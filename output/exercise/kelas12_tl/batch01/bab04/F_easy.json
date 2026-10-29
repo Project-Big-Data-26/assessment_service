@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "F",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 279,
+        "bagian": "Ayo Mencoba 4.7",
+        "nomor": "2",
+        "teks": "Peluang seseorang sembuh dari Covid-19 tanpa penyakit bawaan adalah 0,80. Apabila 40 orang diketahui menderita penyakit ini, berapa nilai harapan sembuhnya?",
+        "jawaban": "32",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai harapan binomial",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah substitusi ke rumus nilai harapan binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+      "jawaban_benar": "45",
+      "alasan_benar": "Menggunakan rumus nilai harapan distribusi binomial: $E(X) = n \\times p = 60 \\times 0,75 = 45$.",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "Menghitung nilai harapan pasien yang gagal sembuh ($n \\times q = 60 \\times 0,25$)."
+        },
+        {
+          "teks": "40",
+          "alasan": "Kesalahan perkalian dasar atau mengira $60 \\times \\frac{2}{3}$ alih-alih $60 \\times \\frac{3}{4}$."
+        },
+        {
+          "teks": "50",
+          "alasan": "Perkiraan kasar tanpa menghitung nilai eksak $60 \\times 0,75$."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $n = 60$\n- $p = 0,75$\n\nNilai harapan distribusi binomial dihitung dengan rumus:\n$$E(X) = n \\cdot p$$\n$$E(X) = 60 \\times 0,75 = 45$$\n\nJadi, nilai harapan banyaknya pasien yang sembuh adalah 45.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0280-latihan-soal-distribusi-binomial-5b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang binomial tunggal",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan langsung fungsi peluang distribusi binomial untuk satu nilai titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+      "jawaban_benar": "0,0256",
+      "alasan_benar": "$P(X = 1) = \\binom{4}{1} \\times (0,8)^1 \\times (0,2)^3 = 4 \\times 0,8 \\times 0,008 = 0,0256$.",
+      "distraktor": [
+        {
+          "teks": "0,0064",
+          "alasan": "Lupa mengalikan dengan koefisien kombinasi $\\binom{4}{1}$, hanya menghitung $(0,8)^1 \\times (0,2)^3 = 0,0064$."
+        },
+        {
+          "teks": "0,1024",
+          "alasan": "Tertukar pangkat antara $p$ dan $q$, menghitung $\\binom{4}{1} \\times (0,8)^3 \\times (0,2)^1 = 4 \\times 0,512 \\times 0,2 = 0,4096$ lalu salah desimal atau mengalikan $4 \\times 0,8 \\times 0,2^2$."
+        },
+        {
+          "teks": "0,0320",
+          "alasan": "Kesalahan hitung nilai eksponen $(0,2)^3$ dianggap $0,01$ sehingga $4 \\times 0,8 \\times 0,01 = 0,0320$."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $n = 4$\n- $p = 0,8$\n- $q = 1 - 0,8 = 0,2$\n- $x = 1$\n\nPeluang tepat 1 bibit tumbuh:\n$$P(X = 1) = \\binom{4}{1} p^1 q^{4-1}$$\n$$P(X = 1) = 4 \\times (0,8)^1 \\times (0,2)^3$$\n$$P(X = 1) = 4 \\times 0,8 \\times 0,008 = 0,0256$$\n\nJadi, peluang tepat 1 bibit yang tumbuh adalah 0,0256.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 274,
+        "bagian": "Ayo Mencoba 4.6",
+        "nomor": "1",
+        "teks": "Tentukan peluang untuk mendapatkan 2 sisi gambar dalam 7 kali pelemparan sebuah uang logam.",
+        "jawaban": "21/128",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang pelemparan koin",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan kombinasi dan substitusi langsung pada peluang binomial koin.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+      "jawaban_benar": "$\\frac{15}{64}$",
+      "alasan_benar": "$P(X = 4) = \\binom{6}{4} \\left(\\frac{1}{2}\\right)^4 \\left(\\frac{1}{2}\\right)^2 = 15 \\times \\frac{1}{64} = \\frac{15}{64}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{64}$",
+          "alasan": "Menggunakan nilai kombinasi $\\binom{6}{1}$ alih-alih $\\binom{6}{4}$."
+        },
+        {
+          "teks": "$\\frac{20}{64}$",
+          "alasan": "Menghitung nilai kombinasi untuk $x = 3$, yaitu $\\binom{6}{3} = 20$."
+        },
+        {
+          "teks": "$\\frac{15}{32}$",
+          "alasan": "Salah menghitung pembagi $2^6 = 64$ menjadi $32$."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $n = 6$\n- $x = 4$\n- $p = \\frac{1}{2}$\n- $q = \\frac{1}{2}$\n\nPerhitungan peluang binomial:\n$$P(X = 4) = \\binom{6}{4} \\left(\\frac{1}{2}\\right)^4 \\left(\\frac{1}{2}\\right)^{6-4}$$\n$$\\binom{6}{4} = \\frac{6!}{4!2!} = \\frac{6 \\times 5}{2 \\times 1} = 15$$\n$$P(X = 4) = 15 \\times \\left(\\frac{1}{2}\\right)^6 = 15 \\times \\frac{1}{64} = \\frac{15}{64}$$\n\nJadi, peluangnya adalah $\\frac{15}{64}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ( x ; n , p ) mempunyai nilai harapan E ( X ) = np dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "rumus nilai harapan",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya mengingat definisi dan mengalikan parameter $n$ dan $p$ dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+      "jawaban_benar": "15",
+      "alasan_benar": "$E(X) = n \\cdot p = 50 \\times 0,3 = 15$.",
+      "distraktor": [
+        {
+          "teks": "35",
+          "alasan": "Menghitung $n \\cdot q = 50 \\times 0,7 = 35$."
+        },
+        {
+          "teks": "10,5",
+          "alasan": "Menghitung varians $n \\cdot p \\cdot q = 50 \\times 0,3 \\times 0,7 = 10,5$ alih-alih nilai harapan."
+        },
+        {
+          "teks": "5",
+          "alasan": "Kesalahan desimal saat mengalikan $50 \\times 0,3$ dianggap 5."
+        }
+      ],
+      "pembahasan": "Berdasarkan rumus nilai harapan distribusi binomial:\n$$E(X) = n \\cdot p$$\nDiketahui $n = 50$ dan $p = 0,3$, maka:\n$$E(X) = 50 \\times 0,3 = 15$$\n\nJadi, nilai harapan $E(X)$ adalah 15.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep parameter binomial",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat hubungan dasar komplementer antara peluang sukses dan peluang gagal pada percobaan binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu percobaan binomial, peluang terjadinya kejadian berhasil dinyatakan dengan $p = \\frac{1}{4}$. Peluang kejadian gagal ($q$) dalam percobaan tersebut bernilai ....",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "$q = 1 - p = 1 - \\frac{1}{4} = \\frac{3}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Menyamakan peluang gagal dengan peluang berhasil."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengira setiap percobaan Bernoulli selalu memiliki peluang gagal setara dengan koin ($0,5$)."
+        },
+        {
+          "teks": "$-\\frac{1}{4}$",
+          "alasan": "Salah memahami pengurangan atau lupa menambahkan 1 pada rumus $1 - p$."
+        }
+      ],
+      "pembahasan": "Pada percobaan binomial, hanya ada dua kemungkinan hasil: sukses dan gagal. Hubungan antara peluang sukses ($p$) dan peluang gagal ($q$) adalah:\n$$q = 1 - p$$\n$$q = 1 - \\frac{1}{4} = \\frac{3}{4}$$\n\nJadi, peluang kejadian gagal adalah $\\frac{3}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 273,
+        "bagian": "Contoh Soal",
+        "nomor": "4.12",
+        "teks": "Sebuah dadu seimbang dilemparkan 5 kali. Tentukan peluang mendapatkan sisi mata dadu empat sebanyak 3 kali.",
+        "jawaban": "0,032",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang binomial dadu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan peluang dasar satu lemparan dadu lalu substitusi langsung ke rumus fungsi peluang binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah dadu seimbang bermata enam dilemparkan sebanyak 4 kali. Peluang mendapatkan sisi mata dadu 6 tepat sebanyak 2 kali adalah ....",
+      "jawaban_benar": "$\\frac{25}{216}$",
+      "alasan_benar": "$P(X = 2) = \\binom{4}{2} \\left(\\frac{1}{6}\\right)^2 \\left(\\frac{5}{6}\\right)^{4-2} = 6 \\times \\frac{1}{36} \\times \\frac{25}{36} = \\frac{25}{216}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{216}$",
+          "alasan": "Lupa mengalikan dengan faktor kombinasi $\\binom{4}{2} = 6$."
+        },
+        {
+          "teks": "$\\frac{25}{1296}$",
+          "alasan": "Lupa mengalikan dengan kombinasi dan salah penyederhanaan penyebut."
+        },
+        {
+          "teks": "$\\frac{5}{36}$",
+          "alasan": "Keliru menghitung kuadrat dari peluang gagal $(5/6)^2$ menjadi $5/6$."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Peluang sukses (muncul mata dadu 6): $p = \\frac{1}{6}$\n- Peluang gagal: $q = 1 - \\frac{1}{6} = \\frac{5}{6}$\n- Banyak percobaan: $n = 4$\n- Banyak sukses yang diharapkan: $x = 2$\n\nMenggunakan rumus peluang binomial:\n$$P(X = x) = \\binom{n}{x} p^x q^{n-x}$$\n$$P(X = 2) = \\binom{4}{2} \\left(\\frac{1}{6}\\right)^2 \\left(\\frac{5}{6}\\right)^2$$\n$$\\binom{4}{2} = \\frac{4 \\times 3}{2 \\times 1} = 6$$\n$$P(X = 2) = 6 \\times \\frac{1}{36} \\times \\frac{25}{36} = \\frac{1}{6} \\times \\frac{25}{36} = \\frac{25}{216}$$\n\nJadi, peluangnya adalah $\\frac{25}{216}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 275,
+        "bagian": "Ayo Mencoba",
+        "nomor": "2",
+        "teks": "Sel kanker yang terdapat pada tubuh manusia diilustrasikan seperti pada Gambar 4.15. Peluang seseorang akan sembuh dari kanker adalah 0,4. Jika 15 orang terkena penyakit tersebut, berapa peluang tepat 5 orang sembuh?",
+        "jawaban": "0,186",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang binomial tembakan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung peluang binomial dengan substitusi langsung ke formula dasar untuk $n$ kecil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang seorang penembak mengenai sasaran tepat adalah 0,6 pada setiap tembakan. Jika ia melepaskan 4 tembakan secara bebas, peluang tepat 3 tembakan mengenai sasaran adalah ....",
+      "jawaban_benar": "0,3456",
+      "alasan_benar": "$P(X = 3) = \\binom{4}{3} (0,6)^3 (0,4)^1 = 4 \\times 0,216 \\times 0,4 = 0,3456$.",
+      "distraktor": [
+        {
+          "teks": "0,0864",
+          "alasan": "Lupa mengalikan dengan kombinasi $\\binom{4}{3} = 4$, hanya menghitung $(0,6)^3 \\times 0,4$."
+        },
+        {
+          "teks": "0,5184",
+          "alasan": "Tertukar nilai peluang sukses dan peluang gagal, menghitung $\\binom{4}{3} (0,4)^3 (0,6)^1$."
+        },
+        {
+          "teks": "0,2304",
+          "alasan": "Salah menghitung pangkat, mengalikan $(0,6)^2 \\times (0,4)^2 \\times 4$."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $n = 4$\n- $x = 3$\n- $p = 0,6$\n- $q = 1 - 0,6 = 0,4$\n\nPeluang binomial:\n$$P(X = 3) = \\binom{4}{3} (0,6)^3 (0,4)^{4-3}$$\n$$\\binom{4}{3} = 4$$\n$$P(X = 3) = 4 \\times 0,216 \\times 0,4 = 0,3456$$\n\nJadi, peluang tepat 3 tembakan mengenai sasaran adalah 0,3456.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 279,
+        "bagian": "Ayo Mencoba",
+        "nomor": "2",
+        "teks": "Peluang seseorang sembuh dari Covid-19 tanpa penyakit bawaan adalah 0,80. Apabila 40 orang diketahui menderita penyakit ini, berapa nilai harapan sembuhnya?",
+        "jawaban": "32",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai harapan produksi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu operasi perkalian langsung menggunakan rumus nilai harapan $E(X) = n \\cdot p$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang sebuah produk elektronik yang dihasilkan sebuah pabrik lolos uji kendali mutu adalah 0,95. Jika diambil sampel acak sebanyak 300 produk, nilai harapan banyaknya produk yang lolos uji mutu adalah ....",
+      "jawaban_benar": "285",
+      "alasan_benar": "$E(X) = n \\cdot p = 300 \\times 0,95 = 285$.",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "Menghitung nilai harapan produk yang tidak lolos mutu ($300 \\times 0,05$)."
+        },
+        {
+          "teks": "270",
+          "alasan": "Keliru mengalikan $300 \\times 0,90$."
+        },
+        {
+          "teks": "295",
+          "alasan": "Melakukan pengurangan $300 - (100 \\times 0,05)$ bukan perkalian langsung."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Banyaknya percobaan ($n$) = 300\n- Peluang keberhasilan ($p$) = 0,95\n\nRumus nilai harapan distribusi binomial:\n$$E(X) = n \\cdot p$$\n$$E(X) = 300 \\times 0,95 = 285$$\n\nJadi, nilai harapan produk yang lolos uji mutu adalah 285.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada dasarnya, berbagai percobaan pada distribusi binomial bersifat bebas, artinya kita dapat menentukan salah satu kejadian sebagai berhasil dengan peluang keberhasilan pada setiap pengulangan tetap sama."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "karakteristik distribusi binomial",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan mengenali sifat atau karakteristik dasar dari proses Bernoulli.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Salah satu sifat utama dari percobaan yang berdistribusi binomial (proses Bernoulli) adalah ....",
+      "jawaban_benar": "peluang keberhasilan pada setiap pengulangan percobaan bernilai tetap",
+      "alasan_benar": "Berdasarkan definisi proses Bernoulli, percobaan bersifat saling bebas dan peluang sukses ($p$) konstan pada setiap pengulangan.",
+      "distraktor": [
+        {
+          "teks": "hasil pada percobaan sebelumnya memengaruhi peluang percobaan berikutnya",
+          "alasan": "Bertentangan dengan sifat saling bebas (independen)."
+        },
+        {
+          "teks": "setiap percobaan memiliki lebih dari dua kemungkinan hasil yang saling bebas",
+          "alasan": "Percobaan binomial hanya memiliki tepat dua kemungkinan hasil (sukses dan gagal)."
+        },
+        {
+          "teks": "peluang kejadian gagal selalu bernilai sama dengan peluang kejadian berhasil",
+          "alasan": "Peluang sukses dan gagal tidak harus sama besar ($p$ tidak harus bernilai 0,5)."
+        }
+      ],
+      "pembahasan": "Karakteristik proses Bernoulli pada distribusi binomial meliputi:\n1. Percobaan diulang sebanyak $n$ kali.\n2. Setiap percobaan hanya menghasilkan dua kemungkinan: berhasil (sukses) atau gagal.\n3. Percobaan bersifat saling bebas (independen).\n4. Peluang keberhasilan ($p$) selalu tetap (konstan) pada setiap pengulangan percobaan.\n\nDengan demikian, pilihan yang tepat adalah peluang keberhasilan pada setiap pengulangan percobaan bernilai tetap.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ^ x ; n , p h mempunyai nilai harapan E ^ X h = np dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai harapan pelemparan dadu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan peluang sederhana satu kejadian dadu dilanjutkan penerapan rumus nilai harapan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah dadu seimbang bermata enam dilemparkan sebanyak 36 kali. Nilai harapan munculnya mata dadu kelipatan 3 adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "$p = \\frac{2}{6} = \\frac{1}{3}$. $E(X) = n \\cdot p = 36 \\times \\frac{1}{3} = 12$.",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "Hanya menghitung peluang satu mata dadu saja ($p = 1/6$, sehingga $36 \\times 1/6 = 6$)."
+        },
+        {
+          "teks": "18",
+          "alasan": "Keliru menganggap mata dadu kelipatan 3 memiliki peluang $1/2$ ($36 \\times 1/2 = 18$)."
+        },
+        {
+          "teks": "24",
+          "alasan": "Menghitung nilai harapan kejadian bukan kelipatan 3 ($36 \\times 2/3 = 24$)."
+        }
+      ],
+      "pembahasan": "Mata dadu kelipatan 3 pada dadu bermata enam adalah $\\{3, 6\\}$, berjumlah 2 dari 6 sisi.\n\n1. Peluang sukses muncul mata dadu kelipatan 3:\n$$p = \\frac{2}{6} = \\frac{1}{3}$$\n\n2. Nilai harapan dengan $n = 36$ kali pelemparan:\n$$E(X) = n \\cdot p = 36 \\times \\frac{1}{3} = 12$$\n\nJadi, nilai harapan munculnya mata dadu kelipatan 3 adalah 12.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": "Ayo Mencoba 4.7",
+        "nomor": "1",
+        "teks": "Berapa nilai harapan untuk mendapatkan 3 sisi angka dalam 6 kali pelemparan sekeping uang logam?",
+        "jawaban": "3",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai harapan pelemparan koin",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah perkalian langsung rumus nilai harapan binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping uang logam seimbang dilemparkan sebanyak 18 kali. Nilai harapan untuk mendapatkan sisi angka adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "$E(X) = n \\times p = 18 \\times \\frac{1}{2} = 9$.",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "Membagi jumlah lemparan dengan 3 bukan dikali peluang 1/2."
+        },
+        {
+          "teks": "12",
+          "alasan": "Mengalikan dengan 2/3 bukan 1/2."
+        },
+        {
+          "teks": "18",
+          "alasan": "Menganggap nilai harapan sama dengan jumlah percobaan n."
+        }
+      ],
+      "pembahasan": "Pada pelemparan uang logam seimbang, peluang munculnya sisi angka pada setiap pelemparan adalah $p = \\frac{1}{2}$. Banyaknya pelemparan adalah $n = 18$.\nNilai harapan variabel acak binomial dirumuskan dengan:\n$$E(X) = n \\cdot p = 18 \\cdot \\frac{1}{2} = 9$$\nJadi, nilai harapan munculnya sisi angka adalah 9.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 280,
+        "bagian": "Latihan Soal Distribusi Binomial",
+        "nomor": "3",
+        "teks": "Peluang seorang bayi belum divaksinasi rubela adalah 0,2. Suatu hari terdapat 6 bayi di posyandu. Tentukan peluang bahwa 4 dari 6 bayi belum divaksinasi rubela.",
+        "jawaban": "0,01536",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang binomial cacat produk",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung kombinasi dan memasukannya ke dalam rumus fungsi peluang binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang sebuah lampu LED rusak dalam suatu proses produksi adalah $0,1$. Jika diambil sampel $3$ lampu LED secara acak dan saling bebas, peluang diperoleh tepat $1$ lampu LED yang rusak adalah ....",
+      "jawaban_benar": "0,243",
+      "alasan_benar": "$P(X = 1) = \\binom{3}{1} (0,1)^1 (0,9)^2 = 3 \\times 0,1 \\times 0,81 = 0,243$.",
+      "distraktor": [
+        {
+          "teks": "0,081",
+          "alasan": "Lupa mengalikan dengan koefisien kombinasi C(3, 1)."
+        },
+        {
+          "teks": "0,270",
+          "alasan": "Salah menghitung pangkat peluang gagal menjadi 3 x 0,1 x 0,9."
+        },
+        {
+          "teks": "0,027",
+          "alasan": "Menggunakan p^3 bukannya p^1 * q^2."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $n = 3$\n- $x = 1$\n- $p = 0,1$ (peluang rusak)\n- $q = 1 - p = 1 - 0,1 = 0,9$\n\nRumus distribusi binomial:\n$$P(X = x) = \\binom{n}{x} p^x q^{n-x}$$\n$$P(X = 1) = \\binom{3}{1} (0,1)^1 (0,9)^{3-1} = 3 \\times 0,1 \\times 0,81 = 0,243$$\nJadi, peluang tepat 1 lampu rusak adalah 0,243.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0280-latihan-soal-distribusi-binomial-5b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang binomial pemanah",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan peluang komplemen dan substitusi langsung ke rumus binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang seorang pemanah mengenai sasaran tepat di tengah adalah $0,8$ pada setiap tembakan. Jika pemanah tersebut melepaskan $3$ tembakan secara bebas, peluang ia mengenai sasaran tepat di tengah tepat $1$ kali adalah ....",
+      "jawaban_benar": "0,096",
+      "alasan_benar": "$P(X = 1) = \\binom{3}{1} (0,8)^1 (0,2)^2 = 3 \\times 0,8 \\times 0,04 = 0,096$.",
+      "distraktor": [
+        {
+          "teks": "0,032",
+          "alasan": "Lupa mengalikan dengan koefisien kombinasi C(3, 1) = 3."
+        },
+        {
+          "teks": "0,384",
+          "alasan": "Tertukar antara pangkat sukses dan pangkat gagal C(3,1) * (0,8)^2 * (0,2)^1."
+        },
+        {
+          "teks": "0,064",
+          "alasan": "Hanya menghitung q^3 yaitu (0,2)^3."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $n = 3$\n- $x = 1$\n- $p = 0,8$\n- $q = 1 - 0,8 = 0,2$\n\nPeluang tepat 1 kali berhasil:\n$$P(X = 1) = \\binom{3}{1} (0,8)^1 (0,2)^2 = 3 \\times 0,8 \\times 0,04 = 0,096$$\nJadi, peluangnya adalah 0,096.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ^ x ; n , p h mempunyai nilai harapan E ^ X h = np dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan parameter peluang",
+      "jumlah_langkah": 1,
+      "alasan_level": "Satu langkah aljabar sederhana membagi nilai harapan dengan banyaknya percobaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak $X$ berdistribusi binomial memiliki nilai harapan $E(X) = 24$. Jika percobaan dilakukan sebanyak $n = 40$ kali, peluang keberhasilan $p$ pada setiap percobaan adalah ....",
+      "jawaban_benar": "0,6",
+      "alasan_benar": "$p = \\frac{E(X)}{n} = \\frac{24}{40} = 0,6$.",
+      "distraktor": [
+        {
+          "teks": "0,4",
+          "alasan": "Menghitung peluang kegagalan q = 1 - p bukannya p."
+        },
+        {
+          "teks": "0,16",
+          "alasan": "Mengurangkan n - E(X) lalu dibagi 100."
+        },
+        {
+          "teks": "0,75",
+          "alasan": "Salah membagi pecahan."
+        }
+      ],
+      "pembahasan": "Rumus nilai harapan distribusi binomial:\n$$E(X) = n \\cdot p$$\nMaka:\n$$24 = 40 \\cdot p \\implies p = \\frac{24}{40} = 0,6$$\nJadi, peluang keberhasilan pada setiap percobaan adalah 0,6.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada dasarnya, berbagai percobaan pada distribusi binomial bersifat bebas, artinya kita dapat menentukan salah satu kejadian sebagai berhasil dengan peluang keberhasilan pada setiap pengulangan tetap sama. Proses seperti ini disebut Proses Bernoulli ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep peluang proses Bernoulli",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi sifat dasar proses Bernoulli bahwa peluang sukses konstan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu percobaan binomial (proses Bernoulli) yang dilakukan sebanyak $n$ kali secara saling bebas, peluang terjadinya keberhasilan pada percobaan ke-1 adalah $p$. Peluang terjadinya keberhasilan pada percobaan ke-5 adalah ....",
+      "jawaban_benar": "$p$",
+      "alasan_benar": "Peluang keberhasilan pada setiap pengulangan percobaan Bernoulli selalu tetap sama yaitu p.",
+      "distraktor": [
+        {
+          "teks": "$5p$",
+          "alasan": "Mengira peluang dikalikan dengan indeks urutan percobaan."
+        },
+        {
+          "teks": "$\\frac{p}{5}$",
+          "alasan": "Mengira peluang terbagi oleh nomor urutan percobaan."
+        },
+        {
+          "teks": "$p^5$",
+          "alasan": "Mengira peluang dipangkatkan urutan percobaan."
+        }
+      ],
+      "pembahasan": "Salah satu sifat utama dari proses Bernoulli pada distribusi binomial adalah bahwa setiap pengulangan percobaan bersifat bebas dan peluang keberhasilan ($p$) pada setiap pengulangan tetap sama.\nOleh karena itu, pada percobaan ke-5 peluang keberhasilannya tetap sebesar $p$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 274,
+        "bagian": "Ayo Mencoba 4.6",
+        "nomor": "1",
+        "teks": "Tentukan peluang untuk mendapatkan 2 sisi gambar dalam 7 kali pelemparan sebuah uang logam.",
+        "jawaban": "0,164",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang muncul gambar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung peluang binomial dengan satu kali aplikasi rumus binomial pada koin seimbang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peluang untuk mendapatkan tepat 1 sisi gambar dalam 5 kali pelemparan sekeping uang logam seimbang.",
+      "jawaban_benar": "$\\frac{5}{32}$",
+      "alasan_benar": "$b(1; 5, 0{,}5) = \\binom{5}{1} \\left(\\frac{1}{2}\\right)^1 \\left(\\frac{1}{2}\\right)^4 = 5 \\times \\frac{1}{32} = \\frac{5}{32}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{32}$",
+          "alasan": "Lupa mengalikan dengan koefisien kombinasi $\\binom{5}{1}$."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Membuat rasio sederhana 1 kejadian dari 5 pelemparan."
+        },
+        {
+          "teks": "$\\frac{10}{32}$",
+          "alasan": "Menggunakan kombinasi $\\binom{5}{2}$ bukan $\\binom{5}{1}$."
+        }
+      ],
+      "pembahasan": "Pada sekeping uang logam seimbang, peluang sisi gambar adalah $p = \\frac{1}{2}$ dan $q = \\frac{1}{2}$. Banyak pelemparan $n = 5$ dan sukses $x = 1$.\n$$P(X = 1) = \\binom{5}{1} \\left(\\frac{1}{2}\\right)^1 \\left(\\frac{1}{2}\\right)^{5-1} = 5 \\cdot \\left(\\frac{1}{2}\\right)^5 = \\frac{5}{32}$$\nJadi, peluang mendapatkan tepat 1 sisi gambar adalah $\\frac{5}{32}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 280,
+        "bagian": "Latihan Soal Distribusi Binomial",
+        "nomor": "3",
+        "teks": "Peluang seorang bayi belum divaksinasi rubela adalah 0,2. Suatu hari terdapat 6 bayi di posyandu. Tentukan peluang bahwa 4 dari 6 bayi belum divaksinasi rubela.",
+        "jawaban": "0,0015",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "peluang kejadian sukses",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memasukkan nilai parameter ke dalam formula peluang binomial langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang sebuah paket sampai tepat waktu adalah $0,8$. Jika seorang kurir mengantar $3$ paket yang proses pengirimannya saling bebas, peluang tepat $2$ paket sampai tepat waktu adalah ....",
+      "jawaban_benar": "0,384",
+      "alasan_benar": "$P(X = 2) = \\binom{3}{2} (0{,}8)^2 (0{,}2)^1 = 3 \\times 0{,}64 \\times 0{,}2 = 0{,}384$.",
+      "distraktor": [
+        {
+          "teks": "0,128",
+          "alasan": "Lupa mengalikan dengan kombinasi $\\binom{3}{2} = 3$ sehingga hanya $(0{,}8)^2 (0{,}2) = 0{,}128$."
+        },
+        {
+          "teks": "0,512",
+          "alasan": "Menghitung peluang ketiga-tiganya tepat waktu $(0{,}8)^3 = 0{,}512$."
+        },
+        {
+          "teks": "0,480",
+          "alasan": "Salah menghitung $(0{,}8)^2 = 0{,}8 \\times 2 = 1{,}6$ lalu dikalikan nilai lain."
+        }
+      ],
+      "pembahasan": "Diketahui $n = 3$, $p = 0{,}8$, $q = 1 - 0{,}8 = 0{,}2$, dan $x = 2$.\n$$P(X = 2) = \\binom{3}{2} (0{,}8)^2 (0{,}2)^{3-2} = 3 \\cdot 0{,}64 \\cdot 0{,}2 = 0{,}384$$\nJadi, peluang tepat 2 paket sampai tepat waktu adalah 0,384.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah b ( x ; n , p ) = c n x m p x q n - x untuk x = 0, 1, 2, …, n ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "formulasi fungsi binomial",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi dan bentuk umum fungsi distribusi peluang binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika suatu variabel acak binomial $X$ menyatakan banyaknya keberhasilan dalam $n$ percobaan saling bebas dengan peluang sukses $p$ dan peluang gagal $q = 1 - p$, bentuk fungsi distribusi peluang binomial $b(x; n, p)$ untuk $x$ keberhasilan adalah ....",
+      "jawaban_benar": "$\\binom{n}{x} p^x q^{n-x}$",
+      "alasan_benar": "Sesuai Definisi 4.6 pada buku siswa, $b(x; n, p) = \\binom{n}{x} p^x q^{n-x}$.",
+      "distraktor": [
+        {
+          "teks": "$\\binom{n}{x} p^{n-x} q^x$",
+          "alasan": "Pangkat peluang sukses $p$ dan peluang gagal $q$ saling tertukar."
+        },
+        {
+          "teks": "$\\binom{n}{x} (p \\cdot q)^{n-x}$",
+          "alasan": "Mengalikan peluang $p$ dan $q$ di dalam satu pangkat bersama."
+        },
+        {
+          "teks": "$n \\cdot p^x q^{n-x}$",
+          "alasan": "Mengganti faktor kombinasi $\\binom{n}{x}$ dengan perkalian langsung $n$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi distribusi binomial, jika $X$ menyatakan banyaknya sukses dalam $n$ percobaan bebas dengan peluang sukses $p$ dan gagal $q = 1 - p$, fungsi peluangnya adalah:\n$$b(x; n, p) = \\binom{n}{x} p^x q^{n-x}, \\quad \\text{untuk } x = 0, 1, 2, \\dots, n$$\nJadi, bentuk yang benar adalah $\\binom{n}{x} p^x q^{n-x}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ( x ; n , p ) mempunyai nilai harapan E ( X ) = np dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "penentuan ukuran sampel",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung banyak percobaan $n$ dengan satu operasi pembagian dari rumus $E(X) = np$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak binomial $X$ memiliki nilai harapan $E(X) = 20$. Jika peluang terjadinya keberhasilan pada setiap percobaan adalah $p = 0{,}4$, banyak percobaan $n$ yang dilakukan adalah ....",
+      "jawaban_benar": "50",
+      "alasan_benar": "$n = \\frac{E(X)}{p} = \\frac{20}{0{,}4} = 50$.",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "Salah melakukan operasi dengan mengalikan $E(X) \\times p = 20 \\times 0{,}4 = 8$."
+        },
+        {
+          "teks": "40",
+          "alasan": "Membagi 20 dengan 0,5 bukannya 0,4."
+        },
+        {
+          "teks": "80",
+          "alasan": "Keliru membagi 20 dengan kuadrat peluang atau salah meletakkan tanda koma desimal."
+        }
+      ],
+      "pembahasan": "Rumus nilai harapan untuk distribusi binomial adalah:\n$$E(X) = n \\cdot p$$\nDiketahui $E(X) = 20$ dan $p = 0{,}4$. Maka banyak percobaan $n$ adalah:\n$$n = \\frac{E(X)}{p} = \\frac{20}{0{,}4} = 50$$\nJadi, banyak percobaan yang dilakukan adalah 50.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": "Ayo Mencoba 4.7",
+        "nomor": "1",
+        "teks": "Berapa nilai harapan untuk mendapatkan 3 sisi angka dalam 6 kali pelemparan sekeping uang logam?",
+        "jawaban": "3",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "nilai harapan koin",
+      "jumlah_langkah": 2,
+      "alasan_level": "Hanya membutuhkan penerapan langsung rumus nilai harapan distribusi binomial dengan dua langkah perhitungan sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berapa nilai harapan untuk mendapatkan 5 sisi angka dalam 10 kali pelemparan sekeping uang logam seimbang?",
+      "jawaban_benar": "5",
+      "alasan_benar": "Peluang muncul sisi angka pada sekeping uang logam seimbang adalah $p = \\frac{1}{2}$. Nilai harapan dihitung dengan rumus $E(X) = n \\cdot p = 10 \\cdot \\frac{1}{2} = 5$.",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "Siswa menganggap nilai harapan sama dengan total banyaknya percobaan ($n$)."
+        },
+        {
+          "teks": "2,5",
+          "alasan": "Siswa keliru mengalikan $n$ dengan kuadrat peluang ($n \\cdot p^2 = 10 \\cdot 0,25$)."
+        },
+        {
+          "teks": "0,5",
+          "alasan": "Siswa hanya menuliskan peluang sukses ($p$) per lemparan tanpa mengalikannya dengan banyak percobaan."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Peluang muncul sisi angka pada uang logam seimbang: $p = \\frac{1}{2}$\n- Banyaknya lemparan: $n = 10$\n\nNilai harapan variabel acak binomial ditentukan dengan rumus:\n$$E(X) = n \\cdot p$$\n$$E(X) = 10 \\cdot \\frac{1}{2} = 5$$\n\nJadi, nilai harapan untuk mendapatkan sisi angka adalah 5.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

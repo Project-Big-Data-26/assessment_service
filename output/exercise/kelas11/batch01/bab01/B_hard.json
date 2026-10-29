@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-b-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 41,
+        "bagian": "3. Komposisi Fungsi",
+        "nomor": "Paragraf 1",
+        "teks": "Misalkan, sebuah toko memberikan penawaran khusus akhir pekan dengan dua pilihan. Pilihan pertama ialah “diskon 20%” terhadap semua barang dengan tambahan potongan harga sebesar Rp25.000,00 setelah diskon 20%. Sedangkan pilihan kedua adalah potongan harga sebesar Rp25.000,00 dilanjutkan diskon 20% setelah potongan harga. Apakah kedua pilihan penawaran tersebut sama? Jika tidak, pilihan mana yang lebih menguntungkan untuk pembeli?",
+        "jawaban": "Pilihan pertama lebih menguntungkan untuk pembeli karena selisih Rp5.000,00 lebih murah.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis_kebijakan_diskon",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi dan membandingkan dua model komposisi fungsi diskon bertingkat untuk menyimpulkan opsi yang lebih menguntungkan beserta selisih pastinya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pusat perbelanjaan memberikan dua pilihan promo akhir pekan untuk pembelian barang dengan harga awal di atas Rp60.000,00:\n- **Pilihan A**: Diskon 30% terlebih dahulu, kemudian dilanjutkan dengan potongan voucer sebesar Rp60.000,00.\n- **Pilihan B**: Potongan voucer sebesar Rp60.000,00 terlebih dahulu, kemudian dilanjutkan dengan diskon 30%.\n\nBerdasarkan konsep komposisi fungsi, manakah pernyataan berikut yang paling tepat mengenai perbandingan kedua promo tersebut?",
+      "jawaban_benar": "Pilihan A selalu lebih murah Rp18.000,00 dibandingkan Pilihan B untuk setiap harga barang.",
+      "alasan_benar": "Harga akhir Pilihan A dirumuskan $(g \\circ f)(x) = 0{,}7x - 60.000$, sedangkan Pilihan B dirumuskan $(f \\circ g)(x) = 0{,}7(x - 60.000) = 0{,}7x - 42.000$. Selisihnya adalah $(0{,}7x - 42.000) - (0{,}7x - 60.000) = 18.000$, sehingga Pilihan A selalu lebih hemat Rp18.000,00.",
+      "distraktor": [
+        {
+          "teks": "Pilihan B selalu lebih murah Rp18.000,00 dibandingkan Pilihan A untuk setiap harga barang.",
+          "alasan": "Tertukar dalam membandingkan hasil akhir kedua fungsi komposisi."
+        },
+        {
+          "teks": "Pilihan A selalu lebih murah Rp42.000,00 dibandingkan Pilihan B untuk setiap harga barang.",
+          "alasan": "Mengira selisih diperoleh dari nilai potongan $0{,}7 \\times 60.000 = 42.000$ secara langsung."
+        },
+        {
+          "teks": "Kedua pilihan promo selalu menghasilkan harga akhir yang sama karena urutan operasi tidak memengaruhi hasil.",
+          "alasan": "Menganggap keliru bahwa komposisi fungsi perkalian dan pengurangan selalu bersifat komutatif."
+        }
+      ],
+      "pembahasan": "Misalkan $x$ adalah harga awal barang dalam rupiah, fungsi diskon $30\\%$ adalah $f(x) = (1 - 0{,}30)x = 0{,}7x$, dan fungsi potongan voucer adalah $g(x) = x - 60.000$.\n\n1. Menentukan model fungsi Pilihan A (diskon dilanjutkan potongan harga):\n$$H_A(x) = (g \\circ f)(x) = g(f(x)) = g(0{,}7x) = 0{,}7x - 60.000$$\n\n2. Menentukan model fungsi Pilihan B (potongan harga dilanjutkan diskon):\n$$H_B(x) = (f \\circ g)(x) = f(g(x)) = f(x - 60.000) = 0{,}7(x - 60.000) = 0{,}7x - 42.000$$\n\n3. Membandingkan harga akhir kedua opsi:\n$$H_B(x) - H_A(x) = (0{,}7x - 42.000) - (0{,}7x - 60.000) = -42.000 + 60.000 = 18.000$$\n\nKarena nilai $H_B(x) - H_A(x) = 18.000 > 0$, maka harga pada Pilihan A selalu Rp18.000,00 lebih murah (lebih hemat) daripada Pilihan B.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f. Ini merupakan syarat komposisi fungsi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "interval_parameter_domain",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menuntut evaluasi syarat eksistensi fungsi komposisi pada domain terbatas untuk mengunci nilai parameter tunggal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{16 - x^2}$ dan $g(x) = 2x + c$. Agar fungsi komposisi $(f \\circ g)(x)$ dapat terdefinisi untuk seluruh bilangan real $x$ pada interval tertutup $[-1, 3]$, maka nilai konstanta $c$ yang memenuhi adalah ....",
+      "jawaban_benar": "$c = -2$",
+      "alasan_benar": "Domain $f$ adalah $[-4, 4]$. Agar $(f \\circ g)(x)$ terdefinisi pada $[-1, 3]$, daerah hasil $g([-1, 3]) = [c - 2, c + 6]$ harus merupakan himpunan bagian dari $[-4, 4]$, sehingga diperoleh $c - 2 \\ge -4 \\implies c \\ge -2$ dan $c + 6 \\le 4 \\implies c \\le -2$, yang memberikan nilai unik $c = -2$.",
+      "distraktor": [
+        {
+          "teks": "$c = 2$",
+          "alasan": "Kesalahan tanda saat menyelesaikan pertidaksamaan batas atas dan bawah."
+        },
+        {
+          "teks": "$-2 \\le c \\le 2$",
+          "alasan": "Mengira solusi berupa interval rentang tanpa menyadari irisan kedua syarat menghasilkan nilai tunggal."
+        },
+        {
+          "teks": "$c = -4$",
+          "alasan": "Hanya menyamakan langsung nilai $c$ dengan batas bawah daerah asal fungsi $f$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan domain dari fungsi $f(x)$:\nSyarat di dalam akar kuadrat tidak boleh negatif:\n$$16 - x^2 \\ge 0 \\iff x^2 \\le 16 \\iff -4 \\le x \\le 4$$\nJadi, daerah asal $D_f = [-4, 4]$.\n\nLangkah 2: Tentukan range dari $g(x) = 2x + c$ untuk $x \\in [-1, 3]$:\nKarena $g(x)$ merupakan fungsi linear yang monoton naik:\n- Nilai minimum tercapai pada $x = -1$, yaitu $g(-1) = 2(-1) + c = c - 2$.\n- Nilai maksimum tercapai pada $x = 3$, yaitu $g(3) = 2(3) + c = c + 6$.\nJadi, $R_g = [c - 2, c + 6]$.\n\nLangkah 3: Terapkan syarat komposisi fungsi:\nAgar $(f \\circ g)(x)$ terdefinisi untuk seluruh $x \\in [-1, 3]$, maka $R_g \\subseteq D_f$, yang berarti:\n$$[c - 2, c + 6] \\subseteq [-4, 4]$$\n\nLangkah 4: Tentukan pertidaksamaan untuk parameter $c$:\n1) $c - 2 \\ge -4 \\implies c \\ge -2$\n2) $c + 6 \\le 4 \\implies c \\le -2$\n\nLangkah 5: Tentukan irisan nilai $c$:\nIrisan dari $c \\ge -2$ dan $c \\le -2$ adalah tepat satu nilai, yaitu $c = -2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 45,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi secara umum tidak memenuhi sifat komutatif."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "analisis_komutatif_linear",
+      "jumlah_langkah": 4,
+      "alasan_level": "Merancang kondisi aljabar pada koefisien dua fungsi linear agar memenuhi sifat komutatif yang secara umum tidak berlaku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Meskipun secara umum komposisi fungsi tidak bersifat komutatif, dua fungsi tertentu dapat memenuhi sifat komutatif $(f \\circ g)(x) = (g \\circ f)(x)$ untuk seluruh $x \\in \\mathbb{R}$. Diketahui fungsi linear $f(x) = 3x - 8$ dan $g(x) = -3x + n$. Nilai konstanta $n$ agar kedua fungsi tersebut saling komutatif adalah ....",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "$(f \\circ g)(x) = 3(-3x + n) - 8 = -9x + 3n - 8$, sedangkan $(g \\circ f)(x) = -3(3x - 8) + n = -9x + 24 + n$. Menyamakan konstanta menghasilkan $3n - 8 = 24 + n \\iff 2n = 32 \\iff n = 16$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Kesalahan perhitungan tanda $2n = 24 - 8 = 16$ sehingga $n = 8$."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Kesalahan aljabar saat memindahkan ruas konstanta sehingga bertanda negatif."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Lupa membagi dengan koefisien $2$ dari variabel $n$ pada langkah akhir."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi komposisi $(f \\circ g)(x)$:\n$$(f \\circ g)(x) = f(g(x)) = f(-3x + n) = 3(-3x + n) - 8 = -9x + 3n - 8$$\n\nLangkah 2: Menentukan fungsi komposisi $(g \\circ f)(x)$:\n$$(g \\circ f)(x) = g(f(x)) = g(3x - 8) = -3(3x - 8) + n = -9x + 24 + n$$\n\nLangkah 3: Menyamakan kedua hasil komposisi fungsi:\nAgar $(f \\circ g)(x) = (g \\circ f)(x)$ berlaku untuk setiap $x \\in \\mathbb{R}$, koefisien $x$ dan suku konstanta pada kedua ruas harus bernilai sama:\n$$-9x + 3n - 8 = -9x + 24 + n$$\n\nLangkah 4: Menyelesaikan nilai $n$:\n$$3n - 8 = 24 + n$$\n$$3n - n = 24 + 8$$\n$$2n = 32$$\n$$n = 16$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 39,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan kata lain,f gadalah fungsi dengan domain (Df ∩ Dg) −{x|g (x) = 0}."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "domain_pembagian_fungsi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis dan mengevaluasi irisan domain dua fungsi irasional serta membuang pembuat nol dari penyebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi real $f(x) = \\sqrt{25 - x^2}$ dan $g(x) = \\sqrt{x^2 - 9}$. Daerah asal (domain) dari fungsi pembagian $h(x) = \\left(\\frac{f}{g}\\right)(x)$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid -5 \\le x < -3 \\text{ atau } 3 < x \\le 5\\}$",
+      "alasan_benar": "$D_f = [-5, 5]$ dan $D_g = (-\\infty, -3] \\cup [3, \\infty)$ sehingga $D_f \\cap D_g = [-5, -3] \\cup [3, 5]$. Karena $g(x) \\neq 0$, titik pembuat nol $x = \\pm 3$ dikeluarkan dari domain sehingga menjadi $[-5, -3) \\cup (3, 5]$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -5 \\le x \\le -3 \\text{ atau } 3 \\le x \\le 5\\}$",
+          "alasan": "Lupa mengecualikan pembuat nol pada penyebut $g(x) = 0$."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -3 < x < 3\\}$",
+          "alasan": "Salah menentukan arah pertidaksamaan kuadrat $x^2 - 9 \\ge 0$ sebagai rentang dalam."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -5 < x < -3 \\text{ atau } 3 < x < 5\\}$",
+          "alasan": "Keliru menganggap batas pembilang juga tidak boleh bernilai sama dengan nol."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan daerah asal fungsi pembilang $f(x) = \\sqrt{25 - x^2}$:\n$$25 - x^2 \\ge 0 \\iff x^2 \\le 25 \\iff -5 \\le x \\le 5$$\nJadi, $D_f = [-5, 5]$.\n\nLangkah 2: Menentukan daerah asal fungsi penyebut $g(x) = \\sqrt{x^2 - 9}$:\n$$x^2 - 9 \\ge 0 \\iff x^2 \\ge 9 \\iff x \\le -3 \\text{ atau } x \\ge 3$$\nJadi, $D_g = (-\\infty, -3] \\cup [3, \\infty)$.\n\nLangkah 3: Menentukan irisan kedua domain $D_f \\cap D_g$:\n$$[-5, 5] \\cap ((-\\infty, -3] \\cup [3, \\infty)) = [-5, -3] \\cup [3, 5]$$\n\nLangkah 4: Menentukan syarat pembagi tidak boleh bernilai nol ($g(x) \\neq 0$):\n$$\\sqrt{x^2 - 9} \\neq 0 \\iff x^2 - 9 \\neq 0 \\iff x \\neq -3 \\text{ dan } x \\neq 3$$\n\nLangkah 5: Mengeluarkan pembuat nol penyebut dari irisan daerah asal:\n$$D_{f/g} = (D_f \\cap D_g) \\setminus \\{-3, 3\\} = [-5, -3) \\cup (3, 5]$$\nDalam notasi himpunan: $\\{x \\in \\mathbb{R} \\mid -5 \\le x < -3 \\text{ atau } 3 < x \\le 5\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "7",
+        "teks": "Jumlah kertas yang diperlukan untuk mencetak x eksemplar modul matematika dinyatakan dalam fungsi k(x) = 250(x + 1) lembar. Biaya pencetakan yang diperlukan untuk k lembar adalah b(k) = 400k + 20.000 (dalam rupiah). Jika pengeluaran hari ini untuk mencetak x eksemplar modul adalah Rp10.120.000,00 tentukan banyak eksemplar modul yang dicetak.",
+        "jawaban": "100",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi_anggaran_komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa mengevaluasi kecukupan alokasi dana menggunakan komposisi fungsi biaya terhadap jumlah produksi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kebutuhan kertas untuk mencetak $x$ eksemplar majalah sekolah dinyatakan oleh fungsi $k(x) = 160(x + 5)$ lembar. Biaya total untuk pengadaan $k$ lembar kertas mengikuti fungsi $B(k) = 450k + 50.000$ (dalam rupiah). Jika pihak sekolah mengalokasikan anggaran sebesar Rp11.570.000,00 untuk mencetak 155 eksemplar majalah, pernyataan evaluasi anggaran yang paling tepat adalah ....",
+      "jawaban_benar": "Anggaran mencukupi dan tersisa Rp0,00 (tepat habis)",
+      "alasan_benar": "$k(155) = 160(160) = 25.600$ lembar; $B(25.600) = 450(25.600) + 50.000 = 11.520.000 + 50.000 = 11.570.000$, tepat sama dengan alokasi dana.",
+      "distraktor": [
+        {
+          "teks": "Anggaran kurang sebesar Rp360.000,00",
+          "alasan": "Menghitung $k(155) = 160(155) + 5 = 24.805$ lembar lalu salah mengalikan koefisien."
+        },
+        {
+          "teks": "Anggaran mencukupi dengan sisa dana Rp50.000,00",
+          "alasan": "Lupa menjumlahkan konstanta biaya tetap Rp50.000,00 pada fungsi $B(k)$."
+        },
+        {
+          "teks": "Anggaran kurang sebesar Rp50.000,00",
+          "alasan": "Menghitung pengeluaran menjadi $11.620.000$ karena keliru menambahkan biaya tetap dua kali."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung kebutuhan lembar kertas untuk $x = 155$:\n$k(155) = 160(155 + 5) = 160 \times 160 = 25.600$ lembar.\n\nLangkah 2: Menghitung biaya total menggunakan fungsi komposisi $(B \\circ k)(155)$:\n$B(25.600) = 450(25.600) + 50.000 = 11.520.000 + 50.000 = 11.570.000$.\n\nLangkah 3: Membandingkan dengan alokasi anggaran:\nBiaya yang dibutuhkan adalah Rp11.570.000,00, sehingga anggaran tepat habis tanpa sisa.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": "Latihan 1.4",
+        "nomor": "2",
+        "teks": "Jika f (x) = 1/(2x+1) dang(x)=2x2+1 , tentukan a. (f ◦ g) (x). b. (g ◦ f ) (x). c. domain dan range dari (f ◦ g) (x). d. domain dan range dari (g ◦ f ) (x).",
+        "jawaban": "range (f o g)(x) adalah (0, 1/3]",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi_range_komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis sifat definit positif pada penyebut fungsi komposisi untuk membatasi daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi real $f(x) = \\frac{1}{3x + 4}$ dan $g(x) = 3x^2 + 2$. Daerah hasil (range) dari fungsi komposisi $(f \\circ g)(x)$ untuk seluruh $x \\in \\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\left\\{y \\in \\mathbb{R} \\mid 0 < y \\le \\frac{1}{10}\\right\\}$",
+      "alasan_benar": "$(f \\circ g)(x) = \\frac{1}{9x^2 + 10}$. Karena $x^2 \\ge 0$, penyebut bernilai minimum $10$ saat $x = 0$, sehingga nilai maksimum pecahan adalah $\\frac{1}{10}$ dan selalu positif mendekati $0$.",
+      "distraktor": [
+        {
+          "teks": "$\\left\\{y \\in \\mathbb{R} \\mid 0 \\le y \\le \\frac{1}{10}\\right\\}$",
+          "alasan": "Mengira nilai pecahan pembilang satu dapat mencapai angka nol."
+        },
+        {
+          "teks": "$\\left\\{y \\in \\mathbb{R} \\mid y \\ge \\frac{1}{10}\\right\\}$",
+          "alasan": "Terbalik menafsirkan bahwa penyebut minimum menghasilkan nilai pecahan minimum."
+        },
+        {
+          "teks": "$\\left\\{y \\in \\mathbb{R} \\mid 0 < y \\le \\frac{1}{6}\\right\\}$",
+          "alasan": "Keliru mengalikan $3(3x^2 + 2) + 4$ menjadi $9x^2 + 6$ karena lupa menambahkan konstanta $4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus komposisi:\n$(f \\circ g)(x) = f(g(x)) = \\frac{1}{3(3x^2 + 2) + 4} = \\frac{1}{9x^2 + 10}$.\n\nLangkah 2: Menentukan batas nilai penyebut:\nUntuk sebarang bilangan real $x$, berlaku $x^2 \\ge 0$, sehingga $9x^2 \\ge 0$.\nAkibatnya, penyebut memenuhi $9x^2 + 10 \\ge 10$.\n\nLangkah 3: Menentukan batas nilai pecahan:\nKarena penyebut bernilai paling kecil $10$, maka nilai terbesar dari $\\frac{1}{9x^2 + 10}$ adalah $\\frac{1}{10}$ (tercapai saat $x = 0$).\nKarena pembilang bertanda positif dan penyebut selalu positif untuk seluruh $x \\in \\mathbb{R}$, pecahan tidak pernah bernilai nol atau negatif.\nJadi, daerah hasil adalah $\\left\\{y \\in \\mathbb{R} \\mid 0 < y \\le \\frac{1}{10}\\right\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f. Ini merupakan syarat komposisi fungsi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis_eksistensi_komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi batas parameter agar daerah hasil fungsi dalam termuat utuh dalam daerah asal fungsi luar pada interval tertutup.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{x - k}$ dan $g(x) = 8 - x^2$. Agar fungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk setiap nilai $x$ pada interval $-2 \\le x \\le 2$, nilai bilangan bulat terbesar dari $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Pada interval $[-2, 2]$, range $g(x)$ adalah $[4, 8]$. Syarat komposisi terdefinisi menuntut $[4, 8] \\subseteq [k, \\infty)$, sehingga $k \\le 4$. Nilai bulat terbesar adalah 4.",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "Menggunakan nilai maksimum $g(x)$ alih-alih nilai minimumnya sebagai batas bawah domain $f$."
+        },
+        {
+          "teks": "0",
+          "alasan": "Menganggap batas bawah domain harus nol tanpa memperhitungkan pergeseran nilai parameter $k$."
+        },
+        {
+          "teks": "-4",
+          "alasan": "Salah tanda dalam menyelesaikan pertidaksamaan nilai minimum $8 - 2^2 \\ge k$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan daerah asal fungsi $f(x)$:\nAgar $f(x) = \\sqrt{x - k}$ terdefinisi pada bilangan real, disyaratkan $x - k \\ge 0 \\iff x \\ge k$. Jadi, $D_f = [k, \\infty)$.\n\nLangkah 2: Menentukan daerah hasil $g(x)$ pada domain $[-2, 2]$:\nFungsi kuadrat $g(x) = 8 - x^2$ terbuka ke bawah dengan puncak di $x = 0$.\nNilai maksimum: $g(0) = 8$.\nNilai minimum di ujung interval: $g(-2) = g(2) = 8 - 4 = 4$.\nJadi, $R_g = [4, 8]$.\n\nLangkah 3: Menerapkan syarat komposisi fungsi:\nAgar $(f \\circ g)(x)$ terdefinisi pada interval tersebut, maka seluruh nilai $g(x)$ harus berada di dalam domain $f$, yaitu $R_g \\subseteq D_f$:\n$[4, 8] \\subseteq [k, \\infty) \\iff k \\le 4$.\n\nLangkah 4: Nilai bulat terbesar dari $k$ yang memenuhi $k \\le 4$ adalah 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi memenuhi sifat asosiatif."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi_parameter_asosiatif",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penerapan berantai sifat asosiatif komposisi tiga fungsi untuk menentukan konstanta tak tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui tiga buah fungsi real $f(x) = 2x - 1$, $g(x) = x^2 + 1$, dan $h(x) = ax + 2$ dengan parameter $a > 0$. Berdasarkan sifat asosiatif komposisi fungsi, diketahui bahwa $((f \\circ g) \\circ h)(1) = 33$. Nilai dari $3a^2 - 2a$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "$h(1) = a+2$; $g(a+2) = (a+2)^2 + 1$; $f(g(h(1))) = 2((a+2)^2 + 1) - 1 = 2(a+2)^2 + 1 = 33 \\Rightarrow (a+2)^2 = 16 \\Rightarrow a = 2$. Maka $3(2)^2 - 2(2) = 12 - 4 = 8$.",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "Keliru memperoleh $a = 1$ akibat salah mengalikan koefisien 2 ke seluruh kurung."
+        },
+        {
+          "teks": "16",
+          "alasan": "Langsung menggunakan nilai $(a + 2)^2 = 16$ sebagai jawaban akhir tanpa menghitung nilai ekspresi."
+        },
+        {
+          "teks": "33",
+          "alasan": "Tertukar antara hasil akhir yang diminta dengan nilai fungsi komposisi pada soal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menerapkan sifat asosiatif:\n$((f \\circ g) \\circ h)(1) = (f \\circ (g \\circ h))(1) = f(g(h(1)))$.\n\nLangkah 2: Menghitung nilai fungsi terdalam:\n$h(1) = a(1) + 2 = a + 2$.\n\nLangkah 3: Mengomposisikan ke dalam fungsi $g$:\n$g(h(1)) = g(a + 2) = (a + 2)^2 + 1$.\n\nLangkah 4: Mengomposisikan ke dalam fungsi $f$:\n$f(g(h(1))) = 2\\left[(a + 2)^2 + 1\\right] - 1 = 2(a + 2)^2 + 2 - 1 = 2(a + 2)^2 + 1$.\n\nLangkah 5: Menyelesaikan nilai $a$ dan menghitung ekspresi akhir:\n$2(a + 2)^2 + 1 = 33$\n$2(a + 2)^2 = 32 \\iff (a + 2)^2 = 16$.\nKarena disyaratkan $a > 0$, maka $a + 2 = 4 \\iff a = 2$.\nNilai dari $3a^2 - 2a = 3(2^2) - 2(2) = 12 - 4 = 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kalian perhatikan bahwa dalam menyelesaikan kedua masalah di atas kalian mengoperasikan fungsi pertama dengan masukan adalah harga awal penjualan kemudian hasil fungsi pertama dioperasikan dalam fungsi kedua untuk mendapatkan harga akhir."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "dekomposisi_dan_akar_fungsi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Merekonstruksi fungsi asal dari rumus komposisi kuadratik dengan substitusi variabel baru, dilanjutkan pemecahan akar persamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui rumus komposisi dua fungsi adalah $(f \\circ g)(x) = 4x^2 - 20x + 21$ dan fungsi dalam $g(x) = 2x - 3$. Jika $x_1$ dan $x_2$ merupakan akar-akar persamaan $f(x) = 5$ dengan $x_1 > x_2$, maka nilai dari $2x_1 + 3x_2$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "Misal $u = 2x - 3 \\Rightarrow 2x = u + 3$, diperoleh $f(u) = u^2 - 4u$. Persamaan $x^2 - 4x - 5 = 0$ menghasilkan akar $x_1 = 5$ dan $x_2 = -1$. Nilai $2(5) + 3(-1) = 7$.",
+      "distraktor": [
+        {
+          "teks": "13",
+          "alasan": "Tertukar menetapkan nilai $x_1$ dan $x_2$ sehingga menghitung $2(-1) + 3(5) = 13$."
+        },
+        {
+          "teks": "9",
+          "alasan": "Salah menentukan tanda pemfaktoran menjadi $(x + 5)(x - 1) = 0$ sehingga akarnya $1$ dan $-5$."
+        },
+        {
+          "teks": "-7",
+          "alasan": "Lupa membalik tanda saat memindahkan suku konstanta ke ruas kiri menjadi $x^2 - 4x + 5 = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Melakukan dekomposisi fungsi dengan pemisalan:\nMisalkan $u = g(x) = 2x - 3$, maka $2x = u + 3$.\n\nLangkah 2: Menentukan rumus fungsi $f(u)$:\n$(f \\circ g)(x) = (2x)^2 - 10(2x) + 21$\n$f(u) = (u + 3)^2 - 10(u + 3) + 21$\n$f(u) = u^2 + 6u + 9 - 10u - 30 + 21 = u^2 - 4u$.\nSehingga rumus fungsi adalah $f(x) = x^2 - 4x$.\n\nLangkah 3: Menyusun persamaan $f(x) = 5$:\n$x^2 - 4x = 5 \\iff x^2 - 4x - 5 = 0$.\n\nLangkah 4: Menentukan akar-akar persamaan:\n$(x - 5)(x + 1) = 0 \\iff x = 5$ atau $x = -1$.\nKarena $x_1 > x_2$, maka $x_1 = 5$ dan $x_2 = -1$.\n\nLangkah 5: Menghitung nilai yang diminta:\n$2x_1 + 3x_2 = 2(5) + 3(-1) = 10 - 3 = 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "3",
+        "teks": "Jika f (x) = 6x − 5 dan g(x) = ax + b, tentukan a dan b sehingga (f ◦ g) (x) = (g ◦ f )(x).",
+        "jawaban": "b = 1 - a",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kesamaan_fungsi_komposisi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembentukan sistem persamaan dari kesamaan dua komposisi fungsi linear serta eliminasi nilai parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 9x - 8$ dan $g(x) = mx + n$. Jika kesamaan $(f \\circ g)(x) = (g \\circ f)(x)$ berlaku untuk setiap bilangan real $x$, dan diketahui pula bahwa $g(2) = 10$, maka hasil kali $m \\cdot n$ adalah ....",
+      "jawaban_benar": "-72",
+      "alasan_benar": "Dari $(f \\circ g)(x) = (g \\circ f)(x)$ diperoleh $9(mx + n) - 8 = m(9x - 8) + n$, sehingga $9n - 8 = -8m + n \\iff m + n = 1$. Dari $g(2) = 10$ diperoleh $2m + n = 10$. Penyelesaian SPLDV menghasilkan $m = 9$ dan $n = -8$, sehingga $m \\cdot n = -72$.",
+      "distraktor": [
+        {
+          "teks": "72",
+          "alasan": "Kesalahan tanda aljabar saat menyelesaikan eliminasi sehingga diperoleh n = 8."
+        },
+        {
+          "teks": "-9",
+          "alasan": "Siswa salah mengoperasikan nilai parameter menjadi m + n = 1 atau keliru mengeliminasi sistem persamaan linear."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa keliru menganggap hasil kali parameter sama dengan nilai masukan g(2)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus $(f \\circ g)(x)$:\n$$(f \\circ g)(x) = f(g(x)) = 9(mx + n) - 8 = 9mx + 9n - 8$$\n\nLangkah 2: Menentukan rumus $(g \\circ f)(x)$:\n$$(g \\circ f)(x) = g(f(x)) = m(9x - 8) + n = 9mx - 8m + n$$\n\nLangkah 3: Menyamakan kedua komposisi:\n$$9mx + 9n - 8 = 9mx - 8m + n$$\n$$9n - 8 = -8m + n$$\n$$8m + 8n = 8 \\implies m + n = 1 \\quad \\text{...(Persamaan 1)}$$\n\nLangkah 4: Menggunakan nilai $g(2) = 10$:\n$$g(2) = 2m + n = 10 \\quad \\text{...(Persamaan 2)}$$\n\nLangkah 5: Menyelesaikan sistem persamaan linear:\nKurangkan Persamaan 2 dengan Persamaan 1:\n$$(2m + n) - (m + n) = 10 - 1 \\implies m = 9$$\nSubstitusikan $m = 9$ ke Persamaan 1:\n$$9 + n = 1 \\implies n = -8$$\n\nMaka hasil kali $m \\cdot n = 9 \\times (-8) = -72$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f. Ini merupakan syarat komposisi fungsi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis_domain_komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi syarat keterdefinisian domain komposisi yang terhubung dengan analisis definit diskriminan fungsi kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\frac{1}{x - 5}$ dan $g(x) = x^2 - 4x + k$. Agar fungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk seluruh bilangan real $x$, maka batasan nilai konstanta $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "$k > 9$",
+      "alasan_benar": "Agar terdefinisi pada R, penyebut g(x) - 5 tidak boleh memiliki pembuat nol real, sehingga diskriminan x^2 - 4x + k - 5 = 0 harus bernilai negatif (D < 0), menghasilkan k > 9.",
+      "distraktor": [
+        {
+          "teks": "$k < 9$",
+          "alasan": "Kesalahan membalik tanda ketaksamaan saat membagi kedua ruas dengan koefisien negatif."
+        },
+        {
+          "teks": "$k \\ge 9$",
+          "alasan": "Menggunakan tanda pertidaksamaan non-ketat sehingga saat k = 9 penyebut bernilai nol di x = 2."
+        },
+        {
+          "teks": "$k > 1$",
+          "alasan": "Siswa lupa mengurangkan nilai 5 pada konstanta saat membentuk persamaan kuadrat penyebut."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan bentuk fungsi komposisi $(f \\circ g)(x)$:\n$$(f \\circ g)(x) = f(g(x)) = \\frac{1}{g(x) - 5} = \\frac{1}{x^2 - 4x + k - 5}$$\n\nLangkah 2: Menentukan syarat keterdefinisian fungsi rasional:\nFungsi $(f \\circ g)(x)$ terdefinisi untuk seluruh $x \\in \\mathbb{R}$ jika dan hanya jika penyebut tidak pernah bernilai nol:\n$$x^2 - 4x + (k - 5) \\neq 0 \\quad \\text{untuk setiap } x \\in \\mathbb{R}$$\n\nLangkah 3: Menerapkan syarat diskriminan persamaan kuadrat tidak memiliki akar real:\nPersamaan $x^2 - 4x + (k - 5) = 0$ tidak boleh memiliki solusi real, sehingga diskriminannya harus negatif ($D < 0$):\n$$D = b^2 - 4ac < 0$$\n$$(-4)^2 - 4(1)(k - 5) < 0$$\n$$16 - 4k + 20 < 0$$\n$$36 - 4k < 0$$\n\nLangkah 4: Menyelesaikan pertidaksamaan:\n$$-4k < -36$$\n$$k > 9$$\n\nJadi, batasan nilai yang memenuhi adalah $k > 9$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kalian perhatikan bahwa dalam menyelesaikan kedua masalah di atas kalian mengoperasikan fungsi pertama dengan masukan adalah harga awal penjualan kemudian hasil fungsi pertama dioperasikan dalam fungsi kedua untuk mendapatkan harga akhir."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi_kebijakan_diskon",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi dan membandingkan dua model komposisi diskon bertingkat untuk menentukan interval efisiensi harga belanja.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah toko swalayan menawarkan dua skema promosi untuk barang dengan harga awal $x$ rupiah:\n- **Skema A**: Diskon 20% terlebih dahulu, kemudian dilanjutkan dengan potongan kupon sebesar Rp50.000,00.\n- **Skema B**: Potongan kupon sebesar Rp30.000,00 terlebih dahulu, kemudian dilanjutkan dengan diskon 25%.\n\nDengan asumsi kedua kupon dapat digunakan tanpa menghasilkan harga akhir negatif, interval harga awal barang $x$ agar Skema A memberikan harga akhir yang **lebih murah** daripada Skema B adalah ....",
+      "jawaban_benar": "$\\text{Rp}62.500,00 \\le x < \\text{Rp}550.000,00$",
+      "alasan_benar": "Fungsi harga akhir A(x) = 0,8x - 50.000 dan B(x) = 0,75x - 22.500. Pertidaksamaan A(x) < B(x) menghasilkan x < 550.000, dengan batas bawah x >= 62.500 agar 0,8x >= 50.000.",
+      "distraktor": [
+        {
+          "teks": "$x > \\text{Rp}550.000,00$",
+          "alasan": "Siswa terbalik dalam menginterpretasikan tanda pertidaksamaan lebih murah."
+        },
+        {
+          "teks": "$x < \\text{Rp}450.000,00$",
+          "alasan": "Siswa lupa mengalikan faktor diskon 25% ke nominal kupon pada Skema B."
+        },
+        {
+          "teks": "$\\text{Rp}30.000,00 \\le x < \\text{Rp}550.000,00$",
+          "alasan": "Siswa salah menetapkan batas bawah keberlakuan kupon Skema A menggunakan potongan Skema B."
+        }
+      ],
+      "pembahasan": "Langkah 1: Memodelkan fungsi harga akhir Skema A sebagai fungsi komposisi:\n$$A(x) = (1 - 0{,}20)x - 50.000 = 0{,}8x - 50.000$$\nSyarat harga setelah diskon mencukupi potongan kupon Rp50.000,00:\n$$0{,}8x \\ge 50.000 \\iff x \\ge 62.500$$\n\nLangkah 2: Memodelkan fungsi harga akhir Skema B sebagai fungsi komposisi:\n$$B(x) = (1 - 0{,}25)(x - 30.000) = 0{,}75(x - 30.000) = 0{,}75x - 22.500$$\n\nLangkah 3: Menyusun pertidaksamaan agar Skema A lebih murah dari Skema B:\n$$A(x) < B(x)$$\n$$0{,}8x - 50.000 < 0{,}75x - 22.500$$\n\nLangkah 4: Menyelesaikan pertidaksamaan:\n$$0{,}8x - 0{,}75x < 50.000 - 22.500$$\n$$0{,}05x < 27.500$$\n$$x < \\frac{27.500}{0{,}05} = 550.000$$\n\nLangkah 5: Menggabungkan dengan syarat batas nilai $x$:\n$$\\text{Rp}62.500,00 \\le x < \\text{Rp}550.000,00$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi memenuhi sifat asosiatif."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "ekstremum_komposisi_fungsi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengomposisikan tiga fungsi aljabar berurutan dan menganalisis nilai ekstremum fungsi kuadrat hasil komposisi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui tiga buah fungsi real $f(x) = 2x + 3$, $g(x) = 3x - 1$, dan $h(x) = x^2 - 4x + 5$. Nilai minimum dari fungsi komposisi $k(x) = (f \\circ (g \\circ h))(x)$ untuk seluruh $x \\in \\mathbb{R}$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "Fungsi h(x) memiliki nilai minimum 1 pada x = 2. Karena g dan f merupakan fungsi linear monoton naik, k(x) mencapai nilai minimum pada f(g(1)) = f(2) = 2(2) + 3 = 7.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa hanya menghitung sampai nilai minimum komposisi dua fungsi g(h(x)) tanpa mengomposisikannya dengan f."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa hanya mengambil nilai konstanta fungsi terdalam h(x)."
+        },
+        {
+          "teks": "11",
+          "alasan": "Kesalahan perhitungan saat mengevaluasi nilai balik kuadratik hasil komposisi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai minimum fungsi terdalam $h(x)$:\n$$h(x) = x^2 - 4x + 5 = (x - 2)^2 + 1$$\nKarena $(x - 2)^2 \\ge 0$, maka nilai minimum dari $h(x)$ adalah $h_{\\min} = 1$ saat $x = 2$.\n\nLangkah 2: Menentukan komposisi $(g \\circ h)(x)$:\nKarena $g(u) = 3u - 1$ adalah fungsi linear monoton naik (gradien $3 > 0$), maka nilai minimum $(g \\circ h)(x)$ terjadi saat $h(x)$ minimum:\n$$(g \\circ h)_{\\min} = g(1) = 3(1) - 1 = 2$$\n\nLangkah 3: Menentukan nilai minimum fungsi komposisi $k(x) = f((g \\circ h)(x))$:\nKarena $f(v) = 2v + 3$ juga monoton naik (gradien $2 > 0$), maka nilai minimum $k(x)$ terjadi saat $(g \\circ h)(x)$ minimum:\n$$k_{\\min} = f(2) = 2(2) + 3 = 7$$\n\n(Dapat pula dibuktikan dengan menyusun rumus lengkap $k(x) = 2(3(x^2 - 4x + 5) - 1) + 3 = 6x^2 - 24x + 31$, dengan titik puncak di $x = -\\frac{-24}{2(6)} = 2$, sehingga $k(2) = 6(4) - 48 + 31 = 7$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g: A →B dan f: B→C merupakan dua fungsi maka komposisi keduanya f (g (x)) dinyatakan dengan notasi (f ◦ g)(x) adalah fungsi dari domain A ke kodomain C."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "dekomposisi_nilai_fungsi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penalaran aljabar untuk menentukan nilai fungsi dalam g(x) dari rumus komposisi dan fungsi luar berbentuk rasional.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui rumus komposisi dua fungsi $(f \\circ g)(x) = \\frac{4x - 1}{2x + 3}$ dan fungsi luar $f(x) = \\frac{x + 1}{x - 2}$ untuk $x \\neq 2$. Nilai dari $g(5)$ adalah ....",
+      "jawaban_benar": "$\\frac{17}{2}$",
+      "alasan_benar": "Substitusi x = 5 menghasilkan (f o g)(5) = 19/13. Persamaan f(g(5)) = 19/13 diselesaikan dengan mengalikan silang sehingga diperoleh g(5) = 17/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{13}$",
+          "alasan": "Siswa mengira nilai (f o g)(5) adalah nilai dari g(5)."
+        },
+        {
+          "teks": "$-\\frac{17}{2}$",
+          "alasan": "Kesalahan tanda aljabar saat memindahkan suku sejenis pada persamaan linear."
+        },
+        {
+          "teks": "$\\frac{13}{6}$",
+          "alasan": "Siswa melakukan kesalahan aritmetika dalam menyelesaikan persamaan pecahan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai dari $(f \\circ g)(5)$ secara langsung dari rumus komposisinya:\n$$(f \\circ g)(5) = \\frac{4(5) - 1}{2(5) + 3} = \\frac{20 - 1}{10 + 3} = \\frac{19}{13}$$\n\nLangkah 2: Menghubungkan definisi komposisi fungsi dengan fungsi luar:\nBerdasarkan definisi komposisi fungsi:\n$$(f \\circ g)(5) = f(g(5)) = \\frac{19}{13}$$\n\nLangkah 3: Membentuk persamaan aljabar dengan memisalkan $g(5) = k$:\n$$f(k) = \\frac{k + 1}{k - 2} = \\frac{19}{13}$$\n\nLangkah 4: Menyelesaikan persamaan pecahan linear:\n$$13(k + 1) = 19(k - 2)$$\n$$13k + 13 = 19k - 38$$\n$$13 + 38 = 19k - 13k$$\n$$51 = 6k$$\n$$k = \\frac{51}{6} = \\frac{17}{2}$$\n\nJadi, nilai dari $g(5) = \\frac{17}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f. Ini merupakan syarat komposisi fungsi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis_syarat_eksistensi_komposisi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan daerah hasil fungsi kuadrat pada domain terbatas lalu mengevaluasi syarat keanggotaan subset pada domain fungsi irasional.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{18 - x}$ dan $g(x) = x^2 - 4x + c$ dengan daerah asal $D_g = \\{x \\in \\mathbb{R} \\mid 1 \\le x \\le 5\\}$. Berdasarkan syarat komposisi bahwa daerah hasil $R_g \\subseteq D_f$, batas nilai maksimum dari konstanta $c$ agar fungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk seluruh $x \\in D_g$ adalah ....",
+      "jawaban_benar": "13",
+      "alasan_benar": "Nilai maksimum $g(x)$ pada $[1, 5]$ terjadi di $x = 5$, bernilai $5^2 - 4(5) + c = 5 + c$. Agar $R_g \\subseteq D_f = (-\\infty, 18]$, maka $\\max(g(x)) \\le 18 \\implies 5 + c \\le 18 \\implies c \\le 13$. Jadi batas nilai maksimum dari $c$ adalah 13.",
+      "distraktor": [
+        {
+          "teks": "18",
+          "alasan": "Hanya menyamakan nilai batas fungsi luar $c = 18$ tanpa memperhitungkan nilai fungsi dalam $g(x)$."
+        },
+        {
+          "teks": "22",
+          "alasan": "Menggunakan titik minimum $x = 2$ di mana $g(2) = c - 4$, lalu mensyaratkan $c - 4 \\le 18 \\implies c \\le 22$ (salah memilih ekstremum maksimum)."
+        },
+        {
+          "teks": "15",
+          "alasan": "Mengevaluasi $g(x)$ pada ujung kiri interval $x = 1$ di mana $g(1) = c - 3$, sehingga $c - 3 \\le 18 \\implies c \\le 21$, lalu salah hitung menjadi 15."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan domain dari $f(x)$. Agar $f(x) = \\sqrt{18 - x}$ terdefinisi, disyaratkan $18 - x \\ge 0 \\implies x \\le 18$. Jadi $D_f = (-\\infty, 18]$.\nLangkah 2: Tentukan sifat fungsi $g(x) = (x - 2)^2 + c - 4$ pada interval tertutup $[1, 5]$. Titik puncak parabola berada pada $x = 2 \\in [1, 5]$.\nLangkah 3: Evaluasi nilai $g(x)$ pada titik puncak dan batas interval:\n- $g(2) = (2 - 2)^2 + c - 4 = c - 4$ (nilai minimum)\n- $g(1) = (1 - 2)^2 + c - 4 = c - 3$\n- $g(5) = (5 - 2)^2 + c - 4 = 9 + c - 4 = c + 5$ (nilai maksimum)\nDaerah hasil $g$ adalah $R_g = [c - 4, c + 5]$.\nLangkah 4: Agar $(f \\circ g)(x)$ terdefinisi untuk setiap $x \\in D_g$, disyaratkan $R_g \\subseteq D_f$. Artinya, seluruh nilai dalam $R_g$ harus $\\le 18$, yang berarti nilai maksimumnya harus memenuhi:\n$\\max(g(x)) \\le 18 \\implies c + 5 \\le 18 \\implies c \\le 13$.\nLangkah 5: Jadi, nilai maksimum dari konstanta $c$ adalah 13.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi memenuhi sifat asosiatif."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis_parameter_asosiatif",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembuktian dan penentuan koefisien persamaan fungsi komposisi tiga fungsi berparameter untuk membandingkan sifat asosiatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui tiga fungsi real $f(x) = 2x - 5$, $g(x) = 4x + 1$, dan $h(x) = px - 3$ dengan $p$ konstanta positif. Jika fungsi komposisi $((f \\circ g) \\circ h)(x) = 48x - 27$, maka nilai dari $((g \\circ h) \\circ f)(3)$ adalah ....",
+      "jawaban_benar": "13",
+      "alasan_benar": "$f(g(x)) = 2(4x+1) - 5 = 8x - 3$. Komposisi dengan $h(x)$: $8(px - 3) - 3 = 8px - 27$. Karena $8px - 27 = 48x - 27$, diperoleh $8p = 48 \\implies p = 6$. Untuk $((g \\circ h) \\circ f)(3)$, hitung $f(3) = 2(3) - 5 = 1$. Lalu $h(1) = 6(1) - 3 = 3$. Akhirnya $g(3) = 4(3) + 1 = 13$.",
+      "distraktor": [
+        {
+          "teks": "21",
+          "alasan": "Tertukar menghitung $g(f(h(3)))$ atau salah mensubstitusikan $f(3) = 1$ menjadi $f(3) = 2$."
+        },
+        {
+          "teks": "9",
+          "alasan": "Lupa menambahkan konstanta $+1$ pada perhitungan akhir fungsi $g(x)$."
+        },
+        {
+          "teks": "49",
+          "alasan": "Langsung mensubstitusikan $x = 3$ ke rumus persamaan pertama $48(3) - 27$ kemudian salah operasi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan $(f \\circ g)(x) = f(g(x)) = 2(4x + 1) - 5 = 8x + 2 - 5 = 8x - 3$.\nLangkah 2: Komposisikan dengan $h(x)$:\n$((f \\circ g) \\circ h)(x) = 8(h(x)) - 3 = 8(px - 3) - 3 = 8px - 24 - 3 = 8px - 27$.\nLangkah 3: Samakan dengan persamaan yang diketahui: $8px - 27 = 48x - 27 \\implies 8p = 48 \\implies p = 6$.\nJadi fungsi $h(x) = 6x - 3$.\nLangkah 4: Hitung nilai $((g \\circ h) \\circ f)(3)$ secara bertahap memanfaatkan kesetaraan asosiatif $g(h(f(3)))$:\n- $f(3) = 2(3) - 5 = 1$.\n- $h(f(3)) = h(1) = 6(1) - 3 = 3$.\n- $g(h(f(3))) = g(3) = 4(3) + 1 = 13$.\nLangkah 5: Diperoleh hasil akhir 13.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 41,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan, sebuah toko memberikan penawaran khusus akhir pekan dengan dua pilihan. Pilihan pertama ialah “diskon 20%” terhadap semua barang dengan tambahan potongan harga sebesar Rp25.000,00 setelah diskon 20%. Sedangkan pilihan kedua adalah potongan harga sebesar Rp25.000,00 dilanjutkan diskon 20% setelah potongan harga. Apakah kedua pilihan penawaran tersebut sama? Jika tidak, pilihan mana yang lebih menguntungkan untuk pembeli?"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "evaluasi_optimasi_skema_diskon",
+      "jumlah_langkah": 5,
+      "alasan_level": "Merancang perbandingan dua model komposisi fungsi diskon bertingkat untuk mengevaluasi batas harga awal barang agar salah satu skema lebih menguntungkan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pusat perbelanjaan menyediakan dua kupon promo belanja untuk pembelian barang dengan harga awal minimal Rp100.000,00:\n- **Kupon Merah**: Diskon 15% dari total belanja, kemudian dilanjutkan potongan harga langsung sebesar Rp30.000,00.\n- **Kupon Biru**: Potongan harga langsung sebesar Rp10.000,00, kemudian dilanjutkan diskon 25% dari sisa belanja.\n\nSeorang pembeli ingin membeli sebuah barang dengan harga $x$ rupiah. Agar penggunaan **Kupon Biru** menghasilkan harga bayar akhir yang lebih murah daripada **Kupon Merah**, batas nilai harga awal $x$ yang memenuhi adalah ....",
+      "jawaban_benar": "$x > \\text{Rp}225.000,00$",
+      "alasan_benar": "Model Kupon Merah: $M(x) = 0{,}85x - 30.000$. Model Kupon Biru: $B(x) = 0{,}75(x - 10.000) = 0{,}75x - 7.500$. Syarat Kupon Biru lebih murah: $B(x) < M(x) \\implies 0{,}75x - 7.500 < 0{,}85x - 30.000 \\implies 22.500 < 0{,}10x \\implies x > 225.000$.",
+      "distraktor": [
+        {
+          "teks": "$x < \\text{Rp}225.000,00$",
+          "alasan": "Terbalik dalam menyusun pertidaksamaan Kupon Biru lebih murah."
+        },
+        {
+          "teks": "$x > \\text{Rp}200.000,00$",
+          "alasan": "Lupa mendiskon potongan langsung Rp10.000 pada Kupon Biru (hanya menghitung selisih potongan Rp30.000 - Rp10.000 = Rp20.000 dibagi 0,10)."
+        },
+        {
+          "teks": "$x > \\text{Rp}375.000,00$",
+          "alasan": "Salah melakukan pengurangan $30.000 + 7.500 = 37.500$ pada ruas pertidaksamaan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Definisikan fungsi untuk masing-masing skema kupon:\n- Misal $x$ adalah harga awal barang dalam rupiah ($x \\ge 100.000$).\n- Kupon Merah terdiri dari fungsi diskon $d_1(x) = 0{,}85x$ dan potongan langsung $p_1(y) = y - 30.000$. Fungsi akhirnya: $M(x) = (p_1 \\circ d_1)(x) = 0{,}85x - 30.000$.\n- Kupon Biru terdiri dari fungsi potongan langsung $p_2(x) = x - 10.000$ dan fungsi diskon $d_2(y) = 0{,}75y$. Fungsi akhirnya: $B(x) = (d_2 \\circ p_2)(x) = 0{,}75(x - 10.000) = 0{,}75x - 7.500$.\nLangkah 2: Susun pertidaksamaan agar Kupon Biru lebih murah daripada Kupon Merah:\n$B(x) < M(x)$.\nLangkah 3: Substitusikan model fungsi:\n$0{,}75x - 7.500 < 0{,}85x - 30.000$.\nLangkah 4: Selesaikan pertidaksamaan linear:\n$30.000 - 7.500 < 0{,}85x - 0{,}75x$\n$22.500 < 0{,}10x$\n$x > \\frac{22.500}{0{,}10} \\implies x > 225.000$.\nLangkah 5: Jadi, Kupon Biru lebih murah apabila harga awal barang $x > \\text{Rp}225.000,00$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "7",
+        "teks": "Jumlah kertas yang diperlukan untuk mencetak x eksemplar modul matematika dinyatakan dalam fungsi k(x) = 250(x + 1) lembar. Biaya pencetakan yang diperlukan untuk k lembar adalah b(k) = 400k + 20.000 (dalam rupiah). Jika pengeluaran hari ini untuk mencetak x eksemplar modul adalah Rp10.120.000,00 tentukan banyak eksemplar modul yang dicetak.",
+        "jawaban": "100",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "optimasi_anggaran_komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan fungsi komposisi biaya cetak, perancangan fungsi total pengeluaran bersama biaya distribusi, serta penentuan solusi bulat optimum dari pertidaksamaan anggaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jumlah kertas yang diperlukan untuk mencetak $x$ eksemplar buletin bulanan dinyatakan oleh fungsi $k(x) = 300(x + 2)$ lembar. Biaya percetakan untuk $k$ lembar kertas memenuhi rumus $b(k) = 150k + 50.000$ (dalam rupiah). Selain biaya percetakan, panitia mengalokasikan biaya konsumsi dan distribusi sebesar Rp5.000,00 untuk setiap eksemplar buletin yang berhasil dicetak. Jika total anggaran yang tersedia adalah Rp10.400.000,00, banyak eksemplar buletin maksimum yang dapat dicetak adalah ....",
+      "jawaban_benar": "205",
+      "alasan_benar": "Fungsi biaya percetakan adalah $(b \\circ k)(x) = 150(300(x + 2)) + 50.000 = 45.000x + 140.000$. Biaya total mencakup distribusi: $T(x) = 45.000x + 140.000 + 5.000x = 50.000x + 140.000$. Agar $T(x) \\le 10.400.000$, maka $50.000x \\le 10.260.000 \\iff x \\le 205,2$. Karena $x$ bilangan bulat, nilai maksimumnya adalah 205 eksemplar.",
+      "distraktor": [
+        {
+          "teks": "226",
+          "alasan": "Siswa lupa memperhitungkan biaya distribusi Rp5.000,00 per eksemplar, sehingga menghitung $45.000x + 140.000 \\le 10.400.000 \\iff x \\le 228$ atau membagi langsung tanpa biaya tetap."
+        },
+        {
+          "teks": "206",
+          "alasan": "Siswa melakukan pembulatan ke atas dari 205,2 menjadi 206, yang mengakibatkan pengeluaran melampaui anggaran."
+        },
+        {
+          "teks": "208",
+          "alasan": "Siswa lupa memperhitungkan konstanta pergeseran lembar kertas $(x + 2)$, sehingga memakai $45.000x + 50.000$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus biaya percetakan melalui komposisi fungsi.\n$(b \\circ k)(x) = b(k(x)) = 150(300(x + 2)) + 50.000$\n$(b \\circ k)(x) = 45.000(x + 2) + 50.000 = 45.000x + 90.000 + 50.000 = 45.000x + 140.000$.\n\nLangkah 2: Menyusun fungsi total pengeluaran $T(x)$.\nTotal pengeluaran mencakup biaya cetak ditambah biaya distribusi sebesar Rp5.000,00 per eksemplar:\n$T(x) = (45.000x + 140.000) + 5.000x = 50.000x + 140.000$.\n\nLangkah 3: Menerapkan syarat anggaran.\nTotal pengeluaran tidak boleh melebihi anggaran yang tersedia:\n$50.000x + 140.000 \\le 10.400.000$\n$50.000x \\le 10.400.000 - 140.000$\n$50.000x \\le 10.260.000$\n$x \\le \\frac{10.260.000}{50.000} = 205,2$.\n\nLangkah 4: Menentukan jumlah eksemplar maksimum.\nKarena banyak eksemplar buletin harus berupa bilangan bulat, nilai bulat terbesar yang memenuhi $x \\le 205,2$ adalah $x = 205$.\n\nJadi, banyak eksemplar buletin maksimum yang dapat dicetak adalah 205.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f. Ini merupakan syarat komposisi fungsi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "syarat_eksistensi_komposisi_interval",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan daerah asal fungsi luar berakar, analisis nilai ekstremum fungsi kuadrat pada interval tertutup, dan evaluasi syarat eksistensi komposisi fungsi berparameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi real $f(x) = \\sqrt{x - 3}$ dan $g(x) = x^2 - 6x + c$ dengan daerah asal fungsi $g$ dibatasi pada interval $D_g = \\{x \\in \\mathbb{R} \\mid 2 \\le x \\le 5\\}$. Berdasarkan syarat komposisi fungsi, agar fungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk setiap $x \\in D_g$, nilai minimum dari konstanta $c$ adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "Agar terdefinisi pada bilangan real, daerah asal fungsi $f$ adalah $D_f = [3, \\infty)$. Syarat $(f \\circ g)(x)$ terdefinisi pada seluruh $x \\in [2, 5]$ adalah daerah hasil $g$ pada interval tersebut termuat dalam $D_f$, yang berarti nilai minimum $g(x)$ pada interval $[2, 5]$ harus $\\ge 3$. Fungsi kuadrat $g(x) = (x - 3)^2 + c - 9$ memiliki titik puncak di $x = 3 \\in [2, 5]$, sehingga nilai minimumnya adalah $g(3) = c - 9$. Syarat $c - 9 \\ge 3 \\iff c \\ge 12$. Jadi nilai minimum $c$ adalah 12.",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "Siswa menghitung nilai fungsi pada batas interval ujung $x = 5$ yaitu $g(5) = c - 5 \\ge 3 \\implies c \\ge 8$, padahal titik puncak $x = 3$ memberikan nilai yang lebih kecil."
+        },
+        {
+          "teks": "11",
+          "alasan": "Siswa menghitung nilai fungsi pada ujung interval $x = 2$ yaitu $g(2) = c - 8 \\ge 3 \\implies c \\ge 11$, bukan di titik puncak parabola."
+        },
+        {
+          "teks": "3",
+          "alasan": "Siswa langsung menyamakan konstanta $c$ dengan batas syarat akar tanpa menganalisis nilai ekstrem dari fungsi kuadrat $g(x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan daerah asal (domain) fungsi luar $f(x)$.\nFungsi $f(x) = \\sqrt{x - 3}$ terdefinisi pada bilangan real jika radikan tak negatif:\n$x - 3 \\ge 0 \\iff x \\ge 3$.\nJadi, $D_f = [3, \\infty)$.\n\nLangkah 2: Menerapkan syarat komposisi fungsi.\nFungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk seluruh $x \\in D_g$ jika dan hanya jika seluruh nilai keluaran $g(x)$ untuk $x \\in [2, 5]$ termuat di dalam $D_f$, yaitu:\n$g(x) \\ge 3$ untuk setiap $x \\in [2, 5]$.\nHal ini setara dengan mensyaratkan nilai minimum dari $g(x)$ pada interval $[2, 5]$ bernilai $\\ge 3$.\n\nLangkah 3: Menentukan nilai minimum fungsi $g(x)$ pada interval $[2, 5]$.\nBentuk kuadrat sempurna dari $g(x)$ adalah:\n$g(x) = x^2 - 6x + c = (x - 3)^2 + c - 9$.\nTitik puncak parabola berada pada absis $x = 3$.\nKarena $x = 3$ berada di dalam interval tertutup $[2, 5]$, maka nilai minimum $g(x)$ pada interval tersebut terjadi di $x = 3$:\n$g_{\\text{min}} = g(3) = (3 - 3)^2 + c - 9 = c - 9$.\n\nLangkah 4: Menyelesaikan pertidaksamaan parameter $c$.\nAgar $g(x) \\ge 3$, maka nilai minimumnya harus memenuhi:\n$c - 9 \\ge 3 \\iff c \\ge 12$.\n\nDengan demikian, nilai minimum dari konstanta $c$ adalah 12.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-hard-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": "Latihan 1.4",
+        "nomor": "2",
+        "teks": "Jika f (x) = (2x+1)1 dang(x)=2x2+1 , tentukan a. (f ◦ g) (x).",
+        "jawaban": "{y ∈ ℝ | y > 1}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi_range_komposisi_kuadrat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Soal menuntut evaluasi daerah hasil fungsi komposisi pecahan dan kuadrat dengan menganalisis restriksi bahwa fungsi dalam tidak pernah bernilai nol sehingga batas bawahnya terbuka.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi real $f(x) = \\frac{1}{5x - 4}$ dan $g(x) = 6x^2 + 8$. Daerah hasil (range) dari fungsi komposisi $(g \\circ f)(x)$ untuk seluruh daerah asalnya adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid y > 8\\}$",
+      "alasan_benar": "Karena $f(x) \\neq 0$ untuk setiap $x \\neq \\frac{4}{5}$, maka $(f(x))^2 > 0$, yang menghasilkan $(g \\circ f)(x) = 6(f(x))^2 + 8 > 8$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ge 8\\}$",
+          "alasan": "Siswa menganggap $(f(x))^2 \\ge 0$ tanpa menyadari bahwa nilai pecahan pembilang satu tidak pernah menghasilkan nilai nol."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y > 0\\}$",
+          "alasan": "Siswa hanya meninjau sifat positif dari bentuk kuadrat tanpa memperhitungkan pergeseran konstanta positif delapan pada fungsi g."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\neq 8\\}$",
+          "alasan": "Siswa keliru menganggap delapan sebagai asimtot biasa yang nilainya boleh di bawah delapan, mengabaikan ketidaksamaan kuadratik."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Tentukan domain dari $f(x)$: $D_f = \\{x \\in \\mathbb{R} \\mid 5x - 4 \\neq 0\\} = \\{x \\in \\mathbb{R} \\mid x \\neq \\frac{4}{5}\\}$.\n2. Tentukan range dari $f(x)$: karena pembilang bernilai 1 (konstan tak nol), maka tidak ada nilai $x$ yang membuat $f(x) = 0$. Jadi, $R_f = \\{u \\in \\mathbb{R} \\mid u \\neq 0\\}$.\n3. Bentuk rumus fungsi komposisi:\n$$(g \\circ f)(x) = g(f(x)) = 6(f(x))^2 + 8 = 6\\left(\\frac{1}{5x - 4}\\right)^2 + 8$$\n4. Analisis nilai untuk $u = f(x) \\neq 0$:\nKarena $u \\neq 0$, maka $u^2 > 0$ untuk setiap $x \\in D_f$.\n5. Tentukan range dari $(g \\circ f)(x)$:\n$$u^2 > 0 \\implies 6u^2 > 0 \\implies 6u^2 + 8 > 8$$\nKetika $|x| \\to \\infty$, nilai $u \\to 0$ sehingga $6u^2 + 8 \\to 8^+$. Ketika $x \\to \\frac{4}{5}$, nilai $u^2 \\to \\infty$ sehingga $6u^2 + 8 \\to \\infty$.\nDengan demikian, daerah hasilnya adalah $R_{g \\circ f} = \\{y \\in \\mathbb{R} \\mid y > 8\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

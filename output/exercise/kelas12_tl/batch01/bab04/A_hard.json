@@ -1,0 +1,728 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "9 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 244,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.1",
+        "teks": "Sebuah kotak berisi 5 bola merah dan 6 bola putih seperti yang ditunjukkan pada Gambar 4.4. Diambil sebanyak 4 bola satu per satu tanpa pengembalian. Jika Z menyatakan banyaknya bola putih yang terambil, tentukan nilai z yang mungkin dari variabel acak Z .",
+        "jawaban": "{0, 1, 2, 3, 4}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rentang nilai variabel acak pengambilan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kendala ketersediaan objek ekstrem untuk menentukan batas bawah dan atas nilai variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi 4 bola merah dan 7 bola putih. Dari dalam kotak tersebut diambil sebanyak 8 bola satu per satu tanpa pengembalian. Jika $Z$ menyatakan banyaknya bola putih yang terambil, tentukan himpunan semua nilai $z$ yang mungkin dari variabel acak $Z$.",
+      "jawaban_benar": "$\\{4, 5, 6, 7\\}$",
+      "alasan_benar": "Karena bola merah hanya ada 4, maka pengambilan 8 bola paling banyak memuat 4 bola merah sehingga bola putih yang terambil minimal $8 - 4 = 4$. Stok bola putih hanya 7, sehingga bola putih yang terambil maksimal 7. Jadi nilai yang mungkin adalah 4, 5, 6, atau 7.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5, 6, 7\\}$",
+          "alasan": "Mengabaikan batas bawah bahwa bola merah hanya tersedia 4 sehingga bola putih tidak mungkin berjumlah kurang dari 4."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4, 5, 6, 7\\}$",
+          "alasan": "Mengira bola putih minimal terambil 1 tanpa memperhitungkan jumlah maksimal bola merah yang dapat terambil."
+        },
+        {
+          "teks": "$\\{4, 5, 6, 7, 8\\}$",
+          "alasan": "Mengira seluruh 8 bola yang terambil bisa semuanya berwarna putih, padahal stok bola putih hanya ada 7."
+        }
+      ],
+      "pembahasan": "Diketahui:\nJumlah bola merah = 4\nJumlah bola putih = 7\nTotal bola yang diambil = 8 secara acak tanpa pengembalian.\n\nLangkah 1: Menentukan batas bawah nilai $Z$.\nJika seluruh bola merah terambil (maksimal 4 bola merah), maka sisa bola yang terambil harus berupa bola putih, yaitu $8 - 4 = 4$ bola putih. Maka, nilai terkecil $Z$ adalah 4.\n\nLangkah 2: Menentukan batas atas nilai $Z$.\nJumlah seluruh bola putih di dalam kotak hanya ada 7. Meskipun diambil 8 bola, banyaknya bola putih yang terambil tidak mungkin melebihi stok yang ada. Jadi, nilai terbesar $Z$ adalah 7 (terdiri dari 7 putih dan 1 merah, di mana stok merah mencukupi).\n\nLangkah 3: Menentukan seluruh kemungkinan nilai.\nNilai $z$ dapat bernilai bilangan bulat dari batas bawah hingga batas atas: 4, 5, 6, 7.\n\nJadi, himpunan semua nilai $z$ yang mungkin dari variabel acak $Z$ adalah $\\{4, 5, 6, 7\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "nilai variabel acak dengan batas kapasitas",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus mengevaluasi kombinasi batas minimum dan maksimum unit rusak yang mungkin terambil berdasarkan stok unit baik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari 10 mobil yang dikirim sebuah pabrik, sebanyak 4 mobil tiba dalam keadaan tergores. Sebuah toko menerima 8 mobil secara acak. Misalkan $T$ menyatakan ruang sampel, $G$ untuk kondisi mobil \"tergores\", dan $B$ untuk kondisi mobil yang \"baik\". Variabel acak $X$ menyatakan banyak mobil terkena goresan yang diterima oleh toko tersebut. Tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+      "jawaban_benar": "$\\{2, 3, 4\\}$",
+      "alasan_benar": "Mobil baik hanya ada $10 - 4 = 6$. Jika toko menerima 8 mobil dan seluruh mobil baik terpilih, minimal ada $8 - 6 = 2$ mobil tergores. Karena total mobil tergores hanya ada 4, mobil tergores maksimal yang diterima adalah 4.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Mengasumsikan mobil tergores bisa bernilai 0 atau 1 tanpa menyadari bahwa mobil baik hanya berjumlah 6 unit."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Mengira batas bawah mobil tergores adalah 1, lupa bahwa 6 mobil baik tidak cukup untuk memenuhi penerimaan 8 mobil."
+        },
+        {
+          "teks": "$\\{2, 3, 4, 5, 6, 7, 8\\}$",
+          "alasan": "Mengabaikan batas atas stok mobil tergores yang hanya ada 4 unit dari pabrik."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi komposisi mobil dari pabrik.\nTotal mobil = 10 unit.\nMobil tergores ($G$) = 4 unit.\nMobil baik ($B$) = $10 - 4 = 6$ unit.\n\nLangkah 2: Analisis batas minimum variabel acak $X$.\nToko menerima 8 mobil. Apabila toko menerima semua mobil baik yang ada (yaitu 6 unit), maka sisa mobil yang diterima harus merupakan mobil tergores: $8 - 6 = 2$ unit. Jadi, nilai minimum $x = 2$.\n\nLangkah 3: Analisis batas maksimum variabel acak $X$.\nJumlah mobil tergores yang tersedia di pabrik hanya 4 unit. Apabila semua mobil tergores diterima oleh toko, maka toko menerima 4 mobil tergores dan 4 mobil baik (stok mobil baik mencukupi karena ada 6 unit). Jadi, nilai maksimum $x = 4$.\n\nLangkah 4: Menentukan himpunan nilai variabel acak.\nNilai-nilai $x$ yang mungkin terletak antara 2 dan 4, yaitu $\\{2, 3, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 241,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ruang sampel adalah himpunan dari semua hasil yang mungkin terjadi dalam suatu percobaan acak."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis ruang sampel dan nilai variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengharuskan penalaran mundur dari banyak nilai variabel acak untuk menemukan ukuran ruang sampel eksperimen.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak memuat $n$ kartu yang masing-masing bertuliskan bilangan bulat dari 1 sampai $n$ (dengan $n > 3$). Dua kartu diambil secara acak sekaligus dari kotak tersebut. Didefinisikan variabel acak $W$ sebagai selisih positif antara kedua angka pada kartu yang terambil. Jika banyaknya anggota himpunan semua nilai yang mungkin dari variabel acak $W$ adalah 7, maka banyaknya seluruh anggota ruang sampel pada percobaan tersebut adalah ....",
+      "jawaban_benar": "28",
+      "alasan_benar": "Nilai selisih positif terendah adalah 1 dan tertinggi adalah $n - 1$, sehingga ada $n - 1$ nilai yang mungkin. Karena ada 7 nilai yang mungkin, diperoleh $n = 8$, sehingga ukuran ruang sampel adalah $\\binom{8}{2} = 28$.",
+      "distraktor": [
+        {
+          "teks": "21",
+          "alasan": "Keliru menganggap banyaknya kartu sama dengan banyaknya nilai variabel acak ($n = 7$), sehingga menghitung $\\binom{7}{2} = 21$."
+        },
+        {
+          "teks": "36",
+          "alasan": "Keliru menyimpulkan $n = 9$ sehingga menghitung $\\binom{9}{2} = 36$."
+        },
+        {
+          "teks": "56",
+          "alasan": "Menggunakan rumus permutasi $P(8, 2)$ alih-alih kombinasi untuk pengambilan dua kartu secara sekaligus."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menganalisis nilai-nilai yang mungkin dari variabel acak $W$.\nDua kartu diambil sekaligus dari kartu bernomor $1, 2, 3, \\dots, n$. Selisih positif terkecil terjadi pada dua angka berurutan, yaitu $|k - (k+1)| = 1$. Selisih positif terbesar terjadi pada kartu terkecil dan kartu terbesar, yaitu $|n - 1| = n - 1$.\n\nLangkah 2: Menghitung banyaknya kemungkinan nilai $W$.\nSeluruh bilangan bulat dari 1 sampai $n - 1$ dapat dibentuk sebagai selisih dua kartu. Jadi, himpunan nilai yang mungkin dari $W$ adalah $\\{1, 2, 3, \\dots, n - 1\\}$, yang memiliki sebanyak $n - 1$ anggota.\n\nLangkah 3: Menentukan nilai $n$.\nDiketahui banyaknya nilai yang mungkin adalah 7, maka:\n$n - 1 = 7 \\implies n = 8$.\n\nLangkah 4: Menghitung banyaknya anggota ruang sampel $n(S)$.\nPengambilan 2 kartu sekaligus dari 8 kartu merupakan kombinasi:\n$n(S) = \\binom{8}{2} = \\frac{8 \\times 7}{2 \\times 1} = 28$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rentang nilai variabel acak bersyarat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi batas minimum dan maksimum variabel acak akibat keterbatasan jumlah barang baik dan cacat yang tersedia.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari 15 unit drone yang dikirim sebuah pabrik, sebanyak 6 unit tiba dalam keadaan cacat sensor dan sisanya dalam kondisi baik. Sebuah instansi menerima 11 unit drone secara acak. Misalkan $T$ menyatakan ruang sampel, $C$ untuk kondisi drone cacat sensor, dan $B$ untuk kondisi drone baik. Variabel acak $X$ menyatakan banyak drone cacat sensor yang diterima oleh instansi tersebut. Himpunan semua nilai $x$ yang mungkin dari variabel acak $X$ adalah ....",
+      "jawaban_benar": "$\\{2, 3, 4, 5, 6\\}$",
+      "alasan_benar": "Jumlah drone baik yang tersedia adalah $15 - 6 = 9$ unit. Karena instansi mengambil 11 unit drone, jika semua 9 drone baik terambil, instansi tetap harus menerima minimal $11 - 9 = 2$ drone cacat sensor. Karena total drone cacat sensor hanya ada 6 unit, nilai maksimum drone cacat sensor yang terambil adalah 6. Jadi, nilai $x$ yang mungkin adalah $\\{2, 3, 4, 5, 6\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5, 6\\}$",
+          "alasan": "Mengabaikan fakta bahwa jumlah drone baik hanya 9 unit sehingga nilai 0 dan 1 mustahil terjadi."
+        },
+        {
+          "teks": "$\\{1, 2, 3, 4, 5, 6\\}$",
+          "alasan": "Salah menghitung selisih minimal drone cacat yang harus terambil ($11 - 9 = 2$, bukan 1)."
+        },
+        {
+          "teks": "$\\{2, 3, 4, 5\\}$",
+          "alasan": "Mengira nilai maksimum drone cacat yang terambil dibatasi oleh selisih pengurang bukan jumlah total drone cacat yang ada."
+        }
+      ],
+      "pembahasan": "Total drone = 15 unit, dengan rincian:\n- Drone cacat sensor ($C$) = 6 unit\n- Drone baik ($B$) = $15 - 6 = 9$ unit\n\nBanyak drone yang diambil = 11 unit.\n1. Nilai minimum $X$ tercapai jika terambil drone baik sebanyak-banyaknya (yaitu seluruh 9 unit drone baik terambil):\n   $x_{\\min} = 11 - 9 = 2$.\n2. Nilai maksimum $X$ tercapai jika terambil drone cacat sebanyak-banyaknya. Karena hanya ada 6 drone cacat dan $11 \\ge 6$, semua drone cacat dapat terambil:\n   $x_{\\max} = 6$.\n\nDengan demikian, nilai $x$ yang mungkin dari variabel acak $X$ adalah bilangan bulat dari 2 sampai 6, yaitu $\\{2, 3, 4, 5, 6\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "penentuan parameter prainang variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan kombinatorial balik untuk menemukan parameter populasi kartu, kemudian menggunakannya untuk menghitung prainang gabungan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi $k$ kartu merah bernomor 2 dan 4 kartu biru bernomor 5. Dua kartu diambil sekaligus secara acak. Variabel acak $Y$ menyatakan jumlah angka pada kedua kartu yang terambil. Jika daerah hasil dari variabel acak $Y$ adalah $\\{4, 7, 10\\}$ dan banyaknya elemen ruang sampel yang menghasilkan nilai $Y = 7$ adalah 24, tentukan banyaknya anggota ruang sampel yang menghasilkan nilai $Y$ berupa bilangan genap.",
+      "jawaban_benar": "21",
+      "alasan_benar": "Nilai $Y = 7$ berasal dari pengambilan 1 kartu merah dan 1 kartu biru, sehingga $k \\times 4 = 24 \\implies k = 6$. Nilai $Y$ bernilai genap jika $Y = 4$ (dua kartu merah) atau $Y = 10$ (dua kartu biru). Banyaknya anggota ruang sampel untuk $Y = 4$ adalah $\\binom{6}{2} = 15$ dan untuk $Y = 10$ adalah $\\binom{4}{2} = 6$. Jumlahnya adalah $15 + 6 = 21$.",
+      "distraktor": [
+        {
+          "teks": "15",
+          "alasan": "Hanya menghitung kemungkinan terambilnya dua kartu merah ($Y = 4$) dan lupa menambahkan kasus dua kartu biru ($Y = 10$)."
+        },
+        {
+          "teks": "27",
+          "alasan": "Salah menghitung nilai $k$ menjadi 8 karena membagi 24 dengan 3 alih-alih dengan 4."
+        },
+        {
+          "teks": "45",
+          "alasan": "Menghitung seluruh total anggota ruang sampel $\\binom{10}{2} = 45$ tanpa menyisihkan elemen yang menghasilkan nilai ganjil ($Y = 7$)."
+        }
+      ],
+      "pembahasan": "Dalam kotak terdapat $k$ kartu merah bertuliskan angka 2 dan 4 kartu biru bertuliskan angka 5.\nDiambil 2 kartu sekaligus secara acak.\nNilai-nilai yang mungkin dari $Y$ (jumlah kedua angka):\n- 2 kartu merah: $2 + 2 = 4$\n- 1 merah dan 1 biru: $2 + 5 = 7$\n- 2 kartu biru: $5 + 5 = 10$\n\nBanyaknya hasil yang menghasilkan $Y = 7$ diperoleh dari memilih 1 kartu merah dari $k$ kartu dan 1 kartu biru dari 4 kartu:\n$n(Y = 7) = \\binom{k}{1} \\times \\binom{4}{1} = 4k$\nDiketahui $4k = 24 \\implies k = 6$.\n\nNilai $Y$ yang berupa bilangan genap adalah $Y = 4$ dan $Y = 10$:\n- Untuk $Y = 4$ (keduanya merah): $\\binom{k}{2} = \\binom{6}{2} = \\frac{6 \\times 5}{2} = 15$.\n- Untuk $Y = 10$ (keduanya biru): $\\binom{4}{2} = \\frac{4 \\times 3}{2} = 6$.\n\nBanyak anggota ruang sampel yang menghasilkan $Y$ genap adalah $15 + 6 = 21$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak. Sebaliknya, variabel yang nilainya tidak bergantung pada hasil percobaan acak disebut variabel tidak acak ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi klaim variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap kebenaran empat pernyataan matematis mengenai daerah hasil dan prainang variabel acak gabungan.",
+      "stimulus": "Empat keping uang logam seimbang dilempar secara bersamaan satu kali. Setiap keping memiliki sisi Angka ($A$) dan Gambar ($G$). Didefinisikan dua variabel acak:\n- $X$ menyatakan selisih mutlak antara banyaknya sisi Angka dan banyaknya sisi Gambar yang muncul.\n- $Y$ menyatakan kuadrat dari selisih tersebut, yaitu $Y = X^2$.\n\nPerhatikan pernyataan-pernyataan berikut:\n(1) Daerah hasil dari variabel acak $X$ adalah $\\{0, 1, 2, 3, 4\\}$.\n(2) Banyaknya elemen ruang sampel yang dipetakan ke nilai $X = 0$ adalah 6.\n(3) Daerah hasil dari variabel acak $Y$ adalah $\\{0, 4, 16\\}$.\n(4) Banyaknya elemen ruang sampel yang menghasilkan nilai $Y \\le 4$ adalah 8.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pernyataan yang bernilai BENAR adalah ....",
+      "jawaban_benar": "(2) dan (3)",
+      "alasan_benar": "Pernyataan (2) benar karena $X = 0$ terjadi jika muncul 2 Angka dan 2 Gambar dengan $\\binom{4}{2} = 6$ cara. Pernyataan (3) benar karena nilai $X \\in \\{0, 2, 4\\}$ sehingga nilai $Y = X^2 \\in \\{0^2, 2^2, 4^2\\} = \\{0, 4, 16\\}$. Pernyataan (1) salah karena nilai ganjil tidak mungkin tercapai. Pernyataan (4) salah karena banyaknya elemen dengan $Y \\le 4$ adalah $6 + 8 = 14$.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (3)",
+          "alasan": "Mengira selisih mutlak dapat menghasilkan seluruh bilangan cacah dari 0 sampai 4 tanpa menyadari paritas selisih selalu genap."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Keliru pada pernyataan (4) dengan hanya menghitung elemen untuk $Y = 4$ dan melupakan nilai $Y = 0$ yang juga memenuhi $Y \\le 4$."
+        },
+        {
+          "teks": "(1) dan (4)",
+          "alasan": "Mengalami dua kesalahan sekaligus: menganggap rentang selisih berurutan lengkap dan mengabaikan batas bawah pertidaksamaan."
+        }
+      ],
+      "pembahasan": "Pelemparan 4 koin memiliki ruang sampel berukuran $n(S) = 2^4 = 16$.\nMisalkan banyak Angka yang muncul adalah $k \\in \\{0, 1, 2, 3, 4\\}$, maka banyak Gambar adalah $4 - k$.\nNilai $X = |k - (4 - k)| = |2k - 4|$:\n- $k = 0$: $X = |0 - 4| = 4$, banyak cara $\\binom{4}{0} = 1$.\n- $k = 1$: $X = |2 - 4| = 2$, banyak cara $\\binom{4}{1} = 4$.\n- $k = 2$: $X = |4 - 4| = 0$, banyak cara $\\binom{4}{2} = 6$.\n- $k = 3$: $X = |6 - 4| = 2$, banyak cara $\\binom{4}{3} = 4$.\n- $k = 4$: $X = |8 - 4| = 4$, banyak cara $\\binom{4}{4} = 1$.\n\nEvaluasi pernyataan:\n(1) Nilai $X$ yang mungkin hanya $\\{0, 2, 4\\}$. Pernyataan (1) SALAH.\n(2) Elemen ruang sampel untuk $X = 0$ berjumlah 6. Pernyataan (2) BENAR.\n(3) Nilai $Y = X^2$ dengan $X \\in \\{0, 2, 4\\}$ adalah $\\{0^2, 2^2, 4^2\\} = \\{0, 4, 16\\}$. Pernyataan (3) BENAR.\n(4) Nilai $Y \\le 4$ dipenuhi oleh $Y = 0$ (6 elemen) dan $Y = 4$ (terjadi saat $X = 2$, yaitu $4 + 4 = 8$ elemen). Jadi total elemen untuk $Y \\le 4$ adalah $6 + 8 = 14$, bukan 8. Pernyataan (4) SALAH.\n\nJadi, pernyataan yang bernilai benar adalah (2) dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rentang nilai variabel acak bersyarat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi batasan rentang nilai variabel acak diskret berdasarkan syarat pertidaksamaan pada kondisi sampel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas kendali mutu melakukan pemeriksaan terhadap 5 unit prosesor komputer. Hasil pengamatan dikategorikan dalam komponen 'layak' dan 'rusak'. $X$ adalah variabel acak yang menyatakan banyaknya prosesor yang rusak. Jika diketahui paling sedikit 2 unit prosesor dalam kondisi layak, himpunan semua nilai $x$ yang mungkin dari variabel acak $X$ adalah ....",
+      "jawaban_benar": "$\\{0, 1, 2, 3\\}$",
+      "alasan_benar": "Total prosesor adalah 5 unit. Karena paling sedikit 2 unit dalam kondisi layak, maka banyaknya prosesor rusak maksimal $5 - 2 = 3$ unit, sehingga nilai $x$ yang mungkin adalah $0, 1, 2, 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{2, 3, 4, 5\\}$",
+          "alasan": "Tertukar mendefinisikan variabel acak untuk prosesor yang layak bukan yang rusak."
+        },
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Mengabaikan kemungkinan tidak ada prosesor rusak (nilai 0)."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4, 5\\}$",
+          "alasan": "Mengabaikan syarat bahwa paling sedikit 2 unit prosesor dalam kondisi layak."
+        }
+      ],
+      "pembahasan": "Misalkan $L$ menyatakan banyaknya prosesor layak dan $X$ menyatakan banyaknya prosesor rusak. Jumlah total prosesor yang diperiksa adalah 5, sehingga berlaku $L + X = 5$ atau $X = 5 - L$. Berdasarkan informasi soal, paling sedikit 2 unit dalam kondisi layak, yang berarti $L \\ge 2$. Dengan menyubstitusikan nilai batas $L$, diperoleh $X = 5 - L \\le 5 - 2 = 3$. Karena banyaknya prosesor rusak tidak mungkin negatif, nilai $X$ harus memenuhi $0 \\le X \\le 3$ dengan $X$ bilangan cacah. Jadi, himpunan semua nilai $x$ yang mungkin dari variabel acak $X$ adalah $\\{0, 1, 2, 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kardinalitas prainang variabel acak FPB",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi sifat keterbagian dan faktor persekutuan terbesar untuk menentukan banyaknya unsur ruang sampel yang dipetakan ke nilai tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Pasangan mata dadu yang muncul dinyatakan sebagai $(a, b)$ dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$. Didefinisikan variabel acak $X = \\gcd(a, b)$, yaitu faktor persekutuan terbesar dari bilangan $a$ dan $b$. Banyaknya elemen ruang sampel yang dipetakan ke nilai $X = 2$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "Hanya pasangan mata dadu genap yang saling prima setelah dibagi 2 yang menghasilkan FPB = 2, yaitu (2,2), (2,4), (2,6), (4,2), (4,6), (6,2), dan (6,4).",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "Menghitung seluruh pasangan genap ($3 \\times 3 = 9$) tanpa mengecualikan pasangan (4,4) dan (6,6)."
+        },
+        {
+          "teks": "6",
+          "alasan": "Lupa menyertakan pasangan kembar (2,2) yang memiliki FPB = 2."
+        },
+        {
+          "teks": "5",
+          "alasan": "Hanya menghitung pasangan tanpa memperhitungkan urutan kemunculan dadu pertama dan kedua."
+        }
+      ],
+      "pembahasan": "Variabel acak bernilai $X = \\gcd(a, b) = 2$. Agar FPB dari dua bilangan adalah 2, kedua bilangan harus merupakan kelipatan 2 (bilangan genap) dan hasil baginya dengan 2 harus saling prima. Mata dadu genap yang tersedia adalah $\\{2, 4, 6\\}$. Dari himpunan tersebut, pasangan yang mungkin adalah:\n- Pasangan dengan angka 2: $(2, 2)$ memiliki $\\gcd(2,2)=2$; $(2, 4)$ dan $(4, 2)$ memiliki $\\gcd(2,4)=2$; $(2, 6)$ dan $(6, 2)$ memiliki $\\gcd(2,6)=2$.\n- Pasangan dengan angka 4 dan 6: $(4, 6)$ dan $(6, 4)$ memiliki $\\gcd(4,6)=2$.\n- Pasangan $(4, 4)$ memiliki $\\gcd(4,4)=4 \\ne 2$.\n- Pasangan $(6, 6)$ memiliki $\\gcd(6,6)=6 \\ne 2$.\nMenghitung total pasangan yang memenuhi: $(2, 2), (2, 4), (2, 6), (4, 2), (4, 6), (6, 2), (6, 4)$. Terdapat tepat 7 elemen ruang sampel.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 242,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Banyaknya anggota dalam ruang sampel ditulis n ( S ) . Artinya, n ( S ) adalah jumlah seluruh elemen dalam ruang sampel S ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rekonstruksi parameter ruang sampel variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Merancang dan merekonstruksi parameter ukuran percobaan dari sifat himpunan bayangan variabel acak selisih mutlak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping uang logam seimbang dilempar sebanyak $n$ kali ($n$ bilangan bulat positif). Didefinisikan variabel acak $W$ sebagai selisih mutlak antara banyaknya sisi Angka dan banyaknya sisi Gambar yang muncul. Jika himpunan semua nilai yang mungkin dari $W$ memiliki tepat 5 anggota dan nilai maksimum dari $W$ adalah 8, banyaknya anggota ruang sampel $n(S)$ dari percobaan tersebut adalah ....",
+      "jawaban_benar": "256",
+      "alasan_benar": "Nilai maksimum selisih mutlak pada $n$ lemparan adalah $n = 8$, sehingga ukuran ruang sampel adalah $2^8 = 256$.",
+      "distraktor": [
+        {
+          "teks": "128",
+          "alasan": "Salah menentukan nilai $n = 7$ lalu menghitung $2^7$."
+        },
+        {
+          "teks": "64",
+          "alasan": "Keliru mengira $n = 6$ karena salah mengaitkan jumlah anggota himpunan dengan $n$."
+        },
+        {
+          "teks": "512",
+          "alasan": "Mengira nilai maksimum 8 terjadi pada $n = 9$ lalu menghitung $2^9$."
+        }
+      ],
+      "pembahasan": "Misalkan uang logam dilempar sebanyak $n$ kali. Jika sisi Angka muncul sebanyak $k$ kali dengan $k \\in \\{0, 1, 2, \\dots, n\\}$, maka sisi Gambar muncul sebanyak $n - k$ kali. Variabel acak $W$ didefinisikan sebagai $W = |k - (n - k)| = |2k - n|$. Nilai maksimum dari $W$ terjadi ketika seluruh lemparan menghasilkan sisi yang sama ($k = n$ atau $k = 0$), yaitu $W_{\\max} = |2(n) - n| = n$. Diketahui nilai maksimum dari $W$ adalah 8, sehingga $n = 8$. Untuk $n = 8$, nilai $2k - 8$ dengan $k \\in \\{0, 1, \\dots, 8\\}$ adalah $\\{-8, -6, -4, -2, 0, 2, 4, 6, 8\\}$. Nilai mutlaknya menghasilkan himpunan nilai $W = \\{0, 2, 4, 6, 8\\}$ yang tepat memiliki 5 anggota (sesuai dengan informasi pada soal). Banyaknya anggota ruang sampel dari pelemparan sekeping uang logam sebanyak $n = 8$ kali adalah $n(S) = 2^n = 2^8 = 256$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 244,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.1",
+        "teks": "Sebuah kotak berisi 5 bola merah dan 6 bola putih seperti yang ditunjukkan pada Gambar 4.4. Diambil sebanyak 4 bola satu per satu tanpa pengembalian. Jika Z menyatakan banyaknya bola putih yang terambil, tentukan nilai z yang mungkin dari variabel acak Z.",
+        "jawaban": "{0, 1, 2, 3, 4}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi batas rentang variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kapasitas batas bawah dan atas pengambilan tanpa pengembalian dari dua kelompok objek.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi 7 bola merah dan 4 bola putih. Dari kotak tersebut diambil 8 bola sekaligus secara acak tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola putih yang terambil, tentukan himpunan semua nilai $z$ yang mungkin dari variabel acak $Z$.",
+      "jawaban_benar": "$\\{1, 2, 3, 4\\}$",
+      "alasan_benar": "Total bola ada $7 + 4 = 11$. Karena diambil 8 bola dan bola merah maksimal hanya ada 7, maka minimal bola putih yang terambil adalah $8 - 7 = 1$. Sementara itu, jumlah seluruh bola putih hanya 4, sehingga maksimal bola putih yang terambil adalah 4. Nilai $z$ yang mungkin adalah $\\{1, 2, 3, 4\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Menganggap nilai $z = 0$ mungkin terjadi tanpa mengevaluasi bahwa jika putih 0, bola merah harus 8 sedangkan stok merah hanya 7."
+        },
+        {
+          "teks": "$\\{1, 2, 3\\}$",
+          "alasan": "Salah menentukan batas maksimum dengan mengabaikan bahwa seluruh 4 bola putih dapat terambil bersama 4 bola merah."
+        },
+        {
+          "teks": "$\\{4, 5, 6, 7, 8\\}$",
+          "alasan": "Tertukar menghitung rentang kemungkinan banyaknya bola merah yang terambil, bukan bola putih."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Bola merah: 7\n- Bola putih: 4\n- Total bola: 11\n- Bola yang diambil: 8\n\nMisalkan $z$ adalah banyak bola putih yang terambil.\n1. Nilai minimum $z$ tercapai jika bola merah terambil sebanyak mungkin (7 bola merah):\n$z_{\\text{min}} = 8 - 7 = 1$.\n2. Nilai maksimum $z$ dibatasi oleh jumlah bola putih yang tersedia di kotak, yaitu 4:\n$z_{\\text{maks}} = \\min(8, 4) = 4$.\n\nDengan demikian, nilai $z$ yang mungkin dari variabel acak $Z$ adalah $\\{1, 2, 3, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 242,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Banyaknya anggota dalam ruang sampel ditulis n(S). Artinya, n(S) adalah jumlah seluruh elemen dalam ruang sampel S."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kesetaraan prainang variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi kesamaan ukuran prainang untuk pasangan nilai variabel acak pada ruang sampel multikoin.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebanyak 5 keping uang logam seimbang dilempar bersamaan satu kali. Setiap keping memiliki sisi Angka ($A$) dan Gambar ($G$). Didefinisikan variabel acak $W = |n_A - n_G|$, yaitu selisih mutlak antara banyaknya sisi Angka ($n_A$) dan banyaknya sisi Gambar ($n_G$) yang muncul pada kelima keping. Manakah pernyataan yang BENAR mengenai variabel acak $W$?\n(1) Himpunan semua nilai $w$ yang mungkin dari variabel acak $W$ adalah $\\{1, 3, 5\\}$.\n(2) Nilai $w = 1$ dihasilkan oleh tepat 20 elemen ruang sampel.\n(3) Banyaknya elemen ruang sampel yang menghasilkan $w = 3$ sama dengan banyaknya elemen ruang sampel yang menghasilkan $w = 1$.\n(4) Nilai $w = 5$ dihasilkan oleh tepat 2 elemen ruang sampel.",
+      "jawaban_benar": "(1), (2), dan (4)",
+      "alasan_benar": "Pasangan $(n_A, n_G)$ yang mungkin dari 5 koin: (5,0) selisih 5; (4,1) selisih 3; (3,2) selisih 1; (2,3) selisih 1; (1,4) selisih 3; (0,5) selisih 5. Maka nilai $W$ adalah {1, 3, 5} (pernyataan 1 benar). Nilai $w=1$ berasal dari (3,2) dan (2,3) dengan banyak cara $\\binom{5}{3} + \\binom{5}{2} = 10 + 10 = 20$ (pernyataan 2 benar). Nilai $w=3$ berasal dari (4,1) dan (1,4) dengan banyak cara $\\binom{5}{4} + \\binom{5}{1} = 5 + 5 = 10 \\neq 20$ (pernyataan 3 salah). Nilai $w=5$ berasal dari (5,0) dan (0,5) yaitu AAAAA dan GGGGG, ada 2 elemen (pernyataan 4 benar).",
+      "distraktor": [
+        {
+          "teks": "(1) dan (3)",
+          "alasan": "Mengira prainang $w=3$ dan $w=1$ berjumlah sama."
+        },
+        {
+          "teks": "(2) dan (3)",
+          "alasan": "Mengabaikan himpunan nilai $W$ pada pernyataan (1) dan memilih (3) yang salah."
+        },
+        {
+          "teks": "(1), (3), dan (4)",
+          "alasan": "Menganggap prainang untuk $w=1$ dan $w=3$ simetris sehingga pernyataan (3) dinilai benar."
+        }
+      ],
+      "pembahasan": "Total ruang sampel pelemparan 5 uang logam adalah $n(S) = 2^5 = 32$.\nBanyaknya sisi Angka ($n_A$) dan sisi Gambar ($n_G$) memenuhi $n_A + n_G = 5$.\n\nKemungkinan pasangan $(n_A, n_G)$, nilai $w = |n_A - n_G|$, dan banyaknya titik sampel:\n1. $n_A = 5, n_G = 0 \\implies w = |5 - 0| = 5$, banyak titik: $\\binom{5}{5} = 1$.\n2. $n_A = 4, n_G = 1 \\implies w = |4 - 1| = 3$, banyak titik: $\\binom{5}{4} = 5$.\n3. $n_A = 3, n_G = 2 \\implies w = |3 - 2| = 1$, banyak titik: $\\binom{5}{3} = 10$.\n4. $n_A = 2, n_G = 3 \\implies w = |2 - 3| = 1$, banyak titik: $\\binom{5}{2} = 10$.\n5. $n_A = 1, n_G = 4 \\implies w = |1 - 4| = 3$, banyak titik: $\\binom{5}{1} = 5$.\n6. $n_A = 0, n_G = 5 \\implies w = |0 - 5| = 5$, banyak titik: $\\binom{5}{0} = 1$.\n\nRekapitulasi nilai variabel acak $W$:\n- $w = 1$: ada $10 + 10 = 20$ titik sampel.\n- $w = 3$: ada $5 + 5 = 10$ titik sampel.\n- $w = 5$: ada $1 + 1 = 2$ titik sampel.\n\nUji kebenaran pernyataan:\n- (1) Nilai yang mungkin adalah $\\{1, 3, 5\\}$ (BENAR).\n- (2) Nilai $w = 1$ dihasilkan oleh 20 elemen (BENAR).\n- (3) Elemen untuk $w = 3$ adalah 10, sedangkan $w = 1$ adalah 20, sehingga tidak sama (SALAH).\n- (4) Nilai $w = 5$ dihasilkan oleh 2 elemen (BENAR).\n\nPernyataan yang benar adalah (1), (2), dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0245-latihan-soal-variabel-acak-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi batas rentang variabel acak bersyarat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi aturan penghentian bersyarat untuk menentukan semua nilai variabel acak yang dapat terwujud.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang auditor sistem mutu melakukan pemeriksaan berurutan terhadap paling banyak 4 unit server. Setiap server yang diperiksa dikategorikan 'normal' atau 'kritis'. Prosedur menetapkan bahwa pemeriksaan akan segera dihentikan jika auditor telah menemukan tepat 2 server berkondisi 'kritis', atau berhenti setelah selesai memeriksa 4 server. Jika variabel acak $K$ menyatakan banyaknya server yang diperiksa oleh auditor tersebut, tentukan himpunan semua nilai $k$ yang mungkin dari variabel acak $K$.",
+      "jawaban_benar": "$\\{2, 3, 4\\}$",
+      "alasan_benar": "Penghentian dini hanya dapat terjadi jika ditemukan 2 server kritis (minimal 2 server), yaitu pada server ke-2 atau ke-3; jika belum mencapai 2 server kritis, pemeriksaan berlanjut hingga server ke-4.",
+      "distraktor": [
+        {
+          "teks": "$\\{1, 2, 3, 4\\}$",
+          "alasan": "Mengira pemeriksaan dapat langsung dihentikan pada server ke-1 jika ditemukan server kritis."
+        },
+        {
+          "teks": "$\\{2, 4\\}$",
+          "alasan": "Mengabaikan kasus di mana server kritis kedua ditemukan tepat pada urutan ke-3."
+        },
+        {
+          "teks": "$\\{0, 1, 2, 3, 4\\}$",
+          "alasan": "Tertukar dengan variabel acak yang mencacah banyaknya server kritis dari 4 server yang diperiksa."
+        }
+      ],
+      "pembahasan": "Misalkan status tiap server adalah $N$ (normal) atau $K$ (kritis). Aturan: berhenti saat ditemukan server $K$ kedua, atau setelah memeriksa 4 server.\n1. Kasus $K = 1$: tidak mungkin terjadi karena maksimal baru 1 server kritis yang ditemukan sehingga pemeriksaan harus dilanjutkan.\n2. Kasus $K = 2$: terjadi jika dua server pertama adalah $KK$. Pemeriksaan langsung berhenti setelah 2 server.\n3. Kasus $K = 3$: terjadi jika server kritis kedua muncul di urutan ke-3, yaitu urutan $NKK$ atau $KNK$. Pemeriksaan berhenti setelah 3 server.\n4. Kasus $K = 4$: terjadi jika server kritis kedua ditemukan pada urutan ke-4 ($NNKK, NKNK, KNNK$) atau jika pemeriksaan selesai tanpa pernah menemukan 2 server kritis ($NNNN, KNNN, NKNN, NNKN, NNNK$).\nDengan demikian, himpunan semua nilai yang mungkin dari variabel acak $K$ adalah $\\{2, 3, 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis prainang variabel acak modulo",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perbandingan ukuran prainang di seluruh nilai variabel acak hasil operasi modulo pada ruang sampel dua dadu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Pasangan mata dadu yang muncul dinyatakan sebagai $(a, b)$ dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$. Didefinisikan suatu variabel acak $X$ sebagai sisa pembagian dari hasil kali kedua mata dadu $(a \\times b)$ oleh 6. Tentukan nilai $x$ dari variabel acak $X$ yang memiliki ukuran prainang (banyaknya elemen ruang sampel yang dipetakan ke $x$) paling besar, beserta banyaknya elemen tersebut.",
+      "jawaban_benar": "$x = 0$ dengan 15 pasangan",
+      "alasan_benar": "Nilai $X = 0$ berarti $a \\times b$ kelipatan 6, yang dihasilkan oleh 15 pasangan berbeda pada pelemparan dua dadu.",
+      "distraktor": [
+        {
+          "teks": "$x = 0$ dengan 11 pasangan",
+          "alasan": "Hanya menghitung pasangan yang memuat setidaknya satu angka 6 tanpa memperhitungkan pasangan faktor perkalian $2 \\times 3$ dan $4 \\times 3$."
+        },
+        {
+          "teks": "$x = 2$ dengan 8 pasangan",
+          "alasan": "Keliru menjumlahkan kombinasi modular dan memasukkan pasangan yang menghasilkan sisa pembagian lain."
+        },
+        {
+          "teks": "$x = 4$ dengan 10 pasangan",
+          "alasan": "Menghitung secara berlebih pasangan yang kongruen dengan 4 modulo 6."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua dadu memiliki $n(S) = 6 \\times 6 = 36$ elemen. Variabel acak $X = (a \\times b) \\pmod 6$ memiliki nilai yang mungkin $\\{0, 1, 2, 3, 4, 5\\}$.\n1. Untuk $X = 0$, artinya $a \\times b$ habis dibagi 6:\n   - Memuat angka 6 pada dadu pertama: $(6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)$ (6 pasangan).\n   - Memuat angka 6 pada dadu kedua dengan $a \\ne 6$: $(1, 6), (2, 6), (3, 6), (4, 6), (5, 6)$ (5 pasangan).\n   - Tidak memuat angka 6, tetapi hasil kalinya kelipatan 6 (kombinasi genap $\\{2, 4\\}$ dan kelipatan 3 $\\{3\\}$): $(2, 3), (4, 3), (3, 2), (3, 4)$ (4 pasangan).\n   Total untuk $X = 0$ adalah $6 + 5 + 4 = 15$ pasangan.\n2. Cek nilai lainnya:\n   - $X = 1$: $(1,1), (5,5) \\implies 2$ pasangan.\n   - $X = 2$: $(1,2), (2,1), (2,4), (4,2), (4,5), (5,4) \\implies 6$ pasangan.\n   - $X = 3$: $(1,3), (3,1), (3,3), (3,5), (5,3) \\implies 5$ pasangan.\n   - $X = 4$: $(1,4), (4,1), (2,2), (2,5), (5,2), (4,4) \\implies 6$ pasangan.\n   - $X = 5$: $(1,5), (5,1) \\implies 2$ pasangan.\nNilai $x$ dengan prainang terbesar adalah $x = 0$ sebanyak 15 pasangan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis fungsi variabel acak kuadratik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus mengevaluasi kombinasi aljabar kuadratik pada elemen ruang sampel dua dadu dan menentukan kondisi paritas yang bersesuaian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Misalkan $(a, b)$ menyatakan pasangan mata dadu yang muncul dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$. Didefinisikan suatu variabel acak $V$ sebagai $V = (a - 3)^2 + (b - 3)^2$. Banyaknya elemen dalam ruang sampel yang memetakan ke nilai variabel acak $V$ berupa bilangan ganjil adalah ....",
+      "jawaban_benar": "18",
+      "alasan_benar": "Nilai $(x - 3)^2$ bernilai ganjil jika $x \\in \\{2, 4, 6\\}$ (3 nilai) dan genap jika $x \\in \\{1, 3, 5\\}$ (3 nilai). Penjumlahan dua kuadrat bernilai ganjil jika satu suku genap dan satu suku ganjil, yaitu $(3 \\times 3) + (3 \\times 3) = 18$.",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "Siswa hanya menghitung kemungkinan suku pertama ganjil dan kedua genap tanpa menukar perannya serta salah mengeliminasi titik pusat."
+        },
+        {
+          "teks": "16",
+          "alasan": "Siswa mengabaikan mata dadu 3 karena menganggap $(3-3)^2 = 0$ bukan bilangan bulat genap."
+        },
+        {
+          "teks": "20",
+          "alasan": "Siswa keliru menganggap pasangan kembar menghasilkan nilai ganjil."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua dadu memiliki $n(S) = 6 \\times 6 = 36$ elemen. Didefinisikan $V = (a - 3)^2 + (b - 3)^2$.\nPerhatikan paritas dari $(x - 3)^2$ untuk $x \\in \\{1, 2, 3, 4, 5, 6\\}$:\n- Jika $x \\in \\{1, 3, 5\\}$, maka $(x - 3)^2 \\in \\{4, 0, 4\\}$ yang seluruhnya merupakan bilangan genap (ada 3 nilai).\n- Jika $x \\in \\{2, 4, 6\\}$, maka $(x - 3)^2 \\in \\{1, 1, 9\\}$ yang seluruhnya merupakan bilangan ganjil (ada 3 nilai).\n\nNilai $V$ bernilai ganjil jika dan hanya jika salah satu suku bernilai genap dan suku lainnya bernilai ganjil:\n1. Suku $(a - 3)^2$ genap dan $(b - 3)^2$ ganjil: terdapat $3 \\times 3 = 9$ pasangan.\n2. Suku $(a - 3)^2$ ganjil dan $(b - 3)^2$ genap: terdapat $3 \\times 3 = 9$ pasangan.\n\nTotal banyaknya elemen ruang sampel yang menghasilkan nilai $V$ ganjil adalah $9 + 9 = 18$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan komposisi kantong variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa harus merekonstruksi komposisi objek dalam kantong berdasarkan kendala kardinalitas himpunan nilai variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi sejumlah kelereng merah dan kelereng biru dengan jumlah total 10 kelereng. Dari dalam kantong tersebut diambil 6 kelereng sekaligus secara acak. Misalkan $m$ menyatakan banyaknya kelereng merah dan $k$ menyatakan banyaknya kelereng biru di dalam kantong. Didefinisikan variabel acak $X$ sebagai banyaknya kelereng merah yang terambil. Jika himpunan semua nilai yang mungkin dari $X$ memiliki tepat 4 anggota, maka selisih mutlak $|m - k|$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Himpunan nilai X beranggotakan tepat 4 jika nilai minimum dan maksimum memenuhi selisih 3. Hal ini terjadi saat m = 3 (nilai {0, 1, 2, 3}) atau m = 7 (nilai {3, 4, 5, 6}), sehingga selisih |m - k| = |3 - 7| = 4.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa menguji m = 4 dan k = 6 yang menghasilkan himpunan nilai {0, 1, 2, 3, 4} sebanyak 5 anggota."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa menguji m = 2 dan k = 8 yang menghasilkan himpunan nilai {0, 1, 2} sebanyak 3 anggota."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa menguji kasus ekstrem m = 1 dan k = 9 yang menghasilkan 2 anggota."
+        }
+      ],
+      "pembahasan": "Diketahui total kelereng $m + k = 10$ dan diambil $r = 6$ kelereng.\nNilai minimum dari variabel acak $X$ (banyak kelereng merah terambil) adalah $\\max(0, 6 - k) = \\max(0, m - 4)$.\nNilai maksimum dari $X$ adalah $\\min(6, m)$.\nBanyak anggota himpunan nilai $X$ adalah $(\\text{maks} - \\text{min} + 1)$. Karena diinginkan tepat 4 anggota, maka $\\text{maks} - \\text{min} = 3$.\n\nKita uji nilai $m$ yang mungkin ($0 \\le m \\le 10$):\n- Jika $m = 3$, maka $k = 7$. Nilai minimum $X = \\max(0, -1) = 0$, nilai maksimum $X = \\min(6, 3) = 3$. Himpunan nilai $X = \\{0, 1, 2, 3\\}$ (4 anggota). Selisih $|m - k| = |3 - 7| = 4$.\n- Jika $m = 7$, maka $k = 3$. Nilai minimum $X = \\max(0, 3) = 3$, nilai maksimum $X = \\min(6, 7) = 6$. Himpunan nilai $X = \\{3, 4, 5, 6\\}$ (4 anggota). Selisih $|m - k| = |7 - 3| = 4$.\n- Untuk $m = 4, 5, 6$, himpunan nilai memiliki 5 anggota.\n- Untuk $m = 2, 8$, himpunan nilai memiliki 3 anggota.\n\nDengan demikian, nilai $|m - k| = 4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 243,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak ialah suatu fungsi yang mengaitkan suatu bilangan real pada setiap unsur dalam ruang sampel."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis prainang variabel acak determinan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menganalisis variabel acak yang didefinisikan melalui konsep matriks determinan dan mencari prainang dengan kendala pertidaksamaan nilai mutlak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Pasangan mata dadu yang muncul dinyatakan sebagai $(a, b)$ dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$. Didefinisikan matriks $M = \\begin{pmatrix} a & 2 \\\\ b & 3 \\end{pmatrix}$. Variabel acak $D$ menyatakan determinan dari matriks $M$. Banyaknya elemen ruang sampel yang memetakan ke nilai variabel acak $D$ sedemikian sehingga $|D| \\le 2$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "Determinan D = 3a - 2b. Syarat |3a - 2b| <= 2 dipenuhi oleh pasangan (1, 1), (1, 2), (2, 2), (2, 3), (2, 4), (3, 4), (3, 5), (4, 5), dan (4, 6), total ada 9 elemen.",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "Siswa tidak teliti saat menghitung batas pertidaksamaan untuk nilai a = 2 sehingga melewatkan pasangan (2, 2) dan (2, 4)."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa melewatkan pasangan (1, 1) karena menganggap determinan harus bernilai 0."
+        },
+        {
+          "teks": "11",
+          "alasan": "Siswa salah memperluas rentang pertidaksamaan menjadi |3a - 2b| <= 3."
+        }
+      ],
+      "pembahasan": "Determinan dari matriks $M$ adalah $D = \\det(M) = 3a - 2b$.\nSyarat $|D| \\le 2$ ekuivalen dengan $-2 \\le 3a - 2b \\le 2$, atau dapat ditulis sebagai:\n$3a - 2 \\le 2b \\le 3a + 2$.\n\nKita uji setiap nilai $a \\in \\{1, 2, 3, 4, 5, 6\\}$:\n1. $a = 1$: $1 \\le 2b \\le 5 \\implies b \\in \\{1, 2\\}$ (2 pasangan: $(1, 1), (1, 2)$)\n2. $a = 2$: $4 \\le 2b \\le 8 \\implies b \\in \\{2, 3, 4\\}$ (3 pasangan: $(2, 2), (2, 3), (2, 4)$)\n3. $a = 3$: $7 \\le 2b \\le 11 \\implies b \\in \\{4, 5\\}$ (2 pasangan: $(3, 4), (3, 5)$)\n4. $a = 4$: $10 \\le 2b \\le 14 \\implies b \\in \\{5, 6\\}$ (2 pasangan: $(4, 5), (4, 6)$)\n5. $a = 5$: $13 \\le 2b \\le 17 \\implies 2b \\ge 13$. Karena nilai maksimal $b = 6$ ($2b = 12$), tidak ada nilai $b$ yang memenuhi (0 pasangan).\n6. $a = 6$: $16 \\le 2b \\le 20 \\implies$ tidak ada nilai $b$ yang memenuhi (0 pasangan).\n\nTotal banyaknya elemen ruang sampel yang memenuhi adalah $2 + 3 + 2 + 2 = 9$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 240,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak adalah fungsi yang memetakan setiap hasil dari percobaan acak ke bilangan real, menggambarkan nilai yang mungkin terjadi dalam suatu eksperimen acak."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesetaraan distribusi variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa harus mengevaluasi kebenaran beberapa pernyataan mengenai ruang sampel dan daerah hasil dari dua variabel acak yang saling berkaitan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah percobaan acak melempar 4 keping uang logam seimbang secara bersamaan. Setiap keping memiliki sisi Angka ($A$) dan Gambar ($G$). Hasil lemparan dinyatakan sebagai barisan 4 huruf berurutan, misalnya $AGGA$.\nDidefinisikan dua variabel acak:\n- $X$: banyaknya sisi Angka ($A$) yang muncul.\n- $Y$: banyaknya pergantian sisi yang terjadi antara dua keping yang bersebelahan (contoh: pada hasil $AGGA$, terjadi pergantian dari $A$ ke $G$ dan dari $G$ ke $A$, sehingga $Y = 2$).\n\nPerhatikan pernyataan-pernyataan berikut:\n(1) Nilai minimum yang mungkin dari variabel acak $Y$ adalah 0.\n(2) Nilai maksimum yang mungkin dari variabel acak $Y$ adalah 3.\n(3) Banyaknya elemen dalam ruang sampel yang memetakan ke nilai $Y = 1$ adalah 6.\n(4) Himpunan semua nilai yang mungkin dari $(X - Y)$ adalah $\\{0, 1, 2, 3, 4\\}$.\n\nPernyataan yang bernilai benar adalah ....",
+      "jawaban_benar": "(1), (2), dan (3)",
+      "alasan_benar": "Pernyataan (1), (2), dan (3) benar, sedangkan (4) salah karena hasil AGAG menghasilkan X = 2 dan Y = 3 sehingga X - Y = -1 (memuat bilangan negatif).",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2) saja",
+          "alasan": "Siswa keliru menghitung prainang Y = 1 dan menduga banyaknya bukan 6."
+        },
+        {
+          "teks": "(2) dan (4) saja",
+          "alasan": "Siswa mengira selisih X - Y selalu non-negatif dan mengabaikan pernyataan (1)."
+        },
+        {
+          "teks": "(1), (3), dan (4)",
+          "alasan": "Siswa mengira X selalu lebih besar atau sama dengan Y sehingga menganggap (4) benar."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan 4 uang logam memiliki $2^4 = 16$ elemen. Ada 3 celah posisi pergantian sisi (antara koin 1-2, 2-3, 3-4).\n\nEvaluasi pernyataan:\n- Pernyataan (1): Nilai $Y = 0$ terjadi jika tidak ada pergantian sisi sama sekali, yaitu pada hasil $AAAA$ dan $GGGG$. Jadi nilai minimum $Y$ adalah 0. (Pernyataan (1) BENAR)\n- Pernyataan (2): Pergantian sisi dapat terjadi di ketiga posisi celah, yaitu pada hasil $AGAG$ dan $GAGA$ ($Y = 3$). Jadi nilai maksimum $Y$ adalah 3. (Pernyataan (2) BENAR)\n- Pernyataan (3): Nilai $Y = 1$ berarti hanya terjadi 1 kali pergantian:\n  * Pergantian di celah 1: $AGGG, GAAA$ (2 hasil)\n  * Pergantian di celah 2: $AAGG, GGAA$ (2 hasil)\n  * Pergantian di celah 3: $AAAG, GGGA$ (2 hasil)\n  Total elemen dengan $Y = 1$ adalah $2 + 2 + 2 = 6$. (Pernyataan (3) BENAR)\n- Pernyataan (4): Perhatikan elemen $AGAG$. Pada hasil ini, banyak angka $X = 2$ dan banyak pergantian sisi $Y = 3$. Nilai $X - Y = 2 - 3 = -1$. Karena himpunan nilai memuat $-1$, maka himpunan nilainya bukan $\\{0, 1, 2, 3, 4\\}$. (Pernyataan (4) SALAH)\n\nJadi, pernyataan yang bernilai benar adalah (1), (2), dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

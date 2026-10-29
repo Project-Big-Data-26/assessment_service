@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "G",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 293,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "8",
+        "teks": "Dua siswa menerima informasi bahwa mereka masing-masing mendapat nilai 0,8 dan 0,4 pada tes matematika pilihan ganda. Jika skor masingmasing adalah 88 dan 64, tentukan rata-rata dan nilai standar dari skor tes.",
+        "jawaban": "rata-rata 40 dan nilai standar (simpangan baku) 60",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "sistem persamaan parameter distribusi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: menyusun dua persamaan skor z terhadap rata-rata dan simpangan baku, melakukan eliminasi/substitusi, lalu menghitung kedua parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua orang siswa mengikuti ujian kemampuan akademik yang nilainya berdistribusi normal. Mereka masing-masing memperoleh skor baku ($Z$) sebesar $1,5$ dan $0,5$. Jika skor mentah kedua siswa tersebut berturut-turut adalah $85$ dan $65$, maka nilai rata-rata ($\\mu$) dan simpangan baku ($\\sigma$) dari skor ujian tersebut berturut-turut adalah ....",
+      "jawaban_benar": "$\\mu = 55$ dan $\\sigma = 20$",
+      "alasan_benar": "Dari $Z = \\frac{X - \\mu}{\\sigma}$, diperoleh $85 - \\mu = 1,5\\sigma$ dan $65 - \\mu = 0,5\\sigma$. Pengurangan kedua persamaan menghasilkan $20 = 1,0\\sigma \\Rightarrow \\sigma = 20$. Substitusi nilai $\\sigma$ memberikan $\\mu = 65 - 0,5(20) = 55$.",
+      "distraktor": [
+        {
+          "teks": "$\\mu = 50$ dan $\\sigma = 20$",
+          "alasan": "Siswa salah melakukan substitusi dengan mengurangkan $0,5 \\times 20$ dari $60$ bukan dari $65$."
+        },
+        {
+          "teks": "$\\mu = 55$ dan $\\sigma = 10$",
+          "alasan": "Siswa salah saat membagi selisih skor dengan selisih z, menghitung $(85 - 65) / (1,5 + 0,5) = 20 / 2 = 10$."
+        },
+        {
+          "teks": "$\\mu = 75$ dan $\\sigma = 20$",
+          "alasan": "Siswa salah menerapkan tanda aljabar dengan menjumlahkan alih-alih mengurangkan: $\\mu = 65 + 0,5(20) = 75$."
+        }
+      ],
+      "pembahasan": "Diketahui hubungan skor mentah $X$ dan nilai baku $Z$ adalah:\n$$Z = \\frac{X - \\mu}{\\sigma} \\iff X = \\mu + Z\\sigma$$\n\nUntuk siswa pertama:\n$$85 = \\mu + 1,5\\sigma \\quad \\text{...(1)}$$\n\nUntuk siswa kedua:\n$$65 = \\mu + 0,5\\sigma \\quad \\text{...(2)}$$\n\nKurangkan persamaan (1) dengan persamaan (2):\n$$(85 - 65) = (1,5\\sigma - 0,5\\sigma)$$\n$$20 = 1,0\\sigma \\implies \\sigma = 20$$\n\nSubstitusikan $\\sigma = 20$ ke persamaan (2):\n$$65 = \\mu + 0,5(20)$$\n$$65 = \\mu + 10 \\implies \\mu = 55$$\n\nJadi, rata-rata skor adalah $\\mu = 55$ dan simpangan bakunya adalah $\\sigma = 20$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0292-latihan-soal-distribusi-normal-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang variabel normal selang tertutup",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan standardisasi dua batas nilai ke nilai z, pembacaan tabel normal baku kumulatif, dan pengurangan kedua nilai peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik pengolahan buah mengemas mangga ke dalam kotak kardus. Bobot buah mangga berdistribusi normal dengan rata-rata $400$ gram dan simpangan baku $50$ gram. Buah yang memenuhi standar mutu supermarket adalah buah dengan bobot antara $325$ gram dan $480$ gram. Jika diketahui $P(Z < -1,50) = 0,0668$ dan $P(Z < 1,60) = 0,9452$, tentukan peluang sebutir mangga yang dipilih secara acak memenuhi standar mutu supermarket.",
+      "jawaban_benar": "$0,8784$",
+      "alasan_benar": "$Z_1 = \\frac{325-400}{50} = -1,50$ dan $Z_2 = \\frac{480-400}{50} = 1,60$. Peluangnya adalah $P(Z < 1,60) - P(Z < -1,50) = 0,9452 - 0,0668 = 0,8784$.",
+      "distraktor": [
+        {
+          "teks": "$0,8780$",
+          "alasan": "Siswa melakukan kesalahan hitung pengurangan pada digit terakhir desimal."
+        },
+        {
+          "teks": "$0,9452$",
+          "alasan": "Siswa hanya mengambil nilai peluang kumulatif batas atas tanpa mengurangkan batas bawah."
+        },
+        {
+          "teks": "$0,0120$",
+          "alasan": "Siswa mengurangkan $1 - (0,9452 + 0,0668)$ karena keliru menerapkan aturan komplemen gabungan."
+        }
+      ],
+      "pembahasan": "Tentukan terlebih dahulu nilai baku $Z$ untuk masing-masing batas:\n$$Z_1 = \\frac{325 - 400}{50} = \\frac{-75}{50} = -1,50$$\n$$Z_2 = \\frac{480 - 400}{50} = \\frac{80}{50} = 1,60$$\n\nPeluang bobot mangga antara $325$ gram dan $480$ gram dihitung dengan:\n$$P(325 < X < 480) = P(-1,50 < Z < 1,60)$$\n$$P(-1,50 < Z < 1,60) = P(Z < 1,60) - P(Z < -1,50)$$\n$$= 0,9452 - 0,0668 = 0,8784$$\n\nJadi, peluang sebutir mangga memenuhi standar mutu supermarket adalah $0,8784$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 292,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan data dari perusahaan game online , waktu bermain harian berdistribusi normal dengan standar deviasi 37 menit. Sebanyak 14% pemain bermain game online lebih dari 230 menit per hari. Tentukan rataratanya."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "inversi distribusi normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan nilai z dari persentase ekor kurva melalui pembacaan inversi tabel normal, lalu menyelesaikan nilai parameter rata-rata.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Waktu pengiriman paket kilat oleh suatu ekspedisi berdistribusi normal dengan simpangan baku $12$ jam. Berdasarkan rekapitulasi data pengiriman, sebanyak $10,56\\%$ paket membutuhkan waktu pengiriman lebih dari $55$ jam. Berdasarkan tabel distribusi normal baku kumulatif, nilai yang memenuhi $P(Z < 1,25) = 0,8944$. Rata-rata waktu pengiriman paket tersebut adalah ....",
+      "jawaban_benar": "$40$ jam",
+      "alasan_benar": "$P(X > 55) = 0,1056 \\iff P(X < 55) = 0,8944$, yang berpadanan dengan $Z = 1,25$. Maka $55 = \\mu + 1,25(12) = \\mu + 15 \\implies \\mu = 40$.",
+      "distraktor": [
+        {
+          "teks": "$35$ jam",
+          "alasan": "Siswa salah mengalikan simpangan baku dengan $1,25$, menghasilkan $20$ lalu menghitung $55 - 20 = 35$."
+        },
+        {
+          "teks": "$45$ jam",
+          "alasan": "Siswa keliru menggunakan nilai $Z = 0,83$ (dari $1 - 0,1056 \\approx 0,90$) sehingga perkiraan rata-rata menjadi $45$ jam."
+        },
+        {
+          "teks": "$70$ jam",
+          "alasan": "Siswa salah menggunakan rumus $X = \\mu - Z\\sigma$ sehingga diperoleh $\\mu = 55 + 15 = 70$ jam."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- $\\sigma = 12$\n- $P(X > 55) = 10,56\\% = 0,1056$\n\nMaka peluang kumulatif di sebelah kiri batas adalah:\n$$P(X < 55) = 1 - 0,1056 = 0,8944$$\n\nDari informasi tabel, luas di sebelah kiri $Z$ sebesar $0,8944$ bersesuaian dengan $Z = 1,25$.\n\nGunakan transformasi nilai baku:\n$$Z = \\frac{X - \\mu}{\\sigma}$$\n$$1,25 = \\frac{55 - \\mu}{12}$$\n$$1,25 \\times 12 = 55 - \\mu$$\n$$15 = 55 - \\mu$$\n$$\\mu = 55 - 15 = 40$$\n\nJadi, rata-rata waktu pengiriman paket tersebut adalah $40$ jam.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kurva memiliki titik belok di x = n ! v , cekung di bagian bawah apabila - n v 1 X 1 n + v , dan cekung di bagian atas untuk nilai x lainnya."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis kecekungan kurva normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan nilai simpangan baku dari varians yang diketahui, kemudian menentukan interval kecekungan grafik fungsi distribusi normal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak kontinu $X$ memiliki fungsi distribusi normal dengan nilai rata-rata $\\mu = 80$ dan varians $\\sigma^2 = 144$. Kurva fungsi densitas peluang distribusi normal tersebut akan cekung ke bawah (cekung di bagian bawah) pada interval nilai $x$ ....",
+      "jawaban_benar": "$68 < x < 92$",
+      "alasan_benar": "Simpangan baku $\\sigma = \\sqrt{144} = 12$. Sifat kurva normal menyatakan cekung ke bawah pada rentang $\\mu - \\sigma < x < \\mu + \\sigma$, yaitu $80 - 12 < x < 80 + 12 \\iff 68 < x < 92$.",
+      "distraktor": [
+        {
+          "teks": "$x < 68$ atau $x > 92$",
+          "alasan": "Siswa tertukar dengan kondisi kurva cekung ke atas."
+        },
+        {
+          "teks": "$56 < x < 104$",
+          "alasan": "Siswa menggunakan interval $\\mu \\pm 2\\sigma = 80 \\pm 24$ alih-alih $\\mu \\pm \\sigma$."
+        },
+        {
+          "teks": "$-64 < x < 224$",
+          "alasan": "Siswa tidak mengakar varians dan langsung memakai varians sebagai simpangan baku: $80 \\pm 144$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat distribusi normal pada buku teks:\n1. Titik belok kurva normal terjadi pada $x = \\mu \\pm \\sigma$.\n2. Kurva cekung ke bawah apabila $\\mu - \\sigma < x < \\mu + \\sigma$, dan cekung ke atas untuk nilai $x$ lainnya.\n\nDiketahui:\n- $\\mu = 80$\n- Varians $\\sigma^2 = 144 \\implies \\sigma = \\sqrt{144} = 12$\n\nMaka kurva cekung ke bawah pada interval:\n$$\\mu - \\sigma < x < \\mu + \\sigma$$\n$$80 - 12 < x < 80 + 12$$\n$$68 < x < 92$$\n\nJadi, kurva cekung ke bawah pada rentang $68 < x < 92$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 293,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan sebuah perguruan tinggi membutuhkan skor IQ minimal 95. Berapa banyak calon mahasiswa yang akan ditolak atas dasar ini, terlepas dari kualifikasi mereka yang lain?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "frekuensi harapan variabel normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan skor baku z, pembacaan peluang kumulatif pada tabel z negatif, lalu mengalikannya dengan ukuran populasi total.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perusahaan menyelenggarakan uji seleksi kompetensi dasar bagi $1.500$ peserta. Nilai ujian berdistribusi normal dengan rata-rata $72$ dan simpangan baku $8$. Peserta yang memperoleh nilai di bawah $60$ dinyatakan tidak memenuhi kriteria minimal dan langsung gugur. Berdasarkan tabel distribusi normal baku, diketahui $P(Z < -1,50) = 0,0668$. Perkiraan banyaknya peserta yang gugur adalah ....",
+      "jawaban_benar": "$100$ orang",
+      "alasan_benar": "Batas gugur adalah $X < 60$. Nilai $Z = \\frac{60 - 72}{8} = -1,50$. Peluangnya adalah $P(Z < -1,50) = 0,0668$. Frekuensi harapan peserta yang gugur $= 0,0668 \\times 1.500 = 100,2 \\approx 100$ orang.",
+      "distraktor": [
+        {
+          "teks": "$67$ orang",
+          "alasan": "Siswa salah mengalikan $0,0668$ dengan $1.000$ (bukan $1.500$), menghasilkan sekitar $67$ orang."
+        },
+        {
+          "teks": "$135$ orang",
+          "alasan": "Siswa salah membagi nilai z sebagai $-1,0$ sehingga menggunakan peluang $0,09$ atau salah operasi hitung."
+        },
+        {
+          "teks": "$1.400$ orang",
+          "alasan": "Siswa menghitung banyaknya peserta yang lolos: $(1 - 0,0668) \\times 1.500 \\approx 1.400$ orang."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai baku $Z$ untuk batas kelulusan $X = 60$:\n$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{60 - 72}{8} = \\frac{-12}{8} = -1,50$$\n\nLangkah 2: Menentukan peluang peserta memperoleh nilai di bawah $60$:\n$$P(X < 60) = P(Z < -1,50) = 0,0668$$\n\nLangkah 3: Menghitung frekuensi harapan peserta yang gugur dari total $1.500$ orang:\n$$\\text{Banyaknya peserta} = P(X < 60) \\times N = 0,0668 \\times 1.500 = 100,2 \\approx 100\\text{ orang}$$\n\nJadi, perkiraan banyaknya peserta yang gugur adalah $100$ orang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0292-latihan-soal-distribusi-normal-2a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang kumulatif ekor kiri",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan standarisasi variabel ke skor Z dan pembacaan tabel distribusi normal kumulatif.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan bahwa $P(Z < -1,75) = 0,0401$ dan $P(Z < 1,75) = 0,9599$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Masa pakai ban sepeda motor jenis tertentu berdistribusi normal dengan rata-rata $24$ bulan dan standar deviasi $4$ bulan. Berdasarkan data stimulus, berapakah peluang bahwa sebuah ban yang dipilih secara acak akan bertahan kurang dari $17$ bulan?",
+      "jawaban_benar": "$0,0401$",
+      "alasan_benar": "Menghitung $Z = \\frac{17 - 24}{4} = -1,75$, sehingga $P(X < 17) = P(Z < -1,75) = 0,0401$.",
+      "distraktor": [
+        {
+          "teks": "$0,9599$",
+          "alasan": "Mengabaikan tanda minus pada nilai Z dan mengambil nilai kumulatif Z positif."
+        },
+        {
+          "teks": "$0,4599$",
+          "alasan": "Mengurangkan nilai peluang kumulatif dari 0,5."
+        },
+        {
+          "teks": "$0,0802$",
+          "alasan": "Mengalikan peluang ekor dengan dua."
+        }
+      ],
+      "pembahasan": "Diketahui $\\mu = 24$ dan $\\sigma = 4$.\nTransformasi ke nilai baku $Z$ untuk $X = 17$:\n$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{17 - 24}{4} = -1,75$$\nPeluang ban bertahan kurang dari $17$ bulan adalah:\n$$P(X < 17) = P(Z < -1,75) = 0,0401$$\nJadi, peluangnya adalah $0,0401$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0292-latihan-soal-distribusi-normal-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang variabel normal selang interval",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan transformasi dua batas nilai ke skor Z dan pengurangan dua nilai peluang kumulatif.",
+      "stimulus": "Diketahui nilai kumulatif distribusi normal baku $P(Z < -1,30) = 0,0968$ dan $P(Z < 2,10) = 0,9821$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kadar gula darah puasa sekelompok pasien berdistribusi normal dengan rata-rata $95\\text{ mg/dL}$ dan simpangan baku $10\\text{ mg/dL}$. Tentukan peluang seorang pasien yang dipilih secara acak memiliki kadar gula darah antara $82\\text{ mg/dL}$ dan $116\\text{ mg/dL}$.",
+      "jawaban_benar": "$0,8853$",
+      "alasan_benar": "Menghitung selisih peluang kumulatif $P(Z < 2,10) - P(Z < -1,30) = 0,9821 - 0,0968 = 0,8853$.",
+      "distraktor": [
+        {
+          "teks": "$1,0789$",
+          "alasan": "Menjumlahkan kedua nilai kumulatif, bukan mengurangkannya."
+        },
+        {
+          "teks": "$0,8885$",
+          "alasan": "Keliru dalam operasi hitung pengurangan desimal."
+        },
+        {
+          "teks": "$0,4821$",
+          "alasan": "Hanya mengurangkan nilai kumulatif batas atas dengan $0,5$."
+        }
+      ],
+      "pembahasan": "Diketahui $\\mu = 95$ dan $\\sigma = 10$.\nHitung nilai $Z$ untuk kedua batas:\n$$Z_1 = \\frac{82 - 95}{10} = -1,30$$\n$$Z_2 = \\frac{116 - 95}{10} = 2,10$$\nPeluang kadar gula darah antara $82\\text{ mg/dL}$ dan $116\\text{ mg/dL}$:\n$$P(82 < X < 116) = P(-1,30 < Z < 2,10) = P(Z < 2,10) - P(Z < -1,30)$$\n$$P(82 < X < 116) = 0,9821 - 0,0968 = 0,8853$$\nJadi, peluangnya adalah $0,8853$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 292,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "6. a",
+        "teks": "Mesin minuman ringan diatur untuk mengeluarkan rata-rata 200 ml per gelas. Misalkan banyaknya minuman yang dikeluarkan menyebar normal dengan simpangan baku 15 ml. a. Berapa banyak gelas (dalam persentase) yang berisi lebih dari 224 ml?",
+        "jawaban": "5,48%",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persentase populasi ekor kanan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan standarisasi ke skor Z, penghitungan komplemen peluang, dan konversi ke bentuk persentase.",
+      "stimulus": "Diketahui bahwa nilai peluang kumulatif pada kurva normal baku adalah $P(Z < 1,80) = 0,9641$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pengisi kemasan minyak goreng diatur untuk mengeluarkan minyak dengan volume rata-rata $500\\text{ ml}$ per kemasan dan simpangan baku $20\\text{ ml}$ yang berdistribusi normal. Tentukan persentase kemasan minyak goreng yang berisi lebih dari $536\\text{ ml}$.",
+      "jawaban_benar": "$3,59\\%$",
+      "alasan_benar": "Menghitung $P(Z > 1,80) = 1 - 0,9641 = 0,0359 = 3,59\\%$.",
+      "distraktor": [
+        {
+          "teks": "$96,41\\%$",
+          "alasan": "Lupa mengurangkan dari 1 untuk peluang 'lebih dari', langsung menggunakan peluang kumulatif."
+        },
+        {
+          "teks": "$46,41\\%$",
+          "alasan": "Mengurangkan nilai kumulatif dengan 0,5 alih-alih mengurangkannya dari 1."
+        },
+        {
+          "teks": "$0,36\\%$",
+          "alasan": "Salah melakukan pergeseran desimal saat mengubah pecahan desimal ke persentase."
+        }
+      ],
+      "pembahasan": "Diketahui $\\mu = 500$ dan $\\sigma = 20$.\nHitung nilai $Z$ untuk $X = 536$:\n$$Z = \\frac{536 - 500}{20} = \\frac{36}{20} = 1,80$$\nPeluang kemasan berisi lebih dari $536\\text{ ml}$:\n$$P(X > 536) = P(Z > 1,80) = 1 - P(Z < 1,80) = 1 - 0,9641 = 0,0359$$\nDalam bentuk persentase:\n$$0,0359 \\times 100\\% = 3,59\\%$$\nJadi, persentasenya adalah $3,59\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Proses mengubah distribusi normal umum menjadi distribusi normal baku menggunakan transformasi nilai baku dengan"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "penentuan simpangan baku distribusi normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan skor Z dari persentil yang diketahui, lalu memanipulasi aljabar rumus nilai baku untuk mencari parameter simpangan baku.",
+      "stimulus": "Berdasarkan tabel distribusi normal baku, diperoleh nilai $P(Z < -2,0) = 0,0228$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berat bersih kemasan kopi bubuk berdistribusi normal dengan rata-rata $\\mu = 250\\text{ gram}$. Berdasarkan pemeriksaan mutu, sebanyak $2,28\\%$ kemasan kopi memiliki berat kurang dari $234\\text{ gram}$. Berapakah nilai simpangan baku ($\\sigma$) dari berat kemasan kopi tersebut?",
+      "jawaban_benar": "$8\\text{ gram}$",
+      "alasan_benar": "Dari $P(X < 234) = 0,0228$ diperoleh $Z = -2,0$. Melalui $-2,0 = \\frac{234 - 250}{\\sigma}$, didapat $\\sigma = 8\\text{ gram}$.",
+      "distraktor": [
+        {
+          "teks": "$16\\text{ gram}$",
+          "alasan": "Hanya menghitung selisih $|234 - 250|$ tanpa membagi dengan nilai mutlak Z."
+        },
+        {
+          "teks": "$4\\text{ gram}$",
+          "alasan": "Membagi selisih dengan kuadrat nilai Z atau salah operasi aljabar."
+        },
+        {
+          "teks": "$32\\text{ gram}$",
+          "alasan": "Mengalikan selisih data dengan nilai mutlak Z alih-alih membaginya."
+        }
+      ],
+      "pembahasan": "Diketahui $\\mu = 250$ dan $P(X < 234) = 2,28\\% = 0,0228$.\nBerdasarkan tabel normal baku, peluang kumulatif $0,0228$ bersesuaian dengan $Z = -2,0$.\nSubstitusikan nilai ke dalam rumus nilai baku:\n$$Z = \\frac{X - \\mu}{\\sigma}$$\n$$-2,0 = \\frac{234 - 250}{\\sigma}$$\n$$-2,0 = \\frac{-16}{\\sigma}$$\n$$\\sigma = \\frac{-16}{-2,0} = 8\\text{ gram}$$\nJadi, nilai simpangan bakunya adalah $8\\text{ gram}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 285,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena kurva distribusinya simetris, daerah dari 0 sampai z negatif sama dengan daerah dari 0 sampai z positif."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "peluang gabungan daerah ekor kurva normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis daerah penolakan dua sisi yang simetris dari kurva normal dan menggabungkan peluang kedua ekor.",
+      "stimulus": "Diketahui bahwa nilai peluang kumulatif distribusi normal baku untuk $Z = -2,0$ adalah $P(Z < -2,0) = 0,0228$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik baut memproduksi baut dengan diameter berdistribusi normal dengan rata-rata $10\\text{ mm}$ dan simpangan baku $0,2\\text{ mm}$. Baut dinyatakan cacat jika diameternya kurang dari $9,6\\text{ mm}$ atau lebih dari $10,4\\text{ mm}$. Berapakah peluang sebuah baut yang dipilih secara acak tergolong cacat?",
+      "jawaban_benar": "$0,0456$",
+      "alasan_benar": "Menjumlahkan peluang kedua ekor simetris: $P(X < 9,6) + P(X > 10,4) = 0,0228 + 0,0228 = 0,0456$.",
+      "distraktor": [
+        {
+          "teks": "$0,0228$",
+          "alasan": "Hanya menghitung peluang salah satu sisi ekor saja."
+        },
+        {
+          "teks": "$0,9544$",
+          "alasan": "Menghitung peluang komplemen (peluang baut tidak cacat/memenuhi standar)."
+        },
+        {
+          "teks": "$0,4772$",
+          "alasan": "Menghitung selisih antara nilai tengah dan luas ekor ($0,5 - 0,0228$)."
+        }
+      ],
+      "pembahasan": "Diketahui $\\mu = 10\\text{ mm}$ dan $\\sigma = 0,2\\text{ mm}$.\nHitung nilai $Z$ untuk kedua batas spesifikasi:\n$$Z_1 = \\frac{9,6 - 10}{0,2} = -2,0$$\n$$Z_2 = \\frac{10,4 - 10}{0,2} = 2,0$$\nBaut dinyatakan cacat jika $X < 9,6$ atau $X > 10,4$.\nPeluang baut berdiameter kurang dari $9,6\\text{ mm}$ adalah:\n$$P(X < 9,6) = P(Z < -2,0) = 0,0228$$\nKarena kurva berdistribusi normal simetris di sekitar rata-rata:\n$$P(X > 10,4) = P(Z > 2,0) = P(Z < -2,0) = 0,0228$$\nMaka peluang total ditemukannya baut cacat adalah:\n$$P(\\text{cacat}) = P(X < 9,6) + P(X > 10,4) = 0,0228 + 0,0228 = 0,0456$$\nJadi, peluang baut tergolong cacat adalah $0,0456$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 292,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "4. a",
+        "teks": "Tinggi rata-rata jenis pudel tertentu adalah 30 cm dan standar deviasinya adalah 4,1 cm.\n\n   - a. Tentukan persentase pudel yang tingginya lebih dari 35,5 cm.",
+        "jawaban": "9,01%",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persentase daerah ekor kurva normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan konversi nilai variabel ke skor baku Z, penelusuran tabel normal, dan pengurangan dari luas total.",
+      "stimulus": "Tabel distribusi normal baku memberikan nilai $P(Z < 2,00) = 0,9772$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tinggi rata-rata suatu jenis tanaman hias adalah $50\\text{ cm}$ dengan standar deviasi $6\\text{ cm}$ dan berdistribusi normal. Tentukan persentase tanaman hias tersebut yang memiliki tinggi lebih dari $62\\text{ cm}$.",
+      "jawaban_benar": "$2,28\\%$",
+      "alasan_benar": "Menghitung nilai baku $Z = \\frac{62 - 50}{6} = 2,00$, kemudian peluang lebih dari adalah $P(Z > 2,00) = 1 - 0,9772 = 0,0228 = 2,28\\%$.",
+      "distraktor": [
+        {
+          "teks": "$97,72\\%$",
+          "alasan": "Mengambil langsung luas daerah di sebelah kiri batas $P(Z < 2,00)$ tanpa mengurangkannya dari 1."
+        },
+        {
+          "teks": "$47,72\\%$",
+          "alasan": "Mengurangkan nilai tabel dengan 0,5 bukannya mengurangkan dari 1."
+        },
+        {
+          "teks": "$4,56\\%$",
+          "alasan": "Menghitung luas dua sisi kurva (mengalikan dua hasil daerah ekor kanan)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai standar $Z$ untuk $x = 62$:\n$$Z = \\frac{x - \\mu}{\\sigma} = \\frac{62 - 50}{6} = \\frac{12}{6} = 2,00$$\n\nLangkah 2: Menentukan peluang nilai lebih dari $62\\text{ cm}$:\n$$P(X > 62) = P(Z > 2,00) = 1 - P(Z < 2,00) = 1 - 0,9772 = 0,0228$$\n\nLangkah 3: Mengubah peluang ke dalam bentuk persentase:\n$$0,0228 \\times 100\\% = 2,28\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 294,
+        "bagian": "Uji Kompetensi Bab 4 B",
+        "nomor": "4",
+        "teks": "Rata-rata jarak tempuh angkutan umum yaitu 5.000 km per bulan dan standar deviasinya 1.200 km yang mengikuti sebaran normal. Tentukan peluang angkutan umum menempuh jarak antara 3.400 km dan 6.500 km dalam 1 bulan.",
+        "jawaban": "0,8071",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang variabel normal selang simetris",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan standardisasi dua batas ke bentuk nilai Z simetris dan pengurangan luas kumulatif.",
+      "stimulus": "Diketahui data tabel distribusi normal baku: $P(Z < -1,50) = 0,0668$ dan $P(Z < 1,50) = 0,9332$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rata-rata jarak tempuh armada bus antarkota adalah $4.000\\text{ km}$ per bulan dengan standar deviasi $800\\text{ km}$ dan mengikuti sebaran normal. Tentukan peluang sebuah armada bus menempuh jarak antara $2.800\\text{ km}$ dan $5.200\\text{ km}$ dalam satu bulan.",
+      "jawaban_benar": "$0,8664$",
+      "alasan_benar": "Menghitung $Z_1 = \\frac{2.800 - 4.000}{800} = -1,50$ dan $Z_2 = \\frac{5.200 - 4.000}{800} = 1,50$, lalu $P(-1,50 < Z < 1,50) = 0,9332 - 0,0668 = 0,8664$.",
+      "distraktor": [
+        {
+          "teks": "$0,9332$",
+          "alasan": "Hanya mengambil luas kumulatif hingga batas atas tanpa mengurangi luas di bawah batas bawah."
+        },
+        {
+          "teks": "$0,4332$",
+          "alasan": "Hanya menghitung luas daerah dari rata-rata ke salah satu batas ($0,9332 - 0,5000$)."
+        },
+        {
+          "teks": "$0,8000$",
+          "alasan": "Membagi selisih batas jarak dengan standar deviasi $((5.200 - 2.800) / 3.000)$ secara keliru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai baku untuk kedua batas:\n$$Z_1 = \\frac{2.800 - 4.000}{800} = \\frac{-1.200}{800} = -1,50$$\n$$Z_2 = \\frac{5.200 - 4.000}{800} = \\frac{1.200}{800} = 1,50$$\n\nLangkah 2: Menghitung selisih peluang kumulatif:\n$$P(2.800 < X < 5.200) = P(-1,50 < Z < 1,50) = P(Z < 1,50) - P(Z < -1,50)$$\n$$P(-1,50 < Z < 1,50) = 0,9332 - 0,0668 = 0,8664$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kurva memiliki titik belok di x = n ! v , cekung di bagian bawah apabila n - v 1 X 1 n + v , dan cekung di bagian atas untuk nilai x lainnya."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "penentuan parameter dari titik belok",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis sifat titik belok kurva normal untuk menemukan rata-rata dan simpangan baku lalu menghitung varians.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi densitas distribusi normal dari suatu variabel acak kontinu $X$ memiliki titik belok di $x = 42$ dan $x = 58$. Tentukan nilai varians ($\\sigma^2$) dari distribusi normal tersebut.",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Titik belok berada pada $\\mu \\pm \\sigma$. Selisih kedua titik belok adalah $2\\sigma = 58 - 42 = 16 \\Rightarrow \\sigma = 8$, sehingga varians $\\sigma^2 = 8^2 = 64$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Hanya menghitung nilai simpangan baku $\\sigma$ dan lupa menguadratkannya untuk memperoleh varians."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Menganggap jarak kedua titik belok ($2\\sigma = 16$) sebagai nilai varians."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Menghitung titik tengah atau nilai rata-rata $\\mu = \\frac{42 + 58}{2} = 50$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengetahui bahwa titik belok kurva normal terletak pada $x = \\mu - \\sigma$ dan $x = \\mu + \\sigma$.\n\nLangkah 2: Menghitung simpangan baku $\\sigma$ dari jarak antar-titik belok:\n$$(\\mu + \\sigma) - (\\mu - \\sigma) = 58 - 42$$\n$$2\\sigma = 16 \\iff \\sigma = 8$$\n\nLangkah 3: Menghitung nilai varians ($\\sigma^2$):\n$$\\sigma^2 = 8^2 = 64$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Proses mengubah distribusi normal umum menjadi distribusi normal baku menggunakan transformasi nilai baku dengan Z = x - v n ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "ambang batas persentil distribusi normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembalikan dari peluang persentil ke nilai baku Z kemudian mentransformasikan kembali ke variabel awal.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan bahwa $P(Z < -1,00) = 0,1587$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai ujian suatu mata kuliah berdistribusi normal dengan rata-rata $68$ dan simpangan baku $12$. Jika $15,87\\%$ peserta dengan nilai terendah diwajibkan mengikuti ujian remidi, batas nilai maksimal peserta yang wajib mengikuti remidi adalah ....",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Peluang $15,87\\% = 0,1587$ bersesuaian dengan $Z = -1,00$. Nilai batas adalah $x = \\mu + Z\\sigma = 68 + (-1,00)(12) = 56$.",
+      "distraktor": [
+        {
+          "teks": "$80$",
+          "alasan": "Menggunakan nilai $Z = +1,00$ sehingga menjumlahkan simpangan baku ke rata-rata."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Salah memperkirakan nilai baku menjadi $Z = -1,33$ sehingga mengurangkan $16$ dari rata-rata."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengurangkan dua kali simpangan baku ($Z = -2,00$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai baku $Z$ yang luas di sebelah kirinya sebesar $15,87\\% = 0,1587$:\nBerdasarkan data stimulus, $P(Z < -1,00) = 0,1587$, maka $Z = -1,00$.\n\nLangkah 2: Menghubungkan skor baku $Z$ dengan nilai asal $x$:\n$$Z = \\frac{x - \\mu}{\\sigma}$$\n$$-1,00 = \\frac{x - 68}{12}$$\n\nLangkah 3: Menghitung nilai $x$:\n$$x - 68 = -1,00 \\times 12 = -12$$\n$$x = 68 - 12 = 56$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Proses mengubah distribusi normal umum menjadi distribusi normal baku menggunakan transformasi nilai baku dengan Z = x - v n ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "perbandingan nilai baku variabel normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai Z dari dua distribusi berbeda lalu membandingkan selisihnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua orang siswa, Andi dan Budi, mengikuti tes kemampuan akademik pada kelompok yang berbeda. Nilai kelompok Andi berdistribusi normal dengan rata-rata $70$ dan simpangan baku $5$. Nilai kelompok Budi berdistribusi normal dengan rata-rata $75$ dan simpangan baku $6$. Jika Andi memperoleh skor $80$ dan Budi memperoleh skor $84$, selisih nilai standar baku ($Z$) antara Andi dan Budi adalah ....",
+      "jawaban_benar": "$0,50$",
+      "alasan_benar": "Skor baku Andi adalah $Z_A = \\frac{80 - 70}{5} = 2,00$. Skor baku Budi adalah $Z_B = \\frac{84 - 75}{6} = 1,50$. Selisihnya adalah $|2,00 - 1,50| = 0,50$.",
+      "distraktor": [
+        {
+          "teks": "$4,00$",
+          "alasan": "Hanya menghitung selisih skor mentah $(84 - 80 = 4)$ tanpa melakukan standardisasi."
+        },
+        {
+          "teks": "$1,00$",
+          "alasan": "Menghitung selisih simpangan baku $(6 - 5 = 1)$ kedua kelompok tes."
+        },
+        {
+          "teks": "$0,33$",
+          "alasan": "Salah membagi selisih skor terhadap simpangan baku kelompok Budi $((84 - 75)/6 - (80 - 75)/6)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai baku ($Z$) untuk Andi:\n$$Z_A = \\frac{x_A - \\mu_A}{\\sigma_A} = \\frac{80 - 70}{5} = \\frac{10}{5} = 2,00$$\n\nLangkah 2: Menghitung nilai baku ($Z$) untuk Budi:\n$$Z_B = \\frac{x_B - \\mu_B}{\\sigma_B} = \\frac{84 - 75}{6} = \\frac{9}{6} = 1,50$$\n\nLangkah 3: Menghitung selisih nilai standar baku keduanya:\n$$\\text{Selisih} = |Z_A - Z_B| = |2,00 - 1,50| = 0,50$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 292,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "7",
+        "teks": "Skor IQ 600 calon mahasiswa berdistribusi normal dengan rata-rata 115 dan standar deviasi 12. Misalkan sebuah perguruan tinggi membutuhkan skor IQ minimal 95. Berapa banyak calon mahasiswa yang akan ditolak atas dasar ini, terlepas dari kualifikasi mereka yang lain?",
+        "jawaban": "29 orang",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "estimasi jumlah subjek populasi normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan konversi nilai batas ke skor-z, pembacaan tabel peluang kumulatif, dan perkalian dengan ukuran populasi.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai kumulatif $P(Z < -2,00) = 0,0228$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebanyak $2.500$ orang pelamar mengikuti tes seleksi kerja yang nilainya berdistribusi normal dengan rata-rata $75$ dan simpangan baku $10$. Jika perusahaan menetapkan batas nilai kelulusan minimal $55$, berapakah perkiraan banyak pelamar yang ditolak karena tidak memenuhi kriteria tersebut?",
+      "jawaban_benar": "$57$ orang",
+      "alasan_benar": "Skor baku dihitung dengan $Z = \\frac{55 - 75}{10} = -2,00$. Peluang nilai di bawah standar adalah $P(Z < -2,00) = 0,0228$. Banyak pelamar yang ditolak adalah $2.500 \\times 0,0228 = 57$ orang.",
+      "distraktor": [
+        {
+          "teks": "$114$ orang",
+          "alasan": "Mengalikan peluang dua arah ekor simetris ($2 \\times 0,0228 = 0,0456$) dengan jumlah total pelamar."
+        },
+        {
+          "teks": "$48$ orang",
+          "alasan": "Keliru mengambil nilai peluang $P(Z < -2,07) = 0,0192$ dari tabel normal baku sehingga $2.500 \\times 0,0192 = 48$."
+        },
+        {
+          "teks": "$71$ orang",
+          "alasan": "Keliru menggunakan nilai peluang $P(Z < -1,90) = 0,0287$ sehingga memperoleh $2.500 \\times 0,0287 \\approx 71$."
+        }
+      ],
+      "pembahasan": "Nilai batas penolakan adalah $X < 55$. Transformasi ke nilai baku:\n$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{55 - 75}{10} = -2,00$$\nBerdasarkan tabel distribusi normal, peluang seorang pelamar mendapat nilai di bawah $55$ adalah:\n$$P(X < 55) = P(Z < -2,00) = 0,0228$$\nBanyak pelamar yang diperkirakan tidak lulus seleksi:\n$$N = 2.500 \\times 0,0228 = 57\\text{ orang}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 292,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "6. a",
+        "teks": "Mesin minuman ringan diatur untuk mengeluarkan rata-rata 200 ml per gelas. Misalkan banyaknya minuman yang dikeluarkan menyebar normal dengan simpangan baku 15 ml. a. Berapa banyak gelas (dalam persentase) yang berisi lebih dari 224 ml?",
+        "jawaban": "5,48%",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persentase melebihi ambang batas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai baku, penentuan komplemen peluang kumulatif, dan konversi ke bentuk persen.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan bahwa $P(Z < 1,30) = 0,9032$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pengisi cairan otomatis diatur untuk mengisi botol dengan volume rata-rata $250\\text{ ml}$ dan simpangan baku $20\\text{ ml}$. Jika distribusi volume cairan menyebar normal, berapa persentase botol yang berisi lebih dari $276\\text{ ml}$?",
+      "jawaban_benar": "$9,68\\%$",
+      "alasan_benar": "Nilai baku $Z = \\frac{276 - 250}{20} = 1,30$. Peluang lebih dari $276\\text{ ml}$ adalah $P(Z > 1,30) = 1 - 0,9032 = 0,0968 = 9,68\\%$.",
+      "distraktor": [
+        {
+          "teks": "$90,32\\%$",
+          "alasan": "Langsung menggunakan nilai tabel kumulatif $P(Z < 1,30)$ tanpa mengurangkan dari $1$."
+        },
+        {
+          "teks": "$9,03\\%$",
+          "alasan": "Kesalahan pembulatan atau pergeseran desimal dari angka desimal $0,9032$."
+        },
+        {
+          "teks": "$8,08\\%$",
+          "alasan": "Keliru membaca nilai tabel untuk $Z = 1,40$ yang bernilai $0,9192$ sehingga menghitung $1 - 0,9192 = 0,0808$."
+        }
+      ],
+      "pembahasan": "Hitung nilai baku ($Z$) untuk $X = 276$:\n$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{276 - 250}{20} = \\frac{26}{20} = 1,30$$\nPeluang volume lebih dari $276\\text{ ml}$ dihitung melalui komplemen luas kurva:\n$$P(X > 276) = P(Z > 1,30) = 1 - P(Z < 1,30)$$\n$$P(X > 276) = 1 - 0,9032 = 0,0968$$\nDalam bentuk persentase:\n$$0,0968 \\times 100\\% = 9,68\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0292-latihan-soal-distribusi-normal-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang selang interval variabel kontinu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan standardisasi dua batas data kontinu dan pengurangan dua nilai kumulatif.",
+      "stimulus": "Tabel distribusi normal baku memberikan nilai $P(Z < -1,80) = 0,0359$ dan $P(Z < 1,20) = 0,8849$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik beras mengemas beras dengan berat bersih berdistribusi normal memiliki rata-rata $25\\text{ kg}$ dan simpangan baku $0,5\\text{ kg}$. Tentukan peluang sebuah karung beras yang dipilih secara acak memiliki berat antara $24,1\\text{ kg}$ dan $25,6\\text{ kg}$.",
+      "jawaban_benar": "$0,8490$",
+      "alasan_benar": "Nilai baku batas bawah $Z_1 = \\frac{24,1 - 25}{0,5} = -1,80$ dan batas atas $Z_2 = \\frac{25,6 - 25}{0,5} = 1,20$. Peluang interval adalah $P(Z < 1,20) - P(Z < -1,80) = 0,8849 - 0,0359 = 0,8490$.",
+      "distraktor": [
+        {
+          "teks": "$0,9208$",
+          "alasan": "Menjumlahkan kedua nilai peluang kumulatif alih-alih mengurangkannya ($0,8849 + 0,0359$)."
+        },
+        {
+          "teks": "$0,8489$",
+          "alasan": "Kesalahan hitung selisih desimal pada digit terakhir ($0,8849 - 0,0360$)."
+        },
+        {
+          "teks": "$0,1151$",
+          "alasan": "Mengurangkan nilai $P(Z < 1,20)$ dari $1$ ($1 - 0,8849$) sehingga hanya menghitung luas ekor kanan."
+        }
+      ],
+      "pembahasan": "Standarisasi nilai batas bawah dan batas atas:\n$$Z_1 = \\frac{24,1 - 25}{0,5} = \\frac{-0,9}{0,5} = -1,80$$\n$$Z_2 = \\frac{25,6 - 25}{0,5} = \\frac{0,6}{0,5} = 1,20$$\nPeluang berat karung berada di antara kedua batas tersebut:\n$$P(24,1 < X < 25,6) = P(-1,80 < Z < 1,20)$$\n$$P(-1,80 < Z < 1,20) = P(Z < 1,20) - P(Z < -1,80)$$\n$$P(-1,80 < Z < 1,20) = 0,8849 - 0,0359 = 0,8490$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Proses mengubah distribusi normal umum menjadi distribusi normal baku menggunakan transformasi nilai baku dengan"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rekonstruksi nilai variabel dari skor baku",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan simpangan baku dari varians lalu membalik rumus transformasi skor baku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai hasil tes potensi akademik suatu angkatan berdistribusi normal dengan rata-rata $\\mu = 520$ dan varians $\\sigma^2 = 625$. Jika seorang peserta memperoleh skor baku $Z = 1,60$, berapakah nilai asli tes peserta tersebut?",
+      "jawaban_benar": "$560$",
+      "alasan_benar": "Simpangan baku adalah $\\sigma = \\sqrt{625} = 25$. Nilai mentah dihitung dengan $X = \\mu + Z \\cdot \\sigma = 520 + (1,60 \\times 25) = 520 + 40 = 560$.",
+      "distraktor": [
+        {
+          "teks": "$1.520$",
+          "alasan": "Langsung mengalikan nilai baku $Z$ dengan varians $625$ tanpa menarik akar kuadrat ($520 + 1,60 \\times 625$)."
+        },
+        {
+          "teks": "$536$",
+          "alasan": "Salah mengalikan nilai $Z$ dengan asumsi simpangan baku bernilai $10$ ($520 + 1,60 \\times 10 = 536$)."
+        },
+        {
+          "teks": "$480$",
+          "alasan": "Salah menerapkan operasi dengan mengurangkan $Z \\cdot \\sigma$ dari rata-rata ($520 - 40$)."
+        }
+      ],
+      "pembahasan": "Diketahui rata-rata $\\mu = 520$ dan varians $\\sigma^2 = 625$.\nSimpangan baku didapat dari akar varians:\n$$\\sigma = \\sqrt{625} = 25$$\nRumus transformasi nilai baku:\n$$Z = \\frac{X - \\mu}{\\sigma}$$\nSubstitusikan nilai yang diketahui:\n$$1,60 = \\frac{X - 520}{25}$$\n$$X - 520 = 1,60 \\times 25$$\n$$X - 520 = 40$$\n$$X = 520 + 40 = 560$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 285,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas kurva pada distribusi normal adalah 1 dan kurva simetris dengan n = 0 , maka luas garis vertikal ke kanan atau ke kiri adalah 0,5."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang variabel normal ekor kanan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan standarisasi variabel ke z-score, pembacaan tabel normal, dan pengurangan dari luas total 1.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai $P(Z < 0,75) = 0,7734$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Waktu pelayanan nasabah pada loket sebuah kantor pos berdistribusi normal dengan rata-rata $15\\text{ menit}$ dan simpangan baku $4\\text{ menit}$. Tentukan peluang seorang nasabah yang datang dilayani lebih dari $18\\text{ menit}$.",
+      "jawaban_benar": "$0,2266$",
+      "alasan_benar": "Nilai baku $Z = \\frac{18 - 15}{4} = 0,75$. Peluang ekor kanan adalah $P(Z > 0,75) = 1 - P(Z < 0,75) = 1 - 0,7734 = 0,2266$.",
+      "distraktor": [
+        {
+          "teks": "$0,7734$",
+          "alasan": "Menggunakan peluang kumulatif kiri $P(Z < 0,75)$ tanpa mengurangkannya dari $1$."
+        },
+        {
+          "teks": "$0,2734$",
+          "alasan": "Mengurangkan nilai kumulatif dengan $0,5$ ($0,7734 - 0,5$) bukan mengurangkan dari $1$."
+        },
+        {
+          "teks": "$0,2296$",
+          "alasan": "Keliru mengambil nilai dari baris tabel untuk $Z = 0,74$ yang bernilai $0,7704$ sehingga didapat $1 - 0,7704 = 0,2296$."
+        }
+      ],
+      "pembahasan": "Hitung nilai baku ($Z$) dari $X = 18$:\n$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{18 - 15}{4} = \\frac{3}{4} = 0,75$$\nKarena dicari peluang waktu pelayanan lebih dari $18\\text{ menit}$:\n$$P(X > 18) = P(Z > 0,75) = 1 - P(Z < 0,75)$$\nBerdasarkan nilai tabel normal baku:\n$$P(X > 18) = 1 - 0,7734 = 0,2266$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -42,7 +42,8 @@ class VerifyResult:
     cocok: int
     total: int
     tidak_cocok: List[str]
-    tidak_terjawab: List[str]
+    tidak_terjawab: List[str]        # solver menjawab null / tidak menjawab (penilaian MODEL)
+    tidak_diverifikasi: List[str]    # panggilan solver gagal (jaringan/penyedia): BUKAN penilaian soal
     tokens_in: int
     tokens_out: int
     seconds: float
@@ -91,9 +92,11 @@ def verifikasi_buta(path: str, client: NineRouterClient, model: str, *, progress
         book = json.load(f)["book"]
     ukuran = CHUNK_GAMBAR if any(s.get("gambar") for s in blind) else CHUNK
     jawaban: Dict[str, dict] = {}
+    gagal_ids: List[str] = []
     tok_in = tok_out = 0
     for i in range(0, len(blind), ukuran):
         chunk = blind[i:i + ukuran]
+        berhasil = False
         for attempt in range(RETRIES + 1):
             try:
                 got = _ask(client, model, chunk, book)
@@ -101,9 +104,12 @@ def verifikasi_buta(path: str, client: NineRouterClient, model: str, *, progress
                 tok_in += usage["in"]  # type: ignore[index]
                 tok_out += usage["out"]  # type: ignore[index]
                 jawaban.update(got)
+                berhasil = True
                 break
             except (NineRouterError, ValueError, KeyError, TypeError) as exc:
                 progress(f"  solver soal {i + 1}-{i + len(chunk)} percobaan {attempt + 1} gagal: {str(exc)[:120]}")
+        if not berhasil:
+            gagal_ids += [s["id"] for s in chunk]
         progress(f"  solver: {min(i + ukuran, len(blind))}/{len(blind)} soal dikerjakan")
 
     solver_path = path[:-len(".json")] + ".solver.json"
@@ -112,9 +118,9 @@ def verifikasi_buta(path: str, client: NineRouterClient, model: str, *, progress
     hasil = verify.compare(path)
     ver_path = path[:-len(".json")] + ".verifikasi.json"
     tidak_cocok = [k for k, v in hasil.items() if not v["cocok"] and v["pilihan_solver"] is not None]
-    tidak_terjawab = [k for k, v in hasil.items() if v["pilihan_solver"] is None]
+    tidak_terjawab = [k for k, v in hasil.items() if v["pilihan_solver"] is None and k not in gagal_ids]
     return VerifyResult(sum(1 for v in hasil.values() if v["cocok"]), len(hasil), tidak_cocok, tidak_terjawab,
-                        tok_in, tok_out, round(time.monotonic() - started, 1), solver_path, ver_path)
+                        gagal_ids, tok_in, tok_out, round(time.monotonic() - started, 1), solver_path, ver_path)
 
 
 SYSTEM_TANPA_GAMBAR = SYSTEM.split("Sebagian soal disertai gambar")[0] + """Soal-soal ini aslinya disertai gambar, tetapi gambarnya TIDAK diberikan kepadamu.

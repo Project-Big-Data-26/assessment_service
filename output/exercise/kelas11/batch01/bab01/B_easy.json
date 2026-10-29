@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0047-latihan-14-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi nilai komposisi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan substitusi bertahap satu langkah dari nilai fungsi dalam ke fungsi luar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui beberapa nilai fungsi sebagai berikut:\n$f(4) = 9$, $g(4) = 8$, $f(8) = 15$, dan $g(8) = 14$.\nNilai dari $(f \\circ g)(4)$ adalah ....",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "$(f \\circ g)(4) = f(g(4)) = f(8) = 15$.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Siswa langsung mengambil nilai $f(4)$ tanpa mengevaluasi $g(4)$ terlebih dahulu."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Siswa tertukar urutan komposisi menjadi $(g \\circ f)(4)$ lalu salah membaca $g(8)$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Siswa mengalikan nilai $f(4)$ dengan $g(4)$, yaitu $9 \\times 8 = 72$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi komposisi fungsi:\n$$(f \\circ g)(4) = f(g(4))$$\nDari data yang diketahui, nilai $g(4) = 8$. Substitusikan ke dalam $f$:\n$$f(g(4)) = f(8) = 15$$\nJadi, nilai dari $(f \\circ g)(4)$ adalah $15$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 43,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Jika f (x) = x − 2 dan g(x) =√ x tentukan h (x) = g (f (x)).",
+        "jawaban": "h(x) = √(x - 2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "aljabar komposisi fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Substitusi langsung bentuk aljabar satu fungsi ke fungsi lainnya tanpa penyederhanaan rumit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = x + 7$ dan $g(x) = \\sqrt{x}$. Rumus fungsi $h(x) = (g \\circ f)(x)$ adalah ....",
+      "jawaban_benar": "$\\sqrt{x + 7}$",
+      "alasan_benar": "$h(x) = g(f(x)) = g(x + 7) = \\sqrt{x + 7}$.",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{x} + 7$",
+          "alasan": "Siswa menjumlahkan $g(x) + 7$ alih-alih memasukkan $x + 7$ ke dalam tanda akar."
+        },
+        {
+          "teks": "$\\sqrt{x} - 7$",
+          "alasan": "Siswa salah memasukkan fungsi dan salah menulis tanda operasi."
+        },
+        {
+          "teks": "$\\sqrt{x - 7}$",
+          "alasan": "Siswa keliru menggunakan tanda pengurangan saat mensubstitusikan $f(x)$."
+        }
+      ],
+      "pembahasan": "Komposisi fungsi didefinisikan sebagai:\n$$h(x) = (g \\circ f)(x) = g(f(x))$$\nSubstitusikan $f(x) = x + 7$ ke dalam rumus fungsi $g(x) = \\sqrt{x}$:\n$$g(f(x)) = g(x + 7) = \\sqrt{x + 7}$$\nJadi, rumus fungsi $h(x)$ adalah $\\sqrt{x + 7}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua fungsi f dan g dapat dikomposisikan sebagai f ◦ g jika range dari g merupakan himpunan bagian dari domain f."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep syarat komposisi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali definisi syarat dua fungsi dapat dikomposisikan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua fungsi $f$ dan $g$ dapat dikomposisikan menjadi $(f \\circ g)(x)$ apabila ....",
+      "jawaban_benar": "daerah hasil (range) dari $g$ merupakan himpunan bagian dari daerah asal (domain) $f$",
+      "alasan_benar": "Syarat eksistensi $(f \\circ g)$ adalah $R_g \\subseteq D_f$.",
+      "distraktor": [
+        {
+          "teks": "daerah asal (domain) dari $g$ merupakan himpunan bagian dari daerah hasil (range) $f$",
+          "alasan": "Siswa tertukar antara daerah asal dan daerah hasil."
+        },
+        {
+          "teks": "daerah hasil (range) dari $f$ merupakan himpunan bagian dari daerah asal (domain) $g$",
+          "alasan": "Siswa tertukar urutan fungsi yang diproses duluan ($f$ dan $g$ terbalik)."
+        },
+        {
+          "teks": "daerah asal (domain) $f$ harus sama persis dengan daerah asal (domain) $g$",
+          "alasan": "Siswa mengira domain kedua fungsi harus identik seperti pada operasi penjumlahan."
+        }
+      ],
+      "pembahasan": "Berdasarkan buku siswa halaman 44, syarat agar dua fungsi $f$ dan $g$ dapat dikomposisikan sebagai $f \\circ g$ adalah range (daerah hasil) dari $g$ merupakan himpunan bagian dari domain (daerah asal) $f$ (dituliskan $R_g \\subseteq D_f$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 37,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f (x) dan g(x) merupakan dua fungsi dengan domain masing-masing Df dan Dg. Maka penjumlahan (f + g) (x) = f (x) + g(x) menghasilkan fungsi yang baru dengan domain Df ∩ Dg."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "operasi aljabar fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menjumlahkan dua suku linear sejenis secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 6x + 5$ dan $g(x) = 2x - 8$. Rumus fungsi $(f + g)(x)$ adalah ....",
+      "jawaban_benar": "$8x - 3$",
+      "alasan_benar": "$(f + g)(x) = (6x + 5) + (2x - 8) = 8x - 3$.",
+      "distraktor": [
+        {
+          "teks": "$8x + 13$",
+          "alasan": "Siswa salah menghitung konstanta: $5 - (-8) = 13$ alih-alih $5 + (-8) = -3$."
+        },
+        {
+          "teks": "$4x + 13$",
+          "alasan": "Siswa melakukan pengurangan koefisien $6 - 2 = 4$ dan salah tanda konstanta."
+        },
+        {
+          "teks": "$8x + 3$",
+          "alasan": "Siswa salah tanda saat menjumlahkan $5 + (-8)$ menjadi $+3$."
+        }
+      ],
+      "pembahasan": "Berdasarkan rumus penjumlahan dua fungsi:\n$$(f + g)(x) = f(x) + g(x)$$\nSubstitusikan masing-masing fungsi:\n$$(f + g)(x) = (6x + 5) + (2x - 8)$$\nJumlahkan suku-suku yang sejenis:\n$$(6x + 2x) + (5 - 8) = 8x - 3$$\nJadi, rumus fungsi $(f + g)(x)$ adalah $8x - 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0040-latihan-13-6c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perkalian fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu operasi perkalian langsung dari nilai dua fungsi pada titik yang sama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui beberapa nilai fungsi sebagai berikut: $f(5) = 8$, $g(5) = 4$, $f(4) = 11$, dan $g(4) = 10$. Nilai dari $(f \\cdot g)(5)$ adalah ....",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "$(f \\cdot g)(5) = f(5) \\times g(5) = 8 \\times 4 = 32$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Siswa menjumlahkan $f(5) + g(5) = 8 + 4$ alih-alih mengalikan."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Siswa salah menggunakan nilai pada $x = 4$, yaitu $f(4) \\times g(4) = 11 \\times 10 = 110$."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Siswa mengalikan nilai $f(5) \\times f(4) = 8 \\times 11 = 88$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi operasi perkalian fungsi, $(f \\cdot g)(x) = f(x) \\cdot g(x)$.\nUntuk $x = 5$:\n$(f \\cdot g)(5) = f(5) \\cdot g(5) = 8 \\times 4 = 32$.\nJadi, nilai dari $(f \\cdot g)(5)$ adalah $32$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0047-latihan-14-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi nilai komposisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai komposisi dua tahap langsung dari nilai fungsi yang diberikan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika diketahui $f(2) = 5$, $g(2) = 7$, $f(7) = 16$, dan $g(7) = 9$, maka nilai dari $(f \\circ g)(2)$ adalah ....",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "$(f \\circ g)(2) = f(g(2)) = f(7) = 16$.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Siswa menghitung $(g \\circ g)(2) = g(g(2)) = g(7) = 9$."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Siswa mengalikan nilai $f(2) \\times g(2) = 5 \\times 7 = 35$ alih-alih mengomposisikannya."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa langsung mengambil nilai $f(2) = 5$ tanpa mengevaluasi fungsi dalam $g(2)$ terlebih dahulu."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi komposisi fungsi:\n$(f \\circ g)(2) = f(g(2))\nDiketahui $g(2) = 7$, sehingga:\n$f(g(2)) = f(7) = 16$.\nJadi, nilai dari $(f \\circ g)(2)$ adalah $16$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 40,
+        "bagian": "Latihan 1.3",
+        "nomor": "6.b",
+        "teks": "Jika f (3) = 7, g (3) = 6, f (6) = 13, g (6) = 12, tentukan\n\n   - b. f (3) − g(3)",
+        "jawaban": "1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "pengurangan fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Melakukan satu operasi pengurangan nilai fungsi pada titik tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika $f(4) = 15$, $g(4) = 9$, $f(9) = 20$, dan $g(9) = 18$, maka nilai dari $(f - g)(4)$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$(f - g)(4) = f(4) - g(4) = 15 - 9 = 6$.",
+      "distraktor": [
+        {
+          "teks": "$-6$",
+          "alasan": "Siswa mengurangkan secara terbalik, yaitu $g(4) - f(4) = 9 - 15 = -6$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah menggunakan titik $x = 9$, yaitu $f(9) - g(9) = 20 - 18 = 2$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Siswa menjumlahkan $f(4) + g(4) = 15 + 9 = 24$ alih-alih mengurangkan."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi operasi pengurangan dua fungsi:\n$(f - g)(x) = f(x) - g(x)$\nUntuk $x = 4$:\n$(f - g)(4) = f(4) - g(4) = 15 - 9 = 6$.\nJadi, nilai dari $(f - g)(4)$ adalah $6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 45,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi secara umum tidak memenuhi sifat komutatif."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "sifat komutatif komposisi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali konsep sifat-sifat operasi komposisi fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pernyataan yang tepat mengenai sifat komutatif pada operasi komposisi fungsi adalah ....",
+      "jawaban_benar": "secara umum tidak berlaku, sehingga $(f \\circ g)(x) \\neq (g \\circ f)(x)$",
+      "alasan_benar": "Komposisi fungsi secara umum tidak memenuhi sifat komutatif.",
+      "distraktor": [
+        {
+          "teks": "selalu berlaku untuk semua jenis pasangan fungsi $f(x)$ dan $g(x)$",
+          "alasan": "Siswa keliru menganggap sifat komutatif pada penjumlahan/perkalian bilangan juga selalu berlaku pada komposisi fungsi."
+        },
+        {
+          "teks": "hanya berlaku jika kedua fungsi berupa fungsi kuadrat",
+          "alasan": "Siswa berspekulasi secara keliru tentang jenis fungsi tertentu tanpa dasar konsep."
+        },
+        {
+          "teks": "selalu menghasilkan $(f \\circ g)(x) = 0$",
+          "alasan": "Siswa salah menafsirkan arti tidak berlakunya sifat komutatif."
+        }
+      ],
+      "pembahasan": "Berdasarkan konsep materi komposisi fungsi, operasi komposisi secara umum tidak memenuhi sifat komutatif, yang berarti secara umum $(f \\circ g)(x) \\neq (g \\circ f)(x)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 42,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g: A →B dan f: B→C merupakan dua fungsi maka komposisi keduanya f (g (x)) dinyatakan dengan notasi (f ◦ g)(x) adalah fungsi dari domain A ke kodomain C."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "domain dan kodomain komposisi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali domain dan kodomain dari definisi dasar komposisi fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika diketahui fungsi $g: A \\to B$ dan $f: B \\to C$, maka fungsi komposisi $(f \\circ g)$ merupakan fungsi dari domain .... ke kodomain ....",
+      "jawaban_benar": "$A$ ke $C$",
+      "alasan_benar": "Komposisi $(f \\circ g)(x) = f(g(x))$ memetakan masukan dari himpunan $A$ langsung ke himpunan hasil $C$.",
+      "distraktor": [
+        {
+          "teks": "$B$ ke $C$",
+          "alasan": "Siswa menyebut domain dan kodomain dari fungsi $f$ saja."
+        },
+        {
+          "teks": "$C$ ke $A$",
+          "alasan": "Siswa membalik arah pemetaan fungsi komposisi."
+        },
+        {
+          "teks": "$B$ ke $A$",
+          "alasan": "Siswa mengira domainnya adalah himpunan perantara $B$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi komposisi fungsi, jika $g: A \\to B$ dan $f: B \\to C$, maka fungsi komposisi $(f \\circ g)$ memiliki domain asal dari himpunan masukan pertama yaitu $A$, dan kodomain hasil akhir yaitu $C$ (ditulis $(f \\circ g): A \\to C$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 40,
+        "bagian": "Latihan 1.3",
+        "nomor": "6.a",
+        "teks": "Jika f (3) = 7, g (3) = 6, f (6) = 13, g (6) = 12, tentukan a. f (3) + g(3)",
+        "jawaban": "13",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "penjumlahan nilai fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah penjumlahan langsung nilai dua fungsi pada titik yang sama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika diketahui $f(5) = 14$, $g(5) = 11$, $f(11) = 25$, dan $g(11) = 22$, maka nilai dari $(f + g)(5)$ adalah ....",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "$(f + g)(5) = f(5) + g(5) = 14 + 11 = 25$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Melakukan operasi pengurangan alih-alih penjumlahan, $14 - 11 = 3$."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Menjumlahkan nilai fungsi pada masukan yang salah, yaitu $f(11) + g(5) = 25 + 11 = 36$."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Menjumlahkan nilai fungsi pada masukan $11$, yaitu $f(11) + g(11) = 25 + 22 = 47$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi penjumlahan fungsi:\n$$(f + g)(5) = f(5) + g(5)$$\nSubstitusikan nilai yang diketahui:\n$$(f + g)(5) = 14 + 11 = 25$$\nJadi, nilai dari $(f + g)(5)$ adalah $25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 46,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 1.5 ternyata komposisi fungsi memenuhi sifat asosiatif."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "sifat asosiatif komposisi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali bentuk kesamaan yang merepresentasikan sifat asosiatif pada fungsi komposisi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada operasi komposisi fungsi, manakah bentuk kesamaan berikut yang menunjukkan berlakunya sifat asosiatif untuk sebarang fungsi $f$, $g$, dan $h$?",
+      "jawaban_benar": "$((f \\circ g) \\circ h)(x) = (f \\circ (g \\circ h))(x)$",
+      "alasan_benar": "Sifat asosiatif pada komposisi menyatakan bahwa pengelompokan operasi tidak mengubah hasil komposisi, yaitu $((f \\circ g) \\circ h) = (f \\circ (g \\circ h))$.",
+      "distraktor": [
+        {
+          "teks": "$(f \\circ g)(x) = (g \\circ f)(x)$",
+          "alasan": "Merupakan representasi sifat komutatif (yang secara umum tidak berlaku pada komposisi fungsi)."
+        },
+        {
+          "teks": "$((f \\circ g) \\circ h)(x) = ((g \\circ f) \\circ h)(x)$",
+          "alasan": "Menukar urutan fungsi di dalam tanda kurung yang melanggar urutan komposisi."
+        },
+        {
+          "teks": "$((f \\circ g) \\circ h)(x) = (f \\cdot g \\cdot h)(x)$",
+          "alasan": "Mengacaukan operasi komposisi fungsi dengan operasi perkalian aljabar fungsi."
+        }
+      ],
+      "pembahasan": "Sifat asosiatif menyatakan bahwa urutan pengelompokan pengerjaan operasi tiga objek tidak memengaruhi hasil akhirnya. Untuk tiga buah fungsi $f$, $g$, dan $h$, sifat asosiatif komposisi fungsi dinyatakan sebagai:\n$$((f \\circ g) \\circ h)(x) = (f \\circ (g \\circ h))(x)$$\nJadi, pernyataan yang tepat adalah $((f \\circ g) \\circ h)(x) = (f \\circ (g \\circ h))(x)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 37,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f (x) dan g(x) merupakan dua fungsi dengan domain masing-masing Df dan Dg. Maka penjumlahan (f + g) (x) = f (x) + g(x) menghasilkan fungsi yang baru dengan domain Df ∩ Dg."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "domain operasi penjumlahan fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan pengingatan definisi teoretis domain fungsi hasil penjumlahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika fungsi $f(x)$ memiliki domain $D_f$ dan fungsi $g(x)$ memiliki domain $D_g$, maka domain dari fungsi hasil penjumlahan $(f + g)(x)$ adalah ....",
+      "jawaban_benar": "$D_f \\cap D_g$",
+      "alasan_benar": "Domain hasil operasi penjumlahan dua fungsi adalah irisan dari domain kedua fungsi asalnya, yaitu $D_f \\cap D_g$.",
+      "distraktor": [
+        {
+          "teks": "$D_f \\cup D_g$",
+          "alasan": "Mengira domain penjumlahan adalah gabungan (union) dari kedua domain."
+        },
+        {
+          "teks": "$D_f - D_g$",
+          "alasan": "Menganggap operasi domain menggunakan operasi selisih himpunan."
+        },
+        {
+          "teks": "$D_f \\times D_g$",
+          "alasan": "Mengira domain merupakan perkalian Cartesius dari kedua domain."
+        }
+      ],
+      "pembahasan": "Agar fungsi $(f + g)(x) = f(x) + g(x)$ terdefinisi, nilai $x$ harus terdefinisi pada fungsi $f$ sekaligus terdefinisi pada fungsi $g$. Oleh karena itu, domain dari fungsi $(f + g)(x)$ adalah irisan dari domain $f$ dan domain $g$, yang dituliskan sebagai $D_f \\cap D_g$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0040-latihan-13-6c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perkalian nilai fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu langkah substitusi dan perkalian langsung nilai dua fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika diketahui nilai fungsi $f(7) = 9$, $g(7) = 5$, $f(5) = 8$, dan $g(5) = 4$, maka nilai dari $(f \\cdot g)(7)$ adalah ....",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Sesuai definisi perkalian fungsi, $(f \\cdot g)(7) = f(7) \\cdot g(7) = 9 \\cdot 5 = 45$.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Mengalikan $f(7)$ dengan $g(5)$, yaitu $9 \\cdot 4 = 36$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Mengalikan $f(5)$ dengan $g(5)$, yaitu $8 \\cdot 4 = 32$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Melakukan penjumlahan $f(7) + g(7) = 9 + 5 = 14$, bukan perkalian."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi operasi perkalian fungsi:\n$$(f \\cdot g)(x) = f(x) \\cdot g(x)$$\nUntuk $x = 7$:\n$$(f \\cdot g)(7) = f(7) \\cdot g(7) = 9 \\cdot 5 = 45$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 40,
+        "bagian": "Latihan 1.3",
+        "nomor": "6.d",
+        "teks": "Jika f (3) = 7, g (3) = 6, f (6) = 13, g (6) = 12, tentukan d. f (3) ÷ g(3)",
+        "jawaban": "7/6",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "pembagian nilai fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu operasi pembagian nilai fungsi yang telah diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika diketahui $f(4) = 28$, $g(4) = 7$, $f(7) = 15$, dan $g(7) = 5$, maka nilai dari $(f \\div g)(4)$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Operasi pembagian fungsi $(f \\div g)(4) = \\frac{f(4)}{g(4)} = \\frac{28}{7} = 4$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Menghitung $(f \\div g)(7) = \\frac{15}{5} = 3$ bukannya untuk $x = 4$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Menghitung operasi pengurangan $f(4) - g(4) = 28 - 7 = 21$."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Menghitung posisi terbalik $(g \\div f)(4) = \\frac{7}{28} = \\frac{1}{4}$."
+        }
+      ],
+      "pembahasan": "Definisi pembagian dua fungsi:\n$$(f \\div g)(x) = \\frac{f(x)}{g(x)}$$\nUntuk $x = 4$:\n$$(f \\div g)(4) = \\frac{f(4)}{g(4)} = \\frac{28}{7} = 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 37,
+        "bagian": "Ayo Mencoba",
+        "nomor": "a",
+        "teks": "Kalian ingin mengetahui keuntungan yang diperoleh dari penjualan setiap barang. Bagaimana cara menemukan fungsi keuntungan jika diketahui fungsi pendapatan dan biaya produksi? (Petunjuk: penjumlahan atau pengurangan?)",
+        "jawaban": "pengurangan",
+        "kutipan": null
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep operasi fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali operasi aljabar fungsi yang tepat dalam konteks keuntungan ekonomi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah koperasi sekolah ingin menentukan fungsi sisa hasil usaha (keuntungan) $U(x)$ dari penjualan alat tulis, di mana $P(x)$ menyatakan fungsi penerimaan total dan $B(x)$ menyatakan fungsi beban operasional. Operasi aljabar fungsi yang tepat untuk menentukan fungsi $U(x)$ adalah ....",
+      "jawaban_benar": "pengurangan, yaitu $U(x) = (P - B)(x)$",
+      "alasan_benar": "Keuntungan diperoleh dari selisih penerimaan total dikurangi beban operasional, sehingga $U(x) = P(x) - B(x) = (P - B)(x)$.",
+      "distraktor": [
+        {
+          "teks": "penjumlahan, yaitu $U(x) = (P + B)(x)$",
+          "alasan": "Keliru mengira keuntungan diperoleh dengan menggabungkan/menjumlahkan penerimaan dan beban."
+        },
+        {
+          "teks": "perkalian, yaitu $U(x) = (P \\cdot B)(x)$",
+          "alasan": "Keliru menerapkan operasi perkalian antar-fungsi."
+        },
+        {
+          "teks": "pembagian, yaitu $U(x) = (P \\div B)(x)$",
+          "alasan": "Keliru menganggap rasio penerimaan terhadap beban sebagai keuntungan mutlak."
+        }
+      ],
+      "pembahasan": "Keuntungan diperoleh dari total penerimaan dikurangi total beban biaya:\n$$U(x) = P(x) - B(x) = (P - B)(x)$$\nJadi, operasi yang tepat adalah pengurangan fungsi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 45,
+        "bagian": "Eksplorasi 1.5",
+        "nomor": "Masalah Pertama",
+        "teks": "Selidikilah apakah harga setelah diskon 25% yang dilanjutkan dengan diskon 20% sama dengan harga setelah diskon 20% yang dilanjutkan dengan diskon 25%. Apakah berlaku sifat komutatif dalam komposisi fungsi ini?",
+        "jawaban": "berlaku",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat komutatif diskon komposisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Membandingkan komposisi dua fungsi diskon bertingkat untuk melihat kesamaan hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah toko pakaian memberikan promo diskon bertingkat. Suatu barang dikenai diskon 40% kemudian dilanjutkan diskon 10%. Jika urutan diskon ditukar menjadi diskon 10% kemudian dilanjutkan diskon 40%, hubungan harga akhir barang pada kedua urutan tersebut adalah ....",
+      "jawaban_benar": "sama besar, karena perkalian faktor pengali diskon bersifat komutatif",
+      "alasan_benar": "Diskon 40% lalu 10% menghasilkan faktor $(1 - 0,10)(1 - 0,40) = 0,9 \\times 0,6 = 0,54$. Urutan sebaliknya menghasilkan $(1 - 0,40)(1 - 0,10) = 0,6 \\times 0,9 = 0,54$, sehingga harganya sama.",
+      "distraktor": [
+        {
+          "teks": "lebih murah jika diskon 40% diberikan terlebih dahulu",
+          "alasan": "Keliru menduga diskon persentase lebih besar di awal membuat harga akhir lebih rendah."
+        },
+        {
+          "teks": "lebih murah jika diskon 10% diberikan terlebih dahulu",
+          "alasan": "Keliru menduga persentase lebih kecil di awal menguntungkan pembeli."
+        },
+        {
+          "teks": "berbeda, karena komposisi dua fungsi secara umum tidak komutatif",
+          "alasan": "Menerapkan fakta umum ketidakkonmutatifan komposisi tanpa melihat bahwa fungsi diskon ini berbentuk perkalian skalar yang saling komutatif."
+        }
+      ],
+      "pembahasan": "Misalkan harga awal adalah $x$.\nUrutan 1 (diskon 40% lalu 10%):\n$$f(x) = (1 - 0,40)x = 0,60x$$\n$$g(f(x)) = (1 - 0,10)(0,60x) = 0,90 \\times 0,60x = 0,54x$$\n\nUrutan 2 (diskon 10% lalu 40%):\n$$g(x) = (1 - 0,10)x = 0,90x$$\n$$f(g(x)) = (1 - 0,40)(0,90x) = 0,60 \\times 0,90x = 0,54x$$\n\nKarena $0,54x = 0,54x$, kedua urutan menghasilkan harga akhir yang sama besar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 38,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f (x) dan g(x) merupakan dua fungsi dengan domain masing-masing Df dan Dg. Maka perkalian (f · g)(x) = f (x) · g(x) menghasilkan fungsi yang baru dengan domain Df ∩ Dg."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "domain operasi perkalian fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi domain dari hasil operasi perkalian dua fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika fungsi $f(x)$ memiliki daerah asal (domain) $D_f$ dan fungsi $g(x)$ memiliki daerah asal $D_g$, maka daerah asal dari fungsi hasil perkalian $(f \\cdot g)(x)$ adalah ....",
+      "jawaban_benar": "$D_f \\cap D_g$",
+      "alasan_benar": "Daerah asal dari perkalian dua fungsi adalah irisan dari domain kedua fungsi asalnya, yaitu $D_f \\cap D_g$.",
+      "distraktor": [
+        {
+          "teks": "$D_f \\cup D_g$",
+          "alasan": "Keliru menggunakan operasi gabungan himpunan."
+        },
+        {
+          "teks": "$D_f - D_g$",
+          "alasan": "Keliru menggunakan operasi selisih himpunan."
+        },
+        {
+          "teks": "$D_f \\times D_g$",
+          "alasan": "Keliru menganggap perkalian fungsi menghasilkan perkalian Cartesius domain."
+        }
+      ],
+      "pembahasan": "Berdasarkan materi Buku Siswa kelas XI, jika $f(x)$ dan $g(x)$ memiliki domain masing-masing $D_f$ dan $D_g$, maka perkalian $(f \\cdot g)(x) = f(x) \\cdot g(x)$ menghasilkan fungsi baru dengan domain irisan kedua domain tersebut, yaitu $D_f \\cap D_g$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 43,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Jika f (x) = x − 2 dan g(x) = √ x tentukan h (x) = g (f (x)).",
+        "jawaban": "h(x) = \\sqrt{x - 2}",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "komposisi bentuk akar",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan satu langkah substitusi fungsi linear ke dalam fungsi akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika diketahui fungsi $f(x) = x - 5$ dan $g(x) = \\sqrt{x}$, maka rumus fungsi $h(x) = g(f(x))$ adalah ....",
+      "jawaban_benar": "$\\sqrt{x - 5}$",
+      "alasan_benar": "Berdasarkan definisi komposisi, $h(x) = g(f(x)) = g(x - 5) = \\sqrt{x - 5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{x} - 5$",
+          "alasan": "Siswa tertukar urutan komposisi menjadi $(f \\circ g)(x) = f(g(x)) = \\sqrt{x} - 5$."
+        },
+        {
+          "teks": "$\\sqrt{x - 2}$",
+          "alasan": "Siswa menggunakan konstanta dari soal acuan di buku tanpa mengubah angka."
+        },
+        {
+          "teks": "$\\sqrt{5 - x}$",
+          "alasan": "Siswa salah menuliskan urutan pengurangan di dalam akar."
+        }
+      ],
+      "pembahasan": "Komposisi fungsi $h(x) = g(f(x))$ diperoleh dengan menyubstitusikan $f(x)$ ke dalam rumus $g(x)$:\n$$h(x) = g(f(x)) = g(x - 5) = \\sqrt{x - 5}$$\nJadi, rumus fungsi $h(x)$ adalah $\\sqrt{x - 5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 37,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f (x) dan g(x) merupakan dua fungsi dengan domain masing-masing Df dan Dg. Maka pengurangan (f − g)(x) = f (x) − g(x) menghasilkan fungsi yang baru dengan domain Df ∩ Dg."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "domain operasi pengurangan fungsi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi daerah asal dari operasi pengurangan dua fungsi secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika fungsi $f(x)$ memiliki daerah asal (domain) $D_f$ dan fungsi $g(x)$ memiliki daerah asal $D_g$, maka daerah asal dari fungsi hasil pengurangan $(f - g)(x)$ adalah ....",
+      "jawaban_benar": "$D_f \\cap D_g$",
+      "alasan_benar": "Sesuai definisi pada materi operasi aljabar fungsi, daerah asal dari $(f - g)(x)$ adalah irisan dari kedua daerah asalnya, yaitu $D_f \\cap D_g$.",
+      "distraktor": [
+        {
+          "teks": "$D_f \\cup D_g$",
+          "alasan": "Siswa mengira operasi fungsi menggabungkan seluruh anggota domain (operasi gabungan/union)."
+        },
+        {
+          "teks": "$D_f - D_g$",
+          "alasan": "Siswa menyamakan operasi pengurangan fungsi dengan pengurangan himpunan pada domain."
+        },
+        {
+          "teks": "$D_f \\times D_g$",
+          "alasan": "Siswa mengira domain dihasilkan dari perkalian Cartesius antarhimpunan domain."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat operasi aljabar fungsi, operasi pengurangan $(f - g)(x) = f(x) - g(x)$ hanya terdefinisi pada nilai-nilai $x$ yang sekaligus menjadi anggota domain $f$ dan domain $g$. Oleh karena itu, daerah asalnya adalah irisan dari kedua daerah asal tersebut, yaitu $D_{(f - g)} = D_f \\cap D_g$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-b-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 47,
+        "bagian": "Latihan 1.4",
+        "nomor": "4",
+        "teks": "4. Hasil dari (f ◦ g) (x) = (2x + 3)<sup>3</sup> sedangkan f (x) = x<sup>3</sup> tentukan g(x).",
+        "jawaban": "2x + 3",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan komponen fungsi komposisi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah penalaran langsung untuk menentukan fungsi dalam dari bentuk komposisi berpangkat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui hasil dari $(f \\circ g)(x) = (7x + 6)^5$ dan $f(x) = x^5$. Rumus fungsi $g(x)$ yang memenuhi adalah ....",
+      "jawaban_benar": "$7x + 6$",
+      "alasan_benar": "Berdasarkan definisi $(f \\circ g)(x) = f(g(x)) = (g(x))^5$. Karena $(g(x))^5 = (7x + 6)^5$, maka $g(x) = 7x + 6$.",
+      "distraktor": [
+        {
+          "teks": "$7x - 6$",
+          "alasan": "Kesalahan tanda operasi pada konstanta fungsi dalam."
+        },
+        {
+          "teks": "$(7x + 6)^5$",
+          "alasan": "Siswa menganggap hasil komposisi $(f \\circ g)(x)$ sama dengan $g(x)$ secara langsung tanpa menguraikan fungsi luar $f$."
+        },
+        {
+          "teks": "$\\frac{7x + 6}{5}$",
+          "alasan": "Siswa salah menerapkan inversi operasi pangkat menjadi pembagian dengan pangkatnya."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi komposisi fungsi:\n$$(f \\circ g)(x) = f(g(x))$$\n\nDiketahui $f(x) = x^5$, sehingga:\n$$f(g(x)) = (g(x))^5$$\n\nDari soal diketahui bahwa $(f \\circ g)(x) = (7x + 6)^5$. Dengan menyamakan kedua bentuk tersebut, diperoleh:\n$$(g(x))^5 = (7x + 6)^5$$\n$$g(x) = 7x + 6$$\n\nJadi, rumus fungsi $g(x)$ adalah $7x + 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

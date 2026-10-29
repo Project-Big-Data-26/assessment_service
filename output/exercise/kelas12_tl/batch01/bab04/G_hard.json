@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "G",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 292,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "5",
+        "teks": "Berdasarkan data dari perusahaan game online , waktu bermain harian berdistribusi normal dengan standar deviasi 37 menit. Sebanyak 14% pemain bermain game online lebih dari 230 menit per hari. Tentukan rataratanya.",
+        "jawaban": "190 menit",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter distribusi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan nilai Z dari persentase ekor kanan, perumusan nilai rata-rata, lalu evaluasi kebenaran batas masa pakai garansi.",
+      "stimulus": "Tabel distribusi normal baku memberikan nilai kumulatif $P(Z < 1,50) = 0,9332$ dan $P(Z < -2,00) = 0,0228$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Masa pakai baterai laptop merek tertentu diketahui berdistribusi normal dengan simpangan baku $\\sigma = 6$ bulan. Hasil evaluasi layanan purnajual mencatat bahwa tepat $6,68\\%$ baterai mampu bertahan lebih dari $45$ bulan. Pabrik berencana memberikan garansi penggantian penuh jika baterai rusak sebelum batas waktu $t$ bulan. Jika pabrik menetapkan kebijakan agar klaim garansi tidak melebihi $2,28\\%$ dari total produksi, berapakah batas masa pakai $t$ yang harus ditetapkan?",
+      "jawaban_benar": "$24\\text{ bulan}$",
+      "alasan_benar": "Dari persentase ekor kanan $P(X > 45) = 0,0668$, diperoleh $P(Z < z) = 1 - 0,0668 = 0,9332$, sehingga $z = 1,50$. Rata-rata populasi dihitung melalui $45 = \\mu + 1,50(6) \\iff \\mu = 36\\text{ bulan}$. Batas klaim $2,28\\%$ bersesuaian dengan ekor kiri $P(Z < -2,00) = 0,0228$, sehingga $t = \\mu + z\\sigma = 36 + (-2,00)(6) = 24\\text{ bulan}$.",
+      "distraktor": [
+        {
+          "teks": "$27\\text{ bulan}$",
+          "alasan": "Siswa salah mengambil nilai $z = -1,50$ alih-alih $-2,00$ saat menghitung batas garansi ($36 - 1,50(6) = 27$)."
+        },
+        {
+          "teks": "$30\\text{ bulan}$",
+          "alasan": "Siswa salah menentukan rata-rata populasi menjadi $\\mu = 42$ karena mengurangkan separuh deviasi, lalu menghitung $42 - 2(6) = 30$."
+        },
+        {
+          "teks": "$48\\text{ bulan}$",
+          "alasan": "Siswa salah menggunakan nilai $Z$ positif untuk batas bawah garansi ($36 + 2(6) = 48$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $z_1$ dari persentase ekor kanan.\nDiketahui $P(X > 45) = 6,68\\% = 0,0668$.\nMaka $P(X \\le 45) = 1 - 0,0668 = 0,9332$.\nBerdasarkan tabel normal, $P(Z < 1,50) = 0,9332$, sehingga $z_1 = 1,50$.\n\nLangkah 2: Menghitung rata-rata populasi ($\\mu$).\n$z_1 = \\frac{x_1 - \\mu}{\\sigma} \\implies 1,50 = \\frac{45 - \\mu}{6} \\implies 45 - \\mu = 9 \\implies \\mu = 36\\text{ bulan}$.\n\nLangkah 3: Menentukan nilai baku untuk klaim garansi $2,28\\%$.\nPabrik menghendaki $P(X < t) \\le 0,0228$.\nBerdasarkan tabel distribusi normal, $P(Z < -2,00) = 0,0228$, maka $z_2 = -2,00$.\n\nLangkah 4: Menghitung batas waktu $t$.\n$t = \\mu + z_2\\sigma = 36 + (-2,00)(6) = 36 - 12 = 24\\text{ bulan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 295,
+        "bagian": "Uji Kompetensi Bab 4",
+        "nomor": "8",
+        "teks": "Nilai rata-rata ujian Matematika adalah 60 dengan varians 64. Peserta ujian memperoleh nilai A jika nilai minimal 80. Peserta ujian akan mendapat nilai B jika nilai paling kecil 65 dan kurang dari 80. Peserta harus mengikuti ujian perbaikan jika nilainya kurang dari 65. Misalkan distribusi nilai ujian tersebut mendekati distribusi normal dan seorang peserta dipilih secara acak. a. Tentukan peluang bahwa peserta itu memperoleh nilai A. b. Tentukan peluang bahwa peserta itu memperoleh nilai B. c. Tentukan peluang bahwa peserta itu harus mengikuti ujian perbaikan.",
+        "jawaban": "a. 0,0062; b. 0,2595; c. 0,7343",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kategori peluang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Melibatkan penentuan nilai simpangan baku dari varians, konversi multi-kategori ke skor baku, serta evaluasi selisih peluang antar-kategori predikat.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai kumulatif berikut:\n- $P(Z < 0,50) = 0,6915$\n- $P(Z < 1,50) = 0,9332$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai ujian seleksi masuk suatu program pelatihan berdistribusi normal dengan rata-rata $70$ dan varians $100$. Peserta dinyatakan lulus dengan predikat Utama jika nilai minimal $85$, predikat Madya jika nilai paling rendah $75$ tetapi kurang dari $85$, dan predikat Dasar jika nilai di bawah $75$. Panitia ingin membandingkan proporsi peserta yang memperoleh predikat Madya terhadap peserta yang memperoleh predikat Utama. Berapakah selisih persentase antara peserta predikat Madya dan peserta predikat Utama?",
+      "jawaban_benar": "$17,49\\%$",
+      "alasan_benar": "Simpangan baku $\\sigma = \\sqrt{100} = 10$. Skor baku batas 75 adalah $z = 0,50$ dan batas 85 adalah $z = 1,50$. Peluang Utama ($X \\ge 85$) adalah $1 - 0,9332 = 0,0668$ ($6,68\\%$). Peluang Madya ($75 \\le X < 85$) adalah $0,9332 - 0,6915 = 0,2417$ ($24,17\\%$). Selisih persentase keduanya adalah $24,17\\% - 6,68\\% = 17,49\\%$.",
+      "distraktor": [
+        {
+          "teks": "$24,17\\%$",
+          "alasan": "Siswa hanya menghitung persentase peserta predikat Madya tanpa mengurangkan persentase predikat Utama."
+        },
+        {
+          "teks": "$13,29\\%$",
+          "alasan": "Siswa salah menggunakan varians 100 langsung sebagai pembagi saat standardisasi alih-alih simpangan baku 10."
+        },
+        {
+          "teks": "$30,85\\%$",
+          "alasan": "Siswa menghitung komplemen dari nilai $P(Z < 0,50)$ saja ($1 - 0,6915 = 0,3085$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan simpangan baku dari varians.\n$\\sigma = \\sqrt{100} = 10$.\n\nLangkah 2: Menghitung skor baku masing-masing batas nilai.\nUntuk $x = 75 \\implies z_1 = \\frac{75 - 70}{10} = 0,50$.\nUntuk $x = 85 \\implies z_2 = \\frac{85 - 70}{10} = 1,50$.\n\nLangkah 3: Menghitung peluang masing-masing predikat.\n- Predikat Utama ($X \\ge 85$):\n$P(X \\ge 85) = P(Z \\ge 1,50) = 1 - P(Z < 1,50) = 1 - 0,9332 = 0,0668 = 6,68\\%$.\n- Predikat Madya ($75 \\le X < 85$):\n$P(75 \\le X < 85) = P(0,50 \\le Z < 1,50) = P(Z < 1,50) - P(Z < 0,50) = 0,9332 - 0,6915 = 0,2417 = 24,17\\%$.\n\nLangkah 4: Menghitung selisih persentase kedua kelompok predikat.\n$\\text{Selisih} = 24,17\\% - 6,68\\% = 17,49\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 285,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas kurva pada distribusi normal adalah 1 dan kurva simetris dengan n = 0 , maka luas garis vertikal ke kanan atau ke kiri adalah 0,5."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan batas toleransi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perancangan interval simetris di sekitar rata-rata agar tingkat penerimaan produk mencapai persentase tertentu, menuntut konstruksi batas toleransi teknis.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai kumulatif $P(Z < 1,96) = 0,9750$ dan $P(Z < -1,96) = 0,0250$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah industri manufaktur memproduksi poros silinder logam dengan diameter berdistribusi normal, memiliki rata-rata $\\mu = 50\\text{ mm}$ dan simpangan baku $\\sigma = 0,25\\text{ mm}$. Tim perancang mesin harus menentukan interval toleransi diameter poros $[50 - k, 50 + k]$ agar tepat $95\\%$ produk yang dihasilkan lolos pemeriksaan (diterima) secara simetris di sekitar rata-rata. Berapakah nilai rentang toleransi total ($2k$) yang harus dirancang?",
+      "jawaban_benar": "$0,98\\text{ mm}$",
+      "alasan_benar": "Interval simetris 95% di sekitar rata-rata menyisakan masing-masing 2,5% pada ujung kiri dan kanan. Dari $P(Z < -z) = 0,0250$, diperoleh $z = 1,96$. Nilai setengah rentang adalah $k = 1,96 \\times 0,25 = 0,49\\text{ mm}$, sehingga rentang toleransi total $2k = 2 \\times 0,49 = 0,98\\text{ mm}$.",
+      "distraktor": [
+        {
+          "teks": "$0,49\\text{ mm}$",
+          "alasan": "Siswa hanya menghitung nilai deviasi satu sisi ($k$) bukan rentang total toleransi ($2k$)."
+        },
+        {
+          "teks": "$0,80\\text{ mm}$",
+          "alasan": "Siswa salah menggunakan nilai $z = 1,60$ saat menghitung toleransi simetris."
+        },
+        {
+          "teks": "$1,96\\text{ mm}$",
+          "alasan": "Siswa mengira rentang toleransi langsung sama dengan nilai $Z$ tanpa mengalikan dengan simpangan baku."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan luas ekor kurva pada perancangan simetris 95%.\nLuas daerah penerimaan adalah $P(\\mu - k \\le X \\le \\mu + k) = 0,95$.\nKarena distribusi normal simetris di sekitar $\\mu$, luas masing-masing ekor penolakan adalah:\n$\\alpha / 2 = \\frac{1 - 0,95}{2} = 0,0250$.\n\nLangkah 2: Menentukan nilai skor baku $Z$.\nDari tabel kumulatif, nilai yang menghasilkan peluang kumulatif $0,0250$ adalah $z = -1,96$, dan sisi kanannya bersesuaian dengan $z = +1,96$.\n\nLangkah 3: Menghitung deviasi batas toleransi ($k$).\n$k = z \\times \\sigma = 1,96 \\times 0,25\\text{ mm} = 0,49\\text{ mm}$.\n\nLangkah 4: Menghitung rentang toleransi total ($2k$).\n$\\text{Rentang total} = (50 + k) - (50 - k) = 2k = 2 \\times 0,49\\text{ mm} = 0,98\\text{ mm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk setiap pasang n dan v , sifat-sifat di atas selalu dipenuhi, namun bentuk kurva akan berlainan. Semakin besar v , semakin rendah kurvanya (platikurtik). Semakin kecil v , semakin tinggi kurvanya (leptokurtik)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komparasi kurva normal",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi klaim komparatif antara dua populasi yang memiliki rata-rata dan varians berbeda dengan menguji konsistensi skor baku dan bentuk kurvanya.",
+      "stimulus": "Dua mesin pemotong kayu ($M_1$ dan $M_2$) memotong papan dengan ketebalan berdistribusi normal:\n- Mesin $M_1$: rata-rata $\\mu_1 = 20\\text{ cm}$ dan varians $\\sigma_1^2 = 16\\text{ cm}^2$\n- Mesin $M_2$: rata-rata $\\mu_2 = 24\\text{ cm}$ dan varians $\\sigma_2^2 = 36\\text{ cm}^2$\n\nDiketahui dari tabel normal baku bahwa $P(Z < 1,00) = 0,8413$ dan $P(Z < 1,50) = 0,9332$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang teknisi menyatakan dua klaim berikut:\n(1) Puncak grafik fungsi densitas mesin $M_1$ lebih tinggi (lebih leptokurtik) dibandingkan puncak grafik mesin $M_2$.\n(2) Peluang mesin $M_1$ memotong papan dengan ketebalan melebihi $26\\text{ cm}$ sama besarnya dengan peluang mesin $M_2$ memotong papan dengan ketebalan melebihi $30\\text{ cm}$.\n\nManakah evaluasi yang tepat mengenai kebenaran kedua klaim teknisi tersebut?",
+      "jawaban_benar": "Klaim (1) benar, tetapi klaim (2) salah karena peluang mesin $M_1$ melebihi $26\\text{ cm}$ adalah $6,68\\%$ sedangkan peluang mesin $M_2$ melebihi $30\\text{ cm}$ adalah $15,87\\%$",
+      "alasan_benar": "Simpangan baku $M_1$ adalah $\\sigma_1 = 4$ dan $M_2$ adalah $\\sigma_2 = 6$. Karena $\\sigma_1 < \\sigma_2$, kurva $M_1$ lebih tinggi (leptokurtik), maka klaim (1) benar. Untuk klaim (2): $z_1 = (26 - 20)/4 = 1,50 \\implies P(X_1 > 26) = 1 - 0,9332 = 0,0668$, sedangkan $z_2 = (30 - 24)/6 = 1,00 \\implies P(X_2 > 30) = 1 - 0,8413 = 0,1587$. Nilai peluang keduanya tidak sama, sehingga klaim (2) salah.",
+      "distraktor": [
+        {
+          "teks": "Kedua klaim benar, karena kedua mesin memiliki selisih nilai potong yang sama persis yaitu $6\\text{ cm}$ terhadap masing-masing rata-ratanya",
+          "alasan": "Siswa mengabaikan pengaruh simpangan baku terhadap skor baku Z dan hanya melihat selisih mutlak $(x - \\mu) = 6$."
+        },
+        {
+          "teks": "Klaim (1) salah dan klaim (2) benar, karena kurva dengan varians lebih besar akan memiliki puncak yang lebih curam",
+          "alasan": "Siswa terbalik memahami konsep kurva leptokurtik dan platikurtik terhadap nilai varians."
+        },
+        {
+          "teks": "Kedua klaim salah, karena kurva distribusi normal selalu memiliki tinggi puncak yang identik terlepas dari variansnya",
+          "alasan": "Siswa keliru menganggap bahwa luas kurva 1 mengharuskan tinggi puncak kurva konstan untuk semua simpangan baku."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menganalisis simpangan baku masing-masing mesin.\n- Mesin $M_1$: $\\sigma_1 = \\sqrt{16} = 4\\text{ cm}$.\n- Mesin $M_2$: $\\sigma_2 = \\sqrt{36} = 6\\text{ cm}$.\nKarena $\\sigma_1 < \\sigma_2$, kurva mesin $M_1$ lebih sempit dan lebih tinggi (leptokurtik) daripada kurva mesin $M_2$. Maka Klaim (1) BENAR.\n\nLangkah 2: Menghitung skor baku dan peluang untuk mesin $M_1$ ($X_1 > 26$).\n$z_1 = \\frac{26 - 20}{4} = \\frac{6}{4} = 1,50$.\n$P(X_1 > 26) = 1 - P(Z < 1,50) = 1 - 0,9332 = 0,0668 = 6,68\\%$.\n\nLangkah 3: Menghitung skor baku dan peluang untuk mesin $M_2$ ($X_2 > 30$).\n$z_2 = \\frac{30 - 24}{6} = \\frac{6}{6} = 1,00$.\n$P(X_2 > 30) = 1 - P(Z < 1,00) = 1 - 0,8413 = 0,1587 = 15,87\\%$.\n\nLangkah 4: Evaluasi komparatif peluang.\nKarena $0,0668 \\ne 0,1587$, peluang kedua mesin tidak sama. Maka Klaim (2) SALAH.\n\nKesimpulan: Klaim (1) benar, tetapi klaim (2) salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0292-latihan-soal-distribusi-normal-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kelulusan berbasis skor baku",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemecahan sistem persamaan linear untuk menemukan parameter distribusi sebelum mengevaluasi proporsi kelulusan pelamar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua peserta seleksi calon staf administrasi memperoleh skor baku $Z_1 = 1,40$ dan $Z_2 = -0,60$ pada tes tertulis yang nilainya berdistribusi normal. Skor mentah yang mereka peroleh berturut-turut adalah $82$ dan $52$. Panitia seleksi memutuskan bahwa hanya peserta dengan skor mentah minimal $70$ yang berhak lolos ke tahap wawancara. Jika diketahui nilai tabel distribusi normal baku $P(Z < 0,60) = 0,7257$, persentase peserta seleksi yang lolos ke tahap wawancara adalah ....",
+      "jawaban_benar": "$27,43\\%$",
+      "alasan_benar": "Dari persamaan skor baku diperoleh sistem linear $82 = \\mu + 1,40\\sigma$ dan $52 = \\mu - 0,60\\sigma$. Mengurangkan kedua persamaan menghasilkan $2,00\\sigma = 30 \\implies \\sigma = 15$, sehingga $\\mu = 52 + 0,60(15) = 61$. Untuk nilai ambang batas $X = 70$, nilai bakunya adalah $Z = \\frac{70 - 61}{15} = 0,60$. Peluang peserta lolos adalah $P(X \\ge 70) = P(Z \\ge 0,60) = 1 - P(Z < 0,60) = 1 - 0,7257 = 0,2743 = 27,43\\%$.",
+      "distraktor": [
+        {
+          "teks": "$72,57\\%$",
+          "alasan": "Siswa langsung menggunakan nilai kumulatif $P(Z < 0,60)$ yang sebenarnya merupakan persentase peserta yang tidak lolos."
+        },
+        {
+          "teks": "$22,57\\%$",
+          "alasan": "Siswa salah menghitung selisih $1 - 0,7257$ akibat kesalahan operasi pengurangan desimal."
+        },
+        {
+          "teks": "$47,43\\%$",
+          "alasan": "Siswa salah menghitung peluang dengan mengurangkan $0,7257$ dengan $0,25$ alih-alih melakukan komplementasi penuh dari $1$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan parameter distribusi (rata-rata $\\mu$ dan simpangan baku $\\sigma$).\nBerdasarkan rumus $Z = \\frac{X - \\mu}{\\sigma} \\iff X = \\mu + Z\\sigma$:\n(1) $82 = \\mu + 1,40\\sigma$\n(2) $52 = \\mu - 0,60\\sigma$\n\nKurangkan persamaan (1) dengan (2):\n$30 = 2,00\\sigma \\implies \\sigma = 15$\n\nSubstitusikan $\\sigma = 15$ ke persamaan (2):\n$\\mu = 52 + 0,60(15) = 52 + 9 = 61$\n\nLangkah 2: Menghitung skor baku untuk nilai ambang batas $X = 70$:\n$Z = \\frac{70 - 61}{15} = \\frac{9}{15} = 0,60$\n\nLangkah 3: Menghitung peluang dan persentase kelulusan:\n$P(X \\ge 70) = P(Z \\ge 0,60) = 1 - P(Z < 0,60) = 1 - 0,7257 = 0,2743$\nDalam bentuk persentase: $0,2743 \\times 100\\% = 27,43\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Proses mengubah distribusi normal umum menjadi distribusi normal baku menggunakan transformasi nilai baku dengan Z = x - v n ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan batas toleransi variabilitas",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perancangan batas maksimum nilai simpangan baku mesin agar tingkat kecacatan produk berada di bawah ambang batas yang disyaratkan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pengisi cairan otomatis diatur untuk mengisi botol detergen dengan volume rata-rata $\\mu = 500\\text{ ml}$. Botol dikategorikan cacat jika volumenya melebihi kapasitas maksimum wadah yaitu $524\\text{ ml}$. Berdasarkan tabel distribusi normal baku, diketahui $P(Z < 2,00) = 0,9772$. Agar persentase botol cacat yang diproduksi tidak melebihi $2,28\\%$, rancangan batas maksimum simpangan baku ($\\sigma$) yang diperbolehkan untuk mesin tersebut adalah ....",
+      "jawaban_benar": "$12\\text{ ml}$",
+      "alasan_benar": "Kondisi cacat terjadi saat $X > 524$. Syarat peluang cacat $P(X > 524) \\le 0,0228 \\iff P(X \\le 524) \\ge 0,9772$. Karena $P(Z \\le 2,00) = 0,9772$, maka nilai baku ambang batas harus memenuhi $Z = \\frac{524 - 500}{\\sigma} \\ge 2,00 \\iff \\frac{24}{\\sigma} \\ge 2,00 \\iff \\sigma \\le 12\\text{ ml}$. Dengan demikian, batas maksimum simpangan baku adalah $12\\text{ ml}$.",
+      "distraktor": [
+        {
+          "teks": "$24\\text{ ml}$",
+          "alasan": "Siswa hanya menghitung selisih $524 - 500 = 24$ tanpa membaginya dengan nilai skor baku $Z = 2,00$."
+        },
+        {
+          "teks": "$6\\text{ ml}$",
+          "alasan": "Siswa keliru membagi selisih $24$ dengan kuadrat dari nilai $Z$ ($2^2 = 4$)."
+        },
+        {
+          "teks": "$48\\text{ ml}$",
+          "alasan": "Siswa terbalik melakukan operasi perhitungan dengan mengalikan selisih $24$ dengan $Z = 2,00$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengidentifikasi kondisi probabilitas.\nBotol cacat jika $X > 524\\text{ ml}$.\nDiinginkan persentase cacat $\\le 2,28\\%$, maka:\n$P(X > 524) \\le 0,0228 \\iff P(X \\le 524) \\ge 1 - 0,0228 = 0,9772$\n\nLangkah 2: Menghubungkan dengan nilai baku $Z$.\nDari tabel distribusi normal baku, $P(Z < 2,00) = 0,9772$.\nAgar $P(X \\le 524) \\ge 0,9772$, posisi nilai $X = 524$ harus berada setidaknya pada $Z = 2,00$ atau lebih ke kanan:\n$\\frac{X - \\mu}{\\sigma} \\ge 2,00$\n\nLangkah 3: Menyelesaikan pertidaksamaan untuk parameter $\\sigma$:\n$\\frac{524 - 500}{\\sigma} \\ge 2,00$\n$\\frac{24}{\\sigma} \\ge 2,00 \\iff \\sigma \\le \\frac{24}{2,00} = 12\\text{ ml}$\n\nJadi, batas maksimum simpangan baku yang diperbolehkan adalah $12\\text{ ml}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas daerah yang terletak di bawah kurva dan di atas sumbu mendatar sama dengan 1."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komparasi posisi relatif",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi perbandingan posisi relatif capaian dua subjek dari populasi berbeda menggunakan transformasi skor baku normal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua kelompok siswa, Kelas A dan Kelas B, menempuh tes matematika dengan distribusi skor berdistribusi normal:\n- Kelas A memiliki rata-rata $\\mu_A = 68$ dengan simpangan baku $\\sigma_A = 8$.\n- Kelas B memiliki rata-rata $\\mu_B = 75$ dengan simpangan baku $\\sigma_B = 10$.\n\nSiswa P dari Kelas A memperoleh nilai mentah 80, sedangkan Siswa Q dari Kelas B memperoleh nilai mentah 90. Berdasarkan perbandingan skor baku ($Z$) pada kurva normal masing-masing kelas, evaluasilah pernyataan yang paling tepat mengenai posisi relatif prestasi kedua siswa tersebut!",
+      "jawaban_benar": "Kedua siswa memiliki posisi relatif yang sama unggul terhadap kelompoknya masing-masing karena nilai baku keduanya sama ($Z_P = Z_Q = 1,50$).",
+      "alasan_benar": "Nilai baku Siswa P adalah $Z_P = \\frac{80 - 68}{8} = 1,50$. Nilai baku Siswa Q adalah $Z_Q = \\frac{90 - 75}{10} = 1,50$. Karena nilai baku kedua siswa bernilai persis sama, kedudukan relatif persentil keduanya terhadap masing-masing kelompok adalah identik.",
+      "distraktor": [
+        {
+          "teks": "Siswa Q memiliki posisi relatif lebih unggul daripada Siswa P karena nilai mentah Siswa Q ($90$) lebih tinggi daripada nilai mentah Siswa P ($80$).",
+          "alasan": "Siswa terjebak membandingkan nilai mentah secara langsung tanpa menstandarisasikannya ke dalam distribusi normal kelompok."
+        },
+        {
+          "teks": "Siswa Q memiliki posisi relatif lebih unggul daripada Siswa P karena selisih nilai terhadap rata-rata kelasnya lebih besar ($15$ poin berbanding $12$ poin).",
+          "alasan": "Siswa hanya melihat deviasi absolut dari rata-rata tanpa membaginya dengan simpangan baku masing-masing kelompok."
+        },
+        {
+          "teks": "Siswa P memiliki posisi relatif lebih unggul daripada Siswa Q karena simpangan baku Kelas A lebih kecil sehingga sebaran nilainya lebih homogen.",
+          "alasan": "Siswa salah menafsirkan simpangan baku yang lebih kecil sebagai tanda keunggulan posisi individu secara sepihak."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung skor baku Siswa P dari Kelas A:\n$Z_P = \\frac{X_P - \\mu_A}{\\sigma_A} = \\frac{80 - 68}{8} = \\frac{12}{8} = 1,50$\n\nLangkah 2: Menghitung skor baku Siswa Q dari Kelas B:\n$Z_Q = \\frac{X_Q - \\mu_B}{\\sigma_B} = \\frac{90 - 75}{10} = \\frac{15}{10} = 1,50$\n\nLangkah 3: Evaluasi perbandingan posisi relatif:\nKarena $Z_P = Z_Q = 1,50$, kedua siswa berada tepat $1,50$ simpangan baku di atas rata-rata populasinya. Pada kurva normal standar, keduanya memiliki luas daerah di sebelah kiri yang identik, sehingga posisi relatif prestasi kedua siswa adalah sama unggul terhadap kelompok masing-masing.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kurva memiliki titik belok di x = n ! v , cekung di bagian bawah apabila - n v 1 X 1 n + v , dan cekung di bagian atas untuk nilai x lainnya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi sifat geometri kurva normal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi keabsahan pernyataan matematis terkait karakteristik geometri kurva fungsi densitas normal (titik belok dan kecekungan).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kurva fungsi densitas peluang suatu variabel acak normal kontinu $X$ diketahui memiliki titik belok di $x = 55$ dan $x = 75$.\nSeorang analis menyimpulkan tiga hal mengenai distribusi tersebut:\n(1) Rata-rata distribusi adalah $\\mu = 65$.\n(2) Simpangan baku distribusi adalah $\\sigma = 20$.\n(3) Kurva berbentuk cekung ke bawah pada interval $55 < x < 75$.\n\nBerdasarkan sifat-sifat kurva normal, evaluasilah kesimpulan analis tersebut: manakah pernyataan yang benar?",
+      "jawaban_benar": "Pernyataan (1) dan (3) saja",
+      "alasan_benar": "Titik belok kurva normal terletak di $x = \\mu \\pm \\sigma$. Maka $\\mu - \\sigma = 55$ dan $\\mu + \\sigma = 75$. Nilai $\\mu = \\frac{55 + 75}{2} = 65$ (pernyataan 1 benar). Nilai $\\sigma = \\frac{75 - 55}{2} = 10$, bukan 20 (pernyataan 2 salah). Kurva normal cekung ke bawah tepat pada interval $\\mu - \\sigma < x < \\mu + \\sigma$, yaitu $55 < x < 75$ (pernyataan 3 benar).",
+      "distraktor": [
+        {
+          "teks": "Pernyataan (1), (2), dan (3)",
+          "alasan": "Siswa keliru menganggap simpangan baku $\\sigma$ sama dengan jarak horizontal antarkedua titik belok ($2\\sigma = 20$)."
+        },
+        {
+          "teks": "Pernyataan (1) dan (2) saja",
+          "alasan": "Siswa salah memahami sifat kecekungan kurva normal dan keliru dalam menentukan simpangan baku."
+        },
+        {
+          "teks": "Pernyataan (1) saja",
+          "alasan": "Siswa meragukan sifat kecekungan kurva di sekitar nilai rata-rata."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menganalisis titik belok kurva normal.\nKurva distribusi normal memiliki titik belok pada absis $x = \\mu - \\sigma$ dan $x = \\mu + \\sigma$.\nDiketahui titik belok berada di $x_1 = 55$ dan $x_2 = 75$.\n\nLangkah 2: Menghitung rata-rata dan simpangan baku.\n- Rata-rata: $\\mu = \\frac{x_1 + x_2}{2} = \\frac{55 + 75}{2} = 65$ (Pernyataan 1 BENAR).\n- Simpangan baku: $2\\sigma = 75 - 55 = 20 \\implies \\sigma = 10$. Nilai pada pernyataan (2) tertulis $\\sigma = 20$ (Pernyataan 2 SALAH).\n\nLangkah 3: Meninjau kecekungan kurva.\nBerdasarkan sifat distribusi normal, kurva cekung di bagian bawah (cekung ke bawah) apabila $\\mu - \\sigma < x < \\mu + \\sigma$, yang berarti $55 < x < 75$ (Pernyataan 3 BENAR).\n\nJadi, pernyataan yang benar adalah (1) dan (3) saja.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 285,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas kurva pada distribusi normal adalah 1 dan kurva simetris dengan n = 0 , maka luas garis vertikal ke kanan atau ke kiri adalah 0,5."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan interval spesifikasi simetris",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan nilai kritis dari luas ekor simetris dua sisi dan konversi varians menjadi interval batas toleransi produk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel distribusi normal baku menunjukkan nilai peluang kumulatif:\n- $P(Z < -1,25) = 0,1056$\n- $P(Z < 1,25) = 0,8944$\n\nSebuah industri manufaktur memproduksi komponen poros silinder dengan diameter berdistribusi normal yang memiliki rata-rata $\\mu = 25\\text{ mm}$ dan varians $\\sigma^2 = 0,16\\text{ mm}^2$. Komponen yang dapat dipasarkan sebagai \"Kualitas Presisi\" harus memiliki diameter dalam rentang simetris di sekitar rata-rata yang mencakup tepat $78,88\\%$ dari seluruh hasil produksi. Rentang diameter untuk komponen \"Kualitas Presisi\" tersebut adalah ....",
+      "jawaban_benar": "$24,5\\text{ mm} \\le X \\le 25,5\\text{ mm}$",
+      "alasan_benar": "Luas daerah simetris di tengah adalah $0,7888$, sehingga total luas kedua ekor adalah $1 - 0,7888 = 0,2112$. Masing-masing ekor memiliki luas $\\frac{0,2112}{2} = 0,1056$, yang bersesuaian dengan $Z = -1,25$ dan $Z = 1,25$. Simpangan baku adalah $\\sigma = \\sqrt{0,16} = 0,4\\text{ mm}$. Batas deviasi adalah $d = 1,25 \\times 0,4 = 0,5\\text{ mm}$. Rentang diameter menjadi $25 - 0,5 \\le X \\le 25 + 0,5$, yaitu $24,5\\text{ mm} \\le X \\le 25,5\\text{ mm}$.",
+      "distraktor": [
+        {
+          "teks": "$24,8\\text{ mm} \\le X \\le 25,2\\text{ mm}$",
+          "alasan": "Siswa langsung mengalikan nilai baku $Z = 1,25$ dengan varians $\\sigma^2 = 0,16$ tanpa menarik akarnya terlebih dahulu menjadi simpangan baku ($0,4$)."
+        },
+        {
+          "teks": "$23,75\\text{ mm} \\le X \\le 26,25\\text{ mm}$",
+          "alasan": "Siswa langsung menjumlahkan dan mengurangkan nilai $Z = 1,25$ ke rata-rata $\\mu = 25$ tanpa mengalikannya dengan simpangan baku."
+        },
+        {
+          "teks": "$24,0\\text{ mm} \\le X \\le 26,0\\text{ mm}$",
+          "alasan": "Siswa salah menentukan nilai batas deviasi menjadi $1,0\\text{ mm}$ akibat salah membaca nilai tabel."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas ekor distribusi normal.\nDaerah simetris di tengah kurva memiliki luas $78,88\\% = 0,7888$.\nLuas daerah di luar interval tersebut adalah $1 - 0,7888 = 0,2112$.\nKarena kurva normal simetris di sekitar rata-rata, luas pada masing-masing ekor (kiri dan kanan) adalah:\n$\\alpha = \\frac{0,2112}{2} = 0,1056$\n\nLangkah 2: Menentukan nilai baku $Z$.\nDari tabel distribusi normal baku:\n$P(Z < Z_1) = 0,1056 \\implies Z_1 = -1,25$\n$P(Z < Z_2) = 1 - 0,1056 = 0,8944 \\implies Z_2 = 1,25$\n\nLangkah 3: Menghitung simpangan baku $\\sigma$.\nDiketahui varians $\\sigma^2 = 0,16\\text{ mm}^2$, maka:\n$\\sigma = \\sqrt{0,16} = 0,4\\text{ mm}$\n\nLangkah 4: Menentukan rentang diameter.\nBatas toleransi $d = Z \\times \\sigma = 1,25 \\times 0,4 = 0,5\\text{ mm}$.\n- Batas bawah: $X_1 = \\mu - d = 25 - 0,5 = 24,5\\text{ mm}$\n- Batas atas: $X_2 = \\mu + d = 25 + 0,5 = 25,5\\text{ mm}$\n\nJadi, rentang diameter komponen Kualitas Presisi adalah $24,5\\text{ mm} \\le X \\le 25,5\\text{ mm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 293,
+        "bagian": "Latihan Soal Distribusi Normal",
+        "nomor": "7",
+        "teks": "Skor IQ 600 calon mahasiswa berdistribusi normal dengan rata-rata 115 dan standar deviasi 12. Misalkan sebuah perguruan tinggi membutuhkan skor IQ minimal 95. Berapa banyak calon mahasiswa yang akan ditolak atas dasar ini, terlepas dari kualifikasi mereka yang lain?",
+        "jawaban": "29 calon mahasiswa",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kuota rekrutmen ambang ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan dua skor baku, selisih peluang kumulatif pada interval dua batas, dan evaluasi jumlah peserta yang memenuhi kriteria bertingkat.",
+      "stimulus": "Tabel distribusi normal baku memberikan nilai kumulatif berikut:\n- $P(Z < -1,25) = 0,1056$\n- $P(Z < 2,00) = 0,9772$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perusahaan menyelenggarakan tes seleksi potensi akademik yang diikuti oleh $1.200$ peserta. Skor tes berdistribusi normal dengan rata-rata $76$ dan simpangan baku $8$. Manajemen menetapkan aturan: peserta dengan skor kurang dari $66$ langsung dinyatakan gugur, sedangkan peserta dengan skor minimal $92$ langsung diterima tanpa wawancara. Peserta dengan skor di antara kedua batas tersebut diwajibkan mengikuti tahap wawancara. Banyaknya peserta yang dipanggil untuk mengikuti tahap wawancara adalah ....",
+      "jawaban_benar": "$1.046$ orang",
+      "alasan_benar": "Skor z untuk $x_1 = 66$ adalah $z_1 = \\frac{66 - 76}{8} = -1,25$. Skor z untuk $x_2 = 92$ adalah $z_2 = \\frac{92 - 76}{8} = 2,00$. Peluang peserta masuk tahap wawancara adalah $P(66 \\le X < 92) = P(-1,25 \\le Z < 2,00) = P(Z < 2,00) - P(Z < -1,25) = 0,9772 - 0,1056 = 0,8716$. Banyak peserta yang dipanggil adalah $1.200 \\times 0,8716 = 1.045,92 \\approx 1.046$ orang.",
+      "distraktor": [
+        {
+          "teks": "$1.173$ orang",
+          "alasan": "Hanya menghitung peserta yang tidak langsung diterima tanpa mengurangkan peserta yang gugur ($1.200 \\times 0,9772$)."
+        },
+        {
+          "teks": "$926$ orang",
+          "alasan": "Keliru menggunakan nilai $P(Z < 1,25) = 0,8944$ lalu mengurangkannya dari $0,9772$ ($0,0828 \\times 1.200 = 99$, lalu $1.200 - 99 - 175$)."
+        },
+        {
+          "teks": "$1.073$ orang",
+          "alasan": "Salah membaca tabel dengan menghitung $P(Z < 2,00) - (1 - P(Z < 2,00)) = 0,9772 - 0,0228 = 0,9544 \\times 1.200$."
+        }
+      ],
+      "pembahasan": "Transformasikan kedua batas skor ke skor baku $Z$:\n$$z_1 = \\frac{66 - 76}{8} = -1,25$$\n$$z_2 = \\frac{92 - 76}{8} = 2,00$$\n\nHitung peluang skor di antara $66$ dan $92$:\n$$P(66 \\le X < 92) = P(-1,25 \\le Z < 2,00) = P(Z < 2,00) - P(Z < -1,25)$$\n$$P = 0,9772 - 0,1056 = 0,8716$$\n\nHitung perkiraan jumlah peserta yang mengikuti wawancara:\n$$\\text{Banyak peserta} = 1.200 \\times 0,8716 = 1.045,92 \\approx 1.046\\text{ orang}$$\n\nJadi, banyaknya peserta yang dipanggil untuk wawancara adalah $1.046$ orang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 294,
+        "bagian": "Uji Kompetensi Bab 4 B",
+        "nomor": "4",
+        "teks": "Rata-rata jarak tempuh angkutan umum yaitu 5.000 km per bulan dan standar deviasinya 1.200 km yang mengikuti sebaran normal. Tentukan peluang angkutan umum menempuh jarak antara 3.400 km dan 6.500 km dalam 1 bulan.",
+        "jawaban": "0,8026",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis risiko anomali armada",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan konversi dua batas ke skor baku, penentuan komplemen peluang interval, dan evaluasi persentase anomali di dua ekor kurva.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai kumulatif:\n- $P(Z < -1,50) = 0,0668$\n- $P(Z < 1,50) = 0,9332$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jarak tempuh bulanan armada taksi listrik pada suatu perusahaan berdistribusi normal dengan rata-rata $4.200\\text{ km}$ dan simpangan baku $600\\text{ km}$. Manajemen menetapkan bahwa jarak tempuh antara $3.300\\text{ km}$ hingga $5.100\\text{ km}$ per bulan merupakan pemakaian wajar. Taksi yang beroperasi di luar rentang tersebut dinyatakan mengalami anomali pemakaian (terlalu rendah atau terlalu tinggi) sehingga memerlukan inspeksi teknis khusus. Persentase armada taksi yang memerlukan inspeksi teknis khusus tersebut adalah ....",
+      "jawaban_benar": "$13,36\\%$",
+      "alasan_benar": "Skor z batas bawah $z_1 = \\frac{3.300 - 4.200}{600} = -1,50$. Skor z batas atas $z_2 = \\frac{5.100 - 4.200}{600} = 1,50$. Peluang pemakaian normal adalah $P(-1,50 \\le Z \\le 1,50) = 0,9332 - 0,0668 = 0,8664$. Persentase yang di luar batas normal adalah $1 - 0,8664 = 0,1336 = 13,36\\%$.",
+      "distraktor": [
+        {
+          "teks": "$6,68\\%$",
+          "alasan": "Hanya menghitung salah satu ekor kurva anomali ($P(Z < -1,50)$ saja atau $P(Z > 1,50)$ saja)."
+        },
+        {
+          "teks": "$86,64\\%$",
+          "alasan": "Menghitung persentase armada dengan pemakaian wajar, bukan persentase anomali pemakaian."
+        },
+        {
+          "teks": "$26,72\\%$",
+          "alasan": "Salah mengalikan dua hasil anomali dari $0,1336$ menjadi $0,2672$."
+        }
+      ],
+      "pembahasan": "Hitung skor baku kedua batas pemakaian:\n$$z_1 = \\frac{3.300 - 4.200}{600} = -1,50$$\n$$z_2 = \\frac{5.100 - 4.200}{600} = 1,50$$\n\nPeluang armada berada pada rentang pemakaian wajar:\n$$P(3.300 \\le X \\le 5.100) = P(-1,50 \\le Z \\le 1,50)$$\n$$P = P(Z < 1,50) - P(Z < -1,50) = 0,9332 - 0,0668 = 0,8664$$\n\nPeluang armada mengalami anomali pemakaian (di luar batas wajar):\n$$P(\\text{anomali}) = 1 - P(3.300 \\le X \\le 5.100) = 1 - 0,8664 = 0,1336$$\n\nDalam persentase:\n$$0,1336 \\times 100\\% = 13,36\\%$$\n\nJadi, persentase armada taksi yang memerlukan inspeksi teknis khusus adalah $13,36\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kurva memiliki titik belok di x = n ! v , cekung di bagian bawah apabila - n v 1 X 1 n + v , dan cekung di bagian atas untuk nilai x lainnya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pengujian hipotesis parameter titik belok",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis sistem persamaan dari koordinat titik belok kurva normal untuk menemukan rata-rata dan simpangan baku, lalu mengevaluasi peluang di bawah batas toleransi.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai kumulatif $P(Z < -1,75) = 0,0401$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pencetak pelat logam memproduksi pelat dengan ketebalan yang berdistribusi normal. Kurva fungsi densitas ketebalan pelat tersebut memiliki titik belok di $x = 4,65\\text{ mm}$ dan $x = 5,35\\text{ mm}$. Pelat dianggap cacat tipis jika ketebalannya kurang dari $4,3875\\text{ mm}$. Berdasarkan karakteristik kurva tersebut, peluang sebuah pelat yang diproduksi mengalami cacat tipis adalah ....",
+      "jawaban_benar": "$0,0401$",
+      "alasan_benar": "Titik belok berada di $\\mu - \\sigma = 4,65$ dan $\\mu + \\sigma = 5,35$. Menjumlahkan keduanya: $2\\mu = 10,00 \\implies \\mu = 5,00\\text{ mm}$. Mengurangkannya: $2\\sigma = 0,70 \\implies \\sigma = 0,35\\text{ mm}$. Skor baku batas cacat: $z = \\frac{4,3875 - 5,00}{0,35} = \\frac{-0,6125}{0,35} = -1,75$. Dari stimulus, $P(Z < -1,75) = 0,0401$.",
+      "distraktor": [
+        {
+          "teks": "$0,9599$",
+          "alasan": "Menghitung komplemennya $1 - 0,0401 = 0,9599$ (peluang pelat tidak cacat tipis)."
+        },
+        {
+          "teks": "$0,0802$",
+          "alasan": "Keliru mengalikan dua peluang karena menganggap cacat terjadi di kedua ujung."
+        },
+        {
+          "teks": "$0,0200$",
+          "alasan": "Keliru membagi dua nilai peluang pada tabel."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat kurva distribusi normal, titik belok berada pada $x = \\mu - \\sigma$ dan $x = \\mu + \\sigma$.\nDiketahui:\n$$\\mu - \\sigma = 4,65$$\n$$\\mu + \\sigma = 5,35$$\n\nJumlahkan kedua persamaan:\n$$2\\mu = 10,00 \\implies \\mu = 5,00\\text{ mm}$$\n\nKurangkan kedua persamaan:\n$$2\\sigma = 0,70 \\implies \\sigma = 0,35\\text{ mm}$$\n\nHitung skor baku untuk batas cacat tipis $x = 4,3875\\text{ mm}$:\n$$z = \\frac{4,3875 - 5,00}{0,35} = \\frac{-0,6125}{0,35} = -1,75$$\n\nPeluang pelat mengalami cacat tipis adalah:\n$$P(X < 4,3875) = P(Z < -1,75) = 0,0401$$\n\nJadi, peluang pelat mengalami cacat tipis adalah $0,0401$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Z = x - v n ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan batas dispersi relatif",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perancangan batasan nilai parameter dispersi (simpangan baku) agar keunggulan performa relatif (skor Z) memenuhi ketidaksamaan yang disyaratkan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua divisi dalam sebuah korporasi menempuh uji kelayakan tahunan dengan skor berdistribusi normal:\n- Divisi A memiliki skor rata-rata $\\mu_A = 72$ dengan simpangan baku $\\sigma_A = 6$.\n- Divisi B memiliki skor rata-rata $\\mu_B = 80$ dengan simpangan baku $\\sigma_B$.\n\nKaryawan teladan dari Divisi A memperoleh skor $81$. Seorang karyawan dari Divisi B memperoleh skor $95$. Agar posisi prestasi relatif (skor baku $Z$) karyawan Divisi B tersebut lebih unggul secara statistik dibandingkan karyawan teladan dari Divisi A, simpangan baku Divisi B ($\\sigma_B$) harus memenuhi syarat ....",
+      "jawaban_benar": "$0 < \\sigma_B < 10$",
+      "alasan_benar": "Skor baku karyawan Divisi A: $Z_A = \\frac{81 - 72}{6} = \\frac{9}{6} = 1,50$. Skor baku karyawan Divisi B: $Z_B = \\frac{95 - 80}{\\sigma_B} = \\frac{15}{\\sigma_B}$. Agar prestasi relatif karyawan Divisi B lebih unggul, disyaratkan $Z_B > Z_A \\implies \\frac{15}{\\sigma_B} > 1,50 \\implies \\sigma_B < \\frac{15}{1,50} = 10$. Karena simpangan baku selalu bernilai positif, maka $0 < \\sigma_B < 10$.",
+      "distraktor": [
+        {
+          "teks": "$\\sigma_B > 10$",
+          "alasan": "Membalik tanda pertidaksamaan saat membagi dengan bilangan positif."
+        },
+        {
+          "teks": "$0 < \\sigma_B < 15$",
+          "alasan": "Lupa mengalikan dengan $1,50$ dan langsung mengambil selisih skor $95 - 80 = 15$."
+        },
+        {
+          "teks": "$\\sigma_B > 12$",
+          "alasan": "Keliru membagi $15$ dengan perbandingan varians bukan skor baku."
+        }
+      ],
+      "pembahasan": "Hitung skor baku ($Z$) untuk karyawan dari Divisi A:\n$$Z_A = \\frac{X_A - \\mu_A}{\\sigma_A} = \\frac{81 - 72}{6} = \\frac{9}{6} = 1,50$$\n\nHitung bentuk skor baku ($Z$) untuk karyawan dari Divisi B:\n$$Z_B = \\frac{X_B - \\mu_B}{\\sigma_B} = \\frac{95 - 80}{\\sigma_B} = \\frac{15}{\\sigma_B}$$\n\nAgar prestasi relatif karyawan Divisi B lebih unggul daripada karyawan Divisi A, maka harus dipenuhi:\n$$Z_B > Z_A$$\n$$\\frac{15}{\\sigma_B} > 1,50$$\n\nKarena simpangan baku $\\sigma_B$ merupakan ukuran dispersi yang wajib bernilai positif ($\\sigma_B > 0$):\n$$15 > 1,50\\sigma_B \\implies \\sigma_B < \\frac{15}{1,50} = 10$$\n\nDengan demikian, batas nilai simpangan baku Divisi B adalah $0 < \\sigma_B < 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas daerah yang terletak di bawah kurva dan di atas sumbu mendatar sama dengan 1."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perbandingan sensitivitas dispersi kurva",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan komparasi dua kurva normal yang memiliki rata-rata identik tetapi simpangan baku berbeda untuk mengevaluasi selisih probabilitas konsentrasi data pada interval simetris.",
+      "stimulus": "Tabel distribusi normal baku memberikan nilai peluang kumulatif:\n- $P(Z < -1,00) = 0,1587$ dan $P(Z < 1,00) = 0,8413$\n- $P(Z < -0,50) = 0,3085$ dan $P(Z < 0,50) = 0,6915$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua lini mesin pengemasan gula, Mesin I dan Mesin II, menghasilkan berat kemasan berdistribusi normal dengan rata-rata yang sama, yaitu $\\mu = 1.000\\text{ gram}$. Namun, tingkat presisinya berbeda: Mesin I memiliki simpangan baku $\\sigma_1 = 10\\text{ gram}$, sedangkan Mesin II memiliki simpangan baku $\\sigma_2 = 20\\text{ gram}$. Sebuah kemasan dikategorikan memiliki berat sangat presisi apabila berada pada rentang $990\\text{ gram} \\le X \\le 1.010\\text{ gram}$. Selisih peluang kemasan berstatus sangat presisi antara Mesin I dan Mesin II adalah ....",
+      "jawaban_benar": "$0,2996$",
+      "alasan_benar": "Untuk Mesin I: interval $[990, 1010]$ menghasilkan $z_1 = \\frac{990 - 1000}{10} = -1,00$ dan $z_2 = 1,00$. Peluangnya $P_1 = 0,8413 - 0,1587 = 0,6826$. Untuk Mesin II: interval $[990, 1010]$ menghasilkan $z_1 = \\frac{990 - 1000}{20} = -0,50$ dan $z_2 = 0,50$. Peluangnya $P_2 = 0,6915 - 0,3085 = 0,3830$. Selisih peluang keduanya adalah $|P_1 - P_2| = 0,6826 - 0,3830 = 0,2996$.",
+      "distraktor": [
+        {
+          "teks": "$0,1498$",
+          "alasan": "Hanya menghitung selisih setengah sisi kurva ($0,8413 - 0,6915 = 0,1498$)."
+        },
+        {
+          "teks": "$0,3830$",
+          "alasan": "Mengambil peluang Mesin II saja tanpa menghitung selisih dengan Mesin I."
+        },
+        {
+          "teks": "$0,6826$",
+          "alasan": "Mengambil peluang Mesin I saja tanpa menghitung selisih dengan Mesin II."
+        }
+      ],
+      "pembahasan": "Hitung peluang kemasan sangat presisi untuk Mesin I:\n- Batas nilai z:\n$$z_1 = \\frac{990 - 1.000}{10} = -1,00$$\n$$z_2 = \\frac{1.010 - 1.000}{10} = 1,00$$\n- Peluang Mesin I:\n$$P_1 = P(-1,00 \\le Z \\le 1,00) = P(Z < 1,00) - P(Z < -1,00) = 0,8413 - 0,1587 = 0,6826$$\n\nHitung peluang kemasan sangat presisi untuk Mesin II:\n- Batas nilai z:\n$$z_1 = \\frac{990 - 1.000}{20} = -0,50$$\n$$z_2 = \\frac{1.010 - 1.000}{20} = 0,50$$\n- Peluang Mesin II:\n$$P_2 = P(-0,50 \\le Z \\le 0,50) = P(Z < 0,50) - P(Z < -0,50) = 0,6915 - 0,3085 = 0,3830$$\n\nHitung selisih peluang kemasan berstatus sangat presisi:\n$$\\Delta P = P_1 - P_2 = 0,6826 - 0,3830 = 0,2996$$\n\nJadi, selisih peluang antara Mesin I dan Mesin II adalah $0,2996$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas daerah yang terletak di bawah kurva dan di atas sumbu mendatar sama dengan 1."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis ekor ganda distribusi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi daerah penolakan pada kedua ujung kurva normal untuk menentukan batas persentase ketidaksesuaian.",
+      "stimulus": "Tabel distribusi normal baku memuat nilai kumulatif berikut:\n- $P(Z < -1,80) = 0,0359$\n- $P(Z < 2,20) = 0,9861$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin produksi pipa baja menghasilkan pipa dengan diameter rata-rata $\\mu = 50\\text{ mm}$ dan simpangan baku $\\sigma = 2,5\\text{ mm}$. Pipa dinyatakan cacat dan harus dilebur kembali apabila diameternya kurang dari $45,5\\text{ mm}$ atau lebih dari $55,5\\text{ mm}$. Berapakah persentase total pipa yang dinyatakan cacat?",
+      "jawaban_benar": "$4,98\\%$",
+      "alasan_benar": "Menghitung $Z_1 = (45,5 - 50)/2,5 = -1,80$ dengan peluang $P(Z < -1,80) = 0,0359$. Menghitung $Z_2 = (55,5 - 50)/2,5 = 2,20$ dengan ekor atas $P(Z > 2,20) = 1 - 0,9861 = 0,0139$. Total persentase cacat adalah $(0,0359 + 0,0139) \\times 100\\% = 0,0498 \\times 100\\% = 4,98\\%$.",
+      "distraktor": [
+        {
+          "teks": "$95,02\\%$",
+          "alasan": "Menghitung persentase produk yang tidak cacat (diterima) bukan produk cacat."
+        },
+        {
+          "teks": "$2,20\\%$",
+          "alasan": "Hanya menghitung salah satu ekor atau mengambil nilai $Z$ sebagai persentase."
+        },
+        {
+          "teks": "$7,18\\%$",
+          "alasan": "Mengalikan peluang ekor kiri dengan 2 secara keliru: $2 \\times 0,0359 = 0,0718$ tanpa memperhitungkan batas atas yang asimetris terhadap rata-rata."
+        }
+      ],
+      "pembahasan": "Langkah 1: Transformasi batas bawah diameter ($x_1 = 45,5\\text{ mm}$) ke skor baku:\n$$Z_1 = \\frac{45,5 - 50}{2,5} = \\frac{-4,5}{2,5} = -1,80$$\nLangkah 2: Transformasi batas atas diameter ($x_2 = 55,5\\text{ mm}$) ke skor baku:\n$$Z_2 = \\frac{55,5 - 50}{2,5} = \\frac{5,5}{2,5} = 2,20$$\nLangkah 3: Menghitung peluang cacat pada masing-masing ekor distribusi:\n- Peluang terlalu kecil: $P(X < 45,5) = P(Z < -1,80) = 0,0359$\n- Peluang terlalu besar: $P(X > 55,5) = P(Z > 2,20) = 1 - P(Z < 2,20) = 1 - 0,9861 = 0,0139$\nLangkah 4: Menjumlahkan kedua peluang cacat dan mengonversi ke persentase:\n$$P(\\text{Cacat}) = 0,0359 + 0,0139 = 0,0498$$\n$$\\text{Persentase} = 0,0498 \\times 100\\% = 4,98\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Proses mengubah distribusi normal umum menjadi distribusi normal baku menggunakan transformasi nilai baku dengan Z = x - v n ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis nilai batas persentil",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan skor baku dari persentase batas bawah pada tabel, kemudian menyelesaikan sistem aljabar untuk mencari nilai batas variabel acak.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai peluang kumulatif:\n- $P(Z < -0,84) = 0,2005$\n- $P(Z < 0,84) = 0,7995$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Masa pakai kompresor kulkas berdistribusi normal dengan rata-rata $10\\text{ tahun}$ dan simpangan baku $2,5\\text{ tahun}$. Pabrik ingin menetapkan batas masa garansi sedemikian rupa sehingga paling banyak $20\\%$ dari seluruh kompresor yang terjual memerlukan klaim garansi. Berdasarkan data tabel, batas masa garansi paling lama yang dapat ditetapkan oleh pabrik adalah ...",
+      "jawaban_benar": "$7,9\\text{ tahun}$",
+      "alasan_benar": "Peluang kumulatif garansi adalah $20\\% = 0,20$. Dari tabel, $P(Z < -0,84) \\approx 0,2005$. Maka $Z = -0,84$. Nilai $x = \\mu + Z\\sigma = 10 + (-0,84)(2,5) = 10 - 2,1 = 7,9\\text{ tahun}$.",
+      "distraktor": [
+        {
+          "teks": "$8,4\\text{ tahun}$",
+          "alasan": "Mengurangi rata-rata langsung dengan nilai skor baku: $10 - 0,84 \\times 2$ atau salah hitung perkalian."
+        },
+        {
+          "teks": "$12,1\\text{ tahun}$",
+          "alasan": "Menggunakan skor baku positif: $10 + 2,1 = 12,1\\text{ tahun}$ yang menghasilkan persentil $80\\%$ teratas."
+        },
+        {
+          "teks": "$7,5\\text{ tahun}$",
+          "alasan": "Hanya mengurangkan satu kali simpangan baku dari rata-rata: $10 - 2,5 = 7,5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai peluang kumulatif yang menjadi batas garansi:\nPabrik menginginkan klaim garansi mencakup $20\\%$ atau $0,20$ data paling kiri pada kurva normal: $P(X < x) \\le 0,20$.\nLangkah 2: Menentukan nilai $Z$ yang bersesuaian dari tabel distribusi normal:\nDari data stimulus, $P(Z < -0,84) = 0,2005 \\approx 0,20$, sehingga nilai skor baku adalah $Z = -0,84$.\nLangkah 3: Menggunakan rumus transformasi nilai baku $Z = \\frac{x - \\mu}{\\sigma}$:\n$$-0,84 = \\frac{x - 10}{2,5}$$\nLangkah 4: Menyelesaikan nilai $x$:\n$$x - 10 = -0,84 \\times 2,5$$\n$$x - 10 = -2,1$$\n$$x = 10 - 2,1 = 7,9\\text{ tahun}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0292-latihan-soal-distribusi-normal-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi ambang mutu bersyarat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan skor baku dua sisi, perhitungan komplemen peluang interval toleransi, dan evaluasi jumlah unit yang tidak memenuhi kriteria kelayakan.",
+      "stimulus": "Tabel distribusi normal baku memberikan nilai peluang kumulatif berikut:\n- $P(Z < -1,80) = 0,0359$\n- $P(Z < 1,80) = 0,9641$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah industri komponen mesin memproduksi poros engsel dengan diameter yang berdistribusi normal. Rata-rata diameter poros adalah $48\\text{ mm}$ dengan simpangan baku $5\\text{ mm}$. Standar kelayakan mengharuskan diameter poros berada pada rentang antara $39\\text{ mm}$ dan $57\\text{ mm}$. Komponen yang berada di luar rentang tersebut dinyatakan tidak lolos seleksi dan harus didaur ulang. Dari total produksi sebanyak $5.000$ unit poros engsel, perkiraan banyaknya komponen yang harus didaur ulang adalah ....",
+      "jawaban_benar": "$359\\text{ unit}$",
+      "alasan_benar": "Nilai baku batas bawah adalah $z_1 = \\frac{39 - 48}{5} = -1,80$ dan batas atas adalah $z_2 = \\frac{57 - 48}{5} = 1,80$. Peluang poros memenuhi standar kelayakan adalah $P(-1,80 < Z < 1,80) = P(Z < 1,80) - P(Z < -1,80) = 0,9641 - 0,0359 = 0,9282$. Maka peluang poros tidak lolos (harus didaur ulang) adalah $1 - 0,9282 = 0,0718$. Jadi, perkiraan banyak komponen yang didaur ulang adalah $5.000 \\times 0,0718 = 359\\text{ unit}$.",
+      "distraktor": [
+        {
+          "teks": "$4.641\\text{ unit}$",
+          "alasan": "Siswa menghitung banyaknya komponen yang lolos seleksi kelayakan, bukan yang harus didaur ulang ($5.000 \\times 0,9282$)."
+        },
+        {
+          "teks": "$180\\text{ unit}$",
+          "alasan": "Siswa hanya menghitung komponen yang gagal pada salah satu sisi ekor distribusi ($5.000 \\times 0,0359 = 179,5 \\approx 180$)."
+        },
+        {
+          "teks": "$718\\text{ unit}$",
+          "alasan": "Siswa salah memperlakukan persentase kegagalan $0,0718$ sebagai desimal yang dikalikan basis $10.000$ bukan $5.000$."
+        }
+      ],
+      "pembahasan": "Transformasikan nilai batas ke nilai baku $Z$:\n$$z_1 = \\frac{39 - 48}{5} = -1,80$$\n$$z_2 = \\frac{57 - 48}{5} = 1,80$$\nPeluang produk memenuhi standar spesifikasi:\n$$P(39 < X < 57) = P(-1,80 < Z < 1,80) = P(Z < 1,80) - P(Z < -1,80) = 0,9641 - 0,0359 = 0,9282$$\nPeluang produk gagal dan harus didaur ulang:\n$$P(\\text{daur ulang}) = 1 - 0,9282 = 0,0718$$\nBanyaknya komponen yang harus didaur ulang:\n$$N = 5.000 \\times 0,0718 = 359\\text{ unit}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 285,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas kurva pada distribusi normal adalah 1 dan kurva simetris dengan n = 0 , maka luas garis vertikal ke kanan atau ke kiri adalah 0,5."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi probabilitas bersyarat distribusi normal",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan transformasi skor baku ganda, penentuan peluang ekor atas, dan evaluasi peluang bersyarat pada sebaran kontinu.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai peluang kumulatif berikut:\n- $P(Z < 0,50) = 0,6915$\n- $P(Z < 1,50) = 0,9332$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Masa pakai lampu penerangan jalan berdistribusi normal dengan rata-rata $\\mu = 4.000\\text{ jam}$ dan simpangan baku $\\sigma = 500\\text{ jam}$. Sebuah lampu yang terpasang telah bertahan menyala selama $4.250\\text{ jam}$. Peluang bahwa lampu tersebut masih akan terus berfungsi melampaui $4.750\\text{ jam}$ adalah ....",
+      "jawaban_benar": "$0,2165$",
+      "alasan_benar": "Nilai baku untuk $4.250\\text{ jam}$ adalah $z_1 = \\frac{4.250 - 4.000}{500} = 0,50$ sehingga $P(X > 4.250) = 1 - 0,6915 = 0,3085$. Nilai baku untuk $4.750\\text{ jam}$ adalah $z_2 = \\frac{4.750 - 4.000}{500} = 1,50$ sehingga $P(X > 4.750) = 1 - 0,9332 = 0,0668$. Peluang bersyaratnya adalah $P(X > 4.750 \\mid X > 4.250) = \\frac{P(X > 4.750)}{P(X > 4.250)} = \\frac{0,0668}{0,3085} \\approx 0,2165$.",
+      "distraktor": [
+        {
+          "teks": "$0,2417$",
+          "alasan": "Siswa salah mengira peluang bersyarat sebagai pengurangan selisih peluang langsung ($0,3085 - 0,0668$)."
+        },
+        {
+          "teks": "$0,0668$",
+          "alasan": "Siswa hanya menghitung peluang tanpa syarat bahwa lampu bertahan lebih dari $4.750\\text{ jam}$."
+        },
+        {
+          "teks": "$0,0966$",
+          "alasan": "Siswa membagi nilai $P(X > 4.750)$ dengan $P(X \\le 4.250)$ yaitu $\\frac{0,0668}{0,6915} \\approx 0,0966$."
+        }
+      ],
+      "pembahasan": "Hitung nilai baku masing-masing ambang batas:\n$$z_1 = \\frac{4.250 - 4.000}{500} = 0,50$$\n$$z_2 = \\frac{4.750 - 4.000}{500} = 1,50$$\nTentukan peluang ekor kanan:\n$$P(X > 4.250) = 1 - P(Z < 0,50) = 1 - 0,6915 = 0,3085$$\n$$P(X > 4.750) = 1 - P(Z < 1,50) = 1 - 0,9332 = 0,0668$$\nKarena kejadian $X > 4.750$ merupakan himpunan bagian dari $X > 4.250$, peluang bersyaratnya adalah:\n$$P(X > 4.750 \\mid X > 4.250) = \\frac{P(X > 4.750 \\cap X > 4.250)}{P(X > 4.250)} = \\frac{P(X > 4.750)}{P(X > 4.250)} = \\frac{0,0668}{0,3085} \\approx 0,2165$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk penggunaan praktis, telah disusun daftar distribusi normal standar atau distribusi normal baku dengan rata-rata n = 0 dan simpangan baku v = 1 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi spesifikasi mutu sistemik",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemecahan sistem persamaan linear untuk menemukan parameter populasi rata-rata dan simpangan baku, lalu mengevaluasi proporsi pemenuhan ambang batas baru.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai peluang kumulatif berikut:\n- $P(Z < -2,00) = 0,0228$\n- $P(Z < -1,50) = 0,0668$\n- $P(Z < 1,00) = 0,8413$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kuat tarik kawat baja yang dihasilkan suatu mesin berdistribusi normal dengan rata-rata $\\mu$ dan simpangan baku $\\sigma$. Pengujian laboratorium menunjukkan bahwa sebanyak $6,68\\%$ kawat memiliki kuat tarik kurang dari $470\\text{ MPa}$, sedangkan $84,13\\%$ kawat memiliki kuat tarik kurang dari $520\\text{ MPa}$. Standar konstruksi menetapkan bahwa kawat baja dapat diterima jika memiliki kuat tarik minimal $460\\text{ MPa}$. Persentase kawat baja yang memenuhi standar konstruksi tersebut adalah ....",
+      "jawaban_benar": "$97,72\\%$",
+      "alasan_benar": "Dari tabel, $P(Z < -1,50) = 0,0668$ dan $P(Z < 1,00) = 0,8413$, menghasilkan persamaan $\\mu - 1,50\\sigma = 470$ dan $\\mu + 1,00\\sigma = 520$. Selisihnya memberikan $2,50\\sigma = 50 \\implies \\sigma = 20\\text{ MPa}$ dan $\\mu = 500\\text{ MPa}$. Untuk kuat tarik minimal $460\\text{ MPa}$, diperoleh skor baku $z = \\frac{460 - 500}{20} = -2,00$. Peluang memenuhi standar adalah $P(X \\ge 460) = 1 - P(Z < -2,00) = 1 - 0,0228 = 0,9772 = 97,72\\%$.",
+      "distraktor": [
+        {
+          "teks": "$93,32\\%$",
+          "alasan": "Siswa mengira batas minimal adalah $470\\text{ MPa}$ sehingga langsung menghitung $1 - 0,0668 = 0,9332$."
+        },
+        {
+          "teks": "$84,13\\%$",
+          "alasan": "Siswa langsung mengambil angka persentil kedua dari soal tanpa menelaah batas spesifikasi $460\\text{ MPa}$."
+        },
+        {
+          "teks": "$2,28\\%$",
+          "alasan": "Siswa menghitung persentase kawat yang gagal memenuhi standar konstruksi ($P(Z < -2,00)$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai baku dari peluang kumulatif yang diketahui:\n- $P(X < 470) = 0,0668 \\implies z_1 = -1,50$\n- $P(X < 520) = 0,8413 \\implies z_2 = 1,00$\n\nLangkah 2: Menyusun dan menyelesaikan sistem persamaan linear:\n$$\\frac{470 - \\mu}{\\sigma} = -1,50 \\implies \\mu - 1,50\\sigma = 470$$\n$$\\frac{520 - \\mu}{\\sigma} = 1,00 \\implies \\mu + 1,00\\sigma = 520$$\nKurangkan persamaan kedua dengan persamaan pertama:\n$$2,50\\sigma = 50 \\implies \\sigma = 20\\text{ MPa}$$\n$$\\mu = 520 - 1,00(20) = 500\\text{ MPa}$$\n\nLangkah 3: Menghitung skor baku untuk ambang batas spesifikasi $X = 460\\text{ MPa}$:\n$$z = \\frac{460 - 500}{20} = -2,00$$\n\nLangkah 4: Menghitung persentase kawat yang memenuhi standar ($X \\ge 460\\text{ MPa}$):\n$$P(X \\ge 460) = 1 - P(Z < -2,00) = 1 - 0,0228 = 0,9772 = 97,72\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-g-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 284,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Semakin besar v , semakin rendah kurvanya (platikurtik). Semakin kecil v , semakin tinggi kurvanya (leptokurtik)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komparasi risiko cacat ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perhitungan nilai baku dua sisi dari dua populasi independen dengan parameter berbeda, evaluasi total probabilitas cacat tiap proses, dan perbandingan selisih tingkat cacat.",
+      "stimulus": "Tabel distribusi normal baku menunjukkan nilai peluang kumulatif berikut:\n- $P(Z < -1,00) = 0,1587$\n- $P(Z < 1,50) = 0,9332$\n- $P(Z < 2,00) = 0,9772$",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua mesin pengisi cairan botol saus beroperasi secara terpisah:\n- Mesin A: volume berdistribusi normal dengan rata-rata $\\mu_A = 300\\text{ ml}$ dan simpangan baku $\\sigma_A = 4\\text{ ml}$.\n- Mesin B: volume berdistribusi normal dengan rata-rata $\\mu_B = 305\\text{ ml}$ dan simpangan baku $\\sigma_B = 2\\text{ ml}$.\n\nSebuah botol dinyatakan cacat jika volumenya kurang dari $296\\text{ ml}$ (kurang isi) atau lebih dari $308\\text{ ml}$ (meluap). Berdasarkan kriteria tersebut, selisih persentase total botol cacat antara Mesin A dan Mesin B adalah ....",
+      "jawaban_benar": "$11,47\\%$",
+      "alasan_benar": "Untuk Mesin A, batas bawah $z_1 = \\frac{296-300}{4} = -1,00$ ($P = 0,1587$) dan batas atas $z_2 = \\frac{308-300}{4} = 2,00$ ($P = 1 - 0,9772 = 0,0228$). Total cacat Mesin A adalah $0,1587 + 0,0228 = 0,1815 = 18,15\\%$. Untuk Mesin B, batas bawah $z_1 = \\frac{296-305}{2} = -4,50$ ($P \\approx 0$) dan batas atas $z_2 = \\frac{308-305}{2} = 1,50$ ($P = 1 - 0,9332 = 0,0668 = 6,68\\%$). Total cacat Mesin B adalah $6,68\\%$. Selisih persentase cacat keduanya adalah $18,15\\% - 6,68\\% = 11,47\\%$.",
+      "distraktor": [
+        {
+          "teks": "$9,19\\%$",
+          "alasan": "Siswa lupa memperhitungkan cacat meluap pada Mesin A dan hanya mengurangkan $15,87\\% - 6,68\\% = 9,19\\%$."
+        },
+        {
+          "teks": "$4,40\\%$",
+          "alasan": "Siswa hanya membandingkan selisih persentase cacat meluap antara Mesin B dan Mesin A ($6,68\\% - 2,28\\% = 4,40\\%$)."
+        },
+        {
+          "teks": "$24,83\\%$",
+          "alasan": "Siswa menjumlahkan total tingkat kecacatan kedua mesin bukannya mencari selisihnya ($18,15\\% + 6,68\\% = 24,83\\%$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung persentase cacat Mesin A\n- Cacat kurang isi ($X < 296\\text{ ml}$):\n$$z = \\frac{296 - 300}{4} = -1,00 \\implies P(Z < -1,00) = 0,1587$$\n- Cacat meluap ($X > 308\\text{ ml}$):\n$$z = \\frac{308 - 300}{4} = 2,00 \\implies P(Z > 2,00) = 1 - 0,9772 = 0,0228$$\n- Total cacat Mesin A:\n$$P_A = 0,1587 + 0,0228 = 0,1815 = 18,15\\%$$\n\nLangkah 2: Menghitung persentase cacat Mesin B\n- Cacat kurang isi ($X < 296\\text{ ml}$):\n$$z = \\frac{296 - 305}{2} = -4,50 \\implies P(Z < -4,50) \\approx 0,0000$$\n- Cacat meluap ($X > 308\\text{ ml}$):\n$$z = \\frac{308 - 305}{2} = 1,50 \\implies P(Z > 1,50) = 1 - 0,9332 = 0,0668$$\n- Total cacat Mesin B:\n$$P_B = 0,0000 + 0,0668 = 0,0668 = 6,68\\%$$\n\nLangkah 3: Menghitung selisih persentase cacat:\n$$\\Delta P = 18,15\\% - 6,68\\% = 11,47\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

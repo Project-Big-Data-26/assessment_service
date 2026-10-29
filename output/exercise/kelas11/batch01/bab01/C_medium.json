@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0056-latihan-15-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aljabar komposisi dan invers",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan nilai parameter b dari persamaan komposisi fungsi sebelum menentukan rumus fungsi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x + b$ dengan $(f \\circ f)(x) = 9x + 20$. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$\\frac{x - 5}{3}$",
+      "alasan_benar": "$(f \\circ f)(x) = 3(3x + b) + b = 9x + 4b$. Karena $(f \\circ f)(x) = 9x + 20$, diperoleh $4b = 20 \\implies b = 5$. Maka $f(x) = 3x + 5$. Dengan memisalkan $y = 3x + 5$, diperoleh $x = \\frac{y - 5}{3}$, sehingga $f^{-1}(x) = \\frac{x - 5}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{x + 5}{3}$",
+          "alasan": "Siswa salah mengubah tanda ketika memindahkan konstanta saat mencari fungsi invers."
+        },
+        {
+          "teks": "$\\frac{x - 20}{3}$",
+          "alasan": "Siswa langsung menggunakan nilai konstanta hasil komposisi 20 tanpa membaginya dengan 4 untuk mencari nilai b."
+        },
+        {
+          "teks": "$\\frac{x - 5}{9}$",
+          "alasan": "Siswa keliru membagi dengan koefisien hasil komposisi 9 alih-alih koefisien fungsi asal 3."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus $(f \\circ f)(x)$:\n$(f \\circ f)(x) = f(f(x)) = 3(3x + b) + b = 9x + 4b$.\n\nLangkah 2: Menyamakan dengan fungsi komposisi yang diketahui:\n$9x + 4b = 9x + 20$\n$4b = 20 \\implies b = 5$.\nDiperoleh rumus fungsi $f(x) = 3x + 5$.\n\nLangkah 3: Menentukan rumus fungsi invers $f^{-1}(x)$:\n$y = 3x + 5$\n$3x = y - 5$\n$x = \\frac{y - 5}{3}$\nJadi, $f^{-1}(x) = \\frac{x - 5}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0055-latihan-15-2c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain fungsi invers",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis daerah hasil fungsi irasional terlebih dahulu untuk menentukan daerah asal fungsi inversnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{2x - 10} + 4$ yang terdefinisi untuk $x \\ge 5$. Daerah asal (domain) dari fungsi invers $f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$",
+      "alasan_benar": "Domain fungsi invers $f^{-1}$ sama dengan range dari fungsi asal $f$. Karena untuk $x \\ge 5$ nilai $\\sqrt{2x - 10} \\ge 0$, maka nilai $f(x) \\ge 0 + 4 = 4$. Daerah hasil fungsi $f$ adalah $R_f = \\{y \\in \\mathbb{R} \\mid y \\ge 4\\}$, sehingga $D_{f^{-1}} = \\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ge 5\\}$",
+          "alasan": "Siswa mengira daerah asal fungsi invers sama persis dengan daerah asal fungsi asal f."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+          "alasan": "Siswa hanya menggunakan syarat non-negatif bentuk akar tanpa memperhitungkan penjumlahan konstanta 4."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ge 10\\}$",
+          "alasan": "Siswa salah menentukan nilai batas bawah akar dengan mengambil angka 10 langsung."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan daerah hasil (range) fungsi asal $f(x)$:\nBentuk akar memiliki nilai non-negatif untuk seluruh daerah asalnya:\n$\\sqrt{2x - 10} \\ge 0$ untuk setiap $x \\ge 5$.\n\nLangkah 2: Menentukan batas nilai $f(x)$:\n$f(x) = \\sqrt{2x - 10} + 4 \\ge 0 + 4 = 4$.\nMaka daerah hasil fungsi $f$ adalah $R_f = \\{y \\in \\mathbb{R} \\mid y \\ge 4\\}$.\n\nLangkah 3: Menentukan domain fungsi invers:\nBerdasarkan sifat fungsi invers, daerah asal fungsi invers sama dengan daerah hasil fungsi asal:\n$D_{f^{-1}} = R_f = \\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 52,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "1. Ubah y = f (x) menjadi bentuk x = f (y)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "fungsi invers pecahan linear",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan manipulasi aljabar persamaan rasional dalam beberapa langkah untuk mengisolasi variabel x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{2x + 5}{3x - 4}$ dengan $x \\ne \\frac{4}{3}$. Rumus untuk fungsi invers $f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$\\frac{4x + 5}{3x - 2}$",
+      "alasan_benar": "Misalkan $y = \\frac{2x + 5}{3x - 4}$. Kalikan silang: $y(3x - 4) = 2x + 5 \\iff 3xy - 4y = 2x + 5$. Kumpulkan suku berpeubah $x$: $3xy - 2x = 4y + 5 \\iff x(3y - 2) = 4y + 5 \\iff x = \\frac{4y + 5}{3y - 2}$. Jadi, $f^{-1}(x) = \\frac{4x + 5}{3x - 2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4x - 5}{3x - 2}$",
+          "alasan": "Siswa salah mengubah tanda konstanta 5 saat memindah ruas ke sisi kanan."
+        },
+        {
+          "teks": "$\\frac{-4x + 5}{3x + 2}$",
+          "alasan": "Siswa keliru memproses tanda negatif pada pemfaktoran variabel x."
+        },
+        {
+          "teks": "$\\frac{3x - 4}{2x + 5}$",
+          "alasan": "Siswa secara keliru hanya menukar posisi pembilang dan penyebut fungsi asal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tulis persamaan dalam bentuk $y = f(x)$ dan kalikan penyebut ke ruas kiri:\n$y = \\frac{2x + 5}{3x - 4}$\n$y(3x - 4) = 2x + 5$\n$3xy - 4y = 2x + 5$\n\nLangkah 2: Kumpulkan semua suku yang memuat peubah $x$ ke salah satu ruas:\n$3xy - 2x = 4y + 5$\n$x(3y - 2) = 4y + 5$\n\nLangkah 3: Nyatakan $x$ dalam $y$ lalu ganti peubah ke rumus $f^{-1}(x)$:\n$x = \\frac{4y + 5}{3y - 2}$\nJadi, rumus fungsi inversnya adalah $f^{-1}(x) = \\frac{4x + 5}{3x - 2}$ untuk $x \\ne \\frac{2}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g−1 )(x)?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "evaluasi invers fungsi komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan rumus fungsi komposisi kemudian mencari prapeta nilai fungsi inversnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 2x - 3$ dan $g(x) = \\frac{x + 1}{4}$. Jika $h(x) = (f \\circ g)(x)$, maka nilai dari $h^{-1}(5)$ adalah ....",
+      "jawaban_benar": "15",
+      "alasan_benar": "$h(x) = f(g(x)) = 2\\left(\\frac{x + 1}{4}\\right) - 3 = \\frac{x + 1}{2} - 3 = \\frac{x - 5}{2}$. Untuk mencari $h^{-1}(5)$, selesaikan $h(x) = 5 \\implies \\frac{x - 5}{2} = 5 \\implies x - 5 = 10 \\implies x = 15$.",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "Siswa mengalikan nilai 5 dengan 2 namun lupa menambahkan 5 pada langkah akhir."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah mengira bahwa invers memetakan nilai masukan yang sama."
+        },
+        {
+          "teks": "25",
+          "alasan": "Siswa salah tanda saat menyamakan penyebut sehingga menghitung x - 15 = 10."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus fungsi komposisi $h(x) = (f \\circ g)(x)$:\n$h(x) = f(g(x)) = 2\\left(\\frac{x + 1}{4}\\right) - 3$\n$h(x) = \\frac{x + 1}{2} - 3 = \\frac{x + 1 - 6}{2} = \\frac{x - 5}{2}$\n\nLangkah 2: Menggunakan definisi nilai invers $h^{-1}(5) = k \\iff h(k) = 5$:\n$\\frac{k - 5}{2} = 5$\n\nLangkah 3: Menyelesaikan persamaan untuk nilai $k$:\n$k - 5 = 10$\n$k = 15$\nJadi, nilai $h^{-1}(5) = 15$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Secara umum tidak semua fungsi memiliki fungsi invers . Hanya fungsi bijektif (injektif dan surjektif) saja yang memiliki invers ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "invers fungsi kuadrat terbatas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis bentuk kuadrat sempurna dan pemilihan cabang akar positif berdasarkan pembatasan daerah asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi kuadrat $f(x) = x^2 - 6x + 14$ dibatasi pada domain $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 3\\}$ agar memiliki fungsi invers. Rumus fungsi invers $f^{-1}(x)$ untuk $x \\ge 5$ adalah ....",
+      "jawaban_benar": "$3 + \\sqrt{x - 5}$",
+      "alasan_benar": "Ubah $y = x^2 - 6x + 14$ ke bentuk kuadrat sempurna: $y = (x - 3)^2 + 5 \\iff (x - 3)^2 = y - 5$. Karena $x \\ge 3$, maka $x - 3 \\ge 0$, sehingga $x - 3 = +\\sqrt{y - 5} \\iff x = 3 + \\sqrt{y - 5}$. Jadi, $f^{-1}(x) = 3 + \\sqrt{x - 5}$.",
+      "distraktor": [
+        {
+          "teks": "$3 - \\sqrt{x - 5}$",
+          "alasan": "Siswa memilih cabang akar negatif yang berkorespondensi dengan daerah asal x <= 3."
+        },
+        {
+          "teks": "$-3 + \\sqrt{x - 5}$",
+          "alasan": "Siswa salah menentukan tanda pergeseran sumbu simetri saat memindahkan nilai 3 ke ruas lain."
+        },
+        {
+          "teks": "$3 + \\sqrt{x + 5}$",
+          "alasan": "Siswa keliru memindahkan konstanta 5 sehingga bertanda positif di dalam akar."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengubah persamaan fungsi ke bentuk kuadrat sempurna:\n$y = x^2 - 6x + 14$\n$y = (x^2 - 6x + 9) + 5$\n$y = (x - 3)^2 + 5$\n\nLangkah 2: Mengisolasi variabel $x$:\n$(x - 3)^2 = y - 5$\nKarena daerah asal dibatasi $x \\ge 3$, maka nilai $(x - 3) \\ge 0$, sehingga diambil tanda positif pada akar kuadrat:\n$x - 3 = \\sqrt{y - 5}$\n$x = 3 + \\sqrt{y - 5}$\n\nLangkah 3: Menuliskan rumus fungsi invers:\n$f^{-1}(x) = 3 + \\sqrt{x - 5}$ untuk $x \\ge 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0056-latihan-15-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aljabar nilai fungsi invers",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penguraian komposisi f(f(x)) untuk mencari parameter b lalu menentukan nilai dari fungsi inversnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi linear $f(x) = 5x + b$ memenuhi $(f \\circ f)(x) = 25x + 36$. Nilai dari $b + f^{-1}(11)$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "$(f \\circ f)(x) = 5(5x + b) + b = 25x + 6b$. Karena $25x + 6b = 25x + 36$, diperoleh $6b = 36 \\implies b = 6$. Rumus fungsi $f(x) = 5x + 6$. Inversnya adalah $f^{-1}(x) = \\frac{x - 6}{5}$. Maka $f^{-1}(11) = \\frac{11 - 6}{5} = 1$. Nilai $b + f^{-1}(11) = 6 + 1 = 7$.",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "Siswa salah mengoperasikan invers sebagai f(11) = 5(11)+6 = 61 lalu salah menghitung pembagian, atau salah menghitung 6 - 1 = 5."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa lupa membagi nilai (11 - 6) dengan koefisien 5 sehingga menganggap f^-1(11) = 5 - 3 = 2, sehingga 6 + 2 = 8."
+        },
+        {
+          "teks": "12",
+          "alasan": "Siswa langsung menyamakan konstanta b = 36 tanpa memperhitungkan komposisi 6b = 36."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $b$.\n$(f \\circ f)(x) = f(5x + b) = 5(5x + b) + b = 25x + 6b$.\nDiketahui $(f \\circ f)(x) = 25x + 36$, maka:\n$6b = 36 \\implies b = 6$.\n\nLangkah 2: Menentukan $f^{-1}(11)$.\n$f(x) = 5x + 6$.\nMisalkan $y = 5x + 6 \\implies 5x = y - 6 \\implies x = \\frac{y - 6}{5}$.\nSehingga $f^{-1}(x) = \\frac{x - 6}{5}$.\nUntuk $x = 11$:\n$f^{-1}(11) = \\frac{11 - 6}{5} = \\frac{5}{5} = 1$.\n\nLangkah 3: Menghitung nilai yang ditanyakan.\n$b + f^{-1}(11) = 6 + 1 = 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0055-latihan-15-2c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "fungsi invers akar dan domain",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa harus membalik fungsi irasional ke bentuk kuadrat dan menentukan daerah asal fungsi invers berdasarkan daerah hasil fungsi asalnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{3x - 12}$ terdefinisi pada daerah asal $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$. Rumus fungsi invers $f^{-1}(x)$ beserta daerah asalnya adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{x^2 + 12}{3}$ dengan domain $\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+      "alasan_benar": "Misal $y = \\sqrt{3x - 12}$ dengan $y \\ge 0$. Kuadratkan kedua ruas: $y^2 = 3x - 12 \\implies 3x = y^2 + 12 \\implies x = \\frac{y^2 + 12}{3}$. Jadi $f^{-1}(x) = \\frac{x^2 + 12}{3}$. Domain $f^{-1}$ adalah range dari $f$, yaitu $x \\ge 0$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{x^2 - 12}{3}$ dengan domain $\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+          "alasan": "Siswa salah tanda saat memindahkan suku -12 ke ruas lain."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{x^2 + 12}{3}$ dengan domain $\\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$",
+          "alasan": "Siswa keliru menggunakan domain fungsi asal sebagai domain fungsi invers bukannya range fungsi asal."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{(x + 12)^2}{3}$ dengan domain $\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+          "alasan": "Siswa menjumlahkan 12 terlebih dahulu sebelum menguadratkan variabel x."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus $f^{-1}(x)$.\n$y = \\sqrt{3x - 12}$\nKarena fungsi akar menghasilkan nilai non-negatif, maka $y \\ge 0$.\nKuadratkan kedua ruas:\n$y^2 = 3x - 12$\n$3x = y^2 + 12$\n$x = \\frac{y^2 + 12}{3}$\nSehingga diperoleh $f^{-1}(x) = \\frac{x^2 + 12}{3}$.\n\nLangkah 2: Menentukan domain $f^{-1}(x)$.\nDomain dari $f^{-1}$ bersesuaian dengan daerah hasil (range) fungsi asal $f(x)$. Karena $f(x) = \\sqrt{3x - 12} \\ge 0$, maka daerah asalnya adalah $\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "3b",
+        "teks": "Temukan persamaan matematis untuk fungsi invers g−1 (x).",
+        "jawaban": "g^-1(x) = (x^2 + 3)/2 untuk x >= 0",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan fungsi invers bentuk akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan aljabar pengubahan bentuk akar ke fungsi invers berderajat dua dengan syarat batas variabel non-negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi $g(x) = \\sqrt{4x + 7}$ yang terdefinisi untuk $x \\ge -\\frac{7}{4}$. Persamaan matematis untuk fungsi invers $g^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$g^{-1}(x) = \\frac{x^2 - 7}{4}$ untuk $x \\ge 0$",
+      "alasan_benar": "Misal $y = \\sqrt{4x + 7}$ dengan $y \\ge 0$. Kuadratkan: $y^2 = 4x + 7 \\implies 4x = y^2 - 7 \\implies x = \\frac{y^2 - 7}{4}$. Maka $g^{-1}(x) = \\frac{x^2 - 7}{4}$ untuk $x \\ge 0$.",
+      "distraktor": [
+        {
+          "teks": "$g^{-1}(x) = \\frac{x^2 + 7}{4}$ untuk $x \\ge 0$",
+          "alasan": "Siswa salah saat memindahkan konstanta 7 positif ke ruas lain menjadi tetap positif."
+        },
+        {
+          "teks": "$g^{-1}(x) = \\frac{x^2 - 7}{4}$ untuk $x \\ge -\\frac{7}{4}$",
+          "alasan": "Siswa salah menetapkan domain invers dengan menggunakan batas domain fungsi asal."
+        },
+        {
+          "teks": "$g^{-1}(x) = 4x^2 - 7$ untuk $x \\ge 0$",
+          "alasan": "Siswa lupa membagi dengan koefisien x yaitu 4."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menyatakan variabel $x$ dalam $y$.\n$y = \\sqrt{4x + 7}$, dengan syarat nilai akar $y \\ge 0$.\nKuadratkan kedua ruas:\n$y^2 = 4x + 7$\n$4x = y^2 - 7$\n$x = \\frac{y^2 - 7}{4}$\n\nLangkah 2: Menuliskan rumus fungsi invers beserta daerah asalnya.\nGanti variabel $x$ menjadi $g^{-1}(x)$ dan $y$ menjadi $x$:\n$g^{-1}(x) = \\frac{x^2 - 7}{4}$ dengan syarat $x \\ge 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "parameter invers melalui identitas komposisi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan fungsi invers yang menghasilkan fungsi identitas untuk mencari nilai parameter tak tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi linear $f(x) = \\frac{2x - 7}{3}$ dan $g(x) = \\frac{3x + k}{2}$. Jika $g(x)$ merupakan fungsi invers dari $f(x)$, maka nilai konstanta $k$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "Jika g adalah invers dari f, maka f^-1(x) = g(x). Dari y = (2x - 7)/3 diperoleh 3y = 2x - 7 sehingga 2x = 3y + 7 atau x = (3y + 7)/2. Jadi f^-1(x) = (3x + 7)/2. Menyamakan dengan g(x) = (3x + k)/2 menghasilkan k = 7.",
+      "distraktor": [
+        {
+          "teks": "-7",
+          "alasan": "Siswa salah tanda saat memindahkan suku -7 ke sisi berlawanan."
+        },
+        {
+          "teks": "3",
+          "alasan": "Siswa keliru menyamakan nilai k dengan penyebut dari fungsi f(x)."
+        },
+        {
+          "teks": "14",
+          "alasan": "Siswa mengalikan konstanta dengan faktor 2 secara keliru saat menyamakan bentuk."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan invers dari $f(x)$.\nMisalkan $y = \\frac{2x - 7}{3}$.\n$3y = 2x - 7$\n$2x = 3y + 7$\n$x = \\frac{3y + 7}{2}$\nMaka $f^{-1}(x) = \\frac{3x + 7}{2}$.\n\nLangkah 2: Membandingkan dengan $g(x)$.\nDiketahui bahwa $g(x)$ adalah fungsi invers dari $f(x)$, sehingga:\n$g(x) = f^{-1}(x)$\n$\\frac{3x + k}{2} = \\frac{3x + 7}{2}$\n\nLangkah 3: Menentukan nilai $k$.\nDengan menyamakan pembilang, diperoleh $k = 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi yang berkebalikan operasinya dari fungsi asalnya disebut sebagai fungsi invers . Fungsi ini memetakan anggota yang ada di range fungsi asal ke anggota yang ada di domain fungsi asal."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemecahan masalah invers kontekstual",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan konsep operasi kebalikan (invers) pada fungsi bertingkat untuk menghitung nilai masukan awal dari harga akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah toko elektronik memberikan promo akhir tahun berupa diskon harga sebesar 20%, kemudian dilanjutkan dengan potongan voucer belanja sebesar Rp50.000,00. Jika seorang pembeli membayar sebesar Rp350.000,00 di kasir, harga barang mula-mula sebelum dikenai promo adalah ....",
+      "jawaban_benar": "Rp500.000,00",
+      "alasan_benar": "Misal harga awal x. Diskon 20% membuat harga menjadi 0,8x. Potongan voucer Rp50.000 membuat harga akhir y = 0,8x - 50.000. Dengan operasi invers: x = (y + 50.000)/0,8. Untuk y = 350.000, diperoleh x = (350.000 + 50.000)/0,8 = 400.000 / 0,8 = 500.000.",
+      "distraktor": [
+        {
+          "teks": "Rp450.000,00",
+          "alasan": "Siswa menghitung diskon 20% langsung dari 400.000 lalu menambahkannya (400.000 + 80.000 = 480.000 atau salah hitung 350.000 + 100.000)."
+        },
+        {
+          "teks": "Rp480.000,00",
+          "alasan": "Siswa mengurangkan voucer terlebih dahulu kemudian mengalikan dengan 1,2 (350.000 + 50.000 = 400.000 lalu 400.000 * 1,2 = 480.000)."
+        },
+        {
+          "teks": "Rp425.000,00",
+          "alasan": "Siswa membagi 350.000 dengan 0,8 terlebih dahulu baru ditambah potongan Rp50.000,00."
+        }
+      ],
+      "pembahasan": "Langkah 1: Membuat model matematis proses pemberian harga.\nMisalkan harga awal barang adalah $x$.\nSetelah diskon 20%, harga menjadi: $f(x) = (1 - 0{,}20)x = 0{,}8x$.\nSetelah potongan voucer Rp50.000,00, harga akhir adalah:\n$y = g(f(x)) = 0{,}8x - 50.000$.\n\nLangkah 2: Menentukan fungsi invers untuk mencari harga asal dari harga akhir.\n$y = 0{,}8x - 50.000$\n$0{,}8x = y + 50.000$\n$x = \\frac{y + 50.000}{0{,}8}$\n\nLangkah 3: Menghitung harga awal untuk $y = 350.000$.\n$x = \\frac{350.000 + 50.000}{0{,}8} = \\frac{400.000}{0{,}8} = 500.000$.\nJadi, harga barang mula-mula adalah Rp500.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2b",
+        "teks": "Tentukan fungsi invers (jika ada) dari fungsi-fungsi di bawah ini, juga domain dan range-nya. b. f (x) = −3x + 1",
+        "jawaban": "f^-1(x) = (1 - x)/3, domain: semua bilangan riil, range: semua bilangan riil",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "invers fungsi linear pecahan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah aljabar untuk mengubah persamaan linear koefisien pecahan ke bentuk fungsi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi linear $f(x) = -\\frac{2}{5}x + 4$ terdefinisi untuk setiap bilangan real $x$. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = -\\frac{5}{2}x + 10$",
+      "alasan_benar": "Memisalkan $y = -\\frac{2}{5}x + 4$, maka $\\frac{2}{5}x = 4 - y \\iff x = \\frac{5}{2}(4 - y) = 10 - \\frac{5}{2}y$, sehingga diperoleh $f^{-1}(x) = -\\frac{5}{2}x + 10$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = -\\frac{5}{2}x + 4$",
+          "alasan": "Siswa hanya membalik koefisien $x$ menjadi bentuk kebalikannya tanpa mengalikan konstanta dengan faktor skala."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{5}{2}x - 10$",
+          "alasan": "Siswa keliru memindahkan tanda negatif saat mengalikan silang pecahan."
+        },
+        {
+          "teks": "$f^{-1}(x) = -\\frac{2}{5}x - 10$",
+          "alasan": "Siswa tidak membalik kemiringan garis (gradien) dan hanya mengubah tanda konstanta."
+        }
+      ],
+      "pembahasan": "Langkah 1: Nyatakan fungsi ke dalam variabel $y$:\n$$y = -\\frac{2}{5}x + 4$$\n\nLangkah 2: Selesaikan persamaan untuk $x$:\n$$\\frac{2}{5}x = 4 - y$$\n$$x = \\frac{5}{2}(4 - y)$$\n$$x = 10 - \\frac{5}{2}y$$\n\nLangkah 3: Ganti $x$ dengan $f^{-1}(x)$ dan $y$ dengan $x$:\n$$f^{-1}(x) = -\\frac{5}{2}x + 10$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2a",
+        "teks": "Tentukan fungsi invers (jika ada) dari fungsi-fungsi di bawah ini, juga domain dan range-nya. a. f (x) = x^3",
+        "jawaban": "f^-1(x) = x^(1/3), domain: semua bilangan riil, range: semua bilangan riil",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "invers fungsi kubik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah operasi aljabar meliputi penarikan akar pangkat tiga dan isolasi variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi bijektif $f(x) = (2x - 5)^3$ yang terdefinisi untuk seluruh bilangan real $x$. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{\\sqrt[3]{x} + 5}{2}$",
+      "alasan_benar": "Dengan memisalkan $y = (2x - 5)^3$, kedua ruas ditarik akar pangkat tiga menghasilkan $\\sqrt[3]{y} = 2x - 5$, sehingga $2x = \\sqrt[3]{y} + 5$ atau $x = \\frac{\\sqrt[3]{y} + 5}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{\\sqrt[3]{x} - 5}{2}$",
+          "alasan": "Siswa salah memindahkan tanda negatif dari $-5$ saat mengisolasi variabel $x$."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\sqrt[3]{\\frac{x + 5}{2}}$",
+          "alasan": "Siswa melakukan operasi penjumlahan dan pembagian sebelum menarik akar pangkat tiga."
+        },
+        {
+          "teks": "$f^{-1}(x) = 2\\sqrt[3]{x} + 5$",
+          "alasan": "Siswa mengalikan dengan koefisien alih-alih membaginya saat menyelesaikan nilai $x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Nyatakan fungsi dalam $y$:\n$$y = (2x - 5)^3$$\n\nLangkah 2: Tarik akar pangkat tiga pada kedua ruas:\n$$\\sqrt[3]{y} = 2x - 5$$\n\nLangkah 3: Isolasi variabel $x$:\n$$2x = \\sqrt[3]{y} + 5$$\n$$x = \\frac{\\sqrt[3]{y} + 5}{2}$$\n\nMaka fungsi inversnya adalah:\n$$f^{-1}(x) = \\frac{\\sqrt[3]{x} + 5}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 52,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "1. Ubah y = f (x) menjadi bentuk x = f (y). 2. Ubah persamaan x = f (y) menjadi bentuk y = . . . . 3. Ubahlah variabel y dengan f−1 (x) sehingga diperoleh rumus fungsi invers f−1 (x)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis parameter fungsi invers pecahan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus menentukan invers fungsi rasional berparameter dan menyamakan koefisien dengan fungsi asalnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{ax + 7}{3x - 4}$ dengan $x \\ne \\frac{4}{3}$ dan $a$ suatu konstanta real. Jika fungsi invers dari $f(x)$ sama dengan fungsi asalnya sendiri, yaitu $f^{-1}(x) = f(x)$, maka nilai konstanta $a$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Invers dari $f(x) = \\frac{ax+b}{cx+d}$ adalah $f^{-1}(x) = \\frac{-dx+b}{cx-a}$. Karena $f^{-1}(x) = f(x)$, maka $-d = a$, sehingga $-(-4) = a \\implies a = 4$.",
+      "distraktor": [
+        {
+          "teks": "-4",
+          "alasan": "Siswa mengira nilai $a$ harus sama dengan konstanta penyebut tanpa memperhatikan perubahan tanda invers."
+        },
+        {
+          "teks": "3",
+          "alasan": "Siswa keliru menyamakan nilai parameter $a$ dengan koefisien $x$ pada penyebut."
+        },
+        {
+          "teks": "7",
+          "alasan": "Siswa menyamakan nilai parameter $a$ dengan konstanta pembilang."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan rumus invers $f^{-1}(x)$ secara aljabar:\n$$y = \\frac{ax + 7}{3x - 4}$$\n$$y(3x - 4) = ax + 7$$\n$$3xy - 4y = ax + 7$$\n$$3xy - ax = 4y + 7$$\n$$x(3y - a) = 4y + 7$$\n$$x = \\frac{4y + 7}{3y - a}$$\n\nDiperoleh:\n$$f^{-1}(x) = \\frac{4x + 7}{3x - a}$$\n\nLangkah 2: Samakan $f^{-1}(x)$ dengan $f(x)$:\n$$\\frac{4x + 7}{3x - a} = \\frac{ax + 7}{3x - 4}$$\n\nLangkah 3: Bandingkan koefisien pembilang dan penyebut yang bersesuaian:\nDari pembilang: $4x = ax \\implies a = 4$.\nDari penyebut: $-a = -4 \\implies a = 4$.\n\nJadi, nilai konstanta $a$ adalah 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g−1 )(x)?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "invers komposisi dua fungsi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua tahap pengerjaan yaitu mengomposisikan dua fungsi kemudian menentukan rumus invers komposisinya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x - 2$ dan $g(x) = 2x + 5$. Rumus fungsi invers dari komposisi $(g \\circ f)(x)$, yaitu $(g \\circ f)^{-1}(x)$, adalah ....",
+      "jawaban_benar": "$\\frac{x - 1}{6}$",
+      "alasan_benar": "Komposisi $(g \\circ f)(x) = 2(3x - 2) + 5 = 6x + 1$. Invers dari $y = 6x + 1$ adalah $x = \\frac{y - 1}{6}$, sehingga $(g \\circ f)^{-1}(x) = \\frac{x - 1}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{x - 13}{6}$",
+          "alasan": "Siswa tertukar menghitung invers dari $(f \\circ g)(x) = 3(2x + 5) - 2 = 6x + 13$ alih-alih $(g \\circ f)(x)$."
+        },
+        {
+          "teks": "$\\frac{x + 1}{6}$",
+          "alasan": "Siswa melakukan kesalahan tanda saat memindahkan konstanta 1 pada proses invers."
+        },
+        {
+          "teks": "$\\frac{x + 13}{6}$",
+          "alasan": "Siswa salah menghitung urutan komposisi sekaligus melakukan kesalahan tanda saat menginverskan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Cari fungsi komposisi $(g \\circ f)(x)$:\n$$(g \\circ f)(x) = g(f(x)) = 2(3x - 2) + 5 = 6x - 4 + 5 = 6x + 1$$\n\nLangkah 2: Tentukan rumus fungsi invers dari $(g \\circ f)(x)$:\n$$y = 6x + 1$$\n$$6x = y - 1$$\n$$x = \\frac{y - 1}{6}$$\n\nDengan demikian:\n$$(g \\circ f)^{-1}(x) = \\frac{x - 1}{6}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi yang berkebalikan operasinya dari fungsi asalnya disebut sebagai fungsi invers . Fungsi ini memetakan anggota yang ada di range fungsi asal ke anggota yang ada di domain fungsi asal."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "konstruksi fungsi dari nilai invers",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus menerapkan sifat relasi nilai fungsi invers ke fungsi asal lalu menyelesaikan sistem persamaan linear dua variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $f(x) = ax + b$ adalah suatu fungsi linear. Jika diketahui nilai $f^{-1}(4) = 1$ dan $f^{-1}(10) = 3$, maka rumus fungsi asal $f(x)$ adalah ....",
+      "jawaban_benar": "$f(x) = 3x + 1$",
+      "alasan_benar": "Dari konsep invers, $f^{-1}(4) = 1 \\iff f(1) = 4$ dan $f^{-1}(10) = 3 \\iff f(3) = 10$. Sistem persamaan $a + b = 4$ dan $3a + b = 10$ menghasilkan $a = 3$ dan $b = 1$, sehingga $f(x) = 3x + 1$.",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 3x - 1$",
+          "alasan": "Siswa salah menghitung nilai $b$ setelah memperoleh nilai $a = 3$ ($4 - 3$ dihitung menjadi $-1$)."
+        },
+        {
+          "teks": "$f(x) = 2x + 2$",
+          "alasan": "Siswa salah membagi selisih nilai ordinat dengan absis saat mencari gradien $a$."
+        },
+        {
+          "teks": "$f(x) = \\frac{1}{3}x + 1$",
+          "alasan": "Siswa membalik gradien garis karena mengira sedang mencari turunan atau gradien invers."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan sifat hubungan fungsi dan inversnya:\n$$f^{-1}(y) = x \\iff f(x) = y$$\nMaka:\n$$f^{-1}(4) = 1 \\implies f(1) = 4$$\n$$f^{-1}(10) = 3 \\implies f(3) = 10$$\n\nLangkah 2: Substitusikan ke bentuk umum $f(x) = ax + b$:\n$$a(1) + b = 4 \\implies a + b = 4 \\quad \\text{...(persamaan 1)}$$\n$$a(3) + b = 10 \\implies 3a + b = 10 \\quad \\text{...(persamaan 2)}$$\n\nLangkah 3: Selesaikan sistem persamaan dengan eliminasi:\n$$(3a + b) - (a + b) = 10 - 4$$\n$$2a = 6 \\implies a = 3$$\nSubstitusikan $a = 3$ ke persamaan 1:\n$$3 + b = 4 \\implies b = 1$$\n\nJadi, rumus fungsi asalnya adalah $f(x) = 3x + 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2d",
+        "teks": "f (x) = 2xx+4−5",
+        "jawaban": "f^-1(x) = (4x + 5)/(2 - x) untuk x != 2",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "invers fungsi pecahan dan domain",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: manipulasi bentuk persamaan pecahan, memisahkan peubah x, dan menentukan daerah asal fungsi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\frac{4x - 7}{3x - 5}$ dengan $x \\ne \\frac{5}{3}$. Rumus fungsi invers $f^{-1}(x)$ beserta daerah asalnya adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{5x - 7}{3x - 4}$ dengan $x \\ne \\frac{4}{3}$",
+      "alasan_benar": "Misalkan $y = \\frac{4x - 7}{3x - 5} \\iff y(3x - 5) = 4x - 7 \\iff 3xy - 5y = 4x - 7 \\iff 3xy - 4x = 5y - 7 \\iff x(3y - 4) = 5y - 7 \\iff x = \\frac{5y - 7}{3y - 4}$. Jadi, $f^{-1}(x) = \\frac{5x - 7}{3x - 4}$ dengan penyebut tidak boleh nol, yaitu $3x - 4 \\ne 0 \\iff x \\ne \\frac{4}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{5x + 7}{3x - 4}$ dengan $x \\ne \\frac{4}{3}$",
+          "alasan": "Kesalahan tanda saat memindahkan konstanta -7 ke ruas kanan."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{5x - 7}{3x + 4}$ dengan $x \\ne -\\frac{4}{3}$",
+          "alasan": "Kesalahan tanda aljabar saat mengelompokkan suku variabel x ke ruas kiri."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{3x - 5}{4x - 7}$ dengan $x \\ne \\frac{7}{4}$",
+          "alasan": "Hanya membalik posisi pembilang dan penyebut fungsi asal (kebalikan multiplikatif, bukan fungsi invers)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Misalkan $y = f(x)$,\n$$y = \\frac{4x - 7}{3x - 5}$$\n\nLangkah 2: Kalikan kedua ruas dengan $(3x - 5)$ dan kelompokkan suku yang memuat $x$:\n$$y(3x - 5) = 4x - 7$$\n$$3xy - 5y = 4x - 7$$\n$$3xy - 4x = 5y - 7$$\n$$x(3y - 4) = 5y - 7$$\n$$x = \\frac{5y - 7}{3y - 4}$$\n\nLangkah 3: Tuliskan rumus invers dan tentukan syarat daerah asalnya (penyebut tidak boleh nol):\n$$f^{-1}(x) = \\frac{5x - 7}{3x - 4}$$\nSyarat penyebut: $3x - 4 \\ne 0 \\implies x \\ne \\frac{4}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "3b",
+        "teks": "Temukan persamaan matematis untuk fungsi invers g−1 (x).",
+        "jawaban": "g^-1(x) = (x^2 + 3)/2 untuk x >= 0",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "invers bentuk akar berdomain kuadrat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aljabar untuk mengubah fungsi bentuk akar menjadi bentuk kuadrat dan menyertakan batasan domain non-negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $g(x) = \\sqrt{5x - 6}$ yang terdefinisi untuk $x \\ge \\frac{6}{5}$. Persamaan matematis untuk fungsi invers $g^{-1}(x)$ beserta daerah asalnya adalah ....",
+      "jawaban_benar": "$g^{-1}(x) = \\frac{x^2 + 6}{5}$ untuk $x \\ge 0$",
+      "alasan_benar": "Misalkan $y = \\sqrt{5x - 6}$. Karena hasil akar utama selalu non-negatif, daerah hasil $g$ adalah $y \\ge 0$, yang menjadi daerah asal $g^{-1}(x) \\implies x \\ge 0$. Kuadratkan kedua ruas: $y^2 = 5x - 6 \\iff 5x = y^2 + 6 \\iff x = \\frac{y^2 + 6}{5}$. Jadi, $g^{-1}(x) = \\frac{x^2 + 6}{5}$ untuk $x \\ge 0$.",
+      "distraktor": [
+        {
+          "teks": "$g^{-1}(x) = \\frac{x^2 - 6}{5}$ untuk $x \\ge 0$",
+          "alasan": "Kesalahan tanda operasi saat memindahkan konstanta -6 dari ruas kanan ke ruas kiri."
+        },
+        {
+          "teks": "$g^{-1}(x) = \\frac{x^2 + 6}{5}$ untuk $x \\ge \\frac{6}{5}$",
+          "alasan": "Menggunakan domain fungsi asal sebagai domain fungsi invers tanpa menyesuaikan dengan range fungsi asal."
+        },
+        {
+          "teks": "$g^{-1}(x) = 5x^2 + 6$ untuk $x \\ge 0$",
+          "alasan": "Mengalikan koefisien 5 ke ruas variabel, bukan membaginya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Misalkan $y = \\sqrt{5x - 6}$.\nNilai $y \\ge 0$ untuk setiap nilai $x$ pada daerah asal $x \\ge \\frac{6}{5}$, sehingga daerah asal dari $g^{-1}(x)$ adalah $x \\ge 0$.\n\nLangkah 2: Selesaikan persamaan untuk $x$:\n$$y^2 = 5x - 6$$\n$$5x = y^2 + 6$$\n$$x = \\frac{y^2 + 6}{5}$$\n\nLangkah 3: Ganti peubah $x$ dengan $g^{-1}(x)$ dan $y$ dengan $x$:\n$$g^{-1}(x) = \\frac{x^2 + 6}{5} \\text{ untuk } x \\ge 0$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2b",
+        "teks": "f (x) = −3x + 1",
+        "jawaban": "f^-1(x) = (1 - x)/3",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "evaluasi nilai invers fungsi linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Dua langkah hitungan: membalik fungsi linear dengan koefisien negatif kemudian mensubstitusikan nilai input.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = -4x + 9$ yang terdefinisi pada bilangan real. Nilai dari $f^{-1}(-7)$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Jika $f^{-1}(-7) = a$, maka $f(a) = -7$. Didapat $-4a + 9 = -7 \\iff -4a = -16 \\iff a = 4$.",
+      "distraktor": [
+        {
+          "teks": "-4",
+          "alasan": "Kesalahan tanda saat membagi ruas kiri dan kanan dengan -4."
+        },
+        {
+          "teks": "37",
+          "alasan": "Siswa langsung mensubstitusikan -7 ke dalam f(x), yaitu f(-7) = -4(-7) + 9 = 28 + 9 = 37."
+        },
+        {
+          "teks": "-½",
+          "alasan": "Kesalahan aljabar saat memindahkan 9: -4a = -7 + 9 = 2 sehingga a = -2/4 = -1/2."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menggunakan sifat relasi invers fungsi $f^{-1}(y) = x \\iff f(x) = y$.\nMisalkan $f^{-1}(-7) = k$, maka:\n$$f(k) = -7$$\n\nLangkah 2: Selesaikan nilai $k$:\n$$-4k + 9 = -7$$\n$$-4k = -7 - 9$$\n$$-4k = -16$$\n$$k = \\frac{-16}{-4} = 4$$\n\nJadi, nilai dari $f^{-1}(-7)$ adalah $4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g −1 )(x)?"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "evaluasi nilai invers komposisi terbalik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis sifat invers komposisi fungsi $(g \\circ f)^{-1}(x) = (f^{-1} \\circ g^{-1})(x)$ untuk menentukan nilai suatu komposisi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 2x - 1$ dan $g(x) = 3x + 5$. Jika $h(x) = (g \\circ f)(x)$, maka nilai dari $h^{-1}(17)$ adalah ....",
+      "jawaban_benar": "\\frac{5}{2}",
+      "alasan_benar": "Komposisi $h(x) = g(f(x)) = 3(2x - 1) + 5 = 6x - 3 + 5 = 6x + 2$. Persamaan $h^{-1}(17) = a \\iff h(a) = 17 \\iff 6a + 2 = 17 \\iff 6a = 15 \\iff a = \\frac{15}{6} = \\frac{5}{2}$.",
+      "distraktor": [
+        {
+          "teks": "\\frac{19}{6}",
+          "alasan": "Kesalahan aljabar saat memindahkan konstanta: 6a = 17 + 2 = 19 sehingga a = 19/6."
+        },
+        {
+          "teks": "2",
+          "alasan": "Salah melakukan komposisi menjadi (f o g)(x) = 2(3x + 5) - 1 = 6x + 9, lalu 6a + 9 = 17 menghasilkan 6a = 8 sehingga a bukan 5/2 melainkan dibulatkan."
+        },
+        {
+          "teks": "3",
+          "alasan": "Lupa mengalikan konstanta di dalam tanda kurung: g(f(x)) = 3(2x - 1) + 5 disederhanakan menjadi 6x - 1 + 5 = 6x + 4, lalu 6a + 4 = 17 disederhanakan salah menjadi 6a = 18 sehingga a = 3."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan fungsi komposisi $h(x) = (g \\circ f)(x)$:\n$$h(x) = g(f(x)) = 3(2x - 1) + 5 = 6x - 3 + 5 = 6x + 2$$\n\nLangkah 2: Gunakan relasi invers $h^{-1}(17) = x \\iff h(x) = 17$:\n$$6x + 2 = 17$$\n\nLangkah 3: Selesaikan nilai $x$:\n$$6x = 17 - 2$$\n$$6x = 15$$\n$$x = \\frac{15}{6} = \\frac{5}{2}$$\n\nJadi, nilai dari $h^{-1}(17)$ adalah $\\frac{5}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika harga awal pakaian adalah x dan hasil akhirnya adalah y maka buatlah fungsi kebalikannya yaitu x adalah fungsi dari y."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan aljabar fungsi invers kontekstual",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan pemodelan fungsi harga diskon dan menentukan rumus fungsi invers untuk mencari harga mula-mula.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah toko buku memberlakukan diskon sebesar 25% untuk setiap pembelian buku, kemudian pembeli mendapatkan potongan kupon langsung sebesar Rp12.000,00. Jika $x$ menyatakan harga label buku (dalam rupiah) dan $y$ menyatakan harga akhir yang dibayarkan, rumus fungsi invers yang menyatakan harga label buku $x$ sebagai fungsi dari harga akhir $y$ adalah ....",
+      "jawaban_benar": "$x = \\frac{4}{3}(y + 12.000)$",
+      "alasan_benar": "Diskon 25% membuat harga buku menjadi (1 - 0,25)x = 0,75x = 3/4 x. Setelah dipotong kupon Rp12.000, didapat y = 3/4 x - 12.000. Untuk mencari rumus x sebagai fungsi y: y + 12.000 = 3/4 x <=> x = 4/3(y + 12.000).",
+      "distraktor": [
+        {
+          "teks": "$x = \\frac{4}{3}y + 12.000$",
+          "alasan": "Lupa mengalikan suku konstanta Rp12.000,00 dengan faktor 4/3 saat mengalikan kedua ruas."
+        },
+        {
+          "teks": "$x = \\frac{3}{4}(y - 12.000)$",
+          "alasan": "Tidak membalik faktor pengali 3/4 menjadi 4/3 serta salah menuliskan tanda operasi pengurangan."
+        },
+        {
+          "teks": "$x = \\frac{4}{3}(y - 12.000)$",
+          "alasan": "Salah tanda operasi saat memindahkan suku potongan kupon -12.000 ke ruas lain."
+        }
+      ],
+      "pembahasan": "Langkah 1: Susun persamaan harga akhir $y$ sebagai fungsi dari harga awal $x$.\nHarga setelah diskon 25% adalah $(1 - 0{,}25)x = 0{,}75x = \\frac{3}{4}x$.\nHarga akhir setelah potongan kupon Rp12.000,00 adalah:\n$$y = \\frac{3}{4}x - 12.000$$\n\nLangkah 2: Tambahkan kedua ruas dengan $12.000$:\n$$y + 12.000 = \\frac{3}{4}x$$\n\nLangkah 3: Kalikan kedua ruas dengan $\\frac{4}{3}$ untuk menyatakan $x$ dalam $y$:\n$$x = \\frac{4}{3}(y + 12.000)$$\n\nJadi, fungsi kebalikannya adalah $x = \\frac{4}{3}(y + 12.000)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

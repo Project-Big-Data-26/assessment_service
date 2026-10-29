@@ -1,0 +1,770 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "F",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "10 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 271,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Tentukan peluang mendapatkan paling sedikit 4 gambar pada 6 kali pelemparan sekeping uang logam seimbang.",
+        "jawaban": "0,34375",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi klaim binomial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perhitungan distribusi binomial kumulatif multi-langkah kemudian mengevaluasi kebenaran suatu klaim komparatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin produksi menghasilkan barang dengan peluang cacat sebesar $0{,}5$ pada setiap unit secara saling bebas. Seorang pengawas mutu mengambil sampel $6$ unit barang secara acak dan menyatakan klaim bahwa 'peluang menemukan paling sedikit $4$ unit barang cacat melebihi $0{,}35$'. Nilai peluang sesungguhnya dan kesimpulan terhadap klaim tersebut adalah ....",
+      "jawaban_benar": "$\\frac{11}{32}$ dan klaim salah",
+      "alasan_benar": "$P(X \\ge 4) = \\frac{\\binom{6}{4} + \\binom{6}{5} + \\binom{6}{6}}{2^6} = \\frac{15 + 6 + 1}{64} = \\frac{22}{64} = \\frac{11}{32} = 0{,}34375$. Karena $0{,}34375 < 0{,}35$, klaim tersebut salah.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{32}$ dan klaim benar",
+          "alasan": "Benar menghitung nilai peluang $\\frac{11}{32} = 0{,}34375$, namun salah membandingkan desimal dan menganggap $0{,}34375 > 0{,}35$."
+        },
+        {
+          "teks": "$\\frac{7}{32}$ dan klaim salah",
+          "alasan": "Hanya menjumlahkan kasus $X=5$ dan $X=6$, lupa menyertakan $X=4$."
+        },
+        {
+          "teks": "$\\frac{21}{32}$ dan klaim benar",
+          "alasan": "Menghitung komplemen secara terbalik $1 - P(X \\ge 4) = \\frac{42}{64} = \\frac{21}{32}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi parameter binomial:\n$n = 6$, $p = 0{,}5 = \\frac{1}{2}$, $q = 1 - p = \\frac{1}{2}$.\n\nLangkah 2: Menghitung peluang masing-masing titik untuk $X \\ge 4$:\n$$P(X = 4) = \\binom{6}{4}\\left(\\frac{1}{2}\\right)^6 = \\frac{15}{64}$$\n$$P(X = 5) = \\binom{6}{5}\\left(\\frac{1}{2}\\right)^6 = \\frac{6}{64}$$\n$$P(X = 6) = \\binom{6}{6}\\left(\\frac{1}{2}\\right)^6 = \\frac{1}{64}$$\n\nLangkah 3: Menjumlahkan peluang:\n$$P(X \\ge 4) = \\frac{15 + 6 + 1}{64} = \\frac{22}{64} = \\frac{11}{32}$$\n\nLangkah 4: Konversi ke desimal:\n$$\\frac{11}{32} = 0{,}34375$$\n\nLangkah 5: Evaluasi klaim:\nKarena $0{,}34375 < 0{,}35$, maka klaim pengawas bahwa peluang melebihi $0{,}35$ adalah salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ( x ; n , p ) mempunyai nilai harapan E ( X ) = np"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembentukan persamaan aljabar dari kesamaan dua nilai fungsi binomial untuk mengisolasi parameter probabilitas, kemudian menghitung nilai harapan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak $X$ berdistribusi binomial dengan $n = 5$ percobaan saling bebas dan peluang sukses $p$ (dengan $0 < p < 1$). Jika diketahui peluang terjadinya $2$ kali sukses sama dengan peluang terjadinya $3$ kali sukses ($P(X = 2) = P(X = 3)$), maka nilai harapan $E(X)$ adalah ....",
+      "jawaban_benar": "$2{,}5$",
+      "alasan_benar": "$\\binom{5}{2} p^2 (1-p)^3 = \\binom{5}{3} p^3 (1-p)^2 \\implies 10(1-p) = 10p \\implies 1 - p = p \\implies p = 0{,}5$. Maka $E(X) = n \\cdot p = 5 \\cdot 0{,}5 = 2{,}5$.",
+      "distraktor": [
+        {
+          "teks": "$2{,}0$",
+          "alasan": "Mengira nilai harapan sama dengan nilai $x$ pertama yang diketahui yaitu $x = 2$."
+        },
+        {
+          "teks": "$3{,}0$",
+          "alasan": "Mengira nilai harapan sama dengan nilai $x$ kedua yang diketahui yaitu $x = 3$."
+        },
+        {
+          "teks": "$1{,}5$",
+          "alasan": "Salah menyelesaikan persamaan menjadi $1 - p = 2p \\implies p = \\frac{1}{3}$, sehingga $E(X) = \\frac{5}{3} \\approx 1{,}67$ lalu dibulatkan salah."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tuliskan rumus peluang binomial untuk kedua kondisi:\n$$P(X = 2) = \\binom{5}{2} p^2 (1 - p)^{5 - 2} = 10 p^2 (1 - p)^3$$\n$$P(X = 3) = \\binom{5}{3} p^3 (1 - p)^{5 - 3} = 10 p^3 (1 - p)^2$$\n\nLangkah 2: Samakan kedua persamaan sesuai yang diketahui:\n$$10 p^2 (1 - p)^3 = 10 p^3 (1 - p)^2$$\n\nLangkah 3: Karena $0 < p < 1$, bagi kedua ruas dengan $10 p^2 (1 - p)^2$:\n$$1 - p = p \\implies 2p = 1 \\implies p = 0{,}5$$\n\nLangkah 4: Hitung nilai harapan:\n$$E(X) = n \\cdot p = 5 \\cdot 0{,}5 = 2{,}5$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah b ( x ; n , p ) = c n p m p x q n - x untuk x = 0, 1, 2, …, n ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rekonstruksi nilai harapan dari parameter",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan model relasi rasio dua peluang binomial untuk menemukan ukuran sampel n yang belum diketahui, dilanjutkan penentuan ekspektasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu eksperimen binomial dengan peluang sukses pada setiap percobaan $p = \\frac{1}{3}$, diketahui bahwa peluang mendapatkan tepat satu kali sukses bernilai tiga kali dari peluang tidak pernah sukses sama sekali. Nilai harapan banyaknya sukses dalam eksperimen tersebut adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$P(X=1) = 3 P(X=0) \\implies n\\left(\\frac{1}{3}\\right)\\left(\\frac{2}{3}\\right)^{n-1} = 3\\left(\\frac{2}{3}\\right)^n \\implies n\\left(\\frac{1}{3}\\right) = 3\\left(\\frac{2}{3}\\right) = 2 \\implies n = 6$. Nilai harapan $E(X) = np = 6 \\times \\frac{1}{3} = 2$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Salah menyelesaikan persamaan menjadi $n = 3$, sehingga $E(X) = 3 \\times \\frac{1}{3} = 1$."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Menganggap nilai $n = 9$ karena salah membagi konstanta $3$, sehingga $E(X) = 9 \\times \\frac{1}{3} = 3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Menjawab banyaknya percobaan $n = 6$ bukan nilai harapannya $E(X)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi peluang sukses dan gagal:\n$p = \\frac{1}{3}$, $q = 1 - \\frac{1}{3} = \\frac{2}{3}$.\n\nLangkah 2: Tuliskan formula $P(X = 0)$ dan $P(X = 1)$:\n$$P(X = 0) = \\binom{n}{0}\\left(\\frac{1}{3}\\right)^0\\left(\\frac{2}{3}\\right)^n = \\left(\\frac{2}{3}\\right)^n$$\n$$P(X = 1) = \\binom{n}{1}\\left(\\frac{1}{3}\\right)^1\\left(\\frac{2}{3}\\right)^{n - 1} = n \\cdot \\frac{1}{3} \\cdot \\left(\\frac{2}{3}\\right)^{n - 1}$$\n\nLangkah 3: Masukkan ke hubungan yang diketahui $P(X = 1) = 3 \\cdot P(X = 0)$:\n$$n \\cdot \\frac{1}{3} \\cdot \\left(\\frac{2}{3}\\right)^{n - 1} = 3 \\cdot \\left(\\frac{2}{3}\\right)^n$$\n\nLangkah 4: Bagi kedua ruas dengan $\\left(\\frac{2}{3}\\right)^{n - 1}$:\n$$\\frac{n}{3} = 3 \\cdot \\frac{2}{3} = 2 \\implies n = 6$$\n\nLangkah 5: Hitung nilai harapan:\n$$E(X) = n \\cdot p = 6 \\cdot \\frac{1}{3} = 2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah b ( x ; n , p ) = c n p m p x q n - x untuk x = 0, 1, 2, …, n ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis batas kelulusan binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis kriteria batas lulus berbasis distribusi binomial dan penerapan komplemen kejadian majemuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah ujian singkat terdiri atas $4$ soal pilihan ganda. Setiap soal memiliki $4$ opsi pilihan jawaban dengan tepat $1$ jawaban benar. Seseorang mengerjakan ujian tersebut dengan menebak seluruh jawaban secara acak dan saling bebas. Jika syarat kelulusan adalah menjawab dengan benar paling sedikit $3$ soal, maka peluang orang tersebut tidak lulus adalah ....",
+      "jawaban_benar": "$\\frac{243}{256}$",
+      "alasan_benar": "Peluang lulus adalah $P(X \\ge 3) = P(X=3) + P(X=4) = \\binom{4}{3}\\left(\\frac{1}{4}\\right)^3\\left(\\frac{3}{4}\\right)^1 + \\binom{4}{4}\\left(\\frac{1}{4}\\right)^4 = \\frac{12}{256} + \\frac{1}{256} = \\frac{13}{256}$. Peluang tidak lulus adalah komplemennya: $1 - \\frac{13}{256} = \\frac{243}{256}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{256}$",
+          "alasan": "Menghitung peluang lulus $P(X \\ge 3)$ bukan peluang tidak lulus."
+        },
+        {
+          "teks": "$\\frac{244}{256}$",
+          "alasan": "Lupa memperhitungkan kasus $X=4$ saat menghitung peluang lulus sehingga mengurangkan $1 - \\frac{12}{256}$."
+        },
+        {
+          "teks": "$\\frac{189}{256}$",
+          "alasan": "Salah menghitung nilai kombinasi $\\binom{4}{3}$ menjadi $1$ sehingga memperoleh peluang lulus $\\frac{4}{256}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan parameter binomial:\n$n = 4$, $p = \\frac{1}{4}$, $q = 1 - \\frac{1}{4} = \\frac{3}{4}$.\n\nLangkah 2: Menghitung peluang lulus $P(\\text{Lulus}) = P(X \\ge 3) = P(X = 3) + P(X = 4)$:\n$$P(X = 3) = \\binom{4}{3}\\left(\\frac{1}{4}\\right)^3\\left(\\frac{3}{4}\\right)^1 = 4 \\cdot \\frac{1}{64} \\cdot \\frac{3}{4} = \\frac{12}{256}$$\n$$P(X = 4) = \\binom{4}{4}\\left(\\frac{1}{4}\\right)^4\\left(\\frac{3}{4}\\right)^0 = 1 \\cdot \\frac{1}{256} \\cdot 1 = \\frac{1}{256}$$\n\nLangkah 3: Menjumlahkan peluang lulus:\n$$P(\\text{Lulus}) = \\frac{12 + 1}{256} = \\frac{13}{256}$$\n\nLangkah 4: Menghitung peluang tidak lulus menggunakan komplemen:\n$$P(\\text{Tidak Lulus}) = 1 - P(\\text{Lulus}) = 1 - \\frac{13}{256} = \\frac{243}{256}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 271,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Tentukan peluang mendapatkan paling sedikit 4 gambar pada 6 kali pelemparan sekeping uang logam seimbang.",
+        "jawaban": "11/32",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi peluang kumulatif majemuk",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan rentang kejadian majemuk paling sedikit 5 dan penjumlahan tiga kasus peluang binomial beruntun.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan peluang mendapatkan paling sedikit 5 sisi gambar pada 7 kali pelemparan sekeping uang logam seimbang.",
+      "jawaban_benar": "$\\frac{29}{128}$",
+      "alasan_benar": "Peluang gambar p = 1/2, q = 1/2. P(X >= 5) = P(X=5) + P(X=6) + P(X=7) = (C(7,5) + C(7,6) + C(7,7)) / 128 = (21 + 7 + 1) / 128 = 29/128.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{128}$",
+          "alasan": "Hanya menghitung peluang tepat 5 sisi gambar P(X = 5)."
+        },
+        {
+          "teks": "$\\frac{7}{32}$",
+          "alasan": "Hanya menghitung P(X = 5) + P(X = 7) = 22/128 = 11/64 atau salah menjumlahkan koefisien kombinasi menjadi 28/128 = 7/32."
+        },
+        {
+          "teks": "$\\frac{99}{128}$",
+          "alasan": "Menghitung komplemen 1 - 29/128, yaitu peluang mendapatkan paling banyak 4 sisi gambar."
+        }
+      ],
+      "pembahasan": "Pelemparan uang logam seimbang sebanyak $n = 7$ kali memiliki peluang muncul gambar $p = \\frac{1}{2}$ dan $q = 1 - p = \\frac{1}{2}$.\nKejadian mendapatkan paling sedikit $5$ sisi gambar berarti $X \\ge 5$, yaitu $X = 5$, $X = 6$, atau $X = 7$.\n1. $P(X = 5) = \\binom{7}{5} \\left(\\frac{1}{2}\\right)^5 \\left(\\frac{1}{2}\\right)^2 = 21 \\cdot \\frac{1}{128} = \\frac{21}{128}$\n2. $P(X = 6) = \\binom{7}{6} \\left(\\frac{1}{2}\\right)^6 \\left(\\frac{1}{2}\\right)^1 = 7 \\cdot \\frac{1}{128} = \\frac{7}{128}$\n3. $P(X = 7) = \\binom{7}{7} \\left(\\frac{1}{2}\\right)^7 \\left(\\frac{1}{2}\\right)^0 = 1 \\cdot \\frac{1}{128} = \\frac{1}{128}$\nJumlahkan seluruh peluang:\n$P(X \\ge 5) = \\frac{21 + 7 + 1}{128} = \\frac{29}{128}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah b ^ x ; n , p h = c np m p x qn - x untuk x = 0, 1, 2, …, n ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "komparasi model binomial",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan pemodelan dua variabel acak binomial independen berbeda, kalkulasi kumulatif masing-masing, serta perbandingan selisih nilainya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua orang siswa, Ahmad dan Budi, melakukan eksperimen peluang. Ahmad melempar $4$ keping uang logam seimbang secara bersamaan dan menang jika memperoleh paling sedikit $3$ sisi gambar. Budi melempar $3$ buah dadu seimbang bersisi enam secara bersamaan dan menang jika memperoleh paling sedikit $2$ mata dadu bernilai genap. Selisih peluang kemenangan Budi terhadap peluang kemenangan Ahmad adalah ....",
+      "jawaban_benar": "$\\frac{3}{16}$",
+      "alasan_benar": "Peluang Ahmad menang = P(X >= 3) = (C(4,3)+C(4,4))/16 = 5/16. Peluang Budi menang = P(Y >= 2) = (C(3,2)+C(3,3))/8 = 4/8 = 8/16. Selisih = 8/16 - 5/16 = 3/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Salah menghitung peluang Ahmad menang menjadi (C(4,2)+C(4,4))/16 = 7/16 sehingga selisihnya 8/16 - 7/16 = 1/16."
+        },
+        {
+          "teks": "$\\frac{5}{16}$",
+          "alasan": "Hanya menghitung nilai peluang kemenangan Ahmad tanpa mencari selisihnya."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengabaikan kasus kejadian semua dadu genap pada perhitungan peluang kemenangan Budi sehingga diperoleh 3/8 - 5/16 = 1/16 atau salah membagi pecahan."
+        }
+      ],
+      "pembahasan": "Untuk Ahmad:\nBanyak koin $n = 4$, peluang sisi gambar $p = \\frac{1}{2}$.\nAhmad menang jika $X \\ge 3$:\n$P(X \\ge 3) = P(X = 3) + P(X = 4) = \\binom{4}{3}\\left(\\frac{1}{2}\\right)^4 + \\binom{4}{4}\\left(\\frac{1}{2}\\right)^4 = \\frac{4 + 1}{16} = \\frac{5}{16}$.\n\nUntuk Budi:\nBanyak dadu $n = 3$, peluang mata dadu genap $\\{2, 4, 6\\}$ adalah $p = \\frac{3}{6} = \\frac{1}{2}$.\nBudi menang jika $Y \\ge 2$:\n$P(Y \\ge 2) = P(Y = 2) + P(Y = 3) = \\binom{3}{2}\\left(\\frac{1}{2}\\right)^3 + \\binom{3}{3}\\left(\\frac{1}{2}\\right)^3 = \\frac{3 + 1}{8} = \\frac{4}{8} = \\frac{8}{16}$.\n\nSelisih peluang kemenangan Budi terhadap Ahmad:\n$P(Y \\ge 2) - P(X \\ge 3) = \\frac{8}{16} - \\frac{5}{16} = \\frac{3}{16}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada dasarnya, berbagai percobaan pada distribusi binomial bersifat bebas, artinya kita dapat menentukan salah satu kejadian sebagai berhasil dengan peluang keberhasilan pada setiap pengulangan tetap sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis batas parameter binomial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penyusunan pertidaksamaan fungsi binomial berderajat tiga dan penyelesaian batas kritis parameter p.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah sistem pengamanan bekerja dengan mengaktifkan $3$ sensor pendeteksi bahaya yang beroperasi secara saling bebas. Setiap sensor memiliki peluang yang sama sebesar $p$ untuk berhasil mendeteksi bahaya. Sistem pengamanan akan menyalakan alarm jika sedikitnya $2$ sensor berhasil mendeteksi bahaya. Nilai peluang keberhasilan setiap sensor ($p$) terkecil agar peluang alarm berbunyi tidak kurang dari $0{,}5$ adalah ....",
+      "jawaban_benar": "$0{,}5$",
+      "alasan_benar": "P(X >= 2) = 3p^2(1-p) + p^3 = 3p^2 - 2p^3 >= 0,5 <=> 4p^3 - 6p^2 + 1 <= 0 <=> (2p - 1)(2p^2 - 2p - 1) <= 0. Untuk 0 <= p <= 1, solusi minimum adalah p = 0,5.",
+      "distraktor": [
+        {
+          "teks": "$0{,}33$",
+          "alasan": "Mengira nilai p minimum diperoleh dari rasio 1 dibagi banyak sensor (1/3)."
+        },
+        {
+          "teks": "$0{,}67$",
+          "alasan": "Mengira peluang per sensor harus sama dengan ambang batas minimal sensor yang bekerja yaitu 2/3."
+        },
+        {
+          "teks": "$0{,}75$",
+          "alasan": "Salah melakukan pemfaktoran pertidaksamaan polinomial pangkat 3."
+        }
+      ],
+      "pembahasan": "Banyaknya sensor $n = 3$, peluang tiap sensor berhasil adalah $p$, dan gagal $1 - p$.\nAlarm menyala jika sedikitnya $2$ sensor berhasil ($X \\ge 2$):\n$P(X \\ge 2) = P(X = 2) + P(X = 3)$\n$P(X \\ge 2) = \\binom{3}{2} p^2 (1 - p) + \\binom{3}{3} p^3 = 3p^2(1 - p) + p^3 = 3p^2 - 2p^3$.\n\nSyarat agar $P(X \\ge 2) \\ge 0{,}5$:\n$3p^2 - 2p^3 \\ge \\frac{1}{2}$\n$6p^2 - 4p^3 \\ge 1$\n$4p^3 - 6p^2 + 1 \\le 0$\n\nFaktorkan suku banyak tersebut:\nSubstitusi $p = \\frac{1}{2}$: $4\\left(\\frac{1}{8}\\right) - 6\\left(\\frac{1}{4}\\right) + 1 = \\frac{1}{2} - \\frac{3}{2} + 1 = 0$.\nDiperoleh pemfaktoran $(2p - 1)(2p^2 - 2p - 1) \\le 0$.\nAkar dari $2p^2 - 2p - 1 = 0$ adalah $p = \\frac{2 \\pm \\sqrt{12}}{4} = \\frac{1 \\pm \\sqrt{3}}{2}$, yang berada di luar rentang $0 < p < 1$.\nKarena pada interval $[0{,}5; 1]$ nilai $4p^3 - 6p^2 + 1 \\le 0$, maka nilai terkecil $p$ yang memenuhi adalah $0{,}5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ^ x ; n , p h mempunyai nilai harapan E ^ X h = np dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi parameter dari ekspektasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perpaduan aljabar rasio dua peluang binomial berurutan dengan rumus nilai harapan untuk mencari ukuran sampel n.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak $X$ berdistribusi binomial dengan $n$ percobaan saling bebas dan peluang berhasil $p$ pada setiap percobaan (dengan $0 < p < 1$). Diketahui bahwa nilai harapan $E(X) = 3$ dan peluang memperoleh tepat satu keberhasilan adalah $4$ kali peluang tidak memperoleh keberhasilan sama sekali ($P(X = 1) = 4 \\cdot P(X = 0)$). Banyaknya percobaan $n$ yang dilakukan adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "P(X=1)/P(X=0) = (n*p*(1-p)^(n-1))/(1-p)^n = np/(1-p) = 4. Karena np = E(X) = 3, maka 3/(1-p) = 4 => 1-p = 3/4 => p = 1/4. Maka n = E(X)/p = 3/(1/4) = 12.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Salah menghitung nilai p menjadi 1/3 sehingga memperoleh n = 3 / (1/3) = 9."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Salah menyelesaikan persamaan aljabar 3/(1-p) = 4 menjadi p = 1/5 sehingga n = 3/(1/5) = 15."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan kuadrat nilai harapan dengan faktor rasio peluang (4 * 4 = 16)."
+        }
+      ],
+      "pembahasan": "Rumus fungsi distribusi binomial:\n$P(X = x) = \\binom{n}{x} p^x (1 - p)^{n - x}$\n\nMaka:\n$P(X = 0) = (1 - p)^n$\n$P(X = 1) = \\binom{n}{1} p^1 (1 - p)^{n - 1} = n p (1 - p)^{n - 1}$\n\nDari informasi $P(X = 1) = 4 \\cdot P(X = 0)$:\n$\\frac{P(X = 1)}{P(X = 0)} = \\frac{n p (1 - p)^{n - 1}}{(1 - p)^n} = \\frac{n p}{1 - p} = 4$\n\nDiketahui nilai harapan $E(X) = n p = 3$. Substitusikan ke persamaan:\n$\\frac{3}{1 - p} = 4$\n$1 - p = \\frac{3}{4} \\implies p = 1 - \\frac{3}{4} = \\frac{1}{4}$\n\nBanyaknya percobaan $n$:\n$n = \\frac{E(X)}{p} = \\frac{3}{\\frac{1}{4}} = 12$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0280-latihan-soal-distribusi-binomial-5c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis ketahanan sistem binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan variabel acak bebas serta evaluasi nilai kumulatif pada batas atas distribusi binomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Peluang sebuah mesin pemindai dokumen berhasil mendeteksi berkas cacat secara tepat adalah $0{,}7$. Dalam suatu pengujian mutu, dipilih $4$ berkas cacat untuk dipindai secara saling bebas. Peluang bahwa paling sedikit $3$ berkas berhasil dideteksi dengan tepat oleh mesin tersebut adalah ....",
+      "jawaban_benar": "$0{,}6517$",
+      "alasan_benar": "$P(X \\ge 3) = P(X=3) + P(X=4) = \\binom{4}{3}(0{,}7)^3(0{,}3)^1 + \\binom{4}{4}(0{,}7)^4(0{,}3)^0 = 4(0{,}343)(0{,}3) + 0{,}2401 = 0{,}4116 + 0{,}2401 = 0{,}6517$.",
+      "distraktor": [
+        {
+          "teks": "$0{,}4116$",
+          "alasan": "Hanya menghitung peluang tepat $3$ berkas berhasil terdeteksi ($P(X = 3)$)."
+        },
+        {
+          "teks": "$0{,}3483$",
+          "alasan": "Menghitung komplemen secara keliru sebagai $1 - 0{,}6517$."
+        },
+        {
+          "teks": "$0{,}2401$",
+          "alasan": "Hanya menghitung peluang seluruh berkas ($4$ berkas) berhasil terdeteksi ($P(X = 4)$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan parameter distribusi binomial: $n = 4$, $p = 0{,}7$, dan $q = 1 - 0{,}7 = 0{,}3$.\nLangkah 2: Kejadian paling sedikit $3$ berkas terdeteksi berarti $X \\ge 3$, yaitu $X = 3$ atau $X = 4$.\nLangkah 3: Hitung probabilitas masing-masing kejadian:\n$P(X = 3) = \\binom{4}{3} (0{,}7)^3 (0{,}3)^1 = 4 \\times 0{,}343 \\times 0{,}3 = 0{,}4116$\n$P(X = 4) = \\binom{4}{4} (0{,}7)^4 (0{,}3)^0 = 1 \\times 0{,}2401 \\times 1 = 0{,}2401$\nLangkah 4: Jumlahkan kedua probabilitas:\n$P(X \\ge 3) = 0{,}4116 + 0{,}2401 = 0{,}6517$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah b ^ x ; n , p h = c np m p x qn - x untuk x = 0, 1, 2, …, n ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi nilai harapan binomial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembentukan persamaan aljabar dari kesamaan peluang dua titik binomial untuk merekonstruksi parameter sukses dan nilai harapannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 6$ dan peluang sukses pada setiap percobaan $p$ (dengan $0 < p < 1$). Jika diketahui peluang terjadinya tepat $1$ kali sukses sama dengan peluang terjadinya tepat $2$ kali sukses, nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+      "jawaban_benar": "$\\frac{12}{7}$",
+      "alasan_benar": "Persamaan $P(X = 1) = P(X = 2)$ menghasilkan $6p(1-p)^5 = 15p^2(1-p)^4$. Penyederhanaan menghasilkan $2(1-p) = 5p \\implies 7p = 2 \\implies p = \\frac{2}{7}$. Nilai harapan $E(X) = n p = 6 \\times \\frac{2}{7} = \\frac{12}{7}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{7}$",
+          "alasan": "Hanya menghitung nilai parameter peluang sukses $p$, lupa mengalikan dengan $n$ untuk mencari nilai harapan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Salah menyelesaikan persamaan linear $2(1-p) = 5p$ menjadi $2 = 3p \\implies p = \\frac{2}{3}$ sehingga $E(X) = 6 \\times \\frac{2}{3} = 4$."
+        },
+        {
+          "teks": "$\\frac{15}{7}$",
+          "alasan": "Keliru menggunakan koefisien kombinasi pada pembilang nilai harapan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tuliskan rumus peluang binomial untuk $X = 1$ dan $X = 2$ dengan $n = 6$:\n$P(X = 1) = \\binom{6}{1} p^1 (1-p)^5 = 6p(1-p)^5$\n$P(X = 2) = \\binom{6}{2} p^2 (1-p)^4 = 15p^2(1-p)^4$\nLangkah 2: Samakan kedua nilai peluang sesuai yang diketahui pada soal:\n$6p(1-p)^5 = 15p^2(1-p)^4$\nLangkah 3: Karena $0 < p < 1$, bagi kedua ruas dengan $3p(1-p)^4$:\n$2(1-p) = 5p$\nLangkah 4: Selesaikan persamaan untuk memperoleh $p$:\n$2 - 2p = 5p \\implies 7p = 2 \\implies p = \\frac{2}{7}$\nLangkah 5: Hitung nilai harapan $E(X)$:\n$E(X) = n \\cdot p = 6 \\cdot \\frac{2}{7} = \\frac{12}{7}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0280-latihan-soal-distribusi-binomial-5c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan nilai harapan dari kumulatif",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penalaran terbalik untuk mengevaluasi parameter peluang keberhasilan dari komplemen peluang kumulatif sebelum menentukan nilai harapan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang teknisi menguji $5$ unit perangkat sensor yang bekerja secara saling bebas. Setiap perangkat memiliki peluang keberhasilan fungsi yang sama sebesar $p$. Jika peluang paling sedikit satu perangkat berfungsi dengan baik adalah $\\frac{242}{243}$, nilai harapan banyaknya perangkat yang berfungsi dengan baik adalah ....",
+      "jawaban_benar": "$\\frac{10}{3}$",
+      "alasan_benar": "Peluang paling sedikit 1 berfungsi adalah $P(X \\ge 1) = 1 - P(X = 0) = 1 - (1 - p)^5 = \\frac{242}{243}$. Diperoleh $(1 - p)^5 = \\frac{1}{243} = \\left(\\frac{1}{3}\\right)^5$, sehingga $1 - p = \\frac{1}{3}$ atau $p = \\frac{2}{3}$. Maka nilai harapan $E(X) = n \\cdot p = 5 \\cdot \\frac{2}{3} = \\frac{10}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{3}$",
+          "alasan": "Siswa keliru mengalikan $n$ dengan peluang kegagalan $q = \\frac{1}{3}$, bukan peluang sukses $p$."
+        },
+        {
+          "teks": "$\\frac{8}{3}$",
+          "alasan": "Siswa keliru menghitung nilai $n = 4$ padahal terdapat $5$ unit perangkat yang diuji."
+        },
+        {
+          "teks": "$\\frac{5}{2}$",
+          "alasan": "Siswa mengasumsikan peluang keberhasilan setiap perangkat netral ($p = 0{,}5$) tanpa memanfaatkan informasi peluang kumulatif."
+        }
+      ],
+      "pembahasan": "Misalkan $X$ menyatakan banyaknya perangkat yang berfungsi dengan baik, maka $X \\sim B(5, p)$.\nDiketahui:\n$$P(X \\ge 1) = \\frac{242}{243}$$\n$$1 - P(X = 0) = \\frac{242}{243}$$\n$$1 - \\binom{5}{0} p^0 (1-p)^5 = \\frac{242}{243}$$\n$$(1-p)^5 = 1 - \\frac{242}{243} = \\frac{1}{243}$$\n$$1 - p = \\frac{1}{3} \\implies p = 1 - \\frac{1}{3} = \\frac{2}{3}$$\nNilai harapan banyaknya perangkat yang berfungsi baik adalah:\n$$E(X) = n \\cdot p = 5 \\cdot \\frac{2}{3} = \\frac{10}{3}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ( x ; n , p ) mempunyai nilai harapan E ( X ) = n p dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis fungsi skor linier binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan variabel acak skor sebagai transformasi linier dari variabel binomial serta evaluasi ketaksamaan peluang kejadian bernilai positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah ujian singkat memuat $4$ butir soal pilihan ganda dengan $5$ opsi jawaban (tepat $1$ opsi benar per soal). Seorang siswa menjawab seluruh soal murni dengan cara menebak secara acak dan bebas. Aturan penilaian memberikan skor $+4$ untuk setiap jawaban benar dan denda skor $-1$ untuk setiap jawaban salah (tidak ada soal yang dikosongkan). Jika $Y$ adalah skor total yang diperoleh siswa tersebut, nilai harapan skor $E(Y)$ dan peluang siswa memperoleh skor total lebih dari $0$ berturut-turut adalah ....",
+      "jawaban_benar": "$0$ dan $\\frac{369}{625}$",
+      "alasan_benar": "Banyaknya jawaban benar $X \\sim B(4, \\frac{1}{5})$. Skor $Y = 4X - 1(4 - X) = 5X - 4$. Nilai harapan $E(X) = 4 \\cdot \\frac{1}{5} = \\frac{4}{5}$, sehingga $E(Y) = 5E(X) - 4 = 5(\\frac{4}{5}) - 4 = 0$. Syarat skor $Y > 0 \\iff 5X - 4 > 0 \\iff X > \\frac{4}{5} \\iff X \\ge 1$. Peluang $P(X \\ge 1) = 1 - P(X = 0) = 1 - (\\frac{4}{5})^4 = 1 - \\frac{256}{625} = \\frac{369}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$ dan $\\frac{369}{625}$",
+          "alasan": "Siswa keliru menganggap nilai harapan skor total sama dengan nilai harapan banyak soal benar $E(X) = \\frac{4}{5}$."
+        },
+        {
+          "teks": "$0$ dan $\\frac{256}{625}$",
+          "alasan": "Siswa menghitung peluang mendapatkan skor tidak positif $P(X = 0) = \\left(\\frac{4}{5}\\right)^4 = \\frac{256}{625}$."
+        },
+        {
+          "teks": "$0$ dan $\\frac{1}{5}$",
+          "alasan": "Siswa salah mengira bahwa peluang memperoleh skor positif hanya diwakili oleh peluang menebak satu soal dengan benar."
+        }
+      ],
+      "pembahasan": "Misalkan $X$ adalah banyaknya jawaban benar. Karena setiap soal memiliki 5 opsi dan ditebak acak, maka $X \\sim B\\left(4, \\frac{1}{5}\\right)$.\nBanyaknya jawaban salah adalah $4 - X$.\nFungsi skor total $Y$ adalah:\n$$Y = 4X - 1(4 - X) = 5X - 4$$\n1. Menghitung nilai harapan $E(Y)$:\n$$E(X) = n \\cdot p = 4 \\cdot \\frac{1}{5} = \\frac{4}{5}$$\n$$E(Y) = E(5X - 4) = 5 \\cdot E(X) - 4 = 5 \\left(\\frac{4}{5}\\right) - 4 = 4 - 4 = 0$$\n2. Menghitung peluang $P(Y > 0)$:\n$$Y > 0 \\iff 5X - 4 > 0 \\iff X > \\frac{4}{5}$$\nKarena $X$ bilangan cacah, $X > \\frac{4}{5}$ setara dengan $X \\ge 1$.\n$$P(Y > 0) = P(X \\ge 1) = 1 - P(X = 0)$$\n$$P(X = 0) = \\binom{4}{0} \\left(\\frac{1}{5}\\right)^0 \\left(\\frac{4}{5}\\right)^4 = 1 \\times 1 \\times \\frac{256}{625} = \\frac{256}{625}$$\n$$P(Y > 0) = 1 - \\frac{256}{625} = \\frac{369}{625}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0280-latihan-soal-distribusi-binomial-5b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "komparasi keandalan sistem binomial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi dan membandingkan peluang kumulatif beroperasinya dua sistem independen dengan parameter ukuran sampel dan peluang sukses yang berbeda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perangkat kendali dapat dirancang dengan dua konfigurasi sistem yang bekerja secara independen:\n- Sistem A menggunakan $4$ komponen dengan peluang masing-masing komponen berfungsi normal sebesar $0{,}8$. Sistem A akan berfungsi jika minimal $3$ komponen bekerja normal.\n- Sistem B menggunakan $3$ komponen berkualitas tinggi dengan peluang masing-masing komponen berfungsi normal sebesar $0{,}9$. Sistem B akan berfungsi jika minimal $2$ komponen bekerja normal.\n\nBerdasarkan evaluasi keandalan menggunakan distribusi binomial, sistem manakah yang memiliki peluang berfungsi lebih tinggi dan berapakah selisih peluang di antara kedua konfigurasi tersebut?",
+      "jawaban_benar": "Sistem B, dengan selisih peluang sebesar $0{,}1528$",
+      "alasan_benar": "Peluang beroperasinya Sistem A adalah $P(X \\ge 3) = P(X=3) + P(X=4) = \\binom{4}{3}(0{,}8)^3(0{,}2)^1 + \\binom{4}{4}(0{,}8)^4 = 4(0{,}512)(0{,}2) + 0{,}4096 = 0{,}4096 + 0{,}4096 = 0{,}8192$. Peluang beroperasinya Sistem B adalah $P(Y \\ge 2) = P(Y=2) + P(Y=3) = \\binom{3}{2}(0{,}9)^2(0{,}1)^1 + \\binom{3}{3}(0{,}9)^3 = 3(0{,}81)(0{,}1) + 0{,}729 = 0{,}243 + 0{,}729 = 0{,}972$. Dengan demikian, Sistem B memiliki keandalan lebih tinggi dengan selisih peluang $0{,}972 - 0{,}8192 = 0{,}1528$.",
+      "distraktor": [
+        {
+          "teks": "Sistem A, dengan selisih peluang sebesar $0{,}1528$",
+          "alasan": "Tertukar dalam membandingkan nilai akhir $0{,}8192$ dan $0{,}972$ sehingga keliru menyimpulkan Sistem A lebih besar."
+        },
+        {
+          "teks": "Sistem B, dengan selisih peluang sebesar $0{,}0704$",
+          "alasan": "Hanya menghitung peluang tepat memenuhi batas minimum ($P(X=3) = 0{,}4096$ dan $P(Y=2) = 0{,}243$) atau salah mengurangi komponen peluang sempurna."
+        },
+        {
+          "teks": "Sistem B, dengan selisih peluang sebesar $0{,}1704$",
+          "alasan": "Kesalahan aritmetika saat menghitung $P(X=4)$ sebagai $(0{,}8)^4 = 0{,}392$ bukan $0{,}4096$."
+        }
+      ],
+      "pembahasan": "Langkah 1 (Peluang Sistem A):\nVariabel acak $X \\sim \\text{Binomial}(n=4, p=0{,}8)$. Sistem A berfungsi jika $X \\ge 3$.\n$P(X = 3) = \\binom{4}{3}(0{,}8)^3(0{,}2)^1 = 4(0{,}512)(0{,}2) = 0{,}4096$\n$P(X = 4) = \\binom{4}{4}(0{,}8)^4(0{,}2)^0 = 1(0{,}4096)(1) = 0{,}4096$\n$P(X \\ge 3) = 0{,}4096 + 0{,}4096 = 0{,}8192$.\n\nLangkah 2 (Peluang Sistem B):\nVariabel acak $Y \\sim \\text{Binomial}(n=3, p=0{,}9)$. Sistem B berfungsi jika $Y \\ge 2$.\n$P(Y = 2) = \\binom{3}{2}(0{,}9)^2(0{,}1)^1 = 3(0{,}81)(0{,}1) = 0{,}243$\n$P(Y = 3) = \\binom{3}{3}(0{,}9)^3(0{,}1)^0 = 1(0{,}729)(1) = 0{,}729$\n$P(Y \\ge 2) = 0{,}243 + 0{,}729 = 0{,}972$.\n\nLangkah 3 (Komparasi dan Selisih):\nKarena $0{,}972 > 0{,}8192$, maka Sistem B memiliki peluang berfungsi lebih tinggi.\nSelisih peluangnya adalah:\n$P(Y \\ge 2) - P(X \\ge 3) = 0{,}972 - 0{,}8192 = 0{,}1528$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter rasio peluang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis hubungan rasio dua titik peluang untuk mengonstruksi nilai parameter peluang sukses, lalu mengevaluasi nilai peluang kumulatif pada ekor distribusi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 5$ dan peluang sukses pada setiap percobaan $p$ (dengan $0 < p < 1$). Jika diketahui bahwa peluang memperoleh tepat $3$ kali sukses bernilai dua kali lipat dari peluang memperoleh tepat $2$ kali sukses, yaitu $P(X = 3) = 2 \\cdot P(X = 2)$, maka nilai dari $P(X \\ge 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{112}{243}$",
+      "alasan_benar": "Dari $P(X = 3) = 2 \\cdot P(X = 2)$, diperoleh $\\binom{5}{3} p^3 (1-p)^2 = 2 \\binom{5}{2} p^2 (1-p)^3$. Karena $\\binom{5}{3} = \\binom{5}{2} = 10$, persamaan tereduksi menjadi $p = 2(1-p) \\implies 3p = 2 \\implies p = \\frac{2}{3}$. Maka $P(X \\ge 4) = P(X = 4) + P(X = 5) = \\binom{5}{4}\\left(\\frac{2}{3}\\right)^4\\left(\\frac{1}{3}\\right)^1 + \\binom{5}{5}\\left(\\frac{2}{3}\\right)^5 = 5\\left(\\frac{16}{243}\\right) + \\frac{32}{243} = \\frac{80 + 32}{243} = \\frac{112}{243}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{80}{243}$",
+          "alasan": "Hanya menghitung nilai $P(X = 4)$ dan lupa menambahkan $P(X = 5)$ untuk kondisi $P(X \\ge 4)$."
+        },
+        {
+          "teks": "$\\frac{11}{243}$",
+          "alasan": "Tertukar saat menyelesaikan perbandingan aljabar sehingga memperoleh $p = \\frac{1}{3}$, lalu menghitung $P(X \\ge 4) = \\frac{10 + 1}{243} = \\frac{11}{243}$."
+        },
+        {
+          "teks": "$\\frac{131}{243}$",
+          "alasan": "Keliru menganggap koefisien kombinasi $\\binom{5}{4}$ adalah $10$ sehingga menghitung $(10 \\times 16 + 32)/243$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan rumus fungsi peluang binomial $b(x; n, p) = \\binom{n}{x} p^x (1-p)^{n-x}$.\n$P(X = 3) = \\binom{5}{3} p^3 (1-p)^2 = 10 p^3 (1-p)^2$\n$P(X = 2) = \\binom{5}{2} p^2 (1-p)^3 = 10 p^2 (1-p)^3$\n\nLangkah 2: Substitusikan ke dalam persamaan $P(X = 3) = 2 \\cdot P(X = 2)$:\n$10 p^3 (1-p)^2 = 2 \\cdot 10 p^2 (1-p)^3$\nBagi kedua ruas dengan $10 p^2 (1-p)^2$ (karena $0 < p < 1$):\n$p = 2(1 - p)$\n$p = 2 - 2p \\implies 3p = 2 \\implies p = \\frac{2}{3}$\nMaka $q = 1 - p = \\frac{1}{3}$.\n\nLangkah 3: Hitung $P(X = 4)$:\n$P(X = 4) = \\binom{5}{4} \\left(\\frac{2}{3}\\right)^4 \\left(\\frac{1}{3}\\right)^1 = 5 \\cdot \\frac{16}{81} \\cdot \\frac{1}{3} = \\frac{80}{243}$.\n\nLangkah 4: Hitung $P(X = 5)$:\n$P(X = 5) = \\binom{5}{5} \\left(\\frac{2}{3}\\right)^5 \\left(\\frac{1}{3}\\right)^0 = 1 \\cdot \\frac{32}{243} \\cdot 1 = \\frac{32}{243}$.\n\nLangkah 5: Jumlahkan untuk mendapatkan $P(X \\ge 4)$:\n$P(X \\ge 4) = P(X = 4) + P(X = 5) = \\frac{80}{243} + \\frac{32}{243} = \\frac{112}{243}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 270,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "P ( A ) + P ( A c ) = 1 dengan P ( A ) adalah peluang kejadian sukses (berhasil), P ( A c ) adalah peluang kejadian gagal."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perancangan kapasitas batas binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi batasan peluang komplemen kumulatif binomial untuk merancang ukuran sampel maksimum yang memenuhi batas toleransi kesalahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu sistem pemantauan lalu lintas data jaringan, setiap paket data yang lewat memiliki peluang independen $p = 0{,}2$ memicu alarm peringatan palsu. Suatu siklus pemeriksaan dinyatakan aman jika peluang munculnya paling sedikit satu alarm peringatan palsu tidak melebihi $0{,}6$. Berapakah banyak paket data maksimum ($n$) yang boleh diperiksa dalam satu siklus agar sistem tetap memenuhi kriteria aman tersebut?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Peluang muncul paling sedikit satu peringatan palsu adalah $P(X \\ge 1) = 1 - P(X = 0) = 1 - (1 - 0{,}2)^n = 1 - (0{,}8)^n$. Syarat aman adalah $P(X \\ge 1) \\le 0{,}6 \\iff 1 - (0{,}8)^n \\le 0{,}6 \\iff (0{,}8)^n \\ge 0{,}4$. Evaluasi nilai $(0{,}8)^n$: untuk $n=1$, $(0{,}8)^1 = 0{,}8$; untuk $n=2$, $(0{,}8)^2 = 0{,}64$; untuk $n=3$, $(0{,}8)^3 = 0{,}512$; untuk $n=4$, $(0{,}8)^4 = 0{,}4096 \\ge 0{,}4$; untuk $n=5$, $(0{,}8)^5 = 0{,}32768 < 0{,}4$. Jadi nilai $n$ maksimum adalah $4$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Berhenti menghitung terlalu awal karena mengira $(0{,}8)^4$ sudah kurang dari $0{,}4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Memilih nilai pertama saat peluang melebihi batas $0{,}6$ bukannya nilai maksimum yang masih memenuhi syarat tidak melebihi $0{,}6$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Salah menggunakan pendekatan linier ekspektasi $n \\cdot p \\le 0{,}6 \\implies n \\le 3$, lalu mengurangi satu karena ragu."
+        }
+      ],
+      "pembahasan": "Langkah 1: Definisikan variabel acak $X$ sebagai banyaknya alarm palsu yang muncul dari $n$ paket data, sehingga $X \\sim \\text{Binomial}(n, p=0{,}2)$. Peluang komplemen (tidak ada alarm palsu sama sekali) adalah $P(X = 0) = (1 - 0{,}2)^n = (0{,}8)^n$.\n\nLangkah 2: Tuliskan peluang terjadinya paling sedikit satu alarm palsu:\n$P(X \\ge 1) = 1 - P(X = 0) = 1 - (0{,}8)^n$.\n\nLangkah 3: Terapkan syarat bahwa peluang ini tidak boleh melebihi $0{,}6$:\n$1 - (0{,}8)^n \\le 0{,}6$\n$-(0{,}8)^n \\le -0{,}4$\n$(0{,}8)^n \\ge 0{,}4$.\n\nLangkah 4: Evaluasi nilai $(0{,}8)^n$ untuk $n$ bilangan bulat positif:\n- $n = 1 \\implies (0{,}8)^1 = 0{,}8 \\ge 0{,}4$ (memenuhi, $P(X \\ge 1) = 0{,}20$)\n- $n = 2 \\implies (0{,}8)^2 = 0{,}64 \\ge 0{,}4$ (memenuhi, $P(X \\ge 1) = 0{,}36$)\n- $n = 3 \\implies (0{,}8)^3 = 0{,}512 \\ge 0{,}4$ (memenuhi, $P(X \\ge 1) = 0{,}488$)\n- $n = 4 \\implies (0{,}8)^4 = 0{,}4096 \\ge 0{,}4$ (memenuhi, $P(X \\ge 1) = 0{,}5904 \\le 0{,}6$)\n- $n = 5 \\implies (0{,}8)^5 = 0{,}32768 < 0{,}4$ (tidak memenuhi, $P(X \\ge 1) = 0{,}67232 > 0{,}6$)\n\nDengan demikian, banyak paket data maksimum yang boleh diperiksa adalah $n = 4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika suatu percobaan binomial mempunyai peluang berhasil p dan peluang gagal q = 1 - p , maka fungsi distribusi peluang untuk variabel random binomial X , yaitu banyaknya keberhasilan dalam n percobaan yang bebas, adalah b ( x ; n , p ) = ( n p ) p x q n - x untuk x = 0, 1, 2, …, n ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "optimasi fungsi peluang binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi fungsi peluang binomial sebagai fungsi terhadap parameter p dan menentukan titik ekstrim maksimumnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu eksperimen binomial dengan variabel acak $X \\sim B(4, p)$ di mana $p \\in (0, 1)$, seorang pengamat ingin mengetahui kondisi ketika peluang mendapatkan tepat $2$ kali sukses mencapai nilai paling maksimum. Nilai peluang maksimum $P(X = 2)$ tersebut adalah ....",
+      "jawaban_benar": "$\\frac{3}{8}$",
+      "alasan_benar": "Peluang $P(X=2) = 6p^2(1-p)^2$ mencapai nilai maksimum saat $p = \\frac{1}{2}$, yang menghasilkan nilai peluang $\\frac{3}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Salah menghitung koefisien binomial $\\binom{4}{2}$ menjadi $4$ alih-alih $6$."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengira nilai peluang maksimum sama dengan nilai parameter $p = \\frac{1}{2}$ yang memaksimumkannya."
+        },
+        {
+          "teks": "$\\frac{5}{16}$",
+          "alasan": "Menggunakan nilai $p = \\frac{1}{4}$ atau salah menjumlahkan pangkat pada ekspresi peluang."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi distribusi binomial, peluang terjadinya tepat $2$ kali sukses dari $n = 4$ percobaan adalah:\n$P(X = 2) = \\binom{4}{2} p^2 (1 - p)^{4-2} = 6 p^2 (1 - p)^2 = 6 [p(1 - p)]^2$\n\nUntuk memaksimumkan fungsi tersebut terhadap $p \\in (0, 1)$, kita tinjau fungsi kuadrat $f(p) = p(1 - p) = p - p^2$.\nFungsi kuadrat ini terbuka ke bawah dan mencapai puncak maksimum saat:\n$p = -\\frac{b}{2a} = -\\frac{1}{2(-1)} = \\frac{1}{2}$\n\nKarena $p = \\frac{1}{2}$ memaksimumkan $f(p)$, maka $[f(p)]^2$ juga mencapai nilai maksimum pada $p = \\frac{1}{2}$.\nNilai peluang maksimumnya adalah:\n$P(X = 2) = 6 \\left(\\frac{1}{2}\\right)^2 \\left(1 - \\frac{1}{2}\\right)^2 = 6 \\cdot \\frac{1}{4} \\cdot \\frac{1}{4} = \\frac{6}{16} = \\frac{3}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Distribusi binomial b ( x ; n , p ) mempunyai nilai harapan E ( X ) = np dengan n banyaknya percobaan dan p peluang keberhasilan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi linear nilai harapan binomial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemecahan sistem persamaan dari peluang binomial dasar dan relasi linier nilai harapan dua variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua variabel acak binomial independen $X$ dan $Y$ masing-masing memenuhi $X \\sim B(n, p)$ dan $Y \\sim B(2n, 1-p)$, dengan $n$ bilangan bulat positif dan $0 < p < 1$. Jika diketahui peluang tidak diperoleh kesuksesan sama sekali pada $X$ adalah $P(X = 0) = \\left(\\frac{2}{3}\\right)^n$ dan selisih nilai harapan keduanya adalah $E(Y) - E(X) = 6$, maka nilai dari $E(X + Y)$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Menemukan $p = \\frac{1}{3}$ dari peluang nol sukses, menyelesaikan $n = 6$ dari selisih nilai harapan, dan menghitung $E(X+Y) = 2 + 8 = 10$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Hanya menghitung nilai harapan $E(Y)$ tanpa menambahkan $E(X)$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Keliru menganggap kedua variabel memiliki banyak percobaan yang sama yaitu $2n$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengira nilai harapan jumlah sama dengan nilai selisih $E(Y) - E(X)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai parameter $p$.\nDiketahui $P(X = 0) = \\binom{n}{0} p^0 (1 - p)^n = (1 - p)^n$.\nKarena $(1 - p)^n = \\left(\\frac{2}{3}\\right)^n$, maka:\n$1 - p = \\frac{2}{3} \\implies p = 1 - \\frac{2}{3} = \\frac{1}{3}$\n\nLangkah 2: Tentukan rumus nilai harapan masing-masing variabel.\n$E(X) = n \\cdot p = \\frac{n}{3}$\n$E(Y) = 2n \\cdot (1 - p) = 2n \\cdot \\frac{2}{3} = \\frac{4n}{3}$\n\nLangkah 3: Gunakan informasi selisih nilai harapan untuk mencari $n$.\n$E(Y) - E(X) = 6$\n$\\frac{4n}{3} - \\frac{n}{3} = 6 \\implies \\frac{3n}{3} = 6 \\implies n = 6$\n\nLangkah 4: Hitung nilai dari $E(X + Y)$.\n$E(X) = \\frac{6}{3} = 2$\n$E(Y) = \\frac{4(6)}{3} = 8$\n$E(X + Y) = E(X) + E(Y) = 2 + 8 = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-f-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 272,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada dasarnya, berbagai percobaan pada distribusi binomial bersifat bebas, artinya kita dapat menentukan salah satu kejadian sebagai berhasil dengan peluang keberhasilan pada setiap pengulangan tetap sama. Proses seperti ini disebut Proses Bernoulli ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis ambang batas keputusan binomial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengevaluasi perubahan ambang batas kumulatif pada sistem deteksi binomial dan menyederhanakan selisih probabilitasnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah sistem pengamanan darurat dilengkapi dengan $5$ sensor gas independen. Pada saat terjadi kebocoran gas, setiap sensor memiliki peluang mendeteksi bahaya sebesar $0{,}6$. Sistem lama membunyikan alarm jika paling sedikit $3$ sensor mendeteksi gas. Pihak teknisi ingin mengubah ambang batas aktivasi sehingga alarm hanya berbunyi jika paling sedikit $4$ sensor mendeteksi gas. Penurunan peluang berbunyinya alarm setelah perubahan ambang batas tersebut dilakukan adalah ....",
+      "jawaban_benar": "$0{,}3456$",
+      "alasan_benar": "Penurunan peluang ekuivalen tepat dengan $P(X = 3)$, yaitu $\\binom{5}{3} (0{,}6)^3 (0{,}4)^2 = 0{,}3456$.",
+      "distraktor": [
+        {
+          "teks": "$0{,}2304$",
+          "alasan": "Keliru menghitung selisih sebagai nilai peluang tepat $4$ sensor mendeteksi gas $P(X=4)$."
+        },
+        {
+          "teks": "$0{,}68256$",
+          "alasan": "Menghitung peluang alarm berbunyi pada sistem lama $P(X \\ge 3)$ bukan penurunannya."
+        },
+        {
+          "teks": "$0{,}33696$",
+          "alasan": "Menghitung peluang alarm berbunyi pada sistem baru $P(X \\ge 4)$ bukan selisih penurunannya."
+        }
+      ],
+      "pembahasan": "Misalkan $X$ adalah banyaknya sensor yang berhasil mendeteksi gas, maka $X \\sim B(5;\\, 0{,}6)$ dengan $q = 1 - 0{,}6 = 0{,}4$.\n\nPeluang alarm berbunyi pada sistem lama: $P_{\\text{lama}} = P(X \\ge 3) = P(X = 3) + P(X = 4) + P(X = 5)$.\nPeluang alarm berbunyi pada sistem baru: $P_{\\text{baru}} = P(X \\ge 4) = P(X = 4) + P(X = 5)$.\n\nPenurunan peluang berbunyinya alarm adalah:\n$\\Delta P = P_{\\text{lama}} - P_{\\text{baru}} = [P(X = 3) + P(X = 4) + P(X = 5)] - [P(X = 4) + P(X = 5)] = P(X = 3)$\n\nMaka kita cukup menghitung peluang tepat $3$ sensor mendeteksi gas:\n$P(X = 3) = \\binom{5}{3} (0{,}6)^3 (0{,}4)^{5-3}$\n$P(X = 3) = 10 \\cdot (0{,}216) \\cdot (0{,}16)$\n$P(X = 3) = 10 \\cdot 0{,}03456 = 0{,}3456$.\n\nJadi, penurunan peluang berbunyinya alarm adalah $0{,}3456$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

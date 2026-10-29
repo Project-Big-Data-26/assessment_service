@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0033-latihan-soal-lingkaran-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "transformasi persamaan lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan integrasi konsep jari-jari lingkaran dari dua titik dengan komposisi transformasi rotasi dan translasi pada titik pusat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui lingkaran $L$ berpusat di titik $(4, -1)$ dan melalui titik $(7, 3)$. Misalkan lingkaran $L$ diputar $90^\\circ$ searah jarum jam terhadap titik asal $O(0, 0)$, kemudian digeser ke kiri sejauh $3$ satuan. Persamaan lingkaran yang dihasilkan adalah ....",
+      "jawaban_benar": "$(x + 4)^2 + (y + 4)^2 = 25$",
+      "alasan_benar": "Jari-jari lingkaran adalah $\\sqrt{(7-4)^2+(3-(-1))^2}=5$. Titik pusat $(4, -1)$ diputar $90^\\circ$ searah jarum jam menjadi $(-1, -4)$, lalu digeser ke kiri 3 satuan menjadi $(-4, -4)$, sehingga persamaannya $(x+4)^2+(y+4)^2=25$.",
+      "distraktor": [
+        {
+          "teks": "$(x - 4)^2 + (y + 4)^2 = 25$",
+          "alasan": "Keliru melakukan translasi ke arah kanan bukannya ke kiri."
+        },
+        {
+          "teks": "$(x + 4)^2 + (y - 4)^2 = 25$",
+          "alasan": "Menerapkan rumus rotasi berlawanan arah jarum jam bukannya searah jarum jam."
+        },
+        {
+          "teks": "$(x + 1)^2 + (y + 4)^2 = 25$",
+          "alasan": "Lupa menerapkan pergeseran translasi sejauh 3 satuan pada absis titik pusat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari lingkaran $L$.\nPusat lingkaran adalah $P(4, -1)$ dan melalui $(7, 3)$:\n$r^2 = (7 - 4)^2 + (3 - (-1))^2 = 3^2 + 4^2 = 9 + 16 = 25$\n\nLangkah 2: Transformasi rotasi titik pusat.\nRotasi sebesar $90^\\circ$ searah jarum jam (sudut $-90^\\circ$) terhadap titik asal memetakan $(x, y) \\to (y, -x)$.\nMaka koordinat pusat baru $P'$ adalah:\n$P'(x', y') = (-1, -4)$\n\nLangkah 3: Transformasi translasi titik pusat.\nLingkaran kemudian digeser ke kiri sejauh 3 satuan, sehingga absis berkurang 3:\n$x'' = -1 - 3 = -4$\n$y'' = -4$\nPusat akhir lingkaran adalah $P''(-4, -4)$.\n\nLangkah 4: Menentukan persamaan lingkaran hasil transformasi.\nKarena transformasi berupa isometri, panjang jari-jari tidak berubah ($r^2 = 25$). Persamaan lingkaran akhirnya adalah:\n$(x - (-4))^2 + (y - (-4))^2 = 25 \\iff (x + 4)^2 + (y + 4)^2 = 25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 24,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diameter membagi lingkaran menjadi dua bagian dengan luas yang sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "persamaan lingkaran berdasar simetri garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penarikan kesimpulan geometris bahwa garis pembagi luas sama harus memuat diameter dan melalui pusat lingkaran, lalu dikaitkan dengan kedudukan garis terhadap sumbu-sumbu koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran terletak di kuadran I dan menyinggung sumbu-$x$ sekaligus sumbu-$y$. Jika garis $4x - 3y = 5$ membagi lingkaran tersebut menjadi dua bagian dengan luas yang sama, maka persamaan umum lingkaran tersebut adalah ....",
+      "jawaban_benar": "$x^2 + y^2 - 10x - 10y + 25 = 0$",
+      "alasan_benar": "Garis pembagi memuat titik pusat $(r, r)$. Substitusi ke $4r-3r=5$ menghasilkan $r=5$, sehingga persamaan lingkarannya $(x-5)^2+(y-5)^2=25$ atau $x^2+y^2-10x-10y+25=0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 - 10x - 10y + 50 = 0$",
+          "alasan": "Keliru tidak mengurangkan suku $r^2$ saat menjabarkan bentuk baku ke bentuk umum."
+        },
+        {
+          "teks": "$x^2 + y^2 + 10x + 10y + 25 = 0$",
+          "alasan": "Salah menentukan tanda koordinat pusat lingkaran yang berada di kuadran I."
+        },
+        {
+          "teks": "$x^2 + y^2 - 5x - 5y + 25 = 0$",
+          "alasan": "Koefisien suku derajat satu langsung menggunakan nilai $r$, bukan $-2r$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat pusat lingkaran.\nLingkaran berada di kuadran I dan menyinggung sumbu-$x$ serta sumbu-$y$, sehingga jarak dari pusat ke kedua sumbu sama dengan jari-jari $r$ ($r > 0$). Oleh karena itu, koordinat pusat lingkaran adalah $P(r, r)$.\n\nLangkah 2: Menghubungkan garis dengan pusat lingkaran.\nBerdasarkan sifat lingkaran, garis lurus yang membagi lingkaran menjadi dua bagian dengan luas yang sama adalah garis yang memuat diameter, yang berarti garis tersebut wajib melewati titik pusat lingkaran $P(r, r)$.\n\nLangkah 3: Menghitung nilai $r$.\nSubstitusikan titik $(r, r)$ ke dalam persamaan garis $4x - 3y = 5$:\n$4(r) - 3(r) = 5 \\implies r = 5$\nDengan demikian, pusat lingkaran berada di $(5, 5)$ dan jari-jarinya adalah $r = 5$.\n\nLangkah 4: Menentukan persamaan umum lingkaran.\nBentuk baku persamaan lingkaran:\n$(x - 5)^2 + (y - 5)^2 = 5^2$\n$(x^2 - 10x + 25) + (y^2 - 10y + 25) = 25$\n$x^2 + y^2 - 10x - 10y + 25 = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0033-latihan-soal-lingkaran-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "transformasi dilatasi dan refleksi lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan pusat dan jari-jari lingkaran awal, pencerminan titik pusat terhadap sumbu koordinat, penskalaan jari-jari, serta rekonstruksi persamaan lingkaran baru.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui sebuah lingkaran $L_1 \\equiv x^2 + y^2 + 10x - 4y - 7 = 0$. Dibuat lingkaran kedua $L_2$ dengan titik pusat lingkaran $L_1$ dicerminkan terhadap sumbu-$x$ dan panjang jari-jarinya diperbesar dua kali dari jari-jari $L_1$. Bentuk umum persamaan lingkaran $L_2$ adalah ....",
+      "jawaban_benar": "$x^2 + y^2 + 10x + 4y - 115 = 0$",
+      "alasan_benar": "Pusat lingkaran $L_1$ adalah $(-5, 2)$ dan jari-jarinya $r_1 = \\sqrt{(-5)^2 + 2^2 - (-7)} = \\sqrt{36} = 6$. Refleksi titik pusat terhadap sumbu-$x$ menghasilkan pusat baru $(-5, -2)$. Jari-jari lingkaran baru adalah $r_2 = 2 \\times 6 = 12$. Persamaan lingkaran $L_2$ adalah $(x + 5)^2 + (y + 2)^2 = 12^2 \\iff x^2 + y^2 + 10x + 4y - 115 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 + 10x - 4y - 115 = 0$",
+          "alasan": "Lupa mencerminkan ordinat pusat lingkaran terhadap sumbu-$x$ sehingga tanda koefisien $y$ tidak berubah."
+        },
+        {
+          "teks": "$x^2 + y^2 - 10x - 4y - 115 = 0$",
+          "alasan": "Tertukar menerapkan pencerminan terhadap sumbu-$y$ dan bukan sumbu-$x$ sehingga tanda absis yang berubah."
+        },
+        {
+          "teks": "$x^2 + y^2 + 10x + 4y + 5 = 0$",
+          "alasan": "Lupa mengkuadratkan jari-jari baru saat menyusun persamaan lingkaran (menggunakan nilai 24 bukan 144)."
+        }
+      ],
+      "pembahasan": "Dari persamaan $L_1 \\equiv x^2 + y^2 + 10x - 4y - 7 = 0$, diperoleh $A = 10$, $B = -4$, dan $C = -7$.\n1. Menentukan pusat $P_1$ dan jari-jari $r_1$:\n$$P_1 = \\left(-\\frac{10}{2}, -\\frac{-4}{2}\\right) = (-5, 2)$$\n$$r_1 = \\sqrt{(-5)^2 + 2^2 - (-7)} = \\sqrt{25 + 4 + 7} = \\sqrt{36} = 6$$\n2. Menentukan pusat $P_2$ hasil pencerminan terhadap sumbu-$x$:\n$$P_2 = (-5, -2)$$\n3. Menentukan jari-jari $r_2$:\n$$r_2 = 2 \\times r_1 = 2 \\times 6 = 12$$\n4. Menyusun persamaan lingkaran $L_2$:\n$$(x - (-5))^2 + (y - (-2))^2 = 12^2$$\n$$(x + 5)^2 + (y + 2)^2 = 144$$\n$$x^2 + 10x + 25 + y^2 + 4y + 4 - 144 = 0$$\n$$x^2 + y^2 + 10x + 4y - 115 = 0$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 32,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika B = C = 0, tunjukkan bahwa lingkaran berpusat pada sumbu- x dan melalui titik pusat koordinat."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "karakteristik persamaan umum lingkaran melalui titik asal",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi kondisi parameter persamaan lingkaran agar memenuhi syarat analitis pusat pada sumbu-$x$ dan melalui titik asal, lalu menentukan ukuran geometri lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persamaan $x^2 + y^2 + (m + 5)x + (m^2 - 9)y + (2m + 6) = 0$. Jika persamaan tersebut merepresentasikan sebuah lingkaran nyata yang berpusat pada sumbu-$x$, melalui titik asal $O(0, 0)$, dan memiliki panjang jari-jari bukan nol, maka panjang diameter lingkaran tersebut adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Syarat pusat di sumbu-$x$ mengharuskan koefisien $y$ bernilai nol: $m^2 - 9 = 0 \\implies m = \\pm 3$. Syarat melalui titik asal mengharuskan konstanta nol: $2m + 6 = 0 \\implies m = -3$. Untuk $m = -3$, persamaan menjadi $x^2 + y^2 + 2x = 0$ dengan jari-jari $r = 1$, sehingga diameter bernilai $2r = 2$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Menjawab panjang jari-jari lingkaran, bukan panjang diameter yang ditanyakan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Keliru mengalikan nilai koefisien $x$ secara langsung sebagai diameter."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Menggunakan nilai mutlak parameter $2|m|$ sebagai diameter lingkaran."
+        }
+      ],
+      "pembahasan": "1. Agar pusat lingkaran terletak pada sumbu-$x$, maka ordinat titik pusat harus bernilai nol, yang berarti koefisien variabel $y$ bernilai nol:\n$$m^2 - 9 = 0 \\implies m = 3 \\text{ atau } m = -3$$\n2. Agar lingkaran melalui titik asal $O(0, 0)$, konstanta persamaan lingkaran harus bernilai nol:\n$$2m + 6 = 0 \\implies m = -3$$\n3. Nilai $m$ yang memenuhi kedua kondisi tersebut adalah $m = -3$.\n4. Substitusikan $m = -3$ ke persamaan lingkaran:\n$$x^2 + y^2 + (-3 + 5)x + ((-3)^2 - 9)y + (2(-3) + 6) = 0$$\n$$x^2 + y^2 + 2x = 0$$\n5. Menentukan jari-jari lingkaran:\n$$r = \\sqrt{\\left(-\\frac{2}{2}\\right)^2 + 0^2 - 0} = \\sqrt{1} = 1$$\nPanjang diameter lingkaran adalah $d = 2r = 2 \\times 1 = 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 25,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan di atas merupakan bentuk baku persamaan lingkaran yang berpusat di P ( a, b ) dengan jari-jari r ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi parameter lingkaran menyinggung garis horizontal",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pengubahan bentuk umum berparameter ke kuadrat sempurna, menganalisis sifat invarian jari-jari, dan menerapkan syarat garis singgung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persamaan $x^2 + y^2 - 2(a + 1)x - 4ay + 5a^2 + 2a - 8 = 0$ merepresentasikan lingkaran untuk setiap nilai real $a$. Jika lingkaran tersebut menyinggung garis horizontal $y = 10$, maka jumlah semua nilai $a$ yang memenuhi adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Pusat lingkaran adalah $(a+1, 2a)$ dan jari-jarinya tetap $r = 3$. Syarat menyinggung $y = 10$ adalah $|2a - 10| = 3$, menghasilkan nilai $a_1 = 6{,}5$ dan $a_2 = 3{,}5$ dengan jumlah $10$.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Membagi dua hasil penjumlahan akar-akar tanpa memperhitungkan koefisien $2a$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Keliru menghitung jari-jari lingkaran menjadi $r = 2$ sehingga $|2a - 10| = 2$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Hanya mengambil salah satu solusi persamaan mutlak yaitu saat $2a = 13$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengubah persamaan lingkaran ke bentuk kuadrat sempurna:\n$x^2 - 2(a + 1)x + y^2 - 4ay = -5a^2 - 2a + 8$\n$(x - (a + 1))^2 + (y - 2a)^2 = (a + 1)^2 + (2a)^2 - (5a^2 + 2a - 8)$\n$= a^2 + 2a + 1 + 4a^2 - 5a^2 - 2a + 8 = 9$.\n\nLangkah 2: Menentukan titik pusat dan jari-jari:\nTitik pusat lingkaran adalah $P(a + 1, 2a)$ dan jari-jari $r = \\sqrt{9} = 3$ (konstan untuk setiap nilai $a$).\n\nLangkah 3: Menerapkan syarat menyinggung garis horizontal $y = 10$:\nJarak ordinat titik pusat ke garis $y = 10$ harus sama dengan jari-jari lingkaran:\n$|2a - 10| = 3$.\n\nLangkah 4: Menyelesaikan persamaan nilai mutlak:\n$2a - 10 = 3 \\implies 2a_1 = 13 \\implies a_1 = 6{,}5$\n$2a - 10 = -3 \\implies 2a_2 = 7 \\implies a_2 = 3{,}5$.\n\nLangkah 5: Menghitung jumlah nilai-nilai $a$:\n$a_1 + a_2 = 6{,}5 + 3{,}5 = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 24,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diameter adalah tali busur terpanjang yang melalui titik pusat. Panjang diameter dua kali jari-jarinya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi persamaan lingkaran dari tali busur",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi hubungan jarak titik pusat ke tali busur dan menerapkan teorema Pythagoras untuk menentukan jari-jari serta bentuk umum persamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran berpusat di titik $P(-2, 3)$. Garis vertikal $x = 1$ memotong lingkaran tersebut sehingga menghasilkan tali busur dengan panjang $8$ satuan. Bentuk umum persamaan lingkaran tersebut adalah ....",
+      "jawaban_benar": "$x^2 + y^2 + 4x - 6y - 12 = 0$",
+      "alasan_benar": "Jarak pusat ke garis adalah $3$, setengah panjang tali busur adalah $4$, sehingga jari-jari kuadrat $r^2 = 3^2 + 4^2 = 25$. Bentuk umumnya adalah $x^2 + y^2 + 4x - 6y - 12 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 + 4x - 6y - 60 = 0$",
+          "alasan": "Menggunakan seluruh panjang tali busur ($8$) bukan setengahnya saat menghitung teorema Pythagoras ($3^2 + 8^2 = 73$)."
+        },
+        {
+          "teks": "$x^2 + y^2 - 4x + 6y - 12 = 0$",
+          "alasan": "Keliru tanda koefisien $x$ dan $y$ pada penjabaran titik pusat $(-2, 3)$."
+        },
+        {
+          "teks": "$x^2 + y^2 + 4x - 6y + 12 = 0$",
+          "alasan": "Salah melakukan operasi pengurangan konstanta $4 + 9 - 25$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung jarak titik pusat ke tali busur pada garis $x = 1$:\nJarak titik pusat $P(-2, 3)$ ke garis $x = 1$ adalah $d = |1 - (-2)| = 3$ satuan.\n\nLangkah 2: Menghitung jari-jari lingkaran menggunakan teorema Pythagoras:\nPanjang tali busur adalah $8$, sehingga setengah panjangnya adalah $\\frac{8}{2} = 4$.\n$r^2 = d^2 + 4^2 = 3^2 + 4^2 = 9 + 16 = 25$.\n\nLangkah 3: Menyusun bentuk baku persamaan lingkaran:\n$(x - (-2))^2 + (y - 3)^2 = 25 \\iff (x + 2)^2 + (y - 3)^2 = 25$.\n\nLangkah 4: Menjabarkan ke bentuk umum:\n$x^2 + 4x + 4 + y^2 - 6y + 9 = 25$\n$x^2 + y^2 + 4x - 6y + 13 - 25 = 0$\n$x^2 + y^2 + 4x - 6y - 12 = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0033-latihan-soal-lingkaran-7",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "batas parameter keberadaan lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi syarat keberadaan lingkaran nyata berdasar pertidaksamaan kuadrat jari-jari bernilai positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan batas-batas nilai $p$ agar persamaan $x^2 + y^2 + 6x + 2py + 2p + 24 = 0$ merepresentasikan sebuah lingkaran nyata.",
+      "jawaban_benar": "$p < -3$ atau $p > 5$",
+      "alasan_benar": "Dari persamaan $x^2 + y^2 + 6x + 2py + (2p + 24) = 0$, diperoleh $A = 6$, $B = 2p$, dan $C = 2p + 24$. Titik pusat lingkaran adalah $(a, b) = \\left(-\\frac{A}{2}, -\\frac{B}{2}\\right) = (-3, -p)$. Syarat terbentuknya lingkaran nyata adalah $r^2 > 0$, yaitu $a^2 + b^2 - C > 0$. Substitusi nilai ke pertidaksamaan: $(-3)^2 + (-p)^2 - (2p + 24) > 0 \\iff 9 + p^2 - 2p - 24 > 0 \\iff p^2 - 2p - 15 > 0$. Pemfaktoran memberikan $(p - 5)(p + 3) > 0$. Dengan demikian, himpunan penyelesaiannya adalah $p < -3$ atau $p > 5$.",
+      "distraktor": [
+        {
+          "teks": "$-3 < p < 5$",
+          "alasan": "Mengambil daerah dalam interval pertidaksamaan bukannya daerah luar bertanda positif."
+        },
+        {
+          "teks": "$p < -5$ atau $p > 3$",
+          "alasan": "Salah dalam memfaktorkan persamaan kuadrat menjadi $(p + 5)(p - 3) > 0$."
+        },
+        {
+          "teks": "$-5 < p < 3$",
+          "alasan": "Salah memfaktorkan sekaligus salah menentukan daerah pertidaksamaan kuadrat."
+        }
+      ],
+      "pembahasan": "Diketahui bentuk umum lingkaran $x^2 + y^2 + Ax + By + C = 0$ dengan $A = 6$, $B = 2p$, dan $C = 2p + 24$.\nTitik pusat lingkaran adalah $(a, b) = (-3, -p)$.\nSyarat lingkaran nyata adalah $r^2 > 0$:\n$$a^2 + b^2 - C > 0$$\n$$(-3)^2 + (-p)^2 - (2p + 24) > 0$$\n$$9 + p^2 - 2p - 24 > 0$$\n$$p^2 - 2p - 15 > 0$$\n$$(p - 5)(p + 3) > 0$$\nPembuat nol adalah $p = -3$ dan $p = 5$. Menggunakan garis bilangan untuk tanda $> 0$, diperoleh $p < -3$ atau $p > 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 25,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan di atas merupakan bentuk baku persamaan lingkaran yang berpusat di P ( a, b ) dengan jari-jari r ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "panjang tali busur perpotongan sumbu",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan analisis geometri hubungan pusat, tali busur pada sumbu koordinat, dan penyusunan persamaan lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran berpusat di titik $P(3, k)$ dengan $k > 0$ dan memiliki jari-jari $5$. Jika sumbu-$x$ memotong lingkaran tersebut sehingga terbentuk tali busur dengan panjang $8$ satuan, maka bentuk umum persamaan lingkaran tersebut adalah ....",
+      "jawaban_benar": "$x^2 + y^2 - 6x - 6y - 7 = 0$",
+      "alasan_benar": "Jarak dari pusat $P(3, k)$ ke sumbu-$x$ ($y = 0$) adalah $|k| = k$. Garis dari pusat yang tegak lurus sumbu-$x$ membagi tali busur menjadi dua bagian sama panjang, yaitu $\\frac{8}{2} = 4$. Berdasarkan teorema Pythagoras pada segitiga siku-siku antara jarak pusat, setengah tali busur, dan jari-jari lingkaran: $k^2 + 4^2 = 5^2 \\implies k^2 + 16 = 25 \\implies k^2 = 9$. Karena $k > 0$, maka $k = 3$. Pusat lingkaran adalah $(3, 3)$ dengan jari-jari $r = 5$. Persamaan lingkarannya: $(x - 3)^2 + (y - 3)^2 = 5^2 \\iff x^2 - 6x + 9 + y^2 - 6y + 9 = 25 \\iff x^2 + y^2 - 6x - 6y - 7 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 - 6x - 6y + 25 = 0$",
+          "alasan": "Lupa mengurangkan suku konstan dari kuadrat jari-jari ke ruas kiri ($9 + 9 - 25$ dihitung tanpa menjumlahkan konstanta kuadrat)."
+        },
+        {
+          "teks": "$x^2 + y^2 - 6x - 8y + 9 = 0$",
+          "alasan": "Keliru menganggap nilai $k$ sama dengan setengah panjang tali busur, yaitu $k = 4$."
+        },
+        {
+          "teks": "$x^2 + y^2 - 6x - 6y + 11 = 0$",
+          "alasan": "Salah menghitung nilai kuadrat jari-jari atau salah mengurangkan konstanta."
+        }
+      ],
+      "pembahasan": "Diketahui pusat lingkaran $P(3, k)$ dengan $k > 0$ dan $r = 5$.\nSumbu-$x$ mempunyai persamaan $y = 0$, sehingga jarak tegak lurus dari $P(3, k)$ ke sumbu-$x$ adalah $d = |k| = k$.\nTali busur pada sumbu-$x$ terbagi dua oleh garis proyeksi dari pusat, masing-masing dengan panjang $4$.\nBerdasarkan teorema Pythagoras:\n$$d^2 + 4^2 = r^2$$\n$$k^2 + 16 = 25 \\implies k^2 = 9 \\implies k = 3 \\text{ (karena } k > 0)$$\nPusat lingkaran adalah $(3, 3)$. Persamaan lingkaran:\n$$(x - 3)^2 + (y - 3)^2 = 5^2$$\n$$x^2 - 6x + 9 + y^2 - 6y + 9 = 25$$\n$$x^2 + y^2 - 6x - 6y - 7 = 0$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 24,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diameter adalah tali busur terpanjang yang melalui titik pusat. Panjang diameter dua kali jari-jarinya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "lingkaran luar segitiga siku-siku",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penalaran geometri analitis bahwa sisi miring segitiga siku-siku bertindak sebagai diameter lingkaran luar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga pada bidang Kartesius memiliki titik-titik sudut di $A(1, 2)$, $B(7, 2)$, dan $C(1, 10)$. Bentuk umum persamaan lingkaran luar yang membatasi segitiga $ABC$ tersebut adalah ....",
+      "jawaban_benar": "$x^2 + y^2 - 8x - 12y + 27 = 0$",
+      "alasan_benar": "Ruas garis $AB$ sejajar sumbu-$x$ (karena ordinat kedua titik sama, yaitu $y = 2$) dan ruas garis $AC$ sejajar sumbu-$y$ (karena absis kedua titik sama, yaitu $x = 1$). Karena $AB \\perp AC$, maka $\\triangle ABC$ siku-siku di $A$. Berdasarkan sifat lingkaran, sudut siku-siku menghadap busur setengah lingkaran, sehingga sisi miring $BC$ merupakan diameter lingkaran luar. Titik pusat lingkaran adalah titik tengah $BC$, yaitu $P = \\left(\\frac{7+1}{2}, \\frac{2+10}{2}\\right) = (4, 6)$. Jari-jari lingkaran adalah setengah dari panjang $BC$, atau jarak $P$ ke $A$: $r^2 = (4 - 1)^2 + (6 - 2)^2 = 3^2 + 4^2 = 25$. Persamaan lingkaran: $(x - 4)^2 + (y - 6)^2 = 25 \\iff x^2 - 8x + 16 + y^2 - 12y + 36 = 25 \\iff x^2 + y^2 - 8x - 12y + 27 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 - 8x - 12y + 52 = 0$",
+          "alasan": "Lupa mengurangkan $r^2 = 25$ pada konstanta $16 + 36 = 52$."
+        },
+        {
+          "teks": "$x^2 + y^2 - 4x - 6y - 12 = 0$",
+          "alasan": "Keliru menggunakan koordinat titik pusat $(4, 6)$ secara langsung sebagai koefisien $A$ dan $B$ tanpa dikalikan $-2$."
+        },
+        {
+          "teks": "$x^2 + y^2 - 8x - 12y - 27 = 0$",
+          "alasan": "Salah tanda pada konstanta $C$."
+        }
+      ],
+      "pembahasan": "Perhatikan koordinat titik sudut $\\triangle ABC$:\n- Garis $AB$ mendatar karena ordinat $A(1, 2)$ dan $B(7, 2)$ sama.\n- Garis $AC$ tegak karena absis $A(1, 2)$ dan $C(1, 10)$ sama.\nKarena garis mendatar tegak lurus garis tegak, maka sudut $\\angle A = 90^\\circ$.\nDalam lingkaran luar segitiga siku-siku, sisi miring $BC$ adalah diameter lingkaran.\nPusat lingkaran adalah titik tengah $BC$:\n$$P(a, b) = \\left(\\frac{7 + 1}{2}, \\frac{2 + 10}{2}\\right) = (4, 6)$$\nPanjang jari-jari kuadrat:\n$$r^2 = (4 - 1)^2 + (6 - 2)^2 = 3^2 + 4^2 = 9 + 16 = 25$$\nPersamaan lingkaran:\n$$(x - 4)^2 + (y - 6)^2 = 25$$\n$$x^2 - 8x + 16 + y^2 - 12y + 36 - 25 = 0$$\n$$x^2 + y^2 - 8x - 12y + 27 = 0$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah lingkaran memiliki persamaan x 2 + y 2 - 4 x - 8 y - 5 = 0 . Tentukanlah titik pusat dan jari-jari lingkaran tersebut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "hubungan dua lingkaran konsentris dan tali busur",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan integrasi konsep konsentrisitas, garis singgung lingkaran dalam, dan teorema Pythagoras untuk menentukan jari-jari lingkaran luar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua lingkaran $L_1$ dan $L_2$ konsentris (memiliki titik pusat yang sama) dengan pusat di $P(2, -3)$. Jari-jari lingkaran $L_1$ adalah $4$ satuan. Sebuah tali busur pada lingkaran $L_2$ menyinggung lingkaran $L_1$ dan memiliki panjang $6$ satuan. Bentuk umum persamaan lingkaran $L_2$ adalah ....",
+      "jawaban_benar": "$x^2 + y^2 - 4x + 6y - 12 = 0$",
+      "alasan_benar": "Kedua lingkaran memiliki pusat yang sama, yaitu $P(2, -3)$. Tali busur lingkaran $L_2$ menyinggung $L_1$, sehingga jarak tegak lurus dari titik pusat $P$ ke tali busur tersebut tepat sama dengan jari-jari lingkaran $L_1$, yaitu $d = r_1 = 4$. Garis dari pusat yang tegak lurus tali busur membagi tali busur sama panjang menjadi dua bagian, masing-masing $\\frac{6}{2} = 3$ satuan. Segitiga siku-siku dibentuk oleh jari-jari $L_1$, setengah tali busur, dan jari-jari lingkaran luar $r_2$. Maka: $r_2^2 = d^2 + 3^2 = 4^2 + 3^2 = 16 + 9 = 25$. Persamaan lingkaran $L_2$ adalah $(x - 2)^2 + (y + 3)^2 = 25 \\iff x^2 - 4x + 4 + y^2 + 6y + 9 = 25 \\iff x^2 + y^2 - 4x + 6y - 12 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 - 4x + 6y - 39 = 0$",
+          "alasan": "Keliru menggunakan panjang tali busur utuh $6$ bukannya setengah tali busur, sehingga $r_2^2 = 4^2 + 6^2 = 52$ dan $C = 13 - 52 = -39$."
+        },
+        {
+          "teks": "$x^2 + y^2 - 4x + 6y + 13 = 0$",
+          "alasan": "Lupa mengurangkan $r_2^2 = 25$ ke ruas kiri persamaan lingkaran."
+        },
+        {
+          "teks": "$x^2 + y^2 + 4x - 6y - 12 = 0$",
+          "alasan": "Terbalik tanda koordinat pusat lingkaran saat menyusun persamaan umum."
+        }
+      ],
+      "pembahasan": "Karena $L_1$ dan $L_2$ konsentris, pusat lingkaran $L_2$ sama dengan $L_1$, yaitu $P(2, -3)$.\nTali busur $L_2$ menyinggung lingkaran dalam $L_1$, yang berarti jarak dari pusat ke tali busur adalah jari-jari $L_1$, yaitu $d = 4$.\nGaris dari pusat membagi tali busur menjadi dua bagian sama panjang, masing-masing sepanjang $\\frac{6}{2} = 3$ satuan.\nDengan teorema Pythagoras pada segitiga siku-siku antara pusat, titik singgung, dan salah satu ujung tali busur, diperoleh kuadrat jari-jari $L_2$ ($r_2$):\n$$r_2^2 = 4^2 + 3^2 = 16 + 9 = 25$$\nPersamaan lingkaran $L_2$:\n$$(x - 2)^2 + (y + 3)^2 = 25$$\n$$x^2 - 4x + 4 + y^2 + 6y + 9 - 25 = 0$$\n$$x^2 + y^2 - 4x + 6y - 12 = 0$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 33,
+        "bagian": "Latihan Soal Lingkaran",
+        "nomor": "5",
+        "teks": "Sebuah persegi ABCD secara berturut-turut terletak pada titik A ^1, 1h, B ^4, 1h, C ^4, 4h, dan D ^1, 4h. Tentukanlah persamaan lingkaran yang menyinggung keempat sisi persegi ABCD tersebut.",
+        "jawaban": "(x - 2,5)^2 + (y - 2,5)^2 = 2,25",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "lingkaran dalam persegi koordinat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan titik pusat dan panjang jari-jari lingkaran dalam dari koordinat keempat titik sudut persegi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi $ABCD$ memiliki titik-titik sudut yang berturut-turut terletak pada $A(-4, -2)$, $B(6, -2)$, $C(6, 8)$, dan $D(-4, 8)$. Persamaan lingkaran yang menyinggung keempat sisi persegi $ABCD$ tersebut adalah ....",
+      "jawaban_benar": "$(x - 1)^2 + (y - 3)^2 = 25$",
+      "alasan_benar": "Panjang sisi persegi adalah $6 - (-4) = 10$. Pusat lingkaran merupakan titik potong kedua diagonal (titik tengah $A$ dan $C$), yaitu $\\left(\\frac{-4 + 6}{2}, \\frac{-2 + 8}{2}\\right) = (1, 3)$. Karena lingkaran menyinggung keempat sisi persegi, jari-jarinya adalah setengah panjang sisi, yaitu $r = \\frac{10}{2} = 5$. Persamaannya $(x - 1)^2 + (y - 3)^2 = 5^2 = 25$.",
+      "distraktor": [
+        {
+          "teks": "$(x - 1)^2 + (y - 3)^2 = 50$",
+          "alasan": "Siswa keliru menghitung persamaan lingkaran luar persegi yang melalui keempat titik sudutnya dengan $r^2 = 5^2 + 5^2 = 50$."
+        },
+        {
+          "teks": "$(x + 1)^2 + (y + 3)^2 = 25$",
+          "alasan": "Siswa melakukan kesalahan tanda koordinat titik pusat lingkaran saat mensubstitusikan ke bentuk baku persamaan lingkaran."
+        },
+        {
+          "teks": "$(x - 1)^2 + (y - 3)^2 = 100$",
+          "alasan": "Siswa menggunakan panjang seluruh sisi persegi ($10$) sebagai panjang jari-jari lingkaran, bukan setengahnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan panjang sisi persegi.\n$s = x_B - x_A = 6 - (-4) = 10$.\n\nLangkah 2: Menentukan koordinat pusat lingkaran ($P$).\nTitik pusat lingkaran dalam tepat berada di titik tengah diagonal $AC$:\n$x_P = \\frac{-4 + 6}{2} = 1$\n$y_P = \\frac{-2 + 8}{2} = 3$\nJadi, pusat lingkaran adalah $P(1, 3)$.\n\nLangkah 3: Menentukan jari-jari lingkaran ($r$).\nKarena lingkaran menyinggung keempat sisi persegi, jari-jarinya adalah setengah dari panjang sisi persegi:\n$r = \\frac{s}{2} = \\frac{10}{2} = 5$.\n\nLangkah 4: Menyusun persamaan baku lingkaran.\n$(x - a)^2 + (y - b)^2 = r^2$\n$(x - 1)^2 + (y - 3)^2 = 5^2$\n$(x - 1)^2 + (y - 3)^2 = 25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 23,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan demikian, dapat disimpulkan bahwa persamaan lingkaran dengan pusat O dan jari-jari r adalah r 2 = x 2 + y 2 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "nilai ekstrem kuadrat jarak pada lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan interpretasi bentuk aljabar kuadrat jarak terhadap titik asal dan penentuan nilai ekstrem menggunakan posisi geometri titik terjauh lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak di sepanjang lintasan lingkaran dengan persamaan $x^2 + y^2 - 8x - 6y + 21 = 0$. Jika $(x, y)$ menyatakan posisi partikel tersebut, nilai maksimum dari $x^2 + y^2$ adalah ....",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Nilai $x^2 + y^2$ menyatakan kuadrat jarak dari titik asal $O(0, 0)$ ke titik $(x, y)$ pada lingkaran. Lingkaran memiliki pusat $(4, 3)$ dan jari-jari $r = \\sqrt{4^2 + 3^2 - 21} = 2$. Jarak titik asal ke pusat adalah $d = \\sqrt{4^2 + 3^2} = 5$. Jarak maksimum titik pada lingkaran ke titik asal adalah $d + r = 5 + 2 = 7$. Maka nilai maksimum dari $x^2 + y^2$ adalah $7^2 = 49$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Siswa hanya menghitung kuadrat jarak dari titik asal ke pusat lingkaran tanpa menambahkan jari-jari ($5^2 = 25$)."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Siswa keliru menghitung nilai minimum kuadrat jarak, yaitu $(d - r)^2 = (5 - 2)^2 = 9$."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Siswa menjumlahkan kuadrat jarak pusat ke titik asal dengan kuadrat jari-jari ($5^2 + 2^2 = 29$) alih-alih menguadratkan jarak total maksimum."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik pusat dan jari-jari lingkaran.\nDari persamaan $x^2 + y^2 - 8x - 6y + 21 = 0$:\n$A = -8$, $B = -6$, $C = 21$.\nPusat $P(a, b) = \\left(-\\frac{1}{2}(-8), -\\frac{1}{2}(-6)\\right) = (4, 3)$.\nJari-jari $r = \\sqrt{4^2 + 3^2 - 21} = \\sqrt{16 + 9 - 21} = \\sqrt{4} = 2$.\n\nLangkah 2: Menghubungkan $x^2 + y^2$ dengan konsep jarak.\nBentuk $x^2 + y^2$ merepresentasikan kuadrat dari jarak titik $(x, y)$ pada lingkaran ke titik asal $O(0, 0)$.\n\nLangkah 3: Menghitung jarak terjauh dari titik asal ke lingkaran.\nJarak dari titik asal $O(0, 0)$ ke pusat lingkaran $P(4, 3)$ adalah:\n$OP = \\sqrt{(4 - 0)^2 + (3 - 0)^2} = \\sqrt{16 + 9} = 5$.\nJarak terjauh dari $O(0, 0)$ ke titik pada lingkaran tercapai pada titik yang segaris dengan $OP$, yaitu:\n$d_{\\max} = OP + r = 5 + 2 = 7$.\n\nLangkah 4: Menghitung nilai maksimum $x^2 + y^2$.\n$(x^2 + y^2)_{\\max} = (d_{\\max})^2 = 7^2 = 49$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 25,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan di atas merupakan bentuk baku persamaan lingkaran yang berpusat di P ( a, b ) dengan jari-jari r ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "panjang perpotongan tali busur garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan koordinat pusat lingkaran dari dua titik potong sumbu dan garis tempat kedudukan pusat, dilanjutkan perpotongan dengan garis horizontal untuk menentukan panjang tali busur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik pusat sebuah lingkaran terletak pada garis $y = x + 1$. Lingkaran tersebut melalui titik asal $O(0, 0)$ dan memotong sumbu-$x$ positif di titik $(4, 0)$. Panjang tali busur yang terbentuk ketika lingkaran tersebut dipotong oleh garis horizontal $y = 1$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Karena lingkaran melalui $(0,0)$ dan $(4,0)$, titik tengah tali busur di sumbu-$x$ berabsis $x = 2$, sehingga absis pusat lingkaran adalah $a = 2$. Pusat terletak pada $y = x + 1$, sehingga ordinat pusat adalah $b = 2 + 1 = 3$. Jari-jari kuadrat lingkaran adalah $r^2 = (2 - 0)^2 + (3 - 0)^2 = 13$, dengan persamaan $(x - 2)^2 + (y - 3)^2 = 13$. Substitusi garis $y = 1$ menghasilkan $(x - 2)^2 + (1 - 3)^2 = 13 \\iff (x - 2)^2 + 4 = 13 \\iff (x - 2)^2 = 9$. Diperoleh $x - 2 = 3 \\implies x = 5$ atau $x - 2 = -3 \\implies x = -1$. Panjang tali busur adalah $|5 - (-1)| = 6$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Hanya menghitung nilai simpangan $|x - 2| = 3$ dari sumbu simetri, bukan panjang tali busur utuh."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengira panjang tali busur pada garis $y = 1$ sama dengan panjang tali busur pada sumbu-$x$ yaitu $4$ satuan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Kesalahan perhitungan kuadrat jarak saat menentukan jari-jari kuadrat menjadi $17$, menghasilkan $x - 2 = \\pm 4$ sehingga panjangnya $8$."
+        }
+      ],
+      "pembahasan": "1. Menentukan titik pusat $P(a, b)$:\nLingkaran melalui $(0, 0)$ dan $(4, 0)$ pada sumbu-$x$. Garis sumbu dari ruas garis ini adalah garis vertikal $x = \\frac{0 + 4}{2} = 2$. Karena pusat lingkaran harus terletak pada garis sumbu tali busur, maka $a = 2$.\nSubstitusikan $a = 2$ ke persamaan garis tempat pusat berada $y = x + 1$:\n$b = 2 + 1 = 3$.\nJadi, pusat lingkaran adalah $P(2, 3)$.\n\n2. Menentukan jari-jari lingkaran:\nKarena lingkaran melalui $(0, 0)$, maka:\n$r^2 = (2 - 0)^2 + (3 - 0)^2 = 4 + 9 = 13$.\nPersamaan lingkaran adalah $(x - 2)^2 + (y - 3)^2 = 13$.\n\n3. Menentukan titik potong dengan garis $y = 1$:\nSubstitusikan $y = 1$ ke persamaan lingkaran:\n$(x - 2)^2 + (1 - 3)^2 = 13$\n$(x - 2)^2 + 4 = 13$\n$(x - 2)^2 = 9$\n$x - 2 = 3 \\implies x_1 = 5$\n$x - 2 = -3 \\implies x_2 = -1$\n\n4. Menghitung panjang tali busur:\nPanjang tali busur $= |x_1 - x_2| = |5 - (-1)| = 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 28,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "dengan A , B , dan C adalah bilangan real. Persamaan di atas disebut bentuk umum persamaan lingkaran ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi persamaan lingkaran bersyarat garis singgung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis relasi titik pusat pada garis tertentu dengan syarat menyinggung sumbu koordinat dan garis vertikal di kuadran tertentu untuk menyusun persamaan umum lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran berpusat di titik $P(h, k)$ pada kuadran IV. Titik pusat lingkaran tersebut terletak pada garis $x + y = 1$. Jika lingkaran tersebut menyinggung sumbu-$x$ dan menyinggung garis vertikal $x = 7$, bentuk umum persamaan lingkaran tersebut adalah ....",
+      "jawaban_benar": "$x^2 + y^2 - 8x + 6y + 16 = 0$",
+      "alasan_benar": "Pusat $P(h, k)$ di kuadran IV ($h > 0, k < 0$). Karena pusat terletak pada $x + y = 1$, maka $k = 1 - h$. Lingkaran menyinggung sumbu-$x$, sehingga jari-jarinya $r = |k| = -(1 - h) = h - 1$. Lingkaran menyinggung garis $x = 7$, sehingga $r = |7 - h|$. Karena $r = h - 1$ dan $r = |7 - h|$, diperoleh $h - 1 = |7 - h|$. Untuk $h < 7$, $h - 1 = 7 - h \\iff 2h = 8 \\iff h = 4$. Diperoleh $k = 1 - 4 = -3$ dan jari-jari $r = 3$. Persamaan lingkaran: $(x - 4)^2 + (y + 3)^2 = 3^2 \\iff x^2 - 8x + 16 + y^2 + 6y + 9 = 9 \\iff x^2 + y^2 - 8x + 6y + 16 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 - 8x - 6y + 16 = 0$",
+          "alasan": "Tertukar tanda ordinat pusat menjadi $(4, 3)$ di kuadran I, mengabaikan syarat pusat di kuadran IV."
+        },
+        {
+          "teks": "$x^2 + y^2 - 8x + 6y + 22 = 0$",
+          "alasan": "Lupa menguadratkan nilai jari-jari pada ruas kanan persamaan baku (menggunakan $r = 3$ bukan $r^2 = 9$)."
+        },
+        {
+          "teks": "$x^2 + y^2 + 8x - 6y + 16 = 0$",
+          "alasan": "Tertukar tanda absis dan ordinat pusat lingkaran menjadi $(-4, 3)$ di kuadran II."
+        }
+      ],
+      "pembahasan": "1. Menentukan relasi koordinat pusat $P(h, k)$:\nKarena $P(h, k)$ terletak pada garis $x + y = 1$, maka:\n$k = 1 - h$.\nKarena $P$ berada di kuadran IV, maka $h > 0$ dan $k < 0$. Dari $k = 1 - h < 0$, diperoleh $h > 1$.\n\n2. Menganalisis syarat jari-jari ($r$):\n- Menyinggung sumbu-$x$: jarak pusat ke sumbu-$x$ adalah $r = |k| = -k = -(1 - h) = h - 1$.\n- Menyinggung garis $x = 7$: jarak pusat ke garis $x = 7$ adalah $r = |h - 7|$.\n\n3. Menyelesaikan nilai $h$ dan $k$:\n$h - 1 = |7 - h|$\nKarena $h > 1$ dan jika $h < 7$:\n$h - 1 = 7 - h$\n$2h = 8 \\implies h = 4$.\n(Jika $h \\ge 7$: $h - 1 = h - 7 \\implies -1 = -7$, tidak ada solusi).\nDengan $h = 4$, maka $k = 1 - 4 = -3$.\nJari-jari $r = 4 - 1 = 3$.\n\n4. Menyusun bentuk umum persamaan lingkaran:\nPersamaan baku: $(x - 4)^2 + (y - (-3))^2 = 3^2$\n$(x - 4)^2 + (y + 3)^2 = 9$\n$x^2 - 8x + 16 + y^2 + 6y + 9 = 9$\n$x^2 + y^2 - 8x + 6y + 16 = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0033-latihan-soal-lingkaran-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "transformasi rotasi dan translasi lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perpaduan konsep penentuan jari-jari lingkaran dari dua titik dengan transformasi geometri komposisi rotasi dan translasi pada pusat lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui lingkaran $L$ berpusat di titik $(3, 4)$ dan melalui titik $(7, 7)$. Misalkan lingkaran $L$ diputar $90^\\circ$ searah jarum jam terhadap titik asal $O(0, 0)$, kemudian digeser ke atas sejauh 3 satuan. Bentuk baku persamaan lingkaran yang dihasilkan adalah ....",
+      "jawaban_benar": "$(x - 4)^2 + y^2 = 25$",
+      "alasan_benar": "Jari-jari lingkaran mula-mula adalah $r = \\sqrt{(7 - 3)^2 + (7 - 4)^2} = \\sqrt{16 + 9} = 5$. Rotasi $90^\\circ$ searah jarum jam terhadap titik asal memetakan $(x, y) \\to (y, -x)$, sehingga pusat $(3, 4)$ berpindah ke $(4, -3)$. Pergeseran ke atas sejauh 3 satuan mengubah koordinat titik pusat menjadi $(4, -3 + 3) = (4, 0)$. Karena jari-jari tidak berubah ($r = 5$), persamaan lingkaran akhir adalah $(x - 4)^2 + (y - 0)^2 = 5^2 \\iff (x - 4)^2 + y^2 = 25$.",
+      "distraktor": [
+        {
+          "teks": "$(x + 4)^2 + y^2 = 25$",
+          "alasan": "Tertukar arah rotasi menjadi berlawanan arah jarum jam sehingga koordinat pusat menjadi $(-4, 3)$, lalu digeser ke atas menjadi $(-4, 6)$ atau salah menentukan tanda absis hasil rotasi."
+        },
+        {
+          "teks": "$(x - 4)^2 + (y + 6)^2 = 25$",
+          "alasan": "Salah mengartikan pergeseran ke atas sebagai pengurangan pada koordinat $y$ sehingga diperoleh $-3 - 3 = -6$ bukannya $-3 + 3 = 0$."
+        },
+        {
+          "teks": "$(x - 3)^2 + (y - 7)^2 = 25$",
+          "alasan": "Salah menerapkan aturan rotasi searah jarum jam dan menggeser langsung titik pusat asal tanpa rotasi yang tepat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jari-jari lingkaran mula-mula:\n$$r^2 = (7 - 3)^2 + (7 - 4)^2 = 4^2 + 3^2 = 16 + 9 = 25$$\n\nLangkah 2: Menentukan koordinat pusat setelah rotasi $90^\\circ$ searah jarum jam terhadap $O(0, 0)$:\nMatriks rotasi $-90^\\circ$ memetakan $(x, y) \\to (y, -x)$.\nPusat awal $(3, 4) \\to (4, -3)$.\n\nLangkah 3: Menentukan koordinat pusat setelah pergeseran ke atas sejauh 3 satuan:\n$$(x', y') = (4, -3 + 3) = (4, 0)$$\n\nLangkah 4: Menyusun persamaan lingkaran dengan pusat $(4, 0)$ dan $r^2 = 25$:\n$$(x - 4)^2 + (y - 0)^2 = 25 \\iff (x - 4)^2 + y^2 = 25$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0033-latihan-soal-lingkaran-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "transformasi refleksi sumbu dan dilatasi jari-jari",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan titik pusat dan jari-jari dari bentuk umum persamaan lingkaran, dilanjutkan evaluasi pencerminan terhadap sumbu koordinat dan penskalaan jari-jari.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui sebuah lingkaran $L_1 \\equiv x^2 + y^2 - 4x + 12y + 15 = 0$. Dibuat lingkaran kedua $L_2$ dengan titik pusat lingkaran $L_1$ dicerminkan terhadap sumbu-$y$ dan panjang jari-jarinya diperbesar dua kali dari jari-jari $L_1$. Bentuk umum persamaan lingkaran $L_2$ tersebut adalah ....",
+      "jawaban_benar": "$x^2 + y^2 + 4x + 12y - 60 = 0$",
+      "alasan_benar": "Dari persamaan $L_1$, diperoleh $A = -4$, $B = 12$, dan $C = 15$. Titik pusat $L_1$ adalah $\\left(-\\frac{-4}{2}, -\\frac{12}{2}\\right) = (2, -6)$, dan jari-jarinya $r_1 = \\sqrt{2^2 + (-6)^2 - 15} = \\sqrt{4 + 36 - 15} = \\sqrt{25} = 5$. Hasil pencerminan pusat $(2, -6)$ terhadap sumbu-$y$ adalah $(-2, -6)$. Jari-jari lingkaran $L_2$ adalah $r_2 = 2 \\times 5 = 10$. Persamaan lingkaran $L_2$ adalah $(x + 2)^2 + (y + 6)^2 = 10^2 \\iff x^2 + y^2 + 4x + 12y + 40 - 100 = 0 \\iff x^2 + y^2 + 4x + 12y - 60 = 0$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + y^2 - 4x - 12y - 60 = 0$",
+          "alasan": "Siswa mencerminkan titik pusat terhadap sumbu-$x$ bukan sumbu-$y$, sehingga koordinat pusat tertukar menjadi $(2, 6)$."
+        },
+        {
+          "teks": "$x^2 + y^2 + 4x + 12y + 15 = 0$",
+          "alasan": "Siswa lupa mengalikan jari-jari dengan faktor skala dua dan tetap memakai nilai konstanta $C$ yang lama."
+        },
+        {
+          "teks": "$x^2 + y^2 + 4x + 12y - 10 = 0$",
+          "alasan": "Siswa mengalikan nilai $r^2$ dengan dua ($25 \\times 2 = 50$) bukan mengalikan panjang jari-jari $r$ dengan dua."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik pusat dan jari-jari lingkaran $L_1$:\n- $a = -\\frac{A}{2} = -\\frac{-4}{2} = 2$\n- $b = -\\frac{B}{2} = -\\frac{12}{2} = -6$\n- Pusat $L_1 = (2, -6)$\n- $r_1 = \\sqrt{a^2 + b^2 - C} = \\sqrt{2^2 + (-6)^2 - 15} = \\sqrt{25} = 5$\n\nLangkah 2: Menentukan titik pusat lingkaran $L_2$ setelah dicerminkan terhadap sumbu-$y$:\nRefleksi terhadap sumbu-$y$ memetakan $(x, y) \\to (-x, y)$, sehingga pusat baru adalah $(-2, -6)$.\n\nLangkah 3: Menentukan jari-jari lingkaran $L_2$:\n$$r_2 = 2 \\times r_1 = 2 \\times 5 = 10$$\n\nLangkah 4: Menyusun bentuk umum persamaan lingkaran $L_2$:\n$$(x - (-2))^2 + (y - (-6))^2 = 10^2$$\n$$(x + 2)^2 + (y + 6)^2 = 100$$\n$$x^2 + 4x + 4 + y^2 + 12y + 36 = 100$$\n$$x^2 + y^2 + 4x + 12y - 60 = 0$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan jari-jari lingkaran adalah r , nilai r dapat ditentukan menggunakan rumus berikut:"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi parameter tali busur lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi hubungan geometris antara jari-jari lingkaran, jarak titik pusat ke tali busur horizontal, dan teorema Pythagoras untuk menemukan parameter konstanta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persamaan $x^2 + y^2 - 4x - 6y + k = 0$ merepresentasikan sebuah lingkaran. Jika garis horizontal $y = 1$ memotong lingkaran tersebut sehingga terbentuk tali busur dengan panjang $8$ satuan, maka nilai $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "Pusat lingkaran adalah $P(a, b) = \\left(-\\frac{-4}{2}, -\\frac{-6}{2}\\right) = (2, 3)$. Jarak tegak lurus dari titik pusat $(2, 3)$ ke garis $y = 1$ adalah $d = |3 - 1| = 2$. Panjang setengah tali busur adalah $\\frac{8}{2} = 4$. Berdasarkan teorema Pythagoras pada segitiga siku-siku antara jarak pusat ke tali busur, setengah panjang tali busur, dan jari-jari lingkaran, diperoleh $r^2 = d^2 + 4^2 = 2^2 + 4^2 = 4 + 16 = 20$. Dari rumus jari-jari lingkaran, $r^2 = a^2 + b^2 - k = 2^2 + 3^2 - k = 13 - k$. Maka $13 - k = 20 \\iff k = 13 - 20 = -7$.",
+      "distraktor": [
+        {
+          "teks": "$-55$",
+          "alasan": "Siswa tidak membagi panjang tali busur menjadi dua (menggunakan panjang penuh 8), sehingga menghitung $r^2 = 2^2 + 8^2 = 68$ dan $k = 13 - 68 = -55$."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Siswa salah menentukan jarak titik pusat ke garis $y = 1$, menggunakan nilai ordinat $b = 3$ secara langsung sebagai $d$, sehingga $r^2 = 3^2 + 4^2 = 25$ dan $k = 13 - 25 = -12$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Siswa salah tanda saat memindahkan variabel aljabar dari persamaan $13 - k = 20$, menganggap $k = 20 - 13 = 7$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat titik pusat lingkaran:\n$$a = -\\frac{-4}{2} = 2, \\quad b = -\\frac{-6}{2} = 3 \\implies P(2, 3)$$\n\nLangkah 2: Menentukan jarak titik pusat $P(2, 3)$ ke garis $y = 1$:\nKarena garis bersifat horizontal sejajar sumbu-$x$, jarak tegak lurusnya adalah:\n$$d = |y_P - 1| = |3 - 1| = 2$$\n\nLangkah 3: Menggunakan hubungan tali busur dan teorema Pythagoras untuk mencari $r^2$:\nSetengah panjang tali busur adalah $L_{setengah} = \\frac{8}{2} = 4$.\n$$r^2 = d^2 + (L_{setengah})^2 = 2^2 + 4^2 = 4 + 16 = 20$$\n\nLangkah 4: Menentukan nilai konstanta $k$ menggunakan rumus jari-jari:\n$$r^2 = a^2 + b^2 - k$$\n$$20 = 2^2 + 3^2 - k$$\n$$20 = 4 + 9 - k$$\n$$20 = 13 - k \\implies k = 13 - 20 = -7$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 21,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Lingkaran adalah kurva tertutup sederhana dengan ciri semua titik pada kurva tersebut memiliki jarak yang sama dengan titik pusat."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik terdekat pada lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan pusat dan jari-jari, analisis geometris kedudukan titik terdekat pada ruas garis, serta evaluasi koordinat titik pada lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan persamaan lingkaran $L \\equiv x^2 + y^2 - 2x - 4y - 20 = 0$ dan sebuah titik $A(7, 10)$ di luar lingkaran. Jika titik $P(x_0, y_0)$ terletak pada keliling lingkaran $L$ dan memiliki jarak terdekat ke titik $A$, maka nilai dari $2x_0 + y_0$ adalah ....",
+      "jawaban_benar": "14",
+      "alasan_benar": "Pusat lingkaran adalah $M(1, 2)$ dan jari-jarinya $r = \\sqrt{1^2 + 2^2 - (-20)} = 5$. Jarak $MA = \\sqrt{(7-1)^2 + (10-2)^2} = 10$. Titik terdekat $P$ terletak pada ruas garis $MA$ dengan jarak $MP = 5$, sehingga $P$ tepat merupakan titik tengah $MA$, yaitu $P(4, 6)$. Maka $2x_0 + y_0 = 2(4) + 6 = 14$.",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "Siswa sudah menemukan koordinat $P(4, 6)$ dengan benar, tetapi hanya menjumlahkan $x_0 + y_0$ dan lupa mengalikan $x_0$ dengan koefisien 2."
+        },
+        {
+          "teks": "-6",
+          "alasan": "Siswa menentukan titik pada lingkaran yang memiliki jarak terjauh dari titik $A$, yaitu titik $P'(-2, -2)$, sehingga memperoleh $2(-2) + (-2) = -6$."
+        },
+        {
+          "teks": "18",
+          "alasan": "Siswa keliru menganggap titik $P$ diperoleh dengan menggeser titik $A$ ke kiri dan ke bawah sebesar komponen jari-jari secara langsung tanpa rasio panjang garis."
+        }
+      ],
+      "pembahasan": "Persamaan lingkaran $x^2 + y^2 - 2x - 4y - 20 = 0$ memiliki nilai $A = -2$, $B = -4$, dan $C = -20$.\n\n1. Menentukan titik pusat $M(a, b)$ dan jari-jari $r$:\n$$a = -\\frac{A}{2} = -\\frac{-2}{2} = 1$$\n$$b = -\\frac{B}{2} = -\\frac{-4}{2} = 2$$\nPusat lingkaran adalah $M(1, 2)$.\n$$r = \\sqrt{a^2 + b^2 - C} = \\sqrt{1^2 + 2^2 - (-20)} = \\sqrt{1 + 4 + 20} = \\sqrt{25} = 5$$\n\n2. Menghitung jarak dari pusat $M(1, 2)$ ke titik $A(7, 10)$:\n$$MA = \\sqrt{(7 - 1)^2 + (10 - 2)^2} = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$$\n\n3. Menentukan koordinat titik $P(x_0, y_0)$:\nTitik pada lingkaran yang terdekat ke $A$ berada pada ruas garis $MA$ dan berjarak $r = 5$ satuan dari $M$. Karena panjang $MA = 10$ dan $MP = 5$, maka titik $P$ adalah titik tengah dari ruas garis $MA$:\n$$x_0 = \\frac{1 + 7}{2} = 4$$\n$$y_0 = \\frac{2 + 10}{2} = 6$$\nSehingga koordinat titik terdekat adalah $P(4, 6)$.\n\n4. Menghitung nilai $2x_0 + y_0$:\n$$2x_0 + y_0 = 2(4) + 6 = 8 + 6 = 14$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 28,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "dengan A , B , dan C adalah bilangan real. Persamaan di atas disebut bentuk umum persamaan lingkaran ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "panjang tali busur pada sumbu koordinat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan titik pusat dari perpotongan garis dan garis bagi tegak lurus dua titik, pembentukan persamaan lingkaran, hingga evaluasi panjang ruas garis perpotongan sumbu koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran berpusat di titik $P$ yang terletak pada garis $x - y - 1 = 0$. Lingkaran tersebut melalui titik $A(1, 1)$ dan titik $B(5, 3)$. Panjang ruas garis yang terbentuk oleh perpotongan lingkaran tersebut dengan sumbu-$x$ adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Pusat lingkaran memenuhi jarak yang sama ke titik $A$ dan $B$ serta terletak pada garis $x - y - 1 = 0$, menghasilkan persamaan lingkaran $(x - 3)^2 + (y - 2)^2 = 5$. Perpotongan dengan sumbu-$x$ ($y = 0$) menghasilkan absis $x = 2$ dan $x = 4$, sehingga panjang ruas garisnya adalah $4 - 2 = 2$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Siswa keliru menganggap nilai ruas kanan $(x - 3)^2 = 1$ langsung sebagai panjang ruas garis."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa hanya mengambil nilai absis titik potong terbesar pada sumbu-$x$ tanpa mengurangkannya dengan titik potong lainnya."
+        },
+        {
+          "teks": "$2\\sqrt{5}$",
+          "alasan": "Siswa salah menghitung panjang diameter lingkaran ($2r$) alih-alih panjang tali busur pada sumbu-$x$."
+        }
+      ],
+      "pembahasan": "Misalkan koordinat titik pusat lingkaran adalah $P(a, b)$.\nKarena $P$ terletak pada garis $x - y - 1 = 0$, maka $b = a - 1$.\n\nKarena lingkaran melalui titik $A(1, 1)$ dan $B(5, 3)$, maka panjang jari-jari $PA = PB$, sehingga $PA^2 = PB^2$:\n$$(a - 1)^2 + (b - 1)^2 = (a - 5)^2 + (b - 3)^2$$\n$$a^2 - 2a + 1 + b^2 - 2b + 1 = a^2 - 10a + 25 + b^2 - 6b + 9$$\n$$-2a - 2b + 2 = -10a - 6b + 34$$\n$$8a + 4b = 32 \\implies 2a + b = 8$$\n\nSubstitusikan $b = a - 1$ ke dalam persamaan tersebut:\n$$2a + (a - 1) = 8 \\implies 3a = 9 \\implies a = 3$$\n$$b = 3 - 1 = 2$$\nTitik pusat lingkaran adalah $P(3, 2)$.\n\nKuadrat jari-jari lingkaran adalah:\n$$r^2 = (3 - 1)^2 + (2 - 1)^2 = 2^2 + 1^2 = 5$$\nPersamaan lingkarannya adalah:\n$$(x - 3)^2 + (y - 2)^2 = 5$$\n\nUntuk mencari titik potong dengan sumbu-$x$, substitusikan $y = 0$:\n$$(x - 3)^2 + (0 - 2)^2 = 5$$\n$$(x - 3)^2 + 4 = 5$$\n$$(x - 3)^2 = 1$$\n$$x - 3 = \\pm 1$$\n$$x_1 = 3 + 1 = 4 \\quad \\text{atau} \\quad x_2 = 3 - 1 = 2$$\n\nPanjang ruas garis yang terbentuk pada sumbu-$x$ adalah:\n$$|x_1 - x_2| = |4 - 2| = 2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-a-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 28,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "dengan A , B , dan C adalah bilangan real. Persamaan di atas disebut bentuk umum persamaan lingkaran ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas maksimum segitiga pada lingkaran",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan titik potong pada sumbu koordinat, analisis jari-jari dan titik puncak lingkaran, serta evaluasi geometris untuk memaksimumkan luas segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran memiliki persamaan $x^2 + y^2 - 4x - 6y - 12 = 0$. Lingkaran tersebut memotong sumbu-$x$ di dua titik, yaitu titik $A$ dan titik $B$. Jika titik $C$ terletak pada busur lingkaran di atas sumbu-$x$, luas maksimum yang mungkin untuk segitiga $ABC$ adalah ....",
+      "jawaban_benar": "$32\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong dengan sumbu-$x$ diperoleh saat $y = 0$, yaitu $x^2 - 4x - 12 = 0 \\iff (x - 6)(x + 2) = 0$, sehingga koordinat titik potong adalah $A(-2, 0)$ dan $B(6, 0)$. Panjang alas segitiga adalah ruas garis $AB = 6 - (-2) = 8$ satuan. Dari persamaan lingkaran, pusat lingkaran adalah $P(2, 3)$ dan jari-jarinya $r = \\sqrt{2^2 + 3^2 - (-12)} = \\sqrt{25} = 5$. Karena alas $AB$ berada pada garis $y = 0$, tinggi maksimum segitiga dicapai pada titik di lingkaran dengan ordinat tertinggi, yaitu $y_{\\text{maks}} = b + r = 3 + 5 = 8$. Jadi, luas maksimum segitiga $ABC$ adalah $\\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi} = \\frac{1}{2} \\times 8 \\times 8 = 32\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$20\\text{ satuan luas}$",
+          "alasan": "Siswa keliru menganggap tinggi segitiga maksimum sama dengan panjang jari-jari lingkaran ($r = 5$), sehingga menghitung $\\frac{1}{2} \\times 8 \\times 5 = 20$."
+        },
+        {
+          "teks": "$24\\text{ satuan luas}$",
+          "alasan": "Siswa salah menentukan ordinat pusat atau salah menghitung ordinat maksimum menjadi $6$, sehingga memperoleh $\\frac{1}{2} \\times 8 \\times 6 = 24$."
+        },
+        {
+          "teks": "$40\\text{ satuan luas}$",
+          "alasan": "Siswa menggunakan panjang diameter ($d = 10$) sebagai alas segitiga alih-alih panjang tali busur $AB$, sehingga menghitung $\\frac{1}{2} \\times 10 \\times 8 = 40$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik potong lingkaran dengan sumbu-$x$ ($y = 0$).\n$$x^2 + (0)^2 - 4x - 6(0) - 12 = 0 \\iff x^2 - 4x - 12 = 0$$\n$$(x - 6)(x + 2) = 0 \\implies x_1 = -2 \\text{ atau } x_2 = 6$$\nMaka titik potongnya adalah $A(-2, 0)$ dan $B(6, 0)$.\n\nLangkah 2: Menghitung panjang alas segitiga $AB$.\n$$\\text{Alas} = |6 - (-2)| = 8$$\n\nLangkah 3: Menentukan titik pusat $P(a, b)$ dan jari-jari $r$ lingkaran.\n$$a = -\\frac{A}{2} = -\\frac{-4}{2} = 2$$\n$$b = -\\frac{B}{2} = -\\frac{-6}{2} = 3$$\n$$r = \\sqrt{a^2 + b^2 - C} = \\sqrt{2^2 + 3^2 - (-12)} = \\sqrt{4 + 9 + 12} = \\sqrt{25} = 5$$\n\nLangkah 4: Menentukan tinggi maksimum segitiga terhadap garis $y = 0$.\nTinggi segitiga merupakan jarak tegak dari titik $C(x, y)$ pada lingkaran ke sumbu-$x$, yaitu nilai $y$. Nilai $y$ maksimum pada lingkaran tercapai di titik puncak teratas:\n$$y_{\\text{maks}} = b + r = 3 + 5 = 8$$\n\nLangkah 5: Menghitung luas maksimum segitiga $ABC$.\n$$L_{\\text{maks}} = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi}_{\\text{maks}} = \\frac{1}{2} \\times 8 \\times 8 = 32\\text{ satuan luas}$$\n\nDengan demikian, luas maksimum segitiga $ABC$ adalah $32\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

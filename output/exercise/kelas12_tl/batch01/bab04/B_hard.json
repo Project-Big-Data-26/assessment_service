@@ -1,0 +1,770 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "12 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ciri-Ciri Variabel Acak Diskret Nilainya diperoleh dari hasil menghitung atau membilang. Nilainya berupa bilangan bulat. Hasilnya dapat direpresentasikan berupa titik-titik terpisah pada garis bilangan."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan distribusi peluang variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa merancang nilai konstanta dan menentukan batas peluang kumulatif agar suatu model variabel acak diskret valid.",
+      "stimulus": "Sebuah variabel acak diskret $K$ menyatakan banyaknya kemunculan suatu peristiwa khusus dengan ruang nilai $\\{0, 1, 2, 3\\}$. Diberikan model fungsi distribusi peluang:\n$$P(K = k) = \\frac{m \\cdot 2^k}{45}$$\nuntuk $k \\in \\{0, 1, 2, 3\\}$, dengan $m$ adalah suatu konstanta bilangan bulat positif.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Agar fungsi tersebut valid sebagai fungsi peluang dari variabel acak diskret $K$, nilai dari $P(K \\ge 2)$ harus bernilai ....",
+      "jawaban_benar": "$\\frac{4}{5}$",
+      "alasan_benar": "Syarat fungsi peluang diskret: $\\sum_{k=0}^3 P(K=k) = 1$.\n$\\sum_{k=0}^3 \\frac{m \\cdot 2^k}{45} = \\frac{m}{45}(2^0 + 2^1 + 2^2 + 2^3) = \\frac{m}{45}(1 + 2 + 4 + 8) = \\frac{15m}{45} = \\frac{m}{3}$.\nAgar total peluang sama dengan 1, maka $\\frac{m}{3} = 1 \\Rightarrow m = 3$.\nKemudian dihitung $P(K \\ge 2) = P(K = 2) + P(K = 3) = \\frac{3(4 + 8)}{45} = \\frac{3 \\times 12}{45} = \\frac{36}{45} = \\frac{4}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Siswa menghitung peluang komplemen $P(K < 2) = P(K = 0) + P(K = 1) = \\frac{3(1 + 2)}{45} = \\frac{9}{45} = \\frac{1}{5}$ bukannya $P(K \\ge 2)$."
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Siswa hanya menghitung nilai pada $K = 3$, yaitu $\\frac{3 \\times 8}{45} = \\frac{24}{45} = \\frac{8}{15}$."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Siswa lupa mengalikan dengan konstanta $m = 3$ dan langsung menghitung proporsi $\\frac{2^2 + 2^3}{18}$ secara keliru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $m$ menggunakan syarat total peluang $\\sum_{k=0}^3 P(K = k) = 1$.\n$$\\frac{m}{45} (2^0 + 2^1 + 2^2 + 2^3) = 1$$\n$$\\frac{m}{45} (1 + 2 + 4 + 8) = 1$$\n$$\\frac{15m}{45} = 1 \\implies \\frac{m}{3} = 1 \\implies m = 3$$\n\nLangkah 2: Menghitung peluang $P(K \\ge 2)$:\n$$P(K \\ge 2) = P(K = 2) + P(K = 3)$$\n$$P(K = 2) = \\frac{3 \\cdot 2^2}{45} = \\frac{12}{45}$$\n$$P(K = 3) = \\frac{3 \\cdot 2^3}{45} = \\frac{24}{45}$$\n$$P(K \\ge 2) = \\frac{12}{45} + \\frac{24}{45} = \\frac{36}{45} = \\frac{4}{5}$$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel acak yang didefinisikan pada ruang sampel diskret disebut ruang sampel diskret ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan aturan variabel acak diskret",
+      "jumlah_langkah": 4,
+      "alasan_level": "Merancang ukuran parameter populasi agar distribusi peluang variabel acak diskret memenuhi kondisi rasio tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi 4 bola merah dan $k$ bola hitam dengan $k \\ge 2$. Dari dalam kantong diambil 2 bola sekaligus secara acak. Misalkan variabel acak diskret $X$ menyatakan banyaknya bola merah yang terambil. Agar peluang terambilnya tepat 1 bola merah bernilai tepat 2 kali lipat dari peluang tidak ada bola merah yang terambil sama sekali, nilai $k$ yang harus dipilih adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "Banyaknya ruang sampel pengambilan 2 bola dari $(4 + k)$ bola adalah $\\binom{4+k}{2}$.\n- Kejadian $X = 0$ (keduanya hitam): banyaknya cara $\\binom{k}{2} = \\frac{k(k-1)}{2}$.\n- Kejadian $X = 1$ (1 merah dan 1 hitam): banyaknya cara $\\binom{4}{1}\\binom{k}{1} = 4k$.\nSyarat yang dirancang adalah $P(X = 1) = 2 \\cdot P(X = 0)$.\nKarena penyebut kedua peluang sama, maka:\n$\\binom{4}{1}\\binom{k}{1} = 2 \\cdot \\binom{k}{2}$\n$4k = 2 \\cdot \\frac{k(k-1)}{2}$\n$4k = k(k-1)$\nKarena $k \\ge 2$ ($k \\ne 0$), bagi kedua ruas dengan $k$:\n$4 = k - 1 \\implies k = 5$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa lupa membagi dengan 2 pada kombinasi $\\binom{k}{2}$, menghasilkan persamaan $4k = 2(k(k-1)) \\implies 2 = k - 1 \\implies k = 3$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa mengasumsikan jumlah bola hitam harus sama dengan bola merah agar kondisinya simetris."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa melakukan kesalahan tanda aljabar saat memindahkan konstanta dari $k - 1 = 4$ menjadi $k = 6$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai-nilai variabel acak $X$ dan rumus peluangnya.\nPengambilan 2 bola dari total $(4 + k)$ bola memiliki ruang sampel $n(S) = \\binom{4+k}{2}$.\n\nLangkah 2: Menentukan ekspresi peluang untuk $X = 0$ dan $X = 1$:\n- $P(X = 0) = \\frac{\\binom{4}{0}\\binom{k}{2}}{\\binom{4+k}{2}} = \\frac{\\frac{k(k-1)}{2}}{\\binom{4+k}{2}}$\n- $P(X = 1) = \\frac{\\binom{4}{1}\\binom{k}{1}}{\\binom{4+k}{2}} = \\frac{4k}{\\binom{4+k}{2}}$\n\nLangkah 3: Menyusun persamaan sesuai ketentuan perancangan $P(X = 1) = 2 \\cdot P(X = 0)$:\n$$\\frac{4k}{\\binom{4+k}{2}} = 2 \\cdot \\frac{\\frac{k(k-1)}{2}}{\\binom{4+k}{2}}$$\n$$4k = k(k-1)$$\n\nLangkah 4: Menyelesaikan persamaan aljabar untuk nilai $k$:\nKarena $k \\ge 2$, kedua ruas dapat dibagi dengan $k$:\n$$4 = k - 1 \\implies k = 5$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap nilai tersebut memiliki peluang tertentu yang jika dijumlahkan, hasilnya adalah 1."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi batas validitas fungsi peluang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi batasan nilai parameter agar memenuhi seluruh aksioma distribusi peluang variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $T$ memiliki ruang nilai $\\{0, 1, 2, 3\\}$ dengan model distribusi peluang dinyatakan sebagai berikut:\n$$\\begin{aligned}\nP(T = 0) &= \\frac{1}{2} - k \\\\\nP(T = 1) &= 2k \\\\\nP(T = 2) &= \\frac{1}{4} + k \\\\\nP(T = 3) &= \\frac{1}{4} - 2k\n\\end{aligned}$$\nBatas-batas nilai real $k$ yang mungkin agar fungsi tersebut merupakan distribusi peluang variabel acak diskret yang sah adalah ....",
+      "jawaban_benar": "$0 \\le k \\le \\frac{1}{8}$",
+      "alasan_benar": "Jumlah seluruh peluang harus sama dengan 1:\n$\\sum P(T = t) = \\left(\\frac{1}{2} - k\\right) + 2k + \\left(\\frac{1}{4} + k\\right) + \\left(\\frac{1}{4} - 2k\\right) = 1$.\nPersamaan ini bernilai benar untuk setiap $k$ (identitas).\nSyarat aksiomatis probabilitas mengharuskan $0 \\le P(T = t) \\le 1$ untuk setiap $t$:\n1. $P(T = 0) \\ge 0 \\implies \\frac{1}{2} - k \\ge 0 \\implies k \\le \\frac{1}{2}$\n2. $P(T = 1) \\ge 0 \\implies 2k \\ge 0 \\implies k \\ge 0$\n3. $P(T = 2) \\ge 0 \\implies \\frac{1}{4} + k \\ge 0 \\implies k \\ge -\\frac{1}{4}$\n4. $P(T = 3) \\ge 0 \\implies \\frac{1}{4} - 2k \\ge 0 \\implies k \\le \\frac{1}{8}$\nIrisan dari seluruh pertidaksamaan tersebut adalah $0 \\le k \\le \\frac{1}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$0 \\le k \\le \\frac{1}{4}$",
+          "alasan": "Siswa keliru menyelesaikan pertidaksamaan $\\frac{1}{4} - 2k \\ge 0$ menjadi $k \\le \\frac{1}{4}$ karena lupa membagi koefisien 2."
+        },
+        {
+          "teks": "$-\\frac{1}{4} \\le k \\le \\frac{1}{8}$",
+          "alasan": "Siswa mengambil batas bawah dari syarat $P(T = 2) \\ge 0$ dan melupakan syarat non-negativitas dari $P(T = 1) = 2k \\ge 0$."
+        },
+        {
+          "teks": "$0 \\le k \\le \\frac{1}{2}$",
+          "alasan": "Siswa hanya menguji syarat pada $P(T = 0)$ dan $P(T = 1)$, mengabaikan pembatasan yang lebih ketat dari $P(T = 3)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Memeriksa syarat normalisasi peluang $\\sum_{t=0}^{3} P(T = t) = 1$:\n$$\\left(\\frac{1}{2} - k\\right) + 2k + \\left(\\frac{1}{4} + k\\right) + \\left(\\frac{1}{4} - 2k\\right) = \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{4} + (-k + 2k + k - 2k) = 1$$\nKarena hasilnya selalu 1, syarat normalisasi terpenuhi untuk setiap nilai real $k$.\n\nLangkah 2: Menetapkan syarat bahwa setiap nilai peluang harus non-negatif ($P(T = t) \\ge 0$):\n- $P(T = 0) \\ge 0 \\implies \\frac{1}{2} - k \\ge 0 \\implies k \\le \\frac{1}{2}$\n- $P(T = 1) \\ge 0 \\implies 2k \\ge 0 \\implies k \\ge 0$\n- $P(T = 2) \\ge 0 \\implies \\frac{1}{4} + k \\ge 0 \\implies k \\ge -\\frac{1}{4}$\n- $P(T = 3) \\ge 0 \\implies \\frac{1}{4} - 2k \\ge 0 \\implies 2k \\le \\frac{1}{4} \\implies k \\le \\frac{1}{8}$\n\nLangkah 3: Menentukan batas bawah nilai $k$ dari irisan pertidaksamaan:\n$$k \\ge 0 \\quad \\text{dan} \\quad k \\ge -\\frac{1}{4} \\implies k \\ge 0$$\n\nLangkah 4: Menentukan batas atas nilai $k$ dari irisan pertidaksamaan:\n$$k \\le \\frac{1}{2} \\quad \\text{dan} \\quad k \\le \\frac{1}{8} \\implies k \\le \\frac{1}{8}$$\nDengan demikian, batas-batas nilai $k$ yang sah adalah $0 \\le k \\le \\frac{1}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0253-latihan-soal-variabel-acak-diskret-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi rentang nilai variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi pembentukan variabel acak diskret dari kombinasi bertingkat dan menguji banyaknya anggota himpunan ruang nilai yang memenuhi syarat kuadratik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari sebuah kotak yang berisi 5 kartu bernomor 1, 2, 3, 4, dan 5 diambil dua kartu sekaligus secara acak. Variabel acak diskret $U$ didefinisikan sebagai hasil kali nomor kedua kartu yang terambil. Banyaknya kemungkinan nilai $u$ dari variabel acak $U$ yang memenuhi pertidaksamaan $u^2 - 15u + 50 \\le 0$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Kombinasi 2 kartu dari 5 kartu menghasilkan $\\binom{5}{2} = 10$ kemungkinan pasangan. Hasil kalinya adalah: $1\\times2=2$, $1\\times3=3$, $1\\times4=4$, $1\\times5=5$, $2\\times3=6$, $2\\times4=8$, $2\\times5=10$, $3\\times4=12$, $3\\times5=15$, $4\\times5=20$. Himpunan nilai yang mungkin dari variabel acak $U$ adalah $\\{2, 3, 4, 5, 6, 8, 10, 12, 15, 20\\}$ (ada 10 nilai berbeda). Syarat: $u^2 - 15u + 50 \\le 0 \\iff (u - 5)(u - 10) \\le 0 \\iff 5 \\le u \\le 10$. Nilai $u$ yang memenuhi interval $[5, 10]$ adalah $5, 6, 8, 10$. Jadi terdapat tepat 4 nilai.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa menggunakan pertidaksamaan ketat $5 < u < 10$ sehingga nilai 5 dan 10 tidak dihitung atau salah mengabaikan salah satu nilai."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa mengira semua bilangan bulat antara 5 sampai 10 (5, 6, 7, 8, 9, 10) adalah nilai dari $U$, padahal 7 dan 9 bukan nilai yang mungkin."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa menghitung banyaknya pasangan kartu yang menghasilkan rentang tersebut, bukan banyaknya kemungkinan nilai diskret dari $U$."
+        }
+      ],
+      "pembahasan": "Dua kartu diambil sekaligus dari $\\{1, 2, 3, 4, 5\\}$. Pasangan kartu yang mungkin beserta hasil kali $u$:\\n- $(1, 2) \\to 2$\\n- $(1, 3) \\to 3$\\n- $(1, 4) \\to 4$\\n- $(1, 5) \\to 5$\\n- $(2, 3) \\to 6$\\n- $(2, 4) \\to 8$\\n- $(2, 5) \\to 10$\\n- $(3, 4) \\to 12$\\n- $(3, 5) \\to 15$\\n- $(4, 5) \\to 20$\\nRuang nilai variabel acak diskret $U$ adalah $\\{2, 3, 4, 5, 6, 8, 10, 12, 15, 20\\}$.\\nPertidaksamaan: $u^2 - 15u + 50 \\le 0 \\iff (u - 5)(u - 10) \\le 0 \\iff 5 \\le u \\le 10$.\\nNilai $u \\in U$ yang berada dalam selang $[5, 10]$ adalah $5, 6, 8,$ dan $10$. Ada 4 nilai.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis peluang variabel acak diskret bertingkat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dan membandingkan probabilitas kejadian diskret pada ruang sampel berhingga tanpa pengembalian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi 3 bola merah dan 3 bola putih. Dilakukan pengambilan bola satu per satu secara acak tanpa pengembalian hingga bola merah kedua terambil. Misalkan variabel acak diskret $N$ menyatakan banyaknya pengambilan bola yang dilakukan sampai percobaan berakhir. Nilai dari $P(N \\le 3)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Bola merah kedua dapat terambil pada pengambilan ke-2, ke-3, ke-4, atau ke-5. Jadi ruang nilai $N$ adalah $\\{2, 3, 4, 5\\}$. Kejadian $N \\le 3$ berarti $N = 2$ atau $N = 3$.\\n- $N = 2$: Pengambilan ke-1 Merah dan ke-2 Merah (MM). Peluang $= \\frac{3}{6} \\times \\frac{2}{5} = \\frac{6}{30} = \\frac{1}{5}$.\\n- $N = 3$: Terdiri dari susunan MPM (Merah, Putih, Merah) atau PMM (Putih, Merah, Merah). Peluang MPM $= \\frac{3}{6} \\times \\frac{3}{5} \\times \\frac{2}{4} = \\frac{18}{120} = \\frac{3}{20}$. Peluang PMM $= \\frac{3}{6} \\times \\frac{3}{5} \\times \\frac{2}{4} = \\frac{3}{20}$. Total $P(N = 3) = \\frac{3}{20} + \\frac{3}{20} = \\frac{6}{20} = \\frac{3}{10}$.\\nJumlahkan: $P(N \\le 3) = P(N = 2) + P(N = 3) = \\frac{1}{5} + \\frac{3}{10} = \\frac{2}{10} + \\frac{3}{10} = \\frac{5}{10} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Siswa hanya menghitung peluang $P(N = 3)$ dan melupakan kasus $N = 2$."
+        },
+        {
+          "teks": "$\\frac{7}{20}$",
+          "alasan": "Siswa lupa mengalikan dengan 2 susunan yang mungkin (hanya menghitung satu urutan MPM) pada $N = 3$."
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Siswa melakukan perhitungan dengan asumsi pengambilan dengan pengembalian."
+        }
+      ],
+      "pembahasan": "Variabel acak $N$ menyatakan banyaknya pengambilan hingga terambil bola merah kedua.\\nNilai $N \\le 3$ mencakup $N = 2$ dan $N = 3$.\\n1. Kasus $N = 2$: Bola yang terambil harus urutan MM.\\n   $P(N = 2) = \\frac{3}{6} \\times \\frac{2}{5} = \\frac{6}{30} = \\frac{1}{5}$.\\n2. Kasus $N = 3$: Pengambilan ke-3 harus merah, dan di antara 2 pengambilan pertama ada tepat 1 merah (MPM atau PMM).\\n   $P(\\text{MPM}) = \\frac{3}{6} \\times \\frac{3}{5} \\times \\frac{2}{4} = \\frac{18}{120} = \\frac{3}{20}$.\\n   $P(\\text{PMM}) = \\frac{3}{6} \\times \\frac{3}{5} \\times \\frac{2}{4} = \\frac{18}{120} = \\frac{3}{20}$.\\n   $P(N = 3) = \\frac{3}{20} + \\frac{3}{20} = \\frac{6}{20} = \\frac{3}{10}$.\\n3. Maka, $P(N \\le 3) = P(N = 2) + P(N = 3) = \\frac{2}{10} + \\frac{3}{10} = \\frac{5}{10} = \\frac{1}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 247,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel memuat elemen-elemen yang jumlahnya hingga ( finite ) atau tak hingga ( infinite ), namun dapat dihitung satu per satu (sebanyak bilangan bulat), ruang sampel itu disebut ruang sampel diskret ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan fungsi variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi dan merancang model fungsi peluang diskret tak hingga berbasis deret geometri konvergen.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $M$ memiliki ruang sampel tak berhingga dengan daerah nilai himpunan bilangan asli $\\{1, 2, 3, \\dots\\}$. Model fungsi peluang dari $M$ didefinisikan sebagai $P(M = m) = k \\left(\\frac{3}{4}\\right)^m$ untuk setiap $m \\in \\{1, 2, 3, \\dots\\}$, dengan $k$ suatu konstanta real. Nilai dari peluang $P(M > 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{9}{16}$",
+      "alasan_benar": "Total peluang seluruh nilai variabel acak diskret harus sama dengan 1:\\n$\\sum_{m=1}^{\\infty} P(M = m) = 1 \\implies \\sum_{m=1}^{\\infty} k \\left(\\frac{3}{4}\\right)^m = 1$.\\nDeret geometri dengan suku pertama $a = k \\cdot \\frac{3}{4}$ dan rasio $r = \\frac{3}{4}$.\\nJumlah deret: $S = \\frac{a}{1 - r} = \\frac{\\frac{3}{4}k}{1 - \\frac{3}{4}} = \\frac{\\frac{3}{4}k}{\\frac{1}{4}} = 3k = 1 \\implies k = \\frac{1}{3}$.\\nMaka $P(M = m) = \\frac{1}{3} \\left(\\frac{3}{4}\\right)^m$.\\nDitanya $P(M > 2) = 1 - P(M \\le 2) = 1 - [P(M=1) + P(M=2)]$.\\n$P(M = 1) = \\frac{1}{3} \\left(\\frac{3}{4}\\right) = \\frac{1}{4}$.\\n$P(M = 2) = \\frac{1}{3} \\left(\\frac{9}{16}\\right) = \\frac{3}{16}$.\\n$P(M \\le 2) = \\frac{1}{4} + \\frac{3}{16} = \\frac{7}{16}$.\\n$P(M > 2) = 1 - \\frac{7}{16} = \\frac{9}{16}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{16}$",
+          "alasan": "Siswa menghitung nilai komplementer $P(M \\le 2)$ alih-alih $P(M > 2)$."
+        },
+        {
+          "teks": "$\\frac{27}{64}$",
+          "alasan": "Siswa keliru menganggap $P(M > 2)$ dimulai dari $m = 4$ atau salah indeks deret."
+        },
+        {
+          "teks": "$\\frac{3}{16}$",
+          "alasan": "Siswa hanya menghitung nilai peluang tepat pada saat $M = 2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $k$ menggunakan syarat total peluang diskret:\\n$$\\sum_{m=1}^{\\infty} P(M = m) = 1$$\\nMerupakan deret geometri tak hingga dengan suku pertama $a = k \\left(\\frac{3}{4}\\right)$ dan rasio $r = \\frac{3}{4}$:\\n$$S_{\\infty} = \\frac{a}{1 - r} = \\frac{\\frac{3}{4}k}{1 - \\frac{3}{4}} = 3k = 1 \\implies k = \\frac{1}{3}$$\\n\\nLangkah 2: Menghitung $P(M \\le 2)$:\\n$$P(M = 1) = \\frac{1}{3}\\left(\\frac{3}{4}\\right) = \\frac{1}{4}$$\\n$$P(M = 2) = \\frac{1}{3}\\left(\\frac{9}{16}\\right) = \\frac{3}{16}$$\\n$$P(M \\le 2) = \\frac{1}{4} + \\frac{3}{16} = \\frac{7}{16}$$\\n\\nLangkah 3: Menghitung peluang komplemen $P(M > 2)$:\\n$$P(M > 2) = 1 - P(M \\le 2) = 1 - \\frac{7}{16} = \\frac{9}{16}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0253-latihan-soal-variabel-acak-diskret-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis distribusi variabel acak ekstremum",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan ruang sampel gabungan tiga objek diskret dan evaluasi komplemen untuk nilai maksimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga buah dadu bersisi empat (tetrahedral) seimbang masing-masing memiliki nomor sisi 1, 2, 3, dan 4. Ketiga dadu dilempar bersamaan sebanyak satu kali. Misalkan variabel acak $M$ menyatakan nilai maksimum (angka terbesar) dari ketiga mata dadu yang muncul. Nilai dari $P(M \\ge 3)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{8}$",
+      "alasan_benar": "Ruang sampel total adalah $4^3 = 64$. Peristiwa $M \\ge 3$ berkomplemen dengan $M \\le 2$, yaitu semua dadu hanya menghasilkan angka 1 atau 2. Banyak kejadian untuk $M \\le 2$ adalah $2^3 = 8$. Maka $P(M \\le 2) = \\frac{8}{64} = \\frac{1}{8}$. Dengan demikian, $P(M \\ge 3) = 1 - \\frac{1}{8} = \\frac{7}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Hanya menghitung proporsi angka $\\ge 3$ pada satu dadu, yaitu $\\frac{2}{4} = \\frac{1}{2}$ lalu menambahkan peluang lain secara keliru."
+        },
+        {
+          "teks": "$\\frac{27}{32}$",
+          "alasan": "Keliru menghitung banyak kemungkinan komplemen sebagai $2 \\times 2 \\times 1 = 4$ kemungkinan sehingga $1 - \\frac{4}{64} = \\frac{15}{16}$ atau salah hitung pecahan."
+        },
+        {
+          "teks": "$\\frac{37}{64}$",
+          "alasan": "Hanya menghitung kejadian jika angka 3 atau 4 muncul minimal satu kali tanpa melibatkan pasangan ketiga dadu secara lengkap."
+        }
+      ],
+      "pembahasan": "Banyaknya anggota ruang sampel pelambungan 3 dadu bersisi 4 adalah:\n$$n(S) = 4 \\times 4 \\times 4 = 64$$\nVariabel acak $M$ bernilai kurang dari 3 (yaitu $M \\le 2$) jika setiap dadu hanya memunculkan angka 1 atau 2.\nBanyaknya hasil yang memenuhi:\n$$n(M \\le 2) = 2 \\times 2 \\times 2 = 8$$\nSehingga peluang komplemennya adalah:\n$$P(M \\le 2) = \\frac{8}{64} = \\frac{1}{8}$$\nOleh karena itu, peluang nilai maksimum sekurang-kurangnya 3 adalah:\n$$P(M \\ge 3) = 1 - P(M \\le 2) = 1 - \\frac{1}{8} = \\frac{7}{8}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga (finite) atau himpunan tak berhingga (infinite) yang dapat dihitung satu per satu (countable), maka x disebut variabel acak diskret."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi peluang deret tak hingga variabel acak",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan variabel acak dengan ruang nilai tak hingga dan penghitungan jumlah deret geometri tak hingga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen melambungkan sebuah dadu berimbang bersisi enam secara berulang-ulang sampai muncul mata dadu 6 untuk pertama kalinya. Misalkan variabel acak diskret $N$ menyatakan banyaknya lemparan yang dilakukan hingga mata dadu 6 muncul. Nilai dari peluang $P(N \\text{ adalah bilangan ganjil})$ adalah ....",
+      "jawaban_benar": "$\\frac{6}{11}$",
+      "alasan_benar": "Peluang sukses (muncul 6) pada setiap lemparan adalah $p = \\frac{1}{6}$, dan peluang gagal adalah $q = \\frac{5}{6}$. Variabel acak $N \\in \\{1, 2, 3, \\dots\\}$ bernilai ganjil saat $N = 1, 3, 5, \\dots$. Peluang $P(N = 2k-1) = q^{2k-2} p$. Jumlah seluruh peluang ganjil membentuk deret geometri tak hingga dengan suku pertama $a = p = \\frac{1}{6}$ dan rasio $r = q^2 = \\left(\\frac{5}{6}\\right)^2 = \\frac{25}{36}$. Jumlahnya adalah $S = \\frac{\\frac{1}{6}}{1 - \\frac{25}{36}} = \\frac{\\frac{1}{6}}{\\frac{11}{36}} = \\frac{6}{11}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{11}$",
+          "alasan": "Menghitung peluang bahwa $N$ adalah bilangan genap."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengasumsikan secara keliru bahwa peluang ganjil dan genap selalu sama pada variabel acak diskret tak hingga."
+        },
+        {
+          "teks": "$\\frac{5}{12}$",
+          "alasan": "Keliru menggunakan rasio deret sebagai $q = \\frac{5}{6}$ bukan $q^2$."
+        }
+      ],
+      "pembahasan": "Peluang muncul mata dadu 6 adalah $p = \\frac{1}{6}$, sehingga peluang bukan mata dadu 6 adalah $q = 1 - \\frac{1}{6} = \\frac{5}{6}$.\nVariabel acak $N$ menyatakan nomor lemparan ketika mata dadu 6 pertama kali muncul, dengan ruang nilai $\\{1, 2, 3, \\dots\\}$.\nFungsi peluang dari $N$ adalah:\n$$P(N = n) = q^{n-1} p$$\nKejadian $N$ bernilai ganjil terjadi jika $n \\in \\{1, 3, 5, 7, \\dots\\}$.\nMaka peluangnya adalah jumlah deret geometri:\n$$P(N \\text{ ganjil}) = P(N=1) + P(N=3) + P(N=5) + \\dots$$\n$$P(N \\text{ ganjil}) = p + q^2 p + q^4 p + \\dots$$\nDeret ini memiliki:\n- Suku pertama: $a = p = \\frac{1}{6}$\n- Rasio: $r = q^2 = \\left(\\frac{5}{6}\\right)^2 = \\frac{25}{36}$\nJumlah deret geometri tak hingga:\n$$P(N \\text{ ganjil}) = \\frac{a}{1 - r} = \\frac{\\frac{1}{6}}{1 - \\frac{25}{36}} = \\frac{\\frac{1}{6}}{\\frac{11}{36}} = \\frac{6}{11}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Variabel Z = X + Y , menyatakan jumlah angka yang diperoleh dari papan A dan papan B. Untuk mengetahui nilai-nilai yang mungkin dari Z beserta peluangnya, kita tentukan pasangan nilai ^ X , Y h yang mungkin pada Tabel 4.5, kemudian menghitung peluangnya."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan distribusi variabel acak bertingkat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan analisis gabungan dua variabel acak diskret terikat melalui perkalian nilai kartu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kotak A berisi 3 kartu bernomor 1, 2, dan 3. Kotak B berisi 3 kartu bernomor 2, 3, dan 4. Dari masing-masing kotak diambil satu kartu secara acak dan independen. Misalkan variabel acak diskret $W$ menyatakan hasil kali kedua nomor kartu yang terambil, yaitu $W = X \\times Y$ dengan $X$ nomor dari kotak A dan $Y$ nomor dari kotak B. Nilai dari peluang $P(W > 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{5}{9}$",
+      "alasan_benar": "Banyaknya seluruh pasangan $(X, Y)$ adalah $3 \\times 3 = 9$. Pasangan dengan hasil kali $W = X \\times Y \\le 4$ adalah: $(1, 2) \\to 2$, $(1, 3) \\to 3$, $(1, 4) \\to 4$, $(2, 2) \\to 4$. Total ada 4 pasangan. Maka peluang $P(W \\le 4) = \\frac{4}{9}$. Peluang $P(W > 4) = 1 - \\frac{4}{9} = \\frac{5}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Menghitung peluang $P(W \\le 4)$ bukan $P(W > 4)$."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Lupa menganggap pasangan $(1, 4)$ atau $(2, 2)$ memiliki hasil kali $\\le 4$ sehingga menyimpulkan hanya ada 3 pasangan."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengira banyaknya kombinasi yang memenuhi genap setengah dari total tanpa mendaftar pasangan."
+        }
+      ],
+      "pembahasan": "Variabel acak $X \\in \\{1, 2, 3\\}$ dan $Y \\in \\{2, 3, 4\\}$.\nSemua pasangan $(X, Y)$ yang mungkin berjumlah $3 \\times 3 = 9$ dengan peluang masing-masing $\\frac{1}{9}$:\n1. $1 \\times 2 = 2$\n2. $1 \\times 3 = 3$\n3. $1 \\times 4 = 4$\n4. $2 \\times 2 = 4$\n5. $2 \\times 3 = 6$\n6. $2 \\times 4 = 8$\n7. $3 \\times 2 = 6$\n8. $3 \\times 3 = 9$\n9. $3 \\times 4 = 12$\n\nPasangan dengan nilai $W \\le 4$ adalah $\\{(1,2), (1,3), (1,4), (2,2)\\}$, berjumlah 4 kemungkinan.\nOleh karena itu, peluang untuk $W > 4$ adalah:\n$$P(W > 4) = 1 - P(W \\le 4) = 1 - \\frac{4}{9} = \\frac{5}{9}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh Soal",
+        "nomor": "4.4",
+        "teks": "Pada sebuah eksperimen melempar sekeping uang logam dua kali, misalkan variabel acak X menyatakan banyaknya kejadian munculnya sisi A (Angka). Tunjukkanlah bahwa X adalah suatu variabel acak diskret.",
+        "jawaban": "X merupakan variabel acak diskret karena hasilnya berupa bilangan diskret yang dapat dihitung satu per satu dengan peluang terdefinisi.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis sebaran selisih acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemetaan ruang sampel 4 koin ke variabel baru selisih mutlak serta evaluasi gabungan titik sampel yang bersesuaian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Empat keping uang logam seimbang dilambungkan secara bersamaan sebanyak satu kali. Misalkan variabel acak diskret $X$ menyatakan selisih mutlak antara banyaknya sisi Angka dan banyaknya sisi Gambar yang muncul. Nilai dari peluang $P(X = 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Ruang sampel pelambungan 4 koin memiliki ukuran $2^4 = 16$. Misalkan $A$ menyatakan banyak Angka dan $G = 4 - A$ menyatakan banyak Gambar, maka $X = |A - G| = |2A - 4|$. Nilai $X = 2$ dipenuhi saat $|2A - 4| = 2$, yaitu $2A - 4 = 2 \\implies A = 3$ atau $2A - 4 = -2 \\implies A = 1$. Banyak kejadian untuk $A = 1$ adalah $\\binom{4}{1} = 4$ dan untuk $A = 3$ adalah $\\binom{4}{3} = 4$. Total titik sampel yang memenuhi adalah $4 + 4 = 8$, sehingga $P(X = 2) = \\frac{8}{16} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Hanya menghitung peluang kejadian salah satu kondisi saja, yaitu ketika selisih bernilai 0 atau salah menghitung kombinasi 2 Angka 2 Gambar $\\binom{4}{2}/16 = 6/16$."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Hanya memperhitungkan satu kejadian, misalnya saat $A = 3$ saja sehingga memperoleh $\\frac{4}{16} = \\frac{1}{4}$."
+        },
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Keliru menjumlahkan titik sampel $A=1$, $A=2$, dan $A=3$ ke dalam perhitungan."
+        }
+      ],
+      "pembahasan": "Ruang sampel dari pelambungan 4 keping koin adalah $n(S) = 2^4 = 16$. Variabel acak $X$ menyatakan selisih mutlak kemunculan Angka ($A$) dan Gambar ($G$). Hubungan $G = 4 - A$ menghasilkan $X = |A - (4 - A)| = |2A - 4|$. Nilai $X = 2$ diperoleh ketika $|2A - 4| = 2$, yang memiliki dua penyelesaian: $2A - 4 = 2 \\implies A = 3$, atau $2A - 4 = -2 \\implies A = 1$. Banyak anggota kejadian untuk $A = 1$ adalah $\\binom{4}{1} = 4$ cara, dan untuk $A = 3$ adalah $\\binom{4}{3} = 4$ cara. Jumlah total kejadian pendukung adalah $4 + 4 = 8$. Jadi, $P(X = 2) = \\frac{8}{16} = \\frac{1}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": "Contoh Soal",
+        "nomor": "4.3",
+        "teks": "Pada permainan papan angka berputar, seperti pada Gambar 4.7, setiap papan diputar satu kali. Misalkan variabel acak X menyatakan angka terpilih dari papan A. Variabel acak Y menyatakan angka terpilih dari papan B. Tunjukkan bahwa Z = X + Y adalah variabel acak diskret.",
+        "jawaban": "Z = X + Y merupakan variabel acak diskret karena hasilnya berupa bilangan diskret yang dapat dihitung satu per satu dengan peluang terdefinisi.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi peluang hasil kali acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan distribusi peluang gabungan dari dua variabel acak independen tak seragam serta evaluasi batas pertidaksamaan perkalian variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah roda putar angka diputar masing-masing satu kali secara independen. Roda A terbagi menjadi 3 sektor dengan angka 1, 2, dan 3 yang memiliki peluang kemunculan berturut-turut $P(X = 1) = \\frac{1}{6}$, $P(X = 2) = \\frac{2}{6}$, dan $P(X = 3) = \\frac{3}{6}$. Roda B terbagi menjadi 2 sektor seimbang bernomor 2 dan 4, sehingga $P(Y = 2) = P(Y = 4) = \\frac{1}{2}$. Jika variabel acak diskret didefinisikan sebagai hasil kali angka kedua roda, yaitu $W = X \\cdot Y$, maka nilai peluang $P(W \\ge 6)$ adalah ....",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Pasangan $(X, Y)$ yang menghasilkan $W = X \\cdot Y \\ge 6$ adalah $(2, 4)$ dengan $W = 8$, $(3, 2)$ dengan $W = 6$, dan $(3, 4)$ dengan $W = 12$. Peluang masing-masing pasangan adalah: $P(2, 4) = \\frac{2}{6} \\times \\frac{1}{2} = \\frac{2}{12}$, $P(3, 2) = \\frac{3}{6} \\times \\frac{1}{2} = \\frac{3}{12}$, dan $P(3, 4) = \\frac{3}{6} \\times \\frac{1}{2} = \\frac{3}{12}$. Jumlah seluruh peluang tersebut adalah $\\frac{2 + 3 + 3}{12} = \\frac{8}{12} = \\frac{2}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Lupa menyertakan pasangan $(2, 4)$ yang bernilai 8 sehingga hanya menjumlahkan $P(3, 2) + P(3, 4) = \\frac{6}{12} = \\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "Keliru mengalikan bobot peluang sektor roda A, menganggap peluang sektor 2 adalah $\\frac{1}{6}$."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menghitung pasangan secara keliru dengan memasukkan pasangan $(1, 4)$ ke dalam syarat pertidaksamaan."
+        }
+      ],
+      "pembahasan": "Nilai variabel acak $W = X \\cdot Y$ untuk setiap pasangan $(X, Y)$ adalah sebagai berikut:\n- $(1, 2) \\implies W = 2$, peluang = $\\frac{1}{6} \\times \\frac{1}{2} = \\frac{1}{12}$\n- $(1, 4) \\implies W = 4$, peluang = $\\frac{1}{6} \\times \\frac{1}{2} = \\frac{1}{12}$\n- $(2, 2) \\implies W = 4$, peluang = $\\frac{2}{6} \\times \\frac{1}{2} = \\frac{2}{12}$\n- $(2, 4) \\implies W = 8$, peluang = $\\frac{2}{6} \\times \\frac{1}{2} = \\frac{2}{12}$\n- $(3, 2) \\implies W = 6$, peluang = $\\frac{3}{6} \\times \\frac{1}{2} = \\frac{3}{12}$\n- $(3, 4) \\implies W = 12$, peluang = $\\frac{3}{6} \\times \\frac{1}{2} = \\frac{3}{12}$\n\nNilai $W \\ge 6$ dipenuhi oleh kejadian $W \\in \\{6, 8, 12\\}$, yang bersesuaian dengan pasangan $(3, 2)$, $(2, 4)$, dan $(3, 4)$. Maka $P(W \\ge 6) = \\frac{3}{12} + \\frac{2}{12} + \\frac{3}{12} = \\frac{8}{12} = \\frac{2}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga (finite) atau himpunan tak berhingga (infinite) yang dapat dihitung satu per satu (countable), maka x disebut variabel acak diskret."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi peluang geometri diskret",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan formulasi deret geometri tak hingga pada ruang sampel variabel acak diskret tak berhingga untuk mengevaluasi peluang indeks genap.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen acak dilakukan dengan melambungkan koin tak seimbang berulang kali secara independen hingga muncul sisi Angka untuk pertama kalinya. Peluang muncul sisi Angka pada setiap lambungan adalah $\\frac{1}{3}$. Jika variabel acak diskret $N$ menyatakan nomor lambungan saat sisi Angka pertama kali muncul, maka nilai peluang $P(N \\text{ bilangan genap})$ adalah ....",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "Peluang sukses adalah $p = \\frac{1}{3}$ dan peluang gagal adalah $q = 1 - p = \\frac{2}{3}$. Variabel acak $N$ berdistribusi dengan peluang $P(N = k) = q^{k-1}p = (\\frac{2}{3})^{k-1} \\cdot \\frac{1}{3}$ untuk $k \\in \\{1, 2, 3, \\dots\\}$. Nilai genap adalah $k \\in \\{2, 4, 6, \\dots\\}$. Peluangnya membentuk deret geometri tak hingga dengan suku pertama $a = P(N = 2) = (\\frac{2}{3})^1 \\cdot \\frac{1}{3} = \\frac{2}{9}$ dan rasio $r = (\\frac{2}{3})^2 = \\frac{4}{9}$. Jumlah deret adalah $S = \\frac{a}{1 - r} = \\frac{2/9}{1 - 4/9} = \\frac{2/9}{5/9} = \\frac{2}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengasumsikan bahwa koin seimbang atau separuh dari total kemungkinan nilai berpeluang sama antara ganjil dan genap."
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Menghitung peluang untuk nomor pelambungan ganjil, yaitu $P(N \\text{ ganjil}) = 1 - \\frac{2}{5} = \\frac{3}{5}$."
+        },
+        {
+          "teks": "$\\frac{2}{9}$",
+          "alasan": "Hanya menghitung nilai peluang pada suku pertama saja, yaitu $P(N = 2)$ tanpa menjumlahkan suku-suku genap berikutnya."
+        }
+      ],
+      "pembahasan": "Kejadian bahwa sisi Angka pertama kali muncul pada pelambungan ke-$k$ memiliki peluang $P(N = k) = (\\frac{2}{3})^{k-1}(\\frac{1}{3})$.\nUntuk nilai $N$ berupa bilangan genap ($k = 2, 4, 6, \\dots$):\n$P(N = 2) = (\\frac{2}{3})^1 (\\frac{1}{3}) = \\frac{2}{9}$\n$P(N = 4) = (\\frac{2}{3})^3 (\\frac{1}{3}) = \\frac{2}{9} \\times \\frac{4}{9}$\n$P(N = 6) = (\\frac{2}{3})^5 (\\frac{1}{3}) = \\frac{2}{9} \\times (\\frac{4}{9})^2$\nIni merupakan deret geometri tak hingga dengan suku pertama $a = \\frac{2}{9}$ dan rasio $r = (\\frac{2}{3})^2 = \\frac{4}{9}$.\nJumlah seluruh peluang genap adalah:\n$P(N \\text{ genap}) = \\frac{a}{1 - r} = \\frac{\\frac{2}{9}}{1 - \\frac{4}{9}} = \\frac{\\frac{2}{9}}{\\frac{5}{9}} = \\frac{2}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya diperoleh dari hasil menghitung atau membilang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi transformasi variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan distribusi selisih mutlak dua dadu, penyelesaian persamaan aljabar dari variabel acak baru, dan evaluasi peluang kumulatif titik sampel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu seimbang bersisi enam dilempar bersamaan sebanyak satu kali. Misalkan variabel acak diskret $D$ menyatakan selisih mutlak dari kedua mata dadu yang muncul. Suatu variabel acak diskret baru didefinisikan sebagai $U = D^2 - 3D$. Nilai peluang $P(U = 0)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Persamaan $U = 0 \\iff D^2 - 3D = 0 \\iff D(D - 3) = 0$, sehingga $D = 0$ atau $D = 3$. Kejadian $D = 0$ memiliki 6 titik sampel: $(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)$. Kejadian $D = 3$ memiliki 6 titik sampel: $(1,4), (4,1), (2,5), (5,2), (3,6), (6,3)$. Total titik sampel adalah $6 + 6 = 12$ dari 36 kemungkinan. Maka $P(U = 0) = \\frac{12}{36} = \\frac{1}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Hanya menghitung titik sampel saat $D = 0$ saja atau saat $D = 3$ saja sehingga memperoleh $\\frac{6}{36} = \\frac{1}{6}$."
+        },
+        {
+          "teks": "$\\frac{5}{18}$",
+          "alasan": "Keliru dalam mencacah pasangan mata dadu dengan selisih 3 (lupa pasangan terbalik sehingga hanya 3 titik)."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Salah memfaktorkan persamaan kuadrat, menganggap akar persamaan adalah $D = 0$ dan $D = 4$."
+        }
+      ],
+      "pembahasan": "Dua dadu dilempar sehingga ukuran ruang sampel adalah $n(S) = 6 \\times 6 = 36$.\nVariabel acak $U = D^2 - 3D$. Nilai $U = 0$ terjadi jika dan hanya jika:\n$D(D - 3) = 0 \\implies D = 0 \\text{ atau } D = 3$.\n\n1. Kasus $D = 0$ (kedua dadu bermata sama):\nPasangannya adalah $(1,1), (2,2), (3,3), (4,4), (5,5), (6,6)$ $\\implies 6$ titik sampel.\n\n2. Kasus $D = 3$ (selisih mutlak kedua mata dadu bernilai 3):\nPasangannya adalah $(1,4), (4,1), (2,5), (5,2), (3,6), (6,3)$ $\\implies 6$ titik sampel.\n\nKarena kedua kejadian tersebut saling lepas, banyak seluruh titik sampel yang memenuhi adalah $6 + 6 = 12$.\nJadi, $P(U = 0) = \\frac{12}{36} = \\frac{1}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh Soal",
+        "nomor": "4.4",
+        "teks": "Pada sebuah eksperimen melempar sekeping uang logam dua kali, misalkan variabel acak X menyatakan banyaknya kejadian munculnya sisi A (Angka). Tunjukkanlah bahwa X adalah suatu variabel acak diskret.",
+        "jawaban": "X adalah variabel acak diskret dengan nilai {0, 1, 2} dan jumlah peluang 1",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi peluang variabel acak binomial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan variabel acak diskret dari eksperimen multi-tahap dan evaluasi peluang kumulatif bersyarat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah sistem transmisi data memiliki 4 saluran independen. Masing-masing saluran memiliki peluang mengalami gangguan sebesar $\\frac{1}{3}$. Misalkan variabel acak diskret $X$ menyatakan banyaknya saluran yang berfungsi normal tanpa gangguan. Sistem dinyatakan mampu mentransmisikan data jika sekurang-kurangnya 3 saluran berfungsi normal. Berapakah peluang sistem tersebut mampu mentransmisikan data?",
+      "jawaban_benar": "$\\frac{16}{27}$",
+      "alasan_benar": "Peluang satu saluran berfungsi normal adalah $p = 1 - \\frac{1}{3} = \\frac{2}{3}$. Nilai $X$ berdistribusi dengan daerah nilai $\\{0, 1, 2, 3, 4\\}$. Kejadian sistem mampu mentransmisikan data terjadi saat $X \\ge 3$, yaitu $X = 3$ atau $X = 4$. Dihitung: $P(X = 3) = \\binom{4}{3} \\left(\\frac{2}{3}\\right)^3 \\left(\\frac{1}{3}\\right)^1 = 4 \\cdot \\frac{8}{27} \\cdot \\frac{1}{3} = \\frac{32}{81}$, dan $P(X = 4) = \\binom{4}{4} \\left(\\frac{2}{3}\\right)^4 \\left(\\frac{1}{3}\\right)^0 = 1 \\cdot \\frac{16}{81} \\cdot 1 = \\frac{16}{81}$. Maka $P(X \\ge 3) = \\frac{32}{81} + \\frac{16}{81} = \\frac{48}{81} = \\frac{16}{27}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{32}{81}$",
+          "alasan": "Hanya menghitung peluang tepat 3 saluran berfungsi dan mengabaikan kemungkinan 4 saluran berfungsi."
+        },
+        {
+          "teks": "$\\frac{8}{27}$",
+          "alasan": "Tertukar menetapkan peluang sukses transmisi dengan peluang gangguan $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{65}{81}$",
+          "alasan": "Keliru menjumlahkan peluang mulai dari $X \\ge 2$ bukannya $X \\ge 3$."
+        }
+      ],
+      "pembahasan": "Diketahui peluang satu saluran berfungsi normal adalah $p = 1 - \\frac{1}{3} = \\frac{2}{3}$ dan peluang gangguan adalah $q = \\frac{1}{3}$. Banyaknya saluran adalah $n = 4$.\nVariabel acak diskret $X$ menyatakan banyaknya saluran yang berfungsi normal, sehingga sistem beroperasi ketika $X \\ge 3$ (yakni $X = 3$ atau $X = 4$).\n1. Hitung peluang untuk $X = 3$:\n$$P(X = 3) = \\binom{4}{3} \\left(\\frac{2}{3}\\right)^3 \\left(\\frac{1}{3}\\right)^1 = 4 \\cdot \\frac{8}{27} \\cdot \\frac{1}{3} = \\frac{32}{81}$$\n2. Hitung peluang untuk $X = 4$:\n$$P(X = 4) = \\binom{4}{4} \\left(\\frac{2}{3}\\right)^4 \\left(\\frac{1}{3}\\right)^0 = 1 \\cdot \\frac{16}{81} \\cdot 1 = \\frac{16}{81}$$\n3. Jumlahkan kedua peluang:\n$$P(X \\ge 3) = P(X = 3) + P(X = 4) = \\frac{32}{81} + \\frac{16}{81} = \\frac{48}{81} = \\frac{16}{27}$$\nJadi, peluang sistem mampu mentransmisikan data adalah $\\frac{16}{27}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya diperoleh dari hasil menghitung atau membilang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter distribusi peluang diskret",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perumusan sistem persamaan dari sifat probabilitas variabel acak diskret dan penyelesaian parameter konstan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $X$ memiliki himpunan nilai $\\{1, 2, 3, 4\\}$ dengan fungsi distribusi peluang didefinisikan oleh:\n$$P(X = x) = c(k - x)$$\nuntuk setiap $x \\in \\{1, 2, 3, 4\\}$, dengan $c$ dan $k$ adalah konstanta real positif. Jika diketahui bahwa $P(X = 1) = 2 \\cdot P(X = 3)$, berapakah nilai konstanta $c$?",
+      "jawaban_benar": "$\\frac{1}{10}$",
+      "alasan_benar": "Dari $P(X = 1) = 2 P(X = 3)$ diperoleh $c(k - 1) = 2c(k - 3)$. Karena $c > 0$, maka $k - 1 = 2k - 6 \\implies k = 5$. Total peluang harus sama dengan 1: $\\sum_{x=1}^{4} c(5 - x) = c(4 + 3 + 2 + 1) = 10c = 1 \\implies c = \\frac{1}{10}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{15}$",
+          "alasan": "Salah menghitung jumlahan deret koefisien dengan menambahkan suku ke-5."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Hanya menjumlahkan suku untuk $x=1, 2, 3$ sehingga diperoleh $9c=1$ atau salah menentukan nilai $k$."
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Keliru menyelesaikan persamaan rasio menjadi $k=6$ dan salah menjumlahkan bobot nilai."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi peluang:\n$P(X = 1) = c(k - 1)$\n$P(X = 3) = c(k - 3)$\n\nDiketahui $P(X = 1) = 2 \\cdot P(X = 3)$:\n$$c(k - 1) = 2c(k - 3)$$\nKarena $c > 0$, bagi kedua ruas dengan $c$:\n$$k - 1 = 2k - 6 \\implies k = 5$$\n\nSifat total peluang dari variabel acak diskret mensyaratkan $\\sum_{x=1}^{4} P(X = x) = 1$:\n$$P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) = 1$$\n$$c(5 - 1) + c(5 - 2) + c(5 - 3) + c(5 - 4) = 1$$\n$$c(4 + 3 + 2 + 1) = 1$$\n$$10c = 1 \\implies c = \\frac{1}{10}$$\nJadi, nilai konstanta $c$ adalah $\\frac{1}{10}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "evaluasi model distribusi peluang tak hingga",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengonstruksi dan mengevaluasi partisi deret tak terhingga pada variabel acak diskret untuk menentukan parameter peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $N$ menyatakan banyaknya pengulangan percobaan independen hingga suatu peristiwa berhasil terjadi untuk pertama kalinya. Diketahui $N$ memiliki daerah nilai $\\{1, 2, 3, \\dots\\}$ dengan fungsi peluang:\n$$P(N = n) = (1 - p)^{n-1} p$$\ndengan $0 < p < 1$. Jika perbandingan antara peluang peristiwa berhasil pada percobaan bernomor ganjil dan peluang peristiwa berhasil pada percobaan bernomor genap adalah $7 : 3$, berapakah nilai $p$?",
+      "jawaban_benar": "$\\frac{4}{7}$",
+      "alasan_benar": "Peluang $N$ ganjil adalah deret geometri tak hingga dengan suku pertama $p$ dan rasio $(1-p)^2$, yang berjumlah $\\frac{p}{1-(1-p)^2} = \\frac{1}{2-p}$. Peluang $N$ genap adalah $1 - \\frac{1}{2-p} = \\frac{1-p}{2-p}$. Rasio keduanya $\\frac{1}{1-p} = \\frac{7}{3} \\implies 7(1-p) = 3 \\implies 7 - 7p = 3 \\implies p = \\frac{4}{7}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Tertukar menghitung nilai $1 - p$ sebagai nilai parameter $p$."
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Keliru mengidentifikasi nilai peluang total percobaan genap sebagai nilai parameter peluang $p$."
+        },
+        {
+          "teks": "$\\frac{5}{7}$",
+          "alasan": "Salah melakukan operasi aljabar saat menyelesaikan persamaan linear $7 - 7p = 3$."
+        }
+      ],
+      "pembahasan": "Variabel acak $N$ menyatakan indeks keberhasilan pertama. Peluang kejadian bernomor ganjil diperoleh dengan menjumlahkan peluang untuk $n = 1, 3, 5, \\dots$:\n$$P(N \\text{ ganjil}) = p + p(1-p)^2 + p(1-p)^4 + \\dots$$\nIni adalah deret geometri tak hingga dengan suku awal $a = p$ dan rasio $r = (1-p)^2$:\n$$P(N \\text{ ganjil}) = \\frac{p}{1 - (1-p)^2} = \\frac{p}{2p - p^2} = \\frac{1}{2 - p}$$\n\nKarena total seluruh peluang bernilai 1, maka peluang kejadian bernomor genap adalah:\n$$P(N \\text{ genap}) = 1 - P(N \\text{ ganjil}) = 1 - \\frac{1}{2-p} = \\frac{1 - p}{2 - p}$$\n\nBerdasarkan perbandingan yang diketahui:\n$$\\frac{P(N \\text{ ganjil})}{P(N \\text{ genap})} = \\frac{\\frac{1}{2-p}}{\\frac{1-p}{2-p}} = \\frac{1}{1-p} = \\frac{7}{3}$$\nSelesaikan persamaan tersebut:\n$$7(1 - p) = 3$$\n$$7 - 7p = 3$$\n$$7p = 4 \\implies p = \\frac{4}{7}$$\nJadi, nilai parameter peluang $p$ adalah $\\frac{4}{7}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis distribusi variabel acak bersyarat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan sebaran variabel acak melalui dua tahap percobaan bertingkat dan evaluasi peluang posterior menggunakan teorema Bayes.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kotak A berisi 2 bola merah dan 3 bola biru, sedangkan Kotak B berisi 3 bola merah dan 1 bola biru. Sebuah bola diambil secara acak dari Kotak A lalu dimasukkan ke dalam Kotak B. Setelah tercampur rata, 2 bola diambil sekaligus secara acak dari Kotak B. Misalkan variabel acak diskret $X$ menyatakan banyaknya bola merah yang terambil dari Kotak B. Jika diketahui terambil tepat 1 bola merah dari Kotak B, maka peluang bahwa bola yang dipindahkan dari Kotak A ke Kotak B adalah bola merah sebesar ....",
+      "jawaban_benar": "$\\frac{4}{13}$",
+      "alasan_benar": "Peluang bola merah dipindahkan adalah $P(M) = \\frac{2}{5}$ dan biru $P(B) = \\frac{3}{5}$. Jika merah dipindahkan, Kotak B berisi 4 merah dan 1 biru, sehingga $P(X = 1 \\mid M) = \\frac{\\binom{4}{1}\\binom{1}{1}}{\\binom{5}{2}} = \\frac{4}{10}$. Jika biru dipindahkan, Kotak B berisi 3 merah dan 2 biru, sehingga $P(X = 1 \\mid B) = \\frac{\\binom{3}{1}\\binom{2}{1}}{\\binom{5}{2}} = \\frac{6}{10}$. Peluang total $P(X = 1) = \\frac{2}{5}\\left(\\frac{4}{10}\\right) + \\frac{3}{5}\\left(\\frac{6}{10}\\right) = \\frac{8 + 18}{50} = \\frac{26}{50}$. Maka peluang posterior $P(M \\mid X = 1) = \\frac{8/50}{26/50} = \\frac{8}{26} = \\frac{4}{13}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{13}$",
+          "alasan": "Siswa menghitung peluang bahwa bola yang dipindahkan adalah bola biru, yaitu $\\frac{18}{26}$."
+        },
+        {
+          "teks": "$\\frac{4}{25}$",
+          "alasan": "Siswa hanya menghitung peluang gabungan $P(M \\cap X = 1) = \\frac{8}{50} = \\frac{4}{25}$ tanpa membaginya dengan total peluang ruang syarat $P(X = 1)$."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Siswa hanya menggunakan peluang apriori terambilnya bola merah dari Kotak A tanpa mempertimbangkan informasi hasil variabel acak $X$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan peluang kejadian pemindahan bola dari Kotak A:\n- Bola merah terpindah ($M$): $P(M) = \\frac{2}{5}$\n- Bola biru terpindah ($B$): $P(B) = \\frac{3}{5}$\n\nLangkah 2: Tentukan komposisi Kotak B setelah pemindahan:\n- Jika $M$ terpindah: Kotak B berisi 4 merah dan 1 biru (total 5 bola).\n- Jika $B$ terpindah: Kotak B berisi 3 merah dan 2 biru (total 5 bola).\n\nLangkah 3: Hitung peluang bersyarat terambil tepat 1 bola merah ($X = 1$):\n$$P(X = 1 \\mid M) = \\frac{\\binom{4}{1}\\binom{1}{1}}{\\binom{5}{2}} = \\frac{4 \\times 1}{10} = \\frac{4}{10}$$\n$$P(X = 1 \\mid B) = \\frac{\\binom{3}{1}\\binom{2}{1}}{\\binom{5}{2}} = \\frac{3 \\times 2}{10} = \\frac{6}{10}$$\n\nLangkah 4: Hitung peluang total terjadinya $X = 1$:\n$$P(X = 1) = P(M) \\cdot P(X = 1 \\mid M) + P(B) \\cdot P(X = 1 \\mid B)$$\n$$P(X = 1) = \\left(\\frac{2}{5} \\times \\frac{4}{10}\\right) + \\left(\\frac{3}{5} \\times \\frac{6}{10}\\right) = \\frac{8}{50} + \\frac{18}{50} = \\frac{26}{50}$$\n\nLangkah 5: Hitung peluang posterior bola merah terpindah dengan rumus Bayes:\n$$P(M \\mid X = 1) = \\frac{P(M \\cap X = 1)}{P(X = 1)} = \\frac{\\frac{8}{50}}{\\frac{26}{50}} = \\frac{8}{26} = \\frac{4}{13}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 247,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "semua kemungkinan nilainya dapat dihitung satu per satu."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis fungsi distribusi kumulatif diskret",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi nilai parameter fungsi distribusi kumulatif berdasarkan aksioma peluang kumulatif diskret lalu menganalisis peluang bersyarat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $\\{1, 2, 3, 4, 5\\}$. Fungsi distribusi kumulatif dari $X$ didefinisikan sebagai:\n$$F(x) = P(X \\le x) = \\frac{x^2 + k}{30}$$\nuntuk setiap $x \\in \\{1, 2, 3, 4, 5\\}$, dengan $k$ suatu konstanta real. Nilai dari peluang bersyarat $P(X \\text{ ganjil} \\mid X \\ge 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{12}$",
+      "alasan_benar": "Karena nilai maksimum $X$ adalah 5, maka $F(5) = 1 \\implies \\frac{5^2 + k}{30} = 1 \\implies k = 5$. Diperoleh $F(x) = \\frac{x^2 + 5}{30}$. Peluang tiap nilai: $P(X = 1) = F(1) = \\frac{6}{30}$, $P(X = 2) = F(2) - F(1) = \\frac{9 - 6}{30} = \\frac{3}{30}$, $P(X = 3) = F(3) - F(2) = \\frac{14 - 9}{30} = \\frac{5}{30}$, $P(X = 4) = F(4) - F(3) = \\frac{21 - 14}{30} = \\frac{7}{30}$, dan $P(X = 5) = F(5) - F(4) = \\frac{30 - 21}{30} = \\frac{9}{30}$. Maka $P(X \\ge 2) = 1 - P(X = 1) = 1 - \\frac{6}{30} = \\frac{24}{30}$. Nilai $X$ ganjil dan $X \\ge 2$ adalah $\\{3, 5\\}$, dengan $P(X \\in \\{3, 5\\}) = \\frac{5 + 9}{30} = \\frac{14}{30}$. Jadi, $P(X \\text{ ganjil} \\mid X \\ge 2) = \\frac{14/30}{24/30} = \\frac{14}{24} = \\frac{7}{12}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{15}$",
+          "alasan": "Siswa hanya menghitung peluang gabungan $P(X \\text{ ganjil} \\cap X \\ge 2) = \\frac{14}{30} = \\frac{7}{15}$ tanpa membaginya dengan peluang syarat $P(X \\ge 2)$."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Siswa menghitung peluang $X$ ganjil tanpa syarat, yaitu $P(X \\in \\{1, 3, 5\\}) = \\frac{6 + 5 + 9}{30} = \\frac{20}{30} = \\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{5}{12}$",
+          "alasan": "Siswa salah mengidentifikasi komplemen atau menghitung $P(X \\text{ genap} \\mid X \\ge 2) = \\frac{3 + 7}{24} = \\frac{10}{24} = \\frac{5}{12}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $k$.\nBerdasarkan sifat fungsi distribusi kumulatif untuk nilai maksimum pada ruang nilai diskret:\n$$F(5) = 1 \\iff \\frac{5^2 + k}{30} = 1 \\iff 25 + k = 30 \\iff k = 5$$\nSehingga rumus fungsi distribusi kumulatif menjadi $F(x) = \\frac{x^2 + 5}{30}$.\n\nLangkah 2: Menghitung fungsi massa peluang $P(X = x) = F(x) - F(x-1)$:\n- $P(X = 1) = F(1) = \\frac{1^2 + 5}{30} = \\frac{6}{30}$\n- $P(X = 2) = F(2) - F(1) = \\frac{9}{30} - \\frac{6}{30} = \\frac{3}{30}$\n- $P(X = 3) = F(3) - F(2) = \\frac{14}{30} - \\frac{9}{30} = \\frac{5}{30}$\n- $P(X = 4) = F(4) - F(3) = \\frac{21}{30} - \\frac{14}{30} = \\frac{7}{30}$\n- $P(X = 5) = F(5) - F(4) = \\frac{30}{30} - \\frac{21}{30} = \\frac{9}{30}$\n\nLangkah 3: Menghitung peluang kejadian syarat $X \\ge 2$:\n$$P(X \\ge 2) = 1 - P(X = 1) = 1 - \\frac{6}{30} = \\frac{24}{30}$$\n\nLangkah 4: Menghitung peluang irisan kejadian $X$ ganjil dan $X \\ge 2$ (yaitu $X = 3$ atau $X = 5$):\n$$P(X \\in \\{3, 5\\}) = P(X = 3) + P(X = 5) = \\frac{5}{30} + \\frac{9}{30} = \\frac{14}{30}$$\n\nLangkah 5: Menghitung nilai peluang bersyarat:\n$$P(X \\text{ ganjil} \\mid X \\ge 2) = \\frac{P(X \\in \\{3, 5\\})}{P(X \\ge 2)} = \\frac{\\frac{14}{30}}{\\frac{24}{30}} = \\frac{14}{24} = \\frac{7}{12}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

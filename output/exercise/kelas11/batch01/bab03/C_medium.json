@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b03-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 143,
+        "bagian": "Uji Kompetensi",
+        "nomor": "5 a",
+        "teks": "Untuk setiap kumpulan pasangan data di bawah ini, hitunglah nilai koefisien korelasinya.\n\na. (–2, –1), (–1, 1), (0, 0), (1, 1), (2, 1)",
+        "jawaban": "0,4",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan koefisien korelasi data diskret",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan rata-rata, deviasi kuadrat, dan substitusi ke rumus korelasi Pearson.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan kumpulan pasangan data $(x, y)$ sebagai berikut: $(1, 2), (2, 1), (3, 4), (4, 3), (5, 5)$. Berapakah nilai koefisien korelasi Pearson ($r$) dari data tersebut?",
+      "jawaban_benar": "$0,80$",
+      "alasan_benar": "Rata-rata $\\bar{x} = 3$ dan $\\bar{y} = 3$. Diperoleh $SS_{xx} = 10$, $SS_{yy} = 10$, dan $SS_{xy} = 8$. Maka $r = \\frac{8}{\\sqrt{10 \\times 10}} = 0,80$.",
+      "distraktor": [
+        {
+          "teks": "$0,64$",
+          "alasan": "Menghitung koefisien determinasi $r^2 = (0,8)^2$, bukan koefisien korelasi $r$."
+        },
+        {
+          "teks": "$0,40$",
+          "alasan": "Membagi $SS_{xy}$ dengan jumlah $SS_{xx} + SS_{yy}$ alih-alih akar perkaliannya."
+        },
+        {
+          "teks": "$0,89$",
+          "alasan": "Kesalahan perhitungan nilai $SS_{xy}$ menjadi $9$ sehingga $\\frac{9}{10} = 0,9$ lalu dibulatkan keliru."
+        }
+      ],
+      "pembahasan": "1. Hitung rata-rata:\n   $$\\bar{x} = \\frac{1+2+3+4+5}{5} = 3$$\n   $$\\bar{y} = \\frac{2+1+4+3+5}{5} = 3$$\n\n2. Hitung jumlah kuadrat deviasi:\n   - $SS_{xx} = (-2)^2 + (-1)^2 + 0^2 + 1^2 + 2^2 = 4 + 1 + 0 + 1 + 4 = 10$\n   - $SS_{yy} = (-1)^2 + (-2)^2 + 1^2 + 0^2 + 2^2 = 1 + 4 + 1 + 0 + 4 = 10$\n   - $SS_{xy} = (-2)(-1) + (-1)(-2) + (0)(1) + (1)(0) + (2)(2) = 2 + 2 + 0 + 0 + 4 = 8$\n\n3. Hitung koefisien korelasi $r$:\n   $$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{8}{\\sqrt{10 \\times 10}} = \\frac{8}{10} = 0,80$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 136,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan Eksplorasi 3.6, kalian dapat melihat bahwa proses analisis korelasi tidak terlepas satu dengan yang lainnya dimulai dari diagram pencar, persamaan garis regresi, nilai koefisien korelasi, dan nilai koefisien determinasi."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Analisis model regresi dan koefisien determinasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan nilai b regresi dan r kuadrat dari tabel data sederhana untuk evaluasi model.",
+      "stimulus": "| $x$ | $1$ | $2$ | $3$ | $4$ |\n|---|---|---|---|---|\n| $y$ | $3$ | $5$ | $7$ | $9$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan pasangan data pada tabel di atas. Berapakah nilai koefisien determinasi ($r^2$) dari hubungan antara variabel $x$ dan $y$ tersebut, serta bagaimana hubungan linear yang terbentuk?",
+      "jawaban_benar": "$r^2 = 1$, hubungan linear positif sempurna",
+      "alasan_benar": "Seluruh titik memenuhi persamaan linear sempurna $y = 2x + 1$ dengan gradien positif $2$, sehingga $r = 1$ dan $r^2 = 1$.",
+      "distraktor": [
+        {
+          "teks": "$r^2 = 0$, tidak ada hubungan linear",
+          "alasan": "Salah mengira data berjarak konstan tidak memiliki hubungan korelasi."
+        },
+        {
+          "teks": "$r^2 = 0,50$, hubungan linear positif sedang",
+          "alasan": "Membagi nilai perubahan $y$ dengan perubahan total data."
+        },
+        {
+          "teks": "$r^2 = 2$, hubungan linear positif sangat kuat",
+          "alasan": "Tertukar antara nilai kemiringan/gradien ($b = 2$) dengan nilai koefisien determinasi."
+        }
+      ],
+      "pembahasan": "1. Amati pola data:\n   Untuk setiap pertambahan $x$ sebesar $1$, nilai $y$ bertambah tepat $2$:\n   - $x = 1 \\to y = 2(1) + 1 = 3$\n   - $x = 2 \\to y = 2(2) + 1 = 5$\n   - $x = 3 \\to y = 2(3) + 1 = 7$\n   - $x = 4 \\to y = 2(4) + 1 = 9$\n2. Seluruh titik berada tepat pada satu garis lurus dengan kemiringan positif ($y = 2x + 1$).\n3. Karena membentuk garis lurus sempurna dengan tren naik, maka koefisien korelasi $r = 1$, sehingga koefisien determinasinya adalah $r^2 = 1^2 = 1$ (korelasi positif sempurna).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 143,
+        "bagian": "Uji Kompetensi",
+        "nomor": "8 b",
+        "teks": "b. r = –0,7",
+        "jawaban": "Gradien garis regresi bernilai negatif",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Interpretasi hubungan gradien regresi dan korelasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis hubungan antara tanda koefisien korelasi, arah tren garis regresi, dan tanda gradien garis regresi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah analisis data bivariat menghasilkan koefisien determinasi $r^2 = 0,49$. Diketahui pula bahwa garis regresi linear dari data tersebut memiliki gradien bernilai negatif ($b < 0$). Berapakah nilai koefisien korelasi Pearson ($r$) dari data tersebut?",
+      "jawaban_benar": "$-0,70$",
+      "alasan_benar": "Karena $r^2 = 0,49$, maka $|r| = \\sqrt{0,49} = 0,70$. Karena gradien garis regresi bernilai negatif ($b < 0$), maka arah hubungan berkorelasi negatif sehingga $r = -0,70$.",
+      "distraktor": [
+        {
+          "teks": "$0,70$",
+          "alasan": "Siswa hanya menarik akar kuadrat dari $0,49$ tanpa memperhatikan bahwa gradien bernilai negatif."
+        },
+        {
+          "teks": "$-0,49$",
+          "alasan": "Siswa keliru mengira nilai koefisien korelasi sama dengan nilai koefisien determinasi yang diberi tanda negatif."
+        },
+        {
+          "teks": "$-0,24$",
+          "alasan": "Siswa membagi nilai koefisien determinasi dengan 2 alih-alih menarik akar kuadrat."
+        }
+      ],
+      "pembahasan": "Hubungan antara koefisien determinasi ($r^2$) dan koefisien korelasi ($r$):\n$|r| = \\sqrt{r^2} = \\sqrt{0,49} = 0,70$.\n\nTanda dari koefisien korelasi ($r$) selalu sama dengan tanda dari gradien garis regresi ($b$):\n- Jika gradien garis regresi positif ($b > 0$), maka $r > 0$.\n- Jika gradien garis regresi negatif ($b < 0$), maka $r < 0$.\n\nKarena garis regresi memiliki gradien negatif, maka $r = -0,70$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0136-eksplorasi-36-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan koefisien determinasi dari korelasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan koefisien determinasi dari nilai r lalu mengonversinya menjadi persentase keterikatan variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen mengamati hubungan antara suhu operasional mesin ($x$) dan daya tahan baterai ($y$) dari sampel 18 perangkat. Hasil perhitungan menunjukkan nilai koefisien korelasi Pearson sebesar $r = -0,40$. Berdasarkan nilai tersebut, berapa persentase variasi daya tahan baterai yang diterangkan oleh suhu operasional?",
+      "jawaban_benar": "$16\\%$",
+      "alasan_benar": "Koefisien determinasi $r^2 = (-0,40)^2 = 0,16$. Dalam persentase: $0,16 \\times 100\\% = 16\\%$.",
+      "distraktor": [
+        {
+          "teks": "$-16\\%$",
+          "alasan": "Siswa tidak menguadratkan tanda negatif atau mengira persentase determinasi bisa bernilai negatif."
+        },
+        {
+          "teks": "$40\\%$",
+          "alasan": "Siswa mengabaikan rumus kuadrat dan langsung mengubah nilai $|r| = 0,40$ menjadi persentase $40\\%$."
+        },
+        {
+          "teks": "$84\\%$",
+          "alasan": "Siswa menghitung persentase variasi yang diterangkan oleh variabel lain, yaitu $100\\% - 16\\% = 84\\%$."
+        }
+      ],
+      "pembahasan": "Koefisien determinasi ($r^2$) diperoleh dengan menguadratkan nilai koefisien korelasi ($r$):\n$$r^2 = (-0,40)^2 = 0,16$$\nPersentase variabel dependen yang diterangkan oleh variabel independen dihitung dengan mengalikan $r^2$ dengan $100\\%$:\n$$\\text{Persentase} = 0,16 \\times 100\\% = 16\\%$$\nJadi, persentase variasi daya tahan baterai yang diterangkan oleh suhu operasional adalah $16\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 128,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menghitung nilai Korelasi Product Moment (r), substitusikan nilai dari ketiga jenis jumlah kuadrat ke dalam rumus Korelasi Product Moment di bawah ini."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Evaluasi koefisien korelasi dan tingkat hubungan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai koefisien korelasi dari jumlah kuadrat kemudian mengevaluasi tingkat hubungannya berdasarkan tabel pedoman korelasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari hasil pengumpulan data bivariat diperoleh nilai jumlah kuadrat selisih $SS_{xx} = 25$, $SS_{yy} = 36$, dan $SS_{xy} = -24$. Berdasarkan pedoman klasifikasi tingkat korelasi, bagaimanakah arah dan kekuatan hubungan antara kedua variabel tersebut?",
+      "jawaban_benar": "Korelasi negatif dengan hubungan kuat",
+      "alasan_benar": "Nilai $r = \\frac{-24}{\\sqrt{25 \\times 36}} = \\frac{-24}{30} = -0,80$. Karena $-1 < -0,80 < -0,7$, maka tingkat korelasinya adalah korelasi negatif kuat.",
+      "distraktor": [
+        {
+          "teks": "Korelasi negatif dengan hubungan sedang",
+          "alasan": "Siswa salah membaca tabel korelasi dan mengira rentang $-0,7 \\le r < -0,3$ mencakup $-0,80$."
+        },
+        {
+          "teks": "Korelasi positif dengan hubungan kuat",
+          "alasan": "Siswa mengabaikan tanda negatif pada pembilang $SS_{xy}$ saat menghitung nilai $r$."
+        },
+        {
+          "teks": "Korelasi negatif dengan hubungan lemah",
+          "alasan": "Siswa mengabaikan nilai mutlak dan menganggap nilai negatif selalu berarti lemah."
+        }
+      ],
+      "pembahasan": "Hitung koefisien korelasi Pearson ($r$):\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{-24}{\\sqrt{25 \\times 36}} = \\frac{-24}{\\sqrt{900}} = \\frac{-24}{30} = -0,80$$\nBerdasarkan pedoman tingkat korelasi pada buku pelajaran:\n- Nilai $r$ berada pada rentang $-1 < r < -0,7$, yang menunjukkan tingkat korelasi **kuat**.\n- Tanda minus menunjukkan bahwa arah tren data berkorelasi **negatif**.\nJadi, hubungannya adalah korelasi negatif dengan hubungan kuat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0136-eksplorasi-36-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan persentase variasi di luar model",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan koefisien determinasi dari koefisien korelasi sebelum menghitung persentase komplementer.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari pengamatan terhadap hubungan waktu penggunaan gawai harian dan durasi tidur malam pada sekelompok remaja diperoleh nilai koefisien korelasi sebesar $r = -0,60$. Berapakah persentase variasi durasi tidur yang diterangkan oleh faktor atau variabel lain di luar waktu penggunaan gawai?",
+      "jawaban_benar": "$64\\%$",
+      "alasan_benar": "Koefisien determinasi dihitung dengan menguadratkan nilai korelasi, yaitu $r^2 = (-0,60)^2 = 0,36 = 36\\%$. Variasi yang diterangkan oleh variabel-variabel lainnya adalah sisanya, yaitu $100\\% - 36\\% = 64\\%$.",
+      "distraktor": [
+        {
+          "teks": "$36\\%$",
+          "alasan": "Menghitung persentase yang diterangkan oleh variabel independen ($r^2$), bukan oleh faktor lain."
+        },
+        {
+          "teks": "$40\\%$",
+          "alasan": "Langsung mengurangkan nilai mutlak koefisien korelasi dari $100\\%$ ($100\\% - 60\\%$) tanpa menguadratkan koefisien korelasi."
+        },
+        {
+          "teks": "$60\\%$",
+          "alasan": "Menggunakan nilai mutlak koefisien korelasi secara langsung sebagai persentase."
+        }
+      ],
+      "pembahasan": "Nilai koefisien determinasi ($r^2$) menyatakan proporsi variasi variabel dependen yang diterangkan oleh variabel independen:\n$$r^2 = (-0,60)^2 = 0,36 = 36\\%$$\nDengan demikian, proporsi variasi variabel dependen yang diterangkan oleh faktor atau variabel lainnya adalah:\n$$100\\% - 36\\% = 64\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 143,
+        "bagian": "Uji Kompetensi",
+        "nomor": "5 a",
+        "teks": "(–2, –1), (–1, 1), (0, 0), (1, 1), (2, 1)",
+        "jawaban": "0,7",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan koefisien korelasi data bivariat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan penghitungan nilai rata-rata, deviasi jumlah kuadrat, dan substitusi ke dalam formula korelasi Pearson.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan kumpulan lima pasangan data $(x, y)$ sebagai berikut: $(1, 6), (2, 5), (3, 3), (4, 2), (5, 4)$. Nilai koefisien korelasi Pearson ($r$) dari kumpulan data tersebut adalah...",
+      "jawaban_benar": "$-0,70$",
+      "alasan_benar": "Rata-rata $\\bar{x} = 3$ dan $\\bar{y} = 4$. Diperoleh $SS_{xx} = 10$, $SS_{yy} = 10$, dan $SS_{xy} = -7$. Koefisien korelasi $r = \\frac{-7}{\\sqrt{10 \\times 10}} = -0,70$.",
+      "distraktor": [
+        {
+          "teks": "$0,70$",
+          "alasan": "Mengabaikan tanda negatif pada hasil perkalian selisih deviasi $SS_{xy}$."
+        },
+        {
+          "teks": "$-0,49$",
+          "alasan": "Menghitung nilai kuadrat korelasi ($r^2$) lalu mempertahankan tanda negatif."
+        },
+        {
+          "teks": "$-0,35$",
+          "alasan": "Membagi $SS_{xy}$ dengan penjumlahan $(SS_{xx} + SS_{yy})$ alih-alih akar perkaliannya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung rata-rata masing-masing variabel:\n$$\\bar{x} = \\frac{1 + 2 + 3 + 4 + 5}{5} = 3$$\n$$\\bar{y} = \\frac{6 + 5 + 3 + 2 + 4}{5} = 4$$\n\nLangkah 2: Menghitung deviasi dan jumlah kuadrat:\n- $x - \\bar{x} = \\{-2, -1, 0, 1, 2\\} \\implies SS_{xx} = (-2)^2 + (-1)^2 + 0^2 + 1^2 + 2^2 = 10$\n- $y - \\bar{y} = \\{2, 1, -1, -2, 0\\} \\implies SS_{yy} = 2^2 + 1^2 + (-1)^2 + (-2)^2 + 0^2 = 10$\n- $SS_{xy} = (-2)(2) + (-1)(1) + (0)(-1) + (1)(-2) + (2)(0) = -4 - 1 + 0 - 2 + 0 = -7$\n\nLangkah 3: Menghitung nilai $r$:\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{-7}{\\sqrt{10 \\times 10}} = \\frac{-7}{10} = -0,70$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 128,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menghitung nilai Korelasi Product Moment (r), substitusikan nilai dari ketiga jenis jumlah kuadrat ke dalam rumus Korelasi Product Moment di bawah ini."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan koefisien korelasi dari komponen SS",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan perkalian akar jumlah kuadrat deviasi lalu substitusi ke rasio korelasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari hasil pengumpulan data dua variabel kuantitatif diperoleh nilai $SS_{xy} = -36$, $SS_{xx} = 25$, dan $SS_{yy} = 81$. Nilai koefisien korelasi Pearson ($r$) dari data tersebut adalah...",
+      "jawaban_benar": "$-0,80$",
+      "alasan_benar": "Substitusi langsung ke rumus korelasi menghasilkan $r = \\frac{-36}{\\sqrt{25 \\times 81}} = \\frac{-36}{5 \\times 9} = \\frac{-36}{45} = -0,80$.",
+      "distraktor": [
+        {
+          "teks": "$0,80$",
+          "alasan": "Mengabaikan tanda negatif pada nilai $SS_{xy}$."
+        },
+        {
+          "teks": "$-0,64$",
+          "alasan": "Menghitung nilai kuadrat dari korelasi ($r^2$) namun diberi tanda negatif."
+        },
+        {
+          "teks": "$0,64$",
+          "alasan": "Menghitung nilai koefisien determinasi ($r^2$) alih-alih koefisien korelasi ($r$)."
+        }
+      ],
+      "pembahasan": "Rumus koefisien korelasi Product Moment dari nilai jumlah kuadrat adalah:\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}}$$\n\nSubstitusikan nilai yang diketahui:\n$$r = \\frac{-36}{\\sqrt{25 \\times 81}} = \\frac{-36}{\\sqrt{2025}} = \\frac{-36}{45} = -0,80$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Koefisien ini akan memberikan informasi arah tren data dan sekaligus tingkat korelasinya apakah kuat, sedang, atau lemah."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Penentuan koefisien korelasi dari model regresi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis tanda gradien garis regresi untuk menentukan tanda dari akar koefisien determinasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis regresi linear yang menghubungkan variabel bebas $x$ dan variabel terikat $y$ dinyatakan oleh $\\hat{y} = 45 - 1,8x$. Apabila koefisien determinasi dari model tersebut adalah $0,36$, nilai koefisien korelasi Pearson ($r$) antara kedua variabel tersebut adalah...",
+      "jawaban_benar": "$-0,60$",
+      "alasan_benar": "Karena $r^2 = 0,36$, maka $|r| = \\sqrt{0,36} = 0,60$. Arah korelasi ditentukan oleh tanda gradien garis regresi ($b = -1,8 < 0$), sehingga $r = -0,60$.",
+      "distraktor": [
+        {
+          "teks": "$0,60$",
+          "alasan": "Mengabaikan arah hubungan negatif yang ditunjukkan oleh gradien negatif pada garis regresi."
+        },
+        {
+          "teks": "$-0,36$",
+          "alasan": "Langsung menyamakan nilai koefisien korelasi dengan koefisien determinasi bertanda negatif tanpa menarik akar kuadrat."
+        },
+        {
+          "teks": "$-1,80$",
+          "alasan": "Mengira nilai gradien garis regresi sebagai nilai koefisien korelasi."
+        }
+      ],
+      "pembahasan": "Nilai koefisien korelasi ($r$) diperoleh dari akar koefisien determinasi:\n$$|r| = \\sqrt{r^2} = \\sqrt{0,36} = 0,60$$\n\nPerhatikan persamaan garis regresi $\\hat{y} = 45 - 1,8x$. Koefisien kemiringan (gradien) garis adalah $b = -1,8$. Karena gradien bernilai negatif, garis memiliki kemiringan turun (tren data negatif), sehingga koefisien korelasi $r$ juga bertanda negatif:\n$$r = -0,60$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 129,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Perlu diingat bahwa nilai r = –0,97 memiliki korelasi yang lebih kuat dibanding nilai r = 0,62 karena tanda negatif di depan angka hanya menunjukkan arah tren data yang berkorelasi negatif."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Perbandingan kekuatan korelasi linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengevaluasi kekuatan korelasi dengan membandingkan nilai mutlak $|r|$ dari beberapa kelompok data.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Empat kelompok siswa menguji hubungan antarvariabel yang berbeda dan memperoleh koefisien korelasi sebagai berikut:\n- Kelompok A: $r = 0,65$\n- Kelompok B: $r = -0,78$\n- Kelompok C: $r = 0,72$\n- Kelompok D: $r = -0,50$\n\nUrutan kelompok berdasarkan tingkat korelasi linear dari yang paling kuat ke paling lemah adalah...",
+      "jawaban_benar": "Kelompok B, Kelompok C, Kelompok A, Kelompok D",
+      "alasan_benar": "Kekuatan korelasi ditentukan oleh nilai mutlak $|r|$: Kelompok B ($0,78$) > Kelompok C ($0,72$) > Kelompok A ($0,65$) > Kelompok D ($0,50$).",
+      "distraktor": [
+        {
+          "teks": "Kelompok C, Kelompok A, Kelompok D, Kelompok B",
+          "alasan": "Mengurutkan nilai $r$ secara aljabar dari bilangan terbesar ke terkecil tanpa menggunakan konsep nilai mutlak."
+        },
+        {
+          "teks": "Kelompok B, Kelompok D, Kelompok C, Kelompok A",
+          "alasan": "Memisahkan dan mendahulukan korelasi bertanda negatif di atas korelasi positif."
+        },
+        {
+          "teks": "Kelompok D, Kelompok A, Kelompok C, Kelompok B",
+          "alasan": "Mengurutkan kekuatan korelasi secara terbalik dari yang paling lemah ke paling kuat."
+        }
+      ],
+      "pembahasan": "Kekuatan hubungan korelasi tidak bergantung pada tanda positif atau negatif, melainkan ditentukan oleh seberapa dekat nilai mutlak koefisien korelasi ($|r|$) dengan $1$:\n- Kelompok A: $|r| = |0,65| = 0,65$\n- Kelompok B: $|r| = |-0,78| = 0,78$\n- Kelompok C: $|r| = |0,72| = 0,72$\n- Kelompok D: $|r| = |-0,50| = 0,50$\n\nUrutan nilai mutlak dari yang terbesar ke terkecil adalah $0,78 > 0,72 > 0,65 > 0,50$, sehingga urutan kekuatannya adalah Kelompok B, Kelompok C, Kelompok A, Kelompok D.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0136-eksplorasi-36-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan proporsi variasi dari korelasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan hubungan antara koefisien korelasi dengan koefisien determinasi serta pengubahan hasilnya ke dalam bentuk persentase.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah penelitian mengkaji hubungan antara massa total kendaraan ($x$, ton) dan konsumsi bahan bakar ($y$, liter/100 km) dari sampel 15 unit mobil. Hasil analisis menunjukkan nilai koefisien korelasi antara kedua variabel sebesar $r = 0,75$. Berapakah persentase konsumsi bahan bakar yang diterangkan oleh massa total kendaraan?",
+      "jawaban_benar": "$56,25\\%$",
+      "alasan_benar": "Koefisien determinasi diperoleh dari $r^2 = (0,75)^2 = 0,5625$, yang jika diubah ke bentuk persentase menjadi $56,25\\%$.",
+      "distraktor": [
+        {
+          "teks": "$75,00\\%$",
+          "alasan": "Siswa langsung mengalikan nilai $r$ dengan $100\\%$ tanpa menguadratkannya menjadi $r^2$."
+        },
+        {
+          "teks": "$43,75\\%$",
+          "alasan": "Siswa menghitung persentase variabel dependen yang diterangkan oleh variabel-variabel lain ($100\\% - 56,25\\%$)."
+        },
+        {
+          "teks": "$37,50\\%$",
+          "alasan": "Siswa keliru membagi nilai $r$ dengan dua sebelum mengubah ke persentase ($0,75 / 2 \\times 100\\%$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung nilai koefisien determinasi ($r^2$) dengan menguadratkan nilai $r$:\n$$r^2 = (0,75)^2 = 0,5625$$\n\nLangkah 2: Ubah nilai koefisien determinasi ke persentase untuk menentukan proporsi variabel dependen yang diterangkan:\n$$\\text{Persentase} = 0,5625 \\times 100\\% = 56,25\\%$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 136,
+        "bagian": "Latihan 3.6",
+        "nomor": "1",
+        "teks": "Nyoman mengumpulkan data mengenai kandungan lemak (gram) dan kalori pada tujuh jenis pizza pada tabel berikut. Dengan menggunakan data di bawah ini, Nyoman memperoleh nilai koefisien determinasi sebesar 0,8242. Apa interpretasi dari nilai tersebut dalam konteks kandungan lemak (gram) dan kalori?",
+        "jawaban": "Sebesar 82,42% dari kalori diterangkan oleh kandungan lemak, dan sisanya 17,58% diterangkan oleh variabel-variabel lainnya.",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Interpretasi kontekstual koefisien determinasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis konsep definisi koefisien determinasi serta ketepatan membedakan peran variabel bebas dan terikat dalam konteks permasalahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang peneliti pertanian mengamati pengaruh kadar pupuk nitrogen ($x$, gram) terhadap tinggi tanaman jagung ($y$, cm). Dari pengolahan data model regresi diperoleh nilai koefisien determinasi sebesar $r^2 = 0,7685$. Manakah pernyataan berikut yang memberikan interpretasi paling tepat terkait nilai tersebut?",
+      "jawaban_benar": "Sebesar $76,85\\%$ dari variasi tinggi tanaman jagung diterangkan oleh kadar pupuk nitrogen, sedangkan $23,15\\%$ sisanya diterangkan oleh variabel-variabel lainnya.",
+      "alasan_benar": "Koefisien determinasi menyatakan proporsi/persentase variabel dependen ($y$, tinggi tanaman) yang diterangkan oleh variabel independen ($x$, kadar pupuk nitrogen). Sisanya $100\\% - 76,85\\% = 23,15\\%$ diterangkan faktor lain.",
+      "distraktor": [
+        {
+          "teks": "Sebesar $76,85\\%$ dari kadar pupuk nitrogen diterangkan oleh tinggi tanaman jagung, sedangkan $23,15\\%$ sisanya diterangkan oleh variabel-variabel lainnya.",
+          "alasan": "Siswa terbalik menafsirkan arah hubungan antara variabel independen dan variabel dependen."
+        },
+        {
+          "teks": "Setiap penambahan pupuk nitrogen sebesar $1\\text{ gram}$ akan menyebabkan pertambahan tinggi tanaman jagung sebesar $76,85\\text{ cm}$.",
+          "alasan": "Siswa mengacaukan arti koefisien determinasi dengan nilai kemiringan/gradien ($b$) garis regresi."
+        },
+        {
+          "teks": "Nilai koefisien korelasi antara kadar pupuk nitrogen dan tinggi tanaman jagung bernilai positif sebesar $0,7685$ dengan tingkat korelasi sedang.",
+          "alasan": "Siswa menyamakan nilai koefisien determinasi ($r^2$) langsung sebagai nilai koefisien korelasi ($r$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi variabel independen ($x$: kadar pupuk nitrogen) dan variabel dependen ($y$: tinggi tanaman jagung).\n\nLangkah 2: Terapkan definisi koefisien determinasi:\nNilai $r^2 = 0,7685$ setara dengan $76,85\\%$. Artinya, $76,85\\%$ variasi dari variabel dependen (tinggi tanaman jagung) dapat diterangkan oleh variabel independen (kadar pupuk nitrogen). Sisanya sebesar $100\\% - 76,85\\% = 23,15\\%$ diterangkan oleh variabel-variabel lainnya.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 130,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Supaya suatu nilai r dapat mendeskripsikan lebih jelas tentang suatu korelasi antar dua variabel, maka terkadang nilai koefisien korelasi r sering dibuat dalam interval tertentu dengan deskripsi tingkat hubungan korelasi masing-masing."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Penentuan batas kovariansi untuk kriteria korelasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis kriteria interval tingkat korelasi kuat positif dan penyusunan pertidaksamaan untuk menentukan batas nilai $SS_{xy}$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari pengolahan data bivariat diperoleh nilai jumlah kuadrat selisih variabel bebas $SS_{xx} = 16$ dan variabel terikat $SS_{yy} = 25$. Agar korelasi antara kedua variabel tersebut termasuk ke dalam kategori korelasi positif dengan tingkat hubungan kuat ($0,7 < r < 1$), berapakah rentang nilai $SS_{xy}$ yang harus dipenuhi?",
+      "jawaban_benar": "$14 < SS_{xy} < 20$",
+      "alasan_benar": "Penyebut koefisien korelasi adalah $\\sqrt{SS_{xx} \\times SS_{yy}} = \\sqrt{16 \\times 25} = 20$. Kriteria korelasi kuat positif adalah $0,7 < r < 1 \\iff 0,7 < \\frac{SS_{xy}}{20} < 1 \\iff 14 < SS_{xy} < 20$.",
+      "distraktor": [
+        {
+          "teks": "$7 < SS_{xy} < 10$",
+          "alasan": "Siswa keliru membagi penyebut dengan faktor 2 sehingga mengira penyebutnya bernilai 10."
+        },
+        {
+          "teks": "$11,2 < SS_{xy} < 16$",
+          "alasan": "Siswa hanya menggunakan $SS_{xx} = 16$ sebagai penyebut rumus korelasi tanpa memperhitungkan $SS_{yy}$."
+        },
+        {
+          "teks": "$17,5 < SS_{xy} < 25$",
+          "alasan": "Siswa hanya menggunakan $SS_{yy} = 25$ sebagai penyebut rumus korelasi tanpa memperhitungkan $SS_{xx}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung faktor pembagi pada rumus korelasi:\n$$\\sqrt{SS_{xx} \\times SS_{yy}} = \\sqrt{16 \\times 25} = \\sqrt{400} = 20$$\n\nLangkah 2: Hubungkan nilai $r$ dengan $SS_{xy}$:\n$$r = \\frac{SS_{xy}}{20}$$\n\nLangkah 3: Terapkan kriteria hubungan korelasi positif kuat dari Tabel 3.2 ($0,7 < r < 1$):\n$$0,7 < \\frac{SS_{xy}}{20} < 1$$\nKalikan seluruh ruas dengan 20:\n$$14 < SS_{xy} < 20$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0136-eksplorasi-36-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan variasi komplementer determinasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan koefisien determinasi dari koefisien korelasi kemudian mengurangkannya dari seratus persen.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu penelitian medis, seorang dokter mengamati hubungan antara asupan kafein harian ($x$) dan denyut jantung istirahat ($y$) pada 25 partisipan. Hasil pengolahan data bivariat menunjukkan nilai koefisien korelasi $r = 0,80$. Berdasarkan hasil tersebut, berapakah persentase perubahan denyut jantung istirahat yang diterangkan oleh variabel-variabel lainnya di luar asupan kafein?",
+      "jawaban_benar": "$36\\%$",
+      "alasan_benar": "Koefisien determinasi $r^2 = (0,80)^2 = 0,64 = 64\\%$, sehingga persentase yang diterangkan oleh variabel lain adalah $100\\% - 64\\% = 36\\%$.",
+      "distraktor": [
+        {
+          "teks": "$64\\%$",
+          "alasan": "menghitung proporsi yang diterangkan oleh variabel independen, bukan variabel lainnya"
+        },
+        {
+          "teks": "$20\\%$",
+          "alasan": "langsung mengurangkan nilai korelasi dari seratus persen tanpa menguadratkannya"
+        },
+        {
+          "teks": "$80\\%$",
+          "alasan": "mengubah koefisien korelasi secara langsung menjadi persentase tanpa menguadratkan"
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung koefisien determinasi ($r^2$)\n$$r^2 = (0,80)^2 = 0,64 = 64\\%$$\nNilai ini menunjukkan bahwa sebesar $64\\%$ perubahan denyut jantung istirahat diterangkan oleh asupan kafein.\n\nLangkah 2: Menghitung persentase yang diterangkan variabel lain\n$$\\text{Persentase variabel lain} = 100\\% - 64\\% = 36\\%$$\n\nJadi, persentase yang diterangkan oleh variabel-variabel lainnya adalah $36\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 128,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menghitung nilai Korelasi Product Moment (r), substitusikan nilai dari ketiga jenis jumlah kuadrat ke dalam rumus Korelasi Product Moment di bawah ini."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Penentuan komponen kovariansi dari korelasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pembalikan rumus korelasi Pearson untuk menentukan nilai SSxy dari korelasi dan deviasi kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu analisis data bivariat, diperoleh nilai jumlah kuadrat selisih variabel independen $SS_{xx} = 64$ dan variabel dependen $SS_{yy} = 36$. Jika koefisien korelasi Pearson antara kedua variabel tersebut adalah $r = -0,75$, berapakah nilai jumlah kuadrat selisih bersama ($SS_{xy}$)?",
+      "jawaban_benar": "$-36$",
+      "alasan_benar": "$SS_{xy} = r \\times \\sqrt{SS_{xx} \\cdot SS_{yy}} = -0,75 \\times \\sqrt{64 \\times 36} = -0,75 \\times 48 = -36$.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "mengabaikan tanda negatif pada koefisien korelasi"
+        },
+        {
+          "teks": "$-27$",
+          "alasan": "salah menghitung akar kuadrat penyebut atau salah operasi aljabar"
+        },
+        {
+          "teks": "$-48$",
+          "alasan": "hanya menghitung nilai penyebut tanpa mengalikannya dengan koefisien korelasi"
+        }
+      ],
+      "pembahasan": "Rumus korelasi Pearson:\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}}$$\n\nLangkah 1: Menghitung penyebut akar jumlah kuadrat\n$$\\sqrt{SS_{xx} \\cdot SS_{yy}} = \\sqrt{64 \\cdot 36} = 8 \\cdot 6 = 48$$\n\nLangkah 2: Menghitung nilai $SS_{xy}$\n$$SS_{xy} = r \\cdot 48 = -0,75 \\cdot 48 = -36$$\n\nJadi, nilai $SS_{xy}$ adalah $-36$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hal ini dapat dilihat dari berapa proporsi (persentase) dari variabel dependen yang diterangkan oleh variabel independen yang disebut sebagai koefisien determinasi ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Komparasi proporsi determinasi antarmodel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis perbandingan daya jelas dua model linear melalui perhitungan masing-masing koefisien determinasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua kelompok peneliti memodelkan hubungan bivariat terhadap suatu variabel terikat yang sama menggunakan dua variabel bebas berbeda. Model pertama menghasilkan koefisien korelasi $r_1 = 0,60$, sedangkan model kedua menghasilkan koefisien korelasi $r_2 = -0,80$. Berapakah selisih persentase variabel dependen yang dapat diterangkan oleh masing-masing variabel independen antara model kedua dan model pertama?",
+      "jawaban_benar": "$28\\%$",
+      "alasan_benar": "Koefisien determinasi model pertama $r_1^2 = (0,60)^2 = 36\\%$ dan model kedua $r_2^2 = (-0,80)^2 = 64\\%$, sehingga selisihnya $64\\% - 36\\% = 28\\%$.",
+      "distraktor": [
+        {
+          "teks": "$20\\%$",
+          "alasan": "langsung mengurangkan nilai mutlak koefisien korelasi tanpa menguadratkannya"
+        },
+        {
+          "teks": "$48\\%$",
+          "alasan": "salah mengalikan kedua koefisien korelasi atau keliru dalam operasi kuadrat"
+        },
+        {
+          "teks": "$14\\%$",
+          "alasan": "menghitung setengah dari selisih persentase yang sebenarnya"
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung koefisien determinasi model pertama ($r_1^2$)\n$$r_1^2 = (0,60)^2 = 0,36 = 36\\%$$\n\nLangkah 2: Menghitung koefisien determinasi model kedua ($r_2^2$)\n$$r_2^2 = (-0,80)^2 = 0,64 = 64\\%$$\n\nLangkah 3: Menghitung selisih persentase kedua model\n$$\\text{Selisih} = 64\\% - 36\\% = 28\\%$$\n\nJadi, selisih persentase variabel dependen yang diterangkan oleh kedua model adalah $28\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 136,
+        "bagian": "Latihan 3.6",
+        "nomor": "1",
+        "teks": "Nyoman mengumpulkan data mengenai kandungan lemak (gram) dan kalori pada tujuh jenis pizza pada tabel berikut. Dengan menggunakan data di bawah ini, Nyoman memperoleh nilai koefisien determinasi sebesar 0,8242. Apa interpretasi dari nilai tersebut dalam konteks kandungan lemak (gram) dan kalori?",
+        "jawaban": "Sebesar 82,42% dari variasi kalori diterangkan oleh kandungan lemak.",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Penentuan koefisien korelasi dari koefisien determinasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penarikan akar kuadrat dari koefisien determinasi dan verifikasi tanda korelasi berdasarkan arah hubungan pada konteks soal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang analis transportasi mengkaji hubungan antara jarak tempuh pengiriman ($x$, km) dan durasi pengantaran paket ($y$, jam). Hasil pemodelan regresi linear menunjukkan nilai koefisien determinasi sebesar $r^2 = 0,5625$. Apabila peningkatan jarak tempuh selalu diiringi dengan pertambahan durasi pengantaran, berapakah nilai koefisien korelasi Pearson ($r$) antara kedua variabel tersebut?",
+      "jawaban_benar": "$0,75$",
+      "alasan_benar": "Nilai korelasi diperoleh dari $r = \\sqrt{r^2} = \\sqrt{0,5625} = 0,75$. Bernilai positif karena tren hubungan searah.",
+      "distraktor": [
+        {
+          "teks": "$-0,75$",
+          "alasan": "Siswa memilih akar negatif padahal informasi soal menyatakan korelasi bernilai positif."
+        },
+        {
+          "teks": "$0,56$",
+          "alasan": "Siswa menyamakan nilai koefisien korelasi dengan pembulatan nilai koefisien determinasi yang diketahui."
+        },
+        {
+          "teks": "$0,3164$",
+          "alasan": "Siswa salah konsep dengan menguadratkan kembali nilai koefisien determinasi $(0,5625^2 \\approx 0,3164)$ bukannya menarik akar kuadrat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hubungan antara koefisien korelasi ($r$) dan koefisien determinasi ($r^2$) dinyatakan oleh:\n$$r = \\pm \\sqrt{r^2}$$\n$$r = \\pm \\sqrt{0,5625} = \\pm 0,75$$\n\nLangkah 2: Menentukan tanda dari nilai $r$.\nKonteks soal menyatakan bahwa bertambahnya jarak pengiriman searah dengan bertambahnya durasi pengantaran (tren positif), sehingga nilai $r$ bernilai positif.\n$$r = 0,75$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 128,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menghitung nilai Korelasi Product Moment (r), substitusikan nilai dari ketiga jenis jumlah kuadrat ke dalam rumus Korelasi Product Moment di bawah ini."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Penentuan koefisien determinasi dari gradien regresi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis gradien garis regresi untuk memperoleh SSxy, dilanjutkan penghitungan korelasi Pearson r dan koefisien determinasi r^2.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis regresi linear dari suatu pengamatan bivariat dinyatakan oleh $\\hat{y} = 8 + 1,2x$. Jika diketahui nilai jumlah kuadrat selisih variabel independen $SS_{xx} = 25$ dan variabel dependen $SS_{yy} = 64$, nilai koefisien determinasi ($r^2$) dari model tersebut adalah...",
+      "jawaban_benar": "$0,5625$",
+      "alasan_benar": "Gradien $b = \\frac{SS_{xy}}{SS_{xx}} \\implies SS_{xy} = 1,2 \\times 25 = 30$. Diperoleh $r = \\frac{30}{\\sqrt{25 \\times 64}} = \\frac{30}{40} = 0,75$, sehingga $r^2 = 0,75^2 = 0,5625$.",
+      "distraktor": [
+        {
+          "teks": "$0,75$",
+          "alasan": "Siswa hanya menghitung sampai nilai koefisien korelasi $r = 0,75$ tanpa menguadratkannya menjadi $r^2$."
+        },
+        {
+          "teks": "$0,4688$",
+          "alasan": "Siswa salah menggunakan rumus regresi dengan menghitung $b \\cdot \\frac{SS_{xx}}{SS_{yy}}$."
+        },
+        {
+          "teks": "$0,3600$",
+          "alasan": "Siswa keliru menghitung nilai $r$ menjadi $0,60$ sehingga kuadratnya bernilai $0,3600$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai $SS_{xy}$ menggunakan gradien garis regresi ($b = 1,2$).\n$$b = \\frac{SS_{xy}}{SS_{xx}} \\implies SS_{xy} = b \\cdot SS_{xx} = 1,2 \\times 25 = 30$$\n\nLangkah 2: Hitung nilai koefisien korelasi Pearson ($r$).\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{30}{\\sqrt{25 \\times 64}} = \\frac{30}{\\sqrt{1600}} = \\frac{30}{40} = 0,75$$\n\nLangkah 3: Hitung nilai koefisien determinasi ($r^2$).\n$$r^2 = (0,75)^2 = 0,5625$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 143,
+        "bagian": "Latihan 3.5",
+        "nomor": "5 b",
+        "teks": "Untuk setiap kumpulan pasangan data di bawah ini, hitunglah nilai koefisien korelasinya.\n\n   - b. (–2, 2), (0, 2), (0, 3), (0, 4), (2, 4)",
+        "jawaban": "0,71",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Kalkulasi koefisien korelasi data berpasangan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai rata-rata tiap variabel, penentuan deviasi kuadrat dan perkalian deviasi (SS), serta substitusi ke rumus korelasi Pearson.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan kumpulan pasangan data bivariat $(x, y)$ sebagai berikut: $(4, 5), (5, 6), (6, 8), (7, 7), (8, 9)$. Nilai koefisien korelasi Pearson ($r$) dari kumpulan data tersebut adalah...",
+      "jawaban_benar": "$0,90$",
+      "alasan_benar": "Rata-rata data adalah $\\bar{x} = 6$ dan $\\bar{y} = 7$. Nilai $SS_{xx} = (-2)^2 + (-1)^2 + 0^2 + 1^2 + 2^2 = 10$, nilai $SS_{yy} = (-2)^2 + (-1)^2 + 1^2 + 0^2 + 2^2 = 10$, dan $SS_{xy} = (-2)(-2) + (-1)(-1) + (0)(1) + (1)(0) + (2)(2) = 4 + 1 + 0 + 0 + 4 = 9$. Maka $r = \\frac{9}{\\sqrt{10 \\times 10}} = 0,90$.",
+      "distraktor": [
+        {
+          "teks": "$0,81$",
+          "alasan": "Siswa keliru menghitung koefisien determinasi $r^2 = 0,90^2 = 0,81$ alih-alih koefisien korelasi $r$."
+        },
+        {
+          "teks": "$0,45$",
+          "alasan": "Siswa salah membagi nilai $SS_{xy} = 9$ dengan penjumlahan $SS_{xx} + SS_{yy} = 20$ sehingga mendapatkan $\\frac{9}{20} = 0,45$."
+        },
+        {
+          "teks": "$-0,90$",
+          "alasan": "Siswa keliru dalam menetapkan tanda pada perkalian deviasi selisih sehingga menghasilkan nilai korelasi bertanda negatif."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan rata-rata $\\bar{x}$ dan $\\bar{y}$.\n$$\\bar{x} = \\frac{4 + 5 + 6 + 7 + 8}{5} = 6$$\n$$\\bar{y} = \\frac{5 + 6 + 8 + 7 + 9}{5} = 7$$\n\nLangkah 2: Hitung jumlah kuadrat deviasi:\n- $SS_{xx} = (4-6)^2 + (5-6)^2 + (6-6)^2 + (7-6)^2 + (8-6)^2 = 4 + 1 + 0 + 1 + 4 = 10$\n- $SS_{yy} = (5-7)^2 + (6-7)^2 + (8-7)^2 + (7-7)^2 + (9-7)^2 = 4 + 1 + 1 + 0 + 4 = 10$\n- $SS_{xy} = (4-6)(5-7) + (5-6)(6-7) + (6-6)(8-7) + (7-6)(7-7) + (8-6)(9-7) = 4 + 1 + 0 + 0 + 4 = 9$\n\nLangkah 3: Hitung koefisien korelasi Pearson ($r$):\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\times SS_{yy}}} = \\frac{9}{\\sqrt{10 \\times 10}} = \\frac{9}{10} = 0,90$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Koefisien ini akan memberikan informasi arah tren data dan sekaligus tingkat korelasinya apakah kuat, sedang, atau lemah."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Penentuan nilai korelasi dan interpretasi tingkat hubungan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan tanda korelasi dari gradien regresi, penarikan akar koefisien determinasi, serta pengklasifikasian tingkat korelasi berdasarkan interval standar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah penelitian mengamati hubungan antara usia pemakaian mesin ($x$, tahun) dan efisiensi energi yang dihasilkan ($y$, %). Model regresi linear yang diperoleh dinyatakan oleh persamaan $\\hat{y} = 95 - 3,2x$ dengan nilai koefisien determinasi sebesar $0,64$. Berdasarkan tabel pedoman tingkat hubungan korelasi, nilai koefisien korelasi ($r$) dan klasifikasi tingkat hubungan antara kedua variabel tersebut adalah...",
+      "jawaban_benar": "$r = -0,80$ dengan hubungan korelasi negatif yang kuat",
+      "alasan_benar": "Gradien regresi bernilai negatif ($b = -3,2$) sehingga korelasi bernilai negatif. Nilai koefisien korelasi adalah $r = -\\sqrt{0,64} = -0,80$. Berdasarkan tabel klasifikasi (rentang $-1 < r < -0,7$), tingkat korelasinya tergolong kuat.",
+      "distraktor": [
+        {
+          "teks": "$r = 0,80$ dengan hubungan korelasi positif yang kuat",
+          "alasan": "Siswa hanya menarik akar kuadrat dari koefisien determinasi tanpa memperhatikan tanda gradien garis regresi yang bernilai negatif."
+        },
+        {
+          "teks": "$r = -0,64$ dengan hubungan korelasi negatif yang sedang",
+          "alasan": "Siswa keliru menyamakan nilai numerik koefisien korelasi langsung dengan koefisien determinasi tanpa menarik akar kuadrat."
+        },
+        {
+          "teks": "$r = -0,4096$ dengan hubungan korelasi negatif yang sedang",
+          "alasan": "Siswa secara terbalik menguadratkan nilai $0,64$ menjadi $0,4096$ alih-alih menarik akar kuadratnya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Perhatikan tanda gradien pada persamaan garis regresi $\\hat{y} = 95 - 3,2x$. Karena koefisien $x$ adalah $b = -3,2$ (negatif), maka arah tren data adalah negatif sehingga nilai $r < 0$.\n\nLangkah 2: Hitung nilai $r$ dari koefisien determinasi $r^2 = 0,64$:\n$$r = -\\sqrt{r^2} = -\\sqrt{0,64} = -0,80$$\n\nLangkah 3: Berdasarkan pedoman interpretasi tingkat hubungan korelasi, nilai $-1 < r < -0,7$ menunjukkan tingkat korelasi yang kuat.\n\nDengan demikian, diperoleh $r = -0,80$ dengan hubungan korelasi negatif yang kuat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

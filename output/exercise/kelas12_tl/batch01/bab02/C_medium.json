@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0162-latihan-soal-aplikasi-turunan-fungsi-6a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "interval kemonotonan fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan turunan pertama kurva kubik, pembuat nol, dan uji tanda interval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Interval nilai $x$ yang menyebabkan kurva fungsi $f(x) = 2x^3 - 9x^2 - 24x + 7$ turun adalah ....",
+      "jawaban_benar": "$-1 < x < 4$",
+      "alasan_benar": "Syarat fungsi turun adalah $f'(x) < 0$. Turunan pertama $f'(x) = 6x^2 - 18x - 24 = 6(x - 4)(x + 1) < 0$, sehingga intervalnya $-1 < x < 4$.",
+      "distraktor": [
+        {
+          "teks": "$x < -1$ atau $x > 4$",
+          "alasan": "Menggunakan syarat fungsi naik ($f'(x) > 0$) alih-alih fungsi turun."
+        },
+        {
+          "teks": "$-4 < x < 1$",
+          "alasan": "Kesalahan tanda saat memfaktorkan persamaan kuadrat menjadi $(x + 4)(x - 1)$."
+        },
+        {
+          "teks": "$x < -4$ atau $x > 1$",
+          "alasan": "Kombinasi kesalahan pemfaktoran tanda akar dan pembalikan interval pertidaksamaan."
+        }
+      ],
+      "pembahasan": "Turunan pertama fungsi:\n$$f'(x) = 6x^2 - 18x - 24$$\nSyarat kurva turun adalah $f'(x) < 0$:\n$$6x^2 - 18x - 24 < 0$$\n$$x^2 - 3x - 4 < 0$$\n$$(x - 4)(x + 1) < 0$$\nPembuat nol adalah $x = -1$ dan $x = 4$. Melalui uji garis bilangan, nilai negatif berada pada interval $-1 < x < 4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0163-latihan-soal-aplikasi-turunan-fungsi-11a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "titik balik fungsi kubik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik stasioner kurva kubik, evaluasi nilai fungsi, dan klasifikasi titik ekstrem.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik balik maksimum dan titik balik minimum dari grafik fungsi $f(x) = \\frac{1}{3}x^3 - 2x^2 + 3x + 5$ berturut-turut adalah ....",
+      "jawaban_benar": "$\\left(1, \\frac{19}{3}\\right)$ dan $(3, 5)$",
+      "alasan_benar": "$f'(x) = x^2 - 4x + 3 = 0$ menghasilkan $x = 1$ dan $x = 3$. Uji turunan kedua $f''(1) = -2 < 0$ (maksimum pada $\\left(1, \\frac{19}{3}\\right)$) dan $f''(3) = 2 > 0$ (minimum pada $(3, 5)$).",
+      "distraktor": [
+        {
+          "teks": "$(3, 5)$ dan $\\left(1, \\frac{19}{3}\\right)$",
+          "alasan": "Tertukar antara titik balik maksimum dengan titik balik minimum."
+        },
+        {
+          "teks": "$\\left(-1, -\\frac{1}{3}\\right)$ dan $(-3, -31)$",
+          "alasan": "Kesalahan tanda saat mencari akar-akar $f'(x) = 0$ sehingga diperoleh $x = -1$ dan $x = -3$."
+        },
+        {
+          "teks": "$\\left(1, \\frac{19}{3}\\right)$ dan $(3, 0)$",
+          "alasan": "Salah menghitung nilai fungsi saat $x = 3$, hanya memasukkan ke turunan pertama sehingga menghasilkan $0$."
+        }
+      ],
+      "pembahasan": "Turunan pertama fungsi:\n$$f'(x) = x^2 - 4x + 3$$\nTitik stasioner tercapai saat $f'(x) = 0$:\n$$(x - 1)(x - 3) = 0 \\implies x_1 = 1 \\text{ atau } x_2 = 3$$\nTurunan kedua:\n$$f''(x) = 2x - 4$$\nUntuk $x = 1$:\n$$f''(1) = 2(1) - 4 = -2 < 0 \\quad (\\text{maksimum})$$\n$$f(1) = \\frac{1}{3}(1)^3 - 2(1)^2 + 3(1) + 5 = \\frac{1}{3} - 2 + 3 + 5 = \\frac{19}{3}$$\nTitik balik maksimum adalah $\\left(1, \\frac{19}{3}\\right)$.\n\nUntuk $x = 3$:\n$$f''(3) = 2(3) - 4 = 2 > 0 \\quad (\\text{minimum})$$\n$$f(3) = \\frac{1}{3}(27) - 2(9) + 3(3) + 5 = 9 - 18 + 9 + 5 = 5$$\nTitik balik minimum adalah $(3, 5)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 144,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "kamu dapat menentukan kemiringan garis singgung kurva menggunakan konsep turunan."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan garis singgung sejajar garis",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan penentuan gradien dari garis sejajar, absis titik singgung via turunan, dan penyusunan persamaan garis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis singgung kurva $y = x^2 - 3x + 4$ yang sejajar dengan garis $5x - y + 2 = 0$ adalah ....",
+      "jawaban_benar": "$y = 5x - 12$",
+      "alasan_benar": "Gradien garis $m = 5$. Dari $y' = 2x - 3 = 5$, didapat $x = 4$. Ordinat titik singgung $y = 4^2 - 3(4) + 4 = 8$. Persamaan garis singgung adalah $y - 8 = 5(x - 4) \\iff y = 5x - 12$.",
+      "distraktor": [
+        {
+          "teks": "$y = 5x + 12$",
+          "alasan": "Kesalahan tanda saat memindahkan konstanta persamaan garis $y = 5(x - 4) - 8$."
+        },
+        {
+          "teks": "$y = 5x - 4$",
+          "alasan": "Lupa mengalikan gradien dengan absis titik singgung saat ekspansi kurung."
+        },
+        {
+          "teks": "$y = -\\frac{1}{5}x + \\frac{44}{5}$",
+          "alasan": "Menggunakan rumus garis tegak lurus ($m_1 m_2 = -1$) alih-alih garis sejajar ($m_1 = m_2$)."
+        }
+      ],
+      "pembahasan": "Garis $5x - y + 2 = 0$ memiliki gradien $m = 5$. Karena sejajar, garis singgung kurva juga memiliki gradien $m = 5$.\nTurunan kurva:\n$$y' = 2x - 3$$\n$$2x - 3 = 5 \\implies 2x = 8 \\implies x = 4$$\nSubstitusikan $x = 4$ ke persamaan kurva:\n$$y = (4)^2 - 3(4) + 4 = 16 - 12 + 4 = 8$$\nTitik singgung adalah $(4, 8)$. Persamaan garis singgung:\n$$y - y_1 = m(x - x_1)$$\n$$y - 8 = 5(x - 4)$$\n$$y = 5x - 20 + 8$$\n$$y = 5x - 12$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 160,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f m^ c h 2 0 , maka f ^ c h adalah nilai balik minimum."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai balik fungsi menggunakan turunan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan turunan pertama untuk mencari titik stasioner, identifikasi jenis melalui turunan kedua, dan perhitungan nilai minimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai balik minimum dari fungsi $f(x) = 2x^3 - 3x^2 - 12x + 10$ adalah ....",
+      "jawaban_benar": "$-10$",
+      "alasan_benar": "$f'(x) = 6x^2 - 6x - 12 = 0 \\implies x = 2$ atau $x = -1$. $f''(2) = 18 > 0$ menunjukkan titik balik minimum di $x = 2$. Nilai minimum $f(2) = 2(8) - 3(4) - 12(2) + 10 = -10$.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Menghitung nilai balik maksimum pada $x = -1$ bukan nilai balik minimum."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Menyebutkan absis pembuat nilai minimum alih-alih nilai fungsinya."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Kesalahan hitung aritmetika saat menyubstitusikan $x = 2$ ke dalam fungsi."
+        }
+      ],
+      "pembahasan": "Turunan pertama fungsi:\n$$f'(x) = 6x^2 - 6x - 12$$\nTitik stasioner tercapai saat $f'(x) = 0$:\n$$6(x^2 - x - 2) = 0$$\n$$(x - 2)(x + 1) = 0 \\implies x = 2 \\text{ atau } x = -1$$\nTurunan kedua:\n$$f''(x) = 12x - 6$$\nUji nilai $x$:\n- Untuk $x = -1$: $f''(-1) = 12(-1) - 6 = -18 < 0$ (maksimum)\n- Untuk $x = 2$: $f''(2) = 12(2) - 6 = 18 > 0$ (minimum)\n\nNilai balik minimum tercapai pada $x = 2$:\n$$f(2) = 2(2)^3 - 3(2)^2 - 12(2) + 10 = 16 - 12 - 24 + 10 = -10$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 163,
+        "bagian": "Latihan Soal Aplikasi Turunan Fungsi",
+        "nomor": "10b",
+        "teks": "Sebuah partikel bergerak sepanjang kurva s ( t ) = t 3 - b 152 l t 2 + 18 t - 1 untuk t ! 0 . b. Tentukan nilai t ketika kecepatan partikel sama dengan nol.",
+        "jawaban": "t = 2 atau t = 3",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kecepatan partikel aplikasi turunan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan konsep turunan pertama lintasan sebagai fungsi kecepatan dan menyelesaikan persamaan kuadrat pembuat nol.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah benda bergerak lurus dengan persamaan gerak $s(t) = \\frac{1}{3}t^3 - 4t^2 + 12t + 5$ ($s$ dalam meter dan $t$ dalam detik). Benda tersebut akan berhenti sesaat ketika nilai $t$ sama dengan ....",
+      "jawaban_benar": "$t = 2$ detik atau $t = 6$ detik",
+      "alasan_benar": "Benda berhenti sesaat jika kecepatannya nol, $v(t) = s'(t) = 0$. Turunan fungsi: $s'(t) = t^2 - 8t + 12$. Persamaan $t^2 - 8t + 12 = 0 \\iff (t - 2)(t - 6) = 0$, menghasilkan $t = 2$ atau $t = 6$.",
+      "distraktor": [
+        {
+          "teks": "$t = 3$ detik atau $t = 4$ detik",
+          "alasan": "Siswa salah memfaktorkan $t^2 - 8t + 12$ menjadi $(t - 3)(t - 4)$ karena keliru menghitung hasil kali faktor."
+        },
+        {
+          "teks": "$t = 4$ detik saja",
+          "alasan": "Siswa mencari nilai percepatan nol ($s''(t) = 2t - 8 = 0$), bukan kecepatan nol."
+        },
+        {
+          "teks": "$t = 1$ detik atau $t = 12$ detik",
+          "alasan": "Siswa memfaktorkan perkalian 12 tanpa memperhatikan penjumlahan koefisien linear $-8$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi kecepatan $v(t)$.\nKecepatan merupakan turunan pertama dari fungsi posisi $s(t)$:\n$v(t) = s'(t) = \\frac{d}{dt}\\left(\\frac{1}{3}t^3 - 4t^2 + 12t + 5\\right) = t^2 - 8t + 12$\n\nLangkah 2: Menentukan nilai $t$ saat berhenti sesaat ($v(t) = 0$).\n$t^2 - 8t + 12 = 0$\n$(t - 2)(t - 6) = 0$\n$t = 2$ atau $t = 6$\n\nJadi, benda berhenti sesaat saat $t = 2$ detik atau $t = 6$ detik.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 152,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Syarat bahwa fungsi f ( x ) naik adalah ketika f l^ x h 2 0"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kemonotonan fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menurunkan fungsi trigonometri, menerapkan syarat fungsi naik pertidaksamaan trigonometri, dan menentukan interval penyelesaian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi $f(x) = \\sin 2x$ pada interval $0 < x < \\pi$ akan naik pada interval ....",
+      "jawaban_benar": "$0 < x < \\frac{\\pi}{4}$ atau $\\frac{3\\pi}{4} < x < \\pi$",
+      "alasan_benar": "Syarat fungsi naik adalah $f'(x) > 0$. $f'(x) = 2\\cos 2x > 0 \\iff \\cos 2x > 0$. Untuk $0 < 2x < 2\\pi$, $\\cos 2x > 0$ terpenuhi pada $0 < 2x < \\frac{\\pi}{2}$ atau $\\frac{3\\pi}{2} < 2x < 2\\pi$. Dibagi 2 menghasilkan $0 < x < \\frac{\\pi}{4}$ atau $\\frac{3\\pi}{4} < x < \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{\\pi}{4} < x < \\frac{3\\pi}{4}$",
+          "alasan": "Siswa menentukan interval ketika fungsi turun ($f'(x) < 0$)."
+        },
+        {
+          "teks": "$0 < x < \\frac{\\pi}{2}$",
+          "alasan": "Siswa lupa membagi sudut $2x$ dengan $2$ pada batas interval kuadran pertama."
+        },
+        {
+          "teks": "$\\frac{\\pi}{2} < x < \\frac{3\\pi}{2}$",
+          "alasan": "Siswa menggunakan batas sudut dasar trigonometri tanpa menyesuaikan dengan domain $x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan pertama fungsi.\n$f(x) = \\sin 2x$\n$f'(x) = 2\\cos 2x$\n\nLangkah 2: Menentukan syarat fungsi naik.\n$f'(x) > 0 \\implies 2\\cos 2x > 0 \\implies \\cos 2x > 0$\n\nLangkah 3: Menyelesaikan pertidaksamaan pada $0 < x < \\pi$ (sehingga $0 < 2x < 2\\pi$).\nKosinus bernilai positif pada kuadran I dan IV:\nKuadran I: $0 < 2x < \\frac{\\pi}{2} \\implies 0 < x < \\frac{\\pi}{4}$\nKuadran IV: $\\frac{3\\pi}{2} < 2x < 2\\pi \\implies \\frac{3\\pi}{4} < x < \\pi$\n\nJadi, fungsi naik pada interval $0 < x < \\frac{\\pi}{4}$ atau $\\frac{3\\pi}{4} < x < \\pi$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 144,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "kemiringan garis singgung y = f ( x ) pada titik P ^ x 1, f ^ x 1hh dapat dihitung menggunakan rumus: m = f'(x_1)"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "garis singgung tegak lurus garis lain",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis hubungan dua garis tegak lurus untuk gradien, menemukan absis dan titik singgung, lalu merumuskan persamaan garis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis singgung kurva $y = 2x^2 + 5x - 3$ yang tegak lurus terhadap garis $x + 9y - 4 = 0$ adalah ....",
+      "jawaban_benar": "$y = 9x - 5$",
+      "alasan_benar": "Gradien garis $x + 9y - 4 = 0$ adalah $m_1 = -\\frac{1}{9}$. Karena tegak lurus, gradien garis singgung $m = -\\frac{1}{m_1} = 9$. Turunan kurva $y' = 4x + 5 = 9 \\iff 4x = 4 \\iff x = 1$. Ordinatnya $y = 2(1)^2 + 5(1) - 3 = 4$. Titik singgung $(1, 4)$. Persamaan garis singgung: $y - 4 = 9(x - 1) \\iff y = 9x - 5$.",
+      "distraktor": [
+        {
+          "teks": "$y = 9x - 13$",
+          "alasan": "Siswa keliru menghitung ordinat titik singgung menjadi $-4$."
+        },
+        {
+          "teks": "$y = -\\frac{1}{9}x + \\frac{37}{9}$",
+          "alasan": "Siswa memakai gradien yang sama dengan garis acuan (sejajar) bukan tegak lurus."
+        },
+        {
+          "teks": "$y = 9x + 5$",
+          "alasan": "Siswa salah tanda saat menyederhanakan $y - 4 = 9x - 9$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan gradien garis singgung ($m$).\nGaris $x + 9y - 4 = 0 \\iff 9y = -x + 4 \\iff y = -\\frac{1}{9}x + \\frac{4}{9}$, maka $m_1 = -\\frac{1}{9}$.\nKarena garis singgung tegak lurus garis tersebut, maka $m \\cdot m_1 = -1 \\implies m = 9$.\n\nLangkah 2: Menentukan absis titik singgung.\n$m = y' = 4x + 5$\n$4x + 5 = 9$\n$4x = 4 \\implies x = 1$\n\nLangkah 3: Menentukan ordinat titik singgung.\n$y = 2(1)^2 + 5(1) - 3 = 2 + 5 - 3 = 4$\nTitik singgung adalah $(1, 4)$.\n\nLangkah 4: Menentukan persamaan garis singgung.\n$y - y_1 = m(x - x_1)$\n$y - 4 = 9(x - 1)$\n$y - 4 = 9x - 9$\n$y = 9x - 5$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 146,
+        "bagian": "Ayo Mencoba 2.6",
+        "nomor": "2",
+        "teks": "Tentukan persamaan garis singgung di titik potong garis y = x + 1 dengan kurva y = x 2 + 2 x + 1 .",
+        "jawaban": "y = x + 1 dan y = -x",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "garis singgung titik potong kurva",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan absis titik potong, perhitungan gradien turunan, dan penyusunan persamaan garis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis singgung kurva $y = x^2 - 5x + 9$ di titik potongnya dengan garis $y = 4x - 5$ yang memiliki absis terbesar adalah ....",
+      "jawaban_benar": "$y = 9x - 40$",
+      "alasan_benar": "Titik potong ditentukan dari $x^2 - 5x + 9 = 4x - 5 \\iff x^2 - 9x + 14 = 0$, sehingga $(x - 7)(x - 2) = 0$. Absis terbesar adalah $x = 7$, dengan ordinat $y = 4(7) - 5 = 23$. Gradien kurva $y' = 2x - 5$, pada $x = 7$ bernilai $m = 2(7) - 5 = 9$. Persamaan garis singgung: $y - 23 = 9(x - 7) \\iff y = 9x - 40$.",
+      "distraktor": [
+        {
+          "teks": "$y = 9x - 63$",
+          "alasan": "Siswa lupa menambahkan ordinat titik singgung $y_1 = 23$ ke ruas kanan."
+        },
+        {
+          "teks": "$y = -x + 30$",
+          "alasan": "Siswa menggunakan titik potong yang salah yaitu $x = 2$ sehingga $m = -1$ tetapi memasukkan titik $(7, 23)$."
+        },
+        {
+          "teks": "$y = 9x + 40$",
+          "alasan": "Kesalahan tanda aljabar saat memindahkan konstanta ke ruas kanan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik potong dengan menyamakan kedua fungsi:\n$$x^2 - 5x + 9 = 4x - 5$$\n$$x^2 - 9x + 14 = 0$$\n$$(x - 7)(x - 2) = 0$$\nDiperoleh $x_1 = 2$ atau $x_2 = 7$. Absis terbesar adalah $x = 7$.\nSubstitusi $x = 7$ ke persamaan garis: $y = 4(7) - 5 = 23$. Titik singgung adalah $(7, 23)$.\n\nLangkah 2: Menentukan gradien garis singgung kurva:\n$$y' = 2x - 5$$\n$$m = y'(7) = 2(7) - 5 = 9$$\n\nLangkah 3: Menentukan persamaan garis singgung:\n$$y - y_1 = m(x - x_1)$$\n$$y - 23 = 9(x - 7)$$\n$$y = 9x - 63 + 23$$\n$$y = 9x - 40$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 163,
+        "bagian": "Latihan Soal Aplikasi Turunan Fungsi",
+        "nomor": "12 b",
+        "teks": "f ^ x h = x 3 - 6 x 2 + 12 x + 5",
+        "jawaban": "(2, 13)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "titik belok fungsi kubik",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan turunan kedua kurva kubik dan substitusi nilai absis pembuat nol ke fungsi awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Koordinat titik belok dari grafik fungsi $f(x) = x^3 - 9x^2 + 24x - 7$ adalah ....",
+      "jawaban_benar": "$(3, 11)$",
+      "alasan_benar": "Turunan pertama $f'(x) = 3x^2 - 18x + 24$, turunan kedua $f''(x) = 6x - 18$. Titik belok terjadi saat $f''(x) = 0 \\iff 6x = 18 \\iff x = 3$. Nilai $f(3) = (3)^3 - 9(3)^2 + 24(3) - 7 = 27 - 81 + 72 - 7 = 11$. Koordinat titik belok adalah $(3, 11)$.",
+      "distraktor": [
+        {
+          "teks": "$(3, 20)$",
+          "alasan": "Siswa salah menghitung operasi aritmetika saat mensubstitusikan $x = 3$ ke rumus fungsi."
+        },
+        {
+          "teks": "$(2, 13)$",
+          "alasan": "Siswa menggunakan pembuat nol turunan pertama $x = 2$ yang merupakan titik stasioner, bukan titik belok."
+        },
+        {
+          "teks": "$(4, 9)$",
+          "alasan": "Siswa menggunakan pembuat nol turunan pertama $x = 4$ yang merupakan titik stasioner balik minimum."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan kedua fungsi $f(x)$:\n$$f'(x) = 3x^2 - 18x + 24$$\n$$f''(x) = 6x - 18$$\nSyarat titik belok adalah $f''(x) = 0$:\n$$6x - 18 = 0 \\iff x = 3$$\n\nLangkah 2: Menentukan ordinat titik belok dengan menghitung nilai $f(3)$:\n$$f(3) = (3)^3 - 9(3)^2 + 24(3) - 7$$\n$$f(3) = 27 - 81 + 72 - 7 = 11$$\nJadi, koordinat titik belok fungsi tersebut adalah $(3, 11)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 162,
+        "bagian": "Latihan Soal Aplikasi Turunan Fungsi",
+        "nomor": "5",
+        "teks": "Tentukan koordinat titik pada kurva y = 2 x 2 - 7 x + 1 jika garis singgung kurva melalui titik tersebut dan membentuk sudut 45° terhadap sumbu- x positif. Tentukan pula persamaan garis singgung kurva yang melalui titik tersebut.",
+        "jawaban": "(2, -5) dan y = x - 7",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "garis singgung dengan sudut kemiringan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan konversi sudut arah menjadi gradien garis, pencarian titik singgung lewat turunan, dan perumusan garis singgung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis singgung pada kurva $y = 3x^2 - 13x + 8$ yang membentuk sudut $135^\\circ$ terhadap sumbu-$x$ positif adalah ....",
+      "jawaban_benar": "$y = -x - 4$",
+      "alasan_benar": "Gradien garis adalah $m = \\tan 135^\\circ = -1$. Turunan kurva $y' = 6x - 13$. Dari $6x - 13 = -1$, diperoleh $x = 2$. Ordinatnya $y = 3(2)^2 - 13(2) + 8 = 12 - 26 + 8 = -6$. Persamaan garis singgung: $y - (-6) = -1(x - 2) \\iff y + 6 = -x + 2 \\iff y = -x - 4$.",
+      "distraktor": [
+        {
+          "teks": "$y = -x + 8$",
+          "alasan": "Siswa salah menjumlahkan konstanta saat memindahkan nilai ordinat titik singgung."
+        },
+        {
+          "teks": "$y = x - 8$",
+          "alasan": "Siswa menganggap gradien $\\tan 135^\\circ = 1$, bukan $-1$."
+        },
+        {
+          "teks": "$y = -x - 2$",
+          "alasan": "Siswa lupa mengalikan tanda minus dengan suku $-x_1$ pada rumus garis singgung."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan gradien garis singgung dari besar sudut:\n$$m = \\tan 135^\\circ = -1$$\n\nLangkah 2: Menentukan koordinat titik singgung melalui turunan kurva:\n$$y' = 6x - 13$$\n$$6x - 13 = -1 \\iff 6x = 12 \\iff x = 2$$\nSubstitusikan $x = 2$ ke persamaan kurva:\n$$y = 3(2)^2 - 13(2) + 8 = 12 - 26 + 8 = -6$$\nTitik singgung adalah $(2, -6)$.\n\nLangkah 3: Menentukan persamaan garis singgung:\n$$y - y_1 = m(x - x_1)$$\n$$y - (-6) = -1(x - 2)$$\n$$y + 6 = -x + 2$$\n$$y = -x - 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 152,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Grafik fungsi f ^ x h naik jika f l^ x h 2 0 dan turun jika f l^ x h 1 0"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "kemonotonan kurva rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan turunan pecahan bentuk u/v dan analisis pertidaksamaan tanda turunan pertama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kurva fungsi rasional $f(x) = \\frac{x}{x^2 + 4}$ akan turun pada interval ....",
+      "jawaban_benar": "$x < -2$ atau $x > 2$",
+      "alasan_benar": "Turunan pertama $f'(x) = \\frac{1(x^2 + 4) - x(2x)}{(x^2 + 4)^2} = \\frac{4 - x^2}{(x^2 + 4)^2}$. Kurva turun saat $f'(x) < 0$. Karena penyebut $(x^2 + 4)^2 > 0$ untuk setiap $x \\in \\mathbb{R}$, syaratnya $4 - x^2 < 0 \\iff x^2 - 4 > 0 \\iff x < -2$ atau $x > 2$.",
+      "distraktor": [
+        {
+          "teks": "$-2 < x < 2$",
+          "alasan": "Siswa menentukan interval kurva naik ($f'(x) > 0$), bukan kurva turun."
+        },
+        {
+          "teks": "$x < -4$ atau $x > 4$",
+          "alasan": "Siswa salah memfaktorkan pembilang $4 - x^2$ menjadi $(x - 4)(x + 4)$."
+        },
+        {
+          "teks": "$-4 < x < 4$",
+          "alasan": "Siswa keliru memfaktorkan bentuk pembilang serta terbalik menentukan tanda pertidaksamaan fungsi turun."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan pertama fungsi pecahan menggunakan aturan hasil bagi:\n$$u = x \\implies u' = 1$$\n$$v = x^2 + 4 \\implies v' = 2x$$\n$$f'(x) = \\frac{u'v - uv'}{v^2} = \\frac{1(x^2 + 4) - x(2x)}{(x^2 + 4)^2} = \\frac{4 - x^2}{(x^2 + 4)^2}$$\n\nLangkah 2: Menentukan syarat fungsi turun:\nSyarat kurva turun adalah $f'(x) < 0$:\n$$\\frac{4 - x^2}{(x^2 + 4)^2} < 0$$\nKarena penyebut $(x^2 + 4)^2$ selalu bernilai positif untuk semua bilangan real $x$, maka tanda pecahan sepenuhnya ditentukan oleh pembilang:\n$$4 - x^2 < 0$$\n$$x^2 - 4 > 0$$\n$$(x - 2)(x + 2) > 0$$\nDiperoleh interval $x < -2$ atau $x > 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 163,
+        "bagian": "Latihan Soal",
+        "nomor": "10.d",
+        "teks": "Berapa nilai _t_ ketika percepatan partikel sama dengan 0?",
+        "jawaban": "t = 5/2",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "percepatan partikel aplikasi turunan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan turunan kedua fungsi posisi untuk mendapatkan fungsi percepatan dan menyelesaikan persamaannya saat bernilai nol.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = t^3 - 6t^2 + 9t + 4$ ($s$ dalam meter dan $t$ dalam detik) untuk $t \\ge 0$. Nilai $t$ ketika percepatan partikel sama dengan nol adalah ....",
+      "jawaban_benar": "$t = 2$ detik",
+      "alasan_benar": "Kecepatan $v(t) = s'(t) = 3t^2 - 12t + 9$, percepatan $a(t) = s''(t) = 6t - 12$. Percepatan sama dengan nol saat $6t - 12 = 0 \\iff t = 2$ detik.",
+      "distraktor": [
+        {
+          "teks": "$t = 1$ detik",
+          "alasan": "Keliru mencari nilai $t$ saat kecepatan partikel nol ($v(t) = 0$ menghasilkan $t = 1$ atau $t = 3$)."
+        },
+        {
+          "teks": "$t = 3$ detik",
+          "alasan": "Keliru mengambil akar lain dari persamaan kecepatan bernilai nol."
+        },
+        {
+          "teks": "$t = 4$ detik",
+          "alasan": "Salah melakukan turunan kedua, menurunkannya menjadi $3t - 12 = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi kecepatan dan fungsi percepatan melalui turunan bertingkat.\n$$v(t) = s'(t) = 3t^2 - 12t + 9$$\n$$a(t) = v'(t) = s''(t) = 6t - 12$$\n\nLangkah 2: Menghitung $t$ ketika percepatan sama dengan nol ($a(t) = 0$).\n$$6t - 12 = 0$$\n$$6t = 12$$\n$$t = 2$$\nJadi, percepatan partikel sama dengan nol pada saat $t = 2$ detik.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 150,
+        "bagian": "Contoh Soal",
+        "nomor": "2.9",
+        "teks": "Diketahui sebuah kurva _y_ = _f_ ^ _x_ h = 2 _x_ 3 - 9 _x_ 2 + 12 _x_ + 10 . Tentukan interval _x_ agar _f_ ^ _x_ h merupakan fungsi turun dan interval _x_ agar _f_ ^ _x_ h merupakan fungsi naik.",
+        "jawaban": "1 < x < 2 untuk turun dan x < 1 atau x > 2 untuk naik",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "interval fungsi naik kurva kubik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penurunan fungsi aljabar, penyusunan pertidaksamaan turunan pertama positif, dan penentuan garis bilangan untuk daerah penyelesaian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Interval nilai $x$ yang menyebabkan fungsi $f(x) = 2x^3 + 3x^2 - 36x + 5$ selalu naik adalah ....",
+      "jawaban_benar": "$x < -3$ atau $x > 2$",
+      "alasan_benar": "Syarat fungsi naik adalah $f'(x) > 0$. $f'(x) = 6x^2 + 6x - 36 > 0 \\iff x^2 + x - 6 > 0 \\iff (x + 3)(x - 2) > 0$, sehingga $x < -3$ atau $x > 2$.",
+      "distraktor": [
+        {
+          "teks": "$-3 < x < 2$",
+          "alasan": "Menghitung interval fungsi turun saat $f'(x) < 0$."
+        },
+        {
+          "teks": "$x < -2$ atau $x > 3$",
+          "alasan": "Salah dalam memfaktorkan persamaan kuadrat sehingga tanda akar tertukar menjadi $(x - 3)(x + 2)$."
+        },
+        {
+          "teks": "$-2 < x < 3$",
+          "alasan": "Menghitung interval turun dari persamaan kuadrat yang salah difaktorkan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan pertama dari fungsi $f(x)$.\n$$f'(x) = 6x^2 + 6x - 36$$\n\nLangkah 2: Menetapkan syarat fungsi naik, yaitu $f'(x) > 0$.\n$$6x^2 + 6x - 36 > 0$$\nBagi kedua ruas dengan $6$:\n$$x^2 + x - 6 > 0$$\n$$(x + 3)(x - 2) > 0$$\n\nLangkah 3: Menentukan interval penyelesaian.\nPembuat nol adalah $x = -3$ dan $x = 2$. Menguji tanda pada garis bilangan menghasilkan nilai positif pada $x < -3$ atau $x > 2$.\nJadi, fungsi $f(x)$ selalu naik pada interval $x < -3$ atau $x > 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 160,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika _f_ m^ _c_ h 2 0 , maka _f_ ^ _c_ h adalah nilai balik minimum."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai balik minimum kurva derajat empat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik stasioner dari turunan pertama, konfirmasi jenis titik balik lewat turunan kedua, dan perhitungan nilai fungsi minimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai balik minimum dari kurva fungsi $f(x) = x^4 - 4x + 6$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$f'(x) = 4x^3 - 4 = 0 \\implies x = 1$. Karena $f''(1) = 12(1)^2 = 12 > 0$, maka $x = 1$ menghasilkan nilai balik minimum yaitu $f(1) = 1^4 - 4(1) + 6 = 3$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Menjawab nilai absis $x = 1$, bukan nilai balik minimumnya ($f(1)$)."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengambil nilai suku konstan fungsi (nilai pada $x = 0$)."
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "Kesalahan tanda dalam menghitung $1 - 4 + 6$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mencari titik stasioner dengan menyelesaikan $f'(x) = 0$.\n$$f'(x) = 4x^3 - 4 = 0$$\n$$4(x^3 - 1) = 0 \\implies x = 1$$\n\nLangkah 2: Mengonfirmasi jenis nilai balik menggunakan uji turunan kedua.\n$$f''(x) = 12x^2$$\n$$f''(1) = 12(1)^2 = 12 > 0$$\nKarena $f''(1) > 0$, maka fungsi memiliki nilai balik minimum di $x = 1$.\n\nLangkah 3: Menghitung nilai balik minimum dengan mensubstitusi $x = 1$ ke $f(x)$.\n$$f(1) = (1)^4 - 4(1) + 6 = 1 - 4 + 6 = 3$$\nJadi, nilai balik minimum fungsi tersebut adalah $3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 144,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "kemiringan garis singgung _y_ = _f_ ( _x_ ) pada titik _P_ ^ _x_ 1, _f_ ^ _x_ 1hh dapat dihitung menggunakan rumus:"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik potong garis singgung terhadap sumbu koordinat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan ordinat titik singgung, turunan pertama untuk gradien, pembentukan persamaan garis singgung, dan penentuan titik potong pada sumbu-x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis singgung kurva $y = x^2 - 6x + 5$ di titik dengan absis $x = 4$ memotong sumbu-$x$ pada koordinat ....",
+      "jawaban_benar": "$\\left(\\frac{11}{2}, 0\\right)$",
+      "alasan_benar": "Titik singgung adalah $(4, -3)$ dan gradien $m = y'(4) = 2(4) - 6 = 2$. Persamaan garis singgung $y - (-3) = 2(x - 4) \\iff y = 2x - 11$. Memotong sumbu-$x$ saat $y = 0 \\implies 2x - 11 = 0 \\iff x = \\frac{11}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$(0, -11)$",
+          "alasan": "Menghitung koordinat titik potong garis singgung dengan sumbu-$y$, bukan sumbu-$x$."
+        },
+        {
+          "teks": "$\\left(-\\frac{11}{2}, 0\\right)$",
+          "alasan": "Kesalahan tanda aljabar saat memindahkan ruas $2x - 11 = 0$."
+        },
+        {
+          "teks": "$(4, 0)$",
+          "alasan": "Hanya mengambil absis titik singgung dan mengubah ordinatnya menjadi 0 tanpa menghitung titik potong garis singgung."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan ordinat titik singgung untuk absis $x = 4$.\n$$y = 4^2 - 6(4) + 5 = 16 - 24 + 5 = -3$$\nTitik singgungnya adalah $(4, -3)$.\n\nLangkah 2: Menentukan kemiringan (gradien) garis singgung melalui turunan pertama.\n$$y' = 2x - 6$$\n$$m = y'(4) = 2(4) - 6 = 2$$\n\nLangkah 3: Menyusun persamaan garis singgung di titik $(4, -3)$ dengan gradien $m = 2$.\n$$y - y_1 = m(x - x_1)$$\n$$y - (-3) = 2(x - 4)$$\n$$y + 3 = 2x - 8$$\n$$y = 2x - 11$$\n\nLangkah 4: Menentukan titik potong garis singgung dengan sumbu-$x$ (syarat $y = 0$).\n$$0 = 2x - 11$$\n$$2x = 11 \\implies x = \\frac{11}{2}$$\nJadi, garis singgung memotong sumbu-$x$ pada koordinat $\\left(\\frac{11}{2}, 0\\right)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0163-latihan-soal-aplikasi-turunan-fungsi-13a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai ekstrem fungsi kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan pembuat nol dari turunan pertama dan evaluasi nilai fungsi untuk menentukan nilai ekstrem.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai ekstrem dan jenis titik ekstrem dari fungsi $f(x) = 2x^2 - 12x + 11$ adalah ....",
+      "jawaban_benar": "Nilai ekstrem minimum $-7$ pada $x = 3$",
+      "alasan_benar": "Turunan pertama $f'(x) = 4x - 12 = 0 \\implies x = 3$. Karena $f''(x) = 4 > 0$, maka titik tersebut menghasilkan nilai minimum $f(3) = 2(3)^2 - 12(3) + 11 = 18 - 36 + 11 = -7$.",
+      "distraktor": [
+        {
+          "teks": "Nilai ekstrem maksimum $-7$ pada $x = 3$",
+          "alasan": "Siswa keliru mengidentifikasi jenis titik ekstrem kurva terbuka ke atas sebagai maksimum."
+        },
+        {
+          "teks": "Nilai ekstrem minimum $11$ pada $x = 3$",
+          "alasan": "Siswa menyangka nilai ekstrem adalah nilai konstanta kurva $c = 11$."
+        },
+        {
+          "teks": "Nilai ekstrem minimum $-7$ pada $x = -3$",
+          "alasan": "Siswa salah tanda saat menyelesaikan persamaan stasioner $4x - 12 = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai absis stasioner kurva.\n$$f'(x) = 4x - 12$$\nFungsi diam saat $f'(x) = 0$:\n$$4x - 12 = 0 \\implies 4x = 12 \\implies x = 3$$\n\nLangkah 2: Menentukan jenis dan nilai ekstrem.\nTurunan kedua: $f''(x) = 4 > 0$, sehingga menghasilkan nilai balik minimum.\nSubstitusikan $x = 3$ ke rumus fungsi $f(x)$:\n$$f(3) = 2(3)^2 - 12(3) + 11 = 18 - 36 + 11 = -7$$\nJadi, nilai ekstremnya adalah minimum $-7$ pada $x = 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 162,
+        "bagian": "Latihan Soal Aplikasi Turunan Fungsi",
+        "nomor": "1.b",
+        "teks": "Tentukan persamaan garis singgung dari: b. kurva _y_ = 2 _x_ 2 - 3 _x_ + 5 pada titik yang berordinat 4",
+        "jawaban": "y = x + 3 atau y = -x + 4,5",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "garis singgung ordinat tertentu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan penentuan absis titik singgung dari ordinat yang diketahui, penghitungan gradien dengan turunan, dan penyusunan persamaan garis singgung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis singgung pada kurva $y = x^2 - 6x + 14$ di titik yang berordinat $9$ dan memiliki absis $x < 3$ adalah ....",
+      "jawaban_benar": "$y = -4x + 13$",
+      "alasan_benar": "Untuk $y = 9$, diperoleh $x^2 - 6x + 14 = 9 \\iff x^2 - 6x + 5 = 0$, sehingga $x = 1$ (karena $x < 3$). Gradien $m = y'(1) = 2(1) - 6 = -4$. Persamaan garisnya $y - 9 = -4(x - 1) \\iff y = -4x + 13$.",
+      "distraktor": [
+        {
+          "teks": "$y = 4x - 11$",
+          "alasan": "Siswa memilih absis yang salah yaitu $x = 5$ yang melanggar syarat $x < 3$."
+        },
+        {
+          "teks": "$y = 4x + 5$",
+          "alasan": "Siswa salah tanda saat menghitung gradien $m = 2(1) - 6 = 4$ bukan $-4$."
+        },
+        {
+          "teks": "$y = -4x + 9$",
+          "alasan": "Siswa lupa mengalikan pergeseran absis $-4(-1)$ saat menyusun bentuk eksplisit persamaan garis."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan absis titik singgung.\nSubstitusikan $y = 9$ ke persamaan kurva:\n$$x^2 - 6x + 14 = 9$$\n$$x^2 - 6x + 5 = 0$$\n$$(x - 1)(x - 5) = 0$$\nDiperoleh $x = 1$ atau $x = 5$. Karena disyaratkan $x < 3$, absis yang memenuhi adalah $x = 1$. Titik singgungnya adalah $(1, 9)$.\n\nLangkah 2: Menghitung gradien garis singgung.\n$$y' = 2x - 6$$\n$$m = y'(1) = 2(1) - 6 = -4$$\n\nLangkah 3: Menentukan persamaan garis singgung.\n$$y - y_1 = m(x - x_1)$$\n$$y - 9 = -4(x - 1)$$\n$$y - 9 = -4x + 4$$\n$$y = -4x + 13$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 144,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan mengaitkan hubungan antartemuan tersebut, kamu dapat menentukan kemiringan garis singgung kurva menggunakan konsep turunan."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan garis singgung kurva pecahan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: mencari titik potong sumbu-x positif, menghitung gradien dengan turunan fungsi rasional, dan menyusun persamaan garis singgung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis singgung pada kurva $y = 4x - \\frac{4}{x}$ di titik potong kurva dengan sumbu-$x$ positif adalah ....",
+      "jawaban_benar": "$y = 8x - 8$",
+      "alasan_benar": "Titik potong sumbu-$x$ saat $y = 0 \\implies 4x - \\frac{4}{x} = 0 \\iff 4x^2 - 4 = 0 \\iff x = 1$ (karena $x > 0$), sehingga titik singgungnya adalah $(1, 0)$. Turunan fungsi adalah $y' = 4 + \\frac{4}{x^2}$. Gradien di $x = 1$ adalah $m = y'(1) = 4 + \\frac{4}{1^2} = 8$. Persamaan garis singgungnya: $y - 0 = 8(x - 1) \\iff y = 8x - 8$.",
+      "distraktor": [
+        {
+          "teks": "$y = 8x + 8$",
+          "alasan": "Siswa salah memasukkan tanda koordinat titik singgung saat menyusun persamaan garis singgung: $y - 0 = 8(x + 1)$."
+        },
+        {
+          "teks": "$y = 4x - 4$",
+          "alasan": "Siswa salah saat menurunkan bentuk pecahan, menganggap turunan $-\\frac{4}{x}$ adalah $0$ sehingga gradien dianggap $4$."
+        },
+        {
+          "teks": "$y = -8x + 8$",
+          "alasan": "Siswa keliru menurunkan tanda dari $-\\frac{4}{x}$ menjadi $-\\frac{4}{x^2}$, sehingga salah menghasilkan gradien $m = 4 - 4 = 0$ atau keliru memberi tanda gradien $-8$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik singgung.\nTitik potong kurva dengan sumbu-$x$ positif diperoleh saat $y = 0$:\n$$4x - \\frac{4}{x} = 0$$\n$$4x^2 - 4 = 0 \\implies x^2 = 1$$\nKarena absis positif, maka $x = 1$. Jadi titik singgungnya adalah $(1, 0)$.\n\nLangkah 2: Menentukan gradien garis singgung.\n$$y = 4x - 4x^{-1}$$\n$$m = y' = 4 - 4(-1)x^{-2} = 4 + \\frac{4}{x^2}$$\nSubstitusikan $x = 1$:\n$$m = 4 + \\frac{4}{1^2} = 8$$\n\nLangkah 3: Menentukan persamaan garis singgung.\n$$y - y_1 = m(x - x_1)$$\n$$y - 0 = 8(x - 1)$$\n$$y = 8x - 8$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 150,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika f l^ x h 1 0 untuk setiap x ! I , maka fungsi f ^ x h turun pada I."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "interval kecepatan negatif partikel",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah: menurunkan fungsi posisi untuk memperoleh fungsi kecepatan dan menyelesaikan pertidaksamaan kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = 2t^3 - 15t^2 + 24t + 10$ ($s$ dalam meter dan $t$ dalam detik) untuk $t \\ge 0$. Interval waktu $t$ saat kecepatan partikel bernilai negatif adalah ....",
+      "jawaban_benar": "$1 < t < 4$ detik",
+      "alasan_benar": "Fungsi kecepatan adalah $v(t) = s'(t) = 6t^2 - 30t + 24$. Kecepatan bernilai negatif jika $v(t) < 0 \\iff 6(t^2 - 5t + 4) < 0 \\iff 6(t - 1)(t - 4) < 0 \\iff 1 < t < 4$ detik.",
+      "distraktor": [
+        {
+          "teks": "$0 \\le t < 1$ atau $t > 4$ detik",
+          "alasan": "Siswa terbalik menentukan tanda pertidaksamaan sehingga mencari interval saat kecepatan bernilai positif."
+        },
+        {
+          "teks": "$2 < t < 5$ detik",
+          "alasan": "Siswa melakukan kesalahan faktorisasi bentuk kuadrat $t^2 - 5t + 4$ menjadi $(t - 2)(t - 5)$."
+        },
+        {
+          "teks": "$1 < t < 2$ detik",
+          "alasan": "Siswa keliru memfaktorkan bentuk kuadrat atau membaginya secara tidak lengkap."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus fungsi kecepatan partikel.\nKecepatan partikel merupakan turunan pertama dari fungsi posisi:\n$$v(t) = s'(t) = \\frac{d}{dt}(2t^3 - 15t^2 + 24t + 10) = 6t^2 - 30t + 24$$\n\nLangkah 2: Menentukan interval saat kecepatan bernilai negatif ($v(t) < 0$).\n$$6t^2 - 30t + 24 < 0$$\nBagi kedua ruas dengan $6$:\n$$t^2 - 5t + 4 < 0$$\n$$(t - 1)(t - 4) < 0$$\nPembuat nol persamaan adalah $t = 1$ dan $t = 4$. Melalui uji garis bilangan, nilai negatif berada pada rentang antara kedua pembuat nol tersebut.\nJadi, kecepatan partikel bernilai negatif pada interval $1 < t < 4$ detik.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 150,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Agar kurva _f_ ^ _x_ h merupakan fungsi naik maka syaratnya adalah _f_ l^ _x_ h 2 0, sedangkan syarat turun adalah _f_ l^ _x_ h 1 0 ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penentuan koefisien kurva dari interval turun",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan turunan pertama kurva kubik berparameter, pengaitan akar pembuat nol turunan dengan batas interval fungsi turun, dan penghitungan nilai parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi $f(x) = x^3 + ax^2 + bx + 7$ hanya turun pada interval $-2 < x < 4$. Nilai dari $a + b$ adalah ....",
+      "jawaban_benar": "$-27$",
+      "alasan_benar": "Turunan pertama fungsi adalah $f'(x) = 3x^2 + 2ax + b$. Kurva turun ketika $f'(x) < 0$. Karena kurva hanya turun pada $-2 < x < 4$, maka $x = -2$ dan $x = 4$ adalah akar-akar dari $3x^2 + 2ax + b = 0$. Berdasarkan hubungan akar persamaan kuadrat: $x_1 + x_2 = -2 + 4 = 2 = -\\frac{2a}{3} \\implies 2a = -6 \\implies a = -3$, dan $x_1 \\cdot x_2 = -2 \\cdot 4 = -8 = \\frac{b}{3} \\implies b = -24$. Sehingga nilai $a + b = -3 + (-24) = -27$.",
+      "distraktor": [
+        {
+          "teks": "$-10$",
+          "alasan": "Siswa lupa mengalikan koefisien turunan dengan 3, menganggap $f'(x) = x^2 + ax + b$ sehingga diperoleh $a = -2$ dan $b = -8$, menghasilkan $a + b = -10$."
+        },
+        {
+          "teks": "$-21$",
+          "alasan": "Siswa salah menerapkan tanda pada rumus jumlah akar persamaan kuadrat, menganggap $\\frac{2a}{3} = 2 \\implies a = 3$, sehingga $a + b = 3 + (-24) = -21$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Siswa salah tanda pada hasil kali akar persamaan kuadrat sehingga diperoleh $b = 24$, lalu dengan $a = -3$ didapatkan $a + b = 21$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan pertama fungsi.\n$f'(x) = 3x^2 + 2ax + b$\n\nLangkah 2: Menghubungkan batas interval fungsi turun dengan pembuat nol turunan.\nFungsi turun jika $f'(x) < 0$. Diketahui interval turun adalah $-2 < x < 4$, artinya $x_1 = -2$ dan $x_2 = 4$ merupakan akar-akar dari persamaan kuadrat $3x^2 + 2ax + b = 0$.\n\nLangkah 3: Menentukan nilai $a$ dan $b$ menggunakan sifat akar kuadrat.\n- Jumlah akar:\n$$x_1 + x_2 = -\\frac{2a}{3}$$\n$$-2 + 4 = -\\frac{2a}{3}$$\n$$2 = -\\frac{2a}{3} \\implies 2a = -6 \\implies a = -3$$\n\n- Hasil kali akar:\n$$x_1 \\cdot x_2 = \\frac{b}{3}$$\n$$(-2)(4) = \\frac{b}{3}$$\n$$-8 = \\frac{b}{3} \\implies b = -24$$\n\nLangkah 4: Menghitung nilai $a + b$.\n$$a + b = -3 + (-24) = -27$$\n\nJadi, nilai $a + b$ adalah $-27$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

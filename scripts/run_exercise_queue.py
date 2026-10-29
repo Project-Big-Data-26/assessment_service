@@ -31,7 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from app.llm.ninerouter import NineRouterClient, NineRouterSettings
 from app.services.exercise import config as C
 from app.services.exercise.llm_generate import Job
-from app.services.exercise.llm_pipeline import STATUS_GAGAL, kerjakan_slot
+from app.services.exercise.llm_pipeline import STATUS_GAGAL, SlotResult, kerjakan_slot
 from app.services.pretest.agentic import kurikulum
 from app.services.pretest.agentic.books import get_book
 
@@ -46,7 +46,18 @@ def _kurang_milik_pipeline(path: str, kuota: int) -> bool:
             d = json.load(f)
     except (OSError, ValueError):
         return False
-    return str(d.get("generator") or "").startswith("9router:") and len(d.get("soal", [])) < kuota
+    if not str(d.get("generator") or "").startswith("9router:"):
+        return False
+    if str(d.get("alasan_kapasitas") or "").startswith("[final]"):
+        return False          # kapasitas kurang yang sudah ditinjau dan dinyatakan final: jangan diulang
+    if len(d.get("soal", [])) < kuota:
+        return True
+    try:                      # penuh, tetapi belum diverifikasi / verifikasi terakhir belum cocok semua
+        with open(path[:-len(".json")] + ".verifikasi.json", encoding="utf-8") as f:
+            v = json.load(f)
+        return v.get("cocok") != v.get("total")
+    except (OSError, ValueError):
+        return True
 
 
 def antrean(books: List[str], batch: int, lengkapi: bool = False) -> List[Slot]:
@@ -128,8 +139,14 @@ def main() -> int:
                 job = Job(book, bab_no, kode, level, a.batch)
                 tag = f"{book} bab{bab_no} {kode} {level}"
                 print(f"[mulai] {tag}", flush=True)
-                res = kerjakan_slot(job, client, solver, maks_perbaikan=a.perbaikan,
-                                    progress=lambda m, t=tag: print(f"   {t}: {m.strip()}", flush=True))
+                try:
+                    res = kerjakan_slot(job, client, solver, maks_perbaikan=a.perbaikan,
+                                        progress=lambda m, t=tag: print(f"   {t}: {m.strip()}", flush=True))
+                except Exception as exc:     # satu slot bermasalah tidak boleh mematikan pekerja/antrean
+                    import traceback
+                    traceback.print_exc()
+                    res = SlotResult(job.path, STATUS_GAGAL, 0, 0, 0, 0,
+                                     [f"galat tak terduga: {type(exc).__name__}: {str(exc)[:160]}"])
                 with lock:
                     gagal_berturut[0] = gagal_berturut[0] + 1 if res.status == STATUS_GAGAL else 0
                     with open(status_file, "a", encoding="utf-8") as f:
