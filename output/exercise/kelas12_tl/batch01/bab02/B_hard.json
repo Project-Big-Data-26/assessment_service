@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-3b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis pembuat nol turunan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan turunan trigonometri dengan aturan rantai, penemuan akar-akar pembuat nol pada interval tertutup, dan evaluasi jumlah kuadrat akar-akar tersebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persamaan fungsi trigonometri $f(x) = 6 - 8\\sin\\left(\\frac{1}{6}\\pi x\\right)$ didefinisikan pada daerah asal $D_f = \\{x \\mid 0 \\le x \\le 12, x \\in \\mathbb{R}\\}$. Jika $f'(x)$ bernilai nol pada $x = x_1$ dan $x = x_2$ dengan $x_1 < x_2$, tentukan nilai dari $x_1^2 + x_2^2$.",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Turunan pertama adalah $f'(x) = -8\\left(\\frac{\\pi}{6}\\right)\\cos\\left(\\frac{\\pi x}{6}\\right) = -\\frac{4\\pi}{3}\\cos\\left(\\frac{\\pi x}{6}\\right)$. Pembuat nol terjadi ketika $\\cos\\left(\\frac{\\pi x}{6}\\right) = 0$. Dalam interval $0 \\le x \\le 12$, nilai $\\frac{\\pi x}{6} \\in [0, 2\\pi]$, sehingga $\\frac{\\pi x}{6} = \\frac{\\pi}{2} \\implies x_1 = 3$ dan $\\frac{\\pi x}{6} = \\frac{3\\pi}{2} \\implies x_2 = 9$. Maka $x_1^2 + x_2^2 = 3^2 + 9^2 = 9 + 81 = 90$.",
+      "distraktor": [
+        {
+          "teks": "$80$",
+          "alasan": "Salah menyelesaikan persamaan kosinus nol menjadi $\\frac{\\pi x}{6} = \\frac{\\pi}{3}$ dan $\\frac{5\\pi}{3}$, menghasilkan $x_1 = 2$ dan $x_2 = 10$ sehingga $4 + 100 = 104$ lalu salah hitung menjadi $80$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengira pembuat nol terjadi saat sinus bernilai nol, yaitu pada $x_1 = 0$ dan $x_2 = 6$ atau $x = 6$ saja sehingga $6^2 + 6^2 = 72$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Menghitung $(x_1 + x_2)^2 = (3 + 9)^2 = 144$ alih-alih $x_1^2 + x_2^2$."
+        }
+      ],
+      "pembahasan": "Turunkan fungsi menggunakan aturan rantai:\n$$f'(x) = -8 \\cdot \\frac{d}{dx}\\left[\\sin\\left(\\frac{\\pi x}{6}\\right)\\right] = -8 \\cdot \\frac{\\pi}{6}\\cos\\left(\\frac{\\pi x}{6}\\right) = -\\frac{4\\pi}{3}\\cos\\left(\\frac{\\pi x}{6}\\right)$$\nSyarat $f'(x) = 0$:\n$$-\\frac{4\\pi}{3}\\cos\\left(\\frac{\\pi x}{6}\\right) = 0 \\implies \\cos\\left(\\frac{\\pi x}{6}\\right) = 0$$\nUntuk $x \\in [0, 12]$, sudut $\\theta = \\frac{\\pi x}{6} \\in [0, 2\\pi]$:\n$$\\frac{\\pi x}{6} = \\frac{\\pi}{2} \\implies x_1 = 3$$\n$$\\frac{\\pi x}{6} = \\frac{3\\pi}{2} \\implies x_2 = 9$$\nHitung nilai yang diminta:\n$$x_1^2 + x_2^2 = 3^2 + 9^2 = 9 + 81 = 90$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 136,
+        "bagian": "Ayo Berdiskusi",
+        "nomor": "3",
+        "teks": "Seekor laba-laba merayap pada bidang Kartesius. Pada posisi t detik labalaba berada pada posisi ^ x ^ t h, y ^ t hh . Nilai x ^ t h ditentukan oleh persamaan kurva x ^ t h = t 2 - 4 , sedangkan y ^ t h ditentukan oleh kurva y ^ t h = t 2 - 2 t + 6 . Tentukan: 1. persamaan yang menunjukkan pergerakan laba-laba pada bidang Kartesius, 2. posisi laba-laba pada t = 2 detik, serta 3. kecepatan laba-laba pada t = 2 detik (kamu dapat menemukan kecepatan dengan mencari turunan pertama).",
+        "jawaban": "2\\sqrt{5}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kecepatan gerak partikel",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan turunan komponen gerak, penyelesaian pembuat nol polinomial berderajat dua dengan syarat waktu, serta evaluasi besar laju total.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak pada bidang datar sehingga posisinya pada saat $t$ detik dinyatakan oleh $(x(t), y(t))$ dengan $x(t) = 3t^2 - 5t$ dan $y(t) = 2t^3 - 9t^2 + 12t + 1$. Besar kecepatan partikel dinyatakan oleh $v(t) = \\sqrt{[x'(t)]^2 + [y'(t)]^2}$. Tentukan besar kecepatan partikel pada saat laju perubahan vertikalnya bernilai nol ($y'(t) = 0$) untuk waktu $t > 1$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Turunan posisi vertikal adalah $y'(t) = 6t^2 - 18t + 12$. Menyelesaikan $y'(t) = 0$ menghasilkan $6(t - 1)(t - 2) = 0$, sehingga $t = 1$ atau $t = 2$. Karena disyaratkan $t > 1$, dipilih $t = 2$. Turunan posisi horizontal adalah $x'(t) = 6t - 5$. Pada $t = 2$, diperoleh $x'(2) = 6(2) - 5 = 7$. Maka besar kecepatannya adalah $v(2) = \\sqrt{7^2 + 0^2} = 7$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Memilih akar $t = 1$ yang melanggar batasan $t > 1$, sehingga menghitung $x'(1) = 6(1) - 5 = 1$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Salah menghitung turunan $x'(t)$ menjadi $6t - 7$ sehingga menghasilkan $6(2) - 7 = 5$."
+        },
+        {
+          "teks": "$\\sqrt{17}$",
+          "alasan": "Mensubstitusikan nilai $t = 2$ ke posisi $x(t)$ dan $y(t)$ alih-alih komponen kecepatan $x'(t)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan $y'(t)$ dan nilai pembuat nolnya:\n$$y'(t) = \\frac{d}{dt}(2t^3 - 9t^2 + 12t + 1) = 6t^2 - 18t + 12$$\n$$6t^2 - 18t + 12 = 0 \\implies t^2 - 3t + 2 = 0 \\implies (t - 1)(t - 2) = 0$$\nDiperoleh $t = 1$ atau $t = 2$. Syarat pada soal $t > 1$, maka waktu yang diambil adalah $t = 2$ detik.\n\nLangkah 2: Menentukan $x'(t)$ pada $t = 2$:\n$$x'(t) = \\frac{d}{dt}(3t^2 - 5t) = 6t - 5$$\n$$x'(2) = 6(2) - 5 = 7$$\n\nLangkah 3: Menghitung besar kecepatan $v(2)$:\n$$v(2) = \\sqrt{[x'(2)]^2 + [y'(2)]^2} = \\sqrt{7^2 + 0^2} = 7$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ( x ) = sin x dan g ( x ) = cos x adalah fungsi-fungsi yang kontinu di R , maka f l ( x ) = cos x dan g l ( x ) = - sin x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penyelesaian persamaan turunan trigonometri",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan penyederhanaan turunan fungsi rasional trigonometri menggunakan identitas, perumusan persamaan sudut rangkap, dan evaluasi jumlah akar pada selang tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{\\sin x - \\cos x}{\\sin x + \\cos x}$ terdefinisi pada interval $0 < x < \\pi$ dengan $x \\ne \\frac{3\\pi}{4}$. Jika nilai turunan pertama fungsi tersebut memenuhi $f'(x) = 4$, tentukan jumlah seluruh nilai $x$ yang memenuhi persamaan tersebut.",
+      "jawaban_benar": "$\\dfrac{3\\pi}{2}$",
+      "alasan_benar": "Dengan aturan pembagian, $f'(x) = \\frac{(\\cos x + \\sin x)(\\sin x + \\cos x) - (\\sin x - \\cos x)(\\cos x - \\sin x)}{(\\sin x + \\cos x)^2} = \\frac{(\\sin x + \\cos x)^2 + (\\sin x - \\cos x)^2}{(\\sin x + \\cos x)^2} = \\frac{2(\\sin^2 x + \\cos^2 x)}{1 + 2\\sin x \\cos x} = \\frac{2}{1 + \\sin(2x)}$. Persamaan $f'(x) = 4$ menjadi $\\frac{2}{1 + \\sin(2x)} = 4 \\implies 1 + \\sin(2x) = \\frac{1}{2} \\implies \\sin(2x) = -\\frac{1}{2}$. Untuk $x \\in (0, \\pi)$, sudut $2x \\in (0, 2\\pi)$, sehingga $2x = \\frac{7\\pi}{6}$ atau $2x = \\frac{11\\pi}{6}$. Diperoleh $x_1 = \\frac{7\\pi}{12}$ dan $x_2 = \\frac{11\\pi}{12}$. Jumlahnya adalah $\\frac{7\\pi}{12} + \\frac{11\\pi}{12} = \\frac{18\\pi}{12} = \\frac{3\\pi}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\pi$",
+          "alasan": "Salah menyederhanakan turunan sehingga memperoleh $\\sin(2x) = 0$ yang menghasilkan akar-akar dengan jumlah $\\pi$."
+        },
+        {
+          "teks": "$\\dfrac{7\\pi}{6}$",
+          "alasan": "Lupa membagi nilai sudut rangkap $2x = \\frac{7\\pi}{6}$ dengan $2$ dan hanya mengambil satu nilai sudut."
+        },
+        {
+          "teks": "$\\dfrac{5\\pi}{4}$",
+          "alasan": "Kesalahan menentukan sudut di kuadran III dan IV, mengira sudut penyelesaian adalah $\\frac{5\\pi}{4}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menurunkan $f(x)$ dengan aturan hasil bagi $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$:\nMisalkan $u = \\sin x - \\cos x \\implies u' = \\cos x + \\sin x$.\nMisalkan $v = \\sin x + \\cos x \\implies v' = \\cos x - \\sin x$.\n\nLangkah 2: Menyederhanakan pembilang:\n$$u'v - uv' = (\\sin x + \\cos x)^2 - (\\sin x - \\cos x)(\\cos x - \\sin x)$$\n$$= (\\sin x + \\cos x)^2 + (\\sin x - \\cos x)^2$$\n$$= (\\sin^2 x + 2\\sin x\\cos x + \\cos^2 x) + (\\sin^2 x - 2\\sin x\\cos x + \\cos^2 x) = 2$$\n\nLangkah 3: Menyederhanakan penyebut:\n$$v^2 = (\\sin x + \\cos x)^2 = \\sin^2 x + \\cos^2 x + 2\\sin x\\cos x = 1 + \\sin(2x)$$\nDiperoleh $f'(x) = \\frac{2}{1 + \\sin(2x)}$.\n\nLangkah 4: Menyelesaikan persamaan $f'(x) = 4$:\n$$\\frac{2}{1 + \\sin(2x)} = 4 \\implies 1 + \\sin(2x) = \\frac{1}{2} \\implies \\sin(2x) = -\\frac{1}{2}$$\n\nLangkah 5: Mencari himpunan penyelesaian untuk $2x \\in (0, 2\\pi)$:\nNilai sinus negatif di kuadran III dan IV:\n$$2x_1 = \\pi + \\frac{\\pi}{6} = \\frac{7\\pi}{6} \\implies x_1 = \\frac{7\\pi}{12}$$\n$$2x_2 = 2\\pi - \\frac{\\pi}{6} = \\frac{11\\pi}{6} \\implies x_2 = \\frac{11\\pi}{12}$$\nKedua nilai memenuhi batasan $0 < x < \\pi$ dan $x \\ne \\frac{3\\pi}{4}$.\n\nLangkah 6: Menjumlahkan kedua nilai $x$:\n$$x_1 + x_2 = \\frac{7\\pi}{12} + \\frac{11\\pi}{12} = \\frac{18\\pi}{12} = \\frac{3\\pi}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Latihan Soal Sifat-Sifat Turunan Fungsi",
+        "nomor": "2",
+        "teks": "Jari-jari sebuah bola bertambah panjang dengan laju 2 cm per detik. Misalkan jari-jari bola tersebut 30 cm. Tentukan laju bertambahnya luas permukaan bola dan laju bertambahnya volume bola.",
+        "jawaban": "laju luas = 480π cm²/detik, laju volume = 7.200π cm³/detik",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "laju perubahan terkait",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan jari-jari awal dari luas permukaan bola lalu menerapkan aturan rantai turunan untuk menghitung laju perubahan volume.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah balon berbentuk bola dipompa sehingga jari-jarinya bertambah dengan laju konstan $1{,}5\\text{ cm/detik}$. Pada saat luas permukaan balon tersebut mencapai $64\\pi\\text{ cm}^2$, laju pertambahan volume balon tersebut adalah ....",
+      "jawaban_benar": "$96\\pi\\text{ cm}^3/\\text{detik}$",
+      "alasan_benar": "Luas permukaan bola $L = 4\\pi r^2 = 64\\pi \\implies r = 4\\text{ cm}$. Volume bola $V = \\frac{4}{3}\\pi r^3$. Melalui aturan rantai, $\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt} = 4\\pi r^2 \\frac{dr}{dt} = 4\\pi (4^2)(1{,}5) = 4\\pi(16)(1{,}5) = 96\\pi\\text{ cm}^3/\\text{detik}$.",
+      "distraktor": [
+        {
+          "teks": "$64\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Siswa lupa mengalikan luas permukaan dengan laju pertambahan jari-jari ($dr/dt$)."
+        },
+        {
+          "teks": "$48\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Siswa keliru menggunakan turunan volume terhadap jari-jari sebagai $2\\pi r^2$ alih-alih $4\\pi r^2$."
+        },
+        {
+          "teks": "$144\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Siswa salah menentukan jari-jari dengan menganggap $4\\pi r = 64\\pi$ sehingga $r = 16$ atau salah mengalikan koefisien."
+        }
+      ],
+      "pembahasan": "Diketahui $\\frac{dr}{dt} = 1{,}5\\text{ cm/detik}$ dan $L = 64\\pi\\text{ cm}^2$.\n1. Cari jari-jari $r$:\n$$4\\pi r^2 = 64\\pi \\implies r^2 = 16 \\implies r = 4\\text{ cm}$$\n2. Tentukan laju perubahan volume $V = \\frac{4}{3}\\pi r^3$ terhadap waktu menggunakan aturan rantai:\n$$\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt} = 4\\pi r^2 \\cdot \\frac{dr}{dt}$$\n$$\\frac{dV}{dt} = 4\\pi (4)^2 \\cdot 1{,}5 = 64\\pi \\cdot 1{,}5 = 96\\pi\\text{ cm}^3/\\text{detik}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 140,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari h ( x ) = e f ( x ) adalah"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis gradien garis singgung tegak lurus",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memadukan turunan fungsi campuran eksponen-trigonometri dengan syarat garis normal/tegak lurus untuk menemukan nilai parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui kurva fungsi $f(x) = e^{2x} \\sin(kx)$ dengan konstanta $k > 0$. Jika garis singgung kurva di titik $(0, f(0))$ tegak lurus dengan garis $x + 5y - 10 = 0$, maka nilai dari $k$ adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Garis $x + 5y - 10 = 0$ memiliki gradien $m_1 = -\\frac{1}{5}$. Garis singgung tegak lurus sehingga $m_2 = -\\frac{1}{m_1} = 5$. Turunan pertama $f'(x) = 2e^{2x}\\sin(kx) + ke^{2x}\\cos(kx)$. Di $x = 0$, $f'(0) = 2(1)(0) + k(1)(1) = k$. Maka $k = 5$.",
+      "distraktor": [
+        {
+          "teks": "$-5$",
+          "alasan": "Siswa menggunakan relasi gradien sejajar $m_2 = m_1$ atau salah menerapkan tanda saling tegak lurus."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Siswa membalik tanda gradien tanpa menegatifkannya ($m_2 = -1/m_1$ terbalik)."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa salah menurunkan $f'(0)$ dengan mengabaikan turunan perkalian sehingga $f'(0) = k - 2 = 5 \\implies k = 7$ atau keliru menjumlahkan suku."
+        }
+      ],
+      "pembahasan": "1. Cari gradien garis singgung $m$:\nGaris $x + 5y - 10 = 0 \\iff y = -\\frac{1}{5}x + 2$ mempunyai gradien $m_1 = -\\frac{1}{5}$.\nKarena tegak lurus, maka $m \\cdot m_1 = -1 \\implies m = 5$.\n\n2. Tentukan turunan $f(x)$ menggunakan aturan perkalian dan rantai:\n$$f'(x) = \\frac{d}{dx}[e^{2x}]\\sin(kx) + e^{2x}\\frac{d}{dx}[\\sin(kx)]$$\n$$f'(x) = 2e^{2x}\\sin(kx) + ke^{2x}\\cos(kx)$$\n\n3. Substitusi $x = 0$:\n$$f'(0) = 2e^0\\sin(0) + ke^0\\cos(0) = 0 + k(1)(1) = k$$\n\n4. Samakan dengan nilai gradien:\n$$k = m = 5$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 134,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan sin x = u ( x ) dan tan x = v ( x ) , maka y l = 2 ( u l ( x ) v ( x ) + u ( x ) v l ( x ) )"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis jumlah pembuat nol turunan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penurunan fungsi pecahan campuran eksponensial-trigonometri lalu menyelesaikan persamaan trigonometri pembuat nol turunan pada selang tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{\\sin x - \\cos x}{e^x}$ terdefinisi pada interval tertutup $[0, 2\\pi]$. Jumlah seluruh nilai $x$ yang memenuhi $f'(x) = 0$ pada interval tersebut adalah ....",
+      "jawaban_benar": "$2\\pi$",
+      "alasan_benar": "Turunan $f'(x) = \\frac{(\\cos x + \\sin x)e^x - (\\sin x - \\cos x)e^x}{e^{2x}} = \\frac{2\\cos x}{e^x}$. $f'(x) = 0 \\iff 2\\cos x = 0 \\iff \\cos x = 0$. Pada $[0, 2\\pi]$, nilai $x$ adalah $\\frac{\\pi}{2}$ dan $\\frac{3\\pi}{2}$. Jumlahnya $\\frac{\\pi}{2} + \\frac{3\\pi}{2} = 2\\pi$.",
+      "distraktor": [
+        {
+          "teks": "$\\pi$",
+          "alasan": "Siswa keliru mengira hanya ada satu solusi yaitu $\\pi$ atau salah menurunkan suku pembilang."
+        },
+        {
+          "teks": "$\\frac{3\\pi}{2}$",
+          "alasan": "Siswa hanya mengambil solusi terbesar dalam interval."
+        },
+        {
+          "teks": "$3\\pi$",
+          "alasan": "Siswa salah menurunkan $u'$ menjadi $\\cos x - \\sin x$ sehingga menghasilkan $\\sin x = 0$ dengan penyelesaian $0 + \\pi + 2\\pi = 3\\pi$."
+        }
+      ],
+      "pembahasan": "Gunakan aturan pembagian $f'(x) = \\dfrac{u'v - uv'}{v^2}$:\n1. Misalkan:\n$u(x) = \\sin x - \\cos x \\implies u'(x) = \\cos x - (-\\sin x) = \\cos x + \\sin x$\n$v(x) = e^x \\implies v'(x) = e^x$\n\n2. Hitung $f'(x)$:\n$$f'(x) = \\frac{(\\cos x + \\sin x)e^x - (\\sin x - \\cos x)e^x}{(e^x)^2}$$\n$$f'(x) = \\frac{e^x[(\\cos x + \\sin x) - (\\sin x - \\cos x)]}{e^{2x}} = \\frac{2\\cos x}{e^x}$$\n\n3. Tentukan pembuat nol $f'(x) = 0$:\n$$\\frac{2\\cos x}{e^x} = 0 \\implies 2\\cos x = 0 \\implies \\cos x = 0$$\n\n4. Pada interval $[0, 2\\pi]$, nilai $x$ yang memenuhi adalah:\n$$x_1 = \\frac{\\pi}{2}, \\quad x_2 = \\frac{3\\pi}{2}$$\n\n5. Jumlah seluruh nilai $x$:\n$$x_1 + x_2 = \\frac{\\pi}{2} + \\frac{3\\pi}{2} = 2\\pi$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diberikan h ( x ) = e x 2 - 5 x . Misalkan g ( x ) = e x dan f ( x ) = x 2 - 5 x , maka h ( x ) = e x 2 - 5 x = g ( f ( x ) ) , g l ( x ) = e x , dan f l ( x ) = 2 x - 5 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "jumlah ordinat titik stasioner",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis titik stasioner dari turunan fungsi aljabar-eksponensial kemudian menghitung ordinat dan jumlahannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui kurva fungsi $f(x) = x^2 e^{-x}$ memiliki dua titik stasioner $(x_1, y_1)$ dan $(x_2, y_2)$ dengan $x_1 < x_2$. Nilai dari $y_1 + y_2$ adalah ....",
+      "jawaban_benar": "$\\dfrac{4}{e^2}$",
+      "alasan_benar": "Turunan $f'(x) = 2x e^{-x} - x^2 e^{-x} = x(2 - x)e^{-x}$. Syarat stasioner $f'(x) = 0 \\implies x_1 = 0$ dan $x_2 = 2$. Ordinatnya $y_1 = f(0) = 0$ dan $y_2 = f(2) = 4e^{-2} = \\frac{4}{e^2}$. Maka $y_1 + y_2 = \\frac{4}{e^2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{2}{e^2}$",
+          "alasan": "Siswa salah memasukkan $x_2 = 2$ ke dalam fungsi menjadi $2e^{-2}$ bukannya $2^2 e^{-2}$."
+        },
+        {
+          "teks": "$\\dfrac{4}{e}$",
+          "alasan": "Siswa salah mensubstitusi eksponen menjadi $e^{-1}$ alih-alih $e^{-2}$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa menjumlahkan absis $x_1 + x_2 = 0 + 2 = 2$ bukan ordinatnya."
+        }
+      ],
+      "pembahasan": "1. Tentukan turunan $f'(x)$ menggunakan aturan perkalian dan rantai:\n$$f'(x) = 2x \\cdot e^{-x} + x^2 \\cdot (-e^{-x}) = (2x - x^2)e^{-x} = x(2 - x)e^{-x}$$\n\n2. Titik stasioner terjadi saat $f'(x) = 0$:\n$$x(2 - x)e^{-x} = 0$$\nKarena $e^{-x} > 0$ untuk setiap bilangan real $x$, maka:\n$$x(2 - x) = 0 \\implies x_1 = 0 \\text{ atau } x_2 = 2$$\n\n3. Hitung ordinat masing-masing titik:\n$$y_1 = f(0) = 0^2 \\cdot e^0 = 0$$\n$$y_2 = f(2) = 2^2 \\cdot e^{-2} = \\frac{4}{e^2}$$\n\n4. Hitung jumlah ordinat:\n$$y_1 + y_2 = 0 + \\frac{4}{e^2} = \\frac{4}{e^2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 135,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan 2 x + sin x = u ( x ) dan cos x = v ( x ) , maka"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "penentuan parameter fungsi trigonometri",
+      "jumlah_langkah": 6,
+      "alasan_level": "Merancang dan menyelesaikan sistem persamaan linear dua variabel dari evaluasi nilai fungsi dan turunan hasil kaidah pembagian trigonometri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{a\\sin x + b}{\\cos x}$ dengan konstanta real $a$ dan $b$. Jika $f\\left(\\frac{\\pi}{3}\\right) = 2\\sqrt{3}$ dan $f'\\left(\\frac{\\pi}{3}\\right) = 8$, tentukan nilai dari $a^2 + b^2$.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Dari $f(\\pi/3)$, diperoleh $\\frac{a\\sqrt{3}/2 + b}{1/2} = a\\sqrt{3} + 2b = 2\\sqrt{3}$. Dari turunan $f'(x) = \\frac{a + b\\sin x}{\\cos^2 x}$, diperoleh $\\frac{a + b\\sqrt{3}/2}{1/4} = 4a + 2\\sqrt{3}b = 8 \\implies 2a + \\sqrt{3}b = 4$. Eliminasi kedua persamaan menghasilkan $a = 2$ dan $b = 0$, sehingga $a^2 + b^2 = 2^2 + 0^2 = 4$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Siswa salah menghitung dan mendapatkan $a = 2, b = 2$ sehingga $a^2 + b^2 = 8$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Siswa salah mengkuadratkan $2\\sqrt{3}$ alih-alih nilai masing-masing konstanta."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa hanya menjumlahkan $a + b = 2 + 0 = 2$ tanpa menguadratkannya."
+        }
+      ],
+      "pembahasan": "1. Evaluasi persamaan dari $f\\left(\\frac{\\pi}{3}\\right) = 2\\sqrt{3}$:\n$$f\\left(\\frac{\\pi}{3}\\right) = \\frac{a\\sin(\\pi/3) + b}{\\cos(\\pi/3)} = \\frac{a\\left(\\frac{\\sqrt{3}}{2}\\right) + b}{\\frac{1}{2}} = a\\sqrt{3} + 2b = 2\\sqrt{3} \\quad \\text{...(1)}$$\n\n2. Tentukan turunan $f'(x)$ menggunakan sifat pembagian:\n$$u = a\\sin x + b \\implies u' = a\\cos x$$\n$$v = \\cos x \\implies v' = -\\sin x$$\n$$f'(x) = \\frac{a\\cos^2 x - (a\\sin x + b)(-\\sin x)}{\\cos^2 x} = \\frac{a(\\cos^2 x + \\sin^2 x) + b\\sin x}{\\cos^2 x} = \\frac{a + b\\sin x}{\\cos^2 x}$$\n\n3. Evaluasi $f'\\left(\\frac{\\pi}{3}\\right) = 8$:\n$$f'\\left(\\frac{\\pi}{3}\\right) = \\frac{a + b\\left(\\frac{\\sqrt{3}}{2}\\right)}{\\left(\\frac{1}{2}\\right)^2} = \\frac{a + \\frac{\\sqrt{3}}{2}b}{\\frac{1}{4}} = 4a + 2\\sqrt{3}b = 8$$\nBagi kedua ruas dengan 2:\n$$2a + \\sqrt{3}b = 4 \\quad \\text{...(2)}$$\n\n4. Selesaikan sistem persamaan (1) dan (2):\nDari (1): $2b = \\sqrt{3}(2 - a) \\implies b = \\frac{\\sqrt{3}(2 - a)}{2}$.\nSubstitusikan ke (2):\n$$2a + \\sqrt{3}\\left(\\frac{\\sqrt{3}(2 - a)}{2}\\right) = 4$$\n$$2a + \\frac{3(2 - a)}{2} = 4 \\iff 4a + 6 - 3a = 8 \\iff a = 2$$\nMaka $b = \\frac{\\sqrt{3}(2 - 2)}{2} = 0$.\n\n5. Hitung $a^2 + b^2$:\n$$a^2 + b^2 = 2^2 + 0^2 = 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-3b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis pembuat nol turunan trigonometri",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan aturan rantai trigonometri, penentuan akar persamaan trigonometri pada interval tertentu, dan evaluasi jumlah kuadrat akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persamaan fungsi trigonometri $f(x) = 9 - 8\\sin\\left(\\frac{1}{8}\\pi x\\right)$ didefinisikan pada daerah asal $D_f = \\{x \\mid 0 \\le x \\le 16, x \\in \\mathbb{R}\\}$. Jika $f'(x)$ bernilai nol pada $x = x_1$ dan $x = x_2$ dengan $x_1 < x_2$, tentukan nilai dari $x_1^2 + x_2^2$.",
+      "jawaban_benar": "160",
+      "alasan_benar": "Turunan pertama adalah $f'(x) = -8 \\cdot \\frac{\\pi}{8} \\cos\\left(\\frac{\\pi x}{8}\\right) = -\\pi \\cos\\left(\\frac{\\pi x}{8}\\right)$. Syarat $f'(x) = 0$ menghasilkan $\\cos\\left(\\frac{\\pi x}{8}\\right) = 0$. Pada interval $0 \\le x \\le 16$, nilai $\\frac{\\pi x}{8}$ berada pada $[0, 2\\pi]$, sehingga sudut yang memenuhi adalah $\\frac{\\pi}{2}$ dan $\\frac{3\\pi}{2}$. Diperoleh $x_1 = 4$ dan $x_2 = 12$. Maka $x_1^2 + x_2^2 = 4^2 + 12^2 = 16 + 144 = 160$.",
+      "distraktor": [
+        {
+          "teks": "80",
+          "alasan": "Hanya menghitung salah satu kuadrat lalu dikalikan dua atau salah mengambil pembuat nol sinus bukan kosinus."
+        },
+        {
+          "teks": "128",
+          "alasan": "Keliru mengambil solusi $\\frac{\\pi x}{8} = \\frac{\\pi}{4}$ dan $\\frac{7\\pi}{4}$ sehingga menghasilkan $x_1 = 2$ dan $x_2 = 14$, menghasilkan $4 + 196 = 200$, atau salah hitung kuadrat."
+        },
+        {
+          "teks": "208",
+          "alasan": "Keliru menganggap pembuat nol terjadi saat $\\sin\\left(\\frac{\\pi x}{8}\\right) = 0$ tanpa menurunkan fungsi terlebih dahulu."
+        }
+      ],
+      "pembahasan": "Turunan fungsi $f(x)$ diperoleh menggunakan turunan fungsi konstan dan turunan sinus dengan aturan rantai:\n$$f'(x) = 0 - 8 \\cdot \\cos\\left(\\frac{1}{8}\\pi x\\right) \\cdot \\frac{1}{8}\\pi = -\\pi \\cos\\left(\\frac{\\pi x}{8}\\right)$$\nAgar $f'(x) = 0$, maka:\n$$-\\pi \\cos\\left(\\frac{\\pi x}{8}\\right) = 0 \\iff \\cos\\left(\\frac{\\pi x}{8}\\right) = 0$$\nKarena $0 \\le x \\le 16$, maka rentang argumen adalah $0 \\le \\frac{\\pi x}{8} \\le 2\\pi$. Nilai argumen yang membuat kosinus bernilai nol pada rentang tersebut adalah:\n$$\\frac{\\pi x_1}{8} = \\frac{\\pi}{2} \\implies x_1 = 4$$\n$$\\frac{\\pi x_2}{8} = \\frac{3\\pi}{2} \\implies x_2 = 12$$\nDengan demikian, nilai dari $x_1^2 + x_2^2$ adalah:\n$$x_1^2 + x_2^2 = 4^2 + 12^2 = 16 + 144 = 160$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 136,
+        "bagian": "Ayo Berdiskusi",
+        "nomor": "3",
+        "teks": "kecepatan laba-laba pada t = 2 detik (kamu dapat menemukan kecepatan dengan mencari turunan pertama).",
+        "jawaban": "kecepatan diperoleh dari turunan kurva posisi",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kecepatan gerak partikel parametrik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan penentuan komponen kecepatan dari dua kurva koordinat menggunakan turunan fungsi aljabar serta perhitungan besar vektor kecepatan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah objek bergerak pada bidang Kartesius dengan posisi $(x(t), y(t))$ pada saat $t$ detik memenuhi persamaan $x(t) = 2t^2 - 2t + 1$ dan $y(t) = t^3 - t^2$. Kecepatan objek dirumuskan sebagai laju perubahan posisi $v(t) = \\sqrt{(x'(t))^2 + (y'(t))^2}$. Tentukan besar kecepatan objek tersebut pada saat $t = 2$ detik.",
+      "jawaban_benar": "10",
+      "alasan_benar": "$x'(t) = 4t - 2 \\implies x'(2) = 6$. $y'(t) = 3t^2 - 2t \\implies y'(2) = 12 - 4 = 8$. Maka $v(2) = \\sqrt{6^2 + 8^2} = 10$.",
+      "distraktor": [
+        {
+          "teks": "14",
+          "alasan": "Menjumlahkan langsung komponen kecepatan $x'(2) + y'(2) = 6 + 8 = 14$ tanpa menghitung resultan vektor."
+        },
+        {
+          "teks": "8",
+          "alasan": "Hanya mengambil komponen kecepatan vertikal $y'(2)$."
+        },
+        {
+          "teks": "2\\sqrt{7}",
+          "alasan": "Salah memasukkan tanda operasi pada turunan $x'(t)$ atau $y'(t)$ sehingga menghasilkan perhitungan kuadrat yang salah."
+        }
+      ],
+      "pembahasan": "Komponen kecepatan horizontal ditentukan oleh turunan $x(t)$ terhadap $t$:\n$$x'(t) = \\frac{d}{dt}(2t^2 - 2t + 1) = 4t - 2$$\nPada $t = 2$:\n$$x'(2) = 4(2) - 2 = 6$$\nKomponen kecepatan vertikal ditentukan oleh turunan $y(t)$ terhadap $t$:\n$$y'(t) = \\frac{d}{dt}(t^3 - t^2) = 3t^2 - 2t$$\nPada $t = 2$:\n$$y'(2) = 3(2)^2 - 2(2) = 12 - 4 = 8$$\nBesar kecepatan pada saat $t = 2$ detik adalah:\n$$v(2) = \\sqrt{(x'(2))^2 + (y'(2))^2} = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 140,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari h ( x ) = e f ( x ) adalah"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter titik stasioner eksponensial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penerapan aturan perkalian dan rantai pada fungsi eksponensial serta pembentukan sistem persamaan linier dua variabel dari kondisi stasioner.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+      "jawaban_benar": "-1",
+      "alasan_benar": "$f'(x) = 2e^{2x}(x^2 + ax + b) + e^{2x}(2x + a) = e^{2x}(2x^2 + (2a + 2)x + 2b + a)$. Titik stasioner di $x = 0 \\implies 2b + a = 0$. Titik stasioner di $x = 1 \\implies 2 + 2a + 2 + 2b + a = 0 \\implies 3a + 2b + 4 = 0$. Substitusi $2b = -a$ menghasilkan $2a + 4 = 0 \\implies a = -2$, sehingga $b = 1$. Maka $a + b = -2 + 1 = -1$.",
+      "distraktor": [
+        {
+          "teks": "1",
+          "alasan": "Kesalahan tanda saat menyelesaikan sistem persamaan linier sehingga mendapatkan $a = 2$ dan $b = -1$."
+        },
+        {
+          "teks": "-3",
+          "alasan": "Lupa mengalikan turunan dari pangkat eksponen ($2$) pada suku pertama aturan perkalian."
+        },
+        {
+          "teks": "0",
+          "alasan": "Keliru mengasumsikan $a = b$ langsung dari syarat titik stasioner di nol."
+        }
+      ],
+      "pembahasan": "Gunakan aturan perkalian turunan $y = u \\cdot v$ dengan $u = e^{2x}$ dan $v = x^2 + ax + b$:\n$$u'(x) = 2e^{2x}$$\n$$v'(x) = 2x + a$$\nMaka turunan pertama $f'(x)$ adalah:\n$$f'(x) = 2e^{2x}(x^2 + ax + b) + e^{2x}(2x + a) = e^{2x}(2x^2 + (2a + 2)x + 2b + a)$$\nKarena kurva memiliki titik stasioner di $x = 0$ dan $x = 1$, maka $f'(0) = 0$ dan $f'(1) = 0$.\nUntuk $x = 0$ (ingat $e^0 = 1$):\n$$f'(0) = 1 \\cdot (2(0)^2 + (2a + 2)(0) + 2b + a) = 0 \\implies 2b + a = 0 \\implies a = -2b$$\nUntuk $x = 1$ (karena $e^2 \\ne 0$):\n$$2(1)^2 + (2a + 2)(1) + 2b + a = 0 \\implies 2 + 2a + 2 + 2b + a = 0 \\implies 3a + 2b + 4 = 0$$\nSubstitusikan $a = -2b$ ke dalam persamaan kedua:\n$$3(-2b) + 2b + 4 = 0 \\implies -4b + 4 = 0 \\implies b = 1$$\nDiperoleh $a = -2(1) = -2$.\nNilai $a + b$ adalah:\n$$a + b = -2 + 1 = -1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 135,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan 2 x + sin x = u ^ x h dan cos x = v ^ x h , maka"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter garis singgung trigonometri",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan aturan pembagian turunan trigonometri, identitas Pythagoras, penentuan parameter dari gradien, serta evaluasi nilai fungsi pada sudut istimewa.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{\\sin x}{p + \\cos x}$ dengan parameter $p > 0$. Jika garis singgung kurva $y = f(x)$ pada absis $x = \\frac{\\pi}{2}$ memiliki gradien $\\frac{1}{4}$, tentukan nilai dari $f\\left(\\frac{\\pi}{3}\\right)$.",
+      "jawaban_benar": "\\frac{\\sqrt{3}}{5}",
+      "alasan_benar": "Turunan $f'(x) = \\frac{\\cos x(p + \\cos x) - \\sin x(-\\sin x)}{(p + \\cos x)^2} = \\frac{p\\cos x + 1}{(p + \\cos x)^2}$. Pada $x = \\frac{\\pi}{2}$, $f'\\left(\\frac{\\pi}{2}\\right) = \\frac{1}{p^2} = \\frac{1}{4} \\implies p = 2$ (karena $p > 0$). Maka $f\\left(\\frac{\\pi}{3}\\right) = \\frac{\\sin(\\pi/3)}{2 + \\cos(\\pi/3)} = \\frac{\\frac{1}{2}\\sqrt{3}}{2 + \\frac{1}{2}} = \\frac{\\sqrt{3}}{5}$.",
+      "distraktor": [
+        {
+          "teks": "\\frac{\\sqrt{3}}{3}",
+          "alasan": "Salah menentukan nilai $p$ menjadi $p = 1$ akibat lupa mengkuadratkan penyebut pada turunan pembagian."
+        },
+        {
+          "teks": "\\frac{\\sqrt{3}}{4}",
+          "alasan": "Lupa menambahkan nilai $\\cos(\\pi/3)$ pada penyebut fungsi $f(x)$."
+        },
+        {
+          "teks": "\\frac{1}{5}",
+          "alasan": "Tertukar antara $\\sin(\\pi/3)$ dan $\\cos(\\pi/3)$ pada pembilang."
+        }
+      ],
+      "pembahasan": "Gunakan aturan turunan fungsi pecahan $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$ dengan $u = \\sin x$ dan $v = p + \\cos x$:\n$$u'(x) = \\cos x$$\n$$v'(x) = -\\sin x$$\nMaka:\n$$f'(x) = \\frac{\\cos x(p + \\cos x) - \\sin x(-\\sin x)}{(p + \\cos x)^2} = \\frac{p\\cos x + \\cos^2 x + \\sin^2 x}{(p + \\cos x)^2}$$\nDengan identitas trigonometri $\\cos^2 x + \\sin^2 x = 1$:\n$$f'(x) = \\frac{p\\cos x + 1}{(p + \\cos x)^2}$$\nDiketahui gradien di $x = \\frac{\\pi}{2}$ adalah $\\frac{1}{4}$:\n$$f'\\left(\\frac{\\pi}{2}\\right) = \\frac{p\\cos(\\pi/2) + 1}{(p + \\cos(\\pi/2))^2} = \\frac{p(0) + 1}{(p + 0)^2} = \\frac{1}{p^2}$$\n$$\\frac{1}{p^2} = \\frac{1}{4} \\implies p^2 = 4$$\nKarena $p > 0$, maka $p = 2$.\nFungsi menjadi $f(x) = \\dfrac{\\sin x}{2 + \\cos x}$. Nilai fungsi pada $x = \\frac{\\pi}{3}$ adalah:\n$$f\\left(\\frac{\\pi}{3}\\right) = \\frac{\\sin(\\pi/3)}{2 + \\cos(\\pi/3)} = \\frac{\\frac{1}{2}\\sqrt{3}}{2 + \\frac{1}{2}} = \\frac{\\frac{1}{2}\\sqrt{3}}{\\frac{5}{2}} = \\frac{\\sqrt{3}}{5}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Perhatikan bahwa 2 x merupakan turunan dari ^1 + x 2h . Misalkan g ^ x h = 1 + x 2 , maka bentuk f ^ x h = ^1 + x 2h k menjadi = k f ^ x h ^ g ^ x hh"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter kurva berpangkat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penerapan aturan rantai pangkat aljabar, penafsiran garis singgung mendatar, substitusi titik kurva, dan eliminasi sistem persamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kurva suatu fungsi didefinisikan sebagai $y = (ax^2 + bx - 1)^3$. Garis singgung kurva di titik berabsis $x = 1$ sejajar dengan sumbu-$X$. Jika kurva tersebut melalui titik $(1, 8)$, tentukan nilai dari $b - a$.",
+      "jawaban_benar": "9",
+      "alasan_benar": "Kurva melalui $(1, 8) \\implies (a(1)^2 + b(1) - 1)^3 = 8 \\implies a + b - 1 = 2 \\implies a + b = 3$. Garis singgung sejajar sumbu-$X$ di $x = 1 \\implies y'(1) = 0$. Turunan $y' = 3(ax^2 + bx - 1)^2 (2ax + b)$. Di $x = 1$, $y'(1) = 3(2)^2 (2a + b) = 12(2a + b) = 0 \\implies 2a + b = 0$. Dari sistem $a + b = 3$ dan $2a + b = 0$, diperoleh $a = -3$ dan $b = 6$. Maka $b - a = 6 - (-3) = 9$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Keliru menghitung $a + b$ dan mengiranya sebagai nilai $b - a$."
+        },
+        {
+          "teks": "-9",
+          "alasan": "Terbalik menghitung $a - b = -3 - 6 = -9$."
+        },
+        {
+          "teks": "5",
+          "alasan": "Lupa menurunkan bagian dalam kurung $(2ax + b)$ sehingga persamaan kedua keliru."
+        }
+      ],
+      "pembahasan": "Kurva melalui titik $(1, 8)$, sehingga substitusi $x = 1$ dan $y = 8$ memberikan:\n$$(a(1)^2 + b(1) - 1)^3 = 8$$\n$$a + b - 1 = \\sqrt[3]{8} = 2 \\implies a + b = 3 \\quad \\text{...(Persamaan 1)}$$\nTurunan pertama $y$ terhadap $x$ dicari dengan aturan rantai:\n$$y' = 3(ax^2 + bx - 1)^2 \\cdot \\frac{d}{dx}(ax^2 + bx - 1) = 3(ax^2 + bx - 1)^2 (2ax + b)$$\nKarena garis singgung pada $x = 1$ sejajar sumbu-$X$, maka gradiennya nol ($y'(1) = 0$):\n$$y'(1) = 3(a(1)^2 + b(1) - 1)^2 (2a(1) + b) = 0$$\n$$3(2)^2 (2a + b) = 0 \\implies 12(2a + b) = 0 \\implies 2a + b = 0 \\quad \\text{...(Persamaan 2)}$$\nEliminasi Persamaan 1 dan Persamaan 2:\n$$(2a + b) - (a + b) = 0 - 3 \\implies a = -3$$\nSubstitusikan nilai $a = -3$ ke Persamaan 1:\n$$-3 + b = 3 \\implies b = 6$$\nDengan demikian, nilai dari $b - a$ adalah:\n$$b - a = 6 - (-3) = 9$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Latihan Soal Sifat-Sifat Turunan Fungsi",
+        "nomor": "2",
+        "teks": "Jari-jari sebuah bola bertambah panjang dengan laju 2 cm per detik. Misalkan jari-jari bola tersebut 30 cm. Tentukan laju bertambahnya luas permukaan bola dan laju bertambahnya volume bola.",
+        "jawaban": "Laju luas permukaan 480π cm²/detik dan laju volume 7.200π cm³/detik",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "laju perubahan terkait laju volume terhadap luas",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan hubungan turunan laju perubahan jari-jari, luas, dan volume secara simultan hingga perbandingan laju.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah balon udara berbentuk bola ditiup sehingga jari-jarinya bertambah dengan laju tetap $0{,}5\\text{ cm/detik}$. Pada saat jari-jari bola mencapai $10\\text{ cm}$, rasio laju pertambahan volume terhadap laju pertambahan luas permukaan balon tersebut adalah ....",
+      "jawaban_benar": "$5\\text{ cm}$",
+      "alasan_benar": "$\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$ dan $\\frac{dL}{dt} = 8\\pi r \\frac{dr}{dt}$, sehingga $\\frac{dV/dt}{dL/dt} = \\frac{4\\pi r^2}{8\\pi r} = \\frac{r}{2} = \\frac{10}{2} = 5\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$10\\text{ cm}$",
+          "alasan": "Siswa lupa membagi dengan faktor 2 dari turunan luas permukaan terhadap jari-jari."
+        },
+        {
+          "teks": "$2{,}5\\text{ cm}$",
+          "alasan": "Siswa mengalikan lagi dengan nilai laju $\\frac{dr}{dt} = 0{,}5$ pada hasil akhir rasio."
+        },
+        {
+          "teks": "$20\\text{ cm}$",
+          "alasan": "Siswa membalik rumus rasio sehingga menjadi $\\frac{2}{r}$ lalu dikalikan kuadrat jari-jari."
+        }
+      ],
+      "pembahasan": "Diketahui laju pertambahan jari-jari $\\frac{dr}{dt} = 0{,}5\\text{ cm/detik}$ saat $r = 10\\text{ cm}$.\nVolume bola: $V = \\frac{4}{3}\\pi r^3 \\implies \\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$.\nLuas permukaan bola: $L = 4\\pi r^2 \\implies \\frac{dL}{dt} = 8\\pi r \\frac{dr}{dt}$.\nRasio laju pertambahan volume terhadap laju pertambahan luas permukaan adalah:\n$$\\frac{\\frac{dV}{dt}}{\\frac{dL}{dt}} = \\frac{4\\pi r^2 \\frac{dr}{dt}}{8\\pi r \\frac{dr}{dt}} = \\frac{r}{2}$$\nSubstitusi $r = 10\\text{ cm}$ menghasilkan $\\frac{10}{2} = 5\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 127,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dengan menerapkan Aturan Rantai, diperoleh"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi turunan fungsi komposisi trigonometri",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dan mengevaluasi turunan rantai trigonometri berpangkat untuk menentukan nilai konstanta pembuat nol.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\cos^4(2x) - \\sin^4(2x)$. Jika turunan pertama $f'(x) = k \\sin(4x)$, maka nilai dari konstanta real $k$ adalah ....",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "$f(x) = \\cos(4x)$, sehingga $f'(x) = -4\\sin(4x)$, diperoleh $k = -4$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Siswa lupa tanda negatif dari turunan fungsi cosinus."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Siswa menurunkan tiap suku secara terpisah dan salah mengalikan faktor turunan rantai secara berlebih."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Siswa lupa mengalikan dengan turunan sudut $4x$ yaitu 4, hanya memperhitungkan 2."
+        }
+      ],
+      "pembahasan": "Gunakan identitas aljabar dan trigonometri terlebih dahulu:\n$$f(x) = (\\cos^2(2x) - \\sin^2(2x))(\\cos^2(2x) + \\sin^2(2x))$$\nKarena $\\cos^2(2x) + \\sin^2(2x) = 1$ dan $\\cos^2(2x) - \\sin^2(2x) = \\cos(4x)$, maka:\n$$f(x) = \\cos(4x)$$\nTurunkan menggunakan aturan rantai:\n$$f'(x) = -\\sin(4x) \\cdot 4 = -4\\sin(4x)$$\nKarena $f'(x) = k\\sin(4x)$, diperoleh nilai $k = -4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "STT 2: f ( x ) = tan x , maka f l( x ) = sec2 x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi nilai turunan fungsi trigonometri rasional",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan turunan hasil bagi trigonometri serta identitas pembuktian untuk menyederhanakan nilai fungsi turunan pada sudut tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $g(x) = \\dfrac{\\tan x}{1 + \\tan x}$ untuk $x \\ne \\frac{\\pi}{2} + k\\pi$ dan $\\tan x \\ne -1$. Nilai dari $g'\\left(\\frac{\\pi}{4}\\right)$ adalah ....",
+      "jawaban_benar": "$\\dfrac{1}{2}$",
+      "alasan_benar": "$g'(x) = \\frac{\\sec^2 x}{(1 + \\tan x)^2}$. Untuk $x = \\frac{\\pi}{4}$, didapat $\\frac{2}{(1 + 1)^2} = \\frac{2}{4} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Siswa salah menyangka $\\sec^2(\\pi/4) = 4$ atau salah hitung penyebut menjadi 2."
+        },
+        {
+          "teks": "$\\dfrac{1}{4}$",
+          "alasan": "Siswa menghitung pembilang sebagai $1$ bukan $\\sec^2(\\pi/4) = 2$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa hanya menghitung turunan pembilang tanpa membagi dengan $(v(x))^2$."
+        }
+      ],
+      "pembahasan": "Misalkan $u(x) = \\tan x \\implies u'(x) = \\sec^2 x$ dan $v(x) = 1 + \\tan x \\implies v'(x) = \\sec^2 x$.\nMenggunakan sifat turunan pembagian fungsi aljabar/trigonometri:\n$$g'(x) = \\frac{u'(x)v(x) - u(x)v'(x)}{(v(x))^2}$$\n$$g'(x) = \\frac{\\sec^2 x(1 + \\tan x) - \\tan x(\\sec^2 x)}{(1 + \\tan x)^2} = \\frac{\\sec^2 x}{(1 + \\tan x)^2}$$\nSubstitusikan $x = \\frac{\\pi}{4}$:\n$\\tan\\left(\\frac{\\pi}{4}\\right) = 1$\n$\\sec\\left(\\frac{\\pi}{4}\\right) = \\sqrt{2} \\implies \\sec^2\\left(\\frac{\\pi}{4}\\right) = 2$\nMaka:\n$$g'\\left(\\frac{\\pi}{4}\\right) = \\frac{2}{(1 + 1)^2} = \\frac{2}{4} = \\frac{1}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 141,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sifat Turunan ax"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "persamaan garis singgung eksponensial umum",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi gradien dari turunan fungsi eksponensial basis sebarang $a^x$ dan merumuskan titik potong kurva garis singgung pada sumbu koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis singgung kurva $f(x) = 2^{3x - 1}$ di titik yang berabsis $x = 1$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai dari konstanta $c$ adalah ....",
+      "jawaban_benar": "$4(1 - 3\\ln 2)$",
+      "alasan_benar": "$y_1 = 4$, gradien $m = 12\\ln 2$. Persamaan garis singgung $y - 4 = 12\\ln 2(x - 1)$, titik potong sumbu-Y ($x=0$) menghasilkan $c = 4 - 12\\ln 2 = 4(1 - 3\\ln 2)$.",
+      "distraktor": [
+        {
+          "teks": "$4(1 + 3\\ln 2)$",
+          "alasan": "Siswa salah tanda saat memindahkan suku konstanta ke ruas kanan."
+        },
+        {
+          "teks": "$4(1 - \\ln 2)$",
+          "alasan": "Siswa lupa mengalikan dengan turunan rantai pangkat $3x - 1$ yaitu 3."
+        },
+        {
+          "teks": "$1 - 12\\ln 2$",
+          "alasan": "Siswa salah menghitung nilai ordinat $f(1) = 2^2 = 4$ menjadi $1$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan ordinat titik singgung untuk $x_1 = 1$:\n$$y_1 = f(1) = 2^{3(1) - 1} = 2^2 = 4$$\nTitik singgung berada di $(1, 4)$.\n\nLangkah 2: Menentukan gradien garis singgung $m = f'(1)$.\nTurunan $f(x) = 2^{3x - 1}$ menggunakan sifat turunan $a^{g(x)}$:\n$$f'(x) = 2^{3x - 1} \\cdot \\ln 2 \\cdot 3 = 3\\ln 2 \\cdot 2^{3x - 1}$$\nUntuk $x = 1$:\n$$m = f'(1) = 3\\ln 2 \\cdot 2^2 = 12\\ln 2$$\n\nLangkah 3: Persamaan garis singgung di titik $(1, 4)$:\n$$y - y_1 = m(x - x_1) \\implies y - 4 = 12\\ln 2(x - 1)$$\n\nLangkah 4: Menentukan titik potong dengan sumbu-$Y$ ($x = 0$):\n$$y - 4 = 12\\ln 2(0 - 1)$$\n$$y = 4 - 12\\ln 2 = 4(1 - 3\\ln 2)$$\nJadi nilai $c = 4(1 - 3\\ln 2)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ( x ) = sin x dan g ( x ) = cos x adalah fungsi-fungsi yang kontinu di R , maka f l ( x ) = cos x dan g l ( x ) = - sin x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis nilai kosinus selisih absis stasioner",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan turunan hasil bagi trigonometri, analisis pembuat nol untuk absis stasioner, dan evaluasi trigonometri sudut relasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{\\sin x}{2 + \\cos x}$ didefinisikan pada interval $[0, 2\\pi]$. Jika $x_1$ dan $x_2$ merupakan dua absis dari titik stasioner kurva $y = f(x)$ dengan $x_1 < x_2$, nilai dari $\\cos(x_1 - x_2)$ adalah ....",
+      "jawaban_benar": "$-\\dfrac{1}{2}$",
+      "alasan_benar": "Turunan $f'(x) = \\frac{\\cos x(2 + \\cos x) - \\sin x(-\\sin x)}{(2 + \\cos x)^2} = \\frac{2\\cos x + 1}{(2 + \\cos x)^2}$. Titik stasioner diperoleh saat $f'(x) = 0 \\iff 2\\cos x + 1 = 0 \\iff \\cos x = -\\frac{1}{2}$. Pada selang $[0, 2\\pi]$, nilai absisnya adalah $x_1 = \\frac{2\\pi}{3}$ dan $x_2 = \\frac{4\\pi}{3}$. Nilai $\\cos(x_1 - x_2) = \\cos\\left(\\frac{2\\pi}{3} - \\frac{4\\pi}{3}\\right) = \\cos\\left(-\\frac{2\\pi}{3}\\right) = \\cos\\left(\\frac{2\\pi}{3}\\right) = -\\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{1}{2}$",
+          "alasan": "Siswa salah menentukan tanda kuadran atau mengabaikan tanda minus pada kosinus sudut tumpul"
+        },
+        {
+          "teks": "$-\\dfrac{\\sqrt{3}}{2}$",
+          "alasan": "Siswa tertukar nilai sudut istimewa antara sinus dan kosinus untuk sudut berpenyiku"
+        },
+        {
+          "teks": "$\\dfrac{\\sqrt{3}}{2}$",
+          "alasan": "Siswa tertukar antara sinus dan kosinus serta keliru menentukan tanda kuadran"
+        }
+      ],
+      "pembahasan": "Gunakan aturan turunan fungsi pecahan $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$:\nMisalkan $u(x) = \\sin x \\implies u'(x) = \\cos x$ dan $v(x) = 2 + \\cos x \\implies v'(x) = -\\sin x$.\n\nMaka turunan pertamanya adalah:\n$$f'(x) = \\frac{\\cos x(2 + \\cos x) - \\sin x(-\\sin x)}{(2 + \\cos x)^2} = \\frac{2\\cos x + \\cos^2 x + \\sin^2 x}{(2 + \\cos x)^2} = \\frac{2\\cos x + 1}{(2 + \\cos x)^2}$$\n\nTitik stasioner tercapai saat $f'(x) = 0$:\n$$2\\cos x + 1 = 0 \\iff \\cos x = -\\frac{1}{2}$$\n\nPada interval $[0, 2\\pi]$, nilai $x$ yang memenuhi adalah:\n$$x_1 = \\frac{2\\pi}{3} \\quad \\text{dan} \\quad x_2 = \\frac{4\\pi}{3}$$\n\nSehingga nilai dari $\\cos(x_1 - x_2)$ adalah:\n$$\\cos\\left(\\frac{2\\pi}{3} - \\frac{4\\pi}{3}\\right) = \\cos\\left(-\\frac{2\\pi}{3}\\right) = \\cos\\left(\\frac{2\\pi}{3}\\right) = -\\frac{1}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari f ( x ) = e^x adalah e^x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah garis singgung kurva eksponensial",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan penerapan turunan perkalian dan aturan rantai fungsi eksponensial untuk menentukan garis singgung dan luas daerah bangun datar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis singgung kurva $f(x) = x e^{2 - x^2}$ pada titik yang berabsis $x = 1$ memotong sumbu-$X$ di titik $(p, 0)$ dan sumbu-$Y$ di titik $(0, q)$. Luas daerah segitiga yang dibatasi oleh garis singgung tersebut dan kedua sumbu koordinat adalah ....",
+      "jawaban_benar": "$2e$",
+      "alasan_benar": "Nilai $f(1) = 1 \\cdot e^{2-1} = e$. Turunan fungsi $f'(x) = 1 \\cdot e^{2-x^2} + x(-2x)e^{2-x^2} = (1 - 2x^2)e^{2-x^2}$, sehingga gradien garis singgung $m = f'(1) = (1 - 2)e = -e$. Persamaan garis singgung: $y - e = -e(x - 1) \\iff ex + y = 2e$. Titik potong sumbu-$X$ adalah $(2, 0)$ dan sumbu-$Y$ adalah $(0, 2e)$. Luas segitiga $L = \\frac{1}{2} \\cdot |2| \\cdot |2e| = 2e$.",
+      "distraktor": [
+        {
+          "teks": "$e$",
+          "alasan": "Siswa keliru membagi dua nilai titik potong sumbu-Y atau salah substitusi titik potong"
+        },
+        {
+          "teks": "$4e$",
+          "alasan": "Siswa lupa mengalikan dengan faktor setengah pada rumus luas segitiga"
+        },
+        {
+          "teks": "$\\dfrac{e}{2}$",
+          "alasan": "Siswa salah menentukan absis titik potong sumbu-X menjadi 1/2"
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan titik singgung pada kurva saat $x = 1$:\n$$y_1 = f(1) = 1 \\cdot e^{2 - 1^2} = e$$\nTitik singgung berada di $(1, e)$.\n\nLangkah 2: Tentukan turunan pertama menggunakan aturan perkalian dan aturan rantai:\n$$u = x \\implies u' = 1$$\n$$v = e^{2 - x^2} \\implies v' = -2x e^{2 - x^2}$$\n$$f'(x) = u'v + uv' = e^{2 - x^2} + x(-2x e^{2 - x^2}) = (1 - 2x^2)e^{2 - x^2}$$\n\nLangkah 3: Tentukan gradien garis singgung $m$ di $x = 1$:\n$$m = f'(1) = (1 - 2(1^2))e^{2 - 1} = -1 \\cdot e = -e$$\n\nLangkah 4: Tentukan persamaan garis singgung:\n$$y - y_1 = m(x - x_1)$$\n$$y - e = -e(x - 1)$$\n$$y - e = -ex + e \\iff ex + y = 2e$$\n\nLangkah 5: Tentukan titik potong dengan sumbu koordinat:\n- Titik potong sumbu-$X$ ($y = 0$): $ex = 2e \\implies x = 2$, sehingga $p = 2$.\n- Titik potong sumbu-$Y$ ($x = 0$): $y = 2e$, sehingga $q = 2e$.\n\nLangkah 6: Hitung luas segitiga:\n$$L = \\frac{1}{2} \\cdot |p| \\cdot |q| = \\frac{1}{2} \\cdot 2 \\cdot 2e = 2e$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ( x ) = c adalah fungsi yang kontinu di R , maka f l ( x ) = 0 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "hasil kali nilai stasioner fungsi eksponensial",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan penentuan turunan fungsi perkalian aljabar-eksponensial, pencarian akar-akar stasioner, serta evaluasi hasil kali nilai-nilai stasioner.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = (x^2 - 4x + 1)e^x$. Jika $x_1$ dan $x_2$ adalah absis dari titik stasioner fungsi $f(x)$ dengan $x_1 < x_2$, maka nilai dari $f(x_1) \\cdot f(x_2)$ adalah ....",
+      "jawaban_benar": "$-12e^2$",
+      "alasan_benar": "Turunan $f'(x) = (2x - 4)e^x + (x^2 - 4x + 1)e^x = (x^2 - 2x - 3)e^x = (x - 3)(x + 1)e^x$. Stasioner saat $f'(x) = 0 \\implies x_1 = -1$ dan $x_2 = 3$. Nilai $f(-1) = ((-1)^2 - 4(-1) + 1)e^{-1} = 6e^{-1}$. Nilai $f(3) = (3^2 - 4(3) + 1)e^3 = -2e^3$. Hasil kali $f(x_1) \\cdot f(x_2) = (6e^{-1})(-2e^3) = -12e^2$.",
+      "distraktor": [
+        {
+          "teks": "$12e^2$",
+          "alasan": "Siswa salah tanda negatif saat mengevaluasi nilai fungsi f(3)"
+        },
+        {
+          "teks": "$-12e^4$",
+          "alasan": "Siswa keliru menjumlahkan pangkat eksponen pada perkalian e^(-1) dan e^3"
+        },
+        {
+          "teks": "$-6e^2$",
+          "alasan": "Siswa salah saat menghitung nilai f(-1) karena keliru tanda kuadrat atau perkalian negatif"
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan turunan $f'(x)$ menggunakan sifat perkalian fungsi $(uv)' = u'v + uv'$:\nMisalkan $u = x^2 - 4x + 1 \\implies u' = 2x - 4$\nMisalkan $v = e^x \\implies v' = e^x$\n$$f'(x) = (2x - 4)e^x + (x^2 - 4x + 1)e^x$$\n\nLangkah 2: Sederhanakan bentuk turunan:\n$$f'(x) = (x^2 - 2x - 3)e^x$$\n\nLangkah 3: Faktorkan untuk menemukan absis titik stasioner saat $f'(x) = 0$:\n$$(x - 3)(x + 1)e^x = 0$$\nKarena $e^x > 0$ untuk seluruh $x \\in \\mathbb{R}$, maka:\n$$(x - 3)(x + 1) = 0 \\implies x = 3 \\quad \\text{atau} \\quad x = -1$$\nKarena $x_1 < x_2$, maka diperoleh $x_1 = -1$ dan $x_2 = 3$.\n\nLangkah 4: Hitung nilai fungsi di $x_1 = -1$:\n$$f(-1) = ((-1)^2 - 4(-1) + 1)e^{-1} = (1 + 4 + 1)e^{-1} = 6e^{-1}$$\n\nLangkah 5: Hitung nilai fungsi di $x_2 = 3$:\n$$f(3) = (3^2 - 4(3) + 1)e^3 = (9 - 12 + 1)e^3 = -2e^3$$\n\nLangkah 6: Hitung hasil kali nilai stasioner:\n$$f(x_1) \\cdot f(x_2) = (6e^{-1}) \\cdot (-2e^3) = -12e^{-1 + 3} = -12e^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

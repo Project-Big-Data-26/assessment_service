@@ -1,0 +1,686 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "10 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas11-b01-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": "Latihan 1.2",
+        "nomor": "1.c",
+        "teks": "f (x) = √ x − 3 + 4",
+        "jawaban": "Domain x >= 3, Range y >= 4",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter fungsi bentuk akar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa menganalisis parameter fungsi bentuk akar dari informasi daerah asal dan daerah hasil gabungan, lalu menguji kebenaran nilai ekspresi aljabar parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi bentuk akar didefinisikan sebagai $f(x) = \\sqrt{px - 28} + q$ dengan domain $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 7\\}$ dan daerah hasil (*range*) $R_f = \\{y \\in \\mathbb{R} \\mid y \\ge -5\\}$. Berdasarkan karakteristik fungsi tersebut, nilai dari ekspresi $2p - 3q$ adalah ....",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Syarat domain $px - 28 \\ge 0 \\iff x \\ge \\frac{28}{p}$. Karena domain $x \\ge 7$, maka $\\frac{28}{p} = 7 \\implies p = 4$. Nilai minimum akar kuadrat utama adalah $0$, sehingga nilai minimum dari $f(x)$ adalah $0 + q = q$. Karena range $y \\ge -5$, maka $q = -5$. Nilai ekspresi $2p - 3q = 2(4) - 3(-5) = 8 + 15 = 23$.",
+      "distraktor": [
+        {
+          "teks": "-7",
+          "alasan": "Siswa keliru menghitung tanda pada operasi pengurangan bilangan negatif: $8 - 15 = -7$."
+        },
+        {
+          "teks": "17",
+          "alasan": "Siswa salah menentukan nilai $p = 1$ dari pembagian $28 - 7$ atau salah hitung parameter."
+        },
+        {
+          "teks": "-23",
+          "alasan": "Siswa tertukar tanda saat mengidentifikasi nilai $q = 5$ sehingga memperoleh $8 - 3(5) = -7$ atau salah tanda total."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi bentuk akar $f(x) = \\sqrt{px - 28} + q$:\n1. Agar terdefinisi pada bilangan riil, nilai di dalam akar harus tak negatif: $px - 28 \\ge 0 \\iff px \\ge 28 \\iff x \\ge \\frac{28}{p}$ (dengan $p > 0$).\n2. Diketahui batas domain adalah $x \\ge 7$, sehingga $\\frac{28}{p} = 7 \\iff p = 4$.\n3. Karena nilai $\\sqrt{4x - 28} \\ge 0$, nilai keluaran fungsi adalah $f(x) \\ge q$.\n4. Diketahui batas range adalah $y \\ge -5$, sehingga $q = -5$.\n5. Nilai $2p - 3q = 2(4) - 3(-5) = 8 + 15 = 23$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana menentukan domain, kodomain, dan range dari suatu fungsi jika diberikan dalam bentuk aljabar?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis domain alami fungsi kombinasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa mengevaluasi irisan syarat ganda pertidaksamaan linear dan kuadrat di bawah tanda akar dan pecahan penyebut untuk menentukan domain alami fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah fungsi terdefinisi melalui bentuk aljabar $f(x) = \\frac{\\sqrt{15 - 3x}}{\\sqrt{x^2 - 4}}$. Agar fungsi $f(x)$ terdefinisi dan menghasilkan nilai pada himpunan bilangan riil $\\mathbb{R}$, maka daerah asal alami (*domain*) dari fungsi tersebut adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid x < -2 \\text{ atau } 2 < x \\le 5\\}$",
+      "alasan_benar": "Syarat pembilang: $15 - 3x \\ge 0 \\iff 3x \\le 15 \\iff x \\le 5$. Syarat penyebut: karena berada di bawah akar dan sebagai pembagi, maka $x^2 - 4 > 0 \\iff (x - 2)(x + 2) > 0 \\iff x < -2$ atau $x > 2$. Irisan dari kedua syarat tersebut: $(x \\le 5) \\cap (x < -2 \\text{ atau } x > 2)$, yang menghasilkan $x < -2$ atau $2 < x \\le 5$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -2 < x < 2 \\text{ atau } x \\ge 5\\}$",
+          "alasan": "Siswa salah menentukan tanda interval penyelesaian pertidaksamaan kuadrat $x^2 - 4 > 0$ menjadi di antara akar-akarnya."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\le -2 \\text{ atau } 2 \\le x \\le 5\\}$",
+          "alasan": "Siswa lupa bahwa penyebut tidak boleh sama dengan nol, sehingga memasukkan tanda sama dengan pada nilai $x = -2$ dan $x = 2$."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid 2 < x \\le 5\\}$",
+          "alasan": "Siswa melupakan domain untuk interval bilangan negatif $x < -2$ yang juga memenuhi syarat $x^2 - 4 > 0$ dan $x \\le 5$."
+        }
+      ],
+      "pembahasan": "Untuk menentukan daerah asal alami (*domain*) fungsi aljabar $f(x) = \\frac{\\sqrt{15 - 3x}}{\\sqrt{x^2 - 4}}$:\n1. Syarat numerus akar pada pembilang: $15 - 3x \\ge 0 \\implies -3x \\ge -15 \\implies x \\le 5$.\n2. Syarat numerus akar pada penyebut: bernilai positif murni (karena penyebut pecahan tidak boleh nol): $x^2 - 4 > 0 \\implies (x - 2)(x + 2) > 0 \\implies x < -2$ atau $x > 2$.\n3. Mengambil irisan dari kedua syarat:\n- Untuk $x < -2$: seluruh nilai ini memenuhi $x \\le 5$, sehingga daerah ini memenuhi.\n- Untuk $x > 2$: dipadukan dengan $x \\le 5$, didapat $2 < x \\le 5$.\nJadi, domain fungsi adalah $\\{x \\in \\mathbb{R} \\mid x < -2 \\text{ atau } 2 < x \\le 5\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Gunakan Microsoft Excel atau Geogebra untuk menggambar f (x) = x 2 x − 1 , dan tentukan domain dan range-nya."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "desain dan pembatasan daerah hasil fungsi rasional",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa menganalisis syarat eksistensi nilai variabel bebas dari fungsi rasional linear dan merumuskan daerah hasil (*range*) menggunakan metode manipulasi aljabar invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi rasional $f(x) = \\frac{4x - 9}{2x + 6}$ dengan daerah asal alaminya $D_f$. Jika daerah hasil fungsi tersebut dinyatakan dalam bentuk himpunan $R_f = \\{y \\in \\mathbb{R} \\mid y \\ne k\\}$, maka nilai $k$ yang tidak mungkin pernah dicapai oleh fungsi tersebut adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Misalkan $y = \\frac{4x - 9}{2x + 6}$. Maka $y(2x + 6) = 4x - 9 \\iff 2xy + 6y = 4x - 9 \\iff x(2y - 4) = -6y - 9 \\iff x = \\frac{-6y - 9}{2y - 4}$. Agar nilai $x$ riil dapat ditemukan untuk suatu masukan $y$, penyebut tidak boleh nol, yaitu $2y - 4 \\ne 0 \\iff 2y \\ne 4 \\iff y \\ne 2$. Jadi nilai yang dikecualikan dari range adalah $k = 2$.",
+      "distraktor": [
+        {
+          "teks": "-3",
+          "alasan": "Siswa tertukar antara pembuat nol penyebut fungsi asal (nilai yang dikeluarkan dari domain: $2x + 6 = 0 \\implies x = -3$) dengan nilai yang dikeluarkan dari range."
+        },
+        {
+          "teks": "-1,5",
+          "alasan": "Siswa membagi konstanta pembilang dengan penyebut secara keliru: $-9 / 6 = -1,5$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa hanya mengambil koefisien $x$ pada pembilang tanpa membaginya dengan koefisien $x$ pada penyebut."
+        }
+      ],
+      "pembahasan": "Untuk mencari daerah hasil (*range*) fungsi rasional $y = \\frac{4x - 9}{2x + 6}$:\n1. Nyatakan $x$ dalam variabel $y$:\n   $$y(2x + 6) = 4x - 9$$\n   $$2xy + 6y = 4x - 9$$\n   $$2xy - 4x = -6y - 9$$\n   $$x(2y - 4) = -(6y + 9)$$\n   $$x = \\frac{-(6y + 9)}{2y - 4}$$\n2. Nilai $x$ terdefinisi pada bilangan riil jika dan hanya jika penyebut pecahan tidak sama dengan nol:\n   $$2y - 4 \\ne 0 \\implies 2y \\ne 4 \\implies y \\ne 2$$\n3. Dengan demikian, himpunan daerah hasil (*range*) adalah $R_f = \\{y \\in \\mathbb{R} \\mid y \\ne 2\\}$. Nilai $k$ adalah $2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0024-latihan-11-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi relasi konversi satuan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi apakah relasi kuadratik hasil modifikasi konversi satuan memenuhi kriteria fungsi dan menentukan syarat batasnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Satuan daya dalam teknik mesin dinyatakan dalam daya kuda metrik (PS) dan kilowatt (kW) dengan kesetaraan $1\\text{ PS} = 0,735\\text{ kW}$. Sebuah laboratorium memodelkan rugi-rugi disipasi daya $P_d$ (dalam $\\text{kW}$) sebagai fungsi terhadap daya mesin $x$ (dalam $\\text{PS}$) melalui relasi $P_d^2 - 0,735 x P_d = 0$. Agar relasi tersebut mendefinisikan disipasi daya positif $P_d$ sebagai fungsi tunggal dari $x$ untuk $x > 0$, evaluasi bentuk rumus fungsi $P_d(x)$ yang valid beserta alasannya.",
+      "jawaban_benar": "$P_d(x) = 0,735x$, karena setiap nilai masukan $x > 0$ menghasilkan tepat satu keluaran positif bernilai nyata",
+      "alasan_benar": "Persamaan $P_d^2 - 0,735xP_d = 0$ menghasilkan dua cabang yaitu $P_d = 0$ atau $P_d = 0,735x$. Karena disyaratkan disipasi daya bernilai positif ($P_d > 0$) untuk masukan $x > 0$, cabang $P_d = 0$ gugur, menyisakan relasi tunggal $P_d(x) = 0,735x$ yang memenuhi definisi fungsi.",
+      "distraktor": [
+        {
+          "teks": "$P_d(x) = \\pm 0,735x$, karena persamaan kuadrat memiliki dua akar penyelesaian untuk setiap nilai $x$",
+          "alasan": "Siswa mempertahankan tanda plus-minus tanpa mengeliminasi nilai non-positif sehingga melanggar syarat tunggal keluaran fungsi."
+        },
+        {
+          "teks": "$P_d(x) = \\frac{x}{0,735}$, karena satuan PS dikonversi terbalik terhadap kilowatt",
+          "alasan": "Siswa salah melakukan operasi pembagian konversi alih-alih memanfaatkan relasi faktorisasi yang diberikan."
+        },
+        {
+          "teks": "Relasi tidak dapat dijadikan fungsi karena persamaan berderajat dua selalu menghasilkan dua nilai keluaran berbeda",
+          "alasan": "Siswa gagal melihat bahwa pembatasan domain/kondisi fisis $P_d > 0$ mereduksi relasi menjadi fungsi tunggal."
+        }
+      ],
+      "pembahasan": "Persamaan $P_d^2 - 0,735x P_d = 0$ difaktorkan menjadi $P_d(P_d - 0,735x) = 0$.\nAkar-akarnya adalah $P_d = 0$ atau $P_d = 0,735x$.\nKarena disyaratkan $P_d > 0$ untuk setiap nilai masukan $x > 0$, maka akar $P_d = 0$ tidak memenuhi syarat fisis yang ditentukan.\nDengan demikian, tersisa $P_d = 0,735x$. Setiap masukan $x > 0$ memetakan tepat ke satu nilai keluaran positif, sehingga $P_d(x) = 0,735x$ merupakan fungsi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana menentukan domain, kodomain, dan range dari suatu fungsi jika diberikan dalam bentuk aljabar?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis domain alami fungsi irasional bersyarat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi irisan pertidaksamaan pecahan aljabar di bawah tanda akar dan syarat penyebut tak nol secara simultan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal alami (*domain*) dari fungsi $f(x) = \\sqrt{\\frac{2x - 6}{8 - x}} + \\frac{1}{\\sqrt{x^2 - 16}}$ pada himpunan bilangan riil $\\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid 4 < x < 8\\}$",
+      "alasan_benar": "Syarat suku pertama: $\\frac{2x - 6}{8 - x} \\ge 0 \\iff 3 \\le x < 8$. Syarat suku kedua: $x^2 - 16 > 0 \\iff x < -4$ atau $x > 4$. Irisan keduanya menghasilkan interval terbuka $4 < x < 8$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid 3 \\le x \\le 8\\}$",
+          "alasan": "Siswa hanya menyelesaikan syarat tanda akar pertama dan mengabaikan batas penyebut pada suku kedua."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid 4 \\le x < 8\\}$",
+          "alasan": "Siswa memasukkan $x = 4$ padahal penyebut tidak boleh bernilai nol ($x^2 - 16 > 0$, bukan $\\ge 0$)."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid 3 \\le x < 4 \\text{ atau } 4 < x < 8\\}$",
+          "alasan": "Siswa salah menentukan himpunan penyelesaian untuk $x^2 - 16 > 0$ dengan menganggap nilai di antara $-4$ dan $4$ memenuhi."
+        }
+      ],
+      "pembahasan": "Agar fungsi $f(x)$ terdefinisi pada bilangan riil, kedua suku harus terdefinisi sekaligus:\n\n1. Suku pertama: $\\sqrt{\\frac{2x - 6}{8 - x}}$\nSyarat di bawah akar: $\\frac{2(x - 3)}{8 - x} \\ge 0$ dengan penyebut $8 - x \\ne 0$.\nUji garis bilangan dengan pembuat nol $x = 3$ dan $x = 8$:\nDiperoleh interval: $3 \\le x < 8$.\n\n2. Suku kedua: $\\frac{1}{\\sqrt{x^2 - 16}}$\nKarena berada di penyebut dalam akar, maka radikan harus bernilai positif murni:\n$x^2 - 16 > 0 \\iff (x - 4)(x + 4) > 0$\nDiperoleh interval: $x < -4$ atau $x > 4$.\n\n3. Menentukan irisan dari kedua syarat:\n$[3, 8) \\cap ((-\\infty, -4) \\cup (4, \\infty)) = (4, 8)$\n\nJadi, daerah asal alaminya adalah $\\{x \\in \\mathbb{R} \\mid 4 < x < 8\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0025-latihan-11-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi model eksponensial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembentukan model eksponensial bertingkat, evaluasi laju pertumbuhan rasional, dan prediksi nilai keluaran pada periode bersyarat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan catatan laboratorium biologi, suatu koloni kultur mikroba pada jam ke-$1$ berjumlah $12$ ribu sel. Pada jam ke-$2$ dan jam ke-$3$, populasi koloni tersebut berkembang berturut-turut menjadi $36$ ribu dan $108$ ribu sel. Jika pertumbuhan populasi mikroba tersebut konsisten mengikuti model fungsi eksponensial $P(t) = a \\cdot b^{t-1}$ dengan $t$ menyatakan waktu dalam jam dan $P(t)$ menyatakan jumlah sel dalam ribuan, populasi mikroba tersebut pada jam ke-$6$ adalah ....",
+      "jawaban_benar": "$2.916$ ribu sel",
+      "alasan_benar": "Rasio pertumbuhan $b = \\frac{36}{12} = 3$ dan nilai awal $a = 12$. Pada jam ke-$6$, $P(6) = 12 \\cdot 3^{6-1} = 12 \\cdot 3^5 = 12 \\cdot 243 = 2.916$ ribu sel.",
+      "distraktor": [
+        {
+          "teks": "$8.748$ ribu sel",
+          "alasan": "Siswa salah menggunakan eksponen $t$ langsung tanpa pergeseran awal, yaitu menghitung $12 \\cdot 3^6 = 12 \\cdot 729 = 8.748$."
+        },
+        {
+          "teks": "$972$ ribu sel",
+          "alasan": "Siswa salah menghitung pangkat dengan mengurangkan eksponen satu tingkat terlalu rendah, yaitu $12 \\cdot 3^4 = 972$."
+        },
+        {
+          "teks": "$1.458$ ribu sel",
+          "alasan": "Siswa salah mengasumsikan suku pertama $a = 6$ bukannya $12$, sehingga $6 \\cdot 3^5 = 1.458$."
+        }
+      ],
+      "pembahasan": "Model fungsi eksponensial pertumbuhan populasi mikroba berbentuk $P(t) = a \\cdot b^{t-1}$.\n1. Dari data awal jam ke-1 ($t = 1$): $P(1) = a = 12$.\n2. Dari data jam ke-2 ($t = 2$): $P(2) = 12 \\cdot b^{2-1} = 36 \\implies b = 3$.\n3. Cek data jam ke-3 ($t = 3$): $P(3) = 12 \\cdot 3^2 = 12 \\cdot 9 = 108$ (konsisten).\n4. Hitung populasi pada jam ke-6 ($t = 6$):\n$P(6) = 12 \\cdot 3^{6-1} = 12 \\cdot 3^5 = 12 \\cdot 243 = 2.916$ ribu sel.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": "Latihan 1.2",
+        "nomor": "1.a",
+        "teks": "f (x) = x^2 - 1",
+        "jawaban": "Domain: {x | x in R}, Range: {y | y >= -1, y in R}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis range kuadratik domain terbatas",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan titik stasioner kurva kuadrat, pengujian ketercakupan puncak dalam domain tertutup, dan evaluasi nilai minimum serta maksimum lokal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi kuadrat $f(x) = 2x^2 - 12x + 11$ dibatasi pada domain tertutup $D_f = \\{x \\in \\mathbb{R} \\mid 1 \\le x \\le 5\\}$. Daerah hasil (*range*) dari fungsi $f(x)$ pada domain tersebut adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid -7 \\le y \\le 1\\}$",
+      "alasan_benar": "Titik puncak berada pada $x_p = -\\frac{-12}{2(2)} = 3 \\in [1, 5]$. Nilai minimum $f(3) = 2(9) - 12(3) + 11 = -7$. Uji batas domain: $f(1) = 2(1) - 12(1) + 11 = 1$ dan $f(5) = 2(25) - 12(5) + 11 = 1$. Maka daerah hasil $[-7, 1]$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid 1 \\le y \\le 11\\}$",
+          "alasan": "Siswa hanya mengevaluasi ujung-ujung interval $x=1$ dan mengira nilai konstanta $c=11$ sebagai nilai maksimum tanpa memeriksa titik balik."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid -7 \\le y \\le 11\\}$",
+          "alasan": "Siswa memasukkan nilai titik balik minimum $-7$, namun untuk batas atas mengambil nilai potong sumbu $y$ saat $x=0$ ($f(0)=11$) yang sebenarnya di luar domain tertutup."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid -1 \\le y \\le 1\\}$",
+          "alasan": "Siswa melakukan kesalahan perhitungan saat menentukan koordinat puncak parabola."
+        }
+      ],
+      "pembahasan": "Langkah pengerjaan:\n1. Tentukan sumbu simetri fungsi kuadrat $f(x) = 2x^2 - 12x + 11$:\n$x_p = -\\frac{b}{2a} = -\\frac{-12}{2 \\cdot 2} = 3$.\n2. Cek apakah sumbu simetri berada dalam domain $D_f = [1, 5]$. Karena $3 \\in [1, 5]$, titik balik adalah nilai ekstrem (minimum karena $a = 2 > 0$).\n3. Hitung nilai minimum di puncak:\n$y_{\\min} = f(3) = 2(3)^2 - 12(3) + 11 = 18 - 36 + 11 = -7$.\n4. Hitung nilai fungsi pada kedua ujung interval domain:\n$f(1) = 2(1)^2 - 12(1) + 11 = 1$\n$f(5) = 2(5)^2 - 12(5) + 11 = 50 - 60 + 11 = 1$\n5. Jadi, nilai minimum adalah $-7$ dan nilai maksimum adalah $1$. Daerah hasil (*range*) adalah $\\{y \\in \\mathbb{R} \\mid -7 \\le y \\le 1\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 23,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila garis vertikal tersebut memotong grafik di dua atau lebih titik yang berbeda, maka relasi tersebut bukanlah fungsi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi tes garis vertikal berparameter",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan titik balik parabola horizontal, pemecahan interval cabang satu-ke-satu, dan pembatasan daerah nilai agar lolos uji garis vertikal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kurva relasi pada bidang Kartesius dinyatakan oleh persamaan $x = -y^2 + 6y - 5$. Berdasarkan tes garis vertikal, relasi ini bukan merupakan fungsi dari $x$ ke $y$. Agar relasi tersebut dapat dijadikan suatu fungsi $y = f(x)$, daerah nilai ($y$) harus dibatasi. Batasan himpunan $y$ berikut yang tepat untuk mengubah relasi tersebut menjadi suatu fungsi adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid y \\ge 3\\}$",
+      "alasan_benar": "Parabola horizontal terbuka ke kiri dengan puncak pada ordinat $y_p = -\\frac{6}{2(-1)} = 3$. Garis vertikal akan memotong kurva tepat satu kali jika cabang parabola dipisah pada $y \\ge 3$ atau $y \\le 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ge 4\\}$",
+          "alasan": "Siswa salah menggunakan nilai puncak absis $x_p = 4$ sebagai batas variabel $y$."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid 1 \\le y \\le 5\\}$",
+          "alasan": "Siswa memilih interval di antara titik potong sumbu $y$ saat $x=0$, di mana garis vertikal justru masih memotong kurva di dua titik."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\le 6\\}$",
+          "alasan": "Siswa salah mengira koefisien linear variabel $y$ yaitu $6$ sebagai batas pembagi cabang parabola."
+        }
+      ],
+      "pembahasan": "Langkah pengerjaan:\n1. Persamaan $x = -y^2 + 6y - 5$ menyatakan parabola horizontal yang terbuka ke kiri.\n2. Tentukan koordinat ordinat titik puncak parabola horizontal:\n$y_p = -\\frac{b}{2a} = -\\frac{6}{2(-1)} = 3$.\n3. Untuk setiap nilai $x < 4$, terdapat dua nilai $y$ simetris terhadap garis horizontal $y = 3$, sehingga tes garis vertikal $x = c$ akan memotong kurva di dua titik berbeda.\n4. Agar kurva lolos tes garis vertikal (setiap $x$ berpasangan tepat dengan satu $y$), relasi harus dibatasi hanya pada salah satu cabang di atas atau di bawah puncaknya, yaitu $y \\ge 3$ atau $y \\le 3$.\n5. Di antara pilihan yang diberikan, batasan yang tepat adalah $\\{y \\in \\mathbb{R} \\mid y \\ge 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 28,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tuliskan notasi himpunan yang menyatakan keluaran dari mesin fungsi keripik tempe. Himpunan ini disebut sebagai range."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "desain dan evaluasi rentang fungsi rasional",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan pembentukan persamaan kuadratik invers, analisis diskriminan non-negatif, dan penentuan daerah hasil fungsi rasional berderajat dua.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\frac{2x}{x^2 + 4}$ terdefinisi untuk setiap bilangan riil $x \\in \\mathbb{R}$. Daerah hasil (*range*) dari fungsi $f(x)$ adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid -\\frac{1}{2} \\le y \\le \\frac{1}{2}\\}$",
+      "alasan_benar": "Memisalkan $y = \\frac{2x}{x^2 + 4} \\iff yx^2 - 2x + 4y = 0$. Syarat $x \\in \\mathbb{R}$ adalah diskriminan $D \\ge 0 \\implies (-2)^2 - 4(y)(4y) \\ge 0 \\implies 4 - 16y^2 \\ge 0 \\implies y^2 \\le \\frac{1}{4} \\implies -\\frac{1}{2} \\le y \\le \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid -2 \\le y \\le 2\\}$",
+          "alasan": "Siswa salah menghitung pertidaksamaan diskriminan dengan mengabaikan pembagian koefisien sehingga memperoleh $y^2 \\le 4$."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ne 0\\}$",
+          "alasan": "Siswa mengira fungsi pecahan tidak pernah menghasilkan nilai $0$, padahal untuk $x=0$, $f(0)=0$."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid -\\frac{1}{4} \\le y \\le \\frac{1}{4}\\}$",
+          "alasan": "Siswa membagi diskriminan secara keliru sehingga menduga batas nilai berada pada interval $\\pm \\frac{1}{4}$."
+        }
+      ],
+      "pembahasan": "Langkah pengerjaan:\n1. Misalkan $y = f(x)$, maka $y = \\frac{2x}{x^2 + 4}$.\n2. Kalikan silang: $y(x^2 + 4) = 2x \\implies yx^2 - 2x + 4y = 0$.\n3. Kasus $y = 0$: persamaan menjadi $-2x = 0 \\implies x = 0 \\in \\mathbb{R}$, sehingga $y = 0$ merupakan anggota range.\n4. Kasus $y \\ne 0$: persamaan merupakan persamaan kuadrat dalam $x$. Agar menghasilkan $x \\in \\mathbb{R}$, diskriminan harus memenuhi $D \\ge 0$:\n$D = b^2 - 4ac = (-2)^2 - 4(y)(4y) = 4 - 16y^2 \\ge 0$.\n5. Selesaikan pertidaksamaan:\n$16y^2 \\le 4 \\implies y^2 \\le \\frac{4}{16} = \\frac{1}{4} \\implies -\\frac{1}{2} \\le y \\le \\frac{1}{2}$.\n6. Rentang tersebut mencakup $y = 0$, sehingga daerah hasil dari fungsi $f(x)$ adalah $\\{y \\in \\mathbb{R} \\mid -\\frac{1}{2} \\le y \\le \\frac{1}{2}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 29,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Domain dari jumlah bahan bakar yang dinyatakan dalam himpunan adalah { x | 0 ≤ x ≤ 9, x ∈ R }, dengan R merupakan himpunan bilangan riil."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "analisis daerah asal alami gabungan irasional dan rasional",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan dan evaluasi irisan domain dari fungsi kombinasi pecahan dan akar kuadrat ganda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal alami (*domain*) dari fungsi $f(x) = \\sqrt{\\frac{3x - 15}{x + 2}} + \\frac{1}{\\sqrt{36 - x^2}}$ pada himpunan bilangan riil $\\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid -6 < x < -2 \\text{ atau } 5 \\le x < 6\\}$",
+      "alasan_benar": "Syarat pertama untuk $\\sqrt{\\frac{3x - 15}{x + 2}}$: $\\frac{3(x - 5)}{x + 2} \\ge 0$ dan $x + 2 \\ne 0$. Uji tanda menghasilkan $x < -2$ atau $x \\ge 5$. Syarat kedua untuk penyebut $\\frac{1}{\\sqrt{36 - x^2}}$: bentuk di dalam akar harus positif murni (tidak boleh nol karena di penyebut), sehingga $36 - x^2 > 0 \\iff x^2 < 36 \\iff -6 < x < 6$. Irisan kedua syarat: $(-6 < x < 6) \\cap (x < -2 \\text{ atau } x \\ge 5) = (-6 < x < -2) \\cup [5, 6)$, atau ditulis $\\{x \\in \\mathbb{R} \\mid -6 < x < -2 \\text{ atau } 5 \\le x < 6\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -6 \\le x \\le -2 \\text{ atau } 5 \\le x \\le 6\\}$",
+          "alasan": "Siswa tidak memperhatikan bahwa penyebut tidak boleh bernilai nol sehingga memasukkan titik $x = \\pm 6$ dan $x = -2$ ke dalam daerah asal."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -2 < x \\le 5\\}$",
+          "alasan": "Siswa keliru menyelesaikan pertidaksamaan pecahan $\\frac{3x - 15}{x + 2} \\ge 0$ dengan mengambil interval di antara pembuat nol."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid 5 \\le x < 6\\}$",
+          "alasan": "Siswa melupakan bagian interval negatif $x < -2$ yang juga menghasilkan pecahan positif di dalam tanda akar."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan syarat pertama dari bentuk akar pecahan $\\sqrt{\\frac{3x - 15}{x + 2}}$.\nBentuk pecahan di dalam akar harus tak negatif dan penyebut tidak boleh nol:\n$$\\frac{3x - 15}{x + 2} \\ge 0 \\quad \\text{dan} \\quad x + 2 \\ne 0$$\nPembuat nol pembilang: $3x - 15 = 0 \\implies x = 5$.\nPembuat nol penyebut: $x + 2 = 0 \\implies x = -2$.\nUji garis bilangan:\n- Untuk $x < -2$: pecahan bertanda $\\frac{(-)}{(-)} = (+) > 0$ (memenuhi).\n- Untuk $-2 < x < 5$: pecahan bertanda $\\frac{(-)}{(+)} = (-) < 0$ (tidak memenuhi).\n- Untuk $x \\ge 5$: pecahan bertanda $\\frac{(+)}{(+)} = (+) \\ge 0$ (memenuhi).\nDiperoleh daerah syarat 1: $D_1 = (-\\infty, -2) \\cup [5, \\infty)$.\n\nLangkah 2: Menentukan syarat kedua dari bentuk pecahan berakar $\\frac{1}{\\sqrt{36 - x^2}}$.\nKarena berada di penyebut, bentuk di dalam akar harus positif murni:\n$$36 - x^2 > 0$$\n$$x^2 < 36$$\n$$-6 < x < 6$$\nDiperoleh daerah syarat 2: $D_2 = (-6, 6)$.\n\nLangkah 3: Mengiriskan kedua daerah syarat ($D_f = D_1 \\cap D_2$).\n$$(-6, 6) \\cap ((-\\infty, -2) \\cup [5, \\infty))$$\nBagian pertama: $(-6, 6) \\cap (-\\infty, -2) = (-6, -2)$\nBagian kedua: $(-6, 6) \\cap [5, \\infty) = [5, 6)$\n\nGabungan kedua irisan: $(-6, -2) \\cup [5, 6)$ atau dalam notasi himpunan:\n$$\\{x \\in \\mathbb{R} \\mid -6 < x < -2 \\text{ atau } 5 \\le x < 6\\}$$\n\nJadi, daerah asal alaminya adalah $\\{x \\in \\mathbb{R} \\mid -6 < x < -2 \\text{ atau } 5 \\le x < 6\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0025-latihan-11-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis model pertumbuhan eksponensial",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi model pertumbuhan eksponensial untuk menentukan batas waktu saat nilai fungsi melampaui batas tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan data sensus di sebuah kawasan konservasi alam, pada tahun 2012 populasi suatu spesies tercatat sebanyak $18$ ekor. Pada tahun 2013 dan 2014, populasi satwa tersebut berturut-turut tercatat sebanyak $54$ dan $162$ ekor. Apabila pertumbuhan populasi terhadap tahun membentuk fungsi eksponensial $P(t) = a \\cdot b^{t - 2012}$, pada tahun berapakah populasi satwa tersebut untuk pertama kalinya melampaui $40.000$ ekor?",
+      "jawaban_benar": "2020",
+      "alasan_benar": "Rasio pertumbuhan tahunan konstan $b = \\frac{54}{18} = 3$ dengan $a = 18$. Pertidaksamaan $18 \\cdot 3^{t - 2012} > 40.000$ menghasilkan $3^{t - 2012} > 2.222,\\bar{2}$. Karena $3^7 = 2.187$ dan $3^8 = 6.561$, nilai pangkat terkecil adalah $t - 2012 = 8$, sehingga $t = 2020$.",
+      "distraktor": [
+        {
+          "teks": "2019",
+          "alasan": "Mengira $3^7 = 2.187$ sudah melampaui rasio pembagian karena salah menghitung nilai $18 \\times 2.187 = 39.366$ yang ternyata belum mencapai $40.000$."
+        },
+        {
+          "teks": "2021",
+          "alasan": "Menghitung indeks tahun awal sebagai $t = 1$ pada rumus eksponen sehingga bergeser satu tahun lebih lambat."
+        },
+        {
+          "teks": "2022",
+          "alasan": "Menggunakan rasio pertumbuhan sebesar $2$ alih-alih $3$ dari pola data yang diberikan."
+        }
+      ],
+      "pembahasan": "Fungsi populasi: $P(t) = a \\cdot b^{t - 2012}$.\\nDari data tahun 2012 ($t = 2012$): $P(2012) = a \\cdot b^0 = a = 18$.\\nDari data tahun 2013 ($t = 2013$): $P(2013) = 18 \\cdot b^1 = 54 \\implies b = 3$.\\nData tahun 2014: $P(2014) = 18 \\cdot 3^2 = 162$ (konsisten).\\nMaka $P(t) = 18 \\cdot 3^{t - 2012}$.\\n\\nSyarat populasi melampaui $40.000$:\\n$$18 \\cdot 3^{t - 2012} > 40.000$$\\n$$3^{t - 2012} > \\frac{40.000}{18} \\approx 2.222,22$$\\n\\nPerpangkatan bilangan 3:\\n- $3^7 = 2.187 < 2.222,22$ (populasi $18 \\times 2.187 = 39.366$)\\n- $3^8 = 6.561 > 2.222,22$ (populasi $18 \\times 6.561 = 118.098$)\\n\\nSehingga nilai bulat terkecil untuk $t - 2012$ adalah $8$:\\n$$t - 2012 = 8 \\implies t = 2020$$\\nPopulasi pertama kali melampaui $40.000$ ekor terjadi pada tahun 2020.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Gunakan Microsoft Excel atau Geogebra untuk menggambar f (x) = x^2 / (x - 1) , dan tentukan domain dan range-nya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis rentang nilai fungsi rasional kuadratik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dan menentukan daerah hasil fungsi rasional berpangkat dua menggunakan diskriminan persamaan kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi aljabar $f(x) = \\frac{x^2 - 4x + 8}{x - 2}$ yang terdefinisi pada daerah asal alaminya $D_f = \\{x \\in \\mathbb{R} \\mid x \\ne 2\\}$. Daerah hasil (*range*) dari fungsi $f(x)$ adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid y \\le -4 \\text{ atau } y \\ge 4\\}$",
+      "alasan_benar": "Menyusun persamaan kuadrat $x^2 - (y + 4)x + (2y + 8) = 0$ dan menuntut nilai $x$ riil ($D \\ge 0$) menghasilkan $y^2 - 16 \\ge 0$, yaitu $y \\le -4$ atau $y \\ge 4$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid -4 \\le y \\le 4\\}$",
+          "alasan": "Terbalik dalam menyelesaikan pertidaksamaan kuadrat $y^2 - 16 \\ge 0$ menjadi interval tertutup bagian dalam."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\le -2 \\text{ atau } y \\ge 2\\}$",
+          "alasan": "Salah menghitung diskriminan menjadi $y^2 - 4 \\ge 0$ akibat keliru mengalikan konstanta $4ac$."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ne 0\\}$",
+          "alasan": "Hanya mengasumsikan range tidak bernilai nol tanpa menganalisis nilai ekstrem kurva rasional."
+        }
+      ],
+      "pembahasan": "Misalkan $y = f(x)$:\\n$$y = \\frac{x^2 - 4x + 8}{x - 2}$$\\n$$y(x - 2) = x^2 - 4x + 8$$\\n$$yx - 2y = x^2 - 4x + 8$$\\n$$x^2 - (y + 4)x + (2y + 8) = 0$$\\n\\nAgar $x$ merupakan bilangan riil, nilai diskriminan $D \\ge 0$:\\n$$D = [-(y + 4)]^2 - 4(1)(2y + 8) \\ge 0$$\\n$$(y^2 + 8y + 16) - (8y + 32) \\ge 0$$\\n$$y^2 - 16 \\ge 0$$\\n$$(y - 4)(y + 4) \\ge 0$$\\n$$y \\le -4 \\text{ atau } y \\ge 4$$\\n\\nPeriksa apakah ada $y$ yang menyebabkan $x = 2$:\\nJika $x = 2$, maka $2^2 - (y + 4)(2) + 2y + 8 = 4 - 2y - 8 + 2y + 8 = 4 \\ne 0$. Tidak ada nilai $y$ yang menghasilkan $x = 2$.\\n\\nJadi, daerah hasil fungsi tersebut adalah $\\{y \\in \\mathbb{R} \\mid y \\le -4 \\text{ atau } y \\ge 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 20,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi merupakan suatu relasi yang menghubungkan satu anggota dari suatu himpunan tepat ke satu anggota di himpunan yang lain."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi konsistensi relasi fungsi berparameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi himpunan pasangan berurutan berparameter untuk memastikan definisi pemetaan tepat satu anggota terpenuhi tanpa percabangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu relasi $R$ pada himpunan bilangan riil didefinisikan sebagai himpunan pasangan berurutan:\\n$$R = \\{(2, a^2 - 3a), (5, 9), (2, 2a + 6), (a - 1, 14)\\}$$\\nAgar relasi $R$ tersebut merupakan suatu fungsi, nilai $a$ yang memenuhi adalah ....",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Syarat keluaran bernilai tunggal untuk masukan $2$ menghasilkan $a = 6$ atau $a = -1$. Jika $a = 6$, elemen terakhir menjadi $(5, 14)$ yang bertentangan dengan $(5, 9)$, sehingga hanya $a = -1$ yang valid.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Hanya menyamakan keluaran pada masukan 2 dan memilih nilai positif tanpa mengevaluasi kontradiksi pasangan terurut terakhir."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Menjumlahkan kedua akar persamaan kuadrat $a_1 + a_2 = 5$ tanpa menguji konsistensi fungsi."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Melakukan kesalahan tanda saat memfaktorkan persamaan kuadrat $a^2 - 5a - 6 = 0$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi, setiap elemen masukan (*input*) harus memiliki tepat satu elemen keluaran (*output*).\\n\\n1. Perhatikan elemen dengan masukan $x = 2$, yaitu $(2, a^2 - 3a)$ dan $(2, 2a + 6)$. Agar keluarannya tunggal:\\n$$a^2 - 3a = 2a + 6$$\\n$$a^2 - 5a - 6 = 0$$\\n$$(a - 6)(a + 1) = 0$$\\nMaka $a = 6$ atau $a = -1$.\\n\\n2. Uji nilai $a = 6$ ke seluruh himpunan $R$:\\n- Pasangan $(2, 6^2 - 3(6)) = (2, 18)$\\n- Pasangan $(5, 9)$\\n- Pasangan $(2, 2(6) + 6) = (2, 18)$\\n- Pasangan $(6 - 1, 14) = (5, 14)$\\nKarena ada $(5, 9)$ dan $(5, 14)$, masukan $5$ memiliki dua keluaran berbeda. Jadi $a = 6$ bukan fungsi.\\n\\n3. Uji nilai $a = -1$:\\n- Pasangan $(2, (-1)^2 - 3(-1)) = (2, 4)$\\n- Pasangan $(5, 9)$\\n- Pasangan $(2, 2(-1) + 6) = (2, 4)$\\n- Pasangan $((-1) - 1, 14) = (-2, 14)$\\nHimpunan masukan adalah $\\{2, 5, -2\\}$, masing-masing memiliki tepat satu keluaran. Relasi $R$ merupakan fungsi.\\n\\nJadi, nilai $a$ yang memenuhi adalah $-1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana menentukan domain, kodomain, dan range dari suatu fungsi jika diberikan dalam bentuk aljabar?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis daerah asal alami gabungan bentuk irasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis syarat gabungan bentuk akar pecahan dan penyebut tak nol untuk merumuskan daerah asal alami.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal alami (*domain*) dari fungsi $f(x) = \\sqrt{\\frac{2x - 10}{x^2 - 4x - 12}} + \\frac{3}{\\sqrt{7 - x}}$ pada himpunan bilangan riil $\\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid -2 < x \\le 5 \\text{ atau } 6 < x < 7\\}$",
+      "alasan_benar": "Syarat bentuk akar pertama $\\frac{2(x - 5)}{(x - 6)(x + 2)} \\ge 0$ menghasilkan $-2 < x \\le 5$ atau $x > 6$. Diiriskan dengan syarat penyebut akar kedua $7 - x > 0 \\implies x < 7$ menghasilkan $-2 < x \\le 5$ atau $6 < x < 7$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -2 \\le x \\le 5 \\text{ atau } 6 \\le x < 7\\}$",
+          "alasan": "Memasukkan nilai pembuat nol penyebut $x = -2$ dan $x = 6$ ke dalam pertidaksamaan."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\le 5 \\text{ atau } 6 < x < 7\\}$",
+          "alasan": "Mengabaikan batas asimtot bawah $x > -2$ pada pecahan di dalam akar pertama."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -2 < x < 7\\}$",
+          "alasan": "Mengabaikan interval negatif pada pecahan di dalam tanda akar antara $5 < x < 6$."
+        }
+      ],
+      "pembahasan": "Agar $f(x)$ terdefinisi pada bilangan riil, harus dipenuhi dua syarat:\\n\\n1. Syarat pada suku $\\sqrt{\\frac{2x - 10}{x^2 - 4x - 12}}$:\\nBentuk di dalam akar harus non-negatif dan penyebut tidak boleh nol:\\n$$\\frac{2(x - 5)}{(x - 6)(x + 2)} \\ge 0 \\quad \\text{dengan } x \\ne -2, x \\ne 6$$\\nTitik-titik kritis pada garis bilangan: $x = -2$, $x = 5$, $x = 6$.\\nUji tanda interval:\\n- Untuk $x < -2$: negatif $(-)$\\n- Untuk $-2 < x \\le 5$: positif $(+)$\\n- Untuk $5 \\le x < 6$: negatif $(-)$\\n- Untuk $x > 6$: positif $(+)$\\nSehingga himpunan penyelesaian pertama adalah: $-2 < x \\le 5$ atau $x > 6$.\\n\\n2. Syarat pada suku $\\frac{3}{\\sqrt{7 - x}}$:\\nBentuk di dalam akar pada penyebut harus positif tegas:\\n$$7 - x > 0 \\implies x < 7$$\\n\\n3. Mengiriskan kedua syarat:\\n$$(-2 < x \\le 5 \\text{ atau } x > 6) \\cap (x < 7)$$\\nHasil irisan adalah $-2 < x \\le 5$ atau $6 < x < 7$.\\n\\nJadi, domain fungsi adalah $\\{x \\in \\mathbb{R} \\mid -2 < x \\le 5 \\text{ atau } 6 < x < 7\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 29,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika diberikan grafik maka penentuan domain dan range dari suatu fungsi ditunjukkan masing-masing oleh nilai yang digunakan pada sumbu x dan sumbu y."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis batas daerah hasil fungsi rasional",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan pemodelan persamaan kuadrat dari fungsi rasional dan analisis diskriminan bernilai riil untuk membuktikan batas rentang daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{3x^2 - 2x + 3}{x^2 + 1}$ terdefinisi untuk setiap bilangan riil $x \\in \\mathbb{R}$. Jika daerah hasil (*range*) dari fungsi tersebut adalah $R_f = \\{y \\in \\mathbb{R} \\mid m \\le y \\le n\\}$, maka nilai dari $m^2 + n^2$ adalah ....",
+      "jawaban_benar": "20",
+      "alasan_benar": "Batas daerah hasil diperoleh dari syarat diskriminan persamaan kuadrat $D \\ge 0$, menghasilkan selang $2 \\le y \\le 4$, sehingga $2^2 + 4^2 = 20$.",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "Siswa keliru menyelesaikan pertidaksamaan $(y - 3)^2 \\le 1$ menjadi $1 \\le y \\le 3$, lalu menghitung $1^2 + 3^2 = 10$."
+        },
+        {
+          "teks": "16",
+          "alasan": "Siswa hanya menghitung kuadrat dari batas atas daerah hasil saja, yaitu $n^2 = 4^2 = 16$."
+        },
+        {
+          "teks": "25",
+          "alasan": "Siswa salah menentukan nilai batas $m = 3$ dan $n = 4$ akibat mengabaikan solusi simpangan kiri, sehingga menghitung $3^2 + 4^2 = 25$."
+        }
+      ],
+      "pembahasan": "Misalkan $y = f(x)$:\n$$y = \\frac{3x^2 - 2x + 3}{x^2 + 1}$$\nKarena $x^2 + 1 > 0$ untuk seluruh $x \\in \\mathbb{R}$, kalikan kedua ruas dengan $(x^2 + 1)$:\n$$y(x^2 + 1) = 3x^2 - 2x + 3$$\n$$yx^2 + y = 3x^2 - 2x + 3$$\n$$(y - 3)x^2 + 2x + (y - 3) = 0$$\n\n1. Jika $y = 3$, maka persamaan menjadi $2x = 0 \\iff x = 0 \\in \\mathbb{R}$. Jadi $y = 3$ termasuk anggota daerah hasil.\n2. Jika $y \\ne 3$, persamaan tersebut merupakan persamaan kuadrat dalam $x$. Agar menghasilkan nilai masukan $x$ yang riil, diskriminan persamaan harus memenuhi $D \\ge 0$:\n$$D = b^2 - 4ac \\ge 0$$\n$$2^2 - 4(y - 3)(y - 3) \\ge 0$$\n$$4 - 4(y - 3)^2 \\ge 0$$\nBagi kedua ruas dengan $4$:\n$$1 - (y - 3)^2 \\ge 0$$\n$$(y - 3)^2 \\le 1$$\n$$-1 \\le y - 3 \\le 1$$\n$$2 \\le y \\le 4$$\n\nDengan demikian, daerah hasil fungsi $f(x)$ adalah $R_f = \\{y \\in \\mathbb{R} \\mid 2 \\le y \\le 4\\}$, sehingga $m = 2$ dan $n = 4$.\nNilai dari $m^2 + n^2$ adalah:\n$$m^2 + n^2 = 2^2 + 4^2 = 4 + 16 = 20$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0024-latihan-11-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi relasi fisik dan pembatasan fungsi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi relasi implisit untuk membuktikan bukan fungsi, merancang pembatasan daerah nilai agar menjadi fungsi bernilai tak-negatif, serta menganalisis nilai optimum fungsi tersebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu eksperimen osilasi pegas, hubungan antara waktu tempuh $t$ (dalam sekon) dan simpangan beban $y$ (dalam $\\text{cm}$) dimodelkan oleh persamaan $4t^2 + y^2 = 36$ pada rentang $-3 \\le t \\le 3$. Berdasarkan definisi fungsi, apakah relasi yang memasangkan waktu $t$ ke simpangan $y$ tersebut merupakan suatu fungsi? Jika bukan, bagaimana pembatasan pada variabel simpangan $y$ agar relasi tersebut menjadi suatu fungsi $y = f(t)$ yang bernilai tak-negatif, dan berapa nilai simpangan maksimumnya?",
+      "jawaban_benar": "Bukan fungsi; nilai keluaran dibatasi $y \\ge 0$ dengan simpangan maksimum $6\\text{ cm}$",
+      "alasan_benar": "Untuk setiap $t \\in (-3, 3)$, terdapat dua nilai $y$ berbeda yaitu $y = \\pm\\sqrt{36 - 4t^2}$, sehingga relasi bukan fungsi. Pembatasan $y \\ge 0$ menghasilkan satu nilai tunggal $y = \\sqrt{36 - 4t^2}$ yang mencapai maksimum $6\\text{ cm}$ saat $t = 0$.",
+      "distraktor": [
+        {
+          "teks": "Merupakan fungsi; tidak memerlukan pembatasan nilai keluaran dengan simpangan maksimum $6\\text{ cm}$",
+          "alasan": "Siswa keliru mengira bahwa setiap persamaan tertutup yang terdefinisi pada interval domain otomatis merupakan fungsi tanpa memeriksa keunikan nilai output."
+        },
+        {
+          "teks": "Bukan fungsi; nilai keluaran dibatasi $y \\ge 0$ dengan simpangan maksimum $36\\text{ cm}$",
+          "alasan": "Siswa lupa menarik akar kuadrat dari konstanta 36 saat mencari nilai puncak $y$ pada saat $t = 0$."
+        },
+        {
+          "teks": "Bukan fungsi; nilai masukan dibatasi $t \\ge 0$ dengan simpangan maksimum $3\\text{ cm}$",
+          "alasan": "Siswa salah membatasi domain masukan $t$ alih-alih rentang keluaran $y$, serta menukar nilai simpangan maksimum dengan batas domain $t$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan apakah relasi $t \\mapsto y$ merupakan fungsi.\nDari persamaan $4t^2 + y^2 = 36$, diperoleh:\n$$y^2 = 36 - 4t^2 \\implies y = \\pm\\sqrt{36 - 4t^2}$$\nUntuk nilai $t$ di dalam interval $(-3, 3)$, misalnya saat $t = 0$:\n$$y = \\pm\\sqrt{36 - 0} = \\pm 6$$\nKarena ada nilai masukan $t$ yang dipasangkan dengan dua nilai keluaran $y$ yang berbeda ($6$ dan $-6$), maka relasi tersebut **bukan merupakan fungsi**.\n\nLangkah 2: Membatasi nilai keluaran agar menjadi fungsi tak-negatif.\nAgar relasi menjadi fungsi yang bernilai tak-negatif, cabang keluaran negatif dihilangkan dengan menetapkan syarat pembatasan $y \\ge 0$. Dengan demikian diperoleh rumus fungsi tunggal:\n$$y = f(t) = \\sqrt{36 - 4t^2}$$\n\nLangkah 3: Menentukan nilai simpangan maksimum.\nFungsi $f(t) = \\sqrt{36 - 4t^2}$ bernilai maksimum ketika suku pengurang $4t^2$ bernilai minimum, yaitu saat $t = 0$:\n$$y_{\\text{maks}} = \\sqrt{36 - 4(0)^2} = \\sqrt{36} = 6\\text{ cm}$$\n\nJadi, relasi tersebut bukan fungsi; agar menjadi fungsi tak-negatif nilai keluaran dibatasi $y \\ge 0$ dengan simpangan maksimum $6\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

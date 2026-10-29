@@ -1,0 +1,728 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "5 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 228,
+        "bagian": "Latihan Soal Penerapan Integral",
+        "nomor": "5",
+        "teks": "Gulungan kabel seberat 200 kg memiliki panjang 100 meter. Kabel tersebut digantung secara vertikal dari atas sebuah gedung yang tinggi. Berapa usaha yang diperlukan untuk mengangkat kabel ke puncak gedung?",
+        "jawaban": "98.000 Joule",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "usaha peregangan/pengangkatan fisika",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan gaya variabel yang bergantung pada posisi sisa panjang rantai sebelum merumuskan integral usaha.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah rantai derek seberat 120 kg memiliki panjang 40 meter dan tergantung vertikal pada derek pelabuhan. Dengan percepatan gravitasi $g = 10\\text{ m/s}^2$, usaha yang diperlukan untuk menarik seluruh rantai tersebut sampai ke puncak derek adalah ....",
+      "jawaban_benar": "$24.000\\text{ Joule}$",
+      "alasan_benar": "Rapat massa linear rantai adalah $\\lambda = \\frac{120\\text{ kg}}{40\\text{ m}} = 3\\text{ kg/m}$. Elemen rantai sepanjang $dx$ di kedalaman $x$ meter memiliki berat $dF = \\lambda g dx = 3 \\times 10 \\, dx = 30 \\, dx$ Newton. Usaha untuk mengangkat elemen tersebut sejauh $x$ meter adalah $dW = x \\, dF = 30x \\, dx$. Total usaha mengangkat seluruh rantai: $W = \\int_{0}^{40} 30x \\, dx = \\left[15x^2\\right]_{0}^{40} = 15 \\times (40)^2 = 15 \\times 1.600 = 24.000\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$48.000\\text{ Joule}$",
+          "alasan": "Mengalikan berat total langsung dengan panjang rantai ($1.200 \\times 40$) tanpa memperhitungkan bahwa beban berkurang secara kontinu saat rantai ditarik ke atas."
+        },
+        {
+          "teks": "$12.000\\text{ Joule}$",
+          "alasan": "Membagi dua kembali hasil akhir usaha yang sudah benar."
+        },
+        {
+          "teks": "$2.400\\text{ Joule}$",
+          "alasan": "Lupa mengalikan dengan percepatan gravitasi $g = 10\\text{ m/s}^2$."
+        }
+      ],
+      "pembahasan": "Rapat massa rantai per satuan panjang:\n$$\\lambda = \\frac{M}{L} = \\frac{120\\text{ kg}}{40\\text{ m}} = 3\\text{ kg/m}$$\nGaya berat elemen rantai sepanjang $dx$ pada jarak $x$ dari puncak:\n$$dF = (\\lambda \\, dx) \\cdot g = 3 \\cdot 10 \\, dx = 30 \\, dx\\text{ N}$$\nElemen ini harus ditarik ke atas sejauh $x$, sehingga usaha elemennya adalah:\n$$dW = x \\cdot dF = 30x \\, dx$$\nTotal usaha untuk menarik seluruh rantai dari $x = 0$ hingga $x = 40$:\n$$W = \\int_{0}^{40} 30x \\, dx = \\left[ 15x^2 \\right]_{0}^{40} = 15(40^2) - 0 = 15 \\times 1.600 = 24.000\\text{ Joule}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 228,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan luas daerah yang dibatasi oleh kurva y = x 2 dan y = - x 2 + 4 x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter luas",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan titik potong berparameter, pembentukan bentuk aljabar integral luas, dan pemecahan persamaan pangkat tiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah tertutup dibatasi oleh kurva parabola $y = ax - x^2$ dan $y = x^2 - ax$ dengan $a > 0$. Jika luas daerah yang terbentuk sama dengan $72\\text{ satuan luas}$, nilai $a$ yang memenuhi adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Titik potong kedua kurva dicari dari $ax - x^2 = x^2 - ax \\iff 2x^2 - 2ax = 0 \\iff 2x(x - a) = 0$, yaitu $x = 0$ dan $x = a$. Pada interval $[0, a]$, kurva $y = ax - x^2$ berada di atas $y = x^2 - ax$. Luas daerahnya: $L = \\int_{0}^{a} ((ax - x^2) - (x^2 - ax)) \\, dx = \\int_{0}^{a} (2ax - 2x^2) \\, dx = \\left[ ax^2 - \\frac{2}{3}x^3 \\right]_{0}^{a} = a^3 - \\frac{2}{3}a^3 = \\frac{1}{3}a^3$. Diketahui luas daerah $= 72$, sehingga $\\frac{1}{3}a^3 = 72 \\iff a^3 = 216 \\iff a = 6$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Keliru menggunakan rumus luas parabola tunggal terhadap sumbu-$x$ yaitu $\\frac{1}{6}a^3 = 72$ yang menghasilkan perhitungan keliru."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Salah melakukan integrasi suku $2ax$ menjadi $ax$ sehingga koefisien luas menjadi keliru."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Salah menarik akar pangkat tiga dari $216$ menjadi $8$."
+        }
+      ],
+      "pembahasan": "Tentukan titik potong kedua kurva:\n$$ax - x^2 = x^2 - ax \\implies 2x^2 - 2ax = 0 \\implies 2x(x - a) = 0$$\nMaka titik potong berada pada $x = 0$ dan $x = a$.\n\nUntuk $0 \\le x \\le a$, $ax - x^2 \\ge x^2 - ax$, sehingga luasnya adalah:\n$$L = \\int_{0}^{a} \\left((ax - x^2) - (x^2 - ax)\\right) dx = \\int_{0}^{a} (2ax - 2x^2) dx$$\n$$L = \\left[ ax^2 - \\frac{2}{3}x^3 \\right]_{0}^{a} = a(a^2) - \\frac{2}{3}a^3 = \\frac{1}{3}a^3$$\n\nDiketahui luas $L = 72\\text{ satuan luas}$:\n$$\\frac{1}{3}a^3 = 72 \\implies a^3 = 216 \\implies a = 6.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "f ^ x h = 4 000. x + 1 000. ; 0 # x # 10 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "aplikasi ekonomi integrasi netto",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan integrasi selisih dua fungsi laju (laju bersih) dan menyelesaikan persamaan kuadrat untuk waktu impas investasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pabrik mengoperasikan mesin baru. Laju penghematan biaya operasional dinyatakan oleh fungsi $f(t) = 6.000t + 3.000$ (rupiah per tahun), sedangkan laju biaya pemeliharaan mesin bertambah menurut fungsi $g(t) = 2.000t + 1.000$ (rupiah per tahun), dengan $t$ menyatakan waktu pemakaian dalam tahun. Total keuntungan finansial bersih kumulatif mesin tersebut mencapai Rp60.000,00 setelah beroperasi selama ....",
+      "jawaban_benar": "$5\\text{ tahun}$",
+      "alasan_benar": "Laju keuntungan finansial bersih adalah $r(t) = f(t) - g(t) = (6.000t + 3.000) - (2.000t + 1.000) = 4.000t + 2.000$ rupiah per tahun. Keuntungan bersih kumulatif selama $T$ tahun adalah $K(T) = \\int_{0}^{T} (4.000t + 2.000) \\, dt = \\left[2.000t^2 + 2.000t\\right]_{0}^{T} = 2.000T^2 + 2.000T$. Kita menginginkan $K(T) = 60.000$, maka $2.000T^2 + 2.000T = 60.000 \\iff T^2 + T - 30 = 0 \\iff (T + 6)(T - 5) = 0$. Karena $T > 0$, diperoleh $T = 5\\text{ tahun}$.",
+      "distraktor": [
+        {
+          "teks": "$4\\text{ tahun}$",
+          "alasan": "Hanya mengintegralkan laju penghematan $f(t)$ tanpa memperhitungkan biaya pemeliharaan $g(t)$ ($3.000T^2 + 3.000T = 60.000 \\implies T = 4$)."
+        },
+        {
+          "teks": "$6\\text{ tahun}$",
+          "alasan": "Mengambil nilai mutlak dari akar negatif persamaan kuadrat $(T = -6)$."
+        },
+        {
+          "teks": "$10\\text{ tahun}$",
+          "alasan": "Menghitung tanpa integral, hanya membagi Rp60.000 dengan keuntungan tahun pertama $r(1) = 6.000$."
+        }
+      ],
+      "pembahasan": "Tentukan fungsi laju keuntungan bersih per tahun:\n$$r(t) = f(t) - g(t) = (6.000t + 3.000) - (2.000t + 1.000) = 4.000t + 2.000$$\n\nTotal keuntungan bersih kumulatif selama $T$ tahun diperoleh dari integral tentu:\n$$K(T) = \\int_{0}^{T} (4.000t + 2.000) \\, dt = \\left[ 2.000t^2 + 2.000t \\right]_{0}^{T} = 2.000T^2 + 2.000T$$\n\nSamakan dengan Rp60.000,00:\n$$2.000T^2 + 2.000T = 60.000$$\nBagi kedua ruas dengan $2.000$:\n$$T^2 + T - 30 = 0$$\n$$(T + 6)(T - 5) = 0$$\nKarena waktu pemakaian $T > 0$, maka $T = 5\\text{ tahun}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan luas daerah pada bidang koordinat Kartesius yang dibatasi oleh fungsi f ^ x h = x 3 - 2 x 2 - 5 x + 6 , garis x = - 2 , dan garis x = 3 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah kurva kubik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap sifat fungsi ganjil dan pemisahan interval integrasi agar bagian daerah di bawah sumbu-x tidak meniadakan bagian di atasnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas total daerah tertutup yang dibatasi oleh kurva $y = x^3 - 4x$ dan sumbu-$x$ adalah ....",
+      "jawaban_benar": "$8\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong kurva dengan sumbu-$x$ diperoleh dari $x^3 - 4x = 0 \\iff x(x - 2)(x + 2) = 0$, yaitu $x = -2, 0, 2$. Pada interval $[-2, 0]$, fungsi bernilai nonnegatif ($y \\ge 0$), sedangkan pada $[0, 2]$, fungsi bernilai nonpositif ($y \\le 0$). Luas total harus dihitung terpisah: $L = \\int_{-2}^{0} (x^3 - 4x) \\, dx - \\int_{0}^{2} (x^3 - 4x) \\, dx$. Antiturunan dari $x^3 - 4x$ adalah $F(x) = \\frac{1}{4}x^4 - 2x^2$. Pada $[-2, 0]$: $F(0) - F(-2) = 0 - (4 - 8) = 4$. Pada $[0, 2]$: $-(F(2) - F(0)) = -(4 - 8 - 0) = 4$. Jadi luas total $L = 4 + 4 = 8\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$0\\text{ satuan luas}$",
+          "alasan": "Mengintegrasikan langsung kurva dari $-2$ sampai $2$ tanpa memecah subinterval, sehingga luas daerah positif dan negatif saling menghilangkan."
+        },
+        {
+          "teks": "$4\\text{ satuan luas}$",
+          "alasan": "Hanya menghitung salah satu subinterval saja ($[-2, 0]$ atau $[0, 2]$)."
+        },
+        {
+          "teks": "$16\\text{ satuan luas}$",
+          "alasan": "Keliru dalam mencari antiturunan menjadi $x^4 - 4x^2$ tanpa membagi pangkatnya."
+        }
+      ],
+      "pembahasan": "Tentukan titik potong dengan sumbu-$x$ ($y = 0$):\n$$x^3 - 4x = 0 \\implies x(x - 2)(x + 2) = 0$$\nAkar-akarnya adalah $x = -2$, $x = 0$, dan $x = 2$.\n\nPeriksa tanda fungsi:\n- Pada $[-2, 0]$: grafik berada di atas sumbu-$x$ ($y \\ge 0$).\n- Pada $[0, 2]$: grafik berada di bawah sumbu-$x$ ($y \\le 0$).\n\nMaka luas total adalah jumlahan dari kedua daerah:\n$$L = \\int_{-2}^{0} (x^3 - 4x) \\, dx + \\int_{0}^{2} -(x^3 - 4x) \\, dx$$\nAntiturunan dari $x^3 - 4x$ adalah $F(x) = \\frac{1}{4}x^4 - 2x^2$.\n$$L_1 = \\left[ \\frac{1}{4}x^4 - 2x^2 \\right]_{-2}^{0} = 0 - \\left(\\frac{1}{4}(-2)^4 - 2(-2)^2\\right) = -(4 - 8) = 4$$\n$$L_2 = -\\left[ \\frac{1}{4}x^4 - 2x^2 \\right]_{0}^{2} = -\\left(\\frac{1}{4}(2)^4 - 2(2)^2 - 0\\right) = -(4 - 8) = 4$$\n$$L = L_1 + L_2 = 4 + 4 = 8\\text{ satuan luas}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 226,
+        "bagian": "Ayo Mencoba",
+        "nomor": "3.13",
+        "teks": "Sebuah gaya sebesar 40 N diperlukan untuk menahan pegas yang direntangkan dari panjang aslinya 10 cm menjadi sepanjang 15 cm. Berapa usaha yang dilakukan untuk meregangkan pegas dari 15 cm menjadi 18 cm?",
+        "jawaban": "0,99 Joule",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "usaha pegas fisika",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan konstanta pegas dalam satuan SI, penetapan batas integrasi pertambahan panjang relatif terhadap panjang alami, serta evaluasi integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah gaya sebesar $60\\text{ N}$ diperlukan untuk menahan sebuah pegas yang direntangkan dari panjang alaminya $20\\text{ cm}$ menjadi sepanjang $26\\text{ cm}$. Berdasarkan Hukum Hooke, besar usaha yang diperlukan untuk meregangkan pegas tersebut lebih lanjut dari panjang $26\\text{ cm}$ menjadi $30\\text{ cm}$ adalah ....",
+      "jawaban_benar": "$3,2\\text{ Joule}$",
+      "alasan_benar": "Pertambahan panjang awal $x_0 = 26\\text{ cm} - 20\\text{ cm} = 6\\text{ cm} = 0,06\\text{ m}$. Berdasarkan $F = kx$, diperoleh $60 = k(0,06) \\iff k = 1.000\\text{ N/m}$. Batas regangan terhadap panjang alami adalah $x_1 = 0,06\\text{ m}$ dan $x_2 = 30\\text{ cm} - 20\\text{ cm} = 0,10\\text{ m}$. Usaha dihitung dengan $W = \\int_{0,06}^{0,10} 1.000x\\,dx = \\left[500x^2\\right]_{0,06}^{0,10} = 500(0,01 - 0,0036) = 500(0,0064) = 3,2\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$5,0\\text{ Joule}$",
+          "alasan": "Mengintegrasikan dari $x = 0$ hingga batas akhir $0,10\\text{ m}$ tanpa mengurangkan usaha regangan awal."
+        },
+        {
+          "teks": "$1,8\\text{ Joule}$",
+          "alasan": "Menggunakan selisih regangan $0,04\\text{ m}$ langsung ke dalam rumus $\\frac{1}{2}k(\\Delta x)^2 = 500(0,04)^2$."
+        },
+        {
+          "teks": "$320\\text{ Joule}$",
+          "alasan": "Lupa mengonversi satuan pertambahan panjang sentimeter ke meter saat proses integrasi."
+        }
+      ],
+      "pembahasan": "Berdasarkan Hukum Hooke, besar gaya pegas adalah $F(x) = kx$, di mana $x$ menyatakan pertambahan panjang dari posisi seimbang.\n1. Menentukan konstanta pegas $k$:\n$\\Delta x = 26\\text{ cm} - 20\\text{ cm} = 6\\text{ cm} = 0,06\\text{ m}$.\n$F = kx \\implies 60 = k(0,06) \\implies k = 1.000\\text{ N/m}$.\n2. Menentukan batas integrasi dari panjang alami:\n$x_1 = 26\\text{ cm} - 20\\text{ cm} = 0,06\\text{ m}$\n$x_2 = 30\\text{ cm} - 20\\text{ cm} = 0,10\\text{ m}$\n3. Menghitung usaha $W$:\n$W = \\int_{x_1}^{x_2} kx\\,dx = \\int_{0,06}^{0,10} 1.000x\\,dx = \\left[ 500x^2 \\right]_{0,06}^{0,10} = 500(0,10^2 - 0,06^2) = 500(0,01 - 0,0036) = 500(0,0064) = 3,2\\text{ Joule}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 220,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan luas daerah di kuadran pertama yang dibatasi oleh fungsi _f_ ^ _x_ h = _x x_ 2 + 5 , sumbu- _x_ , dan garis _x_ = 2."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter kurva",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa mengintegralkan fungsi bentuk substitusi aljabar dengan batas tertentu, menyusun persamaan dalam parameter tak tentu c, dan menyelesaikannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui kurva $f(x) = x\\sqrt{x^2 + c}$ dengan $c > 0$. Jika luas daerah di kuadran pertama yang dibatasi oleh kurva $y = f(x)$, sumbu-$x$, sumbu-$y$, dan garis $x = 2\\sqrt{2}$ sama dengan $\\frac{26}{3}\\text{ satuan luas}$, nilai konstanta $c$ adalah ....",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Luas daerah dinyatakan oleh $\\int_0^{2\\sqrt{2}} x\\sqrt{x^2 + c}\\,dx = \\left[ \\frac{1}{3}(x^2 + c)^{3/2} \\right]_0^{2\\sqrt{2}} = \\frac{1}{3}\\left((8 + c)^{3/2} - c^{3/2}\\right)$. Disetarakan dengan $\\frac{26}{3}$, diperoleh $(8 + c)^{3/2} - c^{3/2} = 26$. Untuk $c = 1$, $(9)^{3/2} - (1)^{3/2} = 27 - 1 = 26$, sehingga $c = 1$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Menyamakan hasil substitusi langsung $8 + c = 26$ sehingga mengira nilai $c$ mendekati bilangan bulat genap."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Lupa mengurangkan batas bawah $c^{3/2}$ saat evaluasi integral sehingga menghitung $(8+c)^{3/2} = 26$ lalu menebak $c = 4$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Tertukar antara nilai $(8 + c)$ dengan nilai $c$ itu sendiri."
+        }
+      ],
+      "pembahasan": "1. Integral luas daerah di kuadran I:\n$L = \\int_{0}^{2\\sqrt{2}} x\\sqrt{x^2 + c}\\,dx$.\n2. Gunakan substitusi $u = x^2 + c$, sehingga $du = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}du$:\n$\\int x(x^2 + c)^{1/2}\\,dx = \\frac{1}{2} \\cdot \\frac{2}{3}(x^2 + c)^{3/2} = \\frac{1}{3}(x^2 + c)^{3/2}$.\n3. Masukkan batas $x = 0$ hingga $x = 2\\sqrt{2}$:\n$L = \\left[ \\frac{1}{3}(x^2 + c)^{3/2} \\right]_0^{2\\sqrt{2}} = \\frac{1}{3}\\left( ((2\\sqrt{2})^2 + c)^{3/2} - (0^2 + c)^{3/2} \\right) = \\frac{1}{3}\\left( (8 + c)^{3/2} - c^{3/2} \\right)$.\n4. Menentukan nilai $c$:\n$\\frac{1}{3}\\left( (8 + c)^{3/2} - c^{3/2} \\right) = \\frac{26}{3} \\iff (8 + c)^{3/2} - c^{3/2} = 26$.\nUji $c = 1$:\n$(8 + 1)^{3/2} - 1^{3/2} = 9^{3/2} - 1 = (\\sqrt{9})^3 - 1 = 27 - 1 = 26$ (memenuhi).\nJadi, nilai konstanta $c = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "_f_ ^ _x_ h = 4 000. _x_ + 1 000. ; 0 # _x_ # 10 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "laju penghematan investasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan laju penghematan neto dari selisih dua fungsi laju alir biaya, pembentukan fungsi integral tentu kumulatif, serta penyelesaian persamaan kuadrat waktu balik modal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perusahaan manufaktur membeli mesin pendingin baru seharga $\\text{Rp}60.000,00$. Pengoperasian mesin tersebut menghasilkan penghematan biaya operasional dengan laju $f(t) = 9.000t + 4.000$ (rupiah per tahun). Namun, mesin memerlukan biaya perawatan berkala dengan laju penambahan biaya $g(t) = 3.000t + 1.000$ (rupiah per tahun), dengan $t$ menyatakan waktu pemakaian dalam tahun. Dalam berapa tahun penghematan operasional neto akan menutup seluruh harga pembelian mesin tersebut?",
+      "jawaban_benar": "$4\\text{ tahun}$",
+      "alasan_benar": "Laju penghematan neto adalah $h(t) = f(t) - g(t) = (9.000t + 4.000) - (3.000t + 1.000) = 6.000t + 3.000$. Total penghematan neto selama $T$ tahun adalah $\\int_0^T (6.000t + 3.000)\\,dt = 3.000T^2 + 3.000T$. Disetarakan dengan harga beli: $3.000T^2 + 3.000T = 60.000 \\iff T^2 + T - 20 = 0 \\iff (T + 5)(T - 4) = 0$. Karena $T > 0$, diperoleh $T = 4\\text{ tahun}$.",
+      "distraktor": [
+        {
+          "teks": "$3\\text{ tahun}$",
+          "alasan": "Hanya menghitung dari laju $f(t)$ tanpa mengurangi laju biaya perawatan $g(t)$ sehingga menghasilkan $T$ lebih cepat."
+        },
+        {
+          "teks": "$5\\text{ tahun}$",
+          "alasan": "Mengambil akar negatif persamaan kuadrat $T = -5$ dan memutlakkan nilainya."
+        },
+        {
+          "teks": "$6\\text{ tahun}$",
+          "alasan": "Salah membagi saat menyederhanakan koefisien persamaan kuadrat $3.000T^2 + 3.000T = 60.000$."
+        }
+      ],
+      "pembahasan": "1. Tentukan laju penghematan neto per tahun:\n$h(t) = f(t) - g(t) = (9.000t + 4.000) - (3.000t + 1.000) = 6.000t + 3.000$.\n2. Total penghematan neto dalam $T$ tahun dirumuskan sebagai integral tentu:\n$S(T) = \\int_0^T (6.000t + 3.000)\\,dt = \\left[ 3.000t^2 + 3.000t \\right]_0^T = 3.000T^2 + 3.000T$.\n3. Titik impas (harga beli kembali) tercapai saat $S(T) = 60.000$:\n$3.000T^2 + 3.000T = 60.000$.\nBagi kedua ruas dengan $3.000$:\n$T^2 + T = 20 \\iff T^2 + T - 20 = 0$.\n4. Faktorkan persamaan kuadrat:\n$(T + 5)(T - 4) = 0 \\implies T = -5 \\text{ atau } T = 4$.\nKarena waktu $T$ harus bernilai positif, maka $T = 4\\text{ tahun}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 234,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah logo rumah makan dirancang dengan bentuk bidang di bawah kurva _y_ = 6 - _x_ 2 dan dibatasi oleh sumbu- _x_ , garis _x_ = 2 , dan garis _x_ = - 2."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah kurva dan garis singgung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan persamaan garis singgung kurva melalui turunan pertama, analisis posisi relatif kurva dan garis singgung pada kuadran pertama, serta perhitungan luas dengan integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bidang datar di kuadran pertama dibatasi oleh sumbu-$y$, kurva parabola $y = 4 - x^2$, dan garis singgung kurva tersebut di titik $(1, 3)$. Luas bidang datar tersebut adalah ....",
+      "jawaban_benar": "$\\frac{1}{3}\\text{ satuan luas}$",
+      "alasan_benar": "Turunan kurva adalah $y' = -2x$. Di titik $(1, 3)$, gradiennya $m = -2(1) = -2$, sehingga persamaan garis singgung adalah $y - 3 = -2(x - 1) \\iff y = -2x + 5$. Di kuadran pertama antara $x = 0$ dan $x = 1$, garis singgung berada di atas parabola. Luas daerah $L = \\int_0^1 ((-2x + 5) - (4 - x^2))\\,dx = \\int_0^1 (x^2 - 2x + 1)\\,dx = \\left[ \\frac{1}{3}x^3 - x^2 + x \\right]_0^1 = \\frac{1}{3} - 1 + 1 = \\frac{1}{3}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}\\text{ satuan luas}$",
+          "alasan": "Keliru mengintegrasikan selisih fungsi menjadi $(x^2 - 2x + 2)$."
+        },
+        {
+          "teks": "$1\\text{ satuan luas}$",
+          "alasan": "Hanya menghitung luas segitiga di bawah garis singgung tanpa mengurangkan luas di bawah kurva parabola."
+        },
+        {
+          "teks": "$\\frac{5}{3}\\text{ satuan luas}$",
+          "alasan": "Tertukar posisi batas fungsi atas dan fungsi bawah sehingga menambahkan luas daerah di bawah parabola."
+        }
+      ],
+      "pembahasan": "1. Menentukan persamaan garis singgung kurva $y = 4 - x^2$ di titik $(1, 3)$:\n$y' = \\frac{dy}{dx} = -2x$.\nGradien di titik $(1, 3)$ adalah $m = -2(1) = -2$.\nPersamaan garis singgung:\n$y - y_1 = m(x - x_1) \\implies y - 3 = -2(x - 1) \\implies y = -2x + 5$.\n2. Menentukan interval integrasi dan posisi kurva:\nDaerah dibatasi oleh sumbu-$y$ ($x = 0$) hingga titik singgung ($x = 1$).\nPada interval $0 \\le x \\le 1$, garis $y = -2x + 5$ selalu berada di atas kurva parabola $y = 4 - x^2$.\n3. Menyusun rumus luas daerah:\n$L = \\int_{0}^{1} \\left[ (-2x + 5) - (4 - x^2) \\right]\\,dx = \\int_{0}^{1} (x^2 - 2x + 1)\\,dx$.\n4. Menghitung integral tentu:\n$L = \\left[ \\frac{1}{3}x^3 - x^2 + x \\right]_0^1 = \\left( \\frac{1}{3}(1)^3 - (1)^2 + 1 \\right) - 0 = \\frac{1}{3} - 1 + 1 = \\frac{1}{3}\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": "Ayo Mencoba 3.11",
+        "nomor": "1",
+        "teks": "Tentukan luas daerah di kuadran keempat yang dibatasi oleh fungsi f ( x ) = x 2 - 4 x , garis x = 1 , dan garis x = 3 .",
+        "jawaban": "22/3 satuan luas",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah kuadran tertentu",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi letak kurva di kuadran keempat di bawah sumbu-x untuk merumuskan tanda integral luas dengan benar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan luas daerah di kuadran keempat yang dibatasi oleh fungsi $f(x) = x^2 - 8x$, sumbu-$x$, garis $x = 2$, dan garis $x = 6$.",
+      "jawaban_benar": "$\\frac{176}{3}\\text{ satuan luas}$",
+      "alasan_benar": "Pada interval $[2, 6]$, kurva $f(x) = x(x - 8) \\le 0$ berada di bawah sumbu-$x$ (kuadran IV). Luas daerahnya adalah $L = -\\int_{2}^{6} (x^2 - 8x)\\,dx = \\int_{2}^{6} (8x - x^2)\\,dx = \\left[4x^2 - \\frac{1}{3}x^3\\right]_{2}^{6} = \\left(4(36) - \\frac{216}{3}\\right) - \\left(4(4) - \\frac{8}{3}\\right) = 72 - \\frac{40}{3} = \\frac{176}{3}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{160}{3}\\text{ satuan luas}$",
+          "alasan": "Kesalahan perhitungan tanda saat mengevaluasi batas bawah integral sehingga batas bawah bernilai $\\frac{56}{3}$."
+        },
+        {
+          "teks": "$-\\frac{176}{3}\\text{ satuan luas}$",
+          "alasan": "Lupa mengalikan dengan tanda negatif untuk daerah di bawah sumbu-$x$ sehingga menghasilkan luas bernilai negatif."
+        },
+        {
+          "teks": "$\\frac{208}{3}\\text{ satuan luas}$",
+          "alasan": "Kesalahan tanda operasi saat proses integrasi menjadi $4x^2 + \\frac{1}{3}x^3$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Periksa posisi kurva pada interval $[2, 6]$. Karena pembuat nol dari $f(x) = x^2 - 8x$ adalah $x = 0$ dan $x = 8$, maka untuk setiap $x \\in [2, 6]$ nilai $f(x) \\le 0$ (kurva berada di bawah sumbu-$x$).\nLangkah 2: Rumuskan integral luas daerah: $L = -\\int_{2}^{6} (x^2 - 8x)\\,dx = \\int_{2}^{6} (8x - x^2)\\,dx$.\nLangkah 3: Tentukan antiturunan fungsinya: $\\int (8x - x^2)\\,dx = 4x^2 - \\frac{1}{3}x^3$.\nLangkah 4: Hitung nilai tentu pada batas-batasnya:\n$L = \\left[4(6)^2 - \\frac{1}{3}(6)^3\\right] - \\left[4(2)^2 - \\frac{1}{3}(2)^3\\right] = (144 - 72) - \\left(16 - \\frac{8}{3}\\right) = 72 - \\frac{40}{3} = \\frac{176}{3}\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 228,
+        "bagian": "Latihan Soal Penerapan Integral",
+        "nomor": "2",
+        "teks": "Tentukan luas daerah yang dibatasi oleh kurva y = x 2 dan y = - x 2 + 4 x .",
+        "jawaban": "8/3 satuan luas",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah perpotongan dua kurva",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan titik potong kedua kurva parabola dan evaluasi fungsi atas terhadap fungsi bawah pada interval batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan luas daerah yang dibatasi oleh kurva parabola $y = 2x^2$ dan $y = 15x - x^2$.",
+      "jawaban_benar": "$\\frac{125}{2}\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong kurva diperoleh dari $2x^2 = 15x - x^2 \\iff 3x^2 - 15x = 0 \\iff 3x(x - 5) = 0$, yaitu $x = 0$ dan $x = 5$. Pada interval $[0, 5]$, kurva $y = 15x - x^2$ berada di atas $y = 2x^2$. Maka luas daerahnya adalah $L = \\int_{0}^{5} ((15x - x^2) - 2x^2)\\,dx = \\int_{0}^{5} (15x - 3x^2)\\,dx = \\left[\\frac{15}{2}x^2 - x^3\\right]_{0}^{5} = \\frac{15(25)}{2} - 125 = \\frac{375}{2} - \\frac{250}{2} = \\frac{125}{2}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$125\\text{ satuan luas}$",
+          "alasan": "Lupa membagi dengan koefisien $2$ saat mengintegralkan suku derajat satu $15x$."
+        },
+        {
+          "teks": "$\\frac{75}{2}\\text{ satuan luas}$",
+          "alasan": "Salah menentukan titik potong atas kedua kurva dengan mengambil nilai $x = 3$."
+        },
+        {
+          "teks": "$\\frac{275}{2}\\text{ satuan luas}$",
+          "alasan": "Salah mengurangkan kedua kurva, malah menjumlahkan kedua persamaan kurva di dalam integral."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan batas integrasi melalui titik potong kedua kurva:\n$2x^2 = 15x - x^2 \\implies 3x^2 - 15x = 0 \\implies 3x(x - 5) = 0$.\nDiperoleh batas integrasi dari $x = 0$ hingga $x = 5$.\nLangkah 2: Menentukan kurva atas dan kurva bawah pada $x \\in [0, 5]$. Untuk $x = 1$, $y_1 = 2(1)^2 = 2$ dan $y_2 = 15(1) - 1^2 = 14$, sehingga $y_2 \\ge y_1$.\nLangkah 3: Menyusun integral luas daerah:\n$L = \\int_{0}^{5} ((15x - x^2) - 2x^2)\\,dx = \\int_{0}^{5} (15x - 3x^2)\\,dx$.\nLangkah 4: Menghitung nilai integral:\n$L = \\left[\\frac{15}{2}x^2 - x^3\\right]_{0}^{5} = \\left(\\frac{15}{2}(25) - 5^3\\right) - 0 = \\frac{375}{2} - 125 = \\frac{125}{2}\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 222,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena terdapat dua daerah, yaitu di atas sumbu- x dan di bawah sumbu- x , maka"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "luas daerah partisi ganda kurva kubik",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemecahan interval integral menjadi dua subinterval akibat pergantian kedudukan kurva atas dan bawah agar hasil luas tidak saling meniadakan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas total daerah tertutup yang dibatasi oleh kurva $y = x^3 - 6x$ dan garis $y = 3x$ adalah ....",
+      "jawaban_benar": "$\\frac{81}{2}\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong kurva dan garis dicari dari $x^3 - 6x = 3x \\iff x^3 - 9x = 0 \\iff x(x - 3)(x + 3) = 0$, yaitu $x = -3$, $x = 0$, dan $x = 3$. Daerah terbagi menjadi dua bagian: pada $[-3, 0]$, kurva berada di atas garis sehingga $L_1 = \\int_{-3}^{0} (x^3 - 9x)\\,dx = \\left[\\frac{1}{4}x^4 - \\frac{9}{2}x^2\\right]_{-3}^{0} = 0 - \\left(\\frac{81}{4} - \\frac{81}{2}\\right) = \\frac{81}{4}$. Pada $[0, 3]$, garis berada di atas kurva sehingga $L_2 = \\int_{0}^{3} (9x - x^3)\\,dx = \\left[\\frac{9}{2}x^2 - \\frac{1}{4}x^4\\right]_{0}^{3} = \\frac{81}{2} - \\frac{81}{4} = \\frac{81}{4}$. Luas total adalah $L_1 + L_2 = \\frac{81}{4} + \\frac{81}{4} = \\frac{81}{2}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$0\\text{ satuan luas}$",
+          "alasan": "Langsung mengintegralkan selisih fungsi dari $-3$ ke $3$ tanpa memecah interval sehingga kedua bagian bernilai saling meniadakan."
+        },
+        {
+          "teks": "$\\frac{81}{4}\\text{ satuan luas}$",
+          "alasan": "Hanya menghitung luas daerah pada salah satu interval saja dan lupa menjumlahkannya."
+        },
+        {
+          "teks": "$81\\text{ satuan luas}$",
+          "alasan": "Kesalahan mengintegralkan suku derajat tiga tanpa pembagi $4$ dan suku derajat satu tanpa pembagi $2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik-titik potong antara kurva dan garis:\n$x^3 - 6x = 3x \\implies x^3 - 9x = 0 \\implies x(x + 3)(x - 3) = 0$.\nTitik potong berada pada $x = -3$, $x = 0$, dan $x = 3$.\nLangkah 2: Menganalisis kedudukan kurva pada masing-masing subinterval:\n- Pada interval $[-3, 0]$, uji $x = -1$: $y_{\\text{kurva}} = (-1)^3 - 6(-1) = 5$ dan $y_{\\text{garis}} = 3(-1) = -3$. Kurva kubik berada di atas garis.\n- Pada interval $[0, 3]$, uji $x = 1$: $y_{\\text{kurva}} = 1 - 6 = -5$ dan $y_{\\text{garis}} = 3$. Garis berada di atas kurva kubik.\nLangkah 3: Menghitung luas bagian pertama ($L_1$):\n$L_1 = \\int_{-3}^{0} ((x^3 - 6x) - 3x)\\,dx = \\int_{-3}^{0} (x^3 - 9x)\\,dx = \\left[\\frac{1}{4}x^4 - \\frac{9}{2}x^2\\right]_{-3}^{0} = 0 - \\left(\\frac{81}{4} - \\frac{81}{2}\\right) = \\frac{81}{4}$.\nLangkah 4: Menghitung luas bagian kedua ($L_2$):\n$L_2 = \\int_{0}^{3} (3x - (x^3 - 6x))\\,dx = \\int_{0}^{3} (9x - x^3)\\,dx = \\left[\\frac{9}{2}x^2 - \\frac{1}{4}x^4\\right]_{0}^{3} = \\frac{81}{2} - \\frac{81}{4} = \\frac{81}{4}$.\nLangkah 5: Menjumlahkan kedua luas:\n$L_{\\text{total}} = L_1 + L_2 = \\frac{81}{4} + \\frac{81}{4} = \\frac{81}{2}\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 226,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menurut Hukum Hooke, gaya yang diperlukan untuk menahan pegas meregang x meter di luar panjang alaminya adalah f ( x ) = kx ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kesetaraan usaha sistem pegas",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perbandingan integral usaha dua buah pegas berbeda untuk menentukan konstanta pegas yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah pegas, yaitu pegas A dan pegas B, mula-mula berada pada panjang alaminya masing-masing. Sebuah gaya sebesar $60\\text{ N}$ diperlukan untuk menahan pegas A tetap teregang sejauh $0,1\\text{ m}$ dari panjang alaminya. Pegas B kemudian diregangkan sejauh $0,4\\text{ m}$ dari panjang alaminya dan menghasilkan usaha yang sama besar dengan usaha untuk meregangkan pegas A sejauh $0,2\\text{ m}$ dari panjang alaminya. Nilai konstanta dari pegas B adalah ....",
+      "jawaban_benar": "$150\\text{ N/m}$",
+      "alasan_benar": "Menurut Hukum Hooke, konstanta pegas A adalah $k_A = \\frac{F}{x} = \\frac{60}{0,1} = 600\\text{ N/m}$. Usaha untuk meregangkan pegas A sejauh $0,2\\text{ m}$ adalah $W_A = \\int_{0}^{0,2} 600x\\,dx = \\left[300x^2\\right]_{0}^{0,2} = 300(0,04) = 12\\text{ Joule}$. Usaha meregangkan pegas B sejauh $0,4\\text{ m}$ adalah $W_B = \\int_{0}^{0,4} k_B x\\,dx = \\frac{1}{2}k_B (0,4)^2 = 0,08k_B$. Karena $W_B = W_A$, maka $0,08k_B = 12 \\iff k_B = \\frac{12}{0,08} = 150\\text{ N/m}$.",
+      "distraktor": [
+        {
+          "teks": "$300\\text{ N/m}$",
+          "alasan": "Menggunakan hubungan linier $W = kx$ tanpa mengintegralkan fungsi gaya terhadap perpindahan."
+        },
+        {
+          "teks": "$75\\text{ N/m}$",
+          "alasan": "Lupa mengalikan faktor $\\frac{1}{2}$ pada integral pegas B sehingga persamaan menjadi $0,16k_B = 12$."
+        },
+        {
+          "teks": "$600\\text{ N/m}$",
+          "alasan": "Menganggap konstanta pegas B sama persis dengan konstanta pegas A."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan konstanta pegas A ($k_A$) menggunakan Hukum Hooke $F(x) = k_A x$:\n$60 = k_A (0,1) \\implies k_A = 600\\text{ N/m}$.\nLangkah 2: Menghitung usaha peregangan pegas A dari $0$ hingga $0,2\\text{ m}$:\n$W_A = \\int_{0}^{0,2} 600x\\,dx = \\left[300x^2\\right]_{0}^{0,2} = 300(0,2)^2 = 300(0,04) = 12\\text{ Joule}$.\nLangkah 3: Merumuskan usaha peregangan pegas B dari $0$ hingga $0,4\\text{ m}$:\n$W_B = \\int_{0}^{0,4} k_B x\\,dx = \\left[\\frac{1}{2}k_B x^2\\right]_{0}^{0,4} = \\frac{1}{2}k_B (0,4)^2 = 0,08 k_B$.\nLangkah 4: Menyamakan usaha kedua pegas ($W_B = W_A$):\n$0,08 k_B = 12 \\implies k_B = \\frac{12}{0,08} = 150\\text{ N/m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 228,
+        "bagian": "Latihan Soal Penerapan Integral",
+        "nomor": "5",
+        "teks": "Gulungan kabel seberat 200 kg memiliki panjang 100 meter. Kabel tersebut digantung secara vertikal dari atas sebuah gedung yang tinggi. Berapa usaha yang diperlukan untuk mengangkat kabel ke puncak gedung?",
+        "jawaban": "98.000 Joule",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "usaha pengangkatan tambang dan beban",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemisahan komponen usaha integral untuk tambang yang terdistribusi dan usaha perkalian gaya konstan untuk beban terpusat di ujungnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tambang baja penarik beban seberat $120\\text{ kg}$ memiliki panjang $60\\text{ meter}$ tergantung vertikal dari tepi atas tebing yang tinggi. Pada ujung bawah tambang tersebut terikat sebuah kotak sampel geologi seberat $40\\text{ kg}$. Jika percepatan gravitasi bumi $g = 10\\text{ m/s}^2$, besar usaha yang diperlukan untuk menarik seluruh tambang beserta kotak tersebut sampai ke puncak tebing adalah ....",
+      "jawaban_benar": "$60.000\\text{ Joule}$",
+      "alasan_benar": "Rapat massa tambang adalah $\\lambda = \\frac{120\\text{ kg}}{60\\text{ m}} = 2\\text{ kg/m}$. Usaha untuk menarik elemen tambang sepanjang $dx$ pada kedalaman $x$ meter ke puncak tebing adalah $dW_1 = (\\lambda dx) g x = 20x\\,dx$. Usaha total menarik tambang adalah $W_1 = \\int_{0}^{60} 20x\\,dx = [10x^2]_{0}^{60} = 10(3.600) = 36.000\\text{ Joule}$. Kotak bermassa $40\\text{ kg}$ ditarik setinggi $60\\text{ m}$ secara penuh, sehingga usaha untuk mengangkat kotak adalah $W_2 = m g h = 40 \\times 10 \\times 60 = 24.000\\text{ Joule}$. Jadi, usaha totalnya adalah $W = W_1 + W_2 = 36.000 + 24.000 = 60.000\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$36.000\\text{ Joule}$",
+          "alasan": "Hanya menghitung usaha pengangkatan tambang baja dan melupakan usaha pengangkatan kotak beban."
+        },
+        {
+          "teks": "$96.000\\text{ Joule}$",
+          "alasan": "Menganggap seluruh massa tambang diangkat sejauh 60 meter penuh tanpa integrasi terhadap titik berat tambang."
+        },
+        {
+          "teks": "$48.000\\text{ Joule}$",
+          "alasan": "Membagi dua seluruh beban termasuk kotak sampel seolah-olah titik tangkap beban berada di tengah panjang tambang."
+        }
+      ],
+      "pembahasan": "Usaha total terdiri atas dua bagian:\n1. Usaha pengangkatan tambang:\n$$\\lambda = \\frac{120}{60} = 2\\text{ kg/m}$$\n$$W_{\\text{tambang}} = \\int_{0}^{60} \\lambda g x\\,dx = \\int_{0}^{60} 20x\\,dx = [10x^2]_{0}^{60} = 36.000\\text{ Joule}$$\n2. Usaha pengangkatan kotak sampel:\n$$W_{\\text{kotak}} = m_{\\text{kotak}} g h = 40 \\times 10 \\times 60 = 24.000\\text{ Joule}$$\nUsaha total:\n$$W = W_{\\text{tambang}} + W_{\\text{kotak}} = 36.000 + 24.000 = 60.000\\text{ Joule}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 228,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan luas daerah yang dibatasi oleh kurva y = x 2 dan y = - x 2 + 4 x ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pembagian luas kurva simetris horizontal",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menuntut perumusan integral luas dengan batas parameter fungsi horizontal serta pemecahan persamaan pangkat rasional.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah tertutup $R$ terletak di atas sumbu-$x$ dan dibatasi oleh kurva parabola $y = 9 - x^2$ serta sumbu-$x$. Sebuah garis horizontal $y = k$ (dengan $0 < k < 9$) membagi luas daerah $R$ menjadi dua bagian yang sama besar. Nilai dari $(9 - k)^3$ adalah ....",
+      "jawaban_benar": "$\\frac{729}{4}$",
+      "alasan_benar": "Luas total daerah $R$ adalah $L = \\int_{-3}^{3} (9 - x^2)\\,dx = 2 \\left[9x - \\frac{1}{3}x^3\\right]_{0}^{3} = 2(27 - 9) = 36\\text{ satuan luas}$. Garis $y = k$ memotong parabola di $x = \\pm\\sqrt{9 - k}$. Luas daerah di atas garis $y = k$ adalah $L_{\\text{atas}} = \\int_{-\\sqrt{9-k}}^{\\sqrt{9-k}} ((9 - x^2) - k)\\,dx = 2 \\int_{0}^{\\sqrt{9-k}} ((9 - k) - x^2)\\,dx = 2 \\left[(9 - k)x - \\frac{1}{3}x^3\\right]_{0}^{\\sqrt{9-k}} = \\frac{4}{3}(9 - k)^{3/2}$. Karena membagi dua sama besar, maka $L_{\\text{atas}} = \\frac{1}{2} L = 18$. Didapat $\\frac{4}{3}(9 - k)^{3/2} = 18 \\iff (9 - k)^{3/2} = \\frac{27}{2}$. Menguadratkan kedua sisi menghasilkan $(9 - k)^3 = \\left(\\frac{27}{2}\\right)^2 = \\frac{729}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$729$",
+          "alasan": "Lupa membagi dua luas total, sehingga menyamakan luas bagian atas dengan 36."
+        },
+        {
+          "teks": "$\\frac{243}{2}$",
+          "alasan": "Melakukan kesalahan perhitungan aljabar saat menguadratkan bentuk pecahan 27/2."
+        },
+        {
+          "teks": "$576$",
+          "alasan": "Terbalik mengalikan faktor pecahan 4/3 menjadi 18 kali 4/3 sama dengan 24 lalu dikuadratkan."
+        }
+      ],
+      "pembahasan": "1. Luas daerah total $R$:\n$$L = 2\\int_{0}^{3} (9 - x^2)\\,dx = 2\\left[9x - \\frac{x^3}{3}\\right]_{0}^{3} = 36$$\n2. Misalkan $u = \\sqrt{9 - k}$, maka kurva dan garis berpotongan di $x = \\pm u$. Luas bagian atas:\n$$L_{\\text{atas}} = 2\\int_{0}^{u} (u^2 - x^2)\\,dx = 2\\left[u^2 x - \\frac{x^3}{3}\\right]_{0}^{u} = \\frac{4}{3}u^3 = \\frac{4}{3}(9 - k)^{3/2}$$\n3. Syarat pembagian sama luas:\n$$\\frac{4}{3}(9 - k)^{3/2} = \\frac{36}{2} = 18 \\implies (9 - k)^{3/2} = \\frac{27}{2}$$\n4. Menguadratkan kedua sisi:\n$$(9 - k)^3 = \\left(\\frac{27}{2}\\right)^2 = \\frac{729}{4}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 232,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah tangki berbentuk kerucut yang puncaknya di bawah dengan tinggi 10 m dan jari-jari 4 m. Kerucut tersebut diisi air setinggi 8 m. Temukan usaha yang diperlukan untuk mengosongkan tangki dengan memompa semua air ke bagian atas tangki."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "usaha pemompaan fluida tangki kerucut",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan matematis irisan volume variabel kerucut, perumusan jarak angkat cairan, dan penetapan batas integral untuk pengosongan sebagian.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tangki penampung air berbentuk kerucut dengan posisi ujung runcing di bawah memiliki tinggi $6\\text{ meter}$ dan jari-jari lingkaran penampang atas $3\\text{ meter}$. Tangki tersebut mula-mula terisi penuh cairan dengan massa jenis $\\rho = 1.000\\text{ kg/m}^3$. Cairan dipompa keluar melalui bibir atas tangki hingga kedalaman cairan di dalam tangki berkurang dan hanya tersisa setinggi $3\\text{ meter}$ dari ujung bawah. Jika percepatan gravitasi bumi $g = 10\\text{ m/s}^2$, besar usaha yang telah dilakukan untuk memompa cairan tersebut adalah ....",
+      "jawaban_benar": "$185.625\\pi\\text{ Joule}$",
+      "alasan_benar": "Misalkan sumbu-$y$ vertikal dengan $y = 0$ di ujung runcing kerucut dan bibir tangki di $y = 6$. Jari-jari penampang horizontal pada ketinggian $y$ adalah $r(y) = \\frac{3}{6}y = \\frac{1}{2}y$. Luas penampang horizontal adalah $A(y) = \\pi (r(y))^2 = \\frac{\\pi}{4}y^2$. Elemen volume $dV = \\frac{\\pi}{4}y^2\\,dy$. Tiap lapisan air pada ketinggian $y$ harus diangkat sejauh $(6 - y)$ meter ke puncak tangki. Karena air dipompa dari penuh ($y = 6$) hingga tersisa setinggi $3\\text{ m}$, batas integrasi lapisan air yang dipompa adalah dari $y = 3$ hingga $y = 6$. Usaha total adalah $W = \\int_{3}^{6} \\rho g (6 - y) A(y)\\,dy = 10.000 \\int_{3}^{6} (6 - y) \\left(\\frac{\\pi}{4}y^2\\right)\\,dy = 2.500\\pi \\int_{3}^{6} (6y^2 - y^3)\\,dy$. Hasil integrasi: $[2y^3 - \\frac{1}{4}y^4]_{3}^{6} = \\left(2(216) - \\frac{1.296}{4}\\right) - \\left(2(27) - \\frac{81}{4}\\right) = (432 - 324) - (54 - 20,25) = 108 - 33,75 = 74,25$. Maka $W = 2.500\\pi \\times 74,25 = 185.625\\pi\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$84.375\\pi\\text{ Joule}$",
+          "alasan": "Mengintegrasikan dari batas 0 hingga 3, yakni menghitung usaha untuk memompa setengah volume kerucut bagian bawah."
+        },
+        {
+          "teks": "$270.000\\pi\\text{ Joule}$",
+          "alasan": "Menghitung usaha untuk memompa seluruh isi tangki hingga kosong total dari batas 0 hingga 6."
+        },
+        {
+          "teks": "$759.375\\pi\\text{ Joule}$",
+          "alasan": "Salah menentukan jarak angkat fluida, mengalikan dengan kedalaman y bukan (6 - y)."
+        }
+      ],
+      "pembahasan": "1. Jari-jari penampang pada ketinggian $y$:\n$$r(y) = \\frac{3}{6}y = \\frac{y}{2}$$\n2. Elemen gaya berat pada irisan setebal $dy$:\n$$dF = \\rho g dV = 1.000 \\times 10 \\times \\pi \\left(\\frac{y}{2}\\right)^2 dy = 2.500\\pi y^2 dy$$\n3. Jarak angkat ke tepi tangki adalah $(6 - y)$. Cairan yang dipindahkan berada pada interval $3 \\le y \\le 6$:\n$$W = \\int_{3}^{6} 2.500\\pi y^2 (6 - y)\\,dy = 2.500\\pi \\left[2y^3 - \\frac{y^4}{4}\\right]_{3}^{6}$$\n4. Evaluasi nilai integral:\n$$\\left[2(6)^3 - \\frac{6^4}{4}\\right] - \\left[2(3)^3 - \\frac{3^4}{4}\\right] = 108 - 33,75 = 74,25$$\n$$W = 2.500\\pi \\times 74,25 = 185.625\\pi\\text{ Joule}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 227,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kecepatan penyembuhan luka tersebut dapat diestimasi dengan fungsi berikut:"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "estimasi luas luka laju nol",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan fungsi antiturunan dengan syarat nilai awal ganda serta analisis batas kondisi laju stasioner.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju perubahan luas permukaan suatu luka pada pasien berkurang secara bertahap dan dimodelkan oleh persamaan laju $\\frac{dA}{dt} = -k(6 - t)\\text{ cm}^2/\\text{hari}$ untuk rentang waktu $0 \\le t \\le 6$, dengan $t$ menyatakan waktu dalam hari sejak perawatan intensif dimulai dan $k$ adalah konstanta positif. Diketahui luas luka pada saat awal perawatan ($t = 0$) adalah $26\\text{ cm}^2$, dan setelah $2\\text{ hari}$ perlakuan luas luka berkurang menjadi $16\\text{ cm}^2$. Luas luka yang tersisa pada saat laju penyembuhan mencapai nol adalah ....",
+      "jawaban_benar": "$8\\text{ cm}^2$",
+      "alasan_benar": "Fungsi luas luka diperoleh dari integral laju perubahan: $A(t) = \\int -k(6 - t)\\,dt = k\\left(\\frac{1}{2}t^2 - 6t\\right) + C$. Pada saat $t = 0$, $A(0) = C = 26$. Pada saat $t = 2$, $A(2) = k\\left(\\frac{1}{2}(4) - 6(2)\\right) + 26 = -10k + 26$. Diketahui $A(2) = 16$, sehingga $-10k + 26 = 16 \\implies 10k = 10 \\implies k = 1$. Laju penyembuhan mencapai nol ketika $\\frac{dA}{dt} = 0 \\iff -1(6 - t) = 0 \\iff t = 6$. Luas luka yang tersisa pada $t = 6$ adalah $A(6) = 1\\left(\\frac{1}{2}(36) - 6(6)\\right) + 26 = 18 - 36 + 26 = 8\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$0\\text{ cm}^2$",
+          "alasan": "Mengira luka sudah sembuh total tanpa sisa karena nilai laju penyembuhannya telah mencapai nol."
+        },
+        {
+          "teks": "$18\\text{ cm}^2$",
+          "alasan": "Menghitung besarnya total pengurangan luas luka selama 6 hari bukan sisa luas luka yang tertinggal."
+        },
+        {
+          "teks": "$10\\text{ cm}^2$",
+          "alasan": "Melakukan substitusi pada t = 4 alih-alih pada t = 6 saat laju penyembuhan nol."
+        }
+      ],
+      "pembahasan": "1. Bentuk fungsi antiturunan luas luka:\n$$A(t) = \\int -k(6 - t)\\,dt = k\\left(\\frac{t^2}{2} - 6t\\right) + C$$\n2. Substitusi nilai awal $t = 0$:\n$$A(0) = C = 26$$\n3. Menentukan konstanta $k$ menggunakan data $t = 2$:\n$$A(2) = k(2 - 12) + 26 = 16 \\implies -10k = -10 \\implies k = 1$$\nFungsi luas luka menjadi $A(t) = \\frac{t^2}{2} - 6t + 26$.\n4. Kondisi laju nol:\n$$\\frac{dA}{dt} = 0 \\iff -(6 - t) = 0 \\iff t = 6$$\n5. Luas luka pada $t = 6$:\n$$A(6) = \\frac{6^2}{2} - 6(6) + 26 = 18 - 36 + 26 = 8\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Seorang manajer perusahaan memperhitungkan bahwa pembelian seperangkat peralatan akan menghasilkan suatu penghematan biaya operasional pada perusahaan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "optimasi keuntungan akumulatif marjinal",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi titik waktu efisiensi optimal saat laju pendapatan menyamai laju biaya sebelum merumuskan dan menghitung integral laba bersih akumulatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah unit mesin industri menghasilkan laju pendapatan operasional sebesar $R'(t) = 18 - 2t$ (dalam puluhan juta rupiah per tahun) dan membutuhkan laju biaya perawatan sebesar $C'(t) = 2t + 2$ (dalam puluhan juta rupiah per tahun), dengan $t$ menyatakan lama mesin beroperasi dalam tahun ($t \\ge 0$). Perusahaan memutuskan untuk menghentikan pengoperasian mesin tepat saat pengoperasiannya tidak lagi memberikan tambahan laba bersih (laju pendapatan sama dengan laju biaya perawatan). Total laba bersih akumulatif maksimum yang diperoleh selama masa pengoperasian mesin tersebut adalah ....",
+      "jawaban_benar": "$\\text{Rp}320.000.000,00$",
+      "alasan_benar": "Waktu penghentian optimal terjadi saat $R'(t) = C'(t) \\iff 18 - 2t = 2t + 2 \\iff 4t = 16 \\iff t = 4$ tahun. Total laba bersih akumulatif maksimum diperoleh dari $P = \\int_{0}^{4} [R'(t) - C'(t)]\\,dt = \\int_{0}^{4} (16 - 4t)\\,dt = \\left[ 16t - 2t^2 \\right]_0^4 = 16(4) - 2(4)^2 = 64 - 32 = 32$ puluhan juta rupiah, setara dengan $\\text{Rp}320.000.000,00$.",
+      "distraktor": [
+        {
+          "teks": "$\\text{Rp}240.000.000,00$",
+          "alasan": "Siswa salah menentukan waktu efisiensi operasional menjadi $t = 2$ tahun akibat kekeliruan membagi saat menyelesaikan $4t = 8$, menghasilkan $\\left[ 16t - 2t^2 \\right]_0^2 = 24$ puluhan juta rupiah."
+        },
+        {
+          "teks": "$\\text{Rp}480.000.000,00$",
+          "alasan": "Siswa keliru mengintegralkan suku $-4t$ menjadi $-t^2$ (lupa membagi koefisien dengan 2), sehingga menghasilkan $16(4) - 4^2 = 48$ puluhan juta rupiah."
+        },
+        {
+          "teks": "$\\text{Rp}560.000.000,00$",
+          "alasan": "Siswa hanya mengintegralkan laju pendapatan $\\int_{0}^{4} (18 - 2t)\\,dt = 56$ puluhan juta rupiah tanpa mengurangkan laju biaya perawatannya."
+        }
+      ],
+      "pembahasan": "Laba bersih operasional bertambah selama laju pendapatan marjinal lebih besar daripada laju biaya perawatan, dan mencapai nilai maksimum ketika $R'(t) = C'(t)$:\n$$18 - 2t = 2t + 2$$\n$$4t = 16 \\implies t = 4\\text{ tahun}$$\n\nTotal laba bersih akumulatif maksimum diperoleh dari integral selisih kedua laju tersebut pada interval $[0, 4]$:\n$$\\begin{aligned}\nP &= \\int_{0}^{4} [R'(t) - C'(t)]\\,dt \\\\\n&= \\int_{0}^{4} [(18 - 2t) - (2t + 2)]\\,dt \\\\\n&= \\int_{0}^{4} (16 - 4t)\\,dt \\\\\n&= \\left[ 16t - 2t^2 \\right]_{0}^{4} \\\\\n&= \\left(16(4) - 2(4)^2\\right) - 0 \\\\\n&= 64 - 32 = 32\\text{ (dalam puluhan juta rupiah)}\n\\end{aligned}$$\n\nNilai dalam rupiah:\n$$32 \\times \\text{Rp}10.000.000,00 = \\text{Rp}320.000.000,00$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

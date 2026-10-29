@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 256,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.3 b",
+        "teks": "Dalam sebuah lomba lari 100 meter, waktu tempuh setiap pelari dicatat (dalam detik), seperti yang diilustrasikan pada Gambar 4.10. Misalkan X adalah variabel acak yang menyatakan waktu tempuh lari dan waktu tempuh berada pada rentang 13,5 detik hingga 15,4 detik. b. Buatlah taksiran bentuk ruang sampel dari variabel acak waktu tempuh lari tersebut.",
+        "jawaban": "S = {x | 13,5 <= x <= 15,4, x in R}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penentuan ruang sampel",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan notasi pembentuk himpunan bilangan real dari interval batas fisik pengukuran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen laboratorium menguji daya regang kawat baja tipis hingga putus. Gaya tarik yang terukur pada saat kawat putus berada dalam rentang $84,6\\text{ N}$ sampai dengan $92,8\\text{ N}$. Jika variabel acak $F$ menyatakan besar gaya tarik yang memutus kawat tersebut, bentuk notasi himpunan ruang sampel $S$ yang tepat adalah ....",
+      "jawaban_benar": "$S = \\{F \\mid 84,6 \\le F \\le 92,8,\\ F \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Gaya tarik adalah besaran kontinu hasil pengukuran sehingga ruang sampelnya mencakup seluruh bilangan real pada interval $[84,6; 92,8]$.",
+      "distraktor": [
+        {
+          "teks": "$S = \\{F \\mid 84,6 < F < 92,8,\\ F \\in \\mathbb{Z}\\}$",
+          "alasan": "Menggunakan himpunan bilangan bulat dan pertidaksamaan murni sehingga mengabaikan nilai desimal dan batas rentang."
+        },
+        {
+          "teks": "$S = \\{84,6;\\ 85,0;\\ 86,0;\\ \\dots;\\ 92,8\\}$",
+          "alasan": "Memperlakukan variabel acak kontinu sebagai variabel diskret dengan pencacahan satu per satu."
+        },
+        {
+          "teks": "$S = \\{F \\mid F \\le 84,6 \\text{ atau } F \\ge 92,8,\\ F \\in \\mathbb{R}\\}$",
+          "alasan": "Salah mengartikan interval rentang menjadi bagian luar dari nilai batas."
+        }
+      ],
+      "pembahasan": "Besaran gaya tarik diperoleh melalui pengukuran alat ukur mekanis dan memiliki nilai tak hingga banyaknya di antara batas ukur. Dengan demikian, $F$ merupakan variabel acak kontinu. Ruang sampel untuk nilai gaya antara $84,6\\text{ N}$ dan $92,8\\text{ N}$ dinyatakan sebagai interval tertutup bilangan real: $S = \\{F \\mid 84,6 \\le F \\le 92,8,\\ F \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": "Contoh Soal",
+        "nomor": "4.5",
+        "teks": "Sebuah mesin pengisi air mineral otomatis digunakan untuk mengisi botol 600 ml. Karena sifat pengisian yang tidak selalu tepat, volume air yang terisi dalam setiap botol bisa bervariasi, dari 595 ml hingga 605 ml. Misalkan X menyatakan volume air dalam suatu botol yang diisi oleh mesin tersebut. Apakah X merupakan variabel acak kontinu?",
+        "jawaban": "Ya, karena Rx mencakup semua bilangan real dalam suatu rentang dan tidak dapat dihitung satu per satu, maka X merupakan variabel acak kontinu.",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis sifat variabel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis sifat kontinu berdasarkan rentang pengukuran dan kepadatan himpunan bilangan real.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah dispenser industri mengisikan sirup ke dalam wadah bertarget $350\\text{ mL}$. Karena toleransi katup pompa, volume sirup yang terisi bervariasi secara acak dari $342,5\\text{ mL}$ hingga $357,5\\text{ mL}$. Misalkan $Y$ menyatakan volume sirup dalam sebuah wadah. Manakah simpulan yang paling tepat mengenai variabel acak $Y$ beserta alasannya?",
+      "jawaban_benar": "$Y$ merupakan variabel acak kontinu karena ruang nilainya memuat seluruh bilangan real pada interval $[342,5; 357,5]$ sehingga tak terhitung satu per satu.",
+      "alasan_benar": "Volume diperoleh lewat pengukuran kontinu sehingga nilai pada interval tersebut membentuk himpunan bagian bilangan real yang tak terhitung.",
+      "distraktor": [
+        {
+          "teks": "$Y$ merupakan variabel acak diskret karena volume cairan dapat dibulatkan ke satu angka desimal terdekat.",
+          "alasan": "Menyamakan pembulatan pembacaan alat dengan hakikat teoritis variabel acak kontinu."
+        },
+        {
+          "teks": "$Y$ merupakan variabel acak diskret karena rentang volumenya memiliki batas bawah $342,5\\text{ mL}$ dan batas atas $357,5\\text{ mL}$ yang bernilai terhingga.",
+          "alasan": "Keliru menganggap interval berhingga (bounded) sebagai himpunan berhingga (finite)."
+        },
+        {
+          "teks": "$Y$ merupakan variabel acak kontinu hanya jika selisih pengisian antarwadah selalu tepat bernilai kelipatan $0,5\\text{ mL}$.",
+          "alasan": "Membatasi nilai pada kisi diskret kelipatan tertentu yang justru merupakan ciri variabel diskret."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu didefinisikan pada ruang sampel di mana titik-titik hasilnya tak berhingga dan tak terhitung (uncountable). Karena volume sirup $Y$ diperoleh melalui pengukuran dan dapat bernilai pecahan/desimal sembarang di antara $342,5\\text{ mL}$ dan $357,5\\text{ mL}$, ruang nilainya merupakan himpunan bagian dari bilangan real $\\mathbb{R}$. Jadi, $Y$ adalah variabel acak kontinu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tinggi badan merupakan contoh variabel acak kontinu karena hasil pengukurannya bisa berupa bilangan desimal dalam rentang tertentu dan tidak dapat dihitung satu per satu (uncountable)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "klasifikasi variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemilahan dan analisis sifat dari empat besaran fisis yang berbeda.",
+      "stimulus": "Perhatikan empat variabel acak yang diamati pada suatu laboratorium riset pertanian berikut:\n(1) $K$: Konsentrasi pupuk cair dalam larutan hidroponik (dalam $\\text{ppm}$)\n(2) $B$: Banyaknya daun yang menguning pada satu pohon tomat\n(3) $T$: Waktu yang dibutuhkan benih jagung hingga berkecambah pertama kali (dalam jam)\n(4) $N$: Jumlah bulir padi yang hampa pada satu malai",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan stimulus tersebut, pasangan variabel acak yang keduanya tergolong sebagai variabel acak kontinu adalah ....",
+      "jawaban_benar": "(1) dan (3)",
+      "alasan_benar": "Konsentrasi zat cair dan durasi waktu diperoleh melalui pengukuran fisik yang nilainya berada pada interval kontinu bilangan real.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2)",
+          "alasan": "Keliru mengelompokkan jumlah daun yang merupakan data cacah/diskret."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Memilih pasangan variabel acak diskret (keduanya hasil proses membilang)."
+        },
+        {
+          "teks": "(3) dan (4)",
+          "alasan": "Keliru menganggap jumlah bulir hampa sebagai besaran kontinu."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu nilainya diperoleh melalui pengukuran dan berada dalam interval bilangan real tak terputus. Pada daftar:\n- (1) $K$ (konsentrasi) diukur dengan instrumen kimia, nilainya kontinu.\n- (2) $B$ (banyak daun) diperoleh dari mencacah satu per satu, nilainya diskret.\n- (3) $T$ (waktu perkecambahan) diukur dengan stopwatch/alat pencatat waktu, nilainya kontinu.\n- (4) $N$ (jumlah bulir) diperoleh dari membilang, nilainya diskret.\nDengan demikian, variabel kontinu adalah (1) dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya berupa bilangan real yang membentuk rentang tak terputus. Dengan demikian, antara dua nilai tertentu selalu terdapat kemungkinan terdapat nilai lain yang masih termasuk dalam variabel tersebut."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis kerapatan interval",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis sifat kerapatan (densitas) bilangan real pada interval variabel acak kontinu untuk membuktikan keberadaan nilai perantara.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah sensor termal mengukur suhu cairan pendingin mesin $T$ pada interval $60,00^\\circ\\text{C} \\le T \\le 60,50^\\circ\\text{C}$. Dua kali pencatatan berturut-turut menghasilkan nilai $t_1 = 60,12^\\circ\\text{C}$ dan $t_2 = 60,13^\\circ\\text{C}$. Berdasarkan sifat variabel acak kontinu, pernyataan yang paling tepat mengenai kemungkinan nilai suhu di antara $t_1$ dan $t_2$ adalah ....",
+      "jawaban_benar": "Terdapat tak hingga banyak nilai suhu real yang mungkin muncul di antara $t_1$ dan $t_2$.",
+      "alasan_benar": "Variabel acak kontinu didefinisikan pada himpunan bilangan real yang memiliki sifat kerapatan, sehingga di antara dua bilangan real selalu ada tak terhingga bilangan real lainnya.",
+      "distraktor": [
+        {
+          "teks": "Tidak ada nilai suhu lain yang mungkin karena selisihnya sudah mencapai batas ketelitian $0,01^\\circ\\text{C}$.",
+          "alasan": "Menyamakan keterbatasan resolusi tampilan alat dengan sifat matematis kontinu dari variabel tersebut."
+        },
+        {
+          "teks": "Tepat ada satu nilai suhu yang mungkin muncul di antara keduanya, yaitu nilai tengahnya $60,125^\\circ\\text{C}$.",
+          "alasan": "Hanya menghitung titik tengah aritmetika dan mengabaikan nilai real lainnya pada interval tersebut."
+        },
+        {
+          "teks": "Hanya ada sembilan nilai suhu tambahan jika dicatat hingga tiga angka di belakang koma.",
+          "alasan": "Terpaku pada pembatasan representasi desimal 3 angka di belakang koma."
+        }
+      ],
+      "pembahasan": "Salah satu ciri utama variabel acak kontinu adalah nilainya berupa bilangan real yang membentuk rentang tak terputus. Mengacu pada materi Buku Siswa hal 255: 'antara dua nilai tertentu selalu terdapat kemungkinan terdapat nilai lain yang masih termasuk dalam variabel tersebut'. Karena himpunan bilangan real bersifat rapat (dense), di antara dua nilai real sembarang $t_1 < t_2$ terdapat tak hingga banyaknya bilangan real lainnya.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0257-latihan-soal-variabel-acak-kontinu-c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "justifikasi ketakterhitungan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis sifat bilangan real pada interval tertutup untuk menjustifikasi mengapa ruang sampel tak terhitung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tekanan uap gas dalam suatu tabung reaksi selama eksperimen berlangsung berada pada rentang $4,2\\text{ bar}$ hingga $6,8\\text{ bar}$. Misalkan $P$ adalah variabel acak yang menyatakan tekanan uap gas tersebut (dalam bar). Apakah seluruh kemungkinan nilai pada ruang sampel variabel acak $P$ dapat dicacah atau dihitung satu per satu? Berikan alasan matematis yang tepat.",
+      "jawaban_benar": "Tidak dapat, karena ruang sampel $P$ memuat semua bilangan real pada interval $[4,2;\\ 6,8]$ yang sifatnya tak terhitung (*uncountable*).",
+      "alasan_benar": "Tekanan gas merupakan variabel acak kontinu yang nilainya berada pada interval kontinu bilangan real, sehingga himpunan nilainya berdensitas rapat dan tak terhitung (uncountable).",
+      "distraktor": [
+        {
+          "teks": "Dapat, karena selisih antara nilai tertinggi dan terendah bernilai tetap yaitu $2,6\\text{ bar}$.",
+          "alasan": "Mengira bahwa panjang interval yang berhingga membuat anggota di dalamnya berhingga dan dapat dicacah."
+        },
+        {
+          "teks": "Dapat, karena pembacaan alat ukur tekanan uap memiliki angka desimal dengan ketelitian tertentu.",
+          "alasan": "Menyamakan keterbatasan resolusi alat ukur fisik dengan sifat teoritis ruang sampel variabel acak kontinu."
+        },
+        {
+          "teks": "Tidak dapat, karena nilai batas atas $6,8\\text{ bar}$ dan batas bawah $4,2\\text{ bar}$ tidak terdefinisi secara pasti.",
+          "alasan": "Keliru menganggap ketakterhitungan disebabkan oleh batas interval yang tidak pasti, padahal batasnya jelas berhingga."
+        }
+      ],
+      "pembahasan": "Variabel acak $P$ merepresentasikan besaran fisik hasil pengukuran kontinu pada rentang $[4,2;\\ 6,8]$. Karena mencakup seluruh bilangan real di antara $4,2$ dan $6,8$, anggota ruang sampelnya tidak berhingga dan bersifat *uncountable* (tak terhitung). Oleh karena itu, nilai-nilainya tidak dapat dicacah satu per satu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": "Contoh Soal",
+        "nomor": "4.5",
+        "teks": "Sebuah mesin pengisi air mineral otomatis digunakan untuk mengisi botol 600 ml. Karena sifat pengisian yang tidak selalu tepat, volume air yang terisi dalam setiap botol bisa bervariasi, dari 595 ml hingga 605 ml. Misalkan X menyatakan volume air dalam suatu botol yang diisi oleh mesin tersebut. Apakah X merupakan variabel acak kontinu?",
+        "jawaban": "Volume air dalam satu botol ditentukan melalui proses pengukuran. Nilainya dari 595 ml hingga 605 ml, artinya antara kedua volume tersebut, selalu mungkin ada volume lain, misalnya 597,2 ml. Dengan demikian, nilai-nilai dari X membentuk suatu interval kontinu dalam bilangan real. Ruang hasil dari variabel acak X dapat ditulis Karena Rx mencakup semua bilangan real dalam suatu rentang dan tidak dapat dihitung satu per satu, maka X merupakan variabel acak kontinu.",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penentuan karakteristik kontinu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan definisi variabel acak kontinu pada kasus industri manufaktur dengan mengidentifikasi sifat interval ruang hasilnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pemotong pelat memproduksi lembaran logam tipis dengan ketebalan nominal $2,0\\text{ mm}$. Akibat getaran mekanik mesin, ketebalan riil lembaran logam yang dihasilkan bervariasi dari $1,8\\text{ mm}$ hingga $2,4\\text{ mm}$. Misalkan $T$ menyatakan ketebalan lembaran logam yang diproduksi. Apakah $T$ merupakan variabel acak kontinu dan apa alasannya?",
+      "jawaban_benar": "Ya, karena nilai $T$ diperoleh melalui proses pengukuran dan mencakup seluruh bilangan real pada interval $[1,8;\\ 2,4]$ sehingga tak terhitung.",
+      "alasan_benar": "Ketebalan diperoleh melalui pengukuran dan nilainya membentuk selang kontinu bilangan real yang tak terhitung (*uncountable*).",
+      "distraktor": [
+        {
+          "teks": "Tidak, karena rentang ketebalan dibatasi secara tegas antara $1,8\\text{ mm}$ dan $2,4\\text{ mm}$.",
+          "alasan": "Mengira bahwa variabel kontinu harus memiliki rentang tak berhingga ($-\\infty$ sampai $\\infty$)."
+        },
+        {
+          "teks": "Tidak, karena tebal lembaran pelat dapat dikelompokkan ke dalam ukuran persepuluhan milimeter.",
+          "alasan": "Mengacaukan proses pembulatan diskret dengan sifat kontinu dari variabel aslinya."
+        },
+        {
+          "teks": "Ya, karena nilai $T$ selalu berupa bilangan bulat positif yang tersebar merata.",
+          "alasan": "Keliru menyebut sifat nilai variabel acak kontinu sebagai bilangan bulat, padahal bilangan real."
+        }
+      ],
+      "pembahasan": "Ketebalan $T$ diperoleh dari pengukuran fisik dan nilainya dapat berupa bilangan desimal berapapun di antara $1,8\\text{ mm}$ dan $2,4\\text{ mm}$. Karena ruang nilainya membentuk interval kontinu pada himpunan bilangan real dan tidak dapat dicacah satu per satu, $T$ memenuhi definisi variabel acak kontinu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X berupa himpunan berhingga atau tak berhingga, tetapi tak terhitung ( uncountable ), maka X disebut variabel acak kontinu ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "identifikasi ruang sampel kontinu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis himpunan bagian bilangan dan kardinalitas ruang sampel untuk menentukan variabel acak yang tergolong kontinu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan empat definisi ruang sampel untuk variabel acak berikut:\n(1) $S_1 = \\{x \\mid 10 \\le x \\le 20,\\ x \\in \\mathbb{N}\\}$\n(2) $S_2 = \\{x \\mid 0 < x < 1,\\ x \\in \\mathbb{Q}\\}$\n(3) $S_3 = \\{x \\mid 5,0 \\le x \\le 8,5,\\ x \\in \\mathbb{R}\\}$\n(4) $S_4 = \\{x \\mid x = 2n,\\ n \\in \\mathbb{Z}^+\\}$\n\nBerdasarkan Definisi 4.3 mengenai variabel acak kontinu, ruang sampel yang mendefinisikan variabel acak kontinu adalah ....",
+      "jawaban_benar": "(3) saja",
+      "alasan_benar": "Definisi 4.3 mensyaratkan ruang sampel tak terhitung (uncountable), yang hanya dipenuhi oleh interval bilangan real $S_3$.",
+      "distraktor": [
+        {
+          "teks": "(2) dan (3)",
+          "alasan": "Mengira himpunan bilangan rasional $\\mathbb{Q}$ bersifat tak terhitung karena padat di antara 0 dan 1, padahal $\\mathbb{Q}$ bersifat terhitung (*countable*)."
+        },
+        {
+          "teks": "(1) dan (4)",
+          "alasan": "Memilih himpunan diskret yang jelas-jelas terhitung (*countable*)."
+        },
+        {
+          "teks": "(2), (3), dan (4)",
+          "alasan": "Menganggap semua himpunan beranggotakan tak hingga otomatis tak terhitung (*uncountable*)."
+        }
+      ],
+      "pembahasan": "Berdasarkan Definisi 4.3, variabel acak kontinu didefinisikan pada ruang sampel yang tak terhitung (*uncountable*).\n- $S_1$ berhingga (terhitung).\n- $S_2$ merupakan himpunan bilangan rasional, yang secara matematis beranggotakan tak hingga tetapi terhitung (*countably infinite*).\n- $S_3$ merupakan interval tertutup pada bilangan real $\\mathbb{R}$, yang bersifat tak terhitung (*uncountable*).\n- $S_4$ merupakan himpunan bilangan genap positif yang terhitung (*countably infinite*).\nJadi, hanya (3) yang mendefinisikan variabel acak kontinu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tinggi badan merupakan contoh variabel acak kontinu karena hasil pengukurannya bisa berupa bilangan desimal dalam rentang tertentu dan tidak dapat dihitung satu per satu (uncountable)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemilahan tipe data pengukuran",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengklasifikasikan variabel-variabel acak berdasarkan cara perolehan nilai (pengukuran kontinu vs penghitungan diskret).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas kesehatan mencatat beberapa variabel acak dari sejumlah balita di posyandu:\n(1) $W$: Berat badan balita (dalam kg)\n(2) $N$: Frekuensi kunjungan imunisasi yang telah diikuti balita\n(3) $L$: Panjang lingkar kepala balita (dalam cm)\n(4) $G$: Banyaknya gigi susu yang telah tumbuh\n\nPasangan variabel acak yang keduanya tergolong variabel acak kontinu adalah ....",
+      "jawaban_benar": "(1) dan (3)",
+      "alasan_benar": "Berat badan ($W$) dan lingkar kepala ($L$) diperoleh melalui pengukuran kontinu dan nilainya tak terhitung dalam suatu rentang.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2)",
+          "alasan": "$N$ adalah hasil membilang/menghitung sehingga merupakan variabel acak diskret."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Keduanya merupakan variabel acak diskret hasil penghitungan bilangan bulat nonnegatif."
+        },
+        {
+          "teks": "(3) dan (4)",
+          "alasan": "$G$ adalah hasil pencacahan (diskret), bukan variabel acak kontinu."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu diperoleh dari proses pengukuran fisik dan nilainya dapat berupa bilangan desimal dalam rentang tertentu yang tidak dapat dicacah satu per satu. Berat badan ($W$) dan lingkar kepala ($L$) diperoleh dari pengukuran menggunakan alat ukur, sehingga keduanya merupakan variabel acak kontinu. Sebaliknya, frekuensi kunjungan ($N$) dan banyak gigi susu ($G$) diperoleh dari proses mencacah/menghitung satu per satu, sehingga merupakan variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 256,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.3 b",
+        "teks": "Buatlah taksiran bentuk ruang sampel dari variabel acak waktu tempuh lari tersebut. Ruang sampel dapat ditulis sebagai rentang waktu: S = \" x … # x # f, x ! R , .",
+        "jawaban": "$S = \\{x \\mid 13,5 \\le x \\le 15,4,\\ x \\in \\mathbb{R}\\}$",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "formulasi ruang sampel kontinu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemetaan interval data terukur ke dalam bentuk himpunan matematis bilangan real.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu larutan kimia memerlukan waktu pengendapan partikel yang dicatat dalam menit. Misalkan $T$ adalah variabel acak kontinu yang menyatakan waktu pengendapan tersebut, dengan hasil pengamatan selalu berada pada rentang $6,4\\text{ menit}$ hingga $9,8\\text{ menit}$. Bentuk penulisan ruang sampel $S$ yang tepat untuk variabel acak tersebut adalah ....",
+      "jawaban_benar": "$S = \\{t \\mid 6,4 \\le t \\le 9,8,\\ t \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Ruang sampel variabel acak kontinu memuat seluruh bilangan real pada interval batas ukur, ditulis $S = \\{t \\mid 6,4 \\le t \\le 9,8,\\ t \\in \\mathbb{R}\\}$.",
+      "distraktor": [
+        {
+          "teks": "$S = \\{t \\mid 6,4 \\le t \\le 9,8,\\ t \\in \\mathbb{Z}\\}$",
+          "alasan": "Menggunakan himpunan bilangan bulat (Z), bukan bilangan real (R)."
+        },
+        {
+          "teks": "$S = \\{6,4;\\ 7,0;\\ 8,0;\\ 9,0;\\ 9,8\\}$",
+          "alasan": "Menuliskan ruang sampel secara diskret diskrit tercacah padahal variabel kontinu memuat tak terhingga nilai desimal."
+        },
+        {
+          "teks": "$S = \\{t \\mid 6,4 < t < 9,8,\\ t \\in \\mathbb{Q}\\}$",
+          "alasan": "Mengabaikan nilai batas (pertidaksamaan murni) dan membatasi pada bilangan rasional (Q)."
+        }
+      ],
+      "pembahasan": "Variabel acak $T$ merupakan variabel acak kontinu karena diperoleh dari pengukuran waktu. Nilai $T$ mencakup seluruh bilangan real dari batas bawah $6,4$ hingga batas atas $9,8$, termasuk kedua batas tersebut. Oleh karena itu, bentuk notasi pembentuk himpunan untuk ruang sampelnya adalah:\n$$S = \\{t \\mid 6,4 \\le t \\le 9,8,\\ t \\in \\mathbb{R}\\}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0257-latihan-soal-variabel-acak-kontinu-c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "evaluasi ketaktercacahan nilai",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis sifat kontinu data laju alir untuk menyimpulkan keterhitungan titik sampel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju alir cairan pelarut melalui suatu pipa kapiler berkisar dari $15,2\\text{ mL/s}$ hingga $19,6\\text{ mL/s}$. Misalkan $Q$ adalah variabel acak yang menyatakan laju alir tersebut dalam satuan $\\text{mL/s}$. Apakah seluruh kemungkinan nilai laju alir dalam ruang sampel tersebut dapat dihitung atau dicacah satu per satu? Berikan penjelasan yang tepat.",
+      "jawaban_benar": "Tidak dapat, karena ruang sampel $Q$ memuat seluruh bilangan real dalam interval tersebut sehingga jumlah nilainya tak terhitung (uncountable).",
+      "alasan_benar": "Variabel acak kontinu didefinisikan pada interval bilangan real yang nilainya rapat dan tak terhitung (uncountable).",
+      "distraktor": [
+        {
+          "teks": "Dapat, karena selisih nilai terbesar dan terkecil berhingga yaitu $4,4\\text{ mL/s}$.",
+          "alasan": "Mengacaukan panjang rentang (interval berhingga) dengan banyak titik sampel di dalam rentang."
+        },
+        {
+          "teks": "Dapat, asalkan nilai laju alir dibulatkan ke satu tempat desimal terdekat.",
+          "alasan": "Memaksa pembulatan instrumen pengukuran sehingga mengubah sifat kontinu alami menjadi diskret."
+        },
+        {
+          "teks": "Tidak dapat, karena nilai batas atas $19,6\\text{ mL/s}$ tidak pasti tercapai dalam eksperimen.",
+          "alasan": "Memberikan alasan empiris tentang kepastian nilai batas, bukan sifat ketakterhitungan bilangan real."
+        }
+      ],
+      "pembahasan": "Laju alir $Q$ adalah variabel acak kontinu yang terbentuk dari proses pengukuran. Ruang sampel variabel acak ini berupa interval bilangan real $[15,2;\\ 19,6]$. Karena antara sembarang dua bilangan real selalu memuat tak hingga banyak bilangan real lainnya, kemungkinan nilai laju alir tidak dapat dicacah atau dihitung satu per satu (uncountable).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya berupa bilangan real yang membentuk rentang tak terputus. Dengan demikian, antara dua nilai tertentu selalu terdapat kemungkinan terdapat nilai lain yang masih termasuk dalam variabel tersebut."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis densitas rentang kontinu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis sifat kerapatan interval tak terputus pada variabel acak kontinu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang laboran mengamati massa endapan $M$ (dalam gram) hasil suatu reaksi kimia yang berada pada rentang $2,40\\text{ gram} \\le M \\le 2,50\\text{ gram}$. Dari pengujian berulang, tercatat dua hasil yaitu $2,42\\text{ gram}$ dan $2,43\\text{ gram}$. Berdasarkan sifat variabel acak kontinu, pernyataan yang paling tepat mengenai kemungkinan nilai massa endapan di antara kedua nilai tersebut adalah ....",
+      "jawaban_benar": "Terdapat tak hingga banyak kemungkinan nilai massa riil di antara $2,42\\text{ gram}$ dan $2,43\\text{ gram}$ karena nilainya membentuk rentang tak terputus.",
+      "alasan_benar": "Nilai variabel acak kontinu membentuk rentang tak terputus pada bilangan real sehingga di antara dua nilai sembarang selalu ada nilai lain tak hingga banyaknya.",
+      "distraktor": [
+        {
+          "teks": "Hanya terdapat tepat sembilan kemungkinan nilai baru jika ketelitian dinaikkan menjadi dua desimal berikutnya.",
+          "alasan": "Membatasi ketelitian instrumen pada digit diskret tertentu, bukan sifat kontinu teoritis."
+        },
+        {
+          "teks": "Tidak ada kemungkinan nilai lain karena data pengukuran hanya menggunakan dua angka di belakang koma.",
+          "alasan": "Menganggap format penyajian desimal membatasi keberadaan nilai kontinu sebenarnya."
+        },
+        {
+          "teks": "Hanya terdapat tepat satu nilai di tengah, yaitu nilai rata-rata $2,425\\text{ gram}$.",
+          "alasan": "Mengira hanya nilai tengah rata-rata aritmetika yang dapat menjadi nilai variabel."
+        }
+      ],
+      "pembahasan": "Salah satu ciri utama variabel acak kontinu adalah nilainya berupa bilangan real yang membentuk rentang tak terputus. Hal ini berarti di antara dua nilai tertentu ($2,42$ dan $2,43$), selalu terdapat kemungkinan nilai lain dalam jumlah tak hingga banyaknya (seperti $2,421$; $2,4256$; $2,42981$, dst.) yang masih termasuk dalam variabel acak tersebut.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tinggi badan merupakan contoh variabel acak kontinu karena hasil pengukurannya bisa berupa bilangan desimal dalam rentang tertentu dan tidak dapat dihitung satu per satu (uncountable)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "identifikasi variabel kontinu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan klasifikasi beberapa variabel berdasarkan cara perolehan nilai (pengukuran vs pencacahan).",
+      "stimulus": "Perhatikan empat variabel acak yang diamati pada suatu pabrik farmasi berikut:\n(1) Tekanan gas dalam tabung reaksi yang berada pada rentang $1,8\\text{ atm}$ hingga $2,4\\text{ atm}$.\n(2) Jumlah botol sirup yang cacat selama proses pengemasan per giliran kerja.\n(3) Konsentrasi zat aktif dalam larutan uji yang berkisar antara $0,05\\text{ mg/mL}$ hingga $0,15\\text{ mg/mL}$.\n(4) Banyaknya teknisi laboratorium yang bertugas pada shift pagi.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan stimulus tersebut, variabel acak yang tergolong sebagai variabel acak kontinu adalah ....",
+      "jawaban_benar": "(1) dan (3)",
+      "alasan_benar": "(1) dan (3) diperoleh dari hasil pengukuran dan nilainya berada dalam rentang kontinu desimal tak terhitung.",
+      "distraktor": [
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Memilih variabel acak diskret yang diperoleh melalui proses menghitung/mencacah bilangan bulat nonnegatif."
+        },
+        {
+          "teks": "(1) dan (2)",
+          "alasan": "Salah mengklasifikasikan jumlah botol cacat (diskret) sebagai variabel acak kontinu."
+        },
+        {
+          "teks": "(2) dan (3)",
+          "alasan": "Mencampurkan satu variabel acak diskret (jumlah botol) dengan satu variabel acak kontinu (konsentrasi)."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu diperoleh dari hasil pengukuran, memiliki nilai berupa bilangan real dalam suatu rentang, dan nilainya tak terhitung (uncountable):\n- (1) Tekanan gas: diukur, bernilai real kontinu.\n- (2) Jumlah botol: dihitung (cacah), bernilai bulat (diskret).\n- (3) Konsentrasi zat aktif: diukur, bernilai real kontinu.\n- (4) Banyaknya teknisi: dihitung (cacah), bernilai bulat (diskret).\nJadi, variabel acak kontinu adalah (1) dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0257-latihan-soal-variabel-acak-kontinu-b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penentuan ruang sampel kontinu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa perlu mengidentifikasi variabel acak sebagai variabel kontinu dan menyusun notasi pembentuk himpunan ruang sampelnya pada bilangan real.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada musim penghujan, suhu udara harian di sebuah dataran tinggi berkisar dari $18,4^\\circ\\text{C}$ hingga $24,0^\\circ\\text{C}$. Misalkan $X$ adalah variabel acak yang menyatakan suhu udara harian dalam derajat Celsius. Bentuk taksiran ruang sampel dari variabel acak suhu harian tersebut adalah ....",
+      "jawaban_benar": "$S = \\{x \\mid 18,4 \\le x \\le 24,0,\\ x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Suhu udara diperoleh dari pengukuran sehingga merupakan variabel acak kontinu yang memuat seluruh nilai bilangan real dalam rentang batas tersebut.",
+      "distraktor": [
+        {
+          "teks": "$S = \\{x \\mid 18,4 \\le x \\le 24,0,\\ x \\in \\mathbb{Z}\\}$",
+          "alasan": "Siswa keliru menganggap anggota ruang sampel variabel acak kontinu berupa bilangan bulat."
+        },
+        {
+          "teks": "$S = \\{18,4;\\ 19,0;\\ 20,0;\\ 21,0;\\ 22,0;\\ 23,0;\\ 24,0\\}$",
+          "alasan": "Siswa mendaftar nilai secara diskret dan mengabaikan nilai desimal tak terhitung di antara dua titik."
+        },
+        {
+          "teks": "$S = \\{x \\mid 18,4 < x < 24,0,\\ x \\in \\mathbb{Q}\\}$",
+          "alasan": "Siswa salah menggunakan tanda pertidaksamaan ketat dan membatasi himpunan hanya pada bilangan rasional."
+        }
+      ],
+      "pembahasan": "Suhu udara merupakan variabel acak kontinu karena nilainya diperoleh melalui pengukuran dan dapat bernilai pecahan atau desimal tak terhitung dalam suatu rentang. Oleh karena itu, ruang sampelnya mencakup semua bilangan real dari batas bawah hingga batas atas, yaitu $S = \\{x \\mid 18,4 \\le x \\le 24,0,\\ x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0257-latihan-soal-variabel-acak-kontinu-b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "formulasi rentang ruang sampel",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa mentranslasikan rentang pengukuran besaran fisik listrik menjadi bentuk notasi matematis ruang sampel kontinu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Arus listrik yang mengalir melalui suatu elemen pemanas laboratorium berfluktuasi secara acak pada rentang $3,50\\text{ A}$ hingga $5,25\\text{ A}$. Jika $I$ adalah variabel acak kontinu yang menyatakan kuat arus listrik tersebut dalam ampere, representasi ruang sampel yang tepat untuk variabel acak $I$ adalah ....",
+      "jawaban_benar": "$S = \\{i \\mid 3,50 \\le i \\le 5,25,\\ i \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Kuat arus listrik adalah besaran kontinu hasil pengukuran sehingga mencakup semua bilangan real dalam interval tertutup $[3,50; 5,25]$.",
+      "distraktor": [
+        {
+          "teks": "$S = \\{i \\mid 3,50 \\le i \\le 5,25,\\ i \\in \\mathbb{N}\\}$",
+          "alasan": "Siswa keliru menggunakan himpunan bilangan asli untuk variabel hasil pengukuran kontinu."
+        },
+        {
+          "teks": "$S = \\{3,50;\\ 4,00;\\ 4,50;\\ 5,00;\\ 5,25\\}$",
+          "alasan": "Siswa menganggap ruang sampel hanya terdiri dari nilai-nilai diskret kelipatan desimal tertentu."
+        },
+        {
+          "teks": "$S = \\{i \\mid 3,50 < i < 5,25,\\ i \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa keliru tidak memasukkan nilai batas pengukuran dengan menggunakan pertidaksamaan terbuka."
+        }
+      ],
+      "pembahasan": "Kuat arus listrik $I$ merupakan variabel acak kontinu karena nilainya dapat berada di sembarang titik real pada selang batas pengukuran. Dengan demikian, ruang sampelnya didefinisikan sebagai himpunan semua bilangan real dari $3,50$ sampai $5,25$, yaitu $S = \\{i \\mid 3,50 \\le i \\le 5,25,\\ i \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya berupa bilangan real yang membentuk rentang tak terputus. Dengan demikian, antara dua nilai tertentu selalu terdapat kemungkinan terdapat nilai lain yang masih termasuk dalam variabel tersebut."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "karakteristik interval kontinu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa menganalisis sifat rentang tak terputus dari variabel acak kontinu pada dua titik data yang sangat berdekatan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen kimia mengukur volume gas hidrogen $V$ yang dihasilkan dalam rentang $12,0\\text{ mL} \\le V \\le 15,0\\text{ mL}$. Dua data pencatatan berturut-turut menunjukkan volume sebesar $13,4\\text{ mL}$ dan $13,5\\text{ mL}$. Berdasarkan ciri-ciri variabel acak kontinu, simpulan yang benar mengenai nilai-nilai yang mungkin berada di antara kedua hasil pengukuran tersebut adalah ....",
+      "jawaban_benar": "Terdapat tak hingga banyak kemungkinan nilai volume lain di antara $13,4\\text{ mL}$ dan $13,5\\text{ mL}$ karena nilainya membentuk rentang tak terputus pada bilangan real.",
+      "alasan_benar": "Variabel acak kontinu membentuk rentang tak terputus pada himpunan bilangan real sehingga di antara sembarang dua nilai selalu ada tak hingga banyaknya nilai real lain.",
+      "distraktor": [
+        {
+          "teks": "Tidak ada kemungkinan nilai lain di antara keduanya karena resolusi pencatatan sudah berhenti pada satu tempat desimal.",
+          "alasan": "Siswa menyamakan keterbatasan alat ukur dengan karakteristik teoretis dari ruang sampel variabel acak kontinu."
+        },
+        {
+          "teks": "Hanya terdapat sembilan kemungkinan nilai lain, yaitu dari $13,41\\text{ mL}$ sampai $13,49\\text{ mL}$.",
+          "alasan": "Siswa membatasi nilai bilangan real hanya pada presisi dua tempat desimal."
+        },
+        {
+          "teks": "Hanya terdapat tepat satu nilai perantara, yaitu nilai rata-rata dari kedua pengukuran sebesar $13,45\\text{ mL}$.",
+          "alasan": "Siswa keliru menganggap hanya nilai tengah yang mungkin muncul di antara dua pengukuran."
+        }
+      ],
+      "pembahasan": "Menurut sifat variabel acak kontinu, nilainya mencakup seluruh bilangan real pada interval tertentu dan membentuk rentang tak terputus. Oleh karena itu, di antara dua nilai sembarang seperti $13,4\\text{ mL}$ dan $13,5\\text{ mL}$, selalu terdapat tak hingga banyak nilai desimal lain yang mungkin terjadi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tinggi badan merupakan contoh variabel acak kontinu karena hasil pengukurannya bisa berupa bilangan desimal dalam rentang tertentu dan tidak dapat dihitung satu per satu (uncountable)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "klasifikasi variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa menerapkan pemahaman tentang perbedaan hasil pengukuran kontinu dan pencacahan diskret pada sekumpulan data meteorologi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang petugas stasiun meteorologi mencatat empat variabel acak selama pengamatan cuaca harian:\n(1) Kecepatan hembusan angin (dalam km/jam)\n(2) Banyaknya hari hujan dalam satu bulan\n(3) Curah hujan harian (dalam mm)\n(4) Banyaknya stasiun pemantau cuaca yang aktif\n\nPasangan variabel acak yang tergolong sebagai variabel acak kontinu adalah ....",
+      "jawaban_benar": "(1) dan (3)",
+      "alasan_benar": "Kecepatan angin dan curah hujan diperoleh dari hasil pengukuran dan nilainya berada dalam rentang bilangan real tak terhitung.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2)",
+          "alasan": "Siswa salah mengira banyaknya hari hujan adalah variabel kontinu, padahal merupakan variabel diskret hasil pencacahan."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Siswa memilih pasangan variabel acak diskret alih-alih variabel acak kontinu."
+        },
+        {
+          "teks": "(3) dan (4)",
+          "alasan": "Siswa keliru mengidentifikasi banyaknya stasiun pemantau sebagai variabel kontinu."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu diperoleh melalui proses pengukuran dan nilainya berupa bilangan real dalam suatu interval (uncountable). Dari keempat variabel tersebut, kecepatan angin (1) dan curah hujan harian (3) diperoleh melalui alat ukur sehingga merupakan variabel acak kontinu. Sedangkan banyaknya hari hujan (2) dan banyaknya stasiun (4) diperoleh dari hasil pencacahan (bilangan cacah) sehingga merupakan variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X berupa himpunan berhingga atau tak berhingga, tetapi tak terhitung ( uncountable ), maka X disebut variabel acak kontinu."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis ruang sampel tak terhitung",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa menganalisis empat definisi ruang sampel matematis untuk menentukan mana yang memenuhi kriteria tak terhitung (uncountable).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan daerah nilai dari empat variabel acak yang berkaitan dengan operasional bus antarkota berikut:\n- $R_P = \\{t \\in \\mathbb{R} \\mid 0 \\le t \\le 120\\}$ (waktu keterlambatan bus dalam menit)\n- $R_Q = \\{n \\in \\mathbb{N} \\mid 0 \\le n \\le 60\\}$ (jumlah penumpang di dalam bus)\n- $R_R = \\{20, 25, 30, 35, 40\\}$ (pilihan tarif bagasi lebih dalam ribuan rupiah)\n- $R_S = \\{v \\in \\mathbb{R} \\mid 40 \\le v \\le 100\\}$ (kecepatan rata-rata bus dalam km/jam)\n\nVariabel acak yang memiliki ruang sampel kontinu adalah ....",
+      "jawaban_benar": "$P$ dan $S$",
+      "alasan_benar": "Daerah nilai $R_P$ dan $R_S$ memuat seluruh bilangan real dalam interval tertutup sehingga bersifat tak terhitung (uncountable).",
+      "distraktor": [
+        {
+          "teks": "$Q$ dan $R$",
+          "alasan": "Siswa memilih himpunan bilangan bulat dan berhingga yang merupakan representasi ruang sampel diskret."
+        },
+        {
+          "teks": "$P$ dan $Q$",
+          "alasan": "Siswa mengira $R_Q$ kontinu hanya karena dibatasi oleh rentang $0 \\le n \\le 60$, mengabaikan syarat $n \\in \\mathbb{N}$."
+        },
+        {
+          "teks": "$R$ dan $S$",
+          "alasan": "Siswa gagal membedakan himpunan nilai diskret berhingga pada $R_R$ dengan interval bilangan real kontinu pada $R_S$."
+        }
+      ],
+      "pembahasan": "Ruang sampel kontinu adalah ruang sampel yang titik-titik anggotanya tak terhitung banyaknya (uncountable), biasanya didefinisikan pada interval bilangan real $\\mathbb{R}$. Pada $R_P$ dan $R_S$, nilai variabel mencakup seluruh bilangan real pada rentang masing-masing sehingga keduanya merupakan variabel acak kontinu. Sebaliknya, $R_Q$ terdiri atas bilangan asli (terhitung) dan $R_R$ berupa himpunan terhingga diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": "Ayo Berdiskusi",
+        "nomor": "1",
+        "teks": "Perhatikan variabel acak berikut.\n\n- Waktu tempuh lari 100 meter\n\n- Banyak siswa yang hadir di kelas\n\n- Volume air dalam gelas\n\n- Banyak soal yang dijawab benar pada ujian matematika\n\n- Berat badan siswa kelas XII\n\nIdentifikasilah variabel acak di atas, kemudian berdiskusilah untuk menjawab setiap pertanyaan berikut ini.\n\n1. Manakah dari variabel-variabel di atas yang memiliki nilai tak terhitung banyaknya dalam suatu rentang?",
+        "jawaban": "Waktu tempuh lari 100 meter, Volume air dalam gelas, dan Berat badan siswa kelas XII",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "pengelompokan variabel tak terhitung",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis klasifikasi sifat kontinu versus diskret pada lima variabel operasional pabrik untuk menentukan variabel dengan nilai tak terhitung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan lima variabel acak yang diamati pada jalur perakitan suatu pabrik otomotif berikut:\n(1) Waktu yang dibutuhkan seorang teknisi untuk merakit satu unit transmisi\n(2) Banyaknya cacat las yang terdeteksi pada rangka bodi mobil\n(3) Tekanan oli hidrolik pada sistem kemudi saat dilakukan uji jalan\n(4) Banyaknya baut yang terpasang pada satu blok mesin kendaraan\n(5) Konsumsi bahan bakar kendaraan selama pengujian emisi sejauh $100\\text{ km}$\n\nManakah dari variabel-variabel acak di atas yang memiliki nilai tak terhitung banyaknya dalam suatu rentang?",
+      "jawaban_benar": "(1), (3), dan (5)",
+      "alasan_benar": "Variabel (1) waktu, (3) tekanan, dan (5) volume konsumsi bahan bakar merupakan besaran hasil pengukuran yang bernilai bilangan real kontinu dalam suatu interval sehingga memiliki nilai tak terhitung banyaknya (uncountable).",
+      "distraktor": [
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Memilih variabel acak diskret hasil pencacahan atau perhitungan satu per satu yang nilainya terhitung (countable)."
+        },
+        {
+          "teks": "(1), (2), dan (3)",
+          "alasan": "Menyertakan variabel (2) banyaknya cacat las yang merupakan variabel diskret terbilang."
+        },
+        {
+          "teks": "(3), (4), dan (5)",
+          "alasan": "Menyertakan variabel (4) banyaknya baut yang merupakan variabel diskret hasil pencacahan."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu dicirikan oleh perolehan nilainya melalui proses pengukuran sehingga mencakup semua bilangan real pada suatu interval tak terputus. Akibatnya, nilai-nilai tersebut tak terhitung banyaknya (_uncountable_).\n- (1) Waktu perakitan $\\rightarrow$ hasil pengukuran waktu (kontinu, tak terhitung).\n- (2) Banyak cacat las $\\rightarrow$ hasil membilang/mencacah (diskret, terhitung).\n- (3) Tekanan oli $\\rightarrow$ hasil pengukuran tekanan (kontinu, tak terhitung).\n- (4) Banyak baut $\\rightarrow$ hasil membilang/mencacah (diskret, terhitung).\n- (5) Konsumsi bahan bakar $\\rightarrow$ hasil pengukuran volume cairan (kontinu, tak terhitung).\nJadi, variabel yang memiliki nilai tak terhitung banyaknya adalah (1), (3), dan (5).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 254,
+        "bagian": "Ayo Berdiskusi",
+        "nomor": "1",
+        "teks": "Perhatikan variabel acak berikut.\n\n- Waktu tempuh lari 100 meter\n\n- Banyak siswa yang hadir di kelas\n\n- Volume air dalam gelas\n\n- Banyak soal yang dijawab benar pada ujian matematika\n\n- Berat badan siswa kelas XII\n\nIdentifikasilah variabel acak di atas, kemudian berdiskusilah untuk menjawab setiap pertanyaan berikut ini.\n\n1. Manakah dari variabel-variabel di atas yang memiliki nilai tak terhitung banyaknya dalam suatu rentang?",
+        "jawaban": "Waktu tempuh lari 100 meter, Volume air dalam gelas, dan Berat badan siswa kelas XII",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis ketercacahan peubah acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penelaahan karakteristik data hasil observasi stasiun geofisika untuk memilah variabel kontinu yang nilainya tak terhitung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tim peneliti di stasiun pemantauan gunung api mencatat lima variabel acak selama masa observasi:\n(1) Frekuensi gempa vulkanik dangkal yang terekam seismograf per hari\n(2) Laju curah hujan per jam di lereng kawah yang dicatat sensor otomatis\n(3) Jumlah kera liar yang terpantau melintas di sekitar pos pengamatan\n(4) Konsentrasi gas belerang di udara ambien pada radius pengamanan\n(5) Perubahan elevasi kubah lava hasil pengukuran teodolit digital\n\nBerdasarkan karakteristik variabel acak, kelompok variabel yang memiliki kemungkinan nilai tak terhitung banyaknya dalam suatu selang adalah ....",
+      "jawaban_benar": "(2), (4), dan (5)",
+      "alasan_benar": "Laju curah hujan, konsentrasi gas belerang, dan perubahan elevasi diperoleh melalui instrumen pengukuran fisik sehingga nilainya dapat berupa sembarang bilangan real pada suatu selang (kontinu dan tak terhitung).",
+      "distraktor": [
+        {
+          "teks": "(1) dan (3)",
+          "alasan": "Memilih variabel acak diskret yang diperoleh dari proses membilang atau pencacahan kejadian."
+        },
+        {
+          "teks": "(1), (2), dan (4)",
+          "alasan": "Keliru menganggap frekuensi gempa sebagai variabel kontinu padahal menyatakan banyak kejadian diskret."
+        },
+        {
+          "teks": "(2), (3), dan (5)",
+          "alasan": "Menyertakan jumlah kera liar yang merupakan peubah diskret berhingga atau terhitung."
+        }
+      ],
+      "pembahasan": "Variabel acak yang memiliki nilai tak berhingga dan tak terhitung (_uncountable_) pada suatu rentang adalah variabel acak kontinu yang diperoleh melalui pengukuran besaran fisik:\n- (1) Frekuensi gempa $\\rightarrow$ pencacahan kejadian bulat $0, 1, 2, \\dots$ (diskret, terhitung).\n- (2) Laju curah hujan $\\rightarrow$ pengukuran volume/tinggi air per satuan waktu (kontinu, tak terhitung).\n- (3) Jumlah kera liar $\\rightarrow$ pencacahan individu (diskret, terhitung).\n- (4) Konsentrasi gas $\\rightarrow$ pengukuran kadar/fraksi zat dalam udara (kontinu, tak terhitung).\n- (5) Perubahan elevasi $\\rightarrow$ pengukuran panjang/ketinggian (kontinu, tak terhitung).\nDengan demikian, variabel yang memiliki nilai tak terhitung banyaknya dalam suatu selang adalah (2), (4), dan (5).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 255,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hasilnya dapat direpresentasikan berupa deretan titik yang terhubung dan membentuk garis pada garis bilangan."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "representasi garis bilangan kontinu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan pemahaman konseptual representasi garis bilangan kontinu pada pemodelan rentang variabel acak waktu proses manufaktur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pemanas induksi memanaskan pelat logam selama rentang waktu $X$ menit dengan batas $6 \\le X \\le 15$. Jika $X$ dimodelkan sebagai variabel acak kontinu, representasi yang paling tepat untuk ruang hasil dari variabel $X$ pada garis bilangan real adalah ....",
+      "jawaban_benar": "ruas garis padat tak terputus dari angka 6 hingga 15 karena memuat seluruh bilangan real di antara kedua titik tersebut",
+      "alasan_benar": "Sesuai definisi representasi garis bilangan variabel acak kontinu, nilainya mencakup seluruh bilangan real pada interval $[6, 15]$ sehingga membentuk segmen garis kontinu tak berlubang.",
+      "distraktor": [
+        {
+          "teks": "kumpulan sepuluh titik terpisah tepat di atas bilangan bulat 6, 7, 8, sampai 15",
+          "alasan": "Memodelkan variabel acak diskret yang hanya bernilai bilangan bulat terpisah."
+        },
+        {
+          "teks": "himpunan titik-titik diskret berjarak tetap 0,1 unit di sepanjang interval 6 hingga 15",
+          "alasan": "Mengira nilai kontinu dibatasi oleh resolusi alat ukur tertentu dan bukan seluruh bilangan real."
+        },
+        {
+          "teks": "hanya dua buah titik penanda batas pada posisi angka 6 dan angka 15",
+          "alasan": "Hanya menandai batas interval tanpa menyertakan deretan nilai kontinu di antara batas tersebut."
+        }
+      ],
+      "pembahasan": "Berdasarkan ciri-ciri variabel acak kontinu pada buku pelajaran, nilai-nilai variabel kontinu merupakan bilangan real yang membentuk rentang tak terputus. Pada garis bilangan, ruang sampel ini direpresentasikan berupa deretan titik yang terhubung rapat tanpa celah sehingga membentuk suatu ruas garis (segmen garis) padat dari batas bawah 6 hingga batas atas 15.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

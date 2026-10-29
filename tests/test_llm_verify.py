@@ -66,3 +66,16 @@ def test_tidak_cocok_dan_tidak_terjawab_dibedakan(tmp_path):
     res = V.verifikasi_buta(path, _Client(data, salah=[ids[0]], kosong=[ids[9]]), "solver-x",
                             progress=lambda *_: None)
     assert res.tidak_cocok == [ids[0]] and res.tidak_terjawab == [ids[9]] and res.cocok == 8
+
+
+class _ClientRusak(_Client):
+    def chat(self, messages, **kw):
+        from app.llm.ninerouter import NineRouterError
+        raise NineRouterError("HTTP 502 gateway")
+
+
+def test_solver_gagal_jaringan_bukan_penolakan_soal(tmp_path):
+    path, data = _file(tmp_path)
+    res = V.verifikasi_buta(path, _ClientRusak(data), "solver-x", progress=lambda *_: None)
+    assert len(res.tidak_diverifikasi) == 10
+    assert res.tidak_terjawab == [] and res.tidak_cocok == []

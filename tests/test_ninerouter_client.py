@@ -101,3 +101,28 @@ def test_galat_http_tidak_diulang(monkeypatch):
     with pytest.raises(NineRouterError):
         client.chat([{"role": "user", "content": "hai"}])
     assert calls["n"] == 1
+
+
+def test_menunggu_reset_lalu_berhasil(monkeypatch):
+    tidur = []
+    monkeypatch.setattr("app.llm.ninerouter.time.sleep", lambda d: tidur.append(d))
+    calls = {"n": 0}
+
+    def handler(request: httpx.Request) -> httpx.Response:
+        calls["n"] += 1
+        if calls["n"] == 1:
+            return httpx.Response(503, text='{"error":{"message":"[x] [403]: HTTP 403 (reset after 1m 30s)"}}')
+        return httpx.Response(200, json={"model": "m1", "choices": [{"message": {"content": "siap"}}]})
+
+    client = NineRouterClient(_settings(stream=False), transport=httpx.MockTransport(handler))
+    assert client.chat([{"role": "user", "content": "hai"}]).text == "siap"
+    assert tidur == [95]
+
+
+def test_reset_terlalu_lama_tidak_ditunggu(monkeypatch):
+    monkeypatch.setattr("app.llm.ninerouter.time.sleep", lambda d: (_ for _ in ()).throw(AssertionError("tidur")))
+    transport = httpx.MockTransport(
+        lambda r: httpx.Response(503, text='{"error":{"message":"quota (reset after 2h 41m)"}}'))
+    client = NineRouterClient(_settings(stream=False), transport=transport)
+    with pytest.raises(NineRouterError):
+        client.chat([{"role": "user", "content": "hai"}])

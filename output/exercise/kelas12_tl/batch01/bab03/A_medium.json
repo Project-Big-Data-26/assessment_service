@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "sec2 x dx = tan x + C ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral trigonometri",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan manipulasi identitas trigonometri terlebih dahulu sebelum mengintegralkan per suku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hasil dari $\\int \\tan^2 x\\,dx$ adalah ....",
+      "jawaban_benar": "$\\tan x - x + C$",
+      "alasan_benar": "Menggunakan identitas $\\tan^2 x = \\sec^2 x - 1$, sehingga $\\int (\\sec^2 x - 1)\\,dx = \\tan x - x + C$.",
+      "distraktor": [
+        {
+          "teks": "$x - \\tan x + C$",
+          "alasan": "Salah menggunakan tanda pada identitas trigonometri menjadi $\\tan^2 x = 1 - \\sec^2 x$."
+        },
+        {
+          "teks": "$\\tan x - 1 + C$",
+          "alasan": "Lupa mengintegralkan konstanta $1$ terhadap variabel $x$."
+        },
+        {
+          "teks": "$\\frac{1}{3}\\tan^3 x + C$",
+          "alasan": "Menerapkan aturan pangkat secara keliru langsung pada fungsi trigonometri tanpa substitusi."
+        }
+      ],
+      "pembahasan": "Gunakan identitas trigonometri dasar:\n$$\\tan^2 x = \\sec^2 x - 1$$\n\nSubstitusikan ke bentuk integral:\n$$\\int \\tan^2 x\\,dx = \\int (\\sec^2 x - 1)\\,dx$$\n\nPisahkan berdasarkan sifat integral tak tentu:\n$$= \\int \\sec^2 x\\,dx - \\int 1\\,dx$$\n\nBerdasarkan Sifat 3.8 Aturan Integral Trigonometri:\n$$= \\tan x - x + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 190,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kecepatan v ^ t h adalah laju perubahan posisi s ^ t h terhadap waktu, sedangkan percepatan a ^ t h adalah laju perubahan kecepatan terhadap waktu. Dalam materi integral, kecepatan dapat diperoleh dari integral percepatan. Adapun posisi dapat diperoleh dari integral kecepatan."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "kinematika gerak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengharuskan dua tahap integrasi berturut-turut (percepatan ke kecepatan, lalu ke posisi) dengan penentuan konstanta di tiap tahap.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak di sepanjang garis lurus dengan percepatan $a(t) = 6t - 4\\text{ m/s}^2$. Partikel tersebut mula-mula diam pada saat $t = 0$ detik dengan posisi awal berada pada jarak $4\\text{ meter}$ di sebelah kanan titik acuan. Posisi partikel pada saat $t = 3$ detik adalah ....",
+      "jawaban_benar": "$13\\text{ meter}$",
+      "alasan_benar": "Integrasi percepatan menghasilkan $v(t) = 3t^2 - 4t$ (karena $v(0)=0$). Integrasi kecepatan menghasilkan $s(t) = t^3 - 2t^2 + 4$ (karena $s(0)=4$). Pada $t = 3$, $s(3) = 27 - 18 + 4 = 13\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$9\\text{ meter}$",
+          "alasan": "Mengabaikan posisi awal $s(0) = 4\\text{ meter}$ sehingga konstanta $C_2$ dianggap bernilai nol."
+        },
+        {
+          "teks": "$15\\text{ meter}$",
+          "alasan": "Hanya menghitung nilai kecepatan partikel pada saat $t = 3$ detik ($v(3) = 3(9) - 4(3) = 15$) bukan posisinya."
+        },
+        {
+          "teks": "$49\\text{ meter}$",
+          "alasan": "Salah melakukan integrasi pada kecepatan dengan tidak membagi koefisien terhadap pangkat baru ($s(t) = 3t^3 - 4t^2 + 4$)."
+        }
+      ],
+      "pembahasan": "1. Menentukan fungsi kecepatan $v(t)$:\n$$v(t) = \\int a(t)\\,dt = \\int (6t - 4)\\,dt = 3t^2 - 4t + C_1$$\nKarena benda mula-mula diam ($v(0) = 0$):\n$$v(0) = 0 \\implies 3(0)^2 - 4(0) + C_1 = 0 \\implies C_1 = 0$$\nSehingga, $v(t) = 3t^2 - 4t$.\n\n2. Menentukan fungsi posisi $s(t)$:\n$$s(t) = \\int v(t)\\,dt = \\int (3t^2 - 4t)\\,dt = t^3 - 2t^2 + C_2$$\nKarena posisi awal $s(0) = 4\\text{ meter}$:\n$$s(0) = 4 \\implies (0)^3 - 2(0)^2 + C_2 = 4 \\implies C_2 = 4$$\nSehingga, $s(t) = t^3 - 2t^2 + 4$.\n\n3. Menghitung posisi pada saat $t = 3$ detik:\n$$s(3) = (3)^3 - 2(3)^2 + 4 = 27 - 18 + 4 = 13\\text{ meter}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 191,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Contoh berikut menunjukkan penyelesaian integral suatu fungsi menggunakan Aturan Integrasi Parsial (Sifat 3.7)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral parsial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan rumus integral parsial $\\int u\\,dv = uv - \\int v\\,du$ dengan memilih komponen diferensial dan integral secara tepat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int (2x - 3)\\cos x\\,dx$$",
+      "jawaban_benar": "$(2x - 3)\\sin x + 2\\cos x + C$",
+      "alasan_benar": "Menggunakan integral parsial dengan $u = 2x - 3$ dan $dv = \\cos x\\,dx$, sehingga diperoleh $(2x - 3)\\sin x - \\int 2\\sin x\\,dx = (2x - 3)\\sin x + 2\\cos x + C$.",
+      "distraktor": [
+        {
+          "teks": "$(2x - 3)\\sin x - 2\\cos x + C$",
+          "alasan": "Salah tanda pada integrasi suku kedua (menganggap $\\int \\sin x\\,dx = \\cos x$)."
+        },
+        {
+          "teks": "$(2x - 3)\\sin x + \\cos x + C$",
+          "alasan": "Lupa mengalikan diferensial $du = 2\\,dx$ ke dalam integral suku kedua."
+        },
+        {
+          "teks": "$-(2x - 3)\\sin x - 2\\cos x + C$",
+          "alasan": "Keliru menentukan antiturunan dari $\\cos x$ menjadi $-\\sin x$."
+        }
+      ],
+      "pembahasan": "Gunakan aturan integrasi parsial: $\\int u\\,dv = uv - \\int v\\,du$.\n\n1. Tetapkan bagian $u$ dan $dv$:\n- $u = 2x - 3 \\implies du = 2\\,dx$\n- $dv = \\cos x\\,dx \\implies v = \\int \\cos x\\,dx = \\sin x$\n\n2. Terapkan rumus integrasi parsial:\n$$\\int (2x - 3)\\cos x\\,dx = (2x - 3)\\sin x - \\int \\sin x (2\\,dx)$$\n$$= (2x - 3)\\sin x - 2\\int \\sin x\\,dx$$\n\n3. Selesaikan integral yang tersisa:\nKarena $\\int \\sin x\\,dx = -\\cos x + C$, maka:\n$$= (2x - 3)\\sin x - 2(-\\cos x) + C$$\n$$= (2x - 3)\\sin x + 2\\cos x + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": "Ayo Mencoba",
+        "nomor": "3.3",
+        "teks": "Tentukan 3 x + 4 dx . #",
+        "jawaban": "$\\frac{2}{9}(3x+4)\\sqrt{3x+4}+C$",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral bentuk akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemisalan substitusi aljabar linear dan pengubahan bentuk akar ke pangkat pecahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int \\sqrt{7x - 2}\\,dx$$",
+      "jawaban_benar": "$\\frac{2}{21}(7x - 2)\\sqrt{7x - 2} + C$",
+      "alasan_benar": "Menggunakan substitusi $u = 7x - 2$, diperoleh $dx = \\frac{du}{7}$. Maka $\\int u^{\\frac{1}{2}} \\frac{du}{7} = \\frac{1}{7} \\cdot \\frac{2}{3} u^{\\frac{3}{2}} + C = \\frac{2}{21}(7x - 2)\\sqrt{7x - 2} + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}(7x - 2)\\sqrt{7x - 2} + C$",
+          "alasan": "Siswa lupa membagi dengan turunan dari fungsi dalam (faktor $\\frac{1}{7}$ terlewat)."
+        },
+        {
+          "teks": "$\\frac{14}{3}(7x - 2)\\sqrt{7x - 2} + C$",
+          "alasan": "Siswa mengalikan dengan turunan fungsi dalam alih-alih membaginya."
+        },
+        {
+          "teks": "$\\frac{3}{14}(7x - 2)\\sqrt{7x - 2} + C$",
+          "alasan": "Siswa keliru membalik pecahan pangkat saat mengintegralkan ($u^{\\frac{3}{2}}$ dibagi $\\frac{2}{3}$, bukan dikali $\\frac{2}{3}$)."
+        }
+      ],
+      "pembahasan": "Misalkan $u = 7x - 2$, maka $\\frac{du}{dx} = 7 \\implies dx = \\frac{du}{7}$.\nSubstitusikan ke dalam integral:\n$$\\int \\sqrt{7x - 2}\\,dx = \\int u^{\\frac{1}{2}} \\cdot \\frac{du}{7} = \\frac{1}{7} \\int u^{\\frac{1}{2}}\\,du$$\n$$= \\frac{1}{7} \\left( \\frac{1}{\\frac{1}{2} + 1} u^{\\frac{1}{2} + 1} \\right) + C = \\frac{1}{7} \\left( \\frac{2}{3} u^{\\frac{3}{2}} \\right) + C = \\frac{2}{21} u^{\\frac{3}{2}} + C$$\nKembalikan ke variabel $x$:\n$$= \\frac{2}{21} (7x - 2)^{\\frac{3}{2}} + C = \\frac{2}{21}(7x - 2)\\sqrt{7x - 2} + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi aljabar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan metode substitusi dengan menentukan $du$ dan menyesuaikan faktor pengali.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari $\\int x(3x^2 + 4)^3\\,dx$ dengan menggunakan teknik substitusi.",
+      "jawaban_benar": "$\\frac{1}{24}(3x^2 + 4)^4 + C$",
+      "alasan_benar": "Dengan memisalkan $u = 3x^2 + 4$, maka $du = 6x\\,dx$ sehingga $x\\,dx = \\frac{du}{6}$. Integral menjadi $\\int \\frac{1}{6}u^3\\,du = \\frac{u^4}{24} + C = \\frac{1}{24}(3x^2 + 4)^4 + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}(3x^2 + 4)^4 + C$",
+          "alasan": "Siswa lupa memperhitungkan faktor diferensial $\\frac{1}{6}$ yang dihasilkan dari turunan fungsi dalam."
+        },
+        {
+          "teks": "$\\frac{1}{12}(3x^2 + 4)^4 + C$",
+          "alasan": "Siswa salah menurunkan $3x^2$ menjadi $3x$ (bukan $6x$), sehingga hanya membagi dengan 3."
+        },
+        {
+          "teks": "$\\frac{1}{18}(3x^2 + 4)^3 + C$",
+          "alasan": "Siswa lupa menambahkan 1 pada pangkat bentuk aljabar setelah proses pengintegralan."
+        }
+      ],
+      "pembahasan": "Gunakan aturan integrasi substitusi.\nMisalkan $u = 3x^2 + 4$.\nTurunan dari $u$ adalah:\n$$du = 6x\\,dx \\implies x\\,dx = \\frac{du}{6}$$\nSubstitusikan ke integral semula:\n$$\\int x(3x^2 + 4)^3\\,dx = \\int u^3 \\cdot \\frac{du}{6} = \\frac{1}{6} \\int u^3\\,du$$\n$$= \\frac{1}{6} \\left( \\frac{1}{4} u^4 \\right) + C = \\frac{1}{24} u^4 + C$$\nKembalikan nilai $u$:\n$$= \\frac{1}{24}(3x^2 + 4)^4 + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi pangkat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melibatkan teknik substitusi aljabar fungsi berpangkat tinggi dengan koefisien berbeda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int x(8x^2 - 1)^6\\,dx$$",
+      "jawaban_benar": "$\\frac{1}{112}(8x^2 - 1)^7 + C$",
+      "alasan_benar": "Misalkan $u = 8x^2 - 1$, maka $du = 16x\\,dx$ atau $x\\,dx = \\frac{du}{16}$. Hasil integralnya adalah $\\frac{1}{16} \\cdot \\frac{1}{7} u^7 + C = \\frac{1}{112}(8x^2 - 1)^7 + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{7}(8x^2 - 1)^7 + C$",
+          "alasan": "Siswa mengabaikan faktor konstanta $\\frac{1}{16}$ dari hasil turunan fungsi dalam."
+        },
+        {
+          "teks": "$\\frac{1}{56}(8x^2 - 1)^7 + C$",
+          "alasan": "Siswa keliru menganggap turunan dari $8x^2$ adalah $8x$ sehingga membagi dengan 8, bukan 16."
+        },
+        {
+          "teks": "$\\frac{1}{96}(8x^2 - 1)^7 + C$",
+          "alasan": "Siswa melakukan kesalahan aritmetika saat mengalikan penyebut $16 \\times 7 = 96$ (seharusnya 112)."
+        }
+      ],
+      "pembahasan": "Misalkan $u = 8x^2 - 1$.\nMaka $\\frac{du}{dx} = 16x \\implies x\\,dx = \\frac{du}{16}$.\nSubstitusi ke bentuk integral:\n$$\\int x(8x^2 - 1)^6\\,dx = \\int u^6 \\cdot \\frac{du}{16} = \\frac{1}{16} \\int u^6\\,du$$\n$$= \\frac{1}{16} \\left( \\frac{1}{7} u^7 \\right) + C = \\frac{1}{112} u^7 + C$$\nSubstitusikan kembali nilai $u$:\n$$= \\frac{1}{112}(8x^2 - 1)^7 + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Antiturunan atau integral dari f(x) untuk setiap nilai x pada interval I merupakan himpunan fungsi F(x) + C sehingga dxd[F(x) + C] = f(x)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "persamaan kurva",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengintegralan fungsi turunan dan penentuan nilai konstanta integrasi dari titik yang dilalui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Gradien garis singgung suatu kurva $y = f(x)$ pada sembarang titik $(x, y)$ ditentukan oleh $f'(x) = 6x^2 - 4x + 1$. Jika kurva tersebut melalui titik $(1, 5)$, rumus fungsi kurva $f(x)$ adalah ....",
+      "jawaban_benar": "$f(x) = 2x^3 - 2x^2 + x + 4$",
+      "alasan_benar": "Integral dari $6x^2 - 4x + 1$ adalah $2x^3 - 2x^2 + x + C$. Nilai $f(1) = 5 \\implies 2(1)^3 - 2(1)^2 + 1 + C = 5 \\implies 1 + C = 5 \\implies C = 4$. Jadi, $f(x) = 2x^3 - 2x^2 + x + 4$.",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 2x^3 - 2x^2 + x + 5$",
+          "alasan": "Siswa langsung memasukkan ordinat titik yang dilalui sebagai konstanta $C = 5$ tanpa menghitung nilai $f(1)$."
+        },
+        {
+          "teks": "$f(x) = 2x^3 - 2x^2 + 5$",
+          "alasan": "Siswa lupa mengintegralkan suku konstanta 1 menjadi $x$."
+        },
+        {
+          "teks": "$f(x) = 2x^3 + 2x^2 + x$",
+          "alasan": "Siswa salah tanda saat mengintegralkan $-4x$ menjadi $+2x^2$ dan salah menghitung konstanta $C$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan antiturunan umum dari $f'(x)$:\n$$f(x) = \\int (6x^2 - 4x + 1)\\,dx = \\frac{6}{3}x^3 - \\frac{4}{2}x^2 + x + C = 2x^3 - 2x^2 + x + C$$\n\nLangkah 2: Menentukan nilai konstanta $C$ menggunakan titik $(1, 5)$:\n$$f(1) = 5$$\n$$2(1)^3 - 2(1)^2 + 1 + C = 5$$\n$$2 - 2 + 1 + C = 5$$\n$$1 + C = 5 \\implies C = 4$$\n\nLangkah 3: Menuliskan persamaan kurva lengkap:\n$$f(x) = 2x^3 - 2x^2 + x + 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "sin x dx = - cos x + C . # ► cos x dx = sin x + C . #"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "antiturunan fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan sifat antiturunan fungsi trigonometri dan penentuan konstanta dari nilai awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui turunan pertama fungsi $g(x)$ adalah $g'(x) = 3\\cos x + 4\\sec^2 x$. Jika grafik fungsi $g(x)$ melalui titik $(0, 2)$, tentukan rumus fungsi $g(x)$.",
+      "jawaban_benar": "$g(x) = 3\\sin x + 4\\tan x + 2$",
+      "alasan_benar": "Integral tak tentu dari $3\\cos x + 4\\sec^2 x$ adalah $3\\sin x + 4\\tan x + C$. Karena $g(0) = 2$, diperoleh $3\\sin 0 + 4\\tan 0 + C = 2 \\implies C = 2$. Jadi, $g(x) = 3\\sin x + 4\\tan x + 2$.",
+      "distraktor": [
+        {
+          "teks": "$g(x) = -3\\sin x + 4\\tan x + 2$",
+          "alasan": "Siswa keliru menganggap integral dari $\\cos x$ adalah $-\\sin x$ (tertukar dengan rumus turunan)."
+        },
+        {
+          "teks": "$g(x) = 3\\sin x + 4\\sec x$",
+          "alasan": "Siswa salah mengingat integral dari $\\sec^2 x$ menjadi $\\sec x$ dan mengabaikan nilai konstanta."
+        },
+        {
+          "teks": "$g(x) = 3\\sin x + 4\\tan x$",
+          "alasan": "Siswa mengabaikan syarat nilai awal $g(0) = 2$ sehingga menganggap konstanta integrasi $C = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan integral tak tentu dari $g'(x)$ menggunakan Sifat 3.8:\n$$g(x) = \\int (3\\cos x + 4\\sec^2 x)\\,dx$$\n$$g(x) = 3\\int \\cos x\\,dx + 4\\int \\sec^2 x\\,dx$$\n$$g(x) = 3\\sin x + 4\\tan x + C$$\n\nLangkah 2: Menentukan nilai $C$ menggunakan informasi titik $(0, 2)$:\n$$g(0) = 2$$\n$$3\\sin(0) + 4\\tan(0) + C = 2$$\n$$3(0) + 4(0) + C = 2 \\implies C = 2$$\n\nLangkah 3: Menyusun rumus fungsi $g(x)$:\n$$g(x) = 3\\sin x + 4\\tan x + 2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-1c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral tak tentu polinomial",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan integrasi suku demi suku pada polinomial berderajat ganjil/genap dan penyederhanaan pecahan koefisien.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan integral tak tentu berikut.\n$$\\int (5x^4 - 6x^2 + 7)\\,dx$$",
+      "jawaban_benar": "$x^5 - 2x^3 + 7x + C$",
+      "alasan_benar": "Integralkan per suku: $\\int 5x^4\\,dx = x^5$, $\\int -6x^2\\,dx = -2x^3$, dan $\\int 7\\,dx = 7x$. Jumlahkan semua suku dan tambahkan konstanta $C$.",
+      "distraktor": [
+        {
+          "teks": "$20x^3 - 12x + C$",
+          "alasan": "Melakukan proses turunan (diferensiasi), bukan antiturunan (integrasi)."
+        },
+        {
+          "teks": "$5x^5 - 6x^3 + 7x + C$",
+          "alasan": "Menambah pangkat variabel tanpa membagi dengan pangkat baru."
+        },
+        {
+          "teks": "$x^5 - 3x^3 + 7x + C$",
+          "alasan": "Salah membagi koefisien $-6$ dengan $2$, bukan dengan $3$."
+        }
+      ],
+      "pembahasan": "Terapkan sifat kelinieran integral tak tentu:\n$$\\int (5x^4 - 6x^2 + 7)\\,dx = 5 \\int x^4\\,dx - 6 \\int x^2\\,dx + 7 \\int dx$$\n$$= 5\\left(\\frac{1}{5}x^5\\right) - 6\\left(\\frac{1}{3}x^3\\right) + 7x + C$$\n$$= x^5 - 2x^3 + 7x + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sifat 3.6 Aturan Integrasi Substitusi Jika g suatu fungsi yang dapat didiferensialkan dan n sebuah bilangan rasional, maka"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi bentuk pecahan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aturan integrasi substitusi pada bentuk pecahan berpangkat negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hasil dari $\\int \\frac{2x + 3}{(x^2 + 3x - 1)^4}\\,dx$ adalah ....",
+      "jawaban_benar": "$-\\frac{1}{3(x^2 + 3x - 1)^3} + C$",
+      "alasan_benar": "Misalkan $u = x^2 + 3x - 1$, maka $du = (2x + 3)\\,dx$. Integral menjadi $\\int u^{-4}\\,du = -\\frac{1}{3}u^{-3} + C = -\\frac{1}{3(x^2 + 3x - 1)^3} + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5(x^2 + 3x - 1)^5} + C$",
+          "alasan": "Menambah pangkat penyebut menjadi $5$ bukan mengintegralkan pangkat $-4$ menjadi $-3$."
+        },
+        {
+          "teks": "$\\frac{1}{3(x^2 + 3x - 1)^3} + C$",
+          "alasan": "Lupa tanda minus yang muncul akibat pembagian dengan $-3$."
+        },
+        {
+          "teks": "$-\\frac{1}{4(x^2 + 3x - 1)^4} + C$",
+          "alasan": "Pangkat tidak ditambah satu saat pengintegralan."
+        }
+      ],
+      "pembahasan": "1. Nyatakan integral dalam bentuk pangkat negatif:\n   $$\\int (2x + 3)(x^2 + 3x - 1)^{-4}\\,dx$$\n2. Misalkan $u = x^2 + 3x - 1$, sehingga $du = (2x + 3)\\,dx$.\n3. Bentuk integral menjadi:\n   $$\\int u^{-4}\\,du = \\frac{u^{-4+1}}{-4+1} + C = -\\frac{1}{3}u^{-3} + C$$\n4. Substitusikan kembali $u$:\n   $$-\\frac{1}{3(x^2 + 3x - 1)^3} + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Antiturunan atau integral dari f ( x ) untuk setiap nilai x pada interval I merupakan himpunan fungsi F ( x ) + C sehingga dxd [ F ( x ) + C ] = f ( x ) ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "nilai fungsi dari turunan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan turunan pertama dan nilai fungsi awal untuk menentukan konstanta integrasi lalu mengevaluasi nilai fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui turunan pertama fungsi $f(x)$ adalah $f'(x) = 4x - 6$. Jika grafik fungsi $f(x)$ melalui titik $(2, -1)$, nilai dari $f(3)$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$f(x) = \\int (4x - 6)\\,dx = 2x^2 - 6x + C$. Titik $(2, -1) \\implies 2(2)^2 - 6(2) + C = -1 \\implies 8 - 12 + C = -1 \\implies C = 3$. Maka $f(x) = 2x^2 - 6x + 3$, sehingga $f(3) = 2(9) - 6(3) + 3 = 18 - 18 + 3 = 3$.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Kesalahan menghitung konstanta integrasi $C$, menghasilkan $C = -1$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Lupa mengalikan faktor saat menghitung turunan antiturunan $2x^2$ sebagai $x^2$."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Mengabaikan konstanta integrasi ($C = 0$) sehingga $2(3)^2 - 6(3) = 0$."
+        }
+      ],
+      "pembahasan": "1. Cari antiturunan dari $f'(x)$:\n   $$f(x) = \\int (4x - 6)\\,dx = 2x^2 - 6x + C$$\n2. Tentukan nilai $C$ melalui titik $(2, -1)$:\n   $$f(2) = 2(2)^2 - 6(2) + C = -1$$\n   $$8 - 12 + C = -1 \\implies -4 + C = -1 \\implies C = 3$$\n   Jadi, $f(x) = 2x^2 - 6x + 3$.\n3. Hitung $f(3)$:\n   $$f(3) = 2(3)^2 - 6(3) + 3 = 18 - 18 + 3 = 3$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 188,
+        "bagian": "Contoh Soal 3.3",
+        "nomor": "3.3",
+        "teks": "Tentukan 2 x ^ x 2 + 5h4 dx . #",
+        "jawaban": "1/10 (x^2 + 5)^5 + C",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi polinomial",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemisalan variabel substitusi dan pengintegralan fungsi aljabar berpangkat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int 8x(4x^2 + 9)^3\\,dx$$",
+      "jawaban_benar": "$\\frac{1}{4}(4x^2 + 9)^4 + C$",
+      "alasan_benar": "Misalkan $u = 4x^2 + 9$, maka $du = 8x\\,dx$. Bentuk integral menjadi $\\int u^3\\,du = \\frac{1}{4}u^4 + C = \\frac{1}{4}(4x^2 + 9)^4 + C$.",
+      "distraktor": [
+        {
+          "teks": "$(4x^2 + 9)^4 + C$",
+          "alasan": "Lupa membagi dengan pangkat baru setelah integrasi."
+        },
+        {
+          "teks": "$\\frac{1}{3}(4x^2 + 9)^4 + C$",
+          "alasan": "Membagi dengan pangkat awal sebelum ditambah satu."
+        },
+        {
+          "teks": "\\frac{1}{32}(4x^2 + 9)^4 + C",
+          "alasan": "Mengalikan penyebut dengan koefisien 8 dua kali."
+        }
+      ],
+      "pembahasan": "Gunakan aturan integrasi substitusi:\n1. Misalkan $u = 4x^2 + 9$, sehingga didapat $\\frac{du}{dx} = 8x \\iff du = 8x\\,dx$.\n2. Substitusikan ke dalam bentuk integral:\n$$\\int 8x(4x^2 + 9)^3\\,dx = \\int u^3\\,du = \\frac{1}{3 + 1}u^{3+1} + C = \\frac{1}{4}u^4 + C$$\n3. Kembalikan variabel $u$ ke dalam $x$:\n$$= \\frac{1}{4}(4x^2 + 9)^4 + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": "Ayo Mencoba 3.3",
+        "nomor": "3.3",
+        "teks": "Tentukan 3 x + 4 dx . #",
+        "jawaban": "2/9 (3x + 4)^(3/2) + C",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi bentuk akar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan pengubahan bentuk akar ke eksponen pecahan dan aturan substitusi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int \\sqrt{5x + 6}\\,dx$$",
+      "jawaban_benar": "$\\frac{2}{15}(5x + 6)\\sqrt{5x + 6} + C$",
+      "alasan_benar": "Misalkan $u = 5x + 6$, maka $dx = \\frac{1}{5}\\,du$. Hasil integral adalah $\\frac{1}{5} \\cdot \\frac{2}{3}u^{3/2} + C = \\frac{2}{15}(5x + 6)^{3/2} + C = \\frac{2}{15}(5x + 6)\\sqrt{5x + 6} + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}(5x + 6)\\sqrt{5x + 6} + C$",
+          "alasan": "Lupa mengalikan dengan faktor diferensial $\\frac{1}{5}$ dari turunan fungsi dalam."
+        },
+        {
+          "teks": "$\\frac{1}{15}(5x + 6)\\sqrt{5x + 6} + C$",
+          "alasan": "Salah mengalikan koefisien $\\frac{1}{5}$ dengan $\\frac{1}{3}$ alih-alih $\\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{2}{5}(5x + 6)\\sqrt{5x + 6} + C$",
+          "alasan": "Lupa membagi dengan pangkat baru pecahan $\\frac{3}{2}$."
+        }
+      ],
+      "pembahasan": "Ubah bentuk akar menjadi bentuk pangkat pecahan:\n$$\\int \\sqrt{5x + 6}\\,dx = \\int (5x + 6)^{\\frac{1}{2}}\\,dx$$\n1. Misalkan $u = 5x + 6$, maka $du = 5\\,dx \\iff dx = \\frac{1}{5}\\,du$.\n2. Lakukan substitusi ke integral:\n$$\\int u^{\\frac{1}{2}} \\cdot \\frac{1}{5}\\,du = \\frac{1}{5} \\int u^{\\frac{1}{2}}\\,du = \\frac{1}{5} \\left( \\frac{1}{\\frac{1}{2} + 1} u^{\\frac{1}{2} + 1} \\right) + C$$\n$$= \\frac{1}{5} \\cdot \\frac{2}{3} u^{\\frac{3}{2}} + C = \\frac{2}{15} u^{\\frac{3}{2}} + C$$\n3. Nyatakan kembali dalam variabel $x$ dan bentuk akar:\n$$= \\frac{2}{15}(5x + 6)^{\\frac{3}{2}} + C = \\frac{2}{15}(5x + 6)\\sqrt{5x + 6} + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-1c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral tak tentu aljabar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan sifat kelinieran dan aturan pangkat integral tak tentu pada suku polinomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int (7x^6 - 8x^3)\\,dx$$",
+      "jawaban_benar": "$x^7 - 2x^4 + C$",
+      "alasan_benar": "$\\int 7x^6\\,dx - \\int 8x^3\\,dx = 7 \\cdot \\frac{1}{7}x^7 - 8 \\cdot \\frac{1}{4}x^4 + C = x^7 - 2x^4 + C$.",
+      "distraktor": [
+        {
+          "teks": "$x^7 - 4x^4 + C$",
+          "alasan": "Membagi 8 dengan 2 bukan dengan pangkat baru 4."
+        },
+        {
+          "teks": "$\\frac{7}{6}x^7 - 2x^4 + C$",
+          "alasan": "Membagi koefisien suku pertama dengan pangkat lama 6 bukan 7."
+        },
+        {
+          "teks": "$42x^5 - 24x^2 + C$",
+          "alasan": "Melakukan proses diferensiasi (turunan) alih-alih integrasi."
+        }
+      ],
+      "pembahasan": "Gunakan aturan integral tak tentu untuk fungsi aljabar:\n$$\\int (7x^6 - 8x^3)\\,dx = 7 \\int x^6\\,dx - 8 \\int x^3\\,dx$$\n$$= 7 \\left( \\frac{1}{6+1} x^{6+1} \\right) - 8 \\left( \\frac{1}{3+1} x^{3+1} \\right) + C$$\n$$= 7 \\cdot \\frac{1}{7}x^7 - 8 \\cdot \\frac{1}{4}x^4 + C$$\n$$= x^7 - 2x^4 + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 190,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kecepatan v ^ t h adalah laju perubahan posisi s ^ t h terhadap waktu, sedangkan percepatan a ^ t h adalah laju perubahan kecepatan terhadap waktu. Dalam materi integral, kecepatan dapat diperoleh dari integral percepatan. Adapun posisi dapat diperoleh dari integral kecepatan."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "masalah gerak lurus",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan integral dua tahap dari percepatan ke posisi disertai penentuan dua konstanta integrasi dari nilai awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak di sepanjang garis lurus dengan percepatan setiap saat dinyatakan oleh $a(t) = 6t - 2\\text{ m/s}^2$. Jika pada saat $t = 1$ detik kecepatan partikel adalah $7\\text{ m/s}$ dan pada saat $t = 2$ detik posisi partikel berada pada $s = 20\\text{ meter}$, tentukan rumus fungsi posisi $s(t)$ partikel tersebut.",
+      "jawaban_benar": "$s(t) = t^3 - t^2 + 6t + 4$",
+      "alasan_benar": "Integrasikan $a(t)$ untuk mendapatkan $v(t) = 3t^2 - 2t + 6$, kemudian integrasikan $v(t)$ untuk memperoleh $s(t) = t^3 - t^2 + 6t + 4$.",
+      "distraktor": [
+        {
+          "teks": "$s(t) = t^3 - t^2 + 6t + 20$",
+          "alasan": "Mengira posisi pada $t = 2$ langsung menjadi konstanta posisi $C_2$."
+        },
+        {
+          "teks": "$s(t) = 3t^3 - 2t^2 + 6t + 4$",
+          "alasan": "Lupa membagi koefisien dengan pangkat baru saat mengintegralkan percepatan kedua kalinya."
+        },
+        {
+          "teks": "$s(t) = t^3 - t^2 + 7t + 4$",
+          "alasan": "Menggunakan nilai $v(1) = 7$ langsung sebagai koefisien $t$ tanpa mencari konstanta $C_1$."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Menentukan fungsi kecepatan $v(t)$:\n$$v(t) = \\int a(t)\\,dt = \\int (6t - 2)\\,dt = 3t^2 - 2t + C_1$$\nDiketahui $v(1) = 7$:\n$$3(1)^2 - 2(1) + C_1 = 7 \\implies 1 + C_1 = 7 \\implies C_1 = 6$$\nSehingga, $v(t) = 3t^2 - 2t + 6$.\n\n2. Menentukan fungsi posisi $s(t)$:\n$$s(t) = \\int v(t)\\,dt = \\int (3t^2 - 2t + 6)\\,dt = t^3 - t^2 + 6t + C_2$$\nDiketahui $s(2) = 20$:\n$$(2)^3 - (2)^2 + 6(2) + C_2 = 20$$\n$$8 - 4 + 12 + C_2 = 20 \\implies 16 + C_2 = 20 \\implies C_2 = 4$$\n\n3. Maka rumus posisi partikel adalah:\n$$s(t) = t^3 - t^2 + 6t + 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g suatu fungsi yang dapat didiferensialkan dan n sebuah bilangan rasional, maka"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi pangkat negatif",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pengubahan bentuk pecahan ke pangkat negatif dan penerapan aturan substitusi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int \\frac{3x^2}{(x^3 + 2)^5}\\,dx$$",
+      "jawaban_benar": "$-\\frac{1}{4(x^3 + 2)^4} + C$",
+      "alasan_benar": "Substitusi $u = x^3 + 2$ menghasilkan $\\int u^{-5}\\,du = -\\frac{1}{4}u^{-4} + C = -\\frac{1}{4(x^3 + 2)^4} + C$.",
+      "distraktor": [
+        {
+          "teks": "$-\\frac{1}{5(x^3 + 2)^4} + C$",
+          "alasan": "Membagi dengan pangkat lama $-5$ alih-alih $-4$."
+        },
+        {
+          "teks": "$\\frac{1}{4(x^3 + 2)^4} + C$",
+          "alasan": "Lupa tanda negatif dari pembagi pangkat baru $-4$."
+        },
+        {
+          "teks": "$-\\frac{1}{6(x^3 + 2)^6} + C$",
+          "alasan": "Menambah nilai mutlak pangkat pada penyebut seolah-olah pangkat positif."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Tuliskan integral dalam bentuk pangkat:\n$$\\int \\frac{3x^2}{(x^3 + 2)^5}\\,dx = \\int 3x^2(x^3 + 2)^{-5}\\,dx$$\n2. Misalkan $u = x^3 + 2$, maka $du = 3x^2\\,dx$.\n3. Bentuk integral menjadi:\n$$\\int u^{-5}\\,du = \\frac{1}{-5 + 1}u^{-5 + 1} + C = -\\frac{1}{4}u^{-4} + C = -\\frac{1}{4u^4} + C$$\n4. Kembalikan variabel $u$:\n$$= -\\frac{1}{4(x^3 + 2)^4} + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g suatu fungsi yang dapat didiferensialkan dan n sebuah bilangan rasional, maka"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi trigonometri",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melibatkan pengenalan struktur fungsi turunan pada trigonometri dan penerapan aturan integrasi substitusi berpangkat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hasil dari integral tak tentu $\\int \\sin^3 x \\cos x\\,dx$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{4}\\sin^4 x + C$",
+      "alasan_benar": "Dengan memisalkan $u = \\sin x$, diperoleh $du = \\cos x\\,dx$, sehingga $\\int u^3\\,du = \\frac{1}{4}u^4 + C = \\frac{1}{4}\\sin^4 x + C$.",
+      "distraktor": [
+        {
+          "teks": "-\\frac{1}{4}\\cos^4 x + C$",
+          "alasan": "Tertukar fungsi yang dimisalkan dan salah menggunakan antiturunan trigonometri."
+        },
+        {
+          "teks": "$\\frac{1}{4}\\sin^4 x \\cos x + C$",
+          "alasan": "Tidak menghilangkan faktor turunan $\\cos x$ setelah melakukan pengintegralan substitusi."
+        },
+        {
+          "teks": "$\\frac{1}{3}\\sin^3 x + C$",
+          "alasan": "Lupa menambahkan 1 pada pangkat ketika mengintegralkan suku berpangkat."
+        }
+      ],
+      "pembahasan": "Bentuk $\\int [g(x)]^n g'(x)\\,dx$ diselesaikan menggunakan aturan integrasi substitusi:\n1. Misalkan $u = \\sin x \\implies \\frac{du}{dx} = \\cos x \\implies du = \\cos x\\,dx$.\n2. Substitusikan ke dalam integral:\n   $$\\int \\sin^3 x \\cos x\\,dx = \\int u^3\\,du = \\frac{1}{3 + 1}u^{3 + 1} + C = \\frac{1}{4}u^4 + C$$\n3. Kembalikan ke variabel $x$:\n   $$= \\frac{1}{4}\\sin^4 x + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "teknik substitusi fungsi kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemisalan variabel baru dan penerapan sifat dasar integral substitusi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan hasil dari $\\int x(x^2 - 16)^3\\,dx$ dengan menggunakan teknik substitusi.",
+      "jawaban_benar": "$\\frac{1}{8}(x^2 - 16)^4 + C$",
+      "alasan_benar": "Misalkan $u = x^2 - 16$, maka $du = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}\\,du$. Integral menjadi $\\int \\frac{1}{2}u^3\\,du = \\frac{1}{8}u^4 + C = \\frac{1}{8}(x^2 - 16)^4 + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}(x^2 - 16)^4 + C$",
+          "alasan": "Lupa membagi dengan turunan fungsi dalam (faktor 1/2)."
+        },
+        {
+          "teks": "$\\frac{1}{6}(x^2 - 16)^4 + C$",
+          "alasan": "Salah mengalikan penyebut, yaitu mengalikan 2 dengan 3 bukan dengan 4."
+        },
+        {
+          "teks": "$\\frac{1}{8}(x^2 - 16)^3 + C$",
+          "alasan": "Lupa menambahkan 1 pada pangkat saat melakukan integrasi."
+        }
+      ],
+      "pembahasan": "Gunakan metode substitusi:\n1. Misalkan $u = x^2 - 16$, sehingga $\\frac{du}{dx} = 2x \\implies x\\,dx = \\frac{1}{2}\\,du$.\n2. Substitusikan ke integral:\n$$\\int x(x^2 - 16)^3\\,dx = \\int u^3 \\cdot \\frac{1}{2}\\,du = \\frac{1}{2} \\left(\\frac{1}{4}u^4\\right) + C = \\frac{1}{8}u^4 + C$$\n3. Kembalikan ke variabel $x$:\n$$\\frac{1}{8}(x^2 - 16)^4 + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "integral substitusi aljabar berpangkat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melibatkan penentuan turunan fungsi dalam dengan koefisien bukan satu serta substitusi variabel aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan integral tak tentu berikut.\n$$\\int x(8x^2 + 9)^4\\,dx$$",
+      "jawaban_benar": "$\\frac{1}{80}(8x^2 + 9)^5 + C$",
+      "alasan_benar": "Dengan memisalkan $u = 8x^2 + 9$, diperoleh $du = 16x\\,dx$ sehingga $x\\,dx = \\frac{du}{16}$. Integral menjadi $\\frac{1}{16} \\int u^4\\,du = \\frac{1}{80}u^5 + C = \\frac{1}{80}(8x^2 + 9)^5 + C$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}(8x^2 + 9)^5 + C$",
+          "alasan": "Mengabaikan turunan fungsi dalam sehingga tidak membagi dengan 16."
+        },
+        {
+          "teks": "$\\frac{1}{40}(8x^2 + 9)^5 + C$",
+          "alasan": "Mengira turunan dari $8x^2$ adalah $8x$ sehingga hanya membagi dengan 8."
+        },
+        {
+          "teks": "$\\frac{1}{80}(8x^2 + 9)^4 + C$",
+          "alasan": "Lupa menaikkan pangkat fungsi setelah proses integrasi."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Misalkan $u = 8x^2 + 9$, maka $du = 16x\\,dx \\implies x\\,dx = \\frac{du}{16}$.\n2. Tuliskan integral dalam variabel $u$:\n$$\\int x(8x^2 + 9)^4\\,dx = \\int u^4 \\cdot \\frac{du}{16} = \\frac{1}{16} \\left(\\frac{1}{5}u^5\\right) + C = \\frac{1}{80}u^5 + C$$\n3. Ganti kembali $u = 8x^2 + 9$:\n$$\\frac{1}{80}(8x^2 + 9)^5 + C$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "aplikasi integral laju perubahan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan integrasi fungsi laju perubahan berbentuk pangkat negatif, substitusi kondisi awal untuk menentukan konstanta, dan perhitungan nilai akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pertumbuhan massa suatu kristal pada $t$ jam setelah pemanasan dimulai dinyatakan oleh persamaan $m'(t) = (15 - t)^{-2}$ gram per jam ($0 \\le t \\le 12$). Jika pada saat $t = 5$ jam massa kristal tersebut tercatat $4$ gram, tentukan massa kristal tersebut pada saat $t = 10$ jam.",
+      "jawaban_benar": "$4,1\\text{ gram}$",
+      "alasan_benar": "Antiturunan dari $m'(t) = (15 - t)^{-2}$ adalah $m(t) = (15 - t)^{-1} + C$. Dari $m(5) = 4$, diperoleh $\\frac{1}{10} + C = 4 \\implies C = 3,9$. Maka $m(10) = \\frac{1}{5} + 3,9 = 0,2 + 3,9 = 4,1\\text{ gram}$.",
+      "distraktor": [
+        {
+          "teks": "$3,8\\text{ gram}$",
+          "alasan": "Kesalahan tanda saat mengintegralkan $(15 - t)^{-2}$ menjadi $-(15 - t)^{-1}$."
+        },
+        {
+          "teks": "$4,0\\text{ gram}$",
+          "alasan": "Mengabaikan perubahan laju dan berasumsi massa kristal tidak bertambah secara signifikan."
+        },
+        {
+          "teks": "$4,2\\text{ gram}$",
+          "alasan": "Salah menghitung nilai desimal pecahan 1/5 menjadi 0,3."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Tentukan fungsi massa $m(t)$ melalui integral tak tentu:\n$$m(t) = \\int (15 - t)^{-2}\\,dt$$\nMisalkan $u = 15 - t$, maka $du = -dt \\implies dt = -du$.\n$$m(t) = \\int -u^{-2}\\,du = -\\left(-u^{-1}\\right) + C = \\frac{1}{15 - t} + C$$\n2. Tentukan konstanta $C$ menggunakan kondisi $m(5) = 4$:\n$$4 = \\frac{1}{15 - 5} + C \\implies 4 = \\frac{1}{10} + C \\implies C = 4 - 0,1 = 3,9$$\nSehingga, rumus massa adalah $m(t) = \\frac{1}{15 - t} + 3,9$.\n3. Hitung massa pada saat $t = 10$ jam:\n$$m(10) = \\frac{1}{15 - 10} + 3,9 = \\frac{1}{5} + 3,9 = 0,2 + 3,9 = 4,1\\text{ gram}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

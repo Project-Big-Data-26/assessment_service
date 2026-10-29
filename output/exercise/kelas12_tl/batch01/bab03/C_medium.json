@@ -1,0 +1,686 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "6 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0228-latihan-soal-penerapan-integral-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas daerah antara dua kurva",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: menyamakan kedua kurva untuk mencari absis titik potong, menyusun integral selisih kurva atas dan bawah, lalu mengevaluasi nilainya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah yang dibatasi oleh parabola $y = x^2$ dan $y = 6x - x^2$ adalah ....",
+      "jawaban_benar": "$9\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong kurva: $x^2 = 6x - x^2 \\Leftrightarrow 2x^2 - 6x = 0 \\Leftrightarrow 2x(x - 3) = 0$, diperoleh $x = 0$ dan $x = 3$. Pada interval $[0, 3]$, $6x - x^2 \\ge x^2$. Luas $L = \\int_{0}^{3} ((6x - x^2) - x^2)\\,dx = \\int_{0}^{3} (6x - 2x^2)\\,dx = \\left[ 3x^2 - \\frac{2}{3}x^3 \\right]_{0}^{3} = 3(9) - \\frac{2}{3}(27) = 27 - 18 = 9\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$18\\text{ satuan luas}$",
+          "alasan": "Siswa lupa mengurangkan suku kedua saat integrasi atau hanya mengintegralkan fungsi atas tanpa dikurangi fungsi bawah: $\\int_0^3 (6x-x^2)dx = 27 - 9 = 18$."
+        },
+        {
+          "teks": "$27\\text{ satuan luas}$",
+          "alasan": "Siswa salah saat mengevaluasi integral, hanya menghitung $3(3)^2$ dan lupa mengurangkan $\\frac{2}{3}(3)^3$."
+        },
+        {
+          "teks": "$\\frac{9}{2}\\text{ satuan luas}$",
+          "alasan": "Siswa membagi hasil akhir dengan 2 karena mengira bentuk daerah simetris terhadap titik puncak."
+        }
+      ],
+      "pembahasan": "Menentukan absis titik potong:\n$$x^2 = 6x - x^2$$\n$$2x^2 - 6x = 0$$\n$$2x(x - 3) = 0$$\nDiperoleh batas integrasi $x = 0$ sampai $x = 3$.\n\nMenghitung luas daerah:\n$$L = \\int_{0}^{3} ((6x - x^2) - x^2)\\,dx$$\n$$L = \\int_{0}^{3} (6x - 2x^2)\\,dx$$\n$$L = \\left[ 3x^2 - \\frac{2}{3}x^3 \\right]_{0}^{3}$$\n$$L = \\left(3(3)^2 - \\frac{2}{3}(3)^3\\right) - 0 = 27 - 18 = 9\\text{ satuan luas}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kecepatan penghematan biaya operasional f ( x ) (dalam rupiah) setiap tahun bila peralatan itu telah dipakai selama x tahun adalah"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi ekonomi titik impas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: membentuk persamaan integral tentu dari laju penghematan biaya, mengintegralkannya, lalu menyelesaikan persamaan kuadrat untuk menentukan waktu impas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah perusahaan membeli mesin baru seharga Rp60.000,00. Kecepatan penghematan biaya operasional perusahaan setelah mesin beroperasi selama $t$ tahun dinyatakan dengan $f(t) = 4.000t + 2.000$ (dalam rupiah per tahun). Dalam berapa tahun harga pembelian mesin tersebut dapat kembali dari akumulasi penghematan operasional?",
+      "jawaban_benar": "$5\\text{ tahun}$",
+      "alasan_benar": "Akumulasi penghematan selama $T$ tahun adalah $\\int_0^T (4.000t + 2.000)\\,dt = 2.000T^2 + 2.000T$. Nilai ini sama dengan harga beli Rp60.000,00, sehingga $2.000T^2 + 2.000T = 60.000 \\Leftrightarrow T^2 + T - 30 = 0 \\Leftrightarrow (T + 6)(T - 5) = 0$. Karena waktu bernilai positif, diperoleh $T = 5\\text{ tahun}$.",
+      "distraktor": [
+        {
+          "teks": "$6\\text{ tahun}$",
+          "alasan": "Siswa mengambil nilai mutlak dari akar negatif persamaan kuadrat $(T = -6)$."
+        },
+        {
+          "teks": "$4\\text{ tahun}$",
+          "alasan": "Siswa salah saat memfaktorkan persamaan kuadrat, mengira faktornya adalah $(T - 4)(T + 5) = 0$."
+        },
+        {
+          "teks": "$15\\text{ tahun}$",
+          "alasan": "Siswa langsung membagi harga beli Rp60.000,00 dengan koefisien $4.000$ tanpa melakukan integrasi."
+        }
+      ],
+      "pembahasan": "Akumulasi penghematan selama $T$ tahun dirumuskan dengan:\n$$S(T) = \\int_{0}^{T} (4.000t + 2.000)\\,dt = \\left[ 2.000t^2 + 2.000t \\right]_{0}^{T} = 2.000T^2 + 2.000T$$\n\nHarga pembelian kembali saat $S(T) = 60.000$:\n$$2.000T^2 + 2.000T = 60.000$$\n$$T^2 + T - 30 = 0$$\n$$(T - 5)(T + 6) = 0$$\nKarena $T > 0$, maka $T = 5$.\n\nJadi, harga peralatan itu kembali dalam jangka waktu $5\\text{ tahun}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 226,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menurut Hukum Hooke, gaya yang diperlukan untuk menahan pegas meregang x meter di luar panjang alaminya adalah f ( x ) = kx ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi fisika usaha pegas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan konstanta pegas k dari kondisi awal, konversi satuan panjang ke meter untuk menentukan batas integrasi, dan penghitungan usaha melalui integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pegas memiliki panjang alami $20\\text{ cm}$. Sebuah gaya sebesar $30\\text{ N}$ diperlukan untuk menahan pegas saat direntangkan hingga panjangnya menjadi $25\\text{ cm}$. Usaha yang diperlukan untuk meregangkan pegas tersebut dari panjang $25\\text{ cm}$ menjadi $30\\text{ cm}$ adalah ....",
+      "jawaban_benar": "$2,25\\text{ Joule}$",
+      "alasan_benar": "Pertambahan panjang awal: $x = 25 - 20 = 5\\text{ cm} = 0,05\\text{ m}$. Menurut Hukum Hooke: $F = kx \\Rightarrow 30 = k(0,05) \\Rightarrow k = 600\\text{ N/m}$. Batas peregangan dari panjang alami adalah dari $a = 25 - 20 = 5\\text{ cm} = 0,05\\text{ m}$ sampai $b = 30 - 20 = 10\\text{ cm} = 0,10\\text{ m}$. Usaha: $W = \\int_{0,05}^{0,10} 600x\\,dx = \\left[ 300x^2 \\right]_{0,05}^{0,10} = 300(0,01 - 0,0025) = 300(0,0075) = 2,25\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$0,75\\text{ Joule}$",
+          "alasan": "Siswa hanya menghitung usaha untuk meregangkan dari panjang alami hingga $5\\text{ cm}$: $300(0,05)^2 = 0,75\\text{ Joule}$."
+        },
+        {
+          "teks": "$3,00\\text{ Joule}$",
+          "alasan": "Siswa menghitung usaha total dari panjang alami hingga $10\\text{ cm}$: $300(0,10)^2 = 3,00\\text{ Joule}$, tanpa mengurangkan usaha regangan awal."
+        },
+        {
+          "teks": "$225\\text{ Joule}$",
+          "alasan": "Siswa lupa mengonversi satuan centimeter ke meter saat menghitung batas integrasi."
+        }
+      ],
+      "pembahasan": "1. Menentukan konstanta pegas $k$:\nPertambahan panjang awal: $\\Delta x = 25 - 20 = 5\\text{ cm} = 0,05\\text{ m}$.\n$$f(x) = kx \\implies 30 = k(0,05) \\implies k = \\frac{30}{0,05} = 600\\text{ N/m}$$\n\n2. Menentukan batas integrasi di luar panjang alami:\n$x_1 = 25 - 20 = 5\\text{ cm} = 0,05\\text{ m}$\n$x_2 = 30 - 20 = 10\\text{ cm} = 0,10\\text{ m}$\n\n3. Menghitung usaha $W$:\n$$W = \\int_{0,05}^{0,10} 600x\\,dx = \\left[ 300x^2 \\right]_{0,05}^{0,10}$$\n$$W = 300(0,10)^2 - 300(0,05)^2 = 300(0,01) - 300(0,0025) = 3 - 0,75 = 2,25\\text{ Joule}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 234,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Biaya tambahan produksi per minggu mengikuti fungsi"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi biaya total fungsi marjinal",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan fungsi biaya total melalui integral tak tentu dari biaya marjinal, mencari konstanta integrasi dari biaya tetap, lalu menghitung biaya total pada waktu yang ditentukan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Biaya tambahan produksi (biaya marjinal) suatu kerajinan tangan setiap minggu dimodelkan oleh $f'(x) = 3x^2 - 12x + 15$ (dalam ratusan ribu rupiah), dengan $x$ menyatakan minggu ke-$x$. Jika biaya tetap awal saat sebelum produksi dimulai ($x = 0$) adalah Rp1.000.000,00, maka total biaya produksi pada akhir minggu ke-3 adalah ....",
+      "jawaban_benar": "Rp2.800.000,00",
+      "alasan_benar": "Fungsi biaya total diperoleh dari antiturunan biaya marjinal: $f(x) = \\int (3x^2 - 12x + 15)\\,dx = x^3 - 6x^2 + 15x + C$. Pada $x = 0$, biaya Rp1.000.000,00 dinyatakan sebagai $10$ (dalam ratusan ribu rupiah), sehingga $C = 10$. Untuk $x = 3$: $f(3) = 3^3 - 6(3^2) + 15(3) + 10 = 27 - 54 + 45 + 10 = 28$ ratusan ribu rupiah, yaitu Rp2.800.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp1.800.000,00",
+          "alasan": "Siswa lupa menambahkan nilai konstanta biaya awal $C = 10$ ratusan ribu rupiah ($27 - 54 + 45 = 18$)."
+        },
+        {
+          "teks": "Rp2.200.000,00",
+          "alasan": "Siswa salah mengintegralkan $-12x$ menjadi $-12x^2$ alih-alih $-6x^2$."
+        },
+        {
+          "teks": "Rp3.400.000,00",
+          "alasan": "Siswa salah menghitung tanda minus pada $-6(3^2)$ menjadi $+54$."
+        }
+      ],
+      "pembahasan": "Fungsi biaya total $f(x)$ adalah antiturunan dari laju biaya tambahan $f'(x)$:\n$$f(x) = \\int (3x^2 - 12x + 15)\\,dx = x^3 - 6x^2 + 15x + C$$\n\nBiaya awal pada $x = 0$ adalah Rp1.000.000,00 = 10 ratusan ribu rupiah:\n$$f(0) = C = 10$$\nSehingga fungsi biaya totalnya:\n$$f(x) = x^3 - 6x^2 + 15x + 10$$\n\nPada akhir minggu ke-3 ($x = 3$):\n$$f(3) = (3)^3 - 6(3)^2 + 15(3) + 10$$\n$$f(3) = 27 - 54 + 45 + 10 = 28$$\n\nKarena satuan dalam ratusan ribu rupiah, total biaya adalah $28 \\times \\text{Rp}100.000{,}00 = \\text{Rp}2.800.000{,}00$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0227-latihan-soal-penerapan-integral-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas daerah kurva dengan sumbu x",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik potong kurva dengan sumbu-x sebagai batas integrasi, penetapan tanda integral karena kurva berada di bawah sumbu-x, serta evaluasi integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah yang dibatasi oleh kurva $y = x^2 - 2x - 8$ dan sumbu-$x$ adalah ....",
+      "jawaban_benar": "$36\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong kurva dengan sumbu-$x$ diperoleh dari $x^2 - 2x - 8 = 0 \\iff (x - 4)(x + 2) = 0$, sehingga $x = -2$ dan $x = 4$. Pada interval $[-2, 4]$, kurva berada di bawah sumbu-$x$ ($y \\le 0$). Maka luasnya adalah $L = \\int_{-2}^{4} -(x^2 - 2x - 8)\\,dx = \\left[-\\frac{1}{3}x^3 + x^2 + 8x\\right]_{-2}^{4} = \\left(-\\frac{64}{3} + 16 + 32\\right) - \\left(\\frac{8}{3} + 4 - 16\\right) = \\frac{80}{3} - \\left(-\\frac{28}{3}\\right) = \\frac{108}{3} = 36$.",
+      "distraktor": [
+        {
+          "teks": "$18\\text{ satuan luas}$",
+          "alasan": "Siswa keliru hanya menghitung integral dari $x = 0$ sampai $x = 4$ atau membagi dua hasil akhir."
+        },
+        {
+          "teks": "$\\frac{100}{3}\\text{ satuan luas}$",
+          "alasan": "Siswa salah menjumlahkan suku pecahan saat substitusi batas atas dan batas bawah."
+        },
+        {
+          "teks": "$40\\text{ satuan luas}$",
+          "alasan": "Siswa melakukan kesalahan tanda pada suku linear $2x$ saat mengintegralkan fungsi negatif."
+        }
+      ],
+      "pembahasan": "Tentukan pembuat nol fungsi:\n$$x^2 - 2x - 8 = 0 \\iff (x - 4)(x + 2) = 0 \\iff x = -2 \\text{ atau } x = 4$$\nKarena kurva membuka ke atas, daerah yang dibatasi sumbu-$x$ berada di bawah sumbu-$x$ ($y \\le 0$).\n$$L = -\\int_{-2}^{4} (x^2 - 2x - 8)\\,dx = \\int_{-2}^{4} (-x^2 + 2x + 8)\\,dx$$\n$$L = \\left[ -\\frac{1}{3}x^3 + x^2 + 8x \\right]_{-2}^{4}$$\nSubstitusi batas:\n$$L = \\left(-\\frac{64}{3} + 16 + 32\\right) - \\left(-\\frac{1}{3}(-8) + 4 - 16\\right)$$\n$$L = \\left(48 - \\frac{64}{3}\\right) - \\left(\\frac{8}{3} - 12\\right) = \\frac{80}{3} - \\left(-\\frac{28}{3}\\right) = \\frac{108}{3} = 36\\text{ satuan luas}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 230,
+        "bagian": "Uji Kompetensi Bab 3 C",
+        "nomor": "3",
+        "teks": "Jumlah pewarna yang digunakan dalam waktu tertentu mengikuti fungsi p ( t ) = 3 t 2 + 2 t + 1 dalam liter per jam, dengan t menyatakan waktu dalam jam sejak proses pewarnaan dimulai. Untuk menghasilkan batik bermotif tugu topeng malangan, proses pewarnaan berlangsung selama 4 jam.",
+        "jawaban": "88 liter",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi konsumsi zat akumulatif",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan konsep integral tentu untuk mengakumulasikan laju konsumsi kontinu pada interval waktu tertentu dalam konteks industri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pemakaian bahan pelumas sebuah mesin pabrik dinyatakan oleh fungsi $r(t) = 3t^2 + 4t + 5$ (dalam liter per jam), dengan $t$ menyatakan lama mesin beroperasi dalam satuan jam. Total bahan pelumas yang digunakan mesin tersebut selama $3$ jam pertama pengoperasian adalah ....",
+      "jawaban_benar": "$60\\text{ liter}$",
+      "alasan_benar": "Total pelumas yang terpakai dihitung dengan integral tentu dari $t = 0$ sampai $t = 3$: $V = \\int_{0}^{3} (3t^2 + 4t + 5)\\,dt = \\left[t^3 + 2t^2 + 5t\\right]_{0}^{3} = (3^3 + 2(3^2) + 5(3)) - 0 = 27 + 18 + 15 = 60\\text{ liter}$.",
+      "distraktor": [
+        {
+          "teks": "$44\\text{ liter}$",
+          "alasan": "Siswa hanya menghitung nilai laju sesaat pada akhir jam ke-3, yaitu $r(3) = 3(9) + 4(3) + 5 = 44$, bukan mengintegralkannya."
+        },
+        {
+          "teks": "$45\\text{ liter}$",
+          "alasan": "Siswa lupa mengintegralkan suku konstanta $5$ sehingga menghasilkan $27 + 18 = 45$."
+        },
+        {
+          "teks": "$66\\text{ liter}$",
+          "alasan": "Siswa keliru mengintegralkan $4t$ menjadi $4t^2$ sehingga perhitungannya menjadi $27 + 36 + 15 = 78$ atau salah substitusi suku linear."
+        }
+      ],
+      "pembahasan": "Total pemakaian pelumas kumulatif diperoleh dari integral laju pemakaian terhadap waktu:\n$$V = \\int_{0}^{3} r(t)\\,dt = \\int_{0}^{3} (3t^2 + 4t + 5)\\,dt$$\n$$V = \\left[ \\frac{3}{3}t^3 + \\frac{4}{2}t^2 + 5t \\right]_{0}^{3} = \\left[ t^3 + 2t^2 + 5t \\right]_{0}^{3}$$\nSubstitusikan batas $t = 3$ dan $t = 0$:\n$$V = (3^3 + 2(3^2) + 5(3)) - 0 = 27 + 18 + 15 = 60\\text{ liter}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Integral juga dapat diaplikasikan dalam penyelesaian persoalan di bidang Fisika seperti pada contoh berikut ini."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi fisika usaha gaya variabel",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan rumus usaha sebagai integral dari gaya variabel terhadap perpindahan posisi pada rentang tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak di sepanjang lintasan lurus dan dipengaruhi oleh gaya $F(x) = 6x^2 - 4x + 3$ (dalam satuan Newton), dengan $x$ menyatakan posisi partikel dalam meter. Usaha yang dilakukan oleh gaya tersebut untuk memindahkan partikel dari posisi $x = 1\\text{ m}$ ke posisi $x = 3\\text{ m}$ adalah ....",
+      "jawaban_benar": "$42\\text{ Joule}$",
+      "alasan_benar": "Usaha dihitung dengan formula $W = \\int_{x_1}^{x_2} F(x)\\,dx = \\int_{1}^{3} (6x^2 - 4x + 3)\\,dx = \\left[2x^3 - 2x^2 + 3x\\right]_{1}^{3} = (2(27) - 2(9) + 3(3)) - (2(1) - 2(1) + 3(1)) = (54 - 18 + 9) - (2 - 2 + 3) = 45 - 3 = 42\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$45\\text{ Joule}$",
+          "alasan": "Siswa hanya menghitung hasil substitusi batas atas $x = 3$ dan lupa mengurangkan hasil substitusi batas bawah $x = 1$."
+        },
+        {
+          "teks": "$39\\text{ Joule}$",
+          "alasan": "Siswa salah tanda saat mengevaluasi batas atas, menghitung $54 - 18 - 9 = 27$ atau keliru pada pengoperasian aljabar."
+        },
+        {
+          "teks": "$48\\text{ Joule}$",
+          "alasan": "Siswa salah menjumlahkan batas bawah alih-alih mengurangkannya ($45 + 3 = 48$)."
+        }
+      ],
+      "pembahasan": "Usaha $W$ oleh gaya variabel didefinisikan sebagai integral tentu dari gaya terhadap posisi:\n$$W = \\int_{1}^{3} F(x)\\,dx = \\int_{1}^{3} (6x^2 - 4x + 3)\\,dx$$\n$$W = \\left[ 2x^3 - 2x^2 + 3x \\right]_{1}^{3}$$\nEvaluasi batas integral:\n$$W = \\left(2(3)^3 - 2(3)^2 + 3(3)\\right) - \\left(2(1)^3 - 2(1)^2 + 3(1)\\right)$$\n$$W = (54 - 18 + 9) - (2 - 2 + 3) = 45 - 3 = 42\\text{ Joule}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 233,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Laju pertumbuhan tanaman dinyatakan dalam fungsi f l( t ) = 6 t , dengan t adalah hari ke- t."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "aplikasi nilai awal laju pertumbuhan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan antara laju diferensial dan nilai awal fungsi untuk memprediksi ukuran pertumbuhan pada waktu tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pertambahan tinggi suatu bibit tanaman dimodelkan oleh persamaan $\\frac{dh}{dt} = 12\\sqrt{t}$ (dalam cm per hari), dengan $t$ adalah waktu dalam hari sejak pengamatan dimulai. Jika tinggi bibit pada hari ke-$1$ ($t = 1$) adalah $18\\text{ cm}$, maka tinggi bibit tanaman tersebut pada hari ke-$4$ ($t = 4$) adalah ....",
+      "jawaban_benar": "$74\\text{ cm}$",
+      "alasan_benar": "Tinggi tanaman diperoleh dari integrasi: $h(t) = \\int 12t^{1/2}\\,dt = 12 \\cdot \\frac{2}{3}t^{3/2} + C = 8t\\sqrt{t} + C$. Diketahui $h(1) = 18$, maka $8(1) + C = 18 \\implies C = 10$. Pada hari ke-4, tinggi bibit adalah $h(4) = 8(4)\\sqrt{4} + 10 = 8(8) + 10 = 64 + 10 = 74\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$56\\text{ cm}$",
+          "alasan": "Siswa hanya menghitung pertambahan tinggi kumulatif dari hari ke-1 sampai ke-4 ($\\int_1^4 12\\sqrt{t}\\,dt = 56$) tanpa menambahkan tinggi awal $18\\text{ cm}$."
+        },
+        {
+          "teks": "$64\\text{ cm}$",
+          "alasan": "Siswa mengabaikan konstanta integrasi $C$ dan langsung menghitung $8(4)^{3/2} = 64$."
+        },
+        {
+          "teks": "$82\\text{ cm}$",
+          "alasan": "Siswa keliru menentukan konstanta $C$, menjumlahkan $18 + 8 = 26$ sehingga $64 + 26 = 90$ atau salah hitung koefisien integral antiturunan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi antiturunan dari laju pertumbuhan:\n$$h(t) = \\int 12\\sqrt{t}\\,dt = \\int 12t^{\\frac{1}{2}}\\,dt = 12 \\cdot \\frac{2}{3}t^{\\frac{3}{2}} + C = 8t^{\\frac{3}{2}} + C$$\n\nLangkah 2: Menggunakan nilai awal $h(1) = 18$ untuk menentukan $C$:\n$$8(1)^{\\frac{3}{2}} + C = 18 \\iff 8 + C = 18 \\iff C = 10$$\nSehingga fungsi tinggi bibit tanaman adalah $h(t) = 8t^{\\frac{3}{2}} + 10$.\n\nLangkah 3: Menghitung tinggi bibit pada hari ke-4 ($t = 4$):\n$$h(4) = 8(4)^{\\frac{3}{2}} + 10 = 8(8) + 10 = 64 + 10 = 74\\text{ cm}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0227-latihan-soal-penerapan-integral-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas daerah kurva dengan sumbu x",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik potong kurva dengan sumbu-x sebagai batas integrasi, kemudian menghitung nilai integral tentu dengan memperhatikan letak daerah di bawah sumbu-x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah yang dibatasi oleh kurva $y = x^2 - x - 6$ dan sumbu-$x$ adalah ....",
+      "jawaban_benar": "$\\frac{125}{6}\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong kurva dengan sumbu-$x$ dicari dari $x^2 - x - 6 = 0 \\iff (x - 3)(x + 2) = 0$, menghasilkan $x = -2$ dan $x = 3$. Pada interval $[-2, 3]$, kurva berada di bawah sumbu-$x$, sehingga $L = -\\int_{-2}^{3} (x^2 - x - 6)\\,dx = \\left[-\\frac{1}{3}x^3 + \\frac{1}{2}x^2 + 6x\\right]_{-2}^{3} = \\left(-9 + \\frac{9}{2} + 18\\right) - \\left(\\frac{8}{3} + 2 - 12\\right) = \\frac{27}{2} - \\left(-\\frac{22}{3}\\right) = \\frac{81 + 44}{6} = \\frac{125}{6}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{115}{6}\\text{ satuan luas}$",
+          "alasan": "Siswa melakukan kesalahan aritmetika saat menjumlahkan pecahan pada batas bawah."
+        },
+        {
+          "teks": "$\\frac{125}{3}\\text{ satuan luas}$",
+          "alasan": "Siswa lupa mengalikan koefisien setengah pada suku $x^2$ saat mencari antiturunan."
+        },
+        {
+          "teks": "$\\frac{35}{6}\\text{ satuan luas}$",
+          "alasan": "Siswa keliru menggunakan batas integrasi dari $0$ ke $3$ alih-alih dari $-2$ ke $3$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan batas integrasi melalui titik potong dengan sumbu-$x$ ($y = 0$):\n$$x^2 - x - 6 = 0 \\implies (x - 3)(x + 2) = 0 \\implies x = -2 \\text{ atau } x = 3$$\n\nLangkah 2: Pada interval $[-2, 3]$, nilai fungsi $y \\le 0$ (berada di bawah sumbu-$x$), sehingga luasnya adalah:\n$$\n\\begin{aligned}\nL &= -\\int_{-2}^{3} (x^2 - x - 6)\\,dx = \\int_{-2}^{3} (-x^2 + x + 6)\\,dx \\\\\n&= \\left[ -\\frac{1}{3}x^3 + \\frac{1}{2}x^2 + 6x \\right]_{-2}^{3} \\\\\n&= \\left(-\\frac{1}{3}(27) + \\frac{1}{2}(9) + 6(3)\\right) - \\left(-\\frac{1}{3}(-8) + \\frac{1}{2}(4) + 6(-2)\\right) \\\\\n&= \\left(-9 + \\frac{9}{2} + 18\\right) - \\left(\\frac{8}{3} + 2 - 12\\right) \\\\\n&= \\frac{27}{2} - \\left(-\\frac{22}{3}\\right) = \\frac{27}{2} + \\frac{22}{3} = \\frac{81 + 44}{6} = \\frac{125}{6}\\text{ satuan luas}.\n\\end{aligned}\n$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 226,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menurut Hukum Hooke, gaya yang diperlukan untuk menahan pegas meregang x meter di luar panjang alaminya adalah f ^ x h = kx ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi fisika usaha pegas lanjut",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan konstanta pegas terlebih dahulu berdasarkan data gaya dan perpindahan, dilanjutkan dengan integrasi fungsi gaya pada interval tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah gaya sebesar $50\\text{ N}$ diperlukan untuk meregangkan sebuah pegas sejauh $0,1\\text{ meter}$ melampaui panjang alaminya. Besar usaha yang diperlukan untuk meregangkan pegas tersebut lebih lanjut dari regangan $0,1\\text{ meter}$ menjadi $0,3\\text{ meter}$ adalah ....",
+      "jawaban_benar": "$20\\text{ Joule}$",
+      "alasan_benar": "Berdasarkan Hukum Hooke $F = kx$, maka $50 = k(0,1) \\iff k = 500\\text{ N/m}$. Usaha untuk meregangkan dari $x = 0,1\\text{ m}$ ke $x = 0,3\\text{ m}$ adalah $W = \\int_{0,1}^{0,3} 500x\\,dx = \\left[250x^2\\right]_{0,1}^{0,3} = 250(0,3^2 - 0,1^2) = 250(0,09 - 0,01) = 250(0,08) = 20\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$10\\text{ Joule}$",
+          "alasan": "Siswa salah mengalikan faktor $1/2$ sebanyak dua kali sehingga menghasilkan setengah dari nilai yang benar."
+        },
+        {
+          "teks": "$22,5\\text{ Joule}$",
+          "alasan": "Siswa menghitung usaha dari posisi setimbang $x = 0$ hingga $x = 0,3$ tanpa mengurangkan usaha awal dari $0$ ke $0,1$."
+        },
+        {
+          "teks": "$40\\text{ Joule}$",
+          "alasan": "Siswa lupa membagi dengan 2 saat mencari antiturunan dari $kx$ ($W = k(x_2^2 - x_1^2)$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan konstanta pegas $k$ menggunakan Hukum Hooke:\n$$f(x) = kx \\implies 50 = k(0,1) \\implies k = 500\\text{ N/m}$$\n\nLangkah 2: Menghitung usaha dengan integral tentu:\n$$\n\\begin{aligned}\nW &= \\int_{0,1}^{0,3} 500x\\,dx \\\\\n&= \\left[ 250x^2 \\right]_{0,1}^{0,3} \\\\\n&= 250(0,3)^2 - 250(0,1)^2 \\\\\n&= 250(0,09) - 250(0,01) \\\\\n&= 22,5 - 2,5 = 20\\text{ Joule}.\n\\end{aligned}\n$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 231,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi yang digunakan menunjukkan bagaimana laju panen berubah setiap jam selama panen berlangsung."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi akumulasi laju pemanenan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemodelan akumulasi hasil panen dari fungsi laju panen menggunakan konsep integral tentu pada interval waktu yang ditentukan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pemetikan buah kopi di sebuah perkebunan dinyatakan oleh fungsi $h(t) = -3t^2 + 18t$ (dalam kg per jam), dengan $t$ menyatakan waktu dalam jam sejak pemetikan dimulai pada pukul 07.00 ($t = 0$). Total hasil panen buah kopi yang dipetik dari pukul 07.00 hingga pukul 11.00 ($t = 4$) adalah ....",
+      "jawaban_benar": "$80\\text{ kg}$",
+      "alasan_benar": "Total panen adalah integral dari fungsi laju panen pada interval $[0, 4]$: $\\int_{0}^{4} (-3t^2 + 18t)\\,dt = \\left[-t^3 + 9t^2\\right]_0^4 = -4^3 + 9(4^2) = -64 + 144 = 80\\text{ kg}$.",
+      "distraktor": [
+        {
+          "teks": "$64\\text{ kg}$",
+          "alasan": "Siswa hanya menghitung nilai $t^3$ pada batas atas tanpa memperhatikan suku kedua."
+        },
+        {
+          "teks": "$96\\text{ kg}$",
+          "alasan": "Siswa salah mengintegrasikan koefisien $-3t^2$ menjadi $-3t^3$ alih-alih $-t^3$."
+        },
+        {
+          "teks": "$144\\text{ kg}$",
+          "alasan": "Siswa hanya menghitung suku kedua $9t^2$ dan mengabaikan suku $-t^3$."
+        }
+      ],
+      "pembahasan": "Waktu dari pukul 07.00 hingga 11.00 bersesuaian dengan interval waktu $t = 0$ sampai $t = 4$.\nTotal hasil panen diperoleh dengan mengintegralkan fungsi laju panen:\n$$\n\\begin{aligned}\n\\text{Total Panen} &= \\int_{0}^{4} (-3t^2 + 18t)\\,dt \\\\\n&= \\left[ -\\frac{3}{3}t^3 + \\frac{18}{2}t^2 \\right]_0^4 \\\\\n&= \\left[ -t^3 + 9t^2 \\right]_0^4 \\\\\n&= \\left( -(4)^3 + 9(4)^2 \\right) - 0 \\\\\n&= -64 + 9(16) \\\\\n&= -64 + 144 = 80\\text{ kg}.\n\\end{aligned}\n$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0228-latihan-soal-penerapan-integral-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas daerah antara dua kurva kuadrat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik potong kedua kurva, penetapan kurva atas dan kurva bawah, lalu penyelesaian integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah yang dibatasi oleh kurva $y = 2x^2$ dan kurva $y = 12x - x^2$ adalah ....",
+      "jawaban_benar": "$32\\text{ satuan luas}$",
+      "alasan_benar": "Titik potong dicari dengan menyamakan kedua kurva: $2x^2 = 12x - x^2 \\iff 3x^2 - 12x = 0 \\iff 3x(x - 4) = 0$, diperoleh batas $x = 0$ hingga $x = 4$. Pada interval $[0, 4]$, kurva $y = 12x - x^2$ berada di atas $y = 2x^2$. Luas daerah: $L = \\int_{0}^{4} ((12x - x^2) - 2x^2)\\,dx = \\int_{0}^{4} (12x - 3x^2)\\,dx = [6x^2 - x^3]_{0}^{4} = (6(16) - 64) - 0 = 96 - 64 = 32\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$16\\text{ satuan luas}$",
+          "alasan": "Siswa salah saat mengintegrasikan koefisien $12x$ menjadi $3x^2$ alih-alih $6x^2$."
+        },
+        {
+          "teks": "$48\\text{ satuan luas}$",
+          "alasan": "Siswa salah menjumlahkan kedua kurva alih-alih mengurangkan kurva atas dengan kurva bawah."
+        },
+        {
+          "teks": "$64\\text{ satuan luas}$",
+          "alasan": "Siswa lupa mengurangkan nilai batas atas pada suku berderajat tiga."
+        }
+      ],
+      "pembahasan": "Menentukan titik potong kedua kurva:\n$$2x^2 = 12x - x^2$$\n$$3x^2 - 12x = 0$$\n$$3x(x - 4) = 0$$\nDiperoleh batas integrasi $x = 0$ sampai $x = 4$.\n\nMenghitung luas daerah:\n$$L = \\int_{0}^{4} (12x - x^2 - 2x^2)\\,dx$$\n$$L = \\int_{0}^{4} (12x - 3x^2)\\,dx$$\n$$L = \\left[ 6x^2 - x^3 \\right]_{0}^{4}$$\n$$L = (6(4)^2 - 4^3) - 0 = 96 - 64 = 32\\text{ satuan luas}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 232,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya sekarang bertambah terhadap waktu yang dinyatakan dengan dVdt = 5 t 23 + 10 t + 50 . Nilai V dalam rupiah dV yang diharapkan dari sebuah lukisan setelah t tahun pembelian."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "aplikasi nilai aset laju kenaikan harga",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan fungsi nilai akumulatif dengan integrasi laju perubahan, penentuan konstanta nilai awal, dan evaluasi nilai pada waktu tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lukisan antik dibeli oleh seorang kolektor seharga Rp20.000.000,00. Laju pertambahan nilai jual lukisan tersebut terhadap waktu memenuhi persamaan $\\frac{dV}{dt} = 6t^2 + 4t + 10$ (dalam ratusan ribu rupiah per tahun), dengan $t$ menyatakan waktu dalam tahun sejak pembelian. Nilai jual lukisan tersebut setelah 3 tahun adalah ....",
+      "jawaban_benar": "Rp30.200.000,00",
+      "alasan_benar": "Pertambahan nilai lukisan selama 3 tahun pertama adalah $\\Delta V = \\int_{0}^{3} (6t^2 + 4t + 10)\\,dt = [2t^3 + 2t^2 + 10t]_{0}^{3} = 2(27) + 2(9) + 10(3) = 54 + 18 + 30 = 102$ ratusan ribu rupiah, yang setara dengan Rp10.200.000,00. Nilai jual lukisan setelah 3 tahun: $V(3) = V(0) + \\Delta V = \\text{Rp}20.000.000,00 + \\text{Rp}10.200.000,00 = \\text{Rp}30.200.000,00$.",
+      "distraktor": [
+        {
+          "teks": "Rp10.200.000,00",
+          "alasan": "Siswa hanya menghitung besar pertambahan nilai lukisan tanpa menjumlahkannya dengan harga beli awal."
+        },
+        {
+          "teks": "Rp28.200.000,00",
+          "alasan": "Siswa keliru mengintegralkan $6t^2$ menjadi $3t^3$ alih-alih $2t^3$."
+        },
+        {
+          "teks": "Rp32.400.000,00",
+          "alasan": "Siswa salah menyubstitusikan nilai $t = 3$ pada suku berderajat satu."
+        }
+      ],
+      "pembahasan": "Menghitung akumulasi pertambahan nilai jual selama 3 tahun:\n$$\\Delta V = \\int_{0}^{3} \\left(6t^2 + 4t + 10\\right)\\,dt$$\n$$\\Delta V = \\left[ 2t^3 + 2t^2 + 10t \\right]_{0}^{3}$$\n$$\\Delta V = \\left(2(3)^3 + 2(3)^2 + 10(3)\\right) - 0$$\n$$\\Delta V = 54 + 18 + 30 = 102\\text{ ratusan ribu rupiah}$$\n$$\\Delta V = \\text{Rp}10.200.000,00$$\n\nNilai jual total setelah 3 tahun:\n$$V(3) = V(0) + \\Delta V = \\text{Rp}20.000.000,00 + \\text{Rp}10.200.000,00 = \\text{Rp}30.200.000,00.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 227,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Rusman terluka dan sedang dalam proses penyembuhan. Seiring waktu proses ini menyebabkan lebar luka berkurang. Kecepatan penyembuhan luka tersebut dapat diestimasi dengan fungsi berikut:"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "aplikasi kesehatan laju penyembuhan luka",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis laju perubahan pengurangan luas luka menggunakan integral tentu dan mengombinasikannya dengan kondisi nilai awal pada hari tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas luka seorang pasien berkurang seiring berjalannya proses penyembuhan. Laju perubahan luas luka tersebut dimodelkan dengan fungsi $A'(t) = -0,6t + 0,4$ (dalam $\\text{cm}^2/\\text{hari}$), dengan $t$ menyatakan waktu dalam hari sejak perawatan dimulai. Jika pada hari ke-1 ($t = 1$) luas luka terukur $5,8\\text{ cm}^2$, luas luka pasien tersebut yang diharapkan pada hari ke-4 ($t = 4$) adalah ....",
+      "jawaban_benar": "$2,5\\text{ cm}^2$",
+      "alasan_benar": "Perubahan luas luka dari hari ke-1 sampai ke-4 dihitung melalui integral tentu: $\\Delta A = \\int_{1}^{4} (-0,6t + 0,4)\\,dt = [-0,3t^2 + 0,4t]_{1}^{4} = (-0,3(16) + 0,4(4)) - (-0,3(1) + 0,4(1)) = (-4,8 + 1,6) - (-0,3 + 0,4) = -3,2 - 0,1 = -3,3\\text{ cm}^2$. Luas luka pada hari ke-4: $A(4) = A(1) + \\Delta A = 5,8 + (-3,3) = 2,5\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$3,3\\text{ cm}^2$",
+          "alasan": "Siswa hanya menghitung besar penyusutan luas luka tanpa mengurangkannya dari luas luka pada hari ke-1."
+        },
+        {
+          "teks": "$2,1\\text{ cm}^2$",
+          "alasan": "Siswa salah saat mengintegrasikan $-0,6t$ menjadi $-0,6t^2$ alih-alih $-0,3t^2$."
+        },
+        {
+          "teks": "$4,1\\text{ cm}^2$",
+          "alasan": "Siswa salah mengevaluasi batas bawah integral sehingga perubahan luas terhitung $-1,7\\text{ cm}^2$."
+        }
+      ],
+      "pembahasan": "Menghitung total perubahan luas luka antara $t = 1$ dan $t = 4$:\n$$\\Delta A = \\int_{1}^{4} (-0,6t + 0,4)\\,dt$$\n$$\\Delta A = \\left[ -0,3t^2 + 0,4t \\right]_{1}^{4}$$\nEvaluasi batas atas ($t = 4$):\n$$-0,3(4)^2 + 0,4(4) = -4,8 + 1,6 = -3,2$$\nEvaluasi batas bawah ($t = 1$):\n$$-0,3(1)^2 + 0,4(1) = -0,3 + 0,4 = 0,1$$\n$$\\Delta A = -3,2 - 0,1 = -3,3\\text{ cm}^2$$\n\nLuas luka pada hari ke-4:\n$$A(4) = A(1) + \\Delta A = 5,8 + (-3,3) = 2,5\\text{ cm}^2.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 223,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Aplikasi Integral dalam Bidang Ekonomi dan Bisnis"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aplikasi ekonomi penerimaan total",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perumusan model integral tentu dari fungsi laju pendapatan, penentuan antiturunan, serta evaluasi batas integrasi kontekstual.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pendapatan sebuah gerai UMKM dinyatakan oleh fungsi $R'(t) = 60 - 4t$ (dalam puluhan ribu rupiah per jam), dengan $t$ menyatakan waktu operasional dalam jam sejak gerai dibuka ($0 \\le t \\le 10$). Total pendapatan yang diperoleh gerai tersebut selama $5$ jam pertama operasional adalah ....",
+      "jawaban_benar": "Rp2.500.000,00",
+      "alasan_benar": "Total pendapatan diperoleh dari $\\int_{0}^{5} (60 - 4t)\\,dt = [60t - 2t^2]_0^5 = 60(5) - 2(5)^2 = 300 - 50 = 250$ puluhan ribu rupiah, yang setara dengan Rp2.500.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp3.500.000,00",
+          "alasan": "Kesalahan tanda operasi pada antiturunan sehingga menghitung $300 + 50 = 350$ puluhan ribu rupiah."
+        },
+        {
+          "teks": "Rp2.000.000,00",
+          "alasan": "Lupa membagi koefisien dengan pangkat baru saat mengintegralkan $4t$ sehingga memperoleh $60(5) - 4(25) = 200$ puluhan ribu rupiah."
+        },
+        {
+          "teks": "Rp1.250.000,00",
+          "alasan": "Salah membagi hasil integral dengan dua karena keliru menerapkan rumus luas segitiga."
+        }
+      ],
+      "pembahasan": "Total pendapatan $R$ selama $5$ jam pertama ($t = 0$ hingga $t = 5$) dihitung dengan mengintegralkan fungsi laju pendapatan:\n$$\\begin{aligned} R &= \\int_{0}^{5} R'(t)\\,dt \\\\ &= \\int_{0}^{5} (60 - 4t)\\,dt \\\\ &= \\left[ 60t - 2t^2 \\right]_{0}^{5} \\\\ &= \\left(60(5) - 2(5)^2\\right) - 0 \\\\ &= 300 - 50 = 250 \\text{ puluhan ribu rupiah} \\end{aligned}$$\nNilai dalam rupiah:\n$$250 \\times \\text{Rp}10.000,00 = \\text{Rp}2.500.000,00$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 220,
+        "bagian": "Contoh Soal 3.13",
+        "nomor": "3.13",
+        "teks": "Tentukan luas daerah di kuadran pertama yang dibatasi oleh fungsi _f_ ^ _x_ h = _x x_ 2 + 5 , sumbu- _x_ , dan garis _x_ = 2.",
+        "jawaban": "9 - \\frac{5\\sqrt{5}}{3}\\text{ satuan luas}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas daerah kurva bentuk akar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan batas integrasi pada kuadran pertama, penerapan integral substitusi untuk fungsi akar, dan evaluasi nilai tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah di kuadran pertama yang dibatasi oleh kurva $f(x) = x\\sqrt{x^2 + 16}$, sumbu-$x$, dan garis $x = 3$ adalah ....",
+      "jawaban_benar": "$\\frac{61}{3}\\text{ satuan luas}$",
+      "alasan_benar": "Batas integrasi di kuadran pertama adalah $x = 0$ sampai $x = 3$. Melalui substitusi $u = x^2 + 16$, diperoleh $\\int_0^3 x\\sqrt{x^2+16}\\,dx = \\frac{1}{3}\\left[(x^2+16)^{3/2}\\right]_0^3 = \\frac{1}{3}(125 - 64) = \\frac{61}{3}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{122}{3}\\text{ satuan luas}$",
+          "alasan": "Lupa membagi dengan faktor 2 dari turunan $du = 2x\\,dx$ saat melakukan integrasi substitusi."
+        },
+        {
+          "teks": "$\\frac{125}{3}\\text{ satuan luas}$",
+          "alasan": "Lupa menyubstitusikan batas bawah $x = 0$ ke dalam $(x^2 + 16)^{3/2}$, menganggap nilainya 0."
+        },
+        {
+          "teks": "$\\frac{61}{2}\\text{ satuan luas}$",
+          "alasan": "Salah menentukan antiturunan dari $u^{1/2}$, menggunakan koefisien $\\frac{1}{2}$ bukannya $\\frac{2}{3}$."
+        }
+      ],
+      "pembahasan": "Daerah berada di kuadran pertama, sehingga batas kirinya adalah perpotongan kurva dengan sumbu-$x$, yaitu $x = 0$, dan batas kanannya adalah garis $x = 3$.\n\nLuas daerah dinyatakan oleh integral tentu:\n$$L = \\int_{0}^{3} x\\sqrt{x^2 + 16}\\,dx$$\n\nGunakan metode substitusi:\nMisalkan $u = x^2 + 16$, sehingga $du = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}\\,du$.\nUbah batas integrasi:\n- Untuk $x = 0 \\implies u = 0^2 + 16 = 16$\n- Untuk $x = 3 \\implies u = 3^2 + 16 = 25$\n\nSubstitusikan ke dalam integral:\n$$L = \\int_{16}^{25} \\frac{1}{2} u^{1/2}\\,du = \\frac{1}{2} \\left[ \\frac{2}{3}u^{3/2} \\right]_{16}^{25} = \\frac{1}{3} \\left[ u^{3/2} \\right]_{16}^{25}$$\n$$L = \\frac{1}{3} \\left( 25^{3/2} - 16^{3/2} \\right) = \\frac{1}{3} \\left( 125 - 64 \\right) = \\frac{61}{3}$$\n\nJadi, luas daerah tersebut adalah $\\frac{61}{3}\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}
