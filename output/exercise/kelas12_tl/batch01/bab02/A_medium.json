@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "parameter kontinuitas fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan syarat limit kiri sama dengan limit kanan untuk mencari nilai parameter kekontinuan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi $f(x) = \\begin{cases} 2x + a, & x \\le 3 \\\\ x^2 - 5, & x > 3 \\end{cases}$. Agar fungsi $f(x)$ kontinu pada seluruh bilangan real $\\mathbb{R}$, nilai $a$ harus sama dengan ....",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Syarat kontinu di $x = 3$ mengharuskan $\\lim_{x\\to 3^-} f(x) = \\lim_{x\\to 3^+} f(x)$, yaitu $2(3) + a = 3^2 - 5 \\iff 6 + a = 4 \\iff a = -2$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Salah transposisi tanda saat menyelesaikan persamaan, menghitung $a = 6 - 4$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Menjumlahkan kedua ruas $6 + 4$ alih-alih mengurangkannya."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Salah tanda pada nilai ruas kanan menjadi $-4 - 6$."
+        }
+      ],
+      "pembahasan": "Fungsi $f(x)$ terdiri atas fungsi polinomial yang kontinu di setiap interval kecuali kemungkinan di titik batas $x = 3$. Agar kontinu di $x = 3$, limit kiri harus sama dengan limit kanan:\n$$\\lim_{x\\to 3^-} (2x + a) = \\lim_{x\\to 3^+} (x^2 - 5)$$\n$$2(3) + a = 3^2 - 5$$\n$$6 + a = 4$$\n$$a = 4 - 6 = -2.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 116,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Garis sekan menghubungkan titik P dan R dengan kemiringan"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kemiringan garis sekan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menghitung ordinat dari dua titik pada kurva lalu menentukan rasio perubahan ordinat terhadap absis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis sekan memotong kurva $f(x) = x^2 + 3x$ di titik $P(1, f(1))$ dan titik $R(1 + \\Delta x, f(1 + \\Delta x))$ dengan $\\Delta x = 2$. Kemiringan garis sekan $PR$ tersebut adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Koordinat titik adalah $P(1, 4)$ dan $R(3, 18)$. Kemiringan $m = \\frac{18 - 4}{3 - 1} = \\frac{14}{2} = 7$.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Hanya menghitung selisih ordinat $f(3) - f(1)$ tanpa membaginya dengan $\\Delta x$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Menghitung nilai turunan fungsi di titik $x = 1$ ($f'(1) = 2(1) + 3 = 5$) bukan garis sekan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Salah membagi ordinat akhir dengan selisih absis, yaitu $\\frac{18}{2} = 9$ tanpa mengurangkan $f(1)$."
+        }
+      ],
+      "pembahasan": "1. Tentukan nilai $f(1)$:\n$$f(1) = 1^2 + 3(1) = 4$$\n2. Karena $\\Delta x = 2$, titik absis kedua adalah $x_2 = 1 + 2 = 3$:\n$$f(3) = 3^2 + 3(3) = 9 + 9 = 18$$\n3. Hitung kemiringan garis sekan:\n$$m = \\dfrac{f(1 + \\Delta x) - f(1)}{\\Delta x} = \\dfrac{18 - 4}{2} = \\dfrac{14}{2} = 7.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 107,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada limit fungsi trigonometri, selain menggunakan sifat-sifat limit fungsi aljabar, kamu juga harus mengingat kembali definisi sinus sudut (sin), kosinus sudut (cos), tangen sudut (tan), dan identitas trigonometri."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit fungsi trigonometri",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan manipulasi aljabar dengan membagi variabel bebas sebelum menerapkan sifat limit dasar trigonometri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai dari $\\displaystyle\\lim_{x\\to 0}\\dfrac{6x + \\sin 4x}{5x - \\tan 2x}$ adalah ....",
+      "jawaban_benar": "$\\dfrac{10}{3}$",
+      "alasan_benar": "Membagi pembilang dan penyebut dengan $x$ menghasilkan $\\frac{6 + 4}{5 - 2} = \\frac{10}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{10}{7}$",
+          "alasan": "Salah tanda operasi pada penyebut sehingga menghitung $5 + 2 = 7$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Hanya membagi suku pertama $\\frac{6x}{5x - 2x}$ atau kesalahan aritmetika membagi koefisien."
+        },
+        {
+          "teks": "$\\dfrac{2}{3}$",
+          "alasan": "Hanya menghitung perbandingan limit fungsi trigonometri tanpa melibatkan suku linier aljabar."
+        }
+      ],
+      "pembahasan": "Bagi pembilang dan penyebut dengan $x$:\n$$\\lim_{x\\to 0}\\dfrac{6x + \\sin 4x}{5x - \\tan 2x} = \\lim_{x\\to 0}\\dfrac{\\frac{6x}{x} + \\frac{\\sin 4x}{x}}{\\frac{5x}{x} - \\frac{\\tan 2x}{x}}$$\n$$= \\dfrac{6 + \\lim_{x\\to 0}\\frac{\\sin 4x}{x}}{5 - \\lim_{x\\to 0}\\frac{\\tan 2x}{x}} = \\dfrac{6 + 4}{5 - 2} = \\dfrac{10}{3}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 112,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah fungsi f ( x ) kontinu di x = c jika: f ( x ) ada; lim f ( x ) ada; lim f ( x ) = f ( c ) ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kontinuitas fungsi aljabar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis kontinuitas di satu titik dengan menentukan nilai limit fungsi rasional melalui pemfaktoran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\begin{cases} \\dfrac{x^2 - 16}{x - 4}, & x \\neq 4 \\\\ c, & x = 4 \\end{cases}$. Agar fungsi $f(x)$ kontinu di titik $x = 4$, nilai $c$ yang memenuhi adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Syarat kontinu adalah $f(4) = \\lim_{x\\to 4} f(x)$. Nilai $\\lim_{x\\to 4}\\frac{x^2-16}{x-4} = \\lim_{x\\to 4}(x+4) = 8$, sehingga $c = 8$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Mengira nilai konstanta $c$ harus sama dengan nilai absis titik $x = 4$."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Langsung menyubstitusikan $x=4$ ke pembilang dan penyebut sehingga memperoleh bentuk $0/0$ lalu menyimpulkan bernilai $0$."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Salah mengalikan tanda faktor menjadi $x - 4$ sehingga menghasilkan $-4 - 4 = -8$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi kekontinuan, fungsi $f(x)$ kontinu di $x = 4$ jika $\\lim_{x\\to 4} f(x) = f(4)$.\nHitung nilai limit fungsi untuk $x \\to 4$:\n$$\\lim_{x\\to 4} \\dfrac{x^2 - 16}{x - 4} = \\lim_{x\\to 4} \\dfrac{(x - 4)(x + 4)}{x - 4} = \\lim_{x\\to 4} (x + 4) = 4 + 4 = 8.$$\nKarena $f(4) = c$, maka agar kontinu diperoleh $c = 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit perkalian fungsi aljabar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan sifat perkalian limit fungsi dan perasionalan penyebut bentuk akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $\\displaystyle\\lim_{x\\to 5} g(x) = 6$. Nilai dari $\\displaystyle\\lim_{x\\to 5}\\left(g(x)\\cdot\\dfrac{4}{\\sqrt{x}+\\sqrt{5}}\\right)$ adalah ....",
+      "jawaban_benar": "$\\dfrac{12}{5}\\sqrt{5}$",
+      "alasan_benar": "Menggunakan sifat limit perkalian diperoleh $6 \\cdot \\frac{4}{\\sqrt{5}+\\sqrt{5}} = \\frac{24}{2\\sqrt{5}} = \\frac{12}{\\sqrt{5}} = \\frac{12}{5}\\sqrt{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{24}{5}\\sqrt{5}$",
+          "alasan": "Siswa keliru menjumlahkan $\\sqrt{5} + \\sqrt{5}$ menjadi $\\sqrt{5}$ sehingga tidak membagi koefisien dengan 2."
+        },
+        {
+          "teks": "$\\dfrac{6}{5}\\sqrt{5}$",
+          "alasan": "Siswa lupa mengalikan dengan pembilang 4."
+        },
+        {
+          "teks": "$12\\sqrt{5}$",
+          "alasan": "Siswa salah saat merasionalkan penyebut, lupa membagi dengan 5."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat limit perkalian dan substitusi langsung:\n$$\\begin{aligned} \\lim_{x\\to 5}\\left(g(x)\\cdot\\dfrac{4}{\\sqrt{x}+\\sqrt{5}}\\right) &= \\left(\\lim_{x\\to 5} g(x)\\right) \\cdot \\left(\\lim_{x\\to 5}\\dfrac{4}{\\sqrt{x}+\\sqrt{5}}\\right) \\\\ &= 6 \\cdot \\dfrac{4}{\\sqrt{5}+\\sqrt{5}} \\\\ &= 6 \\cdot \\dfrac{4}{2\\sqrt{5}} \\\\ &= \\dfrac{12}{\\sqrt{5}} \\\\ &= \\dfrac{12}{5}\\sqrt{5} \\end{aligned}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-1c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit bentuk akar fungsi rasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan sifat limit akar dan pembagian fungsi untuk menghitung nilai limit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Gunakan sifat-sifat limit untuk menentukan nilai dari $\\displaystyle\\lim_{y\\to 3}\\sqrt{\\dfrac{3y^2+9}{2y^2+y+4}}$.",
+      "jawaban_benar": "$\\dfrac{6}{5}$",
+      "alasan_benar": "Menghitung limit di dalam akar diperoleh $\\frac{3(9)+9}{2(9)+3+4} = \\frac{36}{25}$, kemudian ditarik akar menghasilkan $\\frac{6}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{36}{25}$",
+          "alasan": "Siswa lupa menarik akar kuadrat dari hasil pembagian."
+        },
+        {
+          "teks": "$\\dfrac{5}{6}$",
+          "alasan": "Siswa membalik posisi pembilang dan penyebut."
+        },
+        {
+          "teks": "$\\dfrac{4}{5}$",
+          "alasan": "Siswa salah menghitung pembilang $3(3^2)+9$ menjadi $16$ bukan $36$."
+        }
+      ],
+      "pembahasan": "Menggunakan sifat limit akar:\n$$\\lim_{y\\to 3}\\sqrt{\\dfrac{3y^2+9}{2y^2+y+4}} = \\sqrt{\\lim_{y\\to 3}\\dfrac{3y^2+9}{2y^2+y+4}}$$\nSubstitusikan $y = 3$:\n$$= \\sqrt{\\dfrac{3(3)^2+9}{2(3)^2+3+4}} = \\sqrt{\\dfrac{27+9}{18+3+4}} = \\sqrt{\\dfrac{36}{25}} = \\dfrac{6}{5}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 117,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pergerakan Q menuju titik P mengakibatkan h mendekati 0 sehingga kemiringan garis tangen dapat dicari menggunakan rumus"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "definisi turunan fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa menggunakan definisi turunan berbasis limit untuk menentukan turunan fungsi di suatu titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan definisi turunan fungsi $f'(a) = \\displaystyle\\lim_{h\\to 0}\\dfrac{f(a+h) - f(a)}{h}$, nilai dari $f'(3)$ untuk fungsi $f(x) = 2x^2 - 3x$ adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Ekspansi $\\frac{f(3+h)-f(3)}{h} = \\frac{9h+2h^2}{h} = 9+2h$, saat $h\\to 0$ bernilai 9.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Siswa hanya menghitung turunan dari suku pertama $2x^2$ di $x=3$ yaitu $4(3) = 12$ dan mengabaikan suku $-3x$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Siswa salah saat menguraikan kuadrat $(3+h)^2$ menjadi $9+h^2$ tanpa suku tengah $6h$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Siswa melakukan kesalahan tanda pada suku linear sehingga diperoleh $12 + 3 = 15$."
+        }
+      ],
+      "pembahasan": "Hitung $f(3)$ dan $f(3+h)$:\n$$f(3) = 2(3)^2 - 3(3) = 18 - 9 = 9$$\n$$\\begin{aligned} f(3+h) &= 2(3+h)^2 - 3(3+h) \\\\ &= 2(9 + 6h + h^2) - 9 - 3h \\\\ &= 18 + 12h + 2h^2 - 9 - 3h \\\\ &= 9 + 9h + 2h^2 \\end{aligned}$$\nSubstitusikan ke dalam rumus definisi turunan:\n$$\\begin{aligned} f'(3) &= \\lim_{h\\to 0}\\dfrac{f(3+h) - f(3)}{h} \\\\ &= \\lim_{h\\to 0}\\dfrac{(9 + 9h + 2h^2) - 9}{h} \\\\ &= \\lim_{h\\to 0}\\dfrac{h(9 + 2h)}{h} \\\\ &= \\lim_{h\\to 0}(9 + 2h) = 9 \\end{aligned}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 112,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Suatu fungsi kontinu pada suatu interval I jika fungsi tersebut kontinu pada setiap titik di I ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "parameter kontinuitas fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis syarat kekontinuan fungsi pada titik batas dengan memfaktorkan bentuk tak tentu untuk menentukan nilai parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi:\n$$g(x) = \\begin{cases} \\dfrac{x^2 + 2x - 15}{x - 3}, & x \\neq 3 \\\\ 2k + 1, & x = 3 \\end{cases}$$\nAgar fungsi $g(x)$ kontinu di titik $x = 3$, nilai konstanta $k$ harus bernilai ....",
+      "jawaban_benar": "$\\dfrac{7}{2}$",
+      "alasan_benar": "Nilai limit $\\lim_{x\\to 3}\\frac{(x-3)(x+5)}{x-3} = 8$, disamakan dengan $g(3) = 2k+1$ sehingga $k = \\frac{7}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{9}{2}$",
+          "alasan": "Siswa salah mengoperasikan persamaan menjadi $2k - 1 = 8$ sehingga $k = \\frac{9}{2}$."
+        },
+        {
+          "teks": "$\\dfrac{5}{2}$",
+          "alasan": "Siswa salah menghitung limit menjadi $6$ sehingga $2k + 1 = 6 \\implies k = \\frac{5}{2}$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Siswa menyelesaikan $2k = 7$ tetapi lupa membagi dengan koefisien $2$."
+        }
+      ],
+      "pembahasan": "Agar $g(x)$ kontinu di $x = 3$, maka harus dipenuhi syarat:\n$$\\lim_{x\\to 3} g(x) = g(3)$$\nHitung nilai limit $x \\to 3$:\n$$\\begin{aligned} \\lim_{x\\to 3}\\dfrac{x^2 + 2x - 15}{x - 3} &= \\lim_{x\\to 3}\\dfrac{(x - 3)(x + 5)}{x - 3} \\\\ &= \\lim_{x\\to 3}(x + 5) \\\\ &= 3 + 5 = 8 \\end{aligned}$$\nSamakan dengan $g(3) = 2k + 1$:\n$$2k + 1 = 8 \\implies 2k = 7 \\implies k = \\dfrac{7}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-1d",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengubahan bentuk tangen ke sinus dan kosinus, penyederhanaan aljabar, serta substitusi nilai sudut istimewa.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to \\frac{\\pi}{4}}\\left(\\dfrac{2 - 2\\tan x}{\\cos x - \\sin x}\\right)$.",
+      "jawaban_benar": "$2\\sqrt{2}$",
+      "alasan_benar": "Mengubah bentuk $2 - 2\\tan x = 2\\left(1 - \\frac{\\sin x}{\\cos x}\\right) = 2\\left(\\frac{\\cos x - \\sin x}{\\cos x}\\right)$, sehingga limit menjadi $\\lim_{x\\to \\frac{\\pi}{4}} \\frac{2}{\\cos x} = \\frac{2}{\\cos(\\pi/4)} = \\frac{2}{\\frac{1}{2}\\sqrt{2}} = 2\\sqrt{2}$.",
+      "distraktor": [
+        {
+          "teks": "$-2\\sqrt{2}$",
+          "alasan": "Tertukar tanda saat menyederhanakan pembilang $(\\cos x - \\sin x)$ dengan penyebut."
+        },
+        {
+          "teks": "$\\sqrt{2}$",
+          "alasan": "Lupa mengalikan dengan konstanta 2 pada pembilang."
+        },
+        {
+          "teks": "$-\\sqrt{2}$",
+          "alasan": "Salah tanda dan lupa mengalikan dengan faktor 2."
+        }
+      ],
+      "pembahasan": "Ubah bentuk pembilang dengan identitas tangen:\n$$\\begin{aligned} 2 - 2\\tan x &= 2(1 - \\tan x) = 2\\left(1 - \\frac{\\sin x}{\\cos x}\\right) = \\frac{2(\\cos x - \\sin x)}{\\cos x} \\end{aligned}$$\nSubstitusikan kembali ke limit:\n$$\\begin{aligned} \\lim_{x\\to \\frac{\\pi}{4}}\\left(\\frac{\\frac{2(\\cos x - \\sin x)}{\\cos x}}{\\cos x - \\sin x}\\right) &= \\lim_{x\\to \\frac{\\pi}{4}} \\frac{2}{\\cos x} \\\\ &= \\frac{2}{\\cos\\frac{\\pi}{4}} = \\frac{2}{\\frac{1}{2}\\sqrt{2}} = \\frac{4}{\\sqrt{2}} = 2\\sqrt{2} \\end{aligned}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "parameter kontinuitas fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan limit sepihak kiri dan kanan serta menyamakan nilainya dengan nilai fungsi pada titik pembuat batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi $g(x) = \\begin{cases} mx + 5, & x \\le 2 \\\\ 3x^2 - 1, & x > 2 \\end{cases}$. Tentukan nilai $m$ agar fungsi $g(x)$ kontinu di seluruh $\\mathbb{R}$.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Syarat kontinu di $x = 2$ adalah $\\lim_{x\\to 2^-} g(x) = \\lim_{x\\to 2^+} g(x) = g(2)$. Diperoleh $2m + 5 = 3(2)^2 - 1 = 11$, sehingga $2m = 6 \\implies m = 3$.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Salah tanda saat memindahkan konstanta 5 ke ruas kanan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Salah operasi aljabar dengan menjumlahkan $11 + 5 = 16$ lalu membaginya dengan 2."
+        },
+        {
+          "teks": "$\\dfrac{11}{2}$",
+          "alasan": "Mengabaikan konstanta 5 pada cabang kiri dan langsung menyamakan $2m = 11$."
+        }
+      ],
+      "pembahasan": "Agar $g(x)$ kontinu di seluruh $\\mathbb{R}$, $g(x)$ harus kontinu di titik batas $x = 2$:\n1. Nilai fungsi dan limit kiri:\n$$g(2) = \\lim_{x\\to 2^-} (mx + 5) = 2m + 5$$\n2. Limit kanan:\n$$\\lim_{x\\to 2^+} (3x^2 - 1) = 3(2)^2 - 1 = 12 - 1 = 11$$\n3. Syarat kekontinuan $\\lim_{x\\to 2^-} g(x) = \\lim_{x\\to 2^+} g(x)$:\n$$2m + 5 = 11 \\iff 2m = 6 \\iff m = 3$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit perkalian fungsi aljabar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan sifat perkalian limit fungsi dan merasionalkan penyebut bentuk akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $\\displaystyle\\lim_{x\\to 6} g(x) = 4$. Tentukan nilai dari $\\displaystyle\\lim_{x\\to 6}\\left(g(x)\\cdot\\dfrac{3}{\\sqrt{x}+\\sqrt{6}}\\right)$.",
+      "jawaban_benar": "$\\sqrt{6}$",
+      "alasan_benar": "Dengan sifat perkalian limit, diperoleh $4 \\cdot \\frac{3}{\\sqrt{6}+\\sqrt{6}} = 4 \\cdot \\frac{3}{2\\sqrt{6}} = \\frac{6}{\\sqrt{6}} = \\sqrt{6}$.",
+      "distraktor": [
+        {
+          "teks": "$2\\sqrt{6}$",
+          "alasan": "Lupa menjumlahkan dua suku akar di penyebut sehingga penyebut dianggap hanya $\\sqrt{6}$."
+        },
+        {
+          "teks": "$\\dfrac{1}{2}\\sqrt{6}$",
+          "alasan": "Salah membagi saat merasionalkan pecahan sehingga menghasilkan setengah dari nilai sebenarnya."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Salah konsep merasionalkan bentuk akar dengan menghilangkan tanda akar pada penyelesaian akhir."
+        }
+      ],
+      "pembahasan": "Gunakan sifat limit perkalian:\n$$\\begin{aligned} \\lim_{x\\to 6}\\left(g(x)\\cdot\\frac{3}{\\sqrt{x}+\\sqrt{6}}\\right) &= \\lim_{x\\to 6} g(x) \\cdot \\lim_{x\\to 6} \\frac{3}{\\sqrt{x}+\\sqrt{6}} \\\\ &= 4 \\cdot \\frac{3}{\\sqrt{6}+\\sqrt{6}} \\\\ &= 4 \\cdot \\frac{3}{2\\sqrt{6}} \\\\ &= \\frac{12}{2\\sqrt{6}} = \\frac{6}{\\sqrt{6}} = \\sqrt{6} \\end{aligned}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 116,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Garis sekan menghubungkan titik P dan R dengan kemiringan - m = f ^ x 1 + TT xx h f ^ x 1h ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kemiringan garis sekan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai fungsi di dua titik berjarak $\\Delta x$ kemudian menentukan kemiringan garis sekan melalui rasio perubahannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah garis sekan menghubungkan titik $P(1, f(1))$ dan $R(1 + \\Delta x, f(1 + \\Delta x))$ pada kurva fungsi $f(x) = 2x^2 + 5x$. Jika $\\Delta x = 3$, tentukan kemiringan garis sekan $PR$ tersebut.",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "$f(1) = 7$, $f(4) = 52$, sehingga kemiringan garis sekan adalah $m = \\frac{f(4) - f(1)}{\\Delta x} = \\frac{52 - 7}{3} = \\frac{45}{3} = 15$.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "Hanya menghitung selisih ordinat $f(4) - f(1)$ tanpa membaginya dengan $\\Delta x = 3$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Menghitung turunan sesaat $f'(1) = 4(1) + 5 = 9$ alih-alih kemiringan garis sekan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Salah menghitung nilai fungsi $f(4)$ menjadi 46 sehingga $(46-7)/3 = 13$."
+        }
+      ],
+      "pembahasan": "Diketahui $x_1 = 1$ dan $\\Delta x = 3$, maka $x_2 = 1 + 3 = 4$.\nHitung nilai fungsi pada kedua titik:\n- $f(1) = 2(1)^2 + 5(1) = 2 + 5 = 7$\n- $f(4) = 2(4)^2 + 5(4) = 2(16) + 20 = 52$\n\nKemiringan garis sekan $PR$ adalah:\n$$m = \\frac{f(x_1 + \\Delta x) - f(x_1)}{\\Delta x} = \\frac{52 - 7}{3} = \\frac{45}{3} = 15$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 117,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Rumus inilah yang disebut laju perubahaan sesaat pada P dan menjadi dasar dalam pendefinisian turunan."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan sesaat fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan definisi formal laju perubahan sesaat, manipulasi bentuk akar dengan mengalikan sekawan, dan evaluasi limit $h \\to 0$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju perubahan sesaat fungsi $f(x) = \\sqrt{x + 1}$ pada titik $x = 3$ ditentukan oleh nilai limit $\\displaystyle\\lim_{h\\to 0}\\dfrac{f(3+h)-f(3)}{h}$. Nilai laju perubahan sesaat tersebut adalah ....",
+      "jawaban_benar": "$\\dfrac{1}{4}$",
+      "alasan_benar": "Bentuk $\\frac{\\sqrt{4+h}-2}{h}$ dikalikan sekawannya menjadi $\\frac{1}{\\sqrt{4+h}+2}$, yang bernilai $\\frac{1}{2+2} = \\frac{1}{4}$ saat $h \\to 0$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{1}{2}$",
+          "alasan": "Hanya menghitung $\\frac{1}{\\sqrt{4}}$ tanpa menjumlahkan dengan 2 pada penyebut hasil kali sekawan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Terbalik menempatkan hasil perhitungan antara pembilang dan penyebut."
+        },
+        {
+          "teks": "$\\dfrac{1}{8}$",
+          "alasan": "Salah mengalikan sekawan sehingga menghasilkan penyebut dua kali lipat lebih besar."
+        }
+      ],
+      "pembahasan": "Hitung $f(3) = \\sqrt{3 + 1} = \\sqrt{4} = 2$ dan $f(3+h) = \\sqrt{(3+h)+1} = \\sqrt{4+h}$.\nSusun limit definisi laju perubahan sesaat:\n$$\\lim_{h\\to 0}\\frac{\\sqrt{4+h} - 2}{h}$$\nKalikan pembilang dan penyebut dengan bentuk sekawan $(\\sqrt{4+h} + 2)$:\n$$\\begin{aligned} \\lim_{h\\to 0}\\frac{(\\sqrt{4+h} - 2)(\\sqrt{4+h} + 2)}{h(\\sqrt{4+h} + 2)} &= \\lim_{h\\to 0}\\frac{(4+h) - 4}{h(\\sqrt{4+h} + 2)} \\\\ &= \\lim_{h\\to 0}\\frac{h}{h(\\sqrt{4+h} + 2)} \\\\ &= \\lim_{h\\to 0}\\frac{1}{\\sqrt{4+h} + 2} \\\\ &= \\frac{1}{\\sqrt{4+0} + 2} = \\frac{1}{2+2} = \\frac{1}{4} \\end{aligned}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-1c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit bentuk akar fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah: menerapkan sifat limit akar, mengevaluasi limit fungsi rasional pada pembilang dan penyebut, serta menyederhanakan bentuk akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dengan menggunakan sifat-sifat limit fungsi, tentukan nilai dari $\\displaystyle\\lim_{y\\to 4}\\sqrt{\\dfrac{y^2 + 9}{2y^2 - 7y + 12}}$.",
+      "jawaban_benar": "$\\dfrac{5}{4}$",
+      "alasan_benar": "Berdasarkan sifat limit, $\\lim\\sqrt{f(y)} = \\sqrt{\\lim f(y)}$. Nilai pembilang saat $y\\to 4$ adalah $4^2+9 = 25$ dan penyebut $2(4)^2 - 7(4) + 12 = 32 - 28 + 12 = 16$. Maka hasilnya $\\sqrt{\\frac{25}{16}} = \\frac{5}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{25}{16}$",
+          "alasan": "Siswa menghitung nilai limit pecahan di dalam akar dengan benar namun lupa menarik akar kuadratnya."
+        },
+        {
+          "teks": "$\\dfrac{4}{5}$",
+          "alasan": "Siswa terbalik menempatkan pembilang dan penyebut sehingga memperoleh kebalikan dari jawaban yang benar."
+        },
+        {
+          "teks": "$\\dfrac{5}{2}$",
+          "alasan": "Siswa salah menghitung penyebut menjadi 4 alih-alih 16 sebelum menarik akar kuadrat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Terapkan sifat limit fungsi akar:\n$$\\lim_{y\\to 4}\\sqrt{\\dfrac{y^2 + 9}{2y^2 - 7y + 12}} = \\sqrt{\\lim_{y\\to 4}\\dfrac{y^2 + 9}{2y^2 - 7y + 12}}$$\n\nLangkah 2: Terapkan sifat limit pembagian fungsi:\n$$\\lim_{y\\to 4}\\dfrac{y^2 + 9}{2y^2 - 7y + 12} = \\dfrac{4^2 + 9}{2(4^2) - 7(4) + 12} = \\dfrac{16 + 9}{32 - 28 + 12} = \\dfrac{25}{16}$$\n\nLangkah 3: Tarik akar dari hasil limit:\n$$\\sqrt{\\dfrac{25}{16}} = \\dfrac{5}{4}$$\n\nJadi, nilai limit tersebut adalah $\\dfrac{5}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-4b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan fungsi aljabar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan fungsi turunan menggunakan definisi, substitusi dua nilai absis yang berbeda, kemudian menghitung hasil perkaliannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{3}{2}x^2$. Nilai dari $f'(-4) \\cdot f'(2)$ adalah ....",
+      "jawaban_benar": "$-72$",
+      "alasan_benar": "Turunan pertama fungsi $f(x) = \\frac{3}{2}x^2$ adalah $f'(x) = 3x$. Nilai $f'(-4) = 3(-4) = -12$ dan $f'(2) = 3(2) = 6$. Hasil kalinya adalah $(-12) \\cdot 6 = -72$.",
+      "distraktor": [
+        {
+          "teks": "$72$",
+          "alasan": "Siswa mengabaikan tanda negatif pada saat menghitung $f'(-4)$."
+        },
+        {
+          "teks": "$-24$",
+          "alasan": "Siswa menjumlahkan $f'(-4) + f'(2) = -12 + 6 = -6$ lalu dikalikan 4 secara keliru."
+        },
+        {
+          "teks": "$-36$",
+          "alasan": "Siswa salah menurunkan fungsi dengan lupa mengalikan koefisien dengan pangkat, mengira $f'(x) = \\frac{3}{2}x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan turunan fungsi $f(x)$ dengan rumus dasar turunan:\n$$f'(x) = \\lim_{h\\to 0}\\dfrac{\\frac{3}{2}(x+h)^2 - \\frac{3}{2}x^2}{h} = 3x$$\n\nLangkah 2: Hitung nilai $f'(-4)$ dan $f'(2)$:\n$$f'(-4) = 3(-4) = -12$$\n$$f'(2) = 3(2) = 6$$\n\nLangkah 3: Hitung hasil kali kedua nilai tersebut:\n$$f'(-4) \\cdot f'(2) = -12 \\cdot 6 = -72$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 113,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Keadaan pertama dikenal dengan kecepatan rata-rata , sedangkan keadaan kedua merupakan kecepatan sesaat . Untuk memahami laju perubahan atau kecepatan sesaat, kamu perlu mengembangkan pemahaman yang kuat tentang laju perubahan rata-rata atau kecepatan rata-rata."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "laju perubahan rata-rata dan sesaat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perbandingan analitis antara konsep laju perubahan rata-rata pada suatu interval dan kecepatan sesaat pada suatu titik waktu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah benda bergerak sepanjang lintasan lurus dengan posisi yang dinyatakan oleh $s(t) = 3t^2 + 2t$ ($s$ dalam meter dan $t$ dalam detik). Selisih antara kecepatan rata-rata benda dari $t = 1$ hingga $t = 4$ detik dengan kecepatan sesaat benda pada $t = 2$ detik adalah ....",
+      "jawaban_benar": "$3\\text{ m/s}$",
+      "alasan_benar": "Kecepatan rata-rata dari $t = 1$ ke $t = 4$ adalah $\\frac{s(4)-s(1)}{4-1} = \\frac{56-5}{3} = 17\\text{ m/s}$. Kecepatan sesaat pada $t = 2$ adalah $s'(2) = 6(2)+2 = 14\\text{ m/s}$. Selisihnya adalah $17 - 14 = 3\\text{ m/s}$.",
+      "distraktor": [
+        {
+          "teks": "$17\\text{ m/s}$",
+          "alasan": "Siswa hanya menghitung nilai kecepatan rata-rata dan lupa menguranginya dengan kecepatan sesaat."
+        },
+        {
+          "teks": "$14\\text{ m/s}$",
+          "alasan": "Siswa hanya menghitung nilai kecepatan sesaat pada $t = 2$ detik."
+        },
+        {
+          "teks": "$5\\text{ m/s}$",
+          "alasan": "Siswa salah menghitung selang waktu pembagi pada kecepatan rata-rata atau salah mengevaluasi nilai fungsi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung kecepatan rata-rata pada interval $[1, 4]$:\n$$s(4) = 3(4^2) + 2(4) = 48 + 8 = 56$$\n$$s(1) = 3(1^2) + 2(1) = 3 + 2 = 5$$\n$$v_{\\text{rata-rata}} = \\dfrac{s(4) - s(1)}{4 - 1} = \\dfrac{56 - 5}{3} = \\dfrac{51}{3} = 17\\text{ m/s}$$\n\nLangkah 2: Tentukan kecepatan sesaat pada $t = 2$ menggunakan turunan fungsi posisi:\n$$v(t) = s'(t) = 6t + 2$$\n$$v(2) = s'(2) = 6(2) + 2 = 14\\text{ m/s}$$\n\nLangkah 3: Hitung selisih kedua besaran tersebut:\n$$\\Delta v = 17\\text{ m/s} - 14\\text{ m/s} = 3\\text{ m/s}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 107,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada limit fungsi trigonometri, selain menggunakan sifat-sifat limit fungsi aljabar, kamu juga harus mengingat kembali definisi sinus sudut (sin), kosinus sudut (cos), tangen sudut (tan), dan identitas trigonometri."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit trigonometri identitas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan identitas kosinus sudut rangkap terlebih dahulu untuk mengubah bentuk tak tentu, lalu menerapkan sifat limit fungsi trigonometri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai dari $\\displaystyle\\lim_{x\\to 0}\\dfrac{1 - \\cos 4x}{x\\sin 2x}$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Identitas $1 - \\cos 4x = 2\\sin^2(2x)$. Bentuk limit menjadi $\\lim_{x\\to 0}\\frac{2\\sin(2x)\\sin(2x)}{x\\sin(2x)} = \\lim_{x\\to 0}\\frac{2\\sin(2x)}{x} = 2 \\cdot 2 = 4$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa melupakan faktor perkalian 2 dari turunan sudut atau identitas sudut rangkap."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Siswa membagi koefisien langsung tanpa menguraikan rumus sudut rangkap kosinus dengan tepat."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Siswa salah mengalikan kuadrat koefisien sehingga mendapatkan hasil dua kali lipat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Ubah $1 - \\cos 4x$ menggunakan identitas trigonometri sudut rangkap:\n$$1 - \\cos 4x = 2\\sin^2(2x)$$\n\nLangkah 2: Substitusikan ke dalam bentuk limit dan sederhanakan:\n$$\\lim_{x\\to 0}\\dfrac{2\\sin^2(2x)}{x\\sin 2x} = \\lim_{x\\to 0}\\dfrac{2\\sin(2x)\\cdot\\sin(2x)}{x\\sin 2x} = \\lim_{x\\to 0}\\dfrac{2\\sin 2x}{x}$$\n\nLangkah 3: Terapkan sifat limit trigonometri $\\lim_{x\\to 0}\\dfrac{\\sin ax}{x} = a$:\n$$\\lim_{x\\to 0} 2 \\cdot \\dfrac{\\sin 2x}{x} = 2 \\cdot 2 = 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 117,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ketika Q = P , akan terbentuk garis tangen yang digambarkan dengan garis kuning. Pergerakan Q menuju titik P mengakibatkan h mendekati 0 sehingga kemiringan garis tangen dapat dicari menggunakan rumus"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "garis tangen kurva",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan gradien garis singgung melalui konsep turunan fungsi di titik tertentu, penyusunan persamaan garis singgung, dan penentuan titik potong sumbu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis tangen (garis singgung) pada kurva $f(x) = 4 - x^2$ di titik berabsis $x = 1$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai $c$ yang memenuhi adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Titik singgung adalah $(1, f(1)) = (1, 3)$. Kemiringan garis tangen adalah $m = f'(1) = -2(1) = -2$. Persamaan garis tangen adalah $y - 3 = -2(x - 1) \\implies y = -2x + 5$. Titik potong sumbu-$Y$ berada pada $(0, 5)$, sehingga $c = 5$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Siswa mengira nilai $c$ langsung sama dengan nilai ordinat titik singgung $f(1) = 3$."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Siswa mengira nilai $c$ adalah gradien garis tangen $m = -2$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Siswa salah saat menyusun persamaan garis singgung menjadi $y - 3 = -2x - 2$ sehingga $y = -2x + 1$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan titik singgung $(x_1, y_1)$:\n$$x_1 = 1 \\implies y_1 = f(1) = 4 - 1^2 = 3$$\nTitik singgung adalah $(1, 3)$.\n\nLangkah 2: Tentukan gradien garis tangen ($m$) menggunakan turunan di $x = 1$:\n$$m = f'(1) = \\lim_{h\\to 0}\\dfrac{f(1+h)-f(1)}{h} = -2(1) = -2$$\n\nLangkah 3: Susun persamaan garis tangen dan tentukan titik potong sumbu-$Y$:\n$$y - y_1 = m(x - x_1)$$\n$$y - 3 = -2(x - 1)$$\n$$y - 3 = -2x + 2 \\implies y = -2x + 5$$\nGaris memotong sumbu-$Y$ di saat $x = 0$, sehingga $y = 5$. Maka diperoleh nilai $c = 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0118-latihan-soal-definisi-turunan-fungsi-4b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan fungsi aljabar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan fungsi turunan dengan definisi limit, evaluasi pada dua titik berbeda, dan operasi aljabar hasil evaluasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{5}{3}x^2$. Nilai dari $f'(-6) + f'(9)$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Turunan dari $f(x) = \\frac{5}{3}x^2$ adalah $f'(x) = \\frac{10}{3}x$. Diperoleh $f'(-6) = \\frac{10}{3}(-6) = -20$ dan $f'(9) = \\frac{10}{3}(9) = 30$, sehingga $f'(-6) + f'(9) = -20 + 30 = 10$.",
+      "distraktor": [
+        {
+          "teks": "$-10$",
+          "alasan": "Siswa tertukar tanda saat menjumlahkan nilai turunan, yaitu $20 - 30 = -10$."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Siswa mengabaikan tanda negatif pada $f'(-6)$ sehingga menghitung $20 + 30 = 50$."
+        },
+        {
+          "teks": "$-50$",
+          "alasan": "Siswa salah mengoperasikan tanda pada kedua suku menjadi $-20 - 30 = -50$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi turunan fungsi aljabar:\n$$f'(x) = \\lim_{h\\to 0}\\dfrac{f(x+h)-f(x)}{h} = \\lim_{h\\to 0}\\dfrac{\\frac{5}{3}(x+h)^2 - \\frac{5}{3}x^2}{h}$$\n$$f'(x) = \\lim_{h\\to 0}\\dfrac{\\frac{5}{3}(2xh+h^2)}{h} = \\lim_{h\\to 0}\\left(\\dfrac{10}{3}x + \\dfrac{5}{3}h\\right) = \\dfrac{10}{3}x$$\n\nSelanjutnya, substitusikan nilai $x = -6$ dan $x = 9$ ke dalam fungsi turunan:\n1. $f'(-6) = \\dfrac{10}{3}(-6) = -20$\n2. $f'(9) = \\dfrac{10}{3}(9) = 30$\n\nJumlah dari kedua nilai tersebut adalah:\n$$f'(-6) + f'(9) = -20 + 30 = 10$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-a-medium-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 108,
+        "bagian": "Ayo Mencoba 2.2",
+        "nomor": "1",
+        "teks": "Tentukan nilai lim x -> 0 (tan x + 2 x)/(sin x + 2 x)",
+        "jawaban": "1",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "limit fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan manipulasi aljabar dengan membagi variabel x, penerapan sifat limit dasar trigonometri, dan penyederhanaan pecahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to 0}\\dfrac{\\tan 8x + 7x}{\\sin 5x + 4x}$.",
+      "jawaban_benar": "$\\dfrac{5}{3}$",
+      "alasan_benar": "Membagi pembilang dan penyebut dengan $x$ menghasilkan $\\dfrac{\\frac{\\tan 8x}{x} + 7}{\\frac{\\sin 5x}{x} + 4}$. Dengan sifat limit fungsi trigonometri $\\lim_{x\\to 0}\\frac{\\tan 8x}{x} = 8$ dan $\\lim_{x\\to 0}\\frac{\\sin 5x}{x} = 5$, diperoleh $\\dfrac{8 + 7}{5 + 4} = \\dfrac{15}{9} = \\dfrac{5}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{8}{5}$",
+          "alasan": "Siswa mengabaikan koefisien sudut fungsi trigonometri dan menganggap nilai $\\lim_{x\\to 0}\\frac{\\tan 8x}{x} = 1$ serta $\\lim_{x\\to 0}\\frac{\\sin 5x}{x} = 1$, sehingga menghitung $\\frac{1 + 7}{1 + 4} = \\frac{8}{5}$."
+        },
+        {
+          "teks": "$\\dfrac{7}{4}$",
+          "alasan": "Siswa mengabaikan fungsi trigonometri dan hanya membagi koefisien dari suku aljabar $\\frac{7x}{4x}$."
+        },
+        {
+          "teks": "$\\dfrac{3}{5}$",
+          "alasan": "Siswa terbalik meletakkan pembilang dan penyebut pada hasil akhir (resiprokal)."
+        }
+      ],
+      "pembahasan": "Untuk menentukan nilai limit bentuk tak tentu $\\frac{0}{0}$, kalikan pembilang dan penyebut dengan $\\frac{1}{x}$:\n$$\\lim_{x\\to 0}\\dfrac{\\tan 8x + 7x}{\\sin 5x + 4x} = \\lim_{x\\to 0}\\dfrac{\\dfrac{\\tan 8x}{x} + 7}{\\dfrac{\\sin 5x}{x} + 4}$$\n\nBerdasarkan sifat limit fungsi trigonometri:\n$$\\lim_{x\\to 0}\\dfrac{\\tan ax}{x} = a \\implies \\lim_{x\\to 0}\\dfrac{\\tan 8x}{x} = 8$$\n$$\\lim_{x\\to 0}\\dfrac{\\sin bx}{x} = b \\implies \\lim_{x\\to 0}\\dfrac{\\sin 5x}{x} = 5$$\n\nSubstitusikan nilai limit tersebut:\n$$= \\dfrac{8 + 7}{5 + 4} = \\dfrac{15}{9} = \\dfrac{5}{3}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

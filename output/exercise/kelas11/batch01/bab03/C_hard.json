@@ -1,0 +1,98 @@
+{
+  "book": "kelas11",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b03-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 128,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menghitung nilai Korelasi Product Moment (r), substitusikan nilai dari ketiga jenis jumlah kuadrat ke dalam rumus Korelasi Product Moment di bawah ini. Nilai r yang diperoleh akan selalu berada pada interval −1 ≤ r ≤ 1."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan batas parameter korelasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi batasan rentang nilai kuadratik $SS_{xy}$ agar memenuhi kriteria tingkat hubungan korelasi sedang hingga kuat.",
+      "stimulus": "Suatu eksperimen bivariat menghasilkan jumlah kuadrat selisih variabel independen $SS_{xx} = 36$ dan variabel dependen $SS_{yy} = 100$. Diketahui bahwa garis regresi linear dari kedua variabel tersebut memiliki kemiringan (gradien) yang bernilai negatif.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan Tabel Pedoman Tingkat Hubungan Korelasi ($–0,7 \\le r < –0,3$ untuk tingkat sedang/cukup dan $–1 < r < –0,7$ untuk tingkat kuat), berapakah interval nilai $SS_{xy}$ yang tepat agar korelasi kedua variabel tergolong **korelasi negatif dengan tingkat kuat**?",
+      "jawaban_benar": "$-60 < SS_{xy} < -42$",
+      "alasan_benar": "Rumus korelasi Pearson adalah $r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{SS_{xy}}{\\sqrt{36 \\times 100}} = \\frac{SS_{xy}}{60}$.\nKriteria korelasi negatif tingkat kuat adalah $-1 < r < -0,7$.\nMaka:\n$-1 < \\frac{SS_{xy}}{60} < -0,7$\nKalikan semua ruas dengan $60$:\n$-60 < SS_{xy} < -42$.",
+      "distraktor": [
+        {
+          "teks": "$-42 \\le SS_{xy} < -18$",
+          "alasan": "Siswa salah menggunakan rentang kategori korelasi sedang ($-0,7 \\le r < -0,3$), menghasilkan $-42 \\le SS_{xy} < -18$."
+        },
+        {
+          "teks": "$-100 < SS_{xy} < -70$",
+          "alasan": "Siswa keliru mengalikan dengan penyebut $SS_{yy} = 100$, bukan nilai akar $\\sqrt{SS_{xx}SS_{yy}} = 60$."
+        },
+        {
+          "teks": "$42 < SS_{xy} < 60$",
+          "alasan": "Siswa melupakan syarat bahwa gradien negatif mewajibkan nilai $SS_{xy}$ dan $r$ bernilai negatif."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi penyebut rumus korelasi Pearson:\n$\\sqrt{SS_{xx} \\cdot SS_{yy}} = \\sqrt{36 \\times 100} = \\sqrt{3.600} = 60$.\nLangkah 2: Tuliskan rumus koefisien korelasi:\n$r = \\frac{SS_{xy}}{60}$.\nLangkah 3: Karena gradien regresi negatif, maka $SS_{xy} < 0$, sehingga $r$ negatif.\nLangkah 4: Terapkan kriteria tingkat korelasi negatif yang kuat dari tabel acuan buku siswa: $-1 < r < -0,7$.\nLangkah 5: Selesaikan pertidaksamaan:\n$-1 < \\frac{SS_{xy}}{60} < -0,7 \\iff -60 < SS_{xy} < -42$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 144,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selain dari itu, Rizki juga memperoleh nilai koefisien determinasinya sebesar 0,558 dan menemukan persamaan garis regresi linear yang dinyatakan sebagai berikut."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "analisis sistem hubungan regresi-korelasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengonstruksi dan memvalidasi nilai koefisien korelasi dari rasio jumlah kuadrat dan hubungan gradien garis regresi.",
+      "stimulus": "Suatu data bivariat memiliki persamaan garis regresi linear $\\hat{y} = 12 - 0,75x$. Setelah dilakukan pengolahan data, diketahui bahwa rasio antara variasi variabel dependen dan variabel independen adalah $\\frac{SS_{yy}}{SS_{xx}} = 1,44$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berapakah nilai koefisien determinasi ($r^2$) serta nilai koefisien korelasi Pearson ($r$) untuk kumpulan data tersebut?",
+      "jawaban_benar": "$r^2 = 0,390625$ dan $r = -0,625$",
+      "alasan_benar": "Gradien regresi didefinisikan sebagai $b = \\frac{SS_{xy}}{SS_{xx}} = -0,75$.\nMaka $SS_{xy} = -0,75 \\cdot SS_{xx}$.\nKoefisien korelasi Pearson adalah $r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}}$.\nSubstitusikan $SS_{xy}$ dan rasio $SS_{yy} = 1,44 \\cdot SS_{xx}$:\n$r = \\frac{-0,75 \\cdot SS_{xx}}{\\sqrt{SS_{xx} \\cdot (1,44 \\cdot SS_{xx})}} = \\frac{-0,75 \\cdot SS_{xx}}{\\sqrt{1,44} \\cdot SS_{xx}} = \\frac{-0,75}{1,2} = -0,625$.\nNilai koefisien determinasi adalah $r^2 = (-0,625)^2 = 0,390625$.",
+      "distraktor": [
+        {
+          "teks": "$r^2 = 0,5625$ dan $r = -0,75$",
+          "alasan": "Siswa keliru menganggap nilai gradien garis regresi sama persis dengan koefisien korelasi ($r = b$)."
+        },
+        {
+          "teks": "$r^2 = 0,390625$ dan $r = 0,625$",
+          "alasan": "Siswa lupa bahwa nilai $r$ harus bertanda negatif mengikuti tanda negatif gradien garis regresi ($b = -0,75$)."
+        },
+        {
+          "teks": "$r^2 = 0,81$ dan $r = -0,90$",
+          "alasan": "Siswa salah melakukan operasi dengan menghitung $b \\times \\sqrt{1,44} = -0,75 \\times 1,2 = -0,90$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi nilai gradien dari persamaan garis regresi $\\hat{y} = 12 - 0,75x$, yaitu $b = -0,75$.\nLangkah 2: Gunakan hubungan $b = \\frac{SS_{xy}}{SS_{xx}}$ sehingga $SS_{xy} = b \\cdot SS_{xx} = -0,75 \\, SS_{xx}$.\nLangkah 3: Diketahui $\\frac{SS_{yy}}{SS_{xx}} = 1,44$, yang berarti $SS_{yy} = 1,44 \\, SS_{xx}$.\nLangkah 4: Hitung nilai koefisien korelasi $r$:\n$$r = \\frac{SS_{xy}}{\\sqrt{SS_{xx} \\cdot SS_{yy}}} = \\frac{-0,75 \\, SS_{xx}}{\\sqrt{SS_{xx} \\cdot 1,44 \\, SS_{xx}}} = \\frac{-0,75}{1,2} = -0,625$$\nLangkah 5: Hitung nilai koefisien determinasi $r^2$:\n$$r^2 = (-0,625)^2 = 0,390625$$\nKedua nilai ini konsisten dengan fakta bahwa gradien bertanda negatif menghasilkan koefisien korelasi negatif.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b03-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0121-latihan-34-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "substitusi model regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu langkah substitusi nilai variabel independen ke persamaan regresi linear yang sudah diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara lama belajar ($x$, dalam jam) dan skor tes matematika ($y$) dinyatakan dengan persamaan garis regresi $\\hat{y} = 45 + 8x$. Jika seorang siswa belajar selama $4$ jam, prediksi skor tes matematika yang diperoleh siswa tersebut adalah...",
+      "jawaban_benar": "$77$",
+      "alasan_benar": "Substitusi $x = 4$ menghasilkan $\\hat{y} = 45 + 8(4) = 45 + 32 = 77$.",
+      "distraktor": [
+        {
+          "teks": "$69$",
+          "alasan": "Siswa salah mengalikan dengan $3$, yaitu $45 + 8(3) = 69$."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Siswa menambahkan koefisien sebelum substitusi atau salah hitung menjadi $45 + 8(5) = 85$."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Siswa hanya menjumlahkan $45 + 8$ tanpa mengalikan dengan nilai $x = 4$."
+        }
+      ],
+      "pembahasan": "Persamaan regresi: $\\hat{y} = 45 + 8x$\nSubstitusikan $x = 4$:\n$$\\hat{y} = 45 + 8(4) = 45 + 32 = 77$$\nJadi, prediksi skor tes matematika siswa tersebut adalah $77$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 120,
+        "bagian": "Eksplorasi 3.4",
+        "nomor": "5",
+        "teks": "Hitunglah prediksi nilai siswa yang menggunakan rata-rata waktu 3,8 jam per hari untuk media sosial dan internet menggunakan persamaan garis regresi yang ditemukan pada nomor 3.",
+        "jawaban": "69,6",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "estimasi nilai variabel dependen",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu operasi substitusi nilai ke rumus regresi linear untuk menentukan nilai estimasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah penelitian mengamati hubungan antara dosis pupuk cair ($x$, dalam mL) terhadap pertambahan tinggi tanaman ($y$, dalam cm) dengan model regresi $\\hat{y} = 6 + 1{,}5x$. Prediksi pertambahan tinggi tanaman yang diberi pupuk cair sebanyak $8\\text{ mL}$ adalah...",
+      "jawaban_benar": "$18\\text{ cm}$",
+      "alasan_benar": "Substitusi $x = 8$ ke dalam model: $\\hat{y} = 6 + 1{,}5(8) = 6 + 12 = 18\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$12\\text{ cm}$",
+          "alasan": "Siswa hanya menghitung suku $1{,}5(8)$ dan lupa menambahkan konstanta $6$."
+        },
+        {
+          "teks": "$15\\text{ cm}$",
+          "alasan": "Siswa salah menghitung $1{,}5 \\times 8$ menjadi $9$, lalu ditambah $6$ menjadi $15$."
+        },
+        {
+          "teks": "$20\\text{ cm}$",
+          "alasan": "Siswa salah menghitung operasi perkalian desimal menjadi $6 + 14 = 20$."
+        }
+      ],
+      "pembahasan": "Persamaan regresi:\n$$\\hat{y} = 6 + 1{,}5x$$\nUntuk $x = 8$:\n$$\\hat{y} = 6 + 1{,}5(8) = 6 + 12 = 18\\text{ cm}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0117-latihan-33-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "pemilihan garis regresi terbaik",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan residu atau evaluasi titik rata-rata untuk membandingkan dua model regresi linear.",
+      "stimulus": "| Beban ($x$, kg) | Biaya ($y$, ribuan rupiah) |\n|---|---|\n| $2$ | $15$ |\n| $4$ | $25$ |\n| $6$ | $35$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan tabel data di atas, garis regresi linear yang paling tepat mewakili data tersebut adalah...",
+      "jawaban_benar": "$\\hat{y} = 5 + 5x$",
+      "alasan_benar": "Model $\\hat{y} = 5 + 5x$ menghasilkan prediksi persis sama dengan data teramati: $5+5(2)=15$, $5+5(4)=25$, $5+5(6)=35$, sehingga jumlah kuadrat residunya bernilai nol.",
+      "distraktor": [
+        {
+          "teks": "$\\hat{y} = 7 + 4x$",
+          "alasan": "Prediksi model menghasilkan jumlah kuadrat residu lebih besar daripada nol."
+        },
+        {
+          "teks": "$\\hat{y} = 10 + 3x$",
+          "alasan": "Garis tidak melalui titik rata-rata $(4, 25)$ dan memiliki residu lebih besar."
+        },
+        {
+          "teks": "$\\hat{y} = 3 + 6x$",
+          "alasan": "Siswa terbalik memilih gradien dan konstanta sehingga jumlah kuadrat residunya tidak minimal."
+        }
+      ],
+      "pembahasan": "Uji model $\\hat{y} = 5 + 5x$:\n- $x = 2 \\implies \\hat{y} = 5 + 5(2) = 15$ (residu $15 - 15 = 0$)\n- $x = 4 \\implies \\hat{y} = 5 + 5(4) = 25$ (residu $25 - 25 = 0$)\n- $x = 6 \\implies \\hat{y} = 5 + 5(6) = 35$ (residu $35 - 35 = 0$)\nJumlah kuadrat residu bernilai $0$, yang merupakan nilai terkecil yang mungkin tercapai. Maka model yang paling tepat adalah $\\hat{y} = 5 + 5x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 113,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tapi satu hal yang pasti adalah garis tersebut selalu melewati pasangan titik koordinat rata-rata nilai x dan y, ( ~~x~~ , ~~y~~ )."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "karakteristik garis regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat sifat dasar garis regresi linear metode kuadrat terkecil tanpa memerlukan perhitungan rumit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik koordinat yang selalu dilalui oleh garis regresi linear yang ditentukan dengan metode kuadrat terkecil adalah...",
+      "jawaban_benar": "$(\\bar{x}, \\bar{y})$",
+      "alasan_benar": "Garis regresi linear selalu melewati pasangan koordinat nilai rata-rata variabel independen dan dependen $(\\bar{x}, \\bar{y})$.",
+      "distraktor": [
+        {
+          "teks": "$(0, 0)$",
+          "alasan": "Siswa mengira garis regresi harus selalu berpangkal pada titik asal sumbu koordinat."
+        },
+        {
+          "teks": "$(x_{\\text{min}}, y_{\\text{min}})$",
+          "alasan": "Siswa mengira garis regresi menghubungkan titik terendah dari data observasi."
+        },
+        {
+          "teks": "$(x_{\\text{maks}}, y_{\\text{maks}})$",
+          "alasan": "Siswa mengira garis regresi wajib melalui data bernilai maksimum."
+        }
+      ],
+      "pembahasan": "Salah satu sifat pasti dari garis regresi linear hasil metode kuadrat terkecil adalah garis tersebut selalu melewati pasangan titik koordinat rata-rata nilai $x$ dan $y$, yaitu $(\\bar{x}, \\bar{y})$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 115,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selisih antara nilai variabel dependen yang diamati ( y ) dan nilai variabel dependen yang diprediksi (yˆ) disebut sebagai residu (ε yang dibaca epsilon). Maka dari itu, rumus residu ditulis sebagai berikut. Residu (ε) = y − yˆ"
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "penghitungan residu",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung nilai residu secara langsung dengan satu operasi pengurangan sesuai definisi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada suatu data pengamatan, nilai variabel dependen yang diamati adalah $y = 30$, sedangkan nilai prediksi dari garis regresi linear untuk data tersebut adalah $\\hat{y} = 26$. Nilai residu ($\\varepsilon$) dari pengamatan tersebut adalah...",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Residu dihitung dengan rumus $\\varepsilon = y - \\hat{y} = 30 - 26 = 4$.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Siswa terbalik melakukan pengurangan menjadi $\\hat{y} - y = 26 - 30 = -4$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Siswa menghitung kuadrat residu $(30 - 26)^2 = 16$ alih-alih nilai residunya."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Siswa menjumlahkan nilai asli dan nilai prediksi alih-alih mencari selisihnya."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi residu:\n$$\\varepsilon = y - \\hat{y}$$\nSubstitusikan nilai yang diketahui:\n$$\\varepsilon = 30 - 26 = 4$$\nJadi, nilai residunya adalah $4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 120,
+        "bagian": "Eksplorasi 3.4",
+        "nomor": "5",
+        "teks": "Hitunglah prediksi nilai siswa yang menggunakan rata-rata waktu 3,8 jam per hari untuk media sosial dan internet menggunakan persamaan garis regresi yang ditemukan pada nomor 3.",
+        "jawaban": "74",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "prediksi model linear",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah substitusi nilai variabel bebas ke persamaan regresi yang diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara lama latihan mandiri per minggu ($x$, dalam jam) dan kenaikan skor tes ($y$, dalam poin) dimodelkan oleh persamaan garis regresi $\\hat{y} = 0,5 + 0,4x$. Prediksi kenaikan skor tes seorang siswa yang berlatih mandiri selama $5$ jam per minggu adalah...",
+      "jawaban_benar": "$2,5\\text{ poin}$",
+      "alasan_benar": "Substitusikan $x = 5$ ke persamaan $\\hat{y} = 0,5 + 0,4(5) = 0,5 + 2,0 = 2,5\\text{ poin}$.",
+      "distraktor": [
+        {
+          "teks": "$2,0\\text{ poin}$",
+          "alasan": "Hanya menghitung nilai suku $bx = 0,4 \\times 5$ dan lupa menambahkan konstanta $a = 0,5$."
+        },
+        {
+          "teks": "$4,5\\text{ poin}$",
+          "alasan": "Salah melakukan perkalian $0,4 \\times 5$ menjadi $4,0$ lalu ditambah $0,5$."
+        },
+        {
+          "teks": "$2,9\\text{ poin}$",
+          "alasan": "Tertukar operasi perkalian dan penjumlahan: menghitung $(0,5 + 0,4) + 2$ atau salah hitung aritmetika."
+        }
+      ],
+      "pembahasan": "Diketahui persamaan garis regresi $\\hat{y} = 0,5 + 0,4x$. Untuk $x = 5$ jam:\n$$\\hat{y} = 0,5 + 0,4(5) = 0,5 + 2,0 = 2,5\\text{ poin}$$\nJadi, prediksi kenaikan skor tes adalah $2,5\\text{ poin}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "2.e",
+        "teks": "Hitunglah prediksi tinggi badan anak perempuan yang berumur 5,8 tahun.",
+        "jawaban": "120 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "estimasi nilai regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan pemahaman dasar substitusi satu variabel pada model linear garis regresi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pertumbuhan tinggi bibit tanaman cabai ($y$, dalam cm) berdasarkan usia tanam ($x$, dalam minggu) dinyatakan dengan persamaan garis regresi $\\hat{y} = 12 + 6,5x$. Berdasarkan model tersebut, prediksi tinggi bibit tanaman yang telah berumur $4$ minggu adalah...",
+      "jawaban_benar": "$38\\text{ cm}$",
+      "alasan_benar": "Substitusi langsung $x = 4$ menghasilkan $\\hat{y} = 12 + 6,5(4) = 12 + 26 = 38\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$26\\text{ cm}$",
+          "alasan": "Hanya menghitung pertambahan tinggi $6,5 \\times 4$ tanpa menambahkan tinggi awal $12\\text{ cm}$."
+        },
+        {
+          "teks": "$32\\text{ cm}$",
+          "alasan": "Salah mengalikan $6,5 \\times 4$ menjadi $20$ sehingga $12 + 20 = 32$."
+        },
+        {
+          "teks": "$74\\text{ cm}$",
+          "alasan": "Menjumlahkan konstanta dengan koefisien terlebih dahulu: $(12 + 6,5) \\times 4 = 18,5 \\times 4 = 74$."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai usia tanam $x = 4$ ke persamaan garis regresi:\n$$\\hat{y} = 12 + 6,5(4) = 12 + 26 = 38\\text{ cm}$$\nJadi, prediksi tinggi bibit tanaman tersebut adalah $38\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0117-latihan-33-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi model regresi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengevaluasi kesesuaian dua model persamaan regresi dengan membandingkan nilai prediksi terhadap data aktual.",
+      "stimulus": "| Paket Pengiriman | Berat ($x$, kg) | Biaya ($y$, ribu rupiah) |\n|---|---|---|\n| P | 10 | 50 |\n| Q | 20 | 70 |\n| R | 30 | 90 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan data pada tabel di atas, model garis regresi mana yang lebih tepat untuk memprediksi biaya terhadap berat pengiriman?",
+      "jawaban_benar": "$\\hat{y} = 30 + 2x$",
+      "alasan_benar": "Model $\\hat{y} = 30 + 2x$ menghasilkan nilai residu tepat nol untuk semua titik data, sehingga jumlah kuadrat residunya minimum ($0$).",
+      "distraktor": [
+        {
+          "teks": "$\\hat{y} = 10 + 2x$",
+          "alasan": "Memberikan residu yang besar (contoh untuk $x=10$, $\\hat{y}=30$ padahal data aslinya $y=50$)."
+        },
+        {
+          "teks": "$\\hat{y} = 50 + x$",
+          "alasan": "Hanya cocok pada titik pertama ($x=10, y=60 \\neq 50$) dan memiliki kesalahan estimasi besar di titik lainnya."
+        },
+        {
+          "teks": "$\\hat{y} = 30 + 4x$",
+          "alasan": "Gradien terlalu besar sehingga menghasilkan prediksi yang jauh menyimpang dari data aktual."
+        }
+      ],
+      "pembahasan": "Uji titik $(x, y)$ pada model $\\hat{y} = 30 + 2x$:\n- Untuk $x = 10 \\Rightarrow \\hat{y} = 30 + 2(10) = 50$ (residu $50 - 50 = 0$)\n- Untuk $x = 20 \\Rightarrow \\hat{y} = 30 + 2(20) = 70$ (residu $70 - 70 = 0$)\n- Untuk $x = 30 \\Rightarrow \\hat{y} = 30 + 2(30) = 90$ (residu $90 - 90 = 0$)\nJumlah kuadrat residu adalah $0$, sehingga model $\\hat{y} = 30 + 2x$ adalah model garis regresi yang paling tepat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Interpolasi adalah penggunaan hubungan antar variabel untuk memprediksi nilai yang berada di dalam jangkauan data."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "istilah regresi linear",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali definisi istilah dasar dalam analisis regresi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Proses penggunaan model persamaan regresi untuk memprediksi nilai variabel dependen pada nilai variabel independen yang masih berada di dalam rentang jangkauan data pengamatan disebut...",
+      "jawaban_benar": "interpolasi",
+      "alasan_benar": "Sesuai definisi pada buku teks, memprediksi nilai di dalam rentang jangkauan data disebut interpolasi.",
+      "distraktor": [
+        {
+          "teks": "ekstrapolasi",
+          "alasan": "Ekstrapolasi adalah prediksi nilai yang berada di luar jangkauan rentang data."
+        },
+        {
+          "teks": "korelasi",
+          "alasan": "Korelasi mengukur kekuatan dan arah hubungan antardua variabel, bukan proses prediksi."
+        },
+        {
+          "teks": "residu",
+          "alasan": "Residu adalah selisih antara nilai pengamatan aktual dan nilai prediksi."
+        }
+      ],
+      "pembahasan": "Berdasarkan materi Buku Siswa Matematika Kelas XI, proses memprediksi nilai variabel yang berada di dalam jangkauan rentang data yang diamati disebut interpolasi, sedangkan prediksi di luar jangkauan data disebut ekstrapolasi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 118,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "a adalah titik potong sumbu y"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "interpretasi koefisien regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali dan menyebutkan arti komponen parameter dari bentuk umum model regresi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada bentuk umum persamaan regresi linear $\\hat{y} = a + bx$, konstanta $a$ menyatakan...",
+      "jawaban_benar": "titik potong garis regresi terhadap sumbu $y$",
+      "alasan_benar": "Konstanta $a$ merupakan nilai $\\hat{y}$ ketika $x = 0$, yaitu titik potong garis pada sumbu $y$ (intersep).",
+      "distraktor": [
+        {
+          "teks": "gradien kemiringan garis regresi",
+          "alasan": "Gradien garis regresi dinyatakan oleh koefisien $b$."
+        },
+        {
+          "teks": "selisih nilai data pengamatan dengan nilai prediksi",
+          "alasan": "Selisih nilai data aktual dengan prediksi disebut residu."
+        },
+        {
+          "teks": "rata-rata dari nilai variabel independen",
+          "alasan": "Rata-rata variabel independen dilambangkan dengan $\\bar{x}$."
+        }
+      ],
+      "pembahasan": "Dalam model persamaan regresi linear $\\hat{y} = a + bx$, nilai $a$ merupakan intersep atau titik potong garis terhadap sumbu $y$, sedangkan $b$ menyatakan gradien (kemiringan) garis regresi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0121-latihan-34-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "prediksi nilai data",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan satu langkah substitusi nilai variabel independen ke dalam persamaan regresi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara lama pengisian daya gawai ($x$, dalam jam) dan persentase daya baterai ($y$, dalam %) dapat dimodelkan dengan persamaan garis regresi $\\hat{y} = 15 + 22x$. Berapakah prediksi persentase daya baterai setelah pengisian daya berlangsung selama $3,5$ jam?",
+      "jawaban_benar": "$92\\%$",
+      "alasan_benar": "Substitusi $x = 3,5$ ke persamaan menghasilkan $\\hat{y} = 15 + 22(3,5) = 15 + 77 = 92\\%$.",
+      "distraktor": [
+        {
+          "teks": "$82\\%$",
+          "alasan": "Kesalahan perhitungan saat mengalikan $22 \\times 3,5$ menjadi $67$."
+        },
+        {
+          "teks": "$95\\%$",
+          "alasan": "Kesalahan menjumlahkan konstanta $15$ ditambah $80$."
+        },
+        {
+          "teks": "$77\\%$",
+          "alasan": "Hanya menghitung nilai dari $22 \\times 3,5$ tanpa menambahkan nilai konstanta $15$."
+        }
+      ],
+      "pembahasan": "Diketahui persamaan regresi linear $\\hat{y} = 15 + 22x$.\nUntuk $x = 3,5$ jam:\n$$\\hat{y} = 15 + 22(3,5) = 15 + 77 = 92\\%$$\nJadi, prediksi persentase daya baterai adalah $92\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "2.e",
+        "teks": "Hitunglah prediksi tinggi badan anak perempuan yang berumur 5,8 tahun.",
+        "jawaban": "121,8 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "prediksi nilai data",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu kali substitusi langsung pada model regresi yang diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Model regresi linear untuk rata-rata tinggi badan anak ($y$, dalam cm) terhadap usia ($x$, dalam tahun) diberikan oleh persamaan $\\hat{y} = 76 + 6,5x$. Berdasarkan model tersebut, berapa prediksi tinggi badan anak yang berusia $4$ tahun?",
+      "jawaban_benar": "$102\\text{ cm}$",
+      "alasan_benar": "Substitusi $x = 4$ menghasilkan $\\hat{y} = 76 + 6,5(4) = 76 + 26 = 102\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$98\\text{ cm}$",
+          "alasan": "Salah mengalikan $6,5 \\times 4 = 22$, sehingga diperoleh $76 + 22 = 98$."
+        },
+        {
+          "teks": "$106\\text{ cm}$",
+          "alasan": "Salah melakukan penjumlahan $76 + 26$ menjadi $106$."
+        },
+        {
+          "teks": "$82,5\\text{ cm}$",
+          "alasan": "Salah mengoperasikan persamaan dengan menghitung $(76 + 6,5) \\times 4 / 4$ atau lupa mengalikan dengan usia secara tepat."
+        }
+      ],
+      "pembahasan": "Persamaan garis regresi: $\\hat{y} = 76 + 6,5x$.\nSubstitusikan usia $x = 4$ tahun:\n$$\\hat{y} = 76 + 6,5(4) = 76 + 26 = 102\\text{ cm}$$\nJadi, prediksi tinggi badan anak tersebut adalah $102\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 124,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "4",
+        "teks": "Berapa banyak subscribers dari seorang YouTuber yang bekerja dengan ratarata waktu 5 jam per hari?",
+        "jawaban": "Dihitung dari model regresi yang diperoleh.",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "substitusi persamaan regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan operasi evaluasi fungsi regresi satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang pengelola kedai kopi menemukan bahwa rata-rata banyak cangkir kopi yang terjual per hari ($y$) berkaitan dengan lama jam operasional kedai ($x$, dalam jam) melalui model regresi $\\hat{y} = 20 + 15x$. Berapa prediksi banyak cangkir kopi yang terjual jika kedai beroperasi selama $8$ jam per hari?",
+      "jawaban_benar": "$140\\text{ cangkir}$",
+      "alasan_benar": "Substitusi $x = 8$ menghasilkan $\\hat{y} = 20 + 15(8) = 20 + 120 = 140$.",
+      "distraktor": [
+        {
+          "teks": "$120\\text{ cangkir}$",
+          "alasan": "Hanya menghitung nilai $15 \\times 8$ dan mengabaikan nilai konstanta $20$."
+        },
+        {
+          "teks": "$160\\text{ cangkir}$",
+          "alasan": "Salah menjumlahkan konstanta atau salah mengalikan $15 \\times 8 = 140$ lalu ditambah $20$."
+        },
+        {
+          "teks": "$135\\text{ cangkir}$",
+          "alasan": "Salah dalam perkalian dasar $15 \\times 8$ menjadi $115$, ditambah $20$ menjadi $135$."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai $x = 8$ ke dalam persamaan regresi:\n$$\\hat{y} = 20 + 15(8) = 20 + 120 = 140$$\nJadi, prediksi cangkir kopi yang terjual adalah $140\\text{ cangkir}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ekstrapolasi adalah penggunaan hubungan antar variabel untuk memprediksi nilai yang berada di luar jangkauan data dengan asumsi bahwa hubungan ini berlaku meskipun di luar jangkauan data."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "pemahaman konsep regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menanyakan definisi langsung konsep regresi yang tercantum pada buku teks.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Proses penggunaan model regresi untuk memprediksi nilai variabel dependen pada nilai variabel independen yang berada di luar jangkauan data pengamatan disebut...",
+      "jawaban_benar": "ekstrapolasi",
+      "alasan_benar": "Ekstrapolasi adalah prediksi nilai di luar rentang data pengamatan berdasarkan asumsi tren tetap berlaku.",
+      "distraktor": [
+        {
+          "teks": "interpolasi",
+          "alasan": "Interpolasi adalah proses memprediksi nilai yang berada di dalam jangkauan data pengamatan."
+        },
+        {
+          "teks": "korelasi",
+          "alasan": "Korelasi adalah ukuran keeratan hubungan antara dua variabel kuantitatif, bukan metode prediksi di luar jangkauan."
+        },
+        {
+          "teks": "eliminasi",
+          "alasan": "Eliminasi adalah metode penyelesaian sistem aljabar, bukan istilah prediksi data regresi."
+        }
+      ],
+      "pembahasan": "Berdasarkan materi Buku Siswa, ekstrapolasi didefinisikan sebagai penggunaan hubungan antarvariabel untuk memprediksi nilai yang berada di luar jangkauan data dengan asumsi hubungan tersebut tetap berlaku.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 118,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "b adalah gradien garis regresi"
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "komponen bentuk umum regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali makna parameter koefisien arah pada bentuk umum persamaan regresi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada persamaan garis regresi linear $\\hat{y} = a + bx$, nilai $b$ menyatakan...",
+      "jawaban_benar": "gradien garis regresi",
+      "alasan_benar": "Dalam bentuk umum regresi linear y topi = a + bx, nilai b adalah gradien atau kemiringan garis regresi.",
+      "distraktor": [
+        {
+          "teks": "titik potong garis regresi terhadap sumbu y",
+          "alasan": "Titik potong garis regresi dengan sumbu y dinyatakan oleh nilai konstanta a, bukan b."
+        },
+        {
+          "teks": "nilai variabel dependen yang diamati",
+          "alasan": "Nilai variabel dependen yang diamati disimbolkan dengan y, bukan b."
+        },
+        {
+          "teks": "nilai residu model regresi",
+          "alasan": "Residu dinyatakan oleh selisih nilai pengamatan dan nilai prediksi (epsilon = y - y topi)."
+        }
+      ],
+      "pembahasan": "Berdasarkan Buku Siswa, pada bentuk umum garis regresi $\\hat{y} = a + bx$, konstanta $a$ adalah titik potong sumbu $y$, sedangkan $b$ menyatakan gradien garis regresi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 124,
+        "bagian": "Ayo Berpikir Kritis",
+        "nomor": "4",
+        "teks": "Berapa banyak subscribers dari seorang YouTuber yang bekerja dengan ratarata waktu 5 jam per hari?",
+        "jawaban": "Dihitung menggunakan persamaan garis regresi",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "aplikasi model regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu langkah substitusi nilai variabel bebas ke persamaan garis regresi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara lama waktu pembuatan konten ($x$, dalam jam per hari) dan pertambahan pengikut baru mingguan ($y$, dalam puluhan akun) pada suatu kanal media sosial dimodelkan dengan garis regresi $\\hat{y} = 15 + 4x$. Berapa prediksi pertambahan pengikut jika seorang kreator meluangkan waktu rata-rata $6$ jam per hari?",
+      "jawaban_benar": "$39\\text{ puluh akun}$",
+      "alasan_benar": "Substitusi $x = 6$ ke $\\hat{y} = 15 + 4(6) = 15 + 24 = 39$.",
+      "distraktor": [
+        {
+          "teks": "$35\\text{ puluh akun}$",
+          "alasan": "Salah melakukan operasi hitung perkalian $4 \\times 6$ menjadi $20$, lalu ditambah $15$."
+        },
+        {
+          "teks": "$94\\text{ puluh akun}$",
+          "alasan": "Menjumlahkan koefisien terlebih dahulu sebelum perkalian, yaitu $(15 + 4) \\times 6 = 19 \\times 6 = 114$ atau tertukar urutan operasi."
+        },
+        {
+          "teks": "$24\\text{ puluh akun}$",
+          "alasan": "Hanya menghitung nilai perubahan $bx = 4 \\times 6 = 24$ tanpa menambahkan konstanta $a$."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai $x = 6$ ke persamaan garis regresi:\n$$\\hat{y} = 15 + 4(6) = 15 + 24 = 39$$\nJadi, prediksi pertambahan pengikut adalah $39\\text{ puluh akun}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "1.f",
+        "teks": "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 55 km/jam.",
+        "jawaban": "11,2 m",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan nilai duga",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu operasi substitusi nilai kecepatan ke model regresi linier.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis regresi yang menyatakan hubungan antara kecepatan sepeda motor ($x$, dalam km/jam) dan jarak reaksi pengereman ($y$, dalam meter) adalah $\\hat{y} = 1,2 + 0,18x$. Berdasarkan persamaan tersebut, prediksi jarak reaksi jika pengendara melaju dengan kecepatan $45\\text{ km/jam}$ adalah...",
+      "jawaban_benar": "$9,3\\text{ m}$",
+      "alasan_benar": "Substitusi $x = 45$ menghasilkan $\\hat{y} = 1,2 + 0,18(45) = 1,2 + 8,1 = 9,3\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$8,1\\text{ m}$",
+          "alasan": "Siswa lupa menjumlahkan konstanta $a = 1,2$ dan hanya menghitung $0,18 \\times 45$."
+        },
+        {
+          "teks": "$10,3\\text{ m}$",
+          "alasan": "Salah menjumlahkan desimal $1,2 + 8,1$ menjadi $10,3$."
+        },
+        {
+          "teks": "$7,3\\text{ m}$",
+          "alasan": "Keliru mengurangkan konstanta dari hasil kali, yaitu $8,1 - 1,2 = 6,9$ atau salah hitung aritmetika dasar."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai $x = 45$ ke dalam persamaan regresi:\n$$\\hat{y} = 1,2 + 0,18(45) = 1,2 + 8,1 = 9,3\\text{ m}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "2.f",
+        "teks": "Hitunglah prediksi tinggi badan seorang perempuan yang sudah berumur 30 tahun.",
+        "jawaban": "271 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "estimasi nilai ekstrapolasi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menghitung nilai duga dengan melakukan satu kali proses substitusi variabel bebas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara masa kerja seorang karyawan ($x$, dalam tahun) dan skor evaluasi kinerjanya ($y$, dalam poin) dinyatakan dengan model regresi $\\hat{y} = 50 + 2,5x$. Berdasarkan model tersebut, nilai perkiraan skor evaluasi kinerja untuk karyawan yang telah bekerja selama $20\\text{ tahun}$ adalah...",
+      "jawaban_benar": "$100\\text{ poin}$",
+      "alasan_benar": "Substitusi $x = 20$ ke $\\hat{y} = 50 + 2,5(20) = 50 + 50 = 100$.",
+      "distraktor": [
+        {
+          "teks": "$50\\text{ poin}$",
+          "alasan": "Hanya menghitung nilai dari komponen gradien $2,5 \\times 20$ tanpa menambahkan konstanta $50$."
+        },
+        {
+          "teks": "$75\\text{ poin}$",
+          "alasan": "Salah melakukan perkalian $2,5 \\times 20$ menjadi $25$, lalu ditambahkan $50$."
+        },
+        {
+          "teks": "$105\\text{ poin}$",
+          "alasan": "Salah menjumlahkan atau menghitung $2,5 \\times 20$ menjadi $55$."
+        }
+      ],
+      "pembahasan": "Substitusikan $x = 20$ ke dalam persamaan garis regresi:\n$$\\hat{y} = 50 + 2,5(20) = 50 + 50 = 100\\text{ poin}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 115,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selisih antara nilai variabel dependen yang diamati ( y ) dan nilai variabel dependen yang diprediksi (yˆ) disebut sebagai residu (ε yang dibaca epsilon)."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "definisi residu regresi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali definisi istilah dasar residu dalam analisis regresi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada analisis regresi linear, selisih antara nilai variabel dependen yang diamati ($y$) dan nilai variabel dependen yang diprediksi oleh garis regresi ($\\hat{y}$) dinamakan...",
+      "jawaban_benar": "residu",
+      "alasan_benar": "Sesuai definisi pada materi buku siswa, selisih antara nilai riil amatan ($y$) dan nilai estimasi garis regresi ($\\hat{y}$) disebut residu ($e = y - \\hat{y}$).",
+      "distraktor": [
+        {
+          "teks": "gradien",
+          "alasan": "Tertukar dengan koefisien kemiringan arah garis regresi ($b$)."
+        },
+        {
+          "teks": "interpolasi",
+          "alasan": "Tertukar dengan proses estimasi nilai di dalam rentang jangkauan data."
+        },
+        {
+          "teks": "intersep",
+          "alasan": "Tertukar dengan titik potong garis pada sumbu vertikal ($a$)."
+        }
+      ],
+      "pembahasan": "Berdasarkan materi Buku Siswa, selisih antara nilai variabel dependen yang diamati ($y$) dan nilai variabel dependen yang diprediksi ($\\hat{y}$) didefinisikan sebagai residu ($\\varepsilon = y - \\hat{y}$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 115,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "metode umum untuk menempatkan garis lurus ke data-data hasil observasi disebut sebagai metode kuadrat terkecil ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep metode kuadrat terkecil",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali istilah metode penentuan garis lurus terbaik pada data regresi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Metode umum yang digunakan untuk menentukan garis regresi paling tepat (best-fit) dengan cara meminimumkan jumlah kuadrat dari nilai-nilai residu dinamakan...",
+      "jawaban_benar": "metode kuadrat terkecil",
+      "alasan_benar": "Metode yang meminimumkan jumlah kuadrat selisih titik data terhadap garis regresi adalah metode kuadrat terkecil (least squares method).",
+      "distraktor": [
+        {
+          "teks": "metode eliminasi murni",
+          "alasan": "Menyebutkan metode penyelesaian sistem persamaan linear aljabar."
+        },
+        {
+          "teks": "metode bagi dua",
+          "alasan": "Menyebutkan metode pencarian akar numerik (bisection method)."
+        },
+        {
+          "teks": "metode nilai mutlak rata-rata",
+          "alasan": "Terkecoh oleh alternatif meminimumkan nilai mutlak yang sempat dibahas sebagai konsep awal."
+        }
+      ],
+      "pembahasan": "Metode umum untuk menempatkan garis lurus ke data observasi dengan meminimumkan jumlah kuadrat residu disebut metode kuadrat terkecil.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

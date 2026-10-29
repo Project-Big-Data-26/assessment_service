@@ -29,3 +29,23 @@ def test_buang_menghapus_dan_menomori_ulang(tmp_path):
     assert [s.pertanyaan for s in sisa.soal] == ["Berapa 1 + 1?", "Berapa 3 + 3?"]
     assert len(umpan) == 2 and "data tidak konsisten" in umpan[0]
     assert sisa.generator == "9router:m1"
+
+
+def test_write_mengulang_saat_berkas_terkunci(tmp_path, monkeypatch):
+    import os
+
+    job = G.Job("kelas9", 2, "A", "easy", 1, str(tmp_path))
+    soal = ExerciseFile.model_validate(
+        {"book": "kelas9", "bab_no": 2, "subbab": "A", "level": "easy", "batch": 1, "soal": [_soal(1)]}).soal
+    asli, kali = os.replace, {"n": 0}
+
+    def replace_terkunci(src, dst):
+        kali["n"] += 1
+        if kali["n"] < 3:
+            raise PermissionError(5, "Access is denied")
+        return asli(src, dst)
+
+    monkeypatch.setattr(G.os, "replace", replace_terkunci)
+    monkeypatch.setattr(G.time, "sleep", lambda *_: None)
+    G._write(job, "9router:m1", soal)
+    assert kali["n"] == 3 and len(P._muat(job.path).soal) == 1

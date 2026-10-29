@@ -6,6 +6,7 @@ import base64
 import json
 import mimetypes
 import os
+import re
 import time
 from dataclasses import dataclass, field
 from typing import Any
@@ -21,8 +22,22 @@ from .config import PROJECT_ROOT
 NETWORK_RETRIES = 3
 
 
+RESET_MAKS_DETIK = 300      # tunggu paling lama 5 menit untuk "reset after ..."; lebih dari itu dianggap kuota habis
+RESET_RETRIES = 4
+_RESET_RE = re.compile(r"reset after\s+(?:(\d+)\s*h)?\s*(?:(\d+)\s*m)?\s*(?:(\d+)\s*s)?", re.I)
+
+
 class NineRouterError(RuntimeError):
-    pass
+    # detik yang disarankan penyedia sebelum boleh mencoba lagi ("reset after 2m"); None bila tidak disebut
+    retry_after: float | None = None
+
+
+def _retry_after(text: str) -> float | None:
+    m = _RESET_RE.search(text or "")
+    if not m or not any(m.groups()):
+        return None
+    h, mnt, s = (int(x or 0) for x in m.groups())
+    return h * 3600 + mnt * 60 + s
 
 
 def _as_bool(value: str) -> bool:
@@ -167,14 +182,20 @@ class NineRouterClient:
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
         started = time.monotonic()
-        for attempt in range(NETWORK_RETRIES + 1):
+        jaringan = reset = 0
+        while True:
             try:
                 return self._chat_once(payload, started)
             except NineRouterError as exc:
-                if not isinstance(exc.__cause__, httpx.TransportError) or attempt == NETWORK_RETRIES:
+                if isinstance(exc.__cause__, httpx.TransportError) and jaringan < NETWORK_RETRIES:
+                    jaringan += 1
+                    time.sleep(3 * jaringan)
+                elif (exc.retry_after is not None and exc.retry_after <= RESET_MAKS_DETIK
+                      and reset < RESET_RETRIES):
+                    reset += 1
+                    time.sleep(exc.retry_after + 5)      # penyedia membatasi sementara: tunggu lalu ulangi
+                else:
                     raise
-                time.sleep(3 * (attempt + 1))
-        raise NineRouterError("tidak tercapai")    # pragma: no cover
 
     def _chat_once(self, payload: dict[str, Any], started: float) -> ChatResult:
         try:
@@ -188,7 +209,9 @@ class NineRouterClient:
                 text = choice["message"].get("content") or ""
                 model_name, usage, finish = body.get("model"), body.get("usage") or {}, choice.get("finish_reason")
         except httpx.HTTPError as exc:
-            raise NineRouterError(f"permintaan ke 9Router gagal: {_describe(exc)}") from exc
+            err = NineRouterError(f"permintaan ke 9Router gagal: {_describe(exc)}")
+            err.retry_after = _retry_after(str(exc.response.text) if isinstance(exc, httpx.HTTPStatusError) else "")
+            raise err from exc
         except (KeyError, IndexError, ValueError) as exc:
             raise NineRouterError("respons 9Router tidak berformat chat completions") from exc
         return ChatResult(

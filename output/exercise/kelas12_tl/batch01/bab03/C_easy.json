@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": "Ayo Mencoba 3.12",
+        "nomor": "3.12 a",
+        "teks": "Kecepatan penghematan biaya operasional f ^ x h (dalam rupiah) setiap tahun bila peralatan itu telah dipakai selama x tahun adalah f ^ x h = 4 000. x + 1 000. ; 0 # x # 10 . a. Berapa jumlah penghematan biaya operasional dalam 5 tahun pertama?",
+        "jawaban": "Rp55.000,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "aplikasi ekonomi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah langsung yaitu merumuskan integral tentu dan mengevaluasi batas untuk mencari nilai penghematan akumulatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kecepatan penghematan biaya operasional suatu mesin produksi dinyatakan dengan fungsi $f(t) = 6.000t + 2.000$ (dalam rupiah per tahun), dengan $t$ menyatakan lama pemakaian dalam tahun untuk $0 \\le t \\le 5$. Berapa jumlah penghematan biaya operasional yang diperoleh selama 3 tahun pertama?",
+      "jawaban_benar": "Rp33.000,00",
+      "alasan_benar": "Total penghematan adalah $\\int_0^3 (6.000t + 2.000)\\,dt = [3.000t^2 + 2.000t]_0^3 = 3.000(9) + 2.000(3) = 27.000 + 6.000 = 33.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp20.000,00",
+          "alasan": "Hanya menghitung nilai sesaat $f(3) = 6.000(3) + 2.000$ tanpa mengintegralkan fungsi."
+        },
+        {
+          "teks": "Rp60.000,00",
+          "alasan": "Lupa membagi koefisien suku linear saat integrasi sehingga menghitung $6.000t^2 + 2.000t$."
+        },
+        {
+          "teks": "Rp29.000,00",
+          "alasan": "Lupa mengalikan suku konstan dengan batas atas integrasi: $27.000 + 2.000$."
+        }
+      ],
+      "pembahasan": "Jumlah penghematan biaya operasional selama 3 tahun pertama dihitung dengan integral tentu:\n$$\\int_{0}^{3} (6.000t + 2.000)\\,dt = \\left[ 3.000t^2 + 2.000t \\right]_{0}^{3}$$\nSubstitusikan batas:\n$$(3.000(3)^2 + 2.000(3)) - 0 = 3.000(9) + 6.000 = 27.000 + 6.000 = 33.000$$\nJadi, jumlah penghematan biaya operasional adalah Rp33.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 233,
+        "bagian": "C. Penerapan Integral",
+        "nomor": "8. a",
+        "teks": "Seorang pendaki mencatat bahwa kecepatannya mendaki gunung (dalam km/jam) mengikuti fungsi v ^ t h = - 2 t + 10 , dengan t adalah waktu dalam jam sejak pendakian dimulai. Namun setelah 5 jam, pendaki tersebut berhenti total karena kehabisan tenaga. a. Hitunglah total jarak yang telah ditempuh selama 5 jam pendakian.",
+        "jawaban": "25 km",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "aplikasi kinematika",
+      "jumlah_langkah": 2,
+      "alasan_level": "Penyelesaian langsung menggunakan integrasi fungsi kecepatan pada selang waktu yang diberikan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang pengendara sepeda mencatat bahwa kecepatannya (dalam km/jam) mengikuti fungsi $v(t) = -4t + 24$, dengan $t$ menyatakan waktu dalam jam sejak mulai bersepeda. Jika pengendara berhenti pada saat $t = 6$ jam, berapakah total jarak yang telah ditempuh selama 6 jam tersebut?",
+      "jawaban_benar": "72 km",
+      "alasan_benar": "Jarak total $s = \\int_0^6 (-4t + 24)\\,dt = [-2t^2 + 24t]_0^6 = -2(36) + 24(6) = -72 + 144 = 72\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "144 km",
+          "alasan": "Hanya mengalikan kecepatan awal $v(0) = 24$ dengan selang waktu 6 jam tanpa memperhitungkan perlambatan."
+        },
+        {
+          "teks": "36 km",
+          "alasan": "Salah menghitung koefisien integral sehingga memperoleh $-3t^2 + 24t$ yang bernilai $-108 + 144 = 36$."
+        },
+        {
+          "teks": "0 km",
+          "alasan": "Menghitung kecepatan akhir $v(6) = 0$ dan menganggap jarak tempuhnya nol."
+        }
+      ],
+      "pembahasan": "Jarak tempuh adalah integral dari fungsi kecepatan terhadap waktu:\n$$s = \\int_{0}^{6} (-4t + 24)\\,dt = \\left[ -2t^2 + 24t \\right]_{0}^{6}$$\nEvaluasi nilai batas:\n$$s = (-2(6)^2 + 24(6)) - 0 = -2(36) + 144 = -72 + 144 = 72\\text{ km}$$\nJadi, total jarak yang ditempuh adalah 72 km.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": "Contoh Soal 3.15",
+        "nomor": "3.15",
+        "teks": "Ketika sebuah partikel terletak pada a dengan jarak x meter dari titik asal, gaya sebesar ^ x 2 + 2 x h N bertindak di atasnya. Berapa usaha yang dilakukan untuk memindahkannya dari x = 1 ke x = 3 ?",
+        "jawaban": "50/3 Joule",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "aplikasi fisika",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan langsung rumus usaha $W = \\int F(x)\\,dx$ dengan fungsi gaya kuadratik sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah peti ditarik di atas lantai mendatar sehingga bekerja gaya sebesar $F(x) = 3x^2 + 4x$ (dalam Newton), dengan $x$ menyatakan posisi peti dalam meter dari titik asal. Besar usaha yang dilakukan oleh gaya tersebut untuk memindahkan peti dari posisi $x = 0$ meter hingga $x = 2$ meter adalah ....",
+      "jawaban_benar": "$16\\text{ Joule}$",
+      "alasan_benar": "$W = \\int_0^2 (3x^2 + 4x)\\,dx = [x^3 + 2x^2]_0^2 = (2^3 + 2(2^2)) - 0 = 8 + 8 = 16\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$20\\text{ Joule}$",
+          "alasan": "Menghitung nilai gaya di titik akhir $F(2) = 3(4) + 4(2) = 20$ tanpa mengintegralkan fungsi gaya terhadap posisi."
+        },
+        {
+          "teks": "$12\\text{ Joule}$",
+          "alasan": "Lupa mengkuadratkan $x$ pada suku kedua hasil integral: menghitung $x^3 + 2x$ sehingga diperoleh $8 + 4 = 12$."
+        },
+        {
+          "teks": "$8\\text{ Joule}$",
+          "alasan": "Hanya mengintegralkan suku pertama $3x^2$ menjadi $x^3 = 8$ dan mengabaikan suku kedua."
+        }
+      ],
+      "pembahasan": "Usaha $W$ diperoleh dengan mengintegralkan fungsi gaya terhadap perpindahan:\n$$W = \\int_{0}^{2} (3x^2 + 4x)\\,dx$$\n$$W = \\left[ x^3 + 2x^2 \\right]_{0}^{2}$$\nSubstitusikan nilai batas:\n$$W = (2^3 + 2(2)^2) - 0 = 8 + 2(4) = 8 + 8 = 16\\text{ Joule}$$\nJadi, usaha yang dilakukan adalah 16 Joule.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 228,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Integrasi menghasilkan ... di bawah kurva y = v ^ x h . Dimulai dari persegi panjang dengan alas ... dan tinggi v ^ x h , serta luas ...."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "rumus luas kurva",
+      "jumlah_langkah": 1,
+      "alasan_level": "Tingkat ingatan/pemahaman konsep dasar mengenai notasi integral tentu untuk luas daerah di bawah kurva fungsi positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bentuk integral tentu yang menyatakan luas daerah di bawah kurva $f(x) = 2x + 5$ yang dibatasi oleh sumbu-$x$, garis $x = 1$, dan garis $x = 4$ adalah ....",
+      "jawaban_benar": "$\\int_{1}^{4} (2x + 5)\\,dx$",
+      "alasan_benar": "Untuk kurva positif pada interval $[a, b]$, luas daerah terhadap sumbu-$x$ dirumuskan dengan $\\int_a^b f(x)\\,dx$, dengan $a = 1$ dan $b = 4$.",
+      "distraktor": [
+        {
+          "teks": "$\\int_{1}^{4} (2x + 5)^2\\,dx$",
+          "alasan": "Tertukar dengan rumus volume benda putar yang menggunakan kuadrat fungsi."
+        },
+        {
+          "teks": "$\\int_{0}^{4} (2x + 5)\\,dx$",
+          "alasan": "Salah menetapkan batas bawah integrasi, mengasumsikan batas dimulai dari 0 bukan 1."
+        },
+        {
+          "teks": "$\\int_{1}^{4} 2\\,dx$",
+          "alasan": "Mengintegralkan turunan dari fungsi $f(x)$ bukan fungsi kurva itu sendiri."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi penerapan integral, luas daerah $L$ di bawah kurva $y = f(x)$ di atas sumbu-$x$ pada interval $[a, b]$ dirumuskan sebagai:\n$$L = \\int_{a}^{b} f(x)\\,dx$$\nKarena kurva adalah $f(x) = 2x + 5$ dengan batas $x = 1$ hingga $x = 4$, maka bentuk integralnya adalah $\\int_{1}^{4} (2x + 5)\\,dx$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 230,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jumlah pewarna yang digunakan dalam waktu tertentu mengikuti fungsi p ^ t h = 3 t 2 + 2 t + 1 dalam liter per jam, dengan t menyatakan waktu dalam jam sejak proses pewarnaan dimulai."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "aplikasi laju perubahan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung total volume akumulatif melalui integrasi fungsi laju pengisian secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju alir air yang masuk ke dalam sebuah tangki penampungan dinyatakan dengan fungsi $r(t) = 4t + 3$ (dalam liter per menit), dengan $t$ adalah waktu dalam menit sejak pengisian dimulai. Berapa total volume air yang telah masuk ke dalam tangki selama 3 menit pertama?",
+      "jawaban_benar": "$27\\text{ liter}$",
+      "alasan_benar": "$V = \\int_0^3 (4t + 3)\\,dt = [2t^2 + 3t]_0^3 = 2(9) + 3(3) = 18 + 9 = 27\\text{ liter}$.",
+      "distraktor": [
+        {
+          "teks": "$15\\text{ liter}$",
+          "alasan": "Hanya menghitung nilai laju alir sesaat pada menit ke-3: $r(3) = 4(3) + 3 = 15$."
+        },
+        {
+          "teks": "$45\\text{ liter}$",
+          "alasan": "Lupa membagi koefisien $4$ dengan pangkat baru saat integrasi sehingga menghitung $4(9) + 9 = 45$."
+        },
+        {
+          "teks": "$18\\text{ liter}$",
+          "alasan": "Hanya mengintegralkan suku pertama $4t$ menjadi $2t^2 = 18$ dan melupakan suku konstan $3$."
+        }
+      ],
+      "pembahasan": "Total volume air akumulatif dihitung dengan mengintegralkan fungsi laju alir terhadap waktu dari $t = 0$ sampai $t = 3$:\n$$V = \\int_{0}^{3} (4t + 3)\\,dt = \\left[ 2t^2 + 3t \\right]_{0}^{3}$$\nSubstitusikan batas:\n$$V = (2(3)^2 + 3(3)) - 0 = 2(9) + 9 = 18 + 9 = 27\\text{ liter}$$\nJadi, total volume air yang masuk adalah 27 liter.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 233,
+        "bagian": "Pengayaan B",
+        "nomor": "7. a.",
+        "teks": "Laju konsumsi air suatu keluarga dinyatakan dengan fungsi f l^ x h = ^2 x + 1h liter per hari, x adalah hari. a. Hitung total konsumsi air dari hari ke-1 hingga hari ke-5.",
+        "jawaban": "28 liter",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "akumulasi laju konsumsi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai integral tentu dari fungsi linear berderajat satu pada interval tertutup dalam dua langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju konsumsi minyak goreng suatu gerai kuliner dinyatakan dengan fungsi $f'(x) = 6x + 5$ (dalam liter per hari), dengan $x$ adalah waktu dalam hari. Total konsumsi minyak goreng dari hari ke-1 hingga hari ke-3 adalah ....",
+      "jawaban_benar": "34 liter",
+      "alasan_benar": "Total konsumsi didapat dari $\\int_{1}^{3} (6x + 5)\\,dx = \\left[3x^2 + 5x\\right]_1^3 = (3(9) + 5(3)) - (3(1) + 5(1)) = 42 - 8 = 34$.",
+      "distraktor": [
+        {
+          "teks": "42 liter",
+          "alasan": "Siswa hanya menghitung nilai antiturunan pada batas atas $F(3) = 42$ dan lupa mengurangkannya dengan $F(1)$."
+        },
+        {
+          "teks": "23 liter",
+          "alasan": "Siswa langsung mensubstitusikan nilai $x = 3$ ke fungsi turunan $f'(3) = 6(3) + 5 = 23$ tanpa diintegralkan."
+        },
+        {
+          "teks": "60 liter",
+          "alasan": "Siswa tidak membagi dengan 2 saat mengintegralkan $6x$, sehingga menghitung $[6x^2 + 5x]_1^3 = 69 - 11 = 58$, lalu salah hitung menjadi 60."
+        }
+      ],
+      "pembahasan": "Total konsumsi dari hari ke-1 sampai hari ke-3 adalah:\n$$\\int_{1}^{3} (6x + 5)\\,dx = \\left[ 3x^2 + 5x \\right]_{1}^{3}$$\nSubstitusikan batas-batasnya:\n$$F(3) = 3(3)^2 + 5(3) = 27 + 15 = 42$$\n$$F(1) = 3(1)^2 + 5(1) = 3 + 5 = 8$$\n$$F(3) - F(1) = 42 - 8 = 34\\text{ liter.}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 229,
+        "bagian": "Uji Kompetensi Bab 3 C",
+        "nomor": "2.",
+        "teks": "Sebuah negara memodelkan laju inflasi bulanan pada tahun 2025 dengan fungsi i ^ t h = 0, 5 t + 2 , dengan t menyatakan waktu dalam bulan setelah Januari 2025 dan i ^ t h adalah laju inflasi dalam persen per bulan. Pemerintah ingin menghitung total inflasi kumulatif selama 6 bulan pertama (Januari sampai dengan Juni 2025).",
+        "jawaban": "21",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "akumulasi laju inflasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengintegralkan fungsi laju linear sederhana dari batas bawah nol menuju batas atas tertentu dalam dua langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju inflasi bulanan suatu daerah dimodelkan dengan fungsi $i(t) = 0,4t + 3$, dengan $t$ menyatakan waktu dalam bulan dan $i(t)$ dalam persen per bulan. Total inflasi kumulatif selama 5 bulan pertama ($t = 0$ hingga $t = 5$) adalah ....",
+      "jawaban_benar": "$20\\%$",
+      "alasan_benar": "Total inflasi kumulatif dihitung dengan $\\int_0^5 (0,4t + 3)\\,dt = \\left[0,2t^2 + 3t\\right]_0^5 = 0,2(25) + 3(5) = 5 + 15 = 20\\%$.",
+      "distraktor": [
+        {
+          "teks": "$5\\%$",
+          "alasan": "Siswa hanya mensubstitusikan $t = 5$ ke rumus fungsi $i(5) = 0,4(5) + 3 = 5$ tanpa mengintegralkan."
+        },
+        {
+          "teks": "$25\\%$",
+          "alasan": "Siswa tidak membagi koefisien $0,4$ dengan $2$ saat integrasi, sehingga menghitung $0,4(25) + 3(5) = 10 + 15 = 25\\%$."
+        },
+        {
+          "teks": "$17\\%$",
+          "alasan": "Siswa salah mengalikan $0,2 \\times 25$ menjadi $2$, sehingga perhitungannya menjadi $2 + 15 = 17\\%$."
+        }
+      ],
+      "pembahasan": "Total inflasi kumulatif selama 5 bulan pertama dinyatakan oleh integral tentu:\n$$\\int_{0}^{5} (0,4t + 3)\\,dt = \\left[ 0,2t^2 + 3t \\right]_{0}^{5}$$\nSubstitusikan batas atas dan bawah:\n$$\\left(0,2(5)^2 + 3(5)\\right) - 0 = 0,2(25) + 15 = 5 + 15 = 20\\%.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Ketika sebuah partikel terletak pada a dengan jarak x meter dari titik asal, gaya sebesar ^ x 2 + 2 x h N bertindak di atasnya."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "rumus usaha fisika",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali bentuk perumusan integral untuk usaha berdasarkan gaya dan batas perpindahan secara langsung satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah benda bergerak pada garis lurus dan dipengaruhi oleh gaya $F(x) = 5x + 4$ (dalam satuan Newton), dengan $x$ menyatakan posisi benda dalam meter. Bentuk integral tentu yang menyatakan usaha yang dilakukan oleh gaya tersebut untuk memindahkan benda dari $x = 2\\text{ m}$ ke $x = 6\\text{ m}$ adalah ....",
+      "jawaban_benar": "$\\int_{2}^{6} (5x + 4)\\,dx$",
+      "alasan_benar": "Usaha $W$ didefinisikan sebagai integral gaya terhadap perpindahan $W = \\int_{a}^{b} F(x)\\,dx$, sehingga dari posisi $x = 2$ ke $x = 6$ bentuknya adalah $\\int_{2}^{6} (5x + 4)\\,dx$.",
+      "distraktor": [
+        {
+          "teks": "$\\int_{2}^{6} 5\\,dx$",
+          "alasan": "Siswa keliru menggunakan turunan dari fungsi gaya alih-alih mengintegralkan fungsi gayanya sendiri."
+        },
+        {
+          "teks": "$\\int_{0}^{4} (5x + 4)\\,dx$",
+          "alasan": "Siswa mengurangkan batas atas dengan batas bawah ($6 - 2 = 4$) lalu menggunakan interval $[0, 4]$ alih-alih batas posisi aslinya."
+        },
+        {
+          "teks": "$\\int_{6}^{2} (5x + 4)\\,dx$",
+          "alasan": "Siswa menukar posisi batas atas dan batas bawah integrasi."
+        }
+      ],
+      "pembahasan": "Dalam fisika, usaha ($W$) yang dilakukan oleh gaya variabel $F(x)$ sepanjang sumbu-$x$ dari posisi $x = a$ hingga $x = b$ dirumuskan sebagai:\n$$W = \\int_{a}^{b} F(x)\\,dx$$\nDengan $F(x) = 5x + 4$, batas bawah $a = 2$, dan batas atas $b = 6$, maka integral yang menyatakan usaha tersebut adalah:\n$$\\int_{2}^{6} (5x + 4)\\,dx.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 231,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas daerah di bawah kurva v ^ t h dari t = 0 hingga t = 8 menunjukkan jumlah pengunjung kumulatif."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "interpretasi luas kurva",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memahami konsep makna fisis luas daerah di bawah kurva laju perubahan terhadap waktu dalam satu langkah konseptual.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi $r(t)$ menyatakan laju pertambahan volume air (dalam liter/menit) yang dialirkan ke dalam tangki penampungan, dengan $t$ menyatakan waktu dalam menit. Luas daerah di bawah kurva $y = r(t)$ pada selang waktu $[0, 10]$ merepresentasikan ....",
+      "jawaban_benar": "total volume air yang masuk ke tangki selama 10 menit pertama",
+      "alasan_benar": "Integral dari laju perubahan $\\int_0^{10} r(t)\\,dt$, yang merupakan luas daerah di bawah kurva laju alir, menghasilkan akumulasi total kuantitas (volume) selama selang waktu tersebut.",
+      "distraktor": [
+        {
+          "teks": "laju aliran air rata-rata tepat pada menit ke-10",
+          "alasan": "Siswa mengira luas di bawah kurva menyatakan nilai sesaat pada batas akhir."
+        },
+        {
+          "teks": "lama waktu yang dibutuhkan hingga tangki terisi penuh",
+          "alasan": "Siswa menyamakan besaran luas di bawah kurva dengan variabel waktu pada sumbu horizontal."
+        },
+        {
+          "teks": "percepatan peningkatan debit air di dalam tangki",
+          "alasan": "Siswa tertukar antara konsep integral (akumulasi total) dengan konsep turunan (laju perubahan laju)."
+        }
+      ],
+      "pembahasan": "Berdasarkan penerapan integral tentu, integral dari fungsi laju perubahan $\\int_{a}^{b} r(t)\\,dt$ sama dengan luas daerah di bawah kurva $y = r(t)$ dari $t = a$ sampai $t = b$. Nilai ini merepresentasikan perubahan total atau akumulasi kumulatif besaran tersebut. Oleh karena itu, pada selang $[0, 10]$, luas kurva menyatakan total volume air yang masuk ke tangki selama 10 menit pertama.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 223,
+        "bagian": "Contoh Soal",
+        "nomor": "3.14",
+        "teks": "Sejumlah ponsel pintar ( smartphone ) model terbaru dipasarkan selama 5 tahun pertama. Misalkan y menyatakan banyak ponsel pintar yang terjual pada tahun tertentu dan x menyatakan tahun sejak produksi pertama. Fungsinya dinyatakan dalam bentuk y = 3 000. x + 1 000. dengan 0 # x # 5 . Berapa jumlah penjualan ponsel pintar tersebut selama 4 tahun pertama?",
+        "jawaban": "20.000 buah",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "akumulasi produksi barang",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung akumulasi jumlah barang dengan mengintegralkan fungsi linear satu variabel pada batas waktu tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju perakitan komputer tablet di sebuah pabrik dinyatakan dengan fungsi $f(t) = 4.000t + 2.000$ (unit per tahun), dengan $t$ adalah waktu dalam tahun sejak pabrik beroperasi ($0 \\le t \\le 5$). Jumlah total komputer tablet yang dirakit selama 3 tahun pertama adalah ....",
+      "jawaban_benar": "$24.000\\text{ unit}$",
+      "alasan_benar": "Total perakitan adalah $\\int_{0}^{3} (4.000t + 2.000)\\,dt = [2.000t^2 + 2.000t]_{0}^{3} = 2.000(3)^2 + 2.000(3) = 18.000 + 6.000 = 24.000\\text{ unit}$.",
+      "distraktor": [
+        {
+          "teks": "$14.000\\text{ unit}$",
+          "alasan": "Hanya mengevaluasi nilai fungsi laju pada $t = 3$, yaitu $4.000(3) + 2.000 = 14.000$."
+        },
+        {
+          "teks": "$42.000\\text{ unit}$",
+          "alasan": "Salah menentukan antiturunan dari $4.000t$ menjadi $4.000t^2$ sehingga $4.000(9) + 6.000 = 42.000$."
+        },
+        {
+          "teks": "$20.000\\text{ unit}$",
+          "alasan": "Menggunakan jawaban pada soal acuan tanpa menghitung fungsi baru."
+        }
+      ],
+      "pembahasan": "Total produksi selama 3 tahun pertama diperoleh dari integral tentu laju produksi:\n$$N = \\int_{0}^{3} (4.000t + 2.000)\\,dt$$\n$$N = \\left[ 2.000t^2 + 2.000t \\right]_{0}^{3}$$\n$$N = (2.000(9) + 2.000(3)) - 0 = 18.000 + 6.000 = 24.000\\text{ unit}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 230,
+        "bagian": "Uji Kompetensi Bab 3 C",
+        "nomor": "3.",
+        "teks": "Jumlah pewarna yang digunakan dalam waktu tertentu mengikuti fungsi p ( t )= 3 t 2 + 2 t + 1 dalam liter per jam, dengan t menyatakan waktu dalam jam sejak proses pewarnaan dimulai. Untuk menghasilkan batik bermotif tugu topeng malangan, proses pewarnaan berlangsung selama 4 jam.",
+        "jawaban": "88 liter",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "akumulasi volume cairan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung total akumulasi volume cairan dengan mengintegralkan fungsi polinomial berderajat dua secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pengisian bahan bakar minyak ke dalam tangki penampungan dinyatakan dengan fungsi $v(t) = 6t^2 + 6t + 4$ (liter per jam), dengan $t$ menyatakan waktu dalam jam sejak pengisian dimulai. Total bahan bakar yang dialirkan ke dalam tangki selama 2 jam pertama adalah ....",
+      "jawaban_benar": "$36\\text{ liter}$",
+      "alasan_benar": "Total bahan bakar dihitung dengan $\\int_{0}^{2} (6t^2 + 6t + 4)\\,dt = [2t^3 + 3t^2 + 4t]_{0}^{2} = 2(8) + 3(4) + 4(2) = 16 + 12 + 8 = 36\\text{ liter}$.",
+      "distraktor": [
+        {
+          "teks": "$40\\text{ liter}$",
+          "alasan": "Hanya menghitung nilai laju sesaat pada $t = 2$, yaitu $6(2)^2 + 6(2) + 4 = 40$."
+        },
+        {
+          "teks": "$28\\text{ liter}$",
+          "alasan": "Lupa mengintegralkan konstanta 4 sehingga perhitungannya $2(8) + 3(4) = 28$."
+        },
+        {
+          "teks": "$48\\text{ liter}$",
+          "alasan": "Salah melakukan integrasi koefisien menjadi $3t^3 + 3t^2 + 4t$ sehingga hasilnya $24 + 12 + 8 = 44$, lalu salah menjumlah menjadi 48."
+        }
+      ],
+      "pembahasan": "Total bahan bakar yang terkumpul selama 2 jam pertama:\n$$V = \\int_{0}^{2} (6t^2 + 6t + 4)\\,dt$$\n$$V = \\left[ 2t^3 + 3t^2 + 4t \\right]_{0}^{2}$$\n$$V = (2(2)^3 + 3(2)^2 + 4(2)) - 0 = 16 + 12 + 8 = 36\\text{ liter}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 234,
+        "bagian": "Pengayaan C",
+        "nomor": "11. a.",
+        "teks": "Sebuah logo rumah makan dirancang dengan bentuk bidang di bawah kurva y = 6 - x 2 dan dibatasi oleh sumbu- x , garis x = 2 , dan garis x = - 2. a. Hitunglah luas daerah yang akan dijadikan pola logo.",
+        "jawaban": "$\\frac{56}{3}$ satuan luas",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "luas penampang kurva",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung luas daerah di bawah kurva parabola simetris dengan batas integrasi langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah panel kaca hias dirancang menyerupai bidang datar di bawah kurva $y = 8 - 2x^2$, di atas sumbu-$x$, serta dibatasi oleh garis $x = -1$ dan garis $x = 1$. Luas permukaan panel kaca tersebut adalah ....",
+      "jawaban_benar": "$\\frac{44}{3}\\text{ satuan luas}$",
+      "alasan_benar": "Luas dihitung dengan $\\int_{-1}^{1} (8 - 2x^2)\\,dx = \\left[8x - \\frac{2}{3}x^3\\right]_{-1}^{1} = \\left(8 - \\frac{2}{3}\\right) - \\left(-8 + \\frac{2}{3}\\right) = \\frac{22}{3} - \\left(-\\frac{22}{3}\\right) = \\frac{44}{3}\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{22}{3}\\text{ satuan luas}$",
+          "alasan": "Hanya mengintegralkan dari batas $0$ sampai $1$, lupa mengalikan dua atau memperhitungkan batas bawah $-1$."
+        },
+        {
+          "teks": "$12\\text{ satuan luas}$",
+          "alasan": "Salah melakukan integrasi aljabar menjadi $8(1) - 2(1) = 6$ lalu dikalikan 2."
+        },
+        {
+          "teks": "$\\frac{40}{3}\\text{ satuan luas}$",
+          "alasan": "Salah antiturunan suku kuadrat menjadi $-x^3$ sehingga $\\left[8x - x^3\\right]_{-1}^{1} = 7 - (-7) = 14$ lalu salah penyesuaian pecahan."
+        }
+      ],
+      "pembahasan": "Karena fungsi $y = 8 - 2x^2$ bernilai positif pada $[-1, 1]$:\n$$L = \\int_{-1}^{1} (8 - 2x^2)\\,dx$$\n$$L = \\left[ 8x - \\frac{2}{3}x^3 \\right]_{-1}^{1}$$\n$$L = \\left(8(1) - \\frac{2}{3}(1)^3\\right) - \\left(8(-1) - \\frac{2}{3}(-1)^3\\right)$$\n$$L = \\left(8 - \\frac{2}{3}\\right) - \\left(-8 + \\frac{2}{3}\\right) = \\frac{22}{3} + \\frac{22}{3} = \\frac{44}{3}\\text{ satuan luas}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 226,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menurut Hukum Hooke, gaya yang diperlukan untuk menahan pegas meregang x meter di luar panjang alaminya adalah f ^ x h = kx ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "usaha gaya pegas",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung usaha pegas dengan menerapkan integral tentu dari fungsi gaya linear satu variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pegas memerlukan gaya sebesar $F(x) = 80x$ Newton untuk meregangkannya sejauh $x$ meter dari panjang alaminya. Besar usaha yang diperlukan untuk meregangkan pegas tersebut dari posisi alami $x = 0$ meter hingga $x = 0,5$ meter adalah ....",
+      "jawaban_benar": "$10\\text{ Joule}$",
+      "alasan_benar": "Usaha diperoleh dari $W = \\int_{0}^{0,5} 80x\\,dx = [40x^2]_{0}^{0,5} = 40(0,5)^2 = 40(0,25) = 10\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$40\\text{ Joule}$",
+          "alasan": "Hanya menghitung nilai gaya sesaat pada $x = 0,5$, yaitu $80(0,5) = 40\\text{ N}$."
+        },
+        {
+          "teks": "$20\\text{ Joule}$",
+          "alasan": "Lupa membagi koefisien dengan 2 saat mengintegralkan: $80(0,5)^2 = 20\\text{ Joule}$."
+        },
+        {
+          "teks": "$5\\text{ Joule}$",
+          "alasan": "Salah membagi koefisien dengan 4 saat mengintegralkan: $20(0,5)^2 = 5\\text{ Joule}$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi usaha pada pegas:\n$$W = \\int_{0}^{0,5} F(x)\\,dx = \\int_{0}^{0,5} 80x\\,dx$$\n$$W = \\left[ 40x^2 \\right]_{0}^{0,5} = 40(0,5)^2 - 0 = 40(0,25) = 10\\text{ Joule}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan luas daerah di kuadran keempat yang dibatasi oleh fungsi _f_ ^ _x_ h = _x_ 2 - 4 _x_ , garis _x_ = 1 , dan garis _x_ = 3 ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "rumus luas di bawah sumbu-x",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat dan mengenali bentuk formal rumus integral tentu untuk menghitung luas daerah di bawah sumbu-x.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika suatu fungsi kontinu $y = f(x)$ bernilai nonpositif ($f(x) \\le 0$) pada interval tertutup $[a, b]$, maka luas daerah $L$ yang dibatasi oleh kurva tersebut, sumbu-$x$, serta garis $x = a$ dan garis $x = b$ dirumuskan dengan ....",
+      "jawaban_benar": "$L = -\\int_{a}^{b} f(x)\\,dx$",
+      "alasan_benar": "Karena kurva berada di bawah sumbu-$x$ ($f(x) \\le 0$), integral tentu menghasilkan nilai negatif sehingga luas didefinisikan dengan memberi tanda negatif di depan integral agar bernilai positif.",
+      "distraktor": [
+        {
+          "teks": "$L = \\int_{a}^{b} f(x)\\,dx$",
+          "alasan": "Mengabaikan fakta bahwa kurva di bawah sumbu-$x$ sehingga integral tentu akan bernilai negatif, bukan menyatakan ukuran luas."
+        },
+        {
+          "teks": "$L = \\int_{a}^{b} (f(x))^2\\,dx$",
+          "alasan": "Tertukar dengan bentuk kuadrat pada integrasi volume benda putar."
+        },
+        {
+          "teks": "$L = f(b) - f(a)$",
+          "alasan": "Tertukar dengan selisih nilai fungsi ujung interval, bukan bentuk integrasi luas."
+        }
+      ],
+      "pembahasan": "Untuk daerah yang terletak seluruhnya di bawah sumbu-$x$ ($f(x) \\le 0$) pada interval $[a, b]$, nilai integral tentunya bernilai negatif. Oleh karena itu, ukuran luas daerah yang bernilai selalu positif dinyatakan dengan:\n$$L = -\\int_{a}^{b} f(x)\\,dx \\quad \\text{atau} \\quad L = \\int_{a}^{b} -f(x)\\,dx.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 233,
+        "bagian": "Pengayaan A",
+        "nomor": "4.",
+        "teks": "Laju pertumbuhan tanaman dinyatakan dalam fungsi _f_ l^ _t_ h = 6 _t_ , dengan _t_ adalah hari ke- _t._ \n\n   - a. Tentukan fungsi tinggi tanaman _f_ ^ _t_ h . \n\n   - b. Jika tinggi awal tanaman saat _t_ = 0 adalah 2 cm, tentukan _f_ ^ _t_ h . \n\n   - c. Hitung tinggi tanaman setelah 5 hari.",
+        "jawaban": "77 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "akumulasi pertumbuhan tanaman",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai fungsi total dari laju linier melalui integrasi tak tentu satu langkah dan substitusi nilai awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju pertumbuhan tinggi suatu bibit tanaman dinyatakan oleh fungsi $f'(t) = 8t$ (dalam cm per hari), dengan $t$ menyatakan waktu dalam hari. Jika tinggi awal bibit tersebut saat $t = 0$ adalah $5\\text{ cm}$, tinggi tanaman tersebut setelah $3\\text{ hari}$ adalah ....",
+      "jawaban_benar": "$41\\text{ cm}$",
+      "alasan_benar": "$f(t) = \\int 8t\\,dt = 4t^2 + C$. Karena $f(0) = 5$, maka $C = 5$. Untuk $t = 3$, $f(3) = 4(3)^2 + 5 = 36 + 5 = 41\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$36\\text{ cm}$",
+          "alasan": "Siswa lupa menjumlahkan tinggi awal tanaman ($C = 5$)."
+        },
+        {
+          "teks": "$29\\text{ cm}$",
+          "alasan": "Siswa mengintegrasikan $8t$ menjadi $8t$ (turunan konstan) bukan $4t^2$ sehingga $8(3)+5 = 29$."
+        },
+        {
+          "teks": "$77\\text{ cm}$",
+          "alasan": "Siswa mengintegrasikan menjadi $8t^2 + 5$ tanpa membagi koefisien dengan 2."
+        }
+      ],
+      "pembahasan": "Fungsi tinggi tanaman merupakan antiturunan dari laju pertumbuhannya:\n$$f(t) = \\int 8t\\,dt = 4t^2 + C$$\nDengan tinggi awal $f(0) = 5\\text{ cm}$:\n$$4(0)^2 + C = 5 \\implies C = 5$$\n$$f(t) = 4t^2 + 5$$\nSetelah $t = 3\\text{ hari}$:\n$$f(3) = 4(3)^2 + 5 = 36 + 5 = 41\\text{ cm}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 225,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Integral juga dapat diaplikasikan dalam penyelesaian persoalan di bidang Fisika seperti pada contoh berikut ini."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan usaha gaya",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menggunakan rumus integral usaha W = integral F(x) dx secara langsung untuk gaya satu dimensi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak di sepanjang sumbu-$x$ dan dipengaruhi oleh gaya $F(x) = 8x - 4$ (dalam satuan Newton), dengan $x$ menyatakan posisi partikel dalam meter. Besar usaha yang dilakukan gaya tersebut untuk memindahkan partikel dari posisi $x = 1\\text{ meter}$ ke posisi $x = 3\\text{ meter}$ adalah ....",
+      "jawaban_benar": "$24\\text{ Joule}$",
+      "alasan_benar": "$W = \\int_{1}^{3} (8x - 4)\\,dx = \\left[4x^2 - 4x\\right]_{1}^{3} = (4(9) - 4(3)) - (4(1) - 4(1)) = (36 - 12) - 0 = 24\\text{ Joule}$.",
+      "distraktor": [
+        {
+          "teks": "$20\\text{ Joule}$",
+          "alasan": "Siswa hanya menghitung nilai gaya akhir pada $x = 3$, yaitu $F(3) = 24 - 4 = 20$."
+        },
+        {
+          "teks": "$56\\text{ Joule}$",
+          "alasan": "Siswa tidak membagi koefisien dengan 2 saat integrasi sehingga menghitung $[8x^2 - 4x]_1^3 = 60 - 4 = 56$."
+        },
+        {
+          "teks": "$28\\text{ Joule}$",
+          "alasan": "Siswa salah mengoperasikan tanda pada batas bawah menjadi $(36 - 12) - (4 - 8) = 24 - (-4) = 28$."
+        }
+      ],
+      "pembahasan": "Besar usaha ($W$) dinyatakan oleh rumus:\n$$W = \\int_{a}^{b} F(x)\\,dx$$\n$$W = \\int_{1}^{3} (8x - 4)\\,dx = \\left[4x^2 - 4x\\right]_{1}^{3}$$\n$$W = (4(3)^2 - 4(3)) - (4(1)^2 - 4(1)) = (36 - 12) - (4 - 4) = 24\\text{ Joule}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 220,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan luas daerah di kuadran pertama yang dibatasi oleh fungsi f ( x ) = x x 2 + 5 , sumbu- x , dan garis x = 2."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "luas daerah di bawah kurva",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung luas daerah di kuadran pertama langsung dengan integral tentu satu fungsi linier.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah di kuadran pertama yang dibatasi oleh kurva $f(x) = 4x + 1$, sumbu-$x$, sumbu-$y$, dan garis $x = 2$ adalah ....",
+      "jawaban_benar": "$10\\text{ satuan luas}$",
+      "alasan_benar": "Luas diperoleh dari $\\int_{0}^{2} (4x + 1)\\,dx = \\left[2x^2 + x\\right]_{0}^{2} = 2(2)^2 + 2 - 0 = 8 + 2 = 10\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$9\\text{ satuan luas}$",
+          "alasan": "Siswa hanya menghitung nilai ordinat saat $x = 2$, yaitu $4(2) + 1 = 9$."
+        },
+        {
+          "teks": "$18\\text{ satuan luas}$",
+          "alasan": "Siswa mengintegrasikan $4x$ menjadi $4x^2$ tanpa membagi dengan 2, menghasilkan $4(4) + 2 = 18$."
+        },
+        {
+          "teks": "$8\\text{ satuan luas}$",
+          "alasan": "Siswa lupa mengintegrasikan suku konstan $+1$."
+        }
+      ],
+      "pembahasan": "Karena kurva berada di kuadran pertama di atas sumbu-$x$ dari $x = 0$ (sumbu-$y$) sampai $x = 2$, luasnya adalah:\n$$L = \\int_{0}^{2} (4x + 1)\\,dx$$\n$$L = \\left[2x^2 + x\\right]_{0}^{2} = (2(2)^2 + 2) - 0 = 8 + 2 = 10\\text{ satuan luas}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": "Ayo Mencoba 3.11",
+        "nomor": "1",
+        "teks": "Tentukan luas daerah di kuadran keempat yang dibatasi oleh fungsi _f_ ^ _x_ h = _x_ 2 - 4 _x_ , garis _x_ = 1 , dan garis _x_ = 3 .",
+        "jawaban": "22/3 satuan luas",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "luas daerah kuadran keempat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemahaman konsep luas di bawah sumbu-x serta evaluasi integral tentu berderajat satu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan luas daerah di kuadran keempat yang dibatasi oleh fungsi $f(x) = x - 8$, sumbu-$x$, garis $x = 5$, dan garis $x = 7$.",
+      "jawaban_benar": "$4\\text{ satuan luas}$",
+      "alasan_benar": "Pada selang $[5, 7]$, kurva berada di bawah sumbu-$x$ sehingga luas daerah dihitung dengan $L = -\\int_{5}^{7} (x - 8)\\,dx = \\int_{5}^{7} (8 - x)\\,dx = \\left[8x - \\frac{1}{2}x^2\\right]_5^7 = (56 - 24,5) - (40 - 12,5) = 31,5 - 27,5 = 4\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$-4\\text{ satuan luas}$",
+          "alasan": "Mengintegralkan langsung $\\int_5^7 (x - 8)\\,dx$ tanpa mengubah tanda negatif untuk luas di bawah sumbu-$x$."
+        },
+        {
+          "teks": "$6\\text{ satuan luas}$",
+          "alasan": "Keliru mengintegralkan $x$ menjadi $x^2$ tanpa membagi 2 sehingga perhitungannya menjadi $(8(7)-49)-(8(5)-25) = 7 - 15 = -8$ lalu dimutlakkan atau salah aritmetika."
+        },
+        {
+          "teks": "$2\\text{ satuan luas}$",
+          "alasan": "Hanya menghitung selisih nilai ordinat $|f(7) - f(5)| = |-1 - (-3)| = 2$."
+        }
+      ],
+      "pembahasan": "Karena kurva $f(x) = x - 8$ bernilai negatif pada interval $[5, 7]$, luas daerah yang dibatasi oleh kurva dan sumbu-$x$ adalah:\n$$L = -\\int_{5}^{7} (x - 8)\\,dx = \\int_{5}^{7} (8 - x)\\,dx$$\n$$L = \\left[ 8x - \\frac{1}{2}x^2 \\right]_{5}^{7}$$\n$$L = \\left(8(7) - \\frac{1}{2}(7)^2\\right) - \\left(8(5) - \\frac{1}{2}(5)^2\\right)$$\n$$L = (56 - 24,5) - (40 - 12,5) = 31,5 - 27,5 = 4\\text{ satuan luas}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 224,
+        "bagian": "Ayo Mencoba",
+        "nomor": "3.12 a",
+        "teks": "Seorang manajer perusahaan memperhitungkan bahwa pembelian seperangkat peralatan akan menghasilkan suatu penghematan biaya operasional pada perusahaan. Kecepatan penghematan biaya operasional _f_ ^ _x_ h (dalam rupiah) setiap tahun bila peralatan itu telah dipakai selama _x_ tahun adalah _f_ ^ _x_ h = 4 000. _x_ + 1 000. ; 0 # _x_ # 10 . a. Berapa jumlah penghematan biaya operasional dalam 5 tahun pertama?",
+        "jawaban": "Rp65.000,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "akumulasi penghematan biaya",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai akumulasi fungsi laju penghematan linear menggunakan integral tentu dengan batas waktu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju penghematan biaya operasional sebuah mesin pabrik dinyatakan oleh fungsi $f(x) = 6.000x + 8.000$ (dalam rupiah per tahun), dengan $x$ menyatakan lama waktu pemakaian mesin dalam tahun ($0 \\le x \\le 9$). Berapa jumlah total penghematan biaya operasional mesin tersebut selama 2 tahun pertama?",
+      "jawaban_benar": "Rp28.000,00",
+      "alasan_benar": "Total penghematan diperoleh dari integral tentu $\\int_{0}^{2} (6.000x + 8.000)\\,dx = \\left[3.000x^2 + 8.000x\\right]_{0}^{2} = 3.000(4) + 8.000(2) = 12.000 + 16.000 = 28.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp20.000,00",
+          "alasan": "Hanya menghitung nilai laju pada tahun ke-2, yaitu $f(2) = 6.000(2) + 8.000 = 20.000$."
+        },
+        {
+          "teks": "Rp40.000,00",
+          "alasan": "Lupa membagi koefisien $x$ saat mengintegralkan, sehingga menghitung $[6.000x^2 + 8.000x]_0^2 = 24.000 + 16.000 = 40.000$."
+        },
+        {
+          "teks": "Rp14.000,00",
+          "alasan": "Menghitung rata-rata penghematan per tahun atau membagi dua hasil akhir integral."
+        }
+      ],
+      "pembahasan": "Jumlah total penghematan selama 2 tahun pertama dihitung dengan mengintegralkan fungsi laju penghematan dari $x = 0$ hingga $x = 2$:\n$$S = \\int_{0}^{2} (6.000x + 8.000)\\,dx$$\n$$S = \\left[ 3.000x^2 + 8.000x \\right]_{0}^{2}$$\n$$S = (3.000(2)^2 + 8.000(2)) - 0 = 12.000 + 16.000 = 28.000.$$\nJadi, jumlah penghematan biaya operasional selama 2 tahun pertama adalah Rp28.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 233,
+        "bagian": "Pengayaan C",
+        "nomor": "8. a.",
+        "teks": "Seorang pendaki mencatat bahwa kecepatannya mendaki gunung (dalam km/jam) mengikuti fungsi _v_ ^ _t_ h = - 2 _t_ + 10 , dengan _t_ adalah waktu dalam jam sejak pendakian dimulai. Namun setelah 5 jam, pendaki tersebut berhenti total karena kehabisan tenaga. a. Hitunglah total jarak yang telah ditempuh selama 5 jam pendakian.",
+        "jawaban": "25 km",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "perhitungan jarak tempuh",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung jarak tempuh dari fungsi kecepatan linear dengan integral tentu langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kendaraan uji bergerak dengan kecepatan yang memenuhi fungsi $v(t) = -6t + 24$ (dalam km/jam), dengan $t$ menyatakan waktu tempuh dalam jam. Kendaraan berhenti tepat saat kecepatannya nol pada $t = 4$. Berapakah jarak total yang ditempuh kendaraan tersebut selama 4 jam perjalanan?",
+      "jawaban_benar": "$48\\text{ km}$",
+      "alasan_benar": "Jarak total diperoleh dengan mengintegralkan fungsi kecepatan pada selang $[0, 4]$: $s = \\int_{0}^{4} (-6t + 24)\\,dt = \\left[-3t^2 + 24t\\right]_{0}^{4} = -3(16) + 24(4) = -48 + 96 = 48\\text{ km}$.",
+      "distraktor": [
+        {
+          "teks": "$96\\text{ km}$",
+          "alasan": "Lupa membagi dengan 2 pada antiturunan suku berderajat satu, menghitung $[-6t^2 + 24t]$ secara keliru."
+        },
+        {
+          "teks": "$36\\text{ km}$",
+          "alasan": "Salah mengalikan saat substitusi batas atas, menghitung $-3(16) + 24(4)$ menjadi $-60 + 96 = 36$."
+        },
+        {
+          "teks": "$24\\text{ km}$",
+          "alasan": "Hanya mengambil kecepatan awal $v(0) = 24$ atau salah menghitung nilai integral."
+        }
+      ],
+      "pembahasan": "Jarak total yang ditempuh merupakan integral dari fungsi kecepatan terhadap waktu:\n$$s = \\int_{0}^{4} v(t)\\,dt = \\int_{0}^{4} (-6t + 24)\\,dt$$\n$$s = \\left[ -3t^2 + 24t \\right]_{0}^{4}$$\n$$s = (-3(4)^2 + 24(4)) - 0 = -48 + 96 = 48\\text{ km}.$$\nJadi, jarak total yang ditempuh kendaraan tersebut adalah 48 km.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

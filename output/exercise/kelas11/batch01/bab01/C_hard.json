@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "identitas invers fungsi rasional",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengevaluasi kondisi agar suatu fungsi rasional menjadi invers bagi dirinya sendiri (fungsi involutif) menggunakan konsep identitas $(f \\circ f)(x) = x$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\frac{px + 7}{3x - 5}$ terdefinisi untuk $x \\ne \\frac{5}{3}$. Jika fungsi $f$ merupakan invers dari dirinya sendiri, yaitu $f^{-1}(x) = f(x)$ untuk semua nilai $x$ pada daerah asalnya, maka nilai dari konstanta $p$ adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "Misalkan $y = \\frac{px + 7}{3x - 5} \\iff y(3x - 5) = px + 7 \\iff 3xy - 5y = px + 7 \\iff x(3y - p) = 5y + 7 \\iff x = \\frac{5y + 7}{3y - p}$.\nMaka $f^{-1}(x) = \\frac{5x + 7}{3x - p}$.\nAgar $f^{-1}(x) = f(x)$, bentuk $\\frac{5x + 7}{3x - p}$ harus identik dengan $\\frac{px + 7}{3x - 5}$.\nDengan membandingkan koefisien pembilang dan penyebut: koefisien $x$ pada pembilang memberikan $p = 5$, dan konstanta pada penyebut memberikan $-p = -5 \\implies p = 5$. Kedua perbandingan konsisten, sehingga $p = 5$.",
+      "distraktor": [
+        {
+          "teks": "-5",
+          "alasan": "Kesalahan tanda minus saat membandingkan koefisien penyebut $3x - p$ dengan $3x - 5$."
+        },
+        {
+          "teks": "\\frac{5}{3}",
+          "alasan": "Menyamakan $p$ dengan nilai pembuat nol penyebut pada daerah asal."
+        },
+        {
+          "teks": "7",
+          "alasan": "Mengambil angka konstanta pada pembilang fungsi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Cari rumus fungsi invers $f^{-1}(x)$ dari $y = \\frac{px + 7}{3x - 5}$.\nLangkah 2: Kalikan silang: $3xy - 5y = px + 7$.\nLangkah 3: Kelompokkan variabel $x$: $x(3y - p) = 5y + 7 \\implies x = \\frac{5y + 7}{3y - p}$.\nLangkah 4: Tulis fungsi invers: $f^{-1}(x) = \\frac{5x + 7}{3x - p}$.\nLangkah 5: Syarat $f^{-1}(x) = f(x) \\implies \\frac{5x + 7}{3x - p} = \\frac{px + 7}{3x - 5}$. Dari kesamaan kedua pecahan rasional ini, diperoleh $p = 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0056-latihan-15-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "invers fungsi komposisi linear",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan parameter dari kesamaan fungsi komposisi, pembentukan rumus invers, dan evaluasi nilai fungsi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi linear $f(x) = ax + 8$ dengan konstanta $a > 0$ dan memenuhi $(f \\circ f)(x) = 9x + 32$. Jika diketahui $f^{-1}(k) = 2$, nilai $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "14",
+      "alasan_benar": "Dari $(f \\circ f)(x) = a(ax + 8) + 8 = a^2 x + 8a + 8 = 9x + 32$, diperoleh $a^2 = 9 \\implies a = 3$ (karena $a > 0$). Maka $f(x) = 3x + 8$. Persamaan $f^{-1}(k) = 2$ ekuivalen dengan $f(2) = k$, sehingga $k = 3(2) + 8 = 14$.",
+      "distraktor": [
+        {
+          "teks": "10",
+          "alasan": "Siswa salah menghitung fungsi dengan mengira $f(x) = 3x + 4$ sehingga $f(2) = 10$."
+        },
+        {
+          "teks": "-2",
+          "alasan": "Siswa memilih nilai $a = -3$ yang melanggar syarat $a > 0$, sehingga menghasilkan $k = -3(2) + 8 = 2$ lalu salah tanda menjadi -2."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa keliru mengira $f^{-1}(k) = 2$ berarti mencari $f^{-1}(2)$ pada fungsi yang salah."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus komposisi $(f \\circ f)(x)$.\n$(f \\circ f)(x) = f(f(x)) = a(ax + 8) + 8 = a^2 x + 8a + 8$.\n\nLangkah 2: Menentukan nilai konstanta $a$.\nSamakan koefisien dengan $9x + 32$:\n$a^2 = 9 \\implies a = 3$ (karena $a > 0$).\nKonstanta: $8(3) + 8 = 32$ (sesuai).\nJadi, rumus fungsinya adalah $f(x) = 3x + 8$.\n\nLangkah 3: Menentukan nilai $k$.\nBerdasarkan definisi fungsi invers, jika $f^{-1}(k) = 2$, maka $f(2) = k$.\n$k = f(2) = 3(2) + 8 = 6 + 8 = 14$.\n\nJadi, nilai $k$ yang memenuhi adalah 14.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2b",
+        "teks": "- b. f (x) = −3x + 1",
+        "jawaban": "f^-1(x) = (1 - x)/3, domain: R, range: R",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik potong invers linear",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan fungsi invers, penyelesaian sistem persamaan untuk mencari koordinat titik potong grafik, dan evaluasi jumlah koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi linear $f(x) = -4x + 15$. Jika grafik fungsi invers $f^{-1}(x)$ berpotongan dengan grafik garis $y = x + 5$ di titik $(p, q)$, nilai dari $p + q$ adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "Invers dari $f(x)$ adalah $f^{-1}(x) = \\frac{15 - x}{4}$. Titik potong dicari dari $\\frac{15 - x}{4} = x + 5 \\iff 15 - x = 4x + 20 \\iff 5x = -5 \\iff x = -1$. Maka $p = -1$ dan $q = -1 + 5 = 4$. Jadi, $p + q = -1 + 4 = 3$.",
+      "distraktor": [
+        {
+          "teks": "-3",
+          "alasan": "Siswa melakukan kesalahan tanda pada koordinat perpotongan menjadi $(1, -4)$ sehingga menghasilkan $1 + (-4) = -3$."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah menghitung titik potong dengan mengabaikan variabel $x$ dan hanya menjumlahkan konstanta."
+        },
+        {
+          "teks": "7",
+          "alasan": "Siswa salah memindahkan ruas persamaan menjadi $4x - x = 3x$ dan $20 - 15 = 5$, berakibat pada nilai koordinat yang keliru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi invers $f^{-1}(x)$.\nMisalkan $y = -4x + 15$.\n$4x = 15 - y \\iff x = \\frac{15 - y}{4}$.\nMaka $f^{-1}(x) = \\frac{15 - x}{4}$.\n\nLangkah 2: Menentukan absis titik potong ($p$).\nSamakan nilai $y$ dari kedua persamaan:\n$\\frac{15 - x}{4} = x + 5$\n$15 - x = 4(x + 5)$\n$15 - x = 4x + 20$\n$-5x = 5$\n$x = -1$.\nJadi, $p = -1$.\n\nLangkah 3: Menentukan ordinat titik potong ($q$).\nSubstitusi nilai $x = -1$ ke persamaan garis:\n$q = -1 + 5 = 4$.\n\nLangkah 4: Menghitung $p + q$.\n$p + q = -1 + 4 = 3$.\n\nJadi, nilai dari $p + q$ adalah 3.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hanya fungsi bijektif (injektif dan surjektif) saja yang memiliki invers ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik temu invers fungsi kuadrat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis sifat perpotongan grafik fungsi dengan inversnya pada domain pembatasan, serta eliminasi solusi yang tidak memenuhi daerah asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi kuadrat $f(x) = x^2 - 5x + 8$ yang dibatasi pada domain $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 2{,}5\\}$ sehingga memiliki fungsi invers $f^{-1}(x)$. Nilai $x$ yang memenuhi persamaan $f(x) = f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Karena $f(x)$ monoton naik pada $x \\ge 2{,}5$, titik temu $f(x) = f^{-1}(x)$ berada pada garis $y = x$. Persamaan $x^2 - 5x + 8 = x \\iff x^2 - 6x + 8 = 0$ menghasilkan $x = 2$ atau $x = 4$. Karena $x \\ge 2{,}5$, nilai $x = 2$ tidak memenuhi daerah asal, sehingga nilai yang memenuhi hanyalah $x = 4$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa mengambil akar persamaan kuadrat tanpa mengecek batasan domain $x \\ge 2{,}5$."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa keliru menganggap solusi perpotongan sama dengan nilai konstanta fungsi."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa salah melakukan faktorisasi persamaan kuadrat menjadi $(x - 1)(x - 8) = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Memahami sifat titik temu fungsi monoton naik dengan inversnya.\nUntuk fungsi yang monoton naik pada daerah asalnya, grafik $y = f(x)$ dan grafik $y = f^{-1}(x)$ hanya dapat berpotongan pada garis simetri $y = x$.\n\nLangkah 2: Membentuk persamaan $f(x) = x$.\n$x^2 - 5x + 8 = x$\n$x^2 - 6x + 8 = 0$\n\nLangkah 3: Menyelesaikan persamaan kuadrat.\n$(x - 2)(x - 4) = 0$\nDiperoleh $x = 2$ atau $x = 4$.\n\nLangkah 4: Menguji syarat daerah asal ($D_f$).\nDaerah asal fungsi dibatasi pada $x \\ge 2{,}5$.\n- Untuk $x = 2$: tidak memenuhi karena $2 < 2{,}5$.\n- Untuk $x = 4$: memenuhi karena $4 \\ge 2{,}5$.\n\nJadi, nilai $x$ yang memenuhi persamaan tersebut adalah 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0056-latihan-15-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi fungsi invers parameter",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kesamaan komposisi dua fungsi untuk mencari parameter konstanta lalu menurunkan rumus fungsi inversnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi linear $f(x) = 3x + b$ dan $(f \\circ f)(x) = 9x + 28$. Pasangan nilai $b$ dan rumus fungsi invers $f^{-1}(x)$ yang tepat adalah ....",
+      "jawaban_benar": "$b = 7$ dan $f^{-1}(x) = \\frac{x - 7}{3}$",
+      "alasan_benar": "$(f \\circ f)(x) = 3(3x + b) + b = 9x + 4b$. Dari $9x + 4b = 9x + 28$ diperoleh $4b = 28 \\iff b = 7$. Maka $f(x) = 3x + 7$, sehingga $x = \\frac{y - 7}{3}$ atau $f^{-1}(x) = \\frac{x - 7}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$b = 7$ dan $f^{-1}(x) = \\frac{x + 7}{3}$",
+          "alasan": "Siswa salah mengubah tanda saat membalik persamaan linear menjadi fungsi invers."
+        },
+        {
+          "teks": "$b = 14$ dan $f^{-1}(x) = \\frac{x - 14}{3}$",
+          "alasan": "Siswa keliru menganggap $f(f(x)) = 9x + 2b$ sehingga $2b = 28 \\iff b = 14$."
+        },
+        {
+          "teks": "$b = 4$ dan $f^{-1}(x) = \\frac{x - 4}{3}$",
+          "alasan": "Siswa membagi 28 dengan 7 alih-alih dengan 4 sehingga mendapatkan nilai $b = 4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan komposisi $(f \\circ f)(x) = f(f(x)) = 3(3x + b) + b = 9x + 4b$.\nLangkah 2: Menyamakan koefisien dengan bentuk yang diketahui: $9x + 4b = 9x + 28 \\implies 4b = 28 \\implies b = 7$.\nLangkah 3: Menentukan rumus invers dari $f(x) = 3x + 7$. Misalkan $y = 3x + 7$, maka $3x = y - 7 \\implies x = \\frac{y - 7}{3}$. Jadi, $f^{-1}(x) = \\frac{x - 7}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah fungsi bisa dibuat bijektif dengan cara memodifikasi range-nya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis domain pembatasan fungsi kuadrat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus mengevaluasi titik balik fungsi kuadrat dan memilih pembatasan domain yang tepat agar fungsi bersifat bijektif dan memiliki nilai invers tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi kuadrat $f(x) = x^2 - 8x + 11$ dibatasi pada domain $D_f = [c, \\infty)$ agar memiliki invers. Jika diketahui $f^{-1}(-1) = 6$, maka nilai batas bawah domain terkecil $c$ yang memenuhi syarat tersebut adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Titik puncak fungsi kuadrat berada pada $x_p = -\\frac{-8}{2(1)} = 4$. Agar monoton naik dan bijektif pada interval $[c, \\infty)$, haruslah $c \\ge 4$. Karena $f(6) = 6^2 - 8(6) + 11 = -1$, nilai masukan $6$ berada pada cabang $x \\ge 4$, sehingga batas terkecil untuk $c$ adalah 4.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa mengira domain dapat diperluas hingga $c = 2$ padahal fungsi tidak injektif pada $[2, \\infty)$ karena memuat puncak di $x = 4$."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa langsung mengambil nilai $x = 6$ dari $f^{-1}(-1) = 6$ sebagai batas domain."
+        },
+        {
+          "teks": "-1",
+          "alasan": "Siswa tertukar antara nilai domain dengan nilai keluaran $y = -1$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan sumbu simetri fungsi kuadrat $f(x) = x^2 - 8x + 11$: $x_s = -\\frac{b}{2a} = -\\frac{-8}{2} = 4$.\nLangkah 2: Suatu fungsi kuadrat memiliki fungsi invers pada domain berbentuk $[c, \\infty)$ jika domain tersebut tidak memuat bagian yang berbalik arah, yaitu seluruhnya terletak di sebelah kanan sumbu simetri ($c \\ge 4$).\nLangkah 3: Periksa kondisi $f^{-1}(-1) = 6 \\iff f(6) = 6^2 - 8(6) + 11 = 36 - 48 + 11 = -1$. Karena nilai $x = 6 \\ge 4$, nilai ini konsisten berada pada domain $[4, \\infty)$.\nLangkah 4: Nilai terkecil dari $c$ yang menjamin fungsi bijektif pada $[c, \\infty)$ adalah $c = x_s = 4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g−1 )(x)?"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "persamaan invers komposisi bertingkat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan konstruksi solusi dari persamaan invers komposisi fungsi dan manipulasi aljabar untuk menemukan nilai konstanta pembentuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi linear $f(x) = 2x + 5$ dan $g(x) = 3x - 1$. Jika $h(x) = (f \\circ g)(x)$ dan berlaku persamaan $h^{-1}(2a + 1) = 3$, maka nilai konstanta $a$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "Sifat fungsi invers menyatakan $h^{-1}(2a + 1) = 3 \\iff h(3) = 2a + 1$. Hitung $h(3) = f(g(3))$. Karena $g(3) = 3(3) - 1 = 8$, maka $h(3) = f(8) = 2(8) + 5 = 21$. Dengan menyamakan $2a + 1 = 21$, didapat $2a = 20 \\iff a = 10$.",
+      "distraktor": [
+        {
+          "teks": "11",
+          "alasan": "Siswa salah menjumlahkan $2a = 21 + 1 = 22 \\implies a = 11$ saat memindahkan konstanta 1."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa menghentikan perhitungan pada $g(3) = 8$ dan menganggap $2a + 1 = 8$ sehingga $a \\approx 3{,}5$ atau salah perhitungan aljabar."
+        },
+        {
+          "teks": "20",
+          "alasan": "Siswa lupa membagi dengan 2 setelah mendapatkan $2a = 20$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menggunakan sifat dasar fungsi invers: $h^{-1}(y) = x \\iff h(x) = y$. Maka $h^{-1}(2a + 1) = 3$ ekuivalen dengan $h(3) = 2a + 1$.\nLangkah 2: Menghitung nilai fungsi bagian dalam: $g(3) = 3(3) - 1 = 9 - 1 = 8$.\nLangkah 3: Menghitung nilai fungsi komposisi: $h(3) = f(g(3)) = f(8) = 2(8) + 5 = 16 + 5 = 21$.\nLangkah 4: Membentuk persamaan linear: $2a + 1 = 21$.\nLangkah 5: Menyelesaikan nilai $a$: $2a = 20 \\implies a = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0055-latihan-15-2c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "domain dan range invers fungsi akar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi kesesuaian formula invers fungsi irasional bersyarat sekaligus menguji ketepatan daerah asal dan daerah hasilnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi irasional $f(x) = \\sqrt{6x - 24} + 5$ yang terdefinisi pada daerah asal terbesarnya. Jika $f^{-1}(x)$ merupakan fungsi invers dari $f(x)$, manakah pernyataan berikut yang mendefinisikan rumus $f^{-1}(x)$ beserta daerah asal ($D_{f^{-1}}$) dan daerah hasil ($R_{f^{-1}}$) yang tepat?",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{(x - 5)^2 + 24}{6}$ dengan $D_{f^{-1}} = [5, \\infty)$ dan $R_{f^{-1}} = [4, \\infty)$",
+      "alasan_benar": "Daerah asal $f(x)$ mensyaratkan $6x - 24 \\ge 0 \\iff x \\ge 4$, sehingga $D_f = [4, \\infty)$. Karena nilai $\\sqrt{6x - 24} \\ge 0$, maka $f(x) \\ge 5$, sehingga daerah hasil $R_f = [5, \\infty)$. Berdasarkan sifat fungsi invers, daerah asal $D_{f^{-1}} = R_f = [5, \\infty)$ dan daerah hasil $R_{f^{-1}} = D_f = [4, \\infty)$. Untuk menurunkan rumus invers, misalkan $y = \\sqrt{6x - 24} + 5 \\iff y - 5 = \\sqrt{6x - 24} \\iff (y - 5)^2 = 6x - 24 \\iff 6x = (y - 5)^2 + 24 \\iff x = \\frac{(y - 5)^2 + 24}{6}$. Dengan demikian, diperoleh $f^{-1}(x) = \\frac{(x - 5)^2 + 24}{6}$ dengan $D_{f^{-1}} = [5, \\infty)$ dan $R_{f^{-1}} = [4, \\infty)$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{(x - 5)^2 + 24}{6}$ dengan $D_{f^{-1}} = [4, \\infty)$ dan $R_{f^{-1}} = [5, \\infty)$",
+          "alasan": "Tertukar antara domain fungsi invers ($R_f$) dan range fungsi invers ($D_f$)."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{(x + 5)^2 - 24}{6}$ dengan $D_{f^{-1}} = [5, \\infty)$ dan $R_{f^{-1}} = [4, \\infty)$",
+          "alasan": "Salah tanda saat memindahkan suku konstanta $+5$ dan $-24$ dalam aljabar pembalikan."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{x^2 - 1}{6}$ dengan $D_{f^{-1}} = [0, \\infty)$ dan $R_{f^{-1}} = [4, \\infty)$",
+          "alasan": "Menguadratkan langsung kedua ruas tanpa mengisolasi bentuk akar terlebih dahulu $((y)^2 = 6x - 24 + 25)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan domain dan range fungsi asal $f(x)$.\nSyarat bentuk akar: $6x - 24 \\ge 0 \\implies x \\ge 4$. Jadi, $D_f = [4, \\infty)$.\nKarena $\\sqrt{6x - 24} \\ge 0$, maka $y = \\sqrt{6x - 24} + 5 \\ge 5$. Jadi, $R_f = [5, \\infty)$.\n\nLangkah 2: Menentukan domain dan range fungsi invers.\n$D_{f^{-1}} = R_f = [5, \\infty)$\n$R_{f^{-1}} = D_f = [4, \\infty)$\n\nLangkah 3: Menentukan rumus $f^{-1}(x)$.\n$y = \\sqrt{6x - 24} + 5$\n$y - 5 = \\sqrt{6x - 24}$\nKuadratkan kedua ruas untuk $y \\ge 5$:\n$(y - 5)^2 = 6x - 24$\n$6x = (y - 5)^2 + 24$\n$x = \\frac{(y - 5)^2 + 24}{6}$\n\nJadi, $f^{-1}(x) = \\frac{(x - 5)^2 + 24}{6}$ dengan $D_{f^{-1}} = [5, \\infty)$ dan $R_{f^{-1}} = [4, \\infty)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan, f dan g adalah fungsi. Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi keselarasan invers fungsi pecahan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan fungsi invers bentuk pecahan rasional berparameter dan evaluasi kesamaan komponen aljabar untuk menyimpulkan nilai kuadratik parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua fungsi pecahan $f(x) = \\frac{ax + 8}{x - 2}$ dengan $x \\ne 2$ dan $g(x) = \\frac{2x + b}{x - 3}$ dengan $x \\ne 3$, di mana $a$ dan $b$ adalah konstanta real. Jika fungsi $g(x)$ merupakan fungsi invers dari $f(x)$, maka nilai dari $a^2 + b$ adalah ....",
+      "jawaban_benar": "17",
+      "alasan_benar": "Misalkan $y = \\frac{ax + 8}{x - 2}$. Maka $y(x - 2) = ax + 8 \\iff yx - 2y = ax + 8 \\iff x(y - a) = 2y + 8 \\iff x = \\frac{2y + 8}{y - a}$. Dengan demikian, rumus fungsi invers adalah $f^{-1}(x) = \\frac{2x + 8}{x - a}$. Karena $g(x) = f^{-1}(x)$, maka $\\frac{2x + b}{x - 3} = \\frac{2x + 8}{x - a}$. Dari kesamaan penyebut diperoleh $x - a = x - 3 \\implies a = 3$, dan dari kesamaan pembilang diperoleh $2x + b = 2x + 8 \\implies b = 8$. Jadi, $a^2 + b = 3^2 + 8 = 9 + 8 = 17$.",
+      "distraktor": [
+        {
+          "teks": "11",
+          "alasan": "Siswa menjumlahkan langsung kedua parameter $a + b = 3 + 8 = 11$ karena lupa mengkuadratkan nilai $a$."
+        },
+        {
+          "teks": "14",
+          "alasan": "Siswa menghitung $2a + b = 2(3) + 8 = 14$ karena keliru mengalikan dua alih-alih memangkatkan dua."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa salah menerapkan tanda operasi aljabar sehingga menghitung $a^2 - b = 9 - 8 = 1$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan invers dari $f(x)$.\n$y = \\frac{ax + 8}{x - 2}$\n$y(x - 2) = ax + 8$\n$xy - 2y = ax + 8$\n$xy - ax = 2y + 8$\n$x(y - a) = 2y + 8$\n$x = \\frac{2y + 8}{y - a}$\nSehingga diperoleh $f^{-1}(x) = \\frac{2x + 8}{x - a}$.\n\nLangkah 2: Menyamakan $f^{-1}(x)$ dengan $g(x)$.\n$g(x) = \\frac{2x + b}{x - 3} = \\frac{2x + 8}{x - a}$\n\nLangkah 3: Menentukan nilai parameter $a$ dan $b$.\nDari penyebut: $x - 3 = x - a \\implies a = 3$.\nDari pembilang: $2x + b = 2x + 8 \\implies b = 8$.\n\nLangkah 4: Menghitung nilai yang diminta.\n$a^2 + b = 3^2 + 8 = 9 + 8 = 17$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g−1 )(x)?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penyelesaian persamaan invers komposisi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi sifat aljabar invers pada fungsi komposisi bertingkat sebelum menyelesaikan nilai variabel dari persamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi bijektif $f$ dan $g$ pada himpunan bilangan real dengan rumus $f(x) = 2x + 3$ dan $g^{-1}(x) = \\frac{x - 5}{4}$. Jika berlaku persamaan $(g \\circ f^{-1})^{-1}(k) = 11$, maka nilai $k$ adalah ....",
+      "jawaban_benar": "21",
+      "alasan_benar": "Berdasarkan sifat invers dari komposisi fungsi, $((g \\circ f^{-1})^{-1})(x) = ((f^{-1})^{-1} \\circ g^{-1})(x) = (f \\circ g^{-1})(x)$. Oleh karena itu, persamaan menjadi $(f \\circ g^{-1})(k) = 11 \\iff f(g^{-1}(k)) = 11$. Karena $f(x) = 2x + 3$, maka $2(g^{-1}(k)) + 3 = 11 \\iff 2(g^{-1}(k)) = 8 \\iff g^{-1}(k) = 4$. Substitusikan ke rumus $g^{-1}(x)$: $\\frac{k - 5}{4} = 4 \\iff k - 5 = 16 \\iff k = 21$.",
+      "distraktor": [
+        {
+          "teks": "23",
+          "alasan": "Siswa tidak membalik urutan fungsi komposisi saat mencari inversnya, yaitu menganggap $(g \\circ f^{-1})^{-1} = g^{-1} \\circ f$, sehingga menyelesaikan $g^{-1}(f(k)) = 11 \\implies \\frac{(2k + 3) - 5}{4} = 11 \\implies 2k - 2 = 44 \\implies k = 23$."
+        },
+        {
+          "teks": "9",
+          "alasan": "Siswa lupa mengalikan silang penyebut pada tahap akhir, langsung menghitung $k - 5 = 4 \\implies k = 9$."
+        },
+        {
+          "teks": "25",
+          "alasan": "Siswa melakukan kesalahan aljabar pada tahap $2(g^{-1}(k)) + 3 = 11$ dengan menambahkan alih-alih mengurangkan sehingga diperoleh $2(g^{-1}(k)) = 10 \\implies g^{-1}(k) = 5$, lalu $\\frac{k - 5}{4} = 5 \\implies k = 25$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan sifat invers dari komposisi fungsi:\n$(g \\circ f^{-1})^{-1}(x) = (f^{-1})^{-1}(g^{-1}(x)) = (f \\circ g^{-1})(x)$\n\nLangkah 2: Terapkan ke persamaan yang diberikan:\n$(f \\circ g^{-1})(k) = 11 \\iff f(g^{-1}(k)) = 11$\n\nLangkah 3: Hitung nilai $g^{-1}(k)$ menggunakan rumus $f(x) = 2x + 3$:\n$2(g^{-1}(k)) + 3 = 11$\n$2(g^{-1}(k)) = 8$\n$g^{-1}(k) = 4$\n\nLangkah 4: Tentukan nilai $k$ dari rumus $g^{-1}(x) = \\frac{x - 5}{4}$:\n$\\frac{k - 5}{4} = 4$\n$k - 5 = 16$\n$k = 21$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g−1 )(x)?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "invers komposisi fungsi pecahan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penerapan hubungan invers pada fungsi komposisi $(f^{-1} \\circ g)(m) = k \\iff f(k) = g(m)$ untuk menyelesaikan persamaan tanpa menginverskan secara manual.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi $f(x) = \\frac{5x - 3}{x - 2}$ untuk $x \\ne 2$ dan $g(x) = 3x - 3$. Jika berlaku persamaan $(f^{-1} \\circ g)(m) = 3$, maka nilai dari konstanta $m$ adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "Persamaan $(f^{-1} \\circ g)(m) = 3$ ekuivalen dengan $f^{-1}(g(m)) = 3 \\iff g(m) = f(3)$. Dihitung $f(3) = \\frac{5(3) - 3}{3 - 2} = 12$. Maka $3m - 3 = 12 \\iff 3m = 15 \\iff m = 5$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa langsung menyamakan nilai input $m$ dengan hasil luar 3 tanpa memproses relasi invers."
+        },
+        {
+          "teks": "4",
+          "alasan": "Kesalahan perhitungan saat menyelesaikan persamaan $3m - 3 = 12$ menjadi $3m = 12$ sehingga $m = 4$."
+        },
+        {
+          "teks": "7",
+          "alasan": "Salah menggunakan operasi invers pada komposisi, menganggap $f(m) = g(3)$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi invers, relasi $f^{-1}(y) = x$ setara dengan $f(x) = y$.\nPersamaan pada soal:\n$$(f^{-1} \\circ g)(m) = 3 \\iff f^{-1}(g(m)) = 3$$\nEkuivalen dengan:\n$$g(m) = f(3)$$\nHitung nilai $f(3)$:\n$$f(3) = \\frac{5(3) - 3}{3 - 2} = \\frac{15 - 3}{1} = 12$$\nSubstitusikan ke fungsi $g(m)$:\n$$3m - 3 = 12$$\n$$3m = 15$$\n$$m = 5$$\nJadi, nilai $m$ yang memenuhi adalah 5.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan, f dan g adalah fungsi. Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter invers identitas",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis kesamaan fungsi invers pecahan dengan parameter tidak diketahui menggunakan sifat fungsi identitas pada komposisi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua fungsi pecahan $f(x) = \\frac{ax + 5}{2x - 3}$ dengan $x \\ne \\frac{3}{2}$ dan $g(x) = \\frac{3x + 5}{bx - 4}$ dengan $x \\ne \\frac{4}{b}$. Jika berlaku $(f \\circ g)(x) = x$ untuk setiap $x$ pada daerah asal yang memenuhi, maka nilai dari $a^2 + b^2$ adalah ....",
+      "jawaban_benar": "20",
+      "alasan_benar": "Karena $(f \\circ g)(x) = x$, maka $g(x) = f^{-1}(x)$. Invers dari $f(x) = \\frac{ax + 5}{2x - 3}$ adalah $f^{-1}(x) = \\frac{3x + 5}{2x - a}$. Menyamakan dengan $g(x) = \\frac{3x + 5}{bx - 4}$ menghasilkan $b = 2$ dan $a = 4$. Maka $a^2 + b^2 = 4^2 + 2^2 = 16 + 4 = 20$.",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "Siswa menghitung nilai $a + b = 4 + 2 = 6$, bukan $a^2 + b^2$."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa mengalikan nilai $a \\cdot b = 4 \\times 2 = 8$ alih-alih menjumlahkan kuadratnya."
+        },
+        {
+          "teks": "12",
+          "alasan": "Siswa salah tanda saat menyamakan penyebut sehingga menghitung $a^2 - b^2 = 16 - 4 = 12$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat fungsi invers, jika $(f \\circ g)(x) = x$, maka $g(x) = f^{-1}(x)$.\nLangkah 1: Menentukan invers dari $f(x)$:\nMisalkan $y = \\frac{ax + 5}{2x - 3}$\n$$y(2x - 3) = ax + 5$$\n$$2xy - 3y = ax + 5$$\n$$2xy - ax = 3y + 5$$\n$$x(2y - a) = 3y + 5$$\n$$x = \\frac{3y + 5}{2y - a}$$\nDiperoleh rumus invers:\n$$f^{-1}(x) = \\frac{3x + 5}{2x - a}$$\n\nLangkah 2: Menyamakan $f^{-1}(x)$ dengan $g(x)$:\n$$\\frac{3x + 5}{2x - a} = \\frac{3x + 5}{bx - 4}$$\nKarena pembilang sudah identik ($3x + 5$), penyebut harus bernilai sama untuk setiap $x$:\n$$2x - a = bx - 4$$\nDari kesamaan koefisien suku-sejenis:\n$$b = 2$$\n$$-a = -4 \\implies a = 4$$\n\nLangkah 3: Menghitung nilai $a^2 + b^2$:\n$$a^2 + b^2 = 4^2 + 2^2 = 16 + 4 = 20$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sebuah fungsi bisa dibuat bijektif dengan cara memodifikasi range-nya."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "pembatasan domain fungsi kuadrat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Merancang dan mengevaluasi pembatasan domain fungsi kuadrat parabola ke bawah serta menganalisis domain dari fungsi invers yang dihasilkan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi kuadrat $f(x) = -x^2 + 8x - 12$ dibatasi pada daerah asal $D_f = [k, \\infty)$ agar memiliki fungsi invers. Jika rumus fungsi invers yang terbentuk bertanda positif di depan bentuk akar, yaitu $f^{-1}(x) = 4 + \\sqrt{4 - x}$, maka nilai batas domain $k$ beserta daerah asal dari fungsi invers $f^{-1}(x)$ berturut-turut adalah ....",
+      "jawaban_benar": "$k = 4$ dan $D_{f^{-1}} = \\{x \\in \\mathbb{R} \\mid x \\le 4\\}$",
+      "alasan_benar": "Sumbu simetri kurva adalah $x = -\\frac{8}{2(-1)} = 4$. Agar invers bernilai $4 + \\sqrt{\\dots}$, domain harus $x \\ge 4$, sehingga $k = 4$. Nilai maksimum kurva adalah $f(4) = 4$, sehingga range $f(x)$ adalah $y \\le 4$. Karena $D_{f^{-1}} = R_f$, maka domain fungsi invers adalah $\\{x \\in \\mathbb{R} \\mid x \\le 4\\}$.",
+      "distraktor": [
+        {
+          "teks": "$k = 4$ dan $D_{f^{-1}} = \\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$",
+          "alasan": "Keliru menganggap range fungsi kuadrat membuka ke atas sehingga menuliskan $x \\ge 4$."
+        },
+        {
+          "teks": "$k = 2$ dan $D_{f^{-1}} = \\{x \\in \\mathbb{R} \\mid x \\le 4\\}$",
+          "alasan": "Memilih salah satu pembuat nol fungsi ($x = 2$) sebagai nilai batas domain $k$ alih-alih sumbu simetri."
+        },
+        {
+          "teks": "$k = 6$ dan $D_{f^{-1}} = \\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+          "alasan": "Menggunakan akar kedua fungsi sebagai pembatas dan mengasumsikan nilai di dalam akar invers harus non-negatif sederhana."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengubah bentuk $f(x)$ ke bentuk kuadrat sempurna:\n$$f(x) = -(x^2 - 8x) - 12 = -(x^2 - 8x + 16) + 16 - 12 = -(x - 4)^2 + 4$$\nTitik puncak kurva berada pada $(4, 4)$ dengan sumbu simetri $x = 4$.\n\nLangkah 2: Menentukan nilai $k$:\n$$y = -(x - 4)^2 + 4$$\n$$(x - 4)^2 = 4 - y$$\n$$x - 4 = \\pm \\sqrt{4 - y}$$\n$$x = 4 \\pm \\sqrt{4 - y}$$\nAgar rumus invers bertanda positif: $f^{-1}(x) = 4 + \\sqrt{4 - x}$, maka nilai $x \\ge 4$. Dengan demikian, batas daerah asal $D_f = [k, \\infty)$ adalah $k = 4$.\n\nLangkah 3: Menentukan daerah asal fungsi invers ($D_{f^{-1}}$):\nKarena koefisien $x^2$ negatif ($a = -1$), titik puncak $(4, 4)$ adalah nilai maksimum, sehingga range fungsi $f$ untuk $x \\ge 4$ adalah:\n$$R_f = \\{y \\in \\mathbb{R} \\mid y \\le 4\\}$$\nBerdasarkan sifat fungsi invers, daerah asal fungsi invers sama dengan daerah hasil fungsi asalnya:\n$$D_{f^{-1}} = R_f = \\{x \\in \\mathbb{R} \\mid x \\le 4\\}$$\nJadi, $k = 4$ dan $D_{f^{-1}} = \\{x \\in \\mathbb{R} \\mid x \\le 4\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 52,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Cara untuk menemukan persamaan fungsi invers dari fungsi asal dapat dilakukan dengan cara berikut: 1. Ubah y = f (x) menjadi bentuk x = f (y). 2. Ubah persamaan x = f (y) menjadi bentuk y = . . . . 3. Ubahlah variabel y dengan f−1 (x) sehingga diperoleh rumus fungsi invers f−1 (x)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik potong grafik fungsi dan inversnya",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemahaman analitis bahwa titik potong antara grafik suatu fungsi monoton naik dan fungsi inversnya terletak pada garis identitas $y = x$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi linear $f(x) = \\frac{3}{4}x + 2$ memotong grafik fungsi inversnya, yaitu $y = f^{-1}(x)$, pada sebuah titik koordinat $(p, q)$. Nilai dari hasil kali $p \\cdot q$ adalah ....",
+      "jawaban_benar": "64",
+      "alasan_benar": "Grafik fungsi dan fungsi inversnya saling memotong di garis $y = x$. Menyelesaikan $\\frac{3}{4}x + 2 = x$ memberikan $\\frac{1}{4}x = 2 \\iff x = 8$. Maka titik potongnya adalah $(8, 8)$ sehingga $p = 8$ dan $q = 8$. Hasil kali $p \\cdot q = 8 \\cdot 8 = 64$.",
+      "distraktor": [
+        {
+          "teks": "16",
+          "alasan": "Siswa menjumlahkan koordinat titik potong $p + q = 8 + 8 = 16$ alih-alih mengalikannya."
+        },
+        {
+          "teks": "32",
+          "alasan": "Siswa melakukan kesalahan perhitungan kelipatan atau menghitung $8 \\times 4$."
+        },
+        {
+          "teks": "-64",
+          "alasan": "Siswa salah tanda saat memindahkan ruas aljabar sehingga mendapatkan titik potong $(-8, 8)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan persamaan fungsi invers $f^{-1}(x)$:\n$$y = \\frac{3}{4}x + 2$$\n$$y - 2 = \\frac{3}{4}x$$\n$$x = \\frac{4}{3}(y - 2) = \\frac{4}{3}y - \\frac{8}{3}$$\nSehingga rumus fungsi inversnya adalah $f^{-1}(x) = \\frac{4}{3}x - \\frac{8}{3}$.\n\nLangkah 2: Menentukan titik potong kedua grafik:\nKarena grafik $f(x)$ dan $f^{-1}(x)$ merupakan pencerminan terhadap garis $y = x$, maka titik potongnya memenuhi $f(x) = x$:\n$$\\frac{3}{4}x + 2 = x$$\n$$2 = x - \\frac{3}{4}x$$\n$$2 = \\frac{1}{4}x$$\n$$x = 8$$\nKarena titik berada pada garis $y = x$, maka nilai $y = 8$.\nTitik potongnya adalah $(p, q) = (8, 8)$.\n\nLangkah 3: Menghitung hasil kali $p \\cdot q$:\n$$p \\cdot q = 8 \\cdot 8 = 64$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0055-latihan-15-2c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "karakteristik domain range invers irasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi teliti pertukaran domain dan range antara fungsi irasional dan invers kuadratnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan fungsi invers (jika ada) dari $f(x) = \\sqrt{7x - 35}$, beserta daerah asal dan daerah hasilnya.",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{x^2 + 35}{7}$, dengan daerah asal $[0, \\infty)$ dan daerah hasil $[5, \\infty)$",
+      "alasan_benar": "$y = \\sqrt{7x - 35} \\ge 0 \\iff y^2 = 7x - 35 \\iff x = \\frac{y^2 + 35}{7}$. Domain $f$ adalah $x \\ge 5$, range $f$ adalah $y \\ge 0$. Domain $f^{-1} = \\text{range } f = [0, \\infty)$ dan range $f^{-1} = \\text{domain } f = [5, \\infty)$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{x^2 + 35}{7}$, dengan daerah asal $[5, \\infty)$ dan daerah hasil $[0, \\infty)$",
+          "alasan": "Domain dan range fungsi invers tertukar dengan domain dan range fungsi asalnya."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{x^2 - 35}{7}$, dengan daerah asal $[0, \\infty)$ dan daerah hasil $[5, \\infty)$",
+          "alasan": "Kesalahan tanda aljabar saat memindahkan konstanta $-35$ melewati tanda sama dengan."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{x^2 + 35}{7}$, dengan daerah asal $(-\\infty, \\infty)$ dan daerah hasil $[5, \\infty)$",
+          "alasan": "Mengabaikan pembatasan daerah asal fungsi invers yang berasal dari nilai akar yang taknegatif."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan domain dan range $f(x) = \\sqrt{7x - 35}$. Syarat akar $7x - 35 \\ge 0 \\implies x \\ge 5$, sehingga domain $D_f = [5, \\infty)$ dan range $R_f = [0, \\infty)$.\nLangkah 2: Nyatakan $x$ dalam $y$: $y = \\sqrt{7x - 35} \\implies y^2 = 7x - 35 \\implies 7x = y^2 + 35 \\implies x = \\frac{y^2 + 35}{7}$.\nLangkah 3: Tuliskan fungsi invers $f^{-1}(x) = \\frac{x^2 + 35}{7}$.\nLangkah 4: Tentukan domain dan range $f^{-1}$. $D_{f^{-1}} = R_f = [0, \\infty)$ dan $R_{f^{-1}} = D_f = [5, \\infty)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2b",
+        "teks": "f (x) = −3x + 1",
+        "jawaban": "f^-1(x) = (1 - x)/3",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi invers linear dan titik simetri",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi rumus invers linear dan menguji koordinat perpotongannya pada sumbu simetri $y = x$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi linear $f(x) = -7x + 24$. Jika titik perpotongan grafik $y = f(x)$ dan grafik fungsi inversnya $y = f^{-1}(x)$ adalah $(a, b)$, maka nilai dari $a + b$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "Grafik $y = f(x)$ dan $y = f^{-1}(x)$ berpotongan pada garis simetri $y = x$. Maka $-7x + 24 = x \\iff 8x = 24 \\iff x = 3$. Didapat $a = 3$ dan $b = 3$, sehingga $a + b = 3 + 3 = 6$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Hanya menghitung nilai absis $a = 3$ saja dan lupa menjumlahkannya dengan ordinat $b$."
+        },
+        {
+          "teks": "8",
+          "alasan": "Salah membagi pada langkah akhir $-7x - x = -24$ menghasilkan nilai yang keliru atau salah operasi $24 / 6$."
+        },
+        {
+          "teks": "-6",
+          "alasan": "Kesalahan tanda aljabar saat memindahkan suku $-7x$ ke ruas kanan menghasilkan $x = -3$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Pahami sifat bahwa grafik suatu fungsi bijektif dan inversnya selalu berpotongan pada garis $y = x$ jika keduanya memiliki titik potong riil.\nLangkah 2: Substitusikan $y = x$ ke dalam persamaan fungsi: $x = -7x + 24$.\nLangkah 3: Selesaikan persamaan: $8x = 24 \\implies x = 3$. Titik potongnya adalah $(a, b) = (3, 3)$.\nLangkah 4: Hitung nilai yang diminta: $a + b = 3 + 3 = 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis parameter saling invers",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dua fungsi aljabar berparameter menggunakan teorema identitas invers untuk menentukan konstanta tak tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua fungsi linear $f(x) = \\frac{4x - 9}{5}$ dan $g(x) = \\frac{p x + q}{8}$ memenuhi hubungan $(f \\circ g)(x) = x$ untuk setiap $x \\in \\mathbb{R}$. Nilai dari $p - q$ adalah ....",
+      "jawaban_benar": "-8",
+      "alasan_benar": "Fungsi $g$ harus merupakan invers dari $f$. Dari $y = \\frac{4x - 9}{5}$, diperoleh $x = \\frac{5y + 9}{4} = \\frac{10y + 18}{8}$. Diperoleh $p = 10$ dan $q = 18$, sehingga $p - q = 10 - 18 = -8$.",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "Terbalik dalam menghitung selisih $q - p$ alih-alih $p - q$."
+        },
+        {
+          "teks": "28",
+          "alasan": "Salah melakukan operasi dengan menjumlahkan $p + q$ alih-alih menghitung pengurangan $p - q$."
+        },
+        {
+          "teks": "-4",
+          "alasan": "Lupa mengalikan pembilang dan penyebut dengan 2 saat menyamakan penyebut menjadi 8."
+        }
+      ],
+      "pembahasan": "Langkah 1: Berdasarkan teorema di Buku Siswa hal 54, karena $(f \\circ g)(x) = x$, maka $g(x) = f^{-1}(x)$.\nLangkah 2: Cari rumus $f^{-1}(x)$. Misalkan $y = \\frac{4x - 9}{5} \\implies 5y = 4x - 9 \\implies 4x = 5y + 9 \\implies x = \\frac{5y + 9}{4}$. Jadi $f^{-1}(x) = \\frac{5x + 9}{4}$.\nLangkah 3: Samakan bentuk $f^{-1}(x)$ dengan $g(x)$: $g(x) = \\frac{p x + q}{8} = \\frac{2(5x + 9)}{2(4)} = \\frac{10x + 18}{8}$. Didapat $p = 10$ dan $q = 18$.\nLangkah 4: Hitung nilai $p - q = 10 - 18 = -8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Secara umum tidak semua fungsi memiliki fungsi invers . Hanya fungsi bijektif (injektif dan surjektif) saja yang memiliki invers ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "desain pembatasan domain parabola invers",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mendesain pembatasan domain fungsi kuadrat agar bijektif dengan kondisi pemenuhan nilai tertentu pada fungsi inversnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi kuadrat $f(x) = x^2 - 10x + 31$ didefinisikan pada daerah asal $D_f = [k, \\infty)$ agar memiliki fungsi invers $f^{-1}$. Jika diketahui $f^{-1}(10) = 7$, maka batas nilai $k$ terkecil yang mungkin dan rumus fungsi invers $f^{-1}(x)$ berturut-turut adalah ....",
+      "jawaban_benar": "$k = 5$ dan $f^{-1}(x) = 5 + \\sqrt{x - 6}$",
+      "alasan_benar": "Sumbu simetri $x_s = -\\frac{-10}{2(1)} = 5$. Agar injektif pada $[k, \\infty)$, haruslah $k \\ge 5$, sehingga nilai terkecil $k = 5$. Dari $y = (x - 5)^2 + 6 \\implies x - 5 = +\\sqrt{y - 6} \\implies x = 5 + \\sqrt{y - 6}$, konsisten dengan $f^{-1}(10) = 5 + \\sqrt{4} = 7$.",
+      "distraktor": [
+        {
+          "teks": "$k = 5$ dan $f^{-1}(x) = 5 - \\sqrt{x - 6}$",
+          "alasan": "Memilih tanda negatif pada bentuk akar yang menghasilkan cabang domain $x \\le 5$ dan $f^{-1}(10) = 3$ (kontradiksi dengan syarat)."
+        },
+        {
+          "teks": "$k = 6$ dan $f^{-1}(x) = 5 + \\sqrt{x - 6}$",
+          "alasan": "Keliru menganggap nilai minimum fungsi $y = 6$ sebagai batas absis domain $k$."
+        },
+        {
+          "teks": "$k = 10$ dan $f^{-1}(x) = 5 + \\sqrt{x - 6}$",
+          "alasan": "Mengira koefisien nilai masukan $x=10$ sebagai nilai pembatas sumbu simetri $k$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Ubah $f(x)$ ke bentuk kuadrat sempurna: $f(x) = (x - 5)^2 - 25 + 31 = (x - 5)^2 + 6$.\nLangkah 2: Agar fungsi kuadrat memiliki invers, kurva harus monoton murni (injektif). Titik balik berada di $x = 5$. Maka daerah asal $[k, \\infty)$ mengharuskan $k \\ge 5$. Nilai $k$ terkecil adalah $k = 5$.\nLangkah 3: Tentukan invers dari $y = (x - 5)^2 + 6$: $(x - 5)^2 = y - 6 \\implies x - 5 = \\pm\\sqrt{y - 6}$. Karena domain $x \\ge 5$, pilih tanda positif: $x = 5 + \\sqrt{y - 6}$.\nLangkah 4: Uji kecocokan: $f^{-1}(10) = 5 + \\sqrt{10 - 6} = 5 + 2 = 7$ (sesuai).\nLangkah 5: Simpulkan $k = 5$ dan $f^{-1}(x) = 5 + \\sqrt{x - 6}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan, f dan g adalah fungsi. Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi invers komposisi dan parameter pecahan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi sifat titik pada fungsi invers komposisi untuk menentukan nilai parameter yang tidak diketahui, dilanjutkan dengan mencari nilai invers fungsi pecahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi linear $f(x) = 2x - 3$ dan fungsi pecahan $g(x) = \\frac{px - 2}{x - 2}$ dengan $x \\ne 2$. Jika grafik fungsi invers $(f \\circ g)^{-1}(x)$ melalui titik $(11, 3)$, maka nilai dari $g^{-1}(p + 1)$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "Dari $(f \\circ g)^{-1}(11) = 3$, diperoleh $(f \\circ g)(3) = 11$. Karena $f(g(3)) = 2g(3) - 3 = 11$, maka $g(3) = 7$. Substitusi ke rumus fungsi $g(3) = \\frac{3p - 2}{3 - 2} = 7 \\implies 3p - 2 = 7 \\implies p = 3$. Nilai yang dicari adalah $g^{-1}(3 + 1) = g^{-1}(4)$. Jika $g^{-1}(4) = k$, maka $g(k) = 4 \\implies \\frac{3k - 2}{k - 2} = 4 \\implies 3k - 2 = 4k - 8 \\implies k = 6$.",
+      "distraktor": [
+        {
+          "teks": "5",
+          "alasan": "Siswa keliru menghitung nilai fungsi asal $g(p + 1) = g(4) = \\frac{3(4)-2}{4-2} = 5$ alih-alih menghitung nilai fungsi inversnya $g^{-1}(4)$."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa melakukan kesalahan tanda aljabar saat menyelesaikan persamaan linear $3k - 2 = 4(k - 2)$ menjadi $-k = -10$ sehingga diperoleh $k = 10$."
+        },
+        {
+          "teks": "2",
+          "alasan": "Siswa keliru menafsirkan sifat invers dan langsung menggunakan nilai pembuat nol penyebut fungsi $g(x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan sifat fungsi invers.\nGrafik $(f \\circ g)^{-1}(x)$ melalui titik $(11, 3)$ berarti:\n$$(f \\circ g)^{-1}(11) = 3 \\iff (f \\circ g)(3) = 11$$\n\nLangkah 2: Tentukan nilai $g(3)$.\n$$(f \\circ g)(3) = f(g(3)) = 11$$\n$$2(g(3)) - 3 = 11$$\n$$2(g(3)) = 14 \\implies g(3) = 7$$\n\nLangkah 3: Tentukan nilai parameter $p$.\n$$g(3) = \\frac{p(3) - 2}{3 - 2} = 7$$\n$$3p - 2 = 7$$\n$$3p = 9 \\implies p = 3$$\nSehingga rumus fungsi $g(x)$ adalah $g(x) = \\frac{3x - 2}{x - 2}$.\n\nLangkah 4: Hitung nilai $g^{-1}(p + 1) = g^{-1}(4)$.\nMisalkan $g^{-1}(4) = k$, maka $g(k) = 4$:\n$$\\frac{3k - 2}{k - 2} = 4$$\n$$3k - 2 = 4(k - 2)$$\n$$3k - 2 = 4k - 8$$\n$$-k = -6 \\implies k = 6$$\n\nJadi, nilai dari $g^{-1}(p + 1)$ adalah 6.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apakah benar secara umum, jika (g ◦ f )(x) memiliki invers maka (g ◦ f )−1 (x) = (f −1 ◦ g−1 )(x)?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "invers komposisi berparameter pecahan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi sifat invers komposisi untuk mencari parameter yang belum diketahui dan menyelesaikan persamaan invers fungsi pecahan-linear secara bertahap.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi linear $f(x) = 2x + 1$ dan fungsi pecahan $g(x) = \\frac{ax - 1}{x - 2}$ dengan $x \\ne 2$. Jika berlaku $(g \\circ f)^{-1}(3) = 2$ dan $(f \\circ g)^{-1}(11) = k$, maka nilai dari konstanta $k$ adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "Dari $(g \\circ f)^{-1}(3) = 2$, diperoleh $(g \\circ f)(2) = 3$. Karena $f(2) = 2(2) + 1 = 5$, maka $g(5) = 3 \\implies \\frac{5a - 1}{5 - 2} = 3 \\implies 5a - 1 = 9 \\implies a = 2$. Selanjutnya, dari $(f \\circ g)^{-1}(11) = k$, diperoleh $(f \\circ g)(k) = 11 \\implies f(g(k)) = 11 \\implies 2\\cdot g(k) + 1 = 11 \\implies g(k) = 5$. Persamaan $\\frac{2k - 1}{k - 2} = 5$ menghasilkan $2k - 1 = 5k - 10 \\implies 3k = 9 \\implies k = 3$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa tertukar antara nilai konstanta $a$ yang bernilai 2 dengan nilai $k$ yang ditanyakan."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa salah melakukan manipulasi aljabar pada persamaan linear $2k - 1 = 5(k - 2)$ menjadi $2k - 1 = 5k - 13$ sehingga $3k = 12$ dan $k = 4$."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa berhenti pada nilai antara $g(k) = 5$ dan langsung menganggapnya sebagai nilai $k$ tanpa menyelesaikannya ke rumus fungsi $g$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan sifat fungsi invers $(g \\circ f)^{-1}(3) = 2 \\iff (g \\circ f)(2) = 3$.\nLangkah 2: Hitung nilai $f(2) = 2(2) + 1 = 5$.\nLangkah 3: Substitusikan ke fungsi $g$ untuk mencari $a$:\n$$g(5) = 3 \\implies \\frac{5a - 1}{5 - 2} = 3 \\implies \\frac{5a - 1}{3} = 3 \\implies 5a - 1 = 9 \\implies 5a = 10 \\implies a = 2$$\nSehingga rumus fungsi $g(x) = \\frac{2x - 1}{x - 2}$.\nLangkah 4: Gunakan kesetaraan invers untuk mencari $k$:\n$$(f \\circ g)^{-1}(11) = k \\iff (f \\circ g)(k) = 11 \\iff f(g(k)) = 11$$\n$$2\\cdot g(k) + 1 = 11 \\implies 2\\cdot g(k) = 10 \\implies g(k) = 5$$\nLangkah 5: Selesaikan persamaan untuk $k$:\n$$\\frac{2k - 1}{k - 2} = 5 \\implies 2k - 1 = 5(k - 2) \\implies 2k - 1 = 5k - 10 \\implies 3k = 9 \\implies k = 3$$\nJadi, nilai konstanta $k$ adalah 3.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -395,7 +395,13 @@ def _write(job: Job, generator: str, soal: List[Soal], kapasitas_kurang: bool = 
     tmp = job.path + ".tmp"
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data.model_dump(), f, ensure_ascii=False, indent=2)
-    os.replace(tmp, job.path)
+    for percobaan in range(12):
+        try:
+            os.replace(tmp, job.path)
+            return
+        except PermissionError:      # Windows: berkas tujuan sedang dipegang proses lain; tunggu sebentar
+            time.sleep(1 + percobaan)
+    os.replace(tmp, job.path)        # percobaan terakhir; bila tetap gagal, galat naik ke pemanggil
 
 
 def _log(job: Job, entry: dict) -> None:

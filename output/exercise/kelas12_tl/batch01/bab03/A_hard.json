@@ -1,0 +1,770 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "11 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 190,
+        "bagian": "Ayo Mencoba",
+        "nomor": "3.4",
+        "teks": "Sebuah partikel bergerak pada suatu garis lurus. Jarak tempuh suatu partikel dinyatakan dalam s m dari pusat pada saat t detik. Adapun kecepatan partikel adalah v cm/detik sehingga v = cos 2 rt dengan arah positif ke kanan dari titik pusat. Jika titik awal gerak partikel berada 5 cm di kanan titik pusat, tentukan 1 posisi partikel 3 detik kemudian.",
+        "jawaban": "5,16 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "gerak partikel",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan waktu saat kecepatan nol, pengintegralan tak tentu fungsi trigonometri, pencarian konstanta awal, dan evaluasi posisi partikel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak pada suatu garis lurus dengan arah positif ke kanan dari titik pusat. Kecepatan partikel pada saat $t$ detik dinyatakan oleh $v(t) = 12\\cos(3t)\\text{ cm/detik}$. Jika pada saat awal ($t = 0$) posisi partikel berada $7\\text{ cm}$ di sebelah kanan titik pusat, tentukan posisi partikel pada saat kecepatannya bernilai nol untuk pertama kali setelah $t = 0$.",
+      "jawaban_benar": "$11\\text{ cm}$ di sebelah kanan titik pusat",
+      "alasan_benar": "Kecepatan nol pertama kali saat $3t = \\frac{\\pi}{2} \\iff t = \\frac{\\pi}{6}$. Fungsi posisi $s(t) = \\int 12\\cos(3t)\\,dt = 4\\sin(3t) + 7$. Pada $t = \\frac{\\pi}{6}$, $s = 4\\sin(\\frac{\\pi}{2}) + 7 = 11\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$7\\text{ cm}$ di sebelah kanan titik pusat",
+          "alasan": "Siswa hanya menggunakan nilai konstanta integrasi awal tanpa menambahkan perubahan posisi dari integral."
+        },
+        {
+          "teks": "$19\\text{ cm}$ di sebelah kanan titik pusat",
+          "alasan": "Siswa lupa membagi dengan turunan fungsi dalam (faktor 3) saat mengintegralkan, sehingga mendapatkan $s(t) = 12\\sin(3t) + 7$ dan menghasilkan $12 + 7 = 19$."
+        },
+        {
+          "teks": "$3\\text{ cm}$ di sebelah kanan titik pusat",
+          "alasan": "Siswa salah tanda saat mengintegralkan kosinus menjadi $-\\sin$, sehingga menghitung $-4 + 7 = 3$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan waktu $t$ saat kecepatan bernilai nol pertama kali setelah $t = 0$.\n$$v(t) = 12\\cos(3t) = 0$$\nNilai nol terkecil positif tercapai saat:\n$$3t = \\frac{\\pi}{2} \\implies t = \\frac{\\pi}{6}\\text{ detik}$$\n\nLangkah 2: Menentukan fungsi posisi $s(t)$ dengan mengintegralkan fungsi kecepatan.\n$$s(t) = \\int v(t)\\,dt = \\int 12\\cos(3t)\\,dt = 4\\sin(3t) + C$$\n\nLangkah 3: Menentukan nilai konstanta integrasi $C$ dari kondisi awal $s(0) = 7$.\n$$s(0) = 4\\sin(0) + C = 7 \\implies C = 7$$\nSehingga persamaan posisi adalah:\n$$s(t) = 4\\sin(3t) + 7$$\n\nLangkah 4: Menghitung posisi pada saat $t = \\frac{\\pi}{6}$ detik.\n$$s\\left(\\frac{\\pi}{6}\\right) = 4\\sin\\left(3 \\cdot \\frac{\\pi}{6}\\right) + 7 = 4\\sin\\left(\\frac{\\pi}{2}\\right) + 7 = 4(1) + 7 = 11\\text{ cm}$$\n\nJadi, posisi partikel saat kecepatannya nol pertama kali adalah $11\\text{ cm}$ di sebelah kanan titik pusat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan laju perubahan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penerapan integral substitusi pada laju pembentukan kerak, penentuan konstanta nilai awal, dan evaluasi hasil akumulasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu tangki penyimpanan bahan kimia mengalami penumpukan kerak pada dindingnya. Laju pertambahan ketebalan kerak pada jam ke-$t$ pemanasan ($0 \\le t < 9$) dinyatakan oleh persamaan $\\frac{dh}{dt} = 18(9 - t)^{-2}\\text{ mm/jam}$. Jika setelah $3\\text{ jam}$ pemanasan ketebalan kerak terukur $5\\text{ mm}$, berapakah ketebalan kerak setelah $6\\text{ jam}$ pemanasan?",
+      "jawaban_benar": "$8\\text{ mm}$",
+      "alasan_benar": "Fungsi ketebalan $h(t) = \\int 18(9-t)^{-2}\\,dt = \\frac{18}{9-t} + C$. Dari $h(3) = 5$ diperoleh $\\frac{18}{6} + C = 5 \\implies C = 2$. Pada $t = 6$, $h(6) = \\frac{18}{3} + 2 = 8\\text{ mm}$.",
+      "distraktor": [
+        {
+          "teks": "$6\\text{ mm}$",
+          "alasan": "Siswa lupa memperhitungkan konstanta integrasi $C = 2$ sehingga hanya menghitung $\\frac{18}{9-6} = 6$."
+        },
+        {
+          "teks": "$2\\text{ mm}$",
+          "alasan": "Siswa keliru tanda negatif dari turunan substitusi $u = 9 - t$ sehingga memperoleh $h(t) = -\\frac{18}{9-t} + 8$ yang menghasilkan $-6 + 8 = 2$."
+        },
+        {
+          "teks": "$11\\text{ mm}$",
+          "alasan": "Siswa salah menentukan nilai $C$ dengan langsung menganggap $C = 5$, sehingga menghitung $\\frac{18}{3} + 5 = 11$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi ketebalan kerak $h(t)$ melalui integrasi laju perubahan.\n$$h(t) = \\int 18(9 - t)^{-2}\\,dt$$\nGunakan substitusi $u = 9 - t$, sehingga $du = -dt$ atau $dt = -du$:\n$$h(t) = \\int 18 u^{-2}(-du) = -18 \\left(-\\frac{1}{u}\\right) + C = \\frac{18}{9 - t} + C$$\n\nLangkah 2: Menentukan nilai konstanta $C$ menggunakan kondisi $h(3) = 5$.\n$$h(3) = \\frac{18}{9 - 3} + C = 5$$\n$$\\frac{18}{6} + C = 5 \\implies 3 + C = 5 \\implies C = 2$$\n\nLangkah 3: Menuliskan persamaan fungsi ketebalan kerak secara lengkap.\n$$h(t) = \\frac{18}{9 - t} + 2$$\n\nLangkah 4: Menghitung ketebalan kerak pada saat $t = 6\\text{ jam}$.\n$$h(6) = \\frac{18}{9 - 6} + 2 = \\frac{18}{3} + 2 = 6 + 2 = 8\\text{ mm}$$\n\nJadi, ketebalan kerak setelah 6 jam pemanasan adalah $8\\text{ mm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Antiturunan atau integral dari f ^ x h untuk setiap nilai x pada interval I merupakan himpunan fungsi F ^ x h + C sehingga dxd 6 F ^ x h + C @ = f ^ x h ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "persamaan integral fungsional",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan diferensiasi persamaan integral tak tentu untuk menemukan turunan fungsi, pengintegralan ulang untuk menemukan fungsi asal, dan pemecahan konstanta nilai awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi $f(x)$ terdiferensialkan untuk semua bilangan real dan memenuhi hubungan $\\int x f'(x)\\,dx = 4x^3 - 6x^2 + C$. Jika diketahui bahwa $f(1) = 8$, berapakah nilai dari $f(2)$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Turunkan kedua ruas diperoleh $x f'(x) = 12x^2 - 12x \\implies f'(x) = 12x - 12$. Integralkan kembali: $f(x) = 6x^2 - 12x + K$. Dari $f(1) = 8 \\implies 6 - 12 + K = 8 \\implies K = 14$. Maka $f(2) = 6(4) - 12(2) + 14 = 14$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Siswa keliru mengira yang ditanyakan adalah nilai dari turunan $f'(2) = 12(2) - 12 = 12$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah tanda aljabar saat mencari konstanta: $-6 + K = 8$ keliru dihitung sebagai $K = 8 - 6 = 2$, sehingga $f(2) = 2$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Siswa lupa membagi dengan 2 saat mengintegralkan $12x$ sehingga menganggap integralnya adalah $12x^2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menurunkan kedua ruas terhadap $x$ dengan memanfaatkan definisi bahwa turunan dari integral tak tentu suatu fungsi adalah fungsi di dalam integral tersebut:\n$$\\frac{d}{dx}\\left(\\int x f'(x)\\,dx\\right) = \\frac{d}{dx}\\left(4x^3 - 6x^2 + C\\right)$$\n$$x f'(x) = 12x^2 - 12x$$\n\nLangkah 2: Menentukan $f'(x)$ dengan membagi kedua ruas dengan $x$ untuk $x \\ne 0$:\n$$f'(x) = 12x - 12$$\n\nLangkah 3: Mengintegralkan $f'(x)$ untuk mendapatkan bentuk umum $f(x)$:\n$$f(x) = \\int (12x - 12)\\,dx = 6x^2 - 12x + K$$\n\nLangkah 4: Menentukan konstanta $K$ menggunakan informasi $f(1) = 8$:\n$$f(1) = 6(1)^2 - 12(1) + K = 8$$\n$$-6 + K = 8 \\implies K = 14$$\n\nLangkah 5: Menuliskan rumus fungsi $f(x)$ secara eksplisit:\n$$f(x) = 6x^2 - 12x + 14$$\n\nLangkah 6: Menghitung nilai $f(2)$:\n$$f(2) = 6(2)^2 - 12(2) + 14 = 24 - 24 + 14 = 14$$\n\nJadi, nilai dari $f(2)$ adalah $14$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 193,
+        "bagian": "Latihan Soal Integral Tak Tentu",
+        "nomor": "5",
+        "teks": "Sebuah supermarket menjual pasta gigi merek XYZdent. Saat permintaan mencapai 50 kemasan per minggu, harga jualnya menjadi Rp39.500,00/ kemasan. Perubahan harga terhadap jumlah permintaan (fungsi marginal harga permintaan) dinyatakan dalam fungsi p l^ x h =- 0, 017 e -0,01 x dengan x menyatakan jumlah kemasan yang diminta per minggu dan p ( x ) adalah harga per kemasan. Berdasarkan informasi tersebut, tentukan harga per kemasan yang harus ditetapkan oleh supermarket jika ingin menjual 100 kemasan per minggu.",
+        "jawaban": "Rp31.250,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "fungsi marginal ekonomi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan fungsi harga melalui integrasi eksponensial, pemecahan nilai konstanta integrasi dari data batas, dan evaluasi harga pada tingkat permintaan baru.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah distributor barang elektronik mencatat bahwa laju perubahan harga terhadap jumlah permintaan mingguan (fungsi marginal harga) memenuhi persamaan $p'(x) = -0,06e^{-0,02x}$ (dalam ribuan rupiah), dengan $x$ menyatakan banyaknya unit barang yang diminta per minggu. Jika saat permintaan mencapai $40$ unit harga yang terbentuk adalah Rp78.000,00 per unit, berapakah harga per unit yang harus ditetapkan jika permintaan meningkat menjadi $90$ unit per minggu? (Gunakan pendekatan $e^{-0,8} \\approx 0,45$ dan $e^{-1,8} \\approx 0,165$)",
+      "jawaban_benar": "Rp77.145,00",
+      "alasan_benar": "Fungsi harga $p(x) = \\int -0,06e^{-0,02x}\\,dx = \\frac{-0,06}{-0,02}e^{-0,02x} + C = 3e^{-0,02x} + C$. Diketahui $p(40) = 78$ (ribu), maka $3e^{-0,02(40)} + C = 78 \\iff 3(0,45) + C = 78 \\iff 1,35 + C = 78 \\iff C = 76,65$. Untuk $x = 90$, diperoleh $p(90) = 3e^{-0,02(90)} + 76,65 = 3(0,165) + 76,65 = 0,495 + 76,65 = 77,145$ ribu rupiah, yaitu Rp77.145,00.",
+      "distraktor": [
+        {
+          "teks": "Rp76.650,00",
+          "alasan": "Siswa hanya menghitung nilai konstanta $C$ dan mengabaikan nilai suku eksponensial $3e^{-1,8}$."
+        },
+        {
+          "teks": "Rp77.505,00",
+          "alasan": "Siswa keliru membagi koefisien menjadi $-3$ alih-alih $+3$ saat mengintegralkan, lalu melakukan pengurangan yang terbalik."
+        },
+        {
+          "teks": "Rp78.855,00",
+          "alasan": "Siswa salah mengalikan turunan dalam integrasi eksponensial sehingga suku berubah menjadi $-0,06 \\times (-0,02)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan fungsi harga $p(x)$ dari fungsi marginal:\n$$p(x) = \\int p'(x)\\,dx = \\int -0,06e^{-0,02x}\\,dx = \\frac{-0,06}{-0,02}e^{-0,02x} + C = 3e^{-0,02x} + C$$\n\nLangkah 2: Menentukan konstanta $C$ menggunakan kondisi $p(40) = 78$:\n$$3e^{-0,02(40)} + C = 78$$\n$$3e^{-0,8} + C = 78$$\n$$3(0,45) + C = 78$$\n$$1,35 + C = 78 \\implies C = 76,65$$\n\nLangkah 3: Menghitung harga per unit untuk $x = 90$:\n$$p(90) = 3e^{-0,02(90)} + 76,65$$\n$$p(90) = 3e^{-1,8} + 76,65$$\n$$p(90) = 3(0,165) + 76,65 = 0,495 + 76,65 = 77,145$$\n\nJadi, harga yang harus ditetapkan adalah Rp77.145,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Antiturunan atau integral dari f ^ x h untuk setiap nilai x pada interval I merupakan himpunan fungsi F ^ x h + C sehingga dxd 6 F ^ x h + C @ = f ^ x h ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "titik balik fungsi antiturunan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis titik stasioner turunan pertama dan kedua untuk mengidentifikasi titik balik maksimum, menghitung konstanta integrasi, serta mengevaluasi nilai minimum kurva.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi $y = F(x)$ merupakan salah satu antiturunan dari fungsi $f(x) = 3x^2 - 12x + 9$. Jika grafik fungsi $F(x)$ mempunyai titik balik maksimum lokal di titik $(p, 10)$, nilai minimum lokal dari fungsi $F(x)$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "$F'(x) = f(x) = 3(x - 1)(x - 3) = 0 \\implies x = 1$ atau $x = 3$. Karena $F''(1) = -6 < 0$, titik maksimum lokal tercapai di $x = 1$, sehingga $p = 1$ dan $F(1) = 10$. Antiturunannya adalah $F(x) = x^3 - 6x^2 + 9x + C$. Dengan $F(1) = 1 - 6 + 9 + C = 10$, diperoleh $C = 6$. Nilai minimum lokal terjadi pada $x = 3$, yaitu $F(3) = 3^3 - 6(3^2) + 9(3) + 6 = 6$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa salah menentukan nilai konstanta $C$, menganggap $C = 2$ karena keliru saat mengoperasikan $1 - 6 + 9$."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa salah mengidentifikasi absis titik balik, menukar titik minimum pada $x = 1$ dan maksimum pada $x = 3$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa lupa memperhitungkan suku konstan $C$ pada fungsi hasil integrasi saat menghitung nilai $F(3)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik stasioner fungsi $F(x)$:\nKarena $F'(x) = f(x)$, maka:\n$$3x^2 - 12x + 9 = 0 \\iff 3(x - 1)(x - 3) = 0 \\iff x = 1 \\text{ atau } x = 3$$\n\nLangkah 2: Menentukan jenis titik stasioner:\n$$F''(x) = 6x - 12$$\nUntuk $x = 1 \\implies F''(1) = 6(1) - 12 = -6 < 0$ (titik maksimum lokal).\nUntuk $x = 3 \\implies F''(3) = 6(3) - 12 = 6 > 0$ (titik minimum lokal).\nDiketahui titik maksimum di $(p, 10)$, maka $p = 1$ dan $F(1) = 10$.\n\nLangkah 3: Menentukan rumus fungsi $F(x)$:\n$$F(x) = \\int (3x^2 - 12x + 9)\\,dx = x^3 - 6x^2 + 9x + C$$\n$$F(1) = 1^3 - 6(1^2) + 9(1) + C = 10 \\iff 4 + C = 10 \\implies C = 6$$\nJadi, $F(x) = x^3 - 6x^2 + 9x + 6$.\n\nLangkah 4: Menghitung nilai minimum lokal di $x = 3$:\n$$F(3) = 3^3 - 6(3^2) + 9(3) + 6 = 27 - 54 + 27 + 6 = 6$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sifat 3.6 Aturan Integrasi Substitusi Jika g suatu fungsi yang dapat didiferensialkan dan n sebuah bilangan rasional, maka # 6 g ^ x h@ ng l^ x h dx = n +1 1 6 g ^ x h@ n + 1 + C ; n ! - 1 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis asimtot dan ekstrem kurva",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memadukan integrasi substitusi aljabar dengan konsep limit di tak hingga (asimtot datar) dan nilai ekstrem kurva rasional.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui turunan pertama fungsi $f(x)$ adalah $f'(x) = \\frac{6x - 6}{(x^2 - 2x + 3)^2}$. Kurva $y = f(x)$ memiliki asimtot datar $y = 2$ ketika $x \\to \\infty$. Nilai minimum mutlak fungsi $f(x)$ pada domain bilangan real adalah ....",
+      "jawaban_benar": "\\frac{1}{2}",
+      "alasan_benar": "Dengan substitusi $u = x^2 - 2x + 3$, didapat $du = (2x - 2)\\,dx$, sehingga $f(x) = \\int 3u^{-2}\\,du = -\\frac{3}{u} + C = -\\frac{3}{x^2 - 2x + 3} + C$. Karena $\\lim_{x \\to \\infty} f(x) = 2$, maka $0 + C = 2 \\implies C = 2$. Bentuk penyebut $x^2 - 2x + 3 = (x - 1)^2 + 2$ bernilai minimum $2$ saat $x = 1$. Akibatnya, nilai minimum fungsi $f(x)$ tercapai di $x = 1$, yaitu $f(1) = -\\frac{3}{2} + 2 = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "-\\frac{1}{2}",
+          "alasan": "Siswa keliru menganggap $C = 1$ saat menganalisis asimtot datar."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa salah menyubstitusikan nilai penyebut dengan mengabaikan konstanta $+2$ pada kuadrat sempurna."
+        },
+        {
+          "teks": "\\frac{3}{2}",
+          "alasan": "Siswa menghitung nilai suku $\\frac{3}{x^2 - 2x + 3}$ saja tanpa menyertakan konstanta $C$ dan tanda negatif."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus $f(x)$ menggunakan aturan substitusi:\nMisalkan $u = x^2 - 2x + 3$, maka $du = (2x - 2)\\,dx$.\nPembilang dapat ditulis sebagai $3(2x - 2)\\,dx = 3\\,du$.\n$$f(x) = \\int \\frac{3\\,du}{u^2} = \\int 3u^{-2}\\,du = -3u^{-1} + C = -\\frac{3}{x^2 - 2x + 3} + C$$\n\nLangkah 2: Menentukan nilai konstanta $C$ dari asimtot datar:\n$$\\lim_{x \\to \\infty} f(x) = \\lim_{x \\to \\infty} \\left(-\\frac{3}{x^2 - 2x + 3} + C\\right) = 0 + C = 2 \\implies C = 2$$\nSehingga $f(x) = 2 - \\frac{3}{x^2 - 2x + 3}$.\n\nLangkah 3: Menganalisis nilai minimum fungsi:\nFungsi $f(x) = 2 - \\frac{3}{x^2 - 2x + 3}$ akan bernilai minimum ketika pecahan $\\frac{3}{x^2 - 2x + 3}$ bernilai maksimum, yaitu saat penyebutnya $x^2 - 2x + 3 = (x - 1)^2 + 2$ bernilai minimum.\nNilai minimum penyebut adalah $2$ (tercapai saat $x = 1$).\n\nLangkah 4: Menghitung nilai minimum fungsi:\n$$f(1) = 2 - \\frac{3}{(1 - 1)^2 + 2} = 2 - \\frac{3}{2} = \\frac{1}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sifat 3.8 Aturan Integral Trigonometri sin x dx = - cos x + C . cos x dx = sin x + C ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi kurva antiturunan tingkat dua",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pengintegralan dua tahap fungsi trigonometri serta penentuan dua konstanta integrasi berbeda dari kondisi titik singgung horizontal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Turunan kedua suatu fungsi adalah $f''(x) = 4\\cos(2x) - 6\\sin(3x)$ untuk setiap $x \\in \\mathbb{R}$. Kurva $y = f(x)$ memiliki garis singgung horizontal di titik $(0, 5)$. Nilai dari $f(\\pi)$ adalah ....",
+      "jawaban_benar": "5 - 2\\pi",
+      "alasan_benar": "Pengintegralan pertama menghasilkan $f'(x) = 2\\sin(2x) + 2\\cos(3x) + C_1$. Garis singgung horizontal di $x = 0$ berarti $f'(0) = 0 \\implies 0 + 2 + C_1 = 0 \\implies C_1 = -2$. Pengintegralan kedua menghasilkan $f(x) = -\\cos(2x) + \\frac{2}{3}\\sin(3x) - 2x + C_2$. Kurva melalui $(0, 5) \\implies -1 + 0 - 0 + C_2 = 5 \\implies C_2 = 6$. Maka $f(\\pi) = -\\cos(2\\pi) + \\frac{2}{3}\\sin(3\\pi) - 2\\pi + 6 = -1 + 0 - 2\\pi + 6 = 5 - 2\\pi$.",
+      "distraktor": [
+        {
+          "teks": "7 - 2\\pi",
+          "alasan": "Siswa salah tanda saat mengintegralkan $\\sin(2x)$, menuliskan $+\\cos(2x)$ alih-alih $-\\cos(2x)$ sehingga $C_2 = 4$ dan evaluasi menghasilkan $7 - 2\\pi$."
+        },
+        {
+          "teks": "5 + 2\\pi",
+          "alasan": "Siswa salah menentukan tanda dari konstanta $C_1$, mendapatkan $C_1 = +2$ dan menghasilkan suku $+2\\pi$."
+        },
+        {
+          "teks": "6 - 2\\pi",
+          "alasan": "Siswa mengabaikan suku $-\\cos(2\\pi) = -1$ saat melakukan evaluasi akhir pada nilai $x = \\pi$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan $f'(x)$ melalui integral pertama:\n$$f'(x) = \\int (4\\cos(2x) - 6\\sin(3x))\\,dx = 2\\sin(2x) + 2\\cos(3x) + C_1$$\n\nLangkah 2: Menentukan $C_1$ menggunakan syarat garis singgung horizontal di $x = 0$ ($f'(0) = 0$):\n$$f'(0) = 2\\sin(0) + 2\\cos(0) + C_1 = 0 \\iff 0 + 2(1) + C_1 = 0 \\implies C_1 = -2$$\nSehingga $f'(x) = 2\\sin(2x) + 2\\cos(3x) - 2$.\n\nLangkah 3: Menentukan $f(x)$ melalui integral kedua:\n$$f(x) = \\int (2\\sin(2x) + 2\\cos(3x) - 2)\\,dx = -\\cos(2x) + \\frac{2}{3}\\sin(3x) - 2x + C_2$$\n\nLangkah 4: Menentukan $C_2$ menggunakan titik $(0, 5)$ yang dilalui kurva:\n$$f(0) = -\\cos(0) + \\frac{2}{3}\\sin(0) - 2(0) + C_2 = 5 \\iff -1 + 0 - 0 + C_2 = 5 \\implies C_2 = 6$$\nJadi, $f(x) = -\\cos(2x) + \\frac{2}{3}\\sin(3x) - 2x + 6$.\n\nLangkah 5: Menghitung nilai $f(\\pi)$:\n$$f(\\pi) = -\\cos(2\\pi) + \\frac{2}{3}\\sin(3\\pi) - 2\\pi + 6 = -(1) + \\frac{2}{3}(0) - 2\\pi + 6 = 5 - 2\\pi$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 193,
+        "bagian": "Latihan Soal Integral Tak Tentu",
+        "nomor": "5",
+        "teks": "Sebuah supermarket menjual pasta gigi merek XYZdent. Saat permintaan mencapai 50 kemasan per minggu, harga jualnya menjadi Rp39.500,00/ kemasan. Perubahan harga terhadap jumlah permintaan (fungsi marginal harga permintaan) dinyatakan dalam fungsi p l^ x h =- 0, 017 e -0,01 x dengan x menyatakan jumlah kemasan yang diminta per minggu dan p ( x ) adalah harga per kemasan. Berdasarkan informasi tersebut, tentukan harga per kemasan yang harus ditetapkan oleh supermarket jika ingin menjual 100 kemasan per minggu.",
+        "jawaban": "Rp37.750,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan peluruhan eksponensial fisika",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengubah konteks ekonomi ke peluruhan intensitas cahaya melalui medium penyerap dengan fungsi marginal eksponensial berparameter serta kondisi batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Laju perubahan intensitas berkas radiasi terhadap ketebalan medium penyerap $x$ (dalam cm) dinyatakan oleh fungsi intensitas marginal $I'(x) = -40 e^{-0,02x}$ (dalam $\\text{W}/\\text{m}^2$ per cm). Pada ketebalan $50\\text{ cm}$, intensitas radiasi terukur sebesar $1.200\\text{ W}/\\text{m}^2$. Diketahui aproksimasi nilai $e^{-1} \\approx 0,368$ dan $e^{-2} \\approx 0,135$. Berapakah intensitas radiasi yang lolos ketika ketebalan medium mencapai $100\\text{ cm}$?",
+      "jawaban_benar": "$734\\text{ W}/\\text{m}^2$",
+      "alasan_benar": "$I(x) = \\int -40 e^{-0,02x}\\,dx = \\frac{-40}{-0,02}e^{-0,02x} + C = 2.000 e^{-0,02x} + C$. Dari $I(50) = 1.200$: $2.000 e^{-1} + C = 1.200 \\implies 2.000(0,368) + C = 1.200 \\implies 736 + C = 1.200 \\implies C = 464$. Untuk $x = 100$: $I(100) = 2.000 e^{-2} + 464 = 2.000(0,135) + 464 = 270 + 464 = 734\\text{ W}/\\text{m}^2$.",
+      "distraktor": [
+        {
+          "teks": "$600\\text{ W}/\\text{m}^2$",
+          "alasan": "Siswa salah menggunakan ekstrapolasi linear dengan mengira intensitas berkurang secara proporsional tetap dari ketebalan 50 cm ke 100 cm."
+        },
+        {
+          "teks": "$1.004\\text{ W}/\\text{m}^2$",
+          "alasan": "Siswa melakukan kesalahan tanda pada pembagian eksponen sehingga $C = 1.200 - (-736) = 1.936$ atau salah mengoperasikan nilai $C$."
+        },
+        {
+          "teks": "$270\\text{ W}/\\text{m}^2$",
+          "alasan": "Siswa lupa menambahkan nilai konstanta integrasi $C = 464$ ke dalam perhitungan akhir."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus umum intensitas $I(x)$ melalui integrasi tak tentu:\n$$I(x) = \\int I'(x)\\,dx = \\int -40 e^{-0,02x}\\,dx$$\n$$I(x) = \\frac{-40}{-0,02} e^{-0,02x} + C = 2.000 e^{-0,02x} + C$$\n\nLangkah 2: Menghitung nilai konstanta integrasi $C$ dari kondisi batas $I(50) = 1.200$:\n$$I(50) = 2.000 e^{-0,02(50)} + C = 1.200$$\n$$2.000 e^{-1} + C = 1.200$$\n$$2.000(0,368) + C = 1.200 \\implies 736 + C = 1.200 \\implies C = 464$$\n\nLangkah 3: Menghitung intensitas pada ketebalan $x = 100\\text{ cm}$:\n$$I(100) = 2.000 e^{-0,02(100)} + 464 = 2.000 e^{-2} + 464$$\n$$I(100) = 2.000(0,135) + 464 = 270 + 464 = 734\\text{ W}/\\text{m}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Antiturunan atau integral dari f(x) untuk setiap nilai x pada interval I merupakan himpunan fungsi F(x) + C sehingga d/dx[F(x) + C] = f(x)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis titik ekstrem fungsi antiturunan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan fungsi antiturunan dari turunan polinomial berderajat dua, analisis letak ekstrem lokal, penentuan konstanta integrasi dari syarat sumbu-X, dan evaluasi ordinat ekstrem lainnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi $y = F(x)$ merupakan antiturunan dari fungsi $f(x) = 6x^2 - 18x + 12$. Jika grafik fungsi $y = F(x)$ memiliki titik balik minimum lokal yang menyinggung sumbu-$X$, berapakah nilai ordinat dari titik balik maksimum lokal kurva tersebut?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "$F'(x) = f(x) = 6(x - 1)(x - 2) = 0 \\implies x = 1$ (maksimum lokal) dan $x = 2$ (minimum lokal). $F(x) = \\int (6x^2 - 18x + 12)\\,dx = 2x^3 - 9x^2 + 12x + C$. Titik balik minimum lokal di sumbu-$X \\implies F(2) = 0 \\implies 2(8) - 9(4) + 12(2) + C = 0 \\implies 4 + C = 0 \\implies C = -4$. Nilai maksimum lokal adalah $F(1) = 2(1) - 9(1) + 12(1) - 4 = 1$.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Siswa tertukar antara titik maksimum dan titik minimum, menetapkan $F(1) = 0$ sehingga $5 + C = 0 \\implies C = -5$, lalu menghitung $F(2) = 4 - 5 = -1$ atau mengira nilai puncak adalah 5."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Siswa salah tanda saat menyelesaikan persamaan $4 + C = 0$ menjadi $C = 4$, sehingga $F(1) = 5 + 4 = 9$ atau salah mengurangkan pada $F(2)$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa langsung mengambil nilai $F(2) - C = 4$ sebagai nilai ordinat tanpa menghitung $F(1)$ secara utuh."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik kritis dari antiturunan $F(x)$.\nKarena $F'(x) = f(x)$, maka:\n$$F'(x) = 6x^2 - 18x + 12 = 0$$\n$$6(x^2 - 3x + 2) = 0 \\implies 6(x - 1)(x - 2) = 0$$\nTitik kritis adalah $x = 1$ dan $x = 2$.\nBerdasarkan uji turunan kedua $F''(x) = 12x - 18$:\n- Untuk $x = 1$, $F''(1) = -6 < 0$ (titik balik maksimum lokal).\n- Untuk $x = 2$, $F''(2) = 6 > 0$ (titik balik minimum lokal).\n\nLangkah 2: Menentukan rumus umum fungsi $F(x)$:\n$$F(x) = \\int (6x^2 - 18x + 12)\\,dx = 2x^3 - 9x^2 + 12x + C$$\n\nLangkah 3: Titik balik minimum lokal menyinggung sumbu-$X$, artinya $F(2) = 0$:\n$$F(2) = 2(2)^3 - 9(2)^2 + 12(2) + C = 0$$\n$$16 - 36 + 24 + C = 0$$\n$$4 + C = 0 \\implies C = -4$$\n\nLangkah 4: Menghitung nilai ordinat titik balik maksimum lokal di $x = 1$:\n$$F(1) = 2(1)^3 - 9(1)^2 + 12(1) + (-4)$$\n$$F(1) = 2 - 9 + 12 - 4 = 1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "u dv . = … - … ."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "kombinasi substitusi dan integrasi parsial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan strategi penyelesaian dengan substitusi terlebih dahulu sebelum menerapkan integrasi parsial pada fungsi eksponensial komposit, diikuti evaluasi nilai awal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu fungsi $f(x)$ terdiferensialkan untuk setiap bilangan real dan memenuhi persamaan turunan $f'(x) = x^3 e^{x^2}$. Jika grafik fungsi $y = f(x)$ melalui titik $(0, 1)$, berapakah nilai dari $f(2)$?",
+      "jawaban_benar": "$\\frac{3e^4 + 3}{2}$",
+      "alasan_benar": "Substitusi $t = x^2 \\implies dt = 2x dx$. Maka $\\int x^3 e^{x^2}\\,dx = \\int x^2 e^{x^2} \\cdot x\\,dx = \\frac{1}{2}\\int t e^t\\,dt$. Dengan integrasi parsial, $\\int t e^t\\,dt = t e^t - e^t + C_1$. Jadi $f(x) = \\frac{1}{2}(x^2 e^{x^2} - e^{x^2}) + C = \\frac{1}{2}(x^2 - 1)e^{x^2} + C$. Dari $f(0) = 1$: $\\frac{1}{2}(0 - 1)e^0 + C = 1 \\implies -\\frac{1}{2} + C = 1 \\implies C = \\frac{3}{2}$. Maka $f(2) = \\frac{1}{2}(4 - 1)e^4 + \\frac{3}{2} = \\frac{3}{2}e^4 + \\frac{3}{2} = \\frac{3e^4 + 3}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3e^4 + 1}{2}$",
+          "alasan": "Siswa mengabaikan suku $-1/2$ dari $-\\frac{1}{2}e^0$ sehingga menganggap $C = 1$ bukan $\\frac{3}{2}$."
+        },
+        {
+          "teks": "$3e^4 + 3$",
+          "alasan": "Siswa lupa mengalikan faktor $\\frac{1}{2}$ yang berasal dari turunan substitusi $dt = 2x dx$."
+        },
+        {
+          "teks": "$\\frac{5e^4 + 3}{2}$",
+          "alasan": "Siswa melakukan kesalahan tanda pada integrasi parsial menjadi $(t + 1)e^t$ sehingga $(x^2 + 1) = 5$ pada $x = 2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan bentuk integral tak tentu dari $f'(x)$:\n$$f(x) = \\int x^3 e^{x^2}\\,dx$$\n\nLangkah 2: Lakukan substitusi awal. Misalkan $t = x^2$, maka $dt = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}\\,dt$:\n$$\\int x^3 e^{x^2}\\,dx = \\int x^2 e^{x^2} (x\\,dx) = \\int t e^t \\left(\\frac{1}{2}\\,dt\\right) = \\frac{1}{2}\\int t e^t\\,dt$$\n\nLangkah 3: Terapkan integrasi parsial pada $\\int t e^t\\,dt$.\nMisalkan $u = t \\implies du = dt$ dan $dv = e^t\\,dt \\implies v = e^t$:\n$$\\int t e^t\\,dt = t e^t - \\int e^t\\,dt = t e^t - e^t = (t - 1)e^t$$\nKembalikan ke variabel $x$:\n$$f(x) = \\frac{1}{2}(x^2 - 1)e^{x^2} + C$$\n\nLangkah 4: Tentukan nilai konstanta $C$ menggunakan titik $(0, 1)$:\n$$f(0) = \\frac{1}{2}(0^2 - 1)e^0 + C = 1$$\n$$\\frac{1}{2}(-1)(1) + C = 1 \\implies -\\frac{1}{2} + C = 1 \\implies C = \\frac{3}{2}$$\n\nLangkah 5: Evaluasi nilai $f(2)$:\n$$f(2) = \\frac{1}{2}(2^2 - 1)e^{2^2} + \\frac{3}{2} = \\frac{1}{2}(3)e^4 + \\frac{3}{2} = \\frac{3e^4 + 3}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika g suatu fungsi yang dapat didiferensialkan dan n sebuah bilangan rasional, maka"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesalahan prosedur integrasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus mengevaluasi baris demi baris argumen matematis untuk mendeteksi kesalahan konsep pengintegralan substitusi berpangkat rasional.",
+      "stimulus": "Seorang siswa diminta menyelesaikan $\\int \\frac{x}{\\sqrt{x^2 + 9}}\\,dx$. Berikut adalah tahapan yang dikerjakannya:\n\n- **Langkah 1**: Menuliskan integral ke dalam bentuk eksponen: $\\int x(x^2 + 9)^{-\\frac{1}{2}}\\,dx$.\n- **Langkah 2**: Memilih substitusi $u = x^2 + 9$, sehingga $du = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}\\,du$.\n- **Langkah 3**: Mengubah bentuk integral menjadi $\\frac{1}{2} \\int u^{-\\frac{1}{2}}\\,du$.\n- **Langkah 4**: Mengintegralkan terhadap $u$: $\\frac{1}{2} \\cdot \\left(-\\frac{1}{2} u^{\\frac{1}{2}}\\right) + C = -\\frac{1}{4} \\sqrt{x^2 + 9} + C$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan langkah penyelesaian tersebut, pada langkah berapakah kesalahan pertama kali terjadi, dan bagaimana perbaikannya yang tepat?",
+      "jawaban_benar": "Langkah 4 salah; seharusnya antiturunan dari $u^{-\\frac{1}{2}}$ dikalikan $\\frac{1}{-\\frac{1}{2} + 1} = 2$, sehingga diperoleh $\\sqrt{x^2 + 9} + C$.",
+      "alasan_benar": "Pada Langkah 4, siswa mengalikan dengan pangkat lama ($-\\frac{1}{2}$) bukannya membagi dengan pangkat baru ($n + 1 = \\frac{1}{2}$), yang seharusnya menghasilkan koefisien $\\frac{1}{1/2} = 2$.",
+      "distraktor": [
+        {
+          "teks": "Langkah 1 salah; bentuk akar pada penyebut seharusnya diubah menjadi pangkat $\\frac{1}{2}$, bukan $-\\frac{1}{2}$.",
+          "alasan": "Salah memahami sifat eksponen pecahan negatif pada posisi penyebut pecahan."
+        },
+        {
+          "teks": "Langkah 2 salah; diferensial dari $u = x^2 + 9$ seharusnya menghasilkan $du = x\\,dx$ tanpa faktor 2.",
+          "alasan": "Kesalahan menurunkan fungsi $x^2$ yang seharusnya berkoefisien 2."
+        },
+        {
+          "teks": "Langkah 3 salah; substitusi diferensial seharusnya menghasilkan pengali 2 di luar integral, yaitu $2 \\int u^{-\\frac{1}{2}}\\,du$.",
+          "alasan": "Kebalikan operasi pembagian konstanta saat menyatakan $x\\,dx$ dalam $du$."
+        }
+      ],
+      "pembahasan": "Evaluasi per langkah:\n- Langkah 1 benar: $\\frac{1}{\\sqrt{x^2+9}} = (x^2+9)^{-\\frac{1}{2}}$.\n- Langkah 2 benar: $u = x^2+9 \\implies du = 2x\\,dx \\implies x\\,dx = \\frac{1}{2}\\,du$.\n- Langkah 3 benar: $\\int x(x^2+9)^{-\\frac{1}{2}}\\,dx = \\int u^{-\\frac{1}{2}} \\left(\\frac{1}{2}\\,du\\right) = \\frac{1}{2} \\int u^{-\\frac{1}{2}}\\,du$.\n- Langkah 4 salah: Menggunakan aturan $\\int u^n\\,du = \\frac{1}{n+1}u^{n+1}+C$ dengan $n = -\\frac{1}{2}$, diperoleh $\\frac{1}{-\\frac{1}{2}+1} u^{-\\frac{1}{2}+1} = \\frac{1}{1/2} u^{1/2} = 2u^{1/2}$. Jadi, hasil sebenarnya adalah $\\frac{1}{2} \\cdot 2u^{1/2} + C = \\sqrt{u} + C = \\sqrt{x^2+9} + C$. Siswa melakukan kesalahan dengan mengalikan pangkat lama.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0193-latihan-soal-integral-tak-tentu-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "akumulasi laju pertumbuhan sel",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan laju perubahan melalui integral tak tentu dengan substitusi variabel, penentuan nilai parameter waktu relatif terhadap titik acuan tanggal, serta evaluasi konstanta integrasi dari syarat batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam 15 hari pertama bulan Januari, sebuah sel suatu tanaman bertumbuh sedemikian rupa sehingga pada $t$ hari sesudah tanggal 1 Januari, volume sel itu bertambah dengan kecepatan $(18 - t)^{-2}$ mikrometer kubik per hari. Jika pada tanggal 9 Januari volume sel itu adalah 7 mikrometer kubik, berapa volumenya pada tanggal 14 Januari?",
+      "jawaban_benar": "7,1 mikrometer kubik",
+      "alasan_benar": "Kecepatan pertambahan volume adalah laju perubahan volume terhadap waktu, $V'(t) = (18 - t)^{-2}$. Antiturunan dari fungsi tersebut diperoleh melalui substitusi $u = 18 - t$ sehingga $du = -dt$, menghasilkan $V(t) = \\int (18 - t)^{-2}\\,dt = \\frac{1}{18 - t} + C$. Waktu $t$ dihitung sesudah 1 Januari: tanggal 9 Januari bersesuaian dengan $t = 9 - 1 = 8$, sehingga $V(8) = \\frac{1}{18 - 8} + C = 7 \\iff 0,1 + C = 7 \\iff C = 6,9$. Pada tanggal 14 Januari ($t = 14 - 1 = 13$), volume sel adalah $V(13) = \\frac{1}{18 - 13} + 6,9 = \\frac{1}{5} + 6,9 = 0,2 + 6,9 = 7,1\\text{ mikrometer kubik}$.",
+      "distraktor": [
+        {
+          "teks": "6,9 mikrometer kubik",
+          "alasan": "Siswa keliru tidak memperhitungkan tanda negatif dari turunan fungsi dalam ($du = -dt$) saat melakukan substitusi, sehingga memperoleh antiturunan $V(t) = -\\frac{1}{18 - t} + C$, menghasilkan $C = 7,1$ dan $V(13) = -0,2 + 7,1 = 6,9$."
+        },
+        {
+          "teks": "7,2 mikrometer kubik",
+          "alasan": "Siswa mengabaikan kontribusi nilai fungsi pada $t = 8$ dan langsung menambahkan nilai $\\frac{1}{18 - 13} = 0,2$ ke volume 7 mikrometer kubik seolah-olah 7 adalah nilai konstanta awal."
+        },
+        {
+          "teks": "7,4 mikrometer kubik",
+          "alasan": "Siswa salah mengubah pecahan $\\frac{1}{5}$ menjadi desimal $0,5$ (tertukar dengan $\\frac{1}{2}$), sehingga menghitung $0,5 + 6,9 = 7,4$."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Tentukan rumus fungsi volume $V(t)$:\n$$\\frac{dV}{dt} = (18 - t)^{-2}$$\n$$V(t) = \\int (18 - t)^{-2}\\,dt$$\nMisalkan $u = 18 - t$, maka $du = -dt$ atau $dt = -du$.\n$$V(t) = \\int u^{-2}(-du) = -\\left(-u^{-1}\\right) + C = \\frac{1}{18 - t} + C$$\n\n2. Tentukan nilai $t$ untuk tanggal 9 Januari:\nKarena $t$ menyatakan hari sesudah 1 Januari, maka pada tanggal 9 Januari berlaku $t = 9 - 1 = 8$.\nDiketahui $V(8) = 7$:\n$$\\frac{1}{18 - 8} + C = 7$$\n$$\\frac{1}{10} + C = 7$$\n$$0,1 + C = 7 \\implies C = 6,9$$\n\n3. Tentukan fungsi volume sel secara lengkap:\n$$V(t) = \\frac{1}{18 - t} + 6,9$$\n\n4. Hitung volume sel pada tanggal 14 Januari ($t = 14 - 1 = 13$):\n$$V(13) = \\frac{1}{18 - 13} + 6,9 = \\frac{1}{5} + 6,9 = 0,2 + 6,9 = 7,1\\text{ mikrometer kubik}$$\n\nJadi, volume sel pada tanggal 14 Januari adalah 7,1 mikrometer kubik.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Antiturunan atau integral dari f ^ x h untuk setiap nilai x pada interval I merupakan himpunan fungsi F ^ x h + C sehingga dxd 6 F ^ x h + C @ = f ^ x h ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi polinomial antiturunan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Melibatkan penentuan fungsi antiturunan melalui integrasi aljabar dengan parameter, dilanjutkan analisis titik kritis untuk mengevaluasi selisih nilai ekstrem lokal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui turunan pertama fungsi $F(x)$ adalah $F'(x) = 6x^2 - 6(a + 1)x + 6a$ dengan $a$ merupakan suatu konstanta real di mana $a > 1$. Jika selisih antara nilai balik maksimum lokal dan nilai balik minimum lokal dari kurva $y = F(x)$ adalah $27$, tentukan nilai dari konstanta $a$.",
+      "jawaban_benar": "4",
+      "alasan_benar": "F'(x) = 6(x - 1)(x - a) = 0 menghasilkan titik kritis x = 1 (maksimum) dan x = a (minimum). Selisih nilai ekstremnya adalah F(1) - F(a) = (a - 1)^3 = 27 sehingga a - 1 = 3, maka a = 4.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa menyamakan (a - 1)^3 = 1 bukan 27, atau salah mengakar pangkat tiga."
+        },
+        {
+          "teks": "3",
+          "alasan": "Siswa menganggap a = 3 dari hasil akar kubik 27 tanpa menambahkan 1."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah menghitung pengali koefisien polinomial sehingga memperoleh (a - 1)^3 = 64."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Menentukan titik stasioner:\n$F'(x) = 6(x^2 - (a + 1)x + a) = 6(x - 1)(x - a) = 0$.\nKarena $a > 1$, uji tanda turunan menunjukkan bahwa $F(x)$ mencapai maksimum lokal di $x = 1$ dan minimum lokal di $x = a$.\n2. Menentukan rumus antiturunan $F(x)$:\n$$F(x) = \\int [6x^2 - 6(a + 1)x + 6a]\\,dx = 2x^3 - 3(a + 1)x^2 + 6ax + C$$\n3. Menghitung nilai fungsi di titik stasioner:\n- $F(1) = 2 - 3(a + 1) + 6a + C = 3a - 1 + C$\n- $F(a) = 2a^3 - 3(a + 1)a^2 + 6a^2 + C = -a^3 + 3a^2 + C$\n4. Selisih nilai ekstrem:\n$$F(1) - F(a) = (3a - 1 + C) - (-a^3 + 3a^2 + C) = a^3 - 3a^2 + 3a - 1 = (a - 1)^3$$\n5. Menyelesaikan persamaan:\n$$(a - 1)^3 = 27 \\implies a - 1 = 3 \\implies a = 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Adapun proses untuk memperoleh y dari dx disebut antiturunan atau integral ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis titik belok kurva antiturunan",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan integrasi bertingkat dua kali dengan mengevaluasi kondisi batas geometris garis singgung horizontal pada titik belok kurva.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Turunan kedua suatu fungsi polinomial dinyatakan oleh $f''(x) = 12x - 18$ untuk setiap bilangan real $x$. Kurva $y = f(x)$ memiliki titik belok di mana garis singgung kurva di titik tersebut merupakan garis horizontal $y = 5$. Nilai dari $f(0)$ adalah ....",
+      "jawaban_benar": "$-\\frac{7}{4}$",
+      "alasan_benar": "Titik belok terjadi di f''(x) = 0 yaitu x = 3/2. Garis singgung horizontal berarti f'(3/2) = 0, menghasilkan C1 = 27/2. Kurva melalui (3/2, 5) menghasilkan f(0) = C2 = -7/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{4}$",
+          "alasan": "Siswa salah tanda saat memindahkan ruas konstanta integrasi kedua."
+        },
+        {
+          "teks": "$-\\frac{27}{4}$",
+          "alasan": "Siswa lupa memperhitungkan nilai y = 5 dan langsung menggunakan C2 = -f(3/2) tanpa konstanta."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa keliru mengira f(0) sama dengan ordinat garis singgung horizontal."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Menentukan absis titik belok:\n$$f''(x) = 0 \\implies 12x - 18 = 0 \\implies x = \\frac{3}{2}$$\n2. Menentukan fungsi turunan pertama $f'(x)$:\n$$f'(x) = \\int (12x - 18)\\,dx = 6x^2 - 18x + C_1$$\nKarena garis singgung di titik belok horizontal, maka gradiennya nol:\n$$f'\\left(\\frac{3}{2}\\right) = 0 \\implies 6\\left(\\frac{9}{4}\\right) - 18\\left(\\frac{3}{2}\\right) + C_1 = 0 \\implies \\frac{27}{2} - 27 + C_1 = 0 \\implies C_1 = \\frac{27}{2}$$\n3. Menentukan fungsi $f(x)$:\n$$f(x) = \\int \\left(6x^2 - 18x + \\frac{27}{2}\\right)dx = 2x^3 - 9x^2 + \\frac{27}{2}x + C_2$$\n4. Titik belok berada pada garis $y = 5$, sehingga $f(3/2) = 5$:\n$$2\\left(\\frac{27}{8}\\right) - 9\\left(\\frac{9}{4}\\right) + \\frac{27}{2}\\left(\\frac{3}{2}\\right) + C_2 = 5$$\n$$\\frac{27}{4} - \\frac{81}{4} + \\frac{81}{4} + C_2 = 5 \\implies \\frac{27}{4} + C_2 = 5 \\implies C_2 = 5 - \\frac{27}{4} = -\\frac{7}{4}$$\n5. Nilai $f(0) = C_2 = -\\frac{7}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sifat 3.5 Jika f 1^ x h dan f 2^ x h didefinisikan pada interval yang sama, maka # 6 f 1 ^ x h - f 2 ^ x h@ dx = # f 1 ^ x h dx - # f 2 ^ x h dx ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi batas nilai antiturunan aljabar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan integrasi polinomial tak tentu dan evaluasi perpotongan kurva antiturunan dengan garis lurus pada sumbu koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi $F(x)$ merupakan antiturunan dari $f(x) = (3x - 1)(x + 2)$. Garis lurus $g: y = 4x - 7$ memotong kurva $y = F(x)$ tepat di titik potong kurva tersebut dengan sumbu-$y$. Nilai dari $2 \\cdot F(2)$ adalah ....",
+      "jawaban_benar": "14",
+      "alasan_benar": "f(x) = 3x^2 + 5x - 2, sehingga F(x) = x^3 + (5/2)x^2 - 2x + C. Titik potong sumbu-y adalah (0, -7) sehingga C = -7. F(2) = 7, sehingga 2 * F(2) = 14.",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "Siswa lupa mengalikan dengan faktor 2 di akhir soal."
+        },
+        {
+          "teks": "28",
+          "alasan": "Siswa salah mengintegralkan suku 5x menjadi 5x^2 bukan (5/2)x^2."
+        },
+        {
+          "teks": "0",
+          "alasan": "Siswa mengabaikan konstanta C = -7 sehingga F(2) menjadi 14 - 14 = 0."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Menjabarkan integran:\n$$f(x) = (3x - 1)(x + 2) = 3x^2 + 5x - 2$$\n2. Mengintegralkan $f(x)$ untuk memperoleh $F(x)$:\n$$F(x) = \\int (3x^2 + 5x - 2)\\,dx = x^3 + \\frac{5}{2}x^2 - 2x + C$$\n3. Menentukan konstanta $C$:\nTitik potong garis $y = 4x - 7$ dengan sumbu-$y$ ($x = 0$) adalah $(0, -7)$. Karena kurva memotong garis di titik potong sumbu-$y$, maka $F(0) = -7 \\implies C = -7$.\nRumus fungsi: $F(x) = x^3 + \\frac{5}{2}x^2 - 2x - 7$.\n4. Menghitung $F(2)$ dan $2 \\cdot F(2)$:\n$$F(2) = 2^3 + \\frac{5}{2}(2^2) - 2(2) - 7 = 8 + 10 - 4 - 7 = 7$$\n$$2 \\cdot F(2) = 2 \\cdot 7 = 14$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 190,
+        "bagian": "Ayo Mencoba",
+        "nomor": "3.4",
+        "teks": "Sebuah partikel bergerak pada suatu garis lurus. Jarak tempuh suatu partikel dinyatakan dalam s m dari pusat pada saat t detik. Adapun kecepatan partikel adalah v cm/detik sehingga v = cos 2 rt dengan arah positif ke kanan dari titik pusat. Jika titik awal gerak partikel berada 5 cm di kanan titik pusat, tentukan 1 posisi partikel 3 detik kemudian.",
+        "jawaban": "s(1/3) = (sqrt(3)/(4*pi) + 5) cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kinematika gerak partikel trigonometri",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan integrasi substitusi fungsi trigonometri, penentuan konstanta C dari kondisi awal, dan evaluasi nilai fungsi pada waktu pecahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak pada suatu garis lurus dengan arah positif ke kanan dari titik pusat. Kecepatan partikel dinyatakan oleh persamaan $v(t) = 6\\cos(3\\pi t)$ (dalam cm/detik). Jika pada saat awal ($t = 0$) partikel berada pada posisi $4\\text{ cm}$ di sebelah kanan titik pusat, berapakah posisi partikel pada saat $t = \\frac{1}{2}$ detik?",
+      "jawaban_benar": "$\\left(4 - \\frac{2}{\\pi}\\right)\\text{ cm}$",
+      "alasan_benar": "$s(t) = \\int 6\\cos(3\\pi t)\\,dt = \\frac{2}{\\pi}\\sin(3\\pi t) + C$. Kondisi $s(0) = 4 \\implies C = 4$. Saat $t = 1/2$, $s(1/2) = \\frac{2}{\\pi}\\sin(3\\pi/2) + 4 = 4 - \\frac{2}{\\pi}$.",
+      "distraktor": [
+        {
+          "teks": "$\\left(4 + \\frac{2}{\\pi}\\right)\\text{ cm}$",
+          "alasan": "Salah menentukan tanda sin(3pi/2) menjadi +1 bukan -1."
+        },
+        {
+          "teks": "$\\left(4 - \\frac{6}{\\pi}\\right)\\text{ cm}$",
+          "alasan": "Lupa membagi koefisien dengan 3 saat mengintegralkan cos(3pi t)."
+        },
+        {
+          "teks": "$4\\text{ cm}$",
+          "alasan": "Mengira sin(3pi/2) = 0 sehingga suku trigonometri lenyap."
+        }
+      ],
+      "pembahasan": "Posisi $s(t) = \\int v(t)\\,dt = \\int 6\\cos(3\\pi t)\\,dt = \\frac{6}{3\\pi}\\sin(3\\pi t) + C = \\frac{2}{\\pi}\\sin(3\\pi t) + C$. Karena $s(0) = 4$, diperoleh $0 + C = 4 \\implies C = 4$. Pada saat $t = \\frac{1}{2}$, $s\\left(\\frac{1}{2}\\right) = \\frac{2}{\\pi}\\sin\\left(\\frac{3\\pi}{2}\\right) + 4 = \\frac{2}{\\pi}(-1) + 4 = 4 - \\frac{2}{\\pi}\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 191,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Catatan: Kamu dapat memperhatikan bahwa penyelesaian integral cos x x dx membutuhkan Aturan Integrasi Parsial integral u dv = uv - integral v du ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesetaraan integrasi parsial",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis penguraian integrasi parsial berulang pada bentuk aljabar-trigonometri untuk menemukan nilai parameter kombinasi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika $\\int x^2 \\cos x\\,dx = (x^2 + a)\\sin x + bx\\cos x + C$, dengan $a$ dan $b$ merupakan bilangan bulat serta $C$ konstanta integrasi, maka nilai dari $a - b$ adalah ....",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Integrasi parsial menghasilkan $(x^2 - 2)\\sin x + 2x\\cos x + C$, sehingga $a = -2$ dan $b = 2$, maka $a - b = -2 - 2 = -4$.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Menganggap a = 2 dan b = 2 karena kesalahan tanda pada antiturunan pertama."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Menghitung hanya nilai a saja dan mengabaikan suku -b."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Terbalik tanda sehingga memperoleh a = 2 dan b = -2."
+        }
+      ],
+      "pembahasan": "Gunakan integrasi parsial bertahap:\n1. Misalkan $u = x^2, dv = \\cos x\\,dx \\implies du = 2x\\,dx, v = \\sin x$.\nMaka $\\int x^2\\cos x\\,dx = x^2\\sin x - \\int 2x\\sin x\\,dx$.\n2. Untuk $\\int 2x\\sin x\\,dx$, misalkan $u_1 = 2x, dv_1 = \\sin x\\,dx \\implies du_1 = 2\\,dx, v_1 = -\\cos x$.\n$\\int 2x\\sin x\\,dx = -2x\\cos x - \\int (-2\\cos x)\\,dx = -2x\\cos x + 2\\sin x$.\n3. Gabungkan kedua hasil:\n$\\int x^2\\cos x\\,dx = x^2\\sin x - (-2x\\cos x + 2\\sin x) + C = (x^2 - 2)\\sin x + 2x\\cos x + C$.\nDengan demikian, $a = -2$ dan $b = 2$. Maka nilai $a - b = -2 - 2 = -4$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 182,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Definisi 3.1 Antiturunan atau integral dari f ( x ) untuk setiap nilai x pada interval I merupakan himpunan fungsi F ( x ) + C sehingga d/dx [F(x) + C] = f(x)"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi validitas prosedur integral",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap langkah matematis pengerjaan integral tidak tentu untuk mengidentifikasi letak kesalahan konseptual penerapan aturan dasar.",
+      "stimulus": "Diberikan penyelesaian seorang siswa dalam menentukan $\\int x(x - 3)^5\\,dx$ berikut:\n- **Langkah 1**: Menuliskan $x = (x - 3) + 3$, sehingga bentuk integral menjadi $\\int [(x - 3) + 3](x - 3)^5\\,dx$.\n- **Langkah 2**: Mengalikan ke dalam tanda kurung menjadi $\\int \\left((x - 3)^6 + 3(x - 3)^5\\right)\\,dx$.\n- **Langkah 3**: Memisahkan menjadi dua integral: $\\int (x - 3)^6\\,dx + 3\\int (x - 3)^5\\,dx$.\n- **Langkah 4**: Mengintegralkan masing-masing suku menjadi $\\frac{1}{6}(x - 3)^7 + \\frac{3}{5}(x - 3)^6 + C$.\n- **Langkah 5**: Menuliskan hasil akhir $\\frac{1}{6}(x - 3)^7 + \\frac{3}{5}(x - 3)^6 + C$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan tahapan penyelesaian tersebut, pada langkah keberapakah kesalahan pertama kali terjadi, dan bagaimana perbaikannya yang tepat?",
+      "jawaban_benar": "Langkah 4 salah; seharusnya hasil pengintegralan suku pertama adalah $\\frac{1}{7}(x - 3)^7$ dan suku kedua $\\frac{1}{2}(x - 3)^6 + C$.",
+      "alasan_benar": "Aturan pangkat menyatakan $\\int u^n\\,du = \\frac{1}{n+1}u^{n+1}$. Untuk pangkat 6 menjadi pembagi 7, dan untuk $3\\int (x-3)^5\\,dx$ menjadi $3 \\cdot \\frac{1}{6}(x-3)^6 = \\frac{1}{2}(x-3)^6$. Siswa tidak menambahkan 1 pada penyebut di suku-suku tersebut.",
+      "distraktor": [
+        {
+          "teks": "Langkah 1 salah; manipulasi aljabar $x = (x - 3) + 3$ tidak sah dalam integrasi tak tentu.",
+          "alasan": "Manipulasi aljabar tersebut sah dan sering digunakan untuk teknik integrasi substitusi aljabar."
+        },
+        {
+          "teks": "Langkah 2 salah; operasi distributif gagal karena $(x - 3)^5$ tidak boleh dikalikan suku per suku.",
+          "alasan": "Distribusi perkalian terhadap penjumlahan bersifat valid secara aljabar."
+        },
+        {
+          "teks": "Langkah 3 salah; sifat kelinearan integral tak tentu hanya berlaku jika variabelnya berbentuk $x$ tunggal bukan $(x - 3)$.",
+          "alasan": "Sifat penjumlahan integral berlaku untuk sembarang fungsi f1 dan f2 pada interval yang sama."
+        }
+      ],
+      "pembahasan": "Mari kita tinjau setiap langkah:\n- Langkah 1: Mengubah $x$ menjadi $(x - 3) + 3$ adalah manipulasi aljabar yang benar.\n- Langkah 2: Mengalikan ke dalam kurung menjadi $(x - 3)^6 + 3(x - 3)^5$ adalah benar secara distributif.\n- Langkah 3: Menggunakan sifat linear integral $\\int (f + g)\\,dx = \\int f\\,dx + \\int g\\,dx$ adalah benar.\n- Langkah 4: Menggunakan aturan integral substitusi $u = x - 3 \\implies du = dx$:\n  $\\int (x - 3)^6\\,dx = \\frac{1}{7}(x - 3)^7$\n  $3\\int (x - 3)^5\\,dx = 3 \\cdot \\frac{1}{6}(x - 3)^6 = \\frac{1}{2}(x - 3)^6$.\nSiswa menuliskan penyebut 6 dan 5 (bukan $n+1$), sehingga Langkah 4 memuat kesalahan pertama.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

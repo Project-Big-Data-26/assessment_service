@@ -1,9 +1,3 @@
-"""Transactional SQLite store for the local pilot; no raw student identity.
-
-A qualified AI silver snapshot is copied
-into an immutable assessment. SQLite permits operation without provisioning a
-second remote service. One connection per transaction works across threads.
-"""
 from __future__ import annotations
 
 from contextlib import contextmanager
@@ -395,8 +389,6 @@ class AssessmentStore:
         for item in result["items"]:
             route = item["recommendedRouting"]
             action = "needs_ai_review" if route == "ai_review" else "collect_more_events" if route == "collect_more_events" else "retain"
-            # Statistical changes cannot release a version pending AI revalidation.
-            # A corrected, newly validated version has a different immutable ID.
             if AssessmentStore._held(db, item["questionVersionId"]):
                 action = "needs_ai_review"
             key = f"auto:{result['snapshotId']}:{item['questionVersionId']}"

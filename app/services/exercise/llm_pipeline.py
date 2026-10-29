@@ -85,6 +85,12 @@ def kerjakan_slot(job: Job, client: NineRouterClient, solver_model: str, *, maks
             tok_in, tok_out, seconds = tok_in + gen.tokens_in, tok_out + gen.tokens_out, seconds + gen.seconds
             ver = verifikasi_buta(job.path, client, solver_model, progress=progress)
             tok_in, tok_out, seconds = tok_in + ver.tokens_in, tok_out + ver.tokens_out, seconds + ver.seconds
+            if ver.tidak_diverifikasi:
+                # gangguan jaringan/penyedia pada solver: JANGAN membuang soal; berhenti, ulangi nanti
+                return SlotResult(job.path, STATUS_GAGAL, ver.total, kuota, ronde, dibuang,
+                                  [f"verifikasi gagal sementara untuk {len(ver.tidak_diverifikasi)} soal "
+                                   f"(jaringan/penyedia); soal tidak dibuang, jalankan ulang dengan --lengkapi"],
+                                  tok_in, tok_out, round(seconds, 1))
             bermasalah = ver.tidak_cocok + ver.tidak_terjawab
             progress(f"  ronde {ronde + 1}: {ver.cocok}/{ver.total} cocok, bermasalah {len(bermasalah)}")
             if not bermasalah:

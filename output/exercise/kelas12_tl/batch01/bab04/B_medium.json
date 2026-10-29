@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0253-latihan-soal-variabel-acak-diskret-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "banyaknya nilai variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan ruang sampel dua dadu tetrahedral, perhitungan hasil kali untuk tiap titik sampel, dan pencacahan nilai-nilai unik yang terbentuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah dadu bersisi empat (tetrahedral) seimbang masing-masing memiliki sisi bernomor 1, 2, 3, dan 4. Kedua dadu dilemparkan bersama-sama sebanyak satu kali. Jika variabel acak $X$ menyatakan hasil kali kedua mata dadu yang muncul, maka banyaknya nilai berbeda yang mungkin untuk variabel acak $X$ adalah ....",
+      "jawaban_benar": "9",
+      "alasan_benar": "Pasangan mata dadu yang mungkin adalah hasil perkalian elemen himpunan $\\{1, 2, 3, 4\\}$. Hasil kalinya adalah $1, 2, 3, 4, 6, 8, 9, 12, 16$, sehingga terdapat tepat 9 nilai berbeda.",
+      "distraktor": [
+        {
+          "teks": "16",
+          "alasan": "Menghitung total banyak pasangan titik sampel ruang sampel ($4 \\times 4$), bukan banyaknya nilai unik yang dihasilkan oleh variabel acak."
+        },
+        {
+          "teks": "7",
+          "alasan": "Mengira hasil perkalian sama banyaknya dengan hasil penjumlahan dua mata dadu ($2$ sampai $8$, yaitu $7$ nilai)."
+        },
+        {
+          "teks": "10",
+          "alasan": "Keliru menganggap perkalian $2 \\times 2$ dan $1 \\times 4$ menghasilkan dua nilai yang berbeda."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan dua dadu bersisi 4 memiliki ukuran $4 \\times 4 = 16$ pasangan $(d_1, d_2)$. Nilai variabel acak $X = d_1 \\times d_2$ untuk tiap pasangan adalah:\n- $1 \\times 1 = 1$\n- $1 \\times 2 = 2, 2 \\times 1 = 2$\n- $1 \\times 3 = 3, 3 \\times 1 = 3$\n- $1 \\times 4 = 4, 4 \\times 1 = 4, 2 \\times 2 = 4$\n- $2 \\times 3 = 6, 3 \\times 2 = 6$\n- $2 \\times 4 = 8, 4 \\times 2 = 8$\n- $3 \\times 3 = 9$\n- $3 \\times 4 = 12, 4 \\times 3 = 12$\n- $4 \\times 4 = 16$\n\nHimpunan nilai-nilai unik yang mungkin untuk variabel acak $X$ adalah $\\{1, 2, 3, 4, 6, 8, 9, 12, 16\\}$. Jadi, terdapat 9 nilai berbeda.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap nilai tersebut memiliki peluang tertentu yang jika dijumlahkan, hasilnya adalah 1."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "distribusi peluang dengan parameter",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan penentuan nilai konstanta peluang melalui sifat jumlah peluang sama dengan 1, kemudian menghitung peluang kumulatif kejadian majemuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $\\{1, 2, 3, 4\\}$. Fungsi peluang dari $X$ dirumuskan dengan $P(X = x) = c \\cdot x$ untuk setiap $x \\in \\{1, 2, 3, 4\\}$, dengan $c$ merupakan suatu konstanta. Nilai dari $P(X \\ge 3)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{10}$",
+      "alasan_benar": "Karena total peluang bernilai 1, diperoleh $c(1+2+3+4) = 1 \\implies c = \\frac{1}{10}$. Maka $P(X \\ge 3) = P(X=3) + P(X=4) = 3c + 4c = 7c = \\frac{7}{10}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Hanya menghitung nilai $P(X = 3) = \\frac{3}{10}$ tanpa menjumlahkan dengan nilai $P(X = 4)$."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Hanya menyelesaikan nilai konstanta $c$ dan lupa menghitung $P(X \\ge 3)$."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Tertukar menghitung peluang komplemennya yang ketat, yaitu $P(X < 3) = P(X=1) + P(X=2) = \\frac{3}{10}$ atau salah hitung $P(X = 4) = \\frac{4}{10} = \\frac{2}{5}$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat distribusi peluang variabel acak diskret, jumlah total seluruh peluang harus bernilai 1:\n$$\\sum_{x=1}^{4} P(X = x) = 1$$\n$$c(1) + c(2) + c(3) + c(4) = 1$$\n$$10c = 1 \\implies c = \\frac{1}{10}$$\n\nSelanjutnya, tentukan nilai $P(X \\ge 3)$:\n$$P(X \\ge 3) = P(X = 3) + P(X = 4)$$\n$$P(X \\ge 3) = 3c + 4c = 7c = 7 \\times \\frac{1}{10} = \\frac{7}{10}$$\nJadi, nilai $P(X \\ge 3)$ adalah $\\frac{7}{10}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "distribusi peluang pengambilan bola",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis skenario pengambilan tanpa pengembalian bertingkat, menentukan distribusi variabel acak, dan menghitung peluang tepat 1 bola merah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong berisi 3 bola merah dan 2 bola putih. Dari kantong tersebut diambil 2 bola sekaligus secara acak. Jika variabel acak $K$ menyatakan banyaknya bola merah yang terambil, maka nilai peluang $P(K = 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "Banyaknya cara mengambil 2 bola dari 5 adalah $\\binom{5}{2} = 10$. Banyaknya cara mengambil 1 merah dan 1 putih adalah $\\binom{3}{1} \\times \\binom{2}{1} = 6$. Peluangnya $\\frac{6}{10} = \\frac{3}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Hanya menghitung kemungkinan terambilnya 2 bola merah $\\binom{3}{2}/10 = \\frac{3}{10}$, atau hanya menghitung urutan merah-putih tanpa mengalikannya dengan faktor susunan."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Keliru menghitung peluang terambilnya 0 bola merah (2 bola putih), yaitu $\\frac{\\binom{2}{2}}{10} = \\frac{1}{10}$, lalu menduplikasi pembilang secara acak."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Menggunakan peluang kejadian komplemen yang salah atau keliru membagi $\\frac{4}{10}$."
+        }
+      ],
+      "pembahasan": "Total bola dalam kantong adalah $3 + 2 = 5$ bola. Diambil 2 bola sekaligus.\nBanyaknya anggota ruang sampel adalah:\n$$n(S) = \\binom{5}{2} = \\frac{5 \\times 4}{2 \\times 1} = 10$$\n\nVariabel acak $K$ menyatakan banyaknya bola merah yang terambil. Kejadian $K = 1$ berarti terambil 1 bola merah dan 1 bola putih:\n$$n(K = 1) = \\binom{3}{1} \\times \\binom{2}{1} = 3 \\times 2 = 6$$\n\nPeluang terjadinya $K = 1$ adalah:\n$$P(K = 1) = \\frac{n(K = 1)}{n(S)} = \\frac{6}{10} = \\frac{3}{5}$$\nJadi, nilai dari $P(K = 1)$ adalah $\\frac{3}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.2",
+        "teks": "Pada Contoh Soal 4.3, tunjukkan bahwa Z = X - Y adalah suatu variabel acak diskret.",
+        "jawaban": "Z = X - Y merupakan variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "operasi selisih dua variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan kombinasi nilai selisih dua peubah acak independen dan perhitungan peluang gabungannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kotak I berisi dua kartu bernomor 4 dan 7 dengan peluang masing-masing terpilih adalah $0{,}4$ dan $0{,}6$. Kotak II berisi tiga kartu bernomor 1, 2, dan 3 dengan peluang terpilih masing-masing sama besar. Dari masing-masing kotak diambil satu kartu secara acak. Misalkan variabel acak $X$ menyatakan nomor kartu dari kotak I dan variabel acak $Y$ menyatakan nomor kartu dari kotak II. Jika didefinisikan variabel acak $Z = X - Y$, maka nilai peluang $P(Z = 5)$ adalah ....",
+      "jawaban_benar": "$0{,}2$",
+      "alasan_benar": "Kombinasi yang menghasilkan $X - Y = 5$ hanya pasangan $(7, 2)$, dengan peluang $0{,}6 \\times \\frac{1}{3} = 0{,}2$.",
+      "distraktor": [
+        {
+          "teks": "$0{,}133$",
+          "alasan": "Salah mengalikan peluang $0{,}4 \\times \\frac{1}{3}$."
+        },
+        {
+          "teks": "$0{,}3$",
+          "alasan": "Mengalikan peluang kartu 7 ($0{,}6$) dengan $\\frac{1}{2}$ karena mengira isi Kotak II hanya 2 kartu."
+        },
+        {
+          "teks": "$0{,}4$",
+          "alasan": "Hanya menggunakan peluang terpilihnya kartu bernomor 4 pada Kotak I."
+        }
+      ],
+      "pembahasan": "Nilai yang mungkin dari $X$ adalah $\\{4, 7\\}$ dengan $P(X = 4) = 0{,}4$ dan $P(X = 7) = 0{,}6$.\n\nNilai yang mungkin dari $Y$ adalah $\\{1, 2, 3\\}$ dengan $P(Y = 1) = P(Y = 2) = P(Y = 3) = \\frac{1}{3}$.\n\nVariabel acak $Z = X - Y = 5$ tercapai apabila:\n$X - Y = 5 \\implies (X, Y) = (7, 2)$\n(karena jika $X = 4$, nilai $Y$ harus $-1$ yang tidak ada pada Kotak II).\n\nKarena pengambilan dari kedua kotak bersifat bebas, peluangnya adalah:\n$$P(Z = 5) = P(X = 7) \\times P(Y = 2) = 0{,}6 \\times \\frac{1}{3} = 0{,}2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap nilai tersebut memiliki peluang tertentu yang jika dijumlahkan, hasilnya adalah 1."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "distribusi peluang rumus parameter",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan nilai konstanta penormal dari sifat jumlah peluang sama dengan 1, lalu menghitung peluang bersyarat/gabungan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $X$ memiliki himpunan nilai $\\{1, 2, 3\\}$. Fungsi peluang dari $X$ dinyatakan oleh:\n$$P(X = x) = \\frac{k}{x(x+1)}$$\nuntuk $x \\in \\{1, 2, 3\\}$, dengan $k$ suatu konstanta real. Nilai dari $P(X \\ge 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Dari $\\sum P(X=x) = k(\\frac{1}{2}+\\frac{1}{6}+\\frac{1}{12}) = \\frac{3}{4}k = 1$, diperoleh $k = \\frac{4}{3}$. Maka $P(X \\ge 2) = \\frac{4}{3}(\\frac{1}{6}+\\frac{1}{12}) = \\frac{1}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menghitung nilai $P(X = 1)$ bukan $P(X \\ge 2)$."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Lupa mengalikan jumlah $\\frac{1}{6} + \\frac{1}{12}$ dengan konstanta $k$."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Keliru menganggap nilai konstanta $k = 2$."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat distribusi peluang variabel acak diskret, jumlah total peluang harus sama dengan 1:\n$$\\sum_{x=1}^{3} P(X = x) = 1$$\n\nHitung masing-masing komponen:\n$$P(X = 1) = \\frac{k}{1 \\cdot 2} = \\frac{k}{2}$$\n$$P(X = 2) = \\frac{k}{2 \\cdot 3} = \\frac{k}{6}$$\n$$P(X = 3) = \\frac{k}{3 \\cdot 4} = \\frac{k}{12}$$\n\nJumlahkan ketiga nilai peluang tersebut:\n$$k \\left( \\frac{1}{2} + \\frac{1}{6} + \\frac{1}{12} \\right) = 1$$\n$$k \\left( \\frac{6 + 2 + 1}{12} \\right) = 1 \\implies k \\cdot \\frac{9}{12} = 1 \\implies k \\cdot \\frac{3}{4} = 1 \\implies k = \\frac{4}{3}$$\n\nNilai dari $P(X \\ge 2)$ adalah:\n$$P(X \\ge 2) = P(X = 2) + P(X = 3) = \\frac{k}{6} + \\frac{k}{12} = k \\left( \\frac{2 + 1}{12} \\right) = \\frac{4}{3} \\cdot \\frac{3}{12} = \\frac{1}{3}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis konsep ruang sampel tak hingga",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis eksperimen berulang tanpa henti untuk menentukan keterhitungan dan keterhinggaan ruang sampel variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping koin seimbang dilambungkan berulang-ulang sampai muncul sisi Angka untuk pertama kalinya. Misalkan variabel acak $N$ menyatakan banyaknya pelambungan yang dilakukan hingga eksperimen tersebut berhenti. Karakteristik yang tepat mengenai variabel acak $N$ berdasarkan definisinya adalah ....",
+      "jawaban_benar": "ruang sampelnya merupakan himpunan tak berhingga (infinite) yang dapat dihitung satu per satu (countable), sehingga $N$ adalah variabel acak diskret",
+      "alasan_benar": "Eksperimen bisa berlanjut tanpa batas $N \\in \\{1, 2, 3, \\dots\\}$ sehingga tak berhingga, namun nilainya berupa bilangan asli yang terhitung, memenuhi definisi variabel acak diskret.",
+      "distraktor": [
+        {
+          "teks": "ruang sampelnya merupakan himpunan berhingga (finite) dan terhitung (countable), sehingga $N$ adalah variabel acak diskret",
+          "alasan": "Keliru menganggap proses pelambungan pasti berhenti pada batas lemparan tertentu."
+        },
+        {
+          "teks": "ruang sampelnya merupakan himpunan tak berhingga (infinite) dan tak terhitung (uncountable), sehingga $N$ bukan variabel acak diskret",
+          "alasan": "Mengira himpunan tak berhingga selalu tak terhitung (uncountable)."
+        },
+        {
+          "teks": "variabel acak $N$ merupakan variabel acak kontinu karena banyaknya lemparan dapat bertambah terus-menerus tanpa batas",
+          "alasan": "Menyamakan konsep tak hingga dengan sifat variabel kontinu."
+        }
+      ],
+      "pembahasan": "Ruang sampel kejadian adalah:\n$$S = \\{\\text{A}, \\text{GA}, \\text{GGA}, \\text{GGGA}, \\dots\\}$$\n\nNilai yang mungkin dari variabel acak $N$ adalah banyaknya pelambungan:\n$$N \\in \\{1, 2, 3, 4, \\dots\\}$$\n\nHimpunan nilai ini tidak memiliki batas atas, sehingga merupakan himpunan tak berhingga (*infinite*). Akan tetapi, setiap elemennya berupa bilangan bulat positif yang dapat didaftar dan dikorespondensikan satu per satu dengan bilangan asli (*countable*).\n\nSesuai Definisi 4.2 di buku teks, variabel acak yang didefinisikan pada himpunan tak berhingga yang terhitung (*countable*) digolongkan sebagai variabel acak diskret.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": "Contoh Soal",
+        "nomor": "4.3",
+        "teks": "Pada permainan papan angka berputar, seperti pada Gambar 4.7, setiap papan diputar satu kali. Misalkan variabel acak X menyatakan angka terpilih dari papan A. Variabel acak Y menyatakan angka terpilih dari papan B. Tunjukkan bahwa Z = X + Y adalah variabel acak diskret.",
+        "jawaban": "Z = X + Y adalah variabel acak diskret dengan nilai {4, 6, 8, 10, 12}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "operasi penjumlahan dua variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan kombinasi pasangan angka dari dua variabel independen diskret lalu menjumlahkan peluang kejadian terkait.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Papan putar I memiliki dua sektor bernomor 3 dan 5 dengan peluang masing-masing $P(X = 3) = \\frac{1}{3}$ dan $P(X = 5) = \\frac{2}{3}$. Papan putar II memiliki dua sektor bernomor 2 dan 4 dengan peluang masing-masing $P(Y = 2) = \\frac{1}{2}$ dan $P(Y = 4) = \\frac{1}{2}$. Jika kedua papan diputar bersamaan dan didefinisikan variabel acak $Z = X + Y$, maka nilai dari $P(Z = 7)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Nilai $Z = 7$ diperoleh dari pasangan $(X=3, Y=4)$ atau $(X=5, Y=2)$. Peluangnya adalah $(\\frac{1}{3} \\times \\frac{1}{2}) + (\\frac{2}{3} \\times \\frac{1}{2}) = \\frac{1}{6} + \\frac{2}{6} = \\frac{3}{6} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Hanya menghitung peluang pasangan pertama $(3, 4)$ saja."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Hanya menghitung peluang pasangan kedua $(5, 2)$ saja."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Salah menjumlahkan peluang dengan menjumlahkan pembilang tanpa mengalikan kedua papan terlebih dahulu."
+        }
+      ],
+      "pembahasan": "Kombinasi nilai $(X, Y)$ yang menghasilkan $Z = X + Y = 7$ adalah:\n1. $X = 3$ dan $Y = 4 \\implies P(X = 3, Y = 4) = \\frac{1}{3} \\times \\frac{1}{2} = \\frac{1}{6}$\n2. $X = 5$ dan $Y = 2 \\implies P(X = 5, Y = 2) = \\frac{2}{3} \\times \\frac{1}{2} = \\frac{2}{6}$\n\nKarena kedua kejadian saling lepas:\n$$P(Z = 7) = \\frac{1}{6} + \\frac{2}{6} = \\frac{3}{6} = \\frac{1}{2}$$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika kita menjumlahkan semua nilai peluang pada Tabel 4.5, diperoleh 122 + 123 + 124 + 122 + 121 = 1 ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "sifat total peluang variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengharuskan penggunaan konsep total peluang sama dengan 1 untuk mencari nilai konstanta terlebih dahulu, lalu menghitung peluang rentang nilai.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $W$ memiliki himpunan nilai $\\{0, 1, 2, 3\\}$. Distribusi peluang dari $W$ disajikan dalam fungsi berikut:\n$$P(W = w) = c(2w + 1)$$\nuntuk $w \\in \\{0, 1, 2, 3\\}$, dengan $c$ merupakan suatu konstanta. Nilai dari peluang $P(W > 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "Total peluang: $\\sum_{w=0}^3 c(2w+1) = c(1 + 3 + 5 + 7) = 16c = 1 \\implies c = \\frac{1}{16}$. Kejadian $W > 1$ meliputi $w = 2$ dan $w = 3$, sehingga peluangnya $c(5 + 7) = 12c = \\frac{12}{16} = \\frac{3}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Menghitung komplemennya yaitu $P(W \\le 1) = \\frac{1+3}{16} = \\frac{4}{16} = \\frac{1}{4}$."
+        },
+        {
+          "teks": "$\\frac{7}{16}$",
+          "alasan": "Hanya menghitung nilai peluang pada $w = 3$ saja."
+        },
+        {
+          "teks": "$\\frac{5}{16}$",
+          "alasan": "Hanya menghitung nilai peluang pada $w = 2$ saja."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $c$ menggunakan sifat total peluang bernilai 1.\n$$\\sum_{w=0}^3 P(W = w) = 1$$\n$$c(2(0)+1) + c(2(1)+1) + c(2(2)+1) + c(2(3)+1) = 1$$\n$$c(1 + 3 + 5 + 7) = 1$$\n$$16c = 1 \\implies c = \\frac{1}{16}$$\n\nLangkah 2: Menghitung $P(W > 1)$:\n$$P(W > 1) = P(W = 2) + P(W = 3) = c(5) + c(7) = 12c$$\n$$P(W > 1) = 12 \\times \\frac{1}{16} = \\frac{12}{16} = \\frac{3}{4}$$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis sifat variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis sifat variabel acak dan ruang sampel dari beberapa fenomena untuk menentukan klasifikasi yang tepat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Perhatikan tiga variabel acak berikut:\n(1) $V_1$: Banyaknya mobil yang melewati sebuah pos tol dalam selang waktu 1 jam.\n(2) $V_2$: Jarak tempuh sebuah mobil per liter bahan bakar.\n(3) $V_3$: Banyaknya pelemparan koin yang dibutuhkan hingga muncul sisi Angka pertama kali.\n\nBerdasarkan sifat ruang sampelnya, pernyataan yang tepat mengenai ketiga variabel acak tersebut adalah ....",
+      "jawaban_benar": "$V_1$ dan $V_3$ adalah variabel acak diskret, sedangkan $V_2$ adalah variabel kontinu.",
+      "alasan_benar": "$V_1$ bernilai cacah berhingga/dapat dicacah $\\{0, 1, 2, \\dots\\}$ (diskret), $V_3$ bernilai asli tak berhingga terhitung $\\{1, 2, 3, \\dots\\}$ (diskret countable), sedangkan $V_2$ diperoleh dari pengukuran pada interval bilangan real (kontinu).",
+      "distraktor": [
+        {
+          "teks": "Hanya $V_1$ yang merupakan variabel acak diskret karena ruang sampelnya berhingga.",
+          "alasan": "Keliru mengira bahwa variabel acak diskret hanya boleh memiliki ruang sampel berhingga, padahal himpunan tak hingga yang countable ($V_3$) juga diskret."
+        },
+        {
+          "teks": "Ketiga variabel tersebut merupakan variabel acak diskret.",
+          "alasan": "Keliru menganggap jarak tempuh ($V_2$) sebagai variabel diskret, padahal jarak diperoleh dari hasil pengukuran kontinu."
+        },
+        {
+          "teks": "$V_1$ dan $V_2$ adalah variabel acak diskret, sedangkan $V_3$ adalah variabel kontinu.",
+          "alasan": "Tertukar antara variabel kontinu hasil pengukuran fisik dengan variabel diskret tak hingga yang countable."
+        }
+      ],
+      "pembahasan": "Berdasarkan Definisi 4.2 pada buku teks:\n- Variabel acak diskret adalah variabel acak yang ruang sampelnya berhingga (*finite*) atau tak berhingga yang dapat dihitung satu per satu (*countable*).\n- $V_1$ menyatakan banyaknya mobil (hasil membilang/menghitung), sehingga bernilai cacah $\\{0, 1, 2, \\dots\\}$ (diskret).\n- $V_2$ menyatakan jarak tempuh (hasil pengukuran fisik kontinu), sehingga nilainya berupa bilangan real dalam interval tertentu (kontinu).\n- $V_3$ menyatakan banyaknya lemparan sampai sukses pertama, bernilai $\\{1, 2, 3, \\dots\\}$. Ruang sampelnya tak berhingga namun dapat dihitung satu per satu (*countable infinite*), sehingga $V_3$ adalah variabel acak diskret.\n\nJadi, $V_1$ dan $V_3$ adalah variabel acak diskret, sedangkan $V_2$ adalah variabel kontinu.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh Soal",
+        "nomor": "4.4",
+        "teks": "Pada sebuah eksperimen melempar sekeping uang logam dua kali, misalkan variabel acak X menyatakan banyaknya kejadian munculnya sisi A (Angka). Tunjukkanlah bahwa X adalah suatu variabel acak diskret.",
+        "jawaban": "X merupakan variabel acak diskret dengan nilai {0, 1, 2}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "peluang variabel acak koin tidak seimbang",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemodelan peluang binomial koin tidak seimbang dan perhitungan peluang komplementer.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sekeping koin tidak seimbang memiliki peluang muncul sisi Angka sebesar $\\frac{2}{3}$ dan sisi Gambar sebesar $\\frac{1}{3}$. Koin tersebut dilempar sebanyak dua kali secara independen. Jika variabel acak $X$ menyatakan banyaknya sisi Angka yang muncul, berapakah nilai peluang $P(X \\ge 1)$?",
+      "jawaban_benar": "$\\frac{8}{9}$",
+      "alasan_benar": "Kejadian komplemen dari $X \\ge 1$ adalah $X = 0$ (keduanya Gambar). Peluang $P(X = 0) = P(GG) = \\frac{1}{3} \\times \\frac{1}{3} = \\frac{1}{9}$. Maka $P(X \\ge 1) = 1 - \\frac{1}{9} = \\frac{8}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Hanya menghitung peluang tepat satu sisi Angka muncul tanpa menyertakan peluang kedua lemparan menghasilkan Angka."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Mengira peluang muncul minimal satu Angka sama dengan peluang muncul Angka pada satu kali lemparan."
+        },
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Salah mengalikan kombinasi lemparan atau salah saat mengurangkan dari 1."
+        }
+      ],
+      "pembahasan": "Ruang sampel pelemparan koin dua kali adalah $\\{GG, GA, AG, AA\\}$. Nilai variabel acak $X$ menyatakan banyak Angka: $X \\in \\{0, 1, 2\\}$. Peluang tidak muncul sisi Angka sama sekali ($X = 0$) adalah $P(X = 0) = P(G) \\times P(G) = \\frac{1}{3} \\times \\frac{1}{3} = \\frac{1}{9}$. Peluang muncul sekurang-kurangnya satu sisi Angka adalah $P(X \\ge 1) = 1 - P(X = 0) = 1 - \\frac{1}{9} = \\frac{8}{9}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": "Contoh Soal",
+        "nomor": "4.3",
+        "teks": "Pada permainan papan angka berputar, seperti pada Gambar 4.7, setiap papan diputar satu kali. Misalkan variabel acak X menyatakan angka terpilih dari papan A. Variabel acak Y menyatakan angka terpilih dari papan B. Tunjukkan bahwa Z = X + Y adalah variabel acak diskret.",
+        "jawaban": "Z = X + Y merupakan variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penjumlahan dua variabel acak independen",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan pasangan titik sampel gabungan, perhitungan peluang masing-masing pasangan, dan penjumlahan peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen melibatkan pengambilan satu kartu dari Kantong I dan satu kartu dari Kantong II secara acak dan independen. Variabel acak $X$ menyatakan nomor kartu terpilih dari Kantong I dengan distribusi $P(X = 1) = \\frac{1}{4}$ dan $P(X = 3) = \\frac{3}{4}$. Variabel acak $Y$ menyatakan nomor kartu terpilih dari Kantong II dengan distribusi $P(Y = 2) = \\frac{1}{2}$ dan $P(Y = 4) = \\frac{1}{2}$. Jika didefinisikan variabel acak $Z = X + Y$, berapakah nilai dari $P(Z = 5)$?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Nilai $Z = 5$ diperoleh dari pasangan $(X=1, Y=4)$ dan $(X=3, Y=2)$. Peluangnya adalah $(\\frac{1}{4} \\times \\frac{1}{2}) + (\\frac{3}{4} \\times \\frac{1}{2}) = \\frac{1}{8} + \\frac{3}{8} = \\frac{4}{8} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Hanya menghitung peluang pasangan $(1, 4)$ dan mengabaikan pasangan $(3, 2)$."
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Hanya menghitung peluang pasangan $(3, 2)$ dan mengabaikan pasangan $(1, 4)$."
+        },
+        {
+          "teks": "$\\frac{3}{16}$",
+          "alasan": "Mengalikan peluang kedua pasangan alih-alih menjumlahkannya."
+        }
+      ],
+      "pembahasan": "Variabel $Z = X + Y$ bernilai 5 jika terjadi salah satu dari dua kejadian saling lepas berikut:\n1) $X = 1$ dan $Y = 4$, dengan peluang $P(X = 1, Y = 4) = \\frac{1}{4} \\times \\frac{1}{2} = \\frac{1}{8}$.\n2) $X = 3$ dan $Y = 2$, dengan peluang $P(X = 3, Y = 2) = \\frac{3}{4} \\times \\frac{1}{2} = \\frac{3}{8}$.\nKarena kedua kejadian saling lepas, $P(Z = 5) = \\frac{1}{8} + \\frac{3}{8} = \\frac{4}{8} = \\frac{1}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 251,
+        "bagian": "Ayo Mencoba",
+        "nomor": "4.2",
+        "teks": "Pada Contoh Soal 4.3, tunjukkan bahwa Z = X - Y adalah suatu variabel acak diskret.",
+        "jawaban": "Z = X - Y merupakan variabel acak diskret",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "selisih mutlak dua variabel acak",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan penentuan nilai selisih mutlak dari variabel acak gabungan serta penjumlahan probabilitas gabungan terkait.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua pemutar angka diputar secara bersamaan. Pemutar I menghasilkan variabel acak $X \\in \\{5, 8\\}$ dengan peluang $P(X = 5) = 0{,}6$ dan $P(X = 8) = 0{,}4$. Pemutar II menghasilkan variabel acak $Y \\in \\{2, 5\\}$ dengan peluang $P(Y = 2) = 0{,}5$ dan $P(Y = 5) = 0{,}5$. Kedua pemutar bekerja secara independen. Jika dibentuk variabel acak baru $W = |X - Y|$, nilai peluang $P(W = 3)$ adalah ....",
+      "jawaban_benar": "$0{,}50$",
+      "alasan_benar": "Nilai $|X - Y| = 3$ dipenuhi oleh pasangan $(5, 2)$ dengan peluang $0{,}6 \\times 0{,}5 = 0{,}30$ dan pasangan $(8, 5)$ dengan peluang $0{,}4 \\times 0{,}5 = 0{,}20$. Total peluangnya $0{,}30 + 0{,}20 = 0{,}50$.",
+      "distraktor": [
+        {
+          "teks": "$0{,}30$",
+          "alasan": "Hanya menghitung salah satu kombinasi pasangan $(5, 2)$ dan lupa menambahkan pasangan $(8, 5)$."
+        },
+        {
+          "teks": "$0{,}20$",
+          "alasan": "Hanya memperhitungkan pasangan $(8, 5)$."
+        },
+        {
+          "teks": "$0{,}60$",
+          "alasan": "Salah melakukan operasi penjumlahan peluang desimal."
+        }
+      ],
+      "pembahasan": "Nilai dari $W = |X - Y|$ yang menghasilkan $W = 3$ dicapai ketika:\n- $X = 5$ dan $Y = 2$, sehingga $|5 - 2| = 3$. Peluangnya adalah $P(X=5) \\times P(Y=2) = 0{,}6 \\times 0{,}5 = 0{,}30$.\n- $X = 8$ dan $Y = 5$, sehingga $|8 - 5| = 3$. Peluangnya adalah $P(X=8) \\times P(Y=5) = 0{,}4 \\times 0{,}5 = 0{,}20$.\nPasangan lainnya yaitu $(5, 5)$ menghasilkan $W = 0$, dan $(8, 2)$ menghasilkan $W = 6$.\nJadi, $P(W = 3) = 0{,}30 + 0{,}20 = 0{,}50$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0253-latihan-soal-variabel-acak-diskret-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "banyak nilai variabel acak perkalian",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembentukan ruang sampel kombinasi tanpa pengembalian, evaluasi fungsi hasil kali, dan pencacahan nilai unik himpunan nilai variabel acak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak memuat lima kartu yang masing-masing bernomor 1, 2, 3, 4, dan 5. Dari kotak tersebut diambil dua keping kartu sekaligus secara acak. Misalkan variabel acak $M$ menyatakan hasil kali dari dua nomor kartu yang terambil. Banyaknya anggota dari himpunan semua nilai yang mungkin dari variabel acak $M$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "Ada $\\binom{5}{2} = 10$ pasangan kartu yang mungkin diambil, dan kesepuluh pasangan tersebut menghasilkan nilai perkalian yang berbeda satu sama lain.",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "Mengira ada nilai perkalian yang kembar pada pasangan kartu tersebut."
+        },
+        {
+          "teks": "9",
+          "alasan": "Salah menganggap ada satu pasangan perkalian yang bernilai sama."
+        },
+        {
+          "teks": "5",
+          "alasan": "Mengira nilai variabel acak sebanyak jumlah kartu yang ada di kotak."
+        }
+      ],
+      "pembahasan": "Dua kartu diambil sekaligus dari 5 kartu bernomor $\\{1, 2, 3, 4, 5\\}$. Banyak pasangan titik sampel adalah $\\binom{5}{2} = 10$ pasang, yaitu:\n1. $\\{1, 2\\} \\to 1 \\times 2 = 2$\n2. $\\{1, 3\\} \\to 1 \\times 3 = 3$\n3. $\\{1, 4\\} \\to 1 \\times 4 = 4$\n4. $\\{1, 5\\} \\to 1 \\times 5 = 5$\n5. $\\{2, 3\\} \\to 2 \\times 3 = 6$\n6. $\\{2, 4\\} \\to 2 \\times 4 = 8$\n7. $\\{2, 5\\} \\to 2 \\times 5 = 10$\n8. $\\{3, 4\\} \\to 3 \\times 4 = 12$\n9. $\\{3, 5\\} \\to 3 \\times 5 = 15$\n10. $\\{4, 5\\} \\to 4 \\times 5 = 20$\nSemua hasil kali tersebut bernilai unik: $\\{2, 3, 4, 5, 6, 8, 10, 12, 15, 20\\}$. Dengan demikian, banyaknya nilai yang mungkin dari variabel acak $M$ adalah 10.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "distribusi peluang fungsi kuadratik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan sifat total peluang pada variabel acak diskret untuk menentukan konstanta pembuat fungsi peluang lalu menghitung peluang kumulatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $Y$ memiliki daerah nilai $\\{1, 2, 3, 4\\}$. Fungsi peluang dari $Y$ didefinisikan oleh:\n$$P(Y = y) = \\frac{y^2 + 1}{c}$$\nuntuk setiap $y \\in \\{1, 2, 3, 4\\}$ dengan $c$ merupakan konstanta real positif. Nilai dari $P(Y \\le 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{34}$",
+      "alasan_benar": "Jumlah seluruh peluang harus sama dengan 1, sehingga $\\sum_{y=1}^4 (y^2 + 1) = 2 + 5 + 10 + 17 = 34$, menghasilkan $c = 34$. Maka $P(Y \\le 2) = P(Y=1) + P(Y=2) = \\frac{2}{34} + \\frac{5}{34} = \\frac{7}{34}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{34}$",
+          "alasan": "Hanya menghitung nilai $P(Y = 2)$ tanpa menyertakan $P(Y = 1)$."
+        },
+        {
+          "teks": "$\\frac{7}{30}$",
+          "alasan": "Salah menghitung nilai konstanta $c$ karena hanya menjumlahkan $y^2$ tanpa menambahkan suku $+1$ untuk setiap titik."
+        },
+        {
+          "teks": "$\\frac{2}{17}$",
+          "alasan": "Hanya mengambil nilai $P(Y = 1) = \\frac{2}{34}$ lalu disederhanakan menjadi $\\frac{1}{17}$ atau salah mengalikan."
+        }
+      ],
+      "pembahasan": "Berdasarkan syarat fungsi peluang variabel acak diskret, jumlah total peluang seluruh nilai yang mungkin harus sama dengan 1:\n$$\\sum_{y=1}^{4} P(Y = y) = 1$$\n$$\\frac{1^2 + 1}{c} + \\frac{2^2 + 1}{c} + \\frac{3^2 + 1}{c} + \\frac{4^2 + 1}{c} = 1$$\n$$\\frac{2 + 5 + 10 + 17}{c} = 1 \\implies \\frac{34}{c} = 1 \\implies c = 34$$\nSelanjutnya, nilai $P(Y \\le 2)$ dihitung dengan menjumlahkan peluang untuk $y = 1$ dan $y = 2$:\n$$P(Y \\le 2) = P(Y = 1) + P(Y = 2) = \\frac{2}{34} + \\frac{5}{34} = \\frac{7}{34}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0252-latihan-soal-variabel-acak-diskret-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "klasifikasi jenis variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis sifat keterbilangan data dari beberapa kasus terapan untuk memisahkan variabel diskret dan kontinu.",
+      "stimulus": "Perhatikan empat besaran hasil pengamatan di sebuah rumah sakit berikut:\n1. Kadar kolesterol dalam darah pasien.\n2. Banyaknya pasien yang berkunjung ke instalasi rawat jalan setiap hari.\n3. Suhu tubuh pasien yang dirawat di ruang isolasi.\n4. Banyaknya botol infus yang terpakai di ruang rawat inap dalam seminggu.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan data di atas, besaran yang tergolong sebagai variabel acak diskret adalah ....",
+      "jawaban_benar": "2 dan 4",
+      "alasan_benar": "Besaran 2 dan 4 diperoleh dari hasil menghitung/membilang dan bernilai bilangan bulat non-negatif sehingga nilainya dapat dihitung satu per satu (diskret).",
+      "distraktor": [
+        {
+          "teks": "1 dan 3",
+          "alasan": "Memilih variabel kontinu yang diperoleh dari hasil pengukuran instrumen."
+        },
+        {
+          "teks": "1 dan 2",
+          "alasan": "Tertukar antara variabel kontinu (kadar kolesterol) dan diskret."
+        },
+        {
+          "teks": "3 dan 4",
+          "alasan": "Tertukar antara variabel kontinu (suhu tubuh) dan diskret."
+        }
+      ],
+      "pembahasan": "Variabel acak diskret memiliki nilai yang diperoleh melalui proses menghitung atau membilang (*countable*), berupa bilangan bulat non-negatif.\n- (1) Kadar kolesterol: hasil pengukuran pada skala kontinu (variabel acak kontinu).\n- (2) Banyaknya pasien: hasil menghitung bilangan bulat (variabel acak diskret).\n- (3) Suhu tubuh: hasil pengukuran alat ukur termometer (variabel acak kontinu).\n- (4) Banyaknya botol infus: hasil membilang satuan barang (variabel acak diskret).\n\nJadi, yang tergolong variabel acak diskret adalah nomor 2 dan 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika ruang sampel dari variabel acak X merupakan himpunan berhingga ( finite ) atau himpunan tak berhingga ( infinite ) yang dapat dihitung satu per satu ( countable ), maka x disebut variabel acak diskret."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "distribusi peluang fungsi kuadratik berbobot",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan konstanta normalisasi peluang dari jumlah total sama dengan satu sebelum menghitung peluang nilai tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak diskret $Y$ memiliki daerah nilai $\\{0, 1, 2, 3\\}$. Distribusi peluang dari $Y$ dirumuskan dengan $P(Y = y) = c(y + 1)^2$, di mana $c$ adalah sebuah konstanta. Nilai dari $P(Y \\ge 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{5}{6}$",
+      "alasan_benar": "Total peluang $\\sum_{y=0}^3 c(y+1)^2 = c(1 + 4 + 9 + 16) = 30c = 1 \\implies c = \\frac{1}{30}$. Maka $P(Y \\ge 2) = P(Y = 2) + P(Y = 3) = \\frac{9}{30} + \\frac{16}{30} = \\frac{25}{30} = \\frac{5}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Hanya menghitung nilai untuk $P(Y = 2) = \\frac{9}{30} = \\frac{3}{10}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Menghitung komplemennya yaitu $P(Y < 2) = \\frac{1+4}{30} = \\frac{5}{30} = \\frac{1}{6}$."
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Hanya menghitung nilai untuk $P(Y = 3) = \\frac{16}{30} = \\frac{8}{15}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $c$ menggunakan sifat bahwa jumlah seluruh nilai peluang variabel acak diskret harus sama dengan 1.\n$$\\sum_{y=0}^{3} P(Y = y) = 1$$\n$$c(0 + 1)^2 + c(1 + 1)^2 + c(2 + 1)^2 + c(3 + 1)^2 = 1$$\n$$c(1 + 4 + 9 + 16) = 1$$\n$$30c = 1 \\implies c = \\frac{1}{30}$$\n\nLangkah 2: Menghitung nilai $P(Y \\ge 2)$:\n$$P(Y \\ge 2) = P(Y = 2) + P(Y = 3)$$\n$$P(Y \\ge 2) = \\frac{(2 + 1)^2}{30} + \\frac{(3 + 1)^2}{30} = \\frac{9}{30} + \\frac{16}{30} = \\frac{25}{30} = \\frac{5}{6}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 249,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Z = X + Y , menyatakan jumlah angka yang diperoleh dari papan A dan papan B. Untuk mengetahui nilai-nilai yang mungkin dari Z beserta peluangnya, kita tentukan pasangan nilai"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "perkalian dua variabel acak diskret",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis kombinasi perkalian dua variabel acak independen dengan distribusi tidak seragam dan menghitung peluang majemuknya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kotak I berisi dua kartu bertuliskan angka 2 dan 5, dengan peluang terambil berturut-turut adalah $P(X = 2) = \\frac{2}{3}$ dan $P(X = 5) = \\frac{1}{3}$. Kotak II berisi dua kartu bertuliskan angka 1 dan 3, dengan peluang terambil berturut-turut adalah $P(Y = 1) = \\frac{1}{4}$ dan $P(Y = 3) = \\frac{3}{4}$. Satu kartu diambil secara acak dan independen dari masing-masing kotak. Jika variabel acak $W = X \\cdot Y$ menyatakan hasil kali angka kedua kartu, maka nilai peluang $P(W < 6)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Pasangan $(X, Y)$ yang menghasilkan $W < 6$ adalah $(2, 1)$ dengan hasil $2$ (peluang $\\frac{2}{3} \\cdot \\frac{1}{4} = \\frac{2}{12}$) dan $(5, 1)$ dengan hasil $5$ (peluang $\\frac{1}{3} \\cdot \\frac{1}{4} = \\frac{1}{12}$). Jumlah peluangnya adalah $\\frac{2}{12} + \\frac{1}{12} = \\frac{3}{12} = \\frac{1}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Menghitung komplemen yaitu $P(W \\ge 6)$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Hanya menghitung peluang pasangan $(2, 1)$ yaitu $\\frac{2}{12} = \\frac{1}{6}$."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengabaikan bobot peluang dan menganggap setiap pasangan dari empat kombinasi memiliki peluang yang sama besar (2/4)."
+        }
+      ],
+      "pembahasan": "Tentukan setiap kemungkinan hasil perkalian $W = X \\cdot Y$ beserta peluangnya:\n1. $(X=2, Y=1) \\implies W = 2$, peluang $= \\frac{2}{3} \\times \\frac{1}{4} = \\frac{2}{12}$\n2. $(X=2, Y=3) \\implies W = 6$, peluang $= \\frac{2}{3} \\times \\frac{3}{4} = \\frac{6}{12}$\n3. $(X=5, Y=1) \\implies W = 5$, peluang $= \\frac{1}{3} \\times \\frac{1}{4} = \\frac{1}{12}$\n4. $(X=5, Y=3) \\implies W = 15$, peluang $= \\frac{1}{3} \\times \\frac{3}{4} = \\frac{3}{12}$\n\nNilai $W < 6$ terpenuhi saat $W = 2$ dan $W = 5$.\n$$P(W < 6) = P(W = 2) + P(W = 5) = \\frac{2}{12} + \\frac{1}{12} = \\frac{3}{12} = \\frac{1}{4}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 248,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilainya diperoleh dari hasil menghitung atau membilang."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "distribusi peluang pengambilan tanpa pengembalian",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aturan peluang bersyarat/kombinasi tanpa pengembalian untuk membentuk fungsi peluang variabel acak diskret.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak berisi 3 bola merah dan 3 bola biru. Dari kotak tersebut diambil 2 bola satu per satu secara acak tanpa pengembalian. Jika variabel acak $M$ menyatakan banyaknya bola merah yang terambil, maka nilai peluang $P(M \\le 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{4}{5}$",
+      "alasan_benar": "$P(M = 0) = \\frac{3}{6} \\cdot \\frac{2}{5} = \\frac{6}{30}$, $P(M = 1) = 2 \\cdot \\left(\\frac{3}{6} \\cdot \\frac{3}{5}\\right) = \\frac{18}{30}$. Maka $P(M \\le 1) = \\frac{6}{30} + \\frac{18}{30} = \\frac{24}{30} = \\frac{4}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Hanya menghitung nilai untuk $P(M = 1)$."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Hanya menghitung nilai untuk $P(M = 0)$ atau komplemen $P(M = 2)$."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Keliru menggunakan perhitungan dengan pengembalian."
+        }
+      ],
+      "pembahasan": "Total bola dalam kotak $= 3 + 3 = 6$ bola.\nVariabel acak $M$ menyatakan banyaknya bola merah yang terambil dari 2 kali pengambilan tanpa pengembalian, dengan daerah nilai $M \\in \\{0, 1, 2\\}$.\n\n1. Peluang terambil 0 bola merah (keduanya biru):\n$$P(M = 0) = \\frac{3}{6} \\times \\frac{2}{5} = \\frac{6}{30}$$\n\n2. Peluang terambil 1 bola merah (merah lalu biru, atau biru lalu merah):\n$$P(M = 1) = \\left(\\frac{3}{6} \\times \\frac{3}{5}\\right) + \\left(\\frac{3}{6} \\times \\frac{3}{5}\\right) = \\frac{9}{30} + \\frac{9}{30} = \\frac{18}{30}$$\n\nDengan demikian, nilai peluang kumulatif $P(M \\le 1)$ adalah:\n$$P(M \\le 1) = P(M = 0) + P(M = 1) = \\frac{6}{30} + \\frac{18}{30} = \\frac{24}{30} = \\frac{4}{5}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0252-latihan-soal-variabel-acak-diskret-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis pengelompokan variabel acak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis sifat keterhitungan nilai-nilai dari empat variabel pengamatan untuk menentukan kombinasi yang tergolong variabel acak diskret.",
+      "stimulus": "Perhatikan variabel-variabel acak yang diamati pada suatu laboratorium sains berikut:\n(1) $P$: Jumlah tetesan reagen yang dibutuhkan hingga larutan berubah warna.\n(2) $Q$: Waktu yang dibutuhkan (dalam detik) hingga reaksi kimia selesai.\n(3) $R$: Suhu campuran reaksi (dalam derajat Celsius) setiap 5 menit.\n(4) $S$: Banyaknya tabung reaksi yang retak selama proses pemanasan.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan stimulus di atas, pasangan variabel acak yang keduanya tergolong variabel acak diskret adalah ....",
+      "jawaban_benar": "$P$ dan $S$",
+      "alasan_benar": "$P$ (jumlah tetesan) dan $S$ (banyaknya tabung retak) nilainya diperoleh dari hasil membilang/menghitung satu per satu (bilangan bulat cacah), sedangkan $Q$ (waktu) dan $R$ (suhu) merupakan hasil pengukuran pada skala kontinu.",
+      "distraktor": [
+        {
+          "teks": "$P$ dan $Q$",
+          "alasan": "Mengira waktu reaksi merupakan variabel acak diskret karena diukur dalam satuan detik."
+        },
+        {
+          "teks": "$Q$ dan $R$",
+          "alasan": "Memilih variabel kontinu alih-alih variabel acak diskret."
+        },
+        {
+          "teks": "$R$ dan $S$",
+          "alasan": "Menganggap suhu diskret karena dicatat pada interval waktu tertentu."
+        }
+      ],
+      "pembahasan": "Variabel acak diskret adalah variabel yang ruang sampel nilainya diperoleh dari hasil membilang atau menghitung, dan nilainya berupa bilangan bulat terpisah (countable).\n\nAnalisis setiap variabel:\n- (1) $P$ (jumlah tetesan reagen): diperoleh dari membilang ($0, 1, 2, \\dots$), merupakan variabel acak diskret.\n- (2) $Q$ (waktu reaksi): diperoleh dari pengukuran kontinu pada selang waktu real, merupakan variabel acak kontinu.\n- (3) $R$ (suhu campuran): diperoleh dari pengukuran instrumen termometer pada skala kontinu, merupakan variabel acak kontinu.\n- (4) $S$ (banyak tabung reaksi retak): diperoleh dari membilang ($0, 1, 2, \\dots$), merupakan variabel acak diskret.\n\nDengan demikian, pasangan yang keduanya merupakan variabel acak diskret adalah $P$ dan $S$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-b-medium-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 250,
+        "bagian": "Contoh Soal",
+        "nomor": "4.4",
+        "teks": "Pada sebuah eksperimen melempar sekeping uang logam dua kali, misalkan variabel acak X menyatakan banyaknya kejadian munculnya sisi A (Angka). Tunjukkanlah bahwa X adalah suatu variabel acak diskret.",
+        "jawaban": "X merupakan variabel acak diskret karena hasilnya berupa bilangan diskret yang dapat dihitung satu per satu dengan peluang terdefinisi.",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "distribusi peluang variabel acak Bernoulli independen",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan ruang sampel percobaan majemuk, pemetaan titik sampel ke nilai variabel acak, dan penjumlahan peluang majemuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu uji kendali mutu, seorang teknisi memeriksa 3 unit komponen elektronik secara independen. Setiap komponen memiliki peluang yang sama untuk lolos atau gagal uji, yaitu masing-masing bernilai $\\frac{1}{2}$. Jika variabel acak $Y$ menyatakan banyaknya komponen yang lolos uji mutu, nilai dari peluang $P(Y \\ge 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Ruang sampel pemeriksaan 3 komponen memiliki $n(S) = 2^3 = 8$ titik sampel berpeluang sama. Nilai $Y \\ge 2$ mencakup kejadian $Y = 2$ (3 titik: LLG, LGL, GLL) dan $Y = 3$ (1 titik: LLL). Jadi, $P(Y \\ge 2) = \\frac{3 + 1}{8} = \\frac{4}{8} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Hanya menghitung peluang tepat dua komponen lolos uji P(Y = 2) dan melupakan kondisi Y = 3."
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Hanya menghitung peluang seluruh komponen lolos uji P(Y = 3)."
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Keliru mengartikan kondisi sekurang-kurangnya dua menjadi sekurang-kurangnya satu komponen lolos P(Y >= 1)."
+        }
+      ],
+      "pembahasan": "Pemeriksaan 3 komponen elektronik menghasilkan ruang sampel beranggotakan $2^3 = 8$ hasil yang sama mungkin, yaitu:\n$$S = \\{\\text{LLL, LLG, LGL, LGG, GLL, GLG, GGL, GGG}\\}$$\nVariabel acak $Y$ menyatakan banyaknya komponen yang lolos (L).\nKejadian $Y \\ge 2$ berarti terdapat 2 atau 3 komponen yang lolos:\n- $Y = 2$: $\\{\\text{LLG, LGL, GLL}\\}$ sebanyak 3 kejadian.\n- $Y = 3$: $\\{\\text{LLL}\\}$ sebanyak 1 kejadian.\n\nBanyak kejadian yang memenuhi adalah $3 + 1 = 4$.\nDengan demikian, nilai peluangnya adalah:\n$$P(Y \\ge 2) = \\frac{4}{8} = \\frac{1}{2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

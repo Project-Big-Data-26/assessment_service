@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0053-latihan-soal-elips-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan persamaan elips vertikal pusat O(0,0)",
+      "jumlah_langkah": 2,
+      "alasan_level": "Hanya membutuhkan penentuan nilai parameter a dan b dari data fokus dan sumbu mayor, lalu memasukkannya ke rumus baku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu elips memiliki titik pusat $O(0,0)$. Salah satu fokusnya terletak pada titik $(0,6)$ dan panjang sumbu mayornya adalah 20. Persamaan elips tersebut adalah ....",
+      "jawaban_benar": "$\\dfrac{x^2}{64} + \\dfrac{y^2}{100} = 1$",
+      "alasan_benar": "Fokus di sumbu-$y$ $((0,6))$ menunjukkan elips vertikal dengan $c = 6$. Panjang sumbu mayor $2a = 20 \\iff a = 10$. Nilai $b^2 = a^2 - c^2 = 10^2 - 6^2 = 100 - 36 = 64$. Bentuk baku elips vertikal berpusat di $(0,0)$ adalah $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1$, sehingga persamaannya $\\frac{x^2}{64} + \\frac{y^2}{100} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{64} = 1$",
+          "alasan": "Tertukar antara bentuk elips horizontal dan vertikal ($a^2$ ditaruh di bawah $x^2$)."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{64} + \\dfrac{y^2}{400} = 1$",
+          "alasan": "Menganggap panjang sumbu mayor 20 sebagai nilai $a$, sehingga $a^2 = 400$."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{36} + \\dfrac{y^2}{100} = 1$",
+          "alasan": "Salah memasukkan nilai $c^2 = 36$ sebagai penyebut $x^2$ alih-alih menghitung $b^2$."
+        }
+      ],
+      "pembahasan": "Dari letak fokus di $(0,6)$, elips berbentuk vertikal dengan titik pusat di $(0,0)$ dan $c = 6$.\nPanjang sumbu mayor $= 2a = 20 \\implies a = 10$.\nMenghitung $b^2$:\n$$b^2 = a^2 - c^2 = 10^2 - 6^2 = 100 - 36 = 64$$\nPersamaan umum elips vertikal berpusat di $(0,0)$:\n$$\\dfrac{x^2}{b^2} + \\dfrac{y^2}{a^2} = 1 \\iff \\dfrac{x^2}{64} + \\dfrac{y^2}{100} = 1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 43,
+        "bagian": "Contoh Soal",
+        "nomor": "1.7",
+        "teks": "Tentukan persamaan elips dengan titik pusat O ^0, 0h , titik-titik fokus ^,4 0h dan - ^ ,4 0h , serta panjang sumbu mayor 12.",
+        "jawaban": "\\dfrac{x^2}{36} + \\dfrac{y^2}{20} = 1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan persamaan elips horizontal dari titik fokus",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai b dari a dan c secara langsung lalu menuliskan persamaannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan elips dengan titik pusat $O(0,0)$, titik-titik fokus $(6,0)$ dan $(-6,0)$, serta panjang sumbu mayor 16 adalah ....",
+      "jawaban_benar": "$\\dfrac{x^2}{64} + \\dfrac{y^2}{28} = 1$",
+      "alasan_benar": "Fokus pada sumbu-$x$ menunjukkan elips horizontal dengan $c = 6$. Panjang sumbu mayor $2a = 16 \\iff a = 8$. Maka $b^2 = a^2 - c^2 = 8^2 - 6^2 = 64 - 36 = 28$. Persamaan elips: $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\iff \\frac{x^2}{64} + \\frac{y^2}{28} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{28} + \\dfrac{y^2}{64} = 1$",
+          "alasan": "Tertukar antara $a^2$ dan $b^2$ pada persamaan elips horizontal."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{64} + \\dfrac{y^2}{36} = 1$",
+          "alasan": "Menggunakan nilai $c^2 = 36$ sebagai penyebut $y^2$ alih-alih $b^2$."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{64} + \\dfrac{y^2}{100} = 1$",
+          "alasan": "Salah rumus dengan menjumlahkan $a^2 + c^2$ untuk mencari $b^2$ alih-alih mengurangkan."
+        }
+      ],
+      "pembahasan": "Fokus terletak pada $(\\pm 6, 0)$ yang berada pada sumbu-$x$, sehingga elips berbentuk horizontal dengan $c = 6$.\nPanjang sumbu mayor $= 2a = 16 \\implies a = 8$.\nMenghitung $b^2$:\n$$b^2 = a^2 - c^2 = 8^2 - 6^2 = 64 - 36 = 28$$\nBentuk baku elips horizontal:\n$$\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1 \\iff \\dfrac{x^2}{64} + \\dfrac{y^2}{28} = 1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": "Ayo Mencoba 1.5",
+        "nomor": "2",
+        "teks": "Tentukan persamaan elips yang berpusat pada titik O ^0, 0h jika nilai eksentrisitasnya sebesar 4/5 dan jarak kedua fokusnya adalah 16.",
+        "jawaban": "\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan persamaan elips dari eksentrisitas",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi definisi eksentrisitas dan relasi kuadratik untuk memperoleh parameter persamaan elips horizontal baku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan elips horizontal yang berpusat pada titik $O(0,0)$ dengan nilai eksentrisitas $\\frac{3}{5}$ dan jarak kedua fokusnya 12 adalah ....",
+      "jawaban_benar": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{64} = 1$",
+      "alasan_benar": "Jarak antarfokus $2c = 12 \\iff c = 6$. Eksentrisitas $e = \\frac{c}{a} = \\frac{3}{5} \\iff \\frac{6}{a} = \\frac{3}{5} \\iff a = 10$. Nilai $b^2 = a^2 - c^2 = 10^2 - 6^2 = 100 - 36 = 64$. Persamaan elips: $\\frac{x^2}{100} + \\frac{y^2}{64} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{64} + \\dfrac{y^2}{100} = 1$",
+          "alasan": "Keliru menggunakan persamaan elips vertikal untuk elips yang didefinisikan horizontal."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1$",
+          "alasan": "Memakai $c^2 = 36$ langsung pada penyebut variabel $y^2$."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{16} = 1$",
+          "alasan": "Menggunakan nilai perbandingan eksentrisitas ($a=5, c=3$) tanpa mengalikan skala jarak fokus sebenarnya."
+        }
+      ],
+      "pembahasan": "Jarak kedua fokus $= 2c = 12 \\implies c = 6$.\nEksentrisitas $e = \\dfrac{c}{a} = \\dfrac{3}{5}$:\n$$\\dfrac{6}{a} = \\dfrac{3}{5} \\implies a = \\dfrac{6 \\times 5}{3} = 10$$\nMencari $b^2$:\n$$b^2 = a^2 - c^2 = 10^2 - 6^2 = 100 - 36 = 64$$\nKarena elips horizontal dengan pusat $(0,0)$, persamaannya adalah:\n$$\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1 \\iff \\dfrac{x^2}{100} + \\dfrac{y^2}{64} = 1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 38,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Panjang sumbu mayor adalah 2 a dan panjang sumbu minor adalah 2 b ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "menentukan panjang sumbu elips",
+      "jumlah_langkah": 1,
+      "alasan_level": "Membaca parameter b dari persamaan elips baku dan mengalikan dua secara langsung.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Panjang sumbu minor dari elips dengan persamaan $\\dfrac{x^2}{81} + \\dfrac{y^2}{36} = 1$ adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "Pada elips $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ dengan $a^2 = 81$ dan $b^2 = 36$, diperoleh $b = \\sqrt{36} = 6$. Panjang sumbu minor adalah $2b = 2 \\times 6 = 12$.",
+      "distraktor": [
+        {
+          "teks": "6",
+          "alasan": "Hanya menghitung nilai $b$ tanpa mengalikan dua untuk panjang sumbu minor."
+        },
+        {
+          "teks": "18",
+          "alasan": "Menghitung panjang sumbu mayor ($2a = 2 \\times 9 = 18$) alih-alih sumbu minor."
+        },
+        {
+          "teks": "36",
+          "alasan": "Mengambil nilai penyebut $b^2$ langsung sebagai panjang sumbu minor."
+        }
+      ],
+      "pembahasan": "Berdasarkan persamaan baku $\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1$:\n$a^2 = 81 \\implies a = 9$\n$b^2 = 36 \\implies b = 6$\nPanjang sumbu minor $= 2b = 2(6) = 12$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 38,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Titik fokus elips adalah F 1 ^- c , 0h dan F 2^ c , 0h dengan c 2 = a 2 - b 2 ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan koordinat fokus elips",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung nilai fokus c menggunakan rumus selisih kuadrat a dan b pada persamaan baku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Koordinat titik-titik fokus dari elips $\\dfrac{x^2}{169} + \\dfrac{y^2}{25} = 1$ adalah ....",
+      "jawaban_benar": "$(12,0)$ dan $(-12,0)$",
+      "alasan_benar": "Karena penyebut $x^2$ lebih besar ($a^2 = 169 > b^2 = 25$), elips horizontal. Nilai $c = \\sqrt{a^2 - b^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$. Koordinat fokus adalah $(\\pm c, 0) = (12,0)$ dan $(-12,0)$.",
+      "distraktor": [
+        {
+          "teks": "$(0,12)$ dan $(0,-12)$",
+          "alasan": "Menganggap elips vertikal sehingga meletakkan fokus pada sumbu-$y$."
+        },
+        {
+          "teks": "$(13,0)$ dan $(-13,0)$",
+          "alasan": "Mengira koordinat puncak $(a,0)$ sebagai koordinat fokus."
+        },
+        {
+          "teks": "$(5,0)$ dan $(-5,0)$",
+          "alasan": "Menggunakan nilai $b = 5$ sebagai koordinat fokus."
+        }
+      ],
+      "pembahasan": "Dari persamaan $\\dfrac{x^2}{169} + \\dfrac{y^2}{25} = 1$:\n$a^2 = 169$ dan $b^2 = 25$.\nKarena $a^2$ berada di bawah $x^2$, sumbu utama terletak pada sumbu-$x$ (elips horizontal).\nMenghitung jarak fokus $c$:\n$$c^2 = a^2 - b^2 = 169 - 25 = 144 \\implies c = 12$$\nJadi, koordinat kedua titik fokusnya adalah $(12,0)$ dan $(-12,0)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0052-latihan-soal-elips-1d",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "menentukan titik puncak elips",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu langkah identifikasi nilai a langsung dari persamaan baku elips horizontal berpusat di titik asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Koordinat titik-titik puncak pada sumbu mayor dari elips $\\dfrac{x^2}{64} + \\dfrac{y^2}{49} = 1$ adalah ....",
+      "jawaban_benar": "$(8,0)$ dan $(-8,0)$",
+      "alasan_benar": "Pada elips horizontal $\\dfrac{x^2}{a^2}+\\dfrac{y^2}{b^2}=1$, karena $64 > 49$, diperoleh $a^2=64$ sehingga $a=8$. Puncak pada sumbu mayor terletak di $(a,0)$ dan $(-a,0)$, yaitu $(8,0)$ dan $(-8,0)$.",
+      "distraktor": [
+        {
+          "teks": "$(0,8)$ dan $(0,-8)$",
+          "alasan": "Tertukar letak sumbu mayor pada sumbu-y alih-alih sumbu-x."
+        },
+        {
+          "teks": "$(7,0)$ dan $(-7,0)$",
+          "alasan": "Menggunakan nilai b dari sumbu minor sebagai puncak sumbu mayor."
+        },
+        {
+          "teks": "$(64,0)$ dan $(-64,0)$",
+          "alasan": "Lupa menarik akar kuadrat dari $a^2=64$."
+        }
+      ],
+      "pembahasan": "Bentuk umum elips dengan pusat $(0,0)$ adalah $\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1$. Karena penyebut $x^2$ bernilai $64$ dan penyebut $y^2$ bernilai $49$, maka $a^2 = 64$ dan $b^2 = 49$. Dengan demikian, elips ini merupakan elips horizontal dengan $a = 8$. Titik puncak pada sumbu mayor adalah $(a, 0)$ dan $(-a, 0)$, yaitu $(8,0)$ dan $(-8,0)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 34,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Elips adalah kumpulan titik-titik pada bidang datar yang jumlah jarak kedua titik tertentu selalu sama. Kedua titik tersebut dinamakan titik fokus."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "konsep definisi elips",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat definisi dasar elips bahwa jumlah jarak titik sebarang ke kedua titik fokus sama dengan panjang sumbu mayor (2a).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(x,y)$ terletak pada suatu elips dengan titik fokus $F_1$ dan $F_2$. Jika panjang sumbu mayor elips tersebut adalah 18, nilai dari penjumlahan jarak $PF_1 + PF_2$ adalah ....",
+      "jawaban_benar": "18",
+      "alasan_benar": "Berdasarkan definisi elips, jumlah jarak titik sebarang pada elips terhadap kedua titik fokusnya selalu tetap dan bernilai sama dengan panjang sumbu mayor ($2a$), yaitu 18.",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "Mengira jumlah jarak sama dengan nilai semimayor a alih-alih 2a."
+        },
+        {
+          "teks": "36",
+          "alasan": "Mengalikan panjang sumbu mayor dengan 2."
+        },
+        {
+          "teks": "81",
+          "alasan": "Mengkuadratkan nilai setengah sumbu mayor ($a^2 = 9^2 = 81$)."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi elips, elips adalah kumpulan titik-titik pada bidang datar yang jumlah jaraknya terhadap dua titik tertentu (titik fokus $F_1$ dan $F_2$) selalu tetap. Nilai penjumlahan jarak tersebut sama dengan panjang sumbu mayor elips, yaitu $2a$. Karena diketahui panjang sumbu mayor elips adalah 18, maka $PF_1 + PF_2 = 2a = 18$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0052-latihan-soal-elips-1d",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan titik puncak sumbu minor",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya mengidentifikasi nilai b dari bentuk baku elips berpusat di O(0,0).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Koordinat titik-titik puncak elips $\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1$ yang terletak pada sumbu minor adalah ....",
+      "jawaban_benar": "$(0, 6)$ dan $(0, -6)$",
+      "alasan_benar": "Bentuk baku elips horizontal $\\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1$ memiliki $a^2 = 100$ dan $b^2 = 36$. Sumbu minor berada pada sumbu-$y$ dengan puncak $(0, \\pm b) = (0, \\pm 6)$.",
+      "distraktor": [
+        {
+          "teks": "$(6, 0)$ dan $(-6, 0)$",
+          "alasan": "Tertukar meletakkan nilai b pada sumbu-x."
+        },
+        {
+          "teks": "$(10, 0)$ dan $(-10, 0)$",
+          "alasan": "Menghitung titik puncak pada sumbu mayor, bukan sumbu minor."
+        },
+        {
+          "teks": "$(0, 10)$ dan $(0, -10)$",
+          "alasan": "Tertukar menganggap nilai a berada pada sumbu-y."
+        }
+      ],
+      "pembahasan": "Persamaan elips $\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1$ memiliki titik pusat $O(0,0)$ dengan $a^2 = 100$ dan $b^2 = 36$. Karena $a^2 > b^2$, elips merupakan elips horizontal. Puncak-puncak pada sumbu minor terletak pada sumbu-$y$, yaitu di titik $(0, b)$ dan $(0, -b)$. Dengan $b = \\sqrt{36} = 6$, koordinat puncaknya adalah $(0, 6)$ dan $(0, -6)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 43,
+        "bagian": "Contoh Soal 1.7",
+        "nomor": "1.7",
+        "teks": "Tentukan persamaan elips dengan titik pusat O ^0, 0h , titik-titik fokus ^,4 0h dan - ^ ,4 0h , serta panjang sumbu mayor 12.",
+        "jawaban": "\\frac{x^2}{36}+\\frac{y^2}{20}=1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan persamaan elips dari fokus dan sumbu mayor",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan nilai b dari relasi Pythagoras sebelum menyusun persamaan baku.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan elips dengan titik pusat $O(0,0)$, titik-titik fokus $(8,0)$ dan $(-8,0)$, serta panjang sumbu mayor $20$ adalah ....",
+      "jawaban_benar": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1$",
+      "alasan_benar": "Fokus pada sumbu-$x$ menunjukkan elips horizontal dengan $c = 8$. Panjang sumbu mayor $2a = 20 \\implies a = 10$. Nilai $b^2 = a^2 - c^2 = 100 - 64 = 36$, sehingga persamaannya $\\frac{x^2}{100} + \\frac{y^2}{36} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{400} + \\dfrac{y^2}{64} = 1$",
+          "alasan": "Memasukkan 2a dan c langsung sebagai a dan b ke persamaan."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{36} + \\dfrac{y^2}{100} = 1$",
+          "alasan": "Tertukar antara penyebut variabel x dan y (tertukar menjadi elips vertikal)."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{64} = 1$",
+          "alasan": "Menggunakan nilai c^2 = 64 sebagai b^2 tanpa menghitung b^2 = a^2 - c^2."
+        }
+      ],
+      "pembahasan": "Dari fokus $(\\pm 8, 0)$, diketahui elips horizontal berpusat di $(0,0)$ dengan $c = 8$. Panjang sumbu mayor $2a = 20 \\implies a = 10$, sehingga $a^2 = 100$. Nilai $b^2$ dihitung menggunakan hubungan $b^2 = a^2 - c^2 = 10^2 - 8^2 = 100 - 64 = 36$. Persamaan elips baku horizontal adalah $\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1$, yaitu $\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": "Ayo Mencoba 1.5",
+        "nomor": "2",
+        "teks": "Tentukan persamaan elips yang berpusat pada titik O ^0, 0h jika nilai eksentrisitasnya sebesar 4 5 dan jarak kedua fokusnya adalah 16.",
+        "jawaban": "\\frac{x^2}{100}+\\frac{y^2}{36}=1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan persamaan elips dari jarak fokus",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi nilai eksentrisitas untuk mencari a dan b lalu menyusun persamaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan elips horizontal yang berpusat pada titik $O(0,0)$ dengan nilai eksentrisitas $\\dfrac{5}{13}$ dan jarak kedua fokusnya $10$ adalah ....",
+      "jawaban_benar": "$\\dfrac{x^2}{169} + \\dfrac{y^2}{144} = 1$",
+      "alasan_benar": "Jarak kedua fokus $2c = 10 \\implies c = 5$. Eksentrisitas $e = \\frac{c}{a} = \\frac{5}{13} \\implies a = 13$. Diperoleh $b^2 = a^2 - c^2 = 169 - 25 = 144$. Maka persamaannya $\\frac{x^2}{169} + \\frac{y^2}{144} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{144} + \\dfrac{y^2}{169} = 1$",
+          "alasan": "Tertukar antara sumbu mayor dan sumbu minor."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{169} + \\dfrac{y^2}{25} = 1$",
+          "alasan": "Menggunakan c^2 = 25 sebagai b^2."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{25} = 1$",
+          "alasan": "Memakai jarak kedua fokus 2c = 10 sebagai a = 10."
+        }
+      ],
+      "pembahasan": "Jarak kedua fokus adalah $2c = 10$, sehingga $c = 5$. Nilai eksentrisitas $e = \\dfrac{c}{a} = \\dfrac{5}{13}$, sehingga $a = 13$ dan $a^2 = 169$. Menghitung $b^2$: $b^2 = a^2 - c^2 = 13^2 - 5^2 = 169 - 25 = 144$. Jadi, persamaan elips horizontal tersebut adalah $\\dfrac{x^2}{169} + \\dfrac{y^2}{144} = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 38,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Panjang sumbu mayor adalah 2 a dan panjang sumbu minor adalah 2 b ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "menentukan nilai parameter sumbu elips",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membagi dua panjang sumbu untuk memperoleh nilai a dan b.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika panjang sumbu mayor dan panjang sumbu minor suatu elips berturut-turut adalah $14$ dan $10$, nilai $a$ dan $b$ elips tersebut berturut-turut adalah ....",
+      "jawaban_benar": "$7$ dan $5$",
+      "alasan_benar": "Panjang sumbu mayor adalah $2a = 14 \\implies a = 7$, dan panjang sumbu minor adalah $2b = 10 \\implies b = 5$.",
+      "distraktor": [
+        {
+          "teks": "$14$ dan $10$",
+          "alasan": "Mengira panjang sumbu langsung sama dengan nilai a dan b."
+        },
+        {
+          "teks": "$5$ dan $7$",
+          "alasan": "Tertukar antara nilai a (sumbu mayor) dan nilai b (sumbu minor)."
+        },
+        {
+          "teks": "$28$ dan $20$",
+          "alasan": "Mengalikan panjang sumbu dengan 2 bukannya membagi dengan 2."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi unsur-unsur elips, panjang sumbu mayor dirumuskan dengan $2a$ dan panjang sumbu minor dengan $2b$. Diketahui $2a = 14$, maka $a = \\dfrac{14}{2} = 7$. Diketahui $2b = 10$, maka $b = \\dfrac{10}{2} = 5$. Jadi, nilai $a$ dan $b$ berturut-turut adalah $7$ dan $5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 34,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Elips adalah kumpulan titik-titik pada bidang datar yang jumlah jarak kedua titik tertentu selalu sama."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "definisi geometris elips",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat kembali konsep dasar definisi elips.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kumpulan titik-titik pada bidang datar yang jumlah jaraknya terhadap dua titik tertentu selalu bernilai konstan disebut ....",
+      "jawaban_benar": "elips",
+      "alasan_benar": "Sesuai definisi, bangun datar yang jumlah jarak ke dua titik tertentu (titik fokus) selalu sama adalah elips.",
+      "distraktor": [
+        {
+          "teks": "parabola",
+          "alasan": "Parabola merupakan himpunan titik dengan jarak yang sama ke suatu titik fokus dan garis direktriks."
+        },
+        {
+          "teks": "hiperbola",
+          "alasan": "Hiperbola didefinisikan dengan selisih jarak ke dua titik fokus yang selalu tetap, bukan jumlah jarak."
+        },
+        {
+          "teks": "lingkaran",
+          "alasan": "Lingkaran adalah himpunan titik yang berjarak sama terhadap satu titik tertentu (titik pusat)."
+        }
+      ],
+      "pembahasan": "Berdasarkan buku siswa, elips adalah kumpulan titik-titik pada bidang datar yang jumlah jaraknya terhadap kedua titik tertentu (titik fokus) selalu sama atau konstan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0053-latihan-soal-elips-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan persamaan elips dari fokus pada sumbu-y",
+      "jumlah_langkah": 2,
+      "alasan_level": "Hanya memerlukan identifikasi orientasi elips vertikal dan perhitungan satu parameter $b$ dari selisih kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu elips memiliki titik pusat $O(0,0)$. Salah satu fokusnya terletak pada titik $(0,5)$ dan panjang sumbu mayornya adalah $26$. Persamaan elips tersebut adalah ....",
+      "jawaban_benar": "$\\dfrac{x^2}{144} + \\dfrac{y^2}{169} = 1$",
+      "alasan_benar": "Fokus pada sumbu-$y$ menunjukkan elips vertikal dengan $c = 5$. Panjang sumbu mayor $2a = 26 \\implies a = 13$, sehingga $a^2 = 169$. Nilai $b^2 = a^2 - c^2 = 169 - 25 = 144$. Bentuk baku elips vertikal adalah $\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1$, yaitu $\\frac{x^2}{144} + \\frac{y^2}{169} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{169} + \\dfrac{y^2}{144} = 1$",
+          "alasan": "Tertukar antara bentuk elips vertikal dan horizontal (memasang $a^2$ di bawah $x^2$)."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{169} = 1$",
+          "alasan": "Keliru menggunakan nilai $c^2 = 25$ langsung sebagai penyebut tanpa mencari $b^2 = a^2 - c^2$."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{144} + \\dfrac{y^2}{676} = 1$",
+          "alasan": "Tidak membagi dua panjang sumbu mayor sehingga menganggap $a = 26$ dan $a^2 = 676$."
+        }
+      ],
+      "pembahasan": "Diketahui pusat elips $O(0,0)$ dan salah satu fokus di $(0,5)$, artinya elips berorientasi vertikal dan $c = 5$.\nPanjang sumbu mayor adalah $2a = 26$, sehingga:\n$$a = 13 \\implies a^2 = 169$$\nMenghitung nilai $b^2$:\n$$b^2 = a^2 - c^2 = 13^2 - 5^2 = 169 - 25 = 144$$\nPersamaan umum elips vertikal berpusat di $(0,0)$ adalah:\n$$\\frac{x^2}{b^2} + \\frac{y^2}{a^2} = 1 \\implies \\frac{x^2}{144} + \\frac{y^2}{169} = 1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": "Contoh Soal",
+        "nomor": "1.9",
+        "teks": "Diketahui persamaan suatu elips 9 x 2 + 4 y 2 = 36 . Tentukan unsur-unsur elips berikut: a. titik pusat, b. titik fokus, c. titik puncak, d. panjang sumbu mayor, e. panjang sumbu minor, f. panjang latus rectum ,",
+        "jawaban": "6",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan panjang sumbu mayor bentuk implisit",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa hanya perlu mengubah persamaan ke bentuk baku dan menghitung nilai $2a$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Panjang sumbu mayor dari elips dengan persamaan $16x^2 + 25y^2 = 400$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Membagi persamaan dengan $400$ menghasilkan $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$. Karena penyebut terbesar di bawah $x^2$, diperoleh $a^2 = 25 \\implies a = 5$. Panjang sumbu mayor adalah $2a = 2(5) = 10$.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Hanya menghitung nilai semi-sumbu mayor $a$, lupa mengalikannya dengan $2$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Menghitung panjang sumbu minor $2b = 2(4) = 8$ alih-alih sumbu mayor."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Keliru mengambil koefisien $y^2 = 25$ lalu dikurangi $5$ atau mengalikan $a$ dengan $4$."
+        }
+      ],
+      "pembahasan": "Ubah persamaan ke bentuk baku elips dengan membagi kedua ruas dengan $400$:\n$$\\frac{16x^2}{400} + \\frac{25y^2}{400} = \\frac{400}{400} \\implies \\frac{x^2}{25} + \\frac{y^2}{16} = 1$$\nDari bentuk baku diperoleh:\n- $a^2 = 25 \\implies a = 5$\n- $b^2 = 16 \\implies b = 4$\nPanjang sumbu mayor adalah $2a = 2 \\times 5 = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 38,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Eksentrisitas ( e ) adalah suatu ukuran untuk menentukan seberapa melengkungnya sebuah elips. Nilai eksentrisitas berada pada rentang 0 hingga 1."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan nilai eksentrisitas elips",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghitung parameter fokal $c$ lalu menggunakan rumus langsung $e = c/a$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai eksentrisitas dari elips $\\dfrac{x^2}{25} + \\dfrac{y^2}{16} = 1$ adalah ....",
+      "jawaban_benar": "$\\dfrac{3}{5}$",
+      "alasan_benar": "Dari persamaan diketahui $a^2 = 25 \\implies a = 5$ dan $b^2 = 16$. Nilai $c = \\sqrt{a^2 - b^2} = \\sqrt{25 - 16} = \\sqrt{9} = 3$. Eksentrisitas $e = \\frac{c}{a} = \\frac{3}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{4}{5}$",
+          "alasan": "Menghitung rasio $\\frac{b}{a} = \\frac{4}{5}$ alih-alih $\\frac{c}{a}$."
+        },
+        {
+          "teks": "$\\dfrac{3}{4}$",
+          "alasan": "Menghitung rasio $\\frac{c}{b} = \\frac{3}{4}$ alih-alih membaginya dengan $a$."
+        },
+        {
+          "teks": "$\\dfrac{9}{25}$",
+          "alasan": "Menghitung rasio kuadrat $\\frac{c^2}{a^2} = \\frac{9}{25}$ tanpa menarik akar."
+        }
+      ],
+      "pembahasan": "Dari persamaan elips $\\frac{x^2}{25} + \\frac{y^2}{16} = 1$, diketahui:\n- $a^2 = 25 \\implies a = 5$\n- $b^2 = 16 \\implies b = 4$\nJarak fokus ke titik pusat ($c$):\n$$c = \\sqrt{a^2 - b^2} = \\sqrt{25 - 16} = \\sqrt{9} = 3$$\nNilai eksentrisitas ($e$):\n$$e = \\frac{c}{a} = \\frac{3}{5}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 38,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Titik fokus elips adalah F 1 ^- c , 0h dan F 2^ c , 0h dengan c 2 = a 2 - b 2 ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan jarak antartitik fokus",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan nilai $c$ menggunakan selisih kuadrat lalu mengalikannya dengan 2.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jarak antartitik fokus dari elips dengan persamaan $\\dfrac{x^2}{100} + \\dfrac{y^2}{64} = 1$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Dari persamaan diperoleh $a^2 = 100$ dan $b^2 = 64$. Nilai $c = \\sqrt{100 - 64} = \\sqrt{36} = 6$. Jarak antartitik fokus adalah $2c = 2(6) = 12$.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Hanya menghitung nilai $c$ (jarak fokus ke pusat), bukan jarak antarkedua titik fokus ($2c$)."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Menggunakan nilai $c^2 = 36$ secara langsung tanpa menarik akar."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Menghitung selisih panjang sumbu mayor dan minor: $2a - 2b = 20 - 16 = 4$, atau salah mengurangkan kuadrat."
+        }
+      ],
+      "pembahasan": "Dari persamaan elips $\\frac{x^2}{100} + \\frac{y^2}{64} = 1$, diketahui:\n- $a^2 = 100$\n- $b^2 = 64$\nJarak dari pusat ke fokus ($c$):\n$$c = \\sqrt{a^2 - b^2} = \\sqrt{100 - 64} = \\sqrt{36} = 6$$\nJarak antartitik fokus adalah ruas garis $F_1F_2$ dengan panjang:\n$$\\text{Jarak fokus} = 2c = 2 \\times 6 = 12$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 44,
+        "bagian": "Contoh Soal",
+        "nomor": "1.9",
+        "teks": "Diketahui persamaan suatu elips 9 x 2 + 4 y 2 = 36 . Tentukan unsur-unsur elips berikut:",
+        "jawaban": "Panjang latus rectum adalah 8/3",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "menentukan panjang latus rectum",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah perhitungan langsung, yaitu menentukan nilai a dan b dari persamaan baku lalu menghitung panjang latus rectum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Panjang *latus rectum* dari elips dengan persamaan $25x^2 + 16y^2 = 400$ adalah ....",
+      "jawaban_benar": "$\\dfrac{32}{5}$",
+      "alasan_benar": "Bentuk baku elips adalah $\\dfrac{x^2}{16} + \\dfrac{y^2}{25} = 1$, sehingga elips vertikal dengan $a^2 = 25$ ($a = 5$) dan $b^2 = 16$. Panjang *latus rectum* adalah $\\dfrac{2b^2}{a} = \\dfrac{2(16)}{5} = \\dfrac{32}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{16}{5}$",
+          "alasan": "Siswa lupa mengalikan dengan 2 pada rumus latus rectum sehingga menghitung $\\dfrac{b^2}{a}$."
+        },
+        {
+          "teks": "$\\dfrac{25}{2}$",
+          "alasan": "Siswa terbalik menggunakan rumus menjadi $\\dfrac{2a^2}{b}$."
+        },
+        {
+          "teks": "$\\dfrac{32}{25}$",
+          "alasan": "Siswa membagi dengan $a^2$ bukan $a$ sehingga menghitung $\\dfrac{2b^2}{a^2}$."
+        }
+      ],
+      "pembahasan": "Bagi kedua ruas persamaan $25x^2 + 16y^2 = 400$ dengan 400:\n$$\\dfrac{x^2}{16} + \\dfrac{y^2}{25} = 1$$\nKarena penyebut $y^2$ lebih besar daripada penyebut $x^2$, elips merupakan elips vertikal dengan $a^2 = 25 \\Rightarrow a = 5$ dan $b^2 = 16$.\nPanjang *latus rectum* elips vertikal dirumuskan sebagai:\n$$\\text{Panjang } L = \\dfrac{2b^2}{a} = \\dfrac{2 \\times 16}{5} = \\dfrac{32}{5}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 40,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pusat elips terletak pada titik P ( m , n )."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "menentukan titik pusat elips dari persamaan baku",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya membutuhkan satu langkah identifikasi langsung koordinat titik pusat dari bentuk persamaan baku elips.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Koordinat titik pusat dari elips dengan persamaan $\\dfrac{(x - 5)^2}{36} + \\dfrac{(y + 2)^2}{9} = 1$ adalah ....",
+      "jawaban_benar": "$(5, -2)$",
+      "alasan_benar": "Bentuk umum elips dengan pusat $(m, n)$ adalah $\\dfrac{(x - m)^2}{a^2} + \\dfrac{(y - n)^2}{b^2} = 1$. Dengan $x - m = x - 5 \\Rightarrow m = 5$ dan $y - n = y + 2 \\Rightarrow n = -2$, pusat elips adalah $(5, -2)$.",
+      "distraktor": [
+        {
+          "teks": "$(-5, 2)$",
+          "alasan": "Siswa salah tanda pada kedua komponen koordinat pusat."
+        },
+        {
+          "teks": "$(5, 2)$",
+          "alasan": "Siswa salah tanda pada ordinat $y$ saat mengidentifikasi $y - n = y + 2$."
+        },
+        {
+          "teks": "$(-5, -2)$",
+          "alasan": "Siswa salah tanda pada absis $x$ saat mengidentifikasi $x - m = x - 5$."
+        }
+      ],
+      "pembahasan": "Persamaan baku elips dengan titik pusat $P(m, n)$ adalah:\n$$\\dfrac{(x - m)^2}{a^2} + \\dfrac{(y - n)^2}{b^2} = 1$$\nBerdasarkan persamaan $\\dfrac{(x - 5)^2}{36} + \\dfrac{(y + 2)^2}{9} = 1$:\n- $x - m = x - 5 \\Rightarrow m = 5$\n- $y - n = y + 2 \\Rightarrow n = -2$\nDengan demikian, koordinat titik pusat elips tersebut adalah $(5, -2)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": "Ayo Mencoba 1.5",
+        "nomor": "3",
+        "teks": "Tentukan persamaan elips jika titik fokus terletak pada sumbu x dan simetris terhadap titik pusat koordinat, panjang sumbu mayor sebesar 20, serta nilai eksentrisitas sebesar 3/5.",
+        "jawaban": "\\dfrac{x^2}{100} + \\dfrac{y^2}{64} = 1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "persamaan elips dari sumbu mayor dan eksentrisitas",
+      "jumlah_langkah": 2,
+      "alasan_level": "Soal ini membutuhkan dua langkah langsung untuk mencari parameter a dan c kemudian menentukan persamaan elips.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan persamaan elips jika titik fokus terletak pada sumbu-$x$ dan simetris terhadap titik pusat koordinat, panjang sumbu mayor sebesar $10$, serta nilai eksentrisitas sebesar $\\dfrac{4}{5}$.",
+      "jawaban_benar": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$",
+      "alasan_benar": "Panjang sumbu mayor $2a = 10 \\implies a = 5$. Eksentrisitas $e = \\dfrac{c}{a} = \\dfrac{4}{5} \\implies c = 4$. Nilai $b^2 = a^2 - c^2 = 25 - 16 = 9$. Karena fokus di sumbu-$x$ dan simetris terhadap $(0,0)$, persamaannya $\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{9} + \\dfrac{y^2}{25} = 1$",
+          "alasan": "Tertukar menganggap elips vertikal sehingga posisi a kuadrat dan b kuadrat terbalik."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{16} = 1$",
+          "alasan": "Menggunakan nilai c kuadrat sebagai penyebut variabel y alih-alih menghitung b kuadrat."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{100} + \\dfrac{y^2}{36} = 1$",
+          "alasan": "Menganggap panjang sumbu mayor 10 sebagai nilai a tanpa membaginya dengan dua terlebih dahulu."
+        }
+      ],
+      "pembahasan": "Dari soal diketahui titik fokus berada pada sumbu-$x$ dan simetris terhadap titik pusat koordinat, artinya elips berbentuk horizontal berpusat di $O(0, 0)$.\\nPanjang sumbu mayor $= 2a = 10 \\implies a = 5$, sehingga $a^2 = 25$.\\nNilai eksentrisitas $e = \\dfrac{c}{a} = \\dfrac{4}{5} \\implies c = \\dfrac{4}{5} \\times 5 = 4$.\\nHubungan antarnilai $a$, $b$, dan $c$ pada elips:\\n$b^2 = a^2 - c^2 = 5^2 - 4^2 = 25 - 16 = 9$.\\nBentuk baku elips horizontal berpusat di $O(0, 0)$ adalah:\\n$\\dfrac{x^2}{a^2} + \\dfrac{y^2}{b^2} = 1 \\implies \\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-b-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 43,
+        "bagian": "Contoh Soal",
+        "nomor": "1.8",
+        "teks": "Tentukan persamaan elips dengan titik pusat (1, -2) jika salah satu titik fokusnya adalah (1, 1 1/2) dan panjang sumbu minornya adalah 1.",
+        "jawaban": "\\dfrac{(x-1)^2}{1/4} + \\dfrac{(y+2)^2}{25/2} = 1",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "persamaan elips dari fokus dan sumbu minor",
+      "jumlah_langkah": 2,
+      "alasan_level": "Soal ini dapat diselesaikan dalam dua langkah langsung menggunakan hubungan c, b, dan a untuk menyusun persamaan elips vertikal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan persamaan elips dengan titik pusat $(0, 0)$ jika salah satu titik fokusnya adalah $(0, 4)$ dan panjang sumbu minornya adalah $6$.",
+      "jawaban_benar": "$\\dfrac{x^2}{9} + \\dfrac{y^2}{25} = 1$",
+      "alasan_benar": "Pusat $(0,0)$ dan fokus $(0,4)$ menunjukkan elips vertikal dengan $c = 4$. Sumbu minor $2b = 6 \\implies b = 3 \\implies b^2 = 9$. Nilai $a^2 = b^2 + c^2 = 9 + 16 = 25$. Persamaannya adalah $\\dfrac{x^2}{9} + \\dfrac{y^2}{25} = 1$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{x^2}{25} + \\dfrac{y^2}{9} = 1$",
+          "alasan": "Keliru menganggap elips horizontal sehingga meletakkan a kuadrat di bawah suku x."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$",
+          "alasan": "Menggunakan nilai c kuadrat sebagai penyebut suku y alih-alih menghitung a kuadrat."
+        },
+        {
+          "teks": "$\\dfrac{x^2}{36} + \\dfrac{y^2}{52} = 1$",
+          "alasan": "Menganggap panjang sumbu minor 6 langsung sebagai nilai b tanpa membaginya dengan dua."
+        }
+      ],
+      "pembahasan": "Pusat elips berada di $(0, 0)$ dan salah satu fokusnya di $(0, 4)$ yang terletak pada sumbu-$y$, sehingga elips berbentuk vertikal dengan nilai $c = 4$.\\nPanjang sumbu minor $= 2b = 6 \\implies b = 3$, sehingga $b^2 = 9$.\\nPada elips berlaku hubungan:\\n$a^2 = b^2 + c^2 = 3^2 + 4^2 = 9 + 16 = 25$.\\nPersamaan baku elips vertikal berpusat di $(0, 0)$ adalah:\\n$\\dfrac{x^2}{b^2} + \\dfrac{y^2}{a^2} = 1 \\implies \\dfrac{x^2}{9} + \\dfrac{y^2}{25} = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}
