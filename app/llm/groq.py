@@ -1,6 +1,7 @@
 """GroqCloud JSON validation; Free/Developer billing depends on the user's account."""
 from dataclasses import dataclass, field
 import os
+import re
 from urllib.parse import urlparse
 
 from dotenv import dotenv_values
@@ -51,6 +52,36 @@ class GroqSettings:
 
 class GroqSilverAdapter(DeepSeekSilverAdapter):
     """Reuse schema validation/audit handling while sending only Groq parameters."""
+    def _error_metadata(self, error, status):
+        metadata = super()._error_metadata(error, status)
+        if status != 429:
+            return metadata
+        try:
+            message = str(error.response.json().get("error", {}).get("message", ""))
+        except (ValueError, AttributeError, TypeError):
+            return metadata
+        normalized = message.casefold()
+        metric = next((name for name, phrase, abbreviation in (
+            ("tokens_per_day", "tokens per day", "(tpd)"),
+            ("requests_per_day", "requests per day", "(rpd)"),
+            ("tokens_per_minute", "tokens per minute", "(tpm)"),
+            ("requests_per_minute", "requests per minute", "(rpm)"))
+            if phrase in normalized or abbreviation in normalized), None)
+        if metric is None:
+            return metadata
+        # Persist only fixed labels and numbers; the message can contain
+        # organization identifiers and must never be included in an export.
+        limit = {"provider": "groq", "scope": "organization", "quotaMetric": metric}
+        for name, label in (("quotaValue", "Limit"), ("used", "Used"), ("requested", "Requested")):
+            match = re.search(r"\b" + label + r"\s+([0-9][0-9,]*)", message, re.IGNORECASE)
+            if match:
+                limit[name] = match.group(1).replace(",", "")
+        retry_after = error.response.headers.get("retry-after", "").strip()
+        if re.fullmatch(r"[0-9]+(?:\.[0-9]+)?", retry_after):
+            limit["retryAfterSeconds"] = retry_after
+        metadata.update(quotaDailyExhausted=metric.endswith("_per_day"), quotaLimits=[limit])
+        return metadata
+
     def _request_payload(self, prompt):
         body = super()._request_payload(prompt)
         body.pop("thinking")

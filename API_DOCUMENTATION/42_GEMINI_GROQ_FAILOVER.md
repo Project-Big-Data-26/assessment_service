@@ -51,7 +51,9 @@ Periksa semua slot tanpa panggilan API:
 Tambahkan `--execute` untuk satu probe koneksi per slot. Kuota Gemini berlaku per
 project, bukan per key: beberapa key dalam project yang sama tetap berbagi kuota
 ([dokumentasi Google](https://ai.google.dev/gemini-api/docs/rate-limits)). Beberapa
-key Groq juga tidak menjamin kuota terpisah jika organisasinya sama.
+key Groq dalam organisasi yang sama juga berbagi batas
+([dokumentasi Groq](https://console.groq.com/docs/rate-limits)). Mengganti key
+tidak mereset pemakaian organisasi.
 
 Gunakan model yang tersedia untuk masing-masing akun. Jalankan satu probe schema
 per provider dengan soal diagnostik kecil:
@@ -65,6 +67,10 @@ masih false. Output hanya menampilkan status/usage, tidak menampilkan key atau
 isi respons. Probe juga memeriksa kunci soal uji. HTTP 503 menghentikan probe
 sebelum mencoba provider berikutnya. JSON hasil ada di
 `runs/nightly_pipeline/exercise_provider_connection_check.json`.
+
+Probe kecil yang berhasil belum menjamin kuota cukup untuk soal berikutnya.
+Permintaan validasi sebenarnya dapat membutuhkan alokasi token lebih besar;
+checkpoint hanya menghitung soal yang benar-benar berhasil divalidasi.
 
 Aktifkan provider yang sudah berhasil diuji melalui `GEMINI_LIVE_ENABLED=true`
 atau `GROQ_LIVE_ENABLED=true`. Provider tanpa key atau dengan live mode false
@@ -104,8 +110,13 @@ aktif yang tercatat pada checkpoint untuk perintah `progress`/`full`.
   Jika masih ada hasil valid baru, penghitung pemulihan direset agar proses tetap
   melanjutkan pekerjaan. Anggaran API keseluruhan tetap berlaku.
 
-HTTP 429 sendiri belum membedakan batas harian dan batas sementara. Mengganti
-key dalam organisasi/proyek yang sama tidak menjamin tambahan kuota.
+HTTP 429 sendiri belum membedakan batas harian dan batas sementara. Adapter Groq
+membaca jenis batas dari pesan error: TPD/RPD menandai `quotaDailyExhausted=true`,
+sedangkan TPM/RPM tetap batas per menit. `quotaLimits` menyimpan jenis batas,
+scope organisasi, angka limit/pemakaian/permintaan, dan `retryAfterSeconds` jika
+header tersedia. Pesan mentah dan identitas organisasi tidak disimpan. Respons
+yang formatnya tidak dikenal tetap dilaporkan sebagai batas kuota/rate limit umum.
+Mengganti key dalam organisasi/proyek yang sama tidak menjamin tambahan kuota.
 
 Mulai/resume:
 

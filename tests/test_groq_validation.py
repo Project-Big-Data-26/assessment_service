@@ -48,6 +48,36 @@ def test_groq_errors_are_sanitized(code):
     assert "test-private" not in result.model_dump_json()
 
 
+@pytest.mark.parametrize("description,metric,daily", [
+    ("tokens per day (TPD)", "tokens_per_day", True),
+    ("requests per day (RPD)", "requests_per_day", True),
+    ("tokens per minute (TPM)", "tokens_per_minute", False),
+    ("requests per minute (RPM)", "requests_per_minute", False),
+])
+def test_groq_rate_limit_preserves_safe_quota_details(description, metric, daily):
+    message = (f"Rate limit reached for model in organization org-private on {description}: "
+               "Limit 200,000, Used 196986, Requested 4495. Please try again in 10m39s. test-private")
+    with httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(
+            429, headers={"retry-after": "640"}, json={"error": {"message": message}}))) as client:
+        result = GroqSilverAdapter(GroqSettings(api_key="test-private", live_enabled=True), client=client).label_once(
+            question("q1"), [], run_index=1, grade=9)
+    assert result.errorCode == "ClientError:429"
+    assert result.quotaDailyExhausted is daily
+    assert result.quotaLimits == [{"provider": "groq", "scope": "organization", "quotaMetric": metric,
+        "quotaValue": "200000", "used": "196986", "requested": "4495", "retryAfterSeconds": "640"}]
+    assert "org-private" not in result.model_dump_json() and "test-private" not in result.model_dump_json()
+
+
+@pytest.mark.parametrize("body", [None, [], {"error": []}, {"error": {"message": "unknown test-private"}}])
+def test_groq_unknown_quota_response_remains_generic_and_private(body):
+    with httpx.Client(transport=httpx.MockTransport(lambda request: httpx.Response(429, json=body))) as client:
+        result = GroqSilverAdapter(GroqSettings(api_key="test-private", live_enabled=True), client=client).label_once(
+            question("q1"), [], run_index=1)
+    assert result.errorCode == "ClientError:429"
+    assert not result.quotaDailyExhausted and result.quotaLimits == []
+    assert "test-private" not in result.model_dump_json()
+
+
 @pytest.mark.parametrize("address", ["http://api.groq.com/openai/v1", "https://api.groq.com.evil.test/openai/v1",
     "https://api.groq.com/openai/v1?secret=x", "https://user@api.groq.com/openai/v1"])
 def test_groq_credentials_cannot_go_to_another_host(address):

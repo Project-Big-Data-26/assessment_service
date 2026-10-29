@@ -78,6 +78,11 @@ class DeepSeekSilverAdapter:
                 "thinking": {"type": "enabled"}, "reasoning_effort": self.settings.reasoning_effort,
                 "max_tokens": self.settings.max_output_tokens}
 
+    def _error_metadata(self, error, status):
+        return {"providerFailureReason": {
+            400: "provider_configuration_error", 401: "api_key_invalid", 402: "insufficient_balance",
+            403: "permission_denied", 404: "model_not_found"}.get(status)}
+
     def _generate(self, prompt, *, result_type, run_index=None):
         started, data, content = time.perf_counter(), {}, ""
         common = {"promptHash": hashlib.sha256(prompt.encode("utf-8")).hexdigest()}
@@ -109,13 +114,12 @@ class DeepSeekSilverAdapter:
         except Exception as error:
             status = error.response.status_code if isinstance(error, httpx.HTTPStatusError) else None
             code = ("ServerError" if status and status >= 500 else "ClientError") + ":" + str(status) if status else type(error).__name__ + ":unknown"
-            reason = {400: "provider_configuration_error", 401: "api_key_invalid", 402: "insufficient_balance",
-                      403: "permission_denied", 404: "model_not_found"}.get(status)
+            metadata = self._error_metadata(error, status)
             details = ([{"location": ".".join(str(part) for part in entry["loc"]), "type": entry["type"]}
                         for entry in error.errors(include_input=False, include_url=False)]
                        if isinstance(error, ValidationError) else [])
             return result_type(status="failed", errorCode=code, errorDetails=details,
-                               providerFailureReason=reason, usage=usage, responseId=data.get("id"),
+                               **metadata, usage=usage, responseId=data.get("id"),
                                responseHash=hashlib.sha256(content.encode("utf-8")).hexdigest() if content else None,
                                latencyMs=int((time.perf_counter() - started) * 1000), **common)
 
