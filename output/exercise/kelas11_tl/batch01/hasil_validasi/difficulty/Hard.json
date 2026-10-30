@@ -4,7 +4,200 @@
   "subjectTrack": "tl",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 0,
-  "contentQualifiedCount": 0,
-  "items": []
+  "advisoryCount": 3,
+  "contentQualifiedCount": 3,
+  "items": [
+    {
+      "question": {
+        "questionId": "233d402405f02dec4c569e94",
+        "questionVersionId": "233d402405f02dec4c569e94:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "7cd591b0d4bfe64acbb9f633881b6d27447f3bbe573c60ae1b4c8731caee3f25",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Penjumlahan, Pengurangan, dan Perkalian Polinomial",
+        "questionType": "multiple_choice",
+        "stem": "Diketahui $P(x)$ dan $Q(x)$ masing-masing berderajat $4$. Kejadian yang mungkin terjadi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$P(x) + Q(x)$ berderajat $2$ dan $P(x) - Q(x)$ berderajat $4$"
+          },
+          {
+            "label": "B",
+            "text": "$P(x) + Q(x)$ berderajat $8$"
+          },
+          {
+            "label": "C",
+            "text": "$P(x) + Q(x)$ dan $P(x) - Q(x)$ keduanya berderajat $2$"
+          },
+          {
+            "label": "D",
+            "text": "$P(x) + Q(x)$ dan $P(x) - Q(x)$ keduanya berderajat $3$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misal P(x) = ax^4 + ... dan Q(x) = bx^4 + ... dengan a, b != 0. P(x)+Q(x) = (a+b)x^4 + ... dan P(x)-Q(x) = (a-b)x^4 + .... Jika a+b=0 (misal a=1, b=-1), maka derajat P(x)+Q(x) < 4. Jika a-b != 0 (misal 1-(-1)=2), maka derajat P(x)-Q(x) tetap 4. Contoh: P(x)=x^4+x, Q(x)=-x^4+x^2. P+Q=x^2+x (derajat 2), P-Q=2x^4-x^2+x (derajat 4).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "233d402405f02dec4c569e94",
+          "subchapter": "Penjumlahan, Pengurangan, dan Perkalian Polinomial",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: jika koefisien $x^4$ adalah $p$ dan $q$ dengan $p+q=0$, maka $p-q=2p\\neq 0$; contoh $3x^4+2x^3+x^2-5$ dan $-3x^4-2x^3+4x^2+1$",
+            "B": "Salah: menjumlahkan derajat seperti pada perkalian; jumlah tidak pernah melebihi derajat $4$",
+            "C": "Salah: tidak mungkin: $p+q=0$ dan $p-q=0$ mengakibatkan $p=0$, bertentangan dengan derajat $4$",
+            "D": "Salah: tidak mungkin: agar suku $x^4$ lenyap pada jumlah dan selisih sekaligus, harus $p=q=0$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "9a350912e0a2b0aa5aaf472a",
+        "questionVersionId": "9a350912e0a2b0aa5aaf472a:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "32808f271bd6dc83ca36e85d9b273430649f49994f005fc194ac69fa8099f1f8",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Pembagian Polinomial",
+        "questionType": "multiple_choice",
+        "stem": "Polinomial $P(x)$ berkoefisien bilangan bulat. Dari empat pasangan data (sisa jika dibagi $x - 5$, sisa jika dibagi $x + 2$) berikut, pasangan yang TIDAK mungkin terjadi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$(17, -4)$"
+          },
+          {
+            "label": "B",
+            "text": "$(25, 12)$"
+          },
+          {
+            "label": "C",
+            "text": "$(-4, 10)$"
+          },
+          {
+            "label": "D",
+            "text": "$(30, 9)$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Berdasarkan Teorema Sisa, jika P(x) adalah polinomial dengan koefisien bulat, maka untuk setiap bilangan bulat a dan b, (a - b) harus membagi (P(a) - P(b)). Di sini, a = 5 dan b = -2, sehingga (5 - (-2)) = 7 harus membagi (P(5) - P(-2)). Untuk pilihan B: P(5) - P(-2) = 25 - 12 = 13. Karena 13 tidak habis dibagi 7, maka pasangan (25, 12) tidak mungkin terjadi.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "9a350912e0a2b0aa5aaf472a",
+          "subchapter": "Pembagian Polinomial",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: selisih $21$ kelipatan $7$, mungkin (mis. $P(x)=3x+2$)",
+            "B": "Benar: $P(5)-P(-2)$ selalu kelipatan $7$ untuk koefisien bulat; $25-12=13$ bukan kelipatan $7$",
+            "C": "Salah: selisih $-14$ kelipatan $7$, mungkin (mis. $P(x)=-2x+6$)",
+            "D": "Salah: selisih $21$ kelipatan $7$, mungkin (mis. $P(x)=3x+15$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "efe88f220ec77fcc1edbdde2",
+        "questionVersionId": "efe88f220ec77fcc1edbdde2:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ce434dad0e398aaeb37e079433aab14f171baa66ec8069e3021eca83a46ef01d",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Faktor dan Pembuat Nol Polinomial",
+        "questionType": "multiple_choice",
+        "stem": "Diketahui $P(x) = (x - 2)(x^2 + bx + 9)$ dengan $b$ bilangan real. Dina menyimpulkan: \"Agar $P$ memiliki tepat dua pembuat nol real yang berbeda, faktor kuadratnya harus punya diskriminan nol, sehingga $b = 6$ atau $b = -6$.\"\n\nDina melewatkan satu nilai $b$ lagi yang juga membuat $P$ memiliki tepat dua pembuat nol real yang berbeda. Nilai $b$ itu adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$0$"
+          },
+          {
+            "label": "B",
+            "text": "$-\\frac{13}{2}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\frac{13}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$-\\frac92$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "P(x) = (x - 2)(x^2 + bx + 9). Pembuat nol adalah x = 2 atau x^2 + bx + 9 = 0. Kasus 1: Diskriminan kuadrat = 0, b^2 - 36 = 0, b = ±6. Kasus 2: x = 2 adalah akar dari x^2 + bx + 9, maka 2^2 + b(2) + 9 = 0, sehingga 4 + 2b + 9 = 0, 2b = -13, b = -13/2. Untuk b = -13/2, faktor kuadrat menjadi x^2 - 6.5x + 9 = (x-2)(x-4.5), sehingga akar-akarnya adalah 2 dan 4.5 (tepat dua akar berbeda).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "efe88f220ec77fcc1edbdde2",
+          "subchapter": "Faktor dan Pembuat Nol Polinomial",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: faktor kuadrat $x^2+9$ tidak punya pembuat nol real, sehingga $P$ hanya punya satu pembuat nol",
+            "B": "Benar: dua pembuat nol berbeda juga terjadi bila $x=2$ adalah pembuat nol faktor kuadrat: $4+2b+9=0$ sehingga $b=-\\frac{13}{2}$, dengan pembuat nol $2$ dan $\\frac92$ (dua nilai)",
+            "C": "Salah: salah tanda: $4+2b+9=0$ memberi $b=-\\frac{13}{2}$; untuk $b=\\frac{13}{2}$ ada tiga pembuat nol berbeda ($2$, $-2$, $-\\frac92$)",
+            "D": "Salah: mengambil pembuat nol lain $\\frac92$ lalu menjadikannya $b$; $x^2-\\frac92x+9$ berdiskriminan negatif sehingga $P$ hanya punya satu pembuat nol"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
 }
