@@ -1,17 +1,15 @@
 # Validasi ulang soal kelas 11 TL — LLM blind N=1 lanjutan dengan hasil N=3 terdahulu dan diagnostik IndoBERT
 
-**Batch belum selesai:** 1095/1197 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided. Provider berhenti karena kuota harian; checkpoint kerja dapat dilanjutkan saat kuota tersedia.
-
-Model penilai: `openai/gpt-oss-120b`. Prompt: `gemini-silver-math-3x4x3-v10-blind-sma11-tl-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sma11-tl-grade-aware`.
+Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-sma11-tl-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sma11-tl-grade-aware`.
 
 Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terdahulu dipertahankan. Isi, kunci, solusi dan tiga label tetap diperiksa. Temuan konten atau abstain tetap inactive. Confidence N=1 pada JSON memakai round(100 * min(probabilitas label akhir LLM tiap head IndoBERT)); ini dukungan model, bukan konsistensi antar-run atau akurasi terukur; bukti ini tidak memenuhi provenance training N=3.
 
 Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 11 TL, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 1191; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 314, "applying": 690, "reasoning": 85, "undecided": 102}, "knowledgeDimension": {"factual": 52, "conceptual": 489, "procedural": 548, "undecided": 102, "metacognitive": 0}, "intendedDifficulty": {"Easy": 751, "Medium": 323, "Hard": 15, "undecided": 102}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 313, "applying": 685, "reasoning": 85}, "knowledgeDimension": {"factual": 52, "conceptual": 488, "procedural": 543, "metacognitive": 0}, "intendedDifficulty": {"Easy": 747, "Medium": 321, "Hard": 15}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"silver_ready": 1083, "needs_ai_review": 104, "revision_required": 4}`.
-Run awal sukses: 1095/1197; adjudikasi: 1; token sukses tercatat: 3,291,001.
+Jumlah soal: 1191; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 335, "applying": 764, "reasoning": 92}, "knowledgeDimension": {"factual": 53, "conceptual": 540, "procedural": 598, "metacognitive": 0}, "intendedDifficulty": {"Easy": 804, "Medium": 372, "Hard": 15}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 334, "applying": 757, "reasoning": 91}, "knowledgeDimension": {"factual": 53, "conceptual": 537, "procedural": 592, "metacognitive": 0}, "intendedDifficulty": {"Easy": 800, "Medium": 367, "Hard": 15}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"silver_ready": 1182, "needs_ai_review": 5, "revision_required": 4}`.
+Run awal sukses: 1197/1197; adjudikasi: 1; token sukses tercatat: 3,594,259.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -24,8 +22,8 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 751 | 747 | [Easy.json](difficulty/Easy.json) |
-| Medium | 323 | 321 | [Medium.json](difficulty/Medium.json) |
+| Easy | 804 | 800 | [Easy.json](difficulty/Easy.json) |
+| Medium | 372 | 367 | [Medium.json](difficulty/Medium.json) |
 | Hard | 15 | 15 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
@@ -99483,30 +99481,49 @@ Diberikan fungsi logaritma $f(x) = {}^8\log x$. Nilai dari $f(1)$ adalah ....
 | C | $8$ |
 | D | $0$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Berdasarkan definisi logaritma, f(1) = 8log 1. Karena 8^0 = 1, maka 8log 1 = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d11ace74ac720919f3e8857524111cc0a70f0f47a498a04ad4711999f94a4431`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `574a91ae5c4a75a6f9ca345a1601d40a0c946aa32add443d44d5a86f8bbea338`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | failed | — / — | — | — | — | 0 |
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2590 |
 
-Run 1 gagal: `ClientError:429`; tidak dihitung sebagai suara.
+Run 1 — solusi: Berdasarkan definisi logaritma, f(1) = 8log 1. Karena 8^0 = 1, maka 8log 1 = 0.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk menerapkan definisi dasar logaritma (logaritma dari 1 adalah 0) secara langsung tanpa memerlukan langkah tambahan atau manipulasi.. Bukti: f(x) = {}^8\log x; Nilai dari f(1) adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman terhadap definisi dan sifat dasar logaritma sebagai konsep fundamental dalam fungsi logaritma.. Bukti: f(x) = {}^8\log x
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu mengingat sifat logaritma bahwa logaritma dari 1 dengan basis berapapun adalah 0. Tidak ada langkah perantara atau kendala yang harus diintegrasikan.. Bukti: f(x) = {}^8\log x; Nilai dari f(1) adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi dasar logaritma dan eksponen. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, ini adalah penerapan langsung dari definisi logaritma yang sudah dipelajari sebelumnya, sehingga tingkat kesulitannya rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99539,9 +99556,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1091. Soal `d50cd92ada8949c72d16821d`
@@ -99555,27 +99572,49 @@ Fungsi logaritma yang memiliki basis 10 disebut ....
 | C | fungsi logaritma biner |
 | D | fungsi logaritma murni |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Berdasarkan definisi standar dalam matematika, logaritma dengan basis 10 disebut logaritma umum (common logarithm), sedangkan logaritma dengan basis e disebut logaritma alami (natural logarithm).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e3c2d3297a62d3dfe19a1eaf24e1264381e431a81d8b7855d966928645c0e1cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c1357f84c60a63cda2aed13fc6dd47ab57cec29d86ee88ca7ba4cae5d8cbcbaa`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2532 |
+
+Run 1 — solusi: Berdasarkan definisi standar dalam matematika, logaritma dengan basis 10 disebut logaritma umum (common logarithm), sedangkan logaritma dengan basis e disebut logaritma alami (natural logarithm).
+- Domain kognitif `classify/knowing`: Soal ini hanya menuntut siswa untuk mengingat atau mengenali terminologi dasar mengenai fungsi logaritma. Tidak ada proses analisis atau penerapan prosedur yang diperlukan.. Bukti: Fungsi logaritma yang memiliki basis 10 disebut ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai istilah atau terminologi dalam materi logaritma.. Bukti: Fungsi logaritma yang memiliki basis 10 disebut ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan hanya memerlukan ingatan langsung terhadap definisi istilah. Tidak ada langkah penyelesaian, integrasi konsep, atau kendala yang harus dipecahkan.. Bukti: Fungsi logaritma yang memiliki basis 10 disebut ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang notasi logaritma. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah pertanyaan definisi dasar yang seharusnya sudah dikuasai siswa kelas 11 sebagai bagian dari pengenalan fungsi logaritma. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99608,9 +99647,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1092. Soal `5df286e50d339814406368a9`
@@ -99624,27 +99663,49 @@ Hubungan antara tekanan udara $P$ (dalam kPa) dan ketinggian suatu tempat $h$ (d
 | C | $11,088\text{ km}$ |
 | D | $2,772\text{ km}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Model: h = -8 ln(P/104). Stasiun A: h_A = -8 ln(52/104) = -8 ln(1/2) = 8 ln 2. Stasiun B: h_B = -8 ln(26/104) = -8 ln(1/4) = 16 ln 2. Selisih: h_B - h_A = 8 ln 2 = 8 * 0,693 = 5,544 km.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `46fae34b4eb98c826ab1a7d75bc2c914f9a6ed3be6be96235491b5d820e1d368`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8865e54cba6dbe8b36281f85927007a49559f9080dfb16d7d2caf077ecdc5100`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3169 |
+
+Run 1 — solusi: Model: h = -8 ln(P/104). Stasiun A: h_A = -8 ln(52/104) = -8 ln(1/2) = 8 ln 2. Stasiun B: h_B = -8 ln(26/104) = -8 ln(1/4) = 16 ln 2. Selisih: h_B - h_A = 8 ln 2 = 8 * 0,693 = 5,544 km.
+- Domain kognitif `classify/applying`: Siswa perlu memanipulasi persamaan logaritma untuk mengisolasi variabel h, kemudian menerapkan model tersebut pada dua kondisi tekanan yang berbeda untuk mencari selisih ketinggian. Ini melibatkan penerapan prosedur logaritma dalam konteks pemodelan.. Bukti: Hubungan antara tekanan udara P (dalam kPa) dan ketinggian suatu tempat h (dalam km) dimodelkan oleh fungsi logaritma alami ln(P/104) = -h/8.; selisih ketinggian antara stasiun B dan stasiun A adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang sifat logaritma (seperti ln(1/x) = -ln x) dan prosedur aljabar untuk menyelesaikan model fungsi logaritma yang diberikan.. Bukti: ln(P/104) = -h/8; selisih ketinggian antara stasiun B dan stasiun A
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah terstruktur: mengisolasi h, menghitung dua nilai ketinggian, dan mencari selisihnya. Meskipun prosedurnya rutin, siswa harus mengelola hubungan antara tekanan dan ketinggian serta sifat logaritma secara akurat.. Bukti: ln(P/104) = -h/8; tekanan udara tercatat sebesar 52 kPa; tekanan udara tepat separuh dari tekanan di stasiun A, yaitu 26 kPa
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dasar dan manipulasi aljabar persamaan. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu memanipulasi fungsi logaritma dalam konteks pemodelan sederhana. Langkah-langkahnya jelas namun memerlukan ketelitian dalam perhitungan logaritma. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99677,9 +99738,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1093. Soal `20baaf85848ad5f14c8a43ca`
@@ -99693,27 +99754,49 @@ Seorang guru memberikan pernyataan berikut kepada kelasnya:<br>"Untuk setiap bil
 | C | Dodi |
 | D | Budi |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Fungsi logaritma f(x) = b log x bersifat monoton naik untuk b > 1, sehingga b log M < b log N berimplikasi M < N. Untuk 0 < b < 1, fungsi bersifat monoton turun, sehingga b log M < b log N berimplikasi M > N. Pernyataan guru salah karena tidak membatasi nilai b. Candra memberikan analisis yang tepat mengenai pengaruh basis b terhadap arah ketidaksamaan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9371f5325a7d92c9fc2329e3126f00502cd0e6a52059a5541d7927c0508c8009`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8dcba7f1e8be6be6a4db9ea82b83e82e29d7996a0d3e137c89d6fab4178347f9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3193 |
+
+Run 1 — solusi: Fungsi logaritma f(x) = b log x bersifat monoton naik untuk b > 1, sehingga b log M < b log N berimplikasi M < N. Untuk 0 < b < 1, fungsi bersifat monoton turun, sehingga b log M < b log N berimplikasi M > N. Pernyataan guru salah karena tidak membatasi nilai b. Candra memberikan analisis yang tepat mengenai pengaruh basis b terhadap arah ketidaksamaan.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk mengevaluasi kebenaran pernyataan matematis berdasarkan sifat kemonotonan fungsi logaritma. Siswa harus memahami hubungan antara basis logaritma dan arah ketidaksamaan, yang merupakan konsep konseptual, serta membedakan kasus b > 1 dan 0 < b < 1. Ini melibatkan penalaran untuk memvalidasi pernyataan umum.. Bukti: jika ${}^b\log M < {}^b\log N$, maka selalu berlaku $M < N$.; Candra: "Pernyataan bernilai benar jika $b > 1$, tetapi salah jika $0 < b < 1$ karena fungsi logaritma dengan $0 < b < 1$ monoton turun sehingga berakibat $M > N$."
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar kemonotonan fungsi logaritma (konsep) dan menerapkannya untuk menganalisis validitas pernyataan logaritma (prosedural/konseptual).. Bukti: fungsi logaritma dengan $0 < b < 1$ monoton turun; Pernyataan bernilai benar jika $b > 1$, tetapi salah jika $0 < b < 1$
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konseptual tentang sifat monoton fungsi logaritma. Siswa tidak hanya menghitung, tetapi harus menganalisis kondisi basis (b > 1 vs 0 < b < 1) yang mempengaruhi arah ketidaksamaan. Meskipun konsepnya standar, siswa harus mengintegrasikan pengetahuan tentang fungsi untuk mengevaluasi pernyataan yang diberikan.. Bukti: jika ${}^b\log M < {}^b\log N$, maka selalu berlaku $M < N$.; Candra: "Pernyataan bernilai benar jika $b > 1$, tetapi salah jika $0 < b < 1$ karena fungsi logaritma dengan $0 < b < 1$ monoton turun sehingga berakibat $M > N$."
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat dasar logaritma dan kemonotonan fungsi logaritma. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan memahami sifat fungsi logaritma sebagai bagian dari materi fungsi. Soal ini menguji pemahaman mendalam tentang sifat tersebut, bukan sekadar komputasi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99755,9 +99838,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1094. Soal `6a46f909b99702a4083ab14c`
@@ -99771,27 +99854,49 @@ Sebuah tim keamanan siber merancang dua skema kata sandi acak. Skema $A$ menggun
 | C | $11\text{ simbol}$ |
 | D | $15\text{ simbol}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: H_A = 6 * log2(64) = 6 * 6 = 36. Target H_B >= 1.25 * 36 = 45. H_B = L_B * log2(16) = L_B * 4. 4 * L_B >= 45 => L_B >= 11.25. Since L_B must be an integer, L_B = 12.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `501a5f56f9b81daebcb18d8f209f0b4f967db1bf92d9099de195743fb0a2e61f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c04ce20b35aff7e86e2c0696844cb3957b4c206120f6dc2b6bbdc694518c0653`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3081 |
+
+Run 1 — solusi: H_A = 6 * log2(64) = 6 * 6 = 36. Target H_B >= 1.25 * 36 = 45. H_B = L_B * log2(16) = L_B * 4. 4 * L_B >= 45 => L_B >= 11.25. Since L_B must be an integer, L_B = 12.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep logaritma dalam konteks entropi informasi, menghitung nilai entropi skema A, menentukan target entropi skema B, dan menyelesaikan pertidaksamaan logaritma untuk variabel panjang simbol L_B.. Bukti: Tim tersebut menginginkan Skema B memiliki entropi informasi (H) setidaknya 25% lebih kuat daripada Skema A.; Berdasarkan rumus H = L * 2log N, panjang minimal simbol (LB) yang harus dirancang untuk Skema B adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural dalam menggunakan rumus logaritma yang diberikan untuk menyelesaikan masalah optimasi sederhana.. Bukti: Berdasarkan rumus H = L * 2log N
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah logis yang saling terkait: menghitung entropi A, menentukan target entropi B, dan menyelesaikan pertidaksamaan untuk L_B. Siswa harus memahami hubungan antara variabel dalam rumus dan melakukan pembulatan ke atas yang tepat untuk memenuhi syarat 'setidaknya'.. Bukti: Skema A menggunakan panjang LA = 6 simbol yang dipilih dari sekumpulan NA = 64 simbol unik.; Skema B hanya dapat menggunakan sekumpulan NB = 16 simbol unik; setidaknya 25% lebih kuat daripada Skema A
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma (basis 2) dan operasi aljabar dasar. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu mengoperasikan logaritma dan pertidaksamaan linear sederhana dalam konteks aplikasi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99824,9 +99929,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1095. Soal `dc101b6b1e423a73eb82d9a6`
@@ -99840,27 +99945,49 @@ Banyaknya bilangan bulat $x$ yang memenuhi pertidaksamaan logaritma:<br>$${}^{\f
 | C | $3$ |
 | D | $2$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: 1. Syarat numerus: x^2 - 2x - 3 > 0 => (x-3)(x+1) > 0 => x < -1 atau x > 3. 2. Pertidaksamaan: basis 1/2 < 1, maka tanda berubah: x^2 - 2x - 3 <= (1/2)^(-3) => x^2 - 2x - 3 <= 8 => x^2 - 2x - 11 <= 0. Akar x^2 - 2x - 11 = 0 adalah x = (2 +/- sqrt(4 + 44))/2 = 1 +/- sqrt(12) = 1 +/- 2sqrt(3). Nilai: 1 - 3.46 = -2.46 dan 1 + 3.46 = 4.46. Interval: [-2.46, 4.46]. 3. Irisan dengan syarat numerus: [-2.46, -1) U (3, 4.46]. Bilangan bulat: x = -2 (karena -2.46 <= -2 < -1) dan x = 4 (karena 3 < 4 <= 4.46). Total 2 bilangan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b4e30326dd7a8812edceb87eb7d4ee82c210b5af2ff3895af023fac8b0055c3d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `76dd35fa7fdfc329a151c45fa454fb74084b1a92fcb45bc8def4f3db746768ab`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3190 |
+
+Run 1 — solusi: 1. Syarat numerus: x^2 - 2x - 3 > 0 => (x-3)(x+1) > 0 => x < -1 atau x > 3. 2. Pertidaksamaan: basis 1/2 < 1, maka tanda berubah: x^2 - 2x - 3 <= (1/2)^(-3) => x^2 - 2x - 3 <= 8 => x^2 - 2x - 11 <= 0. Akar x^2 - 2x - 11 = 0 adalah x = (2 +/- sqrt(4 + 44))/2 = 1 +/- sqrt(12) = 1 +/- 2sqrt(3). Nilai: 1 - 3.46 = -2.46 dan 1 + 3.46 = 4.46. Interval: [-2.46, 4.46]. 3. Irisan dengan syarat numerus: [-2.46, -1) U (3, 4.46]. Bilangan bulat: x = -2 (karena -2.46 <= -2 < -1) dan x = 4 (karena 3 < 4 <= 4.46). Total 2 bilangan.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan prosedur logaritma, memahami syarat numerus, dan menangani pertidaksamaan dengan basis pecahan (membalik tanda). Ini adalah penerapan konsep logaritma pada konteks rutin.. Bukti: Banyaknya bilangan bulat x yang memenuhi pertidaksamaan logaritma: ${}^{\frac{1}{2}}\log(x^2 - 2x - 3) \ge -3$
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman algoritme penyelesaian pertidaksamaan logaritma dan kriteria penggunaannya (syarat numerus dan basis).. Bukti: Banyaknya bilangan bulat x yang memenuhi pertidaksamaan logaritma: ${}^{\frac{1}{2}}\log(x^2 - 2x - 3) \ge -3$
+- Intended difficulty `classify/Medium`: Soal memerlukan integrasi syarat numerus dan penyelesaian pertidaksamaan kuadrat. Meskipun prosedurnya familiar, siswa harus mengelola dua kendala yang berinteraksi (syarat numerus dan hasil pertidaksamaan) untuk mendapatkan irisan yang benar. Ini adalah tugas Medium bagi kelas 11.. Bukti: Banyaknya bilangan bulat x yang memenuhi pertidaksamaan logaritma: ${}^{\frac{1}{2}}\log(x^2 - 2x - 3) \ge -3$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pertidaksamaan kuadrat, definisi logaritma, syarat numerus logaritma. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu menangani pertidaksamaan logaritma dengan basis pecahan dan syarat numerus sebagai bagian dari kurikulum tingkat lanjut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99895,9 +100022,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1096. Soal `0b7645f226601c8c2e29f3c3`
@@ -99911,27 +100038,49 @@ Lama waktu $t$ (dalam menit) yang diperlukan untuk mengisi daya suatu baterai da
 | C | $3 : 1$ |
 | D | $4 : 1$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Waktu untuk 50% penuh: t1 = -(1/k)ln(1 - 0,5) = -(1/k)ln(0,5) = (1/k)ln(2). Waktu untuk 87,5% penuh: t2 = -(1/k)ln(1 - 0,875) = -(1/k)ln(0,125) = -(1/k)ln(1/8) = -(1/k)ln(2^-3) = (3/k)ln(2). Rasio t2 : t1 = (3/k)ln(2) : (1/k)ln(2) = 3 : 1.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8e4fd62f8dd842c675de98c427e4918595bc6dce5296a8b0acb41334d183402c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `54b98b81de83f8c4d4b7dff2e169db987ce8f6f4379cb08fe2a21c0e3801670c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3156 |
+
+Run 1 — solusi: Waktu untuk 50% penuh: t1 = -(1/k)ln(1 - 0,5) = -(1/k)ln(0,5) = (1/k)ln(2). Waktu untuk 87,5% penuh: t2 = -(1/k)ln(1 - 0,875) = -(1/k)ln(0,125) = -(1/k)ln(1/8) = -(1/k)ln(2^-3) = (3/k)ln(2). Rasio t2 : t1 = (3/k)ln(2) : (1/k)ln(2) = 3 : 1.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan fungsi logaritma yang diberikan ke dalam dua skenario berbeda (87,5% dan 50%) dan membandingkan hasilnya. Ini melibatkan manipulasi logaritma dan penyederhanaan ekspresi untuk menemukan rasio, yang merupakan penerapan konsep dalam konteks rutin.. Bukti: Rasio lama waktu yang diperlukan untuk mengisi daya baterai hingga 87,5% penuh terhadap lama waktu hingga 50% penuh
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang sifat-sifat logaritma (logaritma dari pecahan dan pangkat) serta prosedur substitusi nilai ke dalam model fungsi yang diberikan.. Bukti: t = -1/k ln(1 - C/C0)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemilihan prosedur yang tepat (substitusi dan penyederhanaan logaritma) dan integrasi dua langkah perhitungan yang saling terkait untuk mendapatkan rasio. Meskipun rumusnya diberikan, siswa harus memahami manipulasi logaritma (seperti ln(1/8) = -3 ln 2) untuk mencapai jawaban akhir.. Bukti: Rasio lama waktu yang diperlukan untuk mengisi daya baterai hingga 87,5% penuh terhadap lama waktu hingga 50% penuh
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma, sifat-sifat logaritma (ln(a^b) = b ln a), dan substitusi variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu memanipulasi fungsi logaritma. Soal ini menuntut ketelitian dalam penyederhanaan logaritma, namun alurnya cukup jelas dan tidak memerlukan strategi non-rutin yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -99964,9 +100113,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1097. Soal `9a298fa1a087498f5531fd52`
@@ -99980,27 +100129,49 @@ Dua grafik fungsi logaritma $f(x) = {}^2\log(x + 4)$ dan $g(x) = {}^2\log(x^2 - 
 | C | Kedua argumen salah karena persamaan kuadrat yang terbentuk tidak memiliki akar real pada himpunan bilangan real |
 | D | Argumen Bella benar karena nilai $x$ pada daerah asal fungsi logaritma selalu disyaratkan harus bernilai positif ($x > 0$) |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Titik potong terjadi saat f(x) = g(x), yaitu x + 4 = x^2 - 2x - 4, yang menghasilkan x^2 - 3x - 8 = 0. Akar-akarnya adalah x = (3 ± √41)/2. Nilai x1 ≈ 4,70 dan x2 ≈ -1,70. Syarat numerus: x + 4 > 0 (x > -4) dan x^2 - 2x - 4 > 0. Untuk x1 ≈ 4,70, x + 4 > 0 terpenuhi. Untuk x2 ≈ -1,70, x + 4 = -1,70 + 4 = 2,30 > 0. Karena x2 > -4, maka kedua akar memenuhi syarat numerus.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `97337df48b7736404b80cd84e15f3be2387104d109a83eadd54a5f66751fd374`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bfe2e05a387b916bac4e53665efc64d37fa3ee2ab5ecee88c02b6c7a5a5267d4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3443 |
+
+Run 1 — solusi: Titik potong terjadi saat f(x) = g(x), yaitu x + 4 = x^2 - 2x - 4, yang menghasilkan x^2 - 3x - 8 = 0. Akar-akarnya adalah x = (3 ± √41)/2. Nilai x1 ≈ 4,70 dan x2 ≈ -1,70. Syarat numerus: x + 4 > 0 (x > -4) dan x^2 - 2x - 4 > 0. Untuk x1 ≈ 4,70, x + 4 > 0 terpenuhi. Untuk x2 ≈ -1,70, x + 4 = -1,70 + 4 = 2,30 > 0. Karena x2 > -4, maka kedua akar memenuhi syarat numerus.
+- Domain kognitif `classify/applying`: Soal ini menuntut siswa untuk mengevaluasi argumen matematis terkait syarat eksistensi fungsi logaritma (syarat numerus) dan penyelesaian persamaan logaritma. Siswa harus memahami bahwa syarat numerus tidak sama dengan syarat x > 0, melainkan fungsi numerus harus positif. Ini melibatkan penerapan konsep logaritma pada konteks analisis grafik.. Bukti: Dua grafik fungsi logaritma f(x) = 2log(x + 4) dan g(x) = 2log(x^2 - 2x - 4) diselidiki titik potongnya.; Pernyataan evaluasi yang benar mengenai kedua argumen tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar logaritma (syarat numerus) dan mengaitkannya dengan prosedur aljabar (menyelesaikan persamaan kuadrat) untuk menentukan titik potong fungsi.. Bukti: syarat numerus x + 4 > 0 dan x^2 - 2x - 4 > 0; persamaan x + 4 = x^2 - 2x - 4 memiliki dua akar real berbeda
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konseptual yang tepat mengenai syarat numerus logaritma (bukan sekadar x > 0) dan kemampuan untuk memverifikasi akar persamaan kuadrat terhadap syarat tersebut. Siswa harus mengintegrasikan konsep fungsi logaritma dengan aljabar dasar, namun jalur penyelesaiannya cukup terstruktur dan familiar bagi siswa kelas 11.. Bukti: Dua grafik fungsi logaritma f(x) = 2log(x + 4) dan g(x) = 2log(x^2 - 2x - 4); Argumen Arya: ...memiliki dua akar real berbeda dan kedua akar tersebut menghasilkan nilai numerus yang positif.; Argumen Bella: ...salah satu akar persamaan bernilai negatif, dan bilangan negatif tidak boleh menjadi nilai x
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman syarat numerus logaritma (numerus > 0) dan penyelesaian persamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu membedakan syarat numerus dengan domain variabel x. Soal ini menguji miskonsepsi umum tersebut dengan tingkat kesulitan yang sesuai untuk level menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100037,9 +100208,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1098. Soal `86bed929209b0bc302a164c7`
@@ -100053,27 +100224,49 @@ Sebuah administrator sistem membandingkan dua opsi kebijakan pembuatan kata sand
 | C | $25\text{ karakter}$ |
 | D | $21\text{ karakter}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `21`.
+Solusi minimum hasil AI: Entropi H = L * log2(N). Hx = Lx * log2(16) = 4Lx. Hy = Ly * log2(64) = 6Ly. Diketahui Ly = Lx - 3 dan Hy - Hx = 6. Substitusi: 6(Lx - 3) - 4Lx = 6. 6Lx - 18 - 4Lx = 6. 2Lx = 24, maka Lx = 12. Ly = 12 - 3 = 9. Total Lx + Ly = 12 + 9 = 21.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4235b94143009f53f4e011d1e2ccca070c9e1e494c4e3e39bdb1d29d49986323`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1a45e6077a73aa8e1c1630bc8c7c1c6b0b149b68b3ccf991b21e0375e4aca79b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3297 |
+
+Run 1 — solusi: Entropi H = L * log2(N). Hx = Lx * log2(16) = 4Lx. Hy = Ly * log2(64) = 6Ly. Diketahui Ly = Lx - 3 dan Hy - Hx = 6. Substitusi: 6(Lx - 3) - 4Lx = 6. 6Lx - 18 - 4Lx = 6. 2Lx = 24, maka Lx = 12. Ly = 12 - 3 = 9. Total Lx + Ly = 12 + 9 = 21.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan deskripsi verbal ke dalam model matematika menggunakan konsep logaritma (basis 2) untuk menghitung entropi, lalu menyelesaikan sistem persamaan linear satu variabel. Ini adalah penerapan konsep logaritma dalam konteks masalah nyata.. Bukti: H_X = L_X * {}^2\log 16 = 4L_X; H_Y = (L_X - 3) * {}^2\log 64 = 6(L_X - 3); 6(L_X - 3) - 4L_X = 6
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman prinsip logaritma (basis 2) dan bagaimana menerapkannya dalam rumus entropi informasi, yang merupakan pengetahuan konseptual yang kemudian dioperasikan secara prosedural.. Bukti: H_X = L_X * {}^2\log 16; H_Y - H_X = 6
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus mengintegrasikan beberapa informasi (hubungan panjang kata sandi dan selisih entropi) ke dalam model matematika. Meskipun prosedurnya familiar (substitusi dan aljabar linear), siswa perlu merumuskan persamaan sendiri dari narasi, yang membutuhkan perencanaan langkah yang saling terkait.. Bukti: L_Y = L_X - 3; H_Y - H_X = 6; 6(L_X - 3) - 4L_X = 6
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma (basis 2), aljabar linear satu variabel, dan kemampuan menerjemahkan masalah verbal ke model matematika. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Tingkat kesulitan sesuai untuk kelas 11 karena menuntut kemampuan pemodelan matematika sederhana dari konteks nyata menggunakan logaritma, yang merupakan standar kompetensi kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100110,9 +100303,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `needs_ai_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1099. Soal `c843e2c5ca0028d5219aa6ba`
@@ -100126,27 +100319,49 @@ Diketahui fungsi logaritma $f(x) = {}^a\log(x^2 - 2bx + c)$ dengan $a > 1$. Graf
 | C | $29$ |
 | D | $38$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `32`.
+Solusi minimum hasil AI: Fungsi $f(x) = {}^a\log(x^2 - 2bx + c)$ minimum saat numerus $g(x) = x^2 - 2bx + c$ minimum (karena $a > 1$). Sumbu simetri $x = -(-2b)/2 = b = 4$. Titik potong sumbu-$y$ di $x=0$ memberi $g(0) = c = 25$. Nilai minimum numerus saat $x=4$ adalah $4^2 - 2(4)(4) + 25 = 16 - 32 + 25 = 9$. Diketahui $f(4) = 2$, maka ${}^a\log 9 = 2 \implies a^2 = 9$. Karena $a > 1$, maka $a = 3$. Hasil $a + b + c = 3 + 4 + 25 = 32$.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3b9b73445a478c6d13b5905c1eb50b3135482d76063c27bf761383f25cbebddf`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3dcce761cb24923b0306b73780b433b6fc5750bd4d853470454cae437ffb1c29`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3177 |
+
+Run 1 — solusi: Fungsi $f(x) = {}^a\log(x^2 - 2bx + c)$ minimum saat numerus $g(x) = x^2 - 2bx + c$ minimum (karena $a > 1$). Sumbu simetri $x = -(-2b)/2 = b = 4$. Titik potong sumbu-$y$ di $x=0$ memberi $g(0) = c = 25$. Nilai minimum numerus saat $x=4$ adalah $4^2 - 2(4)(4) + 25 = 16 - 32 + 25 = 9$. Diketahui $f(4) = 2$, maka ${}^a\log 9 = 2 \implies a^2 = 9$. Karena $a > 1$, maka $a = 3$. Hasil $a + b + c = 3 + 4 + 25 = 32$.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan sifat fungsi logaritma (basis > 1) dengan sifat fungsi kuadrat (titik puncak dan sumbu simetri) untuk menentukan parameter a, b, dan c. Ini melibatkan pemahaman hubungan antara nilai minimum fungsi logaritma dan nilai minimum numerusnya.. Bukti: Grafik fungsi f(x) mencapai nilai minimum sebesar 2 pada saat x = 4; memotong sumbu-y di titik (0, ^a log 25)
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut penggunaan prosedur aljabar (mencari sumbu simetri, substitusi titik) yang didasarkan pada pemahaman konseptual tentang sifat fungsi logaritma dan fungsi kuadrat.. Bukti: f(x) = ^a log(x^2 - 2bx + c); nilai minimum sebesar 2 pada saat x = 4
+- Intended difficulty `classify/Medium`: Soal memerlukan integrasi antara sifat fungsi logaritma dan fungsi kuadrat. Siswa harus menghubungkan nilai minimum fungsi logaritma dengan nilai minimum numerus, menentukan parameter b dari sumbu simetri, c dari titik potong, dan a dari nilai fungsi. Langkah-langkahnya saling bergantung namun prosedurnya standar.. Bukti: f(x) = ^a log(x^2 - 2bx + c); nilai minimum sebesar 2 pada saat x = 4; memotong sumbu-y di titik (0, ^a log 25)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat logaritma, fungsi kuadrat (titik puncak/sumbu simetri), dan sistem persamaan sederhana. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu mengaitkan fungsi kuadrat di dalam logaritma. Tingkat kesulitan menengah karena memerlukan integrasi beberapa konsep (logaritma dan kuadrat) secara berurutan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100179,9 +100394,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1100. Soal `f758ce0ca80af401f6618714`
@@ -100195,27 +100410,49 @@ Dua peristiwa gempa bumi tercatat pada stasiun pengamatan seismik. Gempa bumi pe
 | C | $13,400\text{ skala Richter}$ |
 | D | $7,204\text{ skala Richter}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: M1 = log(I1/I0) = 6,2 => I1 = I0 * 10^6,2. M2 = log(I2/I0) = 7,2 => I2 = I0 * 10^7,2 = 10 * I1. I3 = I1 + I2 = I1 + 10 * I1 = 11 * I1 = 11 * I0 * 10^6,2. M3 = log(I3/I0) = log(11 * 10^6,2) = log(11) + 6,2 = log(1,1 * 10) + 6,2 = log(1,1) + log(10) + 6,2 = 0,041 + 1 + 6,2 = 7,241.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4457d4a59f4c0cc8138f7f0862b3081541e3ec808ebe0a0e8444e5e1fc19a74e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b39fa4872861f6401c96cb939e38e126318f97aa35aa624ce959ae719278e4d4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3230 |
+
+Run 1 — solusi: M1 = log(I1/I0) = 6,2 => I1 = I0 * 10^6,2. M2 = log(I2/I0) = 7,2 => I2 = I0 * 10^7,2 = 10 * I1. I3 = I1 + I2 = I1 + 10 * I1 = 11 * I1 = 11 * I0 * 10^6,2. M3 = log(I3/I0) = log(11 * 10^6,2) = log(11) + 6,2 = log(1,1 * 10) + 6,2 = log(1,1) + log(10) + 6,2 = 0,041 + 1 + 6,2 = 7,241.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep logaritma untuk mengubah hubungan intensitas (penjumlahan) menjadi hubungan skala Richter (logaritma). Ini melibatkan manipulasi aljabar logaritma dan pemahaman sifat logaritma untuk mengintegrasikan data yang diberikan.. Bukti: Jika suatu gempa ketiga memiliki intensitas sebesar jumlah intensitas kedua gempa tersebut (I3 = I1 + I2); kekuatan gempa ketiga dalam skala Richter adalah sekitar
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang skala logaritmik dan prosedur manipulasi aljabar logaritma untuk menyelesaikan masalah kontekstual.. Bukti: M = log(I/I0); I3 = I1 + I2
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium. Siswa harus memahami hubungan antara intensitas dan skala Richter, melakukan konversi eksponensial, dan memanipulasi logaritma. Meskipun prosedurnya familiar, terdapat beberapa langkah saling terkait (konversi, penjumlahan intensitas, properti logaritma) yang memerlukan perencanaan.. Bukti: I3 = I1 + I2; log 1,1 ≈ 0,041
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dan eksponen dasar. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu mengoperasikan logaritma dalam konteks nyata. Soal ini menuntut pemahaman bahwa penjumlahan intensitas tidak sama dengan penjumlahan skala Richter, yang merupakan konsep kunci pada materi logaritma. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100248,9 +100485,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1101. Soal `b6ca8eb6e5d596415a601cb1`
@@ -100264,27 +100501,49 @@ Dua kultur mikroorganisme diteliti dalam laboratorium. Kultur $A$ membelah diri 
 | C | $18\text{ jam}$ |
 | D | $12\text{ jam}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Samakan kedua persamaan waktu: 2 * 2log(N/25) = 3 * 2log(N/200). Gunakan sifat logaritma n * log(x) = log(x^n): 2log((N/25)^2) = 2log((N/200)^3). Maka (N/25)^2 = (N/200)^3. N^2 / 625 = N^3 / 8.000.000. N = 8.000.000 / 625 = 12.800. Substitusi N ke persamaan t: t = 2 * 2log(12.800/25) = 2 * 2log(512) = 2 * 9 = 18.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `29672f5b4b8a6974998fa71d6dc0f54d22c3089a8777ae322eea8c7d94c1496b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `61fb3da0eb9e4014fb3595b27cd4e169d780f3abb0ae7ea5d4fc31781d23f23c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3284 |
+
+Run 1 — solusi: Samakan kedua persamaan waktu: 2 * 2log(N/25) = 3 * 2log(N/200). Gunakan sifat logaritma n * log(x) = log(x^n): 2log((N/25)^2) = 2log((N/200)^3). Maka (N/25)^2 = (N/200)^3. N^2 / 625 = N^3 / 8.000.000. N = 8.000.000 / 625 = 12.800. Substitusi N ke persamaan t: t = 2 * 2log(12.800/25) = 2 * 2log(512) = 2 * 9 = 18.
+- Domain kognitif `classify/applying`: Siswa harus mengintegrasikan dua fungsi logaritma yang berbeda untuk mencari nilai variabel N yang sama, kemudian menggunakan nilai tersebut untuk menghitung waktu t. Ini melibatkan pemilihan strategi aljabar (sifat logaritma) dan pemecahan masalah rutin.. Bukti: Jika kedua kultur berkembang biak secara bersamaan dari waktu t = 0, lama waktu t yang dibutuhkan hingga kedua kultur memiliki banyak populasi yang sama (N) adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang sifat-sifat logaritma (seperti n log a = log a^n) dan prosedur aljabar untuk menyelesaikan persamaan logaritma.. Bukti: t = 2 * 2log(N/25); t = 3 * 2log(N/200)
+- Intended difficulty `classify/Medium`: Soal memerlukan beberapa langkah terstruktur: menyamakan persamaan, menerapkan sifat logaritma untuk menghilangkan log, menyelesaikan persamaan aljabar untuk N, dan substitusi balik untuk mendapatkan t. Tingkat kesulitan sedang karena alur penyelesaian jelas namun memerlukan ketelitian dalam manipulasi aljabar.. Bukti: 2 * 2log(N/25) = 3 * 2log(N/200); t = 2 * 2log(N/25)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dasar dan penyelesaian persamaan aljabar. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu memanipulasi persamaan logaritma. Soal ini adalah aplikasi standar fungsi logaritma yang memerlukan beberapa langkah aljabar berurutan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100317,9 +100576,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1102. Soal `66493de9c2ac5a2c5e84af09`
@@ -100333,27 +100592,49 @@ Banyaknya bilangan bulat $x$ yang memenuhi pertidaksamaan logaritma bersarang:<b
 | C | $2$ |
 | D | $8$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Syarat numerus: 1) x^2 - 7 > 0 (x^2 > 7) dan 2) ^3log(x^2 - 7) > 0 (x^2 - 7 > 1 -> x^2 > 8). Pertidaksamaan: ^1/2log(^3log(x^2 - 7)) >= -1. Karena basis 1/2 < 1, tanda berbalik: ^3log(x^2 - 7) <= (1/2)^-1 = 2. Karena basis 3 > 1, tanda tetap: x^2 - 7 <= 3^2 = 9 -> x^2 <= 16. Irisan: 8 < x^2 <= 16. Nilai x bulat: x^2 in {9, 16}. Untuk x^2=9, x in {-3, 3}. Untuk x^2=16, x in {-4, 4}. Total 4 nilai.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `32480c1665906f6555da1f3cbccb0232777a937da5e46ac6a6140806737baf61`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4c377e7d7561d016e0e217ef7d5e77294808ed17b060af1a91eac5a37007bb23`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3193 |
+
+Run 1 — solusi: Syarat numerus: 1) x^2 - 7 > 0 (x^2 > 7) dan 2) ^3log(x^2 - 7) > 0 (x^2 - 7 > 1 -> x^2 > 8). Pertidaksamaan: ^1/2log(^3log(x^2 - 7)) >= -1. Karena basis 1/2 < 1, tanda berbalik: ^3log(x^2 - 7) <= (1/2)^-1 = 2. Karena basis 3 > 1, tanda tetap: x^2 - 7 <= 3^2 = 9 -> x^2 <= 16. Irisan: 8 < x^2 <= 16. Nilai x bulat: x^2 in {9, 16}. Untuk x^2=9, x in {-3, 3}. Untuk x^2=16, x in {-4, 4}. Total 4 nilai.
+- Domain kognitif `classify/applying`: Soal menuntut siswa menerapkan prosedur logaritma secara berjenjang, termasuk syarat numerus dan sifat pertidaksamaan logaritma dengan basis pecahan (tanda berbalik) dan basis > 1 (tanda tetap). Ini adalah penerapan konsep pada konteks rutin.. Bukti: Banyaknya bilangan bulat x yang memenuhi pertidaksamaan logaritma bersarang: ${}^{\frac{1}{2}}\log\left({}^3\log(x^2 - 7)\right) \ge -1$
+- Dimensi pengetahuan `classify/procedural`: Siswa harus menggunakan algoritme penyelesaian pertidaksamaan logaritma, memahami syarat numerus, dan sifat-sifat logaritma (basis < 1 vs > 1).. Bukti: pertidaksamaan logaritma bersarang
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan beberapa langkah yang saling bergantung (syarat numerus ganda, pertidaksamaan logaritma bersarang, dan irisan himpunan penyelesaian). Meskipun prosedurnya familiar, siswa harus teliti dalam mengelola tanda pertidaksamaan akibat basis logaritma dan memastikan semua syarat numerus terpenuhi sebelum menentukan nilai bulat.. Bukti: Banyaknya bilangan bulat x yang memenuhi pertidaksamaan logaritma bersarang; ${}^{\frac{1}{2}}\log\left({}^3\log(x^2 - 7)\right) \ge -1$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat logaritma, pertidaksamaan logaritma, syarat numerus, pertidaksamaan kuadrat. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu menangani pertidaksamaan logaritma bersarang. Tingkat kesulitan menengah karena memerlukan ketelitian pada syarat numerus dan perubahan tanda pertidaksamaan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100388,9 +100669,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1103. Soal `c73a4ee6f3940243553bedcb`
@@ -100404,27 +100685,49 @@ Diberikan suatu fungsi logaritma $f(x) = {}^a\log(kx - x^2)$ dengan basis $a > 1
 | C | $24$ |
 | D | $18$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `18`.
+Solusi minimum hasil AI: Numerus g(x) = kx - x^2 adalah parabola terbuka ke bawah dengan sumbu simetri x = -k/(2(-1)) = k/2. Diketahui sumbu simetri x = 6, maka k/2 = 6, sehingga k = 12. Nilai maksimum numerus terjadi di x = 6, yaitu g(6) = 12(6) - 6^2 = 72 - 36 = 36. Karena a > 1, f(x) mencapai maksimum saat numerus maksimum. Maka, ^a log(36) = 2, yang berarti a^2 = 36. Karena a > 1, maka a = 6. Nilai a + k = 6 + 12 = 18.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d440ea67704746633a655ed6d0a264f3959f81f23cdec4a73e83aed806eec635`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bfa4e91d744ff0d870e9b36cec92a0d84e395c77ab385badb0310c00ce91ca3d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3230 |
+
+Run 1 — solusi: Numerus g(x) = kx - x^2 adalah parabola terbuka ke bawah dengan sumbu simetri x = -k/(2(-1)) = k/2. Diketahui sumbu simetri x = 6, maka k/2 = 6, sehingga k = 12. Nilai maksimum numerus terjadi di x = 6, yaitu g(6) = 12(6) - 6^2 = 72 - 36 = 36. Karena a > 1, f(x) mencapai maksimum saat numerus maksimum. Maka, ^a log(36) = 2, yang berarti a^2 = 36. Karena a > 1, maka a = 6. Nilai a + k = 6 + 12 = 18.
+- Domain kognitif `classify/reasoning`: Siswa perlu mengintegrasikan konsep sumbu simetri fungsi kuadrat (sebagai numerus) dengan sifat monotonik fungsi logaritma untuk menentukan nilai maksimum. Ini melibatkan perencanaan langkah-langkah yang saling bergantung (mencari k, lalu mencari nilai maksimum numerus, lalu mencari a) tanpa bantuan eksplisit.. Bukti: Grafik fungsi f(x) memiliki sumbu simetri pada garis x = 6; mencapai nilai maksimum sebesar 2; f(x) = ^a log(kx - x^2)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan antara sifat fungsi logaritma (monoton naik karena a > 1) dan perilaku fungsi kuadrat di dalam numerus.. Bukti: f(x) = ^a log(kx - x^2); sumbu simetri pada garis x = 6; mencapai nilai maksimum sebesar 2
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi beberapa konsep (fungsi kuadrat dan logaritma) dan perencanaan langkah yang berurutan. Meskipun prosedurnya familiar, siswa harus menghubungkan sumbu simetri dengan nilai k, lalu mengevaluasi nilai maksimum numerus, dan akhirnya menyelesaikan persamaan logaritma. Tidak ada strategi non-rutin yang ekstrem, namun integrasi antar konsep cukup untuk tingkat kelas 11.. Bukti: f(x) = ^a log(kx - x^2); sumbu simetri pada garis x = 6; mencapai nilai maksimum sebesar 2
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat fungsi logaritma, sumbu simetri fungsi kuadrat, dan definisi logaritma. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu mengintegrasikan fungsi kuadrat dan logaritma. Langkah-langkahnya logis dan berurutan, namun memerlukan ketelitian dalam menghubungkan parameter fungsi kuadrat dengan nilai maksimum logaritma. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100457,9 +100760,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1104. Soal `de3a9671f2697ee104a4a681`
@@ -100473,27 +100776,49 @@ Hubungan antara tekanan udara $P$ (dalam $\text{kPa}$) dan ketinggian tempat $h$
 | C | $e$ |
 | D | $\frac{1}{e}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Diketahui ln(P/100) = -h/7. Maka ln(P1/100) = -h1/7 dan ln(P2/100) = -h2/7. Selisih kedua persamaan: ln(P2/100) - ln(P1/100) = -h2/7 - (-h1/7) = -(h2 - h1)/7. Menggunakan sifat logaritma: ln(P2/P1) = -(9,1 - 2,1)/7 = -7/7 = -1. Maka P2/P1 = e^(-1) = 1/e.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f4789885e064efe523d53ed5ae5240f2efff92d743434b3aee7bfcf8cf54956a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `929daee79a39ff67443c721a5a2851d41c5ca2106155ca63be6ad575422b52e9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3067 |
+
+Run 1 — solusi: Diketahui ln(P/100) = -h/7. Maka ln(P1/100) = -h1/7 dan ln(P2/100) = -h2/7. Selisih kedua persamaan: ln(P2/100) - ln(P1/100) = -h2/7 - (-h1/7) = -(h2 - h1)/7. Menggunakan sifat logaritma: ln(P2/P1) = -(9,1 - 2,1)/7 = -7/7 = -1. Maka P2/P1 = e^(-1) = 1/e.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat logaritma (selisih logaritma) untuk menentukan rasio tanpa harus menghitung nilai P1 dan P2 secara terpisah. Ini adalah penerapan konsep logaritma pada konteks pemodelan.. Bukti: Hubungan antara tekanan udara P (dalam kPa) dan ketinggian tempat h (dalam km) di atas permukaan laut dimodelkan oleh persamaan logaritma alami: ln(P/100) = -h/7; Rasio tekanan udara P2/P1 adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang sifat-sifat logaritma (khususnya logaritma alami) dan bagaimana menerapkannya dalam manipulasi aljabar untuk mencari rasio.. Bukti: ln(P/100) = -h/7; Rasio tekanan udara P2/P1
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan manipulasi aljabar logaritma yang sedikit lebih dari sekadar substitusi langsung. Siswa harus menyadari bahwa mencari rasio P2/P1 dapat dilakukan dengan mengurangkan dua persamaan logaritma, yang merupakan langkah strategis yang umum namun memerlukan pemahaman konsep logaritma yang baik.. Bukti: ln(P/100) = -h/7; h1 = 2,1 km; h2 = 9,1 km; Rasio tekanan udara P2/P1
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma (terutama logaritma alami dan pengurangan logaritma), operasi aritmatika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu memanipulasi persamaan logaritma. Soal ini menguji kemampuan tersebut tanpa kerumitan kalkulasi yang tinggi, namun memerlukan pemilihan strategi yang tepat (pengurangan persamaan). |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100528,9 +100853,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1105. Soal `e6d6e1fc77ea31718c71e5c7`
@@ -100544,27 +100869,49 @@ Seorang siswa menyelesaikan persamaan logaritma ${}^3\log(x - 2) + {}^3\log(x - 
 | C | Kesimpulan benar karena kedua nilai $x = 1$ dan $x = 5$ memenuhi persamaan kuadrat pada Langkah 3 |
 | D | Kesimpulan salah sejak Langkah 1 karena sifat penjumlahan logaritma hanya berlaku jika basisnya berbeda |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Persamaan ${}^3\log(x - 2) + {}^3\log(x - 4) = 1$ memiliki syarat numerus $x-2 > 0$ dan $x-4 > 0$, sehingga $x > 4$. Penyelesaian persamaan kuadrat $(x-2)(x-4)=3$ menghasilkan $x^2-6x+5=0$, yaitu $x=5$ atau $x=1$. Nilai $x=1$ tidak memenuhi syarat $x>4$ (karena $1-2=-1$ dan $1-4=-3$, logaritma tidak terdefinisi untuk bilangan negatif). Maka, hanya $x=5$ yang valid.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `42ac9a13552137ea0cc3c3a8eaf7a0a382daea5fdea22612c343cc41390963a3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ea2b9b214cf05030fc1bfc6f0a38763ac2b7bdad43d5ba911724f9ccc5273889`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3211 |
+
+Run 1 — solusi: Persamaan ${}^3\log(x - 2) + {}^3\log(x - 4) = 1$ memiliki syarat numerus $x-2 > 0$ dan $x-4 > 0$, sehingga $x > 4$. Penyelesaian persamaan kuadrat $(x-2)(x-4)=3$ menghasilkan $x^2-6x+5=0$, yaitu $x=5$ atau $x=1$. Nilai $x=1$ tidak memenuhi syarat $x>4$ (karena $1-2=-1$ dan $1-4=-3$, logaritma tidak terdefinisi untuk bilangan negatif). Maka, hanya $x=5$ yang valid.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk mengevaluasi kebenaran langkah-langkah penyelesaian, yang menuntut pemahaman konseptual tentang syarat numerus logaritma dan kemampuan untuk mengidentifikasi kesalahan prosedural dalam konteks penyelesaian persamaan logaritma.. Bukti: Evaluasi yang tepat terhadap hasil penyelesaian siswa tersebut adalah; Langkah 5: Menyimpulkan bahwa himpunan penyelesaian persamaan tersebut adalah {1, 5}.
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip logaritma (syarat numerus) dan bagaimana prinsip tersebut berinteraksi dengan prosedur aljabar (penyelesaian persamaan kuadrat) untuk menentukan validitas solusi.. Bukti: Seorang siswa menyelesaikan persamaan logaritma ${}^3\log(x - 2) + {}^3\log(x - 4) = 1$; Langkah 5: Menyimpulkan bahwa himpunan penyelesaian persamaan tersebut adalah {1, 5}.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya melakukan perhitungan rutin, tetapi harus melakukan verifikasi kritis terhadap hasil akhir berdasarkan syarat numerus yang sering terlewatkan. Meskipun prosedurnya familiar, integrasi antara hasil aljabar dan batasan domain fungsi logaritma memerlukan ketelitian dan pemahaman konseptual yang lebih dari sekadar menghitung.. Bukti: Evaluasi yang tepat terhadap hasil penyelesaian siswa tersebut adalah; Langkah 5: Menyimpulkan bahwa himpunan penyelesaian persamaan tersebut adalah {1, 5}.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma, syarat numerus logaritma, dan penyelesaian persamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu mengidentifikasi kesalahan umum dalam penyelesaian persamaan logaritma, khususnya terkait syarat numerus yang merupakan konsep fundamental. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100604,9 +100951,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1106. Soal `642cc629d23d4c2098e1b32d`
@@ -100620,27 +100967,49 @@ Sebuah sistem autentikasi perbankan awalnya menggunakan kata sandi dengan panjan
 | C | $16\text{ karakter}$ |
 | D | $64\text{ karakter}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Entropi informasi H didefinisikan sebagai L * log2(N). Kondisi H2 >= H1: L2 * log2(N2) >= L1 * log2(N1). Diketahui L1=8, N1=64, N2=8. Maka 8 * log2(64) = 8 * 6 = 48 bit. Untuk sistem baru: L2 * log2(8) >= 48. Karena log2(8) = 3, maka 3 * L2 >= 48, sehingga L2 >= 16.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `44af37c919afcf504cb11c027ca1b64684bc0c112655ab18883354bed2966374`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `61b1e0cbde9729be00ba1431f13e68fec6acf7a2767e2f9ca22c194a302054bc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2977 |
+
+Run 1 — solusi: Entropi informasi H didefinisikan sebagai L * log2(N). Kondisi H2 >= H1: L2 * log2(N2) >= L1 * log2(N1). Diketahui L1=8, N1=64, N2=8. Maka 8 * log2(64) = 8 * 6 = 48 bit. Untuk sistem baru: L2 * log2(8) >= 48. Karena log2(8) = 3, maka 3 * L2 >= 48, sehingga L2 >= 16.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep logaritma dalam konteks entropi informasi. Siswa perlu memahami hubungan logaritmik antara jumlah simbol dan panjang karakter untuk mempertahankan tingkat entropi, yang merupakan penerapan konsep pada situasi baru (kontekstual).. Bukti: Agar entropi informasi (H) dari kata sandi baru minimal sama dengan kekuatan kata sandi lama, panjang karakter minimal (L2) yang harus dirancang adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus menggunakan prinsip logaritma (sifat logaritma dan basis) untuk memodelkan masalah entropi informasi, yang merupakan pengetahuan konseptual tentang fungsi logaritma.. Bukti: entropi informasi (H) dari kata sandi baru minimal sama dengan kekuatan kata sandi lama
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konsep logaritma untuk memodelkan masalah entropi. Meskipun prosedurnya melibatkan aljabar sederhana, siswa harus mengintegrasikan konsep entropi dengan fungsi logaritma dan menentukan ketidaksamaan yang tepat. Ini bukan sekadar perhitungan rutin, tetapi memerlukan pemilihan prosedur yang tepat berdasarkan pemahaman konsep.. Bukti: panjang karakter minimal (L2) yang harus dirancang adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma, sifat logaritma (basis 2), dan konsep ketidaksamaan linear. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu menerapkan fungsi logaritma dalam pemodelan masalah nyata. Soal ini menuntut kemampuan menerjemahkan deskripsi verbal ke dalam model matematika logaritmik, yang sesuai dengan tingkat kesulitan menengah untuk jenjang tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100673,9 +101042,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1107. Soal `6c2371e620a214fd1c96e7a6`
@@ -100689,27 +101058,49 @@ Hubungan antara tekanan udara $P$ (dalam kPa) dan ketinggian tempat $h$ (dalam k
 | C | $8\ln 2\text{ km}$ |
 | D | $24\ln 2\text{ km}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Dari model ln(P/120) = -h/8, didapat h = -8 ln(P/120) = 8 ln(120/P). Ketinggian stasiun A: h_A = 8 ln(120/60) = 8 ln 2. Ketinggian stasiun B: h_B = 8 ln(120/15) = 8 ln 8 = 8 ln(2^3) = 24 ln 2. Selisih ketinggian h_B - h_A = 24 ln 2 - 8 ln 2 = 16 ln 2 km.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3e3788ae055d566ed284852881a2240e7451eaee943a30007933ca41a243d1e5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `37555dc9a9c783687c6b38eacaf6d87234c0e665c55c9968a596dbdf0107a10e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3210 |
+
+Run 1 — solusi: Dari model ln(P/120) = -h/8, didapat h = -8 ln(P/120) = 8 ln(120/P). Ketinggian stasiun A: h_A = 8 ln(120/60) = 8 ln 2. Ketinggian stasiun B: h_B = 8 ln(120/15) = 8 ln 8 = 8 ln(2^3) = 24 ln 2. Selisih ketinggian h_B - h_A = 24 ln 2 - 8 ln 2 = 16 ln 2 km.
+- Domain kognitif `classify/applying`: Siswa perlu memanipulasi persamaan logaritma untuk menyatakan h sebagai fungsi dari P, kemudian menerapkan prosedur tersebut pada dua nilai P yang berbeda untuk mencari selisih ketinggian. Ini adalah penerapan konsep logaritma dalam konteks pemodelan.. Bukti: Hubungan antara tekanan udara P ... dimodelkan oleh persamaan logaritma alami: ln(P/120) = -h/8; Selisih ketinggian antara stasiun B dan stasiun A (h_B - h_A) adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang sifat logaritma (logaritma alami) dan manipulasi aljabar untuk menyelesaikan masalah pemodelan, yang merupakan aspek prosedural dalam menerapkan konsep.. Bukti: ln(P/120) = -h/8; Selisih ketinggian antara stasiun B dan stasiun A
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah terstruktur: mengubah bentuk persamaan, menghitung dua nilai ketinggian yang berbeda, dan melakukan pengurangan. Meskipun prosedurnya familiar, siswa harus mengelola beberapa langkah yang saling terkait tanpa bantuan eksplisit dalam setiap tahapnya.. Bukti: ln(P/120) = -h/8; Stasiun A mencatat tekanan udara sebesar 60 kPa, sedangkan stasiun B ... 15 kPa; Selisih ketinggian antara stasiun B dan stasiun A
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dan manipulasi aljabar dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu memanipulasi persamaan logaritma. Soal ini menuntut ketelitian dalam langkah-langkah aljabar dan pemahaman konsep logaritma, namun alurnya cukup standar untuk tingkat kesulitan menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100744,9 +101135,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1108. Soal `bf888783a4534cebc58cff96`
@@ -100760,27 +101151,49 @@ Himpunan semua bilangan real $x$ yang memenuhi pertidaksamaan logaritma:<br>$${}
 | C | $\{x \mid x < -5 \text{ atau } x \ge 8,\, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x \le -8 \text{ atau } x > 1,\, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: 1. Syarat numerus: (x-1)/(x+5) > 0 menghasilkan x < -5 atau x > 1. 2. Pertidaksamaan: (x-1)/(x+5) <= (1/3)^(-1) = 3. 3. (x-1)/(x+5) - 3 <= 0 => (x-1 - 3x - 15)/(x+5) <= 0 => (-2x - 16)/(x+5) <= 0 => (x+8)/(x+5) >= 0. Solusi: x <= -8 atau x > -5. 4. Irisan syarat numerus dan solusi: (x < -5 atau x > 1) dan (x <= -8 atau x > -5) menghasilkan x <= -8 atau x > 1.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `38ea665f6512bc0501d66ecaf142b7dddb6139defc97d5c2105337556f556a6b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c0ef734bc3ff1eff459709eb7fa323f83c7a716d8e9d371e71a41c0938e5dee0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3273 |
+
+Run 1 — solusi: 1. Syarat numerus: (x-1)/(x+5) > 0 menghasilkan x < -5 atau x > 1. 2. Pertidaksamaan: (x-1)/(x+5) <= (1/3)^(-1) = 3. 3. (x-1)/(x+5) - 3 <= 0 => (x-1 - 3x - 15)/(x+5) <= 0 => (-2x - 16)/(x+5) <= 0 => (x+8)/(x+5) >= 0. Solusi: x <= -8 atau x > -5. 4. Irisan syarat numerus dan solusi: (x < -5 atau x > 1) dan (x <= -8 atau x > -5) menghasilkan x <= -8 atau x > 1.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan syarat numerus logaritma dengan penyelesaian pertidaksamaan rasional, serta menerapkan aturan perubahan tanda pertidaksamaan karena basis logaritma (1/3) berada di antara 0 dan 1. Ini memerlukan penerapan konsep yang saling terkait.. Bukti: Syarat numerus mengharuskan (x - 1)/(x + 5) > 0; basis b = 1/3 berada pada interval 0 < b < 1, tanda pertidaksamaan berbalik; Irisan kedua syarat tersebut adalah x <= -8 atau x > 1
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dalam menyelesaikan pertidaksamaan logaritma dan rasional, serta pemahaman konseptual mengenai syarat logaritma dan sifat basis logaritma.. Bukti: Syarat numerus mengharuskan (x - 1)/(x + 5) > 0; basis b = 1/3 berada pada interval 0 < b < 1, tanda pertidaksamaan berbalik
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan beberapa langkah yang saling bergantung (syarat numerus, penyelesaian pertidaksamaan rasional, dan irisan himpunan penyelesaian). Siswa harus berhati-hati dengan perubahan tanda pertidaksamaan dan syarat domain, namun prosedurnya bersifat rutin bagi siswa kelas 11.. Bukti: Syarat numerus mengharuskan (x - 1)/(x + 5) > 0; tanda pertidaksamaan berbalik menjadi (x - 1)/(x + 5) <= (1/3)^(-1) = 3; Irisan kedua syarat tersebut adalah x <= -8 atau x > 1
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pertidaksamaan rasional, syarat domain logaritma, sifat logaritma. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu mengelola syarat numerus dan pertidaksamaan rasional sebagai bagian dari materi logaritma tingkat lanjut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100815,9 +101228,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1109. Soal `ae92d128a442f03376240489`
@@ -100831,27 +101244,49 @@ Suatu fungsi logaritma memiliki bentuk umum $f(x) = {}^a\log(x - h) + k$ dengan 
 | C | $4$ |
 | D | $6$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Asimtot tegak x=3 berarti h=3, sehingga f(x) = ^a log(x-3) + k. Titik (7,0) -> ^a log(4) + k = 0 -> k = -^a log 4. Titik (19,2) -> ^a log(16) + k = 2 -> ^a log 16 - ^a log 4 = 2 -> ^a log 4 = 2 -> a=2. Maka k = -^2 log 4 = -2. Fungsi menjadi f(x) = ^2 log(x-3) - 2. f(67) = ^2 log(64) - 2 = 6 - 2 = 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8ed171d1c9a61ecadd463c8840b9662740257d242b43c13cdde359008e293ee2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fcae8738b5ff86ee7767cd650d3c9d6b542db178a48d3124e8af7989848d7f97`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3146 |
+
+Run 1 — solusi: Asimtot tegak x=3 berarti h=3, sehingga f(x) = ^a log(x-3) + k. Titik (7,0) -> ^a log(4) + k = 0 -> k = -^a log 4. Titik (19,2) -> ^a log(16) + k = 2 -> ^a log 16 - ^a log 4 = 2 -> ^a log 4 = 2 -> a=2. Maka k = -^2 log 4 = -2. Fungsi menjadi f(x) = ^2 log(x-3) - 2. f(67) = ^2 log(64) - 2 = 6 - 2 = 4.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan informasi asimtot, titik potong, dan titik melalui grafik untuk menentukan parameter fungsi (h, a, k) secara berurutan. Ini melibatkan pemahaman konsep logaritma dan sistem persamaan, yang merupakan penerapan prosedur dalam konteks rutin.. Bukti: Grafik fungsi f(x) memiliki asimtot tegak pada garis x = 3, memotong sumbu-x di titik (7, 0), serta melalui titik (19, 2).; Nilai dari f(67) adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman tentang hubungan antara parameter fungsi logaritma (h, a, k) dengan karakteristik grafiknya (asimtot, titik potong). Ini adalah pengetahuan konseptual tentang struktur fungsi logaritma.. Bukti: f(x) = ^a log(x - h) + k; asimtot tegak pada garis x = 3; memotong sumbu-x di titik (7, 0); melalui titik (19, 2)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling bergantung (menentukan h, lalu k, lalu a) untuk menyusun fungsi lengkap sebelum menghitung nilai akhir. Meskipun prosedurnya familiar bagi siswa kelas 11, integrasi informasi dari tiga kondisi berbeda memerlukan perencanaan langkah yang terstruktur.. Bukti: f(x) = ^a log(x - h) + k; asimtot tegak pada garis x = 3; memotong sumbu-x di titik (7, 0); melalui titik (19, 2)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi logaritma, sifat logaritma, konsep asimtot fungsi logaritma, dan substitusi titik ke dalam fungsi. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 3 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu memodelkan fungsi logaritma dari karakteristik grafiknya. Langkah-langkahnya jelas namun memerlukan ketelitian dalam mengintegrasikan tiga kondisi yang diberikan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100884,9 +101319,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1110. Soal `baecea4f111459a74242b338`
@@ -100900,27 +101335,49 @@ Dua orang siswa, Budi dan Sinta, menganalisis banyaknya penyelesaian real dari p
 | C | Argumen Budi benar karena pemfaktoran persamaan kuadrat telah dilakukan secara benar dan menghasilkan dua nilai real berbeda. |
 | D | Argumen keduanya salah karena persamaan kuadrat $x^2 - 6x + 5 = 0$ memiliki nilai diskriminan negatif sehingga tidak memiliki akar real. |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Persamaan ${}^2\log(x^2 - 2x) = {}^2\log(4x - 5)$ setara dengan $x^2 - 2x = 4x - 5$ dengan syarat numerus $x^2 - 2x > 0$ dan $4x - 5 > 0$. Akar dari $x^2 - 6x + 5 = 0$ adalah $x=1$ dan $x=5$. Uji syarat: untuk $x=1$, $x^2-2x = -1 < 0$ (tidak memenuhi). Untuk $x=5$, $x^2-2x = 15 > 0$ dan $4x-5 = 15 > 0$ (memenuhi). Maka hanya $x=5$ yang valid.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `61f2ac1c990dfa63daf18f2fc5e704f06e9f75d72d4ba1d46e00ddf4e74e9fce`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `558a5a9ca01d866a6408b81dc0f40967d81d7e5f68fd5f0575de502dcc28fe05`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 4331 |
+
+Run 1 — solusi: Persamaan ${}^2\log(x^2 - 2x) = {}^2\log(4x - 5)$ setara dengan $x^2 - 2x = 4x - 5$ dengan syarat numerus $x^2 - 2x > 0$ dan $4x - 5 > 0$. Akar dari $x^2 - 6x + 5 = 0$ adalah $x=1$ dan $x=5$. Uji syarat: untuk $x=1$, $x^2-2x = -1 < 0$ (tidak memenuhi). Untuk $x=5$, $x^2-2x = 15 > 0$ dan $4x-5 = 15 > 0$ (memenuhi). Maka hanya $x=5$ yang valid.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur penyelesaian persamaan logaritma dan memeriksa syarat numerus (domain fungsi) untuk menentukan validitas solusi. Ini adalah penerapan konsep logaritma pada konteks rutin.. Bukti: Budi menyatakan ada 2 penyelesaian real; Sinta menyatakan hanya ada 1 penyelesaian real; Evaluasi yang paling tepat terhadap pernyataan kedua siswa tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang domain fungsi logaritma (syarat numerus) yang harus dipenuhi agar persamaan logaritma valid, bukan sekadar manipulasi aljabar.. Bukti: syarat numerus logaritma; persamaan logaritma
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan dua tahap: menyelesaikan persamaan kuadrat dan melakukan verifikasi syarat numerus. Meskipun prosedurnya familiar, siswa sering melupakan syarat domain, sehingga memerlukan ketelitian dalam integrasi langkah.. Bukti: ${}^2\log(x^2 - 2x) = {}^2\log(4x - 5)$; Budi menyatakan ada 2 penyelesaian real; Sinta menyatakan hanya ada 1 penyelesaian real
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman syarat numerus logaritma dan penyelesaian persamaan kuadrat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu mengintegrasikan syarat domain fungsi logaritma dalam penyelesaian persamaan. Soal ini menguji pemahaman tersebut dengan cara mengevaluasi argumen, yang merupakan tugas standar namun memerlukan ketelitian. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -100958,9 +101415,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1111. Soal `7d724577330b91b0a3c55241`
@@ -100974,27 +101431,49 @@ Nilai jual dua unit mesin pabrik, yaitu mesin A dan mesin B, mengalami penyusuta
 | C | $6\text{ tahun}$ |
 | D | $8\text{ tahun}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Model A: H_A(t) = 80(1/2)^(t/2). Model B: H_B(t) = 270(1/3)^(t/2). Set H_A(t) = H_B(t): 80(1/2)^(t/2) = 270(1/3)^(t/2). Rearrange: (1/2)^(t/2) / (1/3)^(t/2) = 270/80 = 27/8. This simplifies to (3/2)^(t/2) = (3/2)^3. Thus, t/2 = 3, so t = 6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2beb8cf64782cb40ad3baed39d711d38d52f2da5b947d47e2a4eaa2036afab14`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e085c296fcfe81af534660deac6b2126ebb0b58c0a8bd967ebd9892ee0d137b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3066 |
+
+Run 1 — solusi: Model A: H_A(t) = 80(1/2)^(t/2). Model B: H_B(t) = 270(1/3)^(t/2). Set H_A(t) = H_B(t): 80(1/2)^(t/2) = 270(1/3)^(t/2). Rearrange: (1/2)^(t/2) / (1/3)^(t/2) = 270/80 = 27/8. This simplifies to (3/2)^(t/2) = (3/2)^3. Thus, t/2 = 3, so t = 6.
+- Domain kognitif `classify/applying`: Siswa perlu memodelkan fungsi peluruhan eksponensial dari data yang diberikan, menyusun persamaan kesamaan nilai, dan menyelesaikan persamaan eksponensial tersebut. Ini melibatkan penerapan konsep fungsi eksponensial pada konteks masalah nyata.. Bukti: Jika laju peluruhan masing-masing mesin konstan, setelah berapa tahun pemakaian nilai jual kedua mesin tersebut akan bernilai sama?
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang struktur model eksponensial dan prosedur aljabar untuk menyelesaikan persamaan eksponensial.. Bukti: mengikuti model peluruhan H(t) = c e^{-kt}
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium. Siswa harus menentukan parameter model (c dan k) untuk dua fungsi berbeda, lalu menyamakan keduanya. Langkah-langkahnya terstruktur dan prosedural, namun memerlukan integrasi beberapa informasi (dua model berbeda) dan manipulasi aljabar eksponensial yang saling terkait.. Bukti: setelah 2 tahun nilainya menjadi Rp40 juta; setelah 2 tahun nilainya menjadi Rp90 juta; setelah berapa tahun pemakaian nilai jual kedua mesin tersebut akan bernilai sama?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman fungsi eksponensial, logaritma/sifat eksponen, dan penyelesaian persamaan eksponensial. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu memodelkan dan menyelesaikan persamaan eksponensial. Soal ini memerlukan beberapa langkah aljabar yang saling bergantung namun mengikuti alur standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101027,9 +101506,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1112. Soal `9e9f4ce3b81d0fd08f1faff0`
@@ -101043,27 +101522,49 @@ Dua wilayah mengalami gempa bumi. Wilayah pertama mencatat kekuatan gempa sebesa
 | C | $10^{-1,5}$ kali lipat |
 | D | $10^{-3}$ kali lipat |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Diketahui M1 = log(I1/I0) = 8,4 dan M2 = log(I2/I0) = 5,4. Rasio intensitas wilayah kedua terhadap pertama adalah I2/I1. M2 - M1 = log(I2/I0) - log(I1/I0) = log(I2/I1). Maka, 5,4 - 8,4 = log(I2/I1) => -3 = log(I2/I1). Dengan definisi logaritma, I2/I1 = 10^(-3).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d0f3b0b2a30693759b8473887808892264da1c717e1deec2a51699089ec12d99`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `33eb6083f830fb1a25d9d01adf25f7a4cad2305e2deaa9556cd6563e33674519`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3057 |
+
+Run 1 — solusi: Diketahui M1 = log(I1/I0) = 8,4 dan M2 = log(I2/I0) = 5,4. Rasio intensitas wilayah kedua terhadap pertama adalah I2/I1. M2 - M1 = log(I2/I0) - log(I1/I0) = log(I2/I1). Maka, 5,4 - 8,4 = log(I2/I1) => -3 = log(I2/I1). Dengan definisi logaritma, I2/I1 = 10^(-3).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep logaritma untuk memanipulasi rumus magnitudo gempa guna mencari rasio intensitas. Ini melibatkan pemahaman sifat logaritma (pengurangan logaritma adalah logaritma pembagian) dan definisi logaritma untuk mengubah bentuk log ke eksponen.. Bukti: Besar kekuatan gempa dirumuskan dengan M = log(I/I0); Berapa kali lipat intensitas gempa bumi di wilayah kedua dibandingkan dengan gempa bumi di wilayah pertama?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang sifat-sifat logaritma dan bagaimana menerapkannya dalam konteks nyata (skala Richter).. Bukti: M = log(I/I0); log(I2/I1) = -3
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya sekadar memasukkan angka ke rumus, tetapi harus memahami hubungan antara selisih magnitudo dengan rasio intensitas menggunakan sifat logaritma. Meskipun prosedurnya standar, siswa perlu melakukan manipulasi aljabar logaritma yang tepat (pengurangan logaritma menjadi pembagian) untuk mendapatkan rasio yang diminta.. Bukti: M = log(I/I0); Berapa kali lipat intensitas gempa bumi di wilayah kedua dibandingkan dengan gempa bumi di wilayah pertama?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma (log a - log b = log(a/b)) dan definisi logaritma (log x = y <=> x = 10^y). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu memanipulasi logaritma dalam konteks aplikasi. Soal ini memerlukan pemahaman konsep logaritma yang lebih dari sekadar substitusi langsung, namun jalurnya cukup jelas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101096,9 +101597,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1113. Soal `cbce601a5b8c017d50e60758`
@@ -101112,27 +101613,49 @@ Diberikan fungsi logaritma $f(x) = {}^2\log x$. Jika diketahui nilai $f(7) \appr
 | C | $11,24$ |
 | D | $4,81$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: f(56) = ^2log(56) = ^2log(8 * 7) = ^2log(8) + ^2log(7). Karena ^2log(8) = 3 dan ^2log(7) = f(7) = 2,81, maka f(56) = 3 + 2,81 = 5,81.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `abf0a615f7feddd6de91aa2949bfca149c2ed5a34463fd77f41968eb1c0fc48b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `348e18e2e88eb654dc3b0d213168128950424c4a648f9c8740c6c72d4ed9879c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2878 |
+
+Run 1 — solusi: f(56) = ^2log(56) = ^2log(8 * 7) = ^2log(8) + ^2log(7). Karena ^2log(8) = 3 dan ^2log(7) = f(7) = 2,81, maka f(56) = 3 + 2,81 = 5,81.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan sifat logaritma ^a log(b*c) = ^a log(b) + ^a log(c) untuk memecah 56 menjadi faktor yang melibatkan 7 dan basis logaritma (8). Ini adalah penerapan prosedur logaritma yang rutin.. Bukti: f(56) = ^2log(56); f(56) = ^2log(8 * 7) = ^2log(8) + ^2log(7)
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang sifat-sifat logaritma (prosedural) dan bagaimana memanipulasi argumen logaritma untuk menggunakan informasi yang diketahui.. Bukti: ^2log(8 * 7) = ^2log(8) + ^2log(7)
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaian sangat jelas: dekomposisi 56 menjadi 8 * 7. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks. Siswa hanya perlu mengenali sifat logaritma dasar.. Bukti: f(7) = 2,81; f(56) = ^2log(8 * 7)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat dasar logaritma (perkalian argumen). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah bagian standar kelas 11. Soal ini hanya memerlukan satu langkah dekomposisi dan penjumlahan sederhana, yang merupakan tugas rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101165,9 +101688,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1114. Soal `751d94646d9b40c4b82ae11b`
@@ -101181,27 +101704,49 @@ Sebuah sistem komputer membuat kata sandi acak dengan panjang $6$ simbol. Setiap
 | C | $96\text{ bit}$ |
 | D | $4\text{ bit}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Diketahui L = 6 dan N = 16. Substitusi ke rumus H = L * log2(N) menghasilkan H = 6 * log2(16). Karena log2(16) = 4, maka H = 6 * 4 = 24 bit.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7497083d42aa0924a1efcf51befa26477ca436ad8a0d53c5c29706b09a6427c6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3cd505213de4f61d205505e4c7b018c92a6d01728900585ee7ca1e5fa1eaf386`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2801 |
+
+Run 1 — solusi: Diketahui L = 6 dan N = 16. Substitusi ke rumus H = L * log2(N) menghasilkan H = 6 * log2(16). Karena log2(16) = 4, maka H = 6 * 4 = 24 bit.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk menerapkan rumus yang diberikan secara langsung dengan mensubstitusi nilai yang diketahui ke dalam variabel yang sesuai. Ini adalah prosedur rutin yang melibatkan pemahaman dasar tentang logaritma basis 2.. Bukti: H = L * {}^2log N; L adalah panjang kata sandi dan N adalah banyaknya simbol yang tersedia; besar entropi informasi kata sandi tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural dalam menggunakan rumus logaritma yang diberikan untuk menghitung nilai entropi.. Bukti: H = L * {}^2log N
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena rumus sudah diberikan secara eksplisit dan nilai variabel L dan N sudah ditentukan dengan jelas. Siswa hanya perlu melakukan substitusi dan perhitungan logaritma dasar.. Bukti: H = L * {}^2log N; L = 6; N = 16
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang logaritma dan operasi substitusi. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, penerapan rumus logaritma sederhana dengan substitusi langsung merupakan tugas rutin yang tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101234,9 +101779,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1115. Soal `73d442809f1ae7b9ae0610bd`
@@ -101250,27 +101795,49 @@ Himpunan penyelesaian dari pertidaksamaan logaritma ${}^{\frac{1}{3}}\log(2x - 5
 | C | $x > 2,5$ |
 | D | $x > 6$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Syarat numerus: 2x - 5 > 0 (x > 2,5) dan x + 1 > 0 (x > -1), irisan: x > 2,5. Pertidaksamaan: 1/3 log(2x - 5) < 1/3 log(x + 1). Karena basis 0 < 1/3 < 1, tanda berubah: 2x - 5 > x + 1 => x > 6. Irisan x > 2,5 dan x > 6 adalah x > 6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e5e2e8d03c187ec746cc5844f9a2f1d01407296afbe95d8d6867982635f76ca2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ae342a2cd79d600024ba933dba885fb0dbe2ae19db9b4b55fb55fb6098c4eb6f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2938 |
+
+Run 1 — solusi: Syarat numerus: 2x - 5 > 0 (x > 2,5) dan x + 1 > 0 (x > -1), irisan: x > 2,5. Pertidaksamaan: 1/3 log(2x - 5) < 1/3 log(x + 1). Karena basis 0 < 1/3 < 1, tanda berubah: 2x - 5 > x + 1 => x > 6. Irisan x > 2,5 dan x > 6 adalah x > 6.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur pertidaksamaan logaritma dengan basis pecahan. Siswa harus memahami konsep perubahan tanda pertidaksamaan saat basis logaritma antara 0 dan 1, serta mengintegrasikan syarat numerus. Ini adalah penerapan prosedur standar dalam konteks rutin.. Bukti: Himpunan penyelesaian dari pertidaksamaan logaritma ${}^{\frac{1}{3}}\log(2x - 5) < {}^{\frac{1}{3}}\log(x + 1)$
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami prinsip logaritma (basis pecahan) dan algoritma penyelesaian pertidaksamaan logaritma (syarat numerus dan perubahan tanda).. Bukti: ${}^{\frac{1}{3}}\log(2x - 5) < {}^{\frac{1}{3}}\log(x + 1)$
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi antara syarat numerus dan penyelesaian pertidaksamaan logaritma dengan basis pecahan. Siswa harus berhati-hati dengan perubahan tanda pertidaksamaan, yang merupakan jebakan umum namun prosedural.. Bukti: ${}^{\frac{1}{3}}\log(2x - 5) < {}^{\frac{1}{3}}\log(x + 1)$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar logaritma, pertidaksamaan linear, dan syarat numerus logaritma. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Materi logaritma adalah standar kelas 11 TL. Soal ini menguji pemahaman prosedural tentang basis pecahan dan syarat numerus yang saling bergantung, namun jalurnya sangat jelas dan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101303,9 +101870,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1116. Soal `7040aa3fdd6d1dd8aced4a5d`
@@ -101319,27 +101886,49 @@ Diberikan fungsi logaritma $f(x) = {}^2\log(x - 3) - 2$. Titik potong grafik fun
 | C | $(7, 0)$ dan $x = -3$ |
 | D | $(5, 0)$ dan $x = 3$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Titik potong sumbu-x terjadi saat f(x) = 0: 2log(x-3) - 2 = 0 => 2log(x-3) = 2 => x-3 = 2^2 = 4 => x = 7. Titik potong adalah (7, 0). Asimtot tegak terjadi saat numerus logaritma mendekati 0: x - 3 = 0 => x = 3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3aeb60839bae3bba73df3d5275cb4eafa2a4f563d4f9a97e0b019b5513d9c336`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `367f7b5b7455e01022db239a3cbaa5f35874dce5bc75ad8990b330290b1647cd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2948 |
+
+Run 1 — solusi: Titik potong sumbu-x terjadi saat f(x) = 0: 2log(x-3) - 2 = 0 => 2log(x-3) = 2 => x-3 = 2^2 = 4 => x = 7. Titik potong adalah (7, 0). Asimtot tegak terjadi saat numerus logaritma mendekati 0: x - 3 = 0 => x = 3.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan definisi logaritma untuk mencari titik potong (prosedur aljabar) dan memahami konsep asimtot tegak pada fungsi logaritma (konsep dasar). Ini adalah penerapan langsung dari prosedur yang dipelajari di kelas 11.. Bukti: Titik potong grafik fungsi f(x) terhadap sumbu-x serta persamaan asimtot tegaknya berturut-turut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang sifat-sifat fungsi logaritma dan bagaimana parameter dalam fungsi (pergeseran horizontal dan vertikal) mempengaruhi karakteristik grafik (titik potong dan asimtot).. Bukti: f(x) = {}^2\log(x - 3) - 2
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Siswa hanya perlu melakukan dua langkah standar: menyelesaikan persamaan logaritma sederhana untuk titik potong dan mengidentifikasi syarat domain untuk asimtot tegak. Tidak ada integrasi konsep yang kompleks atau kendala yang saling berinteraksi.. Bukti: f(x) = {}^2\log(x - 3) - 2; Titik potong grafik fungsi f(x) terhadap sumbu-x serta persamaan asimtot tegaknya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi logaritma dan sifat-sifat dasar fungsi logaritma. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah kurikulum standar kelas 11. Menentukan asimtot dan titik potong adalah latihan rutin yang sering ditemui dalam pembelajaran fungsi logaritma. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101372,9 +101961,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1117. Soal `06c0aed3a139a31a6bf333de`
@@ -101388,27 +101977,49 @@ Diberikan fungsi logaritma $f(x) = {}^4\log x$. Nilai dari $f\left(\frac{1}{16}\
 | C | $-5$ |
 | D | $-1$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: f(1/16) = 4log(1/16) = 4log(4^-2) = -2. f(1/64) = 4log(1/64) = 4log(4^-3) = -3. Maka, f(1/16) + f(1/64) = -2 + (-3) = -5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b361065c71427c25d728c12af5e45e1203214a2002bd99cbfe79d60d05b6a1e7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4ebccc5523f6de37bee6616c77d375da1fe87632ea180caac939ee990a352c9b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2772 |
+
+Run 1 — solusi: f(1/16) = 4log(1/16) = 4log(4^-2) = -2. f(1/64) = 4log(1/64) = 4log(4^-3) = -3. Maka, f(1/16) + f(1/64) = -2 + (-3) = -5.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk menerapkan definisi logaritma dan sifat-sifat dasar logaritma (logaritma dari perpangkatan basis) secara langsung. Tidak ada strategi non-rutin atau integrasi konsep yang kompleks.. Bukti: f(x) = 4log x; Nilai dari f(1/16) + f(1/64) adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritma dasar untuk mengevaluasi fungsi logaritma dengan basis tertentu, yang merupakan prosedur standar dalam materi logaritma.. Bukti: f(x) = 4log x; Nilai dari f(1/16) + f(1/64)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas. Siswa hanya perlu melakukan substitusi dan evaluasi logaritma dasar. Tidak ada kendala yang berinteraksi atau kebutuhan untuk perencanaan strategi yang kompleks.. Bukti: f(x) = 4log x; Nilai dari f(1/16) + f(1/64)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang logaritma dan eksponen (bentuk pangkat negatif). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 11, evaluasi fungsi logaritma sederhana seperti ini adalah materi dasar yang familiar dan tidak memerlukan penalaran tingkat tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101441,9 +102052,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1118. Soal `bb145e3ee6185d0bf4bbd68a`
@@ -101457,27 +102068,49 @@ Jika $f(x) = \log x$, nilai $y$ yang memenuhi persamaan $f(25) + f(y) = 5$ adala
 | C | $2.500$ |
 | D | $4.000$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `4.000`.
+Solusi minimum hasil AI: Diketahui f(x) = log x. Persamaan f(25) + f(y) = 5 menjadi log 25 + log y = 5. Menggunakan sifat logaritma log a + log b = log(ab), diperoleh log(25y) = 5. Karena basis logaritma adalah 10, maka 25y = 10^5 = 100.000. Sehingga y = 100.000 / 25 = 4.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `178bf70b94b3225c1d96bcf26583178431f149debdc848eb5773da03fc33ad89`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f7d1c99a4167a695bd8ff99a381071d2d3f50152d3fddd327193c39760ff8d3f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2831 |
+
+Run 1 — solusi: Diketahui f(x) = log x. Persamaan f(25) + f(y) = 5 menjadi log 25 + log y = 5. Menggunakan sifat logaritma log a + log b = log(ab), diperoleh log(25y) = 5. Karena basis logaritma adalah 10, maka 25y = 10^5 = 100.000. Sehingga y = 100.000 / 25 = 4.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan sifat penjumlahan logaritma (log a + log b = log ab) dan definisi logaritma (log x = y <=> 10^y = x) untuk menyelesaikan persamaan. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: f(25) + f(y) = 5; log 25 + log y = 5; log(25y) = 5
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara fungsi logaritma dan sifat-sifat aljabarnya, yang merupakan pengetahuan konseptual.. Bukti: f(x) = log x; f(25) + f(y) = 5
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah penyelesaian yang jelas dan langsung. Siswa hanya perlu menerapkan sifat logaritma dan operasi aritmatika dasar. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: f(25) + f(y) = 5; log(25y) = 5
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dasar dan definisi logaritma basis 10. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah topik standar kelas 11. Soal ini menguji pemahaman dasar tanpa kompleksitas tambahan, sehingga dikategorikan mudah bagi siswa kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101510,9 +102143,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1119. Soal `7339e0e179c1e236cb2cb6be`
@@ -101526,27 +102159,49 @@ Suatu larutan pembersih memiliki konsentrasi ion hidrogen sebesar $[\text{H}^+] 
 | C | $4,30$ |
 | D | $5,30$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: pH = -log(2 x 10^-5) = -(log 2 + log 10^-5) = -(0,30 - 5) = -(-4,70) = 4,70.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `12ffe574fd878312601114fc6f296581a6051a0ca97051775993f1c8a15c3c5c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2132cd92aaee8d8ee926fbdc340eaeddd3faecdf248150451331afb50ec4d994`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2789 |
+
+Run 1 — solusi: pH = -log(2 x 10^-5) = -(log 2 + log 10^-5) = -(0,30 - 5) = -(-4,70) = 4,70.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus pH yang diberikan dengan menggunakan sifat logaritma (log(a*b) = log a + log b) dan nilai logaritma yang diketahui. Ini adalah penerapan prosedur langsung.. Bukti: Jika nilai pH = -log[H+] dan diketahui log 2 ≈ 0,30, nilai pH larutan tersebut adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang sifat-sifat logaritma (logaritma perkalian dan logaritma pangkat) untuk menyelesaikan masalah pH.. Bukti: pH = -log[H+]; log 2 ≈ 0,30
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Langkah-langkah penyelesaiannya jelas: substitusi nilai, penggunaan sifat logaritma, dan operasi aritmatika sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: pH = -log[H+]; log 2 ≈ 0,30
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dasar (log(ab) = log a + log b) dan operasi bilangan berpangkat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah bagian dari kurikulum kelas 11. Soal ini menguji aplikasi langsung rumus yang diberikan dengan angka yang sederhana, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101579,9 +102234,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1120. Soal `0610eb3398936a61ec3ed800`
@@ -101595,27 +102250,49 @@ Lama waktu $t$ (dalam menit) yang diperlukan untuk mengisi daya suatu baterai da
 | C | $55,2\text{ menit}$ |
 | D | $34,5\text{ menit}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Diketahui t = -(1/k) * ln(1 - C/C0). Dengan C = 0,75 C0, maka C/C0 = 0,75. Substitusi: t = -(1/0,05) * ln(1 - 0,75) = -20 * ln(0,25). Karena 0,25 = 1/4 = 2^-2, maka ln(0,25) = -2 * ln 2. Diketahui ln 2 = 0,69, maka ln(0,25) = -2 * 0,69 = -1,38. Jadi, t = -20 * (-1,38) = 27,6 menit.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9d20ce89bb47eb7139a2452436a20f4e7c686261e970d695dace1635231b9d9d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c29c94a2931825816f6ecae81213a1822e18269240e6bb45385bf6e71dda67b4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3102 |
+
+Run 1 — solusi: Diketahui t = -(1/k) * ln(1 - C/C0). Dengan C = 0,75 C0, maka C/C0 = 0,75. Substitusi: t = -(1/0,05) * ln(1 - 0,75) = -20 * ln(0,25). Karena 0,25 = 1/4 = 2^-2, maka ln(0,25) = -2 * ln 2. Diketahui ln 2 = 0,69, maka ln(0,25) = -2 * 0,69 = -1,38. Jadi, t = -20 * (-1,38) = 27,6 menit.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus logaritma yang diberikan ke dalam konteks masalah nyata. Siswa perlu mengidentifikasi variabel, melakukan substitusi nilai, dan menggunakan sifat logaritma untuk menyelesaikan perhitungan. Ini adalah penerapan prosedur yang rutin dalam konteks aplikasi.. Bukti: Lama waktu t (dalam menit) yang diperlukan untuk mengisi daya suatu baterai dari kondisi kosong hingga mencapai daya C ditentukan oleh rumus t = -(1/k)ln(1 - C/C0); waktu yang dibutuhkan untuk mengisi baterai hingga mencapai 75% dari kapasitas maksimumnya adalah sekitar
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan antara variabel dalam rumus logaritma dan menerapkan aturan logaritma (sifat logaritma dari perpangkatan) untuk menyederhanakan ekspresi sebelum menghitung nilai numerik.. Bukti: t = -(1/k)ln(1 - C/C0); ln 2 = 0,69
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan beberapa langkah terstruktur: substitusi variabel, penyederhanaan logaritma menggunakan sifat logaritma (ln(1/4) = -2ln2), dan perhitungan aritmatika. Meskipun rumusnya diberikan, siswa harus mampu mengelola langkah-langkah tersebut secara berurutan tanpa bantuan eksplisit di setiap tahap.. Bukti: t = -(1/k)ln(1 - C/C0); C = 0,75 C0; ln 2 = 0,69
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma, sifat-sifat logaritma, dan substitusi aljabar. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu mengoperasikan fungsi logaritma dalam konteks masalah nyata. Soal ini menguji kemampuan prosedural dan konseptual dasar tanpa kerumitan strategi yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101648,9 +102325,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1121. Soal `a46d365ca3a6e783929086a5`
@@ -101664,27 +102341,49 @@ Daerah asal (domain) dari fungsi logaritma $f(x) = {}^3\log(x^2 - 2x - 8)$ untuk
 | C | $\{x \mid x < -4 \text{ atau } x > 2,\, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x < -2 \text{ atau } x > 4,\, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Syarat numerus logaritma adalah x^2 - 2x - 8 > 0. Faktorkan menjadi (x - 4)(x + 2) > 0. Akar-akarnya adalah x = -2 dan x = 4. Uji titik atau gunakan sifat pertidaksamaan kuadrat dengan koefisien x^2 positif, maka daerah penyelesaian adalah x < -2 atau x > 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `769c2e235561242bc7581d110696779238db6ea500675a90a24fd1df92eccfdd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d82bf713dfdc0ad916a946a6aafabd1c5e4848efea911783355b9484b6247e14`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2841 |
+
+Run 1 — solusi: Syarat numerus logaritma adalah x^2 - 2x - 8 > 0. Faktorkan menjadi (x - 4)(x + 2) > 0. Akar-akarnya adalah x = -2 dan x = 4. Uji titik atau gunakan sifat pertidaksamaan kuadrat dengan koefisien x^2 positif, maka daerah penyelesaian adalah x < -2 atau x > 4.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep syarat numerus logaritma (harus positif) dan menyelesaikan pertidaksamaan kuadrat. Ini adalah penerapan prosedur standar pada konteks fungsi logaritma.. Bukti: Daerah asal (domain) dari fungsi logaritma f(x) = 3log(x^2 - 2x - 8)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang syarat domain fungsi logaritma dan metode penyelesaian pertidaksamaan kuadrat, yang merupakan pengetahuan prosedural.. Bukti: Daerah asal (domain) dari fungsi logaritma
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena merupakan prosedur standar yang familiar bagi siswa kelas 11. Langkah-langkahnya jelas: menentukan syarat numerus, memfaktorkan persamaan kuadrat, dan menentukan interval penyelesaian. Tidak ada kendala yang berinteraksi secara kompleks.. Bukti: Daerah asal (domain) dari fungsi logaritma f(x) = 3log(x^2 - 2x - 8)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman syarat logaritma dan penyelesaian pertidaksamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma dan pertidaksamaan kuadrat adalah kurikulum standar kelas 11. Prosedur penyelesaian bersifat rutin dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101717,9 +102416,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1122. Soal `d47581d5cf3fb5394b655523`
@@ -101733,27 +102432,49 @@ Diberikan fungsi logaritma $f(x) = {}^5\log x$. Nilai dari $f\left(\frac{1}{25}\
 | C | $-5$ |
 | D | $1$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: f(1/25) = log_5(5^-2) = -2. f(1/125) = log_5(5^-3) = -3. Maka, f(1/25) - f(1/125) = -2 - (-3) = -2 + 3 = 1.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bf2afaf900b518edb7205edd47532e8f73739bcb85d620fe1ed8581744e64824`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `842f35e18593b85035e321ed74c7973afd89a43b2940d9a1b5dd167dc3848052`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2693 |
+
+Run 1 — solusi: f(1/25) = log_5(5^-2) = -2. f(1/125) = log_5(5^-3) = -3. Maka, f(1/25) - f(1/125) = -2 - (-3) = -2 + 3 = 1.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan definisi logaritma dan sifat logaritma pangkat untuk mengevaluasi nilai fungsi pada titik tertentu, yang merupakan prosedur standar.. Bukti: Nilai dari f(1/25) - f(1/125) adalah ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep logaritma dan sifat-sifatnya (prosedural) untuk menyelesaikan operasi aritmatika pada fungsi tersebut.. Bukti: f(x) = 5log x
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah-langkah yang jelas dan langsung. Siswa hanya perlu mengubah bentuk pecahan menjadi pangkat negatif dan melakukan operasi pengurangan bilangan bulat sederhana.. Bukti: f(1/25) - f(1/125)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi logaritma dan sifat eksponen negatif. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah dasar di kelas 11. Soal ini tidak memerlukan integrasi konsep yang kompleks atau perencanaan strategi, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101786,9 +102507,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1123. Soal `47896c607d06b277f27d0824`
@@ -101802,27 +102523,49 @@ Jika $f(x) = \log x$, nilai $y$ yang memenuhi persamaan $f(16) + f(y) = 2$ adala
 | C | $5,25$ |
 | D | $0,16$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Diketahui f(x) = log(x). Persamaan f(16) + f(y) = 2 menjadi log(16) + log(y) = 2. Menggunakan sifat logaritma log(a) + log(b) = log(ab), diperoleh log(16y) = 2. Karena basis logaritma adalah 10, maka 16y = 10^2 = 100. Sehingga y = 100/16 = 6,25.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7cbf4f8244028ee02f63e9d4da7b93015e5089145b7a1a2b6406749a7d3d88a3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fdcb831e4121ff18de5ece9bcc84af701b1d29a68f42c745b6af3e4114895565`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2813 |
+
+Run 1 — solusi: Diketahui f(x) = log(x). Persamaan f(16) + f(y) = 2 menjadi log(16) + log(y) = 2. Menggunakan sifat logaritma log(a) + log(b) = log(ab), diperoleh log(16y) = 2. Karena basis logaritma adalah 10, maka 16y = 10^2 = 100. Sehingga y = 100/16 = 6,25.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan sifat penjumlahan logaritma log(a) + log(b) = log(ab) dan definisi logaritma untuk menyelesaikan persamaan. Ini adalah penerapan prosedur rutin pada konteks yang sudah dikenal.. Bukti: f(16) + f(y) = 2; f(x) = log x
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma dan aturan operasi logaritma (prosedural) serta pemahaman konsep dasar fungsi logaritma.. Bukti: f(16) + f(y) = 2; f(x) = log x
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menerapkan satu sifat logaritma utama dan melakukan operasi aljabar dasar. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: f(16) + f(y) = 2
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dasar (penjumlahan logaritma) dan konsep dasar logaritma basis 10. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah bagian standar kurikulum kelas 11. Soal ini merupakan penerapan langsung sifat logaritma tanpa modifikasi kompleks, sehingga tergolong mudah bagi siswa kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101855,9 +102598,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1124. Soal `4e72ea83359e6bb3474cd3bc`
@@ -101871,27 +102614,49 @@ Himpunan penyelesaian dari pertidaksamaan logaritma ${}^2\log(3x - 9) \le 3$ unt
 | C | $\{x \mid 3 < x \le \frac{17}{3},\, x \in \mathbb{R}\}$ |
 | D | $\{x \mid 3 \le x \le \frac{17}{3},\, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `{x | 3 < x <= 17/3, x ∈ R}`.
+Solusi minimum hasil AI: 1. Syarat numerus: 3x - 9 > 0 => x > 3. 2. Pertidaksamaan: 2log(3x - 9) <= 3 => 3x - 9 <= 2^3 => 3x - 9 <= 8 => 3x <= 17 => x <= 17/3. 3. Irisan: 3 < x <= 17/3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4a6893bb3f0f65417868f038a30ba4894524ddad1c202633e9c05649714e836e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9371c80050e92e06600173498c92bd2a8e7c313a50824f29752cc5c91a059428`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2948 |
+
+Run 1 — solusi: 1. Syarat numerus: 3x - 9 > 0 => x > 3. 2. Pertidaksamaan: 2log(3x - 9) <= 3 => 3x - 9 <= 2^3 => 3x - 9 <= 8 => 3x <= 17 => x <= 17/3. 3. Irisan: 3 < x <= 17/3.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur logaritma (mengubah basis) dan mengintegrasikan syarat numerus (domain fungsi logaritma) untuk mendapatkan irisan penyelesaian yang benar.. Bukti: Himpunan penyelesaian dari pertidaksamaan logaritma ${}^2\log(3x - 9) \le 3$
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang penyelesaian pertidaksamaan logaritma dan pemahaman konseptual tentang domain fungsi logaritma (syarat numerus).. Bukti: Himpunan penyelesaian dari pertidaksamaan logaritma
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah yang saling bergantung: menyelesaikan pertidaksamaan dan menerapkan syarat numerus. Siswa sering melupakan syarat numerus, sehingga integrasi kedua kendala ini menjadi poin krusial.. Bukti: Himpunan penyelesaian dari pertidaksamaan logaritma ${}^2\log(3x - 9) \le 3$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi logaritma, sifat pertidaksamaan logaritma, dan syarat domain fungsi logaritma. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah standar kelas 11. Soal ini menguji pemahaman dasar tentang syarat numerus yang sering menjadi jebakan bagi siswa, sehingga tingkat kesulitannya moderat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101924,9 +102689,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `needs_ai_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1125. Soal `0dd8e914b1c5f461aff15828`
@@ -101940,27 +102705,49 @@ Sebuah sistem keamanan menghasilkan kata sandi acak dengan panjang $5$ karakter 
 | C | $25\text{ bit}$ |
 | D | $20\text{ bit}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Entropi informasi (H) untuk kata sandi dengan panjang L dan N kemungkinan simbol per karakter dirumuskan sebagai H = L * log2(N). Diketahui L = 5 dan N = 32. Maka, H = 5 * log2(32). Karena 32 = 2^5, maka log2(32) = 5. Jadi, H = 5 * 5 = 25 bit.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8fe2c81756c68ca4d4d904d5e6920fb9fa5c48ab4e43053e3ef89cb0ad500a35`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `805ed87e3b3cfe1e696903b555485779b7fd1e87a412c9c7d5eb53efdb4e7d25`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2890 |
+
+Run 1 — solusi: Entropi informasi (H) untuk kata sandi dengan panjang L dan N kemungkinan simbol per karakter dirumuskan sebagai H = L * log2(N). Diketahui L = 5 dan N = 32. Maka, H = 5 * log2(32). Karena 32 = 2^5, maka log2(32) = 5. Jadi, H = 5 * 5 = 25 bit.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus entropi informasi yang melibatkan logaritma basis 2. Siswa perlu mengenali variabel L dan N, lalu menerapkan prosedur logaritma untuk menghitung nilai akhir. Ini adalah penerapan konsep logaritma dalam konteks yang sedikit berbeda dari aljabar murni, namun prosedurnya langsung.. Bukti: Besar entropi informasi (H) dari kata sandi tersebut adalah; H = L * log2(N) = 5 * log2(32) = 5 * 5 = 25 bit
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara panjang kata sandi, jumlah simbol, dan konsep logaritma basis 2 untuk menghitung entropi. Ini melibatkan pemahaman prinsip logaritma (konseptual) dan penggunaan algoritma perhitungan (prosedural).. Bukti: Besar entropi informasi (H) dari kata sandi tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena rumus atau hubungan variabel diberikan secara implisit melalui pilihan jawaban yang mengarahkan pada penggunaan logaritma. Langkah penyelesaiannya sangat rutin: substitusi nilai ke dalam rumus dan evaluasi logaritma basis 2 yang sederhana (log2(32)=5). Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: panjang 5 karakter (L = 5); 32 jenis simbol yang tersedia (N = 32); H = L * log2(N)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma, khususnya logaritma basis 2 dan sifat eksponen. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, perhitungan logaritma sederhana seperti log2(32) adalah prosedur rutin. Soal ini tidak menuntut pemodelan yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -101993,9 +102780,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1126. Soal `037e707a043cb960aafa074b`
@@ -102009,27 +102796,49 @@ Diketahui fungsi logaritma $f(x) = {}^3\log(x + 2) - 1$. Titik potong grafik $f(
 | C | $(1, 0)$ dan $x = -2$ |
 | D | (-1, 0) dan $x = 0$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Titik potong sumbu-x: f(x) = 0 -> 3log(x+2) = 1 -> x+2 = 3^1 -> x = 1. Titik potong (1, 0). Asimtot tegak: syarat numerus x+2 > 0, maka x > -2. Asimtot tegak terjadi saat x+2 = 0, yaitu x = -2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5711bd405a3e6f4cf554e12cc13ba57ce91dd8c0d872c068ee9c63e23b9b0be1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d4bcec825bbd067f6f6930464252ea34f304dc5716693e83d67cc853a2b4dfb1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2842 |
+
+Run 1 — solusi: Titik potong sumbu-x: f(x) = 0 -> 3log(x+2) = 1 -> x+2 = 3^1 -> x = 1. Titik potong (1, 0). Asimtot tegak: syarat numerus x+2 > 0, maka x > -2. Asimtot tegak terjadi saat x+2 = 0, yaitu x = -2.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi logaritma untuk mencari titik potong (prosedur rutin) dan memahami konsep asimtot tegak pada fungsi logaritma (syarat numerus). Ini adalah penerapan langsung konsep dasar fungsi logaritma.. Bukti: Titik potong grafik f(x) terhadap sumbu-x; persamaan asimtot tegaknya
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang hubungan antara bentuk logaritma, akar fungsi, dan perilaku asimtotik fungsi logaritma.. Bukti: f(x) = 3log(x + 2) - 1
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Langkah penyelesaiannya jelas: satu langkah aljabar untuk titik potong dan satu langkah definisi untuk asimtot. Tidak ada integrasi konsep yang kompleks.. Bukti: f(x) = 3log(x + 2) - 1; Titik potong grafik f(x) terhadap sumbu-x dan persamaan asimtot tegaknya
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi logaritma dan sifat fungsi logaritma dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah standar kelas 11. Soal ini menguji pemahaman dasar tanpa variasi atau kerumitan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102062,9 +102871,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1127. Soal `556404b670bc24999341718c`
@@ -102078,27 +102887,49 @@ Dua wilayah mengalami peristiwa gempa bumi. Wilayah P mencatat kekuatan gempa se
 | C | $3\text{ kali lipat}$ |
 | D | $100\text{ kali lipat}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Diketahui M = log(I/I_0), maka I = I_0 * 10^M. Untuk wilayah P, I_P = I_0 * 10^8,7. Untuk wilayah Q, I_Q = I_0 * 10^5,7. Perbandingan intensitas I_P / I_Q = (I_0 * 10^8,7) / (I_0 * 10^5,7) = 10^(8,7 - 5,7) = 10^3 = 1.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ae0c6c2e27aa0e0a019ce6d62a3509e35c3d9ef0098e57f72a63488115bf32d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `071a6ac7648bd353d0a4c08f51aafdc26a20d078ca131cf4448f4f679ffe59f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2982 |
+
+Run 1 — solusi: Diketahui M = log(I/I_0), maka I = I_0 * 10^M. Untuk wilayah P, I_P = I_0 * 10^8,7. Untuk wilayah Q, I_Q = I_0 * 10^5,7. Perbandingan intensitas I_P / I_Q = (I_0 * 10^8,7) / (I_0 * 10^5,7) = 10^(8,7 - 5,7) = 10^3 = 1.000.
+- Domain kognitif `classify/applying`: Siswa perlu memahami hubungan logaritma dan eksponen untuk mengubah rumus M = log(I/I_0) menjadi I = I_0 * 10^M, kemudian menerapkan konsep perbandingan untuk menyelesaikan masalah. Ini adalah penerapan prosedur logaritma pada konteks nyata.. Bukti: Besar kekuatan gempa ditentukan dengan rumus M = log(I/I_0); Berapa kali lipat intensitas gempa bumi di wilayah P dibandingkan intensitas gempa bumi di wilayah Q?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai konsep logaritma sebagai invers dari eksponen dan bagaimana menerapkannya dalam rumus skala Richter.. Bukti: Besar kekuatan gempa ditentukan dengan rumus M = log(I/I_0)
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan manipulasi aljabar dasar dari rumus yang diberikan. Langkah-langkahnya rutin dan tidak memerlukan perencanaan strategi yang kompleks.. Bukti: Berapa kali lipat intensitas gempa bumi di wilayah P dibandingkan intensitas gempa bumi di wilayah Q?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma dan eksponen (sifat-sifat pangkat). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 sudah familiar dengan sifat logaritma dan eksponen. Soal ini merupakan aplikasi langsung dari rumus yang diberikan tanpa jebakan atau kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102131,9 +102962,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1128. Soal `b64a64bdd7ff0c3d522cc780`
@@ -102147,27 +102978,49 @@ Diberikan fungsi logaritma $f(x) = {}^5\log x$. Jika diketahui nilai $f(2) \appr
 | C | $10,43$ |
 | D | $1,43$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `2,43`.
+Solusi minimum hasil AI: f(50) = 5log(50) = 5log(25 * 2) = 5log(25) + 5log(2) = 2 + 0,43 = 2,43.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `228d3a109f9ec131a7ada431619cc0c7ae17979d68687cb602a8859b2fe9caea`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2c724c32ea903dac645f4c25502e1540e50303ed57145195db42716d46fecf18`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2919 |
+
+Run 1 — solusi: f(50) = 5log(50) = 5log(25 * 2) = 5log(25) + 5log(2) = 2 + 0,43 = 2,43.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan sifat logaritma (log(a*b) = log a + log b) untuk menguraikan 50 menjadi faktor yang melibatkan basis logaritma (25) dan nilai yang diketahui (2). Ini adalah penerapan prosedur familiar dalam konteks logaritma.. Bukti: f(x) = 5log x; f(50) = 5log 50 = 5log(25 * 2) = 5log 25 + 5log 2 = 2 + 0,43 = 2,43
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang sifat-sifat logaritma (prinsip konseptual) dan kemampuan untuk menggunakannya dalam perhitungan (prosedural).. Bukti: 5log(25 * 2) = 5log 25 + 5log 2
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaiannya sangat jelas dan langsung. Siswa hanya perlu melakukan dekomposisi angka 50 menjadi 25 * 2 dan menerapkan sifat logaritma dasar. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: f(2) ≈ 0,43; f(50) = 5log 50
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat dasar logaritma (log(ab) = log a + log b) dan nilai logaritma basis 5 dari 25. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah standar kelas 11. Soal ini hanya memerlukan satu langkah dekomposisi dan satu langkah substitusi, yang merupakan prosedur rutin bagi siswa kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102200,9 +103053,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1129. Soal `3820a1518d1856016bebeb1e`
@@ -102216,27 +103069,49 @@ Suatu sampel air limbah laboratorium memiliki konsentrasi ion hidrogen sebesar $
 | C | $3,30$ |
 | D | $-3,30$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: pH = -log(5 x 10^-4) = -(log 5 + log 10^-4) = -(0,70 - 4) = -0,70 + 4 = 3,30.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1351009900709e194ef68378c0c71bbd83e52384c0cb63b0a54ed617c00faa25`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `20b662e6972106928d8c64431169518ae6464aaff6c8362f6f7a1b92204824ea`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2794 |
+
+Run 1 — solusi: pH = -log(5 x 10^-4) = -(log 5 + log 10^-4) = -(0,70 - 4) = -0,70 + 4 = 3,30.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus pH yang diberikan dengan mensubstitusi nilai yang diketahui dan menggunakan sifat logaritma dasar (log(a*b) = log a + log b) untuk menyelesaikan perhitungan. Ini adalah penerapan prosedur rutin.. Bukti: pH = -log[H+]; [H+] = 5 x 10^-4 M; log 5 ≈ 0,70
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan logaritma dan penggunaan rumus yang diberikan dalam konteks kimia sederhana.. Bukti: pH = -log[H+]; log 5 ≈ 0,70
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu menerapkan sifat logaritma dasar dan substitusi nilai. Tidak ada langkah kompleks atau integrasi konsep yang menantang.. Bukti: pH = -log[H+]; [H+] = 5 x 10^-4 M; log 5 ≈ 0,70
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Sifat-sifat logaritma dasar (log(ab) = log a + log b) dan notasi ilmiah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma adalah bagian dari kurikulum kelas 11. Soal ini merupakan aplikasi langsung dari rumus yang diberikan tanpa memerlukan manipulasi aljabar yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102269,9 +103144,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1130. Soal `90a7d3a5c08fba3f19832e5d`
@@ -102285,27 +103160,49 @@ Suatu jenis bakteri membelah diri setiap 2 jam. Jika koloni mula-mula terdiri at
 | C | $32\text{ jam}$ |
 | D | $16\text{ jam}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Substitusi N = 800 ke dalam rumus: t = 2 * ^2log(800/50) = 2 * ^2log(16). Karena 16 = 2^4, maka ^2log(16) = 4. Jadi, t = 2 * 4 = 8 jam.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4ab0fb1dc7663a93ed74aea6e818c682e9b5e37c0f4d690e65538cb45dd1e4fa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `198f8c4768d1bdef651e4c26c0bf23726057c3fd178a94e0f0d7d1f386ab0153`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2865 |
+
+Run 1 — solusi: Substitusi N = 800 ke dalam rumus: t = 2 * ^2log(800/50) = 2 * ^2log(16). Karena 16 = 2^4, maka ^2log(16) = 4. Jadi, t = 2 * 4 = 8 jam.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus logaritma yang sudah diberikan untuk menyelesaikan masalah kontekstual sederhana. Prosedur substitusi dan evaluasi logaritma merupakan penerapan langsung dari konsep yang dipelajari.. Bukti: waktu t (dalam jam) yang diperlukan agar populasi menjadi sebanyak N bakteri dimodelkan dengan rumus t = 2 * ^2log(N/50); Waktu yang dibutuhkan agar koloni bakteri tersebut mencapai 800 bakteri adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dalam menggunakan rumus logaritma untuk memecahkan masalah pertumbuhan eksponensial/logaritmik.. Bukti: t = 2 * ^2log(N/50)
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu melakukan substitusi nilai ke dalam rumus yang sudah tersedia dan menghitung nilai logaritma sederhana. Tidak ada langkah perencanaan yang kompleks atau kendala yang saling berinteraksi.. Bukti: t = 2 * ^2log(N/50); Waktu yang dibutuhkan agar koloni bakteri tersebut mencapai 800 bakteri
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar logaritma dan substitusi aljabar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 11, penggunaan rumus logaritma dalam konteks pemodelan sederhana adalah tugas rutin yang sesuai dengan tingkat kemahiran yang diharapkan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102338,9 +103235,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1131. Soal `2f16ac7a3ef2ecb0cb5b60ea`
@@ -102354,27 +103251,49 @@ Daerah asal (domain) dari fungsi logaritma $f(x) = {}^2\log\left(\frac{2x - 6}{x
 | C | $\{x \mid -5 < x < 3,\, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x \le -5 \text{ atau } x \ge 3,\, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Syarat numerus logaritma adalah (2x - 6)/(x + 5) > 0. Titik kritis adalah x = 3 (pembilang) dan x = -5 (penyebut). Menggunakan uji titik atau garis bilangan pada interval (-∞, -5), (-5, 3), dan (3, ∞): untuk x < -5 (misal x = -6), (-18)/(-1) = 18 > 0 (memenuhi). Untuk -5 < x < 3 (misal x = 0), -6/5 < 0 (tidak memenuhi). Untuk x > 3 (misal x = 4), 2/9 > 0 (memenuhi). Jadi, domainnya adalah {x \| x < -5 atau x > 3}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ad6529553c2538cb61f6e8c4359a14a9e63f3e721974b6885e45e7783dfd55f6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6b5c2c7276c1f0d6e9b52f6c4d2c1b8ae80e75044440294db92d6d5ff1d66f11`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2926 |
+
+Run 1 — solusi: Syarat numerus logaritma adalah (2x - 6)/(x + 5) > 0. Titik kritis adalah x = 3 (pembilang) dan x = -5 (penyebut). Menggunakan uji titik atau garis bilangan pada interval (-∞, -5), (-5, 3), dan (3, ∞): untuk x < -5 (misal x = -6), (-18)/(-1) = 18 > 0 (memenuhi). Untuk -5 < x < 3 (misal x = 0), -6/5 < 0 (tidak memenuhi). Untuk x > 3 (misal x = 4), 2/9 > 0 (memenuhi). Jadi, domainnya adalah {x \| x < -5 atau x > 3}.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep syarat numerus fungsi logaritma (harus positif) dan menyelesaikan pertidaksamaan rasional. Ini adalah penerapan prosedur standar pada konteks fungsi logaritma.. Bukti: Daerah asal (domain) dari fungsi logaritma f(x) = 2log((2x - 6)/(x + 5))
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip dasar fungsi logaritma (syarat numerus) dan metode penyelesaian pertidaksamaan rasional.. Bukti: Daerah asal (domain) dari fungsi logaritma
+- Intended difficulty `classify/Easy`: Soal ini memerlukan pemahaman syarat numerus dan penyelesaian pertidaksamaan rasional. Langkah-langkahnya rutin bagi siswa kelas 11, yaitu menentukan titik kritis, melakukan uji tanda, dan menentukan interval. Tidak ada kendala yang saling berinteraksi secara kompleks.. Bukti: Daerah asal (domain) dari fungsi logaritma f(x) = 2log((2x - 6)/(x + 5))
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pertidaksamaan rasional dan syarat numerus logaritma. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi logaritma dan pertidaksamaan rasional adalah standar kelas 11. Prosedur penyelesaian bersifat rutin dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102407,9 +103326,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1132. Soal `450d73ee8a6168509e3e4611`
@@ -102423,27 +103342,49 @@ Daerah asal dari fungsi rasional $f(x) = \frac{x + 9}{x - 6}$ untuk $x \in \math
 | C | $\{x \mid x \neq 6, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x \neq -6, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Fungsi rasional f(x) = (x + 9)/(x - 6) terdefinisi jika penyebut tidak sama dengan nol. Maka, x - 6 ≠ 0, yang menghasilkan x ≠ 6. Jadi, daerah asal fungsi adalah {x \| x ≠ 6, x ∈ R}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2a49adfb4f87effc2cacb7882011c05df4374ed43205aad844da98a8b117445a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3bd7e4e185f109aef00cece67107be0a0fa1cf6f130758dd8fc8267a2e168168`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2712 |
+
+Run 1 — solusi: Fungsi rasional f(x) = (x + 9)/(x - 6) terdefinisi jika penyebut tidak sama dengan nol. Maka, x - 6 ≠ 0, yang menghasilkan x ≠ 6. Jadi, daerah asal fungsi adalah {x \| x ≠ 6, x ∈ R}.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu menerapkan prosedur standar untuk menentukan domain fungsi rasional, yaitu memastikan penyebut tidak sama dengan nol. Tidak ada strategi nonrutin atau integrasi konsep yang kompleks.. Bukti: Daerah asal dari fungsi rasional f(x) = (x + 9)/(x - 6)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang syarat keberadaan fungsi rasional (penyebut tidak nol).. Bukti: Daerah asal dari fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu menyelesaikan satu persamaan linear sederhana (x - 6 = 0) untuk menemukan nilai yang dikecualikan. Tidak ada langkah yang saling bergantung atau kendala yang berinteraksi.. Bukti: Daerah asal dari fungsi rasional f(x) = (x + 9)/(x - 6)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang syarat penyebut fungsi rasional tidak boleh nol. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah materi dasar fungsi rasional yang sangat familiar bagi siswa kelas 11, dengan tingkat kesulitan rendah karena hanya melibatkan satu langkah aljabar sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102476,9 +103417,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1133. Soal `e095e07b6f643d866526337f`
@@ -102492,27 +103433,49 @@ Daerah asal dari fungsi akar $g(x) = \sqrt[5]{x + 8}$ pada himpunan bilangan rea
 | C | $\{x \mid x \neq -8, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Fungsi akar dengan indeks ganjil (n=5) terdefinisi untuk semua bilangan real karena bilangan negatif yang dipangkatkan ganjil tetap menghasilkan bilangan real. Oleh karena itu, x + 8 dapat bernilai positif, negatif, atau nol. Domainnya adalah {x \| x ∈ ℝ}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `48e1e447972091f14a3e6683eea9a2ce41aee6bd9187fb6a9aface129160dbfe`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aaff08df5cf2e71f855b952102d2c003c0ac8bb0e669adcaa51701fb434212ec`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2702 |
+
+Run 1 — solusi: Fungsi akar dengan indeks ganjil (n=5) terdefinisi untuk semua bilangan real karena bilangan negatif yang dipangkatkan ganjil tetap menghasilkan bilangan real. Oleh karena itu, x + 8 dapat bernilai positif, negatif, atau nol. Domainnya adalah {x \| x ∈ ℝ}.
+- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual tentang domain fungsi akar dengan indeks ganjil. Siswa perlu mengenali bahwa syarat domain hanya berlaku untuk akar berindeks genap, sehingga ini adalah pengenalan fakta/konsep dasar.. Bukti: Daerah asal dari fungsi akar $g(x) = \sqrt[5]{x + 8}$
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami definisi dan sifat fungsi akar (konseptual) untuk menentukan domainnya tanpa perlu melakukan prosedur perhitungan yang kompleks.. Bukti: Daerah asal dari fungsi akar $g(x) = \sqrt[5]{x + 8}$
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu membedakan sifat akar berindeks ganjil dan genap. Tidak ada langkah perhitungan atau integrasi kendala yang diperlukan.. Bukti: Daerah asal dari fungsi akar $g(x) = \sqrt[5]{x + 8}$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi fungsi akar dan domain bilangan real. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah konsep dasar fungsi yang dipelajari di awal materi fungsi atau aljabar kelas 11, tidak memerlukan langkah kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102545,9 +103508,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1134. Soal `d41dce7e7cddac5beb670264`
@@ -102561,27 +103524,49 @@ Sebuah usaha katering memiliki biaya tetap bulanan sebesar Rp5.000.000,00 dan bi
 | C | $B(x) = 5.000.000 + 25.000x$ |
 | D | $B(x) = \frac{5.000.000 + 25.000x}{x}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Fungsi biaya total B(x) terdiri dari biaya tetap (konstanta) dan biaya variabel (koefisien x). Dengan biaya tetap = 5.000.000 dan biaya produksi per kotak (c) = 25.000, maka B(x) = 5.000.000 + 25.000x.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f24d5a40794d70b4933424e91f90a7c214608119473bd983ce42b4f84333103`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5a152044f03a8e4e57596eccb67ba1fed5ac82ccb0b16ea0b9267d4d032982e0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3577 |
+
+Run 1 — solusi: Fungsi biaya total B(x) terdiri dari biaya tetap (konstanta) dan biaya variabel (koefisien x). Dengan biaya tetap = 5.000.000 dan biaya produksi per kotak (c) = 25.000, maka B(x) = 5.000.000 + 25.000x.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk melakukan substitusi nilai yang diketahui ke dalam rumus fungsi linear yang sudah diberikan secara eksplisit. Tidak ada proses penalaran atau integrasi konsep yang kompleks.. Bukti: biaya tetap bulanan sebesar Rp5.000.000,00; biaya produksi sebesar Rp25.000,00 per kotak makanan; fungsi biaya total dirumuskan dengan B(x) = biaya tetap + cx
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep fungsi linear biaya, yaitu membedakan antara komponen biaya tetap (konstanta) dan biaya variabel (koefisien variabel) untuk menyusun model matematika yang tepat.. Bukti: fungsi biaya total dirumuskan dengan B(x) = biaya tetap + cx
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan bersifat rutin. Siswa hanya perlu memetakan data ke dalam variabel yang sudah ditentukan dalam rumus. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi.. Bukti: B(x) = biaya tetap + cx; biaya tetap bulanan sebesar Rp5.000.000,00; biaya produksi sebesar Rp25.000,00 per kotak makanan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi linear dan variabel. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun untuk kelas 11, soal ini merupakan aplikasi langsung dari konsep fungsi linear yang sangat sederhana dan jauh di bawah tingkat kesulitan yang diharapkan untuk matematika tingkat lanjut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102614,9 +103599,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1135. Soal `e8b89a1b7a3e0088c14fd6fe`
@@ -102630,27 +103615,49 @@ Persamaan asimtot vertikal dari grafik fungsi rasional $f(x) = \frac{5}{x - 4}$ 
 | C | $y = 0$ |
 | D | $x = 4$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Asimtot vertikal fungsi rasional f(x) = P(x)/Q(x) terjadi saat Q(x) = 0 (dengan P(x) tidak nol). Untuk f(x) = 5/(x - 4), penyebutnya adalah x - 4. Maka, x - 4 = 0 menghasilkan x = 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ea332ae56848e87ea269e0f86374743632a1692b4c3a5efdaac8e9699b844c6b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `80f127fac3d2eb8eb3963ff3c2dd2a3322ccabd8d3afb6649146a2752d6a8f51`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2657 |
+
+Run 1 — solusi: Asimtot vertikal fungsi rasional f(x) = P(x)/Q(x) terjadi saat Q(x) = 0 (dengan P(x) tidak nol). Untuk f(x) = 5/(x - 4), penyebutnya adalah x - 4. Maka, x - 4 = 0 menghasilkan x = 4.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali definisi asimtot vertikal untuk fungsi rasional, yaitu nilai x yang membuat penyebut bernilai nol. Ini adalah prosedur standar yang langsung.. Bukti: Persamaan asimtot vertikal dari grafik fungsi rasional f(x) = 5/(x - 4) adalah garis ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat asimtot vertikal pada fungsi rasional.. Bukti: f(x) = 5/(x - 4)
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu menyelesaikan satu persamaan linear sederhana (x-4=0) untuk menemukan asimtot vertikal. Tidak ada langkah tambahan atau integrasi konsep yang kompleks.. Bukti: Persamaan asimtot vertikal dari grafik fungsi rasional f(x) = 5/(x - 4) adalah garis ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi rasional dan definisi asimtot vertikal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, konsep asimtot vertikal adalah materi dasar fungsi rasional yang rutin. Soal ini tidak menuntut analisis lebih lanjut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102683,9 +103690,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1136. Soal `d4f025007fc604a257807569`
@@ -102699,27 +103706,49 @@ Daerah asal dari fungsi akar $f(x) = \sqrt{x - 7}$ untuk $x \in \mathbb{R}$ adal
 | C | $\{x \mid x \ge -7, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x > 7, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Syarat domain fungsi akar f(x) = sqrt(g(x)) adalah g(x) >= 0. Maka, x - 7 >= 0, yang menghasilkan x >= 7. Jadi, daerah asalnya adalah {x \| x >= 7, x ∈ R}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `867c2fbfdeeb1607a71cc8c8941c9179be0c4891287bf4b34ff6edab008feb15`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2d5f9e6f2b76ec516a2fef9f12d6d86fe48c9d6aa8559e018f59188e57de7f7a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2732 |
+
+Run 1 — solusi: Syarat domain fungsi akar f(x) = sqrt(g(x)) adalah g(x) >= 0. Maka, x - 7 >= 0, yang menghasilkan x >= 7. Jadi, daerah asalnya adalah {x \| x >= 7, x ∈ R}.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan prosedur standar dalam menentukan domain fungsi akar, yaitu menetapkan syarat bahwa radikan harus non-negatif. Ini adalah penerapan langsung dari konsep domain fungsi yang sudah dipelajari.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(x - 7)
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar (konseptual) bahwa nilai di dalam akar kuadrat tidak boleh negatif untuk bilangan real, dan menerapkan prosedur aljabar (prosedural) untuk menyelesaikan pertidaksamaan linear sederhana.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(x - 7)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menyelesaikan satu pertidaksamaan linear sederhana. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(x - 7)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang domain fungsi dan penyelesaian pertidaksamaan linear satu variabel. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun materi fungsi akar sering muncul di kelas 10, soal ini tetap relevan sebagai prasyarat atau penguatan di kelas 11. Tingkat kesulitan sangat rendah karena hanya melibatkan satu langkah operasional tanpa jebakan konseptual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102752,9 +103781,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1137. Soal `65523ff998017ffaba9c46a3`
@@ -102768,27 +103797,49 @@ Daerah hasil dari fungsi rasional $f(x) = \frac{3x - 5}{x + 4}$ untuk domain ala
 | C | $\{y \mid y \neq 3, y \in \mathbb{R}\}$ |
 | D | $\{y \mid y \neq -4, y \in \mathbb{R}\}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Misalkan y = (3x - 5)/(x + 4). Maka y(x + 4) = 3x - 5, sehingga yx + 4y = 3x - 5. Mengumpulkan suku x: x(y - 3) = -4y - 5, maka x = (-4y - 5)/(y - 3). Agar x terdefinisi, penyebut y - 3 tidak boleh nol, sehingga y ≠ 3. Daerah hasil adalah {y \| y ≠ 3, y ∈ ℝ}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2e193c2f393adb7e5ed6d6d60ead91d0bcd92c8bd79a7a1ecda4e0f0cfbe6e4f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `957ab9ca1fab2f45371d8bcadf97e8522b303c53cba3ad070bf3e2ec9e4a33a6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2887 |
+
+Run 1 — solusi: Misalkan y = (3x - 5)/(x + 4). Maka y(x + 4) = 3x - 5, sehingga yx + 4y = 3x - 5. Mengumpulkan suku x: x(y - 3) = -4y - 5, maka x = (-4y - 5)/(y - 3). Agar x terdefinisi, penyebut y - 3 tidak boleh nol, sehingga y ≠ 3. Daerah hasil adalah {y \| y ≠ 3, y ∈ ℝ}.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur standar untuk menentukan daerah hasil fungsi rasional dengan mengubah bentuk persamaan menjadi x dalam bentuk y, kemudian mengidentifikasi batasan nilai y. Ini adalah penerapan prosedur yang rutin.. Bukti: Daerah hasil dari fungsi rasional f(x) = (3x - 5)/(x + 4)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana menentukan range fungsi rasional melalui manipulasi aljabar.. Bukti: Daerah hasil dari fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena merupakan prosedur standar yang familiar bagi siswa kelas 11. Langkah-langkah penyelesaiannya jelas (menginverskan fungsi atau mencari asimtot datar), tidak memerlukan integrasi konsep yang kompleks, dan beban kalkulasinya rendah.. Bukti: Daerah hasil dari fungsi rasional f(x) = (3x - 5)/(x + 4)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman fungsi rasional, aljabar dasar, dan konsep domain/range. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan range fungsi rasional adalah materi standar kelas 11. Prosedur invers atau asimtot adalah metode rutin yang diajarkan secara eksplisit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102821,9 +103872,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1138. Soal `6a634d582a60ae0a6ecbab33`
@@ -102837,27 +103888,49 @@ Daerah hasil dari fungsi akar $f(x) = \sqrt{x - 5} + 3$ pada daerah asal alaminy
 | C | $\{y \mid y \ge 5, y \in \mathbb{R}\}$ |
 | D | $\{y \mid y \ge -3, y \in \mathbb{R}\}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Fungsi akar kuadrat f(x) = sqrt(x - 5) + 3 memiliki domain x >= 5. Karena nilai sqrt(x - 5) selalu >= 0 untuk setiap x dalam domainnya, maka nilai minimum fungsi adalah 0 + 3 = 3. Jadi, daerah hasil (range) adalah {y \| y >= 3, y ∈ R}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4e0fb47a0a5d348515253f56fd2707936722541aed8a1e76751edd7b69b17bb1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `387153452f4fb1f9ab7e530c1b38e84753fb594e6b42589d614683e307247107`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2787 |
+
+Run 1 — solusi: Fungsi akar kuadrat f(x) = sqrt(x - 5) + 3 memiliki domain x >= 5. Karena nilai sqrt(x - 5) selalu >= 0 untuk setiap x dalam domainnya, maka nilai minimum fungsi adalah 0 + 3 = 3. Jadi, daerah hasil (range) adalah {y \| y >= 3, y ∈ R}.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat dasar fungsi akar kuadrat (non-negatif) dan menerapkan transformasi vertikal (+3) untuk menentukan daerah hasil. Ini adalah penerapan konsep fungsi pada konteks rutin.. Bukti: Daerah hasil dari fungsi akar f(x) = sqrt(x - 5) + 3
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip dasar fungsi akar dan bagaimana konstanta mempengaruhi range fungsi.. Bukti: Daerah hasil dari fungsi akar f(x) = sqrt(x - 5) + 3
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu mengenali sifat dasar fungsi akar (>=0) dan menambahkan konstanta. Tidak ada langkah yang saling bergantung secara kompleks atau kebutuhan untuk strategi non-rutin.. Bukti: Daerah hasil dari fungsi akar f(x) = sqrt(x - 5) + 3
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang domain dan range fungsi akar kuadrat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi akar adalah topik standar kelas 11. Soal ini menguji pemahaman dasar tanpa kerumitan tambahan, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102890,9 +103963,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1139. Soal `80d569b261764d6947fb537b`
@@ -102906,27 +103979,49 @@ Titik potong grafik fungsi rasional $f(x) = \frac{3x - 12}{x + 2}$ dengan sumbu-
 | C | (-2, 0) |
 | D | $(4, 0)$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Titik potong dengan sumbu-y terjadi saat x = 0. Substitusi x = 0 ke dalam fungsi: f(0) = (3(0) - 12) / (0 + 2) = -12 / 2 = -6. Jadi, titik potongnya adalah (0, -6).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `65b565929af5ef8d12d3b6af102bcd1d708825cc7c4f860b5a078b3ef1e9c23e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `000eea1082c9afbb6aca5621e294d0aede84060e5c1d6f6ad2ff0f53ae36b2e5`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2755 |
+
+Run 1 — solusi: Titik potong dengan sumbu-y terjadi saat x = 0. Substitusi x = 0 ke dalam fungsi: f(0) = (3(0) - 12) / (0 + 2) = -12 / 2 = -6. Jadi, titik potongnya adalah (0, -6).
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk menerapkan prosedur standar (substitusi nilai x=0) untuk menemukan titik potong pada sumbu-y. Tidak ada strategi non-rutin atau integrasi konsep yang kompleks yang diperlukan.. Bukti: Titik potong grafik fungsi rasional f(x) = (3x - 12) / (x + 2) dengan sumbu-y adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep titik potong sumbu-y (konsep) dan menerapkan prosedur substitusi (prosedural) untuk menyelesaikannya.. Bukti: Titik potong grafik fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu melakukan satu langkah substitusi sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.. Bukti: Titik potong grafik fungsi rasional f(x) = (3x - 12) / (x + 2) dengan sumbu-y adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi dan koordinat kartesius (titik potong sumbu-y terjadi saat x=0). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, konsep titik potong fungsi rasional adalah materi dasar yang sudah familiar dan prosedural. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -102959,9 +104054,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1140. Soal `c703a7ae1bf69dbece7f981b`
@@ -102975,27 +104070,49 @@ Persamaan asimtot horizontal dari fungsi rasional $f(x) = \frac{8}{x - 5}$ adala
 | C | $x = 5$ |
 | D | $y = -5$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Fungsi rasional f(x) = 8/(x-5) memiliki derajat pembilang 0 (konstanta) dan derajat penyebut 1. Karena derajat pembilang lebih kecil dari derajat penyebut, maka limit fungsi saat x mendekati tak hingga adalah 0. Jadi, asimtot horizontalnya adalah y = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d1776747841808db8bf2512b12a4292c131b9652a12b23b1c0935351686b4789`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d5cb076bb2e886d9a464abc881f9869688555e7945cd1a93ee96bcff212b0f8e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2698 |
+
+Run 1 — solusi: Fungsi rasional f(x) = 8/(x-5) memiliki derajat pembilang 0 (konstanta) dan derajat penyebut 1. Karena derajat pembilang lebih kecil dari derajat penyebut, maka limit fungsi saat x mendekati tak hingga adalah 0. Jadi, asimtot horizontalnya adalah y = 0.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi asimtot horizontal dari fungsi rasional sederhana. Siswa hanya perlu menerapkan aturan dasar limit fungsi rasional atau sifat derajat polinomial pembilang dan penyebut. Ini adalah prosedur standar yang langsung.. Bukti: Persamaan asimtot horizontal dari fungsi rasional f(x) = 8/(x - 5) adalah garis ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep asimtot horizontal pada fungsi rasional, yang merupakan prinsip dasar dalam analisis fungsi aljabar.. Bukti: Persamaan asimtot horizontal dari fungsi rasional f(x) = 8/(x - 5)
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung dan rutin. Siswa hanya perlu mengenali bentuk fungsi rasional dan menerapkan aturan derajat polinomial. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: Persamaan asimtot horizontal dari fungsi rasional f(x) = 8/(x - 5)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang limit tak hingga dan sifat fungsi rasional. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi asimtot fungsi rasional adalah topik standar kelas 11. Soal ini tidak memerlukan manipulasi aljabar yang rumit, hanya pengenalan konsep dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103028,9 +104145,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1141. Soal `268ca094fb27c6e754b1ba51`
@@ -103044,27 +104161,49 @@ Sebuah percetakan sablon kaos mengeluarkan biaya sewa tempat sebesar Rp8.500.000
 | C | $B(x) = \frac{8.500.000 + 18.000x}{x}$ |
 | D | $B(x) = 8.500.000 - 18.000x$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Fungsi biaya total B(x) terdiri dari biaya tetap (konstanta) dan biaya variabel (biaya per unit dikali jumlah unit). Biaya tetap = 8.500.000. Biaya variabel per unit (c) = 18.000. Maka, B(x) = 8.500.000 + 18.000x.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a12f787c58d62c9a2f2a6474576baa4c8ca7000996c344a573d67e745ca578c3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `01b978b1c54d9a3575e37aa3088b00df11c077f6446e2d8e4a3175aeca9856ab`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2918 |
+
+Run 1 — solusi: Fungsi biaya total B(x) terdiri dari biaya tetap (konstanta) dan biaya variabel (biaya per unit dikali jumlah unit). Biaya tetap = 8.500.000. Biaya variabel per unit (c) = 18.000. Maka, B(x) = 8.500.000 + 18.000x.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengidentifikasi komponen biaya tetap dan biaya variabel dari narasi, lalu menyusunnya ke dalam bentuk fungsi linear yang sudah diberikan strukturnya. Ini adalah penerapan langsung dari konsep fungsi linear dalam konteks ekonomi sederhana.. Bukti: rumus fungsi biaya total adalah B(x) = biaya tetap + cx; biaya sewa tempat sebesar Rp8.500.000,00 per bulan dan biaya bahan sablon sebesar Rp18.000,00 per potong kaos
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara variabel dan konstanta dalam fungsi linear (konseptual) untuk memodelkan situasi nyata ke dalam bentuk aljabar.. Bukti: model matematika dari fungsi biaya tersebut adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Struktur fungsi sudah diberikan (B(x) = biaya tetap + cx), sehingga siswa hanya perlu melakukan substitusi nilai yang sudah eksplisit dalam soal. Tidak ada langkah perencanaan yang kompleks atau kendala yang berinteraksi.. Bukti: B(x) = biaya tetap + cx; biaya sewa tempat sebesar Rp8.500.000,00 per bulan dan biaya bahan sablon sebesar Rp18.000,00 per potong kaos
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar fungsi linear dan variabel. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun untuk kelas 11, soal ini merupakan prasyarat dasar pemodelan fungsi linear yang sangat sederhana dan rutin, sehingga tingkat kesulitannya rendah bagi siswa kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103097,9 +104236,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1142. Soal `da3350acb2ffaa0f55b59e88`
@@ -103113,27 +104252,49 @@ Daerah asal dari fungsi akar $f(x) = \sqrt{2x - 8}$ untuk $x \in \mathbb{R}$ ada
 | C | $\{x \mid x \le 4, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x > 4, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Syarat fungsi akar f(x) = sqrt(2x - 8) terdefinisi adalah bilangan di dalam akar harus non-negatif: 2x - 8 >= 0. Maka 2x >= 8, sehingga x >= 4. Daerah asal adalah {x \| x >= 4, x in R}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fd28bee813cbbd7665498ae9f7d52b8689a0db84519a7aeec4edd66b5a092f88`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0905790f6790f54c8cc89414954f8e758d4bbb490fd5c136333e5e13a7b6129e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2674 |
+
+Run 1 — solusi: Syarat fungsi akar f(x) = sqrt(2x - 8) terdefinisi adalah bilangan di dalam akar harus non-negatif: 2x - 8 >= 0. Maka 2x >= 8, sehingga x >= 4. Daerah asal adalah {x \| x >= 4, x in R}.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu menerapkan prosedur standar untuk menentukan domain fungsi akar (syarat radikan >= 0) dan menyelesaikan pertidaksamaan linear sederhana.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(2x - 8)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang syarat terdefinisi suatu fungsi akar kuadrat.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(2x - 8)
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 11. Prosedurnya rutin, langkah penyelesaiannya sangat sedikit, dan tidak ada kendala yang berinteraksi.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(2x - 8)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar pertidaksamaan linear satu variabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah materi prasyarat atau dasar yang sangat familiar bagi siswa kelas 11, sehingga dikategorikan Easy. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103166,9 +104327,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1143. Soal `11524e07a4f4901965b302be`
@@ -103182,27 +104343,49 @@ Daerah hasil dari fungsi $g(x) = \sqrt[3]{x - 8}$ untuk seluruh domain alaminya 
 | C | $\{y \mid y \ge 8, y \in \mathbb{R}\}$ |
 | D | $\{y \mid y \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Fungsi g(x) = akar pangkat tiga dari (x - 8) terdefinisi untuk semua x real. Karena fungsi akar pangkat tiga (f(x) = x^(1/3)) adalah fungsi bijektif yang memetakan R ke R, maka daerah hasil dari g(x) adalah seluruh himpunan bilangan real, yaitu {y \| y ∈ R}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a8cf35603e960c902aa55d0b440a139e90b9e06e4cd972a63fbf6b7ab3edfdc9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d374e3989fcee8dc83310ea7cb8a7015c31407aae6eea1c18877b2f0cb3a8cc4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2690 |
+
+Run 1 — solusi: Fungsi g(x) = akar pangkat tiga dari (x - 8) terdefinisi untuk semua x real. Karena fungsi akar pangkat tiga (f(x) = x^(1/3)) adalah fungsi bijektif yang memetakan R ke R, maka daerah hasil dari g(x) adalah seluruh himpunan bilangan real, yaitu {y \| y ∈ R}.
+- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman konseptual tentang sifat dasar fungsi akar pangkat tiga. Siswa perlu mengenali bahwa tidak seperti akar kuadrat, akar pangkat tiga memiliki domain dan range seluruh bilangan real.. Bukti: Daerah hasil dari fungsi g(x) = ∛(x - 8)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman tentang konsep dasar fungsi dan sifat operasi akar pangkat ganjil.. Bukti: Daerah hasil dari fungsi g(x) = ∛(x - 8)
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan menguji pemahaman dasar tentang sifat fungsi akar pangkat tiga. Tidak ada langkah prosedural yang kompleks atau kendala yang berinteraksi.. Bukti: Daerah hasil dari fungsi g(x) = ∛(x - 8)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang domain dan range fungsi serta sifat akar pangkat ganjil. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, mengenali sifat fungsi dasar seperti akar pangkat tiga adalah materi yang sangat mendasar dan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103235,9 +104418,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1144. Soal `ea2dccc9d754e50abaec5f2d`
@@ -103251,27 +104434,49 @@ Nilai $x$ yang menyebabkan fungsi rasional $f(x) = \frac{2x + 5}{3x - 12}$ tidak
 | C | $x = -\frac{5}{2}$ |
 | D | $x = 12$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Fungsi rasional f(x) tidak terdefinisi ketika penyebutnya bernilai nol. Maka, 3x - 12 = 0. Menyelesaikan persamaan linear ini memberikan 3x = 12, sehingga x = 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7f644aaa6994f7a6b61b0320a5f11c525bd336f163cb9dba9c488ddcc8790f0e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6b523b6f918283dd01ce7dabeff6b2f279153a1c264bea4b653d456d8002801f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2655 |
+
+Run 1 — solusi: Fungsi rasional f(x) tidak terdefinisi ketika penyebutnya bernilai nol. Maka, 3x - 12 = 0. Menyelesaikan persamaan linear ini memberikan 3x = 12, sehingga x = 4.
+- Domain kognitif `classify/knowing`: Siswa perlu mengenali syarat fungsi rasional tidak terdefinisi (penyebut sama dengan nol) dan menerapkan prosedur aljabar dasar untuk menyelesaikannya.. Bukti: fungsi rasional f(x) = (2x + 5) / (3x - 12) tidak terdefinisi
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang domain fungsi rasional dan syarat agar fungsi tersebut tidak terdefinisi.. Bukti: fungsi rasional; tidak terdefinisi
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi penyebut dan menyelesaikan persamaan linear satu variabel. Tidak ada integrasi konsep yang kompleks atau perencanaan strategi yang menantang.. Bukti: Nilai x yang menyebabkan fungsi rasional f(x) = (2x + 5) / (3x - 12) tidak terdefinisi
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi rasional dan penyelesaian persamaan linear satu variabel. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi rasional adalah dasar yang familiar bagi siswa kelas 11. Soal ini hanya memerlukan satu langkah prosedural tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103304,9 +104509,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1145. Soal `108f3a40d58a1f30a6c8f72e`
@@ -103320,27 +104525,49 @@ Titik potong grafik fungsi rasional $f(x) = \frac{2x - 10}{x + 3}$ dengan sumbu-
 | C | $\left(0, -\frac{10}{3}\right)$ |
 | D | $(-3, 0)$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Titik potong dengan sumbu-x terjadi saat f(x) = 0. Maka, (2x - 10) / (x + 3) = 0. Ini terpenuhi jika pembilang 2x - 10 = 0, sehingga 2x = 10 atau x = 5. Titik potongnya adalah (5, 0).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `572a6a4ebf69b85d0d5112f212911c36525d071c775099a87a681ec19e51e3a1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `99b238b09e8eceff23c34ef71076f448df2b1ca399a36d6c92bae59d55482bc4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2764 |
+
+Run 1 — solusi: Titik potong dengan sumbu-x terjadi saat f(x) = 0. Maka, (2x - 10) / (x + 3) = 0. Ini terpenuhi jika pembilang 2x - 10 = 0, sehingga 2x = 10 atau x = 5. Titik potongnya adalah (5, 0).
+- Domain kognitif `classify/knowing`: Siswa perlu memahami konsep dasar bahwa titik potong sumbu-x terjadi saat nilai fungsi (y) adalah nol. Prosedur penyelesaiannya langsung, yaitu menyelesaikan persamaan linear sederhana yang dihasilkan dari pembilang fungsi rasional.. Bukti: Titik potong grafik fungsi rasional f(x) = (2x - 10) / (x + 3) dengan sumbu-x
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana mencari titik potong sumbu-x pada fungsi rasional, yang merupakan algoritma standar dalam aljabar.. Bukti: f(x) = (2x - 10) / (x + 3)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan syarat f(x)=0 dan menyelesaikan persamaan linear satu variabel. Tidak ada kendala yang berinteraksi atau kebutuhan untuk perencanaan strategi yang kompleks.. Bukti: Titik potong grafik fungsi rasional f(x) = (2x - 10) / (x + 3) dengan sumbu-x
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar fungsi rasional dan penyelesaian persamaan linear. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi rasional dan titik potong sumbu adalah konsep dasar yang sudah familiar bagi siswa kelas 11, sehingga soal ini dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103373,9 +104600,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1146. Soal `f4154829135fa13f6481f371`
@@ -103389,27 +104616,49 @@ Daerah hasil dari fungsi akar $f(x) = \sqrt{x - 9}$ untuk daerah asal alaminya p
 | C | $\{y \mid y \ge 9, y \in \mathbb{R}\}$ |
 | D | $\{y \mid y \in \mathbb{R}\}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Fungsi f(x) = sqrt(x - 9) terdefinisi untuk x - 9 >= 0, yaitu x >= 9. Karena nilai akar kuadrat utama selalu non-negatif, maka f(x) >= 0. Jadi, daerah hasilnya adalah {y \| y >= 0, y ∈ ℝ}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `47ac8225426c3e6f810077ae5a55ecc0110ef88c0780006d5a43d588535e2754`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d748a5d84cbc74eae334c647e3fdb08758a250ba3aceb0128f99552abea1cc6e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2706 |
+
+Run 1 — solusi: Fungsi f(x) = sqrt(x - 9) terdefinisi untuk x - 9 >= 0, yaitu x >= 9. Karena nilai akar kuadrat utama selalu non-negatif, maka f(x) >= 0. Jadi, daerah hasilnya adalah {y \| y >= 0, y ∈ ℝ}.
+- Domain kognitif `classify/applying`: Siswa perlu memahami definisi fungsi akar kuadrat dan sifat dasar bilangan real (hasil akar selalu non-negatif) untuk menentukan daerah hasil. Ini adalah penerapan langsung dari konsep fungsi dasar.. Bukti: Daerah hasil dari fungsi akar f(x) = sqrt(x - 9)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang sifat fungsi akar kuadrat dan bagaimana menentukan daerah hasil berdasarkan domain alaminya.. Bukti: Daerah hasil dari fungsi akar f(x) = sqrt(x - 9)
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dan rutin bagi siswa kelas 11. Tidak ada langkah yang saling bergantung yang kompleks atau kendala yang berinteraksi. Siswa hanya perlu mengenali sifat dasar fungsi akar.. Bukti: Daerah hasil dari fungsi akar f(x) = sqrt(x - 9)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang domain dan range fungsi, serta sifat bilangan real pada fungsi akar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah materi dasar fungsi yang sudah dipelajari sejak kelas 10, sehingga untuk kelas 11 ini dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103442,9 +104691,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1147. Soal `df96518334c3c801a081aa27`
@@ -103458,27 +104707,49 @@ Titik potong grafik fungsi akar $f(x) = \sqrt{x - 4}$ dengan sumbu-$x$ adalah ..
 | C | $(4, 0)$ |
 | D | $(-4, 0)$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Titik potong dengan sumbu-x terjadi saat f(x) = 0. Maka, sqrt(x - 4) = 0. Kuadratkan kedua ruas: x - 4 = 0, sehingga x = 4. Titik potongnya adalah (4, 0).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b9a087d7e4c268e777ffc5c9a28b6b9db342b23041f0f6a59bdd2387ffda6299`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6f8543edcb0ea7aa82c221b27997eeb93faa16516c3e522e2af54c5520988d30`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2703 |
+
+Run 1 — solusi: Titik potong dengan sumbu-x terjadi saat f(x) = 0. Maka, sqrt(x - 4) = 0. Kuadratkan kedua ruas: x - 4 = 0, sehingga x = 4. Titik potongnya adalah (4, 0).
+- Domain kognitif `classify/knowing`: Soal meminta siswa menerapkan definisi titik potong sumbu-x (f(x)=0) pada fungsi akar sederhana. Ini adalah prosedur langsung yang familiar.. Bukti: Titik potong grafik fungsi akar f(x) = sqrt(x - 4) dengan sumbu-x adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep titik potong sumbu-x dan menerapkan prosedur aljabar untuk menyelesaikan persamaan akar sederhana.. Bukti: Titik potong grafik fungsi akar f(x) = sqrt(x - 4) dengan sumbu-x adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu menerapkan satu konsep (f(x)=0) dan menyelesaikan persamaan linear satu variabel. Tidak ada kendala yang berinteraksi atau kebutuhan strategi kompleks.. Bukti: Titik potong grafik fungsi akar f(x) = sqrt(x - 4) dengan sumbu-x adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar fungsi, konsep titik potong sumbu-x, dan penyelesaian persamaan linear. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun materi fungsi akar diajarkan di kelas 11, soal ini hanya menguji pemahaman dasar tentang titik potong yang sudah dipelajari sejak SMP/kelas 10, sehingga sangat mudah bagi siswa kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103511,9 +104782,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1148. Soal `a647e6f072953087c41ae113`
@@ -103527,27 +104798,49 @@ Daerah asal dari fungsi rasional $f(x) = \frac{5x + 1}{2x + 8}$ untuk $x \in \ma
 | C | $\{x \mid x \neq -\frac{1}{5}, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x \neq -4, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Fungsi rasional f(x) terdefinisi jika penyebut tidak sama dengan nol. Maka, 2x + 8 ≠ 0. Menyelesaikan pertidaksamaan ini: 2x ≠ -8, sehingga x ≠ -4. Jadi, daerah asal fungsi adalah {x \| x ≠ -4, x ∈ ℝ}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `10634917e722cd5d3ce0638b2abfd206db1323bc022897b9a982260cc8a3ee0a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cfd304927756e9e6461309a126653003f1eb87f3ec59075d19001eeaf8afad58`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2721 |
+
+Run 1 — solusi: Fungsi rasional f(x) terdefinisi jika penyebut tidak sama dengan nol. Maka, 2x + 8 ≠ 0. Menyelesaikan pertidaksamaan ini: 2x ≠ -8, sehingga x ≠ -4. Jadi, daerah asal fungsi adalah {x \| x ≠ -4, x ∈ ℝ}.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengidentifikasi syarat domain fungsi rasional, yaitu penyebut tidak boleh nol. Ini adalah prosedur standar yang langsung dan rutin bagi siswa kelas 11.. Bukti: Daerah asal dari fungsi rasional f(x) = (5x + 1)/(2x + 8)
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep domain fungsi rasional dan menerapkan prosedur aljabar untuk mencari nilai yang membuat penyebut menjadi nol.. Bukti: Daerah asal dari fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu menyelesaikan satu persamaan linear sederhana (2x + 8 = 0) untuk menentukan nilai yang dikecualikan dari domain. Tidak ada langkah kompleks atau integrasi konsep yang diperlukan.. Bukti: Daerah asal dari fungsi rasional f(x) = (5x + 1)/(2x + 8)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi rasional dan penyelesaian persamaan linear satu variabel. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi domain fungsi rasional adalah konsep dasar yang sudah dipelajari dan diperkuat di kelas 11. Soal ini tidak menuntut analisis lebih lanjut selain prosedur aljabar dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103580,9 +104873,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1149. Soal `9ed515df0d1e151fefa98774`
@@ -103596,27 +104889,49 @@ Persamaan asimtot horizontal dari grafik fungsi rasional $f(x) = \frac{4x + 7}{2
 | C | $y = 0$ |
 | D | $y = 4$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Untuk fungsi rasional f(x) = (ax + b) / (cx + d), asimtot horizontal ditentukan oleh limit x menuju tak hingga. Karena derajat pembilang dan penyebut sama (derajat 1), asimtot horizontal adalah y = koefisien x pembilang / koefisien x penyebut = 4/2 = 2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b3fd5b9f39e686e1533f75253842202a58fcdd1f14851edf2027865bba146b0f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `769b4b93e443f01a4b8bc9a50fdf41627490fc6ee8575838c898a88702f3f8b6`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2730 |
+
+Run 1 — solusi: Untuk fungsi rasional f(x) = (ax + b) / (cx + d), asimtot horizontal ditentukan oleh limit x menuju tak hingga. Karena derajat pembilang dan penyebut sama (derajat 1), asimtot horizontal adalah y = koefisien x pembilang / koefisien x penyebut = 4/2 = 2.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi dan menerapkan prosedur standar dalam menentukan asimtot horizontal fungsi rasional. Siswa hanya perlu mengenali bentuk fungsi dan menerapkan aturan koefisien derajat tertinggi, yang merupakan prosedur langsung.. Bukti: Persamaan asimtot horizontal dari grafik fungsi rasional f(x) = (4x + 7)/(2x - 3)
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep asimtot horizontal pada fungsi rasional dan prosedur untuk menentukannya berdasarkan derajat polinomial pembilang dan penyebut.. Bukti: Persamaan asimtot horizontal dari grafik fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan aturan koefisien derajat tertinggi (4/2) untuk mendapatkan jawaban. Tidak ada langkah yang saling bergantung atau kendala yang kompleks.. Bukti: Persamaan asimtot horizontal dari grafik fungsi rasional f(x) = (4x + 7)/(2x - 3)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi rasional dan konsep limit tak hingga atau aturan asimtot horizontal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi asimtot fungsi rasional adalah topik standar kelas 11. Soal ini menguji pemahaman dasar tanpa variasi atau integrasi konsep yang menantang. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103649,9 +104964,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1150. Soal `ba99c739b6e19d447d8a70df`
@@ -103665,27 +104980,49 @@ Diketahui fungsi akar $f(x) = \sqrt{x + 7}$. Nilai dari $f(18)$ adalah ....
 | C | $5$ |
 | D | $7$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Substitusi x = 18 ke dalam fungsi: f(18) = sqrt(18 + 7) = sqrt(25) = 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c5e1ccc9ea6014c436b14e2a8e286bbd7b0d7bb4d95d2740389dc1a748e1148b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `142b5d41f6ad6cbcea27ec2ea41b93f8ca20a35edc5f12e75b7d033a0d2337ae`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2672 |
+
+Run 1 — solusi: Substitusi x = 18 ke dalam fungsi: f(18) = sqrt(18 + 7) = sqrt(25) = 5.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk melakukan substitusi nilai ke dalam fungsi yang diberikan dan melakukan operasi aritmatika dasar (penjumlahan dan penarikan akar). Ini adalah prosedur yang sangat langsung dan rutin.. Bukti: Diketahui fungsi akar f(x) = sqrt(x + 7). Nilai dari f(18) adalah ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami notasi fungsi dan prosedur substitusi nilai ke dalam variabel, yang merupakan pengetahuan prosedural dasar dalam aljabar.. Bukti: f(x) = sqrt(x + 7)
+- Intended difficulty `classify/Easy`: Soal ini sangat sederhana. Hanya memerlukan satu langkah substitusi dan satu langkah perhitungan akar kuadrat. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang diperlukan.. Bukti: Diketahui fungsi akar f(x) = sqrt(x + 7). Nilai dari f(18) adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang notasi fungsi dan operasi akar kuadrat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun materi fungsi akar diajarkan di kelas 11, soal ini berada jauh di bawah standar kompleksitas kelas 11 Matematika Tingkat Lanjut karena hanya berupa evaluasi fungsi dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103718,9 +105055,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1151. Soal `ab8dc9a1774caef3658a1331`
@@ -103734,27 +105071,49 @@ Sebuah industri rumahan roti membutuhkan biaya bulanan Rp9.000.000,00 dan biaya 
 | C | $\bar{B}(x) = \frac{9.000.000x + 12.000}{x}$ |
 | D | $\bar{B}(x) = \frac{9.000.000 + 12.000x}{x}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Biaya total B(x) = 9.000.000 + 12.000x. Biaya rata-rata B_bar(x) didefinisikan sebagai biaya total dibagi jumlah produksi x, yaitu B_bar(x) = B(x)/x = (9.000.000 + 12.000x) / x.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fc4039eacacf20680c4bf7573aa8e9f31ea9c9902b7c02ffba6045d48bd531fe`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `360964f7a87d573dca9a9208995ecebaa464305ce3846f3a3cddd4ded660eee5`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2983 |
+
+Run 1 — solusi: Biaya total B(x) = 9.000.000 + 12.000x. Biaya rata-rata B_bar(x) didefinisikan sebagai biaya total dibagi jumlah produksi x, yaitu B_bar(x) = B(x)/x = (9.000.000 + 12.000x) / x.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk memahami konsep biaya rata-rata sebagai rasio biaya total terhadap jumlah unit produksi. Siswa hanya perlu menerapkan definisi fungsi biaya rata-rata (B(x)/x) pada model biaya total yang diberikan, yang merupakan prosedur langsung.. Bukti: Model matematika dari fungsi biaya rata-rata B(x) untuk memproduksi x bungkus roti adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang hubungan antara biaya total dan biaya rata-rata dalam konteks fungsi aljabar.. Bukti: biaya tetap + cx; fungsi biaya rata-rata
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerjemahkan informasi biaya tetap dan variabel ke dalam fungsi total, lalu membaginya dengan x. Tidak ada langkah yang saling bergantung yang kompleks atau kendala yang berinteraksi.. Bukti: biaya bulanan Rp9.000.000,00; biaya produksi Rp12.000,00 per bungkus roti; Model matematika dari fungsi biaya rata-rata
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar fungsi linear dan konsep rata-rata. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi biaya adalah aplikasi standar fungsi linear yang familiar bagi siswa kelas 11. Soal tidak menuntut manipulasi aljabar yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103787,9 +105146,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1152. Soal `86ec0cadd6e92dd38bf7b1b1`
@@ -103803,27 +105162,49 @@ Diberikan fungsi akar $f(x) = 8 - \sqrt{25 - x^2}$ pada daerah asal alaminya. Se
 | C | Benar, karena nilai bentuk akar selalu tak negatif sehingga nilai terbesar dari $f(x)$ tercapai saat bentuk akar bernilai nol. |
 | D | Salah, karena nilai di dalam akar tidak boleh negatif sehingga daerah hasilnya adalah $R_f = \{y \mid y \ge 8, y \in \mathbb{R}\}$. |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Domain alami $25-x^2 \ge 0$ memberikan $0 \le \sqrt{25-x^2} \le 5$. Substitusi ke $f(x) = 8 - \sqrt{25-x^2}$ menghasilkan $8-5 \le f(x) \le 8-0$, sehingga $3 \le y \le 8$. Klaim $y \le 8$ salah karena mengabaikan batas bawah.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a912c3a9a435b36e5541b73c551b94b818658b130d9379ab963b3cc148321ddb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `28b813663cb07f5d50dd012e3c0617c3f7146e66fda90556c97f702c9ff7c8b7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2995 |
+
+Run 1 — solusi: Domain alami $25-x^2 \ge 0$ memberikan $0 \le \sqrt{25-x^2} \le 5$. Substitusi ke $f(x) = 8 - \sqrt{25-x^2}$ menghasilkan $8-5 \le f(x) \le 8-0$, sehingga $3 \le y \le 8$. Klaim $y \le 8$ salah karena mengabaikan batas bawah.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep domain alami fungsi akar, menentukan rentang nilai radikan, dan menerapkan transformasi fungsi untuk menentukan range. Ini melibatkan pemahaman konseptual tentang batasan fungsi dan bukan sekadar prosedur rutin.. Bukti: daerah asal alaminya; daerah hasil fungsi tersebut adalah R_f = {y \| y <= 8, y in R}
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang hubungan antara domain dan range fungsi, serta prinsip dasar fungsi akar.. Bukti: daerah asal alaminya; daerah hasil fungsi
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman tentang domain alami dan bagaimana batasan domain mempengaruhi range. Siswa harus melakukan analisis langkah demi langkah (menentukan domain, menentukan rentang radikan, lalu menentukan range fungsi). Ini adalah tugas standar untuk kelas 11 namun memerlukan integrasi konsep yang cukup.. Bukti: daerah asal alaminya; daerah hasil fungsi tersebut adalah R_f = {y \| y <= 8, y in R}
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman domain fungsi akar dan pertidaksamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu menentukan range fungsi komposisi sederhana atau fungsi akar dengan batasan domain. Soal ini menguji pemahaman konseptual yang tepat tanpa kompleksitas aljabar yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103856,9 +105237,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1153. Soal `f3a57ab031015d1b90a4e144`
@@ -103872,27 +105253,49 @@ Diketahui fungsi rasional $f(x) = \frac{2x^2 + kx - 5}{x + 1}$ dengan $k$ adalah
 | C | 4 |
 | D | 0 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `4`.
+Solusi minimum hasil AI: Melakukan pembagian polinomial (2x^2 + kx - 5) / (x + 1) menghasilkan hasil bagi 2x + (k - 2) dengan sisa -3. Asimtot miring adalah y = 2x + k - 2. Karena asimtot melalui (3, 8), substitusikan: 8 = 2(3) + k - 2. Maka 8 = 6 + k - 2, sehingga 8 = 4 + k, yang menghasilkan k = 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c3467153530226633a2bd203fc3107a2939007ef3e34bf1a80cb10b4903ffaf`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `553eedc3491e3ea785459c12297a2dcabbc8ce8a6b775538aafb15ab5d1bf797`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2910 |
+
+Run 1 — solusi: Melakukan pembagian polinomial (2x^2 + kx - 5) / (x + 1) menghasilkan hasil bagi 2x + (k - 2) dengan sisa -3. Asimtot miring adalah y = 2x + k - 2. Karena asimtot melalui (3, 8), substitusikan: 8 = 2(3) + k - 2. Maka 8 = 6 + k - 2, sehingga 8 = 4 + k, yang menghasilkan k = 4.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pembagian polinomial untuk menentukan persamaan asimtot miring, kemudian menerapkan konsep geometri analitik (persamaan garis melalui titik) untuk mencari parameter k. Ini adalah penerapan prosedur familiar dalam konteks yang sedikit lebih kompleks.. Bukti: Diketahui fungsi rasional f(x) = (2x^2 + kx - 5) / (x + 1); Jika garis asimtot miring dari grafik fungsi f melalui titik (3, 8), maka nilai k adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma pembagian polinomial dan hubungan antara fungsi rasional dengan asimtot miringnya.. Bukti: fungsi rasional; asimtot miring; pembagian polinomial
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah prosedural yang saling terkait: menentukan persamaan asimtot melalui pembagian polinomial dan menyelesaikan persamaan linear dengan satu variabel. Tidak ada strategi non-rutin yang diperlukan, namun siswa harus teliti dalam melakukan pembagian polinomial dengan variabel k.. Bukti: f(x) = (2x^2 + kx - 5) / (x + 1); garis asimtot miring ... melalui titik (3, 8)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian polinomial (horner atau bersusun) dan konsep asimtot fungsi rasional. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi asimtot fungsi rasional adalah standar kelas 11 TL. Prosedur pembagian polinomial adalah rutin, namun integrasi antara hasil bagi dengan syarat titik pada asimtot memerlukan ketelitian prosedural. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103925,9 +105328,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1154. Soal `971b6d5a129c7ba7db02ebbf`
@@ -103941,27 +105344,49 @@ Sebuah produsen makanan ringan memodelkan fungsi biaya rata-rata produksi $x$ ko
 | C | 1.500 kotak |
 | D | 800 kotak |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Selesaikan pertidaksamaan: (18.000.000 + 45.000x) / x <= 60.000. Karena x > 0, kalikan kedua ruas dengan x: 18.000.000 + 45.000x <= 60.000x. Kurangi 45.000x dari kedua ruas: 18.000.000 <= 15.000x. Bagi dengan 15.000: x >= 1.200.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e9784a252d135c756d79ca801cd191ec77a11739f4859e98966891961e9979d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `935ddaf17ba7aaa4f921842785ac8cb3790fe0acacd97dfdfcb3249b43c8537c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3015 |
+
+Run 1 — solusi: Selesaikan pertidaksamaan: (18.000.000 + 45.000x) / x <= 60.000. Karena x > 0, kalikan kedua ruas dengan x: 18.000.000 + 45.000x <= 60.000x. Kurangi 45.000x dari kedua ruas: 18.000.000 <= 15.000x. Bagi dengan 15.000: x >= 1.200.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep fungsi rasional dalam konteks pertidaksamaan untuk memodelkan situasi nyata. Siswa perlu menyusun pertidaksamaan dari fungsi yang diberikan dan menyelesaikannya, yang merupakan penerapan prosedur familiar dalam konteks rutin.. Bukti: Agar biaya rata-rata per kotak tidak melebihi Rp60.000,00, jumlah minimum kotak keripik yang harus diproduksi adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma penyelesaian pertidaksamaan rasional (mengalikan dengan variabel, menyederhanakan, dan menyelesaikan persamaan linear) yang merupakan pengetahuan prosedural.. Bukti: fungsi rasional B(x) = (18.000.000 + 45.000x) / x
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena melibatkan beberapa langkah yang saling terkait (menyusun pertidaksamaan, manipulasi aljabar, dan interpretasi hasil) tanpa bantuan eksplisit. Meskipun prosedurnya familiar, siswa harus mengintegrasikan kendala biaya ke dalam model fungsi rasional.. Bukti: Agar biaya rata-rata per kotak tidak melebihi Rp60.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penyelesaian pertidaksamaan linear dan pemahaman fungsi rasional sederhana. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 11, memodelkan masalah biaya dengan fungsi rasional dan menyelesaikan pertidaksamaannya adalah standar, namun memerlukan ketelitian dalam manipulasi aljabar agar tidak terjebak pada kesalahan umum seperti yang ada pada distraktor. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -103994,9 +105419,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1155. Soal `f79cbbd9ac1a4d09f6515357`
@@ -104010,27 +105435,49 @@ Daerah hasil dari fungsi rasional $f(x) = \frac{4x - 12}{x^2 - 5x + 6}$ untuk da
 | C | $\{y \mid y \neq 2 \text{ dan } y \neq 3, y \in \mathbb{R}\}$ |
 | D | $\{y \mid y \neq 0 \text{ dan } y \neq 4, y \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Fungsi difaktorkan menjadi f(x) = 4(x-3)/((x-2)(x-3)). Domain alami adalah x ≠ 2 dan x ≠ 3. Untuk x ≠ 3, fungsi menyederhanakan menjadi f(x) = 4/(x-2). Asimtot horizontal y = 0 tidak pernah dicapai oleh 4/(x-2). Lubang terjadi di x = 3, sehingga nilai y = 4/(3-2) = 4 tidak termasuk dalam range. Maka range adalah {y \| y ≠ 0 dan y ≠ 4, y ∈ ℝ}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9d9404b8e4b18cf91027a9d4587f263450c7da941df802b9d386766542fef535`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `655c18f6bb0cf36d337e395f2e6dd937220dabc748b441beca820e8542a32080`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3392 |
+
+Run 1 — solusi: Fungsi difaktorkan menjadi f(x) = 4(x-3)/((x-2)(x-3)). Domain alami adalah x ≠ 2 dan x ≠ 3. Untuk x ≠ 3, fungsi menyederhanakan menjadi f(x) = 4/(x-2). Asimtot horizontal y = 0 tidak pernah dicapai oleh 4/(x-2). Lubang terjadi di x = 3, sehingga nilai y = 4/(3-2) = 4 tidak termasuk dalam range. Maka range adalah {y \| y ≠ 0 dan y ≠ 4, y ∈ ℝ}.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur faktorisasi, mengidentifikasi domain (titik diskontinuitas), menyederhanakan fungsi, dan menganalisis perilaku fungsi (asimtot dan lubang) untuk menentukan range. Ini adalah penerapan konsep fungsi rasional yang rutin namun memerlukan ketelitian dalam mengintegrasikan dua kendala (asimtot dan lubang).. Bukti: Daerah hasil dari fungsi rasional f(x) = (4x - 12)/(x^2 - 5x + 6); fungsi dapat difaktorkan menjadi f(x) = 4(x - 3)/((x - 2)(x - 3)); Untuk x ≠ 3, fungsi bernilai f(x) = 4/(x - 2). Karena x ≠ 3, maka nilai f(x) ≠ 4.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang domain dan range fungsi rasional, serta prosedur aljabar untuk menyederhanakan fungsi dan mengidentifikasi titik diskontinuitas.. Bukti: f(x) = (4x - 12)/(x^2 - 5x + 6); Daerah asal alaminya adalah D_f = {x \| x ≠ 2 dan x ≠ 3, x ∈ ℝ}; f(x) = 4/(x - 2)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi dua konsep: asimtot horizontal (y=0) dan titik lubang (y=4). Siswa harus melakukan faktorisasi, menyederhanakan, dan mengevaluasi nilai fungsi pada titik yang tidak terdefinisi. Meskipun prosedurnya familiar, siswa sering terjebak hanya pada salah satu kendala (asimtot atau lubang), sehingga menuntut ketelitian perencanaan langkah.. Bukti: f(x) = (4x - 12)/(x^2 - 5x + 6); Daerah asal alaminya adalah D_f = {x \| x ≠ 2 dan x ≠ 3, x ∈ ℝ}; Untuk x ≠ 3, fungsi bernilai f(x) = 4/(x - 2). Karena x ≠ 3, maka nilai f(x) ≠ 4.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Faktorisasi kuadrat, konsep domain dan range, asimtot fungsi rasional. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu menganalisis fungsi rasional. Kesalahan umum pada opsi A dan B menunjukkan bahwa soal ini efektif menguji pemahaman mendalam tentang titik lubang vs asimtot. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104063,9 +105510,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1156. Soal `3ba3a6160cad938fadbe0a22`
@@ -104079,27 +105526,49 @@ Diketahui fungsi rasional $f(x) = \frac{a x^2 + 7x - 4}{x - 2}$ dengan $a$ adala
 | C | $21$ |
 | D | $39$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `39`.
+Solusi minimum hasil AI: Melakukan pembagian polinomial (ax^2 + 7x - 4) / (x - 2). Hasil bagi adalah ax + (2a + 7) + sisa/(x-2). Asimtot miring adalah y = ax + (2a + 7). Diketahui y = 3x + b, maka a = 3. Substitusi a = 3 ke (2a + 7) memberikan b = 2(3) + 7 = 13. Maka a * b = 3 * 13 = 39.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `72cc3b2b9498d5c9815039d0cd581e524b896e4f6f3ccb24e983e007e93e8ebc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ed118cf3bdbe1ea932c8d7136b0bb5e9c18221257aad3ed078d05020ee7c3719`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3083 |
+
+Run 1 — solusi: Melakukan pembagian polinomial (ax^2 + 7x - 4) / (x - 2). Hasil bagi adalah ax + (2a + 7) + sisa/(x-2). Asimtot miring adalah y = ax + (2a + 7). Diketahui y = 3x + b, maka a = 3. Substitusi a = 3 ke (2a + 7) memberikan b = 2(3) + 7 = 13. Maka a * b = 3 * 13 = 39.
+- Domain kognitif `classify/applying`: Siswa perlu menghubungkan konsep asimtot miring fungsi rasional dengan hasil pembagian polinomial. Mereka harus menentukan nilai parameter 'a' dari koefisien asimtot dan kemudian menghitung parameter 'b' melalui prosedur pembagian, yang merupakan penerapan konsep yang sudah dipelajari.. Bukti: grafik fungsi f memiliki garis asimtot miring y = 3x + b; a adalah konstanta bilangan real bukan nol; nilai dari a . b adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang pembagian polinomial dan konsep konseptual tentang bagaimana asimtot miring diperoleh dari fungsi rasional.. Bukti: f(x) = (ax^2 + 7x - 4) / (x - 2); garis asimtot miring y = 3x + b
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi antara pemahaman asimtot miring dan teknik pembagian polinomial. Siswa harus melakukan dua langkah logis: mengidentifikasi 'a' dari koefisien asimtot, lalu menghitung 'b' melalui pembagian. Prosedurnya familiar bagi siswa kelas 11 TL, namun memerlukan ketelitian dalam manipulasi aljabar.. Bukti: f(x) = (ax^2 + 7x - 4) / (x - 2); asimtot miring y = 3x + b; a adalah konstanta bilangan real bukan nol
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian polinomial (horner atau bersusun) dan konsep asimtot fungsi rasional. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi asimtot fungsi rasional adalah bagian dari kurikulum matematika tingkat lanjut kelas 11. Prosedur pembagian polinomial untuk mencari asimtot adalah rutin, namun menuntut ketelitian dalam mengaitkan parameter a dan b. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104132,9 +105601,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1157. Soal `0ede8a7bbea6364f2025189f`
@@ -104148,27 +105617,49 @@ Daerah asal dari fungsi $f(x) = \frac{\sqrt{25 - x^2}}{\sqrt{x - 3}}$ pada himpu
 | C | $50$ |
 | D | $34$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Syarat domain: (1) Pembilang: 25 - x^2 >= 0 => -5 <= x <= 5. (2) Penyebut: x - 3 > 0 => x > 3. Irisan kedua syarat: 3 < x <= 5. Dalam bentuk selang (a, b], maka a = 3 dan b = 5. Nilai a^2 + b^2 = 3^2 + 5^2 = 9 + 25 = 34.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `563e2ba6759dd032212aebefe88ef10b387d313d8899e982f7fdb8c770af8da1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1d8403dd4bfa55ce1faad907d55af1b211d45e8a0f79a0ab9d421b468960ef26`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3004 |
+
+Run 1 — solusi: Syarat domain: (1) Pembilang: 25 - x^2 >= 0 => -5 <= x <= 5. (2) Penyebut: x - 3 > 0 => x > 3. Irisan kedua syarat: 3 < x <= 5. Dalam bentuk selang (a, b], maka a = 3 dan b = 5. Nilai a^2 + b^2 = 3^2 + 5^2 = 9 + 25 = 34.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan menerapkan dua syarat domain fungsi (akar genap non-negatif dan penyebut tidak nol) secara simultan, kemudian mengiris kedua interval tersebut untuk mendapatkan domain akhir.. Bukti: Daerah asal dari fungsi f(x) = sqrt(25 - x^2) / sqrt(x - 3); Jika Df dinyatakan dalam bentuk selang (a, b], maka nilai dari a^2 + b^2 adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat domain fungsi aljabar yang melibatkan akar kuadrat dan pecahan, serta prosedur penyelesaian pertidaksamaan.. Bukti: Daerah asal dari fungsi; 25 - x^2 >= 0; x - 3 > 0
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi dua kendala yang berbeda (syarat akar dan syarat penyebut) untuk menentukan domain. Siswa harus melakukan irisan interval secara tepat. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling bergantung dan potensi kesalahan pada syarat penyebut.. Bukti: Daerah asal dari fungsi f(x) = sqrt(25 - x^2) / sqrt(x - 3); Jika Df dinyatakan dalam bentuk selang (a, b]
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pertidaksamaan kuadrat dan linear, konsep domain fungsi. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu mengelola syarat domain fungsi rasional dan irasional secara bersamaan. Tingkat kesulitan ini sesuai untuk menguji ketelitian dalam menentukan irisan interval. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104201,9 +105692,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1158. Soal `65d456e39e35f34ad66cda66`
@@ -104217,27 +105708,49 @@ Sebuah benda bermassa $m = 600\text{ kg}$ ditarik dari keadaan diam sehingga men
 | C | $36 \le t \le 144$ |
 | D | $4 \le t \le 10$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Model gaya adalah F(t) = 28.800/t^2. Diberikan 200 <= 28.800/t^2 <= 800. Karena t > 0, kita dapat membalik pertidaksamaan: 28.800/800 <= t^2 <= 28.800/200, yang menyederhanakan menjadi 36 <= t^2 <= 144. Mengambil akar kuadrat positif (karena t adalah waktu), diperoleh 6 <= t <= 12.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `46989d61e0f826f7dbedfe783c53b2b44d76f90d0bf5ae8ef537cb8a949d4dab`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e9c647f88129f9b45682832708fa2c3fc4d299dc35b550dd306abaf524e7141a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3144 |
+
+Run 1 — solusi: Model gaya adalah F(t) = 28.800/t^2. Diberikan 200 <= 28.800/t^2 <= 800. Karena t > 0, kita dapat membalik pertidaksamaan: 28.800/800 <= t^2 <= 28.800/200, yang menyederhanakan menjadi 36 <= t^2 <= 144. Mengambil akar kuadrat positif (karena t adalah waktu), diperoleh 6 <= t <= 12.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep fungsi rasional dan pertidaksamaan untuk memodelkan situasi fisik. Langkah-langkahnya melibatkan manipulasi aljabar pada pertidaksamaan rasional yang melibatkan variabel di penyebut, yang merupakan penerapan prosedur familiar dalam konteks masalah.. Bukti: Besar gaya dorong yang bekerja dimodelkan sebagai fungsi rasional terhadap waktu tempuh t; Jika gaya yang diberikan dibatasi paling sedikit 200 N dan paling banyak 800 N, maka rentang waktu tempuh t yang memenuhi adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara variabel dalam fungsi rasional dan penggunaan teknik aljabar untuk menyelesaikan pertidaksamaan yang melibatkan variabel di penyebut.. Bukti: F(t) = (m * s) / t^2; 200 <= F(t) <= 800
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan manipulasi aljabar pada pertidaksamaan rasional dengan variabel di penyebut. Siswa harus memahami sifat pertidaksamaan saat membalik pecahan dan melakukan penarikan akar pada rentang nilai. Meskipun prosedurnya standar, terdapat beberapa langkah yang saling terkait (substitusi, manipulasi pertidaksamaan, penarikan akar) yang membutuhkan ketelitian.. Bukti: F(t) = (m * s) / t^2; 200 <= F(t) <= 800
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pertidaksamaan rasional, operasi aljabar dasar, dan sifat akar kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu menangani pertidaksamaan rasional dan fungsi aljabar. Soal ini menuntut ketelitian dalam manipulasi aljabar tanpa memerlukan strategi non-rutin yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104270,9 +105783,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1159. Soal `aac93e510eae6acc6d27d556`
@@ -104286,27 +105799,49 @@ Seorang siswa mengklaim bahwa grafik fungsi rasional $f(x) = \frac{x^2 - 4x - 12
 | C | Klaim salah, karena garis asimtot vertikal fungsi tersebut yang benar adalah $x = -2$ dan $x = 2$. |
 | D | Klaim benar, karena setiap pembuat nol dari fungsi polinomial penyebut selalu menghasilkan garis asimtot vertikal. |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Faktorkan pembilang dan penyebut: f(x) = ((x-6)(x+2)) / ((x-6)(x-2)). Faktor (x-6) dapat disederhanakan untuk x ≠ 6. Maka, f(x) = (x+2)/(x-2) untuk x ≠ 6. Asimtot vertikal terjadi saat penyebut bernilai nol setelah penyederhanaan, yaitu x-2=0 atau x=2. Pada x=6, terdapat lubang (hole) karena faktor (x-6) saling menghilangkan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e4b03f5fdae882ca73646f20b33db8f47ffe2d5d1f452b7a5d51c97223dc4654`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ccd303292567de58b297a73b599092bb26eb0de8950f1aeec0dcaca49dd3ea6b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3030 |
+
+Run 1 — solusi: Faktorkan pembilang dan penyebut: f(x) = ((x-6)(x+2)) / ((x-6)(x-2)). Faktor (x-6) dapat disederhanakan untuk x ≠ 6. Maka, f(x) = (x+2)/(x-2) untuk x ≠ 6. Asimtot vertikal terjadi saat penyebut bernilai nol setelah penyederhanaan, yaitu x-2=0 atau x=2. Pada x=6, terdapat lubang (hole) karena faktor (x-6) saling menghilangkan.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk mengevaluasi klaim konseptual tentang asimtot vertikal, yang memerlukan pemahaman mendalam tentang hubungan antara faktor pembilang dan penyebut dalam fungsi rasional, bukan sekadar menghitung nilai nol penyebut.. Bukti: memiliki dua garis asimtot vertikal, yaitu x = 2 dan x = 6; Manakah evaluasi yang paling tepat mengenai klaim siswa tersebut?
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual mengenai syarat keberadaan asimtot vertikal pada fungsi rasional dan perbedaan antara asimtot vertikal dengan lubang (hole) pada grafik.. Bukti: grafik fungsi rasional f(x) = (x^2 - 4x - 12)/(x^2 - 8x + 12); memiliki dua garis asimtot vertikal, yaitu x = 2 dan x = 6
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan analisis faktorisasi dan memahami konsep lubang vs asimtot. Meskipun prosedurnya familiar (faktorisasi), siswa sering terjebak pada kesalahan umum (menganggap semua pembuat nol penyebut adalah asimtot), sehingga memerlukan pemahaman konseptual yang lebih dari sekadar prosedur rutin.. Bukti: memiliki dua garis asimtot vertikal, yaitu x = 2 dan x = 6; Manakah evaluasi yang paling tepat mengenai klaim siswa tersebut?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Faktorisasi polinomial kuadrat dan definisi asimtot vertikal. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan memahami perilaku fungsi rasional. Soal ini menguji pemahaman kritis terhadap kesalahan umum dalam menentukan asimtot, yang merupakan materi standar namun menuntut ketelitian konseptual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104339,9 +105874,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1160. Soal `9b02cebdbbc79dc6812c6cb8`
@@ -104355,27 +105890,49 @@ Sebuah satelit pengamat dirancang mengorbit sebuah planet berkeadaan bulat sempu
 | C | $1.000\text{ km}$ |
 | D | $9.000\text{ km}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Diketahui d(h) = sqrt(h^2 + 2Rh) = 3000 dengan R = 4000. Maka sqrt(h^2 + 8000h) = 3000. Kuadratkan kedua ruas: h^2 + 8000h = 9.000.000. Persamaan menjadi h^2 + 8000h - 9.000.000 = 0. Faktorkan: (h + 9000)(h - 1000) = 0. Karena h > 0, maka h = 1000 km.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d52e1744697eac6ae6f79e308e2ff32d7b466938be4d56c543ae3ee30b1273b0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c4de65a5752d8b4fa0dbadc5a2b2f78429c771dcc8baa8a2906da7204f9db0ea`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3057 |
+
+Run 1 — solusi: Diketahui d(h) = sqrt(h^2 + 2Rh) = 3000 dengan R = 4000. Maka sqrt(h^2 + 8000h) = 3000. Kuadratkan kedua ruas: h^2 + 8000h = 9.000.000. Persamaan menjadi h^2 + 8000h - 9.000.000 = 0. Faktorkan: (h + 9000)(h - 1000) = 0. Karena h > 0, maka h = 1000 km.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan model fungsi akar yang diberikan untuk menyelesaikan masalah kontekstual. Prosedur penyelesaian melibatkan substitusi nilai, manipulasi aljabar (menguadratkan kedua ruas), dan penyelesaian persamaan kuadrat. Ini adalah penerapan konsep fungsi dan aljabar pada konteks rutin.. Bukti: jarak pandang garis singgung ke horizon dari satelit pada ketinggian h km di atas permukaan planet dimodelkan oleh fungsi akar d(h) = sqrt(h^2 + 2Rh); jarak pandangnya ke horizon tepat bernilai 3.000 km, berapakah nilai ketinggian h
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang hubungan antara variabel dalam fungsi akar dan prosedur aljabar untuk menyelesaikan persamaan yang melibatkan akar kuadrat.. Bukti: dimodelkan oleh fungsi akar d(h) = sqrt(h^2 + 2Rh); berapakah nilai ketinggian h yang harus dipilih
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium. Siswa perlu melakukan manipulasi aljabar (menguadratkan kedua ruas) dan memecahkan persamaan kuadrat. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling bergantung (substitusi, kuadrat, faktorisasi) yang memerlukan ketelitian, namun tidak memerlukan strategi non-rutin yang kompleks.. Bukti: d(h) = sqrt(h^2 + 2Rh); jarak pandangnya ke horizon tepat bernilai 3.000 km
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman fungsi akar, operasi aljabar dasar, dan penyelesaian persamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu memanipulasi persamaan aljabar dan menyelesaikan persamaan kuadrat sebagai bagian dari prasyarat atau materi lanjutan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104408,9 +105965,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1161. Soal `f997feb6a85b89b593f62391`
@@ -104424,27 +105981,49 @@ Diketahui fungsi rasional $f(x) = \frac{2x + 7}{x^2 - 2mx + (m + 12)}$ terdefini
 | C | $\{m \mid -3 \le m \le 4, m \in \mathbb{R}\}$ |
 | D | $\{m \mid -3 < m < 4, m \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Agar f(x) terdefinisi untuk semua x real, penyebut x^2 - 2mx + (m + 12) tidak boleh memiliki akar real. Syaratnya adalah diskriminan D < 0. D = (-2m)^2 - 4(1)(m + 12) = 4m^2 - 4m - 48. Pertidaksamaan 4m^2 - 4m - 48 < 0 disederhanakan menjadi m^2 - m - 12 < 0. Faktorisasi (m - 4)(m + 3) < 0. Nilai m yang memenuhi adalah -3 < m < 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `235a6e0108097b2ad06c70ee48a4e0b246e59ac780942b4d0c4c72dd7d802774`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `257ce458fd3d7bfcc082bb1e9cc42fc53457fe5ee427086b74dd1b607bcceb8e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2989 |
+
+Run 1 — solusi: Agar f(x) terdefinisi untuk semua x real, penyebut x^2 - 2mx + (m + 12) tidak boleh memiliki akar real. Syaratnya adalah diskriminan D < 0. D = (-2m)^2 - 4(1)(m + 12) = 4m^2 - 4m - 48. Pertidaksamaan 4m^2 - 4m - 48 < 0 disederhanakan menjadi m^2 - m - 12 < 0. Faktorisasi (m - 4)(m + 3) < 0. Nilai m yang memenuhi adalah -3 < m < 4.
+- Domain kognitif `classify/applying`: Siswa perlu mengaitkan konsep domain fungsi rasional dengan syarat penyebut tidak boleh nol, kemudian menerjemahkannya ke dalam syarat diskriminan persamaan kuadrat (D < 0). Ini adalah penerapan konsep pada konteks rutin.. Bukti: f(x) = \frac{2x + 7}{x^2 - 2mx + (m + 12)} terdefinisi untuk seluruh bilangan real; Himpunan seluruh nilai konstanta real m yang memenuhi kondisi tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan antara domain fungsi rasional dan sifat definit positif/negatif dari fungsi kuadrat.. Bukti: f(x) = \frac{2x + 7}{x^2 - 2mx + (m + 12)} terdefinisi untuk seluruh bilangan real
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi antara konsep domain fungsi dan syarat diskriminan kuadrat. Siswa harus memahami bahwa 'terdefinisi untuk semua real' berarti penyebut tidak memiliki akar real (D < 0). Langkah-langkahnya rutin bagi siswa kelas 11, namun memerlukan ketelitian dalam memproses pertidaksamaan kuadrat.. Bukti: f(x) = \frac{2x + 7}{x^2 - 2mx + (m + 12)} terdefinisi untuk seluruh bilangan real
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Syarat definit positif/negatif fungsi kuadrat dan diskriminan. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Materi fungsi rasional dan diskriminan adalah standar kelas 11. Soal ini menguji pemahaman konsep dasar tanpa memerlukan strategi non-rutin yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104477,9 +106056,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1162. Soal `c0fe0960f901ede0c8ed98ee`
@@ -104493,27 +106072,49 @@ Diketahui fungsi rasional $f(x) = \frac{a x^2 + 8x - 5}{2x^2 - 5x - 3}$ dengan $
 | C | $12$ |
 | D | $15$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Asimtot horizontal y = a/2 = 3, maka a = 6. Asimtot vertikal dicari dari penyebut 2x^2 - 5x - 3 = (2x + 1)(x - 3) = 0, yaitu x = -1/2 dan x = 3. Karena p > 0, maka p = 3. Nilai a + 2p = 6 + 2(3) = 12.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `01c054f823b483584f9f78f4408f80c91e892fcf0bffc53d462ea7deaa173dd5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a46faf7091920fa9f3d72fa4251a31738c4719c3df539ef2c71a9ef7679e4849`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2961 |
+
+Run 1 — solusi: Asimtot horizontal y = a/2 = 3, maka a = 6. Asimtot vertikal dicari dari penyebut 2x^2 - 5x - 3 = (2x + 1)(x - 3) = 0, yaitu x = -1/2 dan x = 3. Karena p > 0, maka p = 3. Nilai a + 2p = 6 + 2(3) = 12.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep asimtot fungsi rasional untuk menentukan parameter a dan p. Prosedur ini rutin bagi siswa kelas 11 yang mempelajari fungsi rasional.. Bukti: grafik fungsi f memiliki garis asimtot horizontal y = 3; salah satu garis asimtot vertikalnya adalah x = p dengan p > 0
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman prinsip asimtot pada fungsi rasional dan prosedur faktorisasi penyebut untuk menemukan asimtot vertikal.. Bukti: f(x) = (ax^2 + 8x - 5) / (2x^2 - 5x - 3); asimtot horizontal y = 3; asimtot vertikal x = p
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah prosedural yang saling terkait: menentukan parameter 'a' dari asimtot horizontal dan menentukan 'p' dari faktorisasi penyebut, dengan kendala p > 0.. Bukti: f(x) = (ax^2 + 8x - 5) / (2x^2 - 5x - 3); asimtot horizontal y = 3; salah satu garis asimtot vertikalnya adalah x = p dengan p > 0
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman asimtot fungsi rasional dan faktorisasi persamaan kuadrat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi rasional dan asimtot merupakan bagian standar kurikulum kelas 11. Soal ini menguji pemahaman konsep dasar tanpa kerumitan aljabar yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104546,9 +106147,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1163. Soal `86001062e1a8f2cadfec0b2a`
@@ -104562,27 +106163,49 @@ Daerah asal alami dari fungsi akar $f(x) = \sqrt{\frac{x - 2}{x^2 - 7x + 12}}$ p
 | C | $(2, 3) \cup (4, \infty)$ |
 | D | $[2, 3] \cup [4, \infty)$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Syarat domain: (x-2)/(x^2-7x+12) >= 0. Faktorkan penyebut: (x-2)/((x-3)(x-4)) >= 0. Titik kritis: x=2 (pembilang, tertutup), x=3, x=4 (penyebut, terbuka). Uji interval: x<2 (negatif), 2<=x<3 (positif), 3<x<4 (negatif), x>4 (positif). Domain: [2, 3) U (4, infinity).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c1e668976eaa4dc4643317b47a3409863a3de6256d839ff7ec19bcc053fca595`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4943c5deafd882299cc8c9038bae5aacd8c26a696d669c551764f7368ec92f7f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2934 |
+
+Run 1 — solusi: Syarat domain: (x-2)/(x^2-7x+12) >= 0. Faktorkan penyebut: (x-2)/((x-3)(x-4)) >= 0. Titik kritis: x=2 (pembilang, tertutup), x=3, x=4 (penyebut, terbuka). Uji interval: x<2 (negatif), 2<=x<3 (positif), 3<x<4 (negatif), x>4 (positif). Domain: [2, 3) U (4, infinity).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur menentukan domain fungsi rasional dalam bentuk akar, yang melibatkan pemfaktoran, penentuan titik kritis, dan uji tanda pada garis bilangan. Ini adalah penerapan prosedur rutin pada konteks fungsi aljabar.. Bukti: Daerah asal alami dari fungsi akar f(x) = sqrt((x - 2)/(x^2 - 7x + 12))
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman konseptual tentang syarat domain fungsi akar (radikan non-negatif) dan prosedur aljabar untuk menyelesaikan pertidaksamaan rasional.. Bukti: Daerah asal alami dari fungsi akar; (x - 2)/(x^2 - 7x + 12) >= 0
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi beberapa langkah: memfaktorkan penyebut kuadrat, menentukan titik kritis, dan melakukan uji tanda pada interval. Meskipun prosedurnya familiar, siswa harus berhati-hati dalam menentukan inklusi titik (tertutup/terbuka) berdasarkan syarat pembilang dan penyebut.. Bukti: Daerah asal alami dari fungsi akar f(x) = sqrt((x - 2)/(x^2 - 7x + 12))
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemfaktoran persamaan kuadrat dan penyelesaian pertidaksamaan rasional. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu menangani pertidaksamaan rasional dan domain fungsi sebagai bagian dari prasyarat fungsi aljabar. Tingkat kesulitan menengah karena memerlukan ketelitian dalam syarat penyebut dan pembilang. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104615,9 +106238,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1164. Soal `ccdfc2ce3713984473634b38`
@@ -104631,27 +106254,49 @@ Tentukan daerah asal dan daerah hasil fungsi berikut. $f(x) = \frac{x}{x^2 + 4}$
 | C | Daerah asal $\{x \mid x \neq \pm 2, x \in \mathbb{R}\}$ dan daerah hasil $\{y \mid y \neq 0, y \in \mathbb{R}\}$ |
 | D | Daerah asal $\{x \mid x \in \mathbb{R}\}$ dan daerah hasil $\{y \mid -2 \le y \le 2, y \in \mathbb{R}\}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Domain: x^2 + 4 > 0 untuk semua x real, maka domain adalah R. Range: Misal y = x/(x^2 + 4), maka yx^2 - x + 4y = 0. Jika y = 0, x = 0. Jika y != 0, agar x real, diskriminan D >= 0. D = (-1)^2 - 4(y)(4y) = 1 - 16y^2 >= 0. Maka 16y^2 <= 1, y^2 <= 1/16, sehingga -1/4 <= y <= 1/4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6050330df3131705acec900e2402ce191d55b43a24a62e418c89e464331f345a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `61f73caf2eb23958d8fd7e4fa42ea36cbb9bf649484cefaf8bba978a62c97386`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3147 |
+
+Run 1 — solusi: Domain: x^2 + 4 > 0 untuk semua x real, maka domain adalah R. Range: Misal y = x/(x^2 + 4), maka yx^2 - x + 4y = 0. Jika y = 0, x = 0. Jika y != 0, agar x real, diskriminan D >= 0. D = (-1)^2 - 4(y)(4y) = 1 - 16y^2 >= 0. Maka 16y^2 <= 1, y^2 <= 1/16, sehingga -1/4 <= y <= 1/4.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur aljabar untuk menentukan domain (syarat penyebut) dan range (menggunakan diskriminan persamaan kuadrat atau analisis fungsi) untuk fungsi rasional yang tidak memiliki asimtot vertikal.. Bukti: Tentukan daerah asal dan daerah hasil fungsi berikut. f(x) = x / (x^2 + 4)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang cara mencari domain dan range fungsi rasional, serta pemahaman konseptual tentang syarat keberadaan nilai real pada fungsi.. Bukti: Tentukan daerah asal dan daerah hasil fungsi berikut. f(x) = x / (x^2 + 4)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi antara syarat domain dan teknik mencari range (menggunakan diskriminan atau analisis fungsi). Siswa harus melakukan manipulasi aljabar untuk mengubah fungsi menjadi persamaan kuadrat dalam x, kemudian menerapkan syarat diskriminan D >= 0 untuk menemukan batas nilai y. Ini melibatkan beberapa langkah yang saling bergantung.. Bukti: Tentukan daerah asal dan daerah hasil fungsi berikut. f(x) = x / (x^2 + 4)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman fungsi rasional, syarat penyebut tidak nol, dan penggunaan diskriminan persamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu menganalisis fungsi rasional. Menentukan range dengan diskriminan adalah prosedur standar namun memerlukan ketelitian dalam manipulasi aljabar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104684,9 +106329,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1165. Soal `b8c1fb51e6b861477596a8ca`
@@ -104700,27 +106345,49 @@ Diberikan dua buah fungsi $f(x) = \frac{x^2 - 4x + 3}{x - 3}$ dan $g(x) = x - 1$
 | C | Klaim salah, karena $D_f = \{x \mid x \neq 3, x \in \mathbb{R}\}$ sedangkan $D_g = \mathbb{R}$, sehingga grafik $f(x)$ memiliki titik berlubang (hole) di $(3, 2)$ sedangkan grafik $g(x)$ garis lurus kontinu |
 | D | Klaim salah, karena daerah hasil kedua fungsi berbeda yaitu $R_f = \mathbb{R}$ sedangkan $R_g = \{y \mid y \neq 2, y \in \mathbb{R}\}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Faktorkan pembilang f(x): (x-3)(x-1)/(x-3). Untuk x ≠ 3, f(x) = x - 1. Namun, pada x = 3, f(x) tidak terdefinisi karena penyebut menjadi nol, sehingga domain f(x) adalah {x \| x ≠ 3}. Sebaliknya, g(x) = x - 1 terdefinisi untuk semua x real. Karena domain keduanya berbeda, f(x) ≠ g(x). Grafik f(x) memiliki lubang di (3, 2), sedangkan g(x) kontinu.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `54cdb26b7dbbde02b37999b326edf09247caf8d07d91e992c78037c3d6b1bc61`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c6fb54317135230908208ef0d0f238d54a27dfc925cc7484ff7621f696e4d16b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3157 |
+
+Run 1 — solusi: Faktorkan pembilang f(x): (x-3)(x-1)/(x-3). Untuk x ≠ 3, f(x) = x - 1. Namun, pada x = 3, f(x) tidak terdefinisi karena penyebut menjadi nol, sehingga domain f(x) adalah {x \| x ≠ 3}. Sebaliknya, g(x) = x - 1 terdefinisi untuk semua x real. Karena domain keduanya berbeda, f(x) ≠ g(x). Grafik f(x) memiliki lubang di (3, 2), sedangkan g(x) kontinu.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk mengevaluasi klaim tentang kesamaan dua fungsi dengan menganalisis domain dan sifat fungsi rasional, bukan sekadar menyederhanakan aljabar. Ini memerlukan pemahaman konseptual tentang definisi fungsi dan domain.. Bukti: f(x) = (x^2 - 4x + 3)/(x - 3) dan g(x) = x - 1; Evaluasi yang paling tepat mengenai klaim siswa tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip dasar domain fungsi rasional dan hubungan antara penyederhanaan aljabar dengan batasan nilai input, yang merupakan konsep fundamental dalam fungsi.. Bukti: f(x) = (x^2 - 4x + 3)/(x - 3) dan g(x) = x - 1; bentuk aljabar pembilang dapat difaktorkan dan disederhanakan
+- Intended difficulty `classify/Medium`: Soal ini menguji pemahaman konseptual yang sering disalahpahami (lubang vs asimtot). Meskipun prosedurnya sederhana, siswa harus menolak godaan penyederhanaan aljabar langsung dan mempertimbangkan domain, yang merupakan langkah krusial bagi siswa kelas 11.. Bukti: f(x) = (x^2 - 4x + 3)/(x - 3) dan g(x) = x - 1; Evaluasi yang paling tepat mengenai klaim siswa tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman domain fungsi rasional dan faktorisasi polinomial. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 sering terjebak pada penyederhanaan aljabar tanpa memperhatikan domain. Soal ini menuntut ketelitian konseptual di atas sekadar manipulasi aljabar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104753,9 +106420,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1166. Soal `62f52ebf53e0723e25f15fa0`
@@ -104769,27 +106436,49 @@ Seorang siswa mengklaim bahwa jika suatu fungsi akar berindeks genap $f(x) = \sq
 | C | Klaim salah, karena fungsi akar berderajat genap tidak dapat memiliki daerah asal seluruh bilangan real $\mathbb{R}$. |
 | D | Klaim benar, karena pembuat nol dari bentuk akar adalah $x = 0$ sehingga nilai minimum fungsinya adalah $f(0) = 2$ dan $R_f = [2, \infty)$. |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Untuk f(x) = sqrt(x^2 + 9) + 2, karena x^2 >= 0, maka x^2 + 9 >= 9. Akar kuadrat dari nilai >= 9 adalah >= 3. Maka f(x) >= 3 + 2 = 5. Daerah hasil adalah [5, infinity). Klaim bahwa daerah hasil selalu [c, infinity) (yaitu [2, infinity)) adalah salah.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menyimpulkan', 'mengevaluasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `85c69321f20d39079f399873c1b49484cb727a1289b8d1d6036f8c2bc991de79`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b5387883cfc8bfe06a9f8d56d1a142da484063b10d6b5145d8f641fab093d4b8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3211 |
+
+Run 1 — solusi: Untuk f(x) = sqrt(x^2 + 9) + 2, karena x^2 >= 0, maka x^2 + 9 >= 9. Akar kuadrat dari nilai >= 9 adalah >= 3. Maka f(x) >= 3 + 2 = 5. Daerah hasil adalah [5, infinity). Klaim bahwa daerah hasil selalu [c, infinity) (yaitu [2, infinity)) adalah salah.
+- Domain kognitif `classify/reasoning`: Siswa diminta untuk mengevaluasi kebenaran sebuah pernyataan umum dengan menggunakan contoh penyangkal (counter-example) yang diberikan. Proses ini melibatkan pemahaman konsep daerah asal dan daerah hasil fungsi akar serta kemampuan untuk menguji validitas klaim matematis, yang termasuk dalam domain reasoning.. Bukti: Seorang siswa mengklaim bahwa jika suatu fungsi akar berindeks genap f(x) = sqrt(g(x)) + c memiliki daerah asal seluruh himpunan bilangan real (Df = R), maka daerah hasilnya (Rf) pasti selalu berupa selang [c, infinity).; Untuk menguji klaim tersebut, seorang guru memberikan fungsi f(x) = sqrt(x^2 + 9) + 2.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bentuk fungsi (khususnya fungsi akar) mempengaruhi daerah hasil, bukan sekadar menghitung nilai fungsi.. Bukti: f(x) = sqrt(g(x)) + c; daerah asal seluruh himpunan bilangan real (Df = R); daerah hasilnya (Rf) pasti selalu berupa selang [c, infinity)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan analisis terhadap klaim matematis dan memverifikasinya menggunakan contoh yang diberikan. Meskipun prosedurnya sederhana (menentukan range dari fungsi kuadrat di dalam akar), siswa perlu memahami hubungan antara domain dan range fungsi komposisi akar, yang merupakan langkah integrasi konsep.. Bukti: Seorang siswa mengklaim bahwa jika suatu fungsi akar berindeks genap f(x) = sqrt(g(x)) + c memiliki daerah asal seluruh himpunan bilangan real (Df = R), maka daerah hasilnya (Rf) pasti selalu berupa selang [c, infinity).; Untuk menguji klaim tersebut, seorang guru memberikan fungsi f(x) = sqrt(x^2 + 9) + 2.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang domain dan range fungsi, khususnya fungsi akar kuadrat dan fungsi kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu menganalisis sifat fungsi. Soal ini menuntut pemahaman konseptual tentang range fungsi, bukan sekadar komputasi rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104822,9 +106511,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1167. Soal `e4f4072770af14972104a98b`
@@ -104838,27 +106527,49 @@ Daerah asal dari fungsi $f(x) = \sqrt{6 - x - \sqrt{x + 6}}$ pada himpunan bilan
 | C | 7 |
 | D | 9 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Syarat domain: 1) x + 6 >= 0 -> x >= -6. 2) 6 - x - sqrt(x + 6) >= 0 -> 6 - x >= sqrt(x + 6). Kuadratkan kedua ruas (syarat 6 - x >= 0 -> x <= 6): 36 - 12x + x^2 >= x + 6 -> x^2 - 13x + 30 >= 0 -> (x - 3)(x - 10) >= 0. Penyelesaian: x <= 3 atau x >= 10. Irisan dengan x >= -6 dan x <= 6 adalah -6 <= x <= 3. Bilangan bulat: {-6, -5, -4, -3, -2, -1, 0, 1, 2, 3}. Total ada 10 bilangan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ea800f61ddcc2c79acb9d010c8d8a46738a9d3c78d14e1c18a5e6afbae56385b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e00d4ab1df06c6765e57b17c62ac400c395f05fbd29f50b9309180c54e150065`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2970 |
+
+Run 1 — solusi: Syarat domain: 1) x + 6 >= 0 -> x >= -6. 2) 6 - x - sqrt(x + 6) >= 0 -> 6 - x >= sqrt(x + 6). Kuadratkan kedua ruas (syarat 6 - x >= 0 -> x <= 6): 36 - 12x + x^2 >= x + 6 -> x^2 - 13x + 30 >= 0 -> (x - 3)(x - 10) >= 0. Penyelesaian: x <= 3 atau x >= 10. Irisan dengan x >= -6 dan x <= 6 adalah -6 <= x <= 3. Bilangan bulat: {-6, -5, -4, -3, -2, -1, 0, 1, 2, 3}. Total ada 10 bilangan.
+- Domain kognitif `classify/applying`: Siswa perlu menentukan domain fungsi komposisi akar dengan syarat yang saling bergantung (nested radicals). Siswa harus mengidentifikasi dua syarat domain, menyelesaikan pertidaksamaan irasional, dan melakukan irisan himpunan penyelesaian sebelum menghitung elemen bilangan bulat.. Bukti: Daerah asal dari fungsi f(x) = sqrt(6 - x - sqrt(x + 6)); Banyaknya bilangan bulat yang termuat di dalam Df
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang syarat domain fungsi akar dan teknik penyelesaian pertidaksamaan irasional yang melibatkan kuadrat.. Bukti: Daerah asal dari fungsi f(x) = sqrt(6 - x - sqrt(x + 6))
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi dua syarat domain yang saling bergantung (nested). Siswa harus melakukan manipulasi aljabar (menguadratkan pertidaksamaan) dengan memperhatikan syarat batas (6-x >= 0) agar tidak terjadi kesalahan domain. Langkah-langkahnya rutin bagi siswa kelas 11 namun memerlukan ketelitian dalam irisan interval.. Bukti: Daerah asal dari fungsi f(x) = sqrt(6 - x - sqrt(x + 6)); Banyaknya bilangan bulat yang termuat di dalam Df
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pertidaksamaan irasional, domain fungsi akar, operasi bilangan bulat. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu menangani pertidaksamaan irasional dan domain fungsi. Tingkat kesulitan menengah karena melibatkan dua lapis syarat domain yang harus diiriskan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104891,9 +106602,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1168. Soal `6bf9e5b4272e7be9ff5c58a2`
@@ -104907,27 +106618,49 @@ Diketahui fungsi rasional $f(x) = \frac{a x^2 + b x + 6}{2x^2 - 8}$ dengan $a$ d
 | C | 6 |
 | D | 12 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Asimtot horizontal y=3 berarti limit x menuju tak hingga dari f(x) adalah 3, sehingga a/2 = 3, maka a = 6. Fungsi menjadi f(x) = (6x^2 + bx + 6)/(2x^2 - 8). Karena memotong asimtot di x=5, maka f(5) = 3. (6(25) + 5b + 6)/(2(25) - 8) = 3. (150 + 5b + 6)/42 = 3. 156 + 5b = 126. 5b = -30, maka b = -6. Nilai a + b = 6 + (-6) = 0.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a7b2a26130997ca6297e9a4145dac22fcdb1e159fcfde7902855e9105464e5e9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `88c585fa2b30e8aedcf48222999e0705020799ccf8aeca4bd07a7344f069b57f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2948 |
+
+Run 1 — solusi: Asimtot horizontal y=3 berarti limit x menuju tak hingga dari f(x) adalah 3, sehingga a/2 = 3, maka a = 6. Fungsi menjadi f(x) = (6x^2 + bx + 6)/(2x^2 - 8). Karena memotong asimtot di x=5, maka f(5) = 3. (6(25) + 5b + 6)/(2(25) - 8) = 3. (150 + 5b + 6)/42 = 3. 156 + 5b = 126. 5b = -30, maka b = -6. Nilai a + b = 6 + (-6) = 0.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep asimtot horizontal untuk menentukan parameter 'a' dan menggunakan kondisi titik potong untuk menentukan parameter 'b'. Ini melibatkan penerapan prosedur rutin dalam konteks fungsi rasional.. Bukti: Garis y = 3 merupakan asimtot horizontal; grafik fungsi f memotong garis asimtot horizontal tersebut pada titik dengan absis x = 5
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antara koefisien fungsi rasional dengan perilaku asimtotnya serta pemahaman tentang titik potong fungsi dengan garis horizontal.. Bukti: fungsi rasional f(x) = (ax^2 + bx + 6)/(2x^2 - 8); asimtot horizontal; memotong garis asimtot horizontal
+- Intended difficulty `classify/Medium`: Soal ini memerlukan dua langkah prosedural yang saling terkait: menentukan parameter 'a' dari asimtot dan parameter 'b' dari titik potong. Langkah-langkahnya jelas dan rutin bagi siswa kelas 11, tidak memerlukan strategi non-rutin.. Bukti: Garis y = 3 merupakan asimtot horizontal; memotong garis asimtot horizontal tersebut pada titik dengan absis x = 5
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep limit tak hingga pada fungsi rasional atau aturan koefisien asimtot horizontal, serta substitusi nilai fungsi. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu mengaitkan asimtot horizontal dengan rasio koefisien fungsi rasional dan menyelesaikan persamaan linear sederhana yang dihasilkan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -104960,9 +106693,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1169. Soal `b663e07ff518dcf384588eac`
@@ -104976,27 +106709,49 @@ Diketahui fungsi rasional $f(x) = \frac{3x^2 + m x + 8}{x - 2}$ dengan $m$ adala
 | C | -7 |
 | D | 1 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: 1. Asimtot miring f(x) dicari dengan pembagian polinomial: (3x^2 + mx + 8) / (x - 2) = 3x + (m+6) + 20/(x-2). Asimtotnya adalah y = 3x + m + 6. 2. Puncak g(x) = -x^2 + 4x + 1: x_p = -b/2a = -4/-2 = 2. y_p = g(2) = -4 + 8 + 1 = 5. Titik puncak (2, 5). 3. Substitusi (2, 5) ke y = 3x + m + 6: 5 = 3(2) + m + 6 => 5 = 6 + m + 6 => 5 = 12 + m => m = -7.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0b0056b85c793d720960dac24ab051d89d84b4e9b7bcc246d3755068df794879`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0046adaa388b7909bbf3fca8afa2c365a0f91a4d88a195540c982351a4eb451e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3002 |
+
+Run 1 — solusi: 1. Asimtot miring f(x) dicari dengan pembagian polinomial: (3x^2 + mx + 8) / (x - 2) = 3x + (m+6) + 20/(x-2). Asimtotnya adalah y = 3x + m + 6. 2. Puncak g(x) = -x^2 + 4x + 1: x_p = -b/2a = -4/-2 = 2. y_p = g(2) = -4 + 8 + 1 = 5. Titik puncak (2, 5). 3. Substitusi (2, 5) ke y = 3x + m + 6: 5 = 3(2) + m + 6 => 5 = 6 + m + 6 => 5 = 12 + m => m = -7.
+- Domain kognitif `classify/applying`: Siswa perlu mengintegrasikan dua konsep: menentukan asimtot miring fungsi rasional melalui pembagian polinomial dan menentukan titik puncak fungsi kuadrat, kemudian menghubungkan keduanya melalui substitusi titik ke persamaan garis.. Bukti: Garis asimtot miring dari grafik fungsi f melalui titik puncak dari grafik fungsi kuadrat g(x); Nilai dari konstanta m adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menuntut pemahaman prosedural tentang pembagian polinomial untuk asimtot dan konsep titik puncak parabola, serta pemahaman konseptual tentang hubungan antara grafik fungsi dan persamaan asimtotnya.. Bukti: f(x) = (3x^2 + m x + 8)/(x - 2); g(x) = -x^2 + 4x + 1
+- Intended difficulty `classify/Medium`: Soal memerlukan perencanaan dua langkah utama yang saling bergantung (mencari asimtot dan mencari titik puncak) sebelum menyelesaikan persamaan linear untuk m. Tingkat kesulitan ini sesuai untuk kelas 11 karena mengintegrasikan dua topik fungsi yang berbeda namun familiar.. Bukti: Garis asimtot miring dari grafik fungsi f melalui titik puncak dari grafik fungsi kuadrat g(x); m adalah suatu konstanta bilangan real
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian polinomial (sintetik/bersusun), sifat fungsi kuadrat (titik puncak), dan persamaan garis. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu melakukan pembagian polinomial dan analisis fungsi kuadrat. Soal ini menuntut integrasi dua prosedur standar tanpa kerumitan strategi yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105029,9 +106784,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1170. Soal `6bfbf425abb8b97311eb081a`
@@ -105045,27 +106800,49 @@ Seorang siswa menyatakan bahwa kurva dari grafik suatu fungsi rasional tidak aka
 | C | Pernyataan siswa benar, karena persamaan $f(x) = 2$ tidak memiliki solusi pada himpunan bilangan real |
 | D | Pernyataan siswa benar, karena fungsi $f(x)$ tidak memiliki asimtot horizontal maupun asimtot vertikal |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Asimtot horizontal ditentukan oleh limit x mendekati tak hingga, yaitu y = lim (2x^2 - 4x + 6)/(x^2 + 2) = 2. Untuk mengecek perpotongan, selesaikan f(x) = 2: (2x^2 - 4x + 6)/(x^2 + 2) = 2. Maka 2x^2 - 4x + 6 = 2x^2 + 4. Didapat -4x = -2, sehingga x = 1/2. Titik potongnya adalah (1/2, 2). Pernyataan siswa salah karena grafik memotong asimtot horizontalnya.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0651b0818077839fb4ca2607739fdda6034e80a8d3b42a33e63e4c6a890f4993`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `531ebd71bed1c4391d3c28d94dad9a8f3ed75b82999a95a2a72530ca1aee5507`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3099 |
+
+Run 1 — solusi: Asimtot horizontal ditentukan oleh limit x mendekati tak hingga, yaitu y = lim (2x^2 - 4x + 6)/(x^2 + 2) = 2. Untuk mengecek perpotongan, selesaikan f(x) = 2: (2x^2 - 4x + 6)/(x^2 + 2) = 2. Maka 2x^2 - 4x + 6 = 2x^2 + 4. Didapat -4x = -2, sehingga x = 1/2. Titik potongnya adalah (1/2, 2). Pernyataan siswa salah karena grafik memotong asimtot horizontalnya.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengevaluasi pernyataan konseptual tentang asimtot dengan menerapkan prosedur aljabar (mencari asimtot dan titik potong) pada fungsi rasional yang diberikan. Ini melibatkan pemahaman konsep asimtot dan kemampuan untuk membuktikan/menyangkal klaim melalui perhitungan, yang masuk dalam domain applying.. Bukti: Seorang siswa menyatakan bahwa kurva dari grafik suatu fungsi rasional tidak akan pernah memotong garis asimtotnya.; Berdasarkan analisis terhadap fungsi f(x), simpulan yang paling tepat mengenai pernyataan siswa tersebut adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang hubungan antara fungsi rasional dan asimtotnya (konseptual) serta prosedur untuk menentukan asimtot dan titik potong (prosedural).. Bukti: fungsi rasional f(x) = (2x^2 - 4x + 6)/(x^2 + 2); kurva dari grafik suatu fungsi rasional tidak akan pernah memotong garis asimtotnya
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi antara konsep asimtot horizontal dan prosedur aljabar untuk mencari titik potong. Siswa harus memahami bahwa asimtot horizontal adalah perilaku limit, bukan batasan yang tidak boleh dilewati, dan mampu menyelesaikan persamaan f(x) = y_asimtot. Langkah-langkahnya jelas namun memerlukan pemahaman konsep yang lebih dalam daripada sekadar menghitung nilai fungsi.. Bukti: f(x) = (2x^2 - 4x + 6)/(x^2 + 2); simpulan yang paling tepat mengenai pernyataan siswa tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman limit tak hingga untuk asimtot horizontal dan penyelesaian persamaan aljabar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu menganalisis perilaku fungsi rasional. Soal ini menuntut pemahaman konseptual tentang asimtot yang sering disalahpahami, dengan beban perhitungan yang moderat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105098,9 +106875,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1171. Soal `37501388f23b16086b111078`
@@ -105114,27 +106891,49 @@ Diketahui fungsi akar $f(x) = \sqrt{k x^2 - 4k x + (k + 12)}$ dengan $k$ adalah 
 | C | $\{k \mid -4 \le k \le 0, k \in \mathbb{R}\}$ |
 | D | $\{k \mid 0 \le k \le 4, k \in \mathbb{R}\}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `{k | 0 <= k <= 4, k in R}`.
+Solusi minimum hasil AI: Agar f(x) terdefinisi untuk semua x, maka kx^2 - 4kx + (k+12) >= 0 untuk semua x. Kasus 1: k=0, maka 12 >= 0 (benar). Kasus 2: k > 0, maka syaratnya adalah D <= 0. D = (-4k)^2 - 4(k)(k+12) = 16k^2 - 4k^2 - 48k = 12k^2 - 48k. 12k(k-4) <= 0. Karena k > 0, maka k-4 <= 0, sehingga 0 < k <= 4. Gabungan kasus 1 dan 2 adalah 0 <= k <= 4.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4e26a92745e26d57decd57b79518ffa424fa8c35a9cf21eec46d6a9ec8069539`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f2fdcab3313930c1b268f5977595d967a46742171904998a59456a8c0471895a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3126 |
+
+Run 1 — solusi: Agar f(x) terdefinisi untuk semua x, maka kx^2 - 4kx + (k+12) >= 0 untuk semua x. Kasus 1: k=0, maka 12 >= 0 (benar). Kasus 2: k > 0, maka syaratnya adalah D <= 0. D = (-4k)^2 - 4(k)(k+12) = 16k^2 - 4k^2 - 48k = 12k^2 - 48k. 12k(k-4) <= 0. Karena k > 0, maka k-4 <= 0, sehingga 0 < k <= 4. Gabungan kasus 1 dan 2 adalah 0 <= k <= 4.
+- Domain kognitif `classify/reasoning`: Siswa harus mengintegrasikan syarat fungsi akar (diskriminan non-negatif) dengan analisis kasus khusus (k=0) dan syarat definit positif (k>0 dan D<=0). Ini memerlukan penalaran untuk menggabungkan dua kondisi yang berbeda (linier dan kuadrat) agar memenuhi domain real.. Bukti: Agar fungsi f(x) terdefinisi untuk seluruh bilangan real; k x^2 - 4k x + (k + 12) >= 0 untuk setiap x anggota R
+- Dimensi pengetahuan `classify/conceptual`: Siswa menerapkan prinsip definit positif pada fungsi kuadrat dan memahami syarat domain fungsi akar, yang merupakan konsep relasional dalam aljabar.. Bukti: Agar fungsi f(x) terdefinisi untuk seluruh bilangan real; k x^2 - 4k x + (k + 12) >= 0
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi dua kasus (k=0 dan k>0) yang sering terlewatkan oleh siswa. Meskipun prosedurnya familiar (syarat definit positif), siswa harus berhati-hati dalam menangani kasus k=0 dan menggabungkan hasilnya dengan interval k>0.. Bukti: k x^2 - 4k x + (k + 12) >= 0 untuk setiap x anggota R; k adalah suatu konstanta bilangan real
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Syarat definit positif fungsi kuadrat dan domain fungsi akar. |
+| dependentSteps | 3 |
+| routineStatus | routine_selection |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu menganalisis syarat definit positif. Kesulitan terletak pada keharusan memeriksa kasus k=0 secara eksplisit, yang sering menjadi jebakan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105167,9 +106966,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `needs_ai_review`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1172. Soal `a76f2b2f8b5b156157d275eb`
@@ -105183,27 +106982,49 @@ Daerah asal dari fungsi akar $f(x) = \sqrt{25 - x^2}$ pada himpunan bilangan rea
 | C | $\{x \mid -5 \le x \le 5, x \in \mathbb{R}\}$ |
 | D | $\{x \mid x \ge 5, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Syarat domain fungsi akar f(x) = sqrt(25 - x^2) adalah 25 - x^2 >= 0. Pertidaksamaan ini ekuivalen dengan x^2 <= 25. Akar dari x^2 = 25 adalah x = 5 dan x = -5. Uji titik atau sifat pertidaksamaan kuadrat menunjukkan bahwa nilai x yang memenuhi adalah -5 <= x <= 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0a2dcafd23a231b2ff8e291faec8ea46f8eb2a41e4fc31bc4d08712fde1bcad7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `952118e3b5dea2e705971108bee055b427677994a393a431f4cef28d26f3b2ea`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2807 |
+
+Run 1 — solusi: Syarat domain fungsi akar f(x) = sqrt(25 - x^2) adalah 25 - x^2 >= 0. Pertidaksamaan ini ekuivalen dengan x^2 <= 25. Akar dari x^2 = 25 adalah x = 5 dan x = -5. Uji titik atau sifat pertidaksamaan kuadrat menunjukkan bahwa nilai x yang memenuhi adalah -5 <= x <= 5.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur standar untuk menentukan domain fungsi akar (syarat radikan non-negatif) dan menyelesaikan pertidaksamaan kuadrat sederhana. Ini adalah penerapan konsep yang rutin.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(25 - x^2)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang syarat keberadaan fungsi akar (konseptual) dan prosedur penyelesaian pertidaksamaan kuadrat (prosedural).. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(25 - x^2)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Langkah penyelesaiannya langsung (syarat radikan >= 0) dan tidak melibatkan integrasi konsep yang kompleks atau kendala yang saling berinteraksi.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(25 - x^2)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang syarat domain fungsi akar dan penyelesaian pertidaksamaan kuadrat dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi domain fungsi akar adalah prasyarat dasar yang sudah familiar bagi siswa kelas 11, dan penyelesaian pertidaksamaan kuadrat merupakan keterampilan rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105236,9 +107057,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1173. Soal `e67484dbde4261a3a57ffb4c`
@@ -105252,27 +107073,49 @@ Sebidang kebun sayur berbentuk persegi panjang memiliki luas $360\text{ m}^2$. K
 | C | $K(p) = p + \frac{720}{p} - 3$ |
 | D | $K(p) = 2p + \frac{720}{p} + 3$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Luas L = p * l = 360, sehingga l = 360/p. Keliling persegi panjang adalah 2p + 2l. Kawat pagar K(p) adalah keliling dikurangi lebar pintu: K(p) = 2p + 2(360/p) - 3 = 2p + 720/p - 3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1930fb969747d11018df0cd0d8f343bcc27408807d8d5d6c3883bf9d7168d252`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `09665c8ebbd5b2d526908b5c94edb1d3125c4f269ab596771be190a600022857`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 3546 |
+
+Run 1 — solusi: Luas L = p * l = 360, sehingga l = 360/p. Keliling persegi panjang adalah 2p + 2l. Kawat pagar K(p) adalah keliling dikurangi lebar pintu: K(p) = 2p + 2(360/p) - 3 = 2p + 720/p - 3.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep luas persegi panjang untuk menyatakan lebar dalam variabel panjang, lalu menyusun fungsi keliling dengan kendala pintu masuk. Ini adalah penerapan konsep rutin dalam konteks pemodelan.. Bukti: luas 360 m^2; panjang kebun dimisalkan p; model fungsi rasional untuk panjang kawat pagar K(p)
+- Dimensi pengetahuan `classify/conceptual`: Soal menuntut pemahaman hubungan antara variabel (luas, panjang, lebar) dan struktur fungsi keliling untuk membentuk model matematika.. Bukti: luas 360 m^2; panjang kebun dimisalkan p; model fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini adalah pemodelan dasar yang sering ditemui. Langkah-langkahnya linear dan tidak memerlukan integrasi konsep yang kompleks.. Bukti: luas 360 m^2; panjang kebun dimisalkan p; model fungsi rasional untuk panjang kawat pagar K(p)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep luas persegi panjang dan substitusi variabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Pemodelan fungsi rasional sederhana dari geometri dasar merupakan materi standar yang familiar bagi siswa kelas 11. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105305,9 +107148,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1174. Soal `0e35dd50c99cf49a6f0dde60`
@@ -105321,27 +107164,49 @@ Titik potong antara garis asimtot vertikal dan garis asimtot horizontal dari gra
 | C | $\left(-\frac{5}{6}, 3\right)$ |
 | D | $(4, 3)$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Asimtot vertikal diperoleh dari pembuat nol penyebut: 2x - 8 = 0, sehingga x = 4. Asimtot horizontal diperoleh dari rasio koefisien variabel derajat tertinggi pembilang dan penyebut: y = 6/2 = 3. Titik potong kedua asimtot adalah (4, 3).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `929205ccdc7c61552ce822aa14d9caf106845a1f1aba7d3e94111e3d2d8e4a49`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a7970d6f1e53524cae9376d49f6f8c804101635a23c803b1a38f5a4f15dd044c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2754 |
+
+Run 1 — solusi: Asimtot vertikal diperoleh dari pembuat nol penyebut: 2x - 8 = 0, sehingga x = 4. Asimtot horizontal diperoleh dari rasio koefisien variabel derajat tertinggi pembilang dan penyebut: y = 6/2 = 3. Titik potong kedua asimtot adalah (4, 3).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur standar untuk menentukan asimtot vertikal dan horizontal dari fungsi rasional, kemudian mengidentifikasi titik potongnya. Ini adalah penerapan prosedur rutin yang sudah dipelajari.. Bukti: Titik potong antara garis asimtot vertikal dan garis asimtot horizontal dari grafik fungsi rasional f(x) = (6x + 5)/(2x - 8)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menentukan asimtot fungsi rasional.. Bukti: f(x) = (6x + 5)/(2x - 8)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah-langkah yang jelas dan langsung. Siswa hanya perlu menerapkan aturan asimtot tanpa integrasi konsep yang kompleks atau kendala yang saling berinteraksi.. Bukti: Titik potong antara garis asimtot vertikal dan garis asimtot horizontal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang fungsi rasional dan konsep asimtot. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi asimtot fungsi rasional adalah topik standar kelas 11. Prosedur penentuan asimtot vertikal dan horizontal merupakan algoritma dasar yang familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105374,9 +107239,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1175. Soal `e172735ba401218469cec007`
@@ -105390,27 +107255,49 @@ Daerah asal dan daerah hasil dari fungsi rasional $f(x) = \frac{5x + 6}{x - 8}$ 
 | C | $\{x \mid x \neq 8, x \in \mathbb{R}\}$ dan $\{y \mid y \neq 0, y \in \mathbb{R}\}$ |
 | D | $\{x \mid x \neq 8, x \in \mathbb{R}\}$ dan $\{y \mid y \neq -5, y \in \mathbb{R}\}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Domain: Penyebut x - 8 tidak boleh nol, maka x ≠ 8. Range: y = (5x + 6)/(x - 8) ⇔ y(x - 8) = 5x + 6 ⇔ xy - 8y = 5x + 6 ⇔ x(y - 5) = 8y + 6 ⇔ x = (8y + 6)/(y - 5). Agar x terdefinisi, penyebut y - 5 ≠ 0, maka y ≠ 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `59e74958b41516b93b5b2ca85cd59c19bffe3fed7946d531da58cf763cc2d6a7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8a6bc16f0e11323c49e02415945f09afb1809a2f2fae49a21e266a871bc94958`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2984 |
+
+Run 1 — solusi: Domain: Penyebut x - 8 tidak boleh nol, maka x ≠ 8. Range: y = (5x + 6)/(x - 8) ⇔ y(x - 8) = 5x + 6 ⇔ xy - 8y = 5x + 6 ⇔ x(y - 5) = 8y + 6 ⇔ x = (8y + 6)/(y - 5). Agar x terdefinisi, penyebut y - 5 ≠ 0, maka y ≠ 5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur standar untuk menentukan domain dan range fungsi rasional. Prosedur ini bersifat rutin dan langsung, melibatkan pemahaman tentang syarat penyebut tidak nol dan manipulasi aljabar untuk mencari invers fungsi.. Bukti: Daerah asal dan daerah hasil dari fungsi rasional f(x) = (5x + 6)/(x - 8)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menentukan domain dan range fungsi rasional, yang merupakan algoritma standar dalam aljabar fungsi.. Bukti: Daerah asal dan daerah hasil dari fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena merupakan penerapan langsung dari prosedur standar yang familiar bagi siswa kelas 11. Jalur penyelesaiannya jelas (mencari nilai x yang membuat penyebut nol untuk domain, dan mencari invers untuk range), tidak memerlukan integrasi konsep yang kompleks atau strategi non-rutin.. Bukti: Daerah asal dan daerah hasil dari fungsi rasional f(x) = (5x + 6)/(x - 8)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi rasional, syarat penyebut tidak nol, dan manipulasi aljabar linear. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Menentukan domain dan range fungsi rasional linear-per-linear adalah materi standar kelas 11 yang prosedurnya sangat rutin dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105443,9 +107330,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1176. Soal `1f76ac4281cd903525763710`
@@ -105459,27 +107346,49 @@ Sebuah satelit mengorbit planet yang memiliki jari-jari $3.400\text{ km}$. Jika 
 | C | $d(h) = \sqrt{h^2 + 3.400h}$ |
 | D | $d(h) = \sqrt{h^2 + 6.800h}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Misalkan R adalah jari-jari planet dan h adalah ketinggian satelit. Garis pandang d membentuk segitiga siku-siku dengan jari-jari R (sebagai kaki) dan jarak pusat planet ke satelit (R+h) sebagai sisi miring. Berdasarkan teorema Pythagoras: d^2 + R^2 = (R+h)^2. Maka d^2 = (R+h)^2 - R^2 = R^2 + 2Rh + h^2 - R^2 = h^2 + 2Rh. Dengan R = 3.400, maka d^2 = h^2 + 2(3.400)h = h^2 + 6.800h. Jadi, d(h) = sqrt(h^2 + 6.800h).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f2e571a6daa8c7ad1aeddc578fe2337fbecccaea6c01dc2eebbb95ae8e8ed3f9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `377e7c4a9f515b01087c4936a09cfdd0a687735dffe746708a0b8ee44c31ec68`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2982 |
+
+Run 1 — solusi: Misalkan R adalah jari-jari planet dan h adalah ketinggian satelit. Garis pandang d membentuk segitiga siku-siku dengan jari-jari R (sebagai kaki) dan jarak pusat planet ke satelit (R+h) sebagai sisi miring. Berdasarkan teorema Pythagoras: d^2 + R^2 = (R+h)^2. Maka d^2 = (R+h)^2 - R^2 = R^2 + 2Rh + h^2 - R^2 = h^2 + 2Rh. Dengan R = 3.400, maka d^2 = h^2 + 2(3.400)h = h^2 + 6.800h. Jadi, d(h) = sqrt(h^2 + 6.800h).
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan situasi geometris (segitiga siku-siku yang dibentuk oleh jari-jari planet, jarak pandang, dan jarak pusat planet ke satelit) ke dalam model aljabar. Ini melibatkan penerapan teorema Pythagoras dan manipulasi aljabar sederhana.. Bukti: model matematika fungsi jarak pandang d (dalam km) dari satelit ke horizon planet adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menuntut pemahaman konseptual tentang hubungan geometris (teorema Pythagoras) dan kemampuan prosedural untuk memodelkannya ke dalam fungsi aljabar.. Bukti: model matematika fungsi jarak pandang d
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan translasi dari deskripsi verbal/situasional ke model matematika (representasi transfer). Siswa harus mengidentifikasi hubungan geometris yang relevan (segitiga siku-siku) dan melakukan manipulasi aljabar yang melibatkan ekspansi kuadrat. Meskipun prosedurnya standar, integrasi antara konsep geometri dan aljabar memberikan tuntutan sedang bagi siswa kelas 11.. Bukti: model matematika fungsi jarak pandang d (dalam km) dari satelit ke horizon planet adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Teorema Pythagoras dan operasi aljabar dasar (kuadrat binomial). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 diharapkan mampu memodelkan situasi nyata ke dalam fungsi aljabar. Soal ini menguji kemampuan tersebut dengan tingkat kompleksitas yang sesuai untuk level menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105512,9 +107421,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1177. Soal `35e6438692da510e363d9a23`
@@ -105528,27 +107437,49 @@ Daerah asal dari fungsi $f(x) = \sqrt{\frac{x - 3}{x + 5}}$ pada himpunan bilang
 | C | $\{x \mid x \le -5 \text{ atau } x \ge 3, x \in \mathbb{R}\}$ |
 | D | $\{x \mid -5 < x \le 3, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Syarat domain fungsi akar adalah $\frac{x-3}{x+5} \ge 0$ dan $x+5 \neq 0$. Titik kritis adalah $x=3$ (pembilang nol) dan $x=-5$ (penyebut nol). Uji interval: untuk $x < -5$, misal $x=-6$, $\frac{-9}{-1} = 9 > 0$ (memenuhi). Untuk $-5 < x < 3$, misal $x=0$, $\frac{-3}{5} < 0$ (tidak memenuhi). Untuk $x > 3$, misal $x=4$, $\frac{1}{9} > 0$ (memenuhi). Karena $x=3$ membuat akar nol (diperbolehkan) dan $x=-5$ membuat penyebut nol (tidak diperbolehkan), maka domainnya adalah $x < -5$ atau $x \ge 3$.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bafaf96923cacf6e23b5cc8a7e418f63031621d5d3691ba25eb6ac29bf955ba2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cca29236e1891d830ff310e3591b4a9c2f4d47372b89c214b2826c59438c5653`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2947 |
+
+Run 1 — solusi: Syarat domain fungsi akar adalah $\frac{x-3}{x+5} \ge 0$ dan $x+5 \neq 0$. Titik kritis adalah $x=3$ (pembilang nol) dan $x=-5$ (penyebut nol). Uji interval: untuk $x < -5$, misal $x=-6$, $\frac{-9}{-1} = 9 > 0$ (memenuhi). Untuk $-5 < x < 3$, misal $x=0$, $\frac{-3}{5} < 0$ (tidak memenuhi). Untuk $x > 3$, misal $x=4$, $\frac{1}{9} > 0$ (memenuhi). Karena $x=3$ membuat akar nol (diperbolehkan) dan $x=-5$ membuat penyebut nol (tidak diperbolehkan), maka domainnya adalah $x < -5$ atau $x \ge 3$.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur standar untuk menentukan domain fungsi rasional dalam akar, yang melibatkan penyelesaian pertidaksamaan rasional. Ini adalah penerapan konsep domain fungsi yang rutin bagi siswa kelas 11.. Bukti: Daerah asal dari fungsi $f(x) = \sqrt{\frac{x - 3}{x + 5}}$
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang syarat domain fungsi akar dan pertidaksamaan rasional.. Bukti: Daerah asal dari fungsi $f(x) = \sqrt{\frac{x - 3}{x + 5}}$
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan integrasi dua syarat (syarat akar dan syarat penyebut) serta penggunaan metode uji interval untuk pertidaksamaan rasional. Meskipun prosedurnya familiar, siswa harus berhati-hati dalam menentukan titik kritis dan tanda pada interval, yang merupakan langkah-langkah yang saling bergantung.. Bukti: Daerah asal dari fungsi $f(x) = \sqrt{\frac{x - 3}{x + 5}}$
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang domain fungsi akar, syarat penyebut tidak nol, dan penyelesaian pertidaksamaan rasional. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 tingkat lanjut diharapkan mampu menyelesaikan pertidaksamaan rasional sebagai bagian dari materi fungsi dan aljabar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105581,9 +107512,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1178. Soal `58453c2fcf26f7fb250b0ec5`
@@ -105597,27 +107528,49 @@ Kecepatan gelombang tsunami dinyatakan dengan rumus $v = \sqrt{g \cdot d}$, deng
 | C | $14\text{ m/s}$ |
 | D | $70\text{ m/s}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Substitusi nilai g = 9,8 dan d = 2.000 ke dalam rumus v = sqrt(g * d). Maka v = sqrt(9,8 * 2.000) = sqrt(19.600) = 140 m/s.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `29edd50777ecce2b83ffaeaaa317ede4164f98798b1b24fbe35a03b3c9a1f693`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a7eec228a891ed3e8eaffb1b90c2403a05a23f967756953f5df57f9d43e07774`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2813 |
+
+Run 1 — solusi: Substitusi nilai g = 9,8 dan d = 2.000 ke dalam rumus v = sqrt(g * d). Maka v = sqrt(9,8 * 2.000) = sqrt(19.600) = 140 m/s.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk melakukan substitusi nilai ke dalam rumus yang sudah diberikan dan melakukan operasi aritmatika dasar (perkalian dan penarikan akar kuadrat). Ini adalah prosedur yang sangat langsung.. Bukti: Kecepatan gelombang tsunami dinyatakan dengan rumus v = sqrt(g * d); g = 9,8 m/s^2 dan kedalaman laut di suatu palung adalah 2.000 meter
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami penggunaan rumus dan operasi akar kuadrat, yang merupakan bagian dari prosedur matematika standar.. Bukti: v = sqrt(g * d)
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (straightforward). Siswa hanya perlu mensubstitusi nilai ke dalam rumus yang sudah disediakan dan menghitung hasilnya. Tidak ada langkah perencanaan yang kompleks atau integrasi konsep yang sulit.. Bukti: v = sqrt(g * d); g = 9,8 m/s^2; d = 2.000 meter
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmatika dasar, perkalian desimal, dan penarikan akar kuadrat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Meskipun materi ini sering muncul di jenjang lebih rendah, untuk kelas 11 ini dikategorikan sebagai penerapan rumus sederhana yang familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105650,9 +107603,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1179. Soal `53645d905c1ed0dda6709736`
@@ -105666,27 +107619,49 @@ Sebuah mobil derek bermassa $800\text{ kg}$ mendorong sebuah beban hingga berpin
 | C | $F(t) = \frac{40.000}{t}$ |
 | D | $F(t) = \frac{40.000}{t^2}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Diketahui m = 800 kg dan s = 50 m. Kecepatan rata-rata v(t) = s/t = 50/t. Percepatan a(t) = v/t = (50/t) / t = 50/t^2. Gaya F(t) = m * a(t) = 800 * (50/t^2) = 40.000/t^2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `28421b92d33eaf1826493b60d52317df718bbbc6ec9d125f2e22fb30d368a2d2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f930fecd20924bd200aaafae5fb96a34747b0ea30e594dd1675fa32ceaf15ee4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2899 |
+
+Run 1 — solusi: Diketahui m = 800 kg dan s = 50 m. Kecepatan rata-rata v(t) = s/t = 50/t. Percepatan a(t) = v/t = (50/t) / t = 50/t^2. Gaya F(t) = m * a(t) = 800 * (50/t^2) = 40.000/t^2.
+- Domain kognitif `classify/applying`: Siswa diminta untuk menyusun model fungsi rasional berdasarkan hubungan variabel yang diberikan (m, s, t) dan definisi percepatan serta kecepatan. Ini memerlukan penerapan konsep fungsi dalam konteks fisika sederhana.. Bukti: model fungsi rasional yang menyatakan besar gaya dorong F(t); a = v/t dan kecepatan rata-rata v = s/t
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang hubungan antar variabel (konseptual) dan prosedur substitusi untuk membentuk fungsi rasional.. Bukti: model fungsi rasional; a = v/t dan kecepatan rata-rata v = s/t
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Langkah-langkah penyelesaiannya jelas: substitusi v ke dalam a, lalu a ke dalam F. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: model fungsi rasional yang menyatakan besar gaya dorong F(t); a = v/t dan kecepatan rata-rata v = s/t
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang fungsi, substitusi variabel, dan rumus fisika dasar (F=ma). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini hanya memerlukan substitusi aljabar sederhana yang sudah dipelajari di tingkat SMP/awal SMA. Tidak ada tuntutan integrasi konsep yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105719,9 +107694,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1180. Soal `7f582ed0849d5b61b69d2cdc`
@@ -105735,27 +107710,49 @@ Grafik fungsi rasional $f(x) = \frac{x^2 - 4x - 5}{x + 2}$ memotong sumbu-$x$ di
 | C | $13$ |
 | D | $-13$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Fungsi memotong sumbu-x saat f(x) = 0, yaitu x^2 - 4x - 5 = 0. Faktorisasi: (x - 5)(x + 1) = 0. Akar-akarnya adalah x = 5 dan x = -1. Karena x1 < x2, maka x1 = -1 dan x2 = 5. Nilai 2x1 + 3x2 = 2(-1) + 3(5) = -2 + 15 = 13.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `770811d5bf7b207640711ea1a2292f0fe5c30b0af3496bfa7b5fe26d121ee349`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b7db058803ef183f2ced4abe0e74cb5a3eaebc9cb3542377cf53687f5dcfcabd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2943 |
+
+Run 1 — solusi: Fungsi memotong sumbu-x saat f(x) = 0, yaitu x^2 - 4x - 5 = 0. Faktorisasi: (x - 5)(x + 1) = 0. Akar-akarnya adalah x = 5 dan x = -1. Karena x1 < x2, maka x1 = -1 dan x2 = 5. Nilai 2x1 + 3x2 = 2(-1) + 3(5) = -2 + 15 = 13.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pemfaktoran persamaan kuadrat untuk mencari pembuat nol fungsi rasional dan mengurutkan akar-akar tersebut sesuai syarat yang diberikan, kemudian melakukan substitusi nilai ke dalam ekspresi linear.. Bukti: Grafik fungsi rasional f(x) = (x^2 - 4x - 5)/(x + 2) memotong sumbu-x; Nilai dari 2x1 + 3x2 adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang mencari akar-akar persamaan kuadrat dan konsep pembuat nol pada fungsi rasional.. Bukti: f(x) = (x^2 - 4x - 5)/(x + 2); memotong sumbu-x di titik (x1, 0) dan (x2, 0)
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat standar bagi siswa kelas 11: memfaktorkan persamaan kuadrat, mengidentifikasi akar, dan melakukan substitusi sederhana. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: f(x) = (x^2 - 4x - 5)/(x + 2); x1 < x2; 2x1 + 3x2
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemfaktoran persamaan kuadrat dan konsep fungsi rasional. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi rasional dan pemfaktoran kuadrat adalah prasyarat dasar yang sudah dikuasai di kelas 10 dan 11. Langkah penyelesaian bersifat linear dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105788,9 +107785,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1181. Soal `f8812b191bfe07a6b61d49dd`
@@ -105804,27 +107801,49 @@ Daerah asal dari fungsi $f(x) = \sqrt{2x - 6} + \sqrt{10 - x}$ pada himpunan bil
 | C | $8$ |
 | D | $6$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Syarat domain: 2x - 6 >= 0 dan 10 - x >= 0. Dari 2x - 6 >= 0 diperoleh x >= 3. Dari 10 - x >= 0 diperoleh x <= 10. Irisan kedua syarat adalah 3 <= x <= 10. Bilangan bulat dalam interval [3, 10] adalah {3, 4, 5, 6, 7, 8, 9, 10}. Jumlahnya ada 8.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bd5546f2021254a4d6f0baa5d9abb011ee276e53618e138ed0af96dbfccb035f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `199a9e0247f1457b4ae67e702c5b2c50f05537cd8e98620ad2efac842a0f881e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2854 |
+
+Run 1 — solusi: Syarat domain: 2x - 6 >= 0 dan 10 - x >= 0. Dari 2x - 6 >= 0 diperoleh x >= 3. Dari 10 - x >= 0 diperoleh x <= 10. Irisan kedua syarat adalah 3 <= x <= 10. Bilangan bulat dalam interval [3, 10] adalah {3, 4, 5, 6, 7, 8, 9, 10}. Jumlahnya ada 8.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep domain fungsi akar kuadrat (syarat bilangan di bawah akar non-negatif) dan menerapkan prosedur penyelesaian pertidaksamaan linear sederhana untuk menemukan irisan interval, kemudian menghitung elemen bilangan bulat dalam interval tersebut.. Bukti: Daerah asal dari fungsi f(x) = sqrt(2x - 6) + sqrt(10 - x); Banyaknya bilangan bulat yang termuat di dalam Df
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat domain fungsi irasional dan prosedur aljabar untuk menyelesaikannya.. Bukti: Daerah asal dari fungsi f(x) = sqrt(2x - 6) + sqrt(10 - x)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Langkah penyelesaiannya jelas: menentukan syarat domain untuk masing-masing akar, mencari irisan, dan menghitung jumlah bilangan bulat. Tidak ada kendala yang berinteraksi secara kompleks atau kebutuhan strategi non-rutin.. Bukti: Daerah asal dari fungsi f(x) = sqrt(2x - 6) + sqrt(10 - x); Banyaknya bilangan bulat yang termuat di dalam Df
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penyelesaian pertidaksamaan linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi domain fungsi adalah prasyarat dasar yang familiar bagi siswa kelas 11. Prosedur penyelesaiannya langsung dan tidak memerlukan integrasi konsep yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105857,9 +107876,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1182. Soal `248f2774d76b08c15add4a76`
@@ -105873,27 +107892,49 @@ Persamaan garis asimtot miring dari grafik fungsi rasional $f(x) = \frac{8x^3 - 
 | C | $y = 8x$ |
 | D | $y = -6x + 8$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Untuk mencari asimtot miring, lakukan pembagian polinomial (8x^3 - 6x^2 + 9) dibagi (x^2 + 7). (8x^3) / (x^2) = 8x. Kalikan 8x dengan (x^2 + 7) menghasilkan 8x^3 + 56x. Kurangkan: (8x^3 - 6x^2 + 9) - (8x^3 + 56x) = -6x^2 - 56x + 9. Selanjutnya, (-6x^2) / (x^2) = -6. Kalikan -6 dengan (x^2 + 7) menghasilkan -6x^2 - 42. Kurangkan: (-6x^2 - 56x + 9) - (-6x^2 - 42) = -56x + 51. Hasil bagi adalah 8x - 6, sehingga asimtot miringnya adalah y = 8x - 6.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7da6a953124233b417a0a7971ec39090a4be24d2e317dbd50b460192e51271ea`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ef7b9c1d3a23d9ffdee2d593574a15725cd1a777a5fbcda2fb6abba42263853d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2949 |
+
+Run 1 — solusi: Untuk mencari asimtot miring, lakukan pembagian polinomial (8x^3 - 6x^2 + 9) dibagi (x^2 + 7). (8x^3) / (x^2) = 8x. Kalikan 8x dengan (x^2 + 7) menghasilkan 8x^3 + 56x. Kurangkan: (8x^3 - 6x^2 + 9) - (8x^3 + 56x) = -6x^2 - 56x + 9. Selanjutnya, (-6x^2) / (x^2) = -6. Kalikan -6 dengan (x^2 + 7) menghasilkan -6x^2 - 42. Kurangkan: (-6x^2 - 56x + 9) - (-6x^2 - 42) = -56x + 51. Hasil bagi adalah 8x - 6, sehingga asimtot miringnya adalah y = 8x - 6.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan prosedur pembagian polinomial untuk menentukan asimtot miring. Prosedur ini merupakan penerapan langsung dari konsep asimtot fungsi rasional yang dipelajari di kelas 11.. Bukti: Persamaan garis asimtot miring dari grafik fungsi rasional f(x) = (8x^3 - 6x^2 + 9) / (x^2 + 7)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang algoritma pembagian polinomial untuk menemukan bentuk asimtot miring.. Bukti: Persamaan garis asimtot miring dari grafik fungsi rasional
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah pembagian polinomial yang saling terkait (pembagian suku x^3 dan x^2) dan ketelitian dalam menangani sisa pembagian. Meskipun prosedurnya familiar, siswa harus melakukan integrasi langkah yang tepat untuk mendapatkan hasil bagi yang benar.. Bukti: f(x) = (8x^3 - 6x^2 + 9) / (x^2 + 7)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian polinomial (pembagian bersusun) |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu melakukan pembagian polinomial. Soal ini menuntut ketelitian prosedural standar tanpa memerlukan strategi non-rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105926,9 +107967,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1183. Soal `7fe796f2a18cf75771847d3d`
@@ -105942,27 +107983,49 @@ Jika daerah asal dari fungsi rasional $f(x) = \frac{2x - 8}{3x + 9}$ adalah $D_f
 | C | $1$ |
 | D | $5$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Domain ditentukan oleh penyebut tidak nol: 3x + 9 = 0 -> x = -3, maka a = -3. Range ditentukan oleh asimtot horizontal fungsi rasional ax+b/cx+d yaitu y = a/c: y = 2/3, maka b = 2/3. Nilai a + 3b = -3 + 3(2/3) = -3 + 2 = -1.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `686198dabaa7cbafc38c84ab2dc57bbb9b488f46a05c141f8c300846d8df715e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2fc37ad9e36ef2ea900af04168ff0fc786d14040f7377dbff77e106f3ec44a45`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2908 |
+
+Run 1 — solusi: Domain ditentukan oleh penyebut tidak nol: 3x + 9 = 0 -> x = -3, maka a = -3. Range ditentukan oleh asimtot horizontal fungsi rasional ax+b/cx+d yaitu y = a/c: y = 2/3, maka b = 2/3. Nilai a + 3b = -3 + 3(2/3) = -3 + 2 = -1.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur standar untuk menentukan domain (pembuat nol penyebut) dan range (asimtot horizontal) dari fungsi rasional linear-linear. Ini adalah penerapan konsep yang rutin.. Bukti: daerah asal dari fungsi rasional f(x) = (2x - 8)/(3x + 9); daerah hasilnya adalah Rf = {y \| y != b, y in R}
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana menentukan domain dan range fungsi rasional, yang merupakan bagian dari pengetahuan prosedural dalam aljabar.. Bukti: daerah asal dari fungsi rasional; daerah hasilnya
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Prosedur untuk mencari domain (penyebut tidak nol) dan range (asimtot horizontal) fungsi rasional linear adalah materi standar yang langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Jika daerah asal dari fungsi rasional f(x) = (2x - 8)/(3x + 9) adalah Df = {x \| x != a, x in R} dan daerah hasilnya adalah Rf = {y \| y != b, y in R}, nilai dari a + 3b adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman fungsi rasional, konsep domain dan range, serta asimtot. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi rasional dan asimtot merupakan kurikulum standar kelas 11. Soal ini menguji pemahaman dasar tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -105995,9 +108058,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1184. Soal `c97a2ccb4188eaa39172ec8b`
@@ -106011,27 +108074,49 @@ Sebuah industri tas ransel memiliki biaya operasional tetap sebesar Rp12.000.000
 | C | Rp100.000,00 |
 | D | Rp120.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Biaya total B(x) = 12.000.000 + 60.000x. Untuk x = 300, B(300) = 12.000.000 + 60.000(300) = 12.000.000 + 18.000.000 = 30.000.000. Biaya rata-rata = B(300)/300 = 30.000.000 / 300 = 100.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0de3dd51cfd9782a52354fd23061f1a31580e99b366b2ff9e7f56b66876be53a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1285b3fb269c80da7c99c3dbfcc2e3881abaa6ce63b357b8ae64406acba4675f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2988 |
+
+Run 1 — solusi: Biaya total B(x) = 12.000.000 + 60.000x. Untuk x = 300, B(300) = 12.000.000 + 60.000(300) = 12.000.000 + 18.000.000 = 30.000.000. Biaya rata-rata = B(300)/300 = 30.000.000 / 300 = 100.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan definisi fungsi biaya rata-rata yang diberikan dalam soal untuk menghitung nilai spesifik. Prosedur ini bersifat langsung dan rutin dalam konteks fungsi aljabar.. Bukti: Fungsi biaya rata-rata per unit dinyatakan sebagai B(x) = B(x)/x; Biaya rata-rata per unit untuk memproduksi 300 unit tas dalam satu bulan adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang konsep fungsi biaya total dan biaya rata-rata serta bagaimana memanipulasi fungsi tersebut untuk mendapatkan nilai numerik.. Bukti: Fungsi biaya rata-rata per unit dinyatakan sebagai B(x) = B(x)/x
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaian sangat jelas: menyusun fungsi biaya total, mensubstitusi nilai x, dan membagi dengan x. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: biaya operasional tetap sebesar Rp12.000.000,00; biaya variabel produksi sebesar Rp60.000,00 per unit; Biaya rata-rata per unit untuk memproduksi 300 unit
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar fungsi linear dan operasi aritmatika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi biaya adalah aplikasi standar fungsi linear yang familiar bagi siswa kelas 11. Langkah penyelesaian bersifat prosedural dan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106064,9 +108149,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1185. Soal `a2dcfcc10196d28321481f82`
@@ -106080,27 +108165,49 @@ Daerah asal dari fungsi akar $f(x) = \sqrt{x^2 - 3x - 10}$ pada himpunan bilanga
 | C | $\{x \mid x \le -5 \text{ atau } x \ge 2, x \in \mathbb{R}\}$ |
 | D | $\{x \mid -5 \le x \le 2, x \in \mathbb{R}\}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Syarat fungsi akar terdefinisi adalah x^2 - 3x - 10 >= 0. Faktorkan menjadi (x - 5)(x + 2) >= 0. Titik kritis adalah x = -2 dan x = 5. Uji interval: untuk x < -2 (misal x = -3), (-8)(-1) = 8 > 0 (memenuhi). Untuk -2 < x < 5 (misal x = 0), (-5)(2) = -10 < 0 (tidak memenuhi). Untuk x > 5 (misal x = 6), (1)(8) = 8 > 0 (memenuhi). Jadi, domainnya adalah {x \| x <= -2 atau x >= 5, x ∈ ℝ}.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f06cb4b4efd078f67134427f81decabece720c4a7486902954ba1db2eb445e68`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e0111624b72dae6d0cbbc2b7e21bfcd252904bbeedfe631064571163ff7bf4ad`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2936 |
+
+Run 1 — solusi: Syarat fungsi akar terdefinisi adalah x^2 - 3x - 10 >= 0. Faktorkan menjadi (x - 5)(x + 2) >= 0. Titik kritis adalah x = -2 dan x = 5. Uji interval: untuk x < -2 (misal x = -3), (-8)(-1) = 8 > 0 (memenuhi). Untuk -2 < x < 5 (misal x = 0), (-5)(2) = -10 < 0 (tidak memenuhi). Untuk x > 5 (misal x = 6), (1)(8) = 8 > 0 (memenuhi). Jadi, domainnya adalah {x \| x <= -2 atau x >= 5, x ∈ ℝ}.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur standar untuk menentukan domain fungsi akar, yaitu menyelesaikan pertidaksamaan kuadrat. Ini adalah penerapan konsep yang rutin bagi siswa kelas 11.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(x^2 - 3x - 10)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang syarat fungsi akar dan teknik penyelesaian pertidaksamaan kuadrat.. Bukti: f(x) = sqrt(x^2 - 3x - 10); Daerah asal
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu memfaktorkan persamaan kuadrat dan menentukan interval penyelesaian pertidaksamaan. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Daerah asal dari fungsi akar f(x) = sqrt(x^2 - 3x - 10)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman tentang syarat fungsi akar (radikan >= 0) dan penyelesaian pertidaksamaan kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi domain fungsi dan pertidaksamaan kuadrat adalah prasyarat dasar yang sudah dikuasai di kelas 10 dan diperdalam di kelas 11. Soal ini merupakan aplikasi langsung dari prosedur tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106133,9 +108240,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1186. Soal `36635f9fc2c5edd569f1adc2`
@@ -106149,27 +108256,49 @@ Banyaknya garis asimtot vertikal dari grafik fungsi rasional $f(x) = \frac{x^2 -
 | C | $4$ |
 | D | $0$ |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Faktorkan pembilang dan penyebut: f(x) = ((x-4)(x+4)) / ((x-4)(x+6)). Untuk x ≠ 4, fungsi menyederhanakan menjadi f(x) = (x+4)/(x+6). Asimtot vertikal terjadi saat penyebut nol setelah penyederhanaan, yaitu x+6 = 0, sehingga x = -6. Hanya ada 1 asimtot vertikal.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a147878781f5531e497a6b004ba6c9ebfc3e62bf78308515bd68535503d54f7e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6056eb1347c60781608883004faca6dc7114d40a7855ffb30851a3ca392b9c89`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2883 |
+
+Run 1 — solusi: Faktorkan pembilang dan penyebut: f(x) = ((x-4)(x+4)) / ((x-4)(x+6)). Untuk x ≠ 4, fungsi menyederhanakan menjadi f(x) = (x+4)/(x+6). Asimtot vertikal terjadi saat penyebut nol setelah penyederhanaan, yaitu x+6 = 0, sehingga x = -6. Hanya ada 1 asimtot vertikal.
+- Domain kognitif `classify/applying`: Siswa harus menerapkan prosedur faktorisasi dan memahami konsep asimtot vertikal pada fungsi rasional, khususnya mengenali bahwa faktor persekutuan yang dapat dicoret tidak menghasilkan asimtot vertikal.. Bukti: Banyaknya garis asimtot vertikal dari grafik fungsi rasional f(x) = (x^2 - 16)/(x^2 + 2x - 24)
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang syarat asimtot vertikal pada fungsi rasional dan prosedur aljabar untuk menyederhanakan fungsi tersebut.. Bukti: f(x) = (x^2 - 16)/(x^2 + 2x - 24)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman konseptual bahwa tidak semua pembuat nol penyebut adalah asimtot vertikal. Siswa harus melakukan faktorisasi dan menyederhanakan fungsi terlebih dahulu. Ini bukan sekadar substitusi langsung, melainkan memerlukan pemilihan prosedur yang tepat untuk menghindari jebakan (distraktor) yang umum.. Bukti: Banyaknya garis asimtot vertikal dari grafik fungsi rasional f(x) = (x^2 - 16)/(x^2 + 2x - 24)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Faktorisasi bentuk kuadrat dan konsep dasar fungsi rasional. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu membedakan lubang (hole) dan asimtot pada fungsi rasional. Soal ini menguji pemahaman tersebut dengan distraktor yang menargetkan kesalahan umum (mengabaikan faktor persekutuan). |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106202,9 +108331,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1187. Soal `0b17988652c3a9b22fc53e78`
@@ -106218,27 +108347,49 @@ Kecepatan gelombang tsunami di lautan ditentukan oleh fungsi akar $v = \sqrt{g \
 | C | $140\text{ m/s}$ |
 | D | $280\text{ m/s}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Substitusi nilai g = 9,8 dan d = 8.000 ke dalam fungsi v = sqrt(g * d). Maka v = sqrt(9,8 * 8.000) = sqrt(78.400). Karena 280^2 = 78.400, maka v = 280 m/s.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ecdc4d6f0d79718db26d6dba6857e7ace7eef6c96af36da8287b1efb97a25b33`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `387c8fd6388af4acc069c8493e1c517e462dc6f2b4ea9c4ff844e288185d5a95`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2873 |
+
+Run 1 — solusi: Substitusi nilai g = 9,8 dan d = 8.000 ke dalam fungsi v = sqrt(g * d). Maka v = sqrt(9,8 * 8.000) = sqrt(78.400). Karena 280^2 = 78.400, maka v = 280 m/s.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk melakukan substitusi nilai ke dalam rumus fungsi yang sudah diberikan dan melakukan operasi akar kuadrat sederhana. Ini adalah prosedur langsung yang familiar.. Bukti: v = sqrt(g * d); g = 9,8 m/s^2; kedalaman laut 8.000 meter
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami penggunaan rumus fungsi aljabar (akar) dan melakukan perhitungan aritmatika dasar untuk mendapatkan hasil.. Bukti: v = sqrt(g * d)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas. Siswa hanya perlu melakukan substitusi dan perhitungan akar kuadrat. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: v = sqrt(g * d); g = 9,8 m/s^2; kedalaman laut 8.000 meter
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmatika dasar dan pemahaman fungsi akar kuadrat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 11, soal ini sangat mendasar karena hanya melibatkan substitusi langsung ke dalam rumus fungsi yang sudah disediakan tanpa memerlukan manipulasi aljabar lebih lanjut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106271,9 +108422,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1188. Soal `7d9f6ab64d20123dc6712585`
@@ -106287,27 +108438,49 @@ Sebuah wahana antariksa mengorbit bulan pada ketinggian $h\text{ km}$ di atas pe
 | C | $d(h) = \sqrt{h^2 + 1.738h}$ |
 | D | $d(h) = \sqrt{h^2 - 3.476h}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: d(h) = sqrt((r + h)^2 - r^2) = sqrt(r^2 + 2rh + h^2 - r^2) = sqrt(h^2 + 2rh). Substitusi r = 1738 menghasilkan d(h) = sqrt(h^2 + 2(1738)h) = sqrt(h^2 + 3476h).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6d19c7142f9623413f31391d89102755ee9ff21f40449270bf435057ef975c3d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5d7a0c4f2e72b2cbd665d2ca61671eab2f26daced0709bb3a08988c2fc71126f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2940 |
+
+Run 1 — solusi: d(h) = sqrt((r + h)^2 - r^2) = sqrt(r^2 + 2rh + h^2 - r^2) = sqrt(h^2 + 2rh). Substitusi r = 1738 menghasilkan d(h) = sqrt(h^2 + 2(1738)h) = sqrt(h^2 + 3476h).
+- Domain kognitif `classify/knowing`: Soal meminta penyederhanaan aljabar rutin menggunakan identitas kuadrat (a+b)^2. Siswa hanya perlu melakukan ekspansi aljabar dan penyederhanaan suku sejenis, yang merupakan prosedur standar.. Bukti: Bentuk sederhana dari fungsi jarak d(h) tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang manipulasi aljabar dan penggunaan identitas kuadrat untuk menyederhanakan ekspresi bentuk akar.. Bukti: d(h) = sqrt((r + h)^2 - r^2)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menjabarkan bentuk kuadrat dan menyederhanakan suku-suku di dalam akar. Tidak ada integrasi konsep yang kompleks atau strategi non-rutin yang diperlukan.. Bukti: d(h) = sqrt((r + h)^2 - r^2); Bentuk sederhana dari fungsi jarak d(h) tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjabaran bentuk kuadrat (a+b)^2 dan operasi aljabar dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi aljabar dasar ini merupakan prasyarat yang sudah dikuasai siswa kelas 11. Prosedur penyelesaian sangat langsung dan tidak memerlukan perencanaan langkah yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106340,9 +108513,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1189. Soal `ae80baf0f5b449bfe9b9435e`
@@ -106356,27 +108529,49 @@ Persamaan garis asimtot miring dari grafik fungsi rasional $f(x) = \frac{3x^2 - 
 | C | $y = 3x - 2$ |
 | D | $y = 3x + 2$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Untuk mencari asimtot miring, bagi pembilang dengan penyebut: (3x^2 - 4x + 7) / (x - 2). Menggunakan pembagian bersusun: (3x^2 - 6x) menghasilkan 3x. Sisa sementara 2x + 7. Kemudian (2x - 4) menghasilkan +2. Sisa akhir 11. Hasil bagi adalah 3x + 2. Asimtot miring adalah y = 3x + 2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5085ba37699813647ce0733713520d4357dd34bf230f1b4199a8e1647a997a3d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bf6935e239490c25abcab08a3a70028c5f577066298fa426d253c46b50c98a5f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2787 |
+
+Run 1 — solusi: Untuk mencari asimtot miring, bagi pembilang dengan penyebut: (3x^2 - 4x + 7) / (x - 2). Menggunakan pembagian bersusun: (3x^2 - 6x) menghasilkan 3x. Sisa sementara 2x + 7. Kemudian (2x - 4) menghasilkan +2. Sisa akhir 11. Hasil bagi adalah 3x + 2. Asimtot miring adalah y = 3x + 2.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pembagian polinomial untuk menentukan asimtot miring. Ini adalah penerapan langsung dari algoritma pembagian fungsi rasional yang sudah dipelajari.. Bukti: Persamaan garis asimtot miring dari grafik fungsi rasional f(x) = (3x^2 - 4x + 7)/(x - 2)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma pembagian polinomial (prosedural) untuk mendapatkan bentuk asimtot miring.. Bukti: Persamaan garis asimtot miring dari grafik fungsi rasional
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 11. Prosedur pembagian polinomial adalah standar, jalur penyelesaiannya jelas (pembagian bersusun atau Horner), dan tidak ada kendala yang saling berinteraksi yang kompleks.. Bukti: Persamaan garis asimtot miring dari grafik fungsi rasional f(x) = (3x^2 - 4x + 7)/(x - 2)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian polinomial (pembagian bersusun atau metode Horner). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi asimtot miring fungsi rasional adalah standar kurikulum kelas 11. Prosedur pembagian polinomial adalah keterampilan dasar yang diharapkan sudah dikuasai. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106409,9 +108604,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1190. Soal `fd049d789aef31f3dfce5e09`
@@ -106425,27 +108620,49 @@ Grafik fungsi rasional $f(x) = \frac{4x - 12}{2x + 6}$ memotong sumbu-$x$ di tit
 | C | $5$ |
 | D | $\sqrt{5}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Titik potong sumbu-x (A) diperoleh saat f(x)=0: 4x-12=0, maka x=3, A(3,0). Titik potong sumbu-y (B) diperoleh saat x=0: f(0)=-12/6=-2, B(0,-2). Jarak AB = sqrt((3-0)^2 + (0-(-2))^2) = sqrt(3^2 + 2^2) = sqrt(9+4) = sqrt(13).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a571b1948ec1d70755e36bb7488d5e54469c6d38784ee68c90b3f75aeedab1f7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `784f31533ac69f4237828f3004758be648dbc0ffdaeca24f4a882f928765581a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2936 |
+
+Run 1 — solusi: Titik potong sumbu-x (A) diperoleh saat f(x)=0: 4x-12=0, maka x=3, A(3,0). Titik potong sumbu-y (B) diperoleh saat x=0: f(0)=-12/6=-2, B(0,-2). Jarak AB = sqrt((3-0)^2 + (0-(-2))^2) = sqrt(3^2 + 2^2) = sqrt(9+4) = sqrt(13).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur rutin untuk mencari titik potong grafik dengan sumbu koordinat (f(x)=0 dan f(0)) dan kemudian menerapkan rumus jarak Euclidean antara dua titik. Ini adalah penerapan konsep dasar fungsi rasional dan geometri analitik.. Bukti: memotong sumbu-x di titik A dan memotong sumbu-y di titik B; Jarak antara titik A dan titik B
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara mencari titik potong fungsi rasional dan penggunaan rumus jarak, yang merupakan metode standar dalam aljabar dan geometri.. Bukti: f(x) = (4x - 12) / (2x + 6); memotong sumbu-x di titik A dan memotong sumbu-y di titik B
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas dan langsung. Siswa hanya perlu melakukan dua langkah prosedural standar (mencari titik potong dan menghitung jarak). Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: f(x) = (4x - 12) / (2x + 6); Jarak antara titik A dan titik B
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar fungsi rasional, titik potong sumbu, dan rumus jarak dua titik. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi fungsi rasional dan geometri analitik dasar adalah prasyarat yang sudah dikuasai siswa kelas 11. Soal ini tidak menuntut integrasi konsep yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106478,9 +108695,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 1191. Soal `217864bfe523ffec8dcb2b72`
@@ -106494,27 +108711,49 @@ Persamaan garis asimtot miring dari fungsi $g(x) = \frac{7x^7 - 9x^6 + 8}{x^6 + 
 | C | $y = 7x - 9$ |
 | D | $y = 7x$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Untuk mencari asimtot miring, lakukan pembagian polinomial (7x^7 - 9x^6 + 8) dibagi (x^6 + 6). Hasil bagi (7x^7 / x^6) adalah 7x. Kalikan 7x(x^6 + 6) = 7x^7 + 42x. Kurangi: (7x^7 - 9x^6 + 8) - (7x^7 + 42x) = -9x^6 - 42x + 8. Bagi -9x^6 / x^6 = -9. Kalikan -9(x^6 + 6) = -9x^6 - 54. Kurangi: (-9x^6 - 42x + 8) - (-9x^6 - 54) = -42x + 62. Hasil bagi adalah 7x - 9 dengan sisa -42x + 62. Saat x -> ∞, sisa mendekati 0, sehingga asimtot miring adalah y = 7x - 9.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 11 / Matematika Tingkat Lanjut SMA Kelas 11. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f75d79f4a3286ec672d6af91864b8dfd3a065b92c8a3460ed1a88153367411c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7600f1d4d6f48ffb16d8b0a99a3c0cd243d8584b659c3307d0924e00f47d88ba`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2957 |
+
+Run 1 — solusi: Untuk mencari asimtot miring, lakukan pembagian polinomial (7x^7 - 9x^6 + 8) dibagi (x^6 + 6). Hasil bagi (7x^7 / x^6) adalah 7x. Kalikan 7x(x^6 + 6) = 7x^7 + 42x. Kurangi: (7x^7 - 9x^6 + 8) - (7x^7 + 42x) = -9x^6 - 42x + 8. Bagi -9x^6 / x^6 = -9. Kalikan -9(x^6 + 6) = -9x^6 - 54. Kurangi: (-9x^6 - 42x + 8) - (-9x^6 - 54) = -42x + 62. Hasil bagi adalah 7x - 9 dengan sisa -42x + 62. Saat x -> ∞, sisa mendekati 0, sehingga asimtot miring adalah y = 7x - 9.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pembagian polinomial untuk menentukan asimtot miring fungsi rasional. Ini adalah penerapan algoritma standar yang dipelajari di kelas 11.. Bukti: Persamaan garis asimtot miring dari fungsi g(x) = (7x^7 - 9x^6 + 8) / (x^6 + 6)
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma pembagian polinomial dan konsep asimtot miring sebagai hasil bagi polinomial.. Bukti: Persamaan garis asimtot miring dari fungsi g(x) = (7x^7 - 9x^6 + 8) / (x^6 + 6)
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah pembagian polinomial yang berurutan (pembagian suku derajat tertinggi dan suku berikutnya) untuk mendapatkan hasil yang tepat, bukan sekadar melihat koefisien tertinggi.. Bukti: Persamaan garis asimtot miring dari fungsi g(x) = (7x^7 - 9x^6 + 8) / (x^6 + 6)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian polinomial (polinomial long division) |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 11 TL diharapkan mampu melakukan pembagian polinomial untuk fungsi rasional. Meskipun prosedurnya rutin, keharusan melakukan pembagian hingga suku kedua (bukan hanya suku utama) menuntut ketelitian lebih dari sekadar soal Easy. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -106547,9 +108786,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
-Provider aktif: groq. 1085 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
+Provider aktif: gemini. 1089 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
