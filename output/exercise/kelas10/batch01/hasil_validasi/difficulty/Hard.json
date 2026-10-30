@@ -4,8 +4,8 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 3,
-  "contentQualifiedCount": 3,
+  "advisoryCount": 5,
+  "contentQualifiedCount": 5,
   "items": [
     {
       "question": {
@@ -186,6 +186,134 @@
             "B": "Salah: $k=6$ menghasilkan $D = 0$ (akar kembar), padahal diminta berbeda",
             "C": "Salah: hanya memakai $D > 0$ ($k<-2$), mengabaikan syarat akar positif ($k=-3$ memberi jumlah akar $-3$)",
             "D": "Benar: $D = k^2 - 4k - 12 = (k-6)(k+2) > 0$, jumlah akar $k > 0$, hasil kali $k + 3 > 0$; gabungannya $k > 6$ sehingga $k$ bulat terkecil $7$."
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "f55ce83c01d7e07ced3eb79b",
+        "questionVersionId": "f55ce83c01d7e07ced3eb79b:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "c201c0a17400dbb26d9cb7405a2533d3c4000a31887fc012cd7af2df0ec42df5",
+        "grade": 10,
+        "topic": "Matematika SMA Kelas 10",
+        "subtopic": "Statistik Deskriptif",
+        "questionType": "multiple_choice",
+        "stem": "Lima bilangan asli terurut dari yang terkecil memiliki mean 10, median 8, dan modus 8 sebagai satu-satunya modus. Nilai terbesar yang mungkin untuk bilangan kelima adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "39"
+          },
+          {
+            "label": "B",
+            "text": "31"
+          },
+          {
+            "label": "C",
+            "text": "25"
+          },
+          {
+            "label": "D",
+            "text": "32"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan bilangan tersebut x1, x2, x3, x4, x5. Diketahui x3=8 (median). Agar x5 maksimum, x1, x2, x4 harus minimum. Karena modus tunggal 8, maka x4=8. Agar modus 8 tunggal, x1 dan x2 tidak boleh sama dengan 8 dan tidak boleh sama dengan satu sama lain (jika x1=x2=1, modus 1 dan 8). Maka x1=1, x2=2. Jumlah = 1+2+8+8+x5 = 50. x5 = 31.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f55ce83c01d7e07ced3eb79b",
+          "subchapter": "Statistik Deskriptif",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas10_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: lupa bahwa bilangan keempat tidak boleh kurang dari median 8 (memakai 1, 2, 8 saja)",
+            "B": "Benar: jumlah 50; agar bilangan kelima maksimum, empat bilangan lain minimum: 1, 2, 8, 8 (8 muncul dua kali, yang lain sekali) sehingga bilangan kelima 50 - 19 = 31",
+            "C": "Salah: mengira bilangan kedua harus 8 sehingga 8 muncul tiga kali, padahal dua kali sudah cukup",
+            "D": "Salah: memilih 1, 1, 8, 8 sehingga modus tidak tunggal (1 dan 8 sama-sama muncul dua kali)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "e624f818b72a8fea234a1195",
+        "questionVersionId": "e624f818b72a8fea234a1195:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3ab9149a69938175c170bb394a3fcc42c8ada9aaa5aa0a5e4ffb0273b162d8c7",
+        "grade": 10,
+        "topic": "Matematika SMA Kelas 10",
+        "subtopic": "Distribusi Peluang",
+        "questionType": "multiple_choice",
+        "stem": "Klaim: \"Jika $P(A) + P(B) = 1$, maka $A$ dan $B$ pasti saling komplemen.\" Dua dadu setimbang dilempar satu kali. Pasangan kejadian $A$ dan $B$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$A$: hasil kali kedua mata ganjil; $B$: hasil kali kedua mata genap"
+          },
+          {
+            "label": "B",
+            "text": "$A$: jumlah kedua mata genap; $B$: dadu pertama menunjukkan angka ganjil"
+          },
+          {
+            "label": "C",
+            "text": "$A$: kedua mata sama; $B$: kedua mata berbeda"
+          },
+          {
+            "label": "D",
+            "text": "$A$: jumlah kedua mata paling banyak 7; $B$: jumlah kedua mata paling sedikit 7"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Dua dadu dilempar, total ruang sampel 36. Kejadian A: jumlah mata genap. Pasangan (1,1), (1,3), (1,5), (2,2), (2,4), (2,6), (3,1), (3,3), (3,5), (4,2), (4,4), (4,6), (5,1), (5,3), (5,5), (6,2), (6,4), (6,6). n(A)=18, P(A)=18/36=0.5. Kejadian B: dadu pertama ganjil. Pasangan (1,1) s/d (1,6), (3,1) s/d (3,6), (5,1) s/d (5,6). n(B)=18, P(B)=18/36=0.5. P(A)+P(B)=1. Namun, A dan B tidak saling komplemen karena irisan A dan B tidak kosong (misal (1,1) ada di A dan B).",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "e624f818b72a8fea234a1195",
+          "subchapter": "Distribusi Peluang",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas10_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: jumlah peluang 1 dan memang saling komplemen, jadi mendukung klaim",
+            "B": "Benar: $P(A) = P(B) = \\frac{18}{36}$ sehingga jumlahnya 1, tetapi (1,1) termasuk $A$ dan $B$ sekaligus, jadi bukan komplemen",
+            "C": "Salah: jumlah peluang 1 dan memang saling komplemen, jadi mendukung klaim",
+            "D": "Salah: jumlah peluangnya $\\frac{21}{36} + \\frac{21}{36} \\ne 1$, syarat klaim tidak terpenuhi"
           }
         }
       },

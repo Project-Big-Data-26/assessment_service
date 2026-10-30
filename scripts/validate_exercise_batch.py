@@ -23,6 +23,8 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
+import time
 
 from dotenv import dotenv_values
 
@@ -40,7 +42,7 @@ from scripts.revalidate_all_grades import complete, run_script
 from scripts.export_revalidation_progress import export_class
 from scripts.build_blind_validation_bundle import source_class_matches
 
-CLASSES = {"kelas5": (5, "regular"), "kelas7": (7, "regular"), "kelas8": (8, "regular"),
+CLASSES = {"kelas5": (5, "regular"), "kelas6": (6, "regular"), "kelas7": (7, "regular"), "kelas8": (8, "regular"),
            "kelas9": (9, "regular"), "kelas10": (10, "regular"), "kelas11": (11, "regular"),
            "kelas11_tl": (11, "tl"), "kelas12": (12, "regular"), "kelas12_tl": (12, "tl")}
 LEVELS = ("easy", "medium", "hard")
@@ -448,6 +450,27 @@ def meta_view(name: str, batch: str) -> dict:
             "crosstab": {k: dict(v) for k, v in crosstab.items()}}
 
 
+def copy_publication_file(source, destination):
+    """Replace complete bytes instead of truncating a file mapped by a reader."""
+    destination = Path(destination)
+    if destination.is_dir():
+        destination /= Path(source).name
+    with tempfile.NamedTemporaryFile(dir=destination.parent, prefix=".publish-", suffix=".tmp", delete=False) as handle:
+        temporary = Path(handle.name)
+    try:
+        shutil.copy2(source, temporary)
+        for attempt in range(6):
+            try:
+                os.replace(temporary, destination)
+                return str(destination)
+            except OSError as exc:
+                if getattr(exc, "winerror", None) not in (5, 32, 33, 1224) or attempt == 5:
+                    raise
+                time.sleep(0.1 * 2 ** attempt)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
     grade, _ = CLASSES[name]
     p = paths(name, batch)
@@ -499,11 +522,11 @@ def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
             verify_bundle(p["source"], bundle)
     if (p["final"] / "manifest.json").exists():
         verify_bundle(p["source"], p["final"])
-    shutil.copytree(bundle, p["final"], dirs_exist_ok=True)
+    shutil.copytree(bundle, p["final"], dirs_exist_ok=True, copy_function=copy_publication_file)
     evidence = p["final"] / "bukti_validasi"
-    shutil.copy2(locked, evidence / "silver_labels.json")
+    copy_publication_file(locked, evidence / "silver_labels.json")
     for filename in ("pilot_audit.json", "PILOT_AUDIT.md"):
-        shutil.copy2(snapshot / "audit" / filename, evidence / filename)
+        copy_publication_file(snapshot / "audit" / filename, evidence / filename)
     progress = export_class(p["source"], locked, p["final"], grade=grade, track=CLASSES[name][1])
     progress["class"] = name
     progress["exerciseBatch"] = batch

@@ -4,9 +4,329 @@
   "subjectTrack": "tl",
   "intendedDifficulty": "Medium",
   "researchOnly": true,
-  "advisoryCount": 1,
-  "contentQualifiedCount": 1,
+  "advisoryCount": 9,
+  "contentQualifiedCount": 9,
   "items": [
+    {
+      "question": {
+        "questionId": "49a7280615d4861cac874c5b",
+        "questionVersionId": "49a7280615d4861cac874c5b:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "57d4bb48dc563f899ac8a04e0ce0f7e5894ceeb95d447f9d73982c86d5ccd7f0",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Setiap elemen matriks simetris berordo $3 \\times 3$ dipilih dari himpunan $\\{0, 1\\}$. Banyak matriks yang dapat dibentuk adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$8$"
+          },
+          {
+            "label": "B",
+            "text": "$64$"
+          },
+          {
+            "label": "C",
+            "text": "$512$"
+          },
+          {
+            "label": "D",
+            "text": "$32$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks simetris 3x3 memiliki bentuk [[a, b, c], [b, d, e], [c, e, f]]. Elemen yang dapat dipilih secara bebas adalah elemen diagonal (a, d, f) dan elemen di atas diagonal (b, c, e). Total ada 3 + 3 = 6 elemen bebas. Karena setiap elemen memiliki 2 pilihan (0 atau 1), maka banyak matriks yang dapat dibentuk adalah 2^6 = 64.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "64",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "49a7280615d4861cac874c5b",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya menghitung elemen diagonal utama ($2^3$)",
+            "B": "Benar: Elemen yang bebas dipilih: $3$ pada diagonal utama dan $3$ di atas diagonal utama, yaitu $6$. Tiap elemen punya $2$ pilihan sehingga $2^6 = 64$.",
+            "C": "Salah: tidak memakai sifat simetris sehingga menghitung $2^9$",
+            "D": "Salah: salah menghitung banyak elemen bebas menjadi $5$ ($2^5$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "34e45eca80337f97f10d5017",
+        "questionVersionId": "34e45eca80337f97f10d5017:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f5f8bec93211e4167372a84d76fc8e3b9a2729381b7d070da690f01725d999a6",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Setiap elemen matriks persegi berordo $3 \\times 3$ dipilih dari himpunan $\\{0, 1, 2\\}$. Banyak matriks yang sekaligus merupakan matriks segitiga bawah dan matriks simetris adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$27$"
+          },
+          {
+            "label": "B",
+            "text": "$729$"
+          },
+          {
+            "label": "C",
+            "text": "$9$"
+          },
+          {
+            "label": "D",
+            "text": "$81$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks segitiga bawah 3x3 memiliki elemen 0 pada posisi (1,2), (1,3), dan (2,3). Matriks simetris mengharuskan a_{ij} = a_{ji}. Karena segitiga bawah, a_{12}=0, a_{13}=0, a_{23}=0. Maka simetris memaksa a_{21}=0, a_{31}=0, a_{32}=0. Hanya elemen diagonal (a_{11}, a_{22}, a_{33}) yang bebas dipilih dari {0, 1, 2}. Banyaknya matriks = 3 * 3 * 3 = 27.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "27",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "34e45eca80337f97f10d5017",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Segitiga bawah memaksa elemen di atas diagonal nol; simetris memaksa elemen di bawah diagonal sama dengan pasangannya, yaitu nol. Hanya $3$ elemen diagonal yang bebas: $3^3 = 27$.",
+            "B": "Salah: hanya memakai sifat segitiga bawah ($3^6$ untuk $6$ elemen bebas)",
+            "C": "Salah: mengalikan $3 \\times 3$ alih-alih memangkatkan",
+            "D": "Salah: mengira ada empat elemen yang bebas ($3^4$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "e6b69eca4b040d37a29b5d3f",
+        "questionVersionId": "e6b69eca4b040d37a29b5d3f:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "989138cfe8b7942538c1c8d1b9d0f199cf9f40f00a2a961a05f5e70a47f57742",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Matriks $M = \\begin{pmatrix} 3 & p + 4 & 0 \\\\ 3q - 6 & 6 & 2r + 2 \\\\ 0 & r + 1 & 8 \\end{pmatrix}$ merupakan matriks segitiga atas sekaligus matriks simetris. Nilai $p + q + r$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$5$"
+          },
+          {
+            "label": "B",
+            "text": "$-7$"
+          },
+          {
+            "label": "C",
+            "text": "$-3$"
+          },
+          {
+            "label": "D",
+            "text": "$-1$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks segitiga atas mengharuskan elemen di bawah diagonal utama bernilai nol: 3q - 6 = 0 (q = 2) dan r + 1 = 0 (r = -1). Matriks simetris mengharuskan M_ij = M_ji: p + 4 = 3q - 6. Karena 3q - 6 = 0, maka p + 4 = 0, sehingga p = -4. Nilai p + q + r = -4 + 2 + (-1) = -3.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "e6b69eca4b040d37a29b5d3f",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: salah tanda pada $p$ ($p = 4$)",
+            "B": "Salah: salah tanda pada $q$ ($q = -2$)",
+            "C": "Benar: Segitiga atas: $3q - 6 = 0$ dan $r + 1 = 0$, sehingga $q = 2$ dan $r = -1$. Simetris: $p + 4 = 3q - 6 = 0$ sehingga $p = -4$ (dan $2r + 2 = r + 1 = 0$ terpenuhi). Jadi $p + q + r = -3$.",
+            "D": "Salah: salah tanda pada $r$ ($r = 1$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "deff0cee42ca22f2a07b53cd",
+        "questionVersionId": "deff0cee42ca22f2a07b53cd:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3afb95ca46c1f03065b7199950297ea2cb1cbd50067eac516b54050af4eefe68",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Matriks $A$ berordo $(k + 2) \\times (10 - k)$ dengan $k$ bilangan asli. Jumlah semua kemungkinan banyak elemen $A$ jika $A$ merupakan matriks tegak tetapi bukan matriks kolom adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$125$"
+          },
+          {
+            "label": "B",
+            "text": "$150$"
+          },
+          {
+            "label": "C",
+            "text": "$114$"
+          },
+          {
+            "label": "D",
+            "text": "$79$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks A berordo (k+2) x (10-k). Syarat matriks tegak: baris > kolom, maka k+2 > 10-k => 2k > 8 => k > 4. Syarat matriks bukan kolom: kolom > 1, maka 10-k > 1 => k < 9. Karena k bilangan asli, k ∈ {5, 6, 7, 8}. Banyak elemen = (k+2)(10-k). Untuk k=5: 7x5=35. k=6: 8x4=32. k=7: 9x3=27. k=8: 10x2=20. Jumlah = 35+32+27+20 = 114.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "114",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "deff0cee42ca22f2a07b53cd",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: ikut menghitung $k = 9$ ($11 \\times 1$, matriks kolom)",
+            "B": "Salah: ikut menghitung $k = 4$ ($6 \\times 6$, matriks persegi)",
+            "C": "Benar: Tegak: $k + 2 > 10 - k$ sehingga $k > 4$. Bukan kolom: $10 - k \\geq 2$ sehingga $k \\leq 8$. Maka $k = 5, 6, 7, 8$ dengan banyak elemen $35, 32, 27, 20$, jumlahnya $114$.",
+            "D": "Salah: salah batas $k > 5$ sehingga melewatkan $k = 5$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "2aa711c2b030f8f84b05a098",
+        "questionVersionId": "2aa711c2b030f8f84b05a098:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "22a8d269450d2923c160cf43b2da383198a8eaff6f480a6a108936679e76f866",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Diberikan klaim: \"Jika $A$ dan $A^t$ sama-sama matriks segitiga atas, maka $A$ adalah matriks identitas.\" Matriks berordo $3 \\times 3$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 3 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Sebuah matriks $A$ adalah segitiga atas jika semua elemen di bawah diagonal utama adalah nol. Jika $A$ dan $A^t$ keduanya segitiga atas, maka $A$ haruslah matriks diagonal (elemen di atas dan di bawah diagonal utama adalah nol). Matriks diagonal tidak harus identitas. Pilihan A adalah matriks diagonal dengan elemen diagonal {2, 3, 5}. Matriks ini dan transposnya adalah segitiga atas, namun bukan matriks identitas. Maka A adalah penyangkal yang valid.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "2aa711c2b030f8f84b05a098",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: Matriks ini dan transposnya (sama dengan dirinya) segitiga atas, tetapi diagonal utamanya bukan semuanya satu sehingga bukan identitas.",
+            "B": "Salah: ini matriks identitas, memenuhi klaim sehingga bukan penyangkal",
+            "C": "Salah: matriks ini sendiri bukan segitiga atas, sehingga syarat klaim tidak terpenuhi",
+            "D": "Salah: transposnya segitiga bawah, sehingga syarat klaim tidak terpenuhi"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
     {
       "question": {
         "questionId": "e18ad74984f74a8d128a4970",
@@ -52,12 +372,204 @@
         "source": {
           "externalId": "e18ad74984f74a8d128a4970",
           "subchapter": "Jenis-Jenis Matriks",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas11_tl_exercise_batch01",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
           "optionExtractionNotes": {
             "A": "Salah: hanya menghitung elemen diagonal utama",
             "B": "Benar: Elemen di bawah diagonal utama berjumlah $\\frac{n(n-1)}{2} = 45$ sehingga $n = 10$. Elemen yang boleh tak nol: $\\frac{n(n+1)}{2} = 55$.",
             "C": "Salah: menjawab banyak elemen nol yang diketahui, bukan elemen tak nol",
             "D": "Salah: menghitung semua elemen $n \\times n$ tanpa memakai sifat segitiga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "04f00a7a1504f1359426c352",
+        "questionVersionId": "04f00a7a1504f1359426c352:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "514c3a191dd33fd1a8735d8888a644384049ed4697fc9820cc87d68fbff079aa",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah matriks tegak memuat $60$ elemen dan memiliki paling sedikit dua kolom. Banyak kemungkinan ordo matriks tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$6$"
+          },
+          {
+            "label": "B",
+            "text": "$10$"
+          },
+          {
+            "label": "C",
+            "text": "$5$"
+          },
+          {
+            "label": "D",
+            "text": "$12$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Matriks tegak memiliki $m > n$. Diketahui $m \\times n = 60$ dan $n \\geq 2$. Pasangan faktor $(m, n)$ dari 60 yang memenuhi $m > n$ dan $n \\geq 2$ adalah: $(30, 2), (20, 3), (15, 4), (12, 5), (10, 6)$. Total ada 5 kemungkinan.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "04f00a7a1504f1359426c352",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: ikut menghitung ordo $60 \\times 1$ padahal kolomnya harus minimal dua",
+            "B": "Salah: menghitung semua pasangan faktor dengan kedua bilangan minimal 2 tanpa syarat $m > n$",
+            "C": "Benar: Pasangan $(m, n)$ dengan $m \\times n = 60$, $m > n$, dan $n \\geq 2$: $(30,2), (20,3), (15,4), (12,5), (10,6)$, yaitu $5$ pasangan.",
+            "D": "Salah: menghitung semua pasangan faktor berurutan (termasuk $m < n$ dan $n = 1$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "1facb098aa341522dcf30f8f",
+        "questionVersionId": "1facb098aa341522dcf30f8f:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "2c3c5f7a6984b1bbf333f069979c5b53ef85dee2162705008b5214b07ef78d29",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Jenis-Jenis Matriks",
+        "questionType": "multiple_choice",
+        "stem": "Matriks persegi yang sekaligus merupakan matriks segitiga atas dan matriks simetris pasti merupakan matriks ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "identitas"
+          },
+          {
+            "label": "B",
+            "text": "datar"
+          },
+          {
+            "label": "C",
+            "text": "diagonal"
+          },
+          {
+            "label": "D",
+            "text": "nol"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan matriks A berordo n x n. Matriks segitiga atas berarti a_ij = 0 untuk i > j. Matriks simetris berarti a_ij = a_ji untuk semua i, j. Jika i > j, maka a_ij = 0 (segitiga atas). Karena simetris, a_ji = a_ij = 0 untuk i > j, yang berarti a_ij = 0 untuk i < j. Karena elemen di bawah diagonal (i > j) dan di atas diagonal (i < j) adalah nol, maka matriks tersebut adalah matriks diagonal.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "1facb098aa341522dcf30f8f",
+          "subchapter": "Jenis-Jenis Matriks",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengira diagonal utama pasti bernilai satu",
+            "B": "Salah: mengira ordo matriks tidak persegi",
+            "C": "Benar: Segitiga atas: elemen di bawah diagonal nol. Simetris: elemen di atas diagonal sama dengan pasangannya di bawah, sehingga juga nol. Semua elemen di luar diagonal nol: matriks diagonal.",
+            "D": "Salah: mengira semua elemen termasuk diagonal utama nol"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "411c9ee356f0eda35b4fe0e5",
+        "questionVersionId": "411c9ee356f0eda35b4fe0e5:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "285f9fcaf24f1aa9c63a37e794d299e56f134e93e35030d7f4eadf914525a7b2",
+        "grade": 11,
+        "topic": "Matematika Tingkat Lanjut SMA Kelas 11",
+        "subtopic": "Grafik Fungsi Trigonometri",
+        "questionType": "multiple_choice",
+        "stem": "Diketahui $f(x)=\\sin kx$ dengan $k$ bilangan bulat positif. Fungsi $f$ bernilai maksimum di $x=\\frac{\\pi}{2}$ dan bernilai minimum di $x=\\frac{\\pi}{6}$. Nilai $k$ terkecil yang memenuhi kedua syarat adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$21$"
+          },
+          {
+            "label": "B",
+            "text": "$9$"
+          },
+          {
+            "label": "C",
+            "text": "$5$"
+          },
+          {
+            "label": "D",
+            "text": "$3$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Syarat maksimum: sin(kπ/2) = 1 => kπ/2 = π/2 + 2nπ => k = 1 + 4n (k=1, 5, 9, 13, ...). Syarat minimum: sin(kπ/6) = -1 => kπ/6 = 3π/2 + 2mπ => k = 9 + 12m (k=9, 21, 33, ...). Irisan terkecil dari kedua himpunan adalah k = 9.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "411c9ee356f0eda35b4fe0e5",
+          "subchapter": "Grafik Fungsi Trigonometri",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas11_tl_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memenuhi kedua syarat tetapi bukan yang terkecil",
+            "B": "Benar: $\\sin\\frac{k\\pi}{2}=1$ untuk $k=1,5,9,\\ldots$; $\\sin\\frac{k\\pi}{6}=-1$ untuk $k=9,21,\\ldots$; irisan terkecil adalah 9",
+            "C": "Salah: $k=5$ memenuhi syarat maksimum di $\\frac{\\pi}{2}$ saja; di $x=\\frac{\\pi}{6}$ nilainya $\\sin\\frac{5\\pi}{6}=\\frac{1}{2}$",
+            "D": "Salah: $k=3$ memberi $\\sin\\frac{3\\pi}{2}=-1$ di $x=\\frac{\\pi}{2}$ dan $\\sin\\frac{\\pi}{2}=1$ di $x=\\frac{\\pi}{6}$: maksimum dan minimum tertukar"
           }
         }
       },
