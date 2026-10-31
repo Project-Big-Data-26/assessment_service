@@ -4,9 +4,2008 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Medium",
   "researchOnly": true,
-  "advisoryCount": 1,
-  "contentQualifiedCount": 1,
+  "advisoryCount": 32,
+  "contentQualifiedCount": 32,
   "items": [
+    {
+      "question": {
+        "questionId": "150878cbace8f193c87122b3",
+        "questionVersionId": "150878cbace8f193c87122b3:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "1c2a7545a0f425d74c124526e18e3cadae4f2ec1a609fd5f62dfe9b14ecbfab3",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Seorang siswa menyatakan bahwa pada barisan geometri dengan rasio lebih dari 1, setiap suku selalu lebih besar daripada suku sebelumnya. Barisan berikut yang dapat menjadi contoh penyangkal pernyataan tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$108, 36, 12, 4, \\ldots$"
+          },
+          {
+            "label": "B",
+            "text": "$-4, -12, -36, -108, \\ldots$"
+          },
+          {
+            "label": "C",
+            "text": "$-108, -36, -12, -4, \\ldots$"
+          },
+          {
+            "label": "D",
+            "text": "$4, 12, 36, 108, \\ldots$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pernyataan: r > 1 maka a_{n+1} > a_n. Kita mencari contoh penyangkal (r > 1 tetapi a_{n+1} <= a_n). Opsi B: -4, -12, -36, -108. Rasio r = -12 / -4 = 3. Syarat r > 1 terpenuhi. Namun, -12 < -4, -36 < -12, dst. Suku-suku justru menurun. Ini adalah penyangkal yang valid.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "150878cbace8f193c87122b3",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: suku menurun tetapi rasionya $\\frac{1}{3}$, tidak memenuhi syarat rasio lebih dari 1",
+            "B": "Benar: rasio $\\frac{-12}{-4}=3>1$, tetapi $-12<-4$ sehingga suku justru menurun",
+            "C": "Salah: suku naik dan rasionya $\\frac{1}{3}$ (bukan lebih dari 1); tidak menyangkal klaim",
+            "D": "Salah: rasio 3 dan suku naik; ini mendukung klaim, bukan penyangkal"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "54eea17c53d202be76ab67b2",
+        "questionVersionId": "54eea17c53d202be76ab67b2:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "55438db12c68d10b34a89057acf11397d4e7e317a6c1e8e40ebef76c29854d15",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Seorang siswa menyatakan bahwa pada barisan geometri dengan rasio antara 0 dan 1, nilai suku-sukunya selalu semakin kecil. Pasangan suku pertama $a$ dan rasio $r$ yang membuktikan bahwa pernyataan tersebut salah adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$a=48$ dan $r=4$"
+          },
+          {
+            "label": "B",
+            "text": "$a=-48$ dan $r=4$"
+          },
+          {
+            "label": "C",
+            "text": "$a=-48$ dan $r=\\frac{1}{4}$"
+          },
+          {
+            "label": "D",
+            "text": "$a=48$ dan $r=\\frac{1}{4}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pernyataan: Jika 0 < r < 1, maka suku-suku barisan geometri selalu mengecil. Counterexample harus memenuhi 0 < r < 1 namun suku-suku tidak mengecil (semakin besar). Untuk barisan geometri, U_{n+1} = U_n * r. Jika a negatif dan 0 < r < 1, maka |U_{n+1}| < |U_n|, namun karena nilainya negatif, maka U_{n+1} > U_n (semakin besar). Contoh: a = -48, r = 1/4. Barisan: -48, -12, -3, ... (-48 < -12 < -3). Pernyataan salah.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "54eea17c53d202be76ab67b2",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: rasio tidak antara 0 dan 1 dan suku naik; tidak relevan dengan klaim",
+            "B": "Salah: suku makin kecil ($-48,-192,\\ldots$) dan rasio tidak antara 0 dan 1",
+            "C": "Benar: barisannya $-48, -12, -3, \\ldots$; rasio di antara 0 dan 1 tetapi suku bertambah besar",
+            "D": "Salah: barisan $48, 12, 3$ memang menurun sehingga mendukung klaim"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "1d398b325b19715ae2c2720a",
+        "questionVersionId": "1d398b325b19715ae2c2720a:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "a744501f8a2cab66e4b8aea7e95e08a8b2daace8ab0e711bb99ef9a0f543c4f5",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Tiga bilangan $x$, $x+2$, dan $4x$ berturut-turut membentuk barisan geometri yang semua sukunya positif. Jumlah ketiga bilangan tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "8"
+          },
+          {
+            "label": "B",
+            "text": "$-2$"
+          },
+          {
+            "label": "C",
+            "text": "14"
+          },
+          {
+            "label": "D",
+            "text": "6"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Barisan geometri: x, x+2, 4x. Sifat: (x+2)^2 = x(4x). Maka x^2 + 4x + 4 = 4x^2, sehingga 3x^2 - 4x - 4 = 0. Faktorisasi: (3x+2)(x-2) = 0. Nilai x yang mungkin: -2/3 atau 2. Karena semua suku positif, x=2. Barisan: 2, 4, 8. Jumlah: 2 + 4 + 8 = 14.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "14",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "1d398b325b19715ae2c2720a",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya suku ketiga yang dijumlahkan",
+            "B": "Salah: memakai $x=-\\frac{2}{3}$ yang menghasilkan suku negatif",
+            "C": "Benar: $(x+2)^2=4x^2\\Rightarrow(3x+2)(x-2)=0$; suku positif menuntut $x=2$ sehingga bilangannya 2, 4, 8",
+            "D": "Salah: hanya dua suku pertama yang dijumlahkan"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "ece44de5972746fc68f79d81",
+        "questionVersionId": "ece44de5972746fc68f79d81:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f4511fde910671ef27661de3f454e0220235a825fe1e3f61f08c11c361f014d4",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Tiga bilangan berturut-turut membentuk barisan aritmetika naik. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Bilangan terkecil di antara ketiganya adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "10"
+          },
+          {
+            "label": "B",
+            "text": "7"
+          },
+          {
+            "label": "C",
+            "text": "4"
+          },
+          {
+            "label": "D",
+            "text": "3"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan tiga bilangan tersebut adalah a-d, a, a+d. Jumlah ketiga bilangan adalah 3a = 21, sehingga a = 7. Hasil kali ketiga bilangan adalah a(a^2 - d^2) = 280. Substitusi a = 7 menghasilkan 7(49 - d^2) = 280, sehingga 49 - d^2 = 40, d^2 = 9. Karena barisan naik, maka d = 3. Bilangan terkecil adalah a - d = 7 - 3 = 4.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "4",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "ece44de5972746fc68f79d81",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengambil beda $-3$ sehingga yang diambil justru bilangan terbesar",
+            "B": "Salah: bilangan tengah dikira bilangan terkecil",
+            "C": "Benar: suku tengah $=21:3=7$; $7(7-d)(7+d)=280\\Rightarrow d^2=9$; barisan naik sehingga $d=3$ dan suku terkecil $7-3=4$",
+            "D": "Salah: beda barisan dikira bilangan terkecil"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "8e8e604d60772217c26d0b2c",
+        "questionVersionId": "8e8e604d60772217c26d0b2c:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "d474d40d2c9c7e5a49754a10484f7c74805ca41449e7c8a1a881e9300da1e846",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Suatu barisan geometri memiliki suku ke-3 sama dengan 144. Suku pertama dan rasionya adalah bilangan bulat positif, dan rasionya lebih dari 1. Banyak barisan berbeda yang memenuhi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "15"
+          },
+          {
+            "label": "B",
+            "text": "4"
+          },
+          {
+            "label": "C",
+            "text": "6"
+          },
+          {
+            "label": "D",
+            "text": "5"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui U3 = ar^2 = 144. Karena a dan r adalah bilangan bulat positif dan r > 1, maka r^2 harus merupakan pembagi dari 144 yang merupakan kuadrat sempurna. Faktor dari 144 adalah 1, 2, 3, 4, 6, 8, 9, 12, 16, 18, 24, 36, 48, 72, 144. Kuadrat sempurna yang membagi 144 adalah 4 (r=2), 9 (r=3), 16 (r=4), 36 (r=6), 144 (r=12). Nilai r yang memenuhi r > 1 adalah {2, 3, 4, 6, 12}. Terdapat 5 kemungkinan nilai r, yang masing-masing menentukan nilai a yang unik (a = 144/r^2). Jadi, ada 5 barisan.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "8e8e604d60772217c26d0b2c",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menghitung semua pembagi positif 144 sebagai rasio",
+            "B": "Salah: melewatkan rasio 12 (dengan suku pertama 1)",
+            "C": "Salah: ikut menghitung rasio 1 yang tidak memenuhi syarat $r>1$",
+            "D": "Benar: $ar^2=144$ sehingga $r^2$ harus pembagi 144; $r\\in\\{2,3,4,6,12\\}$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "0e8899a84cd67557d3495668",
+        "questionVersionId": "0e8899a84cd67557d3495668:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "70f5a466654caf2213e1cfcb1fb5530503c628290d905ba7efccad3c165d9f34",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Setiap suku suatu barisan geometri diubah dengan satu operasi. Operasi yang pasti menghasilkan barisan geometri lagi, untuk sembarang barisan geometri awal, adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "setiap suku ditambah nomor sukunya"
+          },
+          {
+            "label": "B",
+            "text": "setiap suku dikalikan $-3$"
+          },
+          {
+            "label": "C",
+            "text": "setiap suku dikurangi 7"
+          },
+          {
+            "label": "D",
+            "text": "setiap suku ditambah 4"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan barisan geometri awal adalah a, ar, ar^2, ... dengan rasio r. Jika setiap suku dikalikan dengan konstanta k (k ≠ 0), barisan baru menjadi ka, kar, kar^2, .... Rasio barisan baru adalah (kar)/(ka) = r. Karena rasio tetap r (konstan), maka barisan baru tetap merupakan barisan geometri. Operasi lain (penjumlahan/pengurangan konstanta atau variabel) mengubah rasio antar suku menjadi tidak konstan.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "0e8899a84cd67557d3495668",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: contoh $1,2,4$ menjadi $2,4,7$ dengan rasio $2\\ne\\frac74$",
+            "B": "Benar: rasio barisan baru tetap sama karena faktor $-3$ terhapus saat pembagian dua suku berurutan",
+            "C": "Salah: contoh $1,2,4$ menjadi $-6,-5,-3$ dengan rasio $\\frac56\\ne\\frac35$",
+            "D": "Salah: contoh $1,2,4$ menjadi $5,6,8$ dengan rasio $\\frac65\\ne\\frac86$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "e2780b99a48ac95bf99ebff2",
+        "questionVersionId": "e2780b99a48ac95bf99ebff2:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "925d1b8034f0ba692b0b0b0c96e132694ee63c7d0f2effc473928e2b66e6f27a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Pada barisan aritmetika diketahui $U_4+U_{11}=58$. Seorang siswa berpendapat nilai $U_6+U_9$ tidak dapat ditentukan karena suku pertama dan beda tidak diketahui. Pernyataan yang benar adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$U_6+U_9$ tidak dapat ditentukan karena $a$ dan $b$ tidak diketahui"
+          },
+          {
+            "label": "B",
+            "text": "$U_6+U_9=29$ karena setiap suku bernilai separuh dari 58"
+          },
+          {
+            "label": "C",
+            "text": "$U_6+U_9=116$ karena suku bernomor lebih besar bernilai dua kali lipat"
+          },
+          {
+            "label": "D",
+            "text": "$U_6+U_9=58$, sebab $4+11=6+9$ sehingga $U_4+U_{11}=2a+13b=U_6+U_9$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Dalam barisan aritmetika, U_n = a + (n-1)b. Maka, U_4 + U_{11} = (a + 3b) + (a + 10b) = 2a + 13b = 58. Selanjutnya, U_6 + U_9 = (a + 5b) + (a + 8b) = 2a + 13b. Karena 2a + 13b = 58, maka U_6 + U_9 = 58.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "e2780b99a48ac95bf99ebff2",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: tidak melihat bahwa kedua jumlah sama-sama berbentuk $2a+13b$",
+            "B": "Salah: membagi dua tanpa dasar; jumlah dua suku tidak dibagi dua",
+            "C": "Salah: mengira jumlah suku lebih belakang berlipat dua",
+            "D": "Benar: $U_4+U_{11}=(a+3b)+(a+10b)=2a+13b$ dan $U_6+U_9=(a+5b)+(a+8b)=2a+13b$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "f7aabe27a3fd051b0e2e4c60",
+        "questionVersionId": "f7aabe27a3fd051b0e2e4c60:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "b0058a4337de8270bba00100729d96219c27cb516212946bf01350bbc0c07453",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Dua perusahaan menawarkan gaji. Perusahaan P: gaji tahun pertama Rp4.000.000,00 per bulan dan naik Rp300.000,00 setiap tahun. Perusahaan Q: gaji tahun pertama Rp3.000.000,00 per bulan dan naik 10% dari gaji tahun sebelumnya setiap tahun. Pada tahun ke berapa gaji Q untuk pertama kalinya lebih besar daripada gaji P?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "tahun ke-9"
+          },
+          {
+            "label": "B",
+            "text": "tahun ke-10"
+          },
+          {
+            "label": "C",
+            "text": "tahun ke-8"
+          },
+          {
+            "label": "D",
+            "text": "tahun ke-7"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "P_n = 4.000.000 + (n-1)300.000 = 3.700.000 + 300.000n. Q_n = 3.000.000 * (1,1)^(n-1). Uji nilai n: n=8: P_8 = 6.100.000, Q_8 = 3.000.000 * (1,1)^7 ≈ 5.846.100 (Q < P). n=9: P_9 = 6.400.000, Q_9 = 3.000.000 * (1,1)^8 ≈ 6.430.710 (Q > P). Jadi, tahun ke-9.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menghitung",
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f7aabe27a3fd051b0e2e4c60",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: tahun ke-8: Q $\\approx5.846.000<6.100.000$; tahun ke-9: Q $\\approx6.431.000>6.400.000$",
+            "B": "Salah: tahun ke-9 sudah lebih besar sehingga tahun ke-10 bukan yang pertama",
+            "C": "Salah: pada tahun ke-8 gaji Q sekitar 5.846.000 masih di bawah gaji P 6.100.000",
+            "D": "Salah: pada tahun ke-7 gaji Q sekitar 5.315.000 jauh di bawah gaji P 5.800.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "801e414001892cd0aac4e611",
+        "questionVersionId": "801e414001892cd0aac4e611:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "abf1257a99f1896308fc6a1c242cf7a9d665580994f66ebec07fd4392f71be49",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Diberikan dua barisan aritmetika: $5, 9, 13, 17, \\ldots$ dan $3, 10, 17, 24, \\ldots$. Bilangan ketiga yang muncul pada kedua barisan (terurut dari yang terkecil) adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "73"
+          },
+          {
+            "label": "B",
+            "text": "101"
+          },
+          {
+            "label": "C",
+            "text": "45"
+          },
+          {
+            "label": "D",
+            "text": "84"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Barisan 1: U_n = 5 + (n-1)4 = 4n + 1. Barisan 2: U_m = 3 + (m-1)7 = 7m - 4. Persamaan 4n + 1 = 7m - 4 => 4n = 7m - 5. Untuk m=3, 4n=16, n=4, suku pertama = 17. Selisih persekutuan adalah KPK(4,7) = 28. Barisan bilangan persekutuan: 17, 17+28=45, 45+28=73. Bilangan ketiga adalah 73.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "801e414001892cd0aac4e611",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: bilangan bersama 17, 45, 73, ... dengan jarak $\\text{KPK}(4,7)=28$",
+            "B": "Salah: bilangan bersama keempat",
+            "C": "Salah: bilangan bersama kedua, bukan yang ketiga",
+            "D": "Salah: mengalikan KPK 28 dengan 3 tanpa menambahkan bilangan bersama pertama (17)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "84a8378b443288b2fe7e35e4",
+        "questionVersionId": "84a8378b443288b2fe7e35e4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "785d38d266a8ae5be759a815b0a543fb9f133ede94f7d1c908581c355246685f",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Barisan geometri memiliki suku pertama 16 dan rasio $-\\frac{1}{2}$. Pernyataan yang benar tentang barisan tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "semua suku bernilai positif karena suku pertamanya positif"
+          },
+          {
+            "label": "B",
+            "text": "semua suku makin kecil karena rasionya kurang dari 1"
+          },
+          {
+            "label": "C",
+            "text": "barisan naik terus karena rasionya negatif"
+          },
+          {
+            "label": "D",
+            "text": "nilai mutlak suku makin kecil, tetapi barisan tidak selalu menurun karena $U_5>U_4$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Suku-suku barisan: U1=16, U2=-8, U3=4, U4=-2, U5=1. Nilai mutlak suku (|Un|) semakin kecil karena |r|=1/2 < 1. Namun, barisan tidak monoton turun karena suku-suku berselang-seling positif dan negatif. U4=-2 dan U5=1, sehingga U5 > U4. Pernyataan D benar.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "84a8378b443288b2fe7e35e4",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: suku genap bernilai negatif akibat rasio negatif",
+            "B": "Salah: mengabaikan tanda rasio negatif yang membuat suku berselang-seling",
+            "C": "Salah: suku ke-3 ($4$) lebih besar daripada suku ke-4 ($-2$), jadi tidak naik terus",
+            "D": "Benar: suku-sukunya $16,-8,4,-2,1,-\\frac12$; $U_4=-2<U_5=1$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "5e3646f32953dad18f8cccb0",
+        "questionVersionId": "5e3646f32953dad18f8cccb0:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "fde63eebc401b74c0e923bb7501bd3477d2b36f380359936171b0c67277f5f9b",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Seorang penjual membagi stok barang menjadi 4 kelompok dengan banyak barang membentuk barisan geometri naik dengan rasio positif. Jika kelompok terkecil berisi 32 barang dan kelompok terbesar berisi 108 barang, berapa barang pada kelompok ketiga?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "70 barang"
+          },
+          {
+            "label": "B",
+            "text": "162 barang"
+          },
+          {
+            "label": "C",
+            "text": "72 barang"
+          },
+          {
+            "label": "D",
+            "text": "48 barang"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui barisan geometri dengan U1 = 32 dan U4 = 108. Rumus suku ke-n adalah Un = ar^(n-1). Maka U4 = 32 * r^3 = 108. r^3 = 108/32 = 27/8. r = akar pangkat tiga dari (27/8) = 3/2. Kelompok ketiga adalah U3 = ar^2 = 32 * (3/2)^2 = 32 * (9/4) = 72.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "5e3646f32953dad18f8cccb0",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengambil rata-rata (32+108):2 seolah-olah aritmetika",
+            "B": "Salah: menghitung suku kelima (memakai pangkat terlalu besar)",
+            "C": "Benar: $32r^3=108$, $r^3=\\frac{27}{8}$, $r=\\frac{3}{2}$, $U_3=32\\times\\frac{9}{4}=72$",
+            "D": "Salah: menghitung kelompok kedua, bukan ketiga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "3d61ba6ecaaf997f1efe87c4",
+        "questionVersionId": "3d61ba6ecaaf997f1efe87c4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3de6b0eec0cbf35bbf9b60ca0217d145b8ed0bcc0532bfd3bff5fc5face5e986",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Barisan",
+        "questionType": "multiple_choice",
+        "stem": "Pernyataan berikut yang benar tentang barisan geometri adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Jika rasio antara 0 dan 1, suku-suku barisan geometri selalu semakin kecil"
+          },
+          {
+            "label": "B",
+            "text": "Jika rasio lebih besar dari 1, setiap barisan geometri pasti naik"
+          },
+          {
+            "label": "C",
+            "text": "Barisan -3, -6, -12, -24, ... adalah barisan geometri dengan rasio 2 dan suku-sukunya semakin kecil"
+          },
+          {
+            "label": "D",
+            "text": "Barisan 5, -10, 20, -40, ... bukan barisan geometri karena sukunya tidak selalu naik atau turun"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Barisan geometri didefinisikan oleh suku ke-n $U_n = a \\cdot r^{n-1}$. Pilihan C: Barisan -3, -6, -12, -24 memiliki rasio $r = \\frac{-6}{-3} = 2$. Karena $r > 1$ dan suku pertama $a = -3$ (negatif), maka suku-suku berikutnya menjadi lebih kecil (semakin negatif), yaitu -3 > -6 > -12 > -24. Pernyataan C benar.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "3d61ba6ecaaf997f1efe87c4",
+          "subchapter": "Barisan",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: lawan contoh: -8, -4, -2, ... rasio $\\frac{1}{2}$ tetapi suku-sukunya naik",
+            "B": "Salah: lawan contoh: suku pertama negatif dengan rasio 2 menurun",
+            "C": "Benar: $r=\\frac{-6}{-3}=2>1$ tetapi karena suku pertama negatif, nilai suku-sukunya menurun: $-3>-6>-12$",
+            "D": "Salah: rasio tetap $-2$ sehingga tetap geometri"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "6ff491a7ccab8d20aa980f28",
+        "questionVersionId": "6ff491a7ccab8d20aa980f28:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3a918bd1aa818cd455aa55f62ae6245790d79eddea7158b594e2b29eeb9eadef",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Dina berpendapat bahwa untuk setiap deret geometri tak hingga dengan suku pertama positif yang memiliki jumlah, jumlah tak hingganya selalu lebih besar daripada suku pertamanya. Contoh penyangkal pendapat Dina adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$6 + 2 + \\frac{2}{3} + \\dots$"
+          },
+          {
+            "label": "B",
+            "text": "$8 + 4 + 2 + 1 + \\dots$"
+          },
+          {
+            "label": "C",
+            "text": "$8 - 4 + 2 - 1 + \\dots$"
+          },
+          {
+            "label": "D",
+            "text": "$8 + 16 + 32 + \\dots$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Deret geometri tak hingga memiliki jumlah S = a / (1 - r) dengan syarat -1 < r < 1. Pernyataan Dina: S > a. Untuk a > 0, ini setara dengan a / (1 - r) > a, atau 1 / (1 - r) > 1. Ini berlaku jika 0 < 1 - r < 1, yaitu 0 < r < 1. Jika -1 < r <= 0, maka 1 / (1 - r) <= 1, sehingga S <= a. Pilihan C: 8 - 4 + 2 - 1 + ... memiliki a = 8 dan r = -1/2. Jumlah S = 8 / (1 - (-1/2)) = 8 / (1.5) = 16/3 = 5,33. Karena 5,33 < 8, maka pilihan C adalah penyangkal yang benar.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "6ff491a7ccab8d20aa980f28",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: jumlahnya 9 > 6, mendukung pendapat Dina",
+            "B": "Salah: jumlahnya 16 > 8, justru mendukung pendapat Dina",
+            "C": "Benar: $r = -\\frac{1}{2}$ memberi jumlah $\\frac{8}{1 + \\frac{1}{2}} = \\frac{16}{3} \\approx 5{,}3 < 8$",
+            "D": "Salah: deret divergen sehingga tidak memiliki jumlah, bukan penyangkal"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "469f2c81fff77d2f647b3854",
+        "questionVersionId": "469f2c81fff77d2f647b3854:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "c0880e54070da1f9f61c37e711d2f2d8fcc382e45f4e573aa9656769229da676",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Dua orang menabung setiap hari. Andi menabung Rp10.000 pada hari pertama dan setiap hari berikutnya Rp10.000 lebih banyak dari hari sebelumnya. Budi menabung Rp1.000 pada hari pertama dan setiap hari berikutnya dua kali lipat dari hari sebelumnya. Total tabungan Budi untuk pertama kali melebihi total tabungan Andi pada hari ke- ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "7"
+          },
+          {
+            "label": "B",
+            "text": "8"
+          },
+          {
+            "label": "C",
+            "text": "10"
+          },
+          {
+            "label": "D",
+            "text": "9"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Andi: S_n = n/2 * (2*10000 + (n-1)*10000) = 5000n(n+1). Budi: S_n = 1000 * (2^n - 1) / (2 - 1) = 1000(2^n - 1). Mencari n terkecil dimana 1000(2^n - 1) > 5000n(n+1) atau 2^n - 1 > 5n(n+1). Untuk n=8: 2^8 - 1 = 255, 5(8)(9) = 360 (255 < 360). Untuk n=9: 2^9 - 1 = 511, 5(9)(10) = 450 (511 > 450). Jadi hari ke-9.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "469f2c81fff77d2f647b3854",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: pada hari ke-7 total Budi Rp127.000 jauh di bawah Andi Rp280.000",
+            "B": "Salah: total Budi hari ke-8 Rp255.000 masih di bawah Andi Rp360.000",
+            "C": "Salah: hari ke-10 memang Budi lebih besar, tetapi bukan yang pertama",
+            "D": "Benar: total hari ke-9: Andi Rp450.000 dan Budi Rp511.000, sedangkan hari ke-8 Budi Rp255.000 < Andi Rp360.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "97bd90dbd09ff2ece4490eaf",
+        "questionVersionId": "97bd90dbd09ff2ece4490eaf:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "094b29684df86c1446df1629415a1af520e1a0b176799dbab475e1256d1e99ff",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Tiga bilangan membentuk deret aritmetika dengan beda positif dan berjumlah 18. Jika bilangan ketiga ditambah 1 (bilangan lain tetap), ketiganya membentuk deret geometri. Hasil kali ketiga bilangan semula adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "216"
+          },
+          {
+            "label": "B",
+            "text": "162"
+          },
+          {
+            "label": "C",
+            "text": "144"
+          },
+          {
+            "label": "D",
+            "text": "192"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misal bilangan tersebut a-b, a, a+b. Jumlah = 3a = 18, maka a = 6. Bilangan: 6-b, 6, 6+b. Setelah ditambah 1: 6-b, 6, 7+b. Syarat GP: 6^2 = (6-b)(7+b) => 36 = 42 + 6b - 7b - b^2 => b^2 + b - 6 = 0 => (b+3)(b-2) = 0. Karena beda positif, b=2. Bilangan: 4, 6, 8. Hasil kali: 4 * 6 * 8 = 192.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "192",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "97bd90dbd09ff2ece4490eaf",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai bilangan setelah ditambah 1 ($4, 6, 9$)",
+            "B": "Salah: memakai akar $b = -3$ yang memberi beda negatif ($9, 6, 3$)",
+            "C": "Salah: mengira bilangan ketiga sama dengan bilangan tengah ($4 \\cdot 6 \\cdot 6$)",
+            "D": "Benar: bilangan $6-b,\\ 6,\\ 6+b$; $(6-b)(7+b) = 36 \\Rightarrow b = 2$ (beda positif); bilangannya $4, 6, 8$ hasil kalinya 192"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "364be7064db72766f61296c1",
+        "questionVersionId": "364be7064db72766f61296c1:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "0b03c7453d00f1773f242b4924bd7deb992145eaecb0baa65752bcc770a40b79",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Pada hari pertama sebuah percobaan ada 3 sel. Setiap hari, banyak sel baru yang muncul dua kali lipat dari hari sebelumnya. Jika yang dihitung adalah jumlah seluruh sel yang pernah muncul sejak hari pertama, jumlah tersebut pertama kali melebihi 3.000 pada hari ke- ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "11"
+          },
+          {
+            "label": "B",
+            "text": "8"
+          },
+          {
+            "label": "C",
+            "text": "10"
+          },
+          {
+            "label": "D",
+            "text": "9"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Ini adalah deret geometri dengan suku pertama a = 3 dan rasio r = 2. Jumlah n suku pertama adalah S_n = a(r^n - 1) / (r - 1) = 3(2^n - 1) / (2 - 1) = 3(2^n - 1). Kita mencari n terkecil sehingga S_n > 3.000. Maka 3(2^n - 1) > 3.000, sehingga 2^n - 1 > 1.000, atau 2^n > 1.001. Karena 2^9 = 512 dan 2^10 = 1.024, maka n terkecil adalah 10.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "364be7064db72766f61296c1",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: membandingkan sel baru hari ke-$n$ ($3 \\cdot 2^{n-1} > 3.000$) bukan jumlahnya",
+            "B": "Salah: $S_8 = 765$ masih jauh di bawah 3.000",
+            "C": "Benar: $S_n = 3(2^n - 1)$; $S_9 = 1.533$ dan $S_{10} = 3.069 > 3.000$",
+            "D": "Salah: $S_9 = 1.533$ belum melebihi 3.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4845890c2a238b7474c5dda8",
+        "questionVersionId": "4845890c2a238b7474c5dda8:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "1ec6d089d6221b6d4cfc7bb6362a4082c064d67e07ef38e3db2a88bf84856000",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah bola dijatuhkan dari ketinggian 10 m dan setiap kali memantul mencapai tinggi $r$ kali tinggi sebelumnya dengan $0 < r < 1$. Agar total panjang lintasan bola sampai berhenti tidak lebih dari 30 m, nilai $r$ terbesar yang mungkin adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\frac{3}{5}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\frac{1}{3}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\frac{1}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\frac{2}{3}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Total lintasan = h + 2(hr + hr^2 + ...) = h + 2(hr / (1-r)) = 10 + 20r / (1-r). Syarat: 10 + 20r / (1-r) <= 30. Kurangi 10: 20r / (1-r) <= 20. Bagi 20: r / (1-r) <= 1. Karena 1-r > 0, maka r <= 1 - r, sehingga 2r <= 1, r <= 1/2. Nilai terbesar r adalah 1/2.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4845890c2a238b7474c5dda8",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: melupakan jatuhan pertama sehingga memakai $\\frac{20r}{1-r} \\le 30$",
+            "B": "Salah: memakai batas lintasan 20 m, bukan 30 m",
+            "C": "Benar: lintasan $= 10 \\cdot \\frac{1 + r}{1 - r} \\le 30$ memberi $1 + r \\le 3 - 3r$ sehingga $r \\le \\frac{1}{2}$",
+            "D": "Salah: memakai $\\frac{10}{1-r} \\le 30$, hanya jumlah tinggi naik-turun satu arah"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "caac041ed92e0e74b7dc330e",
+        "questionVersionId": "caac041ed92e0e74b7dc330e:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "b926ea5892dcfcf1237ea397f66aee7910c5303b9fba6285cf0c6ddc18cb9419",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Deret geometri tak hingga memiliki suku pertama 12 dan jumlah 18. Jumlah tak hingga dari suku-suku bernomor ganjil saja ($U_1 + U_3 + U_5 + \\dots$) adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\frac{27}{2}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\frac{108}{5}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\frac{9}{2}$"
+          },
+          {
+            "label": "D",
+            "text": "$18$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui a = 12 dan S = 18. S = a / (1 - r) => 18 = 12 / (1 - r) => 1 - r = 12/18 = 2/3 => r = 1/3. Suku-suku ganjil (U1, U3, U5, ...) membentuk deret geometri baru dengan suku pertama a' = a = 12 dan rasio r' = r^2 = (1/3)^2 = 1/9. Jumlah deret suku ganjil = a' / (1 - r') = 12 / (1 - 1/9) = 12 / (8/9) = 12 * 9 / 8 = 108 / 8 = 27/2.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "caac041ed92e0e74b7dc330e",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: $r = \\frac{1}{3}$; suku ganjil membentuk deret dengan suku pertama 12 dan rasio $r^2 = \\frac{1}{9}$, jumlah $\\frac{12}{1 - \\frac{1}{9}} = \\frac{27}{2}$",
+            "B": "Salah: salah menentukan rasio ($r = \\frac{2}{3}$) lalu memakai $r^2 = \\frac{4}{9}$",
+            "C": "Salah: mencari jumlah suku bernomor genap, yaitu $18 - \\frac{27}{2}$",
+            "D": "Salah: menganggap suku ganjil memiliki rasio yang sama sehingga jumlahnya tetap 18"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "d70bf2ae8c0afe0ae2661b37",
+        "questionVersionId": "d70bf2ae8c0afe0ae2661b37:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "de8ee02aeeccbb03df6f6c8f856a80edb2f2ea6947483b94ede45e0f0a2c619a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Suatu deret aritmetika memiliki suku pertama 30 dan memenuhi $S_8 = S_{13}$. Nilai terbesar yang dapat dicapai oleh $S_n$ adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "156"
+          },
+          {
+            "label": "B",
+            "text": "165"
+          },
+          {
+            "label": "C",
+            "text": "162"
+          },
+          {
+            "label": "D",
+            "text": "330"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui a = 30. S_8 = S_13 => 8/2(60 + 7b) = 13/2(60 + 12b) => 4(60 + 7b) = 6.5(60 + 12b) => 240 + 28b = 390 + 78b => -150 = 50b => b = -3. S_n mencapai maksimum saat suku terakhir U_n >= 0. U_n = a + (n-1)b = 30 + (n-1)(-3) = 33 - 3n. 33 - 3n >= 0 => n <= 11. Maksimum pada S_11 = 11/2(2(30) + 10(-3)) = 11/2(60 - 30) = 11/2(30) = 165.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "165",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "d70bf2ae8c0afe0ae2661b37",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengira jumlah maksimum terjadi pada $n = 8$",
+            "B": "Benar: $S_8 = S_{13}$ memberi $b = -3$; $U_n = 33 - 3n$ tak negatif sampai $n = 11$; $S_{11} = \\frac{11}{2}(60 - 30) = 165$",
+            "C": "Salah: berhenti pada $n = 12$, padahal $U_{12} = -3$ mengurangi jumlah",
+            "D": "Salah: lupa faktor $\\frac{1}{2}$ pada rumus jumlah"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "2a5eeb491339282ec8f9317b",
+        "questionVersionId": "2a5eeb491339282ec8f9317b:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "8df1cb5849ea19876f8d4e73af6e586b793372704d5b6b8571b8223dc3327e94",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Suatu deret aritmetika memiliki banyak suku ganjil. Jumlah suku-suku pada urutan ganjil ($U_1 + U_3 + U_5 + \\dots$) adalah 108, sedangkan jumlah suku-suku pada urutan genap ($U_2 + U_4 + \\dots$) adalah 96. Banyak suku deret tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "18"
+          },
+          {
+            "label": "B",
+            "text": "17"
+          },
+          {
+            "label": "C",
+            "text": "9"
+          },
+          {
+            "label": "D",
+            "text": "16"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan banyak suku adalah n = 2k + 1. Suku ganjil ada (k+1) suku, suku genap ada k suku. Jumlah suku ganjil S_g = (k+1)/2 * (U_1 + U_{2k+1}) = (k+1) * U_{k+1} = 108. Jumlah suku genap S_e = k/2 * (U_2 + U_{2k}) = k * U_{k+1} = 96. Maka (k+1)/k = 108/96 = 9/8. Diperoleh 8k + 8 = 9k, sehingga k = 8. Banyak suku n = 2(8) + 1 = 17.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "17",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "2a5eeb491339282ec8f9317b",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: membulatkan ke bilangan genap padahal banyak suku harus ganjil",
+            "B": "Benar: bila ada $2k+1$ suku dan suku tengah $U_t$: $(k+1)U_t = 108$ dan $kU_t = 96$ sehingga $U_t = 12$, $k = 8$",
+            "C": "Salah: hanya menghitung banyak suku pada urutan ganjil",
+            "D": "Salah: mengira banyak suku genap karena $k = 8$ dikalikan 2"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "570977d45b29d1fec4cf624d",
+        "questionVersionId": "570977d45b29d1fec4cf624d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "cdef9184707be236f5d18ca42cdbef31b35a8e4c0aa36598ad83bd6e5fd2fa36",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Deret $80 + 40 + 20 + 10 + \\dots$ dijumlahkan sebanyak $n$ suku. Agar selisih antara jumlah tak hingganya dan $S_n$ kurang dari 0,1, banyak suku minimal yang diperlukan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "12"
+          },
+          {
+            "label": "B",
+            "text": "11"
+          },
+          {
+            "label": "C",
+            "text": "14"
+          },
+          {
+            "label": "D",
+            "text": "10"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Deret geometri dengan a=80 dan r=0,5. S_inf = a/(1-r) = 80/0,5 = 160. S_n = a(1-r^n)/(1-r) = 160(1-0,5^n). Selisih S_inf - S_n = 160 - 160(1-0,5^n) = 160(0,5^n) = 160/2^n. Syarat: 160/2^n < 0,1 => 2^n > 1600. Karena 2^10 = 1024 dan 2^11 = 2048, maka n minimal adalah 11.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "570977d45b29d1fec4cf624d",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menambah satu suku cadangan tanpa dasar perhitungan",
+            "B": "Benar: $S_\\infty = 160$ dan $S_\\infty - S_n = \\frac{160}{2^n} < 0{,}1$, yaitu $2^n > 1.600$ sehingga $n \\ge 11$",
+            "C": "Salah: memakai batas selisih 0,01, bukan 0,1",
+            "D": "Salah: memakai selisih $\\frac{80}{2^n}$ (lupa pembagi $1 - r$) sehingga $2^n > 800$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "52ea8e48aab20f89f719dcb4",
+        "questionVersionId": "52ea8e48aab20f89f719dcb4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ac2ca7260c2ebfaf344bfcaee71263f667bb72673ab7f2a4b922a6983fd3005a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Pada suatu deret aritmetika diketahui $S_5 = 0$. Pernyataan yang pasti benar adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$U_5 = 0$"
+          },
+          {
+            "label": "B",
+            "text": "$b = 0$"
+          },
+          {
+            "label": "C",
+            "text": "$a = 0$"
+          },
+          {
+            "label": "D",
+            "text": "$U_3 = 0$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Rumus jumlah n suku pertama deret aritmetika adalah S_n = n/2 * (a + U_n). Untuk n=5, S_5 = 5/2 * (a + U_5). Karena S_5 = 0, maka 0 = 5/2 * (a + U_5), sehingga a + U_5 = 0. Dalam deret aritmetika, a + U_5 = U_1 + U_5 = 2 * U_3. Maka 2 * U_3 = 0, yang berarti U_3 = 0.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "52ea8e48aab20f89f719dcb4",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: pada $-2, -1, 0, 1, 2$ nilai $U_5 = 2 \\ne 0$",
+            "B": "Salah: hanya benar untuk deret nol, sedangkan $-2, -1, 0, 1, 2$ beda $1$",
+            "C": "Salah: hanya benar untuk sebagian deret, contohnya $-2, -1, 0, 1, 2$ memiliki $a = -2$",
+            "D": "Benar: $S_5 = \\frac{5}{2}(U_1 + U_5) = \\frac{5}{2} \\cdot 2U_3 = 5U_3$, sehingga $U_3 = 0$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "d11ecdc31d674831c0c0e531",
+        "questionVersionId": "d11ecdc31d674831c0c0e531:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "991d48303e8fcd06dee575f47c998a39287ca901e67f655e15fa00c3c925fc08",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Deret geometri memiliki suku pertama 3 dan jumlah tiga suku pertamanya 63. Jika rasionya negatif, jumlah empat suku pertama deret tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "312"
+          },
+          {
+            "label": "B",
+            "text": "-312"
+          },
+          {
+            "label": "C",
+            "text": "63"
+          },
+          {
+            "label": "D",
+            "text": "255"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui a = 3 dan S3 = 63. Rumus S3 = a(1 + r + r^2) = 3(1 + r + r^2) = 63, sehingga 1 + r + r^2 = 21, atau r^2 + r - 20 = 0. Faktorisasi menghasilkan (r + 5)(r - 4) = 0. Karena r < 0, maka r = -5. Suku ke-4 adalah ar^3 = 3(-5)^3 = 3(-125) = -375. Jumlah empat suku pertama S4 = S3 + U4 = 63 + (-375) = -312.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "-312",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "d11ecdc31d674831c0c0e531",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: salah tanda pada hasil akhir",
+            "B": "Benar: $3(1 + r + r^2) = 63 \\Rightarrow r = 4$ atau $r = -5$; dengan $r = -5$: $3 - 15 + 75 - 375 = -312$",
+            "C": "Salah: mengira jumlah empat suku sama dengan jumlah tiga suku",
+            "D": "Salah: memakai $r = 4$ yang positif"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "eaee434a2e097c67f49147e0",
+        "questionVersionId": "eaee434a2e097c67f49147e0:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "003bc680f69a02445d0dace4b619cd40e2939923347869a4884154dcaa3dc55d",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Seorang pengrajin membuat gelang dengan pertambahan produksi tetap setiap hari. Jumlah gelang yang dibuat selama 6 hari pertama adalah 75 dan selama 12 hari pertama adalah 258. Banyak gelang yang dibuat pada hari ke-10 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "32"
+          },
+          {
+            "label": "B",
+            "text": "48"
+          },
+          {
+            "label": "C",
+            "text": "29"
+          },
+          {
+            "label": "D",
+            "text": "35"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui S_n = n/2(2a + (n-1)b). Untuk n=6: 75 = 3(2a + 5b) -> 2a + 5b = 25. Untuk n=12: 258 = 6(2a + 11b) -> 2a + 11b = 43. Eliminasi: (2a+11b)-(2a+5b) = 43-25 -> 6b = 18 -> b = 3. Substitusi: 2a + 5(3) = 25 -> 2a = 10 -> a = 5. Maka U_10 = a + 9b = 5 + 9(3) = 5 + 27 = 32.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "eaee434a2e097c67f49147e0",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: $2a + 5b = 25$ dan $2a + 11b = 43$ sehingga $b = 3$, $a = 5$, $U_{10} = 5 + 9 \\times 3 = 32$",
+            "B": "Salah: nilai $a$ dan $b$ tertukar ($a = 3$, $b = 5$)",
+            "C": "Salah: memakai $n = 9$ (salah menghitung hari ke-10)",
+            "D": "Salah: memakai $a + 10b$ (n bukan n-1)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "a5d68f850cf29ef1fe58126e",
+        "questionVersionId": "a5d68f850cf29ef1fe58126e:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "8c200700c934efc8f8055c78e9b5855237ba5f7251c1734342d88af3cf200af7",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Tiga bilangan membentuk deret aritmetika. Jika jumlah mereka 36 dan hasil kalinya 1.680, bilangan terbesar di antara ketiga bilangan tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "12"
+          },
+          {
+            "label": "B",
+            "text": "10"
+          },
+          {
+            "label": "C",
+            "text": "14"
+          },
+          {
+            "label": "D",
+            "text": "16"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan tiga bilangan tersebut adalah a-b, a, a+b. Jumlah = (a-b) + a + (a+b) = 3a = 36, maka a = 12. Hasil kali = (12-b)(12)(12+b) = 1680. (144 - b^2) = 1680/12 = 140. b^2 = 144 - 140 = 4, sehingga b = 2 (atau -2). Bilangan-bilangannya adalah 12-2, 12, 12+2, yaitu 10, 12, 14. Bilangan terbesar adalah 14.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "14",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "a5d68f850cf29ef1fe58126e",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memilih bilangan tengah",
+            "B": "Salah: memilih bilangan terkecil",
+            "C": "Benar: bilangan tengah 12, $12(144 - d^2) = 1.680 \\Rightarrow d^2 = 4$, bilangan 10, 12, 14",
+            "D": "Salah: memakai $d = 4$ (lupa mengakarkan $d^2 = 4$)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "e97650e54340221f277741a7",
+        "questionVersionId": "e97650e54340221f277741a7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "4adf3dc2eb0ea657ce3741c3e40c3e137cd42335c122a5a8bb5b6520a0cadd63",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Panjang tiga potong tali membentuk deret aritmetika. Jika jumlah panjang ketiga potong tali itu 45 cm dan hasil kali panjangnya 3.135 cm$^3$, panjang potongan terpendek adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "15 cm"
+          },
+          {
+            "label": "B",
+            "text": "11 cm"
+          },
+          {
+            "label": "C",
+            "text": "7 cm"
+          },
+          {
+            "label": "D",
+            "text": "19 cm"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan tiga potongan tali adalah a-d, a, a+d. Jumlahnya (a-d) + a + (a+d) = 3a = 45, maka a = 15. Hasil kali (15-d)(15)(15+d) = 3135. Maka (15-d)(15+d) = 3135/15 = 209. 225 - d^2 = 209, sehingga d^2 = 16 dan d = 4. Potongan tali adalah 15-4=11, 15, 15+4=19. Potongan terpendek adalah 11 cm.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "11 cm",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "e97650e54340221f277741a7",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memilih potongan tengah",
+            "B": "Benar: potongan tengah 15 cm, $15(225 - d^2) = 3.135 \\Rightarrow d^2 = 16$, panjangnya 11, 15, 19",
+            "C": "Salah: mengira $d = 8$ (membagi 16 dengan 2 bukan mengakarkan)",
+            "D": "Salah: memilih potongan terpanjang"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4f122c764c30c58342d28f20",
+        "questionVersionId": "4f122c764c30c58342d28f20:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f94399711ba9fcf1d543edd45417a0cdeee5c565930b09a05f23bf7c911a96d4",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Jika $U_n$ menyatakan suku ke-$n$ suatu barisan aritmetika dan diketahui $U_3 - U_5 + U_7 - U_9 + U_{11} = 15$, berapa jumlah 13 suku pertama barisan tersebut?",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "195"
+          },
+          {
+            "label": "B",
+            "text": "105"
+          },
+          {
+            "label": "C",
+            "text": "165"
+          },
+          {
+            "label": "D",
+            "text": "390"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Dalam barisan aritmetika, berlaku sifat U_n + U_m = U_p + U_q jika n+m = p+q. Diketahui U_3 - U_5 + U_7 - U_9 + U_{11} = 15. Perhatikan bahwa 3+11 = 14 dan 5+9 = 14, sehingga U_3 + U_{11} = 2U_7 dan U_5 + U_9 = 2U_7. Substitusi ke persamaan: (U_3 + U_{11}) - (U_5 + U_9) + U_7 = 15 menjadi 2U_7 - 2U_7 + U_7 = 15, sehingga U_7 = 15. Jumlah 13 suku pertama adalah S_{13} = (n/2)(2a + (n-1)d) = n * U_{median} = 13 * U_7 = 13 * 15 = 195.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menghitung"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4f122c764c30c58342d28f20",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: $U_3 + U_{11} = U_5 + U_9 = 2U_7$ sehingga ekspresi $= U_7 = 15$; $S_{13} = 13 \\times U_7 = 195$",
+            "B": "Salah: mengalikan $U_7$ dengan 7 (mengira banyak suku 7)",
+            "C": "Salah: mengalikan $U_7$ dengan 11 (mengira banyak suku 11)",
+            "D": "Salah: memakai $S_{13} = 13(a + U_{13})$ tanpa membagi 2"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "866fd0af9e5022ead150113d",
+        "questionVersionId": "866fd0af9e5022ead150113d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "9e1265d22d3572ba6e27c45212d6246ad1a78b59a4d7bea337cfb0a5156ad0ad",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Diketahui deret bilangan $15 + 16 + 17 + 18 + \\dots + 94$. Dari deret bilangan tersebut, jumlah bilangan yang habis dibagi tiga tetapi tidak habis dibagi sembilan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "1.944"
+          },
+          {
+            "label": "B",
+            "text": "972"
+          },
+          {
+            "label": "C",
+            "text": "486"
+          },
+          {
+            "label": "D",
+            "text": "1.458"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Deret kelipatan 3: 15, 18, ..., 93. n = (93-15)/3 + 1 = 27. Jumlah = 27/2 * (15+93) = 1458. Deret kelipatan 9: 18, 27, ..., 90. n = (90-18)/9 + 1 = 9. Jumlah = 9/2 * (18+90) = 486. Hasil = 1458 - 486 = 972.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "972",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "866fd0af9e5022ead150113d",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjumlahkan kelipatan 3 dan kelipatan 9, bukan mengurangkan",
+            "B": "Benar: kelipatan 3: $15, \\dots, 93$ ($n = 27$) jumlah 1.458; kelipatan 9: $18, \\dots, 90$ ($n = 9$) jumlah 486; selisih 972",
+            "C": "Salah: hanya menghitung jumlah kelipatan 9",
+            "D": "Salah: menjumlahkan semua kelipatan 3 tanpa mengeluarkan kelipatan 9"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4003a5514496d75d4df01cd7",
+        "questionVersionId": "4003a5514496d75d4df01cd7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "66e2e998518586897fbb9ae9441e420173e27fa99be50f1c45e457fefcd2c48c",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Suatu deret geometri memiliki suku pertama 5 dan rasio positif. Jika jumlah 3 suku pertamanya 105, suku ke-5 deret tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "1.280"
+          },
+          {
+            "label": "B",
+            "text": "1.024"
+          },
+          {
+            "label": "C",
+            "text": "5.120"
+          },
+          {
+            "label": "D",
+            "text": "320"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui a = 5 dan S_3 = a(1 + r + r^2) = 105. Maka 1 + r + r^2 = 21, sehingga r^2 + r - 20 = 0. Faktorisasi (r + 5)(r - 4) = 0. Karena r > 0, maka r = 4. Suku ke-5 adalah U_5 = ar^4 = 5 * 4^4 = 5 * 256 = 1.280.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4003a5514496d75d4df01cd7",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: $5(1 + r + r^2) = 105 \\Rightarrow r^2 + r - 20 = 0 \\Rightarrow r = 4$, $U_5 = 5 \\times 4^4 = 1.280$",
+            "B": "Salah: lupa mengalikan dengan suku pertama 5",
+            "C": "Salah: memakai $r^5$ (suku ke-6), bukan $r^4$",
+            "D": "Salah: memakai $r^3$ (suku ke-4), bukan $r^4$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "aeff2aa6dcbc01e891b4a186",
+        "questionVersionId": "aeff2aa6dcbc01e891b4a186:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "c53c156570b2bd60ca99824e3d5f2473610e467b1fc5f480f3c7050ab1e7e376",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Rina menabung Rp50.000 pada bulan pertama, kemudian setiap bulan berikutnya tabungannya Rp10.000 lebih banyak daripada bulan sebelumnya. Rina berhenti menabung ketika jumlah seluruh tabungannya tepat Rp1.260.000. Rina menabung selama .... bulan.",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "13"
+          },
+          {
+            "label": "B",
+            "text": "12"
+          },
+          {
+            "label": "C",
+            "text": "11"
+          },
+          {
+            "label": "D",
+            "text": "14"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui deret aritmetika dengan a = 50.000 dan b = 10.000. Rumus jumlah n suku pertama: S_n = n/2 * (2a + (n-1)b). Substitusi nilai: 1.260.000 = n/2 * (100.000 + (n-1)10.000). Sederhanakan: 1.260.000 = n/2 * (90.000 + 10.000n) = 45.000n + 5.000n^2. Bagi dengan 5.000: n^2 + 9n - 252 = 0. Faktorkan: (n + 21)(n - 12) = 0. Karena n > 0, maka n = 12.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "aeff2aa6dcbc01e891b4a186",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: $S_{13}$ = Rp1.430.000, melebihi Rp1.260.000",
+            "B": "Benar: $S_n = \\frac{n}{2}(100 + 10(n-1)) = 5n^2 + 45n = 1.260$ (dalam ribuan) $\\Rightarrow n = 12$",
+            "C": "Salah: $S_{11}$ = Rp1.100.000, belum mencapai Rp1.260.000",
+            "D": "Salah: $S_{14}$ = Rp1.610.000, melebihi Rp1.260.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "d79afa991ce5d511d78ceb34",
+        "questionVersionId": "d79afa991ce5d511d78ceb34:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "d31f34a0ac058e51947ce895d3e8f9674f21dacd50b1da1f0f5a1c061e77dc54",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Deret",
+        "questionType": "multiple_choice",
+        "stem": "Pada suatu deret aritmetika, jumlah 9 suku pertama adalah 225 dan suku ke-3 adalah 13. Suku ke-12 deret tersebut adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "73"
+          },
+          {
+            "label": "B",
+            "text": "66"
+          },
+          {
+            "label": "C",
+            "text": "61"
+          },
+          {
+            "label": "D",
+            "text": "67"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "S_9 = 9/2(2a + 8b) = 9(a + 4b) = 225, maka a + 4b = 25. U_3 = a + 2b = 13. Eliminasi: (a + 4b) - (a + 2b) = 25 - 13 => 2b = 12 => b = 6. Substitusi: a + 2(6) = 13 => a = 1. U_12 = a + 11b = 1 + 11(6) = 1 + 66 = 67.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "d79afa991ce5d511d78ceb34",
+          "subchapter": "Deret",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai $n = 13$ (suku ke-13)",
+            "B": "Salah: lupa menambahkan suku pertama pada $U_{12}$",
+            "C": "Salah: memakai $n = 11$ (suku ke-11)",
+            "D": "Benar: $a + 4b = 25$ dan $a + 2b = 13$ sehingga $b = 6$, $a = 1$, $U_{12} = 1 + 66 = 67$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
     {
       "question": {
         "questionId": "d4d96bc9a5e5184fa89f2fa7",
@@ -54,7 +2053,7 @@
         "source": {
           "externalId": "d4d96bc9a5e5184fa89f2fa7",
           "subchapter": "Pinjaman dengan Anuitas",
-          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/batch01/kelas12_exercise_batch01",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
           "optionExtractionNotes": {
             "A": "Salah: hanya memakai selisih suku kedua dan ketiga; selisihnya tidak tetap",
             "B": "Benar: selisih 36.000 dan 37.080 tidak sama (bukan aritmetika), rasio 1.236.000/1.200.000 = 1.273.080/1.236.000 = 1,03; a_4 = 1.273.080 x 1,03 = 1.311.272,40",
