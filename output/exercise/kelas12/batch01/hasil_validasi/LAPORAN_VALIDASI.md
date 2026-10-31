@@ -1,6 +1,6 @@
 # Validasi ulang soal kelas 12 — LLM blind N=1 lanjutan dengan hasil N=3 terdahulu dan diagnostik IndoBERT
 
-**Batch belum selesai:** 144/842 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
+**Batch belum selesai:** 284/842 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided. Provider berhenti karena kuota harian; checkpoint kerja dapat dilanjutkan saat kuota tersedia.
 
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-sma12-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sma12-grade-aware`.
 
@@ -8,10 +8,10 @@ Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terd
 
 Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 12, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 836; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 30, "applying": 102, "reasoning": 6, "undecided": 698}, "knowledgeDimension": {"conceptual": 57, "procedural": 79, "factual": 2, "undecided": 698, "metacognitive": 0}, "intendedDifficulty": {"Easy": 106, "Medium": 32, "undecided": 698, "Hard": 0}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 30, "applying": 97, "reasoning": 6}, "knowledgeDimension": {"conceptual": 55, "procedural": 76, "factual": 2, "metacognitive": 0}, "intendedDifficulty": {"Easy": 101, "Medium": 32, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"silver_ready": 133, "needs_ai_review": 703}`.
-Run awal sukses: 144/842; adjudikasi: 3; token sukses tercatat: 426,957.
+Jumlah soal: 836; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 49, "applying": 220, "reasoning": 9, "undecided": 558}, "knowledgeDimension": {"conceptual": 106, "procedural": 166, "factual": 6, "undecided": 558, "metacognitive": 0}, "intendedDifficulty": {"Easy": 213, "Medium": 65, "undecided": 558, "Hard": 0}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 48, "applying": 215, "reasoning": 9}, "knowledgeDimension": {"conceptual": 103, "procedural": 163, "factual": 6, "metacognitive": 0}, "intendedDifficulty": {"Easy": 207, "Medium": 65, "Hard": 0}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"silver_ready": 272, "needs_ai_review": 563, "revision_required": 1}`.
+Run awal sukses: 284/842; adjudikasi: 3; token sukses tercatat: 848,384.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -24,8 +24,8 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 106 | 101 | [Easy.json](difficulty/Easy.json) |
-| Medium | 32 | 32 | [Medium.json](difficulty/Medium.json) |
+| Easy | 213 | 207 | [Easy.json](difficulty/Easy.json) |
+| Medium | 65 | 65 | [Medium.json](difficulty/Medium.json) |
 | Hard | 0 | 0 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
@@ -12231,52 +12231,49 @@ Tabungan Rp5.000.000,00 berbunga tunggal 4% per tahun, dengan bunga ditambahkan 
 | C | Hanya rumus Dani yang benar karena suku pertama barisan harus 5.200.000. |
 | D | Hanya rumus Eka yang benar karena memakai modal awal 5.000.000. |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Kedua rumus dapat disederhanakan menjadi 5.000.000+200.000n, sehingga menghasilkan nilai yang sama untuk setiap n; pilihan B benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `530698185e2709e2da2ef0cc34c1c060b7c86c27003d38c21753252c685677ac`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d4dbe9f7126bda17a894b0db3981a56ba99055baf8c63838e8584cbc9446da29`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | failed | — / — | — | — | — | 0 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 4765 |
 
-Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
+Run 1 — solusi: Kedua rumus dapat disederhanakan menjadi 5.000.000+200.000n, sehingga menghasilkan nilai yang sama untuk setiap n; pilihan B benar.
+- Domain kognitif `classify/applying`: Soal meminta membandingkan dua rumus aritmetika; siswa cukup melakukan substitusi dan penyederhanaan, tidak memerlukan penalaran kompleks.. Bukti: Rumus Dani dan Eka dapat disamakan dengan aljabar sederhana.
+- Dimensi pengetahuan `classify/conceptual`: Penilaian berhubungan dengan pemahaman konsep barisan aritmetika serta kemampuan mengidentifikasi bentuk yang setara.. Bukti: Mengenal barisan aritmetika dan penyederhanaan aljabar.
+- Intended difficulty `classify/Easy`: Solusi memerlukan satu atau dua operasi aljabar sederhana, representasi sudah familiar, tidak ada strategi non‑routine, sehingga tingkat kesulitan Easy.. Bukti: Rumus dapat disamakan dengan satu langkah aljabar; tidak ada keputusan strategi atau interaksi kendala yang rumit.
 
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+Profil difficulty run ini:
 
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
-
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pengetahuan barisan aritmetika dan kemampuan menyederhanakan ekspresi aljabar sederhana. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Kesulitan sesuai kemampuan kelas 12; langkah minimal dan bantuan soal cukup, tidak memerlukan perencanaan tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12308,9 +12305,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 137. Soal `36db73cb935a32cd73f47bbf`
@@ -12324,32 +12321,49 @@ Pada bunga tunggal, besar bunga $B = M \times p\% \times n$. Sebuah simpanan diu
 | C | 1 kali |
 | D | 5,5 kali |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga menjadi 3 kali bunga semula.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c0545f79d94afc6a3ae15eada283fd3df59fcecd62dc6f7eaaf32047e406fd7b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `33ce95aacaf1f4915423564dd45dc4ace4c50ed655b715599002393f1a07da70`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
-| 1 | failed | — / — | — | — | — | 0 |
+| 1 | success | valid / verified | applying | conceptual | Easy | 4704 |
 
-Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
+Run 1 — solusi: Bunga menjadi 3 kali bunga semula.
+- Domain kognitif `classify/applying`: Soal meminta menghitung perubahan bunga dengan menggunakan rumus bunga tunggal, siswa hanya mengalikan faktor perubahan yang diberikan.. Bukti: faktor perubahan 2 x 1/2 x 3 = 3
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman hubungan antara modal, persentase, dan lama waktu dalam rumus bunga tunggal.. Bukti: B = M × p% × n; faktor perubahan 2, 1/2, 3
+- Intended difficulty `classify/Easy`: Penyelesaian memerlukan satu operasi perkalian faktor perubahan; tidak ada perencanaan atau integrasi konsep tambahan, sehingga mudah bagi siswa kelas 12.. Bukti: hanya satu langkah menghitung faktor perubahan
 
-Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal B = M·p%·n dan kemampuan mengalikan faktor perubahan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Langkah hanya menghitung faktor perubahan 2×½×3 sehingga mudah bagi siswa kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12381,9 +12395,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 138. Soal `c430228d9af771a97dfe8ca6`
@@ -12397,27 +12411,49 @@ Bu Rina ingin memperoleh bunga tunggal paling sedikit Rp2.000.000,00 dari simpan
 | C | Rp34.000.000,00 |
 | D | Rp11.111.111,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: M * 0.06 * 3 ≥ 2,000,000 → M ≥ 11,111,111.1; smallest multiple of 1,000,000 is 12,000,000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5daf1e9bbe72ce3fc235e330dfafee8e0dafa9d7c657cf98a3651d347cd7ef1c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4b82a9ca894a14553d8bcba4920426e3745d05ab263db5ab54bc22a3d16f58c4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4818 |
+
+Run 1 — solusi: M * 0.06 * 3 ≥ 2,000,000 → M ≥ 11,111,111.1; smallest multiple of 1,000,000 is 12,000,000.
+- Domain kognitif `classify/applying`: Soal meminta menghitung modal dengan rumus bunga tunggal sederhana, memilih nilai terkecil yang memenuhi syarat, sehingga termasuk domain applying.. Bukti: M * 0.06 * 3 ≥ 2,000,000; kelipatan terkecil 12,000,000
+- Dimensi pengetahuan `classify/procedural`: Penggunaan prosedur perhitungan bunga sederhana dan pembulatan nilai modal merupakan pengetahuan prosedural.. Bukti: rumus bunga tunggal M × r × t; kelipatan Rp1.000.000
+- Intended difficulty `classify/Easy`: Soal hanya memerlukan penerapan langsung rumus bunga tunggal dan pembulatan ke kelipatan terdekat; langkah terhubung secara langsung, beban perhitungan rendah, sehingga mudah bagi siswa kelas 12.. Bukti: rumus sederhana, satu langkah aljabar, pilihan langsung; tidak ada perencanaan strategi kompleks
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami rumus bunga tunggal M·r·t dan konsep kelipatan rupiah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Langkah minimal dan representasi familiar, cocok untuk standar kelas 12 tanpa bantuan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12449,9 +12485,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 139. Soal `d307e5fa2764838d8bacb6a5`
@@ -12465,27 +12501,49 @@ Sebuah tabungan berbunga tunggal 8% per tahun dari modal awal. Bunga ditambahkan
 | C | 12 |
 | D | 14 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: n = 13 years
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c573c6bf3a314775eef818983912c1e4dbe527eb918316aafee9be89a03c20f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a00776524e5d5c0d74637ac14e9981da7036db38be24cad55edca5ad489ca9d9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4698 |
+
+Run 1 — solusi: n = 13 years
+- Domain kognitif `classify/applying`: Soal meminta menghitung tahun minimum dengan bunga tunggal; siswa cukup mengenali rumus sederhana dan menerapkannya, tanpa perlu memilih strategi baru.. Bukti: Saldo = M(1+0,08n) >= 2M; n dibulatkan ke atas menjadi 13
+- Dimensi pengetahuan `classify/procedural`: Menggunakan prosedur perhitungan bunga sederhana, termasuk manipulasi aljabar dasar.. Bukti: Rumus bunga tunggal M(1+rt); Inequality 1+0,08n >= 2
+- Intended difficulty `classify/Easy`: Solusi memerlukan dua langkah berurutan yang sudah sangat familiar bagi siswa kelas 12; beban kalkulasi rendah, tidak ada kendala interaktif, scaffold tidak diperlukan, sehingga mudah.. Bukti: Langkah terbatas: susun inequality, selesaikan n; Tidak ada perpindahan representasi atau keputusan strategi
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga tunggal M(1+rt) dan penyelesaian sederhana inequality. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Kebutuhan langkah minimal dan prosedur sudah dikuasai pada materi kelas 12, sehingga tidak menimbulkan beban kognitif signifikan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12517,9 +12575,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 140. Soal `fb137b5e4d41ab375b97d877`
@@ -12533,27 +12591,49 @@ Modal Rp10.000.000,00 dapat disimpan selama 2,5 tahun di salah satu bank. Bank A
 | C | Bank B lebih menguntungkan, selisih bunga Rp40.000,00. |
 | D | Bank B lebih menguntungkan, selisih bunga Rp100.000,00. |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bank A: 10.000.000 × 0.06 × 2.5 = 1.500.000; Bank B: 10.000.000 × 0.032 × (2.5 yr ÷ 0.5 yr) = 10.000.000 × 0.032 × 5 = 1.600.000; selisih = 100.000, sehingga pilihan D benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `209944585b290c3581ca92d3881fdfdabc68b864bb229bd8735f66d3da6eb759`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `913957a0719027715fba5a721a4c3339bd17540811498c4459910b819a3f5263`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4893 |
+
+Run 1 — solusi: Bank A: 10.000.000 × 0.06 × 2.5 = 1.500.000; Bank B: 10.000.000 × 0.032 × (2.5 yr ÷ 0.5 yr) = 10.000.000 × 0.032 × 5 = 1.600.000; selisih = 100.000, sehingga pilihan D benar.
+- Domain kognitif `classify/applying`: Soal meminta menghitung dan membandingkan bunga tunggal; siswa cukup menerapkan rumus bunga sederhana, tidak memerlukan pemilihan strategi non‑rutin.. Bukti: Bank A: 10.000.000 × 0.06 × 2.5 = 1.500.000; Bank B: 10.000.000 × 0.032 × 5 = 1.600.000; selisih = 100.000
+- Dimensi pengetahuan `classify/procedural`: Soal menguji prosedur perhitungan bunga tunggal dan konversi satuan waktu, sehingga dimensi pengetahuan prosedural.. Bukti: bunga tunggal = pokok × tarif × waktu; konversi periode semester ke tahun (5 semester = 2,5 tahun)
+- Intended difficulty `classify/Easy`: Penyelesaian membutuhkan dua langkah terikat (hitung masing‑masing bunga, bandingkan). Semua prosedur familiar bagi siswa kelas 12, tidak memerlukan perencanaan kompleks atau interaksi kendala; beban perhitungan rendah.. Bukti: hitung dua nilai bunga dan selisihnya; tidak ada keputusan strategi atau kendala tambahan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengerti rumus bunga tunggal dan konversi satuan waktu (semester ↔ tahun). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Langkah minimal yang diperlukan sesuai dengan materi kelas 12; tidak ada hambatan konseptual atau perencanaan lanjutan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12585,9 +12665,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 141. Soal `9848d70ed51d04db04a25eb8`
@@ -12601,27 +12681,49 @@ Pak Tono meminjam Rp9.000.000,00 dan harus melunasinya dengan angsuran bulanan s
 | C | Total bayar Skema X lebih kecil Rp360.000,00 dan angsuran bulanannya lebih besar Rp140.000,00 daripada Skema Y. |
 | D | Total bayar Skema Y lebih kecil Rp360.000,00 dan angsuran bulanannya lebih kecil Rp140.000,00 daripada Skema X. |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Hitung total pembayaran tiap skema: X: bunga = 9.000.000 × 10% × 2 = 1.800.000, total = 10.800.000, angsuran = 10.800.000 ÷ 24 = 450.000. Y: bunga = 9.000.000 × 8% × 3 = 2.160.000, total = 11.160.000, angsuran = 11.160.000 ÷ 36 = 310.000. Selisih total = 360.000, selisih angsuran = 140.000, sehingga pernyataan C benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ac0f0877e7c93956bcb521064f389afe83f7988922b54de75b815c5dab694aa2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `14125f7ddb60bfcd4a304a6570df42f898f8198e767fcd34db70c09b96dab0dd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 5138 |
+
+Run 1 — solusi: Hitung total pembayaran tiap skema: X: bunga = 9.000.000 × 10% × 2 = 1.800.000, total = 10.800.000, angsuran = 10.800.000 ÷ 24 = 450.000. Y: bunga = 9.000.000 × 8% × 3 = 2.160.000, total = 11.160.000, angsuran = 11.160.000 ÷ 36 = 310.000. Selisih total = 360.000, selisih angsuran = 140.000, sehingga pernyataan C benar.
+- Domain kognitif `classify/applying`: Soal meminta membandingkan total pembayaran dan angsuran; siswa cukup menerapkan rumus bunga tunggal dan pembagian, langkah rutin tanpa pilihan strategi.. Bukti: Hitung total pembayaran tiap skema: X: bunga = 9.000.000 × 10% × 2 = 1.800.000, total = 10.800.000, angsuran = 10.800.000 ÷ 24 = 450.000.; Y: bunga = 9.000.000 × 8% × 3 = 2.160.000, total = 11.160.000, angsuran = 11.160.000 ÷ 36 = 310.000.
+- Dimensi pengetahuan `classify/procedural`: Soal menguji prosedur menghitung bunga tunggal dan konversi menjadi angsuran bulanan, termasuk penggunaan rumus matematika yang sudah dipelajari.. Bukti: Rumus bunga tunggal: Bunga = Pokok × suku bunga × lama (tahun).; Pembagian total dengan jumlah bulan untuk angsuran.
+- Intended difficulty `classify/Easy`: Penyelesaian memerlukan tiga langkah berurutan yang semua prosedurnya familiar bagi siswa kelas 12; tidak ada keputusan strategi atau kendala interaktif, beban perhitungan rendah, sehingga termasuk Easy.. Bukti: Langkah 1: menghitung bunga masing‑masing skema (dua operasi).; Langkah 2: menambah pokok, membagi dengan jumlah bulan (dua operasi).; Langkah 3: membandingkan selisih total dan selisih angsuran.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Mengerti rumus bunga tunggal (I = P·r·t) dan cara menghitung angsuran = total pembayaran ÷ jumlah bulan. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 sudah terbiasa menghitung bunga tunggal dan membagi total menjadi angsuran; tidak diperlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12653,9 +12755,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 142. Soal `16f726a8fe436f5699256e2a`
@@ -12669,27 +12771,49 @@ Pak Surya membagi uang Rp20.000.000,00 menjadi dua simpanan. Sebagian disimpan d
 | C | Rp12.000.000,00 |
 | D | Rp6.000.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Misalkan uang di Bank P = x. Bunga = 0.06·5·x + 0.04·5·(20.000.000‑x) = 4.600.000 → 0.1x = 600.000 → x = 6.000.000 rupiah.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `72d4029b4225f96212818b6966b6ab54de28a32581e9a3acac809001f6b7ba58`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e2f016b6610d85f24c06d61721f632334df28caeda8213111bb02703cb40c7c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4991 |
+
+Run 1 — solusi: Misalkan uang di Bank P = x. Bunga = 0.06·5·x + 0.04·5·(20.000.000‑x) = 4.600.000 → 0.1x = 600.000 → x = 6.000.000 rupiah.
+- Domain kognitif `classify/applying`: Soal meminta menghitung nilai pokok dengan menggunakan rumus bunga tunggal; langkahnya rutin dan tidak memerlukan strategi khusus.. Bukti: 0,3x + 0,2(20.000.000 - x) = 4.600.000 sehingga 0,1x = 600.000, x = 6.000.000
+- Dimensi pengetahuan `classify/procedural`: Diperlukan prosedur menghitung bunga tunggal dan menyusun persamaan linear.. Bukti: Bunga tunggal 6% per tahun, 4% per tahun, periode 5 tahun
+- Intended difficulty `classify/Easy`: Penyelesaian melibatkan dua langkah terhubung (menyusun persamaan, menyelesaikannya); semua langkah rutin bagi siswa kelas 12, beban perhitungan rendah, bantuan soal lengkap, sehingga termasuk Easy.. Bukti: Rumus sederhana Bunga = P·r·t, satu persamaan linear, pilihan jawaban langsung; Tidak ada transfer representasi atau keputusan strategi kompleks
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami rumus bunga tunggal B = P·r·t dan kemampuan menyusun serta menyelesaikan persamaan linear sederhana. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Solusi minimum jelas, hanya membutuhkan penerapan rumus dan aljabar dasar; sesuai kemampuan standar kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12721,9 +12845,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 143. Soal `9c22f11bb91234b5576800c1`
@@ -12737,27 +12861,49 @@ Pak Yusuf meminjam Rp7.200.000,00 dengan bunga tunggal 5% per tahun dan akan mel
 | C | Persentase seharusnya 0,5 sehingga angsurannya Rp3.000,00. |
 | D | Bunga seharusnya dikalikan 36 lagi sehingga angsurannya Rp1.080.000,00. |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total bunga = 7.200.000 × 0,05 × 3 = 1.080.000; total bayar = 7.200.000 + 1.080.000 = 8.280.000; angsuran per bulan = 8.280.000 ÷ 36 = 230.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5931133e88437e2455a55b1c0610c08178b54efcd8e70d5d443d0a443729deb3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2fb0abd9cee73a7e4c947475b7134241e7bd297f8cacb4e60693088dcbc3a3e4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 5023 |
+
+Run 1 — solusi: Total bunga = 7.200.000 × 0,05 × 3 = 1.080.000; total bayar = 7.200.000 + 1.080.000 = 8.280.000; angsuran per bulan = 8.280.000 ÷ 36 = 230.000.
+- Domain kognitif `classify/applying`: Soal meminta mengidentifikasi kesalahan perhitungan; siswa harus menerapkan rumus bunga tunggal dan pembagian total pembayaran, sehingga termasuk domain applying.. Bukti: bunga tunggal 5% per tahun; angsuran bulanan sama besar selama 3 tahun; siswa menghitung angsuran per bulan sebagai ... = 30.000; kunci pada sumber: B
+- Dimensi pengetahuan `classify/procedural`: Menuntut penggunaan prosedur perhitungan bunga sederhana dan amortisasi, termasuk langkah prosedural.. Bukti: bunga tunggal 5% per tahun; total bayar = pokok + bunga; pembagian dengan 36 bulan
+- Intended difficulty `classify/Easy`: Penyelesaian memerlukan dua langkah berurutan (hitung bunga, bagi total dengan bulan) tanpa strategi nonrutin; langkah jelas dan familiar bagi siswa kelas 12, sehingga kategori Easy.. Bukti: total bunga = 7.200.000 × 0,05 × 3; total bayar dibagi 36 bulan; pilihan jawaban menjelaskan kesalahan umum
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami bunga tunggal, konversi persen ke desimal, pembagian bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Langkah minimum diperlukan sesuai kurikulum kelas 12; tidak ada perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12789,9 +12935,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 144. Soal `23733fad8863237e79291e0c`
@@ -12805,27 +12951,49 @@ Klaim: "Jika dua simpanan berbunga tunggal disimpan selama waktu yang sama, simp
 | C | X: Rp8.000.000,00 dengan bunga 5%; Y: Rp5.000.000,00 dengan bunga 6% |
 | D | X: Rp9.000.000,00 dengan bunga 2%; Y: Rp9.000.000,00 dengan bunga 8% |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga tunggal (I) dirumuskan sebagai I = P * r * t. Klaim menyatakan jika r2 > r1, maka I2 > I1 untuk t yang sama. Penyangkal (counterexample) adalah kondisi di mana r2 > r1 tetapi I2 < I1, yang terjadi jika P2 * r2 < P1 * r1. Pada opsi C: I_X = 8.000.000 * 5% = 400.000; I_Y = 5.000.000 * 6% = 300.000. Meskipun bunga Y (6%) > bunga X (5%), hasil bunga Y (300.000) < X (400.000).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e3e48c68f1d6b7dee09a723597decc664360c488eec2d6171ce4a725c5a16a7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ab14005b10b5d0e8c91c3c1453d62fa2775972f129216688222cf424c7a505bf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3060 |
+
+Run 1 — solusi: Bunga tunggal (I) dirumuskan sebagai I = P * r * t. Klaim menyatakan jika r2 > r1, maka I2 > I1 untuk t yang sama. Penyangkal (counterexample) adalah kondisi di mana r2 > r1 tetapi I2 < I1, yang terjadi jika P2 * r2 < P1 * r1. Pada opsi C: I_X = 8.000.000 * 5% = 400.000; I_Y = 5.000.000 * 6% = 300.000. Meskipun bunga Y (6%) > bunga X (5%), hasil bunga Y (300.000) < X (400.000).
+- Domain kognitif `classify/reasoning`: Siswa harus memahami konsep bunga tunggal dan secara kritis mengevaluasi pernyataan matematis dengan mencari contoh penyangkal (counterexample). Ini memerlukan pemahaman hubungan antara modal, suku bunga, dan hasil bunga, bukan sekadar menghitung.. Bukti: simpanan dengan persentase bunga lebih besar selalu menghasilkan bunga lebih besar; Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana variabel-variabel dalam rumus bunga tunggal berinteraksi dan kemampuan untuk menguji validitas klaim matematis.. Bukti: bunga tunggal; contoh penyangkal klaim
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan evaluasi terhadap beberapa opsi untuk menemukan penyangkal klaim. Meskipun rumusnya familiar, siswa perlu mengintegrasikan pemahaman bahwa modal (P) juga berpengaruh signifikan terhadap hasil bunga, bukan hanya persentase (r).. Bukti: contoh penyangkal klaim; X: Rp8.000.000,00 dengan bunga 5%; Y: Rp5.000.000,00 dengan bunga 6%
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal (I = P x r x t) dan pemahaman dasar tentang perbandingan variabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan analisis kritis terhadap klaim matematis sederhana. Soal ini menuntut pemilihan opsi yang tepat berdasarkan pemahaman konsep, bukan sekadar komputasi rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12857,9 +13025,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 145. Soal `bfa31bd57521547fab89a2c4`
@@ -12873,27 +13041,49 @@ Tina menyimpan Rp6.000.000,00 dan Umi menyimpan Rp4.000.000,00, keduanya dengan 
 | C | 8% |
 | D | 6% |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `6%`.
+Solusi minimum hasil AI: Misal r adalah suku bunga Tina (dalam persen). Maka suku bunga Umi adalah r + 2. Bunga tunggal: B = P * r * t. Karena bunga sama: 6.000.000 * r * 5 = 4.000.000 * (r + 2) * 5. Bagi kedua sisi dengan 20.000.000: 1,5 * r = r + 2. Maka 0,5 * r = 2, sehingga r = 4%. Suku bunga Umi = r + 2 = 4% + 2% = 6%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c3dbde17fdb2feadcaa4ad32114b9d2395665891fcbf21a1260b3a552329291e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bbb001827c487b0ccb59921b146aa022063ad4eedbcae4657f3808970f5b9d19`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2888 |
+
+Run 1 — solusi: Misal r adalah suku bunga Tina (dalam persen). Maka suku bunga Umi adalah r + 2. Bunga tunggal: B = P * r * t. Karena bunga sama: 6.000.000 * r * 5 = 4.000.000 * (r + 2) * 5. Bagi kedua sisi dengan 20.000.000: 1,5 * r = r + 2. Maka 0,5 * r = 2, sehingga r = 4%. Suku bunga Umi = r + 2 = 4% + 2% = 6%.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan informasi verbal ke dalam model matematika (persamaan bunga tunggal) dan menyelesaikan sistem persamaan linear satu variabel. Ini melibatkan penerapan konsep bunga tunggal pada situasi yang sedikit dimodifikasi, bukan sekadar substitusi langsung.. Bukti: Persentase bunga per tahun simpanan Umi 2 poin persentase lebih besar daripada simpanan Tina; bunga yang mereka terima selama 5 tahun sama besar
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami hubungan konseptual antara modal, suku bunga, waktu, dan bunga yang dihasilkan dalam konteks bunga tunggal untuk menyusun persamaan yang tepat.. Bukti: bunga tunggal selama 5 tahun; Persentase bunga per tahun simpanan Umi 2 poin persentase lebih besar
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perencanaan langkah (menyusun persamaan dari dua kondisi yang berbeda) dan integrasi variabel yang saling bergantung. Meskipun prosedurnya familiar, siswa harus mampu mengonstruksi persamaan sendiri tanpa bantuan langkah-langkah eksplisit.. Bukti: bunga yang mereka terima selama 5 tahun sama besar; Persentase bunga per tahun simpanan Umi 2 poin persentase lebih besar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal (B = P * r * t) dan aljabar linear satu variabel. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu memodelkan masalah keuangan sederhana ke dalam persamaan linear. Tingkat kesulitan terletak pada penyusunan model, bukan pada kompleksitas hitungan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12925,9 +13115,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 146. Soal `ed7141612c51f7385ab1415c`
@@ -12941,27 +13131,49 @@ Pak Anto ingin mendapat bunga tunggal tepat Rp300.000,00 setiap bulan dari sebua
 | C | Modal Rp60.000.000,00 dengan bunga 6% per tahun |
 | D | Modal Rp72.000.000,00 dengan bunga 6% per tahun |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga tunggal per bulan = (Modal * suku bunga per tahun) / 12. Untuk opsi C: (60.000.000 * 0,06) / 12 = 3.600.000 / 12 = 300.000. Sesuai dengan target.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d3f6da896c994c4793edea8f38fc88c0b6d3e72a884dd93ddc93106194981f29`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9c310dc0c0692d185f7acb60f38fd7260515738a4dec71f0dcbe77ea97fe670d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2801 |
+
+Run 1 — solusi: Bunga tunggal per bulan = (Modal * suku bunga per tahun) / 12. Untuk opsi C: (60.000.000 * 0,06) / 12 = 3.600.000 / 12 = 300.000. Sesuai dengan target.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal untuk memverifikasi pasangan modal dan suku bunga yang diberikan dalam pilihan jawaban agar menghasilkan bunga bulanan yang tepat.. Bukti: Pak Anto ingin mendapat bunga tunggal tepat Rp300.000,00 setiap bulan; Pasangan modal dan persentase bunga per tahun yang memenuhi keinginan Pak Anto adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang perhitungan bunga tunggal dan konversi bunga tahunan ke bulanan.. Bukti: bunga tunggal tepat Rp300.000,00 setiap bulan; Pasangan modal dan persentase bunga per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena siswa hanya perlu menguji pilihan jawaban menggunakan rumus bunga tunggal sederhana. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Pak Anto ingin mendapat bunga tunggal tepat Rp300.000,00 setiap bulan; Pasangan modal dan persentase bunga per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan perhitungan persentase. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah materi dasar kelas 12. Soal ini hanya memerlukan substitusi nilai ke dalam rumus, sehingga tergolong mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -12993,9 +13205,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 147. Soal `f20ec6e425d9a3d07b619b71`
@@ -13009,27 +13221,49 @@ Dimas mengikuti program Young Business Camp di sekolahnya. Untuk membeli peralat
 | C | Rp115.000,00 |
 | D | Rp100.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total pinjaman (M) = 3.600.000. Bunga total (B) = M x i x t = 3.600.000 x 0,05 x 3 = 540.000. Total pengembalian = 3.600.000 + 540.000 = 4.140.000. Cicilan per bulan = 4.140.000 / (3 x 12) = 4.140.000 / 36 = 115.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `78ea3e22d5c8033ebf5ea80753ff809b14d9120e37105c10658c483a3ad38807`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e235a965fc95ac6abdd7398ded3ec5c295d7264b35263a9d0e43e394754c8f3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2875 |
+
+Run 1 — solusi: Total pinjaman (M) = 3.600.000. Bunga total (B) = M x i x t = 3.600.000 x 0,05 x 3 = 540.000. Total pengembalian = 3.600.000 + 540.000 = 4.140.000. Cicilan per bulan = 4.140.000 / (3 x 12) = 4.140.000 / 36 = 115.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga tunggal, menghitung total bunga selama periode pinjaman, menambahkan dengan pokok, dan membagi dengan total bulan. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Koperasi tersebut menerapkan bunga sederhana sebesar 5% per tahun; memberikan keringanan berupa angsuran bulanan tetap selama 3 tahun; Berapakah cicilan yang harus dibayarkan Dimas setiap bulan?
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang konsep bunga tunggal dan prosedur perhitungan angsuran tetap, yang merupakan pengetahuan prosedural.. Bukti: bunga sederhana sebesar 5% per tahun; angsuran bulanan tetap selama 3 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan prosedur bunga tunggal yang standar. Siswa hanya perlu mengonversi durasi tahun ke bulan dan melakukan operasi aritmetika dasar. Tidak ada kendala yang berinteraksi atau strategi nonrutin yang diperlukan.. Bukti: bunga sederhana sebesar 5% per tahun; angsuran bulanan tetap selama 3 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar di kelas 12. Prosedur perhitungan bunga dan pembagian angsuran merupakan rutinitas yang diharapkan sudah dikuasai. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13061,9 +13295,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 148. Soal `474750e6f2a1aab982d1d5d9`
@@ -13077,27 +13311,49 @@ Bu Wulan membutuhkan modal untuk membeli mesin jahit sehingga ia meminjam uang R
 | C | Rp530.000,00 |
 | D | Rp1.040.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total pinjaman = Pokok + Bunga. Bunga = Pokok x suku bunga x waktu (dalam tahun). Waktu = 18 bulan = 1,5 tahun. Bunga = 9.000.000 x 0,06 x 1,5 = 810.000. Total pengembalian = 9.000.000 + 810.000 = 9.810.000. Angsuran per bulan = 9.810.000 / 18 = 545.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `83704a1ea778210e92282e906c14ee32d43550489b41b29529424d018e4b8683`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `294f933c081bd060169d891910fb96ad1e3dd17c2c8f08dca0da4a97e9f76fa7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2827 |
+
+Run 1 — solusi: Total pinjaman = Pokok + Bunga. Bunga = Pokok x suku bunga x waktu (dalam tahun). Waktu = 18 bulan = 1,5 tahun. Bunga = 9.000.000 x 0,06 x 1,5 = 810.000. Total pengembalian = 9.000.000 + 810.000 = 9.810.000. Angsuran per bulan = 9.810.000 / 18 = 545.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga tunggal, mengonversi satuan waktu (bulan ke tahun), menghitung total bunga, menjumlahkannya dengan pokok, dan membaginya dengan durasi angsuran. Ini adalah penerapan prosedur standar pada konteks keuangan rutin.. Bukti: Koperasi mengenakan bunga tunggal 6% per tahun.; Pinjaman itu harus dilunasi dengan angsuran yang sama besar setiap bulan selama 18 bulan.
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritme perhitungan bunga tunggal dan prosedur pembagian angsuran secara proporsional.. Bukti: bunga tunggal 6% per tahun; angsuran yang sama besar setiap bulan selama 18 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menerapkan rumus bunga tunggal dan melakukan pembagian sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: bunga tunggal 6% per tahun; angsuran yang sama besar setiap bulan selama 18 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik standar kelas 12. Prosedur penyelesaian sangat langsung dan tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13129,9 +13385,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 149. Soal `3e7a5d36f53cbb680f5674b5`
@@ -13145,27 +13401,49 @@ Dika memenangkan lomba desain poster dan memperoleh hadiah pertama sebesar Rp12.
 | C | Rp18.519.618,00 |
 | D | Rp5.400.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tunggal (B) = P x r x t = 12.000.000 x 0,075 x 6 = 5.400.000. Total uang = Modal + Bunga = 12.000.000 + 5.400.000 = 17.400.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `63b7354f2944bf90a2ffbf4a26e2d9786479e528bf999d49a07ef5020295421c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a4557bdfae21e8b198d5e7d6d3db3d5797f9cae1bd4d5a48547346e45958332e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2781 |
+
+Run 1 — solusi: Bunga tunggal (B) = P x r x t = 12.000.000 x 0,075 x 6 = 5.400.000. Total uang = Modal + Bunga = 12.000.000 + 5.400.000 = 17.400.000.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengidentifikasi konsep bunga tunggal dan menerapkan rumus dasar bunga tunggal (B = P x r x t) serta menjumlahkannya dengan modal awal. Ini adalah penerapan prosedur yang sangat langsung dan rutin.. Bukti: memberikan bunga tunggal sebesar 7,5% per tahun; Berapa total uang yang didapatkan Dika selama 6 tahun?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal, yang merupakan pengetahuan prosedural standar dalam materi keuangan kelas 12.. Bukti: bunga tunggal sebesar 7,5% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks. Siswa hanya perlu memasukkan nilai ke dalam rumus bunga tunggal yang sudah dikenal.. Bukti: Berapa total uang yang didapatkan Dika selama 6 tahun?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan operasi aritmetika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar di kelas 12. Soal ini tidak memerlukan manipulasi aljabar atau penalaran tingkat tinggi, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13197,9 +13475,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 150. Soal `40265cc5851d141238558309`
@@ -13213,27 +13491,49 @@ Tamara menerima honor pertama dari menulis cerpen sebesar Rp8.000.000,00 lalu me
 | C | Rp9.200.000,00 |
 | D | Rp22.400.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Modal (P) = 8.000.000. Bunga (r) = 6% per tahun. Waktu (t) = 30 bulan = 2,5 tahun. Bunga tunggal (B) = P x r x t = 8.000.000 x 0,06 x 2,5 = 1.200.000. Saldo akhir = P + B = 8.000.000 + 1.200.000 = 9.200.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `92636f917214c033902cb822dc3f0894f54306ad16e17fe28e462fa3b8858119`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1d10dd7e76bda9260fa17a4bfd2c80de3860918daf219e973d1430dcd86c1fd9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2811 |
+
+Run 1 — solusi: Modal (P) = 8.000.000. Bunga (r) = 6% per tahun. Waktu (t) = 30 bulan = 2,5 tahun. Bunga tunggal (B) = P x r x t = 8.000.000 x 0,06 x 2,5 = 1.200.000. Saldo akhir = P + B = 8.000.000 + 1.200.000 = 9.200.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi parameter bunga tunggal, melakukan konversi satuan waktu dari bulan ke tahun, menerapkan rumus bunga tunggal, dan menjumlahkannya dengan modal awal. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Bank itu membayar bunga tunggal 6% per tahun; saldo tabungan setelah 30 bulan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan hubungan antara modal, bunga, dan waktu.. Bukti: bunga tunggal 6% per tahun; saldo tabungan setelah 30 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah yang jelas. Siswa hanya perlu mengonversi satuan waktu dan menerapkan rumus bunga tunggal standar. Tidak ada kendala yang berinteraksi atau strategi nonrutin yang diperlukan.. Bukti: bunga tunggal 6% per tahun; saldo tabungan setelah 30 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan konversi satuan waktu (bulan ke tahun). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal ini tidak memiliki jebakan konseptual yang kompleks, hanya memerlukan ketelitian dalam konversi satuan waktu. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13265,9 +13565,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 151. Soal `c19f2936e489f88c20647219`
@@ -13281,27 +13581,49 @@ Eko menabung Rp5.000.000,00 di bank dengan bunga tunggal 6% per tahun. Bunga dit
 | C | 40 |
 | D | 4 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga total = 6.200.000 - 5.000.000 = 1.200.000. Bunga per tahun = 6% * 5.000.000 = 300.000. Lama menabung (n) = Bunga total / Bunga per tahun = 1.200.000 / 300.000 = 4 tahun.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cedc0e447daae2adb4f1e9e9c189ccbcc938a59ccadcbc8f3b4cbe9eb6d07789`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2380212c3da3361f58361fdf0264bf15cc3d6edeaa90415cf06a7da3ed0e875a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2807 |
+
+Run 1 — solusi: Bunga total = 6.200.000 - 5.000.000 = 1.200.000. Bunga per tahun = 6% * 5.000.000 = 300.000. Lama menabung (n) = Bunga total / Bunga per tahun = 1.200.000 / 300.000 = 4 tahun.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal sederhana untuk mencari durasi waktu. Siswa perlu mengidentifikasi bunga yang diperoleh, menghitung bunga per tahun, dan membagi total bunga dengan bunga per tahun. Ini adalah penerapan prosedur rutin.. Bukti: bunga tunggal 6% per tahun; Saldo tabungan Eko menjadi Rp6.200.000,00 setelah menabung selama ... tahun
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan algoritma bunga tunggal (I = P * r * t) yang merupakan prosedur standar dalam matematika keuangan.. Bukti: bunga tunggal 6% per tahun; Saldo tabungan Eko menjadi Rp6.200.000,00
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung. Siswa hanya perlu menghitung selisih saldo untuk mendapatkan total bunga, menghitung bunga tahunan, dan membaginya. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: bunga tunggal 6% per tahun; Saldo tabungan Eko menjadi Rp6.200.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan operasi aritmetika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari rumus bunga tunggal yang merupakan materi dasar kelas 12. Tidak ada kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13333,9 +13655,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 152. Soal `4cf2648d8e554733c30b934e`
@@ -13349,27 +13671,49 @@ Sinta menabung Rp4.000.000,00 di sebuah bank. Bunga tunggal tetap ditambahkan ke
 | C | 5% |
 | D | 25% |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga total (B) = Rp5.000.000 - Rp4.000.000 = Rp1.000.000. Rumus bunga tunggal: B = M0 * i * n. Maka, 1.000.000 = 4.000.000 * i * 5. 1.000.000 = 20.000.000 * i. i = 1.000.000 / 20.000.000 = 0,05 atau 5%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f2e634a951fe2ea7484cf4d2e9b94c3cf6b32593097d897bd1733a08764f81b6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `56dce6b029ae12395d2397ef5d41906991bee4cb0784c73bd9e4cc0c493f8b0c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2836 |
+
+Run 1 — solusi: Bunga total (B) = Rp5.000.000 - Rp4.000.000 = Rp1.000.000. Rumus bunga tunggal: B = M0 * i * n. Maka, 1.000.000 = 4.000.000 * i * 5. 1.000.000 = 20.000.000 * i. i = 1.000.000 / 20.000.000 = 0,05 atau 5%.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal untuk mencari suku bunga. Siswa perlu mengidentifikasi variabel yang diketahui (modal awal, saldo akhir, waktu) dan menerapkan prosedur standar untuk menghitung suku bunga. Ini adalah penerapan konsep rutin.. Bukti: Persentase bunga tunggal per tahun yang diberikan bank adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami prinsip bunga tunggal (konsep) dan menggunakan rumus bunga tunggal (prosedur) untuk menyelesaikan masalah.. Bukti: Bunga tunggal tetap ditambahkan ke saldo setiap akhir tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menghitung selisih saldo untuk mendapatkan bunga total, lalu membaginya dengan modal awal dan durasi waktu. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Sinta menabung Rp4.000.000,00; Pada akhir tahun kelima, saldo tabungan Sinta menjadi Rp5.000.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan operasi aritmatika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari rumus bunga tunggal yang dipelajari di kelas 12, dengan beban kognitif yang rendah karena langkah-langkahnya sangat linear. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13401,9 +13745,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 153. Soal `c812951d904807aeac35446d`
@@ -13417,27 +13761,49 @@ Pak Rahmat menyimpan sejumlah uang di koperasi dengan bunga tunggal 8% per tahun
 | C | Rp6.000.000,00 |
 | D | Rp7.286.400,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total uang (A) = Modal (M) + Bunga. Bunga = M * i * t. Maka A = M(1 + i * t). Diketahui A = 7.920.000, i = 0,08, t = 4. A = M(1 + 0,08 * 4) = M(1,32). M = 7.920.000 / 1,32 = 6.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `255adaea11c9501c22de26352b8b88423a0adb9fa97ff016215430798be49b31`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1bc79c7aab0c1f94928983b342f0843e59418f2311de0c03b3d6f6a0deb5e8bf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3336 |
+
+Run 1 — solusi: Total uang (A) = Modal (M) + Bunga. Bunga = M * i * t. Maka A = M(1 + i * t). Diketahui A = 7.920.000, i = 0,08, t = 4. A = M(1 + 0,08 * 4) = M(1,32). M = 7.920.000 / 1,32 = 6.000.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal untuk mencari modal awal, yang merupakan prosedur standar dan rutin dalam materi keuangan kelas 12.. Bukti: bunga tunggal 8% per tahun; Setelah 4 tahun, total uang Pak Rahmat menjadi Rp7.920.000,00
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menggunakan algoritma perhitungan bunga tunggal (M = A / (1 + i*t)) untuk menyelesaikan masalah.. Bukti: bunga tunggal 8% per tahun; Setelah 4 tahun, total uang Pak Rahmat menjadi Rp7.920.000,00
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas dan langsung menggunakan rumus bunga tunggal tanpa kendala yang saling berinteraksi.. Bukti: bunga tunggal 8% per tahun; Setelah 4 tahun, total uang Pak Rahmat menjadi Rp7.920.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga tunggal (A = M(1 + i*t)) |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah dasar keuangan kelas 12. Soal ini tidak memerlukan perencanaan strategi kompleks atau integrasi konsep, sehingga tergolong mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13469,9 +13835,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 154. Soal `abef29a80a2efdab3defd934`
@@ -13485,27 +13851,49 @@ Dewi menyimpan Rp10.000.000,00 selama 4 tahun dengan bunga tunggal 5% per tahun.
 | C | Rp4.400.000,00 |
 | D | Rp20.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga Dewi = 10.000.000 * 5% * 4 = 2.000.000. Bunga Eka = 8.000.000 * 6% * 5 = 2.400.000. Selisih = 2.400.000 - 2.000.000 = 400.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52ad5047ff85d6010b835a25abc70e04eba38adbcf21418c03497d1f543dddc3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1d90a20faa8a50ecbb419999a061366d0ded851b7ac2709ae497ae080558f786`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2854 |
+
+Run 1 — solusi: Bunga Dewi = 10.000.000 * 5% * 4 = 2.000.000. Bunga Eka = 8.000.000 * 6% * 5 = 2.400.000. Selisih = 2.400.000 - 2.000.000 = 400.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal (B = M * i * t) untuk dua kasus berbeda dan menghitung selisihnya. Ini adalah penerapan langsung dari prosedur yang sudah dipelajari.. Bukti: Dewi menyimpan Rp10.000.000,00 selama 4 tahun dengan bunga tunggal 5% per tahun.; Eka menyimpan Rp8.000.000,00 selama 5 tahun dengan bunga tunggal 6% per tahun.; Selisih total bunga yang diterima Eka dan Dewi adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma perhitungan bunga tunggal.. Bukti: bunga tunggal 5% per tahun; bunga tunggal 6% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menghitung bunga masing-masing pihak menggunakan rumus dasar bunga tunggal dan mencari selisihnya. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Dewi menyimpan Rp10.000.000,00 selama 4 tahun dengan bunga tunggal 5% per tahun.; Eka menyimpan Rp8.000.000,00 selama 5 tahun dengan bunga tunggal 6% per tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga tunggal dan operasi aritmatika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah materi dasar kelas 12. Soal ini tidak memerlukan analisis mendalam, hanya perhitungan langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13537,9 +13925,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 155. Soal `72d120119f33eb4e708c812f`
@@ -13553,27 +13941,49 @@ Dewa menabung Rp3.000.000,00 dengan bunga tunggal 4% per tahun dari modal awal. 
 | C | Rp1.200.000,00 |
 | D | Rp4.200.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Modal awal (M) = 3.000.000. Bunga per tahun = 4% x 3.000.000 = 120.000. Nilai uang akhir tahun ke-n (Un) membentuk barisan aritmetika dengan suku pertama U1 = M + bunga = 3.120.000 dan beda (b) = 120.000. Nilai akhir tahun ke-10 adalah U10 = U1 + 9b = 3.120.000 + 9(120.000) = 3.120.000 + 1.080.000 = 4.200.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5dac4ef17b7456ee4aa96a608091c3b920073e647512a5093905a2eb6cadc65f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2be106068c49976dd41c9ce062a467f8e290d5fff1b9c4e4ba6d177626026937`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2933 |
+
+Run 1 — solusi: Modal awal (M) = 3.000.000. Bunga per tahun = 4% x 3.000.000 = 120.000. Nilai uang akhir tahun ke-n (Un) membentuk barisan aritmetika dengan suku pertama U1 = M + bunga = 3.120.000 dan beda (b) = 120.000. Nilai akhir tahun ke-10 adalah U10 = U1 + 9b = 3.120.000 + 9(120.000) = 3.120.000 + 1.080.000 = 4.200.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa nilai uang akhir tahun membentuk barisan aritmetika, menentukan suku pertama dan beda berdasarkan konsep bunga tunggal, lalu menerapkan rumus suku ke-n. Ini adalah penerapan prosedur familiar pada konteks keuangan.. Bukti: Nilai uang pada akhir tahun pertama, kedua, ketiga, dan seterusnya membentuk barisan aritmetika.; Nilai uang Dewa pada akhir tahun ke-10 adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang hubungan antara konsep bunga tunggal dan pola barisan aritmetika, serta penggunaan algoritma barisan untuk menyelesaikan masalah keuangan.. Bukti: bunga tunggal 4% per tahun dari modal awal; membentuk barisan aritmetika
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaiannya sangat jelas. Siswa hanya perlu menentukan suku pertama dan beda, lalu menggunakan rumus suku ke-n barisan aritmetika. Tidak ada kendala yang berinteraksi atau strategi nonrutin yang diperlukan.. Bukti: Nilai uang pada akhir tahun pertama, kedua, ketiga, dan seterusnya membentuk barisan aritmetika.; Nilai uang Dewa pada akhir tahun ke-10 adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal dan rumus barisan aritmetika (Un = a + (n-1)b). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal dan barisan aritmetika adalah materi standar kelas 12. Soal ini tidak menuntut penalaran kompleks, hanya aplikasi langsung rumus. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13605,9 +14015,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 156. Soal `16a04a64da9b63530548c87f`
@@ -13621,27 +14031,49 @@ Nilai uang pada akhir setiap tahun dari tabungan Rp2.000.000,00 dengan bunga tun
 | C | Rp10.500.000,00 |
 | D | Rp11.000.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Modal awal M = 2.000.000, bunga tunggal 5% per tahun = 100.000. Nilai akhir tahun ke-n (Un) membentuk barisan aritmetika: U1 = 2.100.000, U2 = 2.200.000, ..., U5 = 2.500.000. Jumlah 5 suku pertama (S5) = (n/2)(U1 + Un) = (5/2)(2.100.000 + 2.500.000) = 2,5 * 4.600.000 = 11.500.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e1f81440eaffc2b7a2fbd303310117e3b66390a78a2089e8181fd7bef7dfe84f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f39ee2dac3a688d2100b28cf79bacfa0dc6ea40ae9f27f35cbe293ec284e3cba`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 3005 |
+
+Run 1 — solusi: Modal awal M = 2.000.000, bunga tunggal 5% per tahun = 100.000. Nilai akhir tahun ke-n (Un) membentuk barisan aritmetika: U1 = 2.100.000, U2 = 2.200.000, ..., U5 = 2.500.000. Jumlah 5 suku pertama (S5) = (n/2)(U1 + Un) = (5/2)(2.100.000 + 2.500.000) = 2,5 * 4.600.000 = 11.500.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa bunga tunggal menghasilkan penambahan nilai yang konstan setiap tahun, membentuk barisan aritmetika. Kemudian, siswa menerapkan rumus jumlah deret aritmetika untuk menghitung total nilai dari tahun ke-1 hingga ke-5. Ini adalah penerapan prosedur rutin dalam konteks keuangan.. Bukti: Nilai uang pada akhir setiap tahun dari tabungan Rp2.000.000,00 dengan bunga tunggal 5% per tahun membentuk barisan aritmetika.; Jumlah kelima nilai uang itu, yaitu dari akhir tahun pertama sampai akhir tahun kelima, adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bunga tunggal beroperasi sebagai deret aritmetika dan prosedur untuk menghitung jumlah deret tersebut.. Bukti: bunga tunggal 5% per tahun membentuk barisan aritmetika; Jumlah kelima nilai uang itu
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena konsep bunga tunggal sebagai barisan aritmetika dinyatakan secara eksplisit dalam soal. Siswa hanya perlu menentukan suku pertama dan beda, lalu menerapkan rumus jumlah deret aritmetika yang sudah familiar.. Bukti: Nilai uang pada akhir setiap tahun dari tabungan Rp2.000.000,00 dengan bunga tunggal 5% per tahun membentuk barisan aritmetika.; Jumlah kelima nilai uang itu, yaitu dari akhir tahun pertama sampai akhir tahun kelima
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal dan rumus jumlah deret aritmetika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi barisan aritmetika dan bunga tunggal adalah materi standar kelas 12. Soal memberikan petunjuk eksplisit bahwa nilai uang membentuk barisan aritmetika, sehingga mengurangi beban kognitif dalam pemodelan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13673,9 +14105,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 157. Soal `a9777cf0b8adb1a6bf329868`
@@ -13689,27 +14121,49 @@ Pak Hasan menabung Rp9.000.000,00 dengan bunga tunggal 6% per tahun. Besar bunga
 | C | Rp45.000,00 |
 | D | Rp360.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga tunggal dihitung dengan rumus B = P x r x t. Diketahui P = 9.000.000, r = 6% = 0,06 per tahun, dan t = 8 bulan = 8/12 tahun. Maka, B = 9.000.000 x 0,06 x (8/12) = 9.000.000 x 0,06 x (2/3) = 9.000.000 x 0,04 = 360.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a23c60ec435a2a52a6cc5eb5434aec49c2b053d4ece55fae5b7567349f08b0f3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f780bbadf0f139ebae29df9e9ecb2d1a196d4248133f834017d786c3d270e6ce`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2775 |
+
+Run 1 — solusi: Bunga tunggal dihitung dengan rumus B = P x r x t. Diketahui P = 9.000.000, r = 6% = 0,06 per tahun, dan t = 8 bulan = 8/12 tahun. Maka, B = 9.000.000 x 0,06 x (8/12) = 9.000.000 x 0,06 x (2/3) = 9.000.000 x 0,04 = 360.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal secara langsung. Siswa hanya perlu mengidentifikasi variabel (pokok, suku bunga, waktu) dan melakukan konversi satuan waktu dari bulan ke tahun, yang merupakan prosedur standar dan rutin dalam materi keuangan kelas 12.. Bukti: Pak Hasan menabung Rp9.000.000,00 dengan bunga tunggal 6% per tahun.; Besar bunga yang diperoleh Pak Hasan setelah 8 bulan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung bunga tunggal dengan penyesuaian periode waktu (konversi bulan ke tahun).. Bukti: bunga tunggal 6% per tahun; setelah 8 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus bunga tunggal dengan satu langkah konversi waktu (8/12 tahun). Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.. Bukti: bunga tunggal 6% per tahun; setelah 8 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan konsep bunga tunggal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah materi dasar kelas 12. Soal ini tidak menuntut analisis mendalam, hanya aplikasi rumus langsung, sehingga dikategorikan mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13741,9 +14195,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 158. Soal `cbc0bb9dec0716b6e1b0cf55`
@@ -13757,27 +14211,49 @@ Rudi meminjam Rp5.000.000,00 dari koperasi dengan bunga tunggal. Ia melunasinya 
 | C | 66% |
 | D | 132% |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total pembayaran = 24 bulan * Rp275.000 = Rp6.600.000. Bunga total = Rp6.600.000 - Rp5.000.000 = Rp1.600.000. Rumus bunga tunggal: Bunga = P * i * t. Maka 1.600.000 = 5.000.000 * i * 2. i = 1.600.000 / 10.000.000 = 0,16 atau 16%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5a0a8587fc9ce32bae9cd50ccc4be6db5cfb2c014cccf36dd8924da9af88ac6a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ab891c597a9bed2c4430776cbcdeb51132b8ca9a68901ca97a7d9228e561f28d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2916 |
+
+Run 1 — solusi: Total pembayaran = 24 bulan * Rp275.000 = Rp6.600.000. Bunga total = Rp6.600.000 - Rp5.000.000 = Rp1.600.000. Rumus bunga tunggal: Bunga = P * i * t. Maka 1.600.000 = 5.000.000 * i * 2. i = 1.600.000 / 10.000.000 = 0,16 atau 16%.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi komponen bunga tunggal (pokok, total angsuran, bunga total, waktu) dan menerapkan rumus bunga tunggal (B = P * i * t) untuk mencari suku bunga. Ini adalah penerapan prosedur standar pada konteks keuangan.. Bukti: Rudi meminjam Rp5.000.000,00 dari koperasi dengan bunga tunggal.; Ia melunasinya dengan angsuran tetap Rp275.000,00 setiap bulan selama 2 tahun.; Persentase bunga tunggal per tahun yang dikenakan koperasi adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep bunga tunggal dan prosedur perhitungan suku bunga tahunan berdasarkan total angsuran.. Bukti: bunga tunggal; angsuran tetap Rp275.000,00 setiap bulan selama 2 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan prosedur rutin yang familiar bagi siswa kelas 12. Langkah-langkah penyelesaiannya jelas: menghitung total pembayaran, mencari selisih bunga, dan menerapkan rumus bunga tunggal sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Rudi meminjam Rp5.000.000,00; angsuran tetap Rp275.000,00 setiap bulan selama 2 tahun; Persentase bunga tunggal per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan aritmatika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik standar kelas 12. Prosedur perhitungan bunga dari angsuran adalah latihan rutin yang sering ditemui. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13809,9 +14285,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 159. Soal `c7e45305e7f5802936273189`
@@ -13825,27 +14301,49 @@ Saldo sebuah tabungan dengan bunga tunggal adalah Rp5.600.000,00 pada akhir tahu
 | C | Rp4.700.000,00 |
 | D | Rp5.300.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tunggal per tahun = (M5 - M2) / (5 - 2) = (6.500.000 - 5.600.000) / 3 = 900.000 / 3 = 300.000. Modal awal (M0) = M2 - 2 * bunga_per_tahun = 5.600.000 - 2 * 300.000 = 5.600.000 - 600.000 = 5.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c17292e8899423bee7afb73466588df3b56ba99b0ea0df32dfe979c5b8914af5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c545ebf2fc4ae9c30b3ac5b198077ee70b0f0c233fa1b9b8e7bab6c5f89f53d4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2931 |
+
+Run 1 — solusi: Bunga tunggal per tahun = (M5 - M2) / (5 - 2) = (6.500.000 - 5.600.000) / 3 = 900.000 / 3 = 300.000. Modal awal (M0) = M2 - 2 * bunga_per_tahun = 5.600.000 - 2 * 300.000 = 5.600.000 - 600.000 = 5.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga tunggal untuk menentukan modal awal berdasarkan dua titik data saldo yang diketahui. Ini melibatkan pemahaman bahwa bunga tunggal bersifat linear terhadap waktu, sehingga siswa harus menghitung selisih saldo dan membaginya dengan selisih waktu untuk mendapatkan bunga per tahun, lalu melakukan langkah mundur (subtraksi) untuk mencari modal awal.. Bukti: Saldo sebuah tabungan dengan bunga tunggal adalah Rp5.600.000,00 pada akhir tahun kedua dan Rp6.500.000,00 pada akhir tahun kelima.; Besar uang yang disetorkan pada awal adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang bagaimana bunga tunggal bekerja (linearitas) dan kemampuan menerapkan algoritma perhitungan bunga untuk menemukan nilai pokok awal.. Bukti: Saldo sebuah tabungan dengan bunga tunggal
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan pemilihan prosedur yang tepat (menghitung bunga per periode dari selisih dua titik waktu) dan melakukan langkah-langkah yang saling terkait (menghitung bunga per tahun, lalu mengurangkannya dari saldo tahun kedua). Meskipun prosedurnya familiar, siswa harus merencanakan langkah-langkah tersebut tanpa bantuan eksplisit.. Bukti: Saldo sebuah tabungan dengan bunga tunggal adalah Rp5.600.000,00 pada akhir tahun kedua dan Rp6.500.000,00 pada akhir tahun kelima.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal, aritmatika dasar, pemahaman linearitas. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu memodelkan situasi bunga tunggal sebagai fungsi linear sederhana. Soal ini menuntut perencanaan dua langkah (mencari bunga per tahun, lalu mencari modal awal) yang merupakan standar untuk tingkat menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13877,9 +14375,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 160. Soal `c433eb00d6bc0e35237f0bfd`
@@ -13893,27 +14391,49 @@ Ali menabung Rp8.000.000,00 dengan bunga tunggal 5% per tahun. Budi menabung Rp6
 | C | 15 |
 | D | 5 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: 8.000.000 + 8.000.000(0,05)n = 6.000.000 + 6.000.000(0,10)n. Menyederhanakan persamaan: 2.000.000 = 200.000n, sehingga n = 10.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2559729567b30a8e5086e5b332b372ebde269bf8999a82f8c08320b872eaf16d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bc067cfaf027eaafac764e12f08d0126790a35c3f301604c0366ce95bdbf7a0e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3398 |
+
+Run 1 — solusi: 8.000.000 + 8.000.000(0,05)n = 6.000.000 + 6.000.000(0,10)n. Menyederhanakan persamaan: 2.000.000 = 200.000n, sehingga n = 10.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal untuk menyusun persamaan linear satu variabel dan menyelesaikannya. Ini adalah penerapan langsung dari konsep bunga tunggal dalam konteks perbandingan.. Bukti: Ali menabung Rp8.000.000,00 dengan bunga tunggal 5% per tahun.; Budi menabung Rp6.000.000,00 dengan bunga tunggal 10% per tahun.; Saldo tabungan keduanya akan sama besar setelah ... tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma atau rumus bunga tunggal untuk menyelesaikan masalah keuangan sederhana.. Bukti: bunga tunggal 5% per tahun; bunga tunggal 10% per tahun
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan mudah karena hanya memerlukan penyusunan persamaan linear satu variabel yang sangat standar. Tidak ada kendala yang saling berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Ali menabung Rp8.000.000,00 dengan bunga tunggal 5% per tahun.; Budi menabung Rp6.000.000,00 dengan bunga tunggal 10% per tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal A = P(1 + rn) dan penyelesaian persamaan linear. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah dasar keuangan di kelas 12. Soal ini merupakan aplikasi langsung tanpa kerumitan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -13945,9 +14465,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 161. Soal `dbe14e48da74dfb70ee2d0a7`
@@ -13961,27 +14481,49 @@ Bu Lina membagi uangnya Rp12.000.000,00 menjadi dua simpanan. Rp7.000.000,00 dis
 | C | Rp1.440.000,00 |
 | D | Rp1.740.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga Bank A = 7.000.000 * 0,04 * 3 = 840.000. Sisa uang = 12.000.000 - 7.000.000 = 5.000.000. Bunga Bank B = 5.000.000 * 0,06 * 3 = 900.000. Total bunga = 840.000 + 900.000 = 1.740.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `70154824dee246b073caf043e10b9b21f71a3987b96cbe21f42f9ace9e0c95a8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e2e2b005e3861488bfd90f015ae44a33d007a2dc7fcc59b98f57084db2fe3f4d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2874 |
+
+Run 1 — solusi: Bunga Bank A = 7.000.000 * 0,04 * 3 = 840.000. Sisa uang = 12.000.000 - 7.000.000 = 5.000.000. Bunga Bank B = 5.000.000 * 0,06 * 3 = 900.000. Total bunga = 840.000 + 900.000 = 1.740.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal (M x i x t) pada dua bagian modal yang berbeda dan menjumlahkan hasilnya. Ini adalah penerapan prosedur standar pada konteks yang sedikit dimodifikasi (dua akun berbeda), yang masuk dalam kategori applying.. Bukti: membagi uangnya Rp12.000.000,00 menjadi dua simpanan; Total bunga dari kedua bank setelah 3 tahun adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma bunga tunggal, yang merupakan pengetahuan prosedural.. Bukti: bunga tunggal 4% per tahun; bunga tunggal 6% per tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya sangat langsung dan familiar bagi siswa kelas 12. Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan.. Bukti: Rp7.000.000,00 disimpan di Bank A; sisanya disimpan di Bank B
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan operasi aritmatika. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah aplikasi langsung dari rumus bunga tunggal yang merupakan materi dasar keuangan di kelas 12. Tidak ada kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14013,9 +14555,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 162. Soal `0cd5c4a7ca16d85ad6a3f51a`
@@ -14187,27 +14729,49 @@ Pak Dedi adalah anggota koperasi simpan pinjam. Ia menyimpan Rp42.500.000,00 di 
 | C | Rp5.100.000,00 |
 | D | Rp47.806.720,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga = Modal x suku bunga x waktu = 42.500.000 x 0,04 x 3 = 5.100.000. Modal akhir = Modal awal + Bunga = 42.500.000 + 5.100.000 = 47.600.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6bd5d05eb85580cf3f03eba53921743c1171c87a9d883551b9bc83be72766741`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `06a2c3bebdcd4ab9ac9bbca362d6b632010923ad51877ff9ded6b7ededbcdbc7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2769 |
+
+Run 1 — solusi: Bunga = Modal x suku bunga x waktu = 42.500.000 x 0,04 x 3 = 5.100.000. Modal akhir = Modal awal + Bunga = 42.500.000 + 5.100.000 = 47.600.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal secara langsung untuk menghitung total simpanan setelah periode tertentu. Tidak ada strategi nonrutin atau integrasi konsep yang kompleks yang diperlukan.. Bukti: menyimpan Rp42.500.000,00 di koperasi dengan bunga tunggal 4% per tahun; Berapa jumlah simpanan Pak Dedi setelah 3 tahun?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep bunga tunggal dan menggunakan prosedur perhitungan bunga serta penjumlahan dengan modal awal.. Bukti: bunga tunggal 4% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu mengidentifikasi variabel (modal, bunga, waktu) dan menerapkan rumus bunga tunggal (M = M0(1 + i*n)). Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.. Bukti: menyimpan Rp42.500.000,00; bunga tunggal 4% per tahun; setelah 3 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan konsep bunga tunggal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari rumus bunga tunggal yang merupakan materi standar kelas 12, dengan beban kognitif yang rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14239,9 +14803,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 164. Soal `0e10da8c9065d8d3fa6ff4a3`
@@ -14255,27 +14819,49 @@ Ibu Wati anggota koperasi "Sinar Mandiri". Ia menyimpan modal awal Rp2.400.000,0
 | C | Rp6.000.000,00 |
 | D | Rp2.700.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga = Modal x suku bunga per tahun x (lama bulan / 12) = 2.400.000 x 15% x (10/12) = 2.400.000 x 0,15 x (5/6) = 300.000. Total simpanan = Modal + Bunga = 2.400.000 + 300.000 = 2.700.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ff862925ff672cb1bfa0864502a140fa396f3f989f86764cc6227ea0ee073744`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8cdebf8b69c4ee7fc3dd568c9ba92172de01d738d9aa2c25e7a8da6d77c83acc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2824 |
+
+Run 1 — solusi: Bunga = Modal x suku bunga per tahun x (lama bulan / 12) = 2.400.000 x 15% x (10/12) = 2.400.000 x 0,15 x (5/6) = 300.000. Total simpanan = Modal + Bunga = 2.400.000 + 300.000 = 2.700.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal sederhana dengan konversi satuan waktu (tahun ke bulan). Prosedur ini bersifat rutin dan langsung, sesuai dengan penerapan konsep dasar bunga tunggal.. Bukti: menyimpan modal awal Rp2.400.000,00; bunga tunggal 15% per tahun; menyimpan uangnya selama 10 bulan
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung bunga tunggal dan mengonversi satuan waktu tahunan ke bulanan untuk menentukan total simpanan.. Bukti: bunga tunggal 15% per tahun; menyimpan uangnya selama 10 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah penyelesaian yang jelas dan familiar bagi siswa kelas 12. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: bunga tunggal 15% per tahun; menyimpan uangnya selama 10 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan konversi satuan waktu (tahun ke bulan). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar di kelas 12. Soal ini hanya memerlukan substitusi ke rumus standar tanpa modifikasi kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14307,9 +14893,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 165. Soal `60853b25e1a0d253acf8bdb8`
@@ -14323,27 +14909,49 @@ Pak Hadi menyimpan modal awal Rp4.000.000,00 di koperasi karyawan yang memberi b
 | C | Rp4.210.000,00 |
 | D | Rp210.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga = Modal x Suku Bunga per tahun x (Waktu/12) = 4.000.000 x 9% x (7/12) = 4.000.000 x 0,09 x (7/12) = 360.000 x (7/12) = 30.000 x 7 = 210.000. Jadi, besar bunga adalah Rp210.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c0033b4198416a30ab9dedc3bdd9e0de3956bb4f7e1c28033f37a35e101f94a8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `591f3031a4d5b2d9016a40e00efc0ff48e497bf37a48f26e449b4c7f40f19b54`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2769 |
+
+Run 1 — solusi: Bunga = Modal x Suku Bunga per tahun x (Waktu/12) = 4.000.000 x 9% x (7/12) = 4.000.000 x 0,09 x (7/12) = 360.000 x (7/12) = 30.000 x 7 = 210.000. Jadi, besar bunga adalah Rp210.000,00.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal secara langsung dengan melakukan konversi satuan waktu (bulan ke tahun) yang merupakan prosedur standar dalam materi keuangan kelas 12.. Bukti: Pak Hadi menyimpan modal awal Rp4.000.000,00; bunga tunggal 9% per tahun; menyimpan modalnya selama 7 bulan; Besar bunga yang diterima Pak Hadi adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami hubungan antara suku bunga tahunan dan durasi simpanan dalam bulan untuk menerapkan algoritma bunga tunggal.. Bukti: bunga tunggal 9% per tahun; menyimpan modalnya selama 7 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu mengonversi waktu ke tahun atau suku bunga ke bulan dan melakukan perkalian sederhana.. Bukti: bunga tunggal 9% per tahun; menyimpan modalnya selama 7 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal dan konversi satuan waktu (bulan ke tahun). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah dasar keuangan di kelas 12. Soal ini tidak memiliki jebakan kompleks atau integrasi antar konsep yang sulit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14375,9 +14983,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 166. Soal `8aefe3cd43bb804424b53426`
@@ -14391,27 +14999,49 @@ Perhatikan perhitungan bunga di koperasi simpan pinjam. Pernyataan yang benar te
 | C | Bunga tiap periode makin besar karena modal terus bertambah |
 | D | Bunga tiap periode dihitung dari saldo yang sudah ditambah bunga periode sebelumnya |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tunggal didefinisikan sebagai bunga yang dihitung berdasarkan modal awal saja untuk setiap periode, sehingga besarnya bunga tetap (konstan) setiap periodenya. Pilihan A secara akurat mendeskripsikan prinsip ini.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a4d163e2c8deaee260a489c89b85e001c88905ee9800f8f4bc8215e57265e2ee`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aa2398f045748259671fbf0d22e56b1e92f9eb70164b08d72dfad58e4d64e66c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2527 |
+
+Run 1 — solusi: Bunga tunggal didefinisikan sebagai bunga yang dihitung berdasarkan modal awal saja untuk setiap periode, sehingga besarnya bunga tetap (konstan) setiap periodenya. Pilihan A secara akurat mendeskripsikan prinsip ini.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi definisi atau karakteristik dasar dari bunga tunggal. Siswa hanya perlu mengenali konsep dasar tanpa melakukan perhitungan atau penerapan strategi yang kompleks.. Bukti: Pernyataan yang benar tentang bunga tunggal adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa mengenai prinsip atau konsep dasar bunga tunggal dibandingkan dengan bunga majemuk.. Bukti: Pernyataan yang benar tentang bunga tunggal adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan langsung menanyakan definisi bunga tunggal. Tidak ada perhitungan atau analisis situasi yang diperlukan.. Bukti: Pernyataan yang benar tentang bunga tunggal adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang definisi bunga tunggal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah pertanyaan konseptual dasar yang sangat familiar bagi siswa kelas 12 yang mempelajari materi keuangan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14443,9 +15073,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 167. Soal `6f29f37498834a39172fc170`
@@ -14459,27 +15089,49 @@ Suku bunga dapat diartikan sebagai ....
 | C | kenaikan harga barang dan jasa secara umum dalam waktu tertentu |
 | D | jumlah uang pertama yang disetor nasabah saat membuka rekening |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Suku bunga adalah balas jasa atau kompensasi yang diberikan oleh bank kepada nasabah (atas simpanan) atau oleh nasabah kepada bank (atas pinjaman) sebagai imbalan atas penggunaan uang dalam jangka waktu tertentu.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `25d66de8e209f915b6db76fd04d964599203074d686c8167ab132b6da5617815`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b8fc227f95877b7bb0e1ca5f8ca1452bd9a9712d61dd87a05bcfa9e5613df538`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 3168 |
+
+Run 1 — solusi: Suku bunga adalah balas jasa atau kompensasi yang diberikan oleh bank kepada nasabah (atas simpanan) atau oleh nasabah kepada bank (atas pinjaman) sebagai imbalan atas penggunaan uang dalam jangka waktu tertentu.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk mengenali definisi dasar dari istilah 'suku bunga' tanpa memerlukan prosedur perhitungan atau penalaran lebih lanjut.. Bukti: Suku bunga dapat diartikan sebagai
+- Dimensi pengetahuan `classify/factual`: Soal menanyakan definisi istilah keuangan dasar, yang termasuk dalam kategori pengetahuan faktual.. Bukti: Suku bunga dapat diartikan sebagai
+- Intended difficulty `classify/Easy`: Soal ini bersifat recall langsung terhadap definisi istilah keuangan yang umum dipelajari di kelas 12. Tidak ada langkah perhitungan atau analisis yang diperlukan.. Bukti: Suku bunga dapat diartikan sebagai
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar istilah keuangan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Definisi suku bunga adalah materi dasar yang sangat familiar bagi siswa kelas 12 dalam topik keuangan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14511,9 +15163,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 168. Soal `92fc3b5d4063721c378fe58d`
@@ -14527,27 +15179,49 @@ Suatu koperasi memberi bunga tunggal 0,8% per bulan. Jika Rina menyimpan Rp7.500
 | C | Rp36.000,00 |
 | D | Rp3.600.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `Rp360.000,00`.
+Solusi minimum hasil AI: Bunga = Modal x suku bunga x waktu = 7.500.000 x 0,8% x 6 = 7.500.000 x 0,008 x 6 = 360.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `698d48cff785b34d7cc31d1542f1c75fcfd573ac12f243ee9fa146b68bc3f327`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bfd4cb3d11d3b5d62e1ac7f59001cc97d6b813952c8964d67690a1543ef5121f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 3526 |
+
+Run 1 — solusi: Bunga = Modal x suku bunga x waktu = 7.500.000 x 0,8% x 6 = 7.500.000 x 0,008 x 6 = 360.000.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengenali rumus bunga tunggal dan menerapkan nilai-nilai yang diberikan secara langsung ke dalam rumus tersebut tanpa modifikasi strategi.. Bukti: Suatu koperasi memberi bunga tunggal 0,8% per bulan.; Jika Rina menyimpan Rp7.500.000,00 selama 6 bulan, besar bunga yang diterima Rina adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar tentang perhitungan bunga tunggal yang merupakan algoritma standar.. Bukti: bunga tunggal 0,8% per bulan; Rp7.500.000,00 selama 6 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas. Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks. Siswa hanya perlu melakukan substitusi nilai ke dalam rumus bunga tunggal.. Bukti: bunga tunggal 0,8% per bulan; Rp7.500.000,00 selama 6 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan operasi perkalian bilangan desimal/persen. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah dasar keuangan di kelas 12. Soal ini adalah penerapan langsung rumus tanpa variasi atau jebakan konseptual. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14579,9 +15253,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 169. Soal `997f1f0f0c10ed7433e9e943`
@@ -14595,27 +15269,49 @@ Anita menyimpan modal awal Rp25.000.000,00 di koperasi dan memperoleh bunga tung
 | C | Rp25.125.000,00 |
 | D | Rp1.250.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Modal akhir = Modal awal + Bunga = Rp25.000.000,00 + Rp1.250.000,00 = Rp26.250.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `094aa4d331358523855739e506aedfd61140f7bbf3dfa67eb235a9007d1abe94`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6a973a4c1f6766e220ad6dd488e755d974514ea9a659257a0c26ffddb18e9f0c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2653 |
+
+Run 1 — solusi: Modal akhir = Modal awal + Bunga = Rp25.000.000,00 + Rp1.250.000,00 = Rp26.250.000,00.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk menerapkan definisi dasar modal akhir dalam konteks bunga tunggal, yaitu menjumlahkan modal awal dengan bunga yang diperoleh. Ini adalah prosedur langsung.. Bukti: Anita menyimpan modal awal Rp25.000.000,00 di koperasi dan memperoleh bunga tunggal Rp1.250.000,00; Modal akhir Anita adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep dasar bahwa modal akhir dalam investasi adalah akumulasi dari modal awal dan bunga yang dihasilkan.. Bukti: Modal akhir Anita adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu melakukan satu operasi penjumlahan sederhana untuk mendapatkan jawaban. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Anita menyimpan modal awal Rp25.000.000,00 di koperasi dan memperoleh bunga tunggal Rp1.250.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep modal akhir dan bunga tunggal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini berada di bawah tingkat kesulitan rata-rata untuk kelas 12 karena hanya memerlukan pemahaman definisi dasar tanpa manipulasi rumus atau variabel yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14647,9 +15343,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 170. Soal `40c1ac5b04bdf98a6c81359e`
@@ -14663,27 +15359,49 @@ Sebuah koperasi memberi bunga tunggal 21% per tahun. Persentase bunga tunggal pe
 | C | 252% |
 | D | 0,175% |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga tunggal per bulan dihitung dengan membagi persentase bunga per tahun dengan jumlah bulan dalam satu tahun. Maka, 21% / 12 = 1,75%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ec80f739f17cb080396c6830e035215936a6714c010bd9c4d8270832f03f5a8a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `67fe6728eeebdd3abfb66f7d93dceb69f36d503aed4025577da5d79f6ec21d98`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2597 |
+
+Run 1 — solusi: Bunga tunggal per bulan dihitung dengan membagi persentase bunga per tahun dengan jumlah bulan dalam satu tahun. Maka, 21% / 12 = 1,75%.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk melakukan konversi satuan waktu pada bunga tunggal secara langsung. Siswa hanya perlu mengenali hubungan antara bunga tahunan dan bulanan serta menerapkan prosedur pembagian sederhana.. Bukti: Sebuah koperasi memberi bunga tunggal 21% per tahun. Persentase bunga tunggal per bulan dari koperasi tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep bunga tunggal sebagai proporsi linear terhadap waktu (tahun ke bulan) untuk menentukan prosedur yang tepat.. Bukti: bunga tunggal 21% per tahun; Persentase bunga tunggal per bulan
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan rutin. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks. Siswa hanya perlu melakukan satu operasi pembagian sederhana.. Bukti: Sebuah koperasi memberi bunga tunggal 21% per tahun. Persentase bunga tunggal per bulan dari koperasi tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konversi satuan waktu (1 tahun = 12 bulan) dan konsep bunga tunggal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah soal tingkat dasar yang menguji pemahaman konseptual sederhana tentang bunga tunggal, sesuai untuk kelas 12 sebagai pengingat atau soal pemanasan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14715,9 +15433,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 171. Soal `6daf75d7e28564f760725f5a`
@@ -14731,27 +15449,49 @@ Tuti menyimpan Rp6.000.000,00 di koperasi yang memberi bunga tunggal 12% per tah
 | C | Rp6.540.000,00 |
 | D | Rp6.480.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga = Modal x Suku Bunga per tahun x Waktu (dalam tahun). Bunga = 6.000.000 x 0,12 x (9/12) = 6.000.000 x 0,12 x 0,75 = 540.000. Alternatif: Bunga per bulan = 1% dari 6.000.000 = 60.000. Bunga 9 bulan = 9 x 60.000 = 540.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c8b373303ab0912505ab9a9b49608805a32bfac41d65678d226384abd13a1811`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `605e006bb2e66d813f9c2538f72dee82e767d4c0ca844b77a1cfb545c7ae8ff4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2773 |
+
+Run 1 — solusi: Bunga = Modal x Suku Bunga per tahun x Waktu (dalam tahun). Bunga = 6.000.000 x 0,12 x (9/12) = 6.000.000 x 0,12 x 0,75 = 540.000. Alternatif: Bunga per bulan = 1% dari 6.000.000 = 60.000. Bunga 9 bulan = 9 x 60.000 = 540.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal sederhana dengan melakukan konversi satuan waktu (bulan ke tahun) atau konversi suku bunga (tahunan ke bulanan). Ini adalah penerapan prosedur rutin yang sudah dipelajari.. Bukti: Tuti menyimpan Rp6.000.000,00 di koperasi yang memberi bunga tunggal 12% per tahun.; Setelah 9 bulan, bunga yang diterima Tuti adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan hubungan antara variabel modal, suku bunga, dan waktu.. Bukti: bunga tunggal 12% per tahun; Setelah 9 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu mengonversi satuan waktu atau suku bunga dan melakukan perkalian dasar. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi kompleks.. Bukti: bunga tunggal 12% per tahun; Setelah 9 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan konsep bunga tunggal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar di kelas 12. Soal ini tidak memerlukan penalaran tingkat tinggi, hanya aplikasi rumus langsung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14783,9 +15523,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 172. Soal `8e0878aef283237a9c8a25e6`
@@ -14799,27 +15539,49 @@ Pak Joko menyimpan Rp5.000.000,00 di koperasi dengan bunga tunggal. Setelah 8 bu
 | C | 0,5% |
 | D | 0,05% |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Rumus bunga tunggal: B = M * p * n. Diketahui B = 200.000, M = 5.000.000, n = 8 bulan. Maka p = B / (M * n) = 200.000 / (5.000.000 * 8) = 200.000 / 40.000.000 = 0,005. Dalam persentase: 0,005 * 100% = 0,5% per bulan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f7019dbf196e4f6b58721f7d9cc7985d24a3ee22987343fbcfc8b0aa19a113a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `97f7efc7788662c2a0eb0d18c29c025bbfde3926b93b2280237d5d5136d0b532`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2784 |
+
+Run 1 — solusi: Rumus bunga tunggal: B = M * p * n. Diketahui B = 200.000, M = 5.000.000, n = 8 bulan. Maka p = B / (M * n) = 200.000 / (5.000.000 * 8) = 200.000 / 40.000.000 = 0,005. Dalam persentase: 0,005 * 100% = 0,5% per bulan.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal secara langsung untuk mencari variabel suku bunga (p) yang belum diketahui. Prosedur ini sangat rutin dan langsung, sesuai dengan domain applying.. Bukti: Pak Joko menyimpan Rp5.000.000,00 di koperasi dengan bunga tunggal.; Setelah 8 bulan ia menerima bunga Rp200.000,00.; Persentase bunga tunggal koperasi tersebut per bulan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman siswa terhadap algoritma perhitungan bunga tunggal dan hubungan antar variabel dalam rumus tersebut.. Bukti: bunga tunggal; Persentase bunga tunggal koperasi tersebut per bulan
+- Intended difficulty `classify/Easy`: Soal ini dikategorikan Easy karena merupakan penerapan langsung rumus bunga tunggal dengan variabel yang sudah tersedia secara eksplisit. Tidak ada kendala yang berinteraksi atau kebutuhan untuk perencanaan strategi yang kompleks.. Bukti: Pak Joko menyimpan Rp5.000.000,00 di koperasi dengan bunga tunggal.; Setelah 8 bulan ia menerima bunga Rp200.000,00.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga tunggal dan kemampuan aljabar dasar untuk isolasi variabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah sangat familiar dengan rumus bunga tunggal. Soal ini hanya memerlukan substitusi nilai ke dalam rumus dan operasi aritmatika dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14851,9 +15613,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 173. Soal `2753a1f96f7aebc1896519ca`
@@ -14867,27 +15629,49 @@ Bu Mira menyimpan Rp6.000.000,00 di koperasi dengan bunga tunggal 1,5% per tahun
 | C | 3 |
 | D | 50 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Rumus bunga tunggal: B = M x p x n. Diketahui B = 450.000, M = 6.000.000, p = 1,5% = 0,015. Maka n = B / (M x p) = 450.000 / (6.000.000 x 0,015) = 450.000 / 90.000 = 5 tahun.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a50e6157a7e606256818ec11e63f6d3d44a9c5cf45d63caf6291a30c925e593b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4cf00b7064e230b19820dfdbc8945bf4e6b9035d1b76c71763f168f5200d67a3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2819 |
+
+Run 1 — solusi: Rumus bunga tunggal: B = M x p x n. Diketahui B = 450.000, M = 6.000.000, p = 1,5% = 0,015. Maka n = B / (M x p) = 450.000 / (6.000.000 x 0,015) = 450.000 / 90.000 = 5 tahun.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal secara langsung untuk mencari variabel waktu (n). Prosedur ini sangat rutin dan langsung, sesuai dengan domain applying.. Bukti: Bu Mira menyimpan Rp6.000.000,00 di koperasi dengan bunga tunggal 1,5% per tahun.; Bunga yang ia terima seluruhnya Rp450.000,00. Lama Bu Mira menyimpan uangnya adalah ... tahun.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami hubungan antara modal, suku bunga, waktu, dan total bunga (konsep bunga tunggal) serta menggunakan algoritma perhitungan yang tepat.. Bukti: bunga tunggal 1,5% per tahun; Lama Bu Mira menyimpan uangnya adalah ... tahun
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan substitusi nilai ke dalam rumus bunga tunggal yang sudah baku. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga tunggal 1,5% per tahun; Bunga yang ia terima seluruhnya Rp450.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rumus bunga tunggal (B = M x p x n). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah materi dasar kelas 12. Soal ini hanya menuntut satu langkah perhitungan langsung tanpa modifikasi rumus atau variabel yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14919,9 +15703,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 174. Soal `42cf019eb95fddfc75f15418`
@@ -14935,27 +15719,49 @@ Pada suatu simpanan berbunga tunggal, bunga yang diperoleh setelah 3 tahun adala
 | C | Rp1.080.000,00 |
 | D | Rp360.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga tunggal berbanding lurus dengan waktu (t). Jika bunga setelah 3 tahun adalah Rp360.000,00, maka bunga setelah 9 tahun adalah (9/3) * Rp360.000,00 = 3 * Rp360.000,00 = Rp1.080.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `188abf53dbf11f5c49ba335d08b8973366ef8f167665b76d52a685a8525a97d6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `297b2574e788d73fc93e41e93f10e01f09ff994cab269839def09cb62cec1b4d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2726 |
+
+Run 1 — solusi: Bunga tunggal berbanding lurus dengan waktu (t). Jika bunga setelah 3 tahun adalah Rp360.000,00, maka bunga setelah 9 tahun adalah (9/3) * Rp360.000,00 = 3 * Rp360.000,00 = Rp1.080.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga tunggal yang bersifat linear/proporsional terhadap waktu. Soal ini meminta penerapan langsung dari prinsip perbandingan senilai tersebut.. Bukti: bunga yang diperoleh setelah 3 tahun adalah Rp360.000,00; Bunga yang diperoleh setelah 9 tahun dari simpanan yang sama adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang sifat bunga tunggal (linearitas terhadap waktu) dan prosedur perhitungannya.. Bukti: simpanan berbunga tunggal
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mengenali hubungan proporsional antara waktu dan bunga tunggal. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga yang diperoleh setelah 3 tahun adalah Rp360.000,00; Bunga yang diperoleh setelah 9 tahun dari simpanan yang sama adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga tunggal dan perbandingan senilai. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 12, konsep bunga tunggal adalah materi dasar yang sudah familiar. Soal ini tidak menuntut analisis mendalam, hanya penerapan rumus atau logika perbandingan sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -14987,9 +15793,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 175. Soal `afd12d3acb48ccdaf2d7041e`
@@ -15003,27 +15809,49 @@ Koperasi memberi bunga tunggal 8% per tahun. Setelah menyimpan selama 3 tahun, P
 | C | Rp5.000.000,00 |
 | D | Rp400.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga (B) = Modal (M) x suku bunga (i) x waktu (n). 1.200.000 = M x 0,08 x 3. 1.200.000 = M x 0,24. M = 1.200.000 / 0,24 = 5.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1b9ef209244e82853e40374042daef918a3df8aee09aafdc50b2f66588f71738`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6b605d21896d541538baa80dd0fc9303dd2b51afa5e73a97239541d74a9921f1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3672 |
+
+Run 1 — solusi: Bunga (B) = Modal (M) x suku bunga (i) x waktu (n). 1.200.000 = M x 0,08 x 3. 1.200.000 = M x 0,24. M = 1.200.000 / 0,24 = 5.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal (B = M x i x n) untuk mencari variabel modal awal (M) yang belum diketahui. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Koperasi memberi bunga tunggal 8% per tahun.; Setelah menyimpan selama 3 tahun, Pak Eko menerima bunga Rp1.200.000,00.; Modal awal yang disimpan Pak Eko adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penggunaan algoritma perhitungan bunga tunggal yang merupakan prosedur standar dalam matematika keuangan.. Bukti: Koperasi memberi bunga tunggal 8% per tahun.; Setelah menyimpan selama 3 tahun, Pak Eko menerima bunga Rp1.200.000,00.
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dengan variabel yang sudah jelas dan rumus yang familiar bagi siswa kelas 12. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: Koperasi memberi bunga tunggal 8% per tahun.; Setelah menyimpan selama 3 tahun, Pak Eko menerima bunga Rp1.200.000,00.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan operasi aritmatika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan standar bunga tunggal yang sesuai dengan kurikulum kelas 12 tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15055,9 +15883,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 176. Soal `8ce77a753c6c06487ab84fe5`
@@ -15071,27 +15899,49 @@ Empat orang menyimpan uang di koperasi dengan bunga tunggal. Simpanan P: Rp6.000
 | C | Rp275.000,00 |
 | D | Rp6.525.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tunggal dihitung dengan rumus: Bunga = Modal x suku bunga x (waktu/12). P: 6.000.000 x 0,12 x (10/12) = 600.000. Q: 10.000.000 x 0,06 x (8/12) = 400.000. R: 4.500.000 x 0,15 x (12/12) = 675.000. S: 9.000.000 x 0,05 x (9/12) = 337.500. Bunga terbesar adalah R (675.000) dan terkecil adalah S (337.500). Selisih = 675.000 - 337.500 = 337.500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7d5c9c7455337276bbc924b1bf4978e06a5eb247381ea1b01b319705ac194c6c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7fb5f08db2c5460e06bdf063b330e930a67bd399b56d9aa07ff27d31cf70f001`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3113 |
+
+Run 1 — solusi: Bunga tunggal dihitung dengan rumus: Bunga = Modal x suku bunga x (waktu/12). P: 6.000.000 x 0,12 x (10/12) = 600.000. Q: 10.000.000 x 0,06 x (8/12) = 400.000. R: 4.500.000 x 0,15 x (12/12) = 675.000. S: 9.000.000 x 0,05 x (9/12) = 337.500. Bunga terbesar adalah R (675.000) dan terkecil adalah S (337.500). Selisih = 675.000 - 337.500 = 337.500.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga tunggal secara berulang untuk empat kasus berbeda, kemudian membandingkan hasilnya untuk mencari selisih. Ini adalah penerapan prosedur rutin pada konteks yang diberikan.. Bukti: Empat orang menyimpan uang di koperasi dengan bunga tunggal.; Selisih bunga terbesar dan bunga terkecil di antara keempat simpanan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman dan penggunaan algoritma perhitungan bunga tunggal (prosedural) serta pemahaman konsep bunga tunggal itu sendiri.. Bukti: bunga tunggal; Simpanan P: Rp6.000.000,00, bunga 12% per tahun, selama 10 bulan.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur perhitungan bunga tunggal sangat standar dan familiar bagi siswa kelas 12. Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan; siswa hanya perlu melakukan perhitungan berulang yang terarah.. Bukti: Empat orang menyimpan uang di koperasi dengan bunga tunggal.; Selisih bunga terbesar dan bunga terkecil di antara keempat simpanan adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal dan konversi waktu bulan ke tahun. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 12 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Perhitungan bunga tunggal adalah materi dasar keuangan di kelas 12. Soal ini hanya meminta pengulangan prosedur yang sama sebanyak empat kali tanpa variasi kompleksitas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15123,9 +15973,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 177. Soal `87bef1b72895b1a809bd5519`
@@ -15139,27 +15989,49 @@ Tiga koperasi menawarkan bunga tunggal untuk modal dan lama menyimpan yang sama.
 | C | Koperasi Y paling besar karena 7% lebih besar daripada 1,2% dan 14,4% |
 | D | Koperasi X dan Z memberi bunga sama besar, sedangkan Koperasi Y memberi bunga lebih kecil |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Samakan satuan waktu ke per tahun: Koperasi X = 1,2% * 12 = 14,4% per tahun. Koperasi Y = 7% * 2 = 14% per tahun. Koperasi Z = 14,4% per tahun. Maka, X = Z, dan Y < X (atau Y < Z). Pilihan D benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7206df41ab36220e8e98331ee8ba420f20616a67838b7707832145905792bf1a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aa256e5c7f26318c2a4b60d26b991ca75ea04a977e5cb6b6051c8e551c456acf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2789 |
+
+Run 1 — solusi: Samakan satuan waktu ke per tahun: Koperasi X = 1,2% * 12 = 14,4% per tahun. Koperasi Y = 7% * 2 = 14% per tahun. Koperasi Z = 14,4% per tahun. Maka, X = Z, dan Y < X (atau Y < Z). Pilihan D benar.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur konversi satuan waktu bunga (bulan ke tahun, semester ke tahun) untuk membandingkan besaran bunga tunggal yang setara. Ini adalah penerapan konsep bunga tunggal pada konteks rutin.. Bukti: Koperasi X: 1,2% per bulan. Koperasi Y: 7% per 6 bulan. Koperasi Z: 14,4% per tahun.
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur algoritme konversi satuan waktu untuk membandingkan nilai bunga tunggal.. Bukti: Tiga koperasi menawarkan bunga tunggal untuk modal dan lama menyimpan yang sama.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu melakukan konversi satuan waktu yang sederhana (per bulan ke per tahun, per semester ke per tahun) untuk membandingkan nilai. Prosedur ini sangat familiar bagi siswa kelas 12, jalur penyelesaiannya jelas, dan tidak ada kendala yang berinteraksi.. Bukti: Koperasi X: 1,2% per bulan. Koperasi Y: 7% per 6 bulan. Koperasi Z: 14,4% per tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan konversi satuan waktu. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 sudah terbiasa dengan perhitungan bunga tunggal dan konversi satuan waktu, sehingga soal ini bersifat rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15191,9 +16063,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 178. Soal `daf11da143ba0c945ece98f8`
@@ -15207,27 +16079,49 @@ Koperasi memberi bunga tunggal 15% per tahun. Setelah 8 bulan, modal akhir Ani a
 | C | Kesalahannya: 10% dihitung dari modal akhir padahal harus dari modal awal; modal awal yang benar Rp10.000.000,00 |
 | D | Kesalahannya: modal akhir harus dikali 1,10; modal awal yang benar Rp12.100.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga tunggal 15% per tahun selama 8 bulan adalah (8/12) * 15% = 10%. Modal akhir (Ma) = Modal awal (Mo) + Bunga = Mo + (10% * Mo) = 1,1 * Mo. Maka, Mo = 11.000.000 / 1,1 = 10.000.000. Siswa salah karena menghitung 10% dari modal akhir, bukan dari modal awal.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2a5558882988722b33793a7b398c888a5c3c570690f9f8af5763a64c2dccf4c8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f87f05090fcb2324c05258f5468719bb3a373f420449b26c20ec8731f1d3d7ce`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3017 |
+
+Run 1 — solusi: Bunga tunggal 15% per tahun selama 8 bulan adalah (8/12) * 15% = 10%. Modal akhir (Ma) = Modal awal (Mo) + Bunga = Mo + (10% * Mo) = 1,1 * Mo. Maka, Mo = 11.000.000 / 1,1 = 10.000.000. Siswa salah karena menghitung 10% dari modal akhir, bukan dari modal awal.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengevaluasi dan mengoreksi kesalahan prosedural dalam perhitungan bunga tunggal, yang memerlukan pemahaman konseptual tentang dasar perhitungan bunga (modal awal vs modal akhir).. Bukti: persen per bulan = 15% : 12 = 1,25%; bunga 8 bulan = 1,25% x 8 = 10%; modal awal = 11.000.000 - 10% x 11.000.000 = 9.900.000
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip bunga tunggal (konseptual) dan menerapkan prosedur perhitungan yang benar untuk mengoreksi kesalahan langkah yang diberikan.. Bukti: Koperasi memberi bunga tunggal 15% per tahun; modal awal = 11.000.000 - 10% x 11.000.000
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menghitung, tetapi harus menganalisis kesalahan logika pada langkah yang diberikan. Meskipun prosedurnya familiar, siswa perlu mengidentifikasi bahwa bunga tunggal dihitung dari modal awal, bukan modal akhir, yang merupakan jebakan konseptual umum.. Bukti: Seorang siswa mencari modal awal Ani sebagai berikut; Pernyataan yang benar tentang penyelesaian siswa tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal, persentase, dan operasi aljabar sederhana. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan dasar perhitungan bunga tunggal dan menganalisis kesalahan prosedural dalam konteks keuangan sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15259,9 +16153,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 179. Soal `f9c5c55b031bd40281cd0bdb`
@@ -15275,27 +16169,49 @@ Bu Tika menyimpan Rp15.000.000,00 di koperasi dengan bunga tunggal dan ingin mod
 | C | 12% per tahun selama 8 bulan |
 | D | 12% per tahun selama 12 bulan |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga yang diinginkan adalah Rp16.200.000 - Rp15.000.000 = Rp1.200.000. Persentase bunga terhadap modal adalah (1.200.000 / 15.000.000) * 100% = 8%. Opsi C: 12% per tahun = 1% per bulan. Untuk 8 bulan, total bunga = 8 * 1% = 8%. Ini sesuai dengan target.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cc19d941addc09cfad8b5aa30f4c5d98d9cbb7e7c251c13dcd38d9d03b0007b7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c5af45934ae108f2606b3e6cc11c0d8797925e5b62adcd8589eb7b32f08e8b7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2859 |
+
+Run 1 — solusi: Bunga yang diinginkan adalah Rp16.200.000 - Rp15.000.000 = Rp1.200.000. Persentase bunga terhadap modal adalah (1.200.000 / 15.000.000) * 100% = 8%. Opsi C: 12% per tahun = 1% per bulan. Untuk 8 bulan, total bunga = 8 * 1% = 8%. Ini sesuai dengan target.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal (I = P * r * t) atau memahami konsep proporsionalitas bunga terhadap waktu untuk memverifikasi pasangan nilai yang diberikan dalam pilihan ganda. Ini adalah penerapan konsep bunga tunggal pada konteks rutin.. Bukti: ingin modal akhirnya tepat Rp16.200.000,00; Pasangan persentase bunga per tahun dan lama menyimpan yang memenuhi keinginan Bu Tika adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung bunga tunggal dan mengaitkannya dengan modal akhir, yang merupakan prosedur standar dalam materi keuangan kelas 12.. Bukti: bunga tunggal; modal akhirnya tepat Rp16.200.000,00
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu menghitung selisih modal dan mencocokkannya dengan opsi yang tersedia menggunakan perhitungan bunga sederhana. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga tunggal; Pasangan persentase bunga per tahun dan lama menyimpan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan persentase. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah standar kelas 12. Soal ini langsung menguji pemahaman definisi bunga tunggal tanpa modifikasi atau jebakan yang memerlukan penalaran tingkat tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15327,9 +16243,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 180. Soal `e79ba501b375b1f67c82ab4d`
@@ -15343,27 +16259,49 @@ Dian meminjam Rp12.000.000,00. Skema X: bunga tunggal 1,5% per bulan selama 8 bu
 | C | Kedua skema sama besar karena hanya satuan waktunya yang berbeda |
 | D | Skema Y lebih kecil Rp90.000,00 daripada Skema X |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Skema X: Bunga = 12.000.000 * 1,5% * 8 = 1.440.000. Total = 13.440.000. Skema Y: Bunga = 12.000.000 * (15%/12) * 9 = 12.000.000 * 1,25% * 9 = 1.350.000. Total = 13.350.000. Selisih = 1.440.000 - 1.350.000 = 90.000. Skema Y lebih kecil 90.000 daripada Skema X.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cefde35c72d3dc0664ce698cc7526764d7ca94195398825c6917c95ab7931015`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `96d07b9468f7d16a9aee5e056c4272d1942e72b8ae68993b529f5fdfa5cd1faf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2950 |
+
+Run 1 — solusi: Skema X: Bunga = 12.000.000 * 1,5% * 8 = 1.440.000. Total = 13.440.000. Skema Y: Bunga = 12.000.000 * (15%/12) * 9 = 12.000.000 * 1,25% * 9 = 1.350.000. Total = 13.350.000. Selisih = 1.440.000 - 1.350.000 = 90.000. Skema Y lebih kecil 90.000 daripada Skema X.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal pada dua skema berbeda, melakukan konversi satuan waktu (tahunan ke bulanan), dan membandingkan hasilnya. Ini adalah penerapan prosedur rutin dalam konteks keuangan.. Bukti: Skema X: bunga tunggal 1,5% per bulan selama 8 bulan; Skema Y: bunga tunggal 15% per tahun selama 9 bulan
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme perhitungan bunga tunggal dan kemampuan mengonversi suku bunga tahunan ke bulanan agar dapat dibandingkan.. Bukti: bunga tunggal 1,5% per bulan; bunga tunggal 15% per tahun
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan konversi satuan bunga (tahunan ke bulanan) sebelum perhitungan, yang merupakan langkah tambahan di luar sekadar memasukkan angka ke rumus. Meskipun prosedurnya familiar, siswa harus berhati-hati dengan perbedaan basis waktu.. Bukti: Skema X: bunga tunggal 1,5% per bulan selama 8 bulan; Skema Y: bunga tunggal 15% per tahun selama 9 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal, konversi satuan waktu (tahun ke bulan), operasi aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola perbedaan basis waktu dalam perhitungan bunga sederhana. Langkah-langkahnya terstruktur namun memerlukan ketelitian dalam konversi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15395,9 +16333,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 181. Soal `bc4c68d68643fc12cb26b205`
@@ -15411,27 +16349,49 @@ Klaim: "Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga ya
 | C | Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.600.000,00 |
 | D | Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.200.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Klaim: M_akhir_P = M_akhir_Q => Bunga_P = Bunga_Q. Penyangkal: M_akhir_P = M_akhir_Q tetapi Bunga_P != Bunga_Q. Opsi C: P (M_awal=8jt, Bunga=600rb) -> M_akhir=8,6jt. Q (M_awal=7jt, Bunga=1,6jt) -> M_akhir=8,6jt. Karena 8,6jt = 8,6jt tetapi 600rb != 1,6jt, maka C adalah penyangkal yang valid.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `51a10d7cf4a2568c73b790df3eb42a4dc38a46c658a13283845fd16d3fb3146d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f1bdb4b6af827bcc062918261fd1976d0c2d4f68ba49224cbb0634db567ade30`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Medium | 3153 |
+
+Run 1 — solusi: Klaim: M_akhir_P = M_akhir_Q => Bunga_P = Bunga_Q. Penyangkal: M_akhir_P = M_akhir_Q tetapi Bunga_P != Bunga_Q. Opsi C: P (M_awal=8jt, Bunga=600rb) -> M_akhir=8,6jt. Q (M_awal=7jt, Bunga=1,6jt) -> M_akhir=8,6jt. Karena 8,6jt = 8,6jt tetapi 600rb != 1,6jt, maka C adalah penyangkal yang valid.
+- Domain kognitif `classify/reasoning`: Siswa perlu memahami definisi bunga tunggal dan modal akhir (M_akhir = M_awal + Bunga), lalu menerapkan pemahaman tersebut untuk menguji kebenaran sebuah pernyataan logis dengan mencari contoh penyangkal (counterexample). Ini melibatkan penalaran tentang hubungan antar variabel.. Bukti: Klaim: "Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar."; Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang hubungan antara modal awal, bunga, dan modal akhir dalam konteks bunga tunggal, serta kemampuan untuk memanipulasi konsep tersebut untuk menguji validitas klaim.. Bukti: Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar.
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami hubungan matematis bunga tunggal dan melakukan verifikasi terhadap setiap opsi untuk menemukan contoh penyangkal. Meskipun prosedurnya sederhana (penjumlahan), siswa perlu melakukan perencanaan untuk menguji kondisi 'modal akhir sama' dan 'bunga berbeda' secara sistematis.. Bukti: Klaim: "Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar."; Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep dasar bunga tunggal dan rumus modal akhir (M_akhir = M_awal + Bunga). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan analisis logis sederhana terhadap rumus keuangan dasar. Soal ini menuntut pemahaman konsep, bukan sekadar hitungan rutin, namun jalurnya cukup jelas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15463,9 +16423,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 182. Soal `20e72a5215e97f13ad41b6f0`
@@ -15479,27 +16439,49 @@ Simpanan A: Rp8.000.000,00 dengan bunga tunggal 6% per tahun selama 10 bulan. Si
 | C | 0,64% |
 | D | 8% |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga A = 8.000.000 * (6/100) * (10/12) = 400.000. Bunga B = 5.000.000 * r * (15/12) = 400.000. Maka 5.000.000 * r * 1,25 = 400.000, sehingga 6.250.000 * r = 400.000. r = 400.000 / 6.250.000 = 0,064 atau 6,4%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `48e54830eb42bf2d3d3bf2d53f0add59247a45ee29149b8bced77bd1dc394515`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ca0dfe50edc35c8cf0218bf50fe464c225cc07495a89636aeae2cf6a1783fb1f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3074 |
+
+Run 1 — solusi: Bunga A = 8.000.000 * (6/100) * (10/12) = 400.000. Bunga B = 5.000.000 * r * (15/12) = 400.000. Maka 5.000.000 * r * 1,25 = 400.000, sehingga 6.250.000 * r = 400.000. r = 400.000 / 6.250.000 = 0,064 atau 6,4%.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal (B = M * i * t) pada dua situasi yang berbeda dan menyamakan hasilnya untuk mencari variabel yang tidak diketahui (suku bunga B). Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Simpanan A: Rp8.000.000,00 dengan bunga tunggal 6% per tahun selama 10 bulan.; Simpanan B: Rp5.000.000,00 dengan bunga tunggal selama 1 tahun 3 bulan.; Jika bunga yang diterima simpanan A dan B sama besar, persentase bunga tunggal per tahun simpanan B adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga tunggal dan konversi satuan waktu (bulan ke tahun) dalam konteks keuangan.. Bukti: bunga tunggal 6% per tahun; Simpanan A: Rp8.000.000,00; Simpanan B: Rp5.000.000,00
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan dua langkah perhitungan bunga tunggal yang saling terkait (menghitung bunga A, lalu menggunakan hasilnya untuk mencari suku bunga B) serta konversi satuan waktu (10 bulan = 10/12 tahun; 1 tahun 3 bulan = 15/12 tahun).. Bukti: Simpanan A: Rp8.000.000,00 dengan bunga tunggal 6% per tahun selama 10 bulan.; Simpanan B: Rp5.000.000,00 dengan bunga tunggal selama 1 tahun 3 bulan.; Jika bunga yang diterima simpanan A dan B sama besar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga tunggal (B = M*i*t) dan konversi satuan waktu. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu melakukan perhitungan bunga tunggal dengan konversi waktu. Langkah-langkahnya jelas dan prosedural, namun memerlukan ketelitian dalam menyamakan bunga kedua simpanan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15531,9 +16513,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 183. Soal `fb83343677ffc667594e87a2`
@@ -15547,27 +16529,49 @@ Sebuah simpanan berbunga tunggal diubah: modal awal tetap, persentase bunga per 
 | C | naik 50% dari bunga semula |
 | D | tetap sama besar |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga tunggal I = M * r * t. Bunga baru I' = M * (1.5r) * (2/3t) = M * (3/2 * r) * (2/3 * t) = (3/2 * 2/3) * (M * r * t) = 1 * I. Jadi, bunga tetap sama.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c33825141825ef43995d14e0e7129011c57022dfb11d69dfccbfc3c54b9297c1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `590ca1b4ac2967d1938eed76199d2e7e3151bf0ef108d3dab2e1c4aee8c9d5e9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3633 |
+
+Run 1 — solusi: Bunga tunggal I = M * r * t. Bunga baru I' = M * (1.5r) * (2/3t) = M * (3/2 * r) * (2/3 * t) = (3/2 * 2/3) * (M * r * t) = 1 * I. Jadi, bunga tetap sama.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal dan mengalikan faktor perubahan pada variabel bunga dan waktu untuk menentukan perbandingan bunga akhir terhadap bunga awal.. Bukti: persentase bunga per tahun dinaikkan 50% dari semula; lama menyimpan dikurangi sepertiga dari lama semula
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang prosedur perhitungan bunga tunggal dan manipulasi variabel dalam rumus tersebut.. Bukti: modal awal tetap; persentase bunga per tahun dinaikkan 50% dari semula; lama menyimpan dikurangi sepertiga dari lama semula
+- Intended difficulty `classify/Medium`: Soal ini memerlukan pemahaman hubungan perkalian antar variabel dalam rumus bunga tunggal. Siswa harus menerjemahkan perubahan persentase dan waktu menjadi faktor pengali (3/2 dan 2/3) lalu mengalikannya. Meskipun prosedurnya langsung, ini bukan sekadar substitusi angka, melainkan analisis perubahan proporsional.. Bukti: persentase bunga per tahun dinaikkan 50% dari semula; lama menyimpan dikurangi sepertiga dari lama semula
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal (I = M*r*t) dan operasi pecahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 2 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 12, soal ini menguji pemahaman konseptual tentang perubahan proporsional dalam rumus bunga tunggal. Tingkat kesulitan Medium karena siswa harus berhati-hati dalam mengalikan faktor perubahan (3/2 dan 2/3) dan tidak terjebak menjumlahkan perubahan tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15599,9 +16603,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 184. Soal `70f4bfad615cdc813fcebd30`
@@ -15615,27 +16619,49 @@ Andi dan Budi masing-masing menyimpan Rp10.000.000,00 di koperasi dengan bunga t
 | C | Total bunga Budi hanya Rp100.000,00 karena bunga hanya dihitung satu kali di akhir 12 bulan |
 | D | Total bunga Budi lebih besar, sekitar Rp1.268.000,00, karena bunga bulan sebelumnya ikut berbunga |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga tunggal dihitung berdasarkan modal awal (M) untuk setiap periode (n) dengan suku bunga (i). Rumus bunga tunggal adalah B = M x i x n. Baik Andi maupun Budi memiliki modal Rp10.000.000,00, suku bunga 1% per bulan, dan durasi 12 bulan. Andi menarik bunga tiap bulan, namun total bunga yang terkumpul tetap dihitung dari modal awal. Budi tidak menarik bunga, namun karena sistemnya bunga tunggal, bunga tidak diakumulasikan ke modal (tidak berbunga majemuk). Maka, Bunga = 10.000.000 x 0,01 x 12 = 1.200.000,00 untuk keduanya.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c21f756ba1e86351f41ae0f8400c7f1f32904d8e19f09c6bb12f0c563423028e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `36398ce95abe26faa640d8d6abe76712c39ab6d3aa28524fcfdb4855617423b3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2966 |
+
+Run 1 — solusi: Bunga tunggal dihitung berdasarkan modal awal (M) untuk setiap periode (n) dengan suku bunga (i). Rumus bunga tunggal adalah B = M x i x n. Baik Andi maupun Budi memiliki modal Rp10.000.000,00, suku bunga 1% per bulan, dan durasi 12 bulan. Andi menarik bunga tiap bulan, namun total bunga yang terkumpul tetap dihitung dari modal awal. Budi tidak menarik bunga, namun karena sistemnya bunga tunggal, bunga tidak diakumulasikan ke modal (tidak berbunga majemuk). Maka, Bunga = 10.000.000 x 0,01 x 12 = 1.200.000,00 untuk keduanya.
+- Domain kognitif `classify/applying`: Soal ini menguji pemahaman konseptual tentang definisi bunga tunggal. Siswa harus mengenali bahwa bunga tunggal selalu dihitung dari modal awal, terlepas dari apakah bunga ditarik atau tidak, yang membedakannya dengan bunga majemuk.. Bukti: Andi dan Budi masing-masing menyimpan Rp10.000.000,00 di koperasi dengan bunga tunggal 1% per bulan selama 12 bulan.; Pernyataan yang benar tentang total bunga yang diperoleh keduanya adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar bunga tunggal (konseptual) dan menerapkannya untuk membedakan skenario penarikan bunga (prosedural/konseptual).. Bukti: bunga tunggal 1% per bulan selama 12 bulan; Andi menarik bunga setiap akhir bulan, sedangkan Budi tidak pernah menarik apa pun
+- Intended difficulty `classify/Easy`: Soal ini bersifat konseptual dan menguji pemahaman mendasar tentang bunga tunggal. Jalur penyelesaiannya langsung (menggunakan rumus bunga tunggal standar) dan tidak memerlukan perencanaan langkah yang kompleks atau integrasi kendala yang sulit.. Bukti: bunga tunggal 1% per bulan selama 12 bulan; Andi menarik bunga setiap akhir bulan, sedangkan Budi tidak pernah menarik apa pun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman definisi bunga tunggal dan rumus bunga tunggal (B = M x i x n). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung dari konsep bunga tunggal yang dipelajari di kelas 12. Tidak ada jebakan perhitungan atau logika yang rumit; siswa hanya perlu memahami bahwa bunga tunggal tidak dipengaruhi oleh penarikan bunga berkala. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15667,9 +16693,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 185. Soal `632e18ed585655b37f73a39f`
@@ -15683,27 +16709,49 @@ Modal akhir sebuah simpanan berbunga tunggal (tanpa penarikan dan penambahan uan
 | C | (2 bulan, Rp7.080.000,00), (6 bulan, Rp7.240.000,00), (9 bulan, Rp7.400.000,00) |
 | D | (3 bulan, Rp4.150.000,00), (6 bulan, Rp4.300.000,00), (12 bulan, Rp4.650.000,00) |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga tunggal menghasilkan pertumbuhan linear: M(t) = M0 + (M0 * i * t). Kenaikan modal akhir per satuan waktu harus konstan. Opsi B: (10-5) bulan = 5 bulan, kenaikan = 8.700.000 - 8.350.000 = 350.000 (70.000/bulan). (20-10) bulan = 10 bulan, kenaikan = 9.400.000 - 8.700.000 = 700.000 (70.000/bulan). Kenaikan konstan 70.000/bulan terbukti.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8efce5bf1f6cc2e48f01a4b03a3af08f69455cd00204f0fc6aa59fd49be1822f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `41e483cd3e1ce23342d48a9bf7c0b5cf302f183773d8c89bf8ac1ae1c702b539`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3010 |
+
+Run 1 — solusi: Bunga tunggal menghasilkan pertumbuhan linear: M(t) = M0 + (M0 * i * t). Kenaikan modal akhir per satuan waktu harus konstan. Opsi B: (10-5) bulan = 5 bulan, kenaikan = 8.700.000 - 8.350.000 = 350.000 (70.000/bulan). (20-10) bulan = 10 bulan, kenaikan = 9.400.000 - 8.700.000 = 700.000 (70.000/bulan). Kenaikan konstan 70.000/bulan terbukti.
+- Domain kognitif `classify/applying`: Siswa perlu memahami sifat linear dari bunga tunggal (pertambahan nilai yang konstan setiap periode) dan menguji konsistensi data pada pilihan jawaban untuk menemukan pola yang linear.. Bukti: Modal akhir sebuah simpanan berbunga tunggal; Catatan (lama menyimpan, modal akhir) yang mungkin berasal dari satu simpanan tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga tunggal bekerja secara linear terhadap waktu, yang kemudian diterapkan melalui prosedur pengecekan selisih data.. Bukti: berbunga tunggal; Catatan (lama menyimpan, modal akhir)
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa tidak hanya menghitung bunga, tetapi harus menganalisis data untuk mengidentifikasi pola linear yang konsisten. Terdapat beberapa langkah pengecekan (perbandingan selisih) yang harus dilakukan secara sistematis untuk setiap opsi.. Bukti: Catatan (lama menyimpan, modal akhir) yang mungkin berasal dari satu simpanan tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga tunggal sebagai deret aritmetika atau fungsi linear. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | True |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengidentifikasi karakteristik fungsi linear dari data diskrit. Soal memerlukan ketelitian dalam membandingkan laju perubahan pada beberapa interval waktu. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15735,9 +16783,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 186. Soal `b7642d9798c06936ecba5f8a`
@@ -15751,27 +16799,49 @@ Bu Nia menyimpan Rp8.000.000,00 di koperasi dengan bunga tunggal 9% per tahun. B
 | C | 26 |
 | D | 256 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga per tahun = 9% * 8.000.000 = 720.000. Bunga per bulan = 720.000 / 12 = 60.000. Syarat bunga <= 1.540.000. Maka 60.000 * n <= 1.540.000, sehingga n <= 25,66. Karena bunga hanya dihitung untuk bulan penuh, maka n maksimal adalah 25 bulan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52d71b543a9ebfc9cab88e2a90f4c3b4c6bab6239c230b3813b54df89e1b06d3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `df247163b6d6abcd1fcf49bd2df9b54ef6b96db76860f164a37f9db45b1fb838`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2819 |
+
+Run 1 — solusi: Bunga per tahun = 9% * 8.000.000 = 720.000. Bunga per bulan = 720.000 / 12 = 60.000. Syarat bunga <= 1.540.000. Maka 60.000 * n <= 1.540.000, sehingga n <= 25,66. Karena bunga hanya dihitung untuk bulan penuh, maka n maksimal adalah 25 bulan.
+- Domain kognitif `classify/applying`: Siswa perlu mengonversi suku bunga tahunan ke bulanan, menerapkan rumus bunga tunggal, dan memahami kendala 'bulan penuh' untuk menentukan nilai n yang memenuhi pertidaksamaan.. Bukti: bunga tunggal 9% per tahun; Bunga hanya dihitung untuk bulan penuh; tidak ingin bunga yang diterima melebihi Rp1.540.000,00
+- Dimensi pengetahuan `classify/procedural`: Soal ini memerlukan pemahaman prosedural tentang perhitungan bunga tunggal dan penerapan konsep pembulatan ke bawah dalam konteks kendala finansial.. Bukti: bunga tunggal 9% per tahun; Lama menyimpan terbanyak (dalam bulan penuh)
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan konversi satuan waktu (tahun ke bulan) dan interpretasi kendala 'bulan penuh' yang membatasi hasil pembagian, namun prosedurnya bersifat rutin bagi siswa kelas 12.. Bukti: bunga tunggal 9% per tahun; Bunga hanya dihitung untuk bulan penuh; tidak ingin bunga yang diterima melebihi Rp1.540.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan aritmatika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola konversi satuan bunga dan menerapkan pertidaksamaan sederhana dalam konteks keuangan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15803,9 +16873,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 187. Soal `1d6c6b3a6e593b8610d15c19`
@@ -15832,6 +16902,25 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -15887,27 +16976,61 @@ Sebuah koperasi memberi bunga tunggal 9% per tahun. Pak Hendro menyimpan Rp12.00
 | C | 60 |
 | D | 72 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga tunggal per tahun = 9% * 12.000.000 = 1.080.000. Bunga per bulan = 1.080.000 / 12 = 90.000. Lama menabung (t) = Total Bunga / Bunga per bulan = 540.000 / 90.000 = 6 bulan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `94cd0836e8386828cc96d426574172e3155173cf88aa7cfe68e20d5cfe44656c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b9b027e923443a9e5446c47027836335daa81cda299283cb3f054f4e090c185e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2798 |
+
+Run 1 — solusi: Bunga tunggal per tahun = 9% * 12.000.000 = 1.080.000. Bunga per bulan = 1.080.000 / 12 = 90.000. Lama menabung (t) = Total Bunga / Bunga per bulan = 540.000 / 90.000 = 6 bulan.
+- Domain kognitif `classify/applying`: Siswa perlu mengonversi suku bunga tahunan menjadi bulanan atau menghitung bunga tahunan terlebih dahulu kemudian menyesuaikan dengan satuan waktu yang diminta. Ini adalah penerapan prosedur bunga tunggal yang rutin.. Bukti: Sebuah koperasi memberi bunga tunggal 9% per tahun.; Lama Pak Hendro menyimpan uangnya adalah ... bulan.
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang konsep bunga tunggal dan prosedur perhitungan yang melibatkan konversi satuan waktu (tahun ke bulan).. Bukti: bunga tunggal 9% per tahun; Lama Pak Hendro menyimpan uangnya adalah ... bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menerapkan rumus bunga tunggal dan melakukan konversi satuan waktu yang sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: bunga tunggal 9% per tahun; Pak Hendro menyimpan Rp12.000.000,00; menerima bunga seluruhnya Rp540.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan konversi satuan waktu (tahun ke bulan). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah materi dasar kelas 12. Soal ini tidak menuntut perencanaan kompleks atau integrasi konsep yang sulit bagi siswa kelas 12. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -15939,9 +17062,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 189. Soal `2758c3a736a202bdb34217e4`
@@ -15955,27 +17078,49 @@ Rani menyimpan Rp5.000.000,00 di sebuah koperasi dengan bunga tunggal. Setelah 1
 | C | 0,5% |
 | D | 72% |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga (B) = Rp5.250.000 - Rp5.000.000 = Rp250.000. Rumus bunga tunggal: B = M x i x t, dengan t dalam tahun. Rp250.000 = 5.000.000 x i x (10/12). i = 250.000 / (5.000.000 x 10/12) = 0,05 x 1,2 = 0,06 atau 6%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1935198afbf3f86da590bdc2ba07cbcfe36666bf83c9c1b26bdfdee5fb71be86`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7544a2ca87e087c1cc19dfbad6e1cde628767c3f2056a6fa1dad0e8107f8e2de`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2873 |
+
+Run 1 — solusi: Bunga (B) = Rp5.250.000 - Rp5.000.000 = Rp250.000. Rumus bunga tunggal: B = M x i x t, dengan t dalam tahun. Rp250.000 = 5.000.000 x i x (10/12). i = 250.000 / (5.000.000 x 10/12) = 0,05 x 1,2 = 0,06 atau 6%.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga tunggal untuk mencari suku bunga tahunan. Siswa perlu mengidentifikasi variabel yang diketahui, menghitung bunga yang diperoleh, dan menyesuaikan satuan waktu (bulan ke tahun) untuk mendapatkan persentase tahunan. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Rani menyimpan Rp5.000.000,00 di sebuah koperasi dengan bunga tunggal.; Setelah 10 bulan, modal akhirnya menjadi Rp5.250.000,00.; Persentase bunga tunggal koperasi itu per tahun adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami konsep bunga tunggal dan hubungan antara modal awal, bunga, waktu, dan suku bunga untuk menyelesaikan masalah ini.. Bukti: bunga tunggal; modal akhirnya menjadi Rp5.250.000,00
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menghitung selisih modal untuk mendapatkan bunga, lalu menggunakan rumus bunga tunggal sederhana. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: bunga tunggal; Setelah 10 bulan; Persentase bunga tunggal koperasi itu per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar aritmatika sosial dan rumus bunga tunggal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik standar kelas 12. Soal ini menguji pemahaman langsung terhadap rumus tanpa modifikasi kompleks, sehingga tergolong mudah bagi siswa kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16007,9 +17152,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 190. Soal `ff2df611b244e96a137583cb`
@@ -16023,27 +17168,49 @@ Sebuah koperasi memberi bunga tunggal 12% per tahun. Setelah disimpan selama 8 b
 | C | Rp9.000.000,00 |
 | D | Rp10.497.600,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga tunggal per bulan = 12%/12 = 1%. Bunga selama 8 bulan = 8% x Modal Awal (M). Modal Akhir = M + (8% x M) = 1,08M. 1,08M = 9.720.000. M = 9.720.000 / 1,08 = 9.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a8ed78e5186d8b168dcd6d0bd5158f87df62fc0bfb1482acb67961290d2cb86f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7b065d927cd9ef68854b77c12e7d21d305f928a36644427cadaf065575e119d4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2756 |
+
+Run 1 — solusi: Bunga tunggal per bulan = 12%/12 = 1%. Bunga selama 8 bulan = 8% x Modal Awal (M). Modal Akhir = M + (8% x M) = 1,08M. 1,08M = 9.720.000. M = 9.720.000 / 1,08 = 9.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengonversi suku bunga tahunan ke bulanan dan menerapkan rumus bunga tunggal untuk mencari modal awal dari modal akhir. Ini adalah penerapan prosedur standar yang rutin.. Bukti: koperasi memberi bunga tunggal 12% per tahun; Setelah disimpan selama 8 bulan, modal akhir Bu Sinta menjadi Rp9.720.000,00
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang konsep bunga tunggal dan prosedur perhitungan modal awal berdasarkan modal akhir.. Bukti: bunga tunggal 12% per tahun; Setelah disimpan selama 8 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah penyelesaian yang jelas (konversi bunga, rumus bunga tunggal, aljabar linear sederhana). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: bunga tunggal 12% per tahun; Setelah disimpan selama 8 bulan; Modal akhir Bu Sinta menjadi Rp9.720.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan aljabar linear satu variabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah sangat familiar dengan perhitungan bunga tunggal sederhana ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16075,9 +17242,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 191. Soal `25d6cd4ca486a2564a5f2c67`
@@ -16104,6 +17271,13 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ClientError:429`; tidak dihitung sebagai suara.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -16159,27 +17333,49 @@ Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tun
 | C | Rp8.512.500,00 |
 | D | Rp8.737.500,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga 1 = 7.500.000 * (12%/12) * 6 = 450.000. Bunga 2 = 7.500.000 * (18%/12) * 5 = 562.500. Total Bunga = 450.000 + 562.500 = 1.012.500. Modal Akhir = 7.500.000 + 1.012.500 = 8.512.500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b7fa6ae9595f81e70f85708d6e561d1e976bf59023ca4c7a99df47ecb36cafe5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1e65054dced2b5788d16333e65318cc7341dca831fff7356e6258d3de966d3cf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2914 |
+
+Run 1 — solusi: Bunga 1 = 7.500.000 * (12%/12) * 6 = 450.000. Bunga 2 = 7.500.000 * (18%/12) * 5 = 562.500. Total Bunga = 450.000 + 562.500 = 1.012.500. Modal Akhir = 7.500.000 + 1.012.500 = 8.512.500.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur bunga tunggal pada dua periode waktu yang berbeda dengan suku bunga yang berbeda pula, kemudian menjumlahkan bunga tersebut ke modal awal. Ini adalah penerapan konsep bunga tunggal pada konteks rutin.. Bukti: Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun.; Bunga pada kedua periode dihitung dari modal awal yang sama.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan bagaimana mengelola perubahan suku bunga dalam periode waktu yang berbeda.. Bukti: bunga tunggalnya 12% per tahun; Bunga pada kedua periode dihitung dari modal awal yang sama
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemilihan prosedur yang tepat untuk dua periode bunga yang berbeda dan penggabungan hasilnya. Meskipun prosedurnya familiar, siswa harus teliti dalam mengonversi suku bunga tahunan ke bulanan dan menjumlahkan dua komponen bunga sebelum menambahkannya ke modal awal.. Bukti: Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun.; Modal akhir Pak Darmo setelah 11 bulan adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal, konversi satuan waktu (tahun ke bulan), dan operasi aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 5 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola perhitungan bunga bertahap dengan suku bunga yang berubah, yang merupakan variasi rutin dari rumus bunga tunggal standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16211,9 +17407,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 193. Soal `a727f9709d5f44601af9bce0`
@@ -16227,27 +17423,49 @@ Bu Yuni meminjam Rp6.000.000,00 dari koperasi dengan bunga tunggal 1,5% per bula
 | C | Rp90.000,00 |
 | D | Rp600.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga total = 6.000.000 * 1,5% * 10 = 900.000. Total pengembalian = 6.000.000 + 900.000 = 6.900.000. Angsuran per bulan = 6.900.000 / 10 = 690.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `298bd78d49d13d6e703e112c253ad90242df6a646fcd4d9c046e8eeb3f0a129e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `14d1fd3406e0f7b742115820106d7e75085329240eb7db30d26a86022845e8c7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2810 |
+
+Run 1 — solusi: Bunga total = 6.000.000 * 1,5% * 10 = 900.000. Total pengembalian = 6.000.000 + 900.000 = 6.900.000. Angsuran per bulan = 6.900.000 / 10 = 690.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga tunggal untuk menghitung total bunga, menjumlahkannya dengan pokok, lalu membaginya dengan durasi waktu. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Bu Yuni meminjam Rp6.000.000,00 dari koperasi dengan bunga tunggal 1,5% per bulan.; Pinjaman beserta bunganya dilunasi dengan angsuran sama besar setiap bulan selama 10 bulan.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan pembagian angsuran, yang merupakan pengetahuan prosedural.. Bukti: bunga tunggal 1,5% per bulan; angsuran sama besar setiap bulan selama 10 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah-langkah yang jelas dan familiar bagi siswa kelas 12. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: bunga tunggal 1,5% per bulan; angsuran sama besar setiap bulan selama 10 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan aritmetika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari rumus bunga tunggal yang sudah dipelajari di kelas 12, dengan langkah penyelesaian yang linear dan tidak memerlukan analisis kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16279,9 +17497,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 194. Soal `3a682bf3f1da11b3f16dd05b`
@@ -16295,27 +17513,49 @@ Seorang siswa menghitung bunga tunggal dari simpanan Rp9.000.000,00 dengan bunga
 | C | Persen 8% harus dibagi 6 lalu dikalikan 6 sehingga bunga yang benar Rp720.000,00 |
 | D | Perhitungan sudah benar karena bunga tunggal selalu dikalikan dengan banyaknya bulan |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tunggal dihitung dengan rumus B = M x i x t. Karena bunga 8% per tahun (i = 0,08/tahun) dan waktu 6 bulan (t = 6/12 tahun), maka B = 9.000.000 x (0,08/12) x 6 = 9.000.000 x 0,08 x 0,5 = 360.000. Siswa salah karena tidak mengonversi satuan waktu bunga (tahun) dengan satuan waktu simpanan (bulan).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f0818afc461754405133308fd06845c6cdd3a5cfd5eccfbe45a3802e8f5fe8bc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ed13d815673c6234e975ee24b5c1a041075f2ac1ebe76bcdb3f7cb189515ba52`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3007 |
+
+Run 1 — solusi: Bunga tunggal dihitung dengan rumus B = M x i x t. Karena bunga 8% per tahun (i = 0,08/tahun) dan waktu 6 bulan (t = 6/12 tahun), maka B = 9.000.000 x (0,08/12) x 6 = 9.000.000 x 0,08 x 0,5 = 360.000. Siswa salah karena tidak mengonversi satuan waktu bunga (tahun) dengan satuan waktu simpanan (bulan).
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengevaluasi kesalahan prosedur dalam perhitungan bunga tunggal. Siswa harus mengidentifikasi ketidaksesuaian satuan waktu antara suku bunga (tahunan) dan durasi simpanan (bulanan), kemudian menerapkan prosedur yang benar. Ini termasuk dalam domain applying karena siswa menerapkan konsep bunga tunggal untuk mengoreksi kesalahan prosedural.. Bukti: Seorang siswa menghitung bunga tunggal dari simpanan Rp9.000.000,00 dengan bunga 8% per tahun selama 6 bulan sebagai berikut; Pernyataan yang benar tentang perhitungan siswa tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme perhitungan bunga tunggal dan pentingnya konsistensi satuan waktu dalam rumus tersebut. Ini merupakan pengetahuan prosedural karena berfokus pada langkah-langkah perhitungan yang benar.. Bukti: bunga tunggal dari simpanan Rp9.000.000,00 dengan bunga 8% per tahun selama 6 bulan
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu mengidentifikasi kesalahan umum dalam konversi satuan waktu pada rumus bunga tunggal. Jalur penyelesaiannya langsung (mengonversi 6 bulan menjadi 0,5 tahun atau membagi suku bunga dengan 12) dan tidak melibatkan integrasi konsep yang kompleks.. Bukti: B = 9.000.000 x 8% x 6 = 4.320.000; Pernyataan yang benar tentang perhitungan siswa tersebut adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal dan konversi satuan waktu (tahun ke bulan). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah menguasai konsep bunga tunggal yang merupakan materi dasar keuangan. Kesalahan yang disajikan adalah kesalahan prosedural standar yang mudah dideteksi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16347,9 +17587,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 195. Soal `f43482b8f055934c221061ad`
@@ -16363,27 +17603,49 @@ Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp
 | C | 15% |
 | D | 18% |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga per 4 bulan = 11.350.000 - 10.750.000 = 600.000. Bunga per bulan = 600.000 / 4 = 150.000. Modal awal (M) = 10.750.000 - (5 * 150.000) = 10.000.000. Persentase bunga per bulan = (150.000 / 10.000.000) * 100% = 1,5%. Persentase bunga per tahun = 1,5% * 12 = 18%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b293ba673dc8590045fcb1a86f7ad5b3a068c0dd74380ea1dcd27d85e636443f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0b5a5db61c38408a1419f2f555594a6cff837de821ebe0eab34e1d9f44335b65`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2940 |
+
+Run 1 — solusi: Bunga per 4 bulan = 11.350.000 - 10.750.000 = 600.000. Bunga per bulan = 600.000 / 4 = 150.000. Modal awal (M) = 10.750.000 - (5 * 150.000) = 10.000.000. Persentase bunga per bulan = (150.000 / 10.000.000) * 100% = 1,5%. Persentase bunga per tahun = 1,5% * 12 = 18%.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga tunggal untuk menentukan modal awal dan suku bunga dari dua titik waktu yang berbeda. Ini melibatkan pemilihan prosedur yang tepat (menghitung selisih bunga, mencari modal awal, lalu menghitung persentase) yang merupakan penerapan konsep dalam konteks rutin.. Bukti: Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan.; Persentase bunga tunggal per tahun dari simpanan tersebut adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme perhitungan bunga tunggal dan hubungan antara bunga, modal, waktu, dan persentase bunga.. Bukti: bunga tunggal; Persentase bunga tunggal per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan beberapa langkah yang saling terkait (menghitung selisih bunga, mencari modal awal, menghitung bunga per bulan, lalu konversi ke tahunan). Siswa harus merencanakan urutan langkah tersebut tanpa bantuan eksplisit.. Bukti: bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan; Persentase bunga tunggal per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga tunggal, aritmetika dasar, dan konversi satuan waktu. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengintegrasikan beberapa langkah perhitungan bunga tunggal ini dengan lancar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16415,9 +17677,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 196. Soal `a6940db0c6dfbe94477460e4`
@@ -16444,6 +17706,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -16499,27 +17764,49 @@ Pak Surya menyimpan Rp9.000.000,00 di koperasi dengan bunga tunggal 8% per tahun
 | C | Rp10.620.000,00 |
 | D | Rp1.620.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Modal (M) = 9.000.000. Bunga (i) = 8% per tahun = 8%/12 per bulan. Waktu (n) = 2 tahun 3 bulan = 27 bulan. Bunga = M x i x n = 9.000.000 x (0,08/12) x 27 = 1.620.000. Total = M + Bunga = 9.000.000 + 1.620.000 = 10.620.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `56f9ce6e4b6ae5eaf242076725bbcd4678ffdd4c38d1ae9f623f3ae301953130`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `35081d683332ee831b34051a53f4bc55d768b05573a3578d72a7e84299eff7bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2825 |
+
+Run 1 — solusi: Modal (M) = 9.000.000. Bunga (i) = 8% per tahun = 8%/12 per bulan. Waktu (n) = 2 tahun 3 bulan = 27 bulan. Bunga = M x i x n = 9.000.000 x (0,08/12) x 27 = 1.620.000. Total = M + Bunga = 9.000.000 + 1.620.000 = 10.620.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengonversi satuan waktu (tahun ke bulan) agar konsisten dengan suku bunga tahunan, lalu menerapkan rumus bunga tunggal dan menjumlahkannya dengan modal awal. Ini adalah penerapan prosedur rutin.. Bukti: bunga tunggal 8% per tahun selama 2 tahun 3 bulan; Total simpanan Pak Surya pada akhir masa tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga tunggal dan konversi satuan waktu yang merupakan prosedur standar dalam matematika keuangan.. Bukti: bunga tunggal 8% per tahun; 2 tahun 3 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu melakukan konversi satuan waktu (2 tahun 3 bulan menjadi 27 bulan) dan menerapkan rumus bunga tunggal sederhana. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga tunggal 8% per tahun; 2 tahun 3 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan konversi satuan waktu. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar kelas 12. Soal ini tidak memerlukan penalaran tingkat tinggi, hanya ketelitian dalam konversi waktu dan operasi aritmetika dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16551,9 +17838,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 198. Soal `3385530e5dcd7022d175b7e0`
@@ -16567,27 +17854,49 @@ Seseorang menyimpan modal awal positif di koperasi dengan bunga tunggal tetap. J
 | C | bunga menjadi 9 kali semula karena bunga dihitung dari modal akhir |
 | D | bunga menjadi tepat 3 kali semula, tetapi modal akhir kurang dari 3 kali modal akhir semula |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga tunggal (B) dirumuskan sebagai B = M * i * n, di mana M adalah modal awal, i adalah suku bunga, dan n adalah lama waktu. Jika n menjadi 3n, maka bunga baru B' = M * i * (3n) = 3 * (M * i * n) = 3B. Modal akhir (Ma) dirumuskan sebagai Ma = M + B. Jika n menjadi 3n, modal akhir baru Ma' = M + 3B. Karena M > 0 dan B > 0, maka M + 3B < 3M + 3B = 3(M + B). Jadi, bunga menjadi 3 kali semula, namun modal akhir kurang dari 3 kali modal akhir semula.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `73174663a6ba08ab9dde6daa95451a5c8db36561e26a378b00cd4630934dba50`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c468c7321fb80bc5ad451221f9ac6ed2b344db949d78972e7b01c6f8cb6cba96`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2849 |
+
+Run 1 — solusi: Bunga tunggal (B) dirumuskan sebagai B = M * i * n, di mana M adalah modal awal, i adalah suku bunga, dan n adalah lama waktu. Jika n menjadi 3n, maka bunga baru B' = M * i * (3n) = 3 * (M * i * n) = 3B. Modal akhir (Ma) dirumuskan sebagai Ma = M + B. Jika n menjadi 3n, modal akhir baru Ma' = M + 3B. Karena M > 0 dan B > 0, maka M + 3B < 3M + 3B = 3(M + B). Jadi, bunga menjadi 3 kali semula, namun modal akhir kurang dari 3 kali modal akhir semula.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk memahami hubungan proporsional antara waktu dan bunga dalam bunga tunggal, serta menganalisis perubahan modal akhir. Siswa harus menerapkan konsep bunga tunggal (M*i*n) dan membandingkan modal akhir awal (M+B) dengan modal akhir baru (M+3B) untuk menyimpulkan hubungan ketidaksamaan.. Bukti: bunga tunggal tetap; lama menyimpan dijadikan 3 kali semula; pernyataan yang benar adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip dasar bunga tunggal (konseptual) dan menerapkan rumus bunga tunggal untuk membandingkan dua kondisi (prosedural).. Bukti: bunga tunggal tetap; modal awal dan persentase bunga tidak berubah
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan pemahaman konseptual yang kuat tentang perbedaan antara bunga dan modal akhir. Siswa sering terjebak menganggap modal akhir juga menjadi 3 kali lipat (seperti pada bunga majemuk atau kesalahan logika proporsional). Meskipun prosedurnya sederhana, analisis perbandingan modal akhir memerlukan ketelitian logika.. Bukti: lama menyimpan dijadikan 3 kali semula; modal akhir kurang dari 3 kali modal akhir semula
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga tunggal (B = M*i*n) dan konsep modal akhir (Ma = M + B). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | strong |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan perilaku bunga tunggal terhadap waktu dan dampaknya pada total modal akhir. Distraktor dirancang untuk mengeksploitasi miskonsepsi umum tentang proporsionalitas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16619,9 +17928,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 199. Soal `869f686e904d8a543688f85b`
@@ -16635,27 +17944,49 @@ Sebuah koperasi memberi bunga tunggal 15% per tahun. Setelah menyimpan selama 8 
 | C | Rp1.440.000,00 |
 | D | Rp15.840.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga (B) = M * i * t. B = 1.440.000, i = 15%/tahun = 1,25%/bulan, t = 8 bulan. 1.440.000 = M * 0,0125 * 8. 1.440.000 = M * 0,1. M = 14.400.000. Modal akhir = M + B = 14.400.000 + 1.440.000 = 15.840.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `09f958e4d0956f771758dbabb50b8619f8f4d619d5014403c5d6f89eca155157`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6f7c29ace65f52cf5a9da784c38eabeded4f4e86487dd4c8e5333bb319283489`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2871 |
+
+Run 1 — solusi: Bunga (B) = M * i * t. B = 1.440.000, i = 15%/tahun = 1,25%/bulan, t = 8 bulan. 1.440.000 = M * 0,0125 * 8. 1.440.000 = M * 0,1. M = 14.400.000. Modal akhir = M + B = 14.400.000 + 1.440.000 = 15.840.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga tunggal (B = M*i*t) untuk mencari modal awal (M), kemudian menjumlahkannya dengan bunga untuk mendapatkan modal akhir. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Sebuah koperasi memberi bunga tunggal 15% per tahun.; Setelah menyimpan selama 8 bulan, Bu Lani menerima bunga Rp1.440.000,00.; Modal akhir Bu Lani saat itu adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritme bunga tunggal dan konversi satuan waktu (tahun ke bulan) untuk menyelesaikan masalah.. Bukti: bunga tunggal 15% per tahun; menyimpan selama 8 bulan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan rumus standar bunga tunggal yang familiar bagi siswa kelas 12. Langkah penyelesaiannya jelas: konversi suku bunga, hitung modal awal, lalu hitung modal akhir. Tidak ada kendala yang berinteraksi atau strategi nonrutin yang diperlukan.. Bukti: bunga tunggal 15% per tahun; Setelah menyimpan selama 8 bulan; Modal akhir Bu Lani saat itu adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan konversi satuan waktu. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal adalah topik dasar di kelas 12. Soal ini menuntut prosedur standar tanpa kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16687,9 +18018,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 200. Soal `d541cfdb1aa8d64ec6b45a21`
@@ -16703,27 +18034,49 @@ Dani menyimpan Rp4.000.000,00 di koperasi dengan bunga tunggal 12% per tahun. Bu
 | C | 13 |
 | D | 125 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Modal awal (M) = 4.000.000, bunga tunggal (i) = 12% per tahun = 1% per bulan. Target modal akhir (Mt) = 4.500.000. Bunga yang diinginkan = 500.000. Rumus bunga tunggal: B = M * i * n. 500.000 = 4.000.000 * 0,01 * n. 500.000 = 40.000 * n. n = 500.000 / 40.000 = 12,5. Karena bunga dihitung untuk bulan penuh, maka n harus dibulatkan ke atas menjadi 13 bulan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `da3bca5c36cac3df7a9e44ca6669de69faf67559fa7f99cd23518fa47bae6c26`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `686d976eacc0f2d5e886d6cd26ef82db1767b52e2de25a04c70c7ecd52c4ae09`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2845 |
+
+Run 1 — solusi: Modal awal (M) = 4.000.000, bunga tunggal (i) = 12% per tahun = 1% per bulan. Target modal akhir (Mt) = 4.500.000. Bunga yang diinginkan = 500.000. Rumus bunga tunggal: B = M * i * n. 500.000 = 4.000.000 * 0,01 * n. 500.000 = 40.000 * n. n = 500.000 / 40.000 = 12,5. Karena bunga dihitung untuk bulan penuh, maka n harus dibulatkan ke atas menjadi 13 bulan.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga tunggal dan melakukan interpretasi terhadap syarat 'bulan penuh' untuk menentukan pembulatan yang tepat agar mencapai target modal.. Bukti: Bunga hanya dihitung untuk bulan penuh.; Banyak bulan paling sedikit agar modal akhir Dani mencapai sedikitnya Rp4.500.000,00
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang perhitungan bunga tunggal dan penerapan prinsip pembulatan dalam konteks keuangan.. Bukti: bunga tunggal 12% per tahun; Bunga hanya dihitung untuk bulan penuh
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa tidak hanya menghitung bunga, tetapi harus memahami konversi bunga tahunan ke bulanan dan menerapkan logika pembulatan ke atas (ceiling) berdasarkan syarat 'bulan penuh' untuk memenuhi ketidaksamaan modal.. Bukti: bunga tunggal 12% per tahun; Bunga hanya dihitung untuk bulan penuh.; Banyak bulan paling sedikit agar modal akhir Dani mencapai sedikitnya Rp4.500.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga tunggal, konversi satuan waktu (tahun ke bulan), dan penyelesaian pertidaksamaan linear sederhana. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola perhitungan bunga tunggal dan logika pembulatan dalam konteks finansial sederhana. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16755,9 +18108,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 201. Soal `11b1c8ce2329201d006d4811`
@@ -16771,27 +18124,49 @@ Modal sebesar Rp2.000.000,00 dibungakan dengan bunga majemuk 20% per tahun. Tent
 | C | Rp3.200.000,00 |
 | D | Rp1.456.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Modal akhir (Mn) dengan bunga majemuk dirumuskan Mn = M(1 + i)^n. Diketahui M = 2.000.000, i = 20% = 0,2, dan n = 3. Maka, Mn = 2.000.000 * (1 + 0,2)^3 = 2.000.000 * (1,2)^3 = 2.000.000 * 1,728 = 3.456.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `97f9e8b68fd95dd6fa92857c5c54fceb521a2ed53ae46c90e846ab57738a2ea2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7378a0f57b835db332dde8397f86fefdbe1d8247c34b55ab03bd3d7095f25fec`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2771 |
+
+Run 1 — solusi: Modal akhir (Mn) dengan bunga majemuk dirumuskan Mn = M(1 + i)^n. Diketahui M = 2.000.000, i = 20% = 0,2, dan n = 3. Maka, Mn = 2.000.000 * (1 + 0,2)^3 = 2.000.000 * (1,2)^3 = 2.000.000 * 1,728 = 3.456.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga majemuk secara langsung. Siswa hanya perlu mengidentifikasi variabel (modal, suku bunga, periode) dan memasukkannya ke dalam rumus yang sudah familiar di kelas 12.. Bukti: Modal sebesar Rp2.000.000,00 dibungakan dengan bunga majemuk 20% per tahun. Tentukan modal akhir setelah 3 tahun.
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep bunga majemuk sebagai prinsip perhitungan modal akhir, yang merupakan pengetahuan konseptual.. Bukti: bunga majemuk 20% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus dasar bunga majemuk dengan variabel yang sudah tersedia jelas. Tidak ada kendala yang berinteraksi atau kebutuhan untuk menyusun strategi kompleks.. Bukti: Modal sebesar Rp2.000.000,00 dibungakan dengan bunga majemuk 20% per tahun. Tentukan modal akhir setelah 3 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan penggunaan kalkulator/perkalian desimal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kurikulum kelas 12. Soal ini adalah penerapan rumus langsung tanpa modifikasi variabel atau periode yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16823,9 +18198,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 202. Soal `4bfbfcd5702f4e2863bf9111`
@@ -16839,27 +18214,49 @@ Modal sebesar Rp8.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Tentu
 | C | Rp8.820.000,00 |
 | D | Rp820.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Modal akhir (M_n) = M_0(1 + i)^n = 8.000.000(1 + 0,05)^2 = 8.000.000(1,1025) = 8.820.000. Bunga = M_n - M_0 = 8.820.000 - 8.000.000 = 820.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4131e3d8e24dad5da51c867f669eebd1797b3cac71d38aadfdb9506a7aa13cdb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `48153a2b667f3e61b609d5e83e9244ea0e31865078e689145c51c1338f6a4aeb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2744 |
+
+Run 1 — solusi: Modal akhir (M_n) = M_0(1 + i)^n = 8.000.000(1 + 0,05)^2 = 8.000.000(1,1025) = 8.820.000. Bunga = M_n - M_0 = 8.820.000 - 8.000.000 = 820.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk untuk menghitung bunga setelah periode tertentu. Prosedur ini merupakan penerapan langsung dari konsep bunga majemuk yang sudah dipelajari di kelas 12.. Bukti: Modal sebesar Rp8.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Tentukan bunga yang diperoleh setelah 2 tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritma perhitungan bunga majemuk (M_n = M_0(1+i)^n) dan konsep bunga sebagai selisih modal akhir dengan modal awal.. Bukti: bunga majemuk 5% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu menerapkan rumus bunga majemuk standar untuk dua periode. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Modal sebesar Rp8.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Tentukan bunga yang diperoleh setelah 2 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan operasi aritmetika. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah aplikasi langsung dari rumus bunga majemuk yang merupakan materi standar kelas 12. Langkah penyelesaiannya jelas dan tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16891,9 +18288,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 203. Soal `bcc6b30f5ff9cd8dbe50a44e`
@@ -16907,27 +18304,49 @@ Dina menabung uang di bank dengan bunga majemuk sebesar 10% per 6 bulan. Setelah
 | C | Rp3.025.000,00 |
 | D | Rp2.904.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Diketahui: M_n = 3.630.000, i = 10% = 0,1, n = 12 bulan / 6 bulan = 2 periode. Rumus bunga majemuk: M_n = M_0(1 + i)^n. Maka, 3.630.000 = M_0(1 + 0,1)^2. M_0 = 3.630.000 / (1,1)^2 = 3.630.000 / 1,21 = 3.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f5ab866b560f2a79d9e946c253b1a377209c5f647553e9ce559dc0bbc484ad12`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bd5cf405e1f1411d81c34421954469f8502e802177ad350910efa47e2f527d5f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2839 |
+
+Run 1 — solusi: Diketahui: M_n = 3.630.000, i = 10% = 0,1, n = 12 bulan / 6 bulan = 2 periode. Rumus bunga majemuk: M_n = M_0(1 + i)^n. Maka, 3.630.000 = M_0(1 + 0,1)^2. M_0 = 3.630.000 / (1,1)^2 = 3.630.000 / 1,21 = 3.000.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk untuk mencari modal awal. Prosedur ini merupakan penerapan langsung dari konsep bunga majemuk yang sudah dipelajari di kelas 12.. Bukti: bunga majemuk sebesar 10% per 6 bulan; Setelah 12 bulan menabung, saldo tabungan menjadi sebesar Rp3.630.000,00
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga majemuk dan konversi periode waktu, yang termasuk dalam pengetahuan prosedural.. Bukti: bunga majemuk sebesar 10% per 6 bulan; Setelah 12 bulan menabung
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengidentifikasi periode (n=2) dan menerapkan rumus bunga majemuk secara langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk menyusun strategi non-rutin.. Bukti: bunga majemuk sebesar 10% per 6 bulan; Setelah 12 bulan menabung
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus M_n = M_0(1+i)^n. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan aplikasi langsung dari rumus bunga majemuk yang merupakan materi standar kelas 12. Langkah penyelesaiannya jelas dan tidak memerlukan perencanaan kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -16959,9 +18378,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 204. Soal `f710bfec62b94ecf6e7260b1`
@@ -16975,27 +18394,49 @@ Pak Dodi menyimpan uang di koperasi yang memberi bunga majemuk 4% per 2 bulan. S
 | C | Rp408.000,00 |
 | D | Rp5.200.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Rumus bunga majemuk: M_n = M_0(1 + i)^n. Diketahui M_n = 5.408.000, i = 0,04, dan n = 4 bulan / 2 bulan = 2 periode. Maka, 5.408.000 = M_0(1 + 0,04)^2. M_0 = 5.408.000 / (1,04)^2 = 5.408.000 / 1,0816 = 5.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eeda93507eca0323e8f15c6468ca8a4da38a55a0d0264801049ed37a0a97d202`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5426f2b5a35b2030c7e98b6985fc012ac52c4786c64610fa7dd2b7b379489c1d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2859 |
+
+Run 1 — solusi: Rumus bunga majemuk: M_n = M_0(1 + i)^n. Diketahui M_n = 5.408.000, i = 0,04, dan n = 4 bulan / 2 bulan = 2 periode. Maka, 5.408.000 = M_0(1 + 0,04)^2. M_0 = 5.408.000 / (1,04)^2 = 5.408.000 / 1,0816 = 5.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi variabel yang diketahui, menentukan jumlah periode (n=2), dan menerapkan rumus bunga majemuk secara langsung untuk mencari nilai awal (M0). Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk 4% per 2 bulan; simpanan Pak Dodi menjadi Rp5.408.000,00 setelah 4 bulan; Berapa besar simpanan awal Pak Dodi?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma dan metode perhitungan bunga majemuk, yang merupakan pengetahuan prosedural.. Bukti: bunga majemuk 4% per 2 bulan; simpanan Pak Dodi menjadi Rp5.408.000,00 setelah 4 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menentukan jumlah periode (4/2 = 2) dan membagi saldo akhir dengan faktor bunga (1,04^2). Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: bunga majemuk 4% per 2 bulan; setelah 4 bulan; Berapa besar simpanan awal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga majemuk dan operasi aljabar sederhana. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan standar untuk kelas 12 pada materi keuangan, dengan tingkat kesulitan yang sesuai untuk menguji pemahaman dasar prosedur bunga majemuk. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17027,9 +18468,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 205. Soal `5ea081b2a7d93ea5857a6ff1`
@@ -17043,27 +18484,49 @@ Seseorang berinvestasi emas di suatu aplikasi online. Modal yang diberikan sebes
 | C | Rp5.856.400,00 |
 | D | Rp5.324.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Nilai akhir modal dengan bunga majemuk dihitung menggunakan rumus M_n = M_0(1 + i)^n. Dengan M_0 = 4.000.000, i = 0,1, dan n = 4, maka M_4 = 4.000.000 * (1,1)^4 = 4.000.000 * 1,4641 = 5.856.400.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fd79680d1dece3147a7514107a4579816edb66c018f2d3f42ce39a829a868466`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0760f5d8827f1d3f66b635e7b844f6e0cd8b3971661ed92634ac01ae7dc03f6d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2821 |
+
+Run 1 — solusi: Nilai akhir modal dengan bunga majemuk dihitung menggunakan rumus M_n = M_0(1 + i)^n. Dengan M_0 = 4.000.000, i = 0,1, dan n = 4, maka M_4 = 4.000.000 * (1,1)^4 = 4.000.000 * 1,4641 = 5.856.400.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga majemuk secara langsung untuk menghitung nilai akhir. Siswa hanya perlu mengidentifikasi variabel yang diberikan dan memasukkannya ke dalam rumus yang sudah familiar di kelas 12.. Bukti: Modal yang diberikan sebesar Rp4.000.000,00.; suku bunga majemuk 10% per tahun.; Hitunglah nilai akhir modal tersebut setelah 4 tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus bunga majemuk untuk menyelesaikan masalah keuangan sederhana.. Bukti: suku bunga majemuk 10% per tahun; Hitunglah nilai akhir modal tersebut setelah 4 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaiannya sangat jelas dan langsung menggunakan rumus standar bunga majemuk tanpa ada kendala tambahan atau skenario yang kompleks.. Bukti: Modal yang diberikan sebesar Rp4.000.000,00.; suku bunga majemuk 10% per tahun.; setelah 4 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep bunga majemuk dan penggunaan kalkulator atau perkalian desimal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini hanya memerlukan substitusi nilai ke rumus dasar, yang merupakan tugas rutin bagi siswa pada jenjang ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17095,9 +18558,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 206. Soal `f8703797b56d85058a996c6d`
@@ -17111,27 +18574,49 @@ Bu Sari menanamkan modal Rp12.000.000,00 pada reksa dana yang memberi imbal hasi
 | C | Rp12.600.000,00 |
 | D | Rp13.200.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Menggunakan rumus bunga majemuk: A = P(1 + r)^n. Diketahui P = 12.000.000, r = 0,05, dan n = 2. Maka A = 12.000.000 * (1 + 0,05)^2 = 12.000.000 * 1,1025 = 13.230.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `de21104bc614ef84de5260df9d9e824907a640fce7a3164314ecfc3d513911d8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `58872b155472065f8baa2b04fb490711fc20073d9fcf34cb88f2e5f0342b3273`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2852 |
+
+Run 1 — solusi: Menggunakan rumus bunga majemuk: A = P(1 + r)^n. Diketahui P = 12.000.000, r = 0,05, dan n = 2. Maka A = 12.000.000 * (1 + 0,05)^2 = 12.000.000 * 1,1025 = 13.230.000.
+- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rumus bunga majemuk yang sudah dipelajari di kelas 12. Siswa hanya perlu mengidentifikasi variabel (pokok, suku bunga, periode) dan memasukkannya ke dalam rumus standar.. Bukti: Bu Sari menanamkan modal Rp12.000.000,00 pada reksa dana yang memberi imbal hasil majemuk 5% per tahun. Berapa nilai akhir investasinya setelah 2 tahun?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme atau prosedur perhitungan bunga majemuk yang merupakan bagian dari materi keuangan di kelas 12.. Bukti: imbal hasil majemuk 5% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks. Siswa hanya perlu menerapkan rumus bunga majemuk secara langsung.. Bukti: Bu Sari menanamkan modal Rp12.000.000,00 pada reksa dana yang memberi imbal hasil majemuk 5% per tahun. Berapa nilai akhir investasinya setelah 2 tahun?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep bunga majemuk dan penggunaan rumus A = P(1+r)^n. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah latihan standar untuk materi bunga majemuk kelas 12. Tingkat kesulitannya rendah karena tidak memerlukan modifikasi rumus atau analisis situasi yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17163,9 +18648,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 207. Soal `40c5be5fd719d90ea2c31c84`
@@ -17179,27 +18664,49 @@ Budi menyimpan uang sejumlah Rp10.000.000,00 di bank yang menawarkan bunga majem
 | C | Rp10.300.000,00 |
 | D | Rp10.927.270,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga majemuk per bulan = 12% / 12 = 1% = 0,01. Total uang setelah 3 bulan = P(1 + i)^n = 10.000.000(1 + 0,01)^3 = 10.000.000(1,030301) = 10.303.010.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `71bd4607fc8080bda4914903921fd8d4cb381f8f671170b0a2ac9653e9fb9007`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `79c8d01d1a2622400dcfa5a34c5389a0343e6409c3734693ed7ac54b4576b7ec`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2806 |
+
+Run 1 — solusi: Bunga majemuk per bulan = 12% / 12 = 1% = 0,01. Total uang setelah 3 bulan = P(1 + i)^n = 10.000.000(1 + 0,01)^3 = 10.000.000(1,030301) = 10.303.010.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa bunga tahunan harus dikonversi menjadi bunga bulanan (12%/12 = 1%) dan menerapkan rumus bunga majemuk yang sesuai dengan periode bulanan. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk sebesar 12% setiap tahun dengan pembayaran setiap bulan; Setelah 3 bulan, Budi mencairkan seluruh uangnya
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme bunga majemuk dan bagaimana mengonversi suku bunga tahunan ke periode pembayaran yang lebih pendek (bulanan).. Bukti: bunga majemuk sebesar 12% setiap tahun dengan pembayaran setiap bulan
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan rumus bunga majemuk standar yang familiar bagi siswa kelas 12. Langkah penyelesaiannya langsung: konversi bunga, tentukan periode, dan hitung nilai akhir. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: bunga majemuk sebesar 12% setiap tahun dengan pembayaran setiap bulan; Setelah 3 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk dan konversi suku bunga tahunan ke bulanan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini menguji pemahaman dasar tanpa variasi kompleksitas yang tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17231,9 +18738,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 208. Soal `8318a90335b4a7c47828720a`
@@ -17247,27 +18754,49 @@ Bu Wati menabung uang di bank sebesar Rp30.000.000,00 dengan bunga majemuk 2% pe
 | C | Rp31.212.000,00 |
 | D | Rp30.600.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Modal akhir (A) dengan bunga majemuk dihitung dengan rumus A = P(1 + r)^n. Diketahui P = 30.000.000, r = 0,02, dan n = 2. Maka, A = 30.000.000(1 + 0,02)^2 = 30.000.000(1,0404) = 31.212.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6d442f1f5c10f73da21e8f7537badc13939b70da1ad90ca29ec916a5fe509b1b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a67bd64fae24d9a54a8a3fb1e65abca1bcb8b05f7e760b3abb404a359ce04f40`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2774 |
+
+Run 1 — solusi: Modal akhir (A) dengan bunga majemuk dihitung dengan rumus A = P(1 + r)^n. Diketahui P = 30.000.000, r = 0,02, dan n = 2. Maka, A = 30.000.000(1 + 0,02)^2 = 30.000.000(1,0404) = 31.212.000.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk menerapkan rumus bunga majemuk secara langsung. Siswa hanya perlu mengidentifikasi variabel yang diberikan dan memasukkannya ke dalam rumus yang sudah dikenal, sehingga masuk dalam domain applying.. Bukti: menabung uang di bank sebesar Rp30.000.000,00 dengan bunga majemuk 2% per tahun selama 2 tahun
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep bunga majemuk dan bagaimana menggunakan rumus matematika untuk menghitung nilai akhir investasi, yang merupakan pengetahuan konseptual.. Bukti: bunga majemuk 2% per tahun selama 2 tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk merencanakan strategi yang kompleks. Siswa hanya perlu menerapkan rumus standar.. Bukti: bunga majemuk 2% per tahun selama 2 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan penggunaan kalkulator/perkalian desimal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan penerapan langsung rumus bunga majemuk yang merupakan materi standar kelas 12. Tidak ada kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17299,9 +18828,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 209. Soal `6e57904ea3ee78732bf47333`
@@ -17315,27 +18844,49 @@ Koperasi Harapan memiliki program simpanan berjangka dengan suku bunga majemuk 4
 | C | Rp50.000.000,00 |
 | D | Rp52.000.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Simpanan awal (M0) dihitung dengan rumus bunga majemuk: Mn = M0(1+i)^n. Diketahui Mn = 56.243.200, i = 0,04 per semester, dan n = 18 bulan / 6 bulan = 3 semester. Maka, 56.243.200 = M0(1,04)^3. Dengan (1,04)^3 = 1,124864, diperoleh M0 = 56.243.200 / 1,124864 = 50.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c66e375618109ebbc71987c179c0f91d37e69711302f16d4561ab6f8c7e759f0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `135ea706df337c5a83286d531934ab86b4d92886312d6460ea233179339f7950`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2861 |
+
+Run 1 — solusi: Simpanan awal (M0) dihitung dengan rumus bunga majemuk: Mn = M0(1+i)^n. Diketahui Mn = 56.243.200, i = 0,04 per semester, dan n = 18 bulan / 6 bulan = 3 semester. Maka, 56.243.200 = M0(1,04)^3. Dengan (1,04)^3 = 1,124864, diperoleh M0 = 56.243.200 / 1,124864 = 50.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi variabel yang relevan (Mn, i, n), mengubah satuan waktu (bulan ke semester), dan menerapkan rumus bunga majemuk untuk mencari nilai awal (M0). Ini adalah penerapan prosedur standar pada konteks keuangan.. Bukti: suku bunga majemuk 4% per semester selama 18 bulan; Simpanan awal Bu Lastri adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga majemuk dan hubungan antara variabel-variabel dalam rumus tersebut.. Bukti: suku bunga majemuk 4% per semester; Simpanan awal Bu Lastri adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengonversi satuan waktu (18 bulan menjadi 3 semester) dan menerapkan rumus bunga majemuk. Informasi yang diperlukan sudah tersedia lengkap, termasuk nilai pangkat yang dibutuhkan, sehingga beban kognitif rendah.. Bukti: suku bunga majemuk 4% per semester selama 18 bulan; Diketahui (1,04)^3 = 1,124864
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan operasi hitung dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Soal ini tidak memerlukan penalaran kompleks, hanya substitusi nilai ke dalam rumus yang sudah dikenal. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17367,9 +18918,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 210. Soal `9096d1f1d37d357e3ef25f77`
@@ -17383,27 +18934,49 @@ Suatu tabungan berbunga majemuk 10% per tahun selama 3 tahun. Diketahui $(1,1)^3
 | C | 30% |
 | D | 33,1% |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Modal akhir = Modal awal * (1 + i)^n. Dengan i = 10% = 0,1 dan n = 3, maka Modal akhir = Modal awal * (1,1)^3 = Modal awal * 1,331. Bunga = Modal akhir - Modal awal = (1,331 - 1) * Modal awal = 0,331 * Modal awal = 33,1% dari modal awal.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6bb3640998356e5d9294a19ce9b8ade45896d038c6eff2f0fdb079587c89d790`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `62f832795feda14d5d460332f02264b30e00ad010629d5d689b6f4f91883b278`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2791 |
+
+Run 1 — solusi: Modal akhir = Modal awal * (1 + i)^n. Dengan i = 10% = 0,1 dan n = 3, maka Modal akhir = Modal awal * (1,1)^3 = Modal awal * 1,331. Bunga = Modal akhir - Modal awal = (1,331 - 1) * Modal awal = 0,331 * Modal awal = 33,1% dari modal awal.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan rumus bunga majemuk untuk menentukan persentase bunga yang diperoleh. Siswa perlu memahami hubungan antara faktor pengali (1,331) dengan nilai bunga (0,331 atau 33,1%). Ini adalah penerapan konsep bunga majemuk yang rutin.. Bukti: Suatu tabungan berbunga majemuk 10% per tahun selama 3 tahun; Total bunga yang diterima adalah ... dari tabungan awal
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip bunga majemuk (konsep) dan menggunakan rumus atau faktor pengali yang diberikan untuk menghitung bunga (prosedural).. Bukti: berbunga majemuk 10% per tahun selama 3 tahun; Diketahui (1,1)^3 = 1,331
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena rumus atau faktor pengali sudah disediakan secara eksplisit dalam soal. Siswa hanya perlu melakukan satu langkah pengurangan sederhana (1,331 - 1) untuk mendapatkan persentase bunga. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Suatu tabungan berbunga majemuk 10% per tahun selama 3 tahun; Diketahui (1,1)^3 = 1,331
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan persentase. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 12, konsep bunga majemuk adalah materi standar. Soal ini memberikan semua informasi yang diperlukan, termasuk hasil perpangkatan, sehingga siswa hanya perlu memahami definisi bunga sebagai selisih modal akhir dan awal. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17435,9 +19008,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 211. Soal `8bcd05556e0d97fa9503dd97`
@@ -17451,27 +19024,49 @@ Dewi menyimpan uang sejumlah Rp2.000.000,00 di bank yang menawarkan bunga majemu
 | C | Rp2.508.800,00 |
 | D | Rp2.080.800,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga per bulan = 24%/12 = 2%. Modal setelah 2 bulan = P(1+i)^n = 2.000.000(1+0,02)^2 = 2.000.000(1,0404) = 2.080.800.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `750bfe72a6b6331c9fd327d96d9c513e8788ae06945fa92ad98a7e6d398daec0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d86c55dd53eba18f664b37f2e7f4ad0407ffc78a18f8abc39c3e67935fa34d93`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2729 |
+
+Run 1 — solusi: Bunga per bulan = 24%/12 = 2%. Modal setelah 2 bulan = P(1+i)^n = 2.000.000(1+0,02)^2 = 2.000.000(1,0404) = 2.080.800.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi parameter bunga majemuk, melakukan konversi suku bunga tahunan ke bulanan, dan menerapkan rumus bunga majemuk. Ini adalah penerapan prosedur standar pada konteks keuangan.. Bukti: bunga majemuk sebesar 24% setiap tahun dengan pembayaran setiap bulan; Setelah 2 bulan, seluruh uang dicairkan
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme bunga majemuk dan bagaimana mengonversi suku bunga tahunan menjadi bulanan dalam konteks investasi.. Bukti: bunga majemuk sebesar 24% setiap tahun dengan pembayaran setiap bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengonversi bunga tahunan ke bulanan (24%/12 = 2%) dan menerapkan rumus bunga majemuk untuk 2 periode. Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan.. Bukti: bunga majemuk sebesar 24% setiap tahun dengan pembayaran setiap bulan; Setelah 2 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konversi satuan waktu/bunga. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini menguji pemahaman langsung tanpa jebakan kompleksitas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17503,9 +19098,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 212. Soal `27475408a9a0eccd50d36cbf`
@@ -17519,27 +19114,49 @@ Modal Rp20.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Besar bunga 
 | C | Rp1.102.500,00 |
 | D | Rp23.152.500,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Modal awal tahun ke-3 adalah M2 = M0(1+i)^2 = 20.000.000(1,05)^2 = 20.000.000(1,1025) = 22.050.000. Bunga tahun ke-3 adalah M2 * i = 22.050.000 * 0,05 = 1.102.500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `53a249f4acde644f9eeaefe0c62665deeaa92a32175905fbf51a32c3b9650411`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b7fc596d4b0c39558c72d160b6b9c0f48d526c16a574da98ec3c7e5fadf43d1d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2713 |
+
+Run 1 — solusi: Modal awal tahun ke-3 adalah M2 = M0(1+i)^2 = 20.000.000(1,05)^2 = 20.000.000(1,1025) = 22.050.000. Bunga tahun ke-3 adalah M2 * i = 22.050.000 * 0,05 = 1.102.500.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga majemuk untuk menentukan modal awal tahun ketiga, kemudian menghitung bunga spesifik pada tahun tersebut. Ini adalah penerapan prosedur bunga majemuk yang rutin.. Bukti: Modal Rp20.000.000,00 dibungakan dengan bunga majemuk 5% per tahun. Besar bunga yang diterima pada tahun ketiga adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang prinsip bunga majemuk (modal awal periode n adalah modal akhir periode n-1) dan prosedur perhitungannya.. Bukti: bunga majemuk 5% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu menghitung modal akhir tahun kedua sebagai basis bunga tahun ketiga. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Besar bunga yang diterima pada tahun ketiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk dan eksponen dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kurikulum kelas 12. Soal ini menguji pemahaman dasar tentang bunga pada periode tertentu, bukan akumulasi total, yang merupakan prosedur standar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17571,9 +19188,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 213. Soal `25d754d2f69a2ee57ed69a3c`
@@ -17587,27 +19204,49 @@ Pernyataan yang benar tentang bunga majemuk adalah ....
 | C | Bunga tiap periode dihitung hanya dari bunga periode sebelumnya tanpa modal |
 | D | Bunga tiap periode dihitung dari modal pada periode berjalan sehingga besarnya berubah dari periode ke periode |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga majemuk didefinisikan sebagai bunga yang dihitung berdasarkan modal awal ditambah akumulasi bunga dari periode sebelumnya. Oleh karena itu, dasar perhitungan bunga (modal periode berjalan) berubah setiap periode, yang menyebabkan besarnya bunga yang diperoleh juga berubah.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3264610509cda85f020f92a5971685a2e906af90a6e7c133b7b1183f152f0c5e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f88ec4da201c7494d8b0c3d4fbcfef5b0d31f6680c9c3723e051d7799c60eb37`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2622 |
+
+Run 1 — solusi: Bunga majemuk didefinisikan sebagai bunga yang dihitung berdasarkan modal awal ditambah akumulasi bunga dari periode sebelumnya. Oleh karena itu, dasar perhitungan bunga (modal periode berjalan) berubah setiap periode, yang menyebabkan besarnya bunga yang diperoleh juga berubah.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi definisi konseptual dari bunga majemuk. Siswa perlu memahami prinsip dasar bunga majemuk (bunga berbunga) dibandingkan dengan bunga tunggal. Ini termasuk dalam domain knowing karena hanya memerlukan pengenalan terhadap definisi atau fakta dasar mengenai konsep bunga majemuk.. Bukti: Pernyataan yang benar tentang bunga majemuk adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap prinsip atau struktur konsep bunga majemuk, bukan sekadar menghafal istilah (factual) atau melakukan perhitungan (procedural). Siswa harus memahami hubungan antara modal, bunga, dan akumulasi periode.. Bukti: Pernyataan yang benar tentang bunga majemuk adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat teoretis dan langsung menguji pemahaman definisi dasar. Tidak ada perhitungan, langkah-langkah yang saling bergantung, atau kendala yang harus dipecahkan. Siswa hanya perlu memilih pernyataan yang secara akurat mendeskripsikan mekanisme bunga majemuk.. Bukti: Pernyataan yang benar tentang bunga majemuk adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep bunga majemuk. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini sangat mendasar untuk materi kelas 12 tentang bunga majemuk. Tidak ada kompleksitas kognitif yang tinggi karena hanya menanyakan definisi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17639,9 +19278,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 214. Soal `c1f839837ad81007245fffdb`
@@ -17655,27 +19294,49 @@ Sebuah bank memberi bunga majemuk 2% per triwulan. Sebuah tabungan disimpan sela
 | C | 8 |
 | D | 24 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: 1 tahun = 4 triwulan. Maka, 2 tahun = 2 x 4 = 8 triwulan. Jadi, n = 8.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `303cb88079fe3a0f3e861badf8ea4c8a07c723bcbc7262806716633029c031fa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4dc00bcf463ac11d3e183e270c6e5c675cf8797f84b52bdb3b05487baf55f45e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 3285 |
+
+Run 1 — solusi: 1 tahun = 4 triwulan. Maka, 2 tahun = 2 x 4 = 8 triwulan. Jadi, n = 8.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk mengidentifikasi dan mengonversi satuan waktu (tahun ke triwulan) untuk menentukan jumlah periode bunga (n) dalam rumus bunga majemuk. Ini adalah prosedur langsung yang tidak memerlukan penalaran kompleks.. Bukti: Sebuah bank memberi bunga majemuk 2% per triwulan.; Sebuah tabungan disimpan selama 2 tahun.; Banyak periode bunga (n) yang digunakan dalam rumus adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan prosedur konversi satuan waktu yang standar untuk menentukan nilai n dalam rumus bunga majemuk.. Bukti: Banyak periode bunga (n) yang digunakan dalam rumus adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 12. Konversi satuan waktu adalah keterampilan prasyarat yang sudah dikuasai, dan tidak ada kendala atau langkah kompleks yang terlibat.. Bukti: Sebuah bank memberi bunga majemuk 2% per triwulan.; Sebuah tabungan disimpan selama 2 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang satuan waktu (tahun, bulan, triwulan) dan definisi periode bunga. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini menguji pemahaman dasar tentang periode bunga yang merupakan prasyarat untuk materi keuangan kelas 12. Tidak ada kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17707,9 +19368,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 215. Soal `8e4c3de212f768681dafdb5a`
@@ -17723,27 +19384,49 @@ Suatu modal dibungakan dengan bunga majemuk 7,5% per tahun. Pada rumus $M_n = M(
 | C | 7,5 |
 | D | 1,75 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Diketahui p = 7,5% = 0,075. Maka, nilai (1 + p) = 1 + 0,075 = 1,075.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6bb0877abe1b32a1d586b7f07b95e65dc63d954b3e24f4155974f4a7aff4f26a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dedc3c9548e5510c7cb8b4c85deb12e6784e2149cbdaff3e1422322ed2bf04d8`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2635 |
+
+Run 1 — solusi: Diketahui p = 7,5% = 0,075. Maka, nilai (1 + p) = 1 + 0,075 = 1,075.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menerapkan definisi variabel dalam rumus bunga majemuk secara langsung. Siswa hanya perlu melakukan konversi persentase ke desimal dan operasi penjumlahan dasar.. Bukti: Pada rumus $M_n = M(1+p)^n$, nilai $(1+p)$ adalah ....
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman faktual tentang simbol dan elemen dasar dalam rumus bunga majemuk, khususnya konversi persentase ke desimal.. Bukti: bunga majemuk 7,5% per tahun; Pada rumus $M_n = M(1+p)^n$
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu melakukan konversi persentase ke desimal dan operasi penjumlahan sederhana. Tidak ada langkah perencanaan atau integrasi konsep yang diperlukan.. Bukti: Suatu modal dibungakan dengan bunga majemuk 7,5% per tahun.; Pada rumus $M_n = M(1+p)^n$, nilai $(1+p)$ adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang persentase dan operasi aritmetika. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah soal tingkat dasar yang menguji pemahaman notasi rumus bunga majemuk yang umum diajarkan di kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17775,9 +19458,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 216. Soal `8ae59b5e19350a48bc3c68c6`
@@ -17791,27 +19474,49 @@ Anto dan Beni masing-masing menabung Rp10.000.000,00 selama 2 tahun dengan bunga
 | C | Rp1.000.000,00 |
 | D | Rp100.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Anto (bunga tunggal): 10.000.000 * (1 + 0,1 * 2) = 12.000.000. Beni (bunga majemuk): 10.000.000 * (1 + 0,1)^2 = 10.000.000 * 1,21 = 12.100.000. Selisih: 12.100.000 - 12.000.000 = 100.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c68587a7d8b71d5f3b0b6362fd809a1a5ee80d76eadcecb784390d8e821941d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0e023dfe5d0be83102765a9eebe1a4e4a9adb271785c622d0b5ec4e48d2083d1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2799 |
+
+Run 1 — solusi: Anto (bunga tunggal): 10.000.000 * (1 + 0,1 * 2) = 12.000.000. Beni (bunga majemuk): 10.000.000 * (1 + 0,1)^2 = 10.000.000 * 1,21 = 12.100.000. Selisih: 12.100.000 - 12.000.000 = 100.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan dua rumus bunga yang berbeda (tunggal dan majemuk) dan melakukan operasi pengurangan untuk menemukan selisih. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Anto memakai bunga tunggal, Beni memakai bunga majemuk. Selisih saldo akhir Beni dan Anto adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritme dan metode perhitungan bunga tunggal dan majemuk yang merupakan prosedur standar dalam matematika keuangan.. Bukti: bunga tunggal; bunga majemuk
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang jelas. Siswa hanya perlu menghitung dua nilai menggunakan rumus yang sudah dikenal dan mencari selisihnya. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi nonrutin.. Bukti: Anto memakai bunga tunggal, Beni memakai bunga majemuk. Selisih saldo akhir Beni dan Anto adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal dan bunga majemuk. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal dan majemuk adalah kurikulum standar kelas 12. Soal ini menguji pemahaman dasar tanpa variasi kompleksitas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17843,9 +19548,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 217. Soal `529966e3a34dcc06db81ef55`
@@ -17859,27 +19564,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Rp1.464.100,00 |
 | D | Rp1.210.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga majemuk tahun ke-n dihitung dari modal akhir tahun ke-(n-1). Modal akhir tahun ke-3 adalah Rp13.310.000,00. Maka, bunga tahun ke-4 = 10% x Rp13.310.000,00 = Rp1.331.000,00.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e2ed015869b1caca8508aa5a30330e41c82b884f8411cad796b284771cf6e1b8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `90c8b9e625e06425b0fd9b1a13d90b13b3b46609bf33c5d9a4f08ab234cab7ab`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2908 |
+
+Run 1 — solusi: Bunga majemuk tahun ke-n dihitung dari modal akhir tahun ke-(n-1). Modal akhir tahun ke-3 adalah Rp13.310.000,00. Maka, bunga tahun ke-4 = 10% x Rp13.310.000,00 = Rp1.331.000,00.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk di mana bunga dihitung berdasarkan modal akhir periode sebelumnya. Soal meminta penerapan prosedur ini pada data yang diberikan.. Bukti: Sebuah tabungan berbunga majemuk 10% per tahun; Besar bunga pada tahun ke-4 adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami prinsip bunga majemuk (konseptual) dan menerapkan algoritma perhitungan bunga (prosedural) berdasarkan data tabel.. Bukti: Bunga (Rp) \| Modal akhir (Rp); Sebuah tabungan berbunga majemuk 10% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengidentifikasi modal akhir tahun ke-3 dari tabel dan mengalikan dengan suku bunga 10%. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Tahun ke-0 sampai ke-3 seperti pada data stimulus; Besar bunga pada tahun ke-4 adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan pembacaan tabel. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini menguji pemahaman dasar tentang bagaimana bunga majemuk bekerja secara iteratif, yang merupakan materi standar kelas 12. Tingkat kesulitan rendah karena pola sudah diberikan secara eksplisit dalam tabel. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17918,9 +19645,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 218. Soal `0faf8e0e87647e7814f45f51`
@@ -17934,27 +19661,49 @@ Modal $M$ dibungakan dengan bunga majemuk $p$ per tahun ($p$ dalam bentuk desima
 | C | $M(1+np)$ |
 | D | $M \times p^n$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga majemuk berarti modal bertambah dengan bunga yang dihitung dari modal awal ditambah bunga periode sebelumnya. Tahun ke-1: M(1+p). Tahun ke-2: M(1+p)(1+p) = M(1+p)^2. Pola ini berlanjut hingga tahun ke-n menjadi M(1+p)^n.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `548ee044a58a7f2144fbae5bf6e5062dd91ca2c478883f7ab646c806187ca1bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `08d8e11938bd9ed78432a3492896eb824c8e04f181e8b562ee998e52bd3d70bb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2649 |
+
+Run 1 — solusi: Bunga majemuk berarti modal bertambah dengan bunga yang dihitung dari modal awal ditambah bunga periode sebelumnya. Tahun ke-1: M(1+p). Tahun ke-2: M(1+p)(1+p) = M(1+p)^2. Pola ini berlanjut hingga tahun ke-n menjadi M(1+p)^n.
+- Domain kognitif `classify/knowing`: Soal ini menguji pemahaman definisi dasar dan rumus bunga majemuk. Siswa hanya perlu mengenali atau mengingat rumus umum bunga majemuk yang sudah dipelajari di kelas 12, sehingga masuk dalam kategori knowing.. Bukti: Modal M dibungakan dengan bunga majemuk p per tahun; Modal akhir setelah n tahun dinyatakan oleh
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menanyakan rumus atau prinsip dasar bunga majemuk, yang merupakan bagian dari pengetahuan konseptual tentang bagaimana bunga majemuk bekerja dan diformulasikan.. Bukti: Modal M dibungakan dengan bunga majemuk p per tahun; Modal akhir setelah n tahun dinyatakan oleh
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung (direct recall) mengenai rumus bunga majemuk. Tidak ada langkah perhitungan kompleks atau integrasi kendala yang diperlukan.. Bukti: Modal M dibungakan dengan bunga majemuk p per tahun; Modal akhir setelah n tahun dinyatakan oleh
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep bunga majemuk dan notasi eksponensial. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah pertanyaan standar mengenai rumus bunga majemuk yang merupakan materi dasar kelas 12, sehingga tingkat kesulitannya rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -17986,9 +19735,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 219. Soal `db8e21e888240065d9cee236`
@@ -18002,27 +19751,49 @@ Modal Rp5.000.000,00 dibungakan dengan bunga majemuk 4% per semester. Total bung
 | C | Rp400.000,00 |
 | D | Rp200.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Modal awal (P) = 5.000.000, suku bunga (i) = 4% = 0,04 per semester, periode (n) = 1 tahun = 2 semester. Modal akhir (Mn) = P(1+i)^n = 5.000.000(1,04)^2 = 5.000.000(1,0816) = 5.408.000. Total bunga = Mn - P = 5.408.000 - 5.000.000 = 408.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c788adeee18c5f9f8eda82aca6c98bc9b5fc740d4d807c0d2387fc9f340e1fca`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b5623bc8661547464f527b7e2336991900044b6a52398333d2b8d2dd268d6b04`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2787 |
+
+Run 1 — solusi: Modal awal (P) = 5.000.000, suku bunga (i) = 4% = 0,04 per semester, periode (n) = 1 tahun = 2 semester. Modal akhir (Mn) = P(1+i)^n = 5.000.000(1,04)^2 = 5.000.000(1,0816) = 5.408.000. Total bunga = Mn - P = 5.408.000 - 5.000.000 = 408.000.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk untuk menghitung bunga yang diperoleh. Prosedur ini merupakan penerapan langsung dari konsep bunga majemuk yang sudah dipelajari di kelas 12.. Bukti: Modal Rp5.000.000,00 dibungakan dengan bunga majemuk 4% per semester.; Total bunga yang diperoleh setelah 1 tahun adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga majemuk dan konversi periode waktu (tahun ke semester), yang merupakan pengetahuan prosedural.. Bukti: bunga majemuk 4% per semester; Total bunga yang diperoleh setelah 1 tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan langkah penyelesaian yang jelas (menghitung modal akhir lalu dikurangi modal awal). Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Modal Rp5.000.000,00 dibungakan dengan bunga majemuk 4% per semester.; Total bunga yang diperoleh setelah 1 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan operasi aritmatika dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah aplikasi langsung dari rumus bunga majemuk yang merupakan materi standar kelas 12. Tidak ada kompleksitas tambahan dalam perencanaan atau integrasi konsep. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18054,9 +19825,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 220. Soal `4ed156939a265bdd1db89493`
@@ -18070,27 +19841,49 @@ Modal Rp40.000.000,00 dibungakan dengan bunga majemuk 2% per tahun. Bunga pada t
 | C | Rp40.000.000,00 |
 | D | Rp800.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `conflict`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: Bunga majemuk tahun kedua dihitung dari modal akhir tahun pertama. Modal awal = 40.000.000. Bunga tahun pertama = 2% * 40.000.000 = 800.000. Modal akhir tahun pertama = 40.000.000 + 800.000 = 40.800.000. Jadi, bunga tahun kedua dihitung dari 40.800.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `293a314e0acbe56045cdaa1d4268e2fbc3b24da1e2eb7e4f83dd112c8dccd05a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a5f03b64930525b437cecedf56798135c03cd9f86c6648e8fd30781610140875`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / conflict | knowing | conceptual | Easy | 2679 |
+
+Run 1 — solusi: Bunga majemuk tahun kedua dihitung dari modal akhir tahun pertama. Modal awal = 40.000.000. Bunga tahun pertama = 2% * 40.000.000 = 800.000. Modal akhir tahun pertama = 40.000.000 + 800.000 = 40.800.000. Jadi, bunga tahun kedua dihitung dari 40.800.000.
+- Domain kognitif `classify/knowing`: Soal meminta pemahaman konsep dasar bunga majemuk, yaitu bunga dihitung berdasarkan modal akhir periode sebelumnya. Siswa hanya perlu menerapkan definisi bunga majemuk tanpa perhitungan kompleks.. Bukti: Bunga pada tahun kedua dihitung dari modal sebesar
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga majemuk bekerja (akumulasi modal), bukan sekadar prosedur menghitung nilai akhir.. Bukti: bunga majemuk 2% per tahun
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar bagi siswa kelas 12. Tidak ada langkah perencanaan yang rumit atau kendala yang berinteraksi. Siswa hanya perlu memahami definisi bunga majemuk.. Bukti: Modal Rp40.000.000,00 dibungakan dengan bunga majemuk 2% per tahun; Bunga pada tahun kedua dihitung dari modal sebesar
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi bunga majemuk dan perbedaan dengan bunga tunggal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Konsep bunga majemuk adalah materi standar kelas 12. Soal ini hanya menanyakan definisi operasional, sehingga termasuk kategori mudah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18122,9 +19915,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `revision_required`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 221. Soal `3e43f198bc156b431eeae67f`
@@ -18138,27 +19931,49 @@ Rudi menabung Rp5.000.000,00 dengan bunga majemuk 24% per tahun yang dibayarkan 
 | C | Salah, bunga per bulan seharusnya 4% sehingga yang benar $5.000.000 \times (1,04)^6$ |
 | D | Salah, bunga per bulan seharusnya 2% sehingga yang benar $5.000.000 \times (1,02)^{12}$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga majemuk 24% per tahun dibayarkan bulanan berarti bunga per bulan adalah 24%/12 = 2% atau 0,02. Untuk periode 6 bulan, saldo akhir adalah modal dikali (1 + i)^n, yaitu 5.000.000 * (1 + 0,02)^6 = 5.000.000 * (1,02)^6. Pekerjaan Rudi salah karena menggunakan 24% sebagai bunga per bulan.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `536b5be4a34191711ead9689eec9d39fa7b736f2872a472dcffb70fa934c22b7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `db16cd271e89ac756fcb6f0a6137f9dd61cb232eb970cdab52604d62265e2594`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2881 |
+
+Run 1 — solusi: Bunga majemuk 24% per tahun dibayarkan bulanan berarti bunga per bulan adalah 24%/12 = 2% atau 0,02. Untuk periode 6 bulan, saldo akhir adalah modal dikali (1 + i)^n, yaitu 5.000.000 * (1 + 0,02)^6 = 5.000.000 * (1,02)^6. Pekerjaan Rudi salah karena menggunakan 24% sebagai bunga per bulan.
+- Domain kognitif `classify/applying`: Soal meminta siswa mengevaluasi kesalahan dalam penerapan rumus bunga majemuk. Siswa harus memahami konsep konversi suku bunga tahunan ke bulanan (24%/12) dan menentukan periode yang tepat (6 bulan). Ini adalah penerapan konsep rutin dalam konteks keuangan.. Bukti: bunga majemuk 24% per tahun yang dibayarkan setiap bulan; Rudi menulis 5.000.000 x (1,24)^6
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami prinsip bunga majemuk (konseptual) dan menerapkan prosedur perhitungan saldo yang benar (prosedural).. Bukti: bunga majemuk 24% per tahun yang dibayarkan setiap bulan; Pernyataan yang benar tentang pekerjaan Rudi adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menguji pemahaman dasar tentang konversi bunga tahunan ke bulanan dan penggunaan rumus bunga majemuk yang sangat standar. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga majemuk 24% per tahun yang dibayarkan setiap bulan; Rudi menulis 5.000.000 x (1,24)^6
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konversi satuan waktu bunga. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan perhitungan bunga majemuk dan konversi bunga tahunan ke bulanan sebagai bagian dari materi keuangan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18190,9 +20005,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 222. Soal `7516d3e5e4cccf3885e5080f`
@@ -18206,27 +20021,49 @@ Bu Mira menabung dengan bunga majemuk 10% per tahun selama 3 tahun. Pernyataan y
 | C | Total bunga 30% dari modal awal, sama dengan bunga tunggal |
 | D | Total bunga 21% dari modal awal karena hanya dua tahun pertama yang berbunga majemuk |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga majemuk: M_n = M_0(1+i)^n = M_0(1+0,1)^3 = 1,331 M_0. Total bunga = 1,331 M_0 - M_0 = 0,331 M_0 = 33,1%. Bunga tunggal = 3 x 10% = 30%. Karena 33,1% > 30%, maka pernyataan A benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `de7d2bd641b2660e945d82658909b7c9e52fb17a46382b5eaeb9c203881ce9ac`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bb78db9b86f449492bc4f23b14f028e5b393297a89789e785a1835b68e0ae3fb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 3698 |
+
+Run 1 — solusi: Bunga majemuk: M_n = M_0(1+i)^n = M_0(1+0,1)^3 = 1,331 M_0. Total bunga = 1,331 M_0 - M_0 = 0,331 M_0 = 33,1%. Bunga tunggal = 3 x 10% = 30%. Karena 33,1% > 30%, maka pernyataan A benar.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk M_n = M_0(1+i)^n dan membandingkannya dengan bunga tunggal n x i. Ini adalah penerapan konsep rutin pada konteks keuangan.. Bukti: bunga majemuk 10% per tahun selama 3 tahun; Pernyataan yang benar tentang total bunga
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konsep bunga majemuk vs bunga tunggal dan bagaimana pertumbuhan eksponensial menghasilkan nilai lebih besar daripada pertumbuhan linear.. Bukti: bunga majemuk 10% per tahun; bunga tunggal 30%
+- Intended difficulty `classify/Easy`: Soal ini adalah latihan standar untuk membedakan bunga majemuk dan tunggal dengan angka yang sederhana. Tidak ada kendala kompleks atau langkah yang saling bergantung yang rumit.. Bukti: bunga majemuk 10% per tahun selama 3 tahun; total bunga 33,1% dari modal awal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar persentase, bunga majemuk, dan bunga tunggal. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah topik dasar kelas 12. Soal ini hanya memerlukan perhitungan langsung tanpa variasi skenario yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18258,9 +20095,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 223. Soal `1286fd006220d74ab33eabca`
@@ -18274,27 +20111,49 @@ Klaim: "Dengan suku bunga p per tahun yang sama, saldo akhir bunga majemuk selal
 | C | 1 tahun |
 | D | 3 tahun |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Misalkan modal awal M dan suku bunga p per tahun. Saldo bunga tunggal setelah n tahun adalah M(1 + np). Saldo bunga majemuk setelah n tahun adalah M(1 + p)^n. Klaim menyatakan M(1 + p)^n > M(1 + np) untuk semua n bilangan asli. Untuk n = 1, saldo tunggal = M(1 + p) dan saldo majemuk = M(1 + p). Karena saldo sama, klaim 'selalu lebih besar' salah. Jadi, n = 1 adalah contoh penyangkal.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `941e0136c97f8640cbbdc11db34c94fb531c3915f2095ac4ed95a8748bd97e14`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1c6a5a0f0243182e57b4b20b3162ce42068d53fb6fdc37da331d3a2a69f89789`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | reasoning | conceptual | Easy | 2783 |
+
+Run 1 — solusi: Misalkan modal awal M dan suku bunga p per tahun. Saldo bunga tunggal setelah n tahun adalah M(1 + np). Saldo bunga majemuk setelah n tahun adalah M(1 + p)^n. Klaim menyatakan M(1 + p)^n > M(1 + np) untuk semua n bilangan asli. Untuk n = 1, saldo tunggal = M(1 + p) dan saldo majemuk = M(1 + p). Karena saldo sama, klaim 'selalu lebih besar' salah. Jadi, n = 1 adalah contoh penyangkal.
+- Domain kognitif `classify/reasoning`: Soal meminta siswa untuk mengevaluasi kebenaran sebuah pernyataan matematis dan mencari contoh penyangkal (counterexample). Ini memerlukan pemahaman konseptual tentang definisi bunga tunggal dan majemuk serta kemampuan untuk menguji klaim tersebut pada nilai n tertentu, yang merupakan bentuk penalaran matematis.. Bukti: saldo akhir bunga majemuk selalu lebih besar daripada saldo akhir bunga tunggal untuk setiap lama menabung bilangan asli n tahun; Lama menabung yang menjadi contoh penyangkal klaim tersebut adalah
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip dasar dan rumus bunga tunggal serta majemuk (konseptual) dan menerapkan pemahaman tersebut untuk membandingkan kedua model pertumbuhan tersebut.. Bukti: saldo akhir bunga majemuk selalu lebih besar daripada saldo akhir bunga tunggal; bilangan asli n tahun
+- Intended difficulty `classify/Easy`: Soal ini menguji pemahaman konseptual dasar tentang bunga. Siswa hanya perlu menguji nilai n=1 untuk melihat bahwa kedua model menghasilkan nilai yang sama, yang secara langsung mematahkan klaim 'selalu lebih besar'. Tidak ada perhitungan rumit atau perencanaan langkah yang kompleks.. Bukti: saldo akhir bunga majemuk selalu lebih besar daripada saldo akhir bunga tunggal untuk setiap lama menabung bilangan asli n tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal dan bunga majemuk dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah sangat familiar dengan perbedaan bunga tunggal dan majemuk. Menguji kasus n=1 adalah prosedur standar untuk memeriksa klaim 'selalu' dalam deret/barisan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"reasoning": 1} | single_run / single_run | reasoning |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18326,9 +20185,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "reasoning", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "reasoning", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 224. Soal `2f4609723ab0ae3bf399506c`
@@ -18342,27 +20201,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Bank Q: 6% per semester |
 | D | Bank P: 12% per tahun |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Untuk modal awal M, saldo akhir setelah 1 tahun (t=1) adalah M(1+r/n)^(nt). Bank P: M(1,12)^1 = 1,12M. Bank Q: M(1+0,06)^2 = 1,1236M. Bank R: M(1+0,03)^4 = 1,1255M. Bank S: M(1+0,01)^12 = 1,1268M. Karena 1,1268 > 1,1255 > 1,1236 > 1,12, maka Bank S memberikan saldo terbesar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6d9501c030dd3811aa984eb5b4fbdbfced93e759148f7c15d5785446cd99e422`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c55673b0d2c72b77e236b2c84037c75b1e4771eaa73de03ed682bb9abb1e1d99`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2896 |
+
+Run 1 — solusi: Untuk modal awal M, saldo akhir setelah 1 tahun (t=1) adalah M(1+r/n)^(nt). Bank P: M(1,12)^1 = 1,12M. Bank Q: M(1+0,06)^2 = 1,1236M. Bank R: M(1+0,03)^4 = 1,1255M. Bank S: M(1+0,01)^12 = 1,1268M. Karena 1,1268 > 1,1255 > 1,1236 > 1,12, maka Bank S memberikan saldo terbesar.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk M_t = M_0(1+i)^n untuk membandingkan faktor pengali dari empat skenario yang berbeda. Ini adalah penerapan prosedur rutin pada konteks perbandingan investasi.. Bukti: Empat bank menawarkan bunga majemuk dengan periode berbeda.; Dengan uang awal yang sama dan disimpan tepat 1 tahun, bank yang memberi saldo akhir paling besar adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang prinsip bunga majemuk dan bagaimana periode konversi bunga (tahunan, semesteran, triwulanan, bulanan) mempengaruhi akumulasi saldo akhir.. Bukti: Bunga majemuk; 12% per tahun; 6% per semester; 3% per triwulan
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus melakukan perhitungan berulang untuk empat skenario berbeda dan membandingkan hasilnya. Meskipun prosedurnya familiar, terdapat beberapa langkah saling terkait yang harus diselesaikan dengan teliti untuk menentukan jawaban yang benar.. Bukti: Empat bank menawarkan bunga majemuk dengan periode berbeda.; Dengan uang awal yang sama dan disimpan tepat 1 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga majemuk dan konversi periode bunga. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menghitung bunga majemuk. Beban perhitungan moderat karena harus menghitung empat nilai berbeda untuk perbandingan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18401,9 +20282,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 225. Soal `d0b8bbbbbe4c4f56b9cb132e`
@@ -18417,27 +20298,49 @@ Modal Rp3.000.000,00 dibungakan dengan bunga majemuk $p$ per tahun ($p$ positif)
 | C | 4% |
 | D | 20% |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga tahun ke-1 (I1) = Mp. Bunga tahun ke-2 (I2) = M(1+p)p. Selisih I2 - I1 = Mp^2. Diketahui Mp^2 = 120.000. Substitusi M = 3.000.000: 3.000.000 * p^2 = 120.000. p^2 = 120.000 / 3.000.000 = 12/300 = 0,04. p = sqrt(0,04) = 0,2 atau 20%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['membandingkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5dbba8342c2f0d871b829295656661731f6e3a5984f0cd28b17c974da75338e2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `411b4b154770b301c9eab9688c213f1ce471ecf18e336ae35bf81db6a734a5aa`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2890 |
+
+Run 1 — solusi: Bunga tahun ke-1 (I1) = Mp. Bunga tahun ke-2 (I2) = M(1+p)p. Selisih I2 - I1 = Mp^2. Diketahui Mp^2 = 120.000. Substitusi M = 3.000.000: 3.000.000 * p^2 = 120.000. p^2 = 120.000 / 3.000.000 = 12/300 = 0,04. p = sqrt(0,04) = 0,2 atau 20%.
+- Domain kognitif `classify/applying`: Siswa perlu menerjemahkan deskripsi verbal mengenai selisih bunga majemuk tahun pertama dan kedua ke dalam model matematika, kemudian memanipulasi aljabar untuk menemukan nilai p.. Bukti: Bunga yang diterima pada tahun kedua Rp120.000,00 lebih besar daripada bunga tahun pertama.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bunga majemuk bekerja (bunga tahun kedua dihitung dari modal awal ditambah bunga tahun pertama) dan prosedur aljabar untuk menyelesaikannya.. Bukti: dibungakan dengan bunga majemuk p per tahun; Bunga yang diterima pada tahun kedua Rp120.000,00 lebih besar daripada bunga tahun pertama
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami definisi bunga majemuk untuk merumuskan selisih bunga (Mp^2) dan melakukan manipulasi aljabar yang melibatkan akar kuadrat. Meskipun prosedurnya familiar, siswa harus mampu mengonstruksi hubungan antara bunga tahun ke-1 dan ke-2 secara mandiri.. Bukti: Bunga yang diterima pada tahun kedua Rp120.000,00 lebih besar daripada bunga tahun pertama.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, operasi aljabar dasar, dan akar kuadrat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan memahami konsep bunga majemuk. Soal ini menuntut pemahaman hubungan bunga tahunan, bukan sekadar menghitung nilai akhir, sehingga tingkat kesulitannya menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18469,9 +20372,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 226. Soal `393d101d3b7958a4313e55d1`
@@ -18485,27 +20388,49 @@ Pak Anto menyimpan Rp10.000.000,00 selama 3 tahun dengan suku bunga 12% per tahu
 | C | Rp4.049.280,00 |
 | D | Rp449.280,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Rencana I (Bunga Tunggal): Total = P(1 + rt) = 10.000.000(1 + 0,12 * 3) = 10.000.000(1,36) = 13.600.000. Rencana II (Bunga Majemuk): Total = P(1 + r)^t = 10.000.000(1,12)^3 = 10.000.000(1,404928) = 14.049.280. Selisih = 14.049.280 - 13.600.000 = 449.280.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `40cc1e38b2c0c6575f5091243955e21b3e95382c5e299b011ba092ae64090722`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9233483420b710c2a58b199dbf7a77bb5f16b06a6567d20cd2a2f801ec395a1a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2985 |
+
+Run 1 — solusi: Rencana I (Bunga Tunggal): Total = P(1 + rt) = 10.000.000(1 + 0,12 * 3) = 10.000.000(1,36) = 13.600.000. Rencana II (Bunga Majemuk): Total = P(1 + r)^t = 10.000.000(1,12)^3 = 10.000.000(1,404928) = 14.049.280. Selisih = 14.049.280 - 13.600.000 = 449.280.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi perbedaan model bunga (tunggal vs majemuk), menerapkan rumus masing-masing, dan menghitung selisihnya. Ini adalah penerapan prosedur standar pada konteks keuangan yang rutin.. Bukti: Rencana I bunga diambil setiap akhir tahun (modal tetap Rp10.000.000,00); Rencana II bunga dibiarkan dan ikut berbunga (bunga majemuk); Selisih total kekayaan Pak Anto pada akhir tahun ketiga
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang prinsip bunga tunggal dan bunga majemuk serta penggunaan rumus yang sesuai untuk masing-masing skema.. Bukti: Rencana I bunga diambil setiap akhir tahun; Rencana II bunga dibiarkan dan ikut berbunga (bunga majemuk)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu menerapkan dua rumus dasar bunga yang sudah dipelajari dan melakukan pengurangan. Tidak ada kendala yang berinteraksi atau kebutuhan strategi non-rutin.. Bukti: Rencana I bunga diambil setiap akhir tahun (modal tetap Rp10.000.000,00); Rencana II bunga dibiarkan dan ikut berbunga (bunga majemuk); Selisih total kekayaan Pak Anto pada akhir tahun ketiga
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga tunggal dan bunga majemuk. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal dan majemuk adalah kurikulum standar kelas 12. Prosedur penyelesaian sangat langsung dan familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18537,9 +20462,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 227. Soal `bc9e6f9223809b7473e096d6`
@@ -18553,27 +20478,49 @@ Suatu modal menjadi tepat 2 kali lipat setelah 5 tahun dengan bunga majemuk p pe
 | C | 6 |
 | D | 16 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Misalkan modal awal M0. Setelah 5 tahun, modal menjadi 2*M0, sehingga M0(1+p)^5 = 2*M0, yang berarti (1+p)^5 = 2. Setelah 15 tahun, modal menjadi M15 = M0(1+p)^15. Karena 15 = 3 * 5, maka M15 = M0 * ((1+p)^5)^3 = M0 * (2)^3 = 8*M0. Jadi, modal menjadi 8 kali lipat.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3872d263f49118df0eccc00ca40549dc1b0ec342f9e44f0c91844ef74570b8af`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cd923a84ba09bc173829d669c988c5f9d07f4910edfc90bbd65acfbe64da13b7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2778 |
+
+Run 1 — solusi: Misalkan modal awal M0. Setelah 5 tahun, modal menjadi 2*M0, sehingga M0(1+p)^5 = 2*M0, yang berarti (1+p)^5 = 2. Setelah 15 tahun, modal menjadi M15 = M0(1+p)^15. Karena 15 = 3 * 5, maka M15 = M0 * ((1+p)^5)^3 = M0 * (2)^3 = 8*M0. Jadi, modal menjadi 8 kali lipat.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk dan hubungan eksponensial antara waktu dan pertumbuhan modal. Soal ini meminta siswa untuk menerapkan prinsip pertumbuhan eksponensial (1+p)^t untuk menentukan nilai pada periode waktu yang berbeda berdasarkan informasi yang diberikan.. Bukti: modal menjadi tepat 2 kali lipat setelah 5 tahun dengan bunga majemuk; Setelah 15 tahun, modal tersebut menjadi ... kali modal awal
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bunga majemuk bekerja secara eksponensial, bukan linear, serta kemampuan menggunakan sifat perpangkatan untuk menyelesaikan masalah investasi.. Bukti: bunga majemuk p per tahun yang tetap
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu memahami sifat dasar bunga majemuk dan melakukan substitusi sederhana menggunakan sifat eksponen. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: modal menjadi tepat 2 kali lipat setelah 5 tahun; Setelah 15 tahun, modal tersebut menjadi ... kali modal awal
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rumus bunga majemuk M_t = M_0(1+i)^t dan sifat eksponen (a^m)^n = a^(m*n). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini merupakan aplikasi langsung dari definisi bunga majemuk tanpa modifikasi variabel yang rumit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18605,9 +20552,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 228. Soal `cd0fe343107e7984ce7c279c`
@@ -18621,27 +20568,49 @@ Rani menabung Rp5.000.000,00 dengan bunga majemuk 10% per tahun. Ia menghitung b
 | C | Rp605.000,00 |
 | D | Rp500.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Saldo awal (M) = 5.000.000, i = 10% = 0,1. Saldo akhir tahun ke-2 (M2) = M(1+i)^2 = 5.000.000(1,1)^2 = 5.000.000(1,21) = 6.050.000. Bunga tahun ke-3 = i * M2 = 0,1 * 6.050.000 = 605.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b869df1d2337a298ed6fead164ff00f62d580d53bee2c44a2c27abfe6889bcb7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8a2f5e1162b16a4ff0f5c87382451fa4a9594c06f7700d41310df58268b029d3`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2861 |
+
+Run 1 — solusi: Saldo awal (M) = 5.000.000, i = 10% = 0,1. Saldo akhir tahun ke-2 (M2) = M(1+i)^2 = 5.000.000(1,1)^2 = 5.000.000(1,21) = 6.050.000. Bunga tahun ke-3 = i * M2 = 0,1 * 6.050.000 = 605.000.
+- Domain kognitif `classify/applying`: Siswa diminta mengidentifikasi kesalahan konsep bunga majemuk dan menerapkan prosedur yang benar untuk menghitung bunga pada periode tertentu (tahun ke-3), yang memerlukan pemahaman bahwa bunga majemuk dihitung dari saldo akumulasi periode sebelumnya.. Bukti: Ia menghitung bunga tahun ketiga sebesar 10% x 5.000.000 = 500.000. Bunga yang benar pada tahun ketiga adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga majemuk bekerja (akumulasi saldo) dibandingkan dengan kesalahan umum (menggunakan modal awal secara terus-menerus).. Bukti: bunga majemuk 10% per tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pemahaman dasar tentang definisi bunga majemuk. Siswa hanya perlu menghitung saldo akhir tahun ke-2 lalu mengalikannya dengan suku bunga. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Rani menabung Rp5.000.000,00 dengan bunga majemuk 10% per tahun.; Ia menghitung bunga tahun ketiga sebesar 10% x 5.000.000 = 500.000.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga majemuk dan perhitungan persentase. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah memahami perbedaan mendasar antara bunga tunggal dan majemuk. Soal ini adalah aplikasi langsung dari definisi tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18673,9 +20642,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 229. Soal `a506e56d33bea3193cf3bcb8`
@@ -18689,27 +20658,49 @@ Tabungan A berbunga majemuk 10% per tahun. Tabungan B berbunga tunggal q% per ta
 | C | 10% |
 | D | 21% |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Misalkan modal awal M. Saldo A setelah 2 tahun: M(1 + 0,1)^2 = M(1,21). Saldo B setelah 2 tahun: M(1 + 2q). Karena saldo sama: M(1 + 2q) = M(1,21) -> 1 + 2q = 1,21 -> 2q = 0,21 -> q = 0,105 atau 10,5%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2ba31797d5a6b15e9218042a47aaaeb80b55eac7bc83a72032622bce8e46a051`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `55c1b02632fbd8675b591d991cb64ea4de8ec56b19712c4cf78dc92fdbd5eb0b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2738 |
+
+Run 1 — solusi: Misalkan modal awal M. Saldo A setelah 2 tahun: M(1 + 0,1)^2 = M(1,21). Saldo B setelah 2 tahun: M(1 + 2q). Karena saldo sama: M(1 + 2q) = M(1,21) -> 1 + 2q = 1,21 -> 2q = 0,21 -> q = 0,105 atau 10,5%.
+- Domain kognitif `classify/applying`: Siswa perlu memahami perbedaan model bunga majemuk dan bunga tunggal, lalu menyusun persamaan matematis berdasarkan kondisi saldo yang sama setelah 2 tahun. Ini melibatkan penerapan konsep bunga pada konteks rutin.. Bukti: Tabungan A berbunga majemuk 10% per tahun.; Tabungan B berbunga tunggal q% per tahun.; agar saldo keduanya sama setelah tepat 2 tahun
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip bunga majemuk dan bunga tunggal serta bagaimana menerjemahkan deskripsi tersebut ke dalam rumus matematika.. Bukti: Tabungan A berbunga majemuk 10% per tahun.; Tabungan B berbunga tunggal q% per tahun.
+- Intended difficulty `classify/Easy`: Soal ini memerlukan pemahaman dasar tentang dua jenis bunga. Langkah penyelesaiannya langsung (menyusun persamaan saldo akhir) dan tidak melibatkan kendala yang kompleks atau strategi non-rutin.. Bukti: Tabungan A berbunga majemuk 10% per tahun.; Tabungan B berbunga tunggal q% per tahun.; agar saldo keduanya sama setelah tepat 2 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga majemuk M(1+i)^n dan bunga tunggal M(1+ni). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk dan tunggal adalah materi standar kelas 12. Soal ini menguji pemahaman definisi dasar tanpa kerumitan tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18741,9 +20732,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 230. Soal `e2b257315ef4950c0aee858b`
@@ -18757,27 +20748,49 @@ Bu Sari mempunyai Rp10.000.000,00 untuk 2 tahun. Rencana I: tahun pertama di Ban
 | C | Rp12.127.500,00 |
 | D | Rp12.155.062,50 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Rencana I: Saldo akhir tahun 1 = 10.000.000 * 1,1 = 11.000.000. Saldo akhir tahun 2 (Bank B, 5% per semester, 2 semester) = 11.000.000 * (1,05)^2 = 11.000.000 * 1,1025 = 12.127.500. Rencana II: Saldo akhir 2 tahun (Bank B, 5% per semester, 4 semester) = 10.000.000 * (1,05)^4 = 10.000.000 * 1,21550625 = 12.155.062,50. Selisih = 12.155.062,50 - 12.127.500 = 27.562,50.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `011dbcd840db9444cff15db180dcc3a0c727c4417fa76dfa9a000038fe762b52`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8b306d936f0fa669bfcad9228dccb63809f1bb3ca95ac16edd97935cd7910d79`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3081 |
+
+Run 1 — solusi: Rencana I: Saldo akhir tahun 1 = 10.000.000 * 1,1 = 11.000.000. Saldo akhir tahun 2 (Bank B, 5% per semester, 2 semester) = 11.000.000 * (1,05)^2 = 11.000.000 * 1,1025 = 12.127.500. Rencana II: Saldo akhir 2 tahun (Bank B, 5% per semester, 4 semester) = 10.000.000 * (1,05)^4 = 10.000.000 * 1,21550625 = 12.155.062,50. Selisih = 12.155.062,50 - 12.127.500 = 27.562,50.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk pada dua skenario yang berbeda, mengidentifikasi perbedaan periode bunga (tahunan vs semesteran), dan melakukan perhitungan selisih. Ini adalah penerapan prosedur bunga majemuk pada konteks rutin.. Bukti: Rencana I: tahun pertama di Bank A (bunga majemuk 10% per tahun), lalu seluruh saldo dipindah ke Bank B untuk tahun kedua.; Rencana II: seluruh uang disimpan 2 tahun di Bank B. Bank B memberi bunga majemuk 5% per semester.
+- Dimensi pengetahuan `classify/procedural`: Siswa harus memahami dan menerapkan algoritme bunga majemuk serta menyesuaikan periode bunga (konversi tahun ke semester) untuk menghitung saldo akhir.. Bukti: bunga majemuk 10% per tahun; bunga majemuk 5% per semester
+- Intended difficulty `classify/Medium`: Soal memerlukan perhitungan dua skenario bunga majemuk yang berbeda. Siswa harus teliti dalam menentukan jumlah periode (n) untuk bunga semesteran (2 semester untuk 1 tahun, 4 semester untuk 2 tahun). Langkah-langkahnya jelas dan rutin bagi siswa kelas 12.. Bukti: Rencana I: tahun pertama di Bank A (bunga majemuk 10% per tahun), lalu seluruh saldo dipindah ke Bank B untuk tahun kedua.; Rencana II: seluruh uang disimpan 2 tahun di Bank B. Bank B memberi bunga majemuk 5% per semester.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga majemuk M_n = M_0(1+i)^n dan pemahaman konversi periode bunga. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah standar untuk materi keuangan kelas 12. Kesulitan menengah muncul dari keharusan mengelola dua skenario berbeda dan konversi periode bunga, namun prosedurnya sangat familiar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18809,9 +20822,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 231. Soal `3ffba38b397b3bae439a0197`
@@ -18825,27 +20838,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 8 |
 | D | 7 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tahun ke-k adalah I_k = M_{k-1} * i. M_{k-1} = M_0 * (1+i)^{k-1}. Jadi I_k = 5.000.000 * 0,1 * (1,1)^{k-1} = 500.000 * (1,1)^{k-1}. Syarat I_k > 1.000.000 menjadi 500.000 * (1,1)^{k-1} > 1.000.000, atau (1,1)^{k-1} > 2. Dari tabel, (1,1)^7 = 1,9487171 (kurang dari 2) dan (1,1)^8 = 2,14358881 (lebih dari 2). Maka k-1 = 8, sehingga k = 9.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `db5ec3c54bb5ad595df9a4cd6d65ec7d910f488891b982bc7e704b8b689cf809`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4fd1a161f8bee118c8415b311e82a013880b3b6ec943a8091e24deb905776e01`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3166 |
+
+Run 1 — solusi: Bunga tahun ke-k adalah I_k = M_{k-1} * i. M_{k-1} = M_0 * (1+i)^{k-1}. Jadi I_k = 5.000.000 * 0,1 * (1,1)^{k-1} = 500.000 * (1,1)^{k-1}. Syarat I_k > 1.000.000 menjadi 500.000 * (1,1)^{k-1} > 1.000.000, atau (1,1)^{k-1} > 2. Dari tabel, (1,1)^7 = 1,9487171 (kurang dari 2) dan (1,1)^8 = 2,14358881 (lebih dari 2). Maka k-1 = 8, sehingga k = 9.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk untuk menentukan bunga pada tahun ke-k, yaitu selisih saldo atau bunga dari saldo awal tahun tersebut. Siswa harus menerjemahkan deskripsi verbal menjadi pertidaksamaan eksponensial dan menggunakan tabel yang disediakan untuk menentukan nilai k terkecil yang memenuhi syarat.. Bukti: Bunga yang diterima pada tahun ke-k dihitung dari saldo akhir tahun ke-(k-1); Bunga yang diterima dalam satu tahun pertama kali lebih dari Rp1.000.000,00 pada tahun ke-....
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang perhitungan bunga majemuk dan kemampuan konseptual dalam menghubungkan saldo awal tahun dengan bunga yang dihasilkan pada tahun tersebut.. Bukti: Bunga yang diterima pada tahun ke-k dihitung dari saldo akhir tahun ke-(k-1); Modal Rp5.000.000,00 dibungakan dengan bunga majemuk 10% per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman tentang hubungan antara saldo awal tahun dan bunga yang dihasilkan (bukan sekadar saldo akhir), serta kemampuan membaca tabel untuk menyelesaikan pertidaksamaan eksponensial. Langkah-langkahnya logis dan terstruktur, namun memerlukan ketelitian dalam menentukan indeks tahun (k vs k-1).. Bukti: Bunga yang diterima pada tahun ke-k dihitung dari saldo akhir tahun ke-(k-1); Bunga yang diterima dalam satu tahun pertama kali lebih dari Rp1.000.000,00 pada tahun ke-....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, barisan geometri, dan pertidaksamaan eksponensial dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu memodelkan masalah keuangan sederhana dan menggunakan data tabel untuk estimasi atau penentuan nilai, yang merupakan standar kompetensi pada topik ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18884,9 +20919,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 232. Soal `fe20b344682d725bd46d0c02`
@@ -18900,27 +20935,49 @@ Saldo akhir tahun ke-0 sampai tahun ke-3 (dalam rupiah) dari empat tabungan deng
 | C | 5.000.000; 5.500.000; 6.100.000; 6.700.000 |
 | D | 5.000.000; 5.500.000; 6.050.000; 6.655.000 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga majemuk dengan suku bunga tetap p per tahun berarti saldo membentuk barisan geometri dengan rasio (1+p). Opsi D: 5.500.000/5.000.000 = 1,1; 6.050.000/5.500.000 = 1,1; 6.655.000/6.050.000 = 1,1. Karena rasio tetap (1,1), maka ini adalah bunga majemuk.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b919f461d84a85bd8116ccaeccdb68899bdef09fb3236088723bcc2b25ab976c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b4a2056daad3d6fcae27dacc307089407e72c28295e255b69452eacb81d164af`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2932 |
+
+Run 1 — solusi: Bunga majemuk dengan suku bunga tetap p per tahun berarti saldo membentuk barisan geometri dengan rasio (1+p). Opsi D: 5.500.000/5.000.000 = 1,1; 6.050.000/5.500.000 = 1,1; 6.655.000/6.050.000 = 1,1. Karena rasio tetap (1,1), maka ini adalah bunga majemuk.
+- Domain kognitif `classify/applying`: Siswa perlu memahami definisi bunga majemuk sebagai barisan geometri dan menguji rasio antar saldo tahunan untuk memverifikasi konsistensi suku bunga.. Bukti: Catatan yang menunjukkan bunga majemuk dengan p tetap per tahun adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga majemuk bekerja (pertumbuhan eksponensial/barisan geometri) dibandingkan dengan bunga tunggal atau pertumbuhan tidak konsisten.. Bukti: bunga majemuk dengan p tetap per tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena siswa hanya perlu melakukan pembagian sederhana untuk mengecek rasio antar suku. Prosedurnya rutin dan langsung, tidak memerlukan perencanaan langkah yang kompleks.. Bukti: Saldo akhir tahun ke-0 sampai tahun ke-3; Catatan yang menunjukkan bunga majemuk dengan p tetap per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar barisan geometri dan konsep bunga majemuk. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan konsep bunga majemuk dan pengecekan rasio barisan geometri sebagai prosedur rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -18952,9 +21009,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 233. Soal `318bf144e9598ac28826b451`
@@ -18968,27 +21025,49 @@ Tabungan berbunga majemuk $p$ per tahun ($p$ positif) bernilai Rp14.520.000,00 s
 | C | Rp12.000.000,00 |
 | D | Rp12.100.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Misalkan M0 adalah modal awal dan r = (1+p). Diketahui M2 = M0*r^2 = 14.520.000 dan M4 = M0*r^4 = 17.569.200. Maka r^2 = M4/M2 = 17.569.200 / 14.520.000 = 1,21. Substitusi ke persamaan pertama: M0 * 1,21 = 14.520.000, sehingga M0 = 14.520.000 / 1,21 = 12.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `63d06a8332493481dda21a1d54576055c3a2006d10bc29bf883ec8b2cc2dbb30`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `798e1f112d7b10c61c8e7a572be7cf432716ca1af05d972346247924c829cc12`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2999 |
+
+Run 1 — solusi: Misalkan M0 adalah modal awal dan r = (1+p). Diketahui M2 = M0*r^2 = 14.520.000 dan M4 = M0*r^4 = 17.569.200. Maka r^2 = M4/M2 = 17.569.200 / 14.520.000 = 1,21. Substitusi ke persamaan pertama: M0 * 1,21 = 14.520.000, sehingga M0 = 14.520.000 / 1,21 = 12.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga majemuk untuk membentuk sistem persamaan dari dua titik waktu yang diberikan, kemudian memanipulasi aljabar untuk mengisolasi variabel modal awal. Ini melibatkan penerapan prosedur matematika pada konteks investasi.. Bukti: Tabungan berbunga majemuk p per tahun (p positif) bernilai Rp14.520.000,00 setelah 2 tahun dan Rp17.569.200,00 setelah 4 tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme bunga majemuk dan bagaimana menggunakannya untuk menyelesaikan masalah nilai waktu dari uang.. Bukti: Tabungan berbunga majemuk p per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman hubungan antara dua periode waktu dalam bunga majemuk (rasio M4/M2 = (1+p)^2). Siswa harus merencanakan langkah untuk mencari faktor pengali (1+p)^2 terlebih dahulu sebelum mendapatkan modal awal. Meskipun prosedurnya standar, terdapat beberapa langkah saling terkait yang harus dilakukan secara berurutan.. Bukti: bernilai Rp14.520.000,00 setelah 2 tahun dan Rp17.569.200,00 setelah 4 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, manipulasi aljabar dasar, dan pembagian bilangan desimal/besar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola sistem persamaan sederhana yang muncul dari model pertumbuhan eksponensial/bunga majemuk. Tingkat kesulitan ini sesuai untuk menguji pemahaman prosedural tanpa memerlukan strategi non-rutin yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19020,9 +21099,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 234. Soal `897791de482d773cafc05e55`
@@ -19036,27 +21115,49 @@ Tabungan A berisi Rp5.000.000,00 dan tabungan B berisi Rp20.000.000,00. Keduanya
 | C | Bunga B tepat 4 kali bunga A, sedangkan persentase kenaikan saldo keduanya sama |
 | D | Persentase kenaikan saldo B 4 kali persentase kenaikan saldo A |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Saldo akhir M_t = M_0(1+i)^n. Bunga = M_t - M_0 = M_0((1+i)^n - 1). Karena (1+i)^n sama untuk keduanya, maka bunga berbanding lurus dengan modal awal. Bunga B = 20jt/5jt * Bunga A = 4 * Bunga A. Persentase kenaikan saldo = (M_t - M_0)/M_0 = (1+i)^n - 1, yang nilainya sama untuk keduanya.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d2d3a361ef1b5b453541b6c8cd87443af009c708b96d21cd44534766466ef131`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5833461ae4465ba502c23a92419d08163ee1efc5235a63a8260d40e0b75726cc`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2857 |
+
+Run 1 — solusi: Saldo akhir M_t = M_0(1+i)^n. Bunga = M_t - M_0 = M_0((1+i)^n - 1). Karena (1+i)^n sama untuk keduanya, maka bunga berbanding lurus dengan modal awal. Bunga B = 20jt/5jt * Bunga A = 4 * Bunga A. Persentase kenaikan saldo = (M_t - M_0)/M_0 = (1+i)^n - 1, yang nilainya sama untuk keduanya.
+- Domain kognitif `classify/applying`: Soal ini menuntut pemahaman konseptual tentang sifat bunga majemuk. Siswa harus memahami bahwa persentase kenaikan saldo tidak bergantung pada modal awal, sedangkan nilai bunga (dalam rupiah) berbanding lurus dengan modal awal. Ini memerlukan pemahaman prinsip bunga majemuk, bukan sekadar menghitung angka.. Bukti: Keduanya berbunga majemuk 8% per tahun dan disimpan 3 tahun.; Pernyataan yang benar adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan matematis antara modal awal, suku bunga, dan hasil akhir dalam bunga majemuk (prinsip bunga majemuk).. Bukti: Keduanya berbunga majemuk 8% per tahun; Persentase kenaikan saldo keduanya sama
+- Intended difficulty `classify/Easy`: Soal ini menguji pemahaman konseptual dasar tentang bunga majemuk. Siswa tidak perlu melakukan perhitungan numerik yang rumit, melainkan memahami sifat proporsionalitas dalam bunga majemuk. Jalur penyelesaiannya langsung bagi siswa yang memahami konsep.. Bukti: Tabungan A berisi Rp5.000.000,00 dan tabungan B berisi Rp20.000.000,00.; Keduanya berbunga majemuk 8% per tahun dan disimpan 3 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga majemuk M_t = M_0(1+i)^n |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Soal ini menguji pemahaman konseptual yang mendasar tanpa beban hitung yang berat. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19088,9 +21189,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 235. Soal `05709b65d8b82ba3c01c9130`
@@ -19104,27 +21205,49 @@ Bu Tika ingin uang Rp10.000.000,00 menjadi paling sedikit Rp13.000.000,00 setela
 | C | 6% per semester |
 | D | 3% per triwulan |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Rumus bunga majemuk: M_n = M_0(1+i)^n. Target M_n >= 13.000.000 dengan M_0 = 10.000.000 dalam 2 tahun. Opsi B: 7% per semester (i=0,07, n=4 semester). M_4 = 10.000.000(1,07)^4 = 10.000.000(1,310796) = 13.107.960. Karena 13.107.960 >= 13.000.000, maka opsi B benar.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d8a4b6c8a5081358f5ed98b88630b589254ba49babcd515f990913b3ae088023`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eea7d3cffb673e312c2b6114131e3fde540cc224718cb829b38ea33e4728829c`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2976 |
+
+Run 1 — solusi: Rumus bunga majemuk: M_n = M_0(1+i)^n. Target M_n >= 13.000.000 dengan M_0 = 10.000.000 dalam 2 tahun. Opsi B: 7% per semester (i=0,07, n=4 semester). M_4 = 10.000.000(1,07)^4 = 10.000.000(1,310796) = 13.107.960. Karena 13.107.960 >= 13.000.000, maka opsi B benar.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk untuk menguji setiap opsi yang diberikan. Ini adalah penerapan prosedur standar pada konteks keuangan yang rutin.. Bukti: Bu Tika ingin uang Rp10.000.000,00 menjadi paling sedikit Rp13.000.000,00 setelah tepat 2 tahun.; Skema bunga majemuk yang memenuhi keinginannya adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma bunga majemuk dan bagaimana menggunakannya untuk memverifikasi kondisi yang diberikan.. Bukti: Skema bunga majemuk yang memenuhi keinginannya adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin karena siswa hanya perlu menguji pilihan jawaban menggunakan rumus bunga majemuk yang sudah umum dipelajari. Tidak ada kendala yang saling berinteraksi atau kebutuhan untuk merancang strategi non-rutin.. Bukti: Bu Tika ingin uang Rp10.000.000,00 menjadi paling sedikit Rp13.000.000,00 setelah tepat 2 tahun.; Skema bunga majemuk yang memenuhi keinginannya adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga majemuk M_n = M_0(1+i)^n dan konversi periode waktu (tahun ke semester/triwulan). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah familiar dengan perhitungan bunga majemuk. Soal ini hanya meminta verifikasi sederhana terhadap pilihan yang tersedia. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19156,9 +21279,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 236. Soal `5bc2720771c687a71c717615`
@@ -19172,27 +21295,49 @@ Citra menyimpan uang sejumlah Rp8.000.000,00 di bank yang menawarkan bunga majem
 | C | Rp10.360.232,00 |
 | D | Rp8.741.816,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga majemuk per bulan = 36%/12 = 3% = 0,03. Nilai akhir = P(1 + i)^n = 8.000.000(1 + 0,03)^3 = 8.000.000(1,092727) = 8.741.816.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ee7d87ec8777457a589a1f12c10be12a1ca86dbc676be98feaf1aea2fc86f4e2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `565018277ff852d1789c52a3898b152fcb28d57d15908c60f42e024d60236f1a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2756 |
+
+Run 1 — solusi: Bunga majemuk per bulan = 36%/12 = 3% = 0,03. Nilai akhir = P(1 + i)^n = 8.000.000(1 + 0,03)^3 = 8.000.000(1,092727) = 8.741.816.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga majemuk, melakukan konversi suku bunga tahunan ke bulanan, dan menerapkan rumus nilai akhir bunga majemuk. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk sebesar 36% setiap tahun dengan pembayaran setiap bulan; Setelah 3 bulan, Citra mencairkan seluruh uangnya
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme bunga majemuk dan bagaimana mengadaptasi parameter (suku bunga dan periode) sesuai dengan frekuensi pembayaran.. Bukti: bunga majemuk sebesar 36% setiap tahun dengan pembayaran setiap bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Prosedur konversi bunga tahunan ke bulanan dan penggunaan rumus bunga majemuk adalah materi dasar yang familiar. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: bunga majemuk sebesar 36% setiap tahun dengan pembayaran setiap bulan; Setelah 3 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konversi satuan waktu/bunga. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini langsung menguji penerapan rumus tanpa modifikasi kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19224,9 +21369,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 237. Soal `c6eda76fcaba9311c0ece51e`
@@ -19240,27 +21385,49 @@ Koperasi Mekar memberi bunga majemuk 5% per 3 bulan. Setelah menyimpan uang sela
 | C | Rp4.310.125,00 |
 | D | Rp3.310.125,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Periode bunga 3 bulan, 1 tahun = 4 periode. Bunga majemuk 5% (i=0,05). Saldo akhir (Mn) = M0(1+i)^n. 24.310.125 = M0(1,05)^4. 24.310.125 = M0(1,21550625). M0 = 24.310.125 / 1,21550625 = 20.000.000. Bunga = Mn - M0 = 24.310.125 - 20.000.000 = 4.310.125.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eceb977589dd92195b287808e6c826586777c096d626fda1631ced9333edaec1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d322ce35b130ba0fe7bf8a358bb43968647968d1db5927641465cac71314bdb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2914 |
+
+Run 1 — solusi: Periode bunga 3 bulan, 1 tahun = 4 periode. Bunga majemuk 5% (i=0,05). Saldo akhir (Mn) = M0(1+i)^n. 24.310.125 = M0(1,05)^4. 24.310.125 = M0(1,21550625). M0 = 24.310.125 / 1,21550625 = 20.000.000. Bunga = Mn - M0 = 24.310.125 - 20.000.000 = 4.310.125.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi periode bunga (n=4), menerapkan rumus bunga majemuk untuk mencari modal awal, dan menghitung selisih antara saldo akhir dengan modal awal. Ini adalah penerapan prosedur standar bunga majemuk.. Bukti: bunga majemuk 5% per 3 bulan; Setelah menyimpan uang selama 1 tahun; Besar bunga yang diperoleh Bu Sinta
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga majemuk dan hubungan antara modal awal, saldo akhir, dan bunga.. Bukti: bunga majemuk 5% per 3 bulan; saldo simpanan Bu Sinta menjadi Rp24.310.125,00
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus melakukan konversi periode (1 tahun menjadi 4 periode 3 bulanan) dan melakukan perhitungan mundur (mencari modal awal dari saldo akhir) sebelum mendapatkan nilai bunga. Langkah-langkahnya rutin namun memerlukan ketelitian dalam urutan pengerjaan.. Bukti: bunga majemuk 5% per 3 bulan; Setelah menyimpan uang selama 1 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, operasi perpangkatan, dan aritmatika dasar. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengonversi periode waktu dan menerapkan rumus bunga majemuk. Kesulitan terletak pada perhitungan mundur untuk mencari modal awal, yang merupakan variasi rutin dari soal bunga majemuk. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19292,9 +21459,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 238. Soal `a960b9d737d2abc38fd6b21d`
@@ -19308,27 +21475,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | 3 |
 | D | 4 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Rumus bunga majemuk: A = P(1+i)^n. Diketahui A = 4.831.530, P = 3.000.000, i = 0,1. Maka 4.831.530 = 3.000.000(1,1)^n. Sehingga (1,1)^n = 4.831.530 / 3.000.000 = 1,61051. Berdasarkan tabel, (1,1)^5 = 1,61051. Jadi, n = 5.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9e97a689f0cf3abd8b636fd9eba42b66eedb10ece7dc47df7475e196be0886a6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e4fe23ce030f27df0dbbd0f307ecb29d699794015417eae63652395f9fa8a8cf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2922 |
+
+Run 1 — solusi: Rumus bunga majemuk: A = P(1+i)^n. Diketahui A = 4.831.530, P = 3.000.000, i = 0,1. Maka 4.831.530 = 3.000.000(1,1)^n. Sehingga (1,1)^n = 4.831.530 / 3.000.000 = 1,61051. Berdasarkan tabel, (1,1)^5 = 1,61051. Jadi, n = 5.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk dan menggunakan tabel yang disediakan untuk mencari nilai n. Ini adalah penerapan prosedur rutin dalam konteks keuangan yang sudah ditentukan.. Bukti: Modal Rp3.000.000,00 dibungakan dengan bunga majemuk 10% per tahun hingga menjadi Rp4.831.530,00.; Dengan memakai tabel, lama modal tersebut dibungakan adalah ... tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma bunga majemuk dan penggunaan tabel nilai eksponensial sebagai alat bantu hitung.. Bukti: Modal Rp3.000.000,00 dibungakan dengan bunga majemuk 10% per tahun; Dengan memakai tabel
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaiannya sangat jelas: membagi nilai akhir dengan modal awal, lalu mencocokkan hasilnya dengan tabel yang sudah disediakan. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Modal Rp3.000.000,00 dibungakan dengan bunga majemuk 10% per tahun hingga menjadi Rp4.831.530,00.; Dengan memakai tabel
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rumus bunga majemuk dan operasi pembagian. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan konsep bunga majemuk dan penggunaan tabel untuk mempermudah perhitungan eksponensial. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19368,9 +21557,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 239. Soal `5d8ebd10937128f6a1f85b0e`
@@ -19384,27 +21573,49 @@ Bu Ratna menabung Rp15.000.000,00 pada sebuah koperasi yang memberi bunga majemu
 | C | Rp15.606.000,00 |
 | D | Rp15.900.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Bunga majemuk per triwulan adalah 8%/4 = 2% atau 0,02. Periode 9 bulan setara dengan 9/3 = 3 triwulan. Saldo akhir = P(1+i)^n = 15.000.000(1+0,02)^3 = 15.000.000(1,061208) = 15.918.120.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `51049745484386206d335e0a76bbcb99ddc1564052fc8644f4b2857c7cb92686`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e586fd27b6619adeb19fc63e084ee224f2f6c17f44a45c360ed34ed4c8cb08c0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2789 |
+
+Run 1 — solusi: Bunga majemuk per triwulan adalah 8%/4 = 2% atau 0,02. Periode 9 bulan setara dengan 9/3 = 3 triwulan. Saldo akhir = P(1+i)^n = 15.000.000(1+0,02)^3 = 15.000.000(1,061208) = 15.918.120.
+- Domain kognitif `classify/applying`: Siswa perlu mengonversi suku bunga tahunan ke triwulanan dan durasi waktu ke jumlah periode triwulan sebelum menerapkan rumus bunga majemuk. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk 8% per tahun dengan perhitungan setiap triwulan; Setelah 9 bulan, saldo tabungan Bu Ratna sebesar
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma bunga majemuk dan penggunaan parameter yang tepat (konversi bunga dan periode).. Bukti: bunga majemuk 8% per tahun dengan perhitungan setiap triwulan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu melakukan konversi satuan waktu dan bunga yang sangat standar (triwulan = 3 bulan, 1 tahun = 4 triwulan) lalu memasukkannya ke rumus yang sudah familiar. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga majemuk 8% per tahun dengan perhitungan setiap triwulan; Setelah 9 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konversi satuan waktu/bunga. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Konversi triwulan ke tahunan adalah prosedur rutin yang diharapkan dikuasai. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19436,9 +21647,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 240. Soal `1f7a273e9cff6d72900b1e92`
@@ -19452,27 +21663,49 @@ Pak Hadi memiliki uang Rp20.000.000,00. Bank A memberi bunga majemuk 10% per tah
 | C | Rp200.000,00 |
 | D | Rp110.125,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Saldo Bank A: 20.000.000 * (1 + 0,1)^2 = 24.200.000. Saldo Bank B: 20.000.000 * (1 + 0,05)^4 = 24.310.125. Selisih: 24.310.125 - 24.200.000 = 110.125.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8b44ba583ccf7737ca463209a528250cb8e5aa0eaf3536e59bc4b9734d6eda16`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cd4dc20ade5aefe3bd420f081bc804e6aefdc3302b0bbe550491ff2c698fe8c7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2914 |
+
+Run 1 — solusi: Saldo Bank A: 20.000.000 * (1 + 0,1)^2 = 24.200.000. Saldo Bank B: 20.000.000 * (1 + 0,05)^4 = 24.310.125. Selisih: 24.310.125 - 24.200.000 = 110.125.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk pada dua skenario berbeda dengan periode bunga yang berbeda (tahunan vs semesteran) dan menghitung selisihnya. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Bank A memberi bunga majemuk 10% per tahun; Bank B memberi bunga majemuk 5% per semester; Jika uang itu disimpan selama 2 tahun
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma bunga majemuk dan penyesuaian periode bunga (konversi tahun ke semester).. Bukti: bunga majemuk 10% per tahun; bunga majemuk 5% per semester
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan ketelitian dalam mengonversi periode bunga (2 tahun menjadi 4 semester untuk Bank B) dan melakukan dua perhitungan bunga majemuk yang berbeda sebelum mencari selisihnya. Meskipun prosedurnya familiar, terdapat beberapa langkah yang saling terkait dan potensi kesalahan pada penentuan n.. Bukti: Bank A memberi bunga majemuk 10% per tahun; Bank B memberi bunga majemuk 5% per semester; disimpan selama 2 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga majemuk dan konsep periode bunga. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan periode bunga majemuk. Kesalahan umum pada penentuan n (jumlah periode) membuat soal ini memiliki tingkat kesulitan menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19504,9 +21737,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 241. Soal `3e33be4fe590e6c0bce98aa9`
@@ -19520,27 +21753,49 @@ Suatu tabungan berbunga majemuk 20% per semester selama 2 tahun. Diketahui $(1,2
 | C | 107,36% |
 | D | 80% |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga majemuk: M_n = M_0(1+i)^n. Diketahui i = 20% = 0,2 per semester, n = 2 tahun = 4 semester. Modal akhir M_4 = M_0(1,2)^4 = M_0(2,0736). Bunga = M_4 - M_0 = M_0(2,0736 - 1) = 1,0736 M_0 = 107,36% dari tabungan awal.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `df38b3777424beb073c9671c230fbc070882a72d79bd4f55c814f16bb138710b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `defc4a1198805fc1e81d4af97b63fdb658ea208859ab3d6ec3bdb238fd8b4e74`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2786 |
+
+Run 1 — solusi: Bunga majemuk: M_n = M_0(1+i)^n. Diketahui i = 20% = 0,2 per semester, n = 2 tahun = 4 semester. Modal akhir M_4 = M_0(1,2)^4 = M_0(2,0736). Bunga = M_4 - M_0 = M_0(2,0736 - 1) = 1,0736 M_0 = 107,36% dari tabungan awal.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk, mengonversi periode waktu (tahun ke semester), dan membedakan antara modal akhir dengan bunga yang diperoleh (modal akhir dikurangi modal awal). Ini adalah penerapan prosedur standar pada konteks investasi.. Bukti: berbunga majemuk 20% per semester selama 2 tahun; Total bunga yang diterima adalah ... dari tabungan awal
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus menggunakan rumus bunga majemuk dan memahami hubungan antara persentase bunga, periode, dan modal akhir.. Bukti: berbunga majemuk 20% per semester; selama 2 tahun; (1,2)^4 = 2,0736
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedur penyelesaiannya sangat langsung. Siswa hanya perlu mengonversi waktu (2 tahun = 4 semester), menerapkan rumus bunga majemuk yang sudah diberikan faktor pengalinya, dan melakukan pengurangan sederhana untuk mendapatkan bunga (bukan modal akhir). Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: berbunga majemuk 20% per semester selama 2 tahun; (1,2)^4 = 2,0736
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konversi satuan waktu. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini menguji pemahaman dasar tanpa jebakan atau kompleksitas tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19572,9 +21827,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 242. Soal `f17742a6345dad9cd5522b24`
@@ -19588,27 +21843,49 @@ Bu Dewi menyimpan Rp10.000.000,00 di Bank X dengan bunga majemuk 8% per tahun da
 | C | Rp26.400.000,00 |
 | D | Rp16.224.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bank X: 10.000.000 * (1 + 0,08)^1 = 10.800.000. Bank Y: 15.000.000 * (1 + 0,04)^2 = 15.000.000 * 1,0816 = 16.224.000. Total = 10.800.000 + 16.224.000 = 27.024.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f70593ca66bae202e77e87cada59d9115c07488e15646ced8d53003b2900fb6a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a48ed92bb005f04e30cbde144c5bd97c1d202dbb18608596d257d9a5958f845d`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2894 |
+
+Run 1 — solusi: Bank X: 10.000.000 * (1 + 0,08)^1 = 10.800.000. Bank Y: 15.000.000 * (1 + 0,04)^2 = 15.000.000 * 1,0816 = 16.224.000. Total = 10.800.000 + 16.224.000 = 27.024.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus bunga majemuk M_n = M_0(1+i)^n untuk dua situasi berbeda, memperhatikan konversi periode bunga (semester vs tahun), lalu menjumlahkan hasilnya. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: bunga majemuk 8% per tahun; bunga majemuk 4% per semester; Setelah 1 tahun, total saldo kedua simpanan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga majemuk dan kemampuan mengidentifikasi periode bunga yang berbeda (tahunan vs semesteran) untuk menentukan nilai n yang tepat.. Bukti: bunga majemuk 8% per tahun; bunga majemuk 4% per semester
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan ketelitian dalam mengonversi periode bunga (semester menjadi tahunan) dan melakukan dua perhitungan terpisah sebelum menjumlahkannya. Meskipun prosedurnya familiar, terdapat dua kendala yang berinteraksi (perbedaan periode bunga) yang harus dikelola siswa.. Bukti: bunga majemuk 8% per tahun; bunga majemuk 4% per semester; Setelah 1 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga majemuk dan konversi satuan waktu (semester ke tahun). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani perhitungan bunga majemuk dengan periode yang berbeda. Kesalahan umum pada distractor (seperti menghitung bunga tunggal atau hanya satu semester) menunjukkan tingkat kesulitan yang sesuai untuk level menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19640,9 +21917,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 243. Soal `1842e2395fb5015b8650718f`
@@ -19656,27 +21933,49 @@ Koperasi Tani Makmur memiliki program simpanan berjangka dengan suku bunga majem
 | C | Rp84.000.000,00 |
 | D | Rp88.200.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Periode (n) = 20 bulan / 4 bulan = 5. Rumus bunga majemuk: Mn = M0(1+i)^n. Diketahui Mn = 102.102.525, i = 5%, n = 5. Dari tabel, (1+0,05)^5 = 1,2762815625. Maka M0 = 102.102.525 / 1,2762815625 = 80.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `437a959634896a018ada346ad92fc485195a3c8723014c03ffed81acecc250ad`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c50a866e73b1fe75837ebf2027a7ae9f7492cae5ee529af69de94dce27e039ae`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2960 |
+
+Run 1 — solusi: Periode (n) = 20 bulan / 4 bulan = 5. Rumus bunga majemuk: Mn = M0(1+i)^n. Diketahui Mn = 102.102.525, i = 5%, n = 5. Dari tabel, (1+0,05)^5 = 1,2762815625. Maka M0 = 102.102.525 / 1,2762815625 = 80.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi periode bunga (n) dari durasi total dan durasi per periode, lalu memilih faktor pengali yang tepat dari tabel untuk menerapkan rumus bunga majemuk secara terbalik guna mencari modal awal.. Bukti: suku bunga majemuk 5% per 4 bulan; menyimpan uang selama 20 bulan; Berdasarkan tabel tersebut, simpanan awal Bu Wulan sebesar
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus bunga majemuk dan kemampuan mengintegrasikan data dari tabel untuk menyelesaikan masalah keuangan.. Bukti: suku bunga majemuk 5% per 4 bulan; rumus bunga majemuk; tabel (1+i)^N
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena siswa harus melakukan konversi periode (20 bulan menjadi 5 periode) dan memilih nilai yang tepat dari tabel. Prosedur ini rutin bagi siswa kelas 12, namun memerlukan ketelitian dalam pemilihan data dari tabel.. Bukti: suku bunga majemuk 5% per 4 bulan; menyimpan uang selama 20 bulan; tabel (1+i)^N
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan operasi pembagian dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengonversi satuan waktu dan menggunakan tabel bunga majemuk sebagai bagian dari materi keuangan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19717,9 +22016,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 244. Soal `cdc3af7165717503fce782fa`
@@ -19733,27 +22032,49 @@ Pak Dedi menabung Rp10.000.000,00 dengan bunga majemuk 10% per tahun. Setelah 2 
 | C | Rp20.691.000,00 |
 | D | Rp14.641.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Saldo awal 2 tahun: 10.000.000 * (1 + 0,1)^2 = 12.100.000. Setelah ditambah 5.000.000, saldo menjadi 17.100.000. Saldo 2 tahun berikutnya: 17.100.000 * (1 + 0,1)^2 = 17.100.000 * 1,21 = 20.691.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e0c2cf07d8644430f416c3e145c3df00bec841e2bac72bcbf33cc185a6d3ac38`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3dcaec4ee86e4acb324c0afdc313895d224c517b8dfae826e54f5ed2674a0b86`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2944 |
+
+Run 1 — solusi: Saldo awal 2 tahun: 10.000.000 * (1 + 0,1)^2 = 12.100.000. Setelah ditambah 5.000.000, saldo menjadi 17.100.000. Saldo 2 tahun berikutnya: 17.100.000 * (1 + 0,1)^2 = 17.100.000 * 1,21 = 20.691.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur bunga majemuk secara bertahap, melakukan penyesuaian saldo (penambahan modal), dan menerapkan kembali prosedur bunga majemuk pada saldo baru. Ini adalah penerapan konsep bunga majemuk dalam konteks rutin.. Bukti: menabung Rp10.000.000,00 dengan bunga majemuk 10% per tahun; Setelah 2 tahun, ia menambah tabungannya Rp5.000.000,00; Saldo tabungan Pak Dedi 2 tahun setelah penambahan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma bunga majemuk dan bagaimana menangani perubahan saldo pokok di tengah periode investasi.. Bukti: bunga majemuk 10% per tahun; Setelah 2 tahun, ia menambah tabungannya
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua tahap perhitungan bunga majemuk yang dipisahkan oleh operasi penambahan modal. Siswa harus merencanakan langkah-langkah secara berurutan (hitung saldo awal, tambah modal, hitung saldo akhir) tanpa bantuan eksplisit mengenai langkah-langkah tersebut.. Bukti: bunga majemuk 10% per tahun; Setelah 2 tahun, ia menambah tabungannya Rp5.000.000,00; 2 tahun setelah penambahan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk dan rumus M_n = M_0(1+i)^n. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu mengelola perhitungan bunga majemuk bertahap. Kesulitan terletak pada ketelitian dalam membagi periode waktu dan mengintegrasikan penambahan modal ke dalam perhitungan bunga berikutnya. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19785,9 +22106,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 245. Soal `0047044bda83bc9baf8e01bf`
@@ -19801,27 +22122,49 @@ Koperasi Rukun Sentosa memberi bunga majemuk 4% per semester. Bu Ani menyimpan u
 | C | $(1,124864) \times (1,0816) \times M$ |
 | D | $(1,0816)^2 \times (1,04) \times M$ |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga majemuk 4% per semester selama 30 bulan (5 semester) menghasilkan faktor pengali (1+0,04)^5. Menggunakan tabel, (1,04)^5 = (1,04)^3 * (1,04)^2 = 1,124864 * 1,0816. Pilihan A salah karena menjumlahkan faktor pengali, bukan mengalikannya.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2cca7e60347a4c93a881d46e4dc241576537cd9fe41951fa2f4d8edaed592506`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `497eef082fc45a2a22ee4c3321747724cdf7ce08a91d34e58a522e33abd84f7a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2902 |
+
+Run 1 — solusi: Bunga majemuk 4% per semester selama 30 bulan (5 semester) menghasilkan faktor pengali (1+0,04)^5. Menggunakan tabel, (1,04)^5 = (1,04)^3 * (1,04)^2 = 1,124864 * 1,0816. Pilihan A salah karena menjumlahkan faktor pengali, bukan mengalikannya.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk dan sifat eksponen (perkalian basis yang sama) untuk memvalidasi ekspresi matematika yang diberikan. Ini melibatkan penerapan konsep pada konteks rutin.. Bukti: Koperasi Rukun Sentosa memberi bunga majemuk 4% per semester. Bu Ani menyimpan uang selama 30 bulan.; cara yang tidak tepat untuk menghitung simpanan Bu Ani setelah 30 bulan adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang bagaimana bunga majemuk dihitung dan bagaimana faktor pengali (1+i)^n beroperasi dalam konteks investasi.. Bukti: bunga majemuk 4% per semester; cara yang tidak tepat untuk menghitung simpanan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu mengonversi satuan waktu (30 bulan = 5 semester) dan memahami sifat dasar eksponen dalam bunga majemuk. Pilihan jawaban yang salah (A) sangat jelas secara matematis karena menjumlahkan faktor pengali, yang merupakan kesalahan konseptual dasar.. Bukti: 30 bulan; 4% per semester; cara yang tidak tepat
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, konversi satuan waktu (bulan ke semester), sifat eksponen dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan konsep bunga majemuk dan sifat eksponen. Soal ini tidak memerlukan perencanaan kompleks atau integrasi kendala yang sulit. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19860,9 +22203,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 246. Soal `64de3049bd433ad01738c8f9`
@@ -19876,27 +22219,49 @@ Modal dibungakan dengan bunga majemuk 30% per tahun. Paling sedikit berapa tahun
 | C | 4 tahun |
 | D | 2 tahun |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Modal akhir M_n = M_0(1 + i)^n. Syarat M_n > 2M_0 menjadi (1 + 0,3)^n > 2, atau (1,3)^n > 2. Untuk n=1: 1,3 < 2. Untuk n=2: (1,3)^2 = 1,69 < 2. Untuk n=3: (1,3)^3 = 2,197 > 2. Jadi, n minimum adalah 3 tahun.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3005a2e2dc69a681d22d1c11fe9508714de068028153f26f1a0661fd27415570`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `04312e3bfd41034cc1dcac095644ecaefa4581d5b9ef15c10ec67054c4ae4bc9`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2730 |
+
+Run 1 — solusi: Modal akhir M_n = M_0(1 + i)^n. Syarat M_n > 2M_0 menjadi (1 + 0,3)^n > 2, atau (1,3)^n > 2. Untuk n=1: 1,3 < 2. Untuk n=2: (1,3)^2 = 1,69 < 2. Untuk n=3: (1,3)^3 = 2,197 > 2. Jadi, n minimum adalah 3 tahun.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk, menyusun pertidaksamaan eksponensial sederhana, dan melakukan pengujian nilai untuk menentukan bilangan bulat terkecil yang memenuhi kondisi. Ini adalah penerapan konsep bunga majemuk dalam konteks rutin.. Bukti: Modal dibungakan dengan bunga majemuk 30% per tahun.; Paling sedikit berapa tahun agar modal akhir lebih dari dua kali modal awal?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang rumus bunga majemuk dan kemampuan menerapkannya untuk menyelesaikan masalah pertumbuhan eksponensial sederhana.. Bukti: bunga majemuk 30% per tahun; modal akhir lebih dari dua kali modal awal
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hanya memerlukan pemahaman dasar rumus bunga majemuk dan pengujian nilai n yang kecil. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: bunga majemuk 30% per tahun; Paling sedikit berapa tahun agar modal akhir lebih dari dua kali modal awal?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga majemuk dan operasi perpangkatan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan rumus bunga majemuk dan mampu melakukan perhitungan eksponensial sederhana untuk menentukan durasi waktu. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -19928,9 +22293,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 247. Soal `72355e872be793e4c7a3f792`
@@ -19944,27 +22309,49 @@ Pak Hendra menyimpan Rp60.000.000,00 pada program simpanan berjangka sebuah bank
 | C | Rp72.930.375,00 |
 | D | Rp66.150.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Periode bunga adalah 4 bulan, sehingga untuk 12 bulan terdapat n = 12/4 = 3 periode. Menggunakan rumus bunga majemuk M_n = M_0(1+i)^n, maka M_3 = 60.000.000 * (1+0,05)^3. Dari tabel, (1+0,05)^3 = 1,157625. Maka M_3 = 60.000.000 * 1,157625 = 69.457.500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e192923d0c5c4fe6bfab61f847a54b30632be6c7c6e2c5e4c8ce4dc52a5f7f2f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7c93bf026dbde027a5f9dd99e5dde40ea822258b89649b920b932dc7c4e4fb9b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2930 |
+
+Run 1 — solusi: Periode bunga adalah 4 bulan, sehingga untuk 12 bulan terdapat n = 12/4 = 3 periode. Menggunakan rumus bunga majemuk M_n = M_0(1+i)^n, maka M_3 = 60.000.000 * (1+0,05)^3. Dari tabel, (1+0,05)^3 = 1,157625. Maka M_3 = 60.000.000 * 1,157625 = 69.457.500.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi periode bunga (n) dari durasi total (12 bulan / 4 bulan = 3) dan menerapkan rumus bunga majemuk menggunakan nilai yang tersedia di tabel. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk 5% per 4 bulan; disimpan selama 12 bulan; Berdasarkan tabel tersebut
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang konsep bunga majemuk dan prosedur perhitungan nilai akhir investasi dengan periode majemuk yang ditentukan.. Bukti: bunga majemuk 5% per 4 bulan; disimpan selama 12 bulan
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena jalur penyelesaiannya sangat jelas: menentukan jumlah periode (n=3) dan menggunakan tabel yang disediakan. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: bunga majemuk 5% per 4 bulan; disimpan selama 12 bulan; Berdasarkan tabel tersebut
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan cara membaca tabel faktor bunga. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah familiar dengan perhitungan bunga majemuk sederhana menggunakan tabel faktor bunga. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20005,9 +22392,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 248. Soal `61a9f8dc036f6be8fb241115`
@@ -20021,27 +22408,49 @@ Rina menabung Rp7.000.000,00 dengan bunga majemuk 10% per semester. Besar bunga 
 | C | Rp1.470.000,00 |
 | D | Rp9.317.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Modal awal (P) = 7.000.000, suku bunga (i) = 10% = 0,1 per semester, periode (n) = 1,5 tahun = 3 semester. Modal akhir (Mn) = P(1+i)^n = 7.000.000(1,1)^3 = 7.000.000(1,331) = 9.317.000. Bunga = Mn - P = 9.317.000 - 7.000.000 = 2.317.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b27b9df8418f5ba9d2528e0ee339ffb1c3f506c1b17d06048c9a872e27473e8e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ab3611fbadc0c1fab82918c9ea26e2e2245253fa79de3203765505e728d7b324`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2779 |
+
+Run 1 — solusi: Modal awal (P) = 7.000.000, suku bunga (i) = 10% = 0,1 per semester, periode (n) = 1,5 tahun = 3 semester. Modal akhir (Mn) = P(1+i)^n = 7.000.000(1,1)^3 = 7.000.000(1,331) = 9.317.000. Bunga = Mn - P = 9.317.000 - 7.000.000 = 2.317.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi parameter bunga majemuk, melakukan konversi satuan waktu (tahun ke semester), menerapkan rumus bunga majemuk, dan menghitung selisih modal akhir dengan modal awal.. Bukti: bunga majemuk 10% per semester; setelah 1,5 tahun
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman prosedural tentang rumus bunga majemuk dan konsep dasar bunga sebagai selisih modal akhir dan awal.. Bukti: bunga majemuk 10% per semester; Besar bunga yang diperoleh
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengonversi waktu ke semester (n=3) dan menerapkan rumus bunga majemuk standar. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: bunga majemuk 10% per semester; setelah 1,5 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus bunga majemuk dan konversi satuan waktu. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah standar kelas 12. Soal ini menguji penerapan langsung rumus tanpa modifikasi kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20073,9 +22482,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 249. Soal `7159de91d2e51861000c30ca`
@@ -20089,27 +22498,49 @@ Sebuah bank memberi bunga majemuk 3% per semester. Pak Joko menabung selama 3 ta
 | C | $(1 + 6 \times 0,03) \times M$ |
 | D | $(1,0609)^3 \times M$ |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga majemuk dihitung dengan rumus M_n = M(1+i)^n. Untuk 3 tahun dengan bunga per semester, n = 3 x 2 = 6 semester. Maka tabungan akhir adalah M(1+0,03)^6. Pilihan A, B, dan D adalah bentuk ekuivalen dari (1,03)^6. Pilihan C menggunakan rumus bunga tunggal (1 + n*i), yang tidak tepat untuk bunga majemuk.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e4959036292a9d6fe5b65cd3883943f3f36873207535a1d50c18ae12517b7a53`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4d870b85b53f5d2cd958c3a58d1b41a01efcd6eb4dc7ae82a1e1b57e888bedab`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2858 |
+
+Run 1 — solusi: Bunga majemuk dihitung dengan rumus M_n = M(1+i)^n. Untuk 3 tahun dengan bunga per semester, n = 3 x 2 = 6 semester. Maka tabungan akhir adalah M(1+0,03)^6. Pilihan A, B, dan D adalah bentuk ekuivalen dari (1,03)^6. Pilihan C menggunakan rumus bunga tunggal (1 + n*i), yang tidak tepat untuk bunga majemuk.
+- Domain kognitif `classify/applying`: Siswa perlu memahami perbedaan konsep bunga majemuk dan bunga tunggal serta melakukan konversi periode waktu (tahun ke semester) untuk menentukan model matematika yang tepat.. Bukti: bank memberi bunga majemuk 3% per semester; Pak Joko menabung selama 3 tahun; cara yang tidak tepat untuk menghitung tabungan Pak Joko setelah 3 tahun adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman konseptual tentang perbedaan antara bunga majemuk (eksponensial) dan bunga tunggal (linear) dalam konteks keuangan.. Bukti: bunga majemuk 3% per semester; cara yang tidak tepat untuk menghitung tabungan Pak Joko setelah 3 tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena siswa hanya perlu mengidentifikasi rumus bunga majemuk yang benar dan mengenali bahwa pilihan C menggunakan rumus bunga tunggal yang salah untuk konteks bunga majemuk. Langkah penyelesaian sangat langsung.. Bukti: bunga majemuk 3% per semester; Pak Joko menabung selama 3 tahun; cara yang tidak tepat
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan bunga tunggal, konversi satuan waktu (tahun ke semester). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah familiar dengan perbedaan mendasar antara bunga tunggal dan majemuk. Soal ini tidak memerlukan perhitungan kompleks, hanya pemahaman konsep. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20148,9 +22579,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 250. Soal `3098501dc54dd97703259a4b`
@@ -20164,27 +22595,49 @@ Modal $M$ dibungakan dengan bunga majemuk 10% per tahun. Setelah 3 tahun, bunga 
 | C | Rp6.620.000,00 |
 | D | Rp6.000.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga majemuk setelah 3 tahun adalah A - M = M(1 + i)^n - M. Diketahui i = 0,1 dan n = 3, maka bunga = M((1,1)^3 - 1) = M(1,331 - 1) = 0,331M. Diketahui bunga = 1.986.000, maka 0,331M = 1.986.000. M = 1.986.000 / 0,331 = 6.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8eb1fbe80d8012e9187253c066392e278a792786b99d2056e4418483fd13d5d1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eb92d8eee6097b17a9c5ae0a8499c9624ab5e81fcd8b5faf4d14d044c1ce7e7a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2891 |
+
+Run 1 — solusi: Bunga majemuk setelah 3 tahun adalah A - M = M(1 + i)^n - M. Diketahui i = 0,1 dan n = 3, maka bunga = M((1,1)^3 - 1) = M(1,331 - 1) = 0,331M. Diketahui bunga = 1.986.000, maka 0,331M = 1.986.000. M = 1.986.000 / 0,331 = 6.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu memilih rumus bunga majemuk yang tepat (A = M(1+i)^n) dan memahami bahwa bunga adalah selisih antara modal akhir dan modal awal (A - M), kemudian menerapkan prosedur aljabar untuk mencari nilai M.. Bukti: Modal M dibungakan dengan bunga majemuk 10% per tahun.; Setelah 3 tahun, bunga yang diperoleh sebesar Rp1.986.000,00.
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bunga majemuk bekerja (akumulasi bunga berbunga) dan prosedur perhitungan yang terkait dengan investasi.. Bukti: bunga majemuk 10% per tahun; Setelah 3 tahun, bunga yang diperoleh sebesar Rp1.986.000,00
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus memahami perbedaan antara modal akhir dan bunga yang diperoleh (selisih), serta melakukan manipulasi aljabar sederhana. Meskipun prosedurnya familiar, siswa sering terjebak menganggap bunga sebagai bunga tunggal atau salah mengartikan modal akhir sebagai bunga, sehingga memerlukan ketelitian dalam pemilihan konsep.. Bukti: Modal M dibungakan dengan bunga majemuk 10% per tahun.; Setelah 3 tahun, bunga yang diperoleh sebesar Rp1.986.000,00.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus dasar A = M(1+i)^n. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah familiar dengan rumus bunga majemuk. Kesulitan terletak pada ketelitian membedakan bunga dengan modal akhir, yang merupakan jebakan umum pada topik ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20216,9 +22669,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 251. Soal `b1f1d79e55bcee71eef38d12`
@@ -20232,27 +22685,49 @@ Lia menabung uang di bank dengan bunga majemuk sebesar 2,5% per 3 bulan. Setelah
 | C | Rp8.014.070,00 |
 | D | Rp8.200.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Diketahui: M_n = 8.615.125, i = 2,5% = 0,025, periode = 9 bulan / 3 bulan = 3 periode (n=3). Rumus bunga majemuk: M_n = M_0(1+i)^n. Maka, M_0 = M_n / (1+i)^n = 8.615.125 / (1,025)^3 = 8.615.125 / 1,076890625 = 8.000.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f473a9aa31c3abf68b50364ab410b20365ac3d9aa2baa76ddc7a31e009523c85`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `79afedfbd21ea109a8f391a442402fcb948f6abbec576c00cd896b90dadb0b4f`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2908 |
+
+Run 1 — solusi: Diketahui: M_n = 8.615.125, i = 2,5% = 0,025, periode = 9 bulan / 3 bulan = 3 periode (n=3). Rumus bunga majemuk: M_n = M_0(1+i)^n. Maka, M_0 = M_n / (1+i)^n = 8.615.125 / (1,025)^3 = 8.615.125 / 1,076890625 = 8.000.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi model bunga majemuk, menentukan jumlah periode (n=3) dari durasi 9 bulan dengan interval 3 bulan, dan menerapkan rumus invers bunga majemuk untuk mencari modal awal. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk sebesar 2,5% per 3 bulan; Setelah 9 bulan menabung, saldo tabungan menjadi sebesar Rp8.615.125,00; Berapakah jumlah uang yang ditabung Lia semula?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip bunga majemuk dan penggunaan rumus matematika keuangan untuk menghitung nilai sekarang (present value) dari nilai masa depan.. Bukti: bunga majemuk; saldo tabungan menjadi sebesar Rp8.615.125,00
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan rumus standar bunga majemuk yang familiar bagi siswa kelas 12. Langkah-langkahnya jelas: menentukan n, menerapkan rumus, dan menghitung. Tidak ada kendala yang berinteraksi atau kebutuhan strategi nonrutin.. Bukti: bunga majemuk sebesar 2,5% per 3 bulan; Setelah 9 bulan menabung
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan operasi hitung bilangan desimal/pangkat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini merupakan latihan rutin untuk materi keuangan kelas 12. Siswa hanya perlu mengonversi waktu ke periode bunga dan melakukan operasi aritmatika dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20284,9 +22759,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 252. Soal `3b2aa38b92426382d6a3dee3`
@@ -20300,27 +22775,49 @@ Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak diguna
 | C | Rp11.520.000,00 |
 | D | Rp12.441.600,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga tahun ke-1 adalah 1.000.000 dari modal 5.000.000, maka suku bunga p = 1.000.000/5.000.000 = 20% atau 0,2. Modal akhir tahun ke-3 adalah 8.640.000. Modal akhir tahun ke-5 = M3 * (1 + p)^2 = 8.640.000 * (1,2)^2 = 8.640.000 * 1,44 = 12.441.600.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `53a5697d488a7563d9358b8a9f61eb5bc7b3245f654a4a0f1342d579ff4746c7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2ae0907c1f0cc54b74a7bf759ea4ff524b3c4f67035a9b9dbbcdb500633efce2`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2971 |
+
+Run 1 — solusi: Bunga tahun ke-1 adalah 1.000.000 dari modal 5.000.000, maka suku bunga p = 1.000.000/5.000.000 = 20% atau 0,2. Modal akhir tahun ke-3 adalah 8.640.000. Modal akhir tahun ke-5 = M3 * (1 + p)^2 = 8.640.000 * (1,2)^2 = 8.640.000 * 1,44 = 12.441.600.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi pola bunga majemuk dari tabel, menentukan suku bunga (p), dan menerapkan rumus bunga majemuk untuk menghitung modal pada tahun ke-5. Ini adalah penerapan prosedur familiar dalam konteks rutin.. Bukti: Tabel di atas menunjukkan perhitungan bunga majemuk suatu tabungan dengan bunga p per tahun tetap.; Modal akhir pada tahun ke-5 adalah ....
+- Dimensi pengetahuan `classify/procedural`: Soal menuntut pemahaman tentang prinsip bunga majemuk dan penggunaan algoritma perhitungan yang sesuai untuk menentukan nilai masa depan.. Bukti: perhitungan bunga majemuk suatu tabungan dengan bunga p per tahun tetap
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena pola bunga majemuk sudah diberikan secara eksplisit dalam tabel. Siswa hanya perlu menentukan rasio bunga dari data tahun pertama dan melakukan dua langkah perkalian atau menggunakan rumus bunga majemuk. Tidak ada kendala yang berinteraksi atau strategi non-rutin yang diperlukan.. Bukti: Tabel di atas menunjukkan perhitungan bunga majemuk; Modal akhir pada tahun ke-5 adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep dasar bunga majemuk dan persentase. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 seharusnya sudah sangat familiar dengan perhitungan bunga majemuk sederhana seperti ini. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20359,9 +22856,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 253. Soal `74b03e9a58c01f4e7eb1a973`
@@ -20375,27 +22872,49 @@ Modal Rp20.000.000,00 dibungakan dengan bunga majemuk 10% per tahun. Selisih bun
 | C | Rp266.200,00 |
 | D | Rp2.928.200,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga tahun ke-n adalah A_n - A_{n-1} = P(1+r)^{n-1} * r. Bunga tahun ke-4 = 20.000.000 * (1,1)^3 * 0,1 = 2.662.000. Bunga tahun ke-5 = 20.000.000 * (1,1)^4 * 0,1 = 2.928.200. Selisih = 2.928.200 - 2.662.000 = 266.200.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `afa78f1aa196f6d5c4337b86ac3984758595489f093a4781f0fd14c09faf3320`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `60c13fbbe1384703fac15e8d8f360ce3aa40af677410fc375fc4667c692a9134`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2862 |
+
+Run 1 — solusi: Bunga tahun ke-n adalah A_n - A_{n-1} = P(1+r)^{n-1} * r. Bunga tahun ke-4 = 20.000.000 * (1,1)^3 * 0,1 = 2.662.000. Bunga tahun ke-5 = 20.000.000 * (1,1)^4 * 0,1 = 2.928.200. Selisih = 2.928.200 - 2.662.000 = 266.200.
+- Domain kognitif `classify/applying`: Siswa perlu memahami konsep bunga majemuk, yaitu bunga dihitung dari saldo awal tahun tersebut. Siswa harus menerapkan prosedur menghitung bunga tahunan secara spesifik (bukan total akumulasi) untuk dua tahun berturut-turut dan mencari selisihnya. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Selisih bunga yang diterima pada tahun kelima dan tahun keempat adalah
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma perhitungan bunga majemuk dan bagaimana bunga tahunan dihitung berdasarkan saldo awal periode tersebut.. Bukti: bunga majemuk 10% per tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemahaman bahwa bunga tahunan ke-n adalah bunga dari saldo awal tahun ke-n, bukan sekadar selisih total akumulasi. Siswa harus merencanakan dua perhitungan terpisah dan mengurangkannya. Meskipun prosedurnya familiar, terdapat potensi kesalahan konseptual dalam menentukan 'bunga tahun ke-n' vs 'total bunga sampai tahun ke-n'.. Bukti: Selisih bunga yang diterima pada tahun kelima dan tahun keempat
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk dan rumus pertumbuhan eksponensial. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan bunga tahunan dengan total akumulasi bunga. Langkah perhitungan cukup jelas namun memerlukan ketelitian dalam menerapkan rumus bunga majemuk untuk tahun ke-4 dan ke-5. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20427,9 +22946,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 254. Soal `9a13a1462ad5334bc16f1acd`
@@ -20443,27 +22962,49 @@ Dua tabungan masing-masing Rp10.000.000,00 disimpan selama 5 tahun. Tabungan per
 | C | Rp6.105.100,00 |
 | D | Rp105.100,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Tabungan 1 (Bunga Tunggal): A1 = 10.000.000 * (1 + 5 * 0,12) = 10.000.000 * 1,6 = 16.000.000. Tabungan 2 (Bunga Majemuk): A2 = 10.000.000 * (1 + 0,10)^5 = 10.000.000 * 1,61051 = 16.105.100. Selisih = A2 - A1 = 16.105.100 - 16.000.000 = 105.100.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `acd0b0b3c7420f1fa7ae3415f20112a20ca4451523cd7f9de2a4f8e148c6c9c3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4aed6adbf774a2374a671fed04fc5cff78d141dc0fb6b76feec70fbe47616b6e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3048 |
+
+Run 1 — solusi: Tabungan 1 (Bunga Tunggal): A1 = 10.000.000 * (1 + 5 * 0,12) = 10.000.000 * 1,6 = 16.000.000. Tabungan 2 (Bunga Majemuk): A2 = 10.000.000 * (1 + 0,10)^5 = 10.000.000 * 1,61051 = 16.105.100. Selisih = A2 - A1 = 16.105.100 - 16.000.000 = 105.100.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi dan menerapkan dua rumus bunga yang berbeda (tunggal dan majemuk) untuk konteks yang sama, kemudian menghitung selisihnya. Ini adalah penerapan prosedur rutin dalam konteks keuangan.. Bukti: Dua tabungan masing-masing Rp10.000.000,00 disimpan selama 5 tahun.; tabungan pertama berbunga tunggal 12% per tahun, tabungan kedua berbunga majemuk 10% per tahun.; Selisih saldo akhir tabungan kedua dikurangi tabungan pertama adalah
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang algoritme perhitungan bunga tunggal dan majemuk serta kapan masing-masing rumus tersebut digunakan.. Bukti: tabungan pertama berbunga tunggal 12% per tahun; tabungan kedua berbunga majemuk 10% per tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu menerapkan dua rumus standar secara terpisah dan mencari selisihnya. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Dua tabungan masing-masing Rp10.000.000,00 disimpan selama 5 tahun.; tabungan pertama berbunga tunggal 12% per tahun, tabungan kedua berbunga majemuk 10% per tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus bunga tunggal dan bunga majemuk. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga tunggal dan majemuk adalah kurikulum standar kelas 12. Soal ini menguji pemahaman dasar tanpa variasi yang menuntut penalaran tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20495,9 +23036,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 255. Soal `670779690bb6408e65a1aabc`
@@ -20511,27 +23052,49 @@ Tabungan Rp10.000.000,00 menjadi Rp12.544.000,00 setelah 2 tahun dengan bunga ma
 | C | 25,44% |
 | D | 6,36% |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Menggunakan rumus bunga majemuk A = M(1+p)^n, dengan A=12.544.000, M=10.000.000, dan n=2. Maka 12.544.000 = 10.000.000(1+p)^2. (1+p)^2 = 1,2544. 1+p = sqrt(1,2544) = 1,12. p = 0,12 atau 12%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cd6418e22cb9d33269788d1d01fbf04c1ce39f48d1d7ea3853d1ab4d4199c488`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7cc15c9febf59452fbc8382a2cf51fff71faba0d993e67184274e0ef91535b39`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2787 |
+
+Run 1 — solusi: Menggunakan rumus bunga majemuk A = M(1+p)^n, dengan A=12.544.000, M=10.000.000, dan n=2. Maka 12.544.000 = 10.000.000(1+p)^2. (1+p)^2 = 1,2544. 1+p = sqrt(1,2544) = 1,12. p = 0,12 atau 12%.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus bunga majemuk yang sudah familiar untuk mencari suku bunga. Prosedur penyelesaian bersifat langsung dan rutin bagi siswa kelas 12.. Bukti: Tabungan Rp10.000.000,00 menjadi Rp12.544.000,00 setelah 2 tahun dengan bunga majemuk p per tahun
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang prinsip bunga majemuk dan kemampuan menggunakan algoritma perhitungan bunga untuk mencari variabel yang tidak diketahui.. Bukti: bunga majemuk p per tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena menggunakan rumus standar bunga majemuk yang merupakan materi dasar keuangan di kelas 12. Jalur penyelesaian sangat jelas, tidak ada kendala yang berinteraksi, dan hanya memerlukan satu prosedur aljabar dasar.. Bukti: Tabungan Rp10.000.000,00 menjadi Rp12.544.000,00 setelah 2 tahun dengan bunga majemuk p per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk dan operasi akar kuadrat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini tidak memerlukan modifikasi strategi atau integrasi konsep yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20563,9 +23126,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 256. Soal `a0e38fad7e5cab3807561c42`
@@ -20579,27 +23142,49 @@ Dewi selalu menyisihkan uangnya sebesar Rp4.000.000,00 per tahun pada akhir tahu
 | C | Rp8.200.000,00 |
 | D | Rp12.000.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Menggunakan rumus nilai masa depan anuitas biasa (ordinary annuity): FV = A * (((1 + i)^n - 1) / i). Diketahui A = 4.000.000, i = 0,05, n = 3. FV = 4.000.000 * ((1,05^3 - 1) / 0,05) = 4.000.000 * (0,157625 / 0,05) = 4.000.000 * 3,1525 = 12.610.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4c09d53bfffcfcdb8e4f4ad482e77538eeddb6e3f023cb22386a7ae3825440e3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9031f9af10517304657dc37c05bc10b0c5f1828a3dec3b2e31b469459c0fc62b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2888 |
+
+Run 1 — solusi: Menggunakan rumus nilai masa depan anuitas biasa (ordinary annuity): FV = A * (((1 + i)^n - 1) / i). Diketahui A = 4.000.000, i = 0,05, n = 3. FV = 4.000.000 * ((1,05^3 - 1) / 0,05) = 4.000.000 * (0,157625 / 0,05) = 4.000.000 * 3,1525 = 12.610.000.
+- Domain kognitif `classify/applying`: Soal meminta siswa untuk mengidentifikasi situasi sebagai anuitas biasa (setoran di akhir periode) dan menerapkan rumus nilai masa depan yang sesuai. Ini adalah penerapan prosedur standar dalam konteks keuangan yang rutin bagi siswa kelas 12.. Bukti: Dewi selalu menyisihkan uangnya sebesar Rp4.000.000,00 per tahun pada akhir tahun; bunga majemuk 5% per tahun; Berapa nilai masa depan tabungan Dewi dalam 3 tahun?
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep anuitas dan hubungan antara setoran berkala, bunga majemuk, dan nilai masa depan untuk memilih dan menggunakan rumus yang tepat.. Bukti: bunga majemuk 5% per tahun; nilai masa depan tabungan Dewi dalam 3 tahun
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin. Siswa hanya perlu mengenali pola anuitas biasa dan menerapkan rumus yang sudah dipelajari. Tidak ada kendala yang berinteraksi atau kebutuhan untuk menyusun strategi non-rutin.. Bukti: menyisihkan uangnya sebesar Rp4.000.000,00 per tahun pada akhir tahun; bunga majemuk 5% per tahun; dalam 3 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan konsep anuitas (nilai masa depan). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi anuitas adalah bagian standar kurikulum kelas 12. Soal ini menggunakan angka yang sederhana dan skenario langsung tanpa jebakan atau kompleksitas tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20631,9 +23216,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 257. Soal `c5355bd358c91d6141dc0065`
@@ -20647,27 +23232,49 @@ Pak Rudi rutin menabung Rp1.000.000,00 pada akhir setiap bulan di sebuah bank ya
 | C | Rp4.000.000,00 |
 | D | Rp3.060.400,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Ini adalah masalah anuitas biasa (ordinary annuity) karena setoran dilakukan di akhir periode. Rumus FV = A * ((1 + i)^n - 1) / i. Diketahui A = 1.000.000, i = 0,02, n = 4. FV = 1.000.000 * ((1,02)^4 - 1) / 0,02 = 1.000.000 * (1,08243216 - 1) / 0,02 = 1.000.000 * 0,08243216 / 0,02 = 1.000.000 * 4,121608 = 4.121.608.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ab3d863e7371e15d9b98734ae2b7eac8196792e239fe426a45b157327cbb2456`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f8d897b4616e517524fb88db1516c32f62a446a9f8705d836066544ea63c605b`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2881 |
+
+Run 1 — solusi: Ini adalah masalah anuitas biasa (ordinary annuity) karena setoran dilakukan di akhir periode. Rumus FV = A * ((1 + i)^n - 1) / i. Diketahui A = 1.000.000, i = 0,02, n = 4. FV = 1.000.000 * ((1,02)^4 - 1) / 0,02 = 1.000.000 * (1,08243216 - 1) / 0,02 = 1.000.000 * 0,08243216 / 0,02 = 1.000.000 * 4,121608 = 4.121.608.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa ini adalah masalah anuitas biasa (setoran di akhir periode) dan menerapkan rumus yang sesuai untuk menghitung nilai masa depan. Ini adalah penerapan prosedur standar dalam konteks keuangan.. Bukti: rutin menabung Rp1.000.000,00 pada akhir setiap bulan; bunga majemuk 2% per bulan; nilai masa depan seluruh tabungan Pak Rudi setelah 4 bulan
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang konsep anuitas dan penggunaan rumus nilai masa depan (future value) untuk deret setoran berkala.. Bukti: bunga majemuk 2% per bulan; nilai masa depan seluruh tabungan Pak Rudi setelah 4 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12 yang mempelajari materi anuitas. Prosedur penyelesaiannya langsung menggunakan rumus FV anuitas biasa dengan variabel yang sudah jelas.. Bukti: rutin menabung Rp1.000.000,00 pada akhir setiap bulan; bunga majemuk 2% per bulan; setelah 4 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep bunga majemuk dan rumus dasar anuitas biasa. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi anuitas adalah bagian dari kurikulum kelas 12. Soal ini merupakan penerapan langsung rumus tanpa modifikasi kompleks atau kendala tambahan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20699,9 +23306,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 258. Soal `ee09b45ea0e08791f2254bbe`
@@ -20715,27 +23322,49 @@ Seorang pengusaha menabung sejumlah uang di bank dan mendapat bunga majemuk 10% 
 | C | Rp8.811.220,00 |
 | D | Rp2.000.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Ini adalah masalah nilai sekarang anuitas (present value of annuity). Rumus: PV = A * [1 - (1 + i)^-n] / i. Diketahui: A = 2.662.000, i = 0,1, n = 3. PV = 2.662.000 * [1 - (1,1)^-3] / 0,1 = 2.662.000 * [1 - 0,7513148] / 0,1 = 2.662.000 * 2,486852 = 6.620.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `13d9b0fc9bbeb29ecc32232c0d6a1464bcbffb7914dbcec8bd65e23d28c7ba4f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b0bdedfb2b73d9b69348dc30430ee18b02b459aaba9a8615a76031eae9c4c1de`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2908 |
+
+Run 1 — solusi: Ini adalah masalah nilai sekarang anuitas (present value of annuity). Rumus: PV = A * [1 - (1 + i)^-n] / i. Diketahui: A = 2.662.000, i = 0,1, n = 3. PV = 2.662.000 * [1 - (1,1)^-3] / 0,1 = 2.662.000 * [1 - 0,7513148] / 0,1 = 2.662.000 * 2,486852 = 6.620.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa situasi ini adalah anuitas biasa (ordinary annuity) di mana nilai sekarang (present value) dari serangkaian penarikan harus dihitung. Siswa menerapkan rumus nilai sekarang anuitas yang sudah dipelajari untuk menyelesaikan masalah rutin ini.. Bukti: mendapat bunga majemuk 10% per tahun; Pada akhir setiap tahun selama 3 tahun, ia mengambil Rp2.662.000,00; tabungannya habis tepat setelah pengambilan ketiga
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus anuitas untuk menentukan nilai pokok awal berdasarkan arus kas keluar yang tetap.. Bukti: bunga majemuk 10% per tahun; mengambil Rp2.662.000,00 dari tabungan itu sehingga tabungannya habis
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan pemilihan rumus yang tepat (nilai sekarang anuitas) dan pemahaman bahwa penarikan di akhir periode memerlukan diskonto. Meskipun prosedurnya standar, siswa harus memahami hubungan antara bunga majemuk dan anuitas untuk menentukan model yang benar.. Bukti: bunga majemuk 10% per tahun; Pada akhir setiap tahun selama 3 tahun, ia mengambil Rp2.662.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konsep anuitas (nilai sekarang). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu membedakan antara nilai masa depan dan nilai sekarang dalam konteks anuitas. Soal ini adalah aplikasi standar dari materi keuangan tersebut. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20767,9 +23396,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 259. Soal `89a697347539c208ba13ba42`
@@ -20783,27 +23412,49 @@ Sebuah yayasan ingin memberi beasiswa sebesar Rp2.205.000,00 pada akhir setiap t
 | C | Rp4.520.250,00 |
 | D | Rp2.100.000,00 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Dana awal (PV) adalah nilai sekarang dari anuitas. PV = A/(1+i)^1 + A/(1+i)^2. PV = 2.205.000/1,05 + 2.205.000/(1,05)^2 = 2.100.000 + 2.000.000 = 4.100.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1e39434fd3396551c43a02f60ce559a21678f62994bec12a7b174d29cef4786a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `75b6644ad18472c64b4cf24614b9961d3799c914119ca02151f71128060a950a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2785 |
+
+Run 1 — solusi: Dana awal (PV) adalah nilai sekarang dari anuitas. PV = A/(1+i)^1 + A/(1+i)^2. PV = 2.205.000/1,05 + 2.205.000/(1,05)^2 = 2.100.000 + 2.000.000 = 4.100.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai masalah nilai sekarang (present value) dari anuitas biasa dan menerapkan rumus yang sesuai untuk menghitung nilai awal dana yang diperlukan.. Bukti: Dana beasiswa disimpan di bank berbunga majemuk 5% per tahun dan habis tepat setelah pemberian kedua.; Dana yang harus disimpan yayasan di awal adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami konsep bunga majemuk dan anuitas untuk menentukan metode perhitungan yang tepat.. Bukti: Dana beasiswa disimpan di bank berbunga majemuk 5% per tahun; memberi beasiswa sebesar Rp2.205.000,00 pada akhir setiap tahun
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena merupakan penerapan langsung dari rumus nilai sekarang anuitas untuk periode yang sangat singkat (2 tahun). Langkah penyelesaiannya jelas dan tidak memerlukan integrasi kendala yang kompleks.. Bukti: beasiswa sebesar Rp2.205.000,00 pada akhir setiap tahun selama 2 tahun; berbunga majemuk 5% per tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang nilai waktu dari uang (time value of money) dan bunga majemuk. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi anuitas adalah standar kelas 12. Soal ini hanya melibatkan dua periode, sehingga beban kognitif untuk perencanaan sangat rendah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20835,9 +23486,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 260. Soal `3c1383ea9f79933e7f3641c1`
@@ -20851,27 +23502,49 @@ Pak Doni ingin menerima penghasilan Rp3.000.000,00 pada akhir setiap bulan selam
 | C | Rp5.824.683,00 |
 | D | Rp6.000.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Soal meminta nilai sekarang (PV) dari anuitas biasa. Rumus PV = A * [1 - (1 + i)^-n] / i. Diketahui A = 3.000.000, i = 0,02, n = 2. PV = 3.000.000 * [1 - (1,02)^-2] / 0,02 = 3.000.000 * [1 - 0,96116878] / 0,02 = 3.000.000 * 1,941561 = 5.824.683.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `12984979b5bd65419313a84e76af01b29ba8ab6c10a4999c4725f36d00f62310`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `91657cc5dd80c24b5f70c83802060db9462514d3da1da752d02221027639cddb`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2873 |
+
+Run 1 — solusi: Soal meminta nilai sekarang (PV) dari anuitas biasa. Rumus PV = A * [1 - (1 + i)^-n] / i. Diketahui A = 3.000.000, i = 0,02, n = 2. PV = 3.000.000 * [1 - (1,02)^-2] / 0,02 = 3.000.000 * [1 - 0,96116878] / 0,02 = 3.000.000 * 1,941561 = 5.824.683.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa situasi ini adalah anuitas biasa (pembayaran di akhir periode) dan memilih rumus nilai sekarang (present value) yang tepat untuk menghitung modal awal yang diperlukan.. Bukti: Pak Doni ingin menerima penghasilan Rp3.000.000,00 pada akhir setiap bulan selama 2 bulan; Bank memberi bunga majemuk 24% per tahun yang dihitung tiap bulan (2% per bulan)
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang konsep anuitas dan penggunaan rumus matematika keuangan yang relevan untuk menyelesaikan masalah investasi.. Bukti: Besar uang tabungan yang harus ia siapkan adalah
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena merupakan penerapan langsung rumus anuitas standar. Variabel (A, i, n) diberikan secara eksplisit, jalur penyelesaiannya tunggal dan familiar bagi siswa kelas 12, serta tidak ada kendala yang saling berinteraksi atau kebutuhan untuk melakukan transformasi representasi yang kompleks.. Bukti: selama 2 bulan; bunga majemuk 24% per tahun yang dihitung tiap bulan (2% per bulan)
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep anuitas dan rumus nilai sekarang (present value). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini adalah latihan rutin standar untuk materi keuangan kelas 12. Siswa hanya perlu mengidentifikasi parameter dan memasukkannya ke dalam rumus yang sudah dipelajari. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20903,9 +23576,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 261. Soal `e450daf452783a3a045ecda0`
@@ -20919,27 +23592,49 @@ Bu Mirna ingin menerima Rp3.630.000,00 pada akhir setiap semester selama 1 tahun
 | C | Rp7.623.000,00 |
 | D | Rp6.300.000,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Bunga per semester (i) = 20%/2 = 10% = 0,1. Periode (n) = 1 tahun = 2 semester. PV = A1/(1+i)^1 + A2/(1+i)^2 = 3.630.000/1,1 + 3.630.000/(1,1)^2 = 3.300.000 + 3.000.000 = 6.300.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `53ba18e1ea5a72a0323ced4be3c27e95a0ec95b84b5e12ced15bc5556eca5373`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fad2873a8064e1b215b9d4a3ea29fd97d0a3360806d83572a5fdcb8774fce194`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2888 |
+
+Run 1 — solusi: Bunga per semester (i) = 20%/2 = 10% = 0,1. Periode (n) = 1 tahun = 2 semester. PV = A1/(1+i)^1 + A2/(1+i)^2 = 3.630.000/1,1 + 3.630.000/(1,1)^2 = 3.300.000 + 3.000.000 = 6.300.000.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi bahwa ini adalah masalah nilai sekarang (present value) dari anuitas biasa. Siswa harus menerapkan prosedur konversi suku bunga tahunan ke semesteran dan menggunakan rumus diskonto untuk setiap pembayaran, yang merupakan penerapan konsep keuangan yang rutin bagi kelas 12.. Bukti: ingin menerima Rp3.630.000,00 pada akhir setiap semester selama 1 tahun; bunga majemuk 20% per tahun yang dihitung tiap semester; Tabungan awal yang harus ia siapkan adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang cara menghitung nilai sekarang dari serangkaian pembayaran anuitas dengan bunga majemuk, termasuk penyesuaian periode bunga.. Bukti: bunga majemuk 20% per tahun yang dihitung tiap semester; Tabungan awal yang harus ia siapkan
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan konversi suku bunga tahunan ke semesteran dan pemahaman tentang nilai waktu uang (present value) untuk dua periode. Meskipun prosedurnya standar, siswa harus berhati-hati dalam menentukan periode dan tingkat bunga yang relevan.. Bukti: akhir setiap semester selama 1 tahun; bunga majemuk 20% per tahun yang dihitung tiap semester
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, nilai sekarang (present value), dan anuitas sederhana. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menangani perhitungan anuitas sederhana dengan periode singkat. Kesalahan umum pada distractor (seperti tidak membagi bunga atau salah rumus) menunjukkan tingkat kesulitan yang sesuai untuk menguji pemahaman konsep dasar keuangan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -20971,9 +23666,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 262. Soal `85f79c7b4c34fd610b570a51`
@@ -20987,27 +23682,49 @@ Rina menabung Rp1.000.000,00 pada akhir setiap bulan ke rekening deposito yang m
 | C | Rp3.030.100,00 |
 | D | Rp3.374.400,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Diketahui: PMT = 1.000.000, i = 12%/12 = 1% = 0,01 per bulan, n = 3 bulan. Rumus FV anuitas biasa: FV = PMT * ((1 + i)^n - 1) / i. FV = 1.000.000 * ((1,01)^3 - 1) / 0,01 = 1.000.000 * (1,030301 - 1) / 0,01 = 1.000.000 * 0,030301 / 0,01 = 1.000.000 * 3,0301 = 3.030.100.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9d40498791ab8582b86adad3494abed6a5033d336988a2691d16cdd2f930fa56`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cb7f3695cc5b366d5503eeecf3116fdc2f132653ccf5cecc686a597198646c13`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2927 |
+
+Run 1 — solusi: Diketahui: PMT = 1.000.000, i = 12%/12 = 1% = 0,01 per bulan, n = 3 bulan. Rumus FV anuitas biasa: FV = PMT * ((1 + i)^n - 1) / i. FV = 1.000.000 * ((1,01)^3 - 1) / 0,01 = 1.000.000 * (1,030301 - 1) / 0,01 = 1.000.000 * 0,030301 / 0,01 = 1.000.000 * 3,0301 = 3.030.100.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai anuitas biasa (setoran di akhir periode), memilih rumus yang tepat, melakukan konversi suku bunga tahunan ke bulanan, dan menerapkan prosedur perhitungan nilai masa depan.. Bukti: Rina menabung Rp1.000.000,00 pada akhir setiap bulan; bunga majemuk 12% per tahun, dihitung tiap bulan; Nilai masa depan tabungannya setelah 3 bulan
+- Dimensi pengetahuan `classify/conceptual`: Siswa harus memahami prinsip bunga majemuk dan konsep anuitas (serangkaian pembayaran berkala) untuk menentukan model matematika yang sesuai.. Bukti: bunga majemuk 12% per tahun, dihitung tiap bulan; Nilai masa depan tabungannya setelah 3 bulan
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Prosedur perhitungan anuitas langsung, konversi bunga sederhana, dan jumlah periode sedikit (3 bulan) membuat beban komputasi rendah. Tidak ada kendala kompleks atau strategi non-rutin yang diperlukan.. Bukti: Rina menabung Rp1.000.000,00 pada akhir setiap bulan; bunga majemuk 12% per tahun, dihitung tiap bulan; Nilai masa depan tabungannya setelah 3 bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan rumus anuitas biasa. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi anuitas adalah standar kurikulum kelas 12. Soal ini menguji penerapan rumus langsung tanpa variasi yang menuntut penalaran tinggi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21039,9 +23756,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 263. Soal `8e7a3cc762e0826fbff4c646`
@@ -21055,27 +23772,49 @@ Tia menabung Rp5.000.000,00 pada akhir setiap semester di sebuah bank dengan bun
 | C | Rp10.150.000,00 |
 | D | Rp15.454.500,00 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: PMT = 5.000.000; i = 6%/2 = 3% (0,03) per semester; n = 1,5 tahun * 2 = 3 semester. Rumus FV anuitas biasa: FV = PMT * ((1+i)^n - 1) / i. FV = 5.000.000 * ((1,03)^3 - 1) / 0,03 = 5.000.000 * (1,092727 - 1) / 0,03 = 5.000.000 * 0,092727 / 0,03 = 5.000.000 * 3,0909 = 15.454.500.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5590805b9c99b135cf58cc54f8caa12e4d29cb8a863b885272724061d47df459`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9a2077ec43f1780f97dde9f5eab704179bd28ee8aa2ff3f48d5f308016f1e753`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2869 |
+
+Run 1 — solusi: PMT = 5.000.000; i = 6%/2 = 3% (0,03) per semester; n = 1,5 tahun * 2 = 3 semester. Rumus FV anuitas biasa: FV = PMT * ((1+i)^n - 1) / i. FV = 5.000.000 * ((1,03)^3 - 1) / 0,03 = 5.000.000 * (1,092727 - 1) / 0,03 = 5.000.000 * 0,092727 / 0,03 = 5.000.000 * 3,0909 = 15.454.500.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi parameter anuitas (PMT, i, n) dari konteks soal dan menerapkan rumus nilai masa depan anuitas biasa. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: bunga majemuk 6% per tahun, dihitung tiap semester; akhir setiap semester; Nilai masa depan tabungannya setelah satu setengah tahun
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang prinsip anuitas (hubungan antara periode bunga dan frekuensi pembayaran) serta penggunaan algoritma perhitungan nilai masa depan.. Bukti: bunga majemuk 6% per tahun, dihitung tiap semester; akhir setiap semester
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena menggunakan rumus standar anuitas biasa. Siswa hanya perlu melakukan konversi tingkat bunga (6% per tahun menjadi 3% per semester) dan periode (1,5 tahun menjadi 3 semester), yang merupakan prosedur rutin dalam materi keuangan kelas 12.. Bukti: bunga majemuk 6% per tahun, dihitung tiap semester; akhir setiap semester; satu setengah tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan rumus anuitas biasa. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Konversi periode dan bunga adalah prosedur standar yang diajarkan di kelas 12 untuk topik anuitas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21107,9 +23846,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 264. Soal `59581c8ece0a936d8afbc614`
@@ -21123,27 +23862,49 @@ Eko menabung Rp2.000.000,00 pada akhir setiap tahun di bank dengan bunga majemuk
 | C | 2 |
 | D | 5 |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Rumus nilai masa depan anuitas biasa: FV = A * ((1 + i)^n - 1) / i. Diketahui FV = 6.620.000, A = 2.000.000, i = 0,1. Maka 6.620.000 = 2.000.000 * ((1,1)^n - 1) / 0,1. 6.620.000 / 2.000.000 = ((1,1)^n - 1) / 0,1. 3,31 = ((1,1)^n - 1) / 0,1. 0,331 = (1,1)^n - 1. 1,331 = (1,1)^n. Karena 1,1^3 = 1,331, maka n = 3.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a64cd2636d3eafbed4e597b27496f11ff4d7cf0b767eca41a55d4d5909947fb2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f3434e11f558204be2ebd321da94c980b261666a3138f3f2a038771e32ec282`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2915 |
+
+Run 1 — solusi: Rumus nilai masa depan anuitas biasa: FV = A * ((1 + i)^n - 1) / i. Diketahui FV = 6.620.000, A = 2.000.000, i = 0,1. Maka 6.620.000 = 2.000.000 * ((1,1)^n - 1) / 0,1. 6.620.000 / 2.000.000 = ((1,1)^n - 1) / 0,1. 3,31 = ((1,1)^n - 1) / 0,1. 0,331 = (1,1)^n - 1. 1,331 = (1,1)^n. Karena 1,1^3 = 1,331, maka n = 3.
+- Domain kognitif `classify/applying`: Siswa perlu mengidentifikasi situasi sebagai masalah anuitas biasa (ordinary annuity), memilih rumus yang tepat, dan menerapkan prosedur aljabar untuk menyelesaikan variabel n.. Bukti: Eko menabung Rp2.000.000,00 pada akhir setiap tahun; bunga majemuk 10% per tahun; nilai masa depan tabungannya mencapai Rp6.620.000,00
+- Dimensi pengetahuan `classify/conceptual`: Soal memerlukan pemahaman tentang konsep anuitas dan penggunaan rumus nilai masa depan (future value) untuk memecahkan masalah keuangan.. Bukti: bunga majemuk 10% per tahun; nilai masa depan tabungannya mencapai Rp6.620.000,00
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena memerlukan pemilihan rumus anuitas yang tepat dan manipulasi aljabar untuk mencari nilai n. Meskipun prosedurnya familiar, siswa harus memahami hubungan antara setoran, bunga, dan nilai masa depan.. Bukti: Eko menabung Rp2.000.000,00 pada akhir setiap tahun; bunga majemuk 10% per tahun; mencapai Rp6.620.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar barisan geometri dan rumus anuitas biasa. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai untuk kelas 12, menguji pemahaman aplikasi rumus keuangan yang umum diajarkan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21175,9 +23936,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 265. Soal `84dbc6b3454474090cb24bdc`
@@ -21191,27 +23952,49 @@ Sari menabung Rp5.000.000,00 pada akhir setiap triwulan di bank dengan bunga maj
 | C | 1 |
 | D | 4 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: FV = P * ((1+i)^n - 1) / i. 10.200.000 = 5.000.000 * ((1.04)^n - 1) / 0.04. 2,04 = ((1.04)^n - 1) / 0.04. 0,0816 = (1.04)^n - 1. 1,0816 = (1.04)^n. n = 2.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dc81bfd86768864214947ccbae1cf48edc3c49ec70956ed34b6bafb270394566`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8a97b8686e7ff033629163c34fb3aca088c1aa14e2259f28f272ec8dd11fda42`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3715 |
+
+Run 1 — solusi: FV = P * ((1+i)^n - 1) / i. 10.200.000 = 5.000.000 * ((1.04)^n - 1) / 0.04. 2,04 = ((1.04)^n - 1) / 0.04. 0,0816 = (1.04)^n - 1. 1,0816 = (1.04)^n. n = 2.
+- Domain kognitif `classify/applying`: Siswa perlu memilih rumus nilai masa depan anuitas biasa yang tepat dan menerapkan prosedur aljabar untuk mencari nilai n.. Bukti: Sari menabung Rp5.000.000,00 pada akhir setiap triwulan; bunga majemuk 4% per triwulan; nilai masa depan tabungannya mencapai Rp10.200.000,00
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural tentang penggunaan rumus anuitas untuk menentukan durasi waktu.. Bukti: bunga majemuk 4% per triwulan; nilai masa depan tabungannya mencapai Rp10.200.000,00
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung rumus anuitas dengan variabel yang sudah tersedia. Langkah penyelesaian bersifat rutin dan tidak memerlukan integrasi kendala yang kompleks.. Bukti: Sari menabung Rp5.000.000,00 pada akhir setiap triwulan; bunga majemuk 4% per triwulan; nilai masa depan tabungannya mencapai Rp10.200.000,00
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus nilai masa depan anuitas biasa |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Sesuai dengan standar kelas 12 untuk penerapan rumus keuangan dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21243,9 +24026,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 266. Soal `c5501adaca7a070ee0b2b02a`
@@ -21259,27 +24042,49 @@ Dalam investasi, anuitas adalah ....
 | C | sistem pembayaran atau penerimaan pada periode waktu yang teratur dengan jumlah yang sama |
 | D | setoran satu kali di awal yang kemudian hanya dibungakan sampai akhir masa |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Anuitas didefinisikan sebagai rangkaian pembayaran atau penerimaan yang dilakukan secara berkala (periodik) dengan jumlah yang tetap (sama) dalam jangka waktu tertentu.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9620ec083775463604cc404b14f8dc8ed503c5547e72da5899ed2cc233ddbd80`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `876c427e5af621cf803aa864ac685db82d9294bde73ab9265f392222a6f4acb7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2507 |
+
+Run 1 — solusi: Anuitas didefinisikan sebagai rangkaian pembayaran atau penerimaan yang dilakukan secara berkala (periodik) dengan jumlah yang tetap (sama) dalam jangka waktu tertentu.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengidentifikasi definisi konseptual dari anuitas dalam konteks keuangan. Siswa hanya perlu mengingat dan mengenali definisi dasar tanpa melakukan perhitungan atau penerapan prosedur.. Bukti: Dalam investasi, anuitas adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap istilah dan definisi dasar dalam topik investasi (anuitas), yang merupakan pengetahuan konseptual.. Bukti: Dalam investasi, anuitas adalah ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat recall/mengingat definisi dasar. Tidak ada perhitungan, analisis, atau perencanaan strategi yang diperlukan.. Bukti: Dalam investasi, anuitas adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar mengenai istilah-istilah dalam matematika keuangan (anuitas). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini hanya menanyakan definisi, yang merupakan tingkat kesulitan terendah bagi siswa kelas 12 yang telah mempelajari materi anuitas. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21311,9 +24116,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 267. Soal `69b561040b00b78e6bb3aa0a`
@@ -21327,27 +24132,49 @@ Pak Anto menyetor Rp1.000.000,00 ke tabungan berjangka pada tanggal 1 setiap bul
 | C | tabungan sekali setor |
 | D | bunga tunggal |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Anuitas yang pembayarannya dilakukan di awal setiap periode disebut anuitas terutang (annuity due). Karena Pak Anto menyetor di awal tiap bulan, maka jenis anuitasnya adalah anuitas terutang.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4e395de8562a67d800f138c21c26f05122bcdbd71b17504a0c99ce06c6b76775`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f3333aec49823b1f138d27b17dfdb40df4c04667169fcb5efecf0ce02f6a32c4`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 3476 |
+
+Run 1 — solusi: Anuitas yang pembayarannya dilakukan di awal setiap periode disebut anuitas terutang (annuity due). Karena Pak Anto menyetor di awal tiap bulan, maka jenis anuitasnya adalah anuitas terutang.
+- Domain kognitif `classify/knowing`: Soal meminta siswa mengidentifikasi istilah teknis untuk jenis anuitas berdasarkan waktu pembayaran (awal periode). Ini adalah pengenalan fakta atau istilah dasar dalam materi anuitas.. Bukti: Pak Anto menyetor Rp1.000.000,00 ke tabungan berjangka pada tanggal 1 setiap bulan, yaitu di awal tiap bulan
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami definisi istilah 'anuitas terutang' dan 'anuitas biasa' sebagai bagian dari pengetahuan konseptual dalam topik keuangan.. Bukti: Jenis anuitas pada penyetoran Pak Anto adalah
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mencocokkan deskripsi 'awal bulan' dengan definisi 'anuitas terutang'. Tidak ada perhitungan atau perencanaan langkah yang diperlukan.. Bukti: Pak Anto menyetor Rp1.000.000,00 ke tabungan berjangka pada tanggal 1 setiap bulan, yaitu di awal tiap bulan
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi anuitas biasa dan anuitas terutang. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini menguji pemahaman terminologi dasar yang diajarkan di kelas 12 pada materi anuitas. Tidak ada kompleksitas prosedural. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21379,9 +24206,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 268. Soal `92d85b665fa3e0d0148f6d1c`
@@ -21395,27 +24222,49 @@ Nilai akhir tiap setoran pada anuitas beserta bunganya membentuk deret geometri 
 | C | 1,08 |
 | D | 0,08 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Bunga majemuk i = 8% = 0,08. Rasio deret geometri untuk nilai akhir anuitas adalah (1 + i). Maka, rasio = 1 + 0,08 = 1,08.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dfa099a91808ad101d882e50474516e0ee57b20b5a33201b0e45a736cdf5d85d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f7a2ff6c4b41eeebdf92b44d123e8c23aae9ed4585f4c12df099a98cbda42e0a`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2664 |
+
+Run 1 — solusi: Bunga majemuk i = 8% = 0,08. Rasio deret geometri untuk nilai akhir anuitas adalah (1 + i). Maka, rasio = 1 + 0,08 = 1,08.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali dan menerapkan rumus rasio deret geometri pada konteks anuitas secara langsung. Siswa hanya perlu melakukan substitusi nilai bunga ke dalam rumus yang sudah diberikan di dalam soal.. Bukti: Nilai akhir tiap setoran pada anuitas beserta bunganya membentuk deret geometri dengan rasio (1+i).; Jika bunga majemuk 8% per tahun, rasio deret tersebut adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang bagaimana bunga majemuk membentuk deret geometri dalam konteks anuitas, serta kemampuan prosedural dasar untuk menghitung nilai rasio.. Bukti: Nilai akhir tiap setoran pada anuitas beserta bunganya membentuk deret geometri dengan rasio (1+i).
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Rumus rasio sudah diberikan secara eksplisit dalam teks soal, dan siswa hanya perlu melakukan konversi persen ke desimal serta penjumlahan sederhana. Tidak ada perencanaan langkah yang kompleks.. Bukti: Nilai akhir tiap setoran pada anuitas beserta bunganya membentuk deret geometri dengan rasio (1+i).; Jika bunga majemuk 8% per tahun, rasio deret tersebut adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang bunga majemuk dan konversi persen ke desimal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 12, soal ini termasuk sangat mudah karena rumus sudah disediakan dan hanya memerlukan satu langkah perhitungan dasar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21447,9 +24296,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 269. Soal `5696be872271bcd3c4272d2c`
@@ -21463,27 +24312,49 @@ Pada konsep bunga majemuk, nilai sekarang ($PV$) menyatakan ....
 | C | besarnya tabungan awal |
 | D | besarnya setoran rutin tiap periode |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Dalam konsep bunga majemuk, nilai sekarang (Present Value atau PV) didefinisikan sebagai nilai modal awal atau jumlah uang yang diinvestasikan pada saat ini sebelum dikenakan bunga.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d29beeeb5226e2ce23955fe0e9dc2d55bedcd10739b3995d110df38d35526374`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c60b40a74ebe00e070cbcc4d8e4ec0d3cacf5db420fa40418fc260b721952f53`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2480 |
+
+Run 1 — solusi: Dalam konsep bunga majemuk, nilai sekarang (Present Value atau PV) didefinisikan sebagai nilai modal awal atau jumlah uang yang diinvestasikan pada saat ini sebelum dikenakan bunga.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta definisi istilah dasar dalam keuangan matematika (bunga majemuk). Siswa hanya perlu mengingat atau mengenali terminologi PV sebagai modal awal.. Bukti: Pada konsep bunga majemuk, nilai sekarang (PV) menyatakan ....
+- Dimensi pengetahuan `classify/factual`: Soal menguji pemahaman terhadap istilah atau terminologi dasar dalam topik keuangan.. Bukti: Pada konsep bunga majemuk, nilai sekarang (PV) menyatakan ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat recall atau pengenalan istilah dasar. Tidak ada perhitungan, perencanaan, atau integrasi konsep yang diperlukan.. Bukti: Pada konsep bunga majemuk, nilai sekarang (PV) menyatakan ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar istilah keuangan (PV, FV, bunga). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 1 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 yang mempelajari materi keuangan seharusnya sudah sangat familiar dengan definisi PV sebagai modal awal. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21515,9 +24386,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 270. Soal `1803ade9d4f456ce31af8f14`
@@ -21531,27 +24402,49 @@ Hubungan nilai sekarang dan nilai masa depan adalah $FV = PV \times (1+i)^n$. Ji
 | C | Rp2.600.000,00 |
 | D | Rp2.812.160,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: FV = 2.500.000 * (1 + 0,04)^2 = 2.500.000 * 1,0816 = 2.704.000
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menganalisis']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c3977748487a00069eb34089c40ffc5a295ce93b40637e329569303ad0dcaf05`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fd63f7dc1fb03e1b54e5b967c9bebdc7db596f9d292114ce3ae6cfe58a928b19`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2803 |
+
+Run 1 — solusi: FV = 2.500.000 * (1 + 0,04)^2 = 2.500.000 * 1,0816 = 2.704.000
+- Domain kognitif `classify/knowing`: Soal meminta siswa menerapkan rumus yang sudah diberikan secara eksplisit untuk menghitung nilai masa depan dengan bunga majemuk. Tidak ada strategi nonrutin atau integrasi konsep yang kompleks; ini adalah prosedur substitusi langsung.. Bukti: Hubungan nilai sekarang dan nilai masa depan adalah FV = PV * (1+i)^n; Jika PV = Rp2.500.000,00, bunga majemuk 4% per tahun, dan n = 2 tahun, maka FV adalah
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritme perhitungan bunga majemuk dan cara menggunakan rumus yang diberikan untuk menyelesaikan masalah.. Bukti: FV = PV * (1+i)^n
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena rumus sudah disediakan di dalam soal. Siswa hanya perlu melakukan substitusi nilai ke dalam rumus dan melakukan perhitungan aritmetika sederhana.. Bukti: FV = PV * (1+i)^n; PV = Rp2.500.000,00, bunga majemuk 4% per tahun, dan n = 2 tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi aritmetika dasar dan pemahaman substitusi variabel ke dalam rumus. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | strong |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk kelas 12, soal ini berada di bawah tingkat kesulitan standar karena rumus sudah diberikan secara eksplisit, sehingga tidak menuntut pemahaman konseptual mendalam atau perencanaan strategi. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21583,9 +24476,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 271. Soal `ca4c70ad1920a12004f9d7a3`
@@ -21599,27 +24492,49 @@ Bank memberi bunga majemuk 9% per tahun, dan Hana menyetor tabungan tiap triwula
 | C | 0,75% |
 | D | 9% |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Bunga tahunan = 9%. Satu tahun terdiri dari 4 triwulan (12 bulan / 3 bulan = 4). Suku bunga per triwulan (i) = 9% / 4 = 2,25%.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8b2a00f6e2aa52acca5794d8ec6702e3c3b6d1f1f2717de1b56e23a872111ea3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `594f5c651d05920f633577b89bd4764f6aca4db41de19c3363104200d94b989e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2627 |
+
+Run 1 — solusi: Bunga tahunan = 9%. Satu tahun terdiri dari 4 triwulan (12 bulan / 3 bulan = 4). Suku bunga per triwulan (i) = 9% / 4 = 2,25%.
+- Domain kognitif `classify/knowing`: Soal meminta siswa untuk mengonversi suku bunga tahunan menjadi suku bunga per periode (triwulan). Ini adalah prosedur langsung yang melibatkan pemahaman konsep dasar bunga majemuk dan konversi satuan waktu, sehingga termasuk dalam domain knowing.. Bukti: Suku bunga per triwulan (i) yang dipakai adalah ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami hubungan antara periode bunga tahunan dan periode setoran (triwulan) untuk menerapkan algoritma pembagian suku bunga yang tepat.. Bukti: Bank memberi bunga majemuk 9% per tahun; Hana menyetor tabungan tiap triwulan (3 bulan)
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Siswa hanya perlu mengidentifikasi jumlah triwulan dalam setahun dan membagi suku bunga tahunan. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Suku bunga per triwulan (i) yang dipakai adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konversi satuan waktu (tahun ke triwulan) dan pembagian persentase. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Ini adalah soal dasar dalam materi anuitas kelas 12 yang menguji pemahaman konversi periode bunga, yang merupakan prasyarat untuk perhitungan anuitas yang lebih kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21651,9 +24566,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 272. Soal `aa3c07f94e7dfc639c2bf4cc`
@@ -21667,27 +24582,49 @@ Dika menyetor tabungan anuitas setiap semester selama 4 tahun. Banyak periode se
 | C | 48 |
 | D | 8 |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Satu tahun terdiri dari 2 semester. Jika Dika menabung setiap semester selama 4 tahun, maka banyak periode setoran (n) adalah 4 tahun * 2 semester/tahun = 8 semester.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2239bdc0b6dcaf42be1e11d6647e7e631a66adfb9a29e5837320e43c07b744c8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1e245db14731ff154b38e1d11c49d36c5876ca5663991741c3f309cb8db985a0`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2559 |
+
+Run 1 — solusi: Satu tahun terdiri dari 2 semester. Jika Dika menabung setiap semester selama 4 tahun, maka banyak periode setoran (n) adalah 4 tahun * 2 semester/tahun = 8 semester.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa untuk mengidentifikasi dan menerapkan konversi satuan waktu (tahun ke semester) dalam konteks anuitas. Tidak ada strategi kompleks atau integrasi konsep yang diperlukan.. Bukti: Dika menyetor tabungan anuitas setiap semester selama 4 tahun. Banyak periode setoran (n) adalah ....
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami definisi periode dalam konteks anuitas (faktual/konseptual) dan menerapkan konversi sederhana (prosedural).. Bukti: Banyak periode setoran (n) adalah ....
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar. Siswa hanya perlu melakukan satu operasi perkalian sederhana (4 x 2) untuk menentukan jumlah periode. Tidak ada kendala yang berinteraksi atau perencanaan strategi yang diperlukan.. Bukti: Dika menyetor tabungan anuitas setiap semester selama 4 tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang satuan waktu (semester dan tahun). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini berada di bawah tingkat kesulitan rata-rata kelas 12 karena hanya menguji konversi satuan dasar tanpa melibatkan perhitungan bunga atau rumus anuitas yang kompleks. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21719,9 +24656,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 273. Soal `bb1c8d1b56297aa898f34efe`
@@ -21735,27 +24672,49 @@ Seseorang menabung sebesar $A$ pada akhir setiap periode dengan suku bunga majem
 | C | $FV = A \times (1+i)^n$ |
 | D | $FV = A \times \frac{(1+i)^n - 1}{i}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Rumus nilai masa depan (Future Value) untuk anuitas biasa (ordinary annuity) dengan setoran A di akhir periode, suku bunga i, dan jangka waktu n adalah FV = A * [(1+i)^n - 1] / i. Pilihan D sesuai dengan rumus standar ini.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `addc07b671375874868a398998bd70af291b020e047fc53890fc13bb5ae79834`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `25dd64a671750dfed94cb0f3ea0176cc5e51522a4abcdc6701cf6b6ea4102372`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2658 |
+
+Run 1 — solusi: Rumus nilai masa depan (Future Value) untuk anuitas biasa (ordinary annuity) dengan setoran A di akhir periode, suku bunga i, dan jangka waktu n adalah FV = A * [(1+i)^n - 1] / i. Pilihan D sesuai dengan rumus standar ini.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali rumus standar nilai masa depan anuitas biasa. Siswa hanya perlu mengingat atau mengidentifikasi rumus yang sudah dipelajari dalam materi keuangan matematika tanpa perlu melakukan perhitungan atau manipulasi aljabar yang kompleks.. Bukti: Rumus nilai masa depan (FV) tabungannya adalah
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pemahaman siswa terhadap rumus dasar (faktual/konseptual) dalam topik anuitas. Siswa diharapkan mengetahui bentuk rumus yang tepat untuk nilai masa depan anuitas biasa.. Bukti: Rumus nilai masa depan (FV) tabungannya adalah
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall). Siswa hanya perlu memilih rumus yang benar dari pilihan yang tersedia. Tidak ada langkah perhitungan, analisis kendala, atau strategi yang perlu direncanakan.. Bukti: Rumus nilai masa depan (FV) tabungannya adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang konsep anuitas biasa dan rumus nilai masa depan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Untuk siswa kelas 12, mengenali rumus dasar anuitas adalah materi standar yang bersifat prosedural/faktual dan sangat rutin. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21787,9 +24746,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 274. Soal `e4ec1e6c8f71a2e78d610866`
@@ -21803,27 +24762,49 @@ Seseorang ingin mengambil uang sebesar $A$ pada akhir setiap periode selama $n$ 
 | C | $PV = A \times \frac{1-(1+i)^{n}}{i}$ |
 | D | $PV = A \times \frac{1-(1+i)^{-n}}{i}$ |
 
-Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Rumus nilai sekarang (Present Value) dari anuitas biasa (ordinary annuity) untuk pembayaran A setiap periode selama n periode dengan suku bunga i per periode adalah PV = A * [1 - (1 + i)^(-n)] / i. Opsi D sesuai dengan rumus standar ini.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d2ad6d7b5c9700541603c6526c5313491eff9218878593acbddd1ccc0bb9bc02`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b10de3f76f5a9ebc5a32d205c9d11d202b5867fc4fe7c32bcec526fed6f059cf`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | conceptual | Easy | 2651 |
+
+Run 1 — solusi: Rumus nilai sekarang (Present Value) dari anuitas biasa (ordinary annuity) untuk pembayaran A setiap periode selama n periode dengan suku bunga i per periode adalah PV = A * [1 - (1 + i)^(-n)] / i. Opsi D sesuai dengan rumus standar ini.
+- Domain kognitif `classify/knowing`: Soal ini meminta siswa untuk mengenali rumus standar anuitas (Present Value). Siswa hanya perlu mengingat atau mengidentifikasi bentuk rumus yang benar dari pilihan yang diberikan tanpa perlu melakukan perhitungan atau manipulasi aljabar yang kompleks.. Bukti: Rumus tabungan awal yang diperlukan (PV) adalah ....
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa terhadap rumus dasar (faktual/konseptual) dalam topik anuitas, yaitu bentuk matematis dari nilai sekarang anuitas biasa.. Bukti: Rumus tabungan awal yang diperlukan (PV) adalah ....
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung (recall). Siswa kelas 12 yang mempelajari materi anuitas seharusnya sudah familiar dengan rumus ini. Tidak ada langkah perencanaan atau integrasi yang diperlukan.. Bukti: Rumus tabungan awal yang diperlukan (PV) adalah ....
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rumus anuitas (Present Value). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Soal ini hanya menuntut pengenalan rumus standar yang merupakan materi dasar dalam bab anuitas kelas 12. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21855,9 +24836,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 275. Soal `fca2da892b8a99b5611ae3b6`
@@ -21871,27 +24852,49 @@ Lani menyetor Rp1.500.000,00 pada akhir tahun pertama dan Rp1.500.000,00 pada ak
 | C | Rp3.369.600,00 |
 | D | Rp3.240.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Setoran pertama (akhir tahun 1) berbunga selama 1 tahun: 1.500.000 * (1 + 0,08) = 1.620.000. Setoran kedua (akhir tahun 2) dilakukan tepat saat perhitungan, sehingga belum berbunga: 1.500.000. Total = 1.620.000 + 1.500.000 = 3.120.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5644ed16ee6d83fb7ac7606de6db3bcf410f7aa53f451c205af5b26bcbe91b64`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e138014ccc8e4112fe073f49490a476d853bd794db4d498d8e45ede48667471e`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2874 |
+
+Run 1 — solusi: Setoran pertama (akhir tahun 1) berbunga selama 1 tahun: 1.500.000 * (1 + 0,08) = 1.620.000. Setoran kedua (akhir tahun 2) dilakukan tepat saat perhitungan, sehingga belum berbunga: 1.500.000. Total = 1.620.000 + 1.500.000 = 3.120.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep bunga majemuk pada dua setoran yang berbeda durasi waktunya. Ini melibatkan pemilihan prosedur yang tepat untuk menghitung nilai masa depan dari masing-masing setoran dan menjumlahkannya, yang merupakan penerapan konsep dalam konteks rutin.. Bukti: Lani menyetor Rp1.500.000,00 pada akhir tahun pertama dan Rp1.500.000,00 pada akhir tahun kedua; bunga majemuk 8% per tahun. Nilai tabungan Lani tepat setelah setoran kedua adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip bunga majemuk dan bagaimana waktu setoran (akhir periode) mempengaruhi akumulasi bunga, yang merupakan pengetahuan konseptual tentang bagaimana bunga bekerja dalam investasi.. Bukti: bunga majemuk 8% per tahun; akhir tahun pertama dan ... akhir tahun kedua
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin bagi siswa kelas 12. Siswa hanya perlu memahami bahwa setoran pertama berbunga satu kali dan setoran kedua tidak berbunga karena dilakukan tepat pada saat perhitungan. Tidak ada kendala yang saling berinteraksi atau perencanaan strategi yang kompleks.. Bukti: Lani menyetor Rp1.500.000,00 pada akhir tahun pertama dan Rp1.500.000,00 pada akhir tahun kedua; tepat setelah setoran kedua
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar bunga majemuk dan konsep nilai waktu dari uang. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi bunga majemuk adalah kurikulum standar kelas 12. Soal ini menguji pemahaman dasar tentang durasi bunga tanpa kerumitan anuitas jangka panjang. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21923,9 +24926,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 276. Soal `278f10a57ed0b86ee035e4a6`
@@ -21939,27 +24942,49 @@ Dina menghitung nilai masa depan setoran Rp2.000.000,00 pada akhir setiap tahun 
 | C | Salah: pembilang seharusnya $(1,1)^4 - 1$, sehingga nilai masa depan yang benar Rp9.282.000,00 |
 | D | Salah: suku bunga seharusnya $10\% : 4$, sehingga nilai masa depan yang benar Rp9.282.000,00 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Rumus nilai masa depan anuitas biasa (ordinary annuity) adalah FV = A * ((1+i)^n - 1) / i. Dengan A = 2.000.000, i = 0,1, dan n = 4, maka FV = 2.000.000 * ((1,1)^4 - 1) / 0,1 = 2.000.000 * (1,4641 - 1) / 0,1 = 2.000.000 * 4,641 = 9.282.000. Dina salah karena tidak mengurangkan 1 pada pembilang.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fdfd69e258ec50d8f08b23501e43ddc9104fc92f65996615dd9c93f2795f46dc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fed3cf05f7794e09180a3d1ecd8b03c147639a84533850e0e07fbce7686ae355`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 3011 |
+
+Run 1 — solusi: Rumus nilai masa depan anuitas biasa (ordinary annuity) adalah FV = A * ((1+i)^n - 1) / i. Dengan A = 2.000.000, i = 0,1, dan n = 4, maka FV = 2.000.000 * ((1,1)^4 - 1) / 0,1 = 2.000.000 * (1,4641 - 1) / 0,1 = 2.000.000 * 4,641 = 9.282.000. Dina salah karena tidak mengurangkan 1 pada pembilang.
+- Domain kognitif `classify/applying`: Siswa diminta untuk mengevaluasi kebenaran prosedur perhitungan anuitas dan mengidentifikasi kesalahan spesifik dalam rumus yang digunakan, yang memerlukan pemahaman konseptual tentang rumus anuitas.. Bukti: Ia menulis FV = 2.000.000 x (1,1)^4 / 0,1; Pernyataan yang benar tentang pekerjaan Dina adalah
+- Dimensi pengetahuan `classify/conceptual`: Soal menguji pemahaman tentang prinsip dan struktur rumus anuitas (konseptual) serta kemampuan menerapkan prosedur perhitungan yang benar.. Bukti: nilai masa depan setoran Rp2.000.000,00 pada akhir setiap tahun selama 4 tahun dengan bunga majemuk 10% per tahun
+- Intended difficulty `classify/Medium`: Soal ini tergolong Medium karena menuntut siswa tidak hanya menghitung, tetapi menganalisis kesalahan prosedural dalam rumus yang diberikan. Siswa harus memahami struktur rumus anuitas untuk mendeteksi kesalahan pada pembilang (lupa mengurangkan 1).. Bukti: Ia menulis FV = 2.000.000 x (1,1)^4 / 0,1; Pernyataan yang benar tentang pekerjaan Dina adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus nilai masa depan anuitas biasa (ordinary annuity). |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan sudah familiar dengan rumus anuitas. Menemukan kesalahan dalam rumus adalah tugas standar untuk menguji pemahaman konseptual, bukan sekadar menghitung. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -21991,9 +25016,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 277. Soal `f34e643892355e43f63da39f`
@@ -22007,27 +25032,49 @@ Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3
 | C | Nilai masa depan tabungan orang kedua tepat dua kali nilai masa depan tabungan orang pertama |
 | D | Total bunga orang kedua tepat dua kali total bunga orang pertama |
 
-Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: FV = P * [((1+i)^n - 1) / i]. Orang 1 (10%): 1.000.000 * [((1.1)^3 - 1) / 0.1] = 1.000.000 * 3.31 = 3.310.000. Bunga = 3.310.000 - 3.000.000 = 310.000. Orang 2 (20%): 1.000.000 * [((1.2)^3 - 1) / 0.2] = 1.000.000 * 3.64 = 3.640.000. Bunga = 3.640.000 - 3.000.000 = 640.000. Perbandingan: 640.000 > 2 * 310.000 (620.000).
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `461fcc08f8ae68e9ae8005162b2ffdf77169d974854f644de581a7298775fde0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `23aea2194d7d2b161e3a88d5cd1270fdb9b46ad4641ab247f1c58b6e222ce3e1`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3113 |
+
+Run 1 — solusi: FV = P * [((1+i)^n - 1) / i]. Orang 1 (10%): 1.000.000 * [((1.1)^3 - 1) / 0.1] = 1.000.000 * 3.31 = 3.310.000. Bunga = 3.310.000 - 3.000.000 = 310.000. Orang 2 (20%): 1.000.000 * [((1.2)^3 - 1) / 0.2] = 1.000.000 * 3.64 = 3.640.000. Bunga = 3.640.000 - 3.000.000 = 640.000. Perbandingan: 640.000 > 2 * 310.000 (620.000).
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus nilai masa depan anuitas biasa (ordinary annuity) untuk dua skenario suku bunga yang berbeda, menghitung total bunga yang diperoleh, dan membandingkan hasilnya. Ini melibatkan penerapan prosedur matematika keuangan yang rutin.. Bukti: Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun.; Orang pertama mendapat bunga majemuk 10% per tahun dan orang kedua 20% per tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma perhitungan bunga majemuk pada anuitas dan bagaimana menerapkannya untuk membandingkan dua situasi investasi.. Bukti: bunga majemuk 10% per tahun; menyetor Rp1.000.000,00 pada akhir setiap tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan perhitungan dua skenario terpisah yang melibatkan rumus anuitas, kemudian membandingkan hasilnya. Meskipun prosedurnya familiar, terdapat beberapa langkah perhitungan yang saling terkait dan keputusan perbandingan yang harus dilakukan dengan cermat.. Bukti: Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun.; Orang pertama mendapat bunga majemuk 10% per tahun dan orang kedua 20% per tahun.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus nilai masa depan anuitas biasa (ordinary annuity) dan konsep bunga majemuk. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 4 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menghitung anuitas. Soal ini menuntut ketelitian dalam menghitung dua nilai masa depan dan membandingkannya, yang merupakan standar untuk tingkat menengah. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22059,9 +25106,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 278. Soal `c916970e8ab3d65426404167`
@@ -22075,27 +25122,49 @@ Dua skema menabung selama 2 tahun dengan bunga majemuk 20% per tahun. Skema 1: m
 | C | Kedua skema sama besar karena total setoran sama, yaitu Rp4.000.000,00 |
 | D | Skema 2 lebih besar, selisih nilai masa depan Rp241.000,00 |
 
-Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Skema 1 (Anuitas akhir): i=10%, n=4, PMT=1.000.000. FV = PMT * ((1+i)^n - 1) / i = 1.000.000 * ((1,1)^4 - 1) / 0,1 = 1.000.000 * (1,4641 - 1) / 0,1 = 4.641.000. Skema 2 (Anuitas akhir): i=20%, n=2, PMT=2.000.000. FV = 2.000.000 * ((1,2)^2 - 1) / 0,2 = 2.000.000 * (1,44 - 1) / 0,2 = 2.000.000 * 0,44 / 0,2 = 4.400.000. Selisih = 4.641.000 - 4.400.000 = 241.000.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `['menyimpulkan']`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8d2238dc692ec489128851409f371d739a292559818b1755f952a127e0b5861c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a4ca27a7083dc92305ad9a77eec9ddd0cbd34dbd2ec44e527f2a9b39d1d680d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 3204 |
+
+Run 1 — solusi: Skema 1 (Anuitas akhir): i=10%, n=4, PMT=1.000.000. FV = PMT * ((1+i)^n - 1) / i = 1.000.000 * ((1,1)^4 - 1) / 0,1 = 1.000.000 * (1,4641 - 1) / 0,1 = 4.641.000. Skema 2 (Anuitas akhir): i=20%, n=2, PMT=2.000.000. FV = 2.000.000 * ((1,2)^2 - 1) / 0,2 = 2.000.000 * (1,44 - 1) / 0,2 = 2.000.000 * 0,44 / 0,2 = 4.400.000. Selisih = 4.641.000 - 4.400.000 = 241.000.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan rumus nilai masa depan anuitas (future value of annuity) untuk dua skema yang berbeda frekuensi pembungaannya dan membandingkan hasilnya. Ini adalah penerapan prosedur rutin pada konteks keuangan.. Bukti: Dua skema menabung selama 2 tahun dengan bunga majemuk 20% per tahun.; Skema 1: menyetor Rp1.000.000,00 pada akhir setiap semester dengan bunga dihitung tiap semester.; Skema 2: menyetor Rp2.000.000,00 pada akhir setiap tahun dengan bunga dihitung tiap tahun.
+- Dimensi pengetahuan `classify/procedural`: Soal memerlukan pemahaman tentang konsep anuitas dan prosedur perhitungan bunga majemuk yang disesuaikan dengan periode setoran.. Bukti: bunga majemuk 20% per tahun; menyetor Rp1.000.000,00 pada akhir setiap semester; menyetor Rp2.000.000,00 pada akhir setiap tahun
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan dua perhitungan anuitas yang berbeda (penyesuaian suku bunga dan periode) dan membandingkannya. Langkah-langkahnya rutin namun memerlukan ketelitian dalam konversi periode dan suku bunga.. Bukti: Dua skema menabung selama 2 tahun dengan bunga majemuk 20% per tahun.; Skema 1: menyetor Rp1.000.000,00 pada akhir setiap semester; Skema 2: menyetor Rp2.000.000,00 pada akhir setiap tahun
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk, rumus nilai masa depan anuitas, konversi suku bunga per periode. |
+| dependentSteps | 4 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 6 |
+| interactingConstraints | 2 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 12 diharapkan mampu menghitung anuitas. Kesulitan terletak pada keharusan melakukan dua perhitungan terpisah dengan parameter berbeda sebelum membandingkan. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22127,9 +25196,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 279. Soal `24b01ef6595c3f99af35bea8`
@@ -22156,6 +25225,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -22211,27 +25283,49 @@ Fira menyetor Rp2.000.000,00 pada akhir setiap tahun ke bank berbunga majemuk 10
 | C | 6 |
 | D | 8 |
 
-Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
-Solusi minimum hasil AI: —
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Rumus nilai masa depan anuitas biasa: FV = A * [((1+i)^n - 1) / i]. Diketahui A = 2.000.000, i = 0,1, FV > 15.000.000. Maka: 2.000.000 * [((1,1)^n - 1) / 0,1] > 15.000.000. Sederhanakan: (1,1)^n - 1 > 0,75, sehingga (1,1)^n > 1,75. Untuk n=5: (1,1)^5 = 1,61051 (kurang dari 1,75). Untuk n=6: (1,1)^6 = 1,771561 (lebih dari 1,75). Jadi, n=6 adalah jumlah setoran minimum.
 Gambar sumber: —. Transkripsi visual: —
 
 ### 1. Pemeriksaan input dan fitur
 
 Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 12 / Matematika SMA Kelas 12. KKO: `[]`; KKO hanya petunjuk bantu.
-Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5220a13b3d51613b405fda281102853f3762c5e006465318ee08429b9955a540`. Bukti verifikasi AI tetap tercatat sebagai silver.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cab570709484b9974786c3d88151ef91897966eb2f03eb12ab595a1d144ee7d7`. Bukti verifikasi AI tetap tercatat sebagai silver.
 
 ### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2945 |
+
+Run 1 — solusi: Rumus nilai masa depan anuitas biasa: FV = A * [((1+i)^n - 1) / i]. Diketahui A = 2.000.000, i = 0,1, FV > 15.000.000. Maka: 2.000.000 * [((1,1)^n - 1) / 0,1] > 15.000.000. Sederhanakan: (1,1)^n - 1 > 0,75, sehingga (1,1)^n > 1,75. Untuk n=5: (1,1)^5 = 1,61051 (kurang dari 1,75). Untuk n=6: (1,1)^6 = 1,771561 (lebih dari 1,75). Jadi, n=6 adalah jumlah setoran minimum.
+- Domain kognitif `classify/applying`: Siswa perlu memilih rumus anuitas yang tepat untuk nilai masa depan (future value) dan menerapkan prosedur aljabar untuk menyelesaikan ketidaksamaan eksponensial sederhana atau melakukan iterasi nilai n yang sesuai.. Bukti: Fira menyetor Rp2.000.000,00 pada akhir setiap tahun; bank berbunga majemuk 10% per tahun; nilai masa depan tabungannya lebih dari Rp15.000.000,00
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman konseptual tentang anuitas biasa (setoran akhir periode) dan prosedur perhitungan bunga majemuk dalam konteks investasi.. Bukti: setiap tahun ke bank berbunga majemuk 10% per tahun; nilai masa depan tabungannya lebih dari Rp15.000.000,00
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan pemilihan rumus anuitas yang tepat dan pemahaman tentang konsep bunga majemuk, namun jalur penyelesaiannya bersifat rutin dan prosedural bagi siswa kelas 12 yang telah mempelajari materi keuangan.. Bukti: Banyak setoran paling sedikit yang diperlukan adalah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Konsep bunga majemuk dan rumus anuitas (future value). |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | moderate |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Materi anuitas adalah bagian standar kurikulum kelas 12. Soal ini menuntut penerapan rumus standar dengan satu kendala (ketidaksamaan), yang merupakan tingkat kesulitan menengah yang wajar. |
 
 ### 3. Voting awal dan adjudikasi
 
 | Head | Suara awal | Pola / status akhir | Label akhir advisory |
 |---|---|---|---|
-| Domain kognitif | {} | no_label / incomplete | — |
-| Dimensi pengetahuan | {} | no_label / incomplete | — |
-| Intended difficulty | {} | no_label / incomplete | — |
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
 
 ### 4. Diagnostik IndoBERT setelah label blind dikunci
 
@@ -22263,9 +25357,9 @@ Transkripsi visual: -
 
 ### 5. Keputusan batch
 
-Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
-Status konten: `None`. Catatan konten: .
-Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Medium", "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 ## 281. Soal `8b971243d30a88c167b45089`
@@ -22292,6 +25386,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -22360,6 +25457,9 @@ Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; ha
 
 | Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
 |---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
 
 ### 3. Voting awal dan adjudikasi
 
@@ -60456,4 +63556,4 @@ Status konten: `None`. Catatan konten: .
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
-Provider aktif: gemini. 3 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
+Provider aktif: gemini. 146 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
