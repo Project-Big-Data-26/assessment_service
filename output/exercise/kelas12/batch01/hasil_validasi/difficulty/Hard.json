@@ -4,7 +4,392 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Hard",
   "researchOnly": true,
-  "advisoryCount": 0,
-  "contentQualifiedCount": 0,
-  "items": []
+  "advisoryCount": 6,
+  "contentQualifiedCount": 4,
+  "items": [
+    {
+      "question": {
+        "questionId": "01b3f02dff69d4e4cc868da8",
+        "questionVersionId": "01b3f02dff69d4e4cc868da8:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "fcfaec69db630168852a0d68bf21ee2604674662416ea7c19d179e2943d8dcd1",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Aturan Pengisian Tempat",
+        "questionType": "multiple_choice",
+        "stem": "Delapan batang pohon hias dengan tinggi berbeda-beda akan ditanam sejajar pada satu barisan. Agar tampak rapi, tidak boleh ada pohon yang kedua tetangganya (kiri dan kanan) lebih tinggi darinya. Banyak susunan penanaman yang memenuhi syarat adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "64 susunan"
+          },
+          {
+            "label": "B",
+            "text": "256 susunan"
+          },
+          {
+            "label": "C",
+            "text": "128 susunan"
+          },
+          {
+            "label": "D",
+            "text": "40.320 susunan"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan tinggi pohon $h_1 < h_2 < \\dots < h_8$. Syarat 'tidak boleh ada pohon yang kedua tetangganya lebih tinggi' ekuivalen dengan mengatakan bahwa pohon terpendek harus berada di salah satu ujung barisan (kiri atau kanan). Setelah pohon terpendek ditempatkan, pohon terpendek berikutnya ($h_2$) harus berada di salah satu ujung dari sisa barisan yang tersedia agar syarat tetap terpenuhi. Proses ini berlanjut untuk $h_3, \\dots, h_7$. Untuk setiap pohon dari $h_1$ sampai $h_7$, terdapat 2 pilihan posisi (ujung kiri atau kanan dari sisa barisan). Pohon terakhir ($h_8$) menempati posisi tersisa. Total susunan = $2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2 \\times 2 = 2^7 = 128$.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "128",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "01b3f02dff69d4e4cc868da8",
+          "subchapter": "Aturan Pengisian Tempat",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai $2^6$, kurang satu langkah",
+            "B": "Salah: memakai $2^8$ karena mengira pohon terakhir juga punya 2 pilihan",
+            "C": "Benar: pohon terendah harus di salah satu ujung (2 pilihan), pohon terendah berikutnya di salah satu ujung sisa, dan seterusnya sampai pohon terakhir menempati 1 tempat: $2^7 = 128$",
+            "D": "Salah: menghitung $8!$ tanpa memperhatikan syarat"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "needs_ai_review",
+      "contentQualified": false,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "432d5c3e06ab5ac205cb06eb",
+        "questionVersionId": "432d5c3e06ab5ac205cb06eb:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "0377d0c56d9475401927843dbdf48d6b8c43d9e558ea35404b22935764a6c19b",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Permutasi",
+        "questionType": "multiple_choice",
+        "stem": "Tujuh orang berdiri berjajar dalam satu barisan. Tiga di antaranya, yaitu Aldi, Beni, dan Cica, tidak boleh ada dua orang yang berdiri berdampingan (artinya di antara dua dari ketiganya selalu ada orang lain). Banyak susunan barisan yang mungkin adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "1.440"
+          },
+          {
+            "label": "B",
+            "text": "3.000"
+          },
+          {
+            "label": "C",
+            "text": "720"
+          },
+          {
+            "label": "D",
+            "text": "240"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Susun 4 orang lainnya: 4! = 24 cara. Terdapat 5 celah (termasuk ujung) untuk menempatkan Aldi, Beni, dan Cica agar tidak berdampingan. Banyak cara menempatkan 3 orang di 5 celah adalah P(5,3) = 5 x 4 x 3 = 60. Total susunan = 24 x 60 = 1.440.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "432d5c3e06ab5ac205cb06eb",
+          "subchapter": "Permutasi",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: empat orang lain disusun $4! = 24$; terbentuk 5 celah; Aldi, Beni, Cica menempati 3 celah berbeda secara berurutan $P(5,3) = 60$; total $24 \\times 60 = 1.440$",
+            "B": "Salah: mengira ketiga orang boleh memilih celah yang sama, $4! \\times 5^3$",
+            "C": "Salah: mengurangi $7! - 3 \\times 2 \\times 6!$ tanpa menambah kembali irisan ketiga pasangan",
+            "D": "Salah: memakai kombinasi $C(5,3) = 10$ untuk celah, sehingga urutan ketiga orang diabaikan"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "49ee8822760c840eed17b4d4",
+        "questionVersionId": "49ee8822760c840eed17b4d4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "503f5c5530825a7f4ccf8e38b59a433fc6f7e36a7e7cd8da4eb35c8606667a12",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Permutasi",
+        "questionType": "multiple_choice",
+        "stem": "Lima laki-laki dan lima perempuan duduk mengelilingi meja bundar dengan tempat duduk selang-seling (tidak ada dua orang berjenis kelamin sama yang bersebelahan). Di antara mereka ada pasangan Pak Ali dan Bu Sari yang tidak ingin duduk bersebelahan. Banyak susunan duduk yang berbeda adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "1.152"
+          },
+          {
+            "label": "B",
+            "text": "1.728"
+          },
+          {
+            "label": "C",
+            "text": "1.440"
+          },
+          {
+            "label": "D",
+            "text": "2.880"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Total susunan selang-seling: (5-1)! * 5! = 24 * 120 = 2.880. Susunan di mana Pak Ali dan Bu Sari duduk bersebelahan: Pak Ali duduk (tetap), Bu Sari ada 2 posisi (kiri/kanan), sisa 4 pria di 4 kursi (4!) dan 4 wanita di 4 kursi (4!). Banyaknya: 2 * 4! * 4! = 2 * 24 * 24 = 1.152. Susunan yang diminta: 2.880 - 1.152 = 1.728.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "1.728",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "49ee8822760c840eed17b4d4",
+          "subchapter": "Permutasi",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya menghitung susunan saat Bu Sari duduk di samping Pak Ali, $24 \\times 2 \\times 4!$",
+            "B": "Benar: laki-laki siklis $4! = 24$; perempuan pada 5 celah $5! = 120$ dan Bu Sari tidak pada 2 celah di samping Pak Ali: $120 - 2 \\times 4! = 72$; total $24 \\times 72 = 1.728$",
+            "C": "Salah: membagi 2.880 dengan 2 untuk syarat pasangan",
+            "D": "Salah: hanya selang-seling, lupa syarat Pak Ali dan Bu Sari"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "7593acb3e40a31125b8c8218",
+        "questionVersionId": "7593acb3e40a31125b8c8218:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "cf84580bf1327fc056fcc25cefa84b6db9d21263178a68881545340e3dc0c120",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Permutasi",
+        "questionType": "multiple_choice",
+        "stem": "Dari 9 orang akan dipilih ketua, wakil ketua, sekretaris, dan bendahara (setiap orang paling banyak satu jabatan). Andi hanya bersedia terpilih bila menjadi ketua, sedangkan Budi dan Cici tidak bersedia terpilih bersama-sama dalam pengurus yang sama (salah satu boleh terpilih). Banyak susunan pengurus yang mungkin adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "2.016"
+          },
+          {
+            "label": "B",
+            "text": "1.980"
+          },
+          {
+            "label": "C",
+            "text": "1.320"
+          },
+          {
+            "label": "D",
+            "text": "1.620"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Kasus 1 (Andi ketua): Andi tetap, sisa 3 posisi dari 8 orang. Total P(8,3)=336. Budi & Cici bersama: P(3,2)*6 = 36. Valid = 300. Kasus 2 (Andi tidak terpilih): 4 posisi dari 8 orang. Total P(8,4)=1680. Budi & Cici bersama: P(4,2)*P(6,2) = 12*30 = 360. Valid = 1320. Total = 300 + 1320 = 1620.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "1620",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "7593acb3e40a31125b8c8218",
+          "subchapter": "Permutasi",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengabaikan syarat Budi dan Cici, $P(8,3) + P(8,4)$",
+            "B": "Salah: menerapkan syarat Budi-Cici hanya saat Andi ketua, lupa pada kasus Andi tidak terpilih",
+            "C": "Salah: hanya menghitung kasus Andi tidak terpilih",
+            "D": "Benar: Andi ketua: $P(8,3) - 6 \\times 6 = 300$; Andi tidak terpilih: $P(8,4) - P(4,2) \\times P(6,2) = 1.320$; total $1.620$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "needs_ai_review",
+      "contentQualified": false,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "f82913488ec4001377661635",
+        "questionVersionId": "f82913488ec4001377661635:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "4228a4042aab05bf1fca08595b05c72372870f16ca98641be16578274b94a79f",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Peluang Kejadian Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Andi mengklaim: \"Dua kejadian yang tidak saling lepas pasti tidak saling bebas.\" Pada pelemparan sebuah dadu setimbang, pasangan kejadian yang menyangkal klaim Andi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "muncul mata dadu kurang dari 4 dan muncul mata dadu bukan 3 dan bukan 6"
+          },
+          {
+            "label": "B",
+            "text": "muncul mata dadu kurang dari 3 dan muncul mata dadu lebih dari 1"
+          },
+          {
+            "label": "C",
+            "text": "muncul mata dadu genap dan muncul mata dadu ganjil"
+          },
+          {
+            "label": "D",
+            "text": "muncul mata dadu genap dan muncul bilangan prima"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misal S={1,2,3,4,5,6}. A={1,2,3}, B={1,2,4,5}. A∩B={1,2}≠∅ (tidak saling lepas). P(A)=3/6=1/2, P(B)=4/6=2/3. P(A∩B)=2/6=1/3. Karena P(A)P(B)=(1/2)(2/3)=1/3=P(A∩B), maka A dan B saling bebas. Ini menyangkal klaim Andi.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f82913488ec4001377661635",
+          "subchapter": "Peluang Kejadian Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: irisannya $\\{1,2\\}$ tidak kosong, tetapi $P(A \\cap B)=\\frac{1}{3}=\\frac{1}{2}\\times\\frac{2}{3}=P(A)P(B)$ sehingga saling bebas",
+            "B": "Salah: tidak saling lepas dan $\\frac{1}{6}\\neq\\frac{1}{3}\\times\\frac{5}{6}$, sehingga mendukung klaim",
+            "C": "Salah: saling lepas, sehingga bukan contoh dari kasus yang diklaim",
+            "D": "Salah: tidak saling lepas dan $\\frac{1}{6}\\neq\\frac{1}{2}\\times\\frac{1}{2}$, sehingga justru mendukung klaim"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4391c46275f14c670d66d497",
+        "questionVersionId": "4391c46275f14c670d66d497:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "14be60134d70d41ce1d3d16a9763055265be728297feebd759052394454444ce",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Peluang Kejadian Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah kotak berisi 5 bola merah dan 4 bola putih. Tiga bola diambil satu per satu secara acak tanpa pengembalian. Jika diketahui bola ketiga berwarna putih, peluang bola pertama dan kedua keduanya merah adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "$\\frac{5}{18}$"
+          },
+          {
+            "label": "B",
+            "text": "$\\frac{10}{63}$"
+          },
+          {
+            "label": "C",
+            "text": "$\\frac{4}{9}$"
+          },
+          {
+            "label": "D",
+            "text": "$\\frac{5}{14}$"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan M=merah, P=putih. Kejadian A: bola 1 dan 2 merah (MM_), kejadian B: bola 3 putih. Kita cari P(A|B) = P(A ∩ B) / P(B). P(A ∩ B) = P(MMP) = (5/9)*(4/8)*(4/7) = 80/504 = 10/63. P(B) = P(MMP) + P(PMP) + P(MPP) + P(PPP) = (5/9*4/8*4/7) + (4/9*5/8*4/7) + (5/9*4/8*3/7) + (4/9*3/8*2/7) = (80+80+60+24)/504 = 244/504 = 4/9. Maka P(A|B) = (10/63) / (4/9) = 10/63 * 9/4 = 90/252 = 5/14.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4391c46275f14c670d66d497",
+          "subchapter": "Peluang Kejadian Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya menghitung dua pengambilan pertama dan mengabaikan syarat bola ketiga putih",
+            "B": "Salah: hanya menghitung peluang urutan merah, merah, putih tanpa membagi dengan peluang syarat",
+            "C": "Salah: memakai peluang syarat (bola ketiga putih) sebagai jawaban",
+            "D": "Benar: $P(\\text{MMP})=\\frac{5}{9}\\times\\frac{4}{8}\\times\\frac{4}{7}=\\frac{10}{63}$ dan $P(\\text{bola ketiga putih})=\\frac{4}{9}$, sehingga $\\frac{10/63}{4/9}=\\frac{5}{14}$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Hard"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    }
+  ]
 }
