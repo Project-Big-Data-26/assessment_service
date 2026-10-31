@@ -4,8 +4,8 @@
   "subjectTrack": "regular",
   "intendedDifficulty": "Medium",
   "researchOnly": true,
-  "advisoryCount": 65,
-  "contentQualifiedCount": 65,
+  "advisoryCount": 102,
+  "contentQualifiedCount": 101,
   "items": [
     {
       "question": {
@@ -4064,6 +4064,70 @@
     },
     {
       "question": {
+        "questionId": "24b01ef6595c3f99af35bea8",
+        "questionVersionId": "24b01ef6595c3f99af35bea8:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "393a63f5c7f010b8c631a71121ed89ba9dccb13dcd03872958783a7b9e2847a4",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Rendi ingin tabungannya paling sedikit Rp10.000.000,00 tepat setelah setoran ke-4. Ia menyetor sejumlah yang sama pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun, dan besar setoran harus kelipatan Rp100.000,00. Setoran tahunan terkecil yang memenuhi adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.100.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp2.500.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp2.200.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp2.000.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Rumus nilai masa depan anuitas biasa (akhir periode): FV = A * [((1+i)^n - 1) / i]. Diketahui FV >= 10.000.000, i = 0,1, n = 4. Maka 10.000.000 <= A * [((1,1)^4 - 1) / 0,1]. 10.000.000 <= A * 4,641. A >= 10.000.000 / 4,641 = 2.154.707,9. Karena A harus kelipatan 100.000, maka nilai terkecil yang memenuhi adalah 2.200.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "24b01ef6595c3f99af35bea8",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: pembulatan ke bawah: FV = 9.746.100 masih kurang dari 10.000.000",
+            "B": "Salah: membagi target dengan 4 tanpa bunga; memenuhi tetapi bukan yang terkecil",
+            "C": "Benar: A >= 10.000.000 : 4,641 = 2.154.6xx; kelipatan 100.000 terkecil adalah 2.200.000 (FV 10.210.200)",
+            "D": "Salah: FV = 9.282.000 kurang dari target"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
         "questionId": "cfbc9100185c14c5f23eee86",
         "questionVersionId": "cfbc9100185c14c5f23eee86:content-v2:blind-revalidation",
         "contentVersion": 2,
@@ -4119,6 +4183,2318 @@
       "advisoryLabels": {
         "mathCognitiveDomain": "applying",
         "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "8b971243d30a88c167b45089",
+        "questionVersionId": "8b971243d30a88c167b45089:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3ee9f60fcab52a5ee9240277e49d1b5e251a056e857b20e87c74000a1851e5a0",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Gita ingin menarik Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun dari tabungan berbunga majemuk 10% per tahun, hingga tabungan habis. Untuk mencari tabungan awal ia menghitung $1.210.000 \\times \\frac{(1,1)^2 - 1}{0,1} = 2.541.000$. Pernyataan yang benar adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Gita keliru memakai bunga; tabungan awal yang benar Rp2.420.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Gita keliru karena hanya perlu satu penarikan; tabungan awal yang benar Rp1.100.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Gita sudah benar karena tabungan awal harus mencakup bunga sehingga Rp2.541.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Gita keliru memakai rumus nilai masa depan; tabungan awal yang benar Rp2.100.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Gita menggunakan rumus nilai masa depan (future value) anuitas, padahal seharusnya menggunakan rumus nilai sekarang (present value) untuk mencari tabungan awal. Perhitungannya: PV = 1.210.000 / (1,1)^1 + 1.210.000 / (1,1)^2 = 1.100.000 + 1.000.000 = 2.100.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "8b971243d30a88c167b45089",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjumlahkan penarikan tanpa bunga",
+            "B": "Salah: hanya menghitung penarikan pertama",
+            "C": "Salah: tabungan awal justru lebih kecil dari total penarikan karena bunga membantu",
+            "D": "Benar: tabungan awal adalah nilai sekarang: 1.210.000/1,1 + 1.210.000/1,21 = 1.100.000 + 1.000.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "1832b1cebd5daa2f7602f26d",
+        "questionVersionId": "1832b1cebd5daa2f7602f26d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "6afa1c4568c92e576584e72a96913ed88978750c29ae7876f2a1b3ff172da485",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Bu Lia menyimpan Rp3.200.000,00 di bank berbunga majemuk 10% per tahun. Pada akhir setiap tahun, mulai akhir tahun pertama, ia menarik Rp1.000.000,00. Banyak penarikan penuh Rp1.000.000,00 yang dapat ia lakukan paling banyak adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "4"
+          },
+          {
+            "label": "B",
+            "text": "3"
+          },
+          {
+            "label": "C",
+            "text": "5"
+          },
+          {
+            "label": "D",
+            "text": "2"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Model ini adalah anuitas biasa (ordinary annuity) dengan PV = 3.200.000, PMT = 1.000.000, i = 0,1. Rumus PV = PMT * [1 - (1+i)^-n] / i. Untuk n=4: PV = 1.000.000 * [1 - (1,1)^-4] / 0,1 = 1.000.000 * [1 - 0,68301] / 0,1 = 3.169.865. Untuk n=5: PV = 1.000.000 * [1 - (1,1)^-5] / 0,1 = 3.790.787. Karena 3.169.865 <= 3.200.000 dan 3.790.787 > 3.200.000, maka penarikan penuh maksimal adalah 4 kali.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "1832b1cebd5daa2f7602f26d",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: PV 4 penarikan = 3.169.865 <= 3.200.000, PV 5 penarikan = 3.790.787 > 3.200.000; saldo setelah penarikan ke-4 = 44.120",
+            "B": "Salah: membagi 3.200.000 dengan 1.000.000 tanpa memperhitungkan bunga",
+            "C": "Salah: PV 5 penarikan 3.790.787 melebihi tabungan",
+            "D": "Salah: menghitung terlalu banyak diskonto atau berhenti terlalu cepat"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "5f9d0cdb1a6a02f8d1407db9",
+        "questionVersionId": "5f9d0cdb1a6a02f8d1407db9:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "c9c3406acbbff0b5471558ef655cb244cd1cf047ef10c215679078160ad2a043",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Rama menyetor Rp1.000.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun. Sari ingin nilai masa depan tabungannya sama dengan Rama tepat saat setoran terakhir, tetapi hanya menyetor selama 2 tahun di bank yang sama. Setoran tahunan Sari yang harus ia lakukan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.100.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp2.320.500,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp2.210.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp2.000.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "FV Rama = 1.000.000 * ((1+0,1)^4 - 1) / 0,1 = 1.000.000 * 4,641 = 4.641.000. Sari menyetor selama 2 tahun (akhir tahun ke-3 dan ke-4, atau awal tahun ke-3 dan ke-4). Asumsi anuitas biasa (akhir periode): FV Sari = A * ((1+0,1)^2 - 1) / 0,1 = A * 2,1. Maka 4.641.000 = A * 2,1 => A = 2.210.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "5f9d0cdb1a6a02f8d1407db9",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengambil faktor anuitas 2 tahun (2,1) sebagai besar setoran",
+            "B": "Salah: membagi FV dengan 2 (banyak setoran), bukan dengan faktor anuitas",
+            "C": "Benar: FV Rama = 4.641.000; faktor 2 tahun = 2,1 sehingga A = 4.641.000 : 2,1 = 2.210.000",
+            "D": "Salah: membagi 4 tahun dengan 2 tahun tanpa memperhitungkan bunga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "c407c07f158fb4c2588a1a9d",
+        "questionVersionId": "c407c07f158fb4c2588a1a9d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "6c455a744e3b1403cae0312df0745e0d672e122d925c51ea1cfe05b633375238",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Hana menyetor Rp500.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 20% per tahun. Ia menghitung nilai masa depan sebagai $500.000 \\times (1,2^4 + 1,2^3 + 1,2^2 + 1,2) = 3.220.800$. Pernyataan yang benar adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Hana keliru karena setoran terakhir tidak berbunga; nilai masa depan yang benar Rp2.684.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Hana benar karena setiap setoran berbunga sejak disetor"
+          },
+          {
+            "label": "C",
+            "text": "Hana keliru karena bunga harus tunggal; nilai yang benar Rp2.500.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Hana keliru karena setoran pertama tidak berbunga; nilai masa depan yang benar Rp2.684.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Setoran akhir tahun (ordinary annuity) berarti setoran terakhir tidak berbunga. Deret yang benar adalah 500.000 * (1 + 1,2 + 1,2^2 + 1,2^3) = 500.000 * (1 + 1,2 + 1,44 + 1,728) = 500.000 * 5,368 = 2.684.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "c407c07f158fb4c2588a1a9d",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: suku yang benar 1 + 1,2 + 1,2^2 + 1,2^3 = 5,368 sehingga FV = 500.000 x 5,368",
+            "B": "Salah: menganggap setoran akhir tahun berbunga satu tahun penuh",
+            "C": "Salah: mengabaikan bunga majemuk",
+            "D": "Salah: setoran pertama justru berbunga paling lama (3 tahun)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "e0b5f7e2923d17102b091676",
+        "questionVersionId": "e0b5f7e2923d17102b091676:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "c55ff5b237e7d5a5b29020de7dc7da78e1024cded195c9d69a40dabf6d064ac1",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Seseorang menarik jumlah yang sama pada akhir setiap tahun selama 3 tahun dari tabungan berbunga majemuk 10% per tahun, hingga tabungan habis tepat setelah penarikan ketiga. Tepat setelah penarikan pertama, saldo tabungan Rp2.310.000,00. Besar penarikan tiap tahun adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp770.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp2.541.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp1.155.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp1.331.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Saldo setelah penarikan ke-1 adalah B1 = 2.310.000. Sisa penarikan adalah 2 kali (akhir tahun ke-2 dan ke-3). Persamaan saldo: B2 = B1(1,1) - A dan B3 = B2(1,1) - A = 0. Maka B2 = A/1,1. Substitusi: A/1,1 = 2.310.000(1,1) - A. A(1/1,1 + 1) = 2.541.000. A(2,1/1,1) = 2.541.000. A = 2.541.000 * 1,1 / 2,1 = 1.331.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "e0b5f7e2923d17102b091676",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: membagi saldo dengan 3 padahal tersisa dua penarikan",
+            "B": "Salah: menganggap hanya satu penarikan tersisa sehingga saldo = A/1,1",
+            "C": "Salah: membagi saldo dengan 2 tanpa bunga",
+            "D": "Benar: saldo = A/1,1 + A/1,21 = A x 1,735537 = 2.310.000 sehingga A = 1.331.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "c84e75d72d9764cc3d029e06",
+        "questionVersionId": "c84e75d72d9764cc3d029e06:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "577d25f0981e60fa4c78dec000e6d9a643be017087f1c7c5677b2e0f9fedaaba",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Dani menyetor Rp1.000.000,00 pada akhir setiap tahun ke bank berbunga majemuk 10% per tahun, sebanyak $n$ kali. Ia ingin nilai masa depan tabungan tepat setelah setoran terakhir paling sedikit Rp6.000.000,00, sedangkan total uang yang ia setor tidak lebih dari Rp8.000.000,00. Banyak nilai $n$ bulat positif yang memenuhi kedua syarat adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "4"
+          },
+          {
+            "label": "B",
+            "text": "5"
+          },
+          {
+            "label": "C",
+            "text": "8"
+          },
+          {
+            "label": "D",
+            "text": "3"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Rumus FV anuitas biasa: FV = PMT * [((1+i)^n - 1) / i]. Dengan PMT=1.000.000, i=0,1: FV = 1.000.000 * [((1,1)^n - 1) / 0,1] = 10.000.000 * ((1,1)^n - 1). Syarat 1: FV >= 6.000.000 -> 10.000.000 * ((1,1)^n - 1) >= 6.000.000 -> (1,1)^n - 1 >= 0,6 -> (1,1)^n >= 1,6. Untuk n=4, 1,1^4 = 1,4641 (tidak memenuhi). Untuk n=5, 1,1^5 = 1,61051 (memenuhi). Syarat 2: Total setoran <= 8.000.000 -> n * 1.000.000 <= 8.000.000 -> n <= 8. Nilai n yang memenuhi: 5, 6, 7, 8. Total ada 4 nilai.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "c84e75d72d9764cc3d029e06",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: FV n=5 = 6.105.100 >= 6.000.000 (n=4: 4.641.000 kurang); total setoran <= 8.000.000 berarti n <= 8; n = 5, 6, 7, 8",
+            "B": "Salah: memasukkan n = 4 padahal FV hanya 4.641.000",
+            "C": "Salah: hanya memakai syarat total setoran, tanpa syarat nilai masa depan",
+            "D": "Salah: memakai syarat total setoran kurang dari 8.000.000 sehingga n = 8 tidak dihitung dan n = 5, 6, 7 saja"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "c96ddcde625d90408b89b8d6",
+        "questionVersionId": "c96ddcde625d90408b89b8d6:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "e7dab26476285dee3424548072f6f22540ccc07a0da81da20e1bcde81dcdcacd",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Wulan menyetor Rp1.000.000,00 pada akhir tahun pertama dan akhir tahun kedua ke bank berbunga majemuk 10% per tahun. Setelah itu ia tidak menyetor lagi, melainkan menarik jumlah yang sama pada akhir tahun ketiga dan akhir tahun keempat sehingga tabungan habis tepat setelah penarikan keempat. Besar penarikan tiap tahun adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.541.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp1.210.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp1.050.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp1.155.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Saldo akhir tahun ke-2: 1.000.000(1,1) + 1.000.000 = 2.100.000. Penarikan A di akhir tahun ke-3 dan ke-4 membuat saldo habis: A/(1,1)^1 + A/(1,1)^2 = 2.100.000. A(0,90909 + 0,82645) = 2.100.000. A(1,73554) = 2.100.000. A = 1.210.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "c96ddcde625d90408b89b8d6",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengalikan saldo dengan 1,21 menjadi satu nilai, bukan dibagi dua penarikan",
+            "B": "Benar: saldo akhir tahun ke-2 = 2.100.000 = PV dua penarikan = A x (1/1,1 + 1/1,21) = A x 1,735537 sehingga A = 1.210.000",
+            "C": "Salah: membagi saldo 2.100.000 dengan 2 tanpa bunga",
+            "D": "Salah: membagi saldo yang sudah berbunga satu tahun (2.310.000) dengan 2"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "c9adf1bd913d81a6eebe6774",
+        "questionVersionId": "c9adf1bd913d81a6eebe6774:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "45576c6a77475b1f2e92ca06008acf6c349f93f6a1437f159746a2602924bbc1",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Seorang penjual menawarkan dua pilihan pembayaran: menerima Rp3.300.000,00 tunai sekarang, atau menerima Rp1.331.000,00 pada akhir setiap tahun selama 3 tahun. Suku bunga majemuk yang berlaku 10% per tahun. Kesimpulan yang benar adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Pilihan tunai lebih menguntungkan karena nilai sekarang penerimaan berkala Rp10.000,00 lebih kecil"
+          },
+          {
+            "label": "B",
+            "text": "Kedua pilihan sama menguntungkan karena nilai sekarangnya sama"
+          },
+          {
+            "label": "C",
+            "text": "Pilihan 3 kali penerimaan lebih menguntungkan karena selisihnya Rp693.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Pilihan 3 kali penerimaan lebih menguntungkan karena nilai sekarangnya Rp10.000,00 lebih besar daripada tunai"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Hitung Present Value (PV) dari anuitas: PV = 1.331.000/(1+0,1)^1 + 1.331.000/(1+0,1)^2 + 1.331.000/(1+0,1)^3 = 1.210.000 + 1.100.000 + 1.000.000 = 3.310.000. Bandingkan dengan 3.300.000. Karena 3.310.000 > 3.300.000, pilihan anuitas lebih menguntungkan dengan selisih 10.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "menyimpulkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "c9adf1bd913d81a6eebe6774",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: membalik arah perbandingan",
+            "B": "Salah: salah hitung nilai sekarang penerimaan berkala",
+            "C": "Salah: membandingkan total tanpa bunga (3.993.000 - 3.300.000)",
+            "D": "Benar: PV penerimaan = 1.210.000 + 1.100.000 + 1.000.000 = 3.310.000 > 3.300.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "a923b46657fdcd52cf61ad4d",
+        "questionVersionId": "a923b46657fdcd52cf61ad4d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "9b0ac423cf34245ea80fcf67371f7a989277d587da6c6f148009a11074de59f7",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Gilang menyetor Rp1.000.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun. Pernyataan yang benar tentang bunga yang dihasilkan masing-masing setoran sampai akhir tahun ke-4 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Setoran pertama menghasilkan bunga Rp300.000,00 dan setoran kedua Rp200.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Setoran pertama menghasilkan bunga Rp331.000,00, setoran kedua Rp210.000,00, dan setoran keempat tidak menghasilkan bunga"
+          },
+          {
+            "label": "C",
+            "text": "Setoran pertama menghasilkan bunga Rp400.000,00 dan setoran keempat Rp100.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Setiap setoran menghasilkan bunga yang sama, yaitu Rp160.250,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Setoran 1 (akhir thn 1) berbunga 3 thn: 1.000.000 * (1,1)^3 - 1.000.000 = 1.331.000 - 1.000.000 = 331.000. Setoran 2 (akhir thn 2) berbunga 2 thn: 1.000.000 * (1,1)^2 - 1.000.000 = 1.210.000 - 1.000.000 = 210.000. Setoran 3 (akhir thn 3) berbunga 1 thn: 1.000.000 * (1,1)^1 - 1.000.000 = 100.000. Setoran 4 (akhir thn 4) berbunga 0 thn: 0.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "a923b46657fdcd52cf61ad4d",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai bunga tunggal 10% per tahun",
+            "B": "Benar: setoran pertama berbunga 3 tahun: 1.331.000 - 1.000.000; kedua 2 tahun: 1.210.000 - 1.000.000; keempat tidak berbunga",
+            "C": "Salah: memakai bunga tunggal dan mengira setoran terakhir berbunga satu tahun",
+            "D": "Salah: membagi total bunga 641.000 rata ke empat setoran"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "6d6fcf762cd81ffc17266238",
+        "questionVersionId": "6d6fcf762cd81ffc17266238:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "5994d2ee7bd99f94c3ed116cd8b5889db1462d6ee0d639d66e2e0773646e4a96",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Seseorang menyimpan Rp3.310.000,00 di bank berbunga majemuk 10% per tahun, lalu menarik Rp1.331.000,00 pada akhir setiap tahun selama 3 tahun hingga tabungan habis. Bunga yang diterima pada tahun pertama lebih besar daripada bunga yang diterima pada tahun ketiga sebesar ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp331.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp110.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp683.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp210.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Bunga thn 1 = 3.310.000 * 10% = 331.000. Saldo awal thn 2 = (3.310.000 + 331.000) - 1.331.000 = 2.310.000. Bunga thn 2 = 2.310.000 * 10% = 231.000. Saldo awal thn 3 = (2.310.000 + 231.000) - 1.331.000 = 1.210.000. Bunga thn 3 = 1.210.000 * 10% = 121.000. Selisih = 331.000 - 121.000 = 210.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "6d6fcf762cd81ffc17266238",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjawab bunga tahun pertama saja",
+            "B": "Salah: mengurangkan bunga tahun kedua dengan bunga tahun ketiga",
+            "C": "Salah: menjawab total bunga tiga tahun",
+            "D": "Benar: bunga tahun 1 = 331.000; saldo awal tahun 3 = 1.210.000 sehingga bunga tahun 3 = 121.000; selisih 210.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "47521eae34ca174c8830313a",
+        "questionVersionId": "47521eae34ca174c8830313a:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "68145d7c039ee6aff19a9f62f8897f4a9258550d63cc652f6e964612d4145e8a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Bayu berkata, \"Jika lama menabung dilipatduakan, nilai masa depan tabunganku juga menjadi dua kali.\" Bayu menyetor sejumlah yang sama pada akhir setiap tahun dengan bunga majemuk 20% per tahun. Perbandingan nilai masa depan tabungan setelah 4 tahun terhadap setelah 2 tahun adalah ...., sehingga klaim Bayu keliru.",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "5,368"
+          },
+          {
+            "label": "B",
+            "text": "2"
+          },
+          {
+            "label": "C",
+            "text": "2,44"
+          },
+          {
+            "label": "D",
+            "text": "2,2"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Rumus nilai masa depan anuitas biasa (akhir periode): FV = P * [((1+i)^n - 1) / i]. Untuk i = 0,2: FV_n = P * [((1,2)^n - 1) / 0,2]. FV_4 = P * [((1,2)^4 - 1) / 0,2] = P * [1,0736 / 0,2] = 5,368P. FV_2 = P * [((1,2)^2 - 1) / 0,2] = P * [0,44 / 0,2] = 2,2P. Perbandingan FV_4 : FV_2 = 5,368P : 2,2P = 2,44.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "47521eae34ca174c8830313a",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengambil faktor anuitas 4 tahun saja",
+            "B": "Salah: mengikuti klaim Bayu seolah FV sebanding dengan lama menabung",
+            "C": "Benar: faktor 4 tahun = 5,368; faktor 2 tahun = 2,2; 5,368 : 2,2 = 2,44",
+            "D": "Salah: mengambil faktor anuitas 2 tahun sebagai perbandingan"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "eae15b0730bd59e35aa42d0f",
+        "questionVersionId": "eae15b0730bd59e35aa42d0f:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "96a415e925520efd1cd447cc90937615bcd746cebd12bbabcb2c1551a6a2cbe9",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Eko mendepositokan Rp1.000.000,00 hari ini, lalu menyetor sejumlah yang sama pada akhir setiap tahun selama 3 tahun ke bank yang sama berbunga majemuk 10% per tahun. Ia menginginkan saldo tepat setelah setoran ketiga sebesar Rp6.296.000,00. Besar setoran tahunan yang harus dilakukan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp1.600.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp1.500.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp1.655.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp1.902.115,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan setoran tahunan adalah x. Saldo akhir (setelah 3 tahun) adalah: 1.000.000(1,1)^3 + x(1,1)^2 + x(1,1)^1 + x = 6.296.000. 1.000.000(1,331) + x(1,21 + 1,1 + 1) = 6.296.000. 1.331.000 + 3,31x = 6.296.000. 3,31x = 4.965.000. x = 1.500.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "eae15b0730bd59e35aa42d0f",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: deposit awal tidak dibungakan: (6.296.000 - 1.000.000) : 3,31",
+            "B": "Benar: deposit awal menjadi 1.000.000 x 1,331 = 1.331.000; sisa 4.965.000 : 3,31 = 1.500.000",
+            "C": "Salah: setoran tidak dibungakan: (6.296.000 - 1.331.000) : 3",
+            "D": "Salah: lupa memperhitungkan deposit awal: 6.296.000 : 3,31"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "6c7c9c154d68fee28eecf2b7",
+        "questionVersionId": "6c7c9c154d68fee28eecf2b7:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "3c8e1c1ae2d7c59e211a66de34f29dae69b2158472b6e06bbfaf007ac78c5d70",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Bu Ratna menabung Rp2.000.000,00 pada akhir setiap triwulan selama 1 tahun di bank yang memberi bunga majemuk 20% per tahun, dihitung setiap triwulan. Nilai masa depan seluruh tabungan Bu Ratna setelah 1 tahun adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp10.736.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp6.305.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp8.620.250,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp8.000.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Diketahui: PMT = 2.000.000, i = 20%/4 = 5% = 0,05 per triwulan, n = 1 tahun = 4 triwulan. Rumus nilai masa depan anuitas biasa: FV = PMT * ((1 + i)^n - 1) / i. FV = 2.000.000 * ((1 + 0,05)^4 - 1) / 0,05 = 2.000.000 * (1,21550625 - 1) / 0,05 = 2.000.000 * 0,21550625 / 0,05 = 2.000.000 * 4,310125 = 8.620.250.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "6c7c9c154d68fee28eecf2b7",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai 20% per triwulan tanpa dibagi 4",
+            "B": "Salah: memakai n = 3 sehingga satu setoran terlewat",
+            "C": "Benar: i = 20%/4 = 5% per triwulan, n = 4; FV = 2.000.000 x (1,05^4 - 1)/0,05 = 2.000.000 x 4,310125",
+            "D": "Salah: bunga diabaikan, hanya total setoran"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "2a0ef8fbb50b16280d2965c6",
+        "questionVersionId": "2a0ef8fbb50b16280d2965c6:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "a42ecac2750f968e7d0f7e23a9c720dc8d3f738ac660386aaf6924e089bcf22d",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Dedi ingin memiliki tabungan Rp13.923.000,00 tepat setelah 4 tahun. Ia menyetor sejumlah uang yang sama pada akhir setiap tahun ke bank yang memberi bunga majemuk 10% per tahun. Besar setoran tiap tahun yang harus ia lakukan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp1.392.300,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp9.945.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp3.480.750,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp3.000.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Rumus nilai masa depan anuitas biasa: FV = A * [((1 + i)^n - 1) / i]. Diketahui FV = 13.923.000, i = 0,1, n = 4. Maka: 13.923.000 = A * [((1,1)^4 - 1) / 0,1]. 13.923.000 = A * [(1,4641 - 1) / 0,1]. 13.923.000 = A * 4,641. A = 13.923.000 / 4,641 = 3.000.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "2a0ef8fbb50b16280d2965c6",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengalikan target dengan suku bunga 10%",
+            "B": "Salah: membagi dengan $1 + n \\times i$ = 1,4 (memakai bunga tunggal)",
+            "C": "Salah: membagi target dengan 4 tanpa memperhitungkan bunga",
+            "D": "Benar: faktor = (1,1^4 - 1)/0,1 = 4,641; A = 13.923.000 : 4,641 = 3.000.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "88fbd3ea12ad353b57fbd29d",
+        "questionVersionId": "88fbd3ea12ad353b57fbd29d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "1f928946ac09ff02c24b4eda91b8763d374091c52d398f1a98cdb8ba27dba77e",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Wati menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun (tiga kali setoran) ke bank dengan bunga majemuk 10% per tahun. Setelah setoran ketiga ia tidak menyetor lagi dan membiarkan tabungannya berbunga 1 tahun lagi. Saldo tabungan Wati pada akhir tahun ke-4 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp3.641.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp4.641.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp4.310.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp3.310.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Setoran akhir tahun: 1.000.000(1+0,1)^2 + 1.000.000(1+0,1)^1 + 1.000.000 = 1.210.000 + 1.100.000 + 1.000.000 = 3.310.000. Setelah setoran ke-3, saldo dibiarkan 1 tahun lagi: 3.310.000 * 1,1 = 3.641.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "A",
+          "verifiedAnswerKey": "A",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "88fbd3ea12ad353b57fbd29d",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Benar: FV setelah setoran ketiga = 3.310.000; setahun kemudian 3.310.000 x 1,1 = 3.641.000",
+            "B": "Salah: menganggap ada empat kali setoran",
+            "C": "Salah: menambah setoran keempat padahal tidak ada setoran lagi",
+            "D": "Salah: lupa menambahkan bunga tahun ke-4"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "f8ec83d2e95acbb7d3404446",
+        "questionVersionId": "f8ec83d2e95acbb7d3404446:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "2844ba31961392e131186d0330f9f235163b0dbf3d1a6040cd9cfebe39a529ed",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Pak Hasan menabung sejumlah uang di bank dengan bunga majemuk 10% per tahun. Pada akhir setiap tahun selama 3 tahun ia menarik Rp2.662.000,00 sehingga tabungannya habis tepat setelah penarikan ketiga. Saldo tabungan Pak Hasan tepat setelah penarikan pertama adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp3.958.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp4.620.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp6.620.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp5.324.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan S1 adalah saldo setelah penarikan pertama. Sisa penarikan adalah 2 kali (tahun ke-2 dan ke-3). S1 harus sama dengan nilai sekarang (present value) dari dua penarikan tersebut agar saldo habis tepat setelah penarikan ke-3. S1 = 2.662.000/(1+0,1) + 2.662.000/(1+0,1)^2 = 2.420.000 + 2.200.000 = 4.620.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f8ec83d2e95acbb7d3404446",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengurangi tabungan awal dengan penarikan tanpa memperhitungkan bunga",
+            "B": "Benar: saldo setelah penarikan pertama = nilai sekarang dua penarikan tersisa = 2.662.000/1,1 + 2.662.000/1,21 = 2.420.000 + 2.200.000",
+            "C": "Salah: menjawab tabungan awal, bukan saldo setelah penarikan",
+            "D": "Salah: menjumlahkan dua penarikan tersisa tanpa bunga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "0a321b0537d497dbfd027888",
+        "questionVersionId": "0a321b0537d497dbfd027888:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "98b7f1492140fd0a43335ef61f6ea9eff30b1f7338b88dafc95fd854b839bd8a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Bu Sinta ingin menarik Rp1.331.000,00 pada akhir setiap semester selama satu setengah tahun dari tabungannya. Bank memberi bunga majemuk 20% per tahun yang dihitung tiap semester, dan tabungan habis tepat setelah penarikan terakhir. Tabungan awal yang harus disiapkan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.310.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp3.310.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp3.993.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp4.405.610,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Anuitas (PV) = A * [1 - (1 + i)^-n] / i. A = 1.331.000, i = 20%/2 = 10% = 0,1 per semester. n = 1,5 tahun * 2 = 3 semester. PV = 1.331.000 * [1 - (1,1)^-3] / 0,1 = 1.331.000 * [1 - 0,7513148] / 0,1 = 1.331.000 * 2,486852 = 3.310.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "0a321b0537d497dbfd027888",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai n = 2 (mengira satu setengah tahun hanya 2 semester)",
+            "B": "Benar: i = 10% per semester, n = 3; PV = 1.331.000 x (1 - 1,1^-3)/0,1 = 1.331.000 x 2,486852 ... = 1.210.000 + 1.100.000 + 1.000.000",
+            "C": "Salah: menjumlahkan penarikan tanpa memperhitungkan bunga",
+            "D": "Salah: memakai rumus nilai masa depan anuitas"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "6c046aa0da7c0fc5a85ab570",
+        "questionVersionId": "6c046aa0da7c0fc5a85ab570:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "9d004dea6b30bce40e883dab9bcb03bcd320840d2eebc0de7c62409c185f87c2",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Rani menyetor Rp3.000.000,00 pada akhir tahun pertama dan Rp3.000.000,00 pada akhir tahun kedua ke sebuah bank. Tepat setelah setoran kedua, saldo tabungannya Rp6.450.000,00. Suku bunga majemuk bank tersebut per tahun adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "30%"
+          },
+          {
+            "label": "B",
+            "text": "7,5%"
+          },
+          {
+            "label": "C",
+            "text": "15%"
+          },
+          {
+            "label": "D",
+            "text": "115%"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misalkan i adalah suku bunga. Setoran pertama (3.000.000) berbunga selama 1 tahun menjadi 3.000.000(1+i). Setoran kedua (3.000.000) dilakukan tepat saat saldo dihitung, sehingga tidak berbunga. Persamaan: 3.000.000(1+i) + 3.000.000 = 6.450.000. 3.000.000(1+i) = 3.450.000. 1+i = 3.450.000 / 3.000.000 = 1,15. Maka i = 0,15 atau 15%.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "6c046aa0da7c0fc5a85ab570",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: membagi bunga 450.000 dengan 1.500.000",
+            "B": "Salah: membagi hasil 15% dengan 2 karena ada dua setoran",
+            "C": "Benar: A + A(1+i) = 6.450.000 sehingga 1 + i = 1,15, i = 15%",
+            "D": "Salah: menganggap faktor 1,15 sebagai suku bunga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "b370bd39a3c969a19cea9b85",
+        "questionVersionId": "b370bd39a3c969a19cea9b85:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "b4aa2664b059b2c874ed6922fd5a537b9cf58d00c776fb36185c7d0478d33000",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Tabungan awal Rp3.640.000,00 disimpan di bank dengan bunga majemuk 20% per tahun. Pada akhir setiap tahun diambil Rp1.728.000,00 sehingga tabungan habis tepat setelah pengambilan terakhir. Pengambilan dapat dilakukan selama .... tahun.",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "2"
+          },
+          {
+            "label": "B",
+            "text": "3"
+          },
+          {
+            "label": "C",
+            "text": "4"
+          },
+          {
+            "label": "D",
+            "text": "5"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Model anuitas: PV = A * [1 - (1+i)^-n] / i. Diketahui PV = 3.640.000, A = 1.728.000, i = 0,2. Maka 3.640.000 = 1.728.000 * [1 - (1,2)^-n] / 0,2. 3.640.000 = 8.640.000 * [1 - (1,2)^-n]. 1 - (1,2)^-n = 3.640.000 / 8.640.000 = 364/864 = 91/216. (1,2)^-n = 1 - 91/216 = 125/216. (1,2)^n = 216/125 = (6/5)^3 = (1,2)^3. Jadi, n = 3.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "b370bd39a3c969a19cea9b85",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: dua pengambilan hanya membutuhkan tabungan awal 2.640.000",
+            "B": "Benar: n = 3 memberi PV = 1.440.000 + 1.200.000 + 1.000.000 = 3.640.000",
+            "C": "Salah: empat pengambilan membutuhkan sekitar 4.473.333, melebihi tabungan awal",
+            "D": "Salah: lima pengambilan membutuhkan jauh lebih dari 3.640.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "9023ec384472de424ce4bc75",
+        "questionVersionId": "9023ec384472de424ce4bc75:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "27292b8d9d2145885e867f9362734b683168dbc69337ab7779e9e267f902a2dd",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun. Orang pertama menabung di Bank X dengan bunga majemuk 8% per tahun, orang kedua di Bank Y dengan bunga majemuk 10% per tahun. Selisih nilai masa depan tabungan keduanya adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp3.246.400,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp63.600,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp60.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp20.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "FV = P * [((1+i)^n - 1) / i]. Bank X: 1.000.000 * [((1.08)^3 - 1) / 0.08] = 1.000.000 * 3.2464 = 3.246.400. Bank Y: 1.000.000 * [((1.10)^3 - 1) / 0.10] = 1.000.000 * 3.31 = 3.310.000. Selisih = 3.310.000 - 3.246.400 = 63.600.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "9023ec384472de424ce4bc75",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjawab nilai masa depan Bank X, bukan selisih",
+            "B": "Benar: FV X = 3.246.400; FV Y = 3.310.000; selisih = 63.600",
+            "C": "Salah: memakai bunga tunggal: 2% x 3.000.000",
+            "D": "Salah: memakai n = 2 bukan 3"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "73db701fa39937dfd18a9372",
+        "questionVersionId": "73db701fa39937dfd18a9372:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "09a2b5333e76c279d2aff6fb74260b1113a9398e7b8e8f13fe942d10b8ea1e7a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Pak Toni mendepositokan Rp2.000.000,00 hari ini, lalu menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun ke bank yang sama dengan bunga majemuk 10% per tahun. Saldo tabungan Pak Toni tepat setelah setoran ketiga adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp5.000.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp5.310.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp3.310.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp5.972.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Saldo akhir = (2.000.000 * 1,1^3) + (1.000.000 * (1,1^2 + 1,1^1 + 1)) = 2.662.000 + 1.000.000 * (1,21 + 1,1 + 1) = 2.662.000 + 3.310.000 = 5.972.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "73db701fa39937dfd18a9372",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjumlahkan semua uang tanpa bunga",
+            "B": "Salah: deposit awal tidak dibungakan",
+            "C": "Salah: lupa menyertakan deposit awal",
+            "D": "Benar: deposit awal: 2.000.000 x 1,1^3 = 2.662.000; setoran rutin: 1.000.000 x 3,31 = 3.310.000; jumlah 5.972.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "49c7ada8f05e6987d0932bda",
+        "questionVersionId": "49c7ada8f05e6987d0932bda:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "88ac25e1964c04adaebf4b8762de6e0d3bfe4291b65f1764da46fe67b48c94d6",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Bu Dewi ingin menarik Rp1.157.625,00 pada akhir setiap tahun selama 3 tahun dari tabungan yang berbunga majemuk 5% per tahun, sehingga tabungan habis tepat setelah penarikan ketiga. Saat ini ia hanya memiliki Rp3.000.000,00. Kekurangan dana yang harus ia tambahkan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp3.152.500,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp472.875,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp152.500,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp847.500,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Soal meminta nilai sekarang (PV) dari anuitas biasa selama 3 tahun dengan pembayaran (A) = Rp1.157.625,00 dan bunga (i) = 5% = 0,05. Rumus PV = A * [1 - (1+i)^-n] / i. PV = 1.157.625 * [1 - (1,05)^-3] / 0,05 = 1.157.625 * [1 - 0,8638376] / 0,05 = 1.157.625 * 2,723248 = 3.152.500. Kekurangan dana = PV - Saldo awal = 3.152.500 - 3.000.000 = 152.500.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "Rp152.500,00",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "49c7ada8f05e6987d0932bda",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjawab kebutuhan dana, bukan kekurangannya",
+            "B": "Salah: memakai total penarikan tanpa bunga",
+            "C": "Benar: kebutuhan = PV = 1.102.500 + 1.050.000 + 1.000.000 = 3.152.500; kekurangan = 152.500",
+            "D": "Salah: memakai dua penarikan saja lalu membalik selisihnya"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "48e80c3ab85f7ec640b50a7d",
+        "questionVersionId": "48e80c3ab85f7ec640b50a7d:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "529023eb4ef32b7561e2e03bb582dabe2dbfc11c4a282b9c43b6c989011b846a",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Yayasan Bina Cerdas menyiapkan dana beasiswa yang diambil Rp1.464.100,00 pada akhir setiap tahun selama 4 tahun. Dana disimpan di bank dengan bunga majemuk 10% per tahun dan habis tepat setelah pengambilan keempat. Dana yang harus disimpan di awal adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp5.856.400,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp14.641.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp3.641.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp4.641.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "PV = A * [1 - (1+i)^-n] / i. Dengan A = 1.464.100, i = 0,1, n = 4: PV = 1.464.100 * [1 - (1,1)^-4] / 0,1 = 1.464.100 * [1 - 0,68301345] / 0,1 = 1.464.100 * 3,1698655 = 4.641.000. Atau secara manual: 1.331.000 + 1.210.000 + 1.100.000 + 1.000.000 = 4.641.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "Rp4.641.000,00",
+          "answerKeyStatus": "conflict",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "48e80c3ab85f7ec640b50a7d",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjumlahkan pengambilan tanpa memperhitungkan bunga",
+            "B": "Salah: membagi dengan $i$ saja tanpa faktor $1-(1+i)^{-n}$",
+            "C": "Salah: memakai n = 3 sehingga satu pengambilan terlewat",
+            "D": "Benar: PV = 1.331.000 + 1.210.000 + 1.100.000 + 1.000.000 = 4.641.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "revision_required",
+      "contentQualified": false,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "1f9a229ed77459a7e3b6c4e4",
+        "questionVersionId": "1f9a229ed77459a7e3b6c4e4:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "92b7383dbaa72c96107ebe23f79181c9152ce339700f86861762479c348a6c03",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Pak Joko akan menarik Rp1.102.500,00 pada akhir setiap triwulan selama 6 bulan dari tabungannya. Bank memberi bunga majemuk 20% per tahun yang dihitung tiap triwulan, dan tabungan habis tepat setelah penarikan terakhir. Tabungan awal yang harus disiapkan adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.260.125,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp1.684.375,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp2.205.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp2.050.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Periode penarikan adalah triwulan (3 bulan). Selama 6 bulan terdapat 2 triwulan (n=2). Suku bunga per triwulan i = 20%/4 = 5% = 0,05. Nilai sekarang (PV) dari anuitas akhir periode adalah PV = A/(1+i) + A/(1+i)^2. PV = 1.102.500/1,05 + 1.102.500/(1,05)^2 = 1.050.000 + 1.000.000 = 2.050.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "1f9a229ed77459a7e3b6c4e4",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai rumus nilai masa depan anuitas",
+            "B": "Salah: memakai 20% per triwulan tanpa dibagi 4",
+            "C": "Salah: menjumlahkan penarikan tanpa bunga",
+            "D": "Benar: i = 20%/4 = 5% per triwulan, n = 2; PV = 1.102.500/1,05 + 1.102.500/1,05^2 = 1.050.000 + 1.000.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "dcbfc8fdba8267635555d16a",
+        "questionVersionId": "dcbfc8fdba8267635555d16a:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "ad2c966c6a9fcdba5fe3e88ee803735acd7223e6e563f2acbf69894bdec75940",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Pak Budi menabung sejumlah uang di bank berbunga majemuk 10% per tahun. Pada akhir tahun pertama dan kedua ia menarik Rp2.420.000,00 sehingga tabungannya habis tepat setelah penarikan kedua. Total bunga yang diterima Pak Budi selama 2 tahun adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp484.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp4.200.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp4.840.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp640.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Misal tabungan awal P. Bunga 10% (r=0,1). Penarikan (A) = 2.420.000. Sisa setelah thn 1: P(1,1) - A. Sisa setelah thn 2: (P(1,1) - A)(1,1) - A = 0. P(1,21) - 2,42M(1,1) - 2,42M = 0. P(1,21) = 2,662M + 2,42M = 5,082M. P = 5,082M / 1,21 = 4,2M. Total penarikan = 2 * 2,42M = 4,84M. Bunga = Total penarikan - Tabungan awal = 4,84M - 4,2M = 640.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "dcbfc8fdba8267635555d16a",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengambil 10% dari total penarikan",
+            "B": "Salah: menjawab tabungan awal, bukan bunga",
+            "C": "Salah: menjawab total penarikan, bukan bunga",
+            "D": "Benar: tabungan awal 1 : 2.200.000 + 2.000.000 = 4.200.000; total penarikan 4.840.000; bunga = 640.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "a236d3d0c2b4a208b6db13b8",
+        "questionVersionId": "a236d3d0c2b4a208b6db13b8:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "dbe5e9a9b7567121c58558fa7100c996d432008e662f3e8fb47823542bd755ea",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Investasi Anuitas",
+        "questionType": "multiple_choice",
+        "stem": "Seseorang menyetor Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun ke bank dengan bunga majemuk 10% per tahun. Jika ia hanya menyetor satu kali di awal (tahun ke-0) agar saldo setelah 2 tahun sama besar dengan nilai masa depan tabungan tadi, setoran tunggal itu adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.420.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp2.100.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp3.074.610,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp2.310.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "FV anuitas = 1.210.000 * ((1+0,1)^2 - 1) / 0,1 = 1.210.000 * 2,1 = 2.541.000. Nilai sekarang (PV) dari FV tersebut adalah PV = FV / (1+i)^n = 2.541.000 / (1,1)^2 = 2.541.000 / 1,21 = 2.100.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "a236d3d0c2b4a208b6db13b8",
+          "subchapter": "Investasi Anuitas",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjumlahkan dua setoran tanpa bunga",
+            "B": "Benar: FV anuitas = 1.210.000 x 2,1 = 2.541.000; PV = 2.541.000 : 1,1^2 = 2.100.000",
+            "C": "Salah: mengalikan, bukan membagi, dengan $(1+i)^n$",
+            "D": "Salah: membagi dengan 1,1 sekali, bukan 1,1 pangkat 2"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "conceptual",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "f036860b61ef39efd80008ee",
+        "questionVersionId": "f036860b61ef39efd80008ee:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f5c988d7e27b3473b3ea9bfbbc7aa95cc6c318b0d89e79ed28b77449856cee68",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Pak Hendra meminjam dana sebesar Rp30.000.000,00 yang diangsur selama 10 bulan (pokok tetap) dengan bunga 12% per tahun. Besar bunga pada bulan ke-4 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp300.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp210.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp2.520.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp240.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pokok pinjaman = 30.000.000, jangka waktu = 10 bulan. Angsuran pokok per bulan = 30.000.000 / 10 = 3.000.000. Sisa pokok awal bulan ke-4 (setelah 3 kali angsuran) = 30.000.000 - (3 * 3.000.000) = 21.000.000. Bunga per bulan = 12% / 12 = 1%. Bunga bulan ke-4 = 1% * 21.000.000 = 210.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "f036860b61ef39efd80008ee",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai pokok awal Rp30.000.000,00, bukan sisa pokok bulan ke-4",
+            "B": "Benar: angsuran pokok 3.000.000; sisa pokok bulan ke-4 = $30.000.000 - 3 \\times 3.000.000 = 21.000.000$; bunga = 1% x 21.000.000",
+            "C": "Salah: memakai bunga 12% tahunan tanpa dibagi 12",
+            "D": "Salah: memakai sisa pokok bulan ke-3 (bunga bulan ke-3)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "54fa9bc96fbf7329f0266531",
+        "questionVersionId": "54fa9bc96fbf7329f0266531:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f4f9b83132266c4d05ecf26f3126359ad57027e2dedae4a31971a81b0d1add69",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Seorang karyawan mengambil kredit sepeda motor Rp24.000.000,00 yang dilunasi dalam 8 bulan dengan angsuran pokok tetap. Bunga kredit 18% per tahun dan dikenakan pada sisa pokok. Bunga yang harus dibayar pada bulan ke-3 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp3.240.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp360.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp270.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp315.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Angsuran pokok per bulan = 24.000.000 / 8 = 3.000.000. Sisa pokok awal bulan ke-3 = 24.000.000 - (2 * 3.000.000) = 18.000.000. Bunga per bulan = 18% / 12 = 1,5%. Bunga bulan ke-3 = 1,5% * 18.000.000 = 270.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "54fa9bc96fbf7329f0266531",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai bunga 18% tahunan tanpa dibagi 12",
+            "B": "Salah: memakai pokok awal Rp24.000.000,00, bukan sisa pokok",
+            "C": "Benar: angsuran pokok 3.000.000; sisa pokok bulan ke-3 = 18.000.000; bunga 1,5% x 18.000.000",
+            "D": "Salah: memakai sisa pokok bulan ke-2 (bunga bulan ke-2)"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4ed52cb3cbd46aac38322337",
+        "questionVersionId": "4ed52cb3cbd46aac38322337:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "14446820b2b0e71314cbc656687a6d0a48b78becf68fb25fb15f884a9b6e1221",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Sebuah koperasi memberi pinjaman Rp30.000.000,00 kepada seorang peternak. Pinjaman dilunasi dalam 2 bulan dengan angsuran pokok yang sama dan bunga 18% per tahun dari sisa pokok. Jumlah seluruh bunga yang dibayar peternak adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp900.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp5.400.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp675.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp450.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Bunga per bulan = 18%/12 = 1,5%. Angsuran pokok per bulan = 30.000.000/2 = 15.000.000. Bunga bulan 1 = 1,5% x 30.000.000 = 450.000. Sisa pokok bulan 2 = 30.000.000 - 15.000.000 = 15.000.000. Bunga bulan 2 = 1,5% x 15.000.000 = 225.000. Total bunga = 450.000 + 225.000 = 675.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4ed52cb3cbd46aac38322337",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai pokok awal untuk kedua bulan",
+            "B": "Salah: memakai bunga setahun penuh",
+            "C": "Benar: bunga bulan 1 = 1,5% x 30.000.000 = 450.000; bunga bulan 2 = 1,5% x 15.000.000 = 225.000",
+            "D": "Salah: hanya menghitung bunga bulan pertama"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "45edfdbf24d748b9f87e3c0e",
+        "questionVersionId": "45edfdbf24d748b9f87e3c0e:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "a7a096ee14f91b0c2b393f2bd61d70c712a1eed1c580f2e2b7c305dca5067b64",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Andi meminjam uang sebesar Rp20.000.000,00 di bank dengan bunga 18% per tahun yang diangsur selama 8 bulan dengan pokok tetap. Total angsuran (pokok + bunga) pada bulan ke-2 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp262.500,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp2.800.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp2.762.500,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp2.500.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pokok per bulan = 20.000.000 / 8 = 2.500.000. Sisa pokok setelah bulan ke-1 = 20.000.000 - 2.500.000 = 17.500.000. Bunga per bulan = 18% / 12 = 1,5%. Bunga bulan ke-2 = 1,5% * 17.500.000 = 262.500. Total angsuran bulan ke-2 = 2.500.000 + 262.500 = 2.762.500.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "C",
+          "verifiedAnswerKey": "C",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "45edfdbf24d748b9f87e3c0e",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: hanya bunganya, lupa angsuran pokok",
+            "B": "Salah: memakai total angsuran bulan pertama",
+            "C": "Benar: pokok 2.500.000 + bunga 1,5% x 17.500.000 = 2.500.000 + 262.500",
+            "D": "Salah: hanya angsuran pokok, lupa bunga"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "00fe103324186d560100ef16",
+        "questionVersionId": "00fe103324186d560100ef16:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "cb3a07cd915f84010f92cbd31b0b445a9458ba56faa22c06fb4b67e7e860a38b",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Rina membeli laptop dengan kredit Rp12.000.000,00 yang dilunasi selama 6 bulan, angsuran pokok sama tiap bulan, bunga 12% per tahun dari sisa pokok. Total angsuran yang dibayar Rina pada bulan terakhir adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.120.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp2.240.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp2.000.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp2.020.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pokok pinjaman Rp12.000.000,00 dilunasi 6 bulan, maka angsuran pokok per bulan = 12.000.000 / 6 = 2.000.000. Suku bunga per bulan = 12% / 12 = 1%. Pada bulan terakhir (bulan ke-6), sisa pokok adalah Rp2.000.000,00. Bunga bulan ke-6 = 1% x 2.000.000 = 20.000. Total angsuran bulan ke-6 = pokok + bunga = 2.000.000 + 20.000 = 2.020.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "00fe103324186d560100ef16",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai total angsuran bulan pertama (bunga dari 12.000.000)",
+            "B": "Salah: memakai bunga 12% tanpa dibagi 12",
+            "C": "Salah: hanya angsuran pokok, lupa bunga",
+            "D": "Benar: pokok 2.000.000 + bunga 1% x 2.000.000 = 2.020.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "4fa925be1180b2413fa2fb60",
+        "questionVersionId": "4fa925be1180b2413fa2fb60:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "5188d7cfce56ba740275c80b5f137c3e96c330189ec37ecdabe5411035f59870",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Pak Budi meminjam Rp16.000.000,00 di bank dengan suku bunga 12% per tahun. Pinjaman dikembalikan dalam 8 bulan dengan angsuran pokok tetap dan bunga menurun. Besar bunga pada cicilan ke-5 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp100.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp80.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp960.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp160.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pokok pinjaman (P) = 16.000.000. Angsuran pokok per bulan (a) = 16.000.000 / 8 = 2.000.000. Suku bunga per bulan (i) = 12% / 12 = 1%. Sisa pokok sebelum cicilan ke-5 adalah pokok awal dikurangi 4 kali angsuran pokok: S_4 = 16.000.000 - (4 * 2.000.000) = 8.000.000. Bunga ke-5 = S_4 * i = 8.000.000 * 1% = 80.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "4fa925be1180b2413fa2fb60",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai sisa pokok cicilan ke-4",
+            "B": "Benar: $B_5 = [16.000.000 - 2.000.000 \\times 4] \\times 1\\% = 8.000.000 \\times 1\\%$",
+            "C": "Salah: memakai bunga 12% tanpa dibagi 12",
+            "D": "Salah: memakai pokok awal 16.000.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "945dc2f8bfe82645098aa927",
+        "questionVersionId": "945dc2f8bfe82645098aa927:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "2cb976c9f59f24c397ae2ae6c56dbe09b23fab7820eb6fb1c96ea1f1230b6028",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Bu Dewi memperoleh pinjaman usaha Rp25.000.000,00 dengan bunga 6% per tahun. Pinjaman dibayar lunas dalam 5 bulan, angsuran pokok tetap dan bunga dihitung dari sisa pinjaman. Bunga yang dibayar pada cicilan ke-2 adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp1.200.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp125.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp75.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp100.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pokok pinjaman = Rp25.000.000,00. Angsuran pokok per bulan = 25.000.000 / 5 = Rp5.000.000,00. Sisa pinjaman setelah cicilan ke-1 = 25.000.000 - 5.000.000 = Rp20.000.000,00. Bunga per bulan = 6% / 12 = 0,5%. Bunga cicilan ke-2 = 0,5% x 20.000.000 = Rp100.000,00.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "945dc2f8bfe82645098aa927",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: memakai bunga 6% tanpa dibagi 12",
+            "B": "Salah: memakai pokok awal (bunga cicilan ke-1)",
+            "C": "Salah: memakai sisa pokok cicilan ke-3",
+            "D": "Benar: sisa pokok = 25.000.000 - 5.000.000 = 20.000.000; bunga 0,5% x 20.000.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "8fa49185c7849e20ddce201b",
+        "questionVersionId": "8fa49185c7849e20ddce201b:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "f6928cc7d69d37714913cfb2a62fd091a537ada75eac2894c985b3739bd00d96",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Total angsuran bulan pertama lebih besar daripada total angsuran bulan kedua sebesar ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.000.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp200.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp240.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp20.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pokok pinjaman = 24.000.000. Angsuran pokok per bulan = 24.000.000 / 12 = 2.000.000. Bunga per bulan = 12% / 12 = 1% per bulan. Bunga bulan ke-1 = 1% * 24.000.000 = 240.000. Sisa pokok bulan ke-2 = 24.000.000 - 2.000.000 = 22.000.000. Bunga bulan ke-2 = 1% * 22.000.000 = 220.000. Selisih angsuran bulan ke-1 dan ke-2 = (Pokok + Bunga1) - (Pokok + Bunga2) = Bunga1 - Bunga2 = 240.000 - 220.000 = 20.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "8fa49185c7849e20ddce201b",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: menjawab angsuran pokok yang sama tiap bulan",
+            "B": "Salah: salah menaruh desimal (10% bukan 1% dari angsuran pokok)",
+            "C": "Salah: menjawab bunga bulan pertama",
+            "D": "Benar: bunga bulan 1 = 240.000; bunga bulan 2 = 220.000; selisih 20.000"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "825a0528917b3a8aa6e998d1",
+        "questionVersionId": "825a0528917b3a8aa6e998d1:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "aa10d3e6f5cb7d467075cb49a97916dd610133b9ec9fe904bcfc5871a7834074",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Pinjaman dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga dihitung dari sisa pokok tiap bulan. Bunga bulan pertama Rp240.000,00. Dito menghitung total bunga seluruh masa dengan rumus $\\frac{1}{2} \\times 12 \\times 240.000 = 1.440.000$. Total bunga yang benar adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp2.880.000,00"
+          },
+          {
+            "label": "B",
+            "text": "Rp1.440.000,00"
+          },
+          {
+            "label": "C",
+            "text": "Rp1.320.000,00"
+          },
+          {
+            "label": "D",
+            "text": "Rp1.560.000,00"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Bunga tiap bulan = 240.000 × (sisa pokok/12). Karena pokok tetap, sisa pokok berkurang 1/12 tiap bulan, sehingga total bunga = 240.000 × (12+11+...+1)/12 = 240.000 × 78/12 = 1.560.000.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [],
+        "privateAnswerSpecification": {
+          "answerKey": "D",
+          "verifiedAnswerKey": "D",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "825a0528917b3a8aa6e998d1",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: mengalikan bunga bulan pertama dengan 12 (bunga tidak menurun)",
+            "B": "Salah: mengikuti hitungan Dito: rata-rata bunga dianggap separuh bunga bulan pertama, padahal bulan terakhir bukan nol",
+            "C": "Salah: menjumlahkan sisa pokok setelah angsuran (11+10+...+0) sehingga bunga bulan pertama terlewat",
+            "D": "Benar: bunga bulan ke-$k$ sebanding dengan sisa pokok $(13-k)A$; jumlahnya $A(12+11+...+1) = 78A$, sedangkan bunga bulan pertama sebanding $12A$, sehingga total = $\\frac{13}{2} \\times 240.000$"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "reasoning",
+        "knowledgeDimension": "procedural",
+        "intendedDifficulty": "Medium"
+      },
+      "finalRouting": "silver_ready",
+      "contentQualified": true,
+      "reviewMode": "automated_ai",
+      "labelProvenance": "ai_silver"
+    },
+    {
+      "question": {
+        "questionId": "24eb70276065e189610ca778",
+        "questionVersionId": "24eb70276065e189610ca778:content-v2:blind-revalidation",
+        "contentVersion": 2,
+        "contentHash": "d9cb9de075f1f07484c69b3b83cdb5040f03d5f78442b15a17189af96ee62dd2",
+        "grade": 12,
+        "topic": "Matematika SMA Kelas 12",
+        "subtopic": "Pinjaman Bunga Majemuk",
+        "questionType": "multiple_choice",
+        "stem": "Rani menyatakan: \"Jika dua pinjaman berbunga sama dan memakai angsuran pokok tetap, pinjaman dengan pokok lebih besar pasti membayar bunga bulan ke-5 lebih besar.\" Sebagai pembanding, pinjaman X sebesar Rp40.000.000,00 dilunasi dalam 20 bulan. Pinjaman Y yang menjadi contoh penyangkal klaim Rani (pokok lebih besar dari X, tetapi bunga bulan ke-5 lebih kecil) adalah ....",
+        "stimulus": null,
+        "options": [
+          {
+            "label": "A",
+            "text": "Rp36.000.000,00 dilunasi dalam 6 bulan"
+          },
+          {
+            "label": "B",
+            "text": "Rp48.000.000,00 dilunasi dalam 8 bulan"
+          },
+          {
+            "label": "C",
+            "text": "Rp48.000.000,00 dilunasi dalam 24 bulan"
+          },
+          {
+            "label": "D",
+            "text": "Rp45.000.000,00 dilunasi dalam 18 bulan"
+          }
+        ],
+        "visualAssets": [],
+        "visualAssetHashes": {},
+        "visualTranscript": null,
+        "verifiedMinimalSolution": "Pinjaman X: pokok 40.000.000, tenor 20 bulan, angsuran pokok = 2.000.000 per bulan, sisa pokok bulan‑5 = 40.000.000‑4×2.000.000 = 32.000.000. Pinjaman Y (pilihan B): pokok 48.000.000, tenor 8 bulan, angsuran pokok = 6.000.000 per bulan, sisa pokok bulan‑5 = 48.000.000‑4×6.000.000 = 24.000.000 (<32.000.000) walau pokok awal lebih besar, sehingga bunga bulan‑5 lebih kecil. Jadi B menolak klaim Rani.",
+        "verificationProvenance": "ai_silver",
+        "detectedKko": [
+          "membandingkan"
+        ],
+        "privateAnswerSpecification": {
+          "answerKey": "B",
+          "verifiedAnswerKey": "B",
+          "answerKeyStatus": "verified",
+          "visibility": "restricted"
+        },
+        "source": {
+          "externalId": "24eb70276065e189610ca778",
+          "subchapter": "Pinjaman Bunga Majemuk",
+          "assetBasePath": "D:/KULIAH/Big Data/extraction_model/runs/exercise_validation/failover/batch01/kelas12_exercise_batch01",
+          "optionExtractionNotes": {
+            "A": "Salah: bunganya memang lebih kecil, tetapi pokoknya juga lebih kecil dari X sehingga sesuai klaim, bukan penyangkal",
+            "B": "Benar: sisa pokok bulan ke-5 pinjaman Y = 48.000.000 - 4 x 6.000.000 = 24.000.000, lebih kecil dari X (32.000.000), padahal pokoknya lebih besar",
+            "C": "Salah: sisa pokok bulan ke-5 = 40.000.000 > 32.000.000, bunganya ikut lebih besar sehingga bukan penyangkal",
+            "D": "Salah: sisa pokok bulan ke-5 = 35.000.000 > 32.000.000, bukan penyangkal"
+          }
+        }
+      },
+      "advisoryLabels": {
+        "mathCognitiveDomain": "applying",
+        "knowledgeDimension": "procedural",
         "intendedDifficulty": "Medium"
       },
       "finalRouting": "silver_ready",

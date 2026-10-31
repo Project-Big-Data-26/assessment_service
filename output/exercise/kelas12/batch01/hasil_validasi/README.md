@@ -1,14 +1,14 @@
 # Hasil validasi ulang kelas 12
 
-**Batch belum selesai:** 284/842 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided. Provider berhenti karena kuota harian; checkpoint kerja dapat dilanjutkan saat kuota tersedia.
+**Batch belum selesai:** 343/842 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided. Provider berhenti karena kuota harian; checkpoint kerja dapat dilanjutkan saat kuota tersedia.
 
-Model LLM: `gemini-3.1-flash-lite`; metode lanjutan blind N=1 dengan hasil N=3 terdahulu dipertahankan, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.
+Model LLM: `openai/gpt-oss-120b`; metode lanjutan blind N=1 dengan hasil N=3 terdahulu dipertahankan, rubrik kelas sasaran, verifikasi kunci/solusi, dan adjudikasi AI bila diperlukan. Label terkunci sebelum diagnostik IndoBERT.
 
 Gunakan [validation_results.json](validation_results.json) untuk data hasil dan `cognitive_level`, `cognitive_score`, `confidence_score` dan `status` pada setiap dokumen soal. Baca [LAPORAN_VALIDASI.md](LAPORAN_VALIDASI.md) untuk soal, perhitungan confidence/entropy, run sesuai mode tiap soal, profil difficulty, adjudikasi, serta hasil akhir per soal. [questions.json](questions.json) memuat sumber dan spesifikasi jawaban terbatas; [indobert_predictions.json](indobert_predictions.json) memuat diagnostik artifact yang dipilih.
 
-Distribusi: `{"mathCognitiveDomain": {"knowing": 49, "applying": 220, "reasoning": 9, "undecided": 558}, "knowledgeDimension": {"conceptual": 106, "procedural": 166, "factual": 6, "undecided": 558, "metacognitive": 0}, "intendedDifficulty": {"Easy": 213, "Medium": 65, "undecided": 558, "Hard": 0}}`. Routing: `{"silver_ready": 272, "needs_ai_review": 563, "revision_required": 1}`.
+Distribusi: `{"mathCognitiveDomain": {"knowing": 56, "applying": 271, "reasoning": 10, "undecided": 499}, "knowledgeDimension": {"conceptual": 128, "procedural": 203, "factual": 6, "undecided": 499, "metacognitive": 0}, "intendedDifficulty": {"Easy": 235, "Medium": 102, "undecided": 499, "Hard": 0}}`. Routing: `{"silver_ready": 330, "needs_ai_review": 504, "revision_required": 2}`.
 
-Token sukses tercatat: 848,384; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Label tetap silver AI; CTT/IRT belum dihitung. Artifact diagnostik `indobert-3x4x3-silver-kelas1-v1` memakai dataset `kelas1-gemini-silver-n3-v1`. Packaging ini tidak melatih atau mempromosikan model; diagnostik tidak menentukan label blind.
+Token sukses tercatat: 1,035,325; tidak ada API call pada packaging. Provider dapat mencatat lebih banyak usage dari percobaan yang tidak menghasilkan output valid. Label tetap silver AI; CTT/IRT belum dihitung. Artifact diagnostik `indobert-3x4x3-silver-kelas1-v1` memakai dataset `kelas1-gemini-silver-n3-v1`. Packaging ini tidak melatih atau mempromosikan model; diagnostik tidak menentukan label blind.
 
 Audit tidak menyetujui ekspansi/training bila gate belum lolos. Gate batch: `{"allExpectedItemsPresent": false, "threeSuccessfulRunsAtLeast90Percent": false, "insufficientOrAbstainedBelow10Percent": false, "blindPromptLeakageAbsent": true, "checkpointSourceAndInputsMatch": true, "promptAndRubricVersionMatch": true, "requiredEvidenceComplete": false, "boundaryAnalysisClear": false}`.
 
@@ -25,4 +25,4 @@ Mode lanjutan N=1: `confidence_score = round(100 * min(P(label akhir LLM) tiap h
 
 Exercise: lihat `RINGKASAN_VALIDASI.md`, `validation_results_meta.json` dan `export_status.json`. Metadata asli terhubung lewat `_id`. Periksa fullComplete sebelum menyatakan batch selesai.
 
-Provider aktif: gemini. 146 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
+Provider aktif: groq. 331 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.
