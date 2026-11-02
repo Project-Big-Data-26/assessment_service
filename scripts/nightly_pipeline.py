@@ -114,6 +114,12 @@ def read_config(path):
         raise ValueError("fallbackOn503 must be boolean")
     if config.get("fallbackOn503") and not fallbacks:
         raise ValueError("fallbackOn503 requires fallbackProviders")
+    training = config.get("empiricalFineTuning", {})
+    if (not isinstance(training, dict) or type(training.get("enabled", False)) is not bool
+            or type(training.get("epochs", 3)) is not int or not 1 <= training.get("epochs", 3) <= 12
+            or type(training.get("timeoutSeconds", 21600)) is not int
+            or not 60 <= training.get("timeoutSeconds", 21600) <= 43200):
+        raise ValueError("invalid empiricalFineTuning configuration")
     return config
 
 
@@ -577,10 +583,18 @@ def run(config, output):
             report["psychometrics"] = screen_assessments(config, output)
         except Exception as exc:
             report["psychometrics"] = {"status": "failed", "errorType": type(exc).__name__}
+        try:
+            from scripts.empirical_finetuning import run_feedback
+            report["fineTuning"] = run_feedback(config, report["psychometrics"], output / "fine_tuning", ROOT)
+        except Exception as exc:
+            report["fineTuning"] = {"status": "failed", "errorType": type(exc).__name__}
         report.update(finishedAt=timestamp(), remainingApiCalls=budget)
         report["success"] = (not problems and not report["waitingClasses"]
                              and all(j["status"] == "completed" for j in report["jobs"].values())
                              and report["psychometrics"]["status"] != "failed"
+                             and report["fineTuning"]["status"] != "failed"
+                             and all(a["status"] not in ("failed", "training_failed", "training_timeout")
+                                     for a in report["fineTuning"].get("assessments", []))
                              and all(a["status"] != "failed" for a in report["psychometrics"].get("assessments", [])))
         atomic_write(report, directory / "report.json")
         atomic_write(report, output / "latest.json")

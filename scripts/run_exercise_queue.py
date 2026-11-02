@@ -103,7 +103,7 @@ def main() -> int:
             print("  ", *s)
         return 0
     if not slots:
-        return 0
+        return finalize_books(a.book, a.batch)
 
     try:
         settings = NineRouterSettings.from_environment()
@@ -164,7 +164,20 @@ def main() -> int:
     with ThreadPoolExecutor(max_workers=max(1, a.pekerja)) as pool:
         list(pool.map(jalankan, rantai.values()))
     print("Selesai. Status:", status_file)
-    return 0
+    return finalize_books(a.book, a.batch)
+
+
+def finalize_books(books, batch):
+    """Only export fully generated/verified books; skipped or unfinished slots wait."""
+    from app.services.exercise.export import export_batch
+    from app.services.exercise.handoff import run_validation
+    ready = False
+    for book in dict.fromkeys(books):
+        if antrean([book], batch, lengkapi=True):
+            continue
+        result = export_batch(book, batch)
+        ready = result["ready_for_validation"] or ready
+    return run_validation() if ready else 0
 
 
 if __name__ == "__main__":

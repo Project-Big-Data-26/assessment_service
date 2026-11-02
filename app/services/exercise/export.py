@@ -25,6 +25,7 @@ import hashlib
 import json
 import os
 import sys
+from pathlib import Path
 
 from app.services.exercise import config as C
 from app.services.exercise.options import susun
@@ -102,6 +103,8 @@ def export_batch(book: str, batch: int) -> dict:
                 "bergambar": data.bergambar, "gambar": s.gambar, "deskripsi_gambar": s.deskripsi_gambar,
                 "warning": [w for w in warns if s.id in w],
             }
+    # An old completion marker must never cover an export being rewritten.
+    Path(base, "extraction_ready.json").unlink(missing_ok=True)
     with open(os.path.join(base, "soal_exercise_db.json"), "w", encoding="utf-8") as f:
         json.dump({"pipeline_version": C.PIPELINE_VERSION, "book": book, "batch": batch, "items": rows},
                   f, ensure_ascii=False, indent=2)
@@ -110,7 +113,10 @@ def export_batch(book: str, batch: int) -> dict:
     from app.services.exercise.review import tulis_per_subbab, tulis_readme
     n_sub = tulis_per_subbab(base, book, rows, meta)
     tulis_readme(base, book, batch, rows, meta)
-    ringkas = {"total": len(rows), "file_per_subbab": n_sub, "file_dilewati": dilewati}
+    from app.services.exercise.handoff import mark_completed_export
+    ready = mark_completed_export(Path(base), book, batch, rows, meta, dilewati)
+    ringkas = {"total": len(rows), "file_per_subbab": n_sub, "file_dilewati": dilewati,
+               "ready_for_validation": ready}
     print(ringkas)
     return ringkas
 
@@ -120,7 +126,10 @@ def main(argv=None) -> int:
     ap.add_argument("--book", required=True)
     ap.add_argument("--batch", type=int, default=1)
     a = ap.parse_args(argv)
-    export_batch(a.book, a.batch)
+    result = export_batch(a.book, a.batch)
+    if result["ready_for_validation"]:
+        from app.services.exercise.handoff import run_validation
+        return run_validation()
     return 0
 
 
