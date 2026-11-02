@@ -49,3 +49,28 @@ def test_write_mengulang_saat_berkas_terkunci(tmp_path, monkeypatch):
     monkeypatch.setattr(G.time, "sleep", lambda *_: None)
     G._write(job, "9router:m1", soal)
     assert kali["n"] == 3 and len(P._muat(job.path).soal) == 1
+
+
+def _soal_gambar(i):
+    s = _soal(i)
+    s["id"] = f"kelas9-b02-a-easy-bt01-g{i:03d}"
+    s["gambar"] = ["img/x.png"]
+    s["deskripsi_gambar"] = "gambar berisi angka dan label penting"
+    s["acuan"] = {"sumber": "pretest", "id": "kelas9-b02-p0069-latihan-a-3"}
+    s["tipe_generate"] = "variasi"
+    s["variasi_cara"] = "konteks"
+    return s
+
+
+def test_buang_hiasan_dan_sidecar_bersih(tmp_path):
+    job = G.Job("kelas9", 2, "A", "easy", 1, str(tmp_path), gambar=True)
+    soal = ExerciseFile.model_validate({"book": "kelas9", "bab_no": 2, "subbab": "A", "level": "easy", "batch": 1,
+                                        "bergambar": True, "soal": [_soal_gambar(i) for i in (1, 2, 3)]}).soal
+    G._write(job, "9router:m1", soal)
+    umpan = P._buang_hiasan(job, [job.id_prefix + "002"])
+    sisa = P._muat(job.path)
+    assert [s.id for s in sisa.soal] == [job.id_prefix + "001", job.id_prefix + "002"]
+    assert sisa.bergambar is True and "TANPA gambar" in umpan[0]
+    P._sidecar_bersih(job, "solver-x")
+    side = json.loads(open(job.path.replace(".json", ".tanpagambar.json"), encoding="utf-8").read())
+    assert side["tanpa_gambar_cocok"] == [] and side["butuh_gambar"] == [s.id for s in sisa.soal]

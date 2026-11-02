@@ -60,6 +60,26 @@ def _kurang_milik_pipeline(path: str, kuota: int) -> bool:
         return True
 
 
+def antrean_gambar(books: List[str], batch: int) -> List[Slot]:
+    """Slot soal BERGAMBAR: subbab yang punya soal pretest bergambar (berkas gambar ada), per level."""
+    from app.services.exercise.llm_generate import _pool_gambar
+    out: List[Slot] = []
+    for book in books:
+        for bab_no in range(1, 40):
+            bab = kurikulum.get(book, bab_no)
+            if not bab:
+                continue
+            for kode, _nama in bab.subbab:
+                if not _pool_gambar(Job(book, bab_no, kode, "easy", batch, gambar=True)):
+                    continue
+                for level in C.LEVELS:
+                    path = os.path.join(C.OUT_ROOT, book, f"batch{batch:02d}", f"bab{bab_no:02d}",
+                                        f"{kode}_{level}_gambar.json")
+                    if not os.path.exists(path):
+                        out.append((book, bab_no, kode, level))
+    return out
+
+
 def antrean(books: List[str], batch: int, lengkapi: bool = False) -> List[Slot]:
     out: List[Slot] = []
     for book in books:
@@ -84,6 +104,8 @@ def main() -> int:
     ap.add_argument("--daftar", action="store_true", help="hanya tampilkan antrean")
     ap.add_argument("--lewati", action="append", default=[], metavar="BUKU:BAB:SUBBAB",
                     help="lewati subbab tertentu, mis. kelas7:6:F (boleh diulang), untuk subbab yang sangat besar")
+    ap.add_argument("--gambar", action="store_true",
+                    help="kerjakan soal BERGAMBAR (subbab yang punya soal pretest bergambar), bukan soal teks")
     ap.add_argument("--lengkapi", action="store_true",
                     help="sertakan berkas buatan pipeline ini yang soalnya masih kurang dari kuota")
     ap.add_argument("--maks-slot", type=int, default=0, help="0 = semua")
@@ -92,7 +114,7 @@ def main() -> int:
     ap.add_argument("--perbaikan", type=int, default=2, help="putaran perbaikan otomatis per slot")
     a = ap.parse_args()
 
-    slots = antrean(a.book, a.batch, a.lengkapi)
+    slots = antrean_gambar(a.book, a.batch) if a.gambar else antrean(a.book, a.batch, a.lengkapi)
     lewati = {tuple(x.split(":")) for x in a.lewati}
     slots = [s for s in slots if (s[0], str(s[1]), s[2]) not in lewati]
     if a.maks_slot:
@@ -136,8 +158,8 @@ def main() -> int:
             for book, bab_no, kode, level in urutan:
                 if hentikan():
                     return
-                job = Job(book, bab_no, kode, level, a.batch)
-                tag = f"{book} bab{bab_no} {kode} {level}"
+                job = Job(book, bab_no, kode, level, a.batch, gambar=a.gambar)
+                tag = f"{book} bab{bab_no} {kode} {level}" + (" [gambar]" if a.gambar else "")
                 print(f"[mulai] {tag}", flush=True)
                 try:
                     res = kerjakan_slot(job, client, solver, maks_perbaikan=a.perbaikan,
