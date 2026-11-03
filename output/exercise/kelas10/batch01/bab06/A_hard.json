@@ -370,6 +370,357 @@
       ],
       "pembahasan": "Periksa tiap baris: 15%, 25%, 30%, 20%, 10%. Baris 2 dan 3 pada tabel tertukar meskipun jumlahnya tetap 100%.",
       "catatan": null
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e8d41b3840bb2a84f80929b",
+        "teks": "| Kelas | Peserta sekolah P | Lulus sekolah P | Peserta sekolah Q | Lulus sekolah Q |\n|---|---|---|---|---|\n| Pagi | 80 | 64 | 20 | 18 |\n| Sore | 20 | 4 | 80 | 24 |\n\nDua sekolah, P dan Q, mengikuti seleksi dengan hasil pada tabel. Pak Rudi berkata, \"Persentase lulus Q lebih tinggi daripada P di kelas pagi maupun kelas sore, jadi persentase lulus Q secara keseluruhan pasti lebih tinggi.\" Kesimpulan yang tepat tentang klaim Pak Rudi adalah ....",
+        "jawaban": "Klaim keliru: persentase lulus keseluruhan sekolah P adalah 68% dan sekolah Q 42%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 3. Frekuensinya 7 dan 15. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{11}{3}$",
+      "alasan_benar": "Frekuensi gabungan=22, lebar gabungan=6; densitas=(frekuensi/lebar)=11/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{14}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=22, lebar gabungan=6; densitas=(frekuensi/lebar)=11/3.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 5. Frekuensinya 16 dan 14. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Frekuensi gabungan=30, lebar gabungan=10; densitas=(frekuensi/lebar)=3.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=30, lebar gabungan=10; densitas=(frekuensi/lebar)=3.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70275bc6bebd4b76dcf64d34",
+        "teks": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-5 | 5 | 4 |\n| 5-10 | 5 | 6 |\n| 10-20 | 10 | 2 |\n| 20-40 | 20 | 1,5 |\n\nSebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel, dan luas seluruh batang adalah 100%. Pernyataan yang benar tentang histogram tersebut adalah ....",
+        "jawaban": "Kelas 20-40 memuat data sama banyak dengan kelas 5-10",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 6. Frekuensinya 9 dan 17. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{13}{6}$",
+      "alasan_benar": "Frekuensi gabungan=26, lebar gabungan=12; densitas=(frekuensi/lebar)=13/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{6}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{6}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{6}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=26, lebar gabungan=12; densitas=(frekuensi/lebar)=13/6.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94148e5dd37033d714e044d1",
+        "teks": "Dinas pendidikan ingin membandingkan bentuk sebaran lama belajar harian siswa SMA di kota A (1.200 siswa) dan kota B (300 siswa). Lama belajar tiap siswa dicatat dalam jam dan dikelompokkan ke interval 0-2, 2-4, 4-6, dan seterusnya. Penyajian yang paling tepat adalah ....",
+        "jawaban": "dua histogram frekuensi relatif (persen) dengan interval yang sama",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 4. Frekuensinya 9 dan 14. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{23}{8}$",
+      "alasan_benar": "Frekuensi gabungan=23, lebar gabungan=8; densitas=(frekuensi/lebar)=23/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{8}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{15}{8}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39}{8}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=23, lebar gabungan=8; densitas=(frekuensi/lebar)=23/8.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c795276a80c9c92d634e6b1",
+        "teks": "Sebuah histogram memiliki kelas 0-2 dengan tinggi batang 9 dan kelas 2-6 dengan tinggi batang 6. Kedua kelas digabung menjadi kelas 0-6 tanpa mengubah data. Tinggi batang kelas 0-6 adalah ....",
+        "jawaban": "7",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 5. Frekuensinya 15 dan 5. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Frekuensi gabungan=20, lebar gabungan=10; densitas=(frekuensi/lebar)=2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=20, lebar gabungan=10; densitas=(frekuensi/lebar)=2.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70275bc6bebd4b76dcf64d34",
+        "teks": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-5 | 5 | 4 |\n| 5-10 | 5 | 6 |\n| 10-20 | 10 | 2 |\n| 20-40 | 20 | 1,5 |\n\nSebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel, dan luas seluruh batang adalah 100%. Pernyataan yang benar tentang histogram tersebut adalah ....",
+        "jawaban": "Kelas 20-40 memuat data sama banyak dengan kelas 5-10",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 2. Frekuensinya 9 dan 8. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{17}{4}$",
+      "alasan_benar": "Frekuensi gabungan=17, lebar gabungan=4; densitas=(frekuensi/lebar)=17/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=17, lebar gabungan=4; densitas=(frekuensi/lebar)=17/4.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 4. Frekuensinya 9 dan 6. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{15}{8}$",
+      "alasan_benar": "Frekuensi gabungan=15, lebar gabungan=8; densitas=(frekuensi/lebar)=15/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{8}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{8}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=15, lebar gabungan=8; densitas=(frekuensi/lebar)=15/8.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 4. Frekuensinya 10 dan 12. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{11}{4}$",
+      "alasan_benar": "Frekuensi gabungan=22, lebar gabungan=8; densitas=(frekuensi/lebar)=11/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=22, lebar gabungan=8; densitas=(frekuensi/lebar)=11/4.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas10-b06-a-hard-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c795276a80c9c92d634e6b1",
+        "teks": "Sebuah histogram memiliki kelas 0-2 dengan tinggi batang 9 dan kelas 2-6 dengan tinggi batang 6. Kedua kelas digabung menjadi kelas 0-6 tanpa mengubah data. Tinggi batang kelas 0-6 adalah ....",
+        "jawaban": "7",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 6. Frekuensinya 20 dan 8. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{7}{3}$",
+      "alasan_benar": "Frekuensi gabungan=28, lebar gabungan=12; densitas=(frekuensi/lebar)=7/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=28, lebar gabungan=12; densitas=(frekuensi/lebar)=7/3.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

@@ -169,6 +169,16 @@ def verify_generation(base):
 
 def require_validation(base):
     base = Path(base)
+    hold = base / "reference_replenishment_state.json"
+    if hold.exists():
+        state = load(hold)
+        manifest = base / "reference_replenishment_manifest.json"
+        if state.get("phase") != "validation_authorized" or not manifest.exists():
+            raise ValueError("validation_pending: batch01 reference additions are generation-only")
+        if state.get("manifestSha256") != digest(manifest):
+            raise ValueError("reference addition manifest changed")
+        if any(digest(base / name) != checksum for name, checksum in load(manifest)["files"].items()):
+            raise ValueError("reference addition files changed after approval")
     if not managed(base):
         return  # Existing paid legacy batches are unaffected.
     checksum = verify_generation(base)
@@ -190,6 +200,18 @@ def validation_allowed(base):
 def approve_validation(base, expected_hash):
     base = Path(base)
     with batch_lock(base):
+        hold = base / "reference_replenishment_state.json"
+        if hold.exists():
+            manifest = base / "reference_replenishment_manifest.json"
+            state = load(hold)
+            if (state.get("phase") != "generation_complete" or not manifest.exists()
+                    or digest(manifest) != expected_hash
+                    or state.get("manifestSha256") != expected_hash
+                    or any(digest(base / name) != checksum for name, checksum in load(manifest)["files"].items())):
+                raise ValueError("reference addition approval must match a complete immutable manifest")
+            state.update(phase="validation_authorized", validationStatus="validation_authorized")
+            atomic_json(hold, state)
+            return {**state, "newApiCalls": 0}
         checksum = verify_generation(base)
         if expected_hash != checksum:
             raise ValueError("approval must match the current generation manifest SHA256")

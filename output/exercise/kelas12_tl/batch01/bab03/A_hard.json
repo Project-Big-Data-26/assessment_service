@@ -765,6 +765,786 @@
       "pembahasan": "Mari kita tinjau setiap langkah:\n- Langkah 1: Mengubah $x$ menjadi $(x - 3) + 3$ adalah manipulasi aljabar yang benar.\n- Langkah 2: Mengalikan ke dalam kurung menjadi $(x - 3)^6 + 3(x - 3)^5$ adalah benar secara distributif.\n- Langkah 3: Menggunakan sifat linear integral $\\int (f + g)\\,dx = \\int f\\,dx + \\int g\\,dx$ adalah benar.\n- Langkah 4: Menggunakan aturan integral substitusi $u = x - 3 \\implies du = dx$:\n  $\\int (x - 3)^6\\,dx = \\frac{1}{7}(x - 3)^7$\n  $3\\int (x - 3)^5\\,dx = 3 \\cdot \\frac{1}{6}(x - 3)^6 = \\frac{1}{2}(x - 3)^6$.\nSiswa menuliskan penyebut 6 dan 5 (bukan $n+1$), sehingga Langkah 4 memuat kesalahan pertama.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62149f15f1b2152a28b569c3",
+        "teks": "Turunan kedua suatu fungsi adalah $f''(x) = 4\\cos(2x) - 6\\sin(3x)$ untuk setiap $x \\in \\mathbb{R}$. Kurva $y = f(x)$ memiliki garis singgung horizontal di titik $(0, 5)$. Nilai dari $f(\\pi)$ adalah ....",
+        "jawaban": "5 - 2\\pi",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=6 x^{5} + 7 x + 8$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$\\frac{25}{2}$",
+      "alasan_benar": "Integralnya F(x)=$x^{6} + \\frac{7 x^{2}}{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=25/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{23}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$x^{6} + \\frac{7 x^{2}}{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=25/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ece13167d7a4f2a89bdbc5ee",
+        "teks": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int 2x(x^2 + 3)^6\\,dx$$",
+        "jawaban": "$\\frac{1}{7}(x^2 + 3)^7 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=2 x^{5} + 9 x + 7$ dan $F(0)=0$. Tentukan $F(2)$.",
+      "jawaban_benar": "$\\frac{160}{3}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{x^{6}}{3} + \\frac{9 x^{2}}{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=160/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{163}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{157}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{166}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{x^{6}}{3} + \\frac{9 x^{2}}{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=160/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-021",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1bada2389a3beda064ac9ca6",
+        "teks": "Grafik fungsi $y = F(x)$ merupakan antiturunan dari fungsi $f(x) = 6x^2 - 18x + 12$. Jika grafik fungsi $y = F(x)$ memiliki titik balik minimum lokal yang menyinggung sumbu-$X$, berapakah nilai ordinat dari titik balik maksimum lokal kurva tersebut?",
+        "jawaban": "$1$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=3 x^{4} + 4 x + 9$ dan $F(0)=0$. Tentukan $F(5)$.",
+      "jawaban_benar": "$1970$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{3 x^{5}}{5} + 2 x^{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(5)=1970.",
+      "distraktor": [
+        {
+          "teks": "$1971$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1969$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1972$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{3 x^{5}}{5} + 2 x^{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(5)=1970.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-022",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "baf14576b2d3138a0e0bd795",
+        "teks": "Fungsi $F(x)$ merupakan antiturunan dari $f(x) = (3x - 1)(x + 2)$. Garis lurus $g: y = 4x - 7$ memotong kurva $y = F(x)$ tepat di titik potong kurva tersebut dengan sumbu-$y$. Nilai dari $2 \\cdot F(2)$ adalah ....",
+        "jawaban": "14",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=8 x^{3} + 7 x + 2$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$\\frac{15}{2}$",
+      "alasan_benar": "Integralnya F(x)=$2 x^{4} + \\frac{7 x^{2}}{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=15/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$2 x^{4} + \\frac{7 x^{2}}{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=15/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-023",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77a2b114db14009aac08b821",
+        "teks": "Tentukan hasil dari $\\int x(x^2 + 5)^3\\,dx$ dengan menggunakan teknik substitusi.",
+        "jawaban": "$\\frac{1}{8}(x^2 + 5)^4 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=8 x^{5} + 6 x + 5$ dan $F(0)=0$. Tentukan $F(5)$.",
+      "jawaban_benar": "$\\frac{62800}{3}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{4 x^{6}}{3} + 3 x^{2} + 5 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(5)=62800/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{62803}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{62797}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{62806}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{4 x^{6}}{3} + 3 x^{2} + 5 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(5)=62800/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-024",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12d0388a80bf74b5182ec144",
+        "teks": "Diketahui turunan pertama fungsi $g(x)$ adalah $g'(x) = 3\\cos x + 4\\sec^2 x$. Jika grafik fungsi $g(x)$ melalui titik $(0, 2)$, tentukan rumus fungsi $g(x)$.",
+        "jawaban": "$g(x) = 3\\sin x + 4\\tan x + 2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=9 x^{5} + 4 x + 8$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$\\frac{2271}{2}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{3 x^{6}}{2} + 2 x^{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=2271/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2273}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2269}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2275}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{3 x^{6}}{2} + 2 x^{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=2271/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-025",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77a2b114db14009aac08b821",
+        "teks": "Tentukan hasil dari $\\int x(x^2 + 5)^3\\,dx$ dengan menggunakan teknik substitusi.",
+        "jawaban": "$\\frac{1}{8}(x^2 + 5)^4 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=3 x^{2} + 3 x + 6$ dan $F(0)=0$. Tentukan $F(2)$.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Integralnya F(x)=$x^{3} + \\frac{3 x^{2}}{2} + 6 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=26.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$x^{3} + \\frac{3 x^{2}}{2} + 6 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=26.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-026",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "991468a4fd1e453be188bc1f",
+        "teks": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int 8x(x^2 - 7)^3\\,dx$$",
+        "jawaban": "$(x^2 - 7)^4 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=2 x^{2} + 9 x + 4$ dan $F(0)=0$. Tentukan $F(4)$.",
+      "jawaban_benar": "$\\frac{392}{3}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{2 x^{3}}{3} + \\frac{9 x^{2}}{2} + 4 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(4)=392/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{395}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{389}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{398}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{2 x^{3}}{3} + \\frac{9 x^{2}}{2} + 4 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(4)=392/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-027",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b91cf33e0b6cdcf597ba1026",
+        "teks": "Laju perubahan intensitas berkas radiasi terhadap ketebalan medium penyerap $x$ (dalam cm) dinyatakan oleh fungsi intensitas marginal $I'(x) = -40 e^{-0,02x}$ (dalam $\\text{W}/\\text{m}^2$ per cm). Pada ketebalan $50\\text{ cm}$, intensitas radiasi terukur sebesar $1.200\\text{ W}/\\text{m}^2$. Diketahui aproksimasi nilai $e^{-1} \\approx 0,368$ dan $e^{-2} \\approx 0,135$. Berapakah intensitas radiasi yang lolos ketika ketebalan medium mencapai $100\\text{ cm}$?",
+        "jawaban": "$734\\text{ W}/\\text{m}^2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=9 x^{5} + 7 x + 4$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$1137$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{3 x^{6}}{2} + \\frac{7 x^{2}}{2} + 4 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=1137.",
+      "distraktor": [
+        {
+          "teks": "$1138$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1136$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1139$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{3 x^{6}}{2} + \\frac{7 x^{2}}{2} + 4 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=1137.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-028",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "991468a4fd1e453be188bc1f",
+        "teks": "Tentukan hasil dari integral tak tentu berikut.\n$$\\int 8x(x^2 - 7)^3\\,dx$$",
+        "jawaban": "$(x^2 - 7)^4 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=3 x^{5} + 7 x + 9$ dan $F(0)=0$. Tentukan $F(4)$.",
+      "jawaban_benar": "$2140$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{x^{6}}{2} + \\frac{7 x^{2}}{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(4)=2140.",
+      "distraktor": [
+        {
+          "teks": "$2141$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$2139$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$2142$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{x^{6}}{2} + \\frac{7 x^{2}}{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(4)=2140.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-029",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c358d94b4387e640dc027bdb",
+        "teks": "Tentukan integral tak tentu berikut.\n$$\\int (9x^8 - 4x^7)\\,dx$$",
+        "jawaban": "$x^9 - \\frac{1}{2}x^8 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=6 x^{2} + 7 x + 4$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$\\frac{195}{2}$",
+      "alasan_benar": "Integralnya F(x)=$2 x^{3} + \\frac{7 x^{2}}{2} + 4 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=195/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{197}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{193}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{199}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$2 x^{3} + \\frac{7 x^{2}}{2} + 4 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=195/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-030",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f50ba2cf35b809fd393c251",
+        "teks": "Sebuah partikel bergerak pada suatu garis lurus dengan arah positif ke kanan dari titik pusat. Kecepatan partikel dinyatakan oleh persamaan $v(t) = 6\\cos(3\\pi t)$ (dalam cm/detik). Jika pada saat awal ($t = 0$) partikel berada pada posisi $4\\text{ cm}$ di sebelah kanan titik pusat, berapakah posisi partikel pada saat $t = \\frac{1}{2}$ detik?",
+        "jawaban": "$\\left(4 - \\frac{2}{\\pi}\\right)\\text{ cm}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=2 x^{2} + 5 x + 7$ dan $F(0)=0$. Tentukan $F(5)$.",
+      "jawaban_benar": "$\\frac{1085}{6}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{2 x^{3}}{3} + \\frac{5 x^{2}}{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(5)=1085/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1091}{6}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1079}{6}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1097}{6}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{2 x^{3}}{3} + \\frac{5 x^{2}}{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(5)=1085/6.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-031",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25db1a8bb09000a111688c23",
+        "teks": "Tentukan hasil dari $\\int x(3x^2 + 4)^3\\,dx$ dengan menggunakan teknik substitusi.",
+        "jawaban": "$\\frac{1}{24}(3x^2 + 4)^4 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=6 x^{4} + 9 x + 3$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$\\frac{3411}{10}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{6 x^{5}}{5} + \\frac{9 x^{2}}{2} + 3 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=3411/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3421}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3401}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3431}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{6 x^{5}}{5} + \\frac{9 x^{2}}{2} + 3 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=3411/10.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-032",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "baf14576b2d3138a0e0bd795",
+        "teks": "Fungsi $F(x)$ merupakan antiturunan dari $f(x) = (3x - 1)(x + 2)$. Garis lurus $g: y = 4x - 7$ memotong kurva $y = F(x)$ tepat di titik potong kurva tersebut dengan sumbu-$y$. Nilai dari $2 \\cdot F(2)$ adalah ....",
+        "jawaban": "14",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=9 x^{2} + 8 x + 2$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Integralnya F(x)=$3 x^{3} + 4 x^{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$3 x^{3} + 4 x^{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=9.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-033",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ae0ff7b940bf17d2e3148227",
+        "teks": "Tentukan integral tak tentu dari $\\int (8x^3 - 6x)\\,dx$.",
+        "jawaban": "$2x^4 - 3x^2 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=6 x^{5} + 9 x + 9$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$\\frac{1593}{2}$",
+      "alasan_benar": "Integralnya F(x)=$x^{6} + \\frac{9 x^{2}}{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=1593/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1595}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1591}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1597}{2}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$x^{6} + \\frac{9 x^{2}}{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=1593/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-034",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c108c79026940fde9123a24",
+        "teks": "Diketahui turunan pertama fungsi $f(x)$ adalah $f'(x) = \\frac{6x - 6}{(x^2 - 2x + 3)^2}$. Kurva $y = f(x)$ memiliki asimtot datar $y = 2$ ketika $x \\to \\infty$. Nilai minimum mutlak fungsi $f(x)$ pada domain bilangan real adalah ....",
+        "jawaban": "\\frac{1}{2}",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=3 x^{3} + 7 x + 6$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$\\frac{41}{4}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{3 x^{4}}{4} + \\frac{7 x^{2}}{2} + 6 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=41/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{45}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{37}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{49}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{3 x^{4}}{4} + \\frac{7 x^{2}}{2} + 6 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=41/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-035",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb539c55a8528c02d6b6c512",
+        "teks": "Gradien garis singgung suatu kurva $y = f(x)$ pada sembarang titik $(x, y)$ ditentukan oleh $f'(x) = 6x^2 - 4x + 1$. Jika kurva tersebut melalui titik $(1, 5)$, rumus fungsi kurva $f(x)$ adalah ....",
+        "jawaban": "$f(x) = 2x^3 - 2x^2 + x + 4$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=8 x^{4} + 5 x + 2$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$\\frac{61}{10}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{8 x^{5}}{5} + \\frac{5 x^{2}}{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=61/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{71}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{51}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{81}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{8 x^{5}}{5} + \\frac{5 x^{2}}{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=61/10.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-036",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a20fc290ee728470f598afe6",
+        "teks": "Tentukan integral tak tentu berikut.\n$$\\int (5x^4 - 6x^2 + 7)\\,dx$$",
+        "jawaban": "$x^5 - 2x^3 + 7x + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=8 x^{2} + 6 x + 5$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$114$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{8 x^{3}}{3} + 3 x^{2} + 5 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=114.",
+      "distraktor": [
+        {
+          "teks": "$115$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$113$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{8 x^{3}}{3} + 3 x^{2} + 5 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=114.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-037",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "edd0f0031ede30e8d8e56111",
+        "teks": "Suatu tangki penyimpanan bahan kimia mengalami penumpukan kerak pada dindingnya. Laju pertambahan ketebalan kerak pada jam ke-$t$ pemanasan ($0 \\le t < 9$) dinyatakan oleh persamaan $\\frac{dh}{dt} = 18(9 - t)^{-2}\\text{ mm/jam}$. Jika setelah $3\\text{ jam}$ pemanasan ketebalan kerak terukur $5\\text{ mm}$, berapakah ketebalan kerak setelah $6\\text{ jam}$ pemanasan?",
+        "jawaban": "$8\\text{ mm}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=8 x^{5} + 8 x + 8$ dan $F(0)=0$. Tentukan $F(2)$.",
+      "jawaban_benar": "$\\frac{352}{3}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{4 x^{6}}{3} + 4 x^{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=352/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{355}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{349}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{358}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{4 x^{6}}{3} + 4 x^{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=352/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-hard-bt01-038",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "50a14151d3facf6937d88ee7",
+        "teks": "Tentukan hasil dari $\\int x(x^2 - 4)^5\\,dx$ dengan menggunakan teknik substitusi.",
+        "jawaban": "$\\frac{1}{12}(x^2 - 4)^6 + C$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target hard; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=6 x^{5} + 2 x + 8$ dan $F(0)=0$. Tentukan $F(2)$.",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Integralnya F(x)=$x^{6} + x^{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=84.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$83$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$x^{6} + x^{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=84.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

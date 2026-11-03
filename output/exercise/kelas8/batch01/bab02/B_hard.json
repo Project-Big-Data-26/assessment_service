@@ -639,6 +639,240 @@
       "pembahasan": "Misalkan sisi-sisi segitiga siku-siku tersebut adalah $a$, $b$, dan $c$ dengan $a < b < c$ ($c$ adalah hipotenusa).\n\n1. Diketahui $c - b = 2 \\iff c = b + 2$.\n2. Keliling segitiga:\n   $a + b + c = 84$\n   $a + b + (b + 2) = 84$\n   $a + 2b = 82 \\iff 2b = 82 - a$.\n3. Berdasarkan Teorema Pythagoras:\n   $a^2 + b^2 = c^2$\n   $a^2 = c^2 - b^2$\n   $a^2 = (b + 2)^2 - b^2$\n   $a^2 = 4b + 4$\n4. Kalikan hubungan $a^2 = 4b + 4$ dengan $2$ lalu substitusikan $2b$:\n   $a^2 = 2(2b) + 4$\n   $a^2 = 2(82 - a) + 4$\n   $a^2 = 164 - 2a + 4$\n   $a^2 + 2a - 168 = 0$\n   $(a + 14)(a - 12) = 0$\n   Karena panjang sisi harus bernilai positif, maka $a = 12\\text{ m}$.\n5. Menentukan nilai $b$ dan $c$:\n   $2b = 82 - 12 = 70 \\iff b = 35\\text{ m}$.\n   $c = 35 + 2 = 37\\text{ m}$.\n   (Ketiga bilangan $12, 35, 37$ merupakan tripel Pythagoras karena $12^2 + 35^2 = 144 + 1.225 = 1.369 = 37^2$).\n6. Evaluasi setiap pernyataan:\n   - Pernyataan (1): Hipotenusa $c = 37\\text{ m}$ (Benar).\n   - Pernyataan (2): Sisi siku-siku terpendek $a = 12\\text{ m}$ (Salah, bukan $14\\text{ m}$).\n   - Pernyataan (3): $\\text{Luas} = \\frac{1}{2} \\times a \\times b = \\frac{1}{2} \\times 12 \\times 35 = 210\\text{ m}^2$ (Benar).\n   - Pernyataan (4): Selisih kedua sisi siku-siku $= 35 - 12 = 23\\text{ m}$ (Salah, bukan $21\\text{ m}$).\n\nJadi, pernyataan yang benar adalah (1) dan (3).",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0710541dd23a1136ec6752",
+        "teks": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa $c = \\frac{S^2 + 1}{2}$. Dua buah segitiga siku-siku, $T_1$ dan $T_2$, dibentuk menggunakan aturan tersebut dengan sisi terpendek berturut-turut $S_1$ dan $S_2$ berupa bilangan ganjil ($S_2 > S_1$). Jika selisih panjang hipotenusa kedua segitiga tersebut ($c_2 - c_1$) adalah $40\\text{ cm}$ dan jumlah kedua sisi terpendeknya ($S_1 + S_2$) adalah $40\\text{ cm}$, berapakah keliling segitiga siku-siku $T_2$?",
+        "jawaban": "$462\\text{ cm}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 3 dan 4. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "√(3²+4²)=√25=5.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(3²+4²)=√25=5.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53cdfeafeb48bb51864adb2f",
+        "teks": "Tiga bilangan $(x - 1)$, $x$, dan $(x + 1)$ dengan $x > 1$ membentuk tripel Pythagoras. Nilai $x$ yang memenuhi adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 28 dan 96. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "√(28²+96²)=√10000=100.",
+      "distraktor": [
+        {
+          "teks": "$101$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(28²+96²)=√10000=100.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0710541dd23a1136ec6752",
+        "teks": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa $c = \\frac{S^2 + 1}{2}$. Dua buah segitiga siku-siku, $T_1$ dan $T_2$, dibentuk menggunakan aturan tersebut dengan sisi terpendek berturut-turut $S_1$ dan $S_2$ berupa bilangan ganjil ($S_2 > S_1$). Jika selisih panjang hipotenusa kedua segitiga tersebut ($c_2 - c_1$) adalah $40\\text{ cm}$ dan jumlah kedua sisi terpendeknya ($S_1 + S_2$) adalah $40\\text{ cm}$, berapakah keliling segitiga siku-siku $T_2$?",
+        "jawaban": "$462\\text{ cm}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 16 dan 30. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "√(16²+30²)=√1156=34.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(16²+30²)=√1156=34.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c68b340a3836c2409d4c7d46",
+        "teks": "Berdasarkan aturan pembentukan tripel Pythagoras dengan sisi terpendek berupa bilangan ganjil $S$, panjang sisi tegak lainnya dihitung dengan rumus $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa adalah $H = M + 1$. Suatu segitiga siku-siku dibentuk mengikuti aturan tersebut. Jika jumlah keliling segitiga dan panjang sisi terpendeknya sama dengan $63\\text{ cm}$, maka panjang hipotenusa segitiga tersebut adalah ....",
+        "jawaban": "$25\\text{ cm}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 8 dan 15. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "√(8²+15²)=√289=17.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(8²+15²)=√289=17.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "93f565824b028445903441c3",
+        "teks": "Sebuah segitiga memiliki panjang sisi-sisi berturut-turut $x\\text{ cm}$, $(x + 3)\\text{ cm}$, dan $15\\text{ cm}$, dengan $15\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan syarat ketaksamaan panjang sisi segitiga, berapakah banyak nilai bilangan bulat $x$ yang mungkin agar segitiga tersebut terbentuk dan merupakan segitiga tumpul?",
+        "jawaban": "2",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 10 dan 24. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "√(10²+24²)=√676=26.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(10²+24²)=√676=26.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-021",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a55185dff2181b15b84b90da",
+        "teks": "Sebuah taman bermain berbentuk segitiga siku-siku memiliki keliling $84\\text{ meter}$. Diketahui panjang semua sisinya merupakan bilangan asli dan selisih antara panjang hipotenusa dengan sisi siku-siku terpanjangnya adalah $2\\text{ meter}$. Perhatikan pernyataan-pernyataan berikut:\n(1) Panjang hipotenusa taman bermain tersebut adalah $37\\text{ meter}$.\n(2) Panjang sisi siku-siku terpendek taman bermain tersebut adalah $14\\text{ meter}$.\n(3) Luas area taman bermain tersebut adalah $210\\text{ meter}^2$.\n(4) Selisih panjang antara kedua sisi siku-sikunya adalah $21\\text{ meter}$.\n\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1) dan (3)",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "tripel_pythagoras",
+      "alasan_level": "Target hard; variasi konsep tripel pythagoras. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dua sisi terpendek suatu tripel Pythagoras adalah 5 dan 12. Berapa sisi terpanjangnya?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "√(5²+12²)=√169=13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "√(5²+12²)=√169=13.",
+      "catatan": "codex-replenishment:kelas8-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

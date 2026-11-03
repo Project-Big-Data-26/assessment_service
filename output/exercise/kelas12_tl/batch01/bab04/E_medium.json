@@ -849,6 +849,84 @@
       "pembahasan": "Fungsi distribusi kumulatif $F(x)$ diperoleh dari integral fungsi densitas peluang $f(t)$ dari batas bawah hingga $x$:\n$$F(x) = \\int_{0}^{x} f(t)\\,dt$$\nUntuk selang $0 \\le x \\le 3$:\n$$F(x) = \\int_{0}^{x} \\frac{1}{9}t^2\\,dt = \\left[ \\frac{t^3}{27} \\right]_{0}^{x} = \\frac{x^3}{27} - 0 = \\frac{x^3}{27}$$\nJadi, untuk $0 \\le x \\le 3$, fungsi distribusi kumulatifnya adalah $F(x) = \\frac{x^3}{27}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-021",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51236606641a2933f50d3a6d",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang berbentuk kurva segitiga simetris:\n$$f(x) = \\begin{cases} c x, & 0 \\le x \\le 2 \\\\ c(4 - x), & 2 < x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai peluang bahwa simpangan nilai $X$ terhadap nilai tengah $2$ tidak lebih dari $1$ satuan, yaitu $P(|X - 2| \\le 1)$, adalah ....",
+        "jawaban": "$\\frac{3}{4}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target medium; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<7)$.",
+      "jawaban_benar": "$\\frac{49}{64}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<7)=∫₀^7 2x/64 dx=49/64=49/64.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{113}{64}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$- \\frac{15}{64}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{177}{64}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<7)=∫₀^7 2x/64 dx=49/64=49/64.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-022",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5261bee5e95c7848caf86e7",
+        "teks": "Suatu variabel acak kontinu $X$ memiliki fungsi peluang sepotong yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} ax, & 0 \\le x < 2 \\\\ b, & 2 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nAgar fungsi $f(x)$ kontinu pada interval $[0, 4]$ dan merupakan fungsi densitas peluang yang sah, nilai dari $P(1 \\le X \\le 3)$ adalah ....",
+        "jawaban": "$\\frac{7}{12}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "fungsi_densitas",
+      "alasan_level": "Target medium; variasi konsep fungsi densitas. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Densitas X adalah $f(x)=2x/64$ untuk $0\\le x\\le 8$ dan nol di luar interval. Tentukan $P(X<5)$.",
+      "jawaban_benar": "$\\frac{25}{64}$",
+      "alasan_benar": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/64 dx=25/64=25/64.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{89}{64}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$- \\frac{39}{64}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{153}{64}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integral seluruh densitas =1. P(X<5)=∫₀^5 2x/64 dx=25/64=25/64.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-E-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

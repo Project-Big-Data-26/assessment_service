@@ -45,7 +45,12 @@ def export_batch(book: str, batch: int, *, generation_only: bool = False, _locke
     if not _locked:
         with batch_lock(base):
             return export_batch(book, batch, generation_only=generation_only, _locked=True)
+    if (base / "reference_replenishment_state.json").exists():
+        raise ValueError("batch01 reference additions have a dedicated append export; do not rebuild legacy files")
     generation_only = generation_only or managed(base) or not (base / "soal_exercise_db.json").exists()
+    plan_path = base / "generation_plan.json"
+    if plan_path.exists() and load(plan_path).get("schemaVersion") == "exercise-reference-plan-v1":
+        raise ValueError("reference-based pilot is already exported; preserve this batch and use a new reference batch")
     if generation_only:
         if managed(base) and (base / "generation_state.json").exists():
             if load(base / "generation_state.json").get("phase") == "validation_authorized":

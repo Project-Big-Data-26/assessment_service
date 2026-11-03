@@ -515,6 +515,45 @@
       ],
       "pembahasan": "$3^{t} > 1.000.000$. $3^{10} = 59.049$, $3^{11} = 177.147$, $3^{12} = 531.441$, $3^{13} = 1.594.323$. Jadi $t = 13$.",
       "catatan": null
+    },
+    {
+      "id": "kelas8-b01-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a29fa45e5ec34537763876",
+        "teks": "Banyak bilangan bulat $n$ yang memenuhi $\\frac{1}{64} < 2^{n} \\leq 32$ adalah ....",
+        "jawaban": "11",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pangkat",
+      "alasan_level": "Target hard; variasi konsep aturan pangkat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Bentuk $(5^5)^2 : 5^4$ ditulis sebagai $5^n$. Tentukan $n$.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Pangkat pada pangkat dikalikan, lalu pada pembagian dikurangi: n=5×2-4=6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Pangkat pada pangkat dikalikan, lalu pada pembagian dikurangi: n=5×2-4=6.",
+      "catatan": "codex-replenishment:kelas8-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

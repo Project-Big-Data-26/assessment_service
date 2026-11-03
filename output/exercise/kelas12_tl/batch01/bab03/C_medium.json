@@ -681,6 +681,162 @@
       "pembahasan": "Daerah berada di kuadran pertama, sehingga batas kirinya adalah perpotongan kurva dengan sumbu-$x$, yaitu $x = 0$, dan batas kanannya adalah garis $x = 3$.\n\nLuas daerah dinyatakan oleh integral tentu:\n$$L = \\int_{0}^{3} x\\sqrt{x^2 + 16}\\,dx$$\n\nGunakan metode substitusi:\nMisalkan $u = x^2 + 16$, sehingga $du = 2x\\,dx$ atau $x\\,dx = \\frac{1}{2}\\,du$.\nUbah batas integrasi:\n- Untuk $x = 0 \\implies u = 0^2 + 16 = 16$\n- Untuk $x = 3 \\implies u = 3^2 + 16 = 25$\n\nSubstitusikan ke dalam integral:\n$$L = \\int_{16}^{25} \\frac{1}{2} u^{1/2}\\,du = \\frac{1}{2} \\left[ \\frac{2}{3}u^{3/2} \\right]_{16}^{25} = \\frac{1}{3} \\left[ u^{3/2} \\right]_{16}^{25}$$\n$$L = \\frac{1}{3} \\left( 25^{3/2} - 16^{3/2} \\right) = \\frac{1}{3} \\left( 125 - 64 \\right) = \\frac{61}{3}$$\n\nJadi, luas daerah tersebut adalah $\\frac{61}{3}\\text{ satuan luas}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5bf83cebb09bba6939299a3e",
+        "teks": "Sebuah pabrik mengoperasikan mesin baru. Laju penghematan biaya operasional dinyatakan oleh fungsi $f(t) = 6.000t + 3.000$ (rupiah per tahun), sedangkan laju biaya pemeliharaan mesin bertambah menurut fungsi $g(t) = 2.000t + 1.000$ (rupiah per tahun), dengan $t$ menyatakan waktu pemakaian dalam tahun. Total keuntungan finansial bersih kumulatif mesin tersebut mencapai Rp60.000,00 setelah beroperasi selama ....",
+        "jawaban": "$5\\text{ tahun}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 5 x^{2} + 20 x$ dan sumbu x pada $0\\le x\\le 4$.",
+      "jawaban_benar": "$\\frac{160}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 5 x^{2} + 20 x$ dari 0 sampai 4; hasilnya 160/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{163}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{157}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{166}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 5 x^{2} + 20 x$ dari 0 sampai 4; hasilnya 160/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2925f328994a50e9cc4028be",
+        "teks": "Laju perubahan luas permukaan suatu luka pada pasien berkurang secara bertahap dan dimodelkan oleh persamaan laju $\\frac{dA}{dt} = -k(6 - t)\\text{ cm}^2/\\text{hari}$ untuk rentang waktu $0 \\le t \\le 6$, dengan $t$ menyatakan waktu dalam hari sejak perawatan intensif dimulai dan $k$ adalah konstanta positif. Diketahui luas luka pada saat awal perawatan ($t = 0$) adalah $26\\text{ cm}^2$, dan setelah $2\\text{ hari}$ perlakuan luas luka berkurang menjadi $16\\text{ cm}^2$. Luas luka yang tersisa pada saat laju penyembuhan mencapai nol adalah ....",
+        "jawaban": "$8\\text{ cm}^2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 2 x^{2} + 16 x$ dan sumbu x pada $0\\le x\\le 8$.",
+      "jawaban_benar": "$\\frac{512}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 16 x$ dari 0 sampai 8; hasilnya 512/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{515}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{509}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{518}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 16 x$ dari 0 sampai 8; hasilnya 512/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea5017743ab2cedc4cdb288c",
+        "teks": "Sebuah pegas memiliki panjang alami $20\\text{ cm}$. Sebuah gaya sebesar $30\\text{ N}$ diperlukan untuk menahan pegas saat direntangkan hingga panjangnya menjadi $25\\text{ cm}$. Usaha yang diperlukan untuk meregangkan pegas tersebut dari panjang $25\\text{ cm}$ menjadi $30\\text{ cm}$ adalah ....",
+        "jawaban": "$2,25\\text{ Joule}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 4 x^{2} + 28 x$ dan sumbu x pada $0\\le x\\le 7$.",
+      "jawaban_benar": "$\\frac{686}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 4 x^{2} + 28 x$ dari 0 sampai 7; hasilnya 686/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{689}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{683}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{692}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 4 x^{2} + 28 x$ dari 0 sampai 7; hasilnya 686/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-c-medium-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77558caceef5570882b34967",
+        "teks": "Dua buah pegas, yaitu pegas A dan pegas B, mula-mula berada pada panjang alaminya masing-masing. Sebuah gaya sebesar $60\\text{ N}$ diperlukan untuk menahan pegas A tetap teregang sejauh $0,1\\text{ m}$ dari panjang alaminya. Pegas B kemudian diregangkan sejauh $0,4\\text{ m}$ dari panjang alaminya dan menghasilkan usaha yang sama besar dengan usaha untuk meregangkan pegas A sejauh $0,2\\text{ m}$ dari panjang alaminya. Nilai konstanta dari pegas B adalah ....",
+        "jawaban": "$150\\text{ N/m}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "luas_daerah_integral",
+      "alasan_level": "Target medium; variasi konsep luas daerah integral. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Tentukan luas daerah antara kurva $y=- 2 x^{2} + 10 x$ dan sumbu x pada $0\\le x\\le 5$.",
+      "jawaban_benar": "$\\frac{125}{3}$",
+      "alasan_benar": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 10 x$ dari 0 sampai 5; hasilnya 125/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{128}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{122}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{131}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurva nonnegatif pada interval tersebut. Integralkan $- 2 x^{2} + 10 x$ dari 0 sampai 5; hasilnya 125/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-C-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

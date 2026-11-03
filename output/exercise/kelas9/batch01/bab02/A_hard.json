@@ -639,6 +639,123 @@
       "pembahasan": "Langkah 1: Menentukan hubungan antarunsur pada bangun ruang Platonic:\n- Setiap sisi adalah segitiga, maka $2R = 3S \\implies R = \\frac{3S}{2}$.\n- Setiap titik sudut mempertemukan 4 rusuk, maka $2R = 4T \\implies T = \\frac{R}{2} = \\frac{3S}{4}$.\n\nLangkah 2: Menghitung banyak sisi, rusuk, dan titik sudut menggunakan rumus Euler $S + T - R = 2$:\n$$S + \\frac{3S}{4} - \\frac{3S}{2} = 2$$\n$$\\frac{4S + 3S - 6S}{4} = 2$$\n$$\\frac{S}{4} = 2 \\implies S = 8$$\nBanyak rusuk $R = \\frac{3(8)}{2} = 12$ dan titik sudut $T = 6$ (bangun tersebut adalah oktahedron beraturan).\n\nLangkah 3: Menentukan banyak rusuk sambungan/lipatan yang dipertahankan:\nAgar $S = 8$ sisi tetap saling terhubung menjadi satu pola jaring-jaring tanpa terpisah dan tanpa lingkaran tertutup, banyak rusuk lipatan yang dipertahankan tepat sebanyak $S - 1 = 8 - 1 = 7$ rusuk.\n\nLangkah 4: Menghitung banyak rusuk yang harus digunting:\n$$\\text{Banyak rusuk digunting} = R - (S - 1) = 12 - 7 = 5\\text{ rusuk}.$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9a7c3e067f252a076180ce0",
+        "teks": "Sebuah kemasan berbentuk balok memiliki ukuran panjang $8\\text{ cm}$, lebar $5\\text{ cm}$, dan tinggi $3\\text{ cm}$. Kardus tersebut digunting sepanjang beberapa rusuknya hingga membentang rata menjadi jaring-jaring berbentuk salib pada bidang datar. Pola jaring-jaring tersebut terdiri dari empat bidang berurutan secara vertikal (sisi alas $8\\text{ cm} \\times 5\\text{ cm}$, sisi depan $8\\text{ cm} \\times 3\\text{ cm}$, sisi atas $8\\text{ cm} \\times 5\\text{ cm}$, dan sisi belakang $8\\text{ cm} \\times 3\\text{ cm}$) serta dua bidang sisi samping ($5\\text{ cm} \\times 3\\text{ cm}$) yang masing-masing menempel di sisi kiri dan kanan sisi alas sepanjang rusuk $5\\text{ cm}$. Keliling terluar dari bentangan jaring-jaring balok tersebut adalah ....",
+        "jawaban": "$60\\text{ cm}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-6. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Alas dan tutup masing-masing 6 rusuk, ditambah 6 rusuk tegak: total 3×6=18.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 6 rusuk, ditambah 6 rusuk tegak: total 3×6=18.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9745993c2e4daabb1fc216c",
+        "teks": "Sebuah jaring-jaring tabung tanpa tutup terdiri atas satu persegi panjang sebagai selimut dan satu lingkaran sebagai alas. Luas persegi panjang tersebut adalah $440\\text{ cm}^2$ dan memiliki lebar (tinggi tabung) $10\\text{ cm}$. Jika tabung tersebut diubah menjadi tabung tertutup dengan jari-jari alas baru dua kali jari-jari semula dan tinggi tabung baru setengah dari tinggi semula, maka luas total seluruh jaring-jaring tabung yang baru adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$1.672\\text{ cm}^2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Alas dan tutup masing-masing 4 rusuk, ditambah 4 rusuk tegak: total 3×4=12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 4 rusuk, ditambah 4 rusuk tegak: total 3×4=12.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b02-a-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f69cceadf48934c6b9b192de",
+        "teks": "Sebuah bangun ruang polihedron memiliki banyak rusuk ($R$) tiga kali lipat dari banyak sisinya ($S$), sehingga $R = 3S$. Jika banyak titik sudutnya adalah $26$, banyak sisi ($S$) dari bangun ruang tersebut adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Alas dan tutup masing-masing 8 rusuk, ditambah 8 rusuk tegak: total 3×8=24.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 8 rusuk, ditambah 8 rusuk tegak: total 3×8=24.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

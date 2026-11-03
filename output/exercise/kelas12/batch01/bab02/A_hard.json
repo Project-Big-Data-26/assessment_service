@@ -370,6 +370,552 @@
       ],
       "pembahasan": "Bunga per bulan 60.000. Syarat 60.000 n <= 1.540.000 sehingga n <= 25,67; karena batas atas, n terbanyak = 25.",
       "catatan": null
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "632e18ed585655b37f73a39f",
+        "teks": "Modal akhir sebuah simpanan berbunga tunggal (tanpa penarikan dan penambahan uang) dicatat pada tiga waktu. Catatan (lama menyimpan, modal akhir) yang mungkin berasal dari satu simpanan tersebut adalah ....",
+        "jawaban": "(5 bulan, Rp8.350.000,00), (10 bulan, Rp8.700.000,00), (20 bulan, Rp9.400.000,00)",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 12% per tahun menjadi Rp44.280.000,00 setelah 23 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$36000000$",
+      "alasan_benar": "Nilai akhir M=P(1+12/100×23/12). Maka P=44280000/(123/100)=36000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$36000001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$35999999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$36000002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+12/100×23/12). Maka P=44280000/(123/100)=36000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc4c68d68643fc12cb26b205",
+        "teks": "Klaim: \"Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar.\" Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.600.000,00",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 4% per tahun menjadi Rp31.300.000,00 setelah 13 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$30000000$",
+      "alasan_benar": "Nilai akhir M=P(1+4/100×13/12). Maka P=31300000/(313/300)=30000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$30000001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$29999999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$30000002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+4/100×13/12). Maka P=31300000/(313/300)=30000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 4% per tahun menjadi Rp14.688.000,00 setelah 6 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$14400000$",
+      "alasan_benar": "Nilai akhir M=P(1+4/100×6/12). Maka P=14688000/(51/50)=14400000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$14400001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$14399999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$14400002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+4/100×6/12). Maka P=14688000/(51/50)=14400000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c15826552d38fabbbc64772",
+        "teks": "Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun. Bunga pada kedua periode dihitung dari modal awal yang sama. Modal akhir Pak Darmo setelah 11 bulan adalah ....",
+        "jawaban": "Rp8.512.500,00",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 8% per tahun menjadi Rp25.704.000,00 setelah 3 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$25200000$",
+      "alasan_benar": "Nilai akhir M=P(1+8/100×3/12). Maka P=25704000/(51/50)=25200000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$25200001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$25199999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$25200002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+8/100×3/12). Maka P=25704000/(51/50)=25200000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e79ba501b375b1f67c82ab4d",
+        "teks": "Dian meminjam Rp12.000.000,00. Skema X: bunga tunggal 1,5% per bulan selama 8 bulan. Skema Y: bunga tunggal 15% per tahun selama 9 bulan. Pernyataan yang benar tentang total yang harus dikembalikan Dian adalah ....",
+        "jawaban": "Skema Y lebih kecil Rp90.000,00 daripada Skema X",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 6% per tahun menjadi Rp17.238.000,00 setelah 21 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$15600000$",
+      "alasan_benar": "Nilai akhir M=P(1+6/100×21/12). Maka P=17238000/(221/200)=15600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$15600001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$15599999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$15600002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+6/100×21/12). Maka P=17238000/(221/200)=15600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 3% per tahun menjadi Rp18.810.000,00 setelah 18 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$18000000$",
+      "alasan_benar": "Nilai akhir M=P(1+3/100×18/12). Maka P=18810000/(209/200)=18000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$18000001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$17999999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$18000002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+3/100×18/12). Maka P=18810000/(209/200)=18000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 8% per tahun menjadi Rp3.816.000,00 setelah 9 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$3600000$",
+      "alasan_benar": "Nilai akhir M=P(1+8/100×9/12). Maka P=3816000/(53/50)=3600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$3600001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$3599999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$3600002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+8/100×9/12). Maka P=3816000/(53/50)=3600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc4c68d68643fc12cb26b205",
+        "teks": "Klaim: \"Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar.\" Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.600.000,00",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 2% per tahun menjadi Rp17.472.000,00 setelah 24 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$16800000$",
+      "alasan_benar": "Nilai akhir M=P(1+2/100×24/12). Maka P=17472000/(26/25)=16800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$16800001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$16799999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$16800002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+2/100×24/12). Maka P=17472000/(26/25)=16800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e79ba501b375b1f67c82ab4d",
+        "teks": "Dian meminjam Rp12.000.000,00. Skema X: bunga tunggal 1,5% per bulan selama 8 bulan. Skema Y: bunga tunggal 15% per tahun selama 9 bulan. Pernyataan yang benar tentang total yang harus dikembalikan Dian adalah ....",
+        "jawaban": "Skema Y lebih kecil Rp90.000,00 daripada Skema X",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 8% per tahun menjadi Rp18.368.000,00 setelah 14 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$16800000$",
+      "alasan_benar": "Nilai akhir M=P(1+8/100×14/12). Maka P=18368000/(82/75)=16800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$16800001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$16799999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$16800002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+8/100×14/12). Maka P=18368000/(82/75)=16800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-021",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 10% per tahun menjadi Rp28.750.000,00 setelah 5 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$27600000$",
+      "alasan_benar": "Nilai akhir M=P(1+10/100×5/12). Maka P=28750000/(25/24)=27600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$27600001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$27599999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$27600002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+10/100×5/12). Maka P=28750000/(25/24)=27600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-022",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c15826552d38fabbbc64772",
+        "teks": "Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun. Bunga pada kedua periode dihitung dari modal awal yang sama. Modal akhir Pak Darmo setelah 11 bulan adalah ....",
+        "jawaban": "Rp8.512.500,00",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 5% per tahun menjadi Rp28.060.000,00 setelah 4 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$27600000$",
+      "alasan_benar": "Nilai akhir M=P(1+5/100×4/12). Maka P=28060000/(61/60)=27600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$27600001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$27599999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$27600002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+5/100×4/12). Maka P=28060000/(61/60)=27600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-023",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 5% per tahun menjadi Rp11.880.000,00 setelah 24 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$10800000$",
+      "alasan_benar": "Nilai akhir M=P(1+5/100×24/12). Maka P=11880000/(11/10)=10800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$10800001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$10799999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$10800002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+5/100×24/12). Maka P=11880000/(11/10)=10800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-024",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c15826552d38fabbbc64772",
+        "teks": "Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun. Bunga pada kedua periode dihitung dari modal awal yang sama. Modal akhir Pak Darmo setelah 11 bulan adalah ....",
+        "jawaban": "Rp8.512.500,00",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 10% per tahun menjadi Rp6.200.000,00 setelah 4 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$6000000$",
+      "alasan_benar": "Nilai akhir M=P(1+10/100×4/12). Maka P=6200000/(31/30)=6000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$6000001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$5999999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$6000002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+10/100×4/12). Maka P=6200000/(31/30)=6000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12-b02-a-hard-bt01-025",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Simpanan berbunga tunggal 3% per tahun menjadi Rp23.370.000,00 setelah 10 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$22800000$",
+      "alasan_benar": "Nilai akhir M=P(1+3/100×10/12). Maka P=23370000/(41/40)=22800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$22800001$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$22799999$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$22800002$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+3/100×10/12). Maka P=23370000/(41/40)=22800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

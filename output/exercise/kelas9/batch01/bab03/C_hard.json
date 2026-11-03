@@ -639,6 +639,162 @@
       "pembahasan": "Langkah 1: Menentukan bayangan titik $A$ dan $B$ oleh rotasi $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$.\nAturan rotasi $90^\\circ$ terhadap $O(0,0)$ adalah $(x, y) \\rightarrow (-y, x)$:\n- $A(2, -3) \\rightarrow A'(3, 2)$\n- $B(6, 5) \\rightarrow B'(-5, 6)$\n\nLangkah 2: Menentukan gradien garis bayangan $g'$ yang melalui $A'(3, 2)$ dan $B'(-5, 6)$.\n$$m' = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{6 - 2}{-5 - 3} = \\frac{4}{-8} = -\\frac{1}{2}$$\n\nLangkah 3: Menentukan persamaan garis $g'$.\n$$y - y_1 = m'(x - x_1)$$\n$$y - 2 = -\\frac{1}{2}(x - 3)$$\n$$2(y - 2) = -(x - 3)$$\n$$2y - 4 = -x + 3$$\n$$x + 2y = 7$$\n\nLangkah 4: Menguji titik-titik pada opsi ke dalam persamaan $x + 2y = 7$:\n- Untuk titik $(5, 1)$: $5 + 2(1) = 7$ (MEMENUHI)\n- Untuk titik $(4, 1)$: $4 + 2(1) = 6 \\neq 7$\n- Untuk titik $(-1, -3)$: $-1 + 2(-3) = -7 \\neq 7$\n- Untuk titik $(2, 3)$: $2 + 2(3) = 8 \\neq 7$\n\nJadi, titik yang terletak pada garis $g'$ adalah $(5, 1)$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7cbbda0e443c1b6f8e425e6",
+        "teks": "Titik $K(2a - 5, b + 4)$ dirotasikan sebesar $270^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $K'(6, -7)$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "8",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "transformasi_koordinat",
+      "alasan_level": "Target hard; variasi konsep transformasi koordinat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Titik P$(7, -8)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....",
+      "jawaban_benar": "$(8, 7)$",
+      "alasan_benar": "Gunakan aturan transformasi tersebut pada koordinat (7,-8), diperoleh (8,7).",
+      "distraktor": [
+        {
+          "teks": "$(9, 7)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(8, 8)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(7, 6)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan aturan transformasi tersebut pada koordinat (7,-8), diperoleh (8,7).",
+      "catatan": "codex-replenishment:kelas9-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "715dcf450361aac8930fe664",
+        "teks": "Diketahui segi empat $ABCD$ memiliki titik-titik sudut $A(-5, 4)$, $B(6, 7)$, $C(8, -3)$, dan $D(-4, -6)$. Segi empat tersebut dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan $A'B'C'D'$. Perhatikan pernyataan-pernyataan berikut:\n(1) Titik $A'$ terletak di kuadran IV.\n(2) Titik $B'$ memiliki koordinat $(6, -7)$.\n(3) Jarak titik $C'$ ke sumbu-$Y$ adalah 3 satuan.\n(4) Titik $D'$ terletak di kuadran I.\n\nPernyataan yang benar ditunjukkan oleh nomor ....",
+        "jawaban": "(1) dan (4)",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "transformasi_koordinat",
+      "alasan_level": "Target hard; variasi konsep transformasi koordinat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Titik P$(6, 5)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....",
+      "jawaban_benar": "$(-5, 6)$",
+      "alasan_benar": "Gunakan aturan transformasi tersebut pada koordinat (6,5), diperoleh (-5,6).",
+      "distraktor": [
+        {
+          "teks": "$(-4, 6)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(-5, 7)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(-6, 5)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan aturan transformasi tersebut pada koordinat (6,5), diperoleh (-5,6).",
+      "catatan": "codex-replenishment:kelas9-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7cbbda0e443c1b6f8e425e6",
+        "teks": "Titik $K(2a - 5, b + 4)$ dirotasikan sebesar $270^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $K'(6, -7)$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "8",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "transformasi_koordinat",
+      "alasan_level": "Target hard; variasi konsep transformasi koordinat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Titik P$(5, 9)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....",
+      "jawaban_benar": "$(-9, 5)$",
+      "alasan_benar": "Gunakan aturan transformasi tersebut pada koordinat (5,9), diperoleh (-9,5).",
+      "distraktor": [
+        {
+          "teks": "$(-8, 5)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(-9, 6)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(-10, 4)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan aturan transformasi tersebut pada koordinat (5,9), diperoleh (-9,5).",
+      "catatan": "codex-replenishment:kelas9-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "957b1104b8b5a47934cd2c7c",
+        "teks": "Titik $A(p + 2q, 2p - q)$ dirotasikan sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $A_1$. Bayangan $A_1$ kemudian dirotasikan kembali sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan akhir $A_2(-4, 7)$. Nilai dari $p^2 + q^2$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "transformasi_koordinat",
+      "alasan_level": "Target hard; variasi konsep transformasi koordinat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Titik P$(10, 4)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....",
+      "jawaban_benar": "$(-4, 10)$",
+      "alasan_benar": "Gunakan aturan transformasi tersebut pada koordinat (10,4), diperoleh (-4,10).",
+      "distraktor": [
+        {
+          "teks": "$(-3, 10)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(-4, 11)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$(-5, 9)$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gunakan aturan transformasi tersebut pada koordinat (10,4), diperoleh (-4,10).",
+      "catatan": "codex-replenishment:kelas9-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

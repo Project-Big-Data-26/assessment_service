@@ -238,6 +238,513 @@
       ],
       "pembahasan": "$9^4+4=6565$. Dengan $x^4+4=(x^2+2x+2)(x^2-2x+2)$ dan $x=9$: $101\\cdot65=6565$, sehingga komposit (bahkan $5\\cdot13\\cdot101$).",
       "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5023b881a24c91525317832b",
+        "teks": "Hasan menyatakan bahwa $9^4+4$ adalah bilangan prima, karena penjumlahan dua bilangan kuadrat ($(9^2)^2+2^2$) tidak dapat difaktorkan. Pernyataan yang tepat adalah ....",
+        "jawaban": "Keliru; $9^4+4=(9^2+2)^2-(2\\cdot9)^2=101\\cdot65$, sehingga bilangan komposit",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+7)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$735$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×7²=735.",
+      "distraktor": [
+        {
+          "teks": "$736$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$734$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$737$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×7²=735.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+6)^4$, tentukan koefisien $x^2$.",
+      "jawaban_benar": "$216$",
+      "alasan_benar": "Teorema binomial memberi C(4,2)×6²=216.",
+      "distraktor": [
+        {
+          "teks": "$217$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$215$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$218$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(4,2)×6²=216.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7399a0c5030779d9d7cf5d1",
+        "teks": "Rani ingin menentukan $a$ dan $b$ agar $(x^2+ax+b)^2=x^4-6x^3+13x^2-12x+4$ merupakan identitas polinomial. Pekerjaannya: koefisien $x^3$: $2a=-6$ sehingga $a=-3$; koefisien $x^2$: $a^2+b=13$ sehingga $b=4$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+        "jawaban": "Koefisien $x^2$ seharusnya $a^2+2b$, sehingga $b=2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+5)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$75$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×5²=75.",
+      "distraktor": [
+        {
+          "teks": "$76$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$77$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×5²=75.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+6)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$540$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×6²=540.",
+      "distraktor": [
+        {
+          "teks": "$541$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$539$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$542$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×6²=540.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+4)^4$, tentukan koefisien $x^2$.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Teorema binomial memberi C(4,2)×4²=96.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$95$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(4,2)×4²=96.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+9)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$243$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×9²=243.",
+      "distraktor": [
+        {
+          "teks": "$244$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$242$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$245$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×9²=243.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5023b881a24c91525317832b",
+        "teks": "Hasan menyatakan bahwa $9^4+4$ adalah bilangan prima, karena penjumlahan dua bilangan kuadrat ($(9^2)^2+2^2$) tidak dapat difaktorkan. Pernyataan yang tepat adalah ....",
+        "jawaban": "Keliru; $9^4+4=(9^2+2)^2-(2\\cdot9)^2=101\\cdot65$, sehingga bilangan komposit",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+9)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$810$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×9²=810.",
+      "distraktor": [
+        {
+          "teks": "$811$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$809$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$812$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×9²=810.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+2)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×2²=40.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×2²=40.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "641f6764454d944be672dba5",
+        "teks": "Jika $(px+q)^3 = 8x^3 + 36x^2 + rx + 27$ adalah identitas polinomial dengan $p$ dan $q$ bilangan real positif, nilai $p+q+r$ adalah ....",
+        "jawaban": "$59$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+7)^4$, tentukan koefisien $x^2$.",
+      "jawaban_benar": "$294$",
+      "alasan_benar": "Teorema binomial memberi C(4,2)×7²=294.",
+      "distraktor": [
+        {
+          "teks": "$295$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$293$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$296$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(4,2)×7²=294.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+2)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×2²=12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×2²=12.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-018",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+9)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$1215$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×9²=1215.",
+      "distraktor": [
+        {
+          "teks": "$1216$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1214$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$1217$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×9²=1215.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7399a0c5030779d9d7cf5d1",
+        "teks": "Rani ingin menentukan $a$ dan $b$ agar $(x^2+ax+b)^2=x^4-6x^3+13x^2-12x+4$ merupakan identitas polinomial. Pekerjaannya: koefisien $x^3$: $2a=-6$ sehingga $a=-3$; koefisien $x^2$: $a^2+b=13$ sehingga $b=4$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+        "jawaban": "Koefisien $x^2$ seharusnya $a^2+2b$, sehingga $b=2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+4)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$240$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×4²=240.",
+      "distraktor": [
+        {
+          "teks": "$241$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$239$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$242$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×4²=240.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b02-e-hard-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Dalam identitas $(x+8)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$640$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×8²=640.",
+      "distraktor": [
+        {
+          "teks": "$641$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$639$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$642$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×8²=640.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }

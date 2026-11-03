@@ -849,6 +849,279 @@
       "pembahasan": "Langkah-langkah penyelesaian:\n1. Tentukan fungsi massa $m(t)$ melalui integral tak tentu:\n$$m(t) = \\int (15 - t)^{-2}\\,dt$$\nMisalkan $u = 15 - t$, maka $du = -dt \\implies dt = -du$.\n$$m(t) = \\int -u^{-2}\\,du = -\\left(-u^{-1}\\right) + C = \\frac{1}{15 - t} + C$$\n2. Tentukan konstanta $C$ menggunakan kondisi $m(5) = 4$:\n$$4 = \\frac{1}{15 - 5} + C \\implies 4 = \\frac{1}{10} + C \\implies C = 4 - 0,1 = 3,9$$\nSehingga, rumus massa adalah $m(t) = \\frac{1}{15 - t} + 3,9$.\n3. Hitung massa pada saat $t = 10$ jam:\n$$m(10) = \\frac{1}{15 - 10} + 3,9 = \\frac{1}{5} + 3,9 = 0,2 + 3,9 = 4,1\\text{ gram}$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-021",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "02499a672b258487c54c6738",
+        "teks": "Sebuah partikel bergerak pada suatu garis lurus dengan arah positif ke kanan dari titik pusat. Kecepatan partikel pada saat $t$ detik dinyatakan oleh $v(t) = 12\\cos(3t)\\text{ cm/detik}$. Jika pada saat awal ($t = 0$) posisi partikel berada $7\\text{ cm}$ di sebelah kanan titik pusat, tentukan posisi partikel pada saat kecepatannya bernilai nol untuk pertama kali setelah $t = 0$.",
+        "jawaban": "$11\\text{ cm}$ di sebelah kanan titik pusat",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=4 x^{4} + 7 x + 8$ dan $F(0)=0$. Tentukan $F(2)$.",
+      "jawaban_benar": "$\\frac{278}{5}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{4 x^{5}}{5} + \\frac{7 x^{2}}{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=278/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{283}{5}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{273}{5}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{288}{5}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{4 x^{5}}{5} + \\frac{7 x^{2}}{2} + 8 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=278/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-022",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a4d01b1c46600d5d6852431",
+        "teks": "Suatu fungsi $f(x)$ terdiferensialkan untuk setiap bilangan real dan memenuhi persamaan turunan $f'(x) = x^3 e^{x^2}$. Jika grafik fungsi $y = f(x)$ melalui titik $(0, 1)$, berapakah nilai dari $f(2)$?",
+        "jawaban": "$\\frac{3e^4 + 3}{2}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=2 x^{4} + 4 x + 7$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$\\frac{681}{5}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{2 x^{5}}{5} + 2 x^{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=681/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{686}{5}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{676}{5}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{691}{5}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{2 x^{5}}{5} + 2 x^{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=681/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-023",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b1c7ab4a01d2632663714ff",
+        "teks": "Turunan kedua suatu fungsi polinomial dinyatakan oleh $f''(x) = 12x - 18$ untuk setiap bilangan real $x$. Kurva $y = f(x)$ memiliki titik belok di mana garis singgung kurva di titik tersebut merupakan garis horizontal $y = 5$. Nilai dari $f(0)$ adalah ....",
+        "jawaban": "$-\\frac{7}{4}$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=9 x^{5} + 7 x + 7$ dan $F(0)=0$. Tentukan $F(2)$.",
+      "jawaban_benar": "$124$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{3 x^{6}}{2} + \\frac{7 x^{2}}{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=124.",
+      "distraktor": [
+        {
+          "teks": "$125$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$123$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{3 x^{6}}{2} + \\frac{7 x^{2}}{2} + 7 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(2)=124.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-024",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "092d5ddefac7ef3c244a8c95",
+        "teks": "Grafik fungsi $y = F(x)$ merupakan salah satu antiturunan dari fungsi $f(x) = 3x^2 - 12x + 9$. Jika grafik fungsi $F(x)$ mempunyai titik balik maksimum lokal di titik $(p, 10)$, nilai minimum lokal dari fungsi $F(x)$ adalah ....",
+        "jawaban": "6",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=9 x^{4} + 3 x + 2$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$\\frac{53}{10}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{9 x^{5}}{5} + \\frac{3 x^{2}}{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=53/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{63}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{43}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{73}{10}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{9 x^{5}}{5} + \\frac{3 x^{2}}{2} + 2 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=53/10.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-025",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1bada2389a3beda064ac9ca6",
+        "teks": "Grafik fungsi $y = F(x)$ merupakan antiturunan dari fungsi $f(x) = 6x^2 - 18x + 12$. Jika grafik fungsi $y = F(x)$ memiliki titik balik minimum lokal yang menyinggung sumbu-$X$, berapakah nilai ordinat dari titik balik maksimum lokal kurva tersebut?",
+        "jawaban": "$1$",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=6 x^{2} + 4 x + 9$ dan $F(0)=0$. Tentukan $F(3)$.",
+      "jawaban_benar": "$99$",
+      "alasan_benar": "Integralnya F(x)=$2 x^{3} + 2 x^{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=99.",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$101$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$2 x^{3} + 2 x^{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(3)=99.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-026",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62149f15f1b2152a28b569c3",
+        "teks": "Turunan kedua suatu fungsi adalah $f''(x) = 4\\cos(2x) - 6\\sin(3x)$ untuk setiap $x \\in \\mathbb{R}$. Kurva $y = f(x)$ memiliki garis singgung horizontal di titik $(0, 5)$. Nilai dari $f(\\pi)$ adalah ....",
+        "jawaban": "5 - 2\\pi",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=4 x^{2} + 4 x + 9$ dan $F(0)=0$. Tentukan $F(4)$.",
+      "jawaban_benar": "$\\frac{460}{3}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{4 x^{3}}{3} + 2 x^{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(4)=460/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{463}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{457}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{466}{3}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{4 x^{3}}{3} + 2 x^{2} + 9 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(4)=460/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-a-medium-bt01-027",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c108c79026940fde9123a24",
+        "teks": "Diketahui turunan pertama fungsi $f(x)$ adalah $f'(x) = \\frac{6x - 6}{(x^2 - 2x + 3)^2}$. Kurva $y = f(x)$ memiliki asimtot datar $y = 2$ ketika $x \\to \\infty$. Nilai minimum mutlak fungsi $f(x)$ pada domain bilangan real adalah ....",
+        "jawaban": "\\frac{1}{2}",
+        "snapshot": "_replenishment/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tak_tentu_dengan_syarat",
+      "alasan_level": "Target medium; variasi konsep integral tak tentu dengan syarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "gambar": [],
+      "pertanyaan": "Fungsi $F$ memenuhi $F^\\prime(x)=5 x^{3} + 6 x + 3$ dan $F(0)=0$. Tentukan $F(1)$.",
+      "jawaban_benar": "$\\frac{29}{4}$",
+      "alasan_benar": "Integralnya F(x)=$\\frac{5 x^{4}}{4} + 3 x^{2} + 3 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=29/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{33}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{37}{4}$",
+          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Integralnya F(x)=$\\frac{5 x^{4}}{4} + 3 x^{2} + 3 x$+C. Dari F(0)=0 diperoleh C=0. Maka F(1)=29/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-A-medium; generation_only; level target bukan label tervalidasi.",
+      "dipaksa_kuota": false
     }
   ]
 }
