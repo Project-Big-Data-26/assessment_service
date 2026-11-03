@@ -1,0 +1,556 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "adalah suku-suku yang memiliki variabel sama dan eksponen dari variabelnya juga sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim derajat",
+      "alasan_level": "mengevaluasi empat klaim tentang derajat selisih dua polinomial yang suku pangkat tertingginya bisa saling meniadakan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)$ berderajat $3$ dan $Q(x)$ berderajat $2$. Misalkan $R(x) = [P(x)]^2 - [Q(x)]^3$ dan $R(x)$ bukan polinomial nol. Pernyataan yang pasti benar adalah ....",
+      "jawaban_benar": "derajat $R(x)$ tidak lebih dari $6$",
+      "alasan_benar": "$[P(x)]^2$ dan $[Q(x)]^3$ sama-sama berderajat $6$, sehingga suku $x^6$ dapat saling meniadakan dan derajat selisihnya paling tinggi $6$",
+      "distraktor": [
+        {
+          "teks": "derajat $R(x)$ tepat $6$",
+          "alasan": "mengira selisih dua polinomial berderajat sama pasti berderajat sama; contoh $P=x^3+1$, $Q=x^2$ memberi $R=2x^3+1$"
+        },
+        {
+          "teks": "derajat $R(x)$ tepat $5$",
+          "alasan": "mengurangkan derajat dengan cara $3\\cdot 2 - 1$ tanpa dasar; contoh $P=x^3+1$, $Q=x^2$ memberi derajat $3$"
+        },
+        {
+          "teks": "derajat $R(x)$ tepat $12$",
+          "alasan": "menjumlahkan derajat kedua pangkat ($6+6$) padahal pada pengurangan derajat tidak dijumlahkan"
+        }
+      ],
+      "pembahasan": "$P^2$ berderajat 6 dan $Q^3$ berderajat 6. Selisih dua polinomial berderajat 6 berderajat paling tinggi 6 (bisa lebih rendah jika koefisien $x^6$ sama). Contoh penyangkal: $P=x^3+1$, $Q=x^2$ menghasilkan $R=2x^3+1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "adalah suku-suku yang memiliki variabel sama dan eksponen dari variabelnya juga sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim derajat",
+      "alasan_level": "menimbang empat pernyataan umum tentang derajat jumlah, selisih, dan hasil kali dengan contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan berikut yang pasti benar untuk sembarang polinomial $P(x)$ dan $Q(x)$ yang memenuhi syaratnya adalah ....",
+      "jawaban_benar": "Jika $P(x)$ berderajat $5$ dan $Q(x)$ berderajat $2$, maka $P(x) - Q(x)$ berderajat $5$.",
+      "alasan_benar": "suku $x^5$ hanya dimiliki $P(x)$ sehingga tidak ada yang meniadakannya dan derajat selisih tetap $5$",
+      "distraktor": [
+        {
+          "teks": "Jika $P(x)$ dan $Q(x)$ keduanya berderajat $4$, maka $P(x) + Q(x)$ berderajat $4$.",
+          "alasan": "mengabaikan kemungkinan koefisien $x^4$ saling meniadakan, mis. $x^4+x$ dan $-x^4+2$"
+        },
+        {
+          "teks": "Jika $P(x)$ dan $Q(x)$ keduanya berderajat $3$, maka $P(x) \\cdot Q(x)$ berderajat $9$.",
+          "alasan": "mengalikan derajat, bukan menjumlahkan; hasilnya berderajat $6$"
+        },
+        {
+          "teks": "Jika $P(x)$ dan $Q(x)$ keduanya berderajat $6$, maka $P(x) - Q(x)$ berderajat $0$.",
+          "alasan": "mengira dua polinomial berderajat sama saling meniadakan semua suku; contoh $x^6+x$ dan $x^6+3$ memberi selisih $x-3$ yang berderajat $1$"
+        }
+      ],
+      "pembahasan": "Hanya pernyataan pertama yang berlaku untuk semua polinomial. Yang lain punya contoh penyangkal.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "Untuk menjumlahkan dan mengurangkan suku-suku sejenis, kamu dapat menggunakan sifat distributif seperti ilustrasi berikut ini."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan",
+      "alasan_level": "mengevaluasi langkah demi langkah penyelesaian pengurangan untuk menemukan langkah pertama yang salah",
+      "stimulus": "$(6x^3 - 4x^2 + 5x - 8) - (2x^3 - 7x^2 - 3x + 4)$\n\n(1) $= 6x^3 - 4x^2 + 5x - 8 - 2x^3 - 7x^2 + 3x - 4$\n\n(2) $= 6x^3 - 2x^3 - 4x^2 - 7x^2 + 5x + 3x - 8 - 4$\n\n(3) $= 4x^3 - 11x^2 + 8x - 12$",
+      "pertanyaan": "Seorang siswa menyelesaikan pengurangan polinomial pada stimulus. Langkah pertama yang mengandung kesalahan adalah ....",
+      "jawaban_benar": "langkah (1), karena $-(-7x^2)$ seharusnya menjadi $+7x^2$",
+      "alasan_benar": "pada langkah (1) tanda $-7x^2$ tidak dibalik; langkah (2) dan (3) konsisten dengan langkah (1)",
+      "distraktor": [
+        {
+          "teks": "langkah (2), karena suku-suku sejenis dikelompokkan dengan salah",
+          "alasan": "langkah (2) hanya mengelompokkan ulang suku-suku langkah (1) dan benar"
+        },
+        {
+          "teks": "langkah (3), karena koefisien hasil penjumlahan salah",
+          "alasan": "penjumlahan koefisien pada langkah (3) benar terhadap langkah (2)"
+        },
+        {
+          "teks": "tidak ada langkah yang salah",
+          "alasan": "hasil akhir $4x^3 - 11x^2 + 8x - 12$ berbeda dari hasil benar $4x^3 + 3x^2 + 8x - 12$"
+        }
+      ],
+      "pembahasan": "Langkah (1) seharusnya memberi $6x^3-4x^2+5x-8-2x^3+7x^2+3x-4$. Hasil benar $4x^3+3x^2+8x-12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Sekarang kamu telah mengetahui bagaimana mengalikan dua polinomial, selanjutnya perhatikan contoh berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan",
+      "alasan_level": "mengevaluasi penyelesaian perkalian polinomial untuk menemukan langkah pertama yang keliru",
+      "stimulus": "(1) $(4x - 3)(2x^2 - x + 6) = 4x(2x^2 - x + 6) - 3(2x^2 - x + 6)$\n\n(2) $= 8x^3 - 4x^2 + 24x - 6x^2 - 3x - 18$\n\n(3) $= 8x^3 - 10x^2 + 21x - 18$",
+      "pertanyaan": "Seorang siswa mengalikan $(4x - 3)(2x^2 - x + 6)$ seperti pada stimulus. Pernyataan yang benar tentang pekerjaan siswa adalah ....",
+      "jawaban_benar": "langkah (2) salah karena $-3 \\cdot (-x)$ seharusnya $+3x$, dan hasil yang benar adalah $8x^3 - 10x^2 + 27x - 18$",
+      "alasan_benar": "langkah (1) benar; pada langkah (2) suku $-3x$ seharusnya $+3x$ sehingga koefisien $x$ menjadi $24+3=27$",
+      "distraktor": [
+        {
+          "teks": "langkah (1) salah karena faktor $(4x-3)$ tidak boleh dipecah menjadi dua suku, dan hasil benar $8x^3 - 10x^2 + 21x - 18$",
+          "alasan": "menganggap distribusi pada langkah (1) salah; padahal itu penerapan sifat distributif yang benar"
+        },
+        {
+          "teks": "langkah (3) salah karena $24x - 3x$ seharusnya $27x$, sedangkan langkah (2) benar",
+          "alasan": "langkah (3) konsisten dengan langkah (2); sumber kesalahan sebenarnya ada di langkah (2)"
+        },
+        {
+          "teks": "semua langkah benar dan hasil akhirnya $8x^3 - 10x^2 + 21x - 18$",
+          "alasan": "tidak memeriksa tanda $-3 \\cdot (-x) = +3x$"
+        }
+      ],
+      "pembahasan": "Hasil benar: $8x^3-4x^2+24x-6x^2+3x-18 = 8x^3-10x^2+27x-18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Sekarang kamu telah mengetahui bagaimana mengalikan dua polinomial, selanjutnya perhatikan contoh berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menemukan kesalahan",
+      "alasan_level": "mengevaluasi klaim bahwa kuadrat binomial hanya dikuadratkan sukunya dan mengukur besar kesalahannya",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menulis $(2x - 7)^2 = 4x^2 + 49$. Jika bentuk yang benar dikurangi bentuk tulisan siswa, hasilnya adalah ....",
+      "jawaban_benar": "$-28x$",
+      "alasan_benar": "$(2x-7)^2 = (2x-7)(2x-7) = 4x^2 - 28x + 49$, sehingga selisihnya $-28x$",
+      "distraktor": [
+        {
+          "teks": "$28x$",
+          "alasan": "membalik urutan pengurangan (tulisan siswa dikurangi bentuk benar)"
+        },
+        {
+          "teks": "$-14x$",
+          "alasan": "menghitung suku tengah $2 \\cdot 2x \\cdot 7$ tanpa mengalikan koefisien $2x$ dengan benar"
+        },
+        {
+          "teks": "$0$",
+          "alasan": "membenarkan klaim siswa tanpa memeriksa suku silang $-14x$ dan $-14x$"
+        }
+      ],
+      "pembahasan": "$(2x-7)(2x-7) = 4x^2-14x-14x+49 = 4x^2-28x+49$. Selisih dengan $4x^2+49$ adalah $-28x$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "Untuk menjumlahkan dan mengurangkan suku-suku sejenis, kamu dapat menggunakan sifat distributif seperti ilustrasi berikut ini."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "merancang polinomial",
+      "alasan_level": "merancang polinomial yang memenuhi tiga syarat sekaligus pada selisih dan jumlahnya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x) = 5x^3 - 4x^2 + x + 3$. Polinomial $Q(x) = 5x^3 + ax^2 + bx + c$ dirancang sehingga $P(x) - Q(x)$ berderajat $1$ dengan koefisien $x$ sama dengan $6$, dan suku konstan $P(x) + Q(x)$ sama dengan $11$. Nilai $a + b + c$ adalah ....",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "$P-Q$ berderajat 1 mensyaratkan $-4-a=0$ dan $1-b=6$; suku konstan $3+c=11$",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "memakai $a=-4$, $b=-5$, dan $c=-8$ (suku konstan dihitung dari $3-c=11$)"
+        },
+        {
+          "teks": "$17$",
+          "alasan": "memakai $a=4$, $b=5$, $c=8$ (salah tanda pada $a$ dan $b$)"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "menyelesaikan $1-b=6$ sebagai $b=5$ (salah memindahkan ruas), sehingga $a+b+c=-4+5+8$"
+        }
+      ],
+      "pembahasan": "$P-Q = (-4-a)x^2+(1-b)x+(3-c)$, berderajat 1 jika $a=-4$; $1-b=6 \\Rightarrow b=-5$; $P+Q$ suku konstan $3+c=11 \\Rightarrow c=8$; jumlah $= -1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Sekarang kamu telah mengetahui bagaimana mengalikan dua polinomial, selanjutnya perhatikan contoh berikut!"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang polinomial",
+      "alasan_level": "merancang faktor sehingga suku-suku tengah hasil kali saling meniadakan",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $R(x) = x^2 + px + q$ dirancang sehingga hasil perkalian $(x - 3)R(x)$ hanya terdiri dari dua suku. Polinomial $R(x)$ tersebut adalah ....",
+      "jawaban_benar": "$x^2 + 3x + 9$",
+      "alasan_benar": "$(x-3)(x^2+px+q) = x^3+(p-3)x^2+(q-3p)x-3q$; suku $x^2$ dan $x$ lenyap bila $p=3$ dan $q=9$ sehingga hasilnya $x^3-27$",
+      "distraktor": [
+        {
+          "teks": "$x^2 - 3x + 9$",
+          "alasan": "salah tanda $p$; hasilnya $x^3-6x^2+18x-27$ masih empat suku"
+        },
+        {
+          "teks": "$x^2 + 3x - 9$",
+          "alasan": "salah tanda $q$; hasilnya $x^3-18x+27$ masih tiga suku"
+        },
+        {
+          "teks": "$x^2 + 9$",
+          "alasan": "mengira cukup menghilangkan suku $x$ pada $R$; hasilnya $x^3-3x^2+9x-27$ empat suku"
+        }
+      ],
+      "pembahasan": "Samakan koefisien $x^2$ dan $x$ dengan $0$: $p=3$, $q=9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Sekarang kamu telah mengetahui bagaimana mengalikan dua polinomial, selanjutnya perhatikan contoh berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim hasil operasi",
+      "alasan_level": "menilai klaim hasil operasi dan menemukan bahwa suku-suku yang bergantung pada $x$ saling meniadakan",
+      "stimulus": null,
+      "pertanyaan": "Tiga siswa memberi klaim tentang bentuk paling sederhana dari $(x + 3)(x^2 - 3x + 9) - (x - 3)(x^2 + 3x + 9)$. Klaim yang benar adalah ....",
+      "jawaban_benar": "hasilnya $54$, bernilai sama untuk setiap $x$",
+      "alasan_benar": "$(x+3)(x^2-3x+9)=x^3+27$ dan $(x-3)(x^2+3x+9)=x^3-27$, selisihnya $54$",
+      "distraktor": [
+        {
+          "teks": "hasilnya $2x^3$, berderajat $3$",
+          "alasan": "mengira suku $x^3$ dijumlahkan padahal harus dikurangkan"
+        },
+        {
+          "teks": "hasilnya $0$ karena kedua hasil kali tampak serupa",
+          "alasan": "mengabaikan suku konstan $+27$ dan $-27$ yang berbeda tanda"
+        },
+        {
+          "teks": "hasilnya $27$, bernilai sama untuk setiap $x$",
+          "alasan": "hanya memakai satu suku konstan dan lupa mengurangkan $-27$"
+        }
+      ],
+      "pembahasan": "$x^3+27-(x^3-27)=54$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Sekarang kamu telah mengetahui bagaimana mengalikan dua polinomial, selanjutnya perhatikan contoh berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim hasil operasi",
+      "alasan_level": "menilai klaim tentang banyak suku hasil perkalian ketika hampir semua suku tengah saling meniadakan",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan yang benar tentang hasil perkalian $(x^5 + x^4 + x^3 + x^2 + x + 1)(x - 1)$ setelah disederhanakan adalah ....",
+      "jawaban_benar": "terdiri dari $2$ suku dan berderajat $6$",
+      "alasan_benar": "setiap suku $x^k$ pada hasil distribusi $x\\cdot(\\dots)$ meniadakan $-x^k$ dari $-1\\cdot(\\dots)$, tersisa $x^6-1$",
+      "distraktor": [
+        {
+          "teks": "terdiri dari $6$ suku dan berderajat $5$",
+          "alasan": "menganggap banyak suku sama dengan faktor pertama dan derajat tidak naik karena dikalikan $x$"
+        },
+        {
+          "teks": "terdiri dari $12$ suku dan berderajat $6$",
+          "alasan": "menghitung banyak suku sebelum disederhanakan ($6 \\times 2$)"
+        },
+        {
+          "teks": "terdiri dari $7$ suku dan berderajat $6$",
+          "alasan": "menjumlahkan suku $x^6$ dengan keenam suku lain tanpa memeriksa pasangan yang meniadakan"
+        }
+      ],
+      "pembahasan": "Hasilnya $x^6-1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 81,
+        "kutipan": "Sekarang kamu telah mengetahui bagaimana mengalikan dua polinomial, selanjutnya perhatikan contoh berikut!"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim hasil operasi",
+      "alasan_level": "menilai empat klaim nilai parameter dan koefisien hasil kali yang harus konsisten dengan dua syarat suku hilang",
+      "stimulus": null,
+      "pertanyaan": "Hasil perkalian $(x^2 + ax + 4)(x^2 - 3x + b)$ yang telah disederhanakan tidak memuat suku $x^3$ dan suku $x$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$a = 3$, $b = 4$, dan koefisien $x^2$ adalah $-1$",
+      "alasan_benar": "koefisien $x^3$: $a-3=0$; koefisien $x$: $ab-12=0$ sehingga $b=4$; koefisien $x^2$: $b+4-3a=-1$",
+      "distraktor": [
+        {
+          "teks": "$a = 3$, $b = -4$, dan koefisien $x^2$ adalah $-9$",
+          "alasan": "menghitung koefisien $x$ sebagai $ab+12=0$ (salah tanda $4 \\cdot (-3)$)"
+        },
+        {
+          "teks": "$a = -3$, $b = 4$, dan koefisien $x^2$ adalah $17$",
+          "alasan": "menyelesaikan $a-3=0$ menjadi $a=-3$"
+        },
+        {
+          "teks": "$a = 3$, $b = 4$, dan koefisien $x^2$ adalah $8$",
+          "alasan": "koefisien $x^2$ hanya dari $b+4$ tanpa suku silang $-3a x^2$"
+        }
+      ],
+      "pembahasan": "Koefisien $x^3$: $a-3$; koefisien $x$: $ab-12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "kutipan": "Hasil kali dua bilangan dapat dimaknai sebagai luas daerah."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "pemodelan dan evaluasi hasil",
+      "alasan_level": "memodelkan volume kotak dari potongan karton lalu menilai empat klaim bentuk polinomialnya",
+      "stimulus": null,
+      "pertanyaan": "Selembar karton berbentuk persegi dengan sisi $20$ cm. Dari setiap sudutnya dipotong persegi dengan sisi $x$ cm, lalu karton dilipat menjadi kotak tanpa tutup dengan tinggi $x$ cm. Volume kotak $V(x)$ dinyatakan dalam $x$. Pernyataan yang benar tentang $V(x)$ yang telah disederhanakan adalah ....",
+      "jawaban_benar": "berderajat $3$ dan koefisien $x^2$ adalah $-80$",
+      "alasan_benar": "alas kotak berukuran $(20-2x)$ kali $(20-2x)$ sehingga $V=x(20-2x)^2=4x^3-80x^2+400x$",
+      "distraktor": [
+        {
+          "teks": "berderajat $3$ dan tidak memuat suku $x^2$",
+          "alasan": "mengkuadratkan $(20-2x)$ menjadi $400-4x^2$ tanpa suku tengah"
+        },
+        {
+          "teks": "berderajat $2$ dan koefisien $x^2$ adalah $-2$",
+          "alasan": "menghitung alas sebagai $(20-2x)$ saja (satu faktor) sehingga $V=x(20-2x)$"
+        },
+        {
+          "teks": "berderajat $3$ dan koefisien $x^2$ adalah $-40$",
+          "alasan": "suku tengah dihitung $-2\\cdot 20x$ bukan $-2\\cdot 2\\cdot 20x$"
+        }
+      ],
+      "pembahasan": "$V=x(400-80x+4x^2)=4x^3-80x^2+400x$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "kutipan": "Hasil kali dua bilangan dapat dimaknai sebagai luas daerah."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pemodelan dan evaluasi hasil",
+      "alasan_level": "memodelkan selisih luas dua persegi dan menilai klaim bentuk selisihnya (suku kuadrat saling meniadakan)",
+      "stimulus": null,
+      "pertanyaan": "Persegi $A$ bersisi $(2x + 7)$ cm dan persegi $B$ bersisi $(2x - 7)$ cm dengan $x > 3{,}5$. Selisih luas $A - B$ (dalam cm$^2$) yang benar adalah ....",
+      "jawaban_benar": "$56x$",
+      "alasan_benar": "$(2x+7)^2-(2x-7)^2=(4x^2+28x+49)-(4x^2-28x+49)=56x$",
+      "distraktor": [
+        {
+          "teks": "$98$, konstan",
+          "alasan": "mengira suku silang saling meniadakan lalu menjumlahkan $49$ dan $49$ alih-alih menghitung selisih"
+        },
+        {
+          "teks": "$28x$",
+          "alasan": "hanya menghitung satu suku silang ($28x$), padahal ada dua suku silang berbeda tanda"
+        },
+        {
+          "teks": "$8x^2 + 98$",
+          "alasan": "menjumlahkan luas kedua persegi, bukan menghitung selisihnya"
+        }
+      ],
+      "pembahasan": "Luas A $=4x^2+28x+49$, luas B $=4x^2-28x+49$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 83,
+        "kutipan": "Jika tanda kotak pada persamaan diganti dengan sembarang bilangan real, apakah"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim derajat",
+      "alasan_level": "mengevaluasi klaim tentang sifat polinomial hasil kali ketika koefisien boleh bernilai nol",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan $(\\square x^2 + \\square x + 1)(\\square x - 1) = A(x)$. Jika tanda kotak diganti sembarang bilangan real (boleh nol), pernyataan yang benar tentang $A(x)$ adalah ....",
+      "jawaban_benar": "$A(x)$ selalu polinomial bukan nol, dan derajatnya paling tinggi $3$ (dapat kurang dari $3$)",
+      "alasan_benar": "hasil kali polinomial adalah polinomial; suku konstan $A(x)$ selalu $-1$ sehingga tidak nol; derajat $3$ terjadi hanya bila koefisien $x^2$ dan $x$ pada kedua faktor tidak nol",
+      "distraktor": [
+        {
+          "teks": "$A(x)$ selalu berderajat tepat $3$",
+          "alasan": "melupakan bahwa kotak boleh diisi nol, mis. $(x^2+1)(0\\cdot x-1)=-x^2-1$ berderajat $2$"
+        },
+        {
+          "teks": "$A(x)$ tidak selalu polinomial karena kotak dapat diisi $0$",
+          "alasan": "mengira koefisien nol menghasilkan bentuk yang bukan polinomial"
+        },
+        {
+          "teks": "$A(x)$ dapat berderajat $4$ jika kotak diisi bilangan besar",
+          "alasan": "mengira derajat naik bila koefisien besar; derajat hanya ditentukan pangkat variabel, maksimum $2+1=3$"
+        }
+      ],
+      "pembahasan": "Derajat maksimum $2+1=3$; koefisien nol menurunkannya; konstanta $-1$ menjamin tidak nol.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 82,
+        "kutipan": "Polinomial pertama dikurangi polinomial kedua sama dengan negatif dari penjumlahan kedua polinomial tersebut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi sifat operasi",
+      "alasan_level": "mengevaluasi empat kesamaan umum antarpolinomial dengan memilih satu yang berlaku untuk semua polinomial",
+      "stimulus": null,
+      "pertanyaan": "Untuk sembarang polinomial $P(x)$, $Q(x)$, dan $R(x)$, kesamaan yang selalu berlaku adalah ....",
+      "jawaban_benar": "$P(x) - Q(x) = -[Q(x) - P(x)]$",
+      "alasan_benar": "mengubah tanda setiap suku $Q - P$ menghasilkan $P - Q$",
+      "distraktor": [
+        {
+          "teks": "$P(x) - Q(x) = -[P(x) + Q(x)]$",
+          "alasan": "mengira selisih sama dengan negatif jumlah; contoh $P=x$, $Q=1$"
+        },
+        {
+          "teks": "$P(x) - Q(x) = Q(x) - P(x)$",
+          "alasan": "mengira pengurangan komutatif; hanya berlaku bila $P=Q$"
+        },
+        {
+          "teks": "$P(x) - [Q(x) + R(x)] = P(x) - Q(x) + R(x)$",
+          "alasan": "tidak membalik tanda $R(x)$ saat menghilangkan tanda kurung"
+        }
+      ],
+      "pembahasan": "$-(Q-P)=P-Q$. Contoh $P=x$, $Q=1$, $R=1$ menyangkal tiga kesamaan lain.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "adalah suku-suku yang memiliki variabel sama dan eksponen dari variabelnya juga sama."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kemungkinan derajat jumlah dan selisih",
+      "alasan_level": "menalar kemungkinan derajat jumlah dan selisih secara bersamaan (jumlah meniadakan suku utama berarti selisih menggandakannya)",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)$ dan $Q(x)$ masing-masing berderajat $4$. Kejadian yang mungkin terjadi adalah ....",
+      "jawaban_benar": "$P(x) + Q(x)$ berderajat $2$ dan $P(x) - Q(x)$ berderajat $4$",
+      "alasan_benar": "jika koefisien $x^4$ adalah $p$ dan $q$ dengan $p+q=0$, maka $p-q=2p\\neq 0$; contoh $3x^4+2x^3+x^2-5$ dan $-3x^4-2x^3+4x^2+1$",
+      "distraktor": [
+        {
+          "teks": "$P(x) + Q(x)$ dan $P(x) - Q(x)$ keduanya berderajat $2$",
+          "alasan": "tidak mungkin: $p+q=0$ dan $p-q=0$ mengakibatkan $p=0$, bertentangan dengan derajat $4$"
+        },
+        {
+          "teks": "$P(x) + Q(x)$ berderajat $8$",
+          "alasan": "menjumlahkan derajat seperti pada perkalian; jumlah tidak pernah melebihi derajat $4$"
+        },
+        {
+          "teks": "$P(x) + Q(x)$ dan $P(x) - Q(x)$ keduanya berderajat $3$",
+          "alasan": "tidak mungkin: agar suku $x^4$ lenyap pada jumlah dan selisih sekaligus, harus $p=q=0$"
+        }
+      ],
+      "pembahasan": "Suku $x^4$ tidak dapat lenyap pada jumlah dan selisih sekaligus.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "adalah suku-suku yang memiliki variabel sama dan eksponen dari variabelnya juga sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memilih polinomial yang menjadi contoh penyangkal klaim tentang derajat jumlah dua polinomial berderajat sama",
+      "stimulus": null,
+      "pertanyaan": "Budi mengklaim: \"Jumlah dua polinomial berderajat $3$ selalu berderajat $3$.\" Diketahui $P(x) = 2x^3 - 5x^2 + x + 4$. Polinomial $Q(x)$ yang bersama $P(x)$ merupakan contoh penyangkal klaim Budi adalah ....",
+      "jawaban_benar": "$Q(x) = -2x^3 + x^2 + 6$",
+      "alasan_benar": "$Q$ berderajat $3$ dan $P+Q=-4x^2+x+10$ berderajat $2$, bukan $3$",
+      "distraktor": [
+        {
+          "teks": "$Q(x) = x^2 - 3x + 7$",
+          "alasan": "$Q$ tidak berderajat $3$, sehingga tidak memenuhi syarat klaim; jumlahnya tetap berderajat $3$"
+        },
+        {
+          "teks": "$Q(x) = 2x^3 + x - 1$",
+          "alasan": "koefisien $x^3$ dijumlahkan menjadi $4$, jumlahnya berderajat $3$ sehingga mendukung klaim"
+        },
+        {
+          "teks": "$Q(x) = -x^3 + 4x + 2$",
+          "alasan": "koefisien $x^3$ menjadi $1$ (tidak nol), jumlahnya tetap berderajat $3$"
+        }
+      ],
+      "pembahasan": "Agar jumlah turun derajat, koefisien $x^3$ $Q$ harus $-2$.",
+      "catatan": null
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Hard subbab B (penjumlahan, pengurangan, perkalian polinomial) hanya menyediakan penalaran C5-C6 pada evaluasi klaim derajat, temuan kesalahan langkah, contoh penyangkal, dan perancangan polinomial; soal hitung langsung, parameter, atau soal sistem polinomial bersifat C3-C4 sehingga tidak dilabeli hard. Sisanya akan menjadi soal nyaris kembar."
+}

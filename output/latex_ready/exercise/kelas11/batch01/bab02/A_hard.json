@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 2,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b02-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b02-p0074-latihan-21-4c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "segitiga dalam lingkaran",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembuktian segitiga siku-siku dengan Teorema Thales serta manipulasi identitas aljabar untuk menentukan luas segitiga dari keliling yang diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran dengan panjang jari-jari $13\\text{ cm}$. Titik $C$ terletak pada lingkaran sedemikian sehingga keliling segitiga $ABC$ adalah $60\\text{ cm}$. Luas segitiga $ABC$ tersebut adalah ....",
+      "jawaban_benar": "$120\\text{ cm}^2$",
+      "alasan_benar": "Karena $AB$ adalah diameter, Teorema Thales menyatakan bahwa $\\angle ACB = 90^\\circ$. Panjang diameter $AB = 2 \\times 13 = 26\\text{ cm}$. Dari keliling segitiga diperoleh $AC + BC = 60 - 26 = 34\\text{ cm}$. Menurut teorema Pythagoras, $AC^2 + BC^2 = AB^2 = 26^2 = 676$. Menggunakan identitas aljabar: $(AC + BC)^2 = AC^2 + BC^2 + 2(AC \\times BC) \\Rightarrow 34^2 = 676 + 2(AC \\times BC) \\Rightarrow 1.156 - 676 = 2(AC \\times BC) \\Rightarrow 2(AC \\times BC) = 480 \\Rightarrow AC \\times BC = 240$. Luas segitiga $ABC = \\frac{1}{2} \\times AC \\times BC = \\frac{1}{2} \\times 240 = 120\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$240\\text{ cm}^2$",
+          "alasan": "Siswa lupa mengalikan dengan faktor setengah pada rumus luas segitiga siku-siku."
+        },
+        {
+          "teks": "$60\\text{ cm}^2$",
+          "alasan": "Siswa membagi luas yang benar dengan dua karena salah mengira rumus luas segitiga."
+        },
+        {
+          "teks": "$156\\text{ cm}^2$",
+          "alasan": "Siswa langsung mengalikan jari-jari dengan setengah keliling alas secara keliru ($13 \\times 12$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan panjang diameter $AB = 2r = 2 \\times 13\\text{ cm} = 26\\text{ cm}$.\nLangkah 2: Berdasarkan Teorema Thales, sudut keliling yang menghadap diameter adalah siku-siku, sehingga $\\angle ACB = 90^\\circ$ dan berlaku $AC^2 + BC^2 = 26^2 = 676$.\nLangkah 3: Dari keliling segitiga $ABC = 60\\text{ cm}$, maka $AC + BC + 26 = 60 \\Rightarrow AC + BC = 34\\text{ cm}$.\nLangkah 4: Gunakan pengkuadratan aljabar:\n$(AC + BC)^2 = AC^2 + BC^2 + 2 \\cdot AC \\cdot BC$\n$34^2 = 676 + 2 \\cdot AC \\cdot BC$\n$1.156 = 676 + 2 \\cdot AC \\cdot BC$\n$2 \\cdot AC \\cdot BC = 480 \\Rightarrow AC \\cdot BC = 240$.\nLangkah 5: Hitung luas segitiga:\n$\\text{Luas } \\triangle ABC = \\frac{1}{2} \\times AC \\times BC = \\frac{1}{2} \\times 240 = 120\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 74,
+        "bagian": "Latihan 2.1",
+        "nomor": "3",
+        "teks": "Lingkaran A berjari-jari 2 satuan. Jika panjang BC = 2, tentukan besar ∠ BDC",
+        "jawaban": "30°",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "selisih sudut busur lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan sudut pusat melalui aturan cosinus serta analisis perbandingan sudut keliling pada busur mayor dan busur minor.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran berpusat di titik $O$ memiliki panjang jari-jari $6\\text{ cm}$. Dua titik $P$ dan $Q$ terletak pada lingkaran sehingga panjang tali busur $PQ = 6\\sqrt{3}\\text{ cm}$. Titik $R$ terletak pada busur mayor $PQ$, sedangkan titik $S$ terletak pada busur minor $PQ$. Selisih antara besar $\\angle PSQ$ dan $\\angle PRQ$ adalah ....",
+      "jawaban_benar": "$60^\\circ$",
+      "alasan_benar": "Pada $\\triangle OPQ$, panjang $OP = OQ = 6$ dan $PQ = 6\\sqrt{3}$. Melalui aturan cosinus: $\\cos \\angle POQ = \\frac{6^2 + 6^2 - (6\\sqrt{3})^2}{2 \\cdot 6 \\cdot 6} = \\frac{72 - 108}{72} = -\\frac{1}{2}$, sehingga sudut pusat minor $\\angle POQ = 120^\\circ$. Titik $R$ pada busur mayor menghadap busur minor $PQ$, sehingga $\\angle PRQ = \\frac{1}{2} \\times 120^\\circ = 60^\\circ$. Titik $S$ pada busur minor menghadap busur mayor $PQ$ yang bersudut pusat $360^\\circ - 120^\\circ = 240^\\circ$, sehingga $\\angle PSQ = \\frac{1}{2} \\times 240^\\circ = 120^\\circ$. Selisihnya adalah $|120^\\circ - 60^\\circ| = 60^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$30^\\circ$",
+          "alasan": "Siswa salah menghitung $\\angle PRQ$ sebagai setengah dari $60^\\circ$ bukannya setengah dari $120^\\circ$."
+        },
+        {
+          "teks": "$0^\\circ$",
+          "alasan": "Siswa beranggapan semua sudut keliling besarnya sama tanpa membedakan posisi pada busur mayor dan minor."
+        },
+        {
+          "teks": "$90^\\circ$",
+          "alasan": "Siswa keliru menganggap kedua sudut keliling tersebut saling berkomplemen."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung besar sudut pusat $\\angle POQ$ menggunakan aturan cosinus pada $\\triangle OPQ$ dengan $OP = 6$, $OQ = 6$, dan $PQ = 6\\sqrt{3}$:\n$\\cos \\angle POQ = \\frac{6^2 + 6^2 - (6\\sqrt{3})^2}{2 \\times 6 \\times 6} = \\frac{36 + 36 - 108}{72} = -\\frac{36}{72} = -\\frac{1}{2}$\nMaka sudut pusat minor $\\angle POQ = 120^\\circ$.\nLangkah 2: Hitung besar $\\angle PRQ$. Titik $R$ berada di busur mayor dan menghadap busur minor $PQ$:\n$\\angle PRQ = \\frac{1}{2} \\times 120^\\circ = 60^\\circ$.\nLangkah 3: Hitung besar $\\angle PSQ$. Titik $S$ berada di busur minor dan menghadap busur mayor $PQ$. Sudut pusat busur mayor $= 360^\\circ - 120^\\circ = 240^\\circ$:\n$\\angle PSQ = \\frac{1}{2} \\times 240^\\circ = 120^\\circ$.\nLangkah 4: Hitung selisih kedua sudut:\n$|\\angle PSQ - \\angle PRQ| = |120^\\circ - 60^\\circ| = 60^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 76,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut pusat besarnya dua kali sudut keliling yang menghadap pada busur yang sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "geometri sudut lingkaran",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penyelesaian nilai variabel dari relasi aljabar sudut pusat dan sudut keliling, lalu menganalisis sudut refleks untuk menentukan sudut keliling pada busur sebaliknya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada sebuah lingkaran dengan pusat $O$, sudut pusat $\\angle AOB = (4x + 16)^\\circ$ dan sudut keliling $\\angle ACB = (3x - 14)^\\circ$ sama-sama menghadap busur minor $AB$. Jika titik $D$ terletak pada busur minor $AB$, berapakah besar sudut keliling $\\angle ADB$?",
+      "jawaban_benar": "$128^\\circ$",
+      "alasan_benar": "Sudut pusat sama dengan dua kali sudut keliling yang menghadap busur yang sama: $4x + 16 = 2(3x - 14) \\Rightarrow 4x + 16 = 6x - 28 \\Rightarrow 2x = 44 \\Rightarrow x = 22$. Sudut pusat busur minor adalah $\\angle AOB = 4(22) + 16 = 104^\\circ$. Karena titik $D$ berada pada busur minor $AB$, maka $\\angle ADB$ menghadap ke busur mayor $AB$. Sudut pusat busur mayor $= 360^\\circ - 104^\\circ = 256^\\circ$. Dengan demikian, $\\angle ADB = \\frac{1}{2} \\times 256^\\circ = 128^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$52^\\circ$",
+          "alasan": "Siswa mengira $\\angle ADB$ sama besar dengan $\\angle ACB$ karena sama-sama sudut keliling lingkaran."
+        },
+        {
+          "teks": "$104^\\circ$",
+          "alasan": "Siswa menjawab sebesar sudut pusat busur minor $\\angle AOB$."
+        },
+        {
+          "teks": "$76^\\circ$",
+          "alasan": "Siswa menghitung pelurus dari sudut pusat $180^\\circ - 104^\\circ$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan hubungan sudut pusat dan keliling pada busur minor $AB$:\n$\\angle AOB = 2 \\times \\angle ACB$\n$4x + 16 = 2(3x - 14)$\nLangkah 2: Selesaikan persamaan linier:\n$4x + 16 = 6x - 28$\n$2x = 44 \\Rightarrow x = 22$.\nLangkah 3: Hitung sudut pusat busur minor $\\angle AOB$:\n$\\angle AOB = 4(22) + 16 = 104^\\circ$.\nLangkah 4: Hitung sudut pusat busur mayor $AB$ yang dihadapi oleh $\\angle ADB$:\n$\\text{Sudut refleks } \\angle AOB = 360^\\circ - 104^\\circ = 256^\\circ$.\nLangkah 5: Tentukan besar sudut keliling $\\angle ADB$:\n$\\angle ADB = \\frac{1}{2} \\times 256^\\circ = 128^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 73,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika tiga titik A, B, C terletak pada lingkaran dan AB adalah diameter, maka ∠ ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "sudut perpotongan tali busur",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penerapan Teorema Thales untuk membuktikan segitiga siku-siku serta perpaduan sudut-sudut segitiga dari perpotongan dua ruas garis di dalam lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran. Titik $C$ terletak pada lingkaran sehingga $\\angle ABC = 58^\\circ$. Titik $D$ terletak pada busur $BC$ sedemikian sehingga garis $AD$ memotong tali busur $BC$ di titik $E$. Jika besar $\\angle BAD = 22^\\circ$, berapakah besar sudut $\\angle AEB$?",
+      "jawaban_benar": "$100^\\circ$",
+      "alasan_benar": "Berdasarkan Teorema Thales, karena $AB$ adalah diameter lingkaran, maka $\\angle ACB = 90^\\circ$. Pada segitiga $ABC$, $\\angle CAB = 180^\\circ - 90^\\circ - 58^\\circ = 32^\\circ$. Ruas garis $AD$ berada di antara kaki sudut $\\angle CAB$ dengan $\\angle BAD = 22^\\circ$. Perhatikan segitiga $ABE$, titik $E$ terletak pada ruas garis $AD$ dan $BC$, sehingga sudut-sudut segitiga $ABE$ adalah $\\angle BAE = \\angle BAD = 22^\\circ$ dan $\\angle ABE = \\angle ABC = 58^\\circ$. Jumlah sudut dalam segitiga $ABE$ adalah $180^\\circ$, sehingga $\\angle AEB = 180^\\circ - (22^\\circ + 58^\\circ) = 180^\\circ - 80^\\circ = 100^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$80^\\circ$",
+          "alasan": "Siswa hanya menjumlahkan dua sudut yang diketahui ($22^\\circ + 58^\\circ$) tanpa mengurangkannya dari $180^\\circ$."
+        },
+        {
+          "teks": "$90^\\circ$",
+          "alasan": "Siswa salah berasumsi bahwa garis $AD$ dan $BC$ berpotongan tegak lurus."
+        },
+        {
+          "teks": "$110^\\circ$",
+          "alasan": "Siswa keliru menghitung selisih sudut dalam $\\triangle ABC$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Terapkan Teorema Thales pada $\\triangle ABC$. Karena $AB$ diameter, $\\angle ACB = 90^\\circ$.\nLangkah 2: Tentukan besar $\\angle CAB$ dalam $\\triangle ABC$:\n$\\angle CAB = 180^\\circ - (90^\\circ + 58^\\circ) = 32^\\circ$.\nLangkah 3: Identifikasi sudut-sudut pada segitiga $ABE$:\nTitik $E$ adalah titik potong $AD$ dan $BC$, sehingga ruas garis $AE$ berimpit dengan $AD$ dan ruas garis $BE$ berimpit dengan $BC$.\nDidapatkan $\\angle BAE = \\angle BAD = 22^\\circ$ dan $\\angle ABE = \\angle ABC = 58^\\circ$.\nLangkah 4: Hitung besar $\\angle AEB$ menggunakan jumlah sudut dalam $\\triangle ABE$:\n$\\angle AEB = 180^\\circ - (\\angle BAE + \\angle ABE) = 180^\\circ - (22^\\circ + 58^\\circ) = 180^\\circ - 80^\\circ = 100^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 76,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pelajari sudut yang dibentuk antara cahaya dari kedua mercusuar ( ∠ PCQ) jika kapal berada di luar lingkaran/pada lingkaran/di dalam lingkaran."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "aplikasi sudut lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap kedudukan titik terhadap lingkaran berdasarkan besarnya sudut pandang terhadap dua titik acuan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua mercusuar $P$ dan $Q$ terletak pada batas lingkaran zona bahaya karang yang berpusat di $O$. Sudut pusat busur minor karang tersebut adalah $\\angle POQ = 80^\\circ$. Sebuah kapal $K$ bernavigasi dan mengamati kedua mercusuar dengan mengukur sudut pandang $\\angle PKQ$ pada sisi yang sama dengan busur mayor. Agar kapal dipastikan berada di luar zona bahaya lingkaran tersebut, kapten kapal harus menjaga agar besar sudut $\\angle PKQ$ memenuhi syarat ....",
+      "jawaban_benar": "$\\angle PKQ < 40^\\circ$",
+      "alasan_benar": "Jika kapal berada tepat pada keliling lingkaran, sudut keliling yang terbentuk menghadap busur minor $PQ$ adalah $\\frac{1}{2} \\times \\angle POQ = \\frac{1}{2} \\times 80^\\circ = 40^\\circ$. Berdasarkan sifat geometris, jika titik pengamatan menjauh ke luar lingkaran, sudut pandang terhadap tali busur $PQ$ akan mengecil (kurang dari sudut keliling lingkaran). Sebaliknya, jika kapal masuk ke dalam lingkaran zona bahaya, sudut pandang akan membesar ($> 40^\\circ$). Jadi, syarat agar kapal berada di luar zona bahaya adalah $\\angle PKQ < 40^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$\\angle PKQ > 40^\\circ$",
+          "alasan": "Siswa terbalik mengira bahwa berada di luar lingkaran menghasilkan sudut pandang yang lebih besar daripada sudut keliling."
+        },
+        {
+          "teks": "$\\angle PKQ = 40^\\circ$",
+          "alasan": "Siswa memilih kondisi saat kapal berada tepat pada batas lingkaran zona bahaya."
+        },
+        {
+          "teks": "$\\angle PKQ < 80^\\circ$",
+          "alasan": "Siswa membandingkan langsung dengan sudut pusat $80^\\circ$ bukannya sudut keliling lingkaran."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung besar sudut batas saat kapal berada tepat pada keliling lingkaran. Sudut keliling yang menghadap busur minor $PQ$ adalah:\n$\\angle PKQ_{\\text{batas}} = \\frac{1}{2} \\times \\angle POQ = \\frac{1}{2} \\times 80^\\circ = 40^\\circ$.\nLangkah 2: Analisis posisi titik pengamat terhadap lingkaran:\n- Titik pada lingkaran memiliki besar sudut pandang $= 40^\\circ$.\n- Titik di dalam lingkaran memiliki sudut pandang $> 40^\\circ$.\n- Titik di luar lingkaran memiliki sudut pandang $< 40^\\circ$.\nLangkah 3: Simpulkan syarat keamanan kapal:\nAgar kapal tetap berada di luar daerah bahaya, sudut pandang harus memenuhi $\\angle PKQ < 40^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b02-p0074-latihan-21-4c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "panjang tali busur diameter",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan diameter dari jari-jari desimal, pembuktian sudut siku-siku berdasarkan Teorema Thales, dan penerapan teorema Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ adalah diameter pada sebuah lingkaran. Jari-jari lingkaran tersebut adalah $32{,}5\\text{ cm}$ dan panjang tali busur $AC = 39\\text{ cm}$. Tentukan panjang tali busur $BC$.",
+      "jawaban_benar": "$52\\text{ cm}$",
+      "alasan_benar": "Diameter lingkaran adalah $AB = 2 \\times 32{,}5 = 65\\text{ cm}$. Berdasarkan Teorema Thales, karena $AB$ adalah diameter, maka sudut keliling $\\angle ACB = 90^\\circ$. Dengan teorema Pythagoras pada segitiga siku-siku $ABC$, $BC = \\sqrt{AB^2 - AC^2} = \\sqrt{65^2 - 39^2} = \\sqrt{4225 - 1521} = \\sqrt{2704} = 52\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$26\\text{ cm}$",
+          "alasan": "Siswa langsung menggunakan panjang jari-jari $32{,}5\\text{ cm}$ sebagai sisi miring segitiga alih-alih panjang diameter $65\\text{ cm}$, lalu membulatkan atau salah menghitung $\\sqrt{32{,}5^2 - 39^2}$."
+        },
+        {
+          "teks": "$48\\text{ cm}$",
+          "alasan": "Siswa salah menggunakan tripel Pythagoras $7-24-25$ yang diskalakan dua ($14-48-50$) karena keliru mengingat nilai diameter."
+        },
+        {
+          "teks": "$75{,}8\\text{ cm}$",
+          "alasan": "Siswa menjumlahkan kuadrat kedua sisi ($AB^2 + AC^2$) seolah-olah $BC$ adalah sisi miring hipotenusa."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung diameter lingkaran.\n$AB = 2 \\times r = 2 \\times 32{,}5\\text{ cm} = 65\\text{ cm}$.\n\nLangkah 2: Menentukan jenis segitiga $ABC$.\nBerdasarkan Teorema Thales, setiap sudut keliling yang menghadap diameter lingkaran merupakan sudut siku-siku, sehingga $\\angle ACB = 90^\\circ$.\n\nLangkah 3: Menghitung panjang $BC$ menggunakan teorema Pythagoras pada $\\triangle ABC$.\n$$BC = \\sqrt{AB^2 - AC^2}$$\n$$BC = \\sqrt{65^2 - 39^2} = \\sqrt{4225 - 1521} = \\sqrt{2704} = 52\\text{ cm}$$.\n\nJadi, panjang tali busur $BC$ adalah $52\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 73,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika tiga titik A, B, C terletak pada lingkaran dan AB adalah diameter, maka ∠ ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "sudut perpotongan tali busur diameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis sifat Teorema Thales pada dua segitiga siku-siku terpisah kemudian mengevaluasi sudut perpotongan tali busur di dalam lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran. Titik $C$ dan $D$ terletak pada lingkaran di sisi yang sama terhadap $AB$ sedemikian sehingga tali busur $AC$ dan $BD$ berpotongan di titik $P$ di dalam lingkaran. Jika besar $\\angle CAB = 32^\\circ$ dan besar $\\angle DBA = 46^\\circ$, berapakah besar sudut lancip yang dibentuk oleh perpotongan kedua tali busur tersebut di titik $P$?",
+      "jawaban_benar": "$78^\\circ$",
+      "alasan_benar": "Pada segitiga $PAB$, titik $P$ adalah titik potong $AC$ dan $BD$. Maka sudut-sudut alasnya adalah $\\angle PAB = \\angle CAB = 32^\\circ$ dan $\\angle PBA = \\angle DBA = 46^\\circ$. Jumlah sudut dalam $\\triangle PAB$ adalah $180^\\circ$, sehingga $\\angle APB = 180^\\circ - 32^\\circ - 46^\\circ = 102^\\circ$. Sudut lancip pelurusnya yang dibentuk oleh perpotongan kedua tali busur adalah $180^\\circ - 102^\\circ = 78^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$102^\\circ$",
+          "alasan": "Siswa menentukan sudut tumpul $\\angle APB$ dan lupa bahwa pertanyaan meminta besar sudut lancip."
+        },
+        {
+          "teks": "$76^\\circ$",
+          "alasan": "Siswa salah menjumlahkan $32^\\circ + 46^\\circ = 78^\\circ$ lalu mengurangkannya dari $90^\\circ$ sehingga menghasilkan $12^\\circ$ atau salah hitung aritmetika $180 - 104$."
+        },
+        {
+          "teks": "$58^\\circ$",
+          "alasan": "Siswa hanya mencari penyiku dari $\\angle CAB$, yaitu $90^\\circ - 32^\\circ = 58^\\circ$ tanpa memperhitungkan tali busur $BD$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengidentifikasi posisi titik dan sudut pada segitiga yang terbentuk.\nTali busur $AC$ dan $BD$ berpotongan di titik $P$ di dalam lingkaran. Terbentuk segitiga $PAB$ dengan titik-titik sudut $P$, $A$, dan $B$.\n\nLangkah 2: Menentukan sudut-sudut dalam $\\triangle PAB$.\nDiketahui bahwa $\\angle PAB = \\angle CAB = 32^\\circ$ dan $\\angle PBA = \\angle DBA = 46^\\circ$.\n\nLangkah 3: Menghitung sudut $\\angle APB$.\nJumlah sudut-sudut dalam suatu segitiga adalah $180^\\circ$, maka:\n$$\\angle APB = 180^\\circ - (\\angle PAB + \\angle PBA) = 180^\\circ - (32^\\circ + 46^\\circ) = 180^\\circ - 78^\\circ = 102^\\circ$$\n\nLangkah 4: Menentukan sudut lancip hasil perpotongan kedua garis.\nPerpotongan dua garis membentuk dua pasang sudut yang saling bertolak belakang dan berpelurus. Karena $\\angle APB = 102^\\circ$ tumpul, maka sudut lancip yang dibentuk adalah pelurusnya:\n$$180^\\circ - 102^\\circ = 78^\\circ$$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 76,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut pusat besarnya dua kali sudut keliling yang menghadap pada busur yang sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "sudut keliling busur gabungan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penalaran sudut pelurus diameter, penjumlahan busur sudut pusat, penentuan busur minor, dan pengaitan sudut pusat dengan sudut keliling.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A$, $B$, $C$, dan $D$ terletak pada keliling lingkaran berpusat di $O$ sedemikian sehingga ruas garis $AC$ merupakan diameter lingkaran. Titik $B$ dan $D$ terletak pada sisi yang berseberangan terhadap diameter $AC$. Jika besar sudut pusat $\\angle AOB = 70^\\circ$ dan sudut pusat $\\angle COD = 80^\\circ$, berapakah besar sudut keliling $\\angle BED$ dengan $E$ adalah sembarang titik pada busur mayor $BD$?",
+      "jawaban_benar": "$85^\\circ$",
+      "alasan_benar": "Karena $AC$ garis lurus (diameter), maka sudut pusat $\\angle BOC = 180^\\circ - \\angle AOB = 180^\\circ - 70^\\circ = 110^\\circ$. Sudut pusat mayor yang melalui $C$ adalah $\\angle BOD = \\angle BOC + \\angle COD = 110^\\circ + 80^\\circ = 190^\\circ$. Maka sudut pusat minor $\\angle BOD = 360^\\circ - 190^\\circ = 170^\\circ$. Karena titik $E$ berada pada busur mayor $BD$, maka sudut keliling $\\angle BED$ menghadap ke busur minor $BD$, sehingga $\\angle BED = \\frac{1}{2} \\times 170^\\circ = 85^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$75^\\circ$",
+          "alasan": "Siswa salah menjumlahkan $\\angle AOB + \\angle COD = 150^\\circ$ lalu langsung membaginya dengan dua ($150^\\circ / 2 = 75^\\circ$)."
+        },
+        {
+          "teks": "$95^\\circ$",
+          "alasan": "Siswa menghitung setengah dari sudut pusat mayor $190^\\circ$, yaitu $95^\\circ$, tanpa menyadari bahwa sudut keliling pada busur mayor menghadap busur minor."
+        },
+        {
+          "teks": "$170^\\circ$",
+          "alasan": "Siswa menghitung sudut pusat minor $170^\\circ$ dengan benar tetapi lupa membaginya dengan dua untuk memperoleh sudut keliling."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan besar sudut pusat $\\angle BOC$.\nRuas garis $AC$ merupakan diameter lingkaran, sehingga titik $A$, $O$, dan $C$ segaris ($180^\\circ$).\n$$\\angle BOC = 180^\\circ - \\angle AOB = 180^\\circ - 70^\\circ = 110^\\circ$$\n\nLangkah 2: Menentukan sudut pusat yang memuat titik $C$.\nKarena titik $B$ dan $D$ berada pada sisi berlawanan dari $AC$, besar sudut pusat $\\angle BOD$ yang melalui $C$ adalah:\n$$\\angle BOD_{\\text{mayor}} = \\angle BOC + \\angle COD = 110^\\circ + 80^\\circ = 190^\\circ$$\n\nLangkah 3: Menentukan besar sudut pusat minor yang menghadap busur minor $BD$.\n$$\\angle BOD_{\\text{minor}} = 360^\\circ - 190^\\circ = 170^\\circ$$\n\nLangkah 4: Menghitung sudut keliling $\\angle BED$.\nTitik $E$ terletak pada busur mayor $BD$, sehingga sudut keliling $\\angle BED$ menghadap ke busur minor $BD$. Berdasarkan sifat sudut lingkaran:\n$$\\angle BED = \\frac{1}{2} \\times \\angle BOD_{\\text{minor}} = \\frac{1}{2} \\times 170^\\circ = 85^\\circ$$.\n\nJadi, besar sudut keliling $\\angle BED$ adalah $85^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 73,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika tiga titik A, B, C terletak pada lingkaran dan AB adalah diameter, maka ∠ ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perbandingan keliling dan luas segitiga thales",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perumusan sistem persamaan aljabar dari luas segitiga siku-siku Thales, pemecahan panjang sisi-sisi tegak, dan penentuan jari-jari dari hipotenusa diameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran. Titik $C$ terletak pada lingkaran tersebut sehingga terbentuk segitiga $ABC$. Diketahui luas segitiga $ABC$ adalah $120\\text{ cm}^2$ dan selisih panjang kedua sisi tegaknya adalah $BC - AC = 14\\text{ cm}$. Berapakah panjang jari-jari lingkaran tersebut?",
+      "jawaban_benar": "$13\\text{ cm}$",
+      "alasan_benar": "Berdasarkan Teorema Thales, karena $AB$ adalah diameter, segitiga $ABC$ siku-siku di $C$. Luas segitiga $L = \\frac{1}{2} \\times AC \\times BC = 120 \\implies AC \\times BC = 240$. Dengan $BC - AC = 14$, maka $(BC + AC)^2 = (BC - AC)^2 + 4(AC \\times BC) = 14^2 + 4(240) = 196 + 960 = 1156$, sehingga $BC + AC = 34\\text{ cm}$. Diperoleh $BC = 24\\text{ cm}$ dan $AC = 10\\text{ cm}$. Maka diameter $AB = \\sqrt{AC^2 + BC^2} = \\sqrt{10^2 + 24^2} = 26\\text{ cm}$. Jari-jari lingkaran adalah $r = \\frac{AB}{2} = 13\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$26\\text{ cm}$",
+          "alasan": "Siswa menghitung panjang diameter $AB = 26\\text{ cm}$ tetapi lupa membaginya dengan dua untuk memperoleh jari-jari."
+        },
+        {
+          "teks": "$17\\text{ cm}$",
+          "alasan": "Siswa mengambil nilai setengah dari $(AC + BC) = 34 / 2 = 17\\text{ cm}$ bukan jari-jari lingkaran."
+        },
+        {
+          "teks": "$12\\text{ cm}$",
+          "alasan": "Siswa keliru menganggap panjang sisi tegak $BC = 24\\text{ cm}$ sebagai diameter sehingga jari-jarinya $12\\text{ cm}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan sifat segitiga $ABC$.\nBerdasarkan Teorema Thales, karena $AB$ adalah diameter lingkaran, maka sudut keliling $\\angle ACB = 90^\\circ$, sehingga segitiga $ABC$ siku-siku di $C$ dengan sisi tegak $AC$ dan $BC$.\n\nLangkah 2: Menyusun persamaan dari luas dan selisih sisi tegak.\nLuas $\\triangle ABC = \\frac{1}{2} \\times AC \\times BC = 120\\text{ cm}^2 \\implies AC \\times BC = 240$.\nDiketahui $BC - AC = 14$.\n\nLangkah 3: Mencari panjang sisi $AC$ dan $BC$.\n$$(BC + AC)^2 = (BC - AC)^2 + 4(AC \\times BC)$$\n$$(BC + AC)^2 = 14^2 + 4(240) = 196 + 960 = 1156$$\n$$BC + AC = \\sqrt{1156} = 34$$\nDari $BC - AC = 14$ dan $BC + AC = 34$, diperoleh:\n$$2BC = 48 \\implies BC = 24\\text{ cm}$$\n$$AC = 34 - 24 = 10\\text{ cm}$$\n\nLangkah 4: Menghitung diameter $AB$ dan jari-jari lingkaran.\n$$AB = \\sqrt{AC^2 + BC^2} = \\sqrt{10^2 + 24^2} = \\sqrt{100 + 576} = \\sqrt{676} = 26\\text{ cm}$$\nPanjang jari-jari lingkaran $r$ adalah:\n$$r = \\frac{AB}{2} = \\frac{26}{2} = 13\\text{ cm}$$.\n\nJadi, panjang jari-jari lingkaran tersebut adalah $13\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 76,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut pusat besarnya dua kali sudut keliling yang menghadap pada busur yang sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi sudut busur mayor minor",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis relasi sudut pusat minor dan refleks, pembentukan fungsi dua sudut keliling pada busur yang berlawanan, serta penyelesaian persamaan aljabar selisih sudut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A$ dan $B$ terletak pada lingkaran yang berpusat di $O$. Titik $C$ terletak pada busur mayor $AB$, sedangkan titik $D$ terletak pada busur minor $AB$. Sudut keliling $\\angle ACB$ menghadap busur minor $AB$, sedangkan sudut keliling $\\angle ADB$ menghadap busur mayor $AB$. Jika diketahui selisih besar sudut $\\angle ADB - \\angle ACB = 50^\\circ$, berapakah besar sudut pusat minor $\\angle AOB$?",
+      "jawaban_benar": "$130^\\circ$",
+      "alasan_benar": "Misalkan sudut pusat minor $\\angle AOB = \\alpha$. Karena $\\angle ACB$ menghadap busur minor $AB$, maka $\\angle ACB = \\frac{1}{2}\\alpha$. Sudut pusat refleks yang menghadap busur mayor $AB$ adalah $360^\\circ - \\alpha$, sehingga sudut keliling $\\angle ADB = \\frac{1}{2}(360^\\circ - \\alpha) = 180^\\circ - \\frac{1}{2}\\alpha$. Selisihnya adalah $\\angle ADB - \\angle ACB = (180^\\circ - \\frac{1}{2}\\alpha) - \\frac{1}{2}\\alpha = 180^\\circ - \\alpha$. Diketahui selisihnya $50^\\circ$, maka $180^\\circ - \\alpha = 50^\\circ \\implies \\alpha = 130^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$100^\\circ$",
+          "alasan": "Siswa mengira selisih sudut keliling langsung bernilai setengah dari sudut pusat minor, sehingga $\\alpha = 2 \\times 50^\\circ = 100^\\circ$."
+        },
+        {
+          "teks": "$65^\\circ$",
+          "alasan": "Siswa menghitung nilai sudut keliling $\\angle ACB = \\frac{130^\\circ}{2} = 65^\\circ$ alih-alih sudut pusat minor $\\angle AOB$."
+        },
+        {
+          "teks": "$115^\\circ$",
+          "alasan": "Siswa menghitung nilai sudut keliling $\\angle ADB = 180^\\circ - 65^\\circ = 115^\\circ$ alih-alih sudut pusat minor $\\angle AOB$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Memisalkan besar sudut pusat minor $\\angle AOB$.\nMisalkan besar sudut pusat minor $\\angle AOB = \\alpha$.\n\nLangkah 2: Menentukan besar sudut keliling $\\angle ACB$.\nKarena sudut keliling $\\angle ACB$ menghadap busur minor $AB$ yang sama dengan sudut pusat minor $\\angle AOB$:\n$$\\angle ACB = \\frac{1}{2}\\alpha$$\n\nLangkah 3: Menentukan besar sudut pusat refleks dan sudut keliling $\\angle ADB$.\nSudut pusat refleks $\\angle AOB$ yang menghadap busur mayor $AB$ adalah $360^\\circ - \\alpha$.\nKarena sudut keliling $\\angle ADB$ menghadap busur mayor $AB$, maka:\n$$\\angle ADB = \\frac{1}{2}(360^\\circ - \\alpha) = 180^\\circ - \\frac{1}{2}\\alpha$$\n\nLangkah 4: Menyusun persamaan dari selisih sudut yang diketahui.\n$$\\angle ADB - \\angle ACB = 50^\\circ$$\n$$\\left(180^\\circ - \\frac{1}{2}\\alpha\\right) - \\frac{1}{2}\\alpha = 50^\\circ$$\n$$180^\\circ - \\alpha = 50^\\circ$$\n\nLangkah 5: Menyelesaikan nilai $\\alpha$.\n$$\\alpha = 180^\\circ - 50^\\circ = 130^\\circ$$\n\nJadi, besar sudut pusat minor $\\angle AOB$ adalah $130^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b02-p0074-latihan-21-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "relasi sudut refleks dan keliling",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi hubungan sudut keliling, sudut pusat minor, dan sudut pusat refleks dalam persamaan aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $B$, $C$, dan $E$ terletak pada keliling sebuah lingkaran yang berpusat di titik $O$, dengan titik $E$ terletak pada busur mayor $BC$. Sudut keliling $\\angle BEC$ menghadap busur minor $BC$ dan dinyatakan dengan $(\\alpha - 10)^\\circ$. Sudut refleks $\\angle BOC$ menghadap busur mayor $BC$ dan dinyatakan dengan $(3\\alpha + 60)^\\circ$. Tentukan besar sudut $\\angle BEC$.",
+      "jawaban_benar": "$54^\\circ$",
+      "alasan_benar": "Sudut pusat minor $\\angle BOC = 2 \\times \\angle BEC = 2(\\alpha - 10)^\\circ = (2\\alpha - 20)^\\circ$. Jumlah sudut pusat minor dan refleks adalah $360^\\circ$, sehingga $(3\\alpha + 60)^\\circ + (2\\alpha - 20)^\\circ = 360^\\circ \\implies 5\\alpha + 40^\\circ = 360^\\circ \\implies 5\\alpha = 320^\\circ \\implies \\alpha = 64^\\circ$. Besar $\\angle BEC = 64^\\circ - 10^\\circ = 54^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$64^\\circ$",
+          "alasan": "Hanya mencari nilai variabel $\\alpha$ tanpa mensubstitusikannya kembali ke $(\\alpha - 10)^\\circ$."
+        },
+        {
+          "teks": "$108^\\circ$",
+          "alasan": "Menghitung besar sudut pusat minor $\\angle BOC$, bukan sudut keliling $\\angle BEC$."
+        },
+        {
+          "teks": "$44^\\circ$",
+          "alasan": "Mengabaikan faktor 2 pada hubungan sudut pusat dan sudut keliling sehingga menuliskan persamaan $(3\\alpha + 60) + (\\alpha - 10) = 360$."
+        }
+      ],
+      "pembahasan": "1. Sudut pusat minor $\\angle BOC$ besarnya dua kali sudut keliling $\\angle BEC$ yang menghadap busur yang sama:\n   $$\\angle BOC_{\\text{minor}} = 2(\\alpha - 10)^\\circ = (2\\alpha - 20)^\\circ$$\n2. Sudut satu putaran penuh adalah $360^\\circ$, sehingga:\n   $$\\angle BOC_{\\text{minor}} + \\angle BOC_{\\text{refleks}} = 360^\\circ$$\n   $$(2\\alpha - 20)^\\circ + (3\\alpha + 60)^\\circ = 360^\\circ$$\n   $$5\\alpha + 40^\\circ = 360^\\circ$$\n   $$5\\alpha = 320^\\circ \\implies \\alpha = 64^\\circ$$\n3. Menghitung besar $\\angle BEC$:\n   $$\\angle BEC = 64^\\circ - 10^\\circ = 54^\\circ$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 74,
+        "bagian": "Latihan 2.1",
+        "nomor": "3",
+        "teks": "Lingkaran A berjari-jari 2 satuan. Jika panjang BC = 2, tentukan besar ∠ BDC",
+        "jawaban": "30°",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "selisih sudut keliling berseberangan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan sudut pusat melalui kebalikan Pythagoras serta evaluasi dua sudut keliling pada busur mayor dan minor.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Lingkaran $A$ memiliki jari-jari sebesar $8\\text{ satuan}$. Titik $B$ dan $C$ terletak pada lingkaran sedemikian sehingga panjang tali busur $BC = 8\\sqrt{2}\\text{ satuan}$. Titik $D$ terletak pada busur mayor $BC$, sedangkan titik $E$ terletak pada busur minor $BC$. Tentukan nilai dari $\\angle BEC - \\angle BDC$.",
+      "jawaban_benar": "$90^\\circ$",
+      "alasan_benar": "Karena $AB = AC = 8$ dan $AB^2 + AC^2 = 64 + 64 = 128 = (8\\sqrt{2})^2 = BC^2$, maka $\\angle BAC = 90^\\circ$. Sudut keliling $\\angle BDC = \\frac{1}{2} \\times 90^\\circ = 45^\\circ$. Sudut keliling $\\angle BEC$ menghadap busur mayor bernilai $180^\\circ - 45^\\circ = 135^\\circ$. Selisihnya adalah $135^\\circ - 45^\\circ = 90^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$45^\\circ$",
+          "alasan": "Hanya menghitung nilai salah satu sudut keliling yaitu $\\angle BDC$."
+        },
+        {
+          "teks": "$135^\\circ$",
+          "alasan": "Hanya menghitung nilai sudut keliling $\\angle BEC$ tanpa mengurangkannya dengan $\\angle BDC$."
+        },
+        {
+          "teks": "$60^\\circ$",
+          "alasan": "Keliru mengira segitiga $ABC$ merupakan segitiga sama sisi sehingga sudut pusat dianggap $60^\\circ$."
+        }
+      ],
+      "pembahasan": "1. Periksa jenis $\\triangle ABC$ dengan jari-jari $AB = AC = 8$ dan $BC = 8\\sqrt{2}$:\n   $$AB^2 + AC^2 = 8^2 + 8^2 = 64 + 64 = 128$$\n   $$BC^2 = (8\\sqrt{2})^2 = 128$$\n   Karena $AB^2 + AC^2 = BC^2$, maka $\\triangle ABC$ siku-siku di titik pusat $A$, sehingga sudut pusat busur minor $BC$ adalah $\\angle BAC = 90^\\circ$.\n2. Titik $D$ berada pada busur mayor $BC$, sehingga menghadap busur minor $BC$:\n   $$\\angle BDC = \\frac{1}{2} \\times \\angle BAC = \\frac{1}{2} \\times 90^\\circ = 45^\\circ$$\n3. Titik $E$ berada pada busur minor $BC$, sehingga menghadap busur mayor $BC$ yang memiliki sudut pusat $360^\\circ - 90^\\circ = 270^\\circ$:\n   $$\\angle BEC = \\frac{1}{2} \\times 270^\\circ = 135^\\circ$$\n4. Hitung selisihnya:\n   $$\\angle BEC - \\angle BDC = 135^\\circ - 45^\\circ = 90^\\circ$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 73,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika tiga titik A, B, C terletak pada lingkaran dan AB adalah diameter, maka ∠ ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "garis tinggi segitiga thales",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengombinasikan sifat siku-siku Thales dengan hubungan geometri garis tinggi untuk merumuskan luas segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran dengan jari-jari $25\\text{ cm}$. Titik $C$ terletak pada keliling lingkaran tersebut. Garis tinggi segitiga $ABC$ yang ditarik dari titik $C$ tegak lurus terhadap $AB$ dan memotong diameter $AB$ di titik $D$. Jika panjang $AD = 18\\text{ cm}$, tentukan luas segitiga $ABC$.",
+      "jawaban_benar": "$600\\text{ cm}^2$",
+      "alasan_benar": "Diameter $AB = 2 \\times 25 = 50\\text{ cm}$. Panjang $BD = 50 - 18 = 32\\text{ cm}$. Karena $\\angle ACB = 90^\\circ$ (Teorema Thales), berlaku tinggi $CD = \\sqrt{AD \\times BD} = \\sqrt{18 \\times 32} = \\sqrt{576} = 24\\text{ cm}$. Maka luas segitiga $ABC = \\frac{1}{2} \\times AB \\times CD = \\frac{1}{2} \\times 50 \\times 24 = 600\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$1200\\text{ cm}^2$",
+          "alasan": "Lupa mengalikan dengan faktor $\\frac{1}{2}$ pada rumus luas segitiga ($50 \\times 24$)."
+        },
+        {
+          "teks": "$576\\text{ cm}^2$",
+          "alasan": "Menganggap luas segitiga sama dengan nilai kuadrat garis tinggi ($CD^2 = 576$)."
+        },
+        {
+          "teks": "$450\\text{ cm}^2$",
+          "alasan": "Menggunakan jari-jari sebagai alas bukan diameter dalam perhitungan luas segitiga ($\\frac{1}{2} \\times 25 \\times 36$ atau kesalahan alas $r$)."
+        }
+      ],
+      "pembahasan": "1. Panjang diameter lingkaran:\n   $$AB = 2r = 2 \\times 25\\text{ cm} = 50\\text{ cm}$$\n2. Menentukan panjang segmen $BD$ pada diameter:\n   $$BD = AB - AD = 50\\text{ cm} - 18\\text{ cm} = 32\\text{ cm}$$\n3. Berdasarkan Teorema Thales, karena $AB$ diameter, maka $\\angle ACB = 90^\\circ$. Pada segitiga siku-siku $ABC$ dengan garis tinggi $CD \\perp AB$, berlaku relasi proyeksi:\n   $$CD^2 = AD \\times BD = 18 \\times 32 = 576$$\n   $$CD = \\sqrt{576} = 24\\text{ cm}$$\n4. Menghitung luas $\\triangle ABC$:\n   $$\\text{Luas} = \\frac{1}{2} \\times AB \\times CD = \\frac{1}{2} \\times 50 \\times 24 = 600\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 70,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut pusat besarnya dua kali sudut keliling yang menghadap ke busur lingkaran yang sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perpotongan tali busur dalam",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dua sudut pusat berbeda untuk mengonstruksi sudut-sudut keliling dan menentukan besar sudut perpotongan dua tali busur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A$, $B$, $C$, dan $D$ terletak berurutan pada sebuah lingkaran yang berpusat di titik $O$. Ruas garis $AC$ dan ruas garis $BD$ merupakan tali busur yang berpotongan di titik $M$ di dalam lingkaran. Diketahui besar sudut pusat $\\angle AOB = 76^\\circ$ dan sudut pusat $\\angle COD = 48^\\circ$. Tentukan besar sudut $\\angle AMD$.",
+      "jawaban_benar": "$118^\\circ$",
+      "alasan_benar": "Sudut keliling $\\angle ADB = \\frac{1}{2} \\angle AOB = 38^\\circ$. Sudut keliling $\\angle CAD = \\frac{1}{2} \\angle COD = 24^\\circ$. Pada $\\triangle AMD$, $\\angle MAD = 24^\\circ$ dan $\\angle ADM = 38^\\circ$. Maka $\\angle AMD = 180^\\circ - (24^\\circ + 38^\\circ) = 180^\\circ - 62^\\circ = 118^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$62^\\circ$",
+          "alasan": "Menghitung sudut pelurus dari $\\angle AMD$ (yaitu $\\angle AMB$ atau sudut luar)."
+        },
+        {
+          "teks": "$124^\\circ$",
+          "alasan": "Langsung menjumlahkan kedua sudut pusat $76^\\circ + 48^\\circ$ tanpa membaginya menjadi sudut keliling."
+        },
+        {
+          "teks": "$94^\\circ$",
+          "alasan": "Salah menghitung sudut keliling hanya pada salah satu sudut pusat ($180^\\circ - 48^\\circ - 38^\\circ$)."
+        }
+      ],
+      "pembahasan": "1. Sudut keliling $\\angle ADB$ menghadap busur $AB$ yang sama dengan sudut pusat $\\angle AOB$:\n   $$\\angle ADB = \\frac{1}{2} \\times \\angle AOB = \\frac{1}{2} \\times 76^\\circ = 38^\\circ$$\n2. Sudut keliling $\\angle CAD$ menghadap busur $CD$ yang sama dengan sudut pusat $\\angle COD$:\n   $$\\angle CAD = \\frac{1}{2} \\times \\angle COD = \\frac{1}{2} \\times 48^\\circ = 24^\\circ$$\n3. Perhatikan $\\triangle AMD$. Sudut-sudut dalamnya adalah $\\angle MAD = \\angle CAD = 24^\\circ$ dan $\\angle ADM = \\angle ADB = 38^\\circ$.\n4. Jumlah sudut dalam segitiga adalah $180^\\circ$, sehingga:\n   $$\\angle AMD = 180^\\circ - (\\angle MAD + \\angle ADM) = 180^\\circ - (24^\\circ + 38^\\circ) = 180^\\circ - 62^\\circ = 118^\\circ$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 75,
+        "bagian": "Latihan 2.1",
+        "nomor": "5",
+        "teks": "Apa yang salah pada gambar berikut?",
+        "jawaban": "Sudut keliling dan sudut pusat tidak menghadap busur yang sama sehingga hubungan dua kali lipat tidak berlaku",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesalahan sifat sudut lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap klaim geometri sudut lingkaran yang mengabaikan posisi titik pada busur mayor versus busur minor.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang siswa membuat pernyataan berikut:\n\"Titik $O$ adalah pusat lingkaran, sedangkan titik $A, B,$ dan $C$ terletak pada keliling lingkaran. Jika sudut pusat minor $\\angle AOB = 100^\\circ$, maka besar sudut keliling $\\angle ACB$ pasti selalu bernilai $50^\\circ$, di mana pun posisi titik $C$ diletakkan pada keliling lingkaran tersebut.\"\n\nManakah evaluasi yang paling tepat mengenai kesalahan pernyataan siswa tersebut?",
+      "jawaban_benar": "Pernyataan salah, karena jika titik $C$ berada pada busur minor $AB$, besar $\\angle ACB$ adalah $130^\\circ$.",
+      "alasan_benar": "Sudut keliling bernilai setengah sudut pusat hanya jika menghadap busur yang sama. Jika $C$ di busur minor $AB$, $\\angle ACB$ menghadap busur mayor $AB$ yang bersudut pusat $360^\\circ - 100^\\circ = 260^\\circ$, sehingga $\\angle ACB = \\frac{1}{2} \\times 260^\\circ = 130^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "Pernyataan salah, karena sudut keliling $\\angle ACB$ seharusnya dua kali lipat sudut pusat, yaitu $200^\\circ$.",
+          "alasan": "Tertukar antara definisi sudut pusat dan sudut keliling."
+        },
+        {
+          "teks": "Pernyataan salah, karena jika titik $C$ berada pada busur mayor $AB$, besar $\\angle ACB$ adalah $80^\\circ$.",
+          "alasan": "Salah mengira sudut keliling adalah pelurus dari sudut pusat minor."
+        },
+        {
+          "teks": "Pernyataan salah, karena besar $\\angle ACB$ selalu bergantung pada panjang jari-jari lingkaran.",
+          "alasan": "Mengira besar sudut keliling berubah jika ukuran jari-jari lingkaran membesar atau mengecil."
+        }
+      ],
+      "pembahasan": "Hubungan bahwa besar sudut keliling sama dengan setengah sudut pusat hanya berlaku jika kedua sudut tersebut menghadap ke busur yang sama.\n1. Jika titik $C$ terletak pada busur mayor $AB$, sudut keliling $\\angle ACB$ menghadap busur minor $AB$, sehingga besarnya $\\frac{1}{2} \\times 100^\\circ = 50^\\circ$.\n2. Jika titik $C$ terletak pada busur minor $AB$, sudut keliling $\\angle ACB$ menghadap busur mayor $AB$. Besar sudut pusat refleks busur mayor $AB$ adalah $360^\\circ - 100^\\circ = 260^\\circ$.\n3. Maka besar $\\angle ACB = \\frac{1}{2} \\times 260^\\circ = 130^\\circ$.\nJadi, pernyataan siswa keliru karena nilai $50^\\circ$ tidak berlaku jika $C$ terletak pada busur minor $AB$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 73,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika tiga titik A, B, C terletak pada lingkaran dan AB adalah diameter, maka ∠ ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "garis tinggi perbandingan tali busur diameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan sintesis Teorema Thales, Teorema Pythagoras dengan perbandingan aljabar, dan kesamaan luas segitiga untuk menentukan garis tinggi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran berjari-jari $10\\text{ cm}$. Titik $C$ terletak pada keliling lingkaran sedemikian sehingga perbandingan panjang tali busur $AC : BC = 3 : 4$. Dari titik $C$, ditarik garis tinggi tegak lurus terhadap diameter $AB$ yang memotong ruas garis $AB$ di titik $D$. Panjang ruas garis $CD$ adalah ....",
+      "jawaban_benar": "$9{,}6\\text{ cm}$",
+      "alasan_benar": "Diameter $AB = 20\\text{ cm}$. Berdasarkan Teorema Thales, $\\triangle ABC$ siku-siku di $C$. Dengan perbandingan $3 : 4$, $AC = 12\\text{ cm}$ dan $BC = 16\\text{ cm}$. Luas segitiga $L = \\frac{1}{2} \\times 12 \\times 16 = 96\\text{ cm}^2$. Maka $CD = \\frac{2L}{AB} = \\frac{192}{20} = 9{,}6\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$4{,}8\\text{ cm}$",
+          "alasan": "Lupa mengalikan 2 saat menghitung tinggi dari rumus luas, yaitu langsung membagi luas dengan diameter."
+        },
+        {
+          "teks": "$7{,}2\\text{ cm}$",
+          "alasan": "Menghitung proyeksi ruas garis $AD$ bukan tinggi garis $CD$."
+        },
+        {
+          "teks": "$11{,}2\\text{ cm}$",
+          "alasan": "Salah menerapkan perbandingan Pythagoras sehingga mendapatkan panjang sisi siku-siku yang keliru."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Ruas garis $AB$ adalah diameter lingkaran, sehingga panjang $AB = 2 \\times 10\\text{ cm} = 20\\text{ cm}$. Berdasarkan Teorema Thales, sudut keliling yang menghadap diameter adalah siku-siku, sehingga $\\angle ACB = 90^\\circ$.\n2. Misalkan $AC = 3x$ dan $BC = 4x$. Dengan Teorema Pythagoras pada $\\triangle ABC$:\n   $AC^2 + BC^2 = AB^2$\n   $(3x)^2 + (4x)^2 = 20^2$\n   $25x^2 = 400 \\implies x^2 = 16 \\implies x = 4$.\n   Diperoleh panjang $AC = 3(4) = 12\\text{ cm}$ dan $BC = 4(4) = 16\\text{ cm}$.\n3. Luas $\\triangle ABC$ dapat dihitung melalui sisi siku-siku:\n   $\\text{Luas} = \\frac{1}{2} \\times AC \\times BC = \\frac{1}{2} \\times 12 \\times 16 = 96\\text{ cm}^2$.\n4. Luas $\\triangle ABC$ juga dapat dihitung menggunakan alas $AB$ dan garis tinggi $CD$:\n   $\\text{Luas} = \\frac{1}{2} \\times AB \\times CD$\n   $96 = \\frac{1}{2} \\times 20 \\times CD$\n   $96 = 10 \\times CD \\implies CD = 9{,}6\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 76,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut keliling yang menghadap pada diameter lingkaran, adalah sudut siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis sudut pusat tali busur diameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan integrasi Teorema Thales, jumlah sudut segitiga pada tali busur berpotongan, dan perbandingan sudut keliling serta sudut pusat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $K, L, M,$ dan $N$ terletak berurutan pada keliling lingkaran yang berpusat di $O$, dengan ruas garis $KM$ merupakan diameter lingkaran. Tali busur $LN$ memotong diameter $KM$ di titik $P$ di dalam lingkaran sedemikian sehingga $\\angle KPL = 70^\\circ$. Jika sudut pusat $\\angle KOL = 80^\\circ$, berapakah besar sudut pusat $\\angle MON$ yang menghadap busur minor $MN$?",
+      "jawaban_benar": "$60^\\circ$",
+      "alasan_benar": "$\\angle LOM = 180^\\circ - 80^\\circ = 100^\\circ$, maka $\\angle LKM = 50^\\circ$. Pada $\\triangle KPL$, $\\angle PLK = 180^\\circ - (70^\\circ + 50^\\circ) = 60^\\circ$. Karena $KM$ diameter, $\\angle KLM = 90^\\circ$, sehingga $\\angle NLM = 90^\\circ - 60^\\circ = 30^\\circ$. Sudut pusat $\\angle MON = 2 \\times \\angle NLM = 2 \\times 30^\\circ = 60^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$30^\\circ$",
+          "alasan": "Hanya menghitung sudut keliling $\\angle NLM$ dan lupa mengalikan dua untuk mendapatkan sudut pusat."
+        },
+        {
+          "teks": "$40^\\circ$",
+          "alasan": "Mengira $\\angle MON$ sama dengan setengah dari sudut pusat $\\angle KOL$."
+        },
+        {
+          "teks": "$80^\\circ$",
+          "alasan": "Menganggap busur $MN$ sama panjang dengan busur $KL$ tanpa menghitung posisi titik potong."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Ruas garis $KM$ adalah garis lurus berdiameter yang melalui pusat $O$, sehingga $\\angle KOL + \\angle LOM = 180^\\circ$. Dengan $\\angle KOL = 80^\\circ$, diperoleh $\\angle LOM = 180^\\circ - 80^\\circ = 100^\\circ$.\n2. Sudut keliling $\\angle LKM$ menghadap busur $LM$ yang bersudut pusat $\\angle LOM = 100^\\circ$, sehingga $\\angle LKM = \\frac{1}{2} \\times 100^\\circ = 50^\\circ$.\n3. Pada $\\triangle KPL$, jumlah sudut segitiga adalah $180^\\circ$:\n   $\\angle PLK = 180^\\circ - (\\angle KPL + \\angle PKL) = 180^\\circ - (70^\\circ + 50^\\circ) = 60^\\circ$.\n   Maka $\\angle NLK = 60^\\circ$.\n4. Karena ruas garis $KM$ adalah diameter lingkaran, berdasarkan Teorema Thales, besar sudut keliling $\\angle KLM = 90^\\circ$.\n   Diperoleh $\\angle NLM = \\angle KLM - \\angle NLK = 90^\\circ - 60^\\circ = 30^\\circ$.\n5. Sudut keliling $\\angle NLM$ menghadap busur minor $MN$. Sudut pusat $\\angle MON$ juga menghadap busur minor $MN$, sehingga:\n   $\\angle MON = 2 \\times \\angle NLM = 2 \\times 30^\\circ = 60^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 68,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika lampu diletakkan di pusat kolam dan ingin menyorot BC , apakah lampu dengan sudut penyinaran 30◦ dapat digunakan? Jika tidak, berapa sudut yang dibutuhkan?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perancangan tali busur dan sudut pemantauan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan sudut penyinaran dari tepi dan pusat lingkaran serta analisis sifat geometri segitiga sama sisi untuk perancangan tali pembatas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kolam rekreasi berbentuk lingkaran memiliki garis tengah diameter $AB = 24\\text{ m}$. Sepanjang busur minor $BC$ dipasang lintasan perosotan air. Sebuah lampu sorot dipasang di titik $A$ pada tepi kolam dan dapat menyinari seluruh busur $BC$ dengan sudut sorot $\\angle BAC = 30^\\circ$. Pengelola kolam ingin memindahkan lampu sorot ke titik pusat kolam $O$ agar tepat menyinari busur $BC$, serta memasang tali pembatas lurus langsung dari titik $B$ ke $C$. Berapakah besar sudut sorot lampu di titik pusat $O$ dan panjang tali pembatas lurus $BC$ berturut-turut?",
+      "jawaban_benar": "$60^\\circ\\text{ dan }12\\text{ m}$",
+      "alasan_benar": "Sudut pusat $\\angle BOC = 2 \\times \\angle BAC = 60^\\circ$. Karena jari-jari $OB = OC = 12\\text{ m}$ dan $\\angle BOC = 60^\\circ$, $\\triangle OBC$ adalah segitiga sama sisi, sehingga $BC = 12\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$30^\\circ\\text{ dan }12\\text{ m}$",
+          "alasan": "Mengira sudut di pusat lingkaran sama dengan sudut di tepi lingkaran."
+        },
+        {
+          "teks": "$60^\\circ\\text{ dan }12\\sqrt{2}\\text{ m}$",
+          "alasan": "Menganggap segitiga $BOC$ adalah segitiga siku-siku sama kaki."
+        },
+        {
+          "teks": "$60^\\circ\\text{ dan }24\\text{ m}$",
+          "alasan": "Menggunakan panjang diameter kolam sebagai panjang tali pembatas $BC$."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Titik $A$ terletak pada keliling lingkaran, sehingga $\\angle BAC = 30^\\circ$ adalah sudut keliling yang menghadap busur minor $BC$.\n2. Lampu yang dipindahkan ke titik pusat $O$ membentuk sudut pusat $\\angle BOC$ yang menghadap busur minor yang sama ($BC$).\n   Berdasarkan sifat lingkaran, besar sudut pusat adalah dua kali besar sudut keliling:\n   $\\angle BOC = 2 \\times \\angle BAC = 2 \\times 30^\\circ = 60^\\circ$.\n3. Jari-jari kolam lingkaran adalah $r = \\frac{1}{2} \\times AB = \\frac{1}{2} \\times 24\\text{ m} = 12\\text{ m}$.\n   Panjang ruas garis $OB = OC = r = 12\\text{ m}$.\n4. Perhatikan segitiga $OBC$:\n   Karena $OB = OC$, maka segitiga $OBC$ adalah segitiga sama kaki dengan sudut puncak $\\angle BOC = 60^\\circ$.\n   Besar sudut alasnya adalah $\\frac{180^\\circ - 60^\\circ}{2} = 60^\\circ$.\n   Karena ketiga sudutnya sama besar ($60^\\circ$), maka $\\triangle OBC$ merupakan segitiga sama sisi.\n5. Oleh karena itu, panjang tali pembatas lurus $BC = OB = OC = 12\\text{ m}$.\nJadi, sudut sorot di titik pusat adalah $60^\\circ$ dan panjang tali pembatas adalah $12\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 70,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut pusat besarnya dua kali sudut keliling yang menghadap ke busur lingkaran yang sama."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "sudut pusat tali busur tegak lurus",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan deduksi relasi dua tali busur tegak lurus dalam segitiga siku-siku dan menghubungkannya dengan dua pasang sudut pusat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P, Q, R,$ dan $S$ terletak berurutan pada keliling lingkaran yang berpusat di titik $O$. Ruas garis $PR$ dan ruas garis $QS$ merupakan dua tali busur yang saling berpotongan tegak lurus di titik $T$ di dalam lingkaran. Jika besar sudut pusat $\\angle POS = 116^\\circ$, berapakah besar sudut pusat $\\angle QOR$?",
+      "jawaban_benar": "$64^\\circ$",
+      "alasan_benar": "Pada segitiga siku-siku $PTQ$, $\\angle TPQ + \\angle TQP = 90^\\circ$. Sudut keliling $\\angle TPQ$ menghadap busur $QR$ dan $\\angle TQP$ menghadap busur $PS$. Maka $\\angle QOR + \\angle POS = 2(\\angle TPQ + \\angle TQP) = 2 \\times 90^\\circ = 180^\\circ$. Diperoleh $\\angle QOR = 180^\\circ - 116^\\circ = 64^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$58^\\circ$",
+          "alasan": "Hanya menghitung setengah dari besar sudut pusat $\\angle POS$."
+        },
+        {
+          "teks": "$74^\\circ$",
+          "alasan": "Salah menghitung selisih sudut pelurus ($180^\\circ - 116^\\circ$ dihitung keliru sebagai $74^\\circ$)."
+        },
+        {
+          "teks": "$116^\\circ$",
+          "alasan": "Mengira dua sudut pusat yang berseberangan pada tali busur tegak lurus pasti sama besar."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Ruas garis $PR$ dan ruas garis $QS$ berpotongan tegak lurus di titik $T$, sehingga $\\angle PTQ = 90^\\circ$.\n2. Perhatikan segitiga siku-siku $PTQ$:\n   Jumlah sudut dalam segitiga adalah $180^\\circ$, sehingga:\n   $\\angle TPQ + \\angle TQP = 180^\\circ - \\angle PTQ = 180^\\circ - 90^\\circ = 90^\\circ$.\n3. Identifikasi sudut keliling:\n   - Sudut $\\angle TPQ$ sama dengan sudut keliling $\\angle RPQ$, yang menghadap busur $QR$. Maka sudut pusat $\\angle QOR = 2 \\times \\angle TPQ$.\n   - Sudut $\\angle TQP$ sama dengan sudut keliling $\\angle SQP$, yang menghadap busur $PS$. Maka sudut pusat $\\angle POS = 2 \\times \\angle TQP$.\n4. Jumlahkan kedua sudut pusat tersebut:\n   $\\angle QOR + \\angle POS = 2 \\times \\angle TPQ + 2 \\times \\angle TQP = 2(\\angle TPQ + \\angle TQP)$.\n   $\\angle QOR + \\angle POS = 2 \\times 90^\\circ = 180^\\circ$.\n5. Substitusikan nilai $\\angle POS = 116^\\circ$:\n   $\\angle QOR + 116^\\circ = 180^\\circ$\n   $\\angle QOR = 180^\\circ - 116^\\circ = 64^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-a-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 73,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika tiga titik A, B, C terletak pada lingkaran dan AB adalah diameter, maka ∠ ACB siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "panjang tali busur tegak lurus diameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis geometri bertingkat untuk mengaitkan sifat segitiga siku-siku pada diameter dengan perhitungan panjang tali busur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Ruas garis $AB$ merupakan diameter sebuah lingkaran. Tali busur $CD$ memotong tegak lurus diameter $AB$ di titik $H$. Jika panjang ruas garis $AH = 4\\text{ cm}$ dan $HB = 16\\text{ cm}$, maka panjang tali busur $CD$ adalah ....",
+      "jawaban_benar": "$16\\text{ cm}$",
+      "alasan_benar": "Panjang diameter $AB = 4 + 16 = 20\\text{ cm}$, sehingga jari-jari lingkaran $r = 10\\text{ cm}$. Jarak titik $H$ ke pusat lingkaran $O$ adalah $OH = 10 - 4 = 6\\text{ cm}$. Pada segitiga siku-siku $OCH$, $CH = \\sqrt{r^2 - OH^2} = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$. Karena diameter yang tegak lurus tali busur membagi tali busur menjadi dua bagian sama panjang, maka $CD = 2 \\times CH = 2 \\times 8 = 16\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$8\\text{ cm}$",
+          "alasan": "Hanya menghitung setengah panjang tali busur ($CH$) dan lupa mengalikannya dengan 2."
+        },
+        {
+          "teks": "$12\\text{ cm}$",
+          "alasan": "Salah mengurangkan langsung jari-jari atau salah menerapkan teorema Pythagoras."
+        },
+        {
+          "teks": "$8\\sqrt{5}\\text{ cm}$",
+          "alasan": "Menggunakan rumus tinggi segitiga siku-siku pada proyeksi yang salah atau menjumlahkan kuadrat komponen."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung panjang diameter dan jari-jari lingkaran.\n$AB = AH + HB = 4\\text{ cm} + 16\\text{ cm} = 20\\text{ cm}$\nJari-jari lingkaran $r = \\frac{20}{2} = 10\\text{ cm}$.\n\nLangkah 2: Tentukan jarak titik potong $H$ ke pusat lingkaran $O$.\n$OH = r - AH = 10\\text{ cm} - 4\\text{ cm} = 6\\text{ cm}$.\n\nLangkah 3: Tentukan panjang ruas garis $CH$.\nHubungkan pusat lingkaran $O$ ke titik $C$ sehingga terbentuk segitiga siku-siku $OHC$ dengan sisi miring $OC = r = 10\\text{ cm}$.\n$CH = \\sqrt{OC^2 - OH^2} = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8\\text{ cm}$.\n\nLangkah 4: Tentukan panjang tali busur $CD$.\nKarena diameter $AB$ tegak lurus dengan tali busur $CD$, ruas garis $AB$ membagi dua sama panjang tali busur $CD$, sehingga:\n$CD = 2 \\times CH = 2 \\times 8\\text{ cm} = 16\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -1,0 +1,573 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab C (pembagian polinomial, p84-p95) sempit: penalaran hard hanya berkisar pada Teorema Sisa, Horner, dan sisa pembagi kuadrat; sudah dipakai easy dan medium. Soal hard tambahan akan berupa kembaran berangka berbeda atau materi faktor (subbab D), sehingga tidak dipaksakan.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "juga berlaku jika pembaginya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim Teorema Sisa pembagi ax-b",
+      "alasan_level": "menilai dugaan umum dengan mengujinya pada satu pembagi ax-b dan menolak tiga kesimpulan yang tampak wajar",
+      "stimulus": null,
+      "pertanyaan": "Ahmad menduga bahwa sisa pembagian $P(x)$ oleh $ax - b$ sama dengan $P\\left(\\frac{a}{b}\\right)$. Untuk menguji dugaan itu, ia memakai $P(x) = 8x^3 + 6x^2 - 13x + 9$ yang dibagi $2x - 3$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Dugaan Ahmad salah; sisa sebenarnya $P\\left(\\frac{3}{2}\\right) = 30$, sedangkan $P\\left(\\frac{2}{3}\\right) = \\frac{145}{27}$",
+      "alasan_benar": "pembuat nol $2x-3$ adalah $x=\\frac{3}{2}$, sehingga sisanya $P(\\frac{3}{2})=30$, berbeda dari $P(\\frac{2}{3})$",
+      "distraktor": [
+        {
+          "teks": "Dugaan Ahmad benar; sisanya $P\\left(\\frac{2}{3}\\right) = \\frac{145}{27}$",
+          "alasan": "mengira pembuat nol $ax-b$ adalah $a/b$ (pecahan terbalik)"
+        },
+        {
+          "teks": "Dugaan Ahmad salah; sisa sebenarnya $P(3) = 240$",
+          "alasan": "memakai $b$ saja sebagai pembuat nol dan mengabaikan pembagian dengan $a$"
+        },
+        {
+          "teks": "Dugaan Ahmad salah; sisa sebenarnya $P\\left(-\\frac{3}{2}\\right) = 15$",
+          "alasan": "salah tanda pembuat nol $2x-3$"
+        }
+      ],
+      "pembahasan": "Pembuat nol $2x-3$ adalah $\\frac{3}{2}$ sehingga sisa $=P(\\frac32)=30$ (dicek dengan algoritma pembagian). Nilai $P(\\frac23)=\\frac{145}{27}\\neq 30$, jadi dugaan Ahmad dibantah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "agar suku-sukunya lengkap"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim polinomial",
+      "alasan_level": "menguji klaim umum terhadap empat polinomial untuk menemukan satu yang memenuhi syarat klaim tetapi gagal pada kesimpulan",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika $P(2) = P(-2)$, maka $P(x)$ habis dibagi $x^2 - 4$.\" Polinomial yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$x^4 - 3x^2 + 5$",
+      "alasan_benar": "$P(2)=P(-2)=9$ sehingga syarat klaim terpenuhi, tetapi sisa pembagian oleh $x^2-4$ adalah $9\\neq0$",
+      "distraktor": [
+        {
+          "teks": "$x^4 - 5x^2 + 4$",
+          "alasan": "memenuhi syarat dan juga habis dibagi $x^2-4$ (P(2)=P(-2)=0), jadi justru mendukung klaim"
+        },
+        {
+          "teks": "$x^3 + x^2 - 4$",
+          "alasan": "$P(2)=8$ dan $P(-2)=-8$ tidak sama sehingga syarat klaim tidak terpenuhi, bukan penyangkal"
+        },
+        {
+          "teks": "$x^3 - 3x^2 + 2$",
+          "alasan": "$P(2)=-2$ dan $P(-2)=-18$ tidak sama sehingga syarat klaim tidak terpenuhi, bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi syarat ($P(2)=P(-2)$) tetapi tidak memenuhi kesimpulan (sisa oleh $x^2-4$ tidak nol). Hanya $x^4-3x^2+5$: $P(\\pm2)=9$, sisa $9$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 88,
+        "kutipan": "Dalam metode Horner, jika polinomial pembaginya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan Horner (suku nol hilang)",
+      "alasan_level": "menelusuri pekerjaan siswa untuk menemukan kesalahan (koefisien nol tidak ditulis) dan menilai hasilnya",
+      "stimulus": null,
+      "pertanyaan": "Wulan membagi $P(x) = x^4 - 7x^2 + 3x - 9$ oleh $x - 2$ dengan metode Horner. Ia menuliskan koefisien $1, -7, 3, -9$ dan memakai $c = 2$ sehingga memperoleh baris bawah $1, -5, -7, -23$, lalu menyimpulkan sisanya $-23$. Pernyataan yang benar mengenai pekerjaan Wulan adalah ....",
+      "jawaban_benar": "Ia salah karena koefisien $x^3$ yang bernilai nol tidak ditulis; sisa sebenarnya $-15$",
+      "alasan_benar": "koefisien lengkap harus $1,0,-7,3,-9$; hasilnya baris bawah $1,2,-3,-3,-15$",
+      "distraktor": [
+        {
+          "teks": "Ia salah karena seharusnya $c = -2$; sisa sebenarnya $-27$",
+          "alasan": "mengira pembagi $x-2$ memakai $c=-2$"
+        },
+        {
+          "teks": "Pekerjaannya benar karena sisa Horner selalu $-23$ walau suku nol dilewati",
+          "alasan": "mengira suku berkoefisien nol boleh dilewati"
+        },
+        {
+          "teks": "Ia salah karena suku konstan tidak boleh ditulis; sisa sebenarnya $-6$",
+          "alasan": "mengira suku konstan tidak masuk skema Horner"
+        }
+      ],
+      "pembahasan": "Dengan koefisien lengkap $1,0,-7,3,-9$ dan $c=2$: baris bawah $1,2,-3,-3,-15$, sisa $-15$ (sama dengan $P(2)$). Wulan melewatkan koefisien $0$ sehingga kolomnya bergeser.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 94,
+        "kutipan": "Jawaban yang diperoleh dari kedua cara tersebut ternyata berbeda."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "temukan kesalahan Horner dua kali (pembagi kuadrat)",
+      "alasan_level": "menilai prosedur Horner dua kali dengan menelusuri hubungan sisa kedua tahap terhadap sisa pembagian oleh pembagi kuadrat",
+      "stimulus": null,
+      "pertanyaan": "Raka membagi $P(x) = 3x^3 - 4x^2 - 17x + 9$ oleh $(x - 2)(x + 1)$ dengan Horner dua kali: pertama dibagi $x - 2$, lalu hasil baginya dibagi $x + 1$. Ia memperoleh sisa tahap pertama $-17$ dan sisa tahap kedua $-12$, kemudian menyatakan bahwa sisa pembagian $P(x)$ oleh $(x - 2)(x + 1)$ adalah $-12$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Raka keliru; sisa yang benar adalah $-12x + 7$",
+      "alasan_benar": "$P=(x-2)H_1+S_1$ dan $H_1=(x+1)H_2+S_2$ sehingga $P=(x-2)(x+1)H_2+S_2(x-2)+S_1$",
+      "distraktor": [
+        {
+          "teks": "Raka benar; sisanya $-12$",
+          "alasan": "mengira hanya sisa tahap kedua yang menjadi sisa akhir"
+        },
+        {
+          "teks": "Raka keliru; sisa yang benar adalah $-29$",
+          "alasan": "menjumlahkan kedua sisa tahap tanpa memperhatikan faktor pembagi"
+        },
+        {
+          "teks": "Raka keliru; sisa yang benar adalah $-12x - 29$",
+          "alasan": "mengalikan sisa tahap kedua dengan faktor kedua, bukan faktor pertama"
+        }
+      ],
+      "pembahasan": "$P=(x-2)H_1+S_1$, $H_1=(x+1)H_2+S_2$ sehingga sisa akhir $=S_2(x-2)+S_1=-12x + 7$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "Proses pembagian tersebut menyisakan polinomial"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan pembagian bersusun",
+      "alasan_level": "menelusuri langkah pembagian bersusun siswa untuk menemukan letak kesalahan lalu mengevaluasi hasil akhirnya",
+      "stimulus": null,
+      "pertanyaan": "Doni membagi $P(x) = 2x^3 - 3x^2 - 7x + 4$ oleh $Q(x) = x^2 - 2x + 5$ secara bersusun. Suku pertama hasil bagi ia tulis $2x$, lalu ia mengurangkan $2x \\cdot Q(x) = 2x^3 - 4x^2 + 10x$ dan menuliskan sisa sementara $x^2 + 3x + 4$. Lanjutannya ia peroleh hasil bagi $2x + 1$ dan sisa $5x - 1$. Pernyataan yang benar mengenai pekerjaan Doni adalah ....",
+      "jawaban_benar": "Doni salah pada pengurangan suku $x$ (seharusnya $-7x - 10x = -17x$); hasil bagi $2x + 1$ benar dan sisa yang benar $-15x - 1$",
+      "alasan_benar": "sisa sementara yang benar $x^2-17x+4$; dikurangi $Q$ memberi $-15x-1$",
+      "distraktor": [
+        {
+          "teks": "Doni salah pada pengurangan suku $x^2$; hasil bagi $2x + 1$ dan sisa $-15x - 1$",
+          "alasan": "suku $x^2$ sudah benar: $-3x^2-(-4x^2)=x^2$"
+        },
+        {
+          "teks": "Pekerjaan Doni benar seluruhnya; hasil bagi $2x + 1$ dan sisa $5x - 1$",
+          "alasan": "tidak memeriksa tanda pada pengurangan suku $x$"
+        },
+        {
+          "teks": "Doni salah pada pengurangan suku $x$; hasil bagi $2x + 1$ dan sisa $-15x + 4$",
+          "alasan": "mengoreksi suku $x$ tetapi lupa mengurangkan suku konstan $5$"
+        }
+      ],
+      "pembahasan": "$P-2xQ=x^2-17x+4$; lalu $-1\\cdot Q$ menghasilkan sisa $-15x-1$ dengan hasil bagi $2x+1$. Doni menulis $-7x+10x=3x$, kesalahan tanda.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "Gunakan Teorema Sisa untuk mencari nilai"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar dua sisa sama",
+      "alasan_level": "merancang nilai parameter agar dua pembagian berbeda bersisa sama, lalu mengevaluasi sisa bersama itu",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x) = 2x^3 + kx^2 - 6x + 5$ dirancang agar sisa pembagian oleh $x - 3$ sama dengan sisa pembagian oleh $x + 2$. Sisa yang sama tersebut adalah ....",
+      "jawaban_benar": "$-31$",
+      "alasan_benar": "$P(3)=9k+41$ dan $P(-2)=4k+1$; sama jika $k=-8$, sisa $-31$",
+      "distraktor": [
+        {
+          "teks": "$-83/5$",
+          "alasan": "memakai $P(2)$ untuk pembagi $x+2$ sehingga $k=-\\frac{32}{5}$"
+        },
+        {
+          "teks": "$133/5$",
+          "alasan": "memakai $P(-3)$ untuk pembagi $x-3$ sehingga $k=\\frac{32}{5}$"
+        },
+        {
+          "teks": "$155/13$",
+          "alasan": "menyamakan $P(3)$ dengan $-P(-2)$ sehingga $k=-\\frac{42}{13}$"
+        }
+      ],
+      "pembahasan": "$P(3)=54+9k-18+5=9k+41$, $P(-2)=-16+4k+12+5=4k+1$. $9k+41=4k+1\\Rightarrow k=-8$; sisa $=9(-8)+41=-31$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 88,
+        "kutipan": "Dalam metode Horner, jika polinomial pembaginya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter ganda pada polinomial habis dibagi pembagi kuadrat",
+      "alasan_level": "menentukan dua parameter dari syarat habis dibagi lalu menilai hasil bagi akibatnya; tiap distraktor berasal dari salah memetakan pembuat nol",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x) = x^4 + ax^3 + bx - 12$ habis dibagi $(x - 2)(x + 1)$. Jika hasil bagi pembagian tersebut adalah $H(x)$, nilai $H(3)$ adalah ....",
+      "jawaban_benar": "$27$",
+      "alasan_benar": "habis dibagi berarti $P(2)=0$ dan $P(-1)=0$; diperoleh $a=3$, $b=-14$",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "menganggap pembuat nol $x+1$ adalah $1$ sehingga $a,b$ salah"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "membalik tanda kedua pembuat nol ($x-2$ dan $x+1$)"
+        },
+        {
+          "teks": "$-21$",
+          "alasan": "membaca suku konstan sebagai $+12$ ketika menyusun $P(2)$ dan $P(-1)$"
+        }
+      ],
+      "pembahasan": "$P(2)=8a+2b+4=0$ dan $P(-1)=-a-b-11=0$ sehingga $a=3$, $b=-14$. Pembagian oleh $x^2-x-2$ memberi hasil bagi $x^2 + 4x + 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "Gunakan Teorema Sisa untuk mencari nilai"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "kesesuaian dua sisa pembagi kuadrat",
+      "alasan_level": "menilai konsistensi dua data sisa melalui nilai polinomial di pembuat nol bersama lalu menentukan sisa baru",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)$ jika dibagi $x^2 + x - 2$ bersisa $2x + 5$, dan jika dibagi $x^2 - 2x - 8$ bersisa $3x + 7$. Sisa pembagian $P(x)$ oleh $x^2 - 5x + 4$ adalah ....",
+      "jawaban_benar": "$4x + 3$",
+      "alasan_benar": "$P(1)=7$, $P(-2)=1$ (konsisten dari kedua data), $P(4)=19$; sisa oleh $(x-1)(x-4)$ melalui $(1,7)$ dan $(4,19)$ adalah $4x+3$",
+      "distraktor": [
+        {
+          "teks": "$5x + 12$",
+          "alasan": "menjumlahkan kedua sisa yang diketahui"
+        },
+        {
+          "teks": "$-4x + 23$",
+          "alasan": "menukar nilai $P(1)=19$ dan $P(4)=7$"
+        },
+        {
+          "teks": "$3x + 4$",
+          "alasan": "menukar koefisien dan konstanta sisa $4x+3$"
+        }
+      ],
+      "pembahasan": "Dari $x^2+x-2=(x-1)(x+2)$: $P(1)=7$, $P(-2)=1$. Dari $x^2-2x-8=(x+2)(x-4)$: $P(-2)=1$ (cocok), $P(4)=19$. Sisa oleh $(x-1)(x-4)$ berbentuk $px+q$ dengan $p+q=7$, $4p+q=19$: $4x+3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "juga berlaku jika pembaginya"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bandingkan dua pembagi yang setara",
+      "alasan_level": "membandingkan hasil dua pembagian (x - 1/2 dan 2x - 1) dan menilai klaim siswa yang mencampur hasil bagi dengan sisa",
+      "stimulus": null,
+      "pertanyaan": "Beni membagi $P(x) = 8x^3 - 4x^2 + 10x - 7$ dengan $x - \\frac{1}{2}$ dan dengan $2x - 1$. Ia mengklaim bahwa kedua pembagian memberi hasil bagi yang sama dan sisa yang sama karena $2x - 1 = 2\\left(x - \\frac{1}{2}\\right)$. Pernyataan yang benar mengenai klaim Beni adalah ....",
+      "jawaban_benar": "Salah: hasil baginya berbeda (hasil bagi oleh $2x - 1$ adalah $4x^2 + 5$), sedangkan sisanya sama, yaitu $-2$",
+      "alasan_benar": "$P=(x-\\frac12)H_1+s=(2x-1)\\cdot\\frac{H_1}{2}+s$: hasil bagi dibagi $2$, sisa tetap",
+      "distraktor": [
+        {
+          "teks": "Benar: kedua hasil bagi sama $8x^2 + 10$ dan kedua sisa sama $-2$",
+          "alasan": "tidak memperhitungkan faktor $2$ pada pembagi"
+        },
+        {
+          "teks": "Salah: hasil bagi oleh $2x - 1$ adalah $4x^2 + 5$ dan sisanya $-1$",
+          "alasan": "ikut membagi sisa dengan $2$"
+        },
+        {
+          "teks": "Salah: hasil bagi oleh $2x - 1$ adalah $16x^2 + 20$ dan sisanya $-2$",
+          "alasan": "mengalikan hasil bagi dengan $2$ padahal seharusnya dibagi $2$"
+        }
+      ],
+      "pembahasan": "Horner dengan $c=\\frac12$: hasil bagi $8x^2 + 10$, sisa $-2$. Karena $2x-1=2(x-\\frac12)$, hasil bagi oleh $2x-1$ adalah $4x^2 + 5$, sisa tetap $-2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 92,
+        "kutipan": "Gunakan Teorema Sisa untuk mencari nilai"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 6,
+      "jenis_soal": "rancang polinomial dari tiga sisa",
+      "alasan_level": "merancang polinomial monik berderajat 3 dari tiga syarat sisa lalu menguji nilainya di titik lain",
+      "stimulus": null,
+      "pertanyaan": "Sebuah polinomial monik berderajat $3$, $P(x) = x^3 + ax^2 + bx + c$, dirancang agar jika dibagi $x - 1$ bersisa $1$, jika dibagi $x - 2$ bersisa $7$, dan jika dibagi $x + 1$ bersisa $-11$. Nilai $P(3)$ adalah ....",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "syarat $P(1)=1$, $P(2)=7$, $P(-1)=-11$ memberi $P(x)=x^3-2x^2+5x-3$, sehingga $P(3)=21$",
+      "distraktor": [
+        {
+          "teks": "$85/3$",
+          "alasan": "salah memasukkan sisa $-11$ sebagai $11$ pada syarat $P(-1)$"
+        },
+        {
+          "teks": "$17$",
+          "alasan": "membalik tanda semua pembuat nol ($x-1\\to P(-1)$ dst.)"
+        },
+        {
+          "teks": "$23$",
+          "alasan": "salah menghitung sisa pada syarat $x+1$ (memakai $-5$)"
+        }
+      ],
+      "pembahasan": "Tiga syarat menghasilkan tiga persamaan linear untuk $a,b,c$: $a=-2$, $b=5$, $c=-3$; $P(3)=27-18+15-3=21$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "yang derajatnya kurang dari polinomial pembagi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kecukupan informasi sisa pembagi kuadrat",
+      "alasan_level": "menilai informasi mana yang cukup menentukan sisa secara tunggal dengan menalar hubungan sisa dan pembuat nol",
+      "stimulus": null,
+      "pertanyaan": "Untuk menentukan sisa pembagian $P(x)$ oleh $x^2 - x - 6$ secara tunggal (tanpa mengetahui $P(x)$ sepenuhnya), informasi yang cukup adalah ....",
+      "jawaban_benar": "sisa pembagian $P(x)$ oleh $x - 3$ dan sisa pembagian $P(x)$ oleh $x + 2$",
+      "alasan_benar": "$x^2-x-6=(x-3)(x+2)$; sisa berbentuk $px+q$ ditentukan oleh $P(3)$ dan $P(-2)$",
+      "distraktor": [
+        {
+          "teks": "sisa pembagian $P(x)$ oleh $x - 3$ saja",
+          "alasan": "hanya satu persamaan untuk dua bilangan $p$ dan $q$"
+        },
+        {
+          "teks": "sisa pembagian $P(x)$ oleh $x - 3$ dan nilai $P(3)$",
+          "alasan": "kedua informasi sama (satu persamaan yang sama)"
+        },
+        {
+          "teks": "sisa pembagian $P(x)$ oleh $x - 3$ dan sisa pembagian $P(x)$ oleh $x - 2$",
+          "alasan": "$x-2$ bukan faktor $x^2-x-6$ sehingga tidak memberi syarat pada sisanya"
+        }
+      ],
+      "pembahasan": "Faktor pembagi $(x-3)(x+2)$; sisa $px+q$ dengan $3p+q=P(3)$ dan $-2p+q=P(-2)$. Hanya pasangan pembuat nol yang tepat yang memberi dua persamaan bebas.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "yang derajatnya kurang dari polinomial pembagi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "hasil bagi bersarang (sisa pembagi kuadrat)",
+      "alasan_level": "menilai kesimpulan siswa tentang sisa dengan menelusuri bentuk algoritma pembagian bersarang",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)$ dibagi $x - 2$ bersisa $9$ dengan hasil bagi $H(x)$, dan $H(x)$ dibagi $x + 3$ bersisa $-4$. Rina menyimpulkan bahwa sisa pembagian $P(x)$ oleh $(x - 2)(x + 3)$ adalah $5$ (jumlah kedua sisa). Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Rina keliru; sisa yang benar adalah $-4x + 17$",
+      "alasan_benar": "$P=(x-2)H+9$, $H=(x+3)K-4$ sehingga $P=(x-2)(x+3)K-4(x-2)+9$",
+      "distraktor": [
+        {
+          "teks": "Rina benar; sisanya $5$",
+          "alasan": "menjumlahkan kedua sisa, padahal sisa pembagi kuadrat berderajat paling tinggi $1$"
+        },
+        {
+          "teks": "Rina keliru; sisa yang benar adalah $-4x - 3$",
+          "alasan": "mengalikan sisa kedua dengan $x+3$, bukan $x-2$"
+        },
+        {
+          "teks": "Rina keliru; sisa yang benar adalah $9x - 22$",
+          "alasan": "mengalikan sisa pertama dengan $x-2$ dan menukar peran kedua sisa"
+        }
+      ],
+      "pembahasan": "$P=(x-2)\\big[(x+3)K-4\\big]+9=(x-2)(x+3)K-4(x-2)+9$, sisa $-4x+8+9=-4x+17$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi pernyataan yang pasti benar (sisa umum)",
+      "alasan_level": "mengevaluasi empat pernyataan umum tentang sisa; tiap pernyataan salah harus dibantah dengan contoh, tanpa angka konkret",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)$ dibagi $x - c$ bersisa $s$. Polinomial berikut yang pasti habis dibagi $x - c$, untuk sembarang $P(x)$, $c$, dan $s$ yang memenuhi, adalah ....",
+      "jawaban_benar": "$P(x) - s$",
+      "alasan_benar": "$P(c)=s$ sehingga nilai $P(x)-s$ di $x=c$ adalah $0$",
+      "distraktor": [
+        {
+          "teks": "$P(x) + s$",
+          "alasan": "bernilai $2s$ di $x=c$, nol hanya bila $s=0$"
+        },
+        {
+          "teks": "$P(x) - c$",
+          "alasan": "bernilai $s-c$ di $x=c$; mengira sisa sama dengan $c$"
+        },
+        {
+          "teks": "$s \\cdot P(x) - c \\cdot s$",
+          "alasan": "bernilai $s^2-cs=s(s-c)$ di $x=c$, tidak selalu nol"
+        }
+      ],
+      "pembahasan": "Teorema Sisa: $P(c)=s$. Nilai di $x=c$ untuk $P(x)-s$ adalah $0$ sehingga habis dibagi $x-c$; tiga pilihan lain bernilai $2s$, $s-c$, dan $s(s-c)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 86,
+        "kutipan": "yang derajatnya kurang dari polinomial pembagi"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "parameter agar sisa konstan",
+      "alasan_level": "merancang parameter agar sisa pembagi kuadrat tidak memuat $x$ lewat syarat $P(1)=P(-1)$, lalu menilai sisanya",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x) = 2x^3 - 5x^2 + kx + 7$ dibagi $x^2 - 1$. Sisa pembagian berbentuk $px + q$. Jika sisanya berupa konstanta (nilai $p = 0$), maka pernyataan yang benar adalah ....",
+      "jawaban_benar": "$k = -2$ dan sisanya $2$",
+      "alasan_benar": "sisa $px+q$ memenuhi $p+q=P(1)=k+4$ dan $-p+q=P(-1)=-k$; $p=0$ jika $P(1)=P(-1)$, yaitu $k=-2$, sisa $2$",
+      "distraktor": [
+        {
+          "teks": "$k = -4$ dan sisanya $4$",
+          "alasan": "menyamakan $P(1)=0$ saja (salah syarat)"
+        },
+        {
+          "teks": "$k = -2$ dan sisanya $7$",
+          "alasan": "$k$ benar tetapi sisa diambil dari suku konstan $P(x)$"
+        },
+        {
+          "teks": "$k = 2$ dan sisanya $6$",
+          "alasan": "salah tanda saat menyamakan $P(1)$ dan $P(-1)$"
+        }
+      ],
+      "pembahasan": "$P(1)=k+4$, $P(-1)=-k$. Sisa konstan $\\Rightarrow P(1)=P(-1)\\Rightarrow k=-2$, sisa $=P(1)=2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "keterjangkauan data sisa (koefisien bulat)",
+      "alasan_level": "menalar bahwa $P(a)-P(b)$ habis dibagi $a-b$ untuk koefisien bulat untuk menilai empat pasangan data sisa mana yang mustahil",
+      "stimulus": null,
+      "pertanyaan": "Polinomial $P(x)$ berkoefisien bilangan bulat. Dari empat pasangan data (sisa jika dibagi $x - 5$, sisa jika dibagi $x + 2$) berikut, pasangan yang TIDAK mungkin terjadi adalah ....",
+      "jawaban_benar": "$(25, 12)$",
+      "alasan_benar": "$P(5)-P(-2)$ selalu kelipatan $7$ untuk koefisien bulat; $25-12=13$ bukan kelipatan $7$",
+      "distraktor": [
+        {
+          "teks": "$(30, 9)$",
+          "alasan": "selisih $21$ kelipatan $7$, mungkin (mis. $P(x)=3x+15$)"
+        },
+        {
+          "teks": "$(-4, 10)$",
+          "alasan": "selisih $-14$ kelipatan $7$, mungkin (mis. $P(x)=-2x+6$)"
+        },
+        {
+          "teks": "$(17, -4)$",
+          "alasan": "selisih $21$ kelipatan $7$, mungkin (mis. $P(x)=3x+2$)"
+        }
+      ],
+      "pembahasan": "Teorema Sisa: sisa-sisanya $P(5)$ dan $P(-2)$. Untuk setiap $k$, $5^k-(-2)^k$ kelipatan $7$, jadi $P(5)-P(-2)$ kelipatan $7$. Hanya $25-12=13$ yang tidak.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kecukupan informasi polinomial kubik",
+      "alasan_level": "menalar banyak syarat bebas (bilangan titik berbeda) yang diperlukan untuk menentukan tiga koefisien lewat Teorema Sisa",
+      "stimulus": null,
+      "pertanyaan": "Polinomial monik berderajat $3$, $P(x) = x^3 + ax^2 + bx + c$ dengan $a, b, c$ bilangan real, ingin ditentukan secara tunggal. Informasi yang cukup untuk itu adalah ....",
+      "jawaban_benar": "sisa pembagian oleh $x - 1$, oleh $x + 1$, dan oleh $x - 3$",
+      "alasan_benar": "tiga pembuat nol berbeda ($1,-1,3$) memberi tiga persamaan bebas untuk $a,b,c$",
+      "distraktor": [
+        {
+          "teks": "sisa pembagian oleh $x - 1$ dan oleh $x + 1$",
+          "alasan": "hanya dua persamaan untuk tiga bilangan"
+        },
+        {
+          "teks": "sisa pembagian oleh $x - 1$ dan sisa pembagian oleh $x^2 - 1$",
+          "alasan": "sisa oleh $x^2-1$ memberi $P(1)$ lagi (sama) dan $P(-1)$: hanya dua persamaan bebas"
+        },
+        {
+          "teks": "sisa pembagian oleh $x - 2$ dan sisa pembagian oleh $x^2 - 4$",
+          "alasan": "sisa oleh $x^2-4$ memberi $P(2)$ lagi (sama) dan $P(-2)$: hanya dua persamaan bebas"
+        }
+      ],
+      "pembahasan": "Ada tiga bilangan yang belum diketahui sehingga perlu tiga nilai $P$ di tiga titik berbeda. Pilihan lain hanya memberi dua nilai berbeda.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b02-c-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 91,
+        "kutipan": "Untuk mengetahui penggunaan Teorema Sisa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi pernyataan sisa polinomial berpangkat besar",
+      "alasan_level": "mengevaluasi empat pernyataan sisa untuk pangkat sangat besar tanpa pembagian, dengan Teorema Sisa di $c=-1$",
+      "stimulus": null,
+      "pertanyaan": "Manakah pernyataan yang benar tentang pembagian oleh $x + 1$?",
+      "jawaban_benar": "$x^{2025} + 1$ habis dibagi $x + 1$",
+      "alasan_benar": "sisa $=P(-1)=(-1)^{2025}+1=0$",
+      "distraktor": [
+        {
+          "teks": "$x^{2024} + 1$ habis dibagi $x + 1$",
+          "alasan": "$(-1)^{2024}=1$ sehingga sisa $2$, bukan $0$"
+        },
+        {
+          "teks": "$x^{2025} - 1$ bersisa $0$ jika dibagi $x + 1$",
+          "alasan": "$(-1)^{2025}=-1$ sehingga sisa $-2$"
+        },
+        {
+          "teks": "$x^{2025} + x^{2024}$ bersisa $2$ jika dibagi $x + 1$",
+          "alasan": "$(-1)^{2025}+(-1)^{2024}=-1+1=0$, bukan $2$"
+        }
+      ],
+      "pembahasan": "Sisa pembagian oleh $x+1$ adalah $P(-1)$. $(-1)^{2025}=-1$, $(-1)^{2024}=1$; hanya $(-1)^{2025}+1=0$.",
+      "catatan": null
+    }
+  ]
+}

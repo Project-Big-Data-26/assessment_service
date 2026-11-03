@@ -1,0 +1,720 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "bagian": "Latihan C",
+        "nomor": "1",
+        "teks": "Operasi penjumlahan matriks dilakukan dengan cara menjumlahkan elemen-elemen matriks A dan elemen-elemen matriks B saja.",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konsep penjumlahan",
+      "alasan_level": "mengingat cara menjumlahkan dua matriks berordo sama",
+      "pertanyaan": "Matriks $A$ dan $B$ berordo sama. Pernyataan yang benar mengenai cara memperoleh matriks $A + B$ adalah ....",
+      "jawaban_benar": "Elemen-elemen $A$ dan $B$ yang seletak dijumlahkan, dan hasilnya berordo sama dengan $A$ dan $B$",
+      "alasan_benar": "menurut definisi penjumlahan matriks, $c_{ij} = a_{ij} + b_{ij}$ sehingga ordo hasil sama",
+      "distraktor": [
+        {
+          "teks": "Semua elemen $A$ dijumlahkan lebih dulu, kemudian ditambahkan dengan jumlah semua elemen $B$",
+          "alasan": "mengira penjumlahan matriks menghasilkan satu bilangan"
+        },
+        {
+          "teks": "Baris-baris $A$ dikalikan dengan kolom-kolom $B$, lalu hasilnya dijumlahkan",
+          "alasan": "mencampur dengan prosedur perkalian matriks"
+        },
+        {
+          "teks": "Ordo hasil adalah jumlah ordo $A$ dan ordo $B$ sehingga matriks hasil lebih besar",
+          "alasan": "mengira ordo ikut dijumlahkan"
+        }
+      ],
+      "pembahasan": "Jika $A$ dan $B$ berordo $m \\times n$, maka $C = A + B$ berordo $m \\times n$ dengan $c_{ij} = a_{ij} + b_{ij}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-001",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "bagian": "Latihan C",
+        "nomor": "1",
+        "teks": "Operasi penjumlahan matriks dilakukan dengan cara menjumlahkan elemen-elemen matriks A dan elemen-elemen matriks B saja.",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konsep penjumlahan",
+      "alasan_level": "mengenali elemen yang dijumlahkan pada posisi tertentu",
+      "pertanyaan": "Pada penjumlahan dua matriks $A$ dan $B$ yang berordo sama, elemen baris ke-2 kolom ke-3 matriks $A + B$ diperoleh dengan cara ....",
+      "jawaban_benar": "menjumlahkan elemen baris ke-2 kolom ke-3 matriks $A$ dengan elemen baris ke-2 kolom ke-3 matriks $B$",
+      "alasan_benar": "penjumlahan dilakukan pada elemen yang seletak",
+      "distraktor": [
+        {
+          "teks": "menjumlahkan elemen baris ke-2 kolom ke-3 matriks $A$ dengan elemen baris ke-3 kolom ke-2 matriks $B$",
+          "alasan": "baris dan kolom tertukar sehingga elemen tidak seletak"
+        },
+        {
+          "teks": "menjumlahkan semua elemen baris ke-2 matriks $A$ dengan semua elemen baris ke-2 matriks $B$",
+          "alasan": "menjumlahkan satu baris penuh, bukan satu elemen"
+        },
+        {
+          "teks": "mengalikan elemen baris ke-2 kolom ke-3 matriks $A$ dengan elemen yang seletak pada matriks $B$",
+          "alasan": "mengganti penjumlahan dengan perkalian"
+        }
+      ],
+      "pembahasan": "Elemen $c_{23} = a_{23} + b_{23}$, yaitu penjumlahan elemen yang seletak.",
+      "id": "kelas11_tl-b01-c-easy-bt01-002",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "bagian": "Latihan C",
+        "nomor": "2",
+        "teks": "Dua buah matriks dapat dikurangkan apabila matriks tersebut memiliki ordo yang sama.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "syarat ordo operasi",
+      "alasan_level": "mengingat syarat ordo agar pengurangan matriks terdefinisi",
+      "pertanyaan": "Matriks $M$ berordo $4 \\times 3$. Matriks $N$ dapat dikurangkan dari $M$ (selisih $M - N$ terdefinisi) hanya jika $N$ berordo ....",
+      "jawaban_benar": "$4 \\times 3$",
+      "alasan_benar": "pengurangan hanya terdefinisi untuk matriks berordo sama",
+      "distraktor": [
+        {
+          "teks": "$3 \\times 4$",
+          "alasan": "ordo dibalik (banyak baris dan kolom tertukar)"
+        },
+        {
+          "teks": "$4 \\times 4$",
+          "alasan": "hanya menyamakan banyak baris"
+        },
+        {
+          "teks": "$3 \\times 3$",
+          "alasan": "hanya menyamakan banyak kolom"
+        }
+      ],
+      "pembahasan": "Dua matriks dapat dikurangkan apabila ordonya sama, jadi $N$ harus berordo $4 \\times 3$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-003",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "bagian": "Latihan C",
+        "nomor": "2",
+        "teks": "Dua buah matriks dapat dikurangkan apabila matriks tersebut memiliki ordo yang sama.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "syarat ordo operasi",
+      "alasan_level": "menentukan ordo hasil pengurangan dua matriks berordo sama",
+      "pertanyaan": "Matriks $P$ dan $Q$ sama-sama berordo $3 \\times 5$. Ordo matriks $P - Q$ adalah ....",
+      "jawaban_benar": "$3 \\times 5$",
+      "alasan_benar": "selisih dua matriks berordo $m \\times n$ juga berordo $m \\times n$",
+      "distraktor": [
+        {
+          "teks": "$5 \\times 3$",
+          "alasan": "ordo dibalik"
+        },
+        {
+          "teks": "$6 \\times 10$",
+          "alasan": "ordo kedua matriks dijumlahkan"
+        },
+        {
+          "teks": "$3 \\times 3$",
+          "alasan": "hanya mengingat banyak baris"
+        }
+      ],
+      "pembahasan": "Pengurangan dilakukan elemen demi elemen sehingga hasilnya tetap berordo $3 \\times 5$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-004",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "bagian": "Latihan C",
+        "nomor": "3",
+        "teks": "=-3 1G + 9 -7 = =6 -6G",
+        "jawaban": "Salah (ordo kedua matriks yang dijumlahkan berbeda, sehingga penjumlahan tidak terdefinisi)"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "syarat ordo operasi",
+      "alasan_level": "memeriksa ordo sebelum menjumlahkan: kedua matriks berbeda ordo",
+      "pertanyaan": "Diketahui $A$ = $\\begin{bmatrix} 8 & -4 \\\\ 7 & 5 \\end{bmatrix}$ dan $B$ = $\\begin{bmatrix} 6 & 2 \\\\ -3 & 9 \\\\ 4 & 1 \\end{bmatrix}$. Pernyataan yang benar mengenai $A + B$ adalah ....",
+      "jawaban_benar": "$A + B$ tidak terdefinisi karena ordo $A$ dan $B$ berbeda",
+      "alasan_benar": "$A$ berordo $2 \\times 2$ sedangkan $B$ berordo $3 \\times 2$",
+      "distraktor": [
+        {
+          "teks": "$A + B$ = $\\begin{bmatrix} 14 & -2 \\\\ 4 & 14 \\end{bmatrix}$ karena baris ketiga $B$ diabaikan",
+          "alasan": "mengabaikan baris yang tidak punya pasangan"
+        },
+        {
+          "teks": "$A + B$ = $\\begin{bmatrix} 14 & -2 \\\\ 4 & 14 \\\\ 4 & 1 \\end{bmatrix}$ karena baris ketiga $B$ disalin",
+          "alasan": "menyalin baris tanpa pasangan seolah dijumlah dengan nol"
+        },
+        {
+          "teks": "$A + B$ terdefinisi dan berordo $5 \\times 2$",
+          "alasan": "mengira ordo hasil adalah jumlah ordo"
+        }
+      ],
+      "pembahasan": "Penjumlahan hanya terdefinisi bila ordo sama. Ordo $A$ adalah $2 \\times 2$ dan ordo $B$ adalah $3 \\times 2$, sehingga $A + B$ tidak terdefinisi.",
+      "id": "kelas11_tl-b01-c-easy-bt01-005",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "bagian": "Eksplorasi Penjumlahan Matriks",
+        "nomor": "2",
+        "teks": "Tentukan matriks biaya produksi yang merupakan penjumlahan dari biaya pembelian bahan dasar dan biaya tenaga kerja.",
+        "jawaban": "$\\begin{bmatrix} 31 & 55 & 97 \\\\ 22 & 40 & 74 \\end{bmatrix}$"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "menjumlahkan dua matriks data yang diberikan dalam cerita, satu operasi",
+      "pertanyaan": "Dua pabrik roti mencatat pengeluaran bulan ini (dalam juta rupiah) untuk tepung dan gula, dengan baris menyatakan Pabrik I dan Pabrik II serta kolom menyatakan roti tawar dan roti manis. Pengeluaran tepung $\\begin{bmatrix} 14 & 22 \\\\ 9 & 17 \\end{bmatrix}$ dan pengeluaran gula $\\begin{bmatrix} 5 & 8 \\\\ 6 & 3 \\end{bmatrix}$. Matriks total pengeluaran kedua bahan tersebut adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 19 & 30 \\\\ 15 & 20 \\end{bmatrix}$",
+      "alasan_benar": "total pengeluaran = jumlah elemen seletak: 14+5, 22+8, 9+6, 17+3",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 9 & 14 \\\\ 3 & 14 \\end{bmatrix}$",
+          "alasan": "mengurangkan, bukan menjumlahkan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 19 & 15 \\\\ 30 & 20 \\end{bmatrix}$",
+          "alasan": "baris dan kolom hasil tertukar (transpos)"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 19 & 30 \\\\ 15 & 23 \\end{bmatrix}$",
+          "alasan": "elemen terakhir dijumlahkan dengan elemen yang tidak seletak (17 + 6)"
+        }
+      ],
+      "pembahasan": "Total = tepung + gula = $\\begin{bmatrix} 19 & 30 \\\\ 15 & 20 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-006",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "bagian": "Eksplorasi Penjumlahan Matriks",
+        "nomor": "2",
+        "teks": "Tentukan matriks biaya produksi yang merupakan penjumlahan dari biaya pembelian bahan dasar dan biaya tenaga kerja.",
+        "jawaban": "$\\begin{bmatrix} 31 & 55 & 97 \\\\ 22 & 40 & 74 \\end{bmatrix}$"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "membentuk matriks dari tabel lalu menjumlahkan, satu operasi",
+      "stimulus": "Banyak pesanan (unit) yang diterima sebuah toko daring.\n\n| Minggu I | Kaos | Topi |\n|---|---|---|\n| Cabang Timur | 12 | 7 |\n| Cabang Barat | 9 | 15 |\n| Cabang Utara | 4 | 10 |\n\n| Minggu II | Kaos | Topi |\n|---|---|---|\n| Cabang Timur | 6 | 5 |\n| Cabang Barat | 11 | 4 |\n| Cabang Utara | 8 | 2 |",
+      "pertanyaan": "Matriks banyak pesanan selama dua minggu, dengan baris menyatakan cabang (Timur, Barat, Utara) dan kolom menyatakan barang (kaos, topi), adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 18 & 12 \\\\ 20 & 19 \\\\ 12 & 12 \\end{bmatrix}$",
+      "alasan_benar": "jumlahkan elemen seletak kedua tabel",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 6 & 2 \\\\ -2 & 11 \\\\ -4 & 8 \\end{bmatrix}$",
+          "alasan": "mengurangkan pesanan minggu I dengan minggu II"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 18 & 20 & 12 \\\\ 12 & 19 & 12 \\end{bmatrix}$",
+          "alasan": "matriks hasil ditulis dengan baris dan kolom tertukar"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -6 & -2 \\\\ 2 & -11 \\\\ 4 & -8 \\end{bmatrix}$",
+          "alasan": "mengurangkan dengan urutan terbalik"
+        }
+      ],
+      "pembahasan": "Hasil = $\\begin{bmatrix} 18 & 12 \\\\ 20 & 19 \\\\ 12 & 12 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-007",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "bagian": "Latihan C",
+        "nomor": "6",
+        "teks": "Tentukan matriks banyaknya buah yang masih segar untuk dijual.",
+        "jawaban": "$\\begin{bmatrix} 44 & 58 \\\\ 68 & 66 \\\\ 45 & 57 \\\\ 39 & 46 \\end{bmatrix}$"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "mengurangkan matriks terjual dari matriks stok, satu operasi",
+      "pertanyaan": "Sebuah toko buku memiliki stok awal (eksemplar) pada cabang X dan cabang Y untuk novel, komik, dan kamus: $\\begin{bmatrix} 40 & 25 \\\\ 30 & 18 \\\\ 22 & 35 \\end{bmatrix}$, dengan kolom pertama cabang X dan kolom kedua cabang Y. Buku yang terjual dalam sebulan: $\\begin{bmatrix} 12 & 9 \\\\ 10 & 17 \\\\ 5 & 14 \\end{bmatrix}$. Matriks sisa stok setiap jenis buku di kedua cabang adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 28 & 16 \\\\ 20 & 1 \\\\ 17 & 21 \\end{bmatrix}$",
+      "alasan_benar": "sisa = stok awal dikurangi terjual, elemen seletak",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 52 & 34 \\\\ 40 & 35 \\\\ 27 & 49 \\end{bmatrix}$",
+          "alasan": "menjumlahkan stok dengan yang terjual"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 28 & 20 & 17 \\\\ 16 & 1 & 21 \\end{bmatrix}$",
+          "alasan": "hasil benar tetapi baris dan kolom tertukar"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -28 & -16 \\\\ -20 & -1 \\\\ -17 & -21 \\end{bmatrix}$",
+          "alasan": "urutan pengurangan terbalik sehingga semua elemen bernilai negatif"
+        }
+      ],
+      "pembahasan": "Sisa = $\\begin{bmatrix} 28 & 16 \\\\ 20 & 1 \\\\ 17 & 21 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-008",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "bagian": "Latihan C",
+        "nomor": "6",
+        "teks": "Tentukan matriks banyaknya buah yang masih segar untuk dijual.",
+        "jawaban": "$\\begin{bmatrix} 44 & 58 \\\\ 68 & 66 \\\\ 45 & 57 \\\\ 39 & 46 \\end{bmatrix}$"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "soal cerita operasi matriks",
+      "alasan_level": "mengurangkan dua matriks 2x2 dalam konteks kursi, satu operasi",
+      "pertanyaan": "Kapasitas kursi dua studio bioskop pada sesi siang dan malam adalah $\\begin{bmatrix} 80 & 60 \\\\ 120 & 90 \\end{bmatrix}$ (baris: studio 1 dan 2; kolom: siang dan malam). Kursi yang terisi adalah $\\begin{bmatrix} 57 & 41 \\\\ 85 & 63 \\end{bmatrix}$. Matriks banyak kursi yang masih kosong adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 23 & 19 \\\\ 35 & 27 \\end{bmatrix}$",
+      "alasan_benar": "kursi kosong = kapasitas dikurangi terisi",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 137 & 101 \\\\ 205 & 153 \\end{bmatrix}$",
+          "alasan": "menjumlahkan kapasitas dan kursi terisi"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 23 & 35 \\\\ 19 & 27 \\end{bmatrix}$",
+          "alasan": "hasil benar tetapi ditulis transpos"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 23 & 19 \\\\ 120 & 90 \\end{bmatrix}$",
+          "alasan": "baris kedua belum dikurangkan (setengah langkah)"
+        }
+      ],
+      "pembahasan": "Kursi kosong = $\\begin{bmatrix} 23 & 19 \\\\ 35 & 27 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-009",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "bagian": "Mari Berpikir Kritis",
+        "nomor": "1",
+        "teks": "Apakah sifat-sifat operasi penjumlahan matriks pada Sifat 1.1 berlaku untuk operasi pengurangan matriks?",
+        "jawaban": "Tidak seluruhnya: sifat komutatif dan asosiatif tidak berlaku pada pengurangan matriks"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sifat operasi matriks",
+      "alasan_level": "menghitung dua selisih lalu membandingkan untuk menilai sifat komutatif",
+      "pertanyaan": "Diketahui $A$ = $\\begin{bmatrix} 5 & 2 \\\\ 1 & 4 \\end{bmatrix}$ dan $B$ = $\\begin{bmatrix} 3 & 6 \\\\ 0 & 1 \\end{bmatrix}$. Pernyataan yang benar mengenai $A - B$ dan $B - A$ adalah ....",
+      "jawaban_benar": "$A - B$ dan $B - A$ saling berlawanan sehingga tidak sama; sifat komutatif tidak berlaku pada pengurangan",
+      "alasan_benar": "$A - B$ = $\\begin{bmatrix} 2 & -4 \\\\ 1 & 3 \\end{bmatrix}$ sedangkan $B - A$ = $\\begin{bmatrix} -2 & 4 \\\\ -1 & -3 \\end{bmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$A - B$ dan $B - A$ sama karena kedua matriks berordo sama; sifat komutatif berlaku pada pengurangan",
+          "alasan": "mengira pengurangan bersifat komutatif seperti penjumlahan"
+        },
+        {
+          "teks": "$A - B$ terdefinisi, tetapi $B - A$ tidak terdefinisi",
+          "alasan": "mengira urutan pengurangan memengaruhi keterdefinisian"
+        },
+        {
+          "teks": "$A - B$ dan $B - A$ berbeda ordo sehingga tidak dapat dibandingkan",
+          "alasan": "mengira urutan pengurangan mengubah ordo hasil"
+        }
+      ],
+      "pembahasan": "$A - B$ = $\\begin{bmatrix} 2 & -4 \\\\ 1 & 3 \\end{bmatrix}$ dan $B - A$ = $\\begin{bmatrix} -2 & 4 \\\\ -1 & -3 \\end{bmatrix}$. Keduanya berlawanan, jadi $A - B \\neq B - A$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-010",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "Jika matriks A dan matriks B adalah matriks-matriks yang berordo"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung langsung penjumlahan/pengurangan",
+      "alasan_level": "satu operasi penjumlahan elemen seletak dengan satu bilangan negatif",
+      "pertanyaan": "Diketahui $A$ = $\\begin{bmatrix} 5 & -2 \\\\ 8 & 6 \\end{bmatrix}$ dan $B$ = $\\begin{bmatrix} -4 & 7 \\\\ 3 & -9 \\end{bmatrix}$. Hasil $A + B$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 1 & 5 \\\\ 11 & -3 \\end{bmatrix}$",
+      "alasan_benar": "jumlahkan elemen seletak",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 9 & -9 \\\\ 5 & 15 \\end{bmatrix}$",
+          "alasan": "mengurangkan, bukan menjumlahkan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 1 & 5 \\\\ 11 & 15 \\end{bmatrix}$",
+          "alasan": "salah tanda: 6 + (-9) dihitung 6 + 9"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -20 & -14 \\\\ 24 & -54 \\end{bmatrix}$",
+          "alasan": "mengalikan elemen yang seletak"
+        }
+      ],
+      "pembahasan": "$A + B$ = $\\begin{bmatrix} 1 & 5 \\\\ 11 & -3 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-011",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "maka ada matriks C yang merupakan hasil penjumlahan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung langsung penjumlahan/pengurangan",
+      "alasan_level": "mencari satu elemen hasil penjumlahan, satu operasi",
+      "pertanyaan": "Diketahui $A$ = $\\begin{bmatrix} 3 & -1 & 6 \\\\ 2 & 8 & -5 \\end{bmatrix}$ dan $B$ = $\\begin{bmatrix} 4 & 2 & -7 \\\\ -6 & 1 & 9 \\end{bmatrix}$. Nilai elemen baris ke-2 kolom ke-3 dari $A + B$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$-5 + 9 = 4$",
+      "distraktor": [
+        {
+          "teks": "$-14$",
+          "alasan": "mengurangkan: $-5 - 9$"
+        },
+        {
+          "teks": "$14$",
+          "alasan": "tanda negatif pada $-5$ diabaikan"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "mengambil elemen baris ke-2 kolom ke-2 ($8 + 1$)"
+        }
+      ],
+      "pembahasan": "Elemen baris ke-2 kolom ke-3: $a_{23} + b_{23} = -5 + 9 = 4$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-012",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen c ij = a ij – b ij"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung langsung penjumlahan/pengurangan",
+      "alasan_level": "satu operasi pengurangan elemen seletak dengan tanda negatif",
+      "pertanyaan": "Diketahui $P$ = $\\begin{bmatrix} 6 & -3 \\\\ -2 & 5 \\end{bmatrix}$ dan $Q$ = $\\begin{bmatrix} -4 & 1 \\\\ 7 & -8 \\end{bmatrix}$. Hasil $P - Q$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 10 & -4 \\\\ -9 & 13 \\end{bmatrix}$",
+      "alasan_benar": "kurangkan elemen seletak: 6-(-4)=10, -3-1=-4, -2-7=-9, 5-(-8)=13",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 2 & -2 \\\\ 5 & -3 \\end{bmatrix}$",
+          "alasan": "menjumlahkan, bukan mengurangkan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -10 & 4 \\\\ 9 & -13 \\end{bmatrix}$",
+          "alasan": "urutan pengurangan terbalik"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 10 & -2 \\\\ 5 & 13 \\end{bmatrix}$",
+          "alasan": "salah tanda pada elemen yang melibatkan bilangan negatif ($-3-1$ dan $-2-7$)"
+        }
+      ],
+      "pembahasan": "$P - Q$ = $\\begin{bmatrix} 10 & -4 \\\\ -9 & 13 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-013",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 31,
+        "kutipan": "maka ada matriks C yang merupakan hasil pengurangan matriks A dengan matriks B"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hitung langsung penjumlahan/pengurangan",
+      "alasan_level": "pengurangan dua matriks baris dengan elemen negatif",
+      "pertanyaan": "Diketahui $M$ = $\\begin{bmatrix} 8 & -1 & 5 \\end{bmatrix}$ dan $N$ = $\\begin{bmatrix} 3 & 6 & -4 \\end{bmatrix}$. Hasil $M - N$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 5 & -7 & 9 \\end{bmatrix}$",
+      "alasan_benar": "8-3=5, -1-6=-7, 5-(-4)=9",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} -5 & 7 & -9 \\end{bmatrix}$",
+          "alasan": "urutan pengurangan terbalik"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 11 & 5 & 1 \\end{bmatrix}$",
+          "alasan": "menjumlahkan, bukan mengurangkan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 5 & -7 & 1 \\end{bmatrix}$",
+          "alasan": "tanda negatif pada $-4$ diabaikan ($5 - 4$)"
+        }
+      ],
+      "pembahasan": "$M - N$ = $\\begin{bmatrix} 5 & -7 & 9 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-014",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "mempunyai lawan yaitu matriks"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat dan lawan matriks",
+      "alasan_level": "mengingat bahwa lawan matriks diperoleh dengan mengubah tanda setiap elemen",
+      "pertanyaan": "Lawan dari matriks $A$ = $\\begin{bmatrix} 3 & -5 \\\\ -1 & 0 \\\\ 6 & 2 \\end{bmatrix}$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} -3 & 5 \\\\ 1 & 0 \\\\ -6 & -2 \\end{bmatrix}$",
+      "alasan_benar": "lawan matriks $A$ adalah $-A$, semua elemennya dikalikan $-1$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} -3 & -5 \\\\ 1 & 0 \\\\ -6 & -2 \\end{bmatrix}$",
+          "alasan": "elemen negatif tidak diubah tandanya"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -3 & 5 \\\\ 1 & 0 \\\\ -6 & 2 \\end{bmatrix}$",
+          "alasan": "elemen terakhir tidak diubah tandanya"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 0 & 0 \\\\ 0 & 0 \\\\ 0 & 0 \\end{bmatrix}$",
+          "alasan": "mengira lawan matriks adalah matriks nol"
+        }
+      ],
+      "pembahasan": "$-A$ = $\\begin{bmatrix} -3 & 5 \\\\ 1 & 0 \\\\ -6 & -2 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-015",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "Jika matriks A dan matriks B adalah matriks-matriks yang berordo"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "hitung langsung penjumlahan/pengurangan",
+      "alasan_level": "dua operasi berurutan: jumlah lalu kurang",
+      "pertanyaan": "Diketahui $A$ = $\\begin{bmatrix} 3 & -2 \\\\ 5 & 1 \\end{bmatrix}$, $B$ = $\\begin{bmatrix} 4 & 6 \\\\ -1 & 2 \\end{bmatrix}$, dan $C$ = $\\begin{bmatrix} 2 & -5 \\\\ 3 & 7 \\end{bmatrix}$. Hasil $A + B - C$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 5 & 9 \\\\ 1 & -4 \\end{bmatrix}$",
+      "alasan_benar": "$A + B$ dahulu, lalu dikurangi $C$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 9 & -1 \\\\ 7 & 10 \\end{bmatrix}$",
+          "alasan": "$C$ ikut dijumlahkan, bukan dikurangkan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -3 & -3 \\\\ 3 & -8 \\end{bmatrix}$",
+          "alasan": "$B$ ikut dikurangkan, bukan dijumlahkan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 5 & -1 \\\\ 1 & -4 \\end{bmatrix}$",
+          "alasan": "salah tanda pada $4 - (-5)$ (dihitung $4 - 5$)"
+        }
+      ],
+      "pembahasan": "$A + B$ = $\\begin{bmatrix} 7 & 4 \\\\ 4 & 3 \\end{bmatrix}$; dikurangi $C$ menjadi $\\begin{bmatrix} 5 & 9 \\\\ 1 & -4 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-016",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "merupakan matriks-matriks yang berordo sama, maka dalam penjumlahan matriks berlaku"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat dan lawan matriks",
+      "alasan_level": "menerapkan sifat komutatif penjumlahan matriks",
+      "pertanyaan": "Matriks $A$ dan $B$ berordo sama dengan $A + B$ = $\\begin{bmatrix} 3 & -1 \\\\ 8 & 2 \\end{bmatrix}$. Hasil $B + A$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 3 & -1 \\\\ 8 & 2 \\end{bmatrix}$",
+      "alasan_benar": "sifat komutatif: $A + B = B + A$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 3 & 8 \\\\ -1 & 2 \\end{bmatrix}$",
+          "alasan": "baris dan kolom ditukar saat membalik urutan"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -3 & 1 \\\\ -8 & -2 \\end{bmatrix}$",
+          "alasan": "mengira urutan terbalik mengubah tanda"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 2 & 8 \\\\ -1 & 3 \\end{bmatrix}$",
+          "alasan": "elemen disusun dari belakang"
+        }
+      ],
+      "pembahasan": "Penjumlahan matriks bersifat komutatif, sehingga $B + A = A + B$ = $\\begin{bmatrix} 3 & -1 \\\\ 8 & 2 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-017",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "pengurangan matriks A dengan matriks B didefinisikan sebagai jumlah antara matriks A dengan lawan dari matriks B"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sifat dan lawan matriks",
+      "alasan_level": "mengingat definisi pengurangan sebagai jumlah dengan lawan",
+      "pertanyaan": "Untuk matriks $A$ dan $B$ yang berordo sama, pengurangan $A - B$ didefinisikan sebagai ....",
+      "jawaban_benar": "$A + (-B)$",
+      "alasan_benar": "pengurangan = jumlah matriks pertama dengan lawan matriks kedua",
+      "distraktor": [
+        {
+          "teks": "$(-A) + B$",
+          "alasan": "lawan dikenakan pada matriks yang salah (hasilnya $B - A$)"
+        },
+        {
+          "teks": "$-(A + B)$",
+          "alasan": "mengira seluruh jumlah dibalik tandanya"
+        },
+        {
+          "teks": "$A + B$",
+          "alasan": "mengabaikan lawan matriks"
+        }
+      ],
+      "pembahasan": "Definisi 1.3: $A - B = A + (-B)$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-018",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 28,
+        "kutipan": "Matriks C juga berordo m × n dengan elemen-elemen cij= aij+ bij"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "persamaan matriks",
+      "alasan_level": "menyamakan elemen seletak pada persamaan penjumlahan lalu menjumlahkan dua nilai",
+      "pertanyaan": "Diketahui $\\begin{bmatrix} x & 3 \\\\ 2 & y \\end{bmatrix}$ + $\\begin{bmatrix} 4 & -1 \\\\ 5 & 6 \\end{bmatrix}$ = $\\begin{bmatrix} 9 & 2 \\\\ 7 & 10 \\end{bmatrix}$. Nilai $x + y$ adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "$x + 4 = 9$ sehingga $x = 5$; $y + 6 = 10$ sehingga $y = 4$; $x + y = 9$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "yang dihitung $x - y$, bukan $x + y$"
+        },
+        {
+          "teks": "$29$",
+          "alasan": "$x$ dan $y$ diperoleh dengan menjumlahkan, bukan mengurangkan ($9+4$ dan $10+6$)"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "yang dihitung $x \\cdot y$"
+        }
+      ],
+      "pembahasan": "Elemen seletak: $x + 4 = 9$ dan $y + 6 = 10$, sehingga $x = 5$ dan $y = 4$, maka $x + y = 9$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-019",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 32,
+        "kutipan": "Jika X adalah matriks berordo 3 × 3 dan X + P = Q"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "persamaan matriks",
+      "alasan_level": "mengubah persamaan $X + P = Q$ menjadi $X = Q - P$ lalu mengurangkan",
+      "pertanyaan": "Diketahui $P$ = $\\begin{bmatrix} 2 & -5 \\\\ 6 & 1 \\end{bmatrix}$ dan $Q$ = $\\begin{bmatrix} 9 & -3 \\\\ -4 & 9 \\end{bmatrix}$. Jika $X$ matriks berordo $2 \\times 2$ dan $X + P = Q$, maka $X$ adalah ....",
+      "jawaban_benar": "$\\begin{bmatrix} 7 & 2 \\\\ -10 & 8 \\end{bmatrix}$",
+      "alasan_benar": "$X = Q - P$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{bmatrix} 11 & -8 \\\\ 2 & 10 \\end{bmatrix}$",
+          "alasan": "$P$ dijumlahkan ke $Q$ bukan dipindahkan ruas"
+        },
+        {
+          "teks": "$\\begin{bmatrix} -7 & -2 \\\\ 10 & -8 \\end{bmatrix}$",
+          "alasan": "urutan pengurangan terbalik ($P - Q$)"
+        },
+        {
+          "teks": "$\\begin{bmatrix} 7 & -8 \\\\ -10 & 8 \\end{bmatrix}$",
+          "alasan": "salah tanda pada $-3 - (-5)$ (dihitung $-3 - 5$)"
+        }
+      ],
+      "pembahasan": "$X = Q - P$ = $\\begin{bmatrix} 7 & 2 \\\\ -10 & 8 \\end{bmatrix}$.",
+      "id": "kelas11_tl-b01-c-easy-bt01-020",
+      "stimulus": null,
+      "catatan": null
+    }
+  ]
+}

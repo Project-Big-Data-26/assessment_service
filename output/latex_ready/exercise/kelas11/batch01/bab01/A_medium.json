@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-a-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0025-latihan-11-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "fungsi eksponensial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembentukan model fungsi eksponensial dari data deret geometri lalu menghitung nilai keluaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan data penjualan, pada tahun 2020 sebuah perusahaan rintisan berhasil menjual $6$ unit produk. Pada tahun 2021 dan 2022, perusahaan tersebut berhasil menjual masing-masing $24$ dan $96$ unit produk. Apabila relasi antara tahun dan jumlah penjualan produk membentuk fungsi eksponensial, berapa perkiraan penjualan produk tersebut pada tahun 2025?",
+      "jawaban_benar": "$6.144$ unit",
+      "alasan_benar": "Rasio pertumbuhan tiap tahun adalah $r = \\frac{24}{6} = 4$. Model penjualan pada tahun ke-$t$ dihitung dengan $f(t) = 6 \\times 4^{t - 2020}$. Untuk tahun 2025 ($t - 2020 = 5$), penjualannya adalah $f(2025) = 6 \\times 4^5 = 6 \\times 1.024 = 6.144$ unit.",
+      "distraktor": [
+        {
+          "teks": "$1.536$ unit",
+          "alasan": "Siswa salah menghitung selisih tahun menjadi 4 tahun ($6 \\times 4^4 = 1.536$)."
+        },
+        {
+          "teks": "$2.400$ unit",
+          "alasan": "Siswa salah menganggap model linier dengan kenaikan tetap selisih awal."
+        },
+        {
+          "teks": "$24.576$ unit",
+          "alasan": "Siswa salah menghitung pangkat tahun menjadi 6 tahun ($6 \\times 4^6 = 24.576$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan rasio pertumbuhan penjualan per tahun: $r = \\frac{24}{6} = 4$.\nLangkah 2: Tuliskan rumus fungsi penjualan untuk tahun $t$: $P(t) = 6 \\times 4^{t - 2020}$.\nLangkah 3: Hitung penjualan untuk tahun 2025: $P(2025) = 6 \\times 4^{2025 - 2020} = 6 \\times 4^5 = 6 \\times 1.024 = 6.144$ unit.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": "Latihan 1.2",
+        "nomor": "1. c",
+        "teks": "f (x) = √ x − 3 + 4",
+        "jawaban": "Domain: {x | x >= 3, x in R}, Range: {y | y >= 4, y in R}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain dan range fungsi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan dua syarat aljabar untuk menentukan daerah asal dan daerah hasil fungsi irasional.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{2x - 8} + 5$ terdefinisi pada himpunan bilangan riil $\\mathbb{R}$. Daerah asal (*domain*) dan daerah hasil (*range*) dari fungsi $f(x)$ berturut-turut adalah ....",
+      "jawaban_benar": "$D_f = \\{x \\mid x \\ge 4, x \\in \\mathbb{R}\\}$ dan $R_f = \\{y \\mid y \\ge 5, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Syarat bentuk akar terdefinisi adalah $2x - 8 \\ge 0 \\Leftrightarrow x \\ge 4$. Karena nilai $\\sqrt{2x - 8} \\ge 0$, maka $f(x) = \\sqrt{2x - 8} + 5 \\ge 5$, sehingga daerah hasilnya adalah $y \\ge 5$.",
+      "distraktor": [
+        {
+          "teks": "$D_f = \\{x \\mid x \\ge 8, x \\in \\mathbb{R}\\}$ dan $R_f = \\{y \\mid y \\ge 5, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa lupa membagi 8 dengan koefisien 2 pada pertidaksamaan pembuat nol."
+        },
+        {
+          "teks": "$D_f = \\{x \\mid x \\ge 4, x \\in \\mathbb{R}\\}$ dan $R_f = \\{y \\mid y \\ge 0, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengabaikan konstanta $+5$ dalam menentukan nilai minimum daerah hasil."
+        },
+        {
+          "teks": "$D_f = \\{x \\mid x \\le 4, x \\in \\mathbb{R}\\}$ dan $R_f = \\{y \\mid y \\le 5, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa membalik tanda pertidaksamaan daerah asal dan daerah hasil."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan syarat daerah asal (domain): bentuk di dalam akar harus tak-negatif:\n$2x - 8 \\ge 0 \\Rightarrow 2x \\ge 8 \\Rightarrow x \\ge 4$.\nJadi, $D_f = \\{x \\mid x \\ge 4, x \\in \\mathbb{R}\\}$.\nLangkah 2: Tentukan daerah hasil (range): karena nilai $\\sqrt{2x - 8} \\ge 0$, maka nilai terkecil dari $\\sqrt{2x - 8}$ adalah $0$.\n$f(x) = \\sqrt{2x - 8} + 5 \\ge 0 + 5 = 5$.\nJadi, $R_f = \\{y \\mid y \\ge 5, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 28,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Asumsikan mesin produksi keripik tempe adalah sebagai fungsi linear , lengkapi tabel produksi tempe berikut:"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan fungsi linear",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menyusun fungsi linear dari situasi nyata dengan batasan masukan lalu menghitung selisih hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pencetak keripik memproses ubi jalar menjadi keripik dengan aturan fungsi linear $y = f(x) = 8x$, di mana $x$ menyatakan massa ubi masukan dalam kilogram dan $y$ menyatakan jumlah kemasan keripik yang dihasilkan. Mesin tersebut hanya dapat beroperasi dengan kapasitas bahan masukan $25 \\le x \\le 80$. Selisih antara jumlah kemasan keripik maksimum dan minimum yang dapat diproduksi oleh mesin tersebut adalah ....",
+      "jawaban_benar": "$440$ kemasan",
+      "alasan_benar": "Keluaran minimum: $f(25) = 8 \\times 25 = 200$. Keluaran maksimum: $f(80) = 8 \\times 80 = 640$. Selisihnya adalah $640 - 200 = 440$ kemasan.",
+      "distraktor": [
+        {
+          "teks": "$200$ kemasan",
+          "alasan": "Siswa hanya menghitung hasil keluaran minimum $f(25)$."
+        },
+        {
+          "teks": "$640$ kemasan",
+          "alasan": "Siswa hanya menghitung hasil keluaran maksimum $f(80)$."
+        },
+        {
+          "teks": "$55$ kemasan",
+          "alasan": "Siswa hanya mencari selisih masukan $80 - 25 = 55$ tanpa mengalikan rasio fungsi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung produksi minimum saat bahan masukan $x = 25$ kg:\n$y_{\\text{min}} = 8 \\times 25 = 200$ kemasan.\nLangkah 2: Hitung produksi maksimum saat bahan masukan $x = 80$ kg:\n$y_{\\text{max}} = 8 \\times 80 = 640$ kemasan.\nLangkah 3: Hitung selisih produksi maksimum dan minimum:\n$\\Delta y = 640 - 200 = 440$ kemasan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 32,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan fungsi yang menyatakan hubungan antara suhu dalam Celcius dan Kelvin."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis domain dan range",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis batasan fisis suhu mutlak nol untuk menentukan daerah asal fungsi dalam derajat Celsius.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara suhu dalam skala Kelvin ($K$) dan suhu dalam skala Celsius ($C$) dinyatakan oleh fungsi $K(C) = C + 273,15$. Mengingat batas temperatur mutlak terendah di alam semesta bernilai $0\\text{ K}$ (nol mutlak), maka daerah asal (*domain*) yang valid bagi nilai suhu $C$ agar suhu dalam Kelvin bernilai riil dan mungkin terjadi di alam semesta adalah ....",
+      "jawaban_benar": "$\\{C \\mid C \\ge -273,15, C \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Suhu terendah dalam Kelvin adalah $K \\ge 0$. Karena $K = C + 273,15$, maka $C + 273,15 \\ge 0 \\Leftrightarrow C \\ge -273,15$.",
+      "distraktor": [
+        {
+          "teks": "$\\{C \\mid C \\ge 273,15, C \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah mengoperasikan tanda saat memindahkan konstanta ke ruas lain."
+        },
+        {
+          "teks": "$\\{C \\mid C \\le -273,15, C \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa membalik tanda pertidaksamaan menjadi lebih kecil atau sama dengan."
+        },
+        {
+          "teks": "$\\{C \\mid C \\ge 0, C \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengira batas bawah Celsius bernilai 0 sama seperti titik beku air."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi batasan fisis suhu Kelvin di alam semesta, yaitu tidak ada suhu Kelvin yang negatif: $K \\ge 0$.\nLangkah 2: Substitusikan rumus relasi fungsi suhu Kelvin: $C + 273,15 \\ge 0$.\nLangkah 3: Selesaikan pertidaksamaan untuk daerah asal variabel $C$: $C \\ge -273,15$.\nJadi, domainnya adalah $\\{C \\mid C \\ge -273,15, C \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 23,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila garis vertikal tersebut memotong grafik di dua atau lebih titik yang berbeda, maka relasi tersebut bukanlah fungsi."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis tes garis vertikal",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menganalisis persamaan relasi secara aljabar untuk menentukan grafik yang memenuhi kriteria uji garis vertikal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan tes garis vertikal, suatu relasi pada bidang Kartesius merupakan fungsi jika setiap garis vertikal memotong grafiknya di paling banyak satu titik. Di antara persamaan relasi berikut, manakah yang merupakan suatu fungsi $y = f(x)$ untuk semua $x$ pada daerah definisinya?",
+      "jawaban_benar": "$x^2 + y = 4$",
+      "alasan_benar": "Bentuk $x^2 + y = 4$ dapat dinyatakan sebagai $y = 4 - x^2$. Untuk setiap nilai masukan $x$, hanya menghasilkan tepat satu nilai keluaran $y$. Garis vertikal $x = c$ memotong grafik tepat di satu titik $(c, 4 - c^2)$.",
+      "distraktor": [
+        {
+          "teks": "$x + y^2 = 4$",
+          "alasan": "Untuk nilai $x < 4$, terdapat dua nilai $y = \\pm \\sqrt{4 - x}$ sehingga garis vertikal memotong grafik di dua titik."
+        },
+        {
+          "teks": "$x^2 + y^2 = 4$",
+          "alasan": "Grafik lingkaran ini dipotong oleh garis vertikal seperti $x = 0$ di dua titik, yaitu $(0, 2)$ dan $(0, -2)$."
+        },
+        {
+          "teks": "$|y| = x + 4$",
+          "alasan": "Untuk nilai $x > -4$, terdapat dua nilai $y = \\pm(x + 4)$ sehingga gagal dalam tes garis vertikal."
+        }
+      ],
+      "pembahasan": "Langkah 1: Uji apakah tiap nilai $x$ menghasilkan tepat satu nilai $y$ (lolos tes garis vertikal):\n- Pada $x + y^2 = 4 \\Leftrightarrow y = \\pm \\sqrt{4 - x}$, untuk $x = 0$ terdapat dua nilai $y = 2$ dan $y = -2$ (bukan fungsi).\n- Pada $x^2 + y^2 = 4$, grafik berbentuk lingkaran di mana garis $x = 0$ memotong di $(0, 2)$ dan $(0, -2)$ (bukan fungsi).\n- Pada $|y| = x + 4$, untuk $x = 0$ terdapat $y = 4$ dan $y = -4$ (bukan fungsi).\nLangkah 2: Pada persamaan $x^2 + y = 4$, diperoleh $y = 4 - x^2$. Untuk setiap nilai $x \\in \\mathbb{R}$, nilai $y$ tunggal sehingga setiap garis vertikal memotong grafik tepat pada satu titik. Oleh karena itu, relasi ini merupakan fungsi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0025-latihan-11-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penjualan eksponensial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan rasio pertumbuhan, penyusunan rumus fungsi eksponensial, dan perhitungan nilai fungsi pada periode tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan data penjualan sebuah gerai gawai, pada tahun 2018 gerai tersebut menjual $8$ unit tablet. Pada tahun 2019 dan 2020 berturut-turut terjual $24$ dan $72$ unit tablet. Jika tren penjualan tahunan tersebut membentuk suatu model fungsi eksponensial, perkiraan penjualan tablet pada tahun 2024 adalah ....",
+      "jawaban_benar": "$5.832$ unit",
+      "alasan_benar": "Rasio pertumbuhan penjualan per tahun adalah $r = \\frac{24}{8} = 3$. Fungsi eksponensial penjualan dapat dimodelkan sebagai $f(t) = 8 \\cdot 3^{t - 2018}$. Pada tahun 2024, nilai $t - 2018 = 6$, sehingga $f(2024) = 8 \\cdot 3^6 = 8 \\cdot 729 = 5.832$ unit.",
+      "distraktor": [
+        {
+          "teks": "$1.944$ unit",
+          "alasan": "Siswa salah menghitung selisih tahun menjadi $5$ tahun ($8 \\cdot 3^5 = 1.944$)."
+        },
+        {
+          "teks": "$17.496$ unit",
+          "alasan": "Siswa kelebihan satu periode pemangkatan menjadi pangkat $7$ ($8 \\cdot 3^7 = 17.496$)."
+        },
+        {
+          "teks": "$2.187$ unit",
+          "alasan": "Siswa hanya menghitung nilai perpangkatan $3^7$ tanpa mengalikan dengan nilai awal $8$."
+        }
+      ],
+      "pembahasan": "Penjualan tablet membentuk barisan geometri dengan suku awal $a = 8$ pada tahun $2018$.\nRasio pertumbuhan per tahun:\n$$r = \\frac{24}{8} = \\frac{72}{24} = 3$$\nFungsi penjualan pada tahun ke-$t$ adalah:\n$$f(t) = 8 \\cdot 3^{t - 2018}$$\nUntuk tahun 2024, selisih waktu adalah $t - 2018 = 2024 - 2018 = 6$.\n$$f(2024) = 8 \\cdot 3^6 = 8 \\cdot 729 = 5.832$$\nJadi, penjualan tablet pada tahun 2024 adalah $5.832$ unit.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": "Latihan 1.2",
+        "nomor": "1. a",
+        "teks": "f (x) = x^2 − 1",
+        "jawaban": "Domain: {x | x in R}, Range: {y | y >= -1, y in R}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah hasil fungsi kuadrat berbatas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik balik parabola serta pengujian nilai batas daerah asal untuk menentukan daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi kuadrat $f(x) = 2x^2 - 8$ terdefinisi pada daerah asal terbatas $D_f = \\{x \\mid -1 \\le x \\le 3, x \\in \\mathbb{R}\\}$. Daerah hasil (*range*) dari fungsi $f$ adalah ....",
+      "jawaban_benar": "$\\{y \\mid -8 \\le y \\le 10, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Parabola terbuka ke atas dengan titik puncak pada sumbu simetri $x_p = 0$. Karena $0 \\in [-1, 3]$, nilai minimumnya adalah $f(0) = -8$. Nilai fungsi di ujung domain adalah $f(-1) = 2(-1)^2 - 8 = -6$ dan $f(3) = 2(3)^2 - 8 = 10$. Dengan demikian, nilai maksimumnya adalah $10$, sehingga daerah hasilnya adalah $[-8, 10]$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\mid -6 \\le y \\le 10, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa hanya menghitung nilai ujung interval $f(-1)$ dan $f(3)$ tanpa memperhitungkan nilai minimum di titik puncak $x = 0$."
+        },
+        {
+          "teks": "$\\{y \\mid y \\ge -8, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengabaikan batas atas daerah asal sehingga menganggap daerah hasil tidak terbatas ke atas."
+        },
+        {
+          "teks": "$\\{y \\mid -8 \\le y \\le 18, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa melakukan kesalahan perhitungan saat menentukan $f(3)$ dengan menghitung $2(3^2) = 18$ tanpa menguranginya dengan $8$."
+        }
+      ],
+      "pembahasan": "Fungsi kuadrat $f(x) = 2x^2 - 8$ memiliki kurva parabola dengan $a = 2 > 0$ (terbuka ke atas).\n1. Sumbu simetri berada pada $x_p = -\\frac{b}{2a} = 0$.\nKarena $x = 0$ berada di dalam interval $[-1, 3]$, nilai minimum kurva berada di titik puncak:\n$$y_{\\text{min}} = f(0) = 2(0)^2 - 8 = -8$$\n2. Hitung nilai pada batas-batas interval domain:\n$$f(-1) = 2(-1)^2 - 8 = 2 - 8 = -6$$\n$$f(3) = 2(3)^2 - 8 = 18 - 8 = 10$$\nNilai terbesar di antara nilai-nilai tersebut adalah $y_{\\text{maks}} = 10$.\n3. Maka, daerah hasil (*range*) fungsi adalah $\\{y \\mid -8 \\le y \\le 10, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana menentukan domain, kodomain, dan range dari suatu fungsi jika diberikan dalam bentuk aljabar?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain fungsi rasional irasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penggabungan dua syarat aljabar sekaligus: penyebut pecahan tidak boleh nol dan bentuk di dalam akar harus positif murni.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $g(x) = \\frac{5x - 2}{\\sqrt{6 - 2x}}$ terdefinisi pada himpunan bilangan riil. Daerah asal (*domain*) alami dari fungsi $g(x)$ adalah ....",
+      "jawaban_benar": "$\\{x \\mid x < 3, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Penyebut pecahan tidak boleh sama dengan nol dan radikan di dalam akar harus bernilai tak negatif. Gabungan kedua syarat tersebut menghasilkan syarat tunggal $6 - 2x > 0 \\implies 6 > 2x \\implies x < 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid x \\le 3, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa menyertakan tanda sama dengan sehingga membuat penyebut bernilai nol yang menyebabkan fungsi tidak terdefinisi."
+        },
+        {
+          "teks": "$\\{x \\mid x > 3, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa lupa membalik arah pertidaksamaan saat membagi dengan koefisien negatif $-2$."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 3, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah membalik arah tanda pertidaksamaan sekaligus menyertakan titik batas pembuat nol pada penyebut."
+        }
+      ],
+      "pembahasan": "Agar fungsi aljabar $g(x) = \\frac{5x - 2}{\\sqrt{6 - 2x}}$ terdefinisi pada himpunan bilangan riil:\n1. Syarat bentuk akar: $6 - 2x \\ge 0$\n2. Syarat pecahan: $\\sqrt{6 - 2x} \\ne 0$, sehingga $6 - 2x \\ne 0$\n\nGabungan kedua syarat tersebut adalah radikan harus bernilai positif murni:\n$$6 - 2x > 0$$\n$$-2x > -6$$\nBagi kedua ruas dengan $-2$ (tanda pertidaksamaan berbalik):\n$$x < 3$$\n\nJadi, daerah asal alaminya adalah $\\{x \\mid x < 3, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 23,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila garis vertikal tersebut memotong grafik di dua atau lebih titik yang berbeda, maka relasi tersebut bukanlah fungsi."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis persamaan fungsi aljabar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis bentuk aljabar implisit untuk membuktikan apakah satu nilai masukan x menghasilkan tepat satu nilai keluaran y.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Di antara persamaan-persamaan relasi berikut yang memetakan bilangan riil $x$ ke bilangan riil $y$, persamaan yang mendefinisikan $y$ sebagai fungsi dari $x$ adalah ....",
+      "jawaban_benar": "$x^2 - 2y = 8$",
+      "alasan_benar": "Persamaan $x^2 - 2y = 8$ dapat dinyatakan secara eksplisit menjadi $y = \\frac{1}{2}x^2 - 4$. Untuk setiap nilai masukan $x \\in \\mathbb{R}$, nilai $y$ terdefinisi tunggal (tepat satu nilai keluaran).",
+      "distraktor": [
+        {
+          "teks": "$x + y^2 = 16$",
+          "alasan": "Siswa terkecoh mengira derajat satu pada $x$ menjadikannya fungsi, padahal $y = \\pm \\sqrt{16 - x}$ menghasilkan dua nilai $y$ untuk satu nilai $x < 16$."
+        },
+        {
+          "teks": "$x^2 - y^2 = 9$",
+          "alasan": "Siswa mengabaikan bahwa untuk nilai $x > 3$, nilai $y = \\pm \\sqrt{x^2 - 9}$ menghasilkan dua nilai keluaran berbeda."
+        },
+        {
+          "teks": "$|y| - 3x = 1$",
+          "alasan": "Siswa mengabaikan bahwa bentuk nilai mutlak $|y| = 3x + 1$ menghasilkan dua nilai $y = \\pm (3x + 1)$ untuk $x > -\\frac{1}{3}$."
+        }
+      ],
+      "pembahasan": "Suatu relasi mendefinisikan $y$ sebagai fungsi dari $x$ apabila untuk setiap masukan $x$, terdapat tepat satu keluaran $y$.\n- Opsi $x + y^2 = 16 \\implies y = \\pm \\sqrt{16 - x}$. Untuk $x = 0$, didapat dua nilai $y = 4$ dan $y = -4$ (bukan fungsi).\n- Opsi $x^2 - y^2 = 9 \\implies y = \\pm \\sqrt{x^2 - 9}$. Untuk $x = 5$, didapat dua nilai $y = 4$ dan $y = -4$ (bukan fungsi).\n- Opsi $|y| - 3x = 1 \\implies |y| = 3x + 1$. Untuk $x = 1$, didapat dua nilai $y = 4$ dan $y = -4$ (bukan fungsi).\n- Opsi $x^2 - 2y = 8 \\implies 2y = x^2 - 8 \\implies y = \\frac{1}{2}x^2 - 4$. Karena setiap nilai $x$ menghasilkan tepat satu nilai $y$, relasi ini merupakan fungsi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": "Latihan 1.2",
+        "nomor": "1. c",
+        "teks": "c. f (x) =~~√~~ x − 3 + 4",
+        "jawaban": "Domain x >= 3 dan Range y >= 4",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah hasil fungsi irasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan rentang nilai akar kuadrat utama bertanda negatif untuk menentukan batas maksimum daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi irasional $f(x) = 6 - \\sqrt{2x + 8}$ yang terdefinisi pada daerah asal alaminya. Daerah hasil (*range*) dari fungsi $f(x)$ adalah ....",
+      "jawaban_benar": "$\\{y \\mid y \\le 6, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Nilai bentuk akar $\\sqrt{2x + 8} \\ge 0$, sehingga nilai $6 - \\sqrt{2x + 8} \\le 6 - 0 = 6$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\mid y \\ge 6, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengabaikan tanda minus di depan bentuk akar sehingga menganggap nilainya selalu lebih besar atau sama dengan $6$."
+        },
+        {
+          "teks": "$\\{y \\mid y \\ge -4, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa tertukar antara daerah hasil (*range*) dengan batas daerah asal (*domain*) alami fungsi yaitu $x \\ge -4$."
+        },
+        {
+          "teks": "$\\{y \\mid y \\le -4, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mencampurkan batas daerah asal $x \\ge -4$ dengan pembalikan arah pertidaksamaan."
+        }
+      ],
+      "pembahasan": "Fungsi terdefinisi jika nilai di dalam tanda akar tak negatif:\n$$2x + 8 \\ge 0 \\iff 2x \\ge -8 \\iff x \\ge -4$$\nUntuk setiap $x \\ge -4$, nilai dari akar kuadrat bernilai tak negatif:\n$$\\sqrt{2x + 8} \\ge 0$$\nKalikan kedua ruas dengan $-1$ (tanda pertidaksamaan berbalik):\n$$-\\sqrt{2x + 8} \\le 0$$\nTambahkan kedua ruas dengan $6$:\n$$6 - \\sqrt{2x + 8} \\le 6$$\n$$f(x) \\le 6$$\nJadi, daerah hasil (*range*) fungsi tersebut adalah $R_f = \\{y \\mid y \\le 6, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0024-latihan-11-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "evaluasi relasi fungsi dan nilai fungsi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Melibatkan penghitungan nilai konversi satuan dan analisis definisi pemetaan fungsi tunggal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan konversi satuan tekanan dari atmosfer ($\\text{atm}$) ke kiloPascal ($\\text{kPa}$) didefinisikan dengan kesetaraan $1\\text{ atm} = 101,3\\text{ kPa}$. Sebuah relasi dirumuskan dengan $q = 101,3p$, di mana $p$ menyatakan tekanan dalam satuan $\\text{atm}$ dan $q$ menyatakan tekanan dalam satuan $\\text{kPa}$. Nilai tekanan $q$ untuk $p = 4,5\\text{ atm}$ serta kesimpulan sifat relasi tersebut adalah ....",
+      "jawaban_benar": "$455,85\\text{ kPa}$ dan merupakan fungsi karena setiap nilai $p$ berpasangan dengan tepat satu nilai $q$",
+      "alasan_benar": "Perhitungan $101,3 \\times 4,5 = 455,85\\text{ kPa}$, dan relasi linear memasangkan setiap satu nilai masukan dengan tepat satu nilai keluaran sehingga memenuhi definisi fungsi.",
+      "distraktor": [
+        {
+          "teks": "$455,85\\text{ kPa}$ dan bukan fungsi karena menghubungkan dua satuan ukuran yang berbeda",
+          "alasan": "Siswa menghitung nilai dengan benar tetapi salah memahami konsep relasi dan fungsi pada konversi satuan fisika."
+        },
+        {
+          "teks": "$45,585\\text{ kPa}$ dan merupakan fungsi karena setiap nilai $p$ berpasangan dengan tepat satu nilai $q$",
+          "alasan": "Siswa salah dalam meletakkan koma desimal pada hasil perkalian bilangan berkoma."
+        },
+        {
+          "teks": "$506,5\\text{ kPa}$ dan merupakan fungsi karena setiap nilai $p$ berpasangan dengan tepat satu nilai $q$",
+          "alasan": "Siswa melakukan kesalahan perhitungan aritmetika dengan mengalikan $101,3$ dengan $5$ alih-alih $4,5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai tekanan $q$ saat $p = 4,5\\text{ atm}$:\n$$q = 101,3 \\times 4,5 = 455,85\\text{ kPa}$$\nLangkah 2: Menganalisis sifat relasi:\nRelasi $q = 101,3p$ menghubungkan setiap satu nilai tekanan dalam $\\text{atm}$ ($p$) ke tepat satu nilai tekanan dalam $\\text{kPa}$ ($q$). Tidak ada satu nilai $p$ yang menghasilkan lebih dari satu nilai $q$. Oleh karena itu, relasi ini merupakan fungsi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 23,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila garis vertikal tersebut memotong grafik di dua atau lebih titik yang berbeda, maka relasi tersebut bukanlah fungsi."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "uji tes garis vertikal persamaan lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis titik potong persamaan kuadrat dua variabel dengan garis vertikal untuk menyimpulkan sifat relasi fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah relasi pada bidang Kartesius dinyatakan oleh persamaan $(x - 3)^2 + (y + 1)^2 = 25$. Jika dilakukan uji tes garis vertikal dengan menarik garis lurus $x = 3$, titik potong yang dihasilkan dan kesimpulan mengenai relasi tersebut adalah ....",
+      "jawaban_benar": "memotong di $(3, 4)$ dan $(3, -6)$, sehingga relasi tersebut bukan merupakan fungsi",
+      "alasan_benar": "Substitusi $x = 3$ menghasilkan $(y + 1)^2 = 25$, sehingga $y + 1 = \\pm 5$ yang memberi dua nilai $y = 4$ dan $y = -6$. Karena memotong di dua titik berbeda, relasi bukan fungsi.",
+      "distraktor": [
+        {
+          "teks": "memotong di $(3, 4)$ dan $(3, -6)$, sehingga relasi tersebut merupakan fungsi karena memiliki nilai keluaran simetris",
+          "alasan": "Siswa menemukan titik potong dengan benar namun salah memahami tes garis vertikal dengan menganggap keberadaan dua titik simetris memenuhi syarat fungsi."
+        },
+        {
+          "teks": "memotong di $(3, 5)$ dan $(3, -5)$, sehingga relasi tersebut bukan merupakan fungsi",
+          "alasan": "Siswa lupa memperhitungkan translasi $y + 1$ dan langsung menganggap $y = \\pm 5$."
+        },
+        {
+          "teks": "memotong hanya di $(3, 4)$, sehingga relasi tersebut merupakan fungsi",
+          "alasan": "Siswa hanya mengambil akar kuadrat bernilai positif sehingga menarik kesimpulan yang keliru."
+        }
+      ],
+      "pembahasan": "Uji tes garis vertikal dilakukan dengan mensubstitusikan persamaan garis $x = 3$ ke dalam persamaan relasi:\n$$(3 - 3)^2 + (y + 1)^2 = 25$$\n$$0 + (y + 1)^2 = 25$$\n$$y + 1 = \\pm \\sqrt{25}$$\n$$y + 1 = 5 \\implies y = 4$$\n$$y + 1 = -5 \\implies y = -6$$\nGaris vertikal $x = 3$ memotong grafik relasi di dua titik berbeda, yaitu $(3, 4)$ dan $(3, -6)$.\nSesuai konsep tes garis vertikal, jika terdapat garis vertikal yang memotong grafik di dua atau lebih titik berbeda, maka relasi tersebut **bukan merupakan fungsi**.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 20,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi merupakan suatu relasi yang menghubungkan satu anggota dari suatu himpunan tepat ke satu anggota di himpunan yang lain."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain fungsi pecahan bentuk akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penggabungan dua syarat terdefinisi pada fungsi rasional dan bentuk akar di himpunan bilangan riil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal alami (*domain*) dari fungsi $h(x) = \\frac{\\sqrt{3x + 12}}{x - 5}$ pada himpunan bilangan riil $\\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\{x \\mid x \\ge -4 \\text{ dan } x \\ne 5, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Syarat pembilang akar adalah $3x + 12 \\ge 0 \\iff x \\ge -4$, dan syarat penyebut adalah $x - 5 \\ne 0 \\iff x \\ne 5$. Irisannya adalah $x \\ge -4$ dan $x \\ne 5$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid x > -4 \\text{ dan } x \\ne 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa keliru mengira nilai di dalam akar tidak boleh bernilai nol padahal letaknya di pembilang."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 4 \\text{ dan } x \\ne 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah melakukan operasi tanda saat menyelesaikan pertidaksamaan $3x + 12 \\ge 0$."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ne 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa hanya memperhatikan syarat penyebut tidak sama dengan nol dan melupakan syarat terdefinisi bentuk akar pada pembilang."
+        }
+      ],
+      "pembahasan": "Agar fungsi pecahan $h(x) = \\frac{\\sqrt{3x + 12}}{x - 5}$ terdefinisi pada bilangan riil, harus dipenuhi dua syarat:\n1. Syarat bentuk akar pada pembilang:\n$$3x + 12 \\ge 0 \\iff 3x \\ge -12 \\iff x \\ge -4$$\n2. Syarat penyebut tidak boleh sama dengan nol:\n$$x - 5 \\ne 0 \\iff x \\ne 5$$\nMenggabungkan kedua syarat tersebut menghasilkan daerah asal:\n$$D_h = \\{x \\mid x \\ge -4 \\text{ dan } x \\ne 5, x \\in \\mathbb{R}\\}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0024-latihan-11-2",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "konversi besaran fisika",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan sifat pemetaan fungsi dari kesetaraan dua besaran dan perhitungan konversi nilai keluaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daya mekanik sering dinyatakan dalam satuan daya kuda (*horsepower* atau $\\text{HP}$) dan watt ($\\text{W}$) dengan kesetaraan $1\\text{ HP} = 746\\text{ W}$. Apakah relasi yang memetakan daya dalam satuan $\\text{HP}$ ke satuan watt merupakan suatu fungsi, dan berapakah daya keluaran dalam watt jika sebuah mesin motor menghasilkan daya sebesar $6\\text{ HP}$?",
+      "jawaban_benar": "Ya, merupakan fungsi; daya keluarannya adalah $4.476\\text{ W}$",
+      "alasan_benar": "Setiap nilai daya masukan dalam satuan HP berkorespondensi tepat ke satu nilai keluaran dalam watt sesuai relasi linear $W = 746 \\times \\text{HP}$, dan untuk masukan $6\\text{ HP}$ keluarannya adalah $746 \\times 6 = 4.476\\text{ W}$.",
+      "distraktor": [
+        {
+          "teks": "Ya, merupakan fungsi; daya keluarannya adalah $4.276\\text{ W}$",
+          "alasan": "Siswa salah melakukan operasi perkalian aritmetika $746 \\times 6$."
+        },
+        {
+          "teks": "Bukan fungsi; daya keluarannya adalah $4.476\\text{ W}$",
+          "alasan": "Siswa salah memahami definisi fungsi dan mengira relasi konversi fisis bukan merupakan fungsi."
+        },
+        {
+          "teks": "Ya, merupakan fungsi; daya keluarannya adalah $752\\text{ W}$",
+          "alasan": "Siswa salah operasi dengan menjumlahkan $746 + 6$ alih-alih mengalikannya."
+        }
+      ],
+      "pembahasan": "Relasi konversi daya dari $\\text{HP}$ ke watt dirumuskan oleh fungsi $W(h) = 746h$, di mana $h$ adalah daya dalam $\\text{HP}$. Karena setiap nilai masukan $h$ dipasangkan tepat ke satu nilai keluaran $W$, maka relasi ini merupakan suatu fungsi. Untuk mesin berdaya $h = 6\\text{ HP}$, daya keluarannya adalah $W(6) = 746 \\times 6 = 4.476\\text{ W}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 28,
+        "bagian": "Eksplorasi 1.1",
+        "nomor": "1.",
+        "teks": "Tuliskan notasi himpunan yang menyatakan masukan dari mesin fungsi keripik tempe. Himpunan ini disebut sebagai domain.",
+        "jawaban": "{x | 200 <= x <= 600, x bilangan bulat}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain operasional mesin",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemahaman batasan operasional pada sistem mesin nyata dan memformulasikannya ke dalam notasi pembentuk himpunan daerah asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mesin pemroses di pabrik sari buah hanya dapat mulai bekerja jika dimasukkan minimal $40\\text{ kg}$ buah jeruk dan sistem pengaman akan secara otomatis menghentikan mesin jika muatan melebihi $160\\text{ kg}$. Jika $x$ menyatakan massa buah jeruk (dalam $\\text{kg}$) yang dimasukkan ke dalam mesin sebagai variabel masukan, notasi himpunan yang tepat untuk menyatakan daerah asal (*domain*) dari fungsi operasional mesin tersebut adalah ....",
+      "jawaban_benar": "$\\{x \\mid 40 \\le x \\le 160, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Mesin beroperasi mulai batas minimum $40\\text{ kg}$ inklusif hingga batas maksimum $160\\text{ kg}$ inklusif, sehingga daerah asalnya adalah selang tertutup $[40, 160]$ pada bilangan riil.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid 40 < x < 160, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah menggunakan tanda ketaksamaan murni sehingga tidak menyertakan batas operasional 40 dan 160."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 40, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengabaikan batas maksimum operasional mesin sebesar 160 kg."
+        },
+        {
+          "teks": "$\\{x \\mid 0 \\le x \\le 160, x \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah menentukan nilai batas bawah dengan menganggap masukan dapat dimulai dari 0 kg."
+        }
+      ],
+      "pembahasan": "Daerah asal (*domain*) fungsi merupakan himpunan semua nilai masukan yang dapat diproses oleh fungsi. Karena mesin beroperasi dengan masukan minimal $40\\text{ kg}$ dan berhenti jika melebihi $160\\text{ kg}$, maka nilai masukan $x$ yang diperbolehkan memenuhi $40 \\le x \\le 160$. Dalam notasi pembentuk himpunan bilangan riil, domainnya ditulis $\\{x \\mid 40 \\le x \\le 160, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 32,
+        "bagian": "Latihan 1.2",
+        "nomor": "4. a.",
+        "teks": "Tentukan fungsi yang menyatakan hubungan antara suhu dalam Celcius dan Kelvin.",
+        "jawaban": "K(C) = C + 273,15",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan dan nilai fungsi konversi suhu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan gradien garis linear, penyusunan rumus fungsi linear, dan substitusi nilai untuk evaluasi keluaran fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara suhu dalam derajat Fahrenheit ($F$) dan derajat Celsius ($C$) merupakan fungsi linear. Diketahui air membeku pada suhu $0^\\circ\\text{C}$ yang setara dengan $32^\\circ\\text{F}$ dan mendidih pada suhu $100^\\circ\\text{C}$ yang setara dengan $212^\\circ\\text{F}$. Rumus fungsi linear $F(C)$ dan nilai suhu dalam derajat Fahrenheit ketika termometer Celsius menunjukkan angka $35^\\circ\\text{C}$ berturut-turut adalah ....",
+      "jawaban_benar": "$F(C) = \\frac{9}{5}C + 32$ dan $95^\\circ\\text{F}$",
+      "alasan_benar": "Gradien fungsi adalah $\\frac{212 - 32}{100 - 0} = \\frac{180}{100} = \\frac{9}{5}$ dengan titik potong sumbu $F$ di $32$, sehingga $F(C) = \\frac{9}{5}C + 32$. Nilai untuk $C = 35$ adalah $\\frac{9}{5}(35) + 32 = 63 + 32 = 95^\\circ\\text{F}$.",
+      "distraktor": [
+        {
+          "teks": "$F(C) = \\frac{5}{9}C + 32$ dan $51,4^\\circ\\text{F}$",
+          "alasan": "Siswa terbalik menentukan gradien fungsi sebagai perbandingan $\\frac{5}{9}$ alih-alih $\\frac{9}{5}$."
+        },
+        {
+          "teks": "$F(C) = \\frac{9}{5}C + 32$ dan $67^\\circ\\text{F}$",
+          "alasan": "Siswa salah substitusi dengan menjumlahkan nilai $C$ secara langsung ke 32 tanpa mengalikan $\\frac{9}{5}$ terlebih dahulu."
+        },
+        {
+          "teks": "$F(C) = \\frac{9}{5}C - 32$ dan $31^\\circ\\text{F}$",
+          "alasan": "Siswa salah tanda pada konstanta titik beku dengan menulis $-32$."
+        }
+      ],
+      "pembahasan": "Fungsi linear berpasangan melalui titik $(0, 32)$ dan $(100, 212)$. Kemiringan fungsi:\n$$m = \\frac{212 - 32}{100 - 0} = \\frac{180}{100} = \\frac{9}{5}$$\nKarena untuk $C = 0$ nilai $F = 32$, maka persamaan fungsinya adalah $F(C) = \\frac{9}{5}C + 32$. Untuk $C = 35^\\circ\\text{C}$:\n$$F(35) = \\frac{9}{5}(35) + 32 = 63 + 32 = 95^\\circ\\text{F}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 20,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi merupakan suatu relasi yang menghubungkan satu anggota dari suatu himpunan tepat ke satu anggota di himpunan yang lain."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "parameter relasi fungsi berurutan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan syarat ketunggalan pemetaan pada pasangan berurutan dengan menyelesaikan persamaan linear untuk parameter variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu relasi dinyatakan dalam himpunan pasangan berurutan $R = \\{(3, 7), (p^2 - p, 4), (5, 11), (3, 3p - 2)\\}$. Agar relasi $R$ tersebut merupakan suatu fungsi, maka nilai bilangan bulat positif $p$ yang memenuhi adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Agar relasi merupakan fungsi, anggota masukan $x = 3$ harus memetakan ke keluaran yang tunggal, sehingga $3p - 2 = 7 \\implies 3p = 9 \\implies p = 3$. Untuk $p = 3$, masukan kedua bernilai $p^2 - p = 6$ yang tidak menimbulkan kontradiksi pemetaan.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah menyelesaikan persamaan $3p - 2 = 7$ atau salah menguji nilai $p$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Siswa keliru menyamakan $p^2 - p = 0$ lalu mengambil salah satu pembuat nolnya."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa keliru menjumlahkan konstanta dan koefisien secara tidak tepat."
+        }
+      ],
+      "pembahasan": "Definisi fungsi mengharuskan setiap anggota masukan terhubung tepat ke satu anggota keluaran. Pada pasangan berurutan terdapat dua titik dengan masukan yang sama, yaitu $(3, 7)$ dan $(3, 3p - 2)$. Agar relasi ini tetap merupakan fungsi, kedua keluaran harus bernilai sama:\n$$3p - 2 = 7 \\implies 3p = 9 \\implies p = 3$$\nJika $p = 3$, maka komponen pertama titik kedua adalah $p^2 - p = 3^2 - 3 = 6$, sehingga pasangan berurutannya menjadi $\\{(3, 7), (6, 4), (5, 11)\\}$. Setiap nilai masukan $3, 6, 5$ berpasangan tepat satu nilai keluaran, sehingga syarat fungsi terpenuhi dengan $p = 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana menentukan domain, kodomain, dan range dari suatu fungsi jika diberikan dalam bentuk aljabar?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah hasil fungsi pecahan linear",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan manipulasi aljabar untuk mengekspresikan variabel masukan dalam variabel keluaran serta menentukan syarat keterdefinisian daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi pecahan linear $f(x) = \\frac{6x - 5}{2x + 4}$ dengan daerah asal alami $D_f = \\{x \\in \\mathbb{R} \\mid x \\ne -2\\}$. Daerah hasil (*range*) dari fungsi $f(x)$ pada himpunan bilangan riil adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid y \\ne 3\\}$",
+      "alasan_benar": "Dengan mengubah persamaan menjadi bentuk $x = g(y)$, diperoleh $x = \\frac{-4y - 5}{2y - 6}$. Agar nilai $x$ terdefinisi pada bilangan riil, penyebut tidak boleh nol, yaitu $2y - 6 \\ne 0 \\iff y \\ne 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ne -2\\}$",
+          "alasan": "Siswa keliru menyamakan daerah hasil dengan batasan daerah asal ($x \\ne -2$)."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ne -\\frac{5}{4}\\}$",
+          "alasan": "Siswa mengambil perbandingan suku konstanta $-\\frac{5}{4}$ sebagai nilai asimtot/pantangan."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ne 6\\}$",
+          "alasan": "Siswa hanya memperhatikan koefisien pembilang tanpa membaginya dengan koefisien penyebut."
+        }
+      ],
+      "pembahasan": "Misalkan $y = f(x)$, maka:\n$$y = \\frac{6x - 5}{2x + 4}$$\n$$y(2x + 4) = 6x - 5$$\n$$2xy + 4y = 6x - 5$$\n$$2xy - 6x = -4y - 5$$\n$$x(2y - 6) = -4y - 5$$\n$$x = \\frac{-4y - 5}{2y - 6}$$\nAgar nilai masukan $x$ riil terdefinisi, nilai penyebut tidak boleh sama dengan nol:\n$$2y - 6 \\ne 0 \\implies 2y \\ne 6 \\implies y \\ne 3$$\nJadi daerah hasil (*range*) dari fungsi tersebut adalah $R_f = \\{y \\in \\mathbb{R} \\mid y \\ne 3\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 31,
+        "bagian": "Latihan 1.2",
+        "nomor": "1. a.",
+        "teks": "a. f (x) = x^2 − 1",
+        "jawaban": "Domain: {x | x ∈ R}, Range: {y | y ≥ -1, y ∈ R}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah hasil fungsi kuadrat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan absis titik balik dari fungsi kuadrat, substitusi untuk mencari nilai ekstrem, dan perumusan notasi himpunan daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi kuadrat $f(x) = x^2 - 6x + 14$ terdefinisi pada himpunan bilangan riil $\\mathbb{R}$. Daerah hasil (*range*) dari fungsi $f(x)$ adalah ....",
+      "jawaban_benar": "$\\{y \\mid y \\ge 5, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Parabola $f(x) = x^2 - 6x + 14$ terbuka ke atas ($a = 1 > 0$), sehingga memiliki nilai minimum pada absis titik puncak $x_p = -\\frac{b}{2a} = -\\frac{-6}{2(1)} = 3$. Nilai minimum fungsinya adalah $y_{\\min} = f(3) = 3^2 - 6(3) + 14 = 9 - 18 + 14 = 5$. Jadi, daerah hasilnya adalah $\\{y \\mid y \\ge 5, y \\in \\mathbb{R}\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\mid y \\ge 14, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengira nilai konstanta $c = 14$ sebagai nilai minimum fungsi kuadrat tanpa mencari titik balik."
+        },
+        {
+          "teks": "$\\{y \\mid y \\le 5, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa keliru menentukan arah pertidaksamaan karena mengira kurva memiliki nilai maksimum."
+        },
+        {
+          "teks": "$\\{y \\mid y \\ge -5, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa melakukan kesalahan tanda saat menghitung nilai minimum: $9 - 18 - 14$ atau salah tanda pada absis titik puncak."
+        }
+      ],
+      "pembahasan": "Untuk menentukan daerah hasil (*range*) dari fungsi kuadrat $f(x) = ax^2 + bx + c$ dengan domain $\\mathbb{R}$:\n1. Perhatikan nilai koefisien $a = 1$. Karena $a > 0$, parabola terbuka ke atas sehingga fungsi memiliki nilai minimum.\n2. Tentukan koordinat titik puncak pada sumbu simetri:\n$$x_p = -\\frac{b}{2a} = -\\frac{-6}{2(1)} = 3$$\n3. Hitung nilai minimum dengan mensubstitusikan $x_p$ ke $f(x)$:\n$$f(3) = (3)^2 - 6(3) + 14 = 9 - 18 + 14 = 5$$\nDengan demikian, nilai keluaran $y$ selalu lebih besar atau sama dengan $5$. Jadi, daerah hasilnya adalah $R_f = \\{y \\mid y \\ge 5, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-a-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 30,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana menentukan domain, kodomain, dan range dari suatu fungsi jika diberikan dalam bentuk aljabar?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "domain fungsi rasional kuadrat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan syarat penyebut fungsi pecahan, pemfaktoran bentuk kuadrat, dan penarikan kesimpulan domain alami fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal alami (*domain*) dari fungsi rasional $f(x) = \\frac{2x + 7}{x^2 - 4x - 12}$ pada himpunan bilangan riil $\\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$\\{x \\in \\mathbb{R} \\mid x \\ne -2 \\text{ dan } x \\ne 6\\}$",
+      "alasan_benar": "Fungsi rasional terdefinisi pada bilangan riil jika penyebutnya tidak bernilai nol: $x^2 - 4x - 12 \\ne 0 \\iff (x - 6)(x + 2) \\ne 0$. Diperoleh syarat $x \\ne 6$ dan $x \\ne -2$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ne -6 \\text{ dan } x \\ne 2\\}$",
+          "alasan": "Siswa salah menentukan tanda saat memfaktorkan persamaan kuadrat penyebut."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid -2 < x < 6\\}$",
+          "alasan": "Siswa keliru menganggap syarat pecahan sama dengan pertidaksamaan bentuk akar dan mengambil interval tertutup di antaranya."
+        },
+        {
+          "teks": "$\\{x \\in \\mathbb{R} \\mid x \\ne -\\frac{7}{2}\\}$",
+          "alasan": "Siswa menyamakan pembilang dengan nol alih-alih memeriksa syarat penyebut tidak boleh nol."
+        }
+      ],
+      "pembahasan": "Agar fungsi rasional $f(x) = \\frac{2x + 7}{x^2 - 4x - 12}$ terdefinisi pada himpunan bilangan riil, penyebut tidak boleh sama dengan nol:\n$$x^2 - 4x - 12 \\ne 0$$\nFaktorkan bentuk kuadrat pada penyebut:\n$$(x - 6)(x + 2) \\ne 0$$\nPembuat nol penyebut adalah $x = 6$ atau $x = -2$. Dengan demikian, nilai $x$ yang memenuhi syarat domain alami adalah seluruh bilangan riil kecuali $x = -2$ dan $x = 6$.\nJadi, daerah asal alaminya adalah $D_f = \\{x \\in \\mathbb{R} \\mid x \\ne -2 \\text{ dan } x \\ne 6\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

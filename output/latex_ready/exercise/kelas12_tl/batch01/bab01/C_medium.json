@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 66,
+        "bagian": "Latihan Soal Kedudukan Titik dan Garis terhadap Lingkaran",
+        "nomor": "3",
+        "teks": "Tentukan nilai t yang memenuhi kedudukan titik A ^2 t , - t h terletak pada lingkaran L / x 2 + y 2 + 2 x + 8 y - 2 = 0 .",
+        "jawaban": "t = 1/5 atau t = -2",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai parameter titik pada lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi koordinat berparameter ke persamaan umum lingkaran dan pemfaktoran persamaan kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai $t$ yang memenuhi agar titik $P(t, -t)$ terletak pada lingkaran $L \\equiv x^2 + y^2 + 6x - 2y - 24 = 0$ adalah ....",
+      "jawaban_benar": "$t = -6$ atau $t = 2$",
+      "alasan_benar": "Substitusi $x = t$ dan $y = -t$ menghasilkan $t^2 + (-t)^2 + 6t - 2(-t) - 24 = 0 \\iff 2t^2 + 8t - 24 = 0 \\iff t^2 + 4t - 12 = 0$. Faktornya $(t + 6)(t - 2) = 0$, sehingga $t = -6$ atau $t = 2$.",
+      "distraktor": [
+        {
+          "teks": "$t = -2$ atau $t = 6$",
+          "alasan": "Kesalahan tanda saat memfaktorkan persamaan kuadrat $(t - 6)(t + 2) = 0$."
+        },
+        {
+          "teks": "$t = -4$ atau $t = 3$",
+          "alasan": "Kesalahan membagi koefisien linear saat menyederhanakan $2t^2 + 8t - 24 = 0$."
+        },
+        {
+          "teks": "$t = -3$ atau $t = 4$",
+          "alasan": "Kesalahan menentukan pasangan faktor bilangan pembentuk $-12$ dan tanda akarnya."
+        }
+      ],
+      "pembahasan": "Agar titik $P(t, -t)$ terletak pada lingkaran, nilai kuasa titik harus sama dengan nol.\nSubstitusikan $x = t$ dan $y = -t$ ke persamaan lingkaran:\n$$t^2 + (-t)^2 + 6(t) - 2(-t) - 24 = 0$$\n$$t^2 + t^2 + 6t + 2t - 24 = 0$$\n$$2t^2 + 8t - 24 = 0$$\nBagi kedua ruas dengan 2:\n$$t^2 + 4t - 12 = 0$$\n$$(t + 6)(t - 2) = 0$$\nDiperoleh $t = -6$ atau $t = 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 62,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Titik potong pada lingkaran L dengan garis y = 3 dapat ditentukan dengan menyubstitusikan y = 3 ke persamaan lingkaran"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "panjang tali busur persekutuan garis dan lingkaran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengharuskan substitusi garis ke lingkaran, faktorisasi akar persekutuan, penentuan koordinat kedua titik potong, lalu perhitungan jarak antartitik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis $g: y = x + 1$ memotong lingkaran $L \\equiv x^2 + y^2 = 25$ di dua titik, yaitu titik $A$ dan $B$. Jarak antara titik $A$ dan titik $B$ adalah ....",
+      "jawaban_benar": "$7\\sqrt{2}$ satuan",
+      "alasan_benar": "Substitusi $y = x + 1$ ke $x^2 + y^2 = 25$ menghasilkan $2x^2 + 2x - 24 = 0 \\iff x^2 + x - 12 = 0$. Akar-akarnya $x_1 = 3$ dan $x_2 = -4$. Titik potongnya $(3, 4)$ dan $(-4, -3)$. Jaraknya $\\sqrt{(3 - (-4))^2 + (4 - (-3))^2} = \\sqrt{49 + 49} = 7\\sqrt{2}$.",
+      "distraktor": [
+        {
+          "teks": "$5\\sqrt{2}$ satuan",
+          "alasan": "Menggunakan nilai jari-jari lingkaran dikalikan $\\sqrt{2}$ tanpa menghitung titik potong sebenarnya."
+        },
+        {
+          "teks": "$14$ satuan",
+          "alasan": "Menjumlahkan selisih absis ($7$) dan selisih ordinat ($7$) alih-alih menghitung jarak Euclidean $\\sqrt{7^2 + 7^2}$."
+        },
+        {
+          "teks": "$7$ satuan",
+          "alasan": "Hanya menghitung selisih nilai $x$ ($3 - (-4) = 7$) tanpa memasukkan komponen ordinat."
+        }
+      ],
+      "pembahasan": "Substitusikan $y = x + 1$ ke dalam persamaan lingkaran:\n$$x^2 + (x + 1)^2 = 25$$\n$$x^2 + x^2 + 2x + 1 - 25 = 0$$\n$$2x^2 + 2x - 24 = 0$$\n$$x^2 + x - 12 = 0$$\n$$(x + 4)(x - 3) = 0$$\nDiperoleh $x_1 = -4$ atau $x_2 = 3$.\n\nCari ordinat masing-masing titik:\n- Untuk $x_1 = -4 \\implies y_1 = -4 + 1 = -3$, sehingga $A(-4, -3)$\n- Untuk $x_2 = 3 \\implies y_2 = 3 + 1 = 4$, sehingga $B(3, 4)$\n\nJarak antara titik $A$ dan $B$:\n$$AB = \\sqrt{(3 - (-4))^2 + (4 - (-3))^2} = \\sqrt{7^2 + 7^2} = \\sqrt{49 + 49} = \\sqrt{98} = 7\\sqrt{2}$$\nJadi, jarak antara kedua titik potong adalah $7\\sqrt{2}$ satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 61,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai diskriminan pada fungsi kuadrat ^1 + m 2h x 2 + ^2 mk + A + Bm h x + k 2 + Bk + C = 0 bernilai nol ^ D = 0h , maka garis g bersinggungan dengan lingkaran L."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai konstanta garis singgung lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi persamaan garis berparameter ke lingkaran, penataan persamaan kuadrat, dan penarikan nilai $D = 0$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Agar garis $y = 2x + c$ menyinggung lingkaran $L \\equiv x^2 + y^2 = 5$, nilai $c$ yang memenuhi adalah ....",
+      "jawaban_benar": "$c = -5$ atau $c = 5$",
+      "alasan_benar": "Substitusi $y = 2x + c$ menghasilkan $5x^2 + 4cx + (c^2 - 5) = 0$. Syarat menyinggung $D = 0 \\iff (4c)^2 - 4(5)(c^2 - 5) = 0 \\iff 16c^2 - 20c^2 + 100 = 0 \\iff -4c^2 = -100 \\iff c^2 = 25 \\iff c = \\pm 5$.",
+      "distraktor": [
+        {
+          "teks": "$c = -25$ atau $c = 25$",
+          "alasan": "Lupa menarik akar kuadrat dari $c^2 = 25$."
+        },
+        {
+          "teks": "$c = -\\sqrt{5}$ atau $c = \\sqrt{5}$",
+          "alasan": "Menganggap nilai $c$ langsung sama dengan $\\pm r$ lingkaran."
+        },
+        {
+          "teks": "$c = -10$ atau $c = 10$",
+          "alasan": "Kesalahan pada perhitungan diskriminan dengan rumus $b^2 - 2ac = 0$."
+        }
+      ],
+      "pembahasan": "Substitusikan garis $y = 2x + c$ ke dalam persamaan lingkaran $x^2 + y^2 = 5$:\n$$x^2 + (2x + c)^2 = 5$$\n$$x^2 + 4x^2 + 4cx + c^2 - 5 = 0$$\n$$5x^2 + 4cx + (c^2 - 5) = 0$$\nDari persamaan kuadrat diperoleh $a = 5$, $b = 4c$, dan $c_k = c^2 - 5$.\n\nSyarat garis menyinggung lingkaran adalah $D = 0$:\n$$b^2 - 4ac_k = 0$$\n$$(4c)^2 - 4(5)(c^2 - 5) = 0$$\n$$16c^2 - 20(c^2 - 5) = 0$$\n$$16c^2 - 20c^2 + 100 = 0$$\n$$-4c^2 + 100 = 0$$\n$$4c^2 = 100$$\n$$c^2 = 25 \\implies c = \\pm 5$$\nJadi, nilai $c$ yang memenuhi adalah $c = -5$ atau $c = 5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 60,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai diskriminan pada fungsi kuadrat ^1 + m 2h x 2 + ^2 mk + A + Bm h x + k 2 + Bk + C = 0 bernilai positif ^ D 2 0h , maka kedudukan garis g memotong lingkaran L."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "batasan parameter garis memotong lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi persamaan garis, perumusan diskriminan kuadrat berparameter, dan penentuan himpunan penyelesaian pertidaksamaan kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Batasan nilai $n$ agar garis $y = 3x + n$ memotong lingkaran $L \\equiv x^2 + y^2 = 10$ di dua titik berlainan adalah ....",
+      "jawaban_benar": "$-10 < n < 10$",
+      "alasan_benar": "Substitusi menghasilkan $10x^2 + 6nx + (n^2 - 10) = 0$. Syarat memotong di dua titik berlainan $D > 0 \\iff (6n)^2 - 4(10)(n^2 - 10) > 0 \\iff 36n^2 - 40n^2 + 400 > 0 \\iff -4n^2 + 400 > 0 \\iff n^2 < 100 \\iff -10 < n < 10$.",
+      "distraktor": [
+        {
+          "teks": "$n < -10$ atau $n > 10$",
+          "alasan": "Terbalik dalam menyimpulkan tanda pertidaksamaan $-4n^2 + 400 > 0$ tanpa membalik tanda saat membagi dengan bilangan negatif."
+        },
+        {
+          "teks": "$-2\\sqrt{10} < n < 2\\sqrt{10}$",
+          "alasan": "Kesalahan mengalikan koefisien $a$ saat menyusun diskriminan."
+        },
+        {
+          "teks": "$-100 < n < 100$",
+          "alasan": "Lupa menarik akar kuadrat dari batas interval $n^2 < 100$."
+        }
+      ],
+      "pembahasan": "Substitusikan $y = 3x + n$ ke dalam persamaan lingkaran $x^2 + y^2 = 10$:\n$$x^2 + (3x + n)^2 = 10$$\n$$x^2 + 9x^2 + 6nx + n^2 - 10 = 0$$\n$$10x^2 + 6nx + (n^2 - 10) = 0$$\n\nDiperoleh koefisien:\n$a = 10$, $b = 6n$, $c = n^2 - 10$\n\nGaris memotong lingkaran di dua titik jika diskriminan bernilai positif ($D > 0$):\n$$b^2 - 4ac > 0$$\n$$(6n)^2 - 4(10)(n^2 - 10) > 0$$\n$$36n^2 - 40n^2 + 400 > 0$$\n$$-4n^2 + 400 > 0$$\nBagi kedua ruas dengan $-4$ (tanda pertidaksamaan dibalik):\n$$n^2 - 100 < 0$$\n$$(n + 10)(n - 10) < 0$$\n$$-10 < n < 10$$\nJadi, batas nilai $n$ adalah $-10 < n < 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0066-latihan-soal-kedudukan-2a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "batasan parameter titik di dalam lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan syarat kuasa titik bernilai negatif untuk menyelesaikan pertidaksamaan kuadrat satu variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Batasan nilai $k$ agar titik $M(k, -2)$ terletak di dalam lingkaran $L \\equiv (x + 3)^2 + (y - 6)^2 = 100$ adalah ....",
+      "jawaban_benar": "$-9 < k < 3$",
+      "alasan_benar": "Substitusi titik ke persamaan lingkaran dengan syarat kuasa titik $< 0$ menghasilkan pertidaksamaan kuadrat $(k + 3)^2 < 36$ sehingga diperoleh $-9 < k < 3$.",
+      "distraktor": [
+        {
+          "teks": "$-3 < k < 9$",
+          "alasan": "Siswa salah memindahkan tanda pada pertidaksamaan $-6 < k - 3 < 6$ bukannya $-6 < k + 3 < 6$."
+        },
+        {
+          "teks": "$k < -9$ atau $k > 3$",
+          "alasan": "Siswa tertukar dengan syarat titik berada di luar lingkaran (kuasa positif)."
+        },
+        {
+          "teks": "$-11 < k < 5$",
+          "alasan": "Siswa salah menghitung $(-2 - 6)^2 = (-8)^2 = 64$ menjadi $(-4)^2 = 16$ sehingga $(k+3)^2 < 84$ atau keliru mengurangkan konstanta."
+        }
+      ],
+      "pembahasan": "Agar titik $M(k, -2)$ terletak di dalam lingkaran $L \\equiv (x + 3)^2 + (y - 6)^2 = 100$, nilai kuasa titik harus bertanda negatif ($K_M < 0$):\n$$\n(k + 3)^2 + (-2 - 6)^2 - 100 < 0\n$$\n$$\n(k + 3)^2 + (-8)^2 - 100 < 0\n$$\n$$\n(k + 3)^2 + 64 - 100 < 0\n$$\n$$\n(k + 3)^2 - 36 < 0\n$$\n$$\n(k + 3)^2 < 36\n$$\n$$\n-6 < k + 3 < 6\n$$\nKurangkan ketiga ruas dengan 3:\n$$\n-9 < k < 3\n$$\nJadi, batasan nilai $k$ yang memenuhi adalah $-9 < k < 3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0066-latihan-soal-kedudukan-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "batasan parameter titik di luar lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan syarat kuasa titik bertanda positif untuk menyusun dan menyelesaikan pertidaksamaan kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Batasan nilai $b$ agar titik $Q(4, b)$ terletak di luar lingkaran $L \\equiv (x - 1)^2 + (y + 5)^2 = 45$ adalah ....",
+      "jawaban_benar": "$b < -11$ atau $b > 1$",
+      "alasan_benar": "Substitusi $x = 4$ menghasilkan $(b + 5)^2 > 36$ yang memiliki penyelesaian $b + 5 < -6$ atau $b + 5 > 6$, yaitu $b < -11$ atau $b > 1$.",
+      "distraktor": [
+        {
+          "teks": "$-11 < b < 1$",
+          "alasan": "Siswa salah menggunakan tanda interval titik di dalam lingkaran $(< 0)$."
+        },
+        {
+          "teks": "$b < -1$ atau $b > 11$",
+          "alasan": "Siswa salah mengoperasikan tanda pada pertidaksamaan nilai mutlak menjadi $b - 5 > 6$."
+        },
+        {
+          "teks": "$b < -7$ atau $b > 7$",
+          "alasan": "Siswa lupa memperhitungkan pergeseran ordinat pusat $+5$."
+        }
+      ],
+      "pembahasan": "Agar titik $Q(4, b)$ berada di luar lingkaran $L$, nilai kuasa titik harus lebih dari nol ($K_Q > 0$):\n$$\n(4 - 1)^2 + (b + 5)^2 - 45 > 0\n$$\n$$\n3^2 + (b + 5)^2 - 45 > 0\n$$\n$$\n9 + (b + 5)^2 - 45 > 0\n$$\n$$\n(b + 5)^2 - 36 > 0\n$$\n$$\n(b + 5)^2 > 36\n$$\nMaka diperoleh:\n$$\nb + 5 < -6 \\quad \\text{atau} \\quad b + 5 > 6\n$$\n$$\nb < -11 \\quad \\text{atau} \\quad b > 1\n$$\nJadi, batasan nilai $b$ adalah $b < -11$ atau $b > 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 58,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila berada di luar lingkaran, berapa jarak titik A terhadap pusat lingkaran?"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak terdekat titik ke lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan rumus jarak dua titik ke pusat lingkaran kemudian mengurangkannya dengan panjang jari-jari lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jarak terdekat dari titik $P(9, 12)$ ke lingkaran $L \\equiv x^2 + y^2 = 25$ adalah ....",
+      "jawaban_benar": "10 satuan",
+      "alasan_benar": "Jarak titik $P(9, 12)$ ke pusat $O(0, 0)$ adalah 15 satuan, dikurangi jari-jari lingkaran $r = 5$ satuan, diperoleh jarak terdekat 10 satuan.",
+      "distraktor": [
+        {
+          "teks": "15 satuan",
+          "alasan": "Siswa hanya menghitung jarak titik $P$ ke titik pusat lingkaran tanpa mengurangkan dengan jari-jari."
+        },
+        {
+          "teks": "5 satuan",
+          "alasan": "Siswa mengira jarak terdekat sama dengan panjang jari-jari lingkaran."
+        },
+        {
+          "teks": "20 satuan",
+          "alasan": "Siswa menghitung jarak terjauh dari titik $P$ ke lingkaran ($OP + r = 15 + 5$)."
+        }
+      ],
+      "pembahasan": "Lingkaran $L \\equiv x^2 + y^2 = 25$ berpusat di titik $O(0, 0)$ dengan jari-jari:\n$$\nr = \\sqrt{25} = 5\n$$\nJarak titik $P(9, 12)$ ke titik pusat $O(0, 0)$ adalah:\n$$\nOP = \\sqrt{(9 - 0)^2 + (12 - 0)^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\n$$\nKarena $OP = 15 > r = 5$, titik $P$ berada di luar lingkaran.\nJarak terdekat dari titik $P$ ke lingkaran dihitung dengan mengurangkan jarak pusat terhadap jari-jari:\n$$\nd_{\\text{terdekat}} = OP - r = 15 - 5 = 10 \\text{ satuan}\n$$\nJadi, jarak terdekat dari titik $P$ ke lingkaran tersebut adalah 10 satuan.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 62,
+        "bagian": "Contoh Soal 1.18",
+        "nomor": "1.18",
+        "teks": "Tentukan titik potong lingkaran _L_ / ^ _x_ + 1h2 + ^ _y_ - 3h2 = 9 dengan garis _y_ = 3 .",
+        "jawaban": "(-4, 3) dan (2, 3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "titik potong garis dan lingkaran",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi nilai ordinat garis ke persamaan baku lingkaran dan pemfaktoran persamaan kuadrat satu variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik potong antara lingkaran $L \\equiv (x - 4)^2 + (y + 1)^2 = 25$ dengan garis $y = 2$ adalah ....",
+      "jawaban_benar": "$(0, 2)$ dan $(8, 2)$",
+      "alasan_benar": "Substitusi $y = 2$ ke persamaan lingkaran menghasilkan $(x - 4)^2 + 9 = 25 \\iff (x - 4)^2 = 16$, sehingga $x = 0$ atau $x = 8$. Titik potongnya adalah $(0, 2)$ dan $(8, 2)$.",
+      "distraktor": [
+        {
+          "teks": "$(-1, 2)$ dan $(7, 2)$",
+          "alasan": "Siswa salah menghitung $(2 + 1)^2$ menjadi $10$ sehingga $(x - 4)^2 = 15$ atau salah operasi penarikan akar."
+        },
+        {
+          "teks": "$(0, -2)$ dan $(8, -2)$",
+          "alasan": "Siswa salah memasukkan nilai $y$ pada koordinat titik potong menjadi negatif."
+        },
+        {
+          "teks": "$(1, 2)$ dan $(9, 2)$",
+          "alasan": "Siswa mengira pusat absis adalah $x + 4$ sehingga menyelesaikan $x - 5 = \\pm 4$."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai $y = 2$ ke dalam persamaan lingkaran:\n$$(x - 4)^2 + (2 + 1)^2 = 25$$\n$$(x - 4)^2 + 3^2 = 25$$\n$$(x - 4)^2 + 9 = 25$$\n$$(x - 4)^2 = 16$$\n$$x - 4 = \\pm 4$$\n\nUntuk $x - 4 = -4$, diperoleh $x = 0$.\nUntuk $x - 4 = 4$, diperoleh $x = 8$.\n\nKarena nilai $y = 2$, titik potongnya adalah $(0, 2)$ dan $(8, 2)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 58,
+        "bagian": "Contoh Soal 1.15",
+        "nomor": "1.15",
+        "teks": "Selidiki apakah titik _A_ ^5, - 3h berada di luar lingkaran _L_ / _x_ 2 + _y_ 2 = 18 . Apabila berada di luar lingkaran, berapa jarak titik _A_ terhadap pusat lingkaran?",
+        "jawaban": "titik A berada di luar lingkaran dan OA = \\sqrt{34}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak titik di luar lingkaran ke pusat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan titik pusat lingkaran dan penerapan rumus jarak Euclidean dua titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui titik $B(7, -1)$ berada di luar lingkaran $L \\equiv x^2 + y^2 = 25$. Jarak titik $B$ terhadap titik pusat lingkaran $L$ adalah ....",
+      "jawaban_benar": "$5\\sqrt{2}\\text{ satuan}$",
+      "alasan_benar": "Pusat lingkaran adalah $O(0, 0)$. Jarak $OB = \\sqrt{(7 - 0)^2 + (-1 - 0)^2} = \\sqrt{49 + 1} = \\sqrt{50} = 5\\sqrt{2}\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$5\\text{ satuan}$",
+          "alasan": "Siswa keliru mengira jarak titik ke pusat sama dengan panjang jari-jari lingkaran."
+        },
+        {
+          "teks": "$2\\sqrt{5}\\text{ satuan}$",
+          "alasan": "Siswa salah menyederhanakan bentuk akar $\\sqrt{50}$ menjadi $\\sqrt{20}$."
+        },
+        {
+          "teks": "$6\\sqrt{2}\\text{ satuan}$",
+          "alasan": "Siswa salah menghitung $7^2 + (-1)^2$ menjadi $49 - 1 = 48$ lalu menyederhanakannya keliru."
+        }
+      ],
+      "pembahasan": "Persamaan lingkaran $L \\equiv x^2 + y^2 = 25$ memiliki titik pusat di $O(0, 0)$.\n\nJarak titik $B(7, -1)$ ke titik pusat $O(0, 0)$ ditentukan dengan rumus jarak dua titik:\n$$OB = \\sqrt{(x_B - x_O)^2 + (y_B - y_O)^2}$$\n$$OB = \\sqrt{(7 - 0)^2 + (-1 - 0)^2}$$\n$$OB = \\sqrt{49 + 1} = \\sqrt{50} = 5\\sqrt{2}$$\n\nJadi, jarak titik $B$ terhadap titik pusat lingkaran adalah $5\\sqrt{2}\\text{ satuan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kuasa titik adalah nilai yang diperoleh dari substitusi suatu titik (misalkan titik A ^ x , y h jika menggunakan konteks Gambar 1.23) terhadap persamaan lingkaran."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai parameter dari kuasa titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan definisi kuasa titik untuk membentuk dan menyelesaikan persamaan kuadrat dengan pembatas bilangan bulat positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai kuasa titik $P(m, 2)$ terhadap lingkaran $L \\equiv x^2 + y^2 - 6x + 4y - 3 = 0$ bernilai $16$. Jika $m$ merupakan bilangan bulat positif, nilai $m$ yang memenuhi adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Substitusi $P(m, 2)$ ke ekspresi lingkaran menghasilkan $m^2 + 2^2 - 6m + 4(2) - 3 = 16 \\iff m^2 - 6m - 7 = 0$. Faktornya $(m - 7)(m + 1) = 0$. Karena $m > 0$, maka $m = 7$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Siswa mengambil nilai positif dari akar negatif $-1$."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa hanya menghitung sumbu simetri $m = -b/(2a) = 6/2 = 3$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa salah menghitung konstanta menjadi $m^2 - 6m + 5 = 0$ sehingga diperoleh $m = 5$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi, nilai kuasa titik $P(m, 2)$ diperoleh dengan menyubstitusikan koordinat titik ke persamaan umum lingkaran:\n$$K_P = m^2 + 2^2 - 6(m) + 4(2) - 3$$\n$$K_P = m^2 + 4 - 6m + 8 - 3$$\n$$K_P = m^2 - 6m + 9$$\n\nDiketahui nilai kuasa $K_P = 16$, maka:\n$$m^2 - 6m + 9 = 16$$\n$$m^2 - 6m - 7 = 0$$\n$$(m - 7)(m + 1) = 0$$\n$$m = 7 \\text{ atau } m = -1$$\n\nKarena disyaratkan $m$ merupakan bilangan bulat positif, nilai yang memenuhi adalah $m = 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 61,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai diskriminan pada fungsi kuadrat ^1 + _m_ 2h _x_ 2 + ^2 _mk_ + _A_ + _Bm_ h _x_ + _k_ 2 + _Bk_ + _C_ = 0 bernilai nol ^ _D_ = 0h , maka garis _g_ bersinggungan dengan lingkaran _L_ ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "garis singgung vertikal lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan diskriminan nol pada persamaan kuadrat hasil substitusi garis vertikal $x = c$ ke persamaan lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis vertikal dengan persamaan $x = c$ menyinggung lingkaran $L \\equiv x^2 + y^2 - 8x - 4y + 16 = 0$. Nilai $c$ yang memenuhi adalah ....",
+      "jawaban_benar": "$c = 2$ atau $c = 6$",
+      "alasan_benar": "Substitusi $x = c$ menghasilkan $y^2 - 4y + (c^2 - 8c + 16) = 0$. Syarat bersinggungan $D = 0 \\iff 16 - 4(c - 4)^2 = 0 \\iff (c - 4)^2 = 4$, diperoleh $c = 2$ atau $c = 6$.",
+      "distraktor": [
+        {
+          "teks": "$c = -2$ atau $c = -6$",
+          "alasan": "Siswa salah menentukan tanda saat menyelesaikan $c - 4 = \\pm 2$."
+        },
+        {
+          "teks": "$c = 4$ saja",
+          "alasan": "Siswa mengira garis singgung melewati titik pusat absis lingkaran."
+        },
+        {
+          "teks": "$c = 0$ atau $c = 8$",
+          "alasan": "Siswa salah memasukkan nilai jari-jari menjadi $4$ sehingga $c = 4 \\pm 4$."
+        }
+      ],
+      "pembahasan": "Substitusikan persamaan garis vertikal $x = c$ ke dalam persamaan lingkaran:\n$$c^2 + y^2 - 8c - 4y + 16 = 0$$\n$$y^2 - 4y + (c^2 - 8c + 16) = 0$$\n\nPersamaan di atas merupakan persamaan kuadrat dalam variabel $y$ dengan:\n$$a = 1, \\quad b = -4, \\quad c_k = c^2 - 8c + 16$$\n\nSyarat garis menyinggung lingkaran adalah diskriminan $D = 0$:\n$$D = b^2 - 4ac_k = 0$$\n$$(-4)^2 - 4(1)(c^2 - 8c + 16) = 0$$\n$$16 - 4(c - 4)^2 = 0$$\n$$4(c - 4)^2 = 16$$\n$$(c - 4)^2 = 4$$\n$$c - 4 = \\pm 2$$\n\nUntuk $c - 4 = -2$, diperoleh $c = 2$.\nUntuk $c - 4 = 2$, diperoleh $c = 6$.\n\nJadi, nilai $c$ yang memenuhi adalah $c = 2$ atau $c = 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 66,
+        "bagian": "Latihan Soal Kedudukan Titik dan Garis terhadap Lingkaran",
+        "nomor": "3",
+        "teks": "Tentukan nilai t yang memenuhi kedudukan titik A ^2 t , - t h terletak pada lingkaran L / x 2 + y 2 + 2 x + 8 y - 2 = 0 .",
+        "jawaban": "t = -1 atau t = 1/5",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai parameter titik pada lingkaran",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi koordinat berparameter ke persamaan umum lingkaran lalu menyelesaikan persamaan kuadrat yang terbentuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai $m$ yang memenuhi agar titik $P(m, 2m)$ terletak pada lingkaran $L \\equiv x^2 + y^2 - 9x + 2y - 30 = 0$ adalah ....",
+      "jawaban_benar": "$m = -2$ atau $m = 3$",
+      "alasan_benar": "Substitusi $x = m$ dan $y = 2m$ ke persamaan lingkaran menghasilkan $m^2 + (2m)^2 - 9(m) + 2(2m) - 30 = 0 \\iff 5m^2 - 5m - 30 = 0 \\iff m^2 - m - 6 = 0$. Faktorkan menjadi $(m - 3)(m + 2) = 0$, sehingga $m = 3$ atau $m = -2$.",
+      "distraktor": [
+        {
+          "teks": "$m = -3$ atau $m = 2$",
+          "alasan": "Kesalahan tanda saat menentukan akar-akar dari pemfaktoran $(m - 3)(m + 2) = 0$."
+        },
+        {
+          "teks": "$m = -6$ atau $m = 1$",
+          "alasan": "Kesalahan memilih pasangan faktor dari konstanta $-6$ pada persamaan kuadrat."
+        },
+        {
+          "teks": "$m = -1$ atau $m = 6$",
+          "alasan": "Kesalahan tanda sekaligus memilih pasangan faktor dari konstanta $-6$."
+        }
+      ],
+      "pembahasan": "Agar titik $P(m, 2m)$ terletak pada lingkaran, substitusikan $x = m$ dan $y = 2m$ ke persamaan lingkaran:\n$$m^2 + (2m)^2 - 9(m) + 2(2m) - 30 = 0$$\n$$m^2 + 4m^2 - 9m + 4m - 30 = 0$$\n$$5m^2 - 5m - 30 = 0$$\nBagi kedua ruas dengan 5:\n$$m^2 - m - 6 = 0$$\n$$(m - 3)(m + 2) = 0$$\nDiperoleh $m = 3$ atau $m = -2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 62,
+        "bagian": "Contoh Soal 1.18",
+        "nomor": "1.18",
+        "teks": "Tentukan titik potong lingkaran L / ^ x + 1h2 + ^ y - 3h2 = 9 dengan garis y = 3 .",
+        "jawaban": "(-4, 3) dan (2, 3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "titik potong garis vertikal dan lingkaran",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi persamaan garis vertikal ke persamaan baku lingkaran lalu memecahkan persamaan kuadrat untuk memperoleh dua titik potong.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik potong antara garis vertikal $x = 5$ dengan lingkaran $L \\equiv (x - 1)^2 + (y - 4)^2 = 25$ adalah ....",
+      "jawaban_benar": "$(5, 1)$ dan $(5, 7)$",
+      "alasan_benar": "Substitusi $x = 5$ ke persamaan lingkaran menghasilkan $(5 - 1)^2 + (y - 4)^2 = 25 \\iff 16 + (y - 4)^2 = 25 \\iff (y - 4)^2 = 9$. Maka $y - 4 = \\pm 3$, sehingga $y = 1$ atau $y = 7$. Titik potongnya $(5, 1)$ dan $(5, 7)$.",
+      "distraktor": [
+        {
+          "teks": "$(5, -1)$ dan $(5, 7)$",
+          "alasan": "Kesalahan tanda saat menyelesaikan persamaan $y - 4 = -3$ yang keliru dihitung menjadi $y = -1$."
+        },
+        {
+          "teks": "$(1, 5)$ dan $(7, 5)$",
+          "alasan": "Tertukar antara posisi absis $x$ dan ordinat $y$ pada koordinat titik potong."
+        },
+        {
+          "teks": "$(5, -7)$ dan $(5, -1)$",
+          "alasan": "Kesalahan tanda pada kedua nilai ordinat yang diperoleh."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai $x = 5$ ke dalam persamaan lingkaran:\n$$(5 - 1)^2 + (y - 4)^2 = 25$$\n$$4^2 + (y - 4)^2 = 25$$\n$$16 + (y - 4)^2 = 25$$\n$$(y - 4)^2 = 9$$\n$$y - 4 = \\pm 3$$\nUntuk $y - 4 = 3 \\implies y = 7$.\nUntuk $y - 4 = -3 \\implies y = 1$.\n\nJadi, garis $x = 5$ memotong lingkaran di titik $(5, 1)$ dan $(5, 7)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 58,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kamu dapat mengingat kembali materi vektor, yaitu cara menentukan jarak dua titik A dan B dapat menggunakan rumus AB = ^ xbb - xaa h22 + ^ ybb - ya h2 ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "jarak terjauh titik ke lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik pusat dan jari-jari lingkaran, perhitungan jarak titik ke pusat, serta penjumlahan jarak dengan jari-jari.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jarak terjauh dari titik $P(10, 7)$ ke lingkaran $L \\equiv (x - 2)^2 + (y - 1)^2 = 36$ adalah ....",
+      "jawaban_benar": "$16\\text{ satuan}$",
+      "alasan_benar": "Pusat lingkaran $M(2, 1)$ dan jari-jari $r = \\sqrt{36} = 6$. Jarak titik $P$ ke pusat adalah $PM = \\sqrt{(10 - 2)^2 + (7 - 1)^2} = \\sqrt{64 + 36} = 10$. Jarak terjauh adalah $PM + r = 10 + 6 = 16\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$4\\text{ satuan}$",
+          "alasan": "Menghitung jarak terdekat dari titik ke lingkaran ($PM - r = 10 - 6$)."
+        },
+        {
+          "teks": "$10\\text{ satuan}$",
+          "alasan": "Hanya menghitung jarak titik $P$ ke titik pusat lingkaran tanpa menambahkan jari-jari."
+        },
+        {
+          "teks": "$22\\text{ satuan}$",
+          "alasan": "Menambahkan panjang diameter ($2r = 12$) ke jarak titik pusat bukan jari-jari."
+        }
+      ],
+      "pembahasan": "Berdasarkan persamaan lingkaran $L \\equiv (x - 2)^2 + (y - 1)^2 = 36$:\n- Titik pusat lingkaran adalah $M(2, 1)$.\n- Jari-jari lingkaran adalah $r = \\sqrt{36} = 6$.\n\nHitung jarak titik $P(10, 7)$ ke pusat lingkaran $M(2, 1)$:\n$$PM = \\sqrt{(10 - 2)^2 + (7 - 1)^2} = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$$\n\nJarak terjauh dari titik $P$ ke lingkaran adalah jarak dari titik $P$ ke pusat lingkaran ditambah jari-jari lingkaran:\n$$\\text{Jarak terjauh} = PM + r = 10 + 6 = 16\\text{ satuan}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 61,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai diskriminan pada fungsi kuadrat ^1 + m 2h x 2 + ^2 mk + A + Bm h x + k 2 + Bk + C = 0 bernilai nol ^ D = 0h , maka garis g bersinggungan dengan lingkaran L ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "garis singgung horizontal lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi garis horizontal ke persamaan lingkaran, pembentukan persamaan kuadrat dalam satu variabel, dan penerapan diskriminan nol.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai $m$ yang memenuhi agar garis horizontal $y = m$ menyinggung lingkaran $L \\equiv x^2 + y^2 + 6x - 10y + 9 = 0$ adalah ....",
+      "jawaban_benar": "$m = 0$ atau $m = 10$",
+      "alasan_benar": "Substitusi $y = m$ menghasilkan $x^2 + 6x + (m^2 - 10m + 9) = 0$. Syarat garis menyinggung adalah $D = 0$, yaitu $6^2 - 4(1)(m^2 - 10m + 9) = 0 \\iff -4m^2 + 40m = 0 \\iff -4m(m - 10) = 0$, sehingga $m = 0$ atau $m = 10$.",
+      "distraktor": [
+        {
+          "teks": "$m = -10$ atau $m = 0$",
+          "alasan": "Kesalahan tanda saat memfaktorkan persamaan $-4m(m - 10) = 0$ menjadi $-4m(m + 10) = 0$."
+        },
+        {
+          "teks": "$m = -5$ atau $m = 5$",
+          "alasan": "Hanya menggunakan nilai $\\pm r$ lingkaran tanpa memperhitungkan pergeseran ordinat pusat."
+        },
+        {
+          "teks": "$m = 5$ atau $m = 15$",
+          "alasan": "Kesalahan perhitungan diskriminan yang menggeser nilai ordinat ke arah positif."
+        }
+      ],
+      "pembahasan": "Substitusikan $y = m$ ke persamaan lingkaran:\n$$x^2 + m^2 + 6x - 10m + 9 = 0$$\n$$x^2 + 6x + (m^2 - 10m + 9) = 0$$\n\nPersamaan kuadrat dalam $x$ memiliki koefisien:\n$a = 1$, $b = 6$, dan $c = m^2 - 10m + 9$.\n\nAgar garis menyinggung lingkaran, nilai diskriminan $D = 0$:\n$$D = b^2 - 4ac = 0$$\n$$6^2 - 4(1)(m^2 - 10m + 9) = 0$$\n$$36 - 4m^2 + 40m - 36 = 0$$\n$$-4m^2 + 40m = 0$$\n$$-4m(m - 10) = 0$$\nDiperoleh $m = 0$ atau $m = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0066-latihan-soal-kedudukan-2a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "batasan absis titik di dalam lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi koordinat ke pertidaksamaan lingkaran baku dan menyelesaikan pertidaksamaan kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Batasan nilai $k$ agar titik $P(k, 6)$ terletak di dalam lingkaran $L \\equiv (x - 5)^2 + (y - 2)^2 = 80$ adalah ....",
+      "jawaban_benar": "$-3 < k < 13$",
+      "alasan_benar": "Syarat di dalam lingkaran: $(k - 5)^2 + (6 - 2)^2 < 80 \\Leftrightarrow (k - 5)^2 + 16 < 80 \\Leftrightarrow (k - 5)^2 < 64 \\Leftrightarrow -8 < k - 5 < 8 \\Leftrightarrow -3 < k < 13$.",
+      "distraktor": [
+        {
+          "teks": "$-13 < k < 3$",
+          "alasan": "Salah tanda pergeseran absis saat menyelesaikan nilai mutlak $|k - 5| < 8$."
+        },
+        {
+          "teks": "$k < -3$ atau $k > 13$",
+          "alasan": "Menggunakan tanda ketaksamaan untuk titik di luar lingkaran."
+        },
+        {
+          "teks": "$-8 < k < 8$",
+          "alasan": "Lupa menambahkan koordinat pusat $x = 5$ pada batas pertidaksamaan."
+        }
+      ],
+      "pembahasan": "Agar titik $P(k, 6)$ berada di dalam lingkaran $L \\equiv (x - 5)^2 + (y - 2)^2 = 80$, kuasa titik harus bernilai negatif:\n$$(k - 5)^2 + (6 - 2)^2 - 80 < 0$$\n$$(k - 5)^2 + 16 - 80 < 0$$\n$$(k - 5)^2 - 64 < 0$$\n$$(k - 5)^2 < 64$$\n$$-8 < k - 5 < 8$$\n$$-3 < k < 13$$\n\nJadi, batasan nilai $k$ yang memenuhi adalah $-3 < k < 13$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0067-latihan-soal-kedudukan-7",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "parameter garis singgung lingkaran umum",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi garis ke bentuk umum lingkaran dan analisis diskriminan bernilai nol.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai $c$ yang memenuhi agar garis $y = 3x + c$ menyinggung lingkaran $L \\equiv x^2 + y^2 - 8x - 6y + 15 = 0$ adalah ....",
+      "jawaban_benar": "$c = -19$ atau $c = 1$",
+      "alasan_benar": "Substitusi $y = 3x + c$ ke $L$ menghasilkan diskriminan $D = 0$ saat $c^2 + 18c - 19 = 0$, menghasilkan $c = 1$ atau $c = -19$.",
+      "distraktor": [
+        {
+          "teks": "$c = -1$ atau $c = 19$",
+          "alasan": "Salah memfaktorkan $c^2 + 18c - 19 = 0$ menjadi $(c - 19)(c + 1) = 0$."
+        },
+        {
+          "teks": "$c = -10$ atau $c = 10$",
+          "alasan": "Mengabaikan konstanta pergeseran pusat lingkaran."
+        },
+        {
+          "teks": "$c = -21$ atau $c = -1$",
+          "alasan": "Salah menjumlahkan konstanta saat menyusun persamaan kuadrat persekutuan."
+        }
+      ],
+      "pembahasan": "Pusat lingkaran $L$ adalah $\\left(-\\frac{-8}{2}, -\\frac{-6}{2}\\right) = (4, 3)$ dengan jari-jari $r = \\sqrt{4^2 + 3^2 - 15} = \\sqrt{10}$.\n\nGaris $3x - y + c = 0$ menyinggung lingkaran jika jarak pusat ke garis sama dengan $r$:\n$$\\frac{|3(4) - 3 + c|}{\\sqrt{3^2 + (-1)^2}} = \\sqrt{10}$$\n$$\\frac{|9 + c|}{\\sqrt{10}} = \\sqrt{10}$$\n$$|c + 9| = 10$$\n\nDiperoleh dua kemungkinan:\n1) $c + 9 = 10 \\Rightarrow c = 1$\n2) $c + 9 = -10 \\Rightarrow c = -19$\n\nJadi, nilai $c$ yang memenuhi adalah $c = -19$ atau $c = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kuasa titik adalah nilai yang diperoleh dari substitusi suatu titik (misalkan titik A ^ x , y h jika menggunakan konteks Gambar 1.23) terhadap persamaan lingkaran."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai parameter negatif dari kuasa titik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan definisi nilai kuasa titik lingkaran untuk mencari nilai variabel berkondisi negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai kuasa titik $A(p, 3)$ terhadap lingkaran $L \\equiv (x + 2)^2 + (y - 5)^2 = 25$ bernilai $15$. Jika $p$ bilangan real negatif, maka nilai $p$ adalah ....",
+      "jawaban_benar": "$-8$",
+      "alasan_benar": "Kuasa titik bernilai 15 memberikan $(p + 2)^2 + (3 - 5)^2 - 25 = 15 \\Leftrightarrow (p + 2)^2 = 36$. Nilai negatif adalah $p = -6 - 2 = -8$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Memilih nilai positif $p = 6 - 2 = 4$ padahal disyaratkan negatif."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Lupa memperhitungkan nilai suku konstan $(3 - 5)^2$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Salah operasi tanda aljabar saat memindahkan ruas $p + 2 = -6$."
+        }
+      ],
+      "pembahasan": "Kuasa titik $A(p, 3)$ terhadap lingkaran $L \\equiv (x + 2)^2 + (y - 5)^2 = 25$ dirumuskan dengan:\n$$K_A = (p + 2)^2 + (3 - 5)^2 - 25$$\n\nDiketahui $K_A = 15$, maka:\n$$(p + 2)^2 + (-2)^2 - 25 = 15$$\n$$(p + 2)^2 + 4 - 25 = 15$$\n$$(p + 2)^2 - 21 = 15$$\n$$(p + 2)^2 = 36$$\n$$p + 2 = \\pm 6$$\n\nDiperoleh:\n- $p + 2 = 6 \\Rightarrow p = 4$\n- $p + 2 = -6 \\Rightarrow p = -8$\n\nKarena disyaratkan $p$ bernilai negatif, maka $p = -8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b01-p0066-latihan-soal-kedudukan-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "batasan ordinat titik di luar lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan syarat kuasa titik bernilai positif untuk menyusun dan menyelesaikan pertidaksamaan kuadrat dalam mencari batasan nilai ordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Batasan nilai $a$ agar titik $P(a, 4)$ terletak di luar lingkaran $L \\equiv (x - 2)^2 + (y - 1)^2 = 34$ adalah ....",
+      "jawaban_benar": "$a < -3$ atau $a > 7$",
+      "alasan_benar": "Substitusi titik $(a, 4)$ ke persamaan lingkaran menghasilkan $(a - 2)^2 + (4 - 1)^2 > 34$, sehingga $(a - 2)^2 > 25$, yang memberikan $a < -3$ atau $a > 7$.",
+      "distraktor": [
+        {
+          "teks": "$-3 < a < 7$",
+          "alasan": "Menggunakan tanda ketaksamaan terbalik seolah titik berada di dalam lingkaran."
+        },
+        {
+          "teks": "$a < -7$ atau $a > 3$",
+          "alasan": "Salah dalam memindahkan tanda minus pada $(a - 2)$, menganggap solusinya berpusat di $-2$."
+        },
+        {
+          "teks": "$a < -5$ atau $a > 5$",
+          "alasan": "Lupa memperhitungkan pergeseran nilai pusat $x = 2$ setelah menarik akar dari $25$."
+        }
+      ],
+      "pembahasan": "Agar titik $P(a, 4)$ berada di luar lingkaran $L$, kuasa titik harus bernilai positif:\n$$(a - 2)^2 + (4 - 1)^2 - 34 > 0$$\n$$(a - 2)^2 + 3^2 - 34 > 0$$\n$$(a - 2)^2 + 9 - 34 > 0$$\n$$(a - 2)^2 - 25 > 0$$\n$$(a - 2)^2 > 25$$\n\nSelesaikan pertidaksamaan kuadrat:\n$$a - 2 < -5 \\quad \\text{atau} \\quad a - 2 > 5$$\n$$a < -3 \\quad \\text{atau} \\quad a > 7$$\n\nJadi, batasan nilai $a$ adalah $a < -3$ atau $a > 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b01-c-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 64,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Persamaan garis h : x - y - 1 = 0 ekuivalen dengan y = x - 1 . Untuk menyelidiki apakah garis h dan lingkaran L berpotongan, perlu ditunjukkan bahwa persamaan kuadrat yang diperoleh dari substitusi persamaan garis h ke persamaan lingkaran L , memiliki diskriminan bernilai positif."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "koordinat titik potong garis miring dan lingkaran",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menyubstitusikan persamaan linear garis ke persamaan kuadrat lingkaran untuk menentukan absis dan ordinat persekutuan kedua kurva.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Koordinat titik potong antara garis $g: y = x + 2$ dan lingkaran $L \\equiv x^2 + y^2 - 4x - 2y - 4 = 0$ adalah ....",
+      "jawaban_benar": "$(-1, 1)$ dan $(2, 4)$",
+      "alasan_benar": "Substitusi $y = x + 2$ menghasilkan persamaan $2x^2 - 2x - 4 = 0$ dengan akar $x = -1$ dan $x = 2$, yang menghasilkan titik $(-1, 1)$ dan $(2, 4)$.",
+      "distraktor": [
+        {
+          "teks": "$(1, 3)$ dan $(-2, 0)$",
+          "alasan": "Kesalahan tanda saat memfaktorkan persamaan kuadrat $(x + 1)(x - 2) = 0$ menjadi $(x - 1)(x + 2) = 0$."
+        },
+        {
+          "teks": "$(-1, -1)$ dan $(2, 2)$",
+          "alasan": "Lupa menambahkan konstanta $2$ saat mencari nilai $y$, mengira $y = x$."
+        },
+        {
+          "teks": "$(-2, 0)$ dan $(1, 3)$",
+          "alasan": "Menukar tanda akar-akar kuadrat penyelesaian persamaan."
+        }
+      ],
+      "pembahasan": "Substitusikan $y = x + 2$ ke dalam persamaan lingkaran $L$:\n$$x^2 + (x + 2)^2 - 4x - 2(x + 2) - 4 = 0$$\n$$x^2 + (x^2 + 4x + 4) - 4x - 2x - 4 - 4 = 0$$\n$$2x^2 - 2x - 4 = 0$$\n\nBagi kedua ruas dengan $2$:\n$$x^2 - x - 2 = 0$$\n$$(x - 2)(x + 1) = 0$$\nDiperoleh $x_1 = -1$ atau $x_2 = 2$.\n\nSubstitusikan nilai $x$ ke persamaan garis $y = x + 2$:\n- Untuk $x = -1$, $y = -1 + 2 = 1 \\implies (-1, 1)$.\n- Untuk $x = 2$, $y = 2 + 2 = 4 \\implies (2, 4)$.\n\nJadi, titik potong garis $g$ dan lingkaran $L$ adalah $(-1, 1)$ dan $(2, 4)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

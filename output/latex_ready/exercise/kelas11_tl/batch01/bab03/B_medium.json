@@ -1,0 +1,494 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab B (Grafik Fungsi Trigonometri) teks-saja: acuan variasi siswa yang terbaca sudah dipakai easy (Contoh 3.12 no.1, MM3.12 no.1, Latihan B no.6a, 8a, 9a, 9c, pretest) dan sisa Latihan B/Contoh/MBK butuh grafik; sisa acuan hanya Contoh 3.12 no.2, MM3.12 no.2, Latihan B 8a/8c/9b. Soal orisinal medium (transformasi, model gelombang dua langkah+) lebih banyak akan nyaris kembar satu sama lain.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 147,
+        "bagian": "Contoh 3.12",
+        "nomor": "no.2",
+        "teks": "Dengan menggunakan fungsi pada nomor 1, perkirakan ketinggian permukaan air teluk tersebut pada pukul 16.00.",
+        "jawaban": "sekitar 0,35 m di atas tinggi rata-rata"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi model pasang surut sinus",
+      "alasan_level": "substitusi ke model, reduksi sudut $\\frac{7\\pi}{3}$ dengan periode $2\\pi$, lalu nilai sinus sudut istimewa",
+      "stimulus": null,
+      "pertanyaan": "Ketinggian permukaan air sebuah teluk terhadap tinggi rata-ratanya dimodelkan oleh fungsi $y = 0{,}6 \\sin\\left(\\frac{\\pi}{9}x\\right)$ dengan $x$ dalam jam setelah pukul 00.00. Dengan menggunakan fungsi tersebut, perkirakan ketinggian permukaan air teluk tersebut pada pukul 21.00.",
+      "jawaban_benar": "sekitar $0{,}52$ m di atas tinggi rata-rata",
+      "alasan_benar": "$x=21$ sehingga $\\sin\\frac{7\\pi}{3}=\\sin\\frac{\\pi}{3}=\\frac{\\sqrt{3}}{2}$ dan $y=0{,}6\\cdot\\frac{\\sqrt{3}}{2}\\approx 0{,}52$ (positif berarti di atas rata-rata)",
+      "distraktor": [
+        {
+          "teks": "sekitar $0{,}52$ m di bawah tinggi rata-rata",
+          "alasan": "nilai sinus diberi tanda negatif (salah menentukan kuadran setelah reduksi sudut)"
+        },
+        {
+          "teks": "sekitar $0{,}30$ m di atas tinggi rata-rata",
+          "alasan": "memakai $\\sin\\frac{\\pi}{3}=\\frac{1}{2}$ (tertukar dengan nilai kosinus)"
+        },
+        {
+          "teks": "sekitar $0{,}42$ m di atas tinggi rata-rata",
+          "alasan": "memakai $\\sin\\frac{\\pi}{3}=\\frac{\\sqrt{2}}{2}$ (tertukar dengan sudut $\\frac{\\pi}{4}$)"
+        }
+      ],
+      "pembahasan": "$y=0{,}6\\sin\\frac{21\\pi}{9}=0{,}6\\sin\\frac{7\\pi}{3}=0{,}6\\sin\\frac{\\pi}{3}=0{,}6\\cdot\\frac{\\sqrt{3}}{2}\\approx 0{,}52$ m di atas rata-rata.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 148,
+        "bagian": "Mari Mencoba 3.12",
+        "nomor": "no.2",
+        "teks": "Perkirakan ketinggian permukaan air laut di Kota Ambon pada pukul 07.00.",
+        "jawaban": "sekitar 0,39 m di bawah tinggi rata-rata"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "model pasang surut kosinus lalu evaluasi",
+      "alasan_level": "empat langkah: amplitudo dari selisih, $b=\\frac{2\\pi}{T}$, substitusi waktu, dan reduksi sudut istimewa",
+      "stimulus": null,
+      "pertanyaan": "Selisih ketinggian air pasang dan air surut di sebuah teluk adalah 3,2 m. Air pasang terjadi pada pukul 00.00 dan pasang berikutnya pada pukul 09.00. Ketinggian air terhadap tinggi rata-ratanya $x$ jam setelah pukul 00.00 dimodelkan oleh $y = a\\cos bx$. Perkirakan ketinggian permukaan air teluk tersebut pada pukul 15.00.",
+      "jawaban_benar": "$0{,}8$ m di bawah tinggi rata-rata",
+      "alasan_benar": "$a=\\frac{3{,}2}{2}=1{,}6$, periode $9$ sehingga $b=\\frac{2\\pi}{9}$; $y=1{,}6\\cos\\frac{10\\pi}{3}=1{,}6\\cos\\frac{4\\pi}{3}=1{,}6\\cdot\\left(-\\frac{1}{2}\\right)=-0{,}8$",
+      "distraktor": [
+        {
+          "teks": "$0{,}8$ m di atas tinggi rata-rata",
+          "alasan": "memakai $b=\\frac{\\pi}{T}$ sehingga sudutnya $\\frac{5\\pi}{3}$ dan kosinus bernilai $+\\frac{1}{2}$"
+        },
+        {
+          "teks": "$1{,}6$ m di bawah tinggi rata-rata",
+          "alasan": "amplitudo diambil sama dengan selisih pasang-surut ($3{,}2$) dan hasil kali dengan $-\\frac{1}{2}$"
+        },
+        {
+          "teks": "$1{,}4$ m di bawah tinggi rata-rata",
+          "alasan": "memakai sinus (bukan kosinus) sehingga hasilnya $1{,}6\\sin\\frac{10\\pi}{3}\\approx -1{,}4$"
+        }
+      ],
+      "pembahasan": "$y=1{,}6\\cos\\left(\\frac{2\\pi}{9}\\cdot 15\\right)=1{,}6\\cos\\frac{10\\pi}{3}=1{,}6\\cos\\frac{4\\pi}{3}=-0{,}8$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 149,
+        "bagian": "Latihan B Penerapan Konsep",
+        "nomor": "8c",
+        "teks": "Tentukan posisi pelampung tersebut 9 detik setelah posisi awalnya.",
+        "jawaban": "sekitar 0,57 m di atas posisi tengah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi model gelombang pelampung",
+      "alasan_level": "empat langkah: amplitudo, periode dari dua kali waktu tertinggi-terendah, model sinus, lalu substitusi dan reduksi sudut",
+      "stimulus": null,
+      "pertanyaan": "Sebuah pelampung penanda naik turun mengikuti ombak. Jarak antara posisi tertinggi dan terendahnya adalah 5,4 m, dan pelampung bergerak dari posisi tertinggi ke posisi terendah setiap 6 detik. Pada saat awal pelampung tepat di posisi tengah dan bergerak naik. Tentukan posisi pelampung tersebut 14 detik setelah posisi awalnya.",
+      "jawaban_benar": "sekitar $2{,}34$ m di atas posisi tengah",
+      "alasan_benar": "$a=2{,}7$; periode $12$ detik sehingga $b=\\frac{\\pi}{6}$; $y=2{,}7\\sin\\frac{14\\pi}{6}=2{,}7\\sin\\frac{7\\pi}{3}=2{,}7\\cdot\\frac{\\sqrt{3}}{2}\\approx 2{,}34$",
+      "distraktor": [
+        {
+          "teks": "sekitar $1{,}35$ m di atas posisi tengah",
+          "alasan": "memakai $\\sin\\frac{7\\pi}{3}=\\frac{1}{2}$ (tertukar dengan kosinus)"
+        },
+        {
+          "teks": "sekitar $2{,}34$ m di bawah posisi tengah",
+          "alasan": "salah tanda setelah mereduksi sudut $\\frac{7\\pi}{3}$"
+        },
+        {
+          "teks": "sekitar $4{,}68$ m di atas posisi tengah",
+          "alasan": "amplitudo diambil sama dengan jarak tertinggi-terendah, tidak dibagi dua"
+        }
+      ],
+      "pembahasan": "$y=2{,}7\\sin\\left(\\frac{\\pi}{6}t\\right)$, sehingga $y(14)=2{,}7\\sin\\frac{7\\pi}{3}=2{,}7\\sin\\frac{\\pi}{3}\\approx 2{,}34$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 149,
+        "bagian": "Latihan B Penerapan Konsep",
+        "nomor": "9b",
+        "teks": "Tentukan ketinggian orang tersebut ketika kincir ria berputar selama 10 menit.",
+        "jawaban": "-12,5 m terhadap titik pusat (12,5 m di bawah pusat)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi model kincir ria terhadap tanah",
+      "alasan_level": "empat langkah: jari-jari, $b=\\frac{2\\pi}{T}$, tambah tinggi pusat, substitusi dan reduksi sudut",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kincir ria berdiameter 40 m membutuhkan waktu 9 menit untuk berputar satu putaran. Titik pusat kincir ria berada 22 m di atas permukaan tanah. Seseorang mula-mula berada di puncak kincir ria. Tentukan ketinggian orang tersebut dari permukaan tanah ketika kincir ria berputar selama 6 menit.",
+      "jawaban_benar": "$12$ m",
+      "alasan_benar": "$h(t)=22+20\\cos\\frac{2\\pi}{9}t$; $h(6)=22+20\\cos\\frac{4\\pi}{3}=22+20\\cdot\\left(-\\frac{1}{2}\\right)=12$",
+      "distraktor": [
+        {
+          "teks": "$32$ m",
+          "alasan": "memakai $\\cos\\frac{4\\pi}{3}=+\\frac{1}{2}$ (salah tanda di kuadran III)"
+        },
+        {
+          "teks": "$2$ m",
+          "alasan": "memakai diameter $40$ sebagai amplitudo, bukan jari-jari"
+        },
+        {
+          "teks": "$-10$ m",
+          "alasan": "lupa menambahkan tinggi pusat $22$ m (ketinggian relatif terhadap pusat)"
+        }
+      ],
+      "pembahasan": "$h(t)=22+20\\cos\\left(\\frac{2\\pi}{9}t\\right)$, sehingga $h(6)=22+20\\cos\\frac{4\\pi}{3}=22-10=12$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 149,
+        "bagian": "Latihan B Penerapan Konsep",
+        "nomor": "8a",
+        "teks": "Sebuah pelampung penanda di suatu pantai bergerak naik turun mengikuti ombak. Jarak antara posisi tertinggi dan terendah pelampung tersebut adalah 1,6 m. Pelampung tersebut bergerak dari posisi tertinggi ke posisi terendah setiap 4 detik.",
+        "jawaban": "y = 0,8 sin (pi/4 t)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "model gelombang dengan arah gerak awal",
+      "alasan_level": "tiga keputusan: amplitudo, periode, dan tanda sinus karena mulai di tengah bergerak turun",
+      "stimulus": null,
+      "pertanyaan": "Sebuah perahu kecil di dermaga bergerak naik turun terbawa gelombang. Selisih tinggi antara puncak dan lembah gelombang yang dilalui perahu adalah 2,4 m. Perahu bergerak dari puncak ke lembah setiap 5 detik. Pada saat $t=0$ detik, perahu tepat berada di posisi tengah dan bergerak turun. Fungsi yang memodelkan ketinggian perahu terhadap posisi tengah setiap $t$ detik adalah ....",
+      "jawaban_benar": "$y = -1{,}2\\sin\\left(\\frac{\\pi}{5}t\\right)$",
+      "alasan_benar": "amplitudo $\\frac{2{,}4}{2}=1{,}2$; periode $2\\times 5=10$ sehingga $b=\\frac{\\pi}{5}$; mulai di tengah dan bergerak turun sehingga sinus dengan $a$ negatif",
+      "distraktor": [
+        {
+          "teks": "$y = 1{,}2\\sin\\left(\\frac{\\pi}{5}t\\right)$",
+          "alasan": "mengabaikan arah gerak awal: fungsi ini justru bergerak naik pada $t=0$"
+        },
+        {
+          "teks": "$y = -2{,}4\\sin\\left(\\frac{\\pi}{5}t\\right)$",
+          "alasan": "amplitudo diambil sama dengan selisih puncak-lembah, tidak dibagi dua"
+        },
+        {
+          "teks": "$y = -1{,}2\\sin\\left(\\frac{2\\pi}{5}t\\right)$",
+          "alasan": "menganggap 5 detik adalah satu periode penuh"
+        }
+      ],
+      "pembahasan": "$a=-1{,}2$ (turun lebih dulu), $b=\\frac{2\\pi}{10}=\\frac{\\pi}{5}$: $y=-1{,}2\\sin\\frac{\\pi}{5}t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 142,
+        "kutipan": "Grafik kedua fungsi tersebut memiliki amplitudo"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai minimum dan periode bentuk $a\\cos(kx-\\phi)+c$",
+      "alasan_level": "menentukan $c$, $|a|$, dan $k$ dari bentuk umum lalu menggabungkannya menjadi nilai minimum dan periode",
+      "stimulus": null,
+      "pertanyaan": "Nilai minimum dan periode fungsi $y = 5 - 3\\cos(4x - \\pi)$ berturut-turut adalah ....",
+      "jawaban_benar": "$2$ dan $\\frac{\\pi}{2}$",
+      "alasan_benar": "nilai tengah $5$ dan amplitudo $3$ sehingga minimum $5-3=2$; periode $\\frac{2\\pi}{4}=\\frac{\\pi}{2}$ (konstanta $\\pi$ hanya menggeser grafik)",
+      "distraktor": [
+        {
+          "teks": "$8$ dan $\\frac{\\pi}{2}$",
+          "alasan": "memberi nilai maksimum $5+3$ padahal yang ditanyakan minimum"
+        },
+        {
+          "teks": "$-3$ dan $\\frac{\\pi}{2}$",
+          "alasan": "memakai $-a$ sebagai minimum, lupa nilai tengah $5$"
+        },
+        {
+          "teks": "$2$ dan $8\\pi$",
+          "alasan": "mengalikan $2\\pi$ dengan $k=4$, bukan membaginya"
+        }
+      ],
+      "pembahasan": "$y_{\\min}=5-3=2$; $T=\\frac{2\\pi}{4}=\\frac{\\pi}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 141,
+        "kutipan": "Jarak antara nilai tengah dan nilai maksimum atau nilai minimum fungsi tersebut"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyusun persamaan dari maksimum, minimum, periode",
+      "alasan_level": "amplitudo dan nilai tengah dari $M$ dan $m$, lalu $k=\\frac{2\\pi}{T}$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah fungsi berbentuk $y = a\\sin kx + c$ dengan $a>0$ dan $k>0$ memiliki nilai maksimum $5$, nilai minimum $-1$, dan periode $4$. Persamaan fungsi tersebut adalah ....",
+      "jawaban_benar": "$y = 3\\sin\\left(\\frac{\\pi}{2}x\\right) + 2$",
+      "alasan_benar": "$a=\\frac{M-m}{2}=3$, $c=\\frac{M+m}{2}=2$, $k=\\frac{2\\pi}{4}=\\frac{\\pi}{2}$",
+      "distraktor": [
+        {
+          "teks": "$y = 6\\sin\\left(\\frac{\\pi}{2}x\\right) + 2$",
+          "alasan": "amplitudo diambil sama dengan $M-m$, tidak dibagi dua"
+        },
+        {
+          "teks": "$y = 3\\sin\\left(\\frac{\\pi}{4}x\\right) + 2$",
+          "alasan": "memakai $k=\\frac{\\pi}{T}$, lupa faktor 2"
+        },
+        {
+          "teks": "$y = 2\\sin\\left(\\frac{\\pi}{2}x\\right) + 3$",
+          "alasan": "amplitudo dan nilai tengah tertukar"
+        }
+      ],
+      "pembahasan": "$a=\\frac{5-(-1)}{2}=3$, $c=\\frac{5+(-1)}{2}=2$, $k=\\frac{2\\pi}{4}=\\frac{\\pi}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 142,
+        "kutipan": "Grafik kedua fungsi tersebut memiliki amplitudo"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "letak nilai maksimum pertama bentuk $a\\sin k(x-b)+c$",
+      "alasan_level": "memakai pergeseran horizontal $b$ dan faktor $k$ untuk menemukan $x$ pertama yang memberi sinus bernilai 1",
+      "stimulus": null,
+      "pertanyaan": "Nilai $x$ positif terkecil yang membuat fungsi $y = 5\\sin 2\\left(x - \\frac{\\pi}{6}\\right) + 3$ mencapai nilai maksimumnya adalah ....",
+      "jawaban_benar": "$\\frac{5\\pi}{12}$",
+      "alasan_benar": "maksimum tercapai saat $2\\left(x-\\frac{\\pi}{6}\\right)=\\frac{\\pi}{2}$, sehingga $x=\\frac{\\pi}{4}+\\frac{\\pi}{6}=\\frac{5\\pi}{12}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{\\pi}{4}$",
+          "alasan": "mengabaikan pergeseran horizontal $\\frac{\\pi}{6}$"
+        },
+        {
+          "teks": "$\\frac{2\\pi}{3}$",
+          "alasan": "tidak membagi dengan $k=2$: $\\frac{\\pi}{2}+\\frac{\\pi}{6}$"
+        },
+        {
+          "teks": "$\\frac{\\pi}{12}$",
+          "alasan": "mengurangi pergeseran, bukan menambahkannya: $\\frac{\\pi}{4}-\\frac{\\pi}{6}$"
+        }
+      ],
+      "pembahasan": "$\\sin 2(x-\\frac{\\pi}{6})=1 \\Rightarrow 2x-\\frac{\\pi}{3}=\\frac{\\pi}{2}+2n\\pi \\Rightarrow x=\\frac{5\\pi}{12}+n\\pi$; yang positif terkecil $\\frac{5\\pi}{12}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 142,
+        "kutipan": "kemudian mencerminkan hasilnya terhadap sumbu"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "urutan transformasi grafik sinus",
+      "alasan_level": "mengubah $\\sin(\\frac{\\pi}{3}-x)$ menjadi $-\\sin(x-\\frac{\\pi}{3})$ lalu membaca urutan transformasi",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi $g(x) = \\sin\\left(\\frac{\\pi}{3} - x\\right)$ dapat diperoleh dari grafik $y = \\sin x$ dengan ....",
+      "jawaban_benar": "menggeser ke kanan sejauh $\\frac{\\pi}{3}$ satuan, kemudian mencerminkan hasilnya terhadap sumbu-$x$",
+      "alasan_benar": "$\\sin\\left(\\frac{\\pi}{3}-x\\right)=-\\sin\\left(x-\\frac{\\pi}{3}\\right)$: geser kanan $\\frac{\\pi}{3}$, lalu cermin terhadap sumbu-$x$",
+      "distraktor": [
+        {
+          "teks": "menggeser ke kiri sejauh $\\frac{\\pi}{3}$ satuan, kemudian mencerminkan hasilnya terhadap sumbu-$x$",
+          "alasan": "tanda pergeseran dibaca terbalik"
+        },
+        {
+          "teks": "menggeser ke kanan sejauh $\\frac{\\pi}{3}$ satuan saja, tanpa pencerminan",
+          "alasan": "mengabaikan tanda negatif pada $x$ di dalam sinus"
+        },
+        {
+          "teks": "menggeser ke kanan sejauh $\\frac{\\pi}{3}$ satuan, kemudian mencerminkan hasilnya terhadap sumbu-$y$",
+          "alasan": "mengira tanda negatif pada $x$ berarti pencerminan terhadap sumbu-$y$ setelah digeser"
+        }
+      ],
+      "pembahasan": "$\\sin(\\frac{\\pi}{3}-x)=-\\sin(x-\\frac{\\pi}{3})$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 144,
+        "kutipan": "Grafik fungsinya seolah-olah mendekati sebuah garis vertikal"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "asimtot vertikal tangen yang digeser",
+      "alasan_level": "menggeser syarat $x+\\frac{\\pi}{6}=\\frac{\\pi}{2}+n\\pi$ untuk menemukan letak asimtot",
+      "stimulus": null,
+      "pertanyaan": "Untuk sembarang bilangan bulat $n$, garis asimtot vertikal grafik fungsi $y = 2\\tan\\left(x + \\frac{\\pi}{6}\\right)$ adalah $x = \\ldots$",
+      "jawaban_benar": "$\\frac{\\pi}{3} + n\\pi$",
+      "alasan_benar": "tak terdefinisi saat $x+\\frac{\\pi}{6}=\\frac{\\pi}{2}+n\\pi$, sehingga $x=\\frac{\\pi}{3}+n\\pi$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{\\pi}{2} + n\\pi$",
+          "alasan": "mengabaikan pergeseran horizontal"
+        },
+        {
+          "teks": "$-\\frac{\\pi}{3} + n\\pi$",
+          "alasan": "menggeser asimtot ke arah yang salah: $-\\frac{\\pi}{2}+\\frac{\\pi}{6}$ dibaca sebagai $-\\frac{\\pi}{3}$"
+        },
+        {
+          "teks": "$-\\frac{\\pi}{6} + n\\pi$",
+          "alasan": "tertukar dengan letak $x$ yang membuat fungsi bernilai nol"
+        }
+      ],
+      "pembahasan": "$x+\\frac{\\pi}{6}=\\frac{\\pi}{2}+n\\pi \\Rightarrow x=\\frac{\\pi}{3}+n\\pi$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 141,
+        "kutipan": "Jarak antara nilai tengah dan nilai maksimum atau nilai minimum fungsi tersebut"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "waktu pertama mencapai ketinggian tertentu pada model",
+      "alasan_level": "menyelesaikan persamaan trigonometri pada model dan memilih akar pertama dari kurva yang menurun",
+      "stimulus": null,
+      "pertanyaan": "Ketinggian seorang penumpang kincir ria dari permukaan tanah dimodelkan oleh $h(t) = 10 + 8\\cos\\left(\\frac{\\pi}{6}t\\right)$ dengan $h$ dalam meter dan $t$ dalam menit sejak kincir mulai berputar. Pertama kali setelah kincir mulai berputar, penumpang berada pada ketinggian 14 m saat $t = \\ldots$ menit.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$10+8\\cos\\frac{\\pi}{6}t=14 \\Rightarrow \\cos\\frac{\\pi}{6}t=\\frac{1}{2} \\Rightarrow \\frac{\\pi}{6}t=\\frac{\\pi}{3} \\Rightarrow t=2$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "memakai $\\cos\\frac{\\pi}{6}=\\frac{1}{2}$ (sudut istimewa tertukar dengan $\\frac{\\pi}{3}$)"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "menganggap $\\cos\\theta=\\frac{1}{2}$ terjadi pada $\\theta=\\frac{\\pi}{2}$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "memakai $\\cos\\theta=-\\frac{1}{2}$ (salah tanda), sehingga $\\theta=\\frac{2\\pi}{3}$"
+        }
+      ],
+      "pembahasan": "$\\cos\\frac{\\pi}{6}t=\\frac{4}{8}=\\frac{1}{2}$; akar pertama $t>0$: $\\frac{\\pi}{6}t=\\frac{\\pi}{3}$, $t=2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 142,
+        "kutipan": "Grafik kedua fungsi tersebut memiliki amplitudo"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "model pasang surut dengan pergeseran horizontal dan vertikal",
+      "alasan_level": "menentukan $c$, $a$, $k$, dan $b$ sekaligus dari data waktu pasang dan tinggi rata-rata",
+      "stimulus": null,
+      "pertanyaan": "Tinggi rata-rata permukaan air di sebuah pelabuhan adalah 4 m dan selisih tinggi air pasang dengan air surut adalah 3 m. Air pasang tertinggi terjadi pada pukul 02.00, dan pasang tertinggi berikutnya pada pukul 14.00. Ketinggian air $x$ jam setelah tengah malam dimodelkan oleh $y = c + a\\cos k(x-b)$ dengan $a>0$, $k>0$, dan $b$ sebagai waktu pasang pertama. Model yang tepat adalah ....",
+      "jawaban_benar": "$y = 4 + 1{,}5\\cos\\left(\\frac{\\pi}{6}(x-2)\\right)$",
+      "alasan_benar": "$c=4$, $a=\\frac{3}{2}=1{,}5$, periode $14-2=12$ sehingga $k=\\frac{\\pi}{6}$, dan pasang pada $x=2$ sehingga $b=2$",
+      "distraktor": [
+        {
+          "teks": "$y = 4 + 3\\cos\\left(\\frac{\\pi}{6}(x-2)\\right)$",
+          "alasan": "amplitudo diambil sama dengan selisih pasang-surut, tidak dibagi dua"
+        },
+        {
+          "teks": "$y = 4 + 1{,}5\\cos\\left(\\frac{\\pi}{6}(x+2)\\right)$",
+          "alasan": "tanda pergeseran horizontal terbalik"
+        },
+        {
+          "teks": "$y = 4 + 1{,}5\\cos\\left(\\frac{\\pi}{12}(x-2)\\right)$",
+          "alasan": "memakai $k=\\frac{\\pi}{T}$, lupa faktor 2"
+        }
+      ],
+      "pembahasan": "Periode $12$ jam, $k=\\frac{2\\pi}{12}=\\frac{\\pi}{6}$; maksimum $5{,}5$ pada $x=2$ dan $x=14$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 142,
+        "kutipan": "Grafik kedua fungsi tersebut memiliki amplitudo"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "analisis bentuk $a\\sin(kx-\\phi)+c$ (pergeseran sebenarnya)",
+      "alasan_level": "harus memfaktorkan $k$ untuk menemukan pergeseran sebenarnya lalu menilai maksimum dan arah geser",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan fungsi $y = 4\\sin\\left(2x - \\frac{\\pi}{3}\\right) + 1$. Pernyataan yang benar tentang grafiknya adalah ....",
+      "jawaban_benar": "nilai maksimumnya $5$ dan grafiknya bergeser $\\frac{\\pi}{6}$ satuan ke kanan dari grafik $y = 4\\sin 2x + 1$",
+      "alasan_benar": "$4\\sin(2x-\\frac{\\pi}{3})+1=4\\sin 2(x-\\frac{\\pi}{6})+1$: maksimum $1+4=5$ dan pergeseran $\\frac{\\pi}{6}$ ke kanan",
+      "distraktor": [
+        {
+          "teks": "nilai maksimumnya $4$ dan grafiknya bergeser $\\frac{\\pi}{6}$ satuan ke kanan dari grafik $y = 4\\sin 2x + 1$",
+          "alasan": "maksimum dikira sama dengan amplitudo, lupa nilai tengah $1$"
+        },
+        {
+          "teks": "nilai maksimumnya $5$ dan grafiknya bergeser $\\frac{\\pi}{3}$ satuan ke kanan dari grafik $y = 4\\sin 2x + 1$",
+          "alasan": "tidak memfaktorkan $k=2$ sehingga pergeseran dibaca $\\frac{\\pi}{3}$"
+        },
+        {
+          "teks": "nilai maksimumnya $5$ dan grafiknya bergeser $\\frac{\\pi}{6}$ satuan ke kiri dari grafik $y = 4\\sin 2x + 1$",
+          "alasan": "arah pergeseran dibaca terbalik"
+        }
+      ],
+      "pembahasan": "Faktorkan: $2x-\\frac{\\pi}{3}=2\\left(x-\\frac{\\pi}{6}\\right)$ sehingga $b=\\frac{\\pi}{6}$ (kanan); $y_{\\max}=1+4=5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 141,
+        "kutipan": "pengali variabel x dalam fungsi sinus menyebabkan perubahan periode fungsi tersebut"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak titik maksimum pada interval tertutup",
+      "alasan_level": "periode $\\frac{2\\pi}{3}$ memberi puncak berjarak sama; harus menghitung kedua ujung interval yang juga puncak",
+      "stimulus": null,
+      "pertanyaan": "Banyak titik pada grafik $y = 2\\cos 3x + 1$ dengan $0 \\le x \\le 2\\pi$ yang bernilai maksimum adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "periode $\\frac{2\\pi}{3}$; maksimum di $x=0,\\ \\frac{2\\pi}{3},\\ \\frac{4\\pi}{3},\\ 2\\pi$ (ujung interval ikut dihitung)",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "menghitung banyak periode ($2\\pi\\div\\frac{2\\pi}{3}=3$) dan tidak menghitung titik $x=2\\pi$"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "mengalikan $k=3$ dengan 2 tanpa memeriksa letak puncak"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "mengambil koefisien $a=2$ sebagai banyak puncak"
+        }
+      ],
+      "pembahasan": "$\\cos 3x=1 \\Rightarrow x=\\frac{2n\\pi}{3}$; pada $[0,2\\pi]$ ada $n=0,1,2,3$, yaitu 4 titik.",
+      "catatan": null
+    }
+  ]
+}

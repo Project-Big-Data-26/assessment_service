@@ -1,0 +1,210 @@
+{
+  "book": "kelas5",
+  "bab_no": 8,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab Diagram Batang (teks saja, tanpa gambar) hanya memberi 6 pola penalaran hard yang layak dan tidak kembar dengan easy/medium: sumbu terpotong, salah baca skala, pemilihan skala, data hilang dari total, menilai dua pernyataan, menilai kesimpulan. Pola lain (baca tabel lalu bandingkan, selisih, total, urutan) sudah dipakai di easy/medium.",
+  "soal": [
+    {
+      "id": "kelas5-b08-c-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 279,
+        "kutipan": "Ketika akan membandingkan dua diagram batang, apa yang harus kita perhatikan?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "diagram menyesatkan (sumbu terpotong)",
+      "alasan_level": "mengevaluasi diagram yang sumbunya tidak dimulai dari 0, lalu menghitung nilai sebenarnya",
+      "stimulus": "Banyak tiket yang terjual pada bulan Maret dan April disajikan dalam diagram batang. Angka pada sumbu tegak adalah 200, 220, 240, 260, dan 280 dari bawah ke atas. Sumbu tegak dimulai dari angka 200, bukan 0. Batang Maret setinggi 1 garis di atas angka 200 dan batang April setinggi 4 garis di atas angka 200.",
+      "pertanyaan": "Kesimpulan yang tepat tentang tiket yang terjual adalah ....",
+      "jawaban_benar": "April lebih banyak 60 tiket daripada Maret, tetapi bukan 4 kali lipat",
+      "alasan_benar": "Maret 220 tiket dan April 280 tiket; 280 : 220 bukan 4, selisihnya 60 tiket",
+      "distraktor": [
+        {
+          "teks": "April tepat 4 kali lipat Maret, dengan selisih 60 tiket",
+          "alasan": "percaya tampilan batang 4 garis dibanding 1 garis padahal sumbu tidak mulai dari 0"
+        },
+        {
+          "teks": "Maret 20 tiket dan April 80 tiket",
+          "alasan": "menganggap sumbu mulai dari 0, hanya mengalikan banyak garis dengan 20"
+        },
+        {
+          "teks": "April lebih banyak 4 tiket daripada Maret",
+          "alasan": "mengurangkan banyak garis (4 - 1) lalu keliru memberi satuan tiket"
+        }
+      ],
+      "pembahasan": "Sumbu mulai dari 200. Maret = 200 + 1 x 20 = 220. April = 200 + 4 x 20 = 280. Selisih 60 tiket. 280 bukan 4 x 220, sehingga tampilan batang menyesatkan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas5-b08-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 270,
+        "kutipan": "Bagaimana cara mengetahui dengan cepat data yang paling banyak dan paling sedikit, tanpa harus membaca data satu per satu, ya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mendeteksi kesalahan membaca skala",
+      "alasan_level": "menemukan kesalahan penalaran Rani (menjumlah, bukan mengalikan) lalu menentukan nilai yang benar",
+      "stimulus": "Banyak sampah plastik yang terkumpul di beberapa dusun disajikan dalam diagram batang horizontal. Tiap garis pada sumbu mendatar mewakili 4 kg. Batang Dusun Melati berakhir tepat pada garis ke-7. Rani menjawab: \"Sampah Dusun Melati adalah 7 + 4 = 11 kg.\"",
+      "pertanyaan": "Pernyataan yang benar tentang jawaban Rani adalah ....",
+      "jawaban_benar": "salah, seharusnya 7 x 4 = 28 kg",
+      "alasan_benar": "banyak garis harus dikalikan dengan nilai tiap garis: 7 x 4 = 28 kg",
+      "distraktor": [
+        {
+          "teks": "salah, seharusnya 7 - 4 = 3 kg",
+          "alasan": "mengira garis harus dikurangi dengan nilai tiap garis"
+        },
+        {
+          "teks": "benar, karena banyak garis ditambah nilai tiap garis",
+          "alasan": "mengira menjumlahkan sama dengan membaca skala"
+        },
+        {
+          "teks": "salah, seharusnya 28 : 4 = 7 kg",
+          "alasan": "mengira nilai batang dibagi dengan nilai tiap garis lalu memberi satuan kg"
+        }
+      ],
+      "pembahasan": "Batang setinggi 7 garis, tiap garis 4 kg, sehingga nilainya 7 x 4 = 28 kg. Rani menjumlahkan sehingga keliru.",
+      "catatan": null
+    },
+    {
+      "id": "kelas5-b08-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 277,
+        "kutipan": "Tentukan pendapatan Pak Bajuri dari hasil panen lele tersebut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "memilih skala sumbu yang sesuai",
+      "alasan_level": "menguji empat pilihan skala terhadap dua syarat (tepat pada garis dan paling banyak 10 garis)",
+      "stimulus": "Penjualan beras di sebuah toko selama lima hari adalah 90 kg, 120 kg, 180 kg, 240 kg, dan 300 kg. Dina akan membuat diagram batang vertikal. Sumbu tegaknya paling banyak 10 garis, dan setiap batang harus berakhir tepat pada sebuah garis.",
+      "pertanyaan": "Nilai tiap garis pada sumbu tegak yang sesuai adalah ....",
+      "jawaban_benar": "30 kg",
+      "alasan_benar": "90, 120, 180, 240, dan 300 semuanya kelipatan 30, dan 300 : 30 = 10 garis",
+      "distraktor": [
+        {
+          "teks": "10 kg",
+          "alasan": "semua data tepat pada garis, tetapi garis yang dibutuhkan 30 (melebihi 10)"
+        },
+        {
+          "teks": "20 kg",
+          "alasan": "data 90 jatuh di antara dua garis (4,5 garis) dan 300 butuh 15 garis"
+        },
+        {
+          "teks": "50 kg",
+          "alasan": "data 120 dan 180 tidak tepat pada garis (2,4 dan 3,6 garis)"
+        }
+      ],
+      "pembahasan": "Skala 10: 300 butuh 30 garis (lebih dari 10). Skala 20: 90 = 4,5 garis dan 300 butuh 15 garis. Skala 50: 120 = 2,4 garis. Skala 30: 3, 4, 6, 8, 10 garis, semuanya tepat dan tidak lebih dari 10 garis.",
+      "catatan": null
+    },
+    {
+      "id": "kelas5-b08-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 276,
+        "kutipan": "Tabel dan diagram batang di atas dibuat dari data yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "data hilang dari total",
+      "alasan_level": "menghitung total kg empat batang, mencari sisa dari total, lalu mengubahnya kembali menjadi tinggi batang",
+      "stimulus": "Penjualan gula pasir selama lima hari (Senin sampai Jumat) disajikan dalam diagram batang vertikal. Tiap garis pada sumbu tegak mewakili 15 kg. Tinggi batang: Senin 6 garis, Selasa 4 garis, Rabu 7 garis, Kamis 5 garis. Batang hari Jumat tertutup noda dan tidak terbaca. Penjualan selama lima hari itu seluruhnya 465 kg.",
+      "pertanyaan": "Batang hari Jumat seharusnya setinggi ....",
+      "jawaban_benar": "9 garis",
+      "alasan_benar": "empat hari: 22 garis x 15 = 330 kg; Jumat 465 - 330 = 135 kg; 135 : 15 = 9 garis",
+      "distraktor": [
+        {
+          "teks": "31 garis",
+          "alasan": "membagi total 465 dengan 15 tanpa mengurangi batang empat hari"
+        },
+        {
+          "teks": "135 garis",
+          "alasan": "lupa membagi sisa 135 kg dengan 15 kg tiap garis"
+        },
+        {
+          "teks": "7 garis",
+          "alasan": "mengira batang Jumat sama dengan batang tertinggi (Rabu)"
+        }
+      ],
+      "pembahasan": "Empat hari: 6 + 4 + 7 + 5 = 22 garis = 22 x 15 = 330 kg. Sisa 465 - 330 = 135 kg. Tinggi batang 135 : 15 = 9 garis.",
+      "catatan": null
+    },
+    {
+      "id": "kelas5-b08-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "Menurut kalian, pernyataan siapa yang dapat diterima?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menilai dua pernyataan siswa",
+      "alasan_level": "memeriksa dua pernyataan: satu perbandingan dua kali lipat, satu kenaikan terbesar yang ternyata penurunan",
+      "stimulus": "Hasil panen jeruk Pak Hasan selama lima tahun disajikan dalam diagram batang. Datanya ditulis dalam tabel berikut.\n\n|Tahun|Hasil Panen (kg)|\n|---|---|\n|2019|120|\n|2020|150|\n|2021|90|\n|2022|180|\n|2023|135|\n\nAyu berkata: \"Hasil panen tahun 2022 adalah dua kali lipat hasil panen tahun 2021.\" Bimo berkata: \"Kenaikan hasil panen terbesar terjadi dari tahun 2020 ke tahun 2021.\"",
+      "pertanyaan": "Pernyataan yang dapat diterima adalah ....",
+      "jawaban_benar": "hanya pernyataan Ayu",
+      "alasan_benar": "180 = 2 x 90 sehingga Ayu benar; 2020 ke 2021 justru turun 60 kg, kenaikan terbesar 2021 ke 2022 (90 kg), sehingga Bimo salah",
+      "distraktor": [
+        {
+          "teks": "hanya pernyataan Bimo",
+          "alasan": "mengira selisih 60 dari 2020 ke 2021 adalah kenaikan"
+        },
+        {
+          "teks": "pernyataan Ayu dan Bimo",
+          "alasan": "tidak memeriksa arah perubahan dari 2020 ke 2021"
+        },
+        {
+          "teks": "pernyataan Ayu dan Bimo keduanya tidak dapat diterima",
+          "alasan": "salah menghitung perbandingan 180 dan 90"
+        }
+      ],
+      "pembahasan": "Ayu: 90 x 2 = 180, benar. Perubahan tiap tahun: +30, -60, +90, -45. Dari 2020 ke 2021 turun 60 kg, kenaikan terbesar 2021 ke 2022 (90 kg), jadi Bimo salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas5-b08-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "Menurut kalian, pernyataan siapa yang dapat diterima?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menilai kesimpulan yang didukung data",
+      "alasan_level": "menguji empat kesimpulan dengan menghitung perubahan antarbulan dan membedakan fakta dari ramalan",
+      "stimulus": "Banyak pengunjung perpustakaan desa dari Januari sampai Juni disajikan dalam diagram batang. Datanya ditulis dalam tabel berikut.\n\n|Bulan|Pengunjung|\n|---|---|\n|Januari|80|\n|Februari|95|\n|Maret|70|\n|April|110|\n|Mei|100|\n|Juni|125|",
+      "pertanyaan": "Kesimpulan yang didukung oleh data tersebut adalah ....",
+      "jawaban_benar": "dibanding bulan sebelumnya, pengunjung naik pada 3 bulan",
+      "alasan_benar": "naik pada Februari, April, dan Juni; turun pada Maret dan Mei",
+      "distraktor": [
+        {
+          "teks": "pengunjung naik setiap bulan",
+          "alasan": "hanya melihat bulan pertama dan terakhir"
+        },
+        {
+          "teks": "pengunjung bulan Juli pasti lebih dari 125 orang",
+          "alasan": "meramalkan bulan yang tidak ada di data seolah pasti"
+        },
+        {
+          "teks": "penurunan terbesar terjadi pada bulan Mei, yaitu 25 orang",
+          "alasan": "salah bulan: penurunan 25 orang terjadi pada Maret, sedangkan Mei turun 10 orang"
+        }
+      ],
+      "pembahasan": "Perubahan: +15 (Feb), -25 (Mar), +40 (Apr), -10 (Mei), +25 (Jun). Naik 3 kali. Data hanya sampai Juni sehingga Juli tidak dapat dipastikan.",
+      "catatan": null
+    }
+  ]
+}

@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "E",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0269-latihan-soal-fungsi-densitas-peluang-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang dari fungsi densitas linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pengintegralan fungsi densitas linear pada selang tertentu dan evaluasi batas integral.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=3$ dan $x=7$, didefinisikan dengan fungsi densitas peluang $f(x)=\\frac{x-1}{16}$, dan $f(x)=0$ untuk nilai $x$ lainnya. Nilai dari $P(X \\ge 5)$ adalah ....",
+      "jawaban_benar": "$\\frac{5}{8}$",
+      "alasan_benar": "$P(X \\ge 5) = \\int_5^7 \\frac{x-1}{16}\\,dx = \\left[\\frac{x^2}{32} - \\frac{x}{16}\\right]_5^7 = \\left(\\frac{49}{32} - \\frac{14}{32}\\right) - \\left(\\frac{25}{32} - \\frac{10}{32}\\right) = \\frac{35}{32} - \\frac{15}{32} = \\frac{20}{32} = \\frac{5}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Siswa menghitung peluang komplemennya yaitu $P(X < 5)$ alih-alih $P(X \\ge 5)$."
+        },
+        {
+          "teks": "$\\frac{7}{16}$",
+          "alasan": "Siswa salah melakukan integrasi dan hanya menghitung selisih batas atas dan batas bawah dikalikan fungsi pada titik tengah."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Siswa keliru memasukkan batas bawah $x=4$ alih-alih $x=5$ sehingga memperoleh $\\frac{24}{32} = \\frac{3}{4}$."
+        }
+      ],
+      "pembahasan": "Peluang variabel acak kontinu $X$ pada interval $X \\ge 5$ dalam domain $[3, 7]$ dihitung dengan integral tentu:\n$$P(X \\ge 5) = \\int_5^7 f(x)\\,dx = \\int_5^7 \\frac{x-1}{16}\\,dx$$\n\nSelesaikan integral:\n$$\\int_5^7 \\frac{x-1}{16}\\,dx = \\left[ \\frac{(x-1)^2}{32} \\right]_5^7 = \\frac{(7-1)^2}{32} - \\frac{(5-1)^2}{32} = \\frac{36}{32} - \\frac{16}{32} = \\frac{20}{32} = \\frac{5}{8}$$\n\nJadi, nilai dari $P(X \\ge 5)$ adalah $\\frac{5}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 267,
+        "bagian": "Contoh Soal 4.10",
+        "nomor": "b",
+        "teks": "Sebuah ruangan rapat suatu hotel disewakan dengan durasi tidak lebih dari 4 jam. Misalkan _Y_ adalah variabel acak yang menyatakan waktu rapat.",
+        "jawaban": "1/4",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang durasi waktu seragam",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan konsep fungsi densitas peluang seragam pada konteks durasi waktu dan menghitung peluang interval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang pengunjung kafe memanfaatkan fasilitas akses internet yang dibatasi paling lama 5 jam per sesi. Misalkan $W$ menyatakan variabel acak kontinu untuk durasi pemakaian internet (dalam jam) dengan fungsi densitas peluang $f(w) = \\frac{1}{5}$ untuk $0 \\le w \\le 5$, dan $f(w) = 0$ untuk nilai $w$ lainnya. Peluang pengunjung tersebut memakai internet selama antara 1 jam hingga 3,5 jam adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "$P(1 \\le W \\le 3{,}5) = \\int_{1}^{3{,}5} \\frac{1}{5}\\,dw = \\frac{1}{5}(3{,}5 - 1) = \\frac{2{,}5}{5} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{10}$",
+          "alasan": "Siswa menghitung peluang kumulatif hingga batas atas $P(W \\le 3{,}5) = \\frac{3{,}5}{5} = \\frac{7}{10}$ tanpa mengurangkan batas bawah."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Siswa hanya menghitung peluang hingga batas bawah $P(W \\le 1) = \\frac{1}{5}$."
+        },
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Siswa menghitung komplemen batas atas $1 - \\frac{7}{10} = \\frac{3}{10}$."
+        }
+      ],
+      "pembahasan": "Peluang bahwa durasi pemakaian $W$ berada di antara 1 jam dan 3,5 jam dinyatakan oleh:\n$$P(1 \\le W \\le 3{,}5) = \\int_{1}^{3{,}5} f(w)\\,dw$$\n\nSubstitusi fungsi densitas peluang:\n$$P(1 \\le W \\le 3{,}5) = \\int_{1}^{3{,}5} \\frac{1}{5}\\,dw = \\left[ \\frac{w}{5} \\right]_{1}^{3{,}5} = \\frac{3{,}5 - 1}{5} = \\frac{2{,}5}{5} = \\frac{1}{2}$$\n\nJadi, peluang pemakaian internet antara 1 jam hingga 3,5 jam adalah $\\frac{1}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan _X_ adalah variabel acak kontinu. Suatu fungsi _f_ disebut _fungsi densitas peluang_ jika untuk setiap hasil _x_ yang mungkin, memenuhi"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan konstanta fungsi densitas",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan nilai konstanta dari syarat total luas fungsi densitas sama dengan 1 sebelum menghitung peluang selang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang yang dinyatakan oleh:\n$$f(x) = \\begin{cases} kx^2, & 0 \\le x \\le 3 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(1 \\le X \\le 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{27}$",
+      "alasan_benar": "Pertama cari nilai $k$: $\\int_0^3 kx^2\\,dx = 1 \\implies k\\left[\\frac{x^3}{3}\\right]_0^3 = 9k = 1 \\implies k = \\frac{1}{9}$. Kemudian hitung $P(1 \\le X \\le 2) = \\int_1^2 \\frac{1}{9}x^2\\,dx = \\frac{1}{9}\\left[\\frac{x^3}{3}\\right]_1^2 = \\frac{8 - 1}{27} = \\frac{7}{27}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{27}$",
+          "alasan": "Siswa hanya mengevaluasi integral pada batas atas $x=2$ tanpa mengurangkan hasil evaluasi batas bawah $x=1$."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Siswa mengira nilai konstanta $k = \\frac{1}{9}$ adalah jawaban akhir peluang yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Siswa lupa mengalikan faktor $\\frac{1}{3}$ hasil integrasi $x^2$ pada langkah kedua sehingga menghitung $\\frac{1}{9}(2^3 - 1^3)$ alih-alih $\\frac{1}{27}(8 - 1)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $k$ menggunakan syarat total peluang bernilai 1:\n$$\\int_{-\\infty}^{\\infty} f(x)\\,dx = 1$$\n$$\\int_0^3 kx^2\\,dx = 1 \\implies k \\left[ \\frac{x^3}{3} \\right]_0^3 = 1 \\implies k \\left(\\frac{27}{3}\\right) = 1 \\implies 9k = 1 \\implies k = \\frac{1}{9}$$\n\nLangkah 2: Menghitung $P(1 \\le X \\le 2)$:\n$$P(1 \\le X \\le 2) = \\int_1^2 \\frac{1}{9}x^2\\,dx = \\left[ \\frac{x^3}{27} \\right]_1^2 = \\frac{2^3 - 1^3}{27} = \\frac{8 - 1}{27} = \\frac{7}{27}$$\n\nJadi, nilai $P(1 \\le X \\le 2)$ adalah $\\frac{7}{27}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Peluang dalam variabel acak kontinu tidak dihitung berdasarkan nilai tunggal, tetapi berdasarkan interval nilai. Peluang suatu kejadian dihitung sebagai _luas di bawah kurva fungsi densitas_ pada interval tertentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang komplemen dari fungsi densitas kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan integrasi fungsi kuadrat pada interval terbuka ke atas yang dibatasi oleh domain fungsi densitas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{3}{8}x^2, & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X > 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{8}$",
+      "alasan_benar": "$P(X > 1) = \\int_1^2 \\frac{3}{8}x^2\\,dx = \\left[\\frac{x^3}{8}\\right]_1^2 = \\frac{2^3 - 1^3}{8} = \\frac{8 - 1}{8} = \\frac{7}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Siswa menghitung komplemennya yaitu $P(X \\le 1) = \\int_0^1 \\frac{3}{8}x^2\\,dx = \\frac{1}{8}$."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Siswa salah saat mengintegrasikan $x^2$ menjadi $x$ sehingga menghitung $\\frac{3}{8}(2^2 - 1^2) = \\frac{9}{8}$ lalu dikurangi atau salah operasi menjadi $\\frac{3}{4}$."
+        },
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Siswa salah mengevaluasi nilai $2^3$ menjadi $6$ sehingga menghitung $\\frac{6 - 1}{8} = \\frac{5}{8}$."
+        }
+      ],
+      "pembahasan": "Karena fungsi hanya bernilai tak nol pada interval $[0, 2]$, batas atas untuk $X > 1$ adalah $x = 2$:\n$$P(X > 1) = \\int_1^2 f(x)\\,dx = \\int_1^2 \\frac{3}{8}x^2\\,dx$$\n\nIntegralkan fungsi tersebut:\n$$\\int_1^2 \\frac{3}{8}x^2\\,dx = \\left[ \\frac{3}{8} \\cdot \\frac{x^3}{3} \\right]_1^2 = \\left[ \\frac{x^3}{8} \\right]_1^2 = \\frac{2^3}{8} - \\frac{1^3}{8} = \\frac{8}{8} - \\frac{1}{8} = \\frac{7}{8}$$\n\nJadi, nilai dari $P(X > 1)$ adalah $\\frac{7}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas tersebut merepresentasikan area di bawah kurva fungsi peluang _f_ ^ _x_ h , yang berada di atas sumbu- _x_ dan dibatasi oleh garis vertikal _x_ = _a_ dan _x_ = _b_ ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "menghitung peluang fungsi densitas sepotong",
+      "jumlah_langkah": 4,
+      "alasan_level": "Menganalisis dan memecah selang integral menjadi dua bagian sesuai definisi fungsi densitas sepotong (piecewise) lalu menjumlahkannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang sepotong yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{1}{4}x, & 0 \\le x \\le 2 \\\\ \\frac{1}{2}, & 2 < x \\le 3 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari peluang $P(1 \\le X \\le 2{,}5)$ adalah ....",
+      "jawaban_benar": "$\\frac{5}{8}$",
+      "alasan_benar": "$P(1 \\le X \\le 2{,}5) = \\int_1^2 \\frac{1}{4}x\\,dx + \\int_2^{2{,}5} \\frac{1}{2}\\,dx = \\left[\\frac{x^2}{8}\\right]_1^2 + \\left[\\frac{x}{2}\\right]_2^{2{,}5} = \\left(\\frac{4-1}{8}\\right) + \\frac{1}{2}(0{,}5) = \\frac{3}{8} + \\frac{1}{4} = \\frac{5}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Siswa hanya mengintegrasikan bagian pertama pada interval $[1, 2]$ dan mengabaikan bagian kedua."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Siswa hanya menghitung bagian kedua pada interval $[2, 2{,}5]$ dan mengabaikan bagian pertama."
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Siswa keliru menggunakan fungsi $\\frac{1}{2}$ untuk seluruh rentang dari $1$ hingga $2{,}5$ atau salah menjumlahkan pecahan."
+        }
+      ],
+      "pembahasan": "Interval $[1, 2{,}5]$ melintasi titik batas $x = 2$, sehingga integral harus dipecah menjadi dua bagian:\n$$P(1 \\le X \\le 2{,}5) = \\int_1^2 f(x)\\,dx + \\int_2^{2{,}5} f(x)\\,dx$$\n\nHitung masing-masing integral:\n1. Bagian pertama ($1 \\le x \\le 2$):\n$$\\int_1^2 \\frac{1}{4}x\\,dx = \\left[ \\frac{x^2}{8} \\right]_1^2 = \\frac{2^2 - 1^2}{8} = \\frac{3}{8}$$\n\n2. Bagian kedua ($2 < x \\le 2{,}5$):\n$$\\int_2^{2{,}5} \\frac{1}{2}\\,dx = \\left[ \\frac{1}{2}x \\right]_2^{2{,}5} = \\frac{1}{2}(2{,}5 - 2) = \\frac{1}{2}(0{,}5) = 0{,}25 = \\frac{2}{8}$$\n\nJumlahkan kedua hasil:\n$$P(1 \\le X \\le 2{,}5) = \\frac{3}{8} + \\frac{2}{8} = \\frac{5}{8}$$\n\nJadi, nilai dari $P(1 \\le X \\le 2{,}5)$ adalah $\\frac{5}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0269-latihan-soal-fungsi-densitas-peluang-1a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang interval waktu operasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengubah batas waktu operasional dan menghitung integral peluang pada subinterval waktu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam masa pembatasan kunjungan, suatu pameran buku hanya dibuka selama 150 menit, yaitu mulai pukul 09.00 hingga pukul 11.30. Pengunjung tidak diperbolehkan berada di area pameran sebelum pukul 09.00 dan wajib meninggalkan area paling lambat pukul 11.30. Misalkan $X$ adalah variabel acak yang menyatakan lama pengunjung berada di dalam area pameran (dalam menit) dengan fungsi densitas peluang:\n$$f(x) = \\begin{cases} \\frac{1}{150}, & 0 \\le x \\le 150 \\\\ 0, & x < 0 \\text{ atau } x > 150 \\end{cases}$$\nBerapakah peluang seorang pengunjung berada di area pameran pada rentang waktu antara 45 dan 105 menit?",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "$P(45 \\le X \\le 105) = \\int_{45}^{105} \\frac{1}{150}\\,dx = \\frac{105 - 45}{150} = \\frac{60}{150} = \\frac{2}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{10}$",
+          "alasan": "Salah menghitung selisih $105 - 45$ menjadi $45$, lalu $45/150 = 3/10$."
+        },
+        {
+          "teks": "$\\frac{7}{15}$",
+          "alasan": "Hanya menghitung peluang terhadap batas atas $105/150 = 7/10$ lalu dikurangi $1/3$."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Membagi langsung titik tengah interval $(105 + 45)/2 = 75$, sehingga $75/150 = 1/2$."
+        }
+      ],
+      "pembahasan": "Peluang pengunjung berada di area pameran antara 45 dan 105 menit dihitung dengan integral:\n$$P(45 \\le X \\le 105) = \\int_{45}^{105} f(x)\\,dx = \\int_{45}^{105} \\frac{1}{150}\\,dx$$\n$$P(45 \\le X \\le 105) = \\left[ \\frac{x}{150} \\right]_{45}^{105} = \\frac{105 - 45}{150} = \\frac{60}{150} = \\frac{2}{5}$$\nJadi, peluangnya adalah $\\frac{2}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hubungan antara fungsi distribusi kumulatif dan fungsi densitas dinyatakan dalam relasi berikut:"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan nilai fungsi distribusi kumulatif",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan formulasi fungsi kumulatif melalui integral dari fungsi densitas kuadratik, lalu substitusi nilai batas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{3}{64}x^2, & 0 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nJika $F(x)$ merupakan fungsi distribusi kumulatif dari $X$, berapakah nilai dari $F(2)$?",
+      "jawaban_benar": "$\\frac{1}{8}$",
+      "alasan_benar": "$F(2) = \\int_{0}^{2} \\frac{3}{64}t^2\\,dt = \\left[ \\frac{t^3}{64} \\right]_0^2 = \\frac{8}{64} = \\frac{1}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{16}$",
+          "alasan": "Langsung mensubstitusikan $x=2$ ke dalam fungsi densitas $f(2) = \\frac{3}{64}(4) = \\frac{3}{16}$."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Lupa mengalikan koefisien $1/3$ saat mengintegralkan $x^2$, memperoleh $\\frac{3}{64}(2^2) = \\frac{12}{64}$ lalu membulatkan keliru."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Membagi hasil pangkat secara keliru menjadi $2^2 / 64 = 4/64 = 1/16$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi distribusi kumulatif untuk variabel acak kontinu:\n$$F(x) = P(X \\le x) = \\int_{-\\infty}^{x} f(t)\\,dt$$\nUntuk $0 \\le x \\le 4$:\n$$F(x) = \\int_{0}^{x} \\frac{3}{64}t^2\\,dt = \\left[ \\frac{3}{64} \\cdot \\frac{t^3}{3} \\right]_0^x = \\frac{x^3}{64}$$\nMaka nilai untuk $F(2)$ adalah:\n$$F(2) = \\frac{2^3}{64} = \\frac{8}{64} = \\frac{1}{8}$$\nJadi, nilai $F(2)$ adalah $\\frac{1}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas tersebut merepresentasikan area di bawah kurva fungsi peluang f ( x ) , yang berada di atas sumbu- x dan dibatasi oleh garis vertikal x = a dan x = b ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "menentukan nilai konstanta dan peluang integral",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis syarat total luas di bawah kurva untuk mencari nilai konstanta terlebih dahulu, lalu menghitung nilai peluang pada interval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak kontinu $X$ memiliki fungsi densitas peluang:\n$$f(x) = \\begin{cases} c(4-x), & 0 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(1 \\le X \\le 3)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Total luas $\\int_0^4 c(4-x)\\,dx = c[4x - x^2/2]_0^4 = 8c = 1 \\implies c = 1/8$. Maka $P(1 \\le X \\le 3) = \\int_1^3 \\frac{1}{8}(4-x)\\,dx = \\frac{1}{8}[4x - x^2/2]_1^3 = \\frac{1}{8}(7,5 - 3,5) = \\frac{4}{8} = \\frac{1}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Salah menghitung nilai $c = 1/16$, sehingga nilai peluang menjadi setengah dari yang seharusnya."
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Keliru pada batas pengintegralan, menghitung dari $x=2$ sampai $x=4$."
+        },
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Salah dalam substitusi batas bawah $x=1$ saat menghitung $[4(1) - 1/2] = 3,5$ dihitung sebagai $2,5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai konstanta $c$.\nKarena total luas di bawah kurva densitas peluang harus sama dengan 1:\n$$\\int_{-\\infty}^{\\infty} f(x)\\,dx = 1$$\n$$\\int_{0}^{4} c(4-x)\\,dx = 1$$\n$$c \\left[ 4x - \\frac{x^2}{2} \\right]_0^4 = 1$$\n$$c \\left( 16 - 8 \\right) = 1 \\implies 8c = 1 \\implies c = \\frac{1}{8}$$\n\nLangkah 2: Menghitung $P(1 \\le X \\le 3)$.\n$$P(1 \\le X \\le 3) = \\int_{1}^{3} \\frac{1}{8}(4-x)\\,dx$$\n$$P(1 \\le X \\le 3) = \\frac{1}{8} \\left[ 4x - \\frac{x^2}{2} \\right]_1^3$$\n$$P(1 \\le X \\le 3) = \\frac{1}{8} \\left( \\left( 12 - \\frac{9}{2} \\right) - \\left( 4 - \\frac{1}{2} \\right) \\right)$$\n$$P(1 \\le X \\le 3) = \\frac{1}{8} \\left( \\frac{15}{2} - \\frac{7}{2} \\right) = \\frac{1}{8} (4) = \\frac{1}{2}$$\nJadi, nilai dari $P(1 \\le X \\le 3)$ adalah $\\frac{1}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0269-latihan-soal-fungsi-densitas-peluang-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang dari fungsi densitas linear",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengintegralan fungsi linear satu tahap dan substitusi batas selang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu variabel acak kontinu $X$, untuk nilai-nilai di antara $x=6$ dan $x=10$, dinyatakan dengan fungsi densitas peluang $f(x)=\\frac{x-6}{8}$, dan bernilai $0$ untuk nilai $x$ lainnya. Tentukan nilai dari $P(X<8)$.",
+      "jawaban_benar": "0,25",
+      "alasan_benar": "P(X < 8) dihitung dengan mengintegralkan fungsi f(x) dari 6 hingga 8, menghasilkan [ (x - 6)^2 / 16 ] dari 6 ke 8 = 4/16 = 0,25.",
+      "distraktor": [
+        {
+          "teks": "0,50",
+          "alasan": "Siswa salah mengira titik x = 8 adalah median sehingga langsung membagi peluang menjadi setengah."
+        },
+        {
+          "teks": "0,125",
+          "alasan": "Siswa lupa mengalikan penyebut 8 dengan pangkat integrasi 2, sehingga membagi dengan 8 bukan 16."
+        },
+        {
+          "teks": "0,75",
+          "alasan": "Siswa menghitung P(X > 8) bukan P(X < 8)."
+        }
+      ],
+      "pembahasan": "Peluang variabel acak kontinu $X < 8$ ditentukan melalui integral tentu fungsi densitas peluangnya:\n$$P(X < 8) = \\int_{6}^{8} \\frac{x-6}{8}\\,dx$$\nMisalkan $u = x - 6$, maka $du = dx$. Untuk $x = 6$, $u = 0$, dan untuk $x = 8$, $u = 2$:\n$$P(X < 8) = \\int_{0}^{2} \\frac{u}{8}\\,du = \\left[ \\frac{u^2}{16} \\right]_{0}^{2} = \\frac{2^2}{16} - 0 = \\frac{4}{16} = \\frac{1}{4} = 0,25$$\nJadi, nilai dari $P(X < 8)$ adalah $0,25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 267,
+        "bagian": "Contoh Soal 4.10",
+        "nomor": "b",
+        "teks": "Berapa peluang suatu rapat berlangsung selama 3 jam atau lebih?",
+        "jawaban": "1/4",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang durasi waktu seragam",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemodelan batas integral dari deskripsi batas waktu dan integrasi fungsi densitas konstan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Uji ketahanan baterai suatu gawai dilakukan paling lama 10 jam. Durasi pengujian dinyatakan oleh variabel acak kontinu $T$ (dalam jam) dengan fungsi densitas peluang seragam $f(t) = \\frac{1}{10}$ untuk $0 \\le t \\le 10$, dan $f(t) = 0$ untuk nilai lainnya. Berapa peluang uji ketahanan berlangsung selama 7 jam atau lebih?",
+      "jawaban_benar": "$\\frac{3}{10}$",
+      "alasan_benar": "P(T >= 7) adalah integral f(t) dari 7 hingga 10, yaitu (10 - 7)/10 = 3/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{10}$",
+          "alasan": "Siswa menghitung P(T <= 7) alih-alih durasi 7 jam atau lebih."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Siswa salah menghitung selang waktu integral menjadi 10 - 8 = 2 jam sehingga menghasilkan 2/10 = 1/5."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Siswa menjumlahkan batas 7 dan 10 lalu keliru menentukan selang."
+        }
+      ],
+      "pembahasan": "Peluang pengujian berlangsung selama 7 jam atau lebih dinyatakan oleh $P(T \\ge 7)$:\n$$P(T \\ge 7) = \\int_{7}^{10} f(t)\\,dt = \\int_{7}^{10} \\frac{1}{10}\\,dt = \\left[ \\frac{t}{10} \\right]_{7}^{10} = \\frac{10 - 7}{10} = \\frac{3}{10}$$\nJadi, peluang uji ketahanan berlangsung selama 7 jam atau lebih adalah $\\frac{3}{10}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0269-latihan-soal-fungsi-densitas-peluang-1b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang interval waktu operasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan integral fungsi densitas konstan pada selang waktu operasional tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam masa pemeliharaan sistem, suatu server lokal hanya beroperasi selama 200 menit, yaitu mulai pukul 07.00 hingga pukul 10.20. Pengguna hanya dapat mengakses server pada rentang waktu operasional tersebut. Misalkan $X$ adalah variabel acak yang menyatakan waktu akses pengguna terhubung (dalam menit sejak server dibuka). Fungsi densitas peluang $X$ dinyatakan dengan:\n$$f(x)=\\begin{cases}\\frac{1}{200}, & 0 \\le x \\le 200\\\\ 0, & x<0 \\text{ atau } x>200\\end{cases}$$\nBerapakah peluang seorang pengguna terhubung ke server pada rentang waktu antara 40 dan 160 menit?",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "P(40 <= X <= 160) = (160 - 40) / 200 = 120 / 200 = 3/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Siswa menghitung peluang di luar rentang waktu tersebut (komplemennya) yaitu (40 + 40)/200 = 80/200 = 2/5."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Siswa hanya menggunakan batas bawah 40/200 = 1/5."
+        },
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Siswa hanya menggunakan batas atas 160/200 = 4/5."
+        }
+      ],
+      "pembahasan": "Peluang pengguna terhubung pada rentang waktu 40 hingga 160 menit dihitung menggunakan integral fungsi densitas peluang:\n$$P(40 \\le X \\le 160) = \\int_{40}^{160} f(x)\\,dx = \\int_{40}^{160} \\frac{1}{200}\\,dx = \\left[ \\frac{x}{200} \\right]_{40}^{160} = \\frac{160 - 40}{200} = \\frac{120}{200} = \\frac{3}{5}$$\nJadi, peluangnya adalah $\\frac{3}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Secara matematis, peluang bahwa variabel acak kontinu X berada dari a hingga b , yaitu P ^ a # X # b h , dapat dinyatakan dengan"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang dari kurva parabola",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan integrasi suku aljabar kuadrat kemudian mengevaluasi selang simetris.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{3}{32}(4x - x^2), & 0 \\le x \\le 4 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nTentukan nilai peluang $P(1 \\le X \\le 3)$.",
+      "jawaban_benar": "$\\frac{11}{16}$",
+      "alasan_benar": "Integral f(x) dari 1 hingga 3 menghasilkan (3/32) * [2x^2 - x^3/3] dari 1 ke 3 = (3/32) * (22/3) = 11/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{16}$",
+          "alasan": "Siswa menghitung nilai peluang komplemennya yaitu 1 - 11/16 = 5/16."
+        },
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Siswa salah mengintegrasikan 4x menjadi 4x^2 bukan 2x^2."
+        },
+        {
+          "teks": "$\\frac{7}{16}$",
+          "alasan": "Siswa salah mengevaluasi batas bawah x = 1."
+        }
+      ],
+      "pembahasan": "Peluang $P(1 \\le X \\le 3)$ dihitung dengan integral tentu:\n$$P(1 \\le X \\le 3) = \\int_{1}^{3} \\frac{3}{32}(4x - x^2)\\,dx$$\nHitung antiturunan dari fungsinya:\n$$\\int (4x - x^2)\\,dx = 2x^2 - \\frac{x^3}{3}$$\nEvaluasi batas dari 1 hingga 3:\nUntuk $x = 3$: $2(3)^2 - \\frac{3^3}{3} = 18 - 9 = 9$\nUntuk $x = 1$: $2(1)^2 - \\frac{1^3}{3} = 2 - \\frac{1}{3} = \\frac{5}{3}$\nSelisih nilai evaluasi:\n$$9 - \\frac{5}{3} = \\frac{22}{3}$$\nKalikan dengan konstanta $\\frac{3}{32}$:\n$$P(1 \\le X \\le 3) = \\frac{3}{32} \\times \\frac{22}{3} = \\frac{22}{32} = \\frac{11}{16}$$\nJadi, nilai peluangnya adalah $\\frac{11}{16}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hubungan antara fungsi distribusi kumulatif dan fungsi densitas dinyatakan dalam relasi berikut:"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang dari fungsi kumulatif",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan konsep hubungan fungsi kumulatif dengan peluang ekor kanan menggunakan komplemen.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi distribusi kumulatif dari suatu variabel acak kontinu $X$ didefinisikan sebagai:\n$$F(x) = \\begin{cases} 0, & x < 0 \\\\ \\frac{x^2 + 2x}{8}, & 0 \\le x \\le 2 \\\\ 1, & x > 2 \\end{cases}$$\nTentukan nilai dari $P(X \\ge 1)$.",
+      "jawaban_benar": "$\\frac{5}{8}$",
+      "alasan_benar": "P(X >= 1) = 1 - F(1) = 1 - (1^2 + 2(1))/8 = 1 - 3/8 = 5/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Siswa menghitung nilai F(1) yaitu P(X <= 1) tanpa mengurangkannya dari 1."
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Siswa hanya menghitung x^2/8 untuk x=1 atau keliru dalam operasi pecahan."
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Siswa lupa memperhitungkan suku 2x pada pembilang F(x)."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi distribusi kumulatif, peluang variabel acak kontinu bernilai $X \\ge 1$ adalah komplemen dari $F(1)$:\n$$P(X \\ge 1) = 1 - P(X < 1) = 1 - F(1)$$\nSubstitusikan $x = 1$ ke dalam rumus $F(x)$:\n$$F(1) = \\frac{1^2 + 2(1)}{8} = \\frac{1 + 2}{8} = \\frac{3}{8}$$\nMaka diperoleh:\n$$P(X \\ge 1) = 1 - \\frac{3}{8} = \\frac{5}{8}$$\nJadi, nilai dari $P(X \\ge 1)$ adalah $\\frac{5}{8}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0269-latihan-soal-fungsi-densitas-peluang-1a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang interval waktu operasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemodelan integral fungsi densitas seragam pada selang waktu yang ditentukan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam masa pembatasan jam operasional, suatu apotek hanya beroperasi selama 250 menit, yaitu mulai pukul 08.00 hingga pukul 12.10. Pembeli tidak diperbolehkan berada di dalam apotek tersebut sebelum pukul 08.00 dan harus meninggalkan apotek paling lambat pukul 12.10. Misalkan $X$ adalah variabel acak yang menyatakan lama pembeli berada di dalam apotek (dalam menit). Fungsi densitas peluang $X$ dinyatakan dengan:\n$$f(x)=\\begin{cases}\\frac{1}{250}, & 0 \\le x \\le 250\\\\ 0, & x<0 \\text{ atau } x>250\\end{cases}$$\nBerapakah peluang seorang pembeli berada di apotek pada rentang waktu antara 45 dan 120 menit?",
+      "jawaban_benar": "$\\frac{3}{10}$",
+      "alasan_benar": "$P(45 \\le X \\le 120) = \\int_{45}^{120} \\frac{1}{250}\\,dx = \\frac{120 - 45}{250} = \\frac{75}{250} = \\frac{3}{10}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Mengurangkan nilai salah $120 - 70 = 50$, menghasilkan $\\frac{50}{250} = \\frac{1}{5}$."
+        },
+        {
+          "teks": "$\\frac{9}{25}$",
+          "alasan": "Hanya menghitung batas atas $x = 90$ atau salah hitung selisih batas menjadi $90$."
+        },
+        {
+          "teks": "$\\frac{7}{20}$",
+          "alasan": "Salah membaca selang batas bawah menjadi $32,5$ atau salah menyederhanakan pecahan."
+        }
+      ],
+      "pembahasan": "Peluang variabel acak kontinu $X$ pada selang $45 \\le x \\le 120$ dihitung dengan mengintegralkan fungsi densitas peluangnya:\n$$P(45 \\le X \\le 120) = \\int_{45}^{120} f(x)\\,dx = \\int_{45}^{120} \\frac{1}{250}\\,dx$$\n$$P(45 \\le X \\le 120) = \\left[ \\frac{x}{250} \\right]_{45}^{120} = \\frac{120 - 45}{250} = \\frac{75}{250} = \\frac{3}{10}$$\nJadi, peluangnya adalah $\\frac{3}{10}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0269-latihan-soal-fungsi-densitas-peluang-1b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang interval waktu operasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan integral fungsi konstan terhadap batas selang waktu baru.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam masa perbaikan fasilitas, suatu perpustakaan daerah hanya beroperasi selama 240 menit, yaitu mulai pukul 09.00 hingga pukul 13.00. Pengunjung tidak diperbolehkan berada di dalam perpustakaan sebelum pukul 09.00 dan harus meninggalkan gedung paling lambat pukul 13.00. Misalkan $X$ adalah variabel acak yang menyatakan lama pengunjung berada di dalam perpustakaan (dalam menit). Fungsi densitas peluang $X$ dinyatakan dengan:\n$$f(x)=\\begin{cases}\\frac{1}{240}, & 0 \\le x \\le 240\\\\ 0, & x<0 \\text{ atau } x>240\\end{cases}$$\nBerapakah peluang seorang pengunjung berada di perpustakaan pada rentang waktu antara 30 dan 110 menit?",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "$P(30 \\le X \\le 110) = \\int_{30}^{110} \\frac{1}{240}\\,dx = \\frac{110 - 30}{240} = \\frac{80}{240} = \\frac{1}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Memakai jawaban acuan asli atau salah menghitung selisih menjadi $60$ menit."
+        },
+        {
+          "teks": "$\\frac{7}{24}$",
+          "alasan": "Salah mengurangkan batas $110 - 40 = 70$, menghasilkan $\\frac{70}{240} = \\frac{7}{24}$."
+        },
+        {
+          "teks": "$\\frac{5}{12}$",
+          "alasan": "Salah menghitung selisih batas menjadi $100$, menghasilkan $\\frac{100}{240} = \\frac{5}{12}$."
+        }
+      ],
+      "pembahasan": "Peluang bahwa pengunjung berada di perpustakaan antara 30 dan 110 menit diperoleh melalui integral:\n$$P(30 \\le X \\le 110) = \\int_{30}^{110} \\frac{1}{240}\\,dx = \\left[ \\frac{x}{240} \\right]_{30}^{110} = \\frac{110 - 30}{240} = \\frac{80}{240} = \\frac{1}{3}$$\nJadi, peluangnya adalah $\\frac{1}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 268,
+        "bagian": "Ayo Mencoba 4.5",
+        "nomor": "a",
+        "teks": "Seorang siswa mengikuti latihan pemrograman selama 2 jam setiap sore, dari pukul 16.00—18.00. Ia mencatat waktu efektif yang benar-benar digunakan untuk menulis kode setiap hari, dalam satuan menit. Berdasarkan pengamatan, waktu efektif tersebut tersebar dari 20 menit hingga 100 menit. Misalkan _X_ adalah variabel acak yang menyatakan lama waktu efektif menulis kode (dalam menit). Fungsi densitas peluang untuk _X_ adalah Tentukan peluang bahwa siswa tersebut menulis kode dalam rentang waktu a. dari 30 menit hingga 90 menit,",
+        "jawaban": "$\\frac{3}{4}$",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang durasi seragam",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan fungsi densitas seragam dari interval waktu lalu mengintegrasikannya pada subinterval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang atlet panahan berlatih memanah selama 2 jam setiap pagi, dari pukul 07.00—09.00. Ia mencatat durasi fokus membidik sebelum melepaskan anak panah setiap sesi dalam satuan detik. Berdasarkan catatan, durasi fokus tersebut tersebar merata dari 10 detik hingga 50 detik. Misalkan $X$ adalah variabel acak kontinu yang menyatakan durasi fokus membidik (dalam detik). Peluang atlet tersebut fokus membidik dalam rentang waktu dari 18 detik hingga 42 detik adalah ....",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "Karena $X$ tersebar seragam pada $[10, 50]$, fungsi densitasnya adalah $f(x) = \\frac{1}{50 - 10} = \\frac{1}{40}$ untuk $10 \\le x \\le 50$. Peluangnya adalah $P(18 \\le X \\le 42) = \\int_{18}^{42} \\frac{1}{40}\\,dx = \\frac{42 - 18}{40} = \\frac{24}{40} = \\frac{3}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{25}$",
+          "alasan": "Menggunakan batas atas 50 detik sebagai penyebut langsung tanpa dikurangi batas bawah: $\\frac{42 - 18}{50} = \\frac{24}{50} = \\frac{12}{25}$."
+        },
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menghitung selisih dari batas bawah interval asal: $\\frac{42 - 10}{40} = \\frac{32}{40} = \\frac{4}{5}$."
+        },
+        {
+          "teks": "$\\frac{9}{20}$",
+          "alasan": "Hanya menghitung rasio batas bawah target terhadap panjang selang: $\\frac{18}{40} = \\frac{9}{20}$."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu $X$ tersebar merata dari $a = 10$ hingga $b = 50$, sehingga fungsi densitas peluangnya:\n$$f(x) = \\begin{cases} \\frac{1}{50 - 10} = \\frac{1}{40}, & 10 \\le x \\le 50 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\n\nPeluang fokus membidik antara 18 hingga 42 detik adalah:\n$$P(18 \\le X \\le 42) = \\int_{18}^{42} \\frac{1}{40}\\,dx = \\left[ \\frac{x}{40} \\right]_{18}^{42} = \\frac{42 - 18}{40} = \\frac{24}{40} = \\frac{3}{5}$$\n\nJadi, peluangnya adalah $\\frac{3}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 268,
+        "bagian": "Ayo Mencoba 4.5",
+        "nomor": "b",
+        "teks": "Seorang siswa mengikuti latihan pemrograman selama 2 jam setiap sore, dari pukul 16.00—18.00. Ia mencatat waktu efektif yang benar-benar digunakan untuk menulis kode setiap hari, dalam satuan menit. Berdasarkan pengamatan, waktu efektif tersebut tersebar dari 20 menit hingga 100 menit. Misalkan _X_ adalah variabel acak yang menyatakan lama waktu efektif menulis kode (dalam menit). Fungsi densitas peluang untuk _X_ adalah Tentukan peluang bahwa siswa tersebut menulis kode dalam rentang waktu b. dari 40 menit hingga 60 menit.",
+        "jawaban": "$\\frac{1}{4}$",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang durasi seragam",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa menentukan fungsi densitas kontinu bernilai konstan kemudian mengintegralkannya pada interval yang ditentukan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang pianis melakukan latihan teknik setiap malam selama 2 jam, dari pukul 19.00—21.00. Ia mencatat durasi pemanasan jari setiap sesi latihan dalam satuan menit. Berdasarkan pengamatan, durasi pemanasan tersebut berdistribusi merata dari 15 menit hingga 45 menit. Jika $X$ menyatakan variabel acak kontinu untuk durasi pemanasan jari (dalam menit), peluang pianis tersebut melakukan pemanasan dalam rentang 21 menit hingga 33 menit adalah ....",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "Fungsi densitas peluang $X$ adalah $f(x) = \\frac{1}{45 - 15} = \\frac{1}{30}$ untuk $15 \\le x \\le 45$. Maka $P(21 \\le X \\le 33) = \\frac{33 - 21}{30} = \\frac{12}{30} = \\frac{2}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "Membagi panjang selang target dengan batas atas 45: $\\frac{12}{45} = \\frac{4}{15}$."
+        },
+        {
+          "teks": "$\\frac{7}{15}$",
+          "alasan": "Menghitung rasio batas bawah target terhadap batas atas interval: $\\frac{21}{45} = \\frac{7}{15}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Salah melakukan pengurangan batas $33 - 21 = 10$, menghasilkan $\\frac{10}{30} = \\frac{1}{3}$."
+        }
+      ],
+      "pembahasan": "Variabel acak kontinu $X$ terdistribusi merata pada rentang $[15, 45]$. Panjang interval adalah $45 - 15 = 30$, sehingga fungsi densitas peluangnya:\n$$f(x) = \\begin{cases} \\frac{1}{30}, & 15 \\le x \\le 45 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\n\nPeluang durasi pemanasan berada dalam rentang 21 hingga 33 menit:\n$$P(21 \\le X \\le 33) = \\int_{21}^{33} \\frac{1}{30}\\,dx = \\frac{33 - 21}{30} = \\frac{12}{30} = \\frac{2}{5}$$\n\nJadi, peluangnya adalah $\\frac{2}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Peluang dalam variabel acak kontinu tidak dihitung berdasarkan nilai tunggal, tetapi berdasarkan interval nilai. Peluang suatu kejadian dihitung sebagai luas di bawah kurva fungsi densitas pada interval tertentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang dari kurva pangkat tiga",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan integrasi fungsi densitas aljabar derajat tiga dan substitusi batas selang yang diberikan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang yang dinyatakan oleh:\n$$f(x) = \\begin{cases} \\frac{1}{4}x^3, & 0 \\le x \\le 2 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai peluang $P(1 \\le X \\le 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{15}{16}$",
+      "alasan_benar": "$P(1 \\le X \\le 2) = \\int_1^2 \\frac{1}{4}x^3\\,dx = \\left[ \\frac{x^4}{16} \\right]_1^2 = \\frac{16 - 1}{16} = \\frac{15}{16}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Salah melakukan integrasi menjadi $\\frac{x^3}{8}$, lalu menghitung $\\frac{8 - 1}{8} = \\frac{7}{8}$."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Hanya menghitung nilai integral dari 0 sampai 1, yaitu komplemen yang salah dievaluasi: $P(0 \\le X \\le 1) = \\frac{1}{16}$."
+        },
+        {
+          "teks": "$\\frac{7}{16}$",
+          "alasan": "Salah menghitung $2^4 - 1^4$ sebagai $8 - 1 = 7$, sehingga mendapatkan $\\frac{7}{16}$."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi peluang variabel acak kontinu, peluang pada selang $[1, 2]$ dihitung dengan integral fungsi densitas:\n$$P(1 \\le X \\le 2) = \\int_{1}^{2} \\frac{1}{4}x^3\\,dx$$\n\nMenghitung integral tentu:\n$$\\int_{1}^{2} \\frac{1}{4}x^3\\,dx = \\left[ \\frac{1}{4} \\cdot \\frac{x^4}{4} \\right]_{1}^{2} = \\left[ \\frac{x^4}{16} \\right]_{1}^{2} = \\frac{2^4}{16} - \\frac{1^4}{16} = \\frac{16 - 1}{16} = \\frac{15}{16}$$\n\nJadi, nilai dari $P(1 \\le X \\le 2)$ adalah $\\frac{15}{16}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 266,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Peluang suatu kejadian dihitung sebagai luas di bawah kurva fungsi densitas pada interval tertentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menghitung peluang densitas linear",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemahaman konsep luas di bawah kurva, integrasi fungsi linear dengan batas tertentu, serta evaluasi pecahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang yang didefinisikan sebagai:\n$$f(x) = \\begin{cases} 2 - 2x, & 0 \\le x \\le 1 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nNilai dari $P\\left(X \\le \\frac{1}{2}\\right)$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "$P(X \\le 1/2) = \\int_0^{1/2} (2 - 2x)\\,dx = \\left[2x - x^2\\right]_0^{1/2} = 2\\left(\\frac{1}{2}\\right) - \\left(\\frac{1}{2}\\right)^2 = 1 - \\frac{1}{4} = \\frac{3}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Siswa menghitung peluang komplemennya $P(X > 1/2)$ atau salah dalam pengurangan batas evaluasi."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Siswa mengabaikan kemiringan fungsi densitas dan mengasumsikan distribusi seragam sehingga membagi rentang sama rata."
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Siswa keliru saat melakukan integrasi antiturunan fungsi menjadi $x - x^2$ alih-alih $2x - x^2$."
+        }
+      ],
+      "pembahasan": "Peluang variabel acak kontinu pada selang $0 \\le X \\le \\frac{1}{2}$ dihitung dengan mengintegralkan fungsi densitas peluangnya:\n$$P\\left(X \\le \\frac{1}{2}\\right) = \\int_{0}^{\\frac{1}{2}} (2 - 2x)\\,dx$$\nAntiturunan dari $2 - 2x$ adalah $2x - x^2$. Evaluasi pada batas $[0, \\frac{1}{2}]$:\n$$\\left[ 2x - x^2 \\right]_{0}^{\\frac{1}{2}} = \\left(2\\left(\\frac{1}{2}\\right) - \\left(\\frac{1}{2}\\right)^2\\right) - (0) = 1 - \\frac{1}{4} = \\frac{3}{4}$$\nJadi, nilai dari $P\\left(X \\le \\frac{1}{2}\\right)$ adalah $\\frac{3}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-e-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 265,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena X variabel acak kontinu, fungsi distribusi peluangnya disebut fungsi distribusi kumulatif ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan rumus distribusi kumulatif",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan definisi hubungan integral antara fungsi densitas peluang dan fungsi distribusi kumulatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Variabel acak kontinu $X$ memiliki fungsi densitas peluang sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{1}{9}x^2, & 0 \\le x \\le 3 \\\\ 0, & x \\text{ lainnya} \\end{cases}$$\nUntuk interval $0 \\le x \\le 3$, fungsi distribusi kumulatif $F(x)$ dinyatakan oleh ....",
+      "jawaban_benar": "$\\frac{x^3}{27}$",
+      "alasan_benar": "$F(x) = \\int_0^x f(t)\\,dt = \\int_0^x \\frac{1}{9}t^2\\,dt = \\left[\\frac{t^3}{27}\\right]_0^x = \\frac{x^3}{27}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{x^2}{9}$",
+          "alasan": "Siswa tidak melakukan integrasi dan menyamakan fungsi distribusi kumulatif dengan fungsi densitas peluang."
+        },
+        {
+          "teks": "$\\frac{2x}{9}$",
+          "alasan": "Siswa menurunkan fungsi densitas peluang alih-alih mengintegralkannya."
+        },
+        {
+          "teks": "$\\frac{x^3}{9}$",
+          "alasan": "Siswa melakukan integrasi variabel $x$ menjadi $x^3$ tetapi lupa membagi koefisien dengan pangkat baru 3."
+        }
+      ],
+      "pembahasan": "Fungsi distribusi kumulatif $F(x)$ diperoleh dari integral fungsi densitas peluang $f(t)$ dari batas bawah hingga $x$:\n$$F(x) = \\int_{0}^{x} f(t)\\,dt$$\nUntuk selang $0 \\le x \\le 3$:\n$$F(x) = \\int_{0}^{x} \\frac{1}{9}t^2\\,dt = \\left[ \\frac{t^3}{27} \\right]_{0}^{x} = \\frac{x^3}{27} - 0 = \\frac{x^3}{27}$$\nJadi, untuk $0 \\le x \\le 3$, fungsi distribusi kumulatifnya adalah $F(x) = \\frac{x^3}{27}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

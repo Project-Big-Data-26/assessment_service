@@ -1,0 +1,644 @@
+{
+  "book": "kelas9",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas9-b03-c-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi sistem koordinat bayangan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan koordinat bayangan empat titik sudut melalui rotasi 180 derajat serta pengujian kebenaran posisi kuadran dan jarak geometrisnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segi empat $ABCD$ memiliki titik-titik sudut $A(-5, 4)$, $B(6, 7)$, $C(8, -3)$, dan $D(-4, -6)$. Segi empat tersebut dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan $A'B'C'D'$. Perhatikan pernyataan-pernyataan berikut:\n(1) Titik $A'$ terletak di kuadran IV.\n(2) Titik $B'$ memiliki koordinat $(6, -7)$.\n(3) Jarak titik $C'$ ke sumbu-$Y$ adalah 3 satuan.\n(4) Titik $D'$ terletak di kuadran I.\n\nPernyataan yang benar ditunjukkan oleh nomor ....",
+      "jawaban_benar": "(1) dan (4)",
+      "alasan_benar": "Aturan rotasi $180^\\circ$ terhadap pusat $O(0,0)$ memetakan $(x, y) \\to (-x, -y)$. Maka $A'(5, -4)$ berada di kuadran IV (benar), $B'(-6, -7)$ bukan $(6, -7)$ (salah), jarak $C'(-8, 3)$ ke sumbu-$Y$ adalah $|-8| = 8$ satuan bukan 3 satuan (salah), dan $D'(4, 6)$ berada di kuadran I (benar). Jadi pernyataan yang tepat adalah (1) dan (4).",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2)",
+          "alasan": "Siswa salah mengubah tanda absis titik $B$ pada rotasi $180^\\circ$, mengira absis tetap positif sehingga menganggap pernyataan (2) benar."
+        },
+        {
+          "teks": "(2) dan (3)",
+          "alasan": "Siswa salah memahami konsep jarak koordinat ke sumbu-$Y$ dengan tertukar mengambil nilai mutlak ordinat (3 satuan) serta keliru pada tanda absis titik $B'$."
+        },
+        {
+          "teks": "(3) dan (4)",
+          "alasan": "Siswa tertukar antara jarak titik terhadap sumbu-$X$ dan sumbu-$Y$ pada titik $C'$ sehingga menganggap pernyataan (3) benar."
+        }
+      ],
+      "pembahasan": "Rotasi sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ memiliki rumus pemetaan:\n$(x, y) \\to (-x, -y)$\n\nMari tentukan bayangan dari masing-masing titik:\n1. Titik $A(-5, 4) \\to A'(5, -4)$. Karena absis positif dan ordinat negatif, titik $A'$ berada di kuadran IV. Pernyataan (1) BENAR.\n2. Titik $B(6, 7) \\to B'(-6, -7)$. Pernyataan (2) menyatakan $B'(6, -7)$, sehingga pernyataan (2) SALAH.\n3. Titik $C(8, -3) \\to C'(-8, 3)$. Jarak sebuah titik $(x, y)$ terhadap sumbu-$Y$ adalah $|x|$. Jadi, jarak $C'$ ke sumbu-$Y$ adalah $|-8| = 8$ satuan. Pernyataan (3) SALAH.\n4. Titik $D(-4, -6) \\to D'(4, 6)$. Karena absis dan ordinat keduanya positif, titik $D'$ berada di kuadran I. Pernyataan (4) BENAR.\n\nDengan demikian, pernyataan yang benar adalah (1) dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 187,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan ∆ A'OB' merupakan hasil rotasi sebesar -90º (searah perputaran jarum jam), sedangkan ∆ A\"OB\" merupakan hasil rotasi sebesar 90º (berlawanan arah jarum jam)."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "komposisi rotasi titik parameter",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan koordinat dari komposisi dua tahap rotasi berurutan yang memuat dua variabel tak tentu, kemudian menyelesaikan sistem persamaan linear untuk menemukan nilai kuadratnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(p + 2q, 2p - q)$ dirotasikan sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $A_1$. Bayangan $A_1$ kemudian dirotasikan kembali sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan akhir $A_2(-4, 7)$. Nilai dari $p^2 + q^2$ adalah ....",
+      "jawaban_benar": "13",
+      "alasan_benar": "Rotasi berturut-turut $90^\\circ$ lalu $180^\\circ$ setara dengan rotasi $270^\\circ$ berlawanan arah jarum jam yang memetakan $(x, y) \\to (y, -x)$. Diperoleh sistem persamaan $2p - q = -4$ dan $-p - 2q = 7$. Penyelesaiannya adalah $p = -3$ dan $q = -2$, sehingga $p^2 + q^2 = (-3)^2 + (-2)^2 = 9 + 4 = 13$.",
+      "distraktor": [
+        {
+          "teks": "25",
+          "alasan": "Siswa salah tanda saat menyelesaikan sistem persamaan sehingga memperoleh nilai $p = -4$ dan $q = -3$, menghasilkan $(-4)^2 + (-3)^2 = 25$."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa tertukar rumus rotasi $90^\\circ$ berlawanan arah dengan searah jarum jam sehingga mendapatkan $p = -1$ dan $q = -3$, menghasilkan $(-1)^2 + (-3)^2 = 10$."
+        },
+        {
+          "teks": "17",
+          "alasan": "Siswa keliru mengeliminasi variabel sehingga mendapat nilai $p = -1$ dan $q = -4$, yang memberikan $(-1)^2 + (-4)^2 = 17$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan aturan rotasi pertama sebesar $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$:\n$(x, y) \\to (-y, x)$\n$A_1(-(2p - q), p + 2q) = A_1(-2p + q, p + 2q)$\n\nLangkah 2: Menentukan aturan rotasi kedua sebesar $180^\\circ$ terhadap $O(0,0)$:\n$(x_1, y_1) \\to (-x_1, -y_1)$\n$A_2(-(-2p + q), -(p + 2q)) = A_2(2p - q, -p - 2q)$\n\nLangkah 3: Menyamakan dengan koordinat bayangan akhir $A_2(-4, 7)$:\n(i) $2p - q = -4 \\implies q = 2p + 4$\n(ii) $-p - 2q = 7 \\implies p + 2q = -7$\n\nLangkah 4: Menyelesaikan sistem persamaan linear:\nSubstitusi (i) ke (ii):\n$p + 2(2p + 4) = -7$\n$p + 4p + 8 = -7$\n$5p = -15 \\implies p = -3$\n\nMencari nilai $q$:\n$q = 2(-3) + 4 = -6 + 4 = -2$\n\nLangkah 5: Menghitung nilai $p^2 + q^2$:\n$p^2 + q^2 = (-3)^2 + (-2)^2 = 9 + 4 = 13$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 188,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 3.11 Hasil Rotasi Titik ( x,y )"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis titik tengah bayangan rotasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis koordinat bayangan dari dua titik berparameter setelah rotasi 180 derajat yang dikaitkan dengan rumus titik tengah ruas garis untuk menemukan selisih parameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(a, 6)$ dan titik $B(-4, b)$ dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ sehingga berturut-turut menghasilkan bayangan $A'$ dan $B'$. Jika titik tengah dari ruas garis $A'B'$ adalah $M'(3, -1)$, nilai dari $a - b$ adalah ....",
+      "jawaban_benar": "2",
+      "alasan_benar": "Bayangan titik adalah $A'(-a, -6)$ dan $B'(4, -b)$. Titik tengahnya adalah $\\left(\\frac{-a+4}{2}, \\frac{-6-b}{2}\\right) = (3, -1)$. Diperoleh $\\frac{-a+4}{2} = 3 \\implies a = -2$ dan $\\frac{-6-b}{2} = -1 \\implies b = -4$. Nilai $a - b = -2 - (-4) = 2$.",
+      "distraktor": [
+        {
+          "teks": "-6",
+          "alasan": "Siswa salah menghitung operasi pengurangan $a - b$ menjadi $-2 - 4 = -6$ karena keliru menentukan tanda negatif dari nilai $b$."
+        },
+        {
+          "teks": "-2",
+          "alasan": "Siswa tertukar menghitung $b - a$ alih-alih $a - b$, yaitu $-4 - (-2) = -2$."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa salah dalam aljabar penentuan nilai parameter sehingga mendapatkan $a = 2$ dan $b = -4$, menghasilkan $2 - (-4) = 6$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan bayangan titik $A$ dan $B$ oleh rotasi $180^\\circ$ terhadap pusat $O(0,0)$ dengan rumus $(x, y) \\to (-x, -y)$:\n- $A(a, 6) \\to A'(-a, -6)$\n- $B(-4, b) \\to B'(4, -b)$\n\nLangkah 2: Menggunakan rumus koordinat titik tengah ruas garis $A'B'$:\n$M' = \\left(\\frac{x_{A'} + x_{B'}}{2}, \\frac{y_{A'} + y_{B'}}{2}\\right) = \\left(\\frac{-a + 4}{2}, \\frac{-6 - b}{2}\\right)$\n\nLangkah 3: Menentukan nilai $a$ dari absis titik tengah $M'(3, -1)$:\n$\\frac{-a + 4}{2} = 3$\n$-a + 4 = 6$\n$-a = 2 \\implies a = -2$\n\nLangkah 4: Menentukan nilai $b$ dari ordinat titik tengah $M'(3, -1)$:\n$\\frac{-6 - b}{2} = -1$\n$-6 - b = -2$\n$-b = 4 \\implies b = -4$\n\nLangkah 5: Menghitung nilai $a - b$:\n$a - b = -2 - (-4) = -2 + 4 = 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Besar sudut dari bayangan objek terhadap posisi awalnya disebut sudut rotasi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi koordinat bangun bayangan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan koordinat titik sudut yang belum diketahui melalui rumus luas segitiga terlebih dahulu, lalu menentukan bayangannya melalui rotasi searah jarum jam.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga sama kaki $PQR$ memiliki titik-titik sudut $P(0, 0)$, $Q(6, 0)$, dan $R(3, k)$ dengan $k > 0$. Jika luas segitiga $PQR$ adalah 15 satuan luas, kemudian segitiga tersebut dirotasikan sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$, koordinat bayangan titik puncak $R'$ adalah ....",
+      "jawaban_benar": "$(5, -3)$",
+      "alasan_benar": "Alas segitiga terletak pada segmen $PQ$ dengan panjang 6 satuan. Luas $= \\frac{1}{2} \\times 6 \\times k = 3k = 15 \\implies k = 5$, sehingga $R(3, 5)$. Rotasi $-90^\\circ$ terhadap $O(0,0)$ memetakan $(x, y) \\to (y, -x)$, sehingga $R'(5, -3)$.",
+      "distraktor": [
+        {
+          "teks": "$(-5, 3)$",
+          "alasan": "Siswa menggunakan aturan rotasi $90^\\circ$ berlawanan arah jarum jam yaitu $(x, y) \\to (-y, x)$ bukan searah jarum jam."
+        },
+        {
+          "teks": "$(-3, -5)$",
+          "alasan": "Siswa salah mengira rotasi yang dilakukan adalah rotasi $180^\\circ$ dengan aturan pemetaan $(x, y) \\to (-x, -y)$."
+        },
+        {
+          "teks": "$(5, 3)$",
+          "alasan": "Siswa menukar posisi koordinat namun lupa memberikan tanda negatif pada nilai absis awal sehingga mendapatkan $(y, x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan panjang alas segitiga $PQR$:\nTitik $P(0, 0)$ dan $Q(6, 0)$ terletak pada sumbu-$X$. Panjang alas segitiga adalah:\n$a = |6 - 0| = 6$ satuan.\n\nLangkah 2: Menentukan nilai $k$ dari luas segitiga:\nTinggi segitiga dari titik $R(3, k)$ ke garis alas $PQ$ adalah $t = k$ (karena $k > 0$).\n$\\text{Luas} = \\frac{1}{2} \\times a \\times t$\n$15 = \\frac{1}{2} \\times 6 \\times k$\n$15 = 3k \\implies k = 5$\nJadi, koordinat titik puncak adalah $R(3, 5)$.\n\nLangkah 3: Menentukan aturan rotasi sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap pusat $O(0,0)$:\n$(x, y) \\to (y, -x)$\n\nLangkah 4: Menghitung koordinat bayangan titik $R(3, 5)$:\n$R'(5, -3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 187,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan ∆ A'OB' merupakan hasil rotasi sebesar -90º ( searah perputaran jarum jam), sedangkan ∆ A\"OB\" merupakan hasil rotasi sebesar 90º ( berlawanan arah perputaran jarum jam)."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan koordinat bangun rotasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembentukan sistem persamaan dua variabel dari kondisi perputaran dua titik dan mencari panjang diagonal bangun hasil rotasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi panjang $ABCD$ memiliki titik pusat simetri putar di titik asal $O(0,0)$. Titik $A(a, b)$ terletak di kuadran II dengan panjang $OA = 5$ satuan. Jika titik $A$ dirotasikan sebesar $-90^\\circ$ (searah jarum jam) terhadap titik pusat $O(0,0)$ menghasilkan bayangan $A'(4, 3)$, maka nilai dari $2a - b$ adalah ....",
+      "jawaban_benar": "-10",
+      "alasan_benar": "Rotasi $-90^\\circ$ searah jarum jam terhadap $O(0,0)$ memetakan $(x, y) \\to (y, -x)$. Jadi bayangan dari $A(a, b)$ adalah $(b, -a) = (4, 3)$. Diperoleh $b = 4$ dan $-a = 3 \\implies a = -3$. Titik $A(-3, 4)$ benar berada di kuadran II dan jarak $OA = \\sqrt{(-3)^2 + 4^2} = 5$. Maka nilai $2a - b = 2(-3) - 4 = -6 - 4 = -10$.",
+      "distraktor": [
+        {
+          "teks": "-2",
+          "alasan": "Siswa tertukar menggunakan aturan rotasi positif $90^\\circ$ sehingga menghasilkan $a = 3$ dan $b = -4$."
+        },
+        {
+          "teks": "2",
+          "alasan": "Siswa salah memasukkan tanda negatif saat menghitung $2(-3) - (-4)$."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa lupa mengalikan tanda negatif pada nilai $a$ sehingga memperoleh $2(3) + 4 = 10$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan rumus rotasi $-90^\\circ$ (searah perputaran jarum jam) terhadap pusat $O(0,0)$:\n$(x, y) \\to (y, -x)$\n\nLangkah 2: Menghubungkan titik asal $A(a, b)$ dengan bayangan $A'(4, 3)$:\n$(b, -a) = (4, 3)$\nDari kesamaan koordinat diperoleh:\n$b = 4$\n$-a = 3 \\iff a = -3$\n\nLangkah 3: Memeriksa syarat koordinat titik $A$:\nTitik $A(-3, 4)$ memiliki absis negatif dan ordinat positif, sehingga benar berada di kuadran II. Panjang $OA = \\sqrt{(-3)^2 + 4^2} = \\sqrt{25} = 5$ (memenuhi syarat).\n\nLangkah 4: Menghitung nilai $2a - b$:\n$2a - b = 2(-3) - 4 = -6 - 4 = -10$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 185,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Rotasi merupakan salah satu bentuk transformasi dengan memutarkan suatu objek (titik, garis, atau bangun) berdasarkan sudut dan arah tertentu terhadap pusat rotasinya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis luas dan letak bayangan rotasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis geometri bangun datar pada bidang koordinat setelah mengalami rotasi 180 derajat untuk menentukan keliling bayangan bangun tersebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga siku-siku $KLM$ memiliki koordinat $K(-2, 1)$, $L(6, 1)$, dan $M(-2, 7)$ dengan sudut siku-siku di titik $K$. Segitiga tersebut dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan segitiga $K'L'M'$. Keliling dari segitiga bayangan $K'L'M'$ adalah ....",
+      "jawaban_benar": "24 satuan",
+      "alasan_benar": "Rotasi merupakan transformasi isometri (tidak mengubah ukuran dan bentuk bangun). Panjang sisi-sisi segitiga asal: $KL = 6 - (-2) = 8$ satuan, $KM = 7 - 1 = 6$ satuan. Karena siku-siku di $K$, sisi miring $LM = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = 10$ satuan. Keliling $\\Delta KLM = 8 + 6 + 10 = 24$ satuan. Karena keliling bayangan sama dengan keliling bangun semula, keliling $\\Delta K'L'M'$ adalah 24 satuan.",
+      "distraktor": [
+        {
+          "teks": "48 satuan",
+          "alasan": "Siswa mengalikan keliling dengan dua karena mengira rotasi $180^\\circ$ melipatgandakan ukuran bangun."
+        },
+        {
+          "teks": "28 satuan",
+          "alasan": "Siswa salah menghitung panjang hipotenusa dengan menjumlahkan langsung $8 + 6 = 14$ bukan menggunakan teorema Pythagoras."
+        },
+        {
+          "teks": "14 satuan",
+          "alasan": "Siswa hanya menjumlahkan dua sisi siku-siku $8 + 6 = 14$ tanpa menghitung sisi miring."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan sifat transformasi rotasi:\nRotasi merupakan transformasi isometri, yaitu transformasi yang mempertahankan jarak antar-titik sehingga ukuran dan bentuk bangun tidak berubah. Oleh karena itu, keliling segitiga bayangan $K'L'M'$ sama dengan keliling segitiga awal $KLM$.\n\nLangkah 2: Menghitung panjang sisi-sisi segitiga $KLM$:\n- Titik $K(-2, 1)$ dan $L(6, 1)$ terletak pada garis horizontal yang sama:\n$KL = |6 - (-2)| = 8$ satuan\n- Titik $K(-2, 1)$ dan $M(-2, 7)$ terletak pada garis vertikal yang sama:\n$KM = |7 - 1| = 6$ satuan\n\nLangkah 3: Menghitung panjang sisi miring $LM$ menggunakan teorema Pythagoras:\n$LM = \\sqrt{KL^2 + KM^2} = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = \\sqrt{100} = 10$ satuan\n\nLangkah 4: Menghitung keliling segitiga $K'L'M'$:\nKeliling $= KL + KM + LM = 8 + 6 + 10 = 24$ satuan",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi koordinat bayangan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan tiga koordinat bayangan hasil rotasi dan evaluasi operasi aljabar selisih jumlah koordinatnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga $KLM$ memiliki koordinat titik-titik sudut di $K(7, 4)$, $L(9, -2)$, dan $M(-5, 6)$. Segitiga tersebut dirotasikan sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan segitiga bayangan $K'L'M'$. Jika koordinat bayangannya adalah $K'(x_1, y_1)$, $L'(x_2, y_2)$, dan $M'(x_3, y_3)$, nilai dari $(x_1 + x_2 + x_3) - (y_1 + y_2 + y_3)$ adalah ....",
+      "jawaban_benar": "-19",
+      "alasan_benar": "Aturan rotasi $[O, 90^\\circ]$ memetakan $(x, y) \\to (-y, x)$. Maka $K'( -4, 7)$, $L'(2, 9)$, dan $M'(-6, -5)$. Jumlah absis $x_1+x_2+x_3 = -4 + 2 + (-6) = -8$. Jumlah ordinat $y_1+y_2+y_3 = 7 + 9 + (-5) = 11$. Selisihnya $-8 - 11 = -19$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Menjumlahkan langsung absis dan ordinat $(-8 + 11 = 3) bukannya mengurangkan."
+        },
+        {
+          "teks": "19",
+          "alasan": "Tertukar arah pengurangan antara jumlah ordinat dengan jumlah absis $(11 - (-8) = 19)$."
+        },
+        {
+          "teks": "-3",
+          "alasan": "Keliru menggunakan rumus rotasi searah jarum jam $(y, -x)$ sehingga absis bernilai 8 dan ordinat bernilai -11."
+        }
+      ],
+      "pembahasan": "Rotasi sebesar $90^\\circ$ berlawanan arah jarum jam dengan pusat $O(0,0)$ memiliki aturan $(x, y) \\to (-y, x)$.\n1. Titik $K(7, 4) \\to K'(-4, 7)$, sehingga $x_1 = -4$ dan $y_1 = 7$.\n2. Titik $L(9, -2) \\to L'(2, 9)$, sehingga $x_2 = 2$ dan $y_2 = 9$.\n3. Titik $M(-5, 6) \\to M'(-6, -5)$, sehingga $x_3 = -6$ dan $y_3 = -5$.\n\nJumlahkan seluruh absis bayangan:\n$x_1 + x_2 + x_3 = -4 + 2 + (-6) = -8$\n\nJumlahkan seluruh ordinat bayangan:\n$y_1 + y_2 + y_3 = 7 + 9 + (-5) = 11$\n\nHitung nilai yang ditanyakan:\n$(x_1 + x_2 + x_3) - (y_1 + y_2 + y_3) = -8 - 11 = -19$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kedudukan bayangan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan seluruh koordinat bayangan rotasi 180 derajat dan pembuktian kebenaran posisi kuadran serta relasi koordinatnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segi empat $PQRS$ dengan koordinat $P(-7, 5)$, $Q(4, 9)$, $R(6, -8)$, dan $S(-2, -4)$. Segi empat tersebut dirotasikan sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan $P'Q'R'S'$. Pernyataan berikut yang benar mengenai bayangan tersebut adalah ....",
+      "jawaban_benar": "Titik $Q'$ terletak di kuadran III",
+      "alasan_benar": "Rotasi $180^\\circ$ memetakan $(x, y) \\to (-x, -y)$. Titik $Q(4, 9)$ dipetakan ke $Q'(-4, -9)$, di mana absis dan ordinatnya bertanda negatif sehingga berada di kuadran III.",
+      "distraktor": [
+        {
+          "teks": "Titik $P'$ dan $S'$ terletak di kuadran yang sama",
+          "alasan": "Keliru mengira $P'(7, -5)$ berada di kuadran yang sama dengan $S'(2, 4)$, padahal $P'$ di kuadran IV dan $S'$ di kuadran I."
+        },
+        {
+          "teks": "Jumlah seluruh absis titik bayangan adalah 2",
+          "alasan": "Salah menghitung penjumlahan absis $7 + (-4) + (-6) + 2 = -1$, bukan 2."
+        },
+        {
+          "teks": "Titik $R'$ memiliki koordinat $(6, -8)$",
+          "alasan": "Mengira rotasi $180^\\circ$ tidak mengubah koordinat titik $R$, padahal koordinatnya berubah menjadi $(-6, 8)$."
+        }
+      ],
+      "pembahasan": "Rotasi sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ memetakan titik $(x, y) \\to (-x, -y)$.\nKoordinat bayangan titik-titik sudutnya:\n- $P(-7, 5) \\to P'(7, -5)$ (Kuadran IV)\n- $Q(4, 9) \\to Q'(-4, -9)$ (Kuadran III)\n- $R(6, -8) \\to R'(-6, 8)$ (Kuadran II)\n- $S(-2, -4) \\to S'(2, 4)$ (Kuadran I)\n\nEvaluasi setiap pilihan:\n- Titik $Q'(-4, -9)$ memiliki absis negatif dan ordinat negatif, sehingga berada di kuadran III (Benar).\n- Titik $P'$ di kuadran IV dan $S'$ di kuadran I, sehingga tidak berada di kuadran yang sama (Salah).\n- Jumlah absis bayangan: $7 + (-4) + (-6) + 2 = -1$ (Salah).\n- Titik $R'$ adalah $(-6, 8)$, bukan $(6, -8)$ (Salah).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 189,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tentukan bayangan segitiga PQR dengan P(5,-3), Q(4,4) dan R(-3,1), yang dirotasikan sebesar 90º berlawanan arah jarum jam terhadap titik pusat (0,0)!"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis titik tengah geometri rotasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan penentuan posisi hipotenusa segitiga siku-siku, rotasi titik sudut ke bayangannya, dan penentuan titik tengah bangun bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga siku-siku $ABC$ memiliki sudut siku-siku di titik $A(2, 3)$, dengan koordinat dua titik sudut lainnya adalah $B(8, 3)$ dan $C(2, 11)$. Segitiga tersebut dirotasikan sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $\\Delta A'B'C'$. Koordinat titik tengah sisi miring (hipotenusa) pada segitiga bayangan $\\Delta A'B'C'$ adalah ....",
+      "jawaban_benar": "(-7, 5)",
+      "alasan_benar": "Sisi miring segitiga siku-siku berada di depan titik $A$, yaitu ruas garis $BC$. Hasil rotasi $90^\\circ$ CCW: $B(8, 3) \\to B'(-3, 8)$ dan $C(2, 11) \\to C'(-11, 2)$. Titik tengah $B'C'$ adalah $((-3 + (-11))/2, (8 + 2)/2) = (-7, 5)$.",
+      "distraktor": [
+        {
+          "teks": "(-5, 7)",
+          "alasan": "Menukar posisi absis dan ordinat pada titik tengah segitiga bayangan."
+        },
+        {
+          "teks": "(-3, 5)",
+          "alasan": "Keliru mencari titik tengah ruas garis $A'B'$ bukan hipotenusa $B'C'$."
+        },
+        {
+          "teks": "(7, -5)",
+          "alasan": "Menggunakan aturan rotasi searah jarum jam $(y, -x)$ pada penentuan koordinat bayangan."
+        }
+      ],
+      "pembahasan": "1. Pada $\\Delta ABC$ yang siku-siku di titik $A$, sisi miringnya (hipotenusa) adalah ruas garis yang menghubungkan titik $B(8, 3)$ dan $C(2, 11)$.\n2. Rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap pusat $O(0,0)$ memetakan $(x, y) \\to (-y, x)$:\n   - $B(8, 3) \\to B'(-3, 8)$\n   - $C(2, 11) \\to C'(-11, 2)$\n3. Sisi miring bayangan adalah ruas garis $B'C'$.\n4. Koordinat titik tengah ruas garis $B'C'$ dihitung dengan:\n   $x_m = \\frac{x_1 + x_2}{2} = \\frac{-3 + (-11)}{2} = \\frac{-14}{2} = -7$\n   $y_m = \\frac{y_1 + y_2}{2} = \\frac{8 + 2}{2} = \\frac{10}{2} = 5$\nJadi, koordinat titik tengah sisi miring pada segitiga bayangan adalah $(-7, 5)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 187,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan ∆ A'OB' merupakan hasil rotasi sebesar -90º (searah perputaran jarum jam), sedangkan ∆ A\"OB\" merupakan hasil rotasi sebesar 90º (berlawanan arah perputaran jarum jam)."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "komposisi parameter rotasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan sistem persamaan linear dua variabel dari hasil komposisi dua langkah rotasi berurutan pada titik berparameter.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(a + 3b, 2a - b)$ dirotasikan sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $P_1$. Kemudian, bayangan $P_1$ dirotasikan kembali sebesar $180^\\circ$ terhadap titik pusat $O(0,0)$ menghasilkan bayangan akhir $P_2(4, -9)$. Nilai dari $4a + 5b$ adalah ....",
+      "jawaban_benar": "22",
+      "alasan_benar": "Rotasi $90^\\circ$ CCW lalu $180^\\circ$ ekuivalen dengan $(x, y) \\to (y, -x)$. Diperoleh $2a - b = 4$ dan $-(a + 3b) = -9 \\Rightarrow a + 3b = 9$. Solusinya adalah $a = 3$ dan $b = 2$. Maka $4(3) + 5(2) = 12 + 10 = 22$.",
+      "distraktor": [
+        {
+          "teks": "14",
+          "alasan": "Keliru mengurangkan perkalian koefisien parameter $(4a - 5b = 12 - 10 = 2)$ lalu salah menjumlahkan menjadi 14."
+        },
+        {
+          "teks": "18",
+          "alasan": "Tertukar nilai parameter $a = 2$ dan $b = 3$ sehingga menghasilkan $4(2) + 5(3) = 23$ lalu salah hitung menjadi 18."
+        },
+        {
+          "teks": "26",
+          "alasan": "Kesalahan tanda saat menyelesaikan persamaan linear sehingga memperoleh nilai $a = 4$ dan $b = 2$."
+        }
+      ],
+      "pembahasan": "Misalkan titik awal adalah $P(x, y)$ dengan $x = a + 3b$ dan $y = 2a - b$.\n1. Rotasi pertama sebesar $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$:\n   $P(x, y) \\to P_1(-y, x)$\n2. Rotasi kedua sebesar $180^\\circ$ terhadap $O(0,0)$:\n   $P_1(-y, x) \\to P_2(-(-y), -(x)) = P_2(y, -x)$\n3. Diketahui koordinat $P_2$ adalah $(4, -9)$, maka:\n   - $y = 4 \\Rightarrow 2a - b = 4$\n   - $-x = -9 \\Rightarrow x = 9 \\Rightarrow a + 3b = 9$\n4. Dari persamaan $2a - b = 4$, diperoleh $b = 2a - 4$.\n   Substitusikan ke persamaan kedua:\n   $a + 3(2a - 4) = 9$\n   $a + 6a - 12 = 9$\n   $7a = 21 \\Rightarrow a = 3$\n   Maka $b = 2(3) - 4 = 6 - 4 = 2$.\n5. Nilai dari $4a + 5b$:\n   $4(3) + 5(2) = 12 + 10 = 22$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Besar sudut dari bayangan objek terhadap posisi awalnya disebut sudut rotasi."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis jarak bayangan rotasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan koordinat bayangan berparameter, pembentukan persamaan jarak antartitik, dan penyelesaian nilai parameter positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(k, 8)$ dirotasikan sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $P'$. Jika jarak antara titik mula-mula $P$ dan titik bayangannya $P'$ adalah $10\\sqrt{2}$ satuan panjang, nilai $k$ positif yang memenuhi adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "Bayangan $P'$ adalah $(-8, k)$. Jarak $(PP')^2 = (-8 - k)^2 + (k - 8)^2 = 2k^2 + 128$. Diketahui jarak $10\\sqrt{2}$, maka kuadratnya $200$. Didapat persamaan $2k^2 + 128 = 200 \\Rightarrow 2k^2 = 72 \\Rightarrow k^2 = 36$. Karena $k$ positif, nilai $k = 6$.",
+      "distraktor": [
+        {
+          "teks": "8",
+          "alasan": "Menebak nilai $k$ sama dengan nilai ordinat titik mula-mula."
+        },
+        {
+          "teks": "4",
+          "alasan": "Kesalahan pembagian saat menyederhanakan persamaan $2k^2 = 72$ menjadi $k^2 = 16$."
+        },
+        {
+          "teks": "10",
+          "alasan": "Mengira nilai $k$ langsung sama dengan koefisien depan bentuk akar pada nilai jarak."
+        }
+      ],
+      "pembahasan": "1. Titik $P(k, 8)$ dirotasikan sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0,0)$ menghasilkan bayangan $P'(-8, k)$.\n2. Gunakan rumus jarak antara dua titik $P(x_1, y_1)$ dan $P'(x_2, y_2)$:\n   $d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2$\n   $(10\\sqrt{2})^2 = (-8 - k)^2 + (k - 8)^2$\n3. Uraikan kedua ruas:\n   $100 \\times 2 = (64 + 16k + k^2) + (k^2 - 16k + 64)$\n   $200 = 2k^2 + 128$\n4. Selesaikan persamaan kuadrat:\n   $2k^2 = 200 - 128$\n   $2k^2 = 72$\n   $k^2 = 36$\n   $k = \\pm 6$\n5. Karena disyaratkan nilai $k$ positif, maka diperoleh $k = 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0191-latihan-c-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi pernyataan formasi rotasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan koordinat tiga bayangan rotasi dan evaluasi kebenaran beberapa pernyataan analitis terkait posisi kuadran serta operasinya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga unit drone penyelamat sedang berpatroli dengan formasi segitiga pada koordinat $P(4, 2)$, $Q(7, 6)$, dan $R(1, 5)$. Tim kendali memutar formasi ketiga drone tersebut sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap stasiun pemantau di titik pusat $O(0,0)$ sehingga menghasilkan bayangan $P'$, $Q'$, dan $R'$.\n\nPerhatikan pernyataan-pernyataan berikut:\n(1) Koordinat bayangan $P'$ adalah $(-2, 4)$.\n(2) Titik $Q'$ berada di kuadran III pada bidang koordinat.\n(3) Jarak titik $R'$ terhadap sumbu-$x$ adalah 1 satuan.\n(4) Jumlah absis ketiga titik bayangan adalah $-13$.\n\nPernyataan yang benar ditunjukkan oleh nomor ....",
+      "jawaban_benar": "(1), (3), dan (4)",
+      "alasan_benar": "Rotasi $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$ memetakan $(x, y) \\rightarrow (-y, x)$. Diperoleh $P'(-2, 4)$, $Q'(-6, 7)$, dan $R'(-5, 1)$. Titik $P'$ benar $(-2, 4)$ (1 benar). Titik $Q'(-6, 7)$ berada di kuadran II, bukan kuadran III (2 salah). Jarak $R'$ ke sumbu-$x$ adalah $|y| = |1| = 1$ satuan (3 benar). Jumlah absis ketiga bayangan: $(-2) + (-6) + (-5) = -13$ (4 benar). Jadi, pernyataan yang benar adalah (1), (3), dan (4).",
+      "distraktor": [
+        {
+          "teks": "(1), (2), dan (3)",
+          "alasan": "Siswa salah mengira titik $Q'(-6, 7)$ terletak di kuadran III karena absisnya bernilai negatif."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Siswa salah menganggap pernyataan (2) benar dan mengabaikan evaluasi pernyataan (1) dan (3)."
+        },
+        {
+          "teks": "(1) dan (2) saja",
+          "alasan": "Siswa salah mengidentifikasi letak kuadran titik $Q'$ dan tidak memeriksa pernyataan (3) serta (4)."
+        }
+      ],
+      "pembahasan": "Aturan rotasi sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik asal $O(0,0)$ adalah:\n$$(x, y) \\rightarrow (-y, x)$$\n\nMenentukan bayangan masing-masing titik drone:\n1. $P(4, 2) \\rightarrow P'(-2, 4)$\n2. $Q(7, 6) \\rightarrow Q'(-6, 7)$\n3. $R(1, 5) \\rightarrow R'(-5, 1)$\n\nEvaluasi pernyataan:\n- Pernyataan (1): Koordinat $P'$ adalah $(-2, 4)$ (BENAR).\n- Pernyataan (2): Titik $Q'(-6, 7)$ memiliki absis negatif dan ordinat positif sehingga terletak di kuadran II, bukan kuadran III (SALAH).\n- Pernyataan (3): Jarak titik $R'(-5, 1)$ ke sumbu-$x$ ditentukan oleh harga mutlak ordinatnya, yaitu $|1| = 1$ satuan (BENAR).\n- Pernyataan (4): Jumlah absis ketiga titik bayangan adalah $(-2) + (-6) + (-5) = -13$ (BENAR).\n\nDengan demikian, pernyataan yang benar adalah (1), (3), dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 188,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 3.11 Hasil Rotasi Titik ( x,y )"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kedudukan bayangan pada garis",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perumusan koordinat bayangan titik berparameter setelah rotasi, substitusi ke dalam persamaan garis, penyelesaian nilai parameter, dan evaluasi bentuk aljabar kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $P(3m - 1, 2m + 3)$ dirotasikan sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan $P'$. Jika titik $P'$ terletak pada garis $3x + 4y = 5$, maka nilai dari $m^2 - 4m + 5$ adalah ....",
+      "jawaban_benar": "2",
+      "alasan_benar": "Rotasi $90^\\circ$ terhadap $O(0,0)$ menghasilkan $P'(-(2m + 3), 3m - 1) = (-2m - 3, 3m - 1)$. Substitusi ke garis $3x + 4y = 5$ memberikan $3(-2m - 3) + 4(3m - 1) = 5 \\Rightarrow 6m - 13 = 5 \\Rightarrow 6m = 18 \\Rightarrow m = 3$. Nilai $m^2 - 4m + 5 = 3^2 - 4(3) + 5 = 9 - 12 + 5 = 2$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa berhenti pada langkah menemukan nilai parameter $m = 3$ tanpa menghitung nilai bentuk aljabar yang ditanyakan."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah menerapkan tanda minus pada rumus rotasi sehingga memperoleh $m = 0$, lalu mendapatkan $0^2 - 4(0) + 5 = 5$."
+        },
+        {
+          "teks": "26",
+          "alasan": "Siswa salah memasukkan tanda pada bentuk aljabar menjadi $m^2 + 4m + 5 = 3^2 + 4(3) + 5 = 26$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat bayangan hasil rotasi.\nRotasi sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ memiliki aturan:\n$$(x, y) \\rightarrow (-y, x)$$\nUntuk titik $P(3m - 1, 2m + 3)$:\n$$x' = -(2m + 3) = -2m - 3$$\n$$y' = 3m - 1$$\nSehingga bayangan titik $P$ adalah $P'(-2m - 3, 3m - 1)$.\n\nLangkah 2: Substitusi koordinat $P'$ ke persamaan garis $3x + 4y = 5$.\n$$3(-2m - 3) + 4(3m - 1) = 5$$\n$$-6m - 9 + 12m - 4 = 5$$\n$$6m - 13 = 5$$\n$$6m = 18$$\n$$m = 3$$\n\nLangkah 3: Menghitung nilai dari $m^2 - 4m + 5$.\n$$m^2 - 4m + 5 = 3^2 - 4(3) + 5 = 9 - 12 + 5 = 2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 187,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan ∆ A'OB' merupakan hasil rotasi sebesar - 90º ( searah perputaran jarum jam), sedangkan ∆ A\"OB\" merupakan hasil rotasi sebesar 90º ( berlawanan arah perputaran jarum jam)."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rekonstruksi koordinat bangun datar rotasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan rekonstruksi koordinat titik keempat trapesium siku-siku dari sifat ketegaklurusan dan kesejajaran sisi, penentuan bayangan rotasi searah jarum jam, lalu evaluasi ekspresi linear koordinat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui trapesium siku-siku $ABCD$ memiliki koordinat titik sudut di $A(2, -1)$, $B(8, -1)$, dan $C(5, 3)$. Sisi $AB$ sejajar dengan sisi $CD$, serta sudut siku-siku terletak pada titik sudut $A$ dan $D$. Trapesium tersebut kemudian dirotasikan sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap titik pusat $O(0,0)$ sehingga menghasilkan bayangan trapesium $A'B'C'D'$. Jika koordinat titik $D'$ dinyatakan sebagai $(u, v)$, maka nilai dari $2u - 3v$ adalah ....",
+      "jawaban_benar": "12",
+      "alasan_benar": "Karena $AB$ horisontal pada $y = -1$ dan $CD$ sejajar $AB$ melalui $C(5, 3)$, maka ordinat $D$ adalah $3$. Sisi $AD$ tegak lurus $AB$ sehingga $AD$ vertikal melalui $A(2, -1)$, diperoleh absis $D$ adalah $2$. Titik $D(2, 3)$ dirotasikan $-90^\\circ$ terhadap $O(0,0)$ menghasilkan $D'(3, -2)$, sehingga $u = 3$ dan $v = -2$. Nilai $2u - 3v = 2(3) - 3(-2) = 6 + 6 = 12$.",
+      "distraktor": [
+        {
+          "teks": "-12",
+          "alasan": "Siswa tertukar menggunakan aturan rotasi berlawanan arah jarum jam $90^\\circ$ sehingga menghasilkan $D'(-3, 2)$ dan nilai $2(-3) - 3(2) = -12$."
+        },
+        {
+          "teks": "0",
+          "alasan": "Siswa lupa memberi tanda negatif pada ordinat bayangan saat rotasi $-90^\\circ$ sehingga menganggap $D'(3, 2)$ dan memperoleh $2(3) - 3(2) = 0$."
+        },
+        {
+          "teks": "21",
+          "alasan": "Siswa keliru mengira absis titik $D$ sama dengan absis titik $C$ yaitu $D(5, 3)$, menghasilkan $D'(3, -5)$ dan $2(3) - 3(-5) = 21$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Merekonstruksi koordinat titik $D$.\n- Garis $AB$ melewati titik $A(2, -1)$ dan $B(8, -1)$, yang merupakan garis horizontal dengan persamaan $y = -1$.\n- Sisi $CD$ sejajar dengan sisi $AB$, sehingga sisi $CD$ juga terletak pada garis horizontal. Karena titik $C$ memiliki koordinat $(5, 3)$, maka persamaan garis yang memuat sisi $CD$ adalah $y = 3$. Oleh karena itu, ordinat titik $D$ adalah $y = 3$.\n- Sudut siku-siku terletak di titik $A$ dan $D$, sehingga sisi $AD$ tegak lurus dengan sisi $AB$. Karena $AB$ horizontal, maka sisi $AD$ merupakan garis vertikal yang memuat titik $A(2, -1)$, sehingga absis titik $D$ harus sama dengan absis titik $A$, yaitu $x = 2$.\n- Dengan demikian, koordinat titik $D$ adalah $(2, 3)$.\n\nLangkah 2: Menentukan bayangan titik $D$ oleh rotasi $-90^\\circ$ terhadap $O(0,0)$.\nAturan rotasi sebesar $-90^\\circ$ (searah perputaran jarum jam) terhadap $O(0,0)$ adalah:\n$$(x, y) \\rightarrow (y, -x)$$\nMaka untuk titik $D(2, 3)$:\n$$D'(3, -2)$$\nDiperoleh $u = 3$ dan $v = -2$.\n\nLangkah 3: Menghitung nilai dari $2u - 3v$.\n$$2u - 3v = 2(3) - 3(-2) = 6 - (-6) = 6 + 6 = 12$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-c-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 186,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selanjutnya rotasi yang arahnya berlawanan dengan arah perputaran jarum jam disebut arah positif , sedangkan yang searah dengan arah perputaran jarum jam disebut arah negatif ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis titik pada garis bayangan rotasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan koordinat dua titik bayangan garis setelah rotasi $90^\\circ$, penentuan persamaan garis bayangan, dan pengujian keanggotaan titik pada garis tersebut.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis $g$ melalui titik $A(2, -3)$ dan titik $B(6, 5)$. Garis tersebut dirotasikan sebesar $90^\\circ$ berlawanan arah perputaran jarum jam terhadap titik pusat $O(0,0)$ sehingga menghasilkan garis bayangan $g'$. Titik berikut yang terletak pada garis $g'$ adalah ....",
+      "jawaban_benar": "$(5, 1)$",
+      "alasan_benar": "Rotasi $90^\\circ$ menghasilkan bayangan $A'(3, 2)$ dan $B'(-5, 6)$. Gradien garis $g'$ adalah $m' = \\frac{6 - 2}{-5 - 3} = -\\frac{1}{2}$. Persamaan garis $g'$ adalah $y - 2 = -\\frac{1}{2}(x - 3) \\Leftrightarrow x + 2y = 7$. Titik $(5, 1)$ memenuhi persamaan tersebut karena $5 + 2(1) = 7$.",
+      "distraktor": [
+        {
+          "teks": "$(4, 1)$",
+          "alasan": "Siswa menguji titik pada persamaan garis awal $g$ sebelum dirotasikan ($2x - y = 7$)."
+        },
+        {
+          "teks": "$(-1, -3)$",
+          "alasan": "Siswa menggunakan aturan rotasi searah jarum jam ($-90^\\circ$) sehingga memperoleh garis $x + 2y = -7$."
+        },
+        {
+          "teks": "$(2, 3)$",
+          "alasan": "Siswa salah menyusun persamaan garis bayangan karena tertukar koefisien menjadi $2x + y = 7$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan bayangan titik $A$ dan $B$ oleh rotasi $90^\\circ$ berlawanan arah jarum jam terhadap $O(0,0)$.\nAturan rotasi $90^\\circ$ terhadap $O(0,0)$ adalah $(x, y) \\rightarrow (-y, x)$:\n- $A(2, -3) \\rightarrow A'(3, 2)$\n- $B(6, 5) \\rightarrow B'(-5, 6)$\n\nLangkah 2: Menentukan gradien garis bayangan $g'$ yang melalui $A'(3, 2)$ dan $B'(-5, 6)$.\n$$m' = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{6 - 2}{-5 - 3} = \\frac{4}{-8} = -\\frac{1}{2}$$\n\nLangkah 3: Menentukan persamaan garis $g'$.\n$$y - y_1 = m'(x - x_1)$$\n$$y - 2 = -\\frac{1}{2}(x - 3)$$\n$$2(y - 2) = -(x - 3)$$\n$$2y - 4 = -x + 3$$\n$$x + 2y = 7$$\n\nLangkah 4: Menguji titik-titik pada opsi ke dalam persamaan $x + 2y = 7$:\n- Untuk titik $(5, 1)$: $5 + 2(1) = 7$ (MEMENUHI)\n- Untuk titik $(4, 1)$: $4 + 2(1) = 6 \\neq 7$\n- Untuk titik $(-1, -3)$: $-1 + 2(-3) = -7 \\neq 7$\n- Untuk titik $(2, 3)$: $2 + 2(3) = 8 \\neq 7$\n\nJadi, titik yang terletak pada garis $g'$ adalah $(5, 1)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

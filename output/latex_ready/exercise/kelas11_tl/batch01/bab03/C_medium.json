@@ -1,0 +1,531 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0155-latihan-c-2"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mengalikan identitas Pythagoras",
+      "alasan_level": "dua langkah: $\\sec^2 t - 1 = \\tan^2 t$ lalu $\\tan^2 t \\cos^2 t = \\sin^2 t$; menerapkan identitas pada hasil kali",
+      "stimulus": null,
+      "pertanyaan": "Untuk $t$ yang membuat semua bentuknya terdefinisi, $(\\sec^2 t - 1)\\cos^2 t$ sama dengan ....",
+      "jawaban_benar": "$\\sin^2 t$",
+      "alasan_benar": "$\\sec^2 t - 1 = \\tan^2 t$, lalu $\\tan^2 t \\cdot \\cos^2 t = \\sin^2 t$",
+      "distraktor": [
+        {
+          "teks": "$\\tan^2 t$",
+          "alasan": "berhenti setelah $\\sec^2 t - 1 = \\tan^2 t$ dan lupa mengalikan $\\cos^2 t$"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengalikan $\\sec^2 t \\cos^2 t = 1$ dan mengabaikan pengurangan $1$"
+        },
+        {
+          "teks": "$\\cos^2 t$",
+          "alasan": "mengira $\\tan^2 t \\cos^2 t$ sama dengan $\\cos^2 t$"
+        }
+      ],
+      "pembahasan": "$\\sec^2 t - 1 = \\tan^2 t = \\frac{\\sin^2 t}{\\cos^2 t}$, sehingga $(\\sec^2 t - 1)\\cos^2 t = \\sin^2 t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0155-latihan-c-2"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua identitas Pythagoras sekaligus",
+      "alasan_level": "tiga langkah: $\\sec^2 t - \\tan^2 t = 1$, $\\sin^2 t + \\cos^2 t = 1$, lalu jumlahkan; memadukan dua identitas",
+      "stimulus": null,
+      "pertanyaan": "Untuk $t$ yang membuat semua bentuknya terdefinisi, $(\\sec t - \\tan t)(\\sec t + \\tan t) + \\sin^2 t + \\cos^2 t$ sama dengan ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "hasil kali $= \\sec^2 t - \\tan^2 t = 1$ dan $\\sin^2 t + \\cos^2 t = 1$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "lupa menjumlahkan salah satu dari dua bagian yang masing-masing bernilai $1$"
+        },
+        {
+          "teks": "$0$",
+          "alasan": "mengurangkan kedua bagian"
+        },
+        {
+          "teks": "$\\sec^2 t + 1$",
+          "alasan": "mengira hasil kali $(\\sec t - \\tan t)(\\sec t + \\tan t)$ sama dengan $\\sec^2 t$"
+        }
+      ],
+      "pembahasan": "$(\\sec t - \\tan t)(\\sec t + \\tan t) = \\sec^2 t - \\tan^2 t = 1$ dan $\\sin^2 t + \\cos^2 t = 1$, jumlahnya $2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 155,
+        "bagian": "Latihan C Pemahaman Konsep",
+        "nomor": "3",
+        "teks": "Benar atau salah? Jika sec u = - 5 3 , maka nilai cos u = - 3 5 .",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tan dari sec dengan kuadran",
+      "alasan_level": "tiga langkah: $\\cos u = 1/\\sec u$, $\\sin u$ dari identitas Pythagoras dengan tanda kuadran II, lalu $\\tan u = \\sin u / \\cos u$",
+      "stimulus": null,
+      "pertanyaan": "Jika $\\sec u = -\\frac{17}{8}$ dan $u$ berada di kuadran II, maka nilai $\\tan u$ adalah ....",
+      "jawaban_benar": "$-\\frac{15}{8}$",
+      "alasan_benar": "$\\cos u = -\\frac{8}{17}$, $\\sin u = \\frac{15}{17}$ (positif di kuadran II), $\\tan u = \\frac{\\sin u}{\\cos u}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{8}$",
+          "alasan": "lupa bahwa $\\cos u$ negatif di kuadran II sehingga $\\tan u$ ikut negatif"
+        },
+        {
+          "teks": "$-\\frac{8}{15}$",
+          "alasan": "pembilang dan penyebut tertukar (menghitung $\\cot u$)"
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "tertukar dan lupa tanda negatif"
+        }
+      ],
+      "pembahasan": "$\\cos u = \\frac{1}{\\sec u} = -\\frac{8}{17}$; $\\sin^2 u = 1 - \\frac{64}{289} = \\frac{225}{289}$ dan $\\sin u > 0$ di kuadran II, jadi $\\sin u = \\frac{15}{17}$. $\\tan u = \\frac{15/17}{-8/17} = -\\frac{15}{8}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 155,
+        "bagian": "Latihan C Pemahaman Konsep",
+        "nomor": "3",
+        "teks": "Benar atau salah? Jika sec u = - 5 3 , maka nilai cos u = - 3 5 .",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "cos dari csc dengan tanda tan",
+      "alasan_level": "tiga langkah: $\\sin v = 1/\\csc v$, $\\cos^2 v$ dari identitas Pythagoras, lalu tentukan tanda dari syarat $\\tan v > 0$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\csc v = -\\frac{25}{7}$ dan $\\tan v > 0$. Nilai $\\cos v$ adalah ....",
+      "jawaban_benar": "$-\\frac{24}{25}$",
+      "alasan_benar": "$\\sin v = -\\frac{7}{25}$ dan $\\tan v > 0$ berarti $\\cos v < 0$ (kuadran III), $\\cos^2 v = \\frac{576}{625}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{24}{25}$",
+          "alasan": "lupa memeriksa tanda: $\\sin v < 0$ dan $\\tan v > 0$ memaksa $\\cos v < 0$"
+        },
+        {
+          "teks": "$-\\frac{25}{24}$",
+          "alasan": "menghitung $\\sec v$, bukan $\\cos v$"
+        },
+        {
+          "teks": "$-\\frac{7}{24}$",
+          "alasan": "membagi $\\sin v$ dengan $\\cos v$ hasil yang salah (bukan $\\cos v$)"
+        }
+      ],
+      "pembahasan": "$\\sin v = \\frac{1}{\\csc v} = -\\frac{7}{25}$. $\\cos^2 v = 1 - \\frac{49}{625} = \\frac{576}{625}$, jadi $\\cos v = \\pm\\frac{24}{25}$. Karena $\\sin v < 0$ dan $\\tan v > 0$, $\\cos v < 0$, sehingga $\\cos v = -\\frac{24}{25}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b03-p0155-latihan-c-6"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menemukan kesalahan pembuktian",
+      "alasan_level": "menganalisis langkah pembuktian, menemukan bahwa kuadrat kedua ruas tidak ekuivalen, lalu menguji dengan $t = 0$",
+      "stimulus": "Dani menyelidiki apakah $\\cos t = -\\cos(-t)$ merupakan identitas. Langkahnya: (1) $\\cos t = -\\cos(-t)$ (persamaan yang diberikan); (2) $\\cos^2 t = [-\\cos(-t)]^2$ (kuadratkan kedua ruas); (3) $\\cos^2 t = \\cos^2 t$ (sederhanakan, karena $\\cos(-t) = \\cos t$). Karena kedua ruas akhirnya sama, Dani menyimpulkan bahwa persamaan itu identitas.",
+      "pertanyaan": "Pernyataan yang benar tentang kesimpulan Dani adalah ....",
+      "jawaban_benar": "salah, sebab kuadrat kedua ruas tidak ekuivalen; untuk $t = 0$ ruas kiri $1$ dan ruas kanan $-1$",
+      "alasan_benar": "persamaan awal diasumsikan benar dan kuadrat kedua ruas hanya memberi $a^2 = b^2$; untuk $t = 0$, $\\cos 0 = 1$ sedangkan $-\\cos 0 = -1$",
+      "distraktor": [
+        {
+          "teks": "benar, sebab setelah disederhanakan kedua ruas menjadi sama untuk semua nilai $t$",
+          "alasan": "mengira kesamaan setelah dikuadratkan membuktikan persamaan awal"
+        },
+        {
+          "teks": "kesimpulan salah, sebab $\\cos(-t) = -\\cos t$ sehingga langkah (3) keliru",
+          "alasan": "mengira kosinus fungsi ganjil seperti sinus"
+        },
+        {
+          "teks": "kesimpulan salah, sebab hasil langkah (3) seharusnya $\\cos^2 t = -\\cos^2 t$",
+          "alasan": "mengira kuadrat dari bentuk negatif tetap negatif"
+        }
+      ],
+      "pembahasan": "Dari $\\cos^2 t = \\cos^2 t$ tidak dapat disimpulkan $\\cos t = -\\cos(-t)$, karena $a^2 = b^2$ hanya berarti $a = \\pm b$. Untuk $t = 0$: ruas kiri $1$, ruas kanan $-1$, jadi bukan identitas.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 155,
+        "bagian": "Latihan C Penerapan Konsep",
+        "nomor": "4a",
+        "teks": "Buktikan setiap identitas trigonometri berikut. sin t tan t = cos t",
+        "jawaban": "sin t / tan t = cos t"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyederhanakan jumlah hasil bagi",
+      "alasan_level": "tiga langkah: sederhanakan masing-masing hasil bagi dengan identitas hasil bagi lalu jumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Untuk $t$ yang membuat semua bentuknya terdefinisi, bentuk sederhana dari $\\frac{\\sin t}{\\tan t} + \\frac{\\cos t}{\\cot t}$ adalah ....",
+      "jawaban_benar": "$\\sin t + \\cos t$",
+      "alasan_benar": "$\\frac{\\sin t}{\\tan t} = \\cos t$ dan $\\frac{\\cos t}{\\cot t} = \\sin t$",
+      "distraktor": [
+        {
+          "teks": "$\\sin t \\cos t$",
+          "alasan": "mengalikan kedua hasil, bukan menjumlahkan"
+        },
+        {
+          "teks": "$2\\cos t$",
+          "alasan": "mengira kedua suku sama-sama menghasilkan $\\cos t$"
+        },
+        {
+          "teks": "$\\frac{1}{\\sin t} + \\frac{1}{\\cos t}$",
+          "alasan": "membalik kedua hasil sederhana"
+        }
+      ],
+      "pembahasan": "$\\frac{\\sin t}{\\tan t} = \\sin t \\cdot \\frac{\\cos t}{\\sin t} = \\cos t$ dan $\\frac{\\cos t}{\\cot t} = \\cos t \\cdot \\frac{\\sin t}{\\cos t} = \\sin t$. Jumlahnya $\\sin t + \\cos t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 155,
+        "bagian": "Latihan C Pemahaman Konsep",
+        "nomor": "1",
+        "teks": "Benar atau salah? Karena sin 2 t + cos 2 t = 1, maka sin t = 1 - cos 2 t",
+        "jawaban": "Salah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menguji klaim dengan contoh penyangkal",
+      "alasan_level": "menganalisis klaim turunan identitas Pythagoras dan mengujinya dengan substitusi $t = \\pi/4$ (nilai $\\tan$ dan $\\sec$, lalu bandingkan)",
+      "stimulus": null,
+      "pertanyaan": "Karena $\\sec^2 t - \\tan^2 t = 1$, Rina menyimpulkan bahwa $\\sec t - \\tan t = 1$ untuk semua $t$ yang terdefinisi. Pernyataan yang benar tentang kesimpulan Rina adalah ....",
+      "jawaban_benar": "salah, sebab untuk $t = \\frac{\\pi}{4}$ diperoleh $\\sec t - \\tan t = \\sqrt{2} - 1 \\neq 1$",
+      "alasan_benar": "$\\sec \\frac{\\pi}{4} = \\sqrt{2}$ dan $\\tan \\frac{\\pi}{4} = 1$, sehingga selisihnya $\\sqrt{2} - 1$, bukan $1$",
+      "distraktor": [
+        {
+          "teks": "benar, sebab kedua ruas dapat diakarkan sehingga $\\sec t - \\tan t = \\sqrt{1}$ untuk semua $t$",
+          "alasan": "mengira akar dari selisih kuadrat sama dengan selisih akar"
+        },
+        {
+          "teks": "salah, sebab untuk $t = \\frac{\\pi}{4}$ diperoleh $\\sec t - \\tan t = \\sqrt{2} + 1$",
+          "alasan": "salah menghitung selisih dengan menjumlahkan nilai $\\sec$ dan $\\tan$"
+        },
+        {
+          "teks": "salah, sebab seharusnya $\\sec t - \\tan t = -1$ untuk semua $t$",
+          "alasan": "mengira hasil akar bernilai negatif"
+        }
+      ],
+      "pembahasan": "$\\sec^2 t - \\tan^2 t = (\\sec t - \\tan t)(\\sec t + \\tan t) = 1$, bukan $\\sec t - \\tan t = 1$. Contoh penyangkal: $t = \\frac{\\pi}{4}$ memberi $\\sqrt{2} - 1 \\neq 1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menyederhanakan selisih sec dan sin tan",
+      "alasan_level": "tiga langkah: ubah ke sinus dan kosinus, samakan penyebut, lalu pakai $1 - \\sin^2 t = \\cos^2 t$",
+      "stimulus": null,
+      "pertanyaan": "Untuk $t$ yang membuat semua bentuknya terdefinisi, bentuk sederhana dari $\\sec t - \\sin t \\tan t$ adalah ....",
+      "jawaban_benar": "$\\cos t$",
+      "alasan_benar": "$\\sec t - \\sin t \\tan t = \\frac{1}{\\cos t} - \\frac{\\sin^2 t}{\\cos t} = \\frac{1 - \\sin^2 t}{\\cos t} = \\cos t$",
+      "distraktor": [
+        {
+          "teks": "$\\sin t$",
+          "alasan": "mengira $1 - \\sin^2 t = \\sin^2 t$ lalu membagi sembarang"
+        },
+        {
+          "teks": "$\\cos^2 t$",
+          "alasan": "lupa membagi dengan $\\cos t$ setelah $1 - \\sin^2 t = \\cos^2 t$"
+        },
+        {
+          "teks": "$\\tan t$",
+          "alasan": "mengira hasil pengurangan sama dengan $\\tan t$ karena ada suku $\\tan t$"
+        }
+      ],
+      "pembahasan": "$\\sec t - \\sin t \\tan t = \\frac{1}{\\cos t} - \\frac{\\sin^2 t}{\\cos t} = \\frac{\\cos^2 t}{\\cos t} = \\cos t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menjumlahkan pecahan trigonometri",
+      "alasan_level": "empat langkah: samakan penyebut, jabarkan kuadrat, pakai $\\sin^2 t + \\cos^2 t = 1$, lalu faktorkan dan sederhanakan",
+      "stimulus": null,
+      "pertanyaan": "Untuk $t$ yang membuat semua bentuknya terdefinisi, $\\frac{\\sin t}{1 + \\cos t} + \\frac{1 + \\cos t}{\\sin t}$ sama dengan ....",
+      "jawaban_benar": "$2\\csc t$",
+      "alasan_benar": "$\\frac{\\sin^2 t + (1 + \\cos t)^2}{\\sin t(1 + \\cos t)} = \\frac{2 + 2\\cos t}{\\sin t(1 + \\cos t)} = \\frac{2}{\\sin t}$",
+      "distraktor": [
+        {
+          "teks": "$2\\sec t$",
+          "alasan": "tertukar csc dan sec setelah menyederhanakan"
+        },
+        {
+          "teks": "$\\csc t$",
+          "alasan": "lupa faktor $2$ pada pembilang $2 + 2\\cos t$"
+        },
+        {
+          "teks": "$2\\sin t$",
+          "alasan": "membalik hasil $\\frac{2}{\\sin t}$ menjadi $2\\sin t$"
+        }
+      ],
+      "pembahasan": "Samakan penyebut: $\\frac{\\sin^2 t + 1 + 2\\cos t + \\cos^2 t}{\\sin t(1 + \\cos t)} = \\frac{2 + 2\\cos t}{\\sin t (1 + \\cos t)} = \\frac{2}{\\sin t} = 2\\csc t$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 153,
+        "kutipan": "Sekarang kita akan menemukan identitas penjumlahan untuk kosinus."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kosinus jumlah sudut dari sinus",
+      "alasan_level": "tiga langkah: cari $\\cos A$ dan $\\cos B$ dari identitas Pythagoras, lalu pakai rumus $\\cos(A+B)$ dan hitung",
+      "stimulus": null,
+      "pertanyaan": "Sudut $A$ dan $B$ keduanya lancip dengan $\\sin A = \\frac{8}{17}$ dan $\\sin B = \\frac{3}{5}$. Nilai $\\cos(A + B)$ adalah ....",
+      "jawaban_benar": "$\\frac{36}{85}$",
+      "alasan_benar": "$\\cos A = \\frac{15}{17}$, $\\cos B = \\frac{4}{5}$ (positif karena lancip), $\\cos(A+B) = \\cos A \\cos B - \\sin A \\sin B = \\frac{60}{85} - \\frac{24}{85}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{84}{85}$",
+          "alasan": "memakai rumus $\\cos(A - B)$ (tanda plus di tengah)"
+        },
+        {
+          "teks": "$\\frac{77}{85}$",
+          "alasan": "memakai rumus $\\sin(A + B)$"
+        },
+        {
+          "teks": "$-\\frac{36}{85}$",
+          "alasan": "tertukar urutan pengurangan: $\\sin A \\sin B - \\cos A \\cos B$"
+        }
+      ],
+      "pembahasan": "$\\cos A = \\sqrt{1 - \\frac{64}{289}} = \\frac{15}{17}$ dan $\\cos B = \\sqrt{1 - \\frac{9}{25}} = \\frac{4}{5}$. $\\cos(A+B) = \\frac{15}{17}\\cdot\\frac{4}{5} - \\frac{8}{17}\\cdot\\frac{3}{5} = \\frac{60 - 24}{85} = \\frac{36}{85}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 154,
+        "kutipan": "Dengan identitas tersebut, kita dapat menemukan identitas pengurangan untuk kosinus dengan mudah."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sinus selisih sudut dengan kuadran",
+      "alasan_level": "empat langkah: tentukan $\\cos A$ dan $\\sin B$ beserta tandanya dari kuadran, lalu pakai rumus $\\sin(A-B)$ dan hitung",
+      "stimulus": null,
+      "pertanyaan": "Sudut $A$ berada di kuadran II dengan $\\sin A = \\frac{4}{5}$, sedangkan sudut $B$ berada di kuadran IV dengan $\\cos B = \\frac{5}{13}$. Nilai $\\sin(A - B)$ adalah ....",
+      "jawaban_benar": "$-\\frac{16}{65}$",
+      "alasan_benar": "$\\cos A = -\\frac{3}{5}$ dan $\\sin B = -\\frac{12}{13}$, $\\sin(A-B) = \\sin A \\cos B - \\cos A \\sin B = \\frac{20}{65} - \\frac{36}{65}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{56}{65}$",
+          "alasan": "memakai rumus $\\sin(A + B)$"
+        },
+        {
+          "teks": "$-\\frac{56}{65}$",
+          "alasan": "memakai rumus $\\sin(A+B)$ lalu menukar tanda"
+        },
+        {
+          "teks": "$\\frac{16}{65}$",
+          "alasan": "tertukar urutan pengurangan pada rumus"
+        }
+      ],
+      "pembahasan": "$\\cos A = -\\frac{3}{5}$ (kuadran II), $\\sin B = -\\frac{12}{13}$ (kuadran IV). $\\sin(A-B) = \\frac{4}{5}\\cdot\\frac{5}{13} - \\left(-\\frac{3}{5}\\right)\\left(-\\frac{12}{13}\\right) = \\frac{20}{65} - \\frac{36}{65} = -\\frac{16}{65}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 153,
+        "kutipan": "Sekarang kita akan menemukan identitas penjumlahan untuk kosinus."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai tepat kosinus sudut istimewa",
+      "alasan_level": "tiga langkah: uraikan $\\frac{7\\pi}{12} = \\frac{\\pi}{3} + \\frac{\\pi}{4}$, pakai rumus $\\cos(A+B)$, lalu hitung nilai sudut istimewa",
+      "stimulus": null,
+      "pertanyaan": "Dengan menuliskan $\\frac{7\\pi}{12} = \\frac{\\pi}{3} + \\frac{\\pi}{4}$, nilai $\\cos\\frac{7\\pi}{12}$ adalah ....",
+      "jawaban_benar": "$\\frac{\\sqrt{2} - \\sqrt{6}}{4}$",
+      "alasan_benar": "$\\cos\\frac{\\pi}{3}\\cos\\frac{\\pi}{4} - \\sin\\frac{\\pi}{3}\\sin\\frac{\\pi}{4} = \\frac{\\sqrt{2}}{4} - \\frac{\\sqrt{6}}{4}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{\\sqrt{2} + \\sqrt{6}}{4}$",
+          "alasan": "memakai tanda plus pada rumus $\\cos(A+B)$"
+        },
+        {
+          "teks": "$\\frac{\\sqrt{6} - \\sqrt{2}}{4}$",
+          "alasan": "tertukar urutan pengurangan sehingga tanda berbalik"
+        },
+        {
+          "teks": "$-\\frac{\\sqrt{6} + \\sqrt{2}}{4}$",
+          "alasan": "memakai tanda plus lalu menambah tanda negatif karena sudut di kuadran II"
+        }
+      ],
+      "pembahasan": "$\\cos\\frac{7\\pi}{12} = \\frac{1}{2}\\cdot\\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{3}}{2}\\cdot\\frac{\\sqrt{2}}{2} = \\frac{\\sqrt{2} - \\sqrt{6}}{4}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 154,
+        "kutipan": "Dengan identitas tersebut, kita dapat menemukan identitas pengurangan untuk kosinus dengan mudah."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mengenali bentuk rumus selisih sudut",
+      "alasan_level": "dua langkah: mengenali bentuk $\\cos A \\cos B + \\sin A \\sin B = \\cos(A - B)$, lalu hitung nilai sudut istimewa",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $\\cos 80^\\circ \\cos 20^\\circ + \\sin 80^\\circ \\sin 20^\\circ$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "bentuk itu sama dengan $\\cos(80^\\circ - 20^\\circ) = \\cos 60^\\circ$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{\\sqrt{3}}{2}$",
+          "alasan": "mengira hasilnya $\\sin 60^\\circ$ atau salah mengambil nilai $\\cos 30^\\circ$"
+        },
+        {
+          "teks": "$\\cos 100^\\circ$",
+          "alasan": "memakai rumus $\\cos(A + B)$ padahal bentuknya $\\cos(A - B)$"
+        },
+        {
+          "teks": "$-\\frac{1}{2}$",
+          "alasan": "salah tanda saat menghitung nilai $\\cos 60^\\circ$"
+        }
+      ],
+      "pembahasan": "$\\cos A \\cos B + \\sin A \\sin B = \\cos(A - B)$, sehingga nilainya $\\cos 60^\\circ = \\frac{1}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kuadrat jumlah dan hasil kali sin cos",
+      "alasan_level": "tiga langkah: kuadratkan kedua ruas, pakai $\\sin^2 t + \\cos^2 t = 1$, lalu selesaikan $\\sin t \\cos t$",
+      "stimulus": null,
+      "pertanyaan": "Jika $\\sin t + \\cos t = \\frac{1}{2}$, maka nilai $\\sin t \\cos t$ adalah ....",
+      "jawaban_benar": "$-\\frac{3}{8}$",
+      "alasan_benar": "$(\\sin t + \\cos t)^2 = 1 + 2\\sin t \\cos t = \\frac{1}{4}$, sehingga $\\sin t \\cos t = -\\frac{3}{8}$",
+      "distraktor": [
+        {
+          "teks": "$-\\frac{3}{4}$",
+          "alasan": "lupa membagi dengan $2$ dari suku $2\\sin t \\cos t$"
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "salah tanda saat memindahkan $1$ ke ruas kanan"
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "lupa suku $\\sin^2 t + \\cos^2 t = 1$ sehingga langsung $2\\sin t \\cos t = \\frac{1}{4}$"
+        }
+      ],
+      "pembahasan": "Kuadratkan: $\\sin^2 t + 2\\sin t\\cos t + \\cos^2 t = \\frac{1}{4}$, yaitu $1 + 2\\sin t \\cos t = \\frac{1}{4}$. Maka $\\sin t \\cos t = \\frac{1}{2}\\left(\\frac{1}{4} - 1\\right) = -\\frac{3}{8}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b03-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Kita akan menggunakan identitas trigonometri pada Sifat 3.4 untuk membuktikan identitas lainnya."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sistem dari sec dan tan",
+      "alasan_level": "tiga langkah: faktorkan $\\sec^2 t - \\tan^2 t = 1$, dapatkan $\\sec t - \\tan t$, lalu eliminasi untuk $\\tan t$",
+      "stimulus": null,
+      "pertanyaan": "Jika $\\sec t + \\tan t = 2$, maka nilai $\\tan t$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "$(\\sec t - \\tan t)(\\sec t + \\tan t) = 1$ sehingga $\\sec t - \\tan t = \\frac{1}{2}$; eliminasi: $\\tan t = \\frac{2 - 1/2}{2}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "menghitung $\\sec t$, bukan $\\tan t$"
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "lupa membagi dengan $2$ setelah mengurangkan kedua persamaan"
+        },
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "mengira $\\sec t - \\tan t = \\frac{1}{2}$ lalu langsung membagi dengan $2$"
+        }
+      ],
+      "pembahasan": "Dari $\\sec^2 t - \\tan^2 t = 1$: $\\sec t - \\tan t = \\frac{1}{2}$. Kurangkan dengan $\\sec t + \\tan t = 2$: $2\\tan t = 2 - \\frac{1}{2} = \\frac{3}{2}$, jadi $\\tan t = \\frac{3}{4}$ (dan $\\sec t = \\frac{5}{4}$).",
+      "catatan": null
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab C hanya p150-p155: identitas dasar, penjumlahan/pengurangan sudut, dan Latihan C 6 soal. Bukti identitas (Latihan 4b, Contoh 3.13/3.14, Mari Mencoba) berupa gambar sehingga tidak dapat dipakai; acuan siswa/pretest teks sudah banyak terpakai di easy. Soal medium lain akan nyaris kembar atau di luar materi."
+}

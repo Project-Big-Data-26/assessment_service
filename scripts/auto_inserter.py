@@ -50,7 +50,7 @@ MONGO_URI = (
     "mongodb+srv://romadhonim1_db_user:cEaG3NBp2wKc99VF"
     "@cluster0.nn1euxs.mongodb.net/project_assessment?appName=Cluster0"
 )
-DB_NAME = "nolla_experiment"
+DB_NAME = "math_learning_db"
 
 WATCH_DIR = _PROJECT_ROOT / "output"
 TARGET_FILENAME = "validation_results.json"

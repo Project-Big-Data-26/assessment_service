@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b03-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0117-latihan-33-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "perbandingan model regresi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah perhitungan residu kuadrat untuk dua model regresi guna mengevaluasi model terbaik.",
+      "stimulus": "| Waktu Uji ($x$, jam) | Suhu Mesin ($y$, $^{\\circ}\\text{C}$) |\n|---|---|\n| $1$ | $3$ |\n| $2$ | $5$ |\n| $3$ | $8$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua peneliti mengajukan model garis regresi yang berbeda untuk data pada tabel di atas, yaitu Model A: $\\hat{y} = 0,5 + 2,5x$ dan Model B: $\\hat{y} = 1 + 2x$. Berdasarkan metode kuadrat terkecil, berapakah jumlah kuadrat residu dari model yang lebih tepat?",
+      "jawaban_benar": "$0,25$",
+      "alasan_benar": "Pada Model A, nilai prediksi berturut-turut adalah $3$, $5,5$, dan $8$. Residu masing-masing adalah $3 - 3 = 0$, $5 - 5,5 = -0,5$, dan $8 - 8 = 0$, sehingga jumlah kuadrat residunya $0^2 + (-0,5)^2 + 0^2 = 0,25$. Pada Model B, nilai prediksi adalah $3$, $5$, dan $7$. Residu masing-masing adalah $3 - 3 = 0$, $5 - 5 = 0$, dan $8 - 7 = 1$, sehingga jumlah kuadrat residunya $0^2 + 0^2 + 1^2 = 1$. Model A lebih tepat karena memiliki jumlah kuadrat residu lebih kecil, yaitu $0,25$.",
+      "distraktor": [
+        {
+          "teks": "$1,00$",
+          "alasan": "Siswa memilih jumlah kuadrat residu dari Model B yang sebenarnya lebih besar dan kurang tepat."
+        },
+        {
+          "teks": "$0,50$",
+          "alasan": "Siswa menghitung jumlah nilai mutlak residu, bukan jumlah kuadrat residu."
+        },
+        {
+          "teks": "$1,25$",
+          "alasan": "Siswa menjumlahkan total kuadrat residu dari kedua model regresi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung kuadrat residu Model A:\n- Untuk $x = 1$: $\\hat{y} = 0,5 + 2,5(1) = 3 \\implies (3 - 3)^2 = 0$\n- Untuk $x = 2$: $\\hat{y} = 0,5 + 2,5(2) = 5,5 \\implies (5 - 5,5)^2 = (-0,5)^2 = 0,25$\n- Untuk $x = 3$: $\\hat{y} = 0,5 + 2,5(3) = 8 \\implies (8 - 8)^2 = 0$\nJumlah kuadrat residu Model A $= 0 + 0,25 + 0 = 0,25$.\n\nLangkah 2: Hitung kuadrat residu Model B:\n- Untuk $x = 1$: $\\hat{y} = 1 + 2(1) = 3 \\implies (3 - 3)^2 = 0$\n- Untuk $x = 2$: $\\hat{y} = 1 + 2(2) = 5 \\implies (5 - 5)^2 = 0$\n- Untuk $x = 3$: $\\hat{y} = 1 + 2(3) = 7 \\implies (8 - 7)^2 = 1^2 = 1$\nJumlah kuadrat residu Model B $= 0 + 0 + 1 = 1$.\n\nLangkah 3: Menurut metode kuadrat terkecil, model yang lebih tepat adalah model dengan jumlah kuadrat residu terkecil, yaitu Model A dengan nilai $0,25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0121-latihan-34-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "prediksi regresi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan intersep garis regresi dari titik rata-rata sebelum menghitung nilai prediksi pada nilai x tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada suatu percobaan fisika, diperoleh rata-rata nilai variabel bebas $\\bar{x} = 25$ dan rata-rata nilai variabel terikat $\\bar{y} = 15$. Jika kemiringan garis regresi (gradien $b$) yang dihasilkan adalah $0,4$, berapakah nilai prediksi $\\hat{y}$ untuk nilai $x = 30$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Konstanta $a$ dicari dari titik rata-rata: $a = \\bar{y} - b\\bar{x} = 15 - 0,4(25) = 15 - 10 = 5$. Persamaan regresi adalah $\\hat{y} = 5 + 0,4x$. Untuk $x = 30$, diperoleh $\\hat{y} = 5 + 0,4(30) = 5 + 12 = 17$.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Siswa hanya menghitung nilai $bx = 0,4 \\times 30 = 12$ tanpa menambahkan konstanta $a$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Siswa salah menghitung tanda intersep menjadi $a = \\bar{y} + b\\bar{x} = 25$, lalu memperoleh nilai yang keliru."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Siswa terbalik menukar nilai $\\bar{x}$ dan $\\bar{y}$ saat menghitung persamaan garis regresi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai titik potong sumbu $y$ ($a$):\n$$a = \\bar{y} - b\\bar{x} = 15 - (0,4)(25) = 15 - 10 = 5$$\n\nLangkah 2: Tuliskan persamaan garis regresi linearnya:\n$$\\hat{y} = a + bx = 5 + 0,4x$$\n\nLangkah 3: Hitung nilai prediksi untuk $x = 30$:\n$$\\hat{y} = 5 + 0,4(30) = 5 + 12 = 17$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 119,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilai b dapat dihitung dengan menggunakan kedua jenis jumlah kuadrat di atas sehingga menjadi:"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penentuan parameter regresi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Siswa harus menghitung gradien regresi dari rasio jumlah kuadrat terlebih dahulu sebelum menghitung titik potong sumbu y.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari pengolahan data bivariat diperoleh nilai $SS_{xy} = 180$, $SS_{xx} = 60$, rata-rata variabel independen $\\bar{x} = 12$, dan rata-rata variabel dependen $\\bar{y} = 45$. Berapakah nilai titik potong sumbu $y$ (nilai $a$) pada model regresi linear tersebut?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Nilai gradien adalah $b = \\frac{SS_{xy}}{SS_{xx}} = \\frac{180}{60} = 3$. Selanjutnya, titik potong sumbu $y$ adalah $a = \\bar{y} - b\\bar{x} = 45 - 3(12) = 45 - 36 = 9$.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Siswa hanya menyelesaikan langkah pertama, yaitu menghitung nilai gradien $b$."
+        },
+        {
+          "teks": "$81$",
+          "alasan": "Siswa salah menggunakan tanda pada rumus intersep sehingga menghitung $a = \\bar{y} + b\\bar{x} = 45 + 36 = 81$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Siswa terbalik menghitung gradien sebagai $b = \\frac{SS_{xx}}{SS_{xy}} = \\frac{60}{180} = \\frac{1}{3}$, lalu mendapatkan $a = 45 - \\frac{1}{3}(12) = 41$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung gradien ($b$):\n$$b = \\frac{SS_{xy}}{SS_{xx}} = \\frac{180}{60} = 3$$\n\nLangkah 2: Menghitung nilai intersep ($a$):\nKarena garis regresi selalu melalui titik $(\\bar{x}, \\bar{y})$, maka:\n$$a = \\bar{y} - b\\bar{x} = 45 - 3(12) = 45 - 36 = 9$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 115,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selisih antara nilai variabel dependen yang diamati ( y ) dan nilai variabel dependen yang diprediksi (yˆ) disebut sebagai residu (ε yang dibaca epsilon). Maka dari itu, rumus residu ditulis sebagai berikut. Residu (ε) = y − yˆ"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis residu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan nilai estimasi regresi terlebih dahulu kemudian memanipulasi rumus residu untuk menemukan nilai data pengamatan riil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara dua variabel dirumuskan oleh persamaan regresi linear $\\hat{y} = 14 + 2,5x$. Jika untuk suatu titik pengamatan dengan nilai $x = 8$ diperoleh nilai residu $\\varepsilon = -3,5$, berapakah nilai variabel dependen aktual ($y$) dari data pengamatan tersebut?",
+      "jawaban_benar": "$30,5$",
+      "alasan_benar": "Nilai prediksi garis regresi untuk $x = 8$ adalah $\\hat{y} = 14 + 2,5(8) = 14 + 20 = 34$. Berdasarkan rumus residu $\\varepsilon = y - \\hat{y}$, maka $-3,5 = y - 34$, sehingga $y = 34 - 3,5 = 30,5$.",
+      "distraktor": [
+        {
+          "teks": "$34,0$",
+          "alasan": "Siswa hanya menghitung nilai prediksi $\\hat{y}$ tanpa memperhitungkan nilai residu."
+        },
+        {
+          "teks": "$37,5$",
+          "alasan": "Siswa salah menggunakan definisi residu menjadi $\\varepsilon = \\hat{y} - y$, sehingga menghitung $y = 34 + 3,5 = 37,5$."
+        },
+        {
+          "teks": "$26,5$",
+          "alasan": "Siswa mengurangkan residu dua kali atau salah dalam operasi aljabar pemindahan ruas."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung nilai prediksi regresi ($\\hat{y}$) pada saat $x = 8$:\n$$\\hat{y} = 14 + 2,5(8) = 14 + 20 = 34$$\n\nLangkah 2: Tentukan nilai aktual $y$ menggunakan hubungan residu $\\varepsilon = y - \\hat{y}$:\n$$-3,5 = y - 34 \\iff y = 34 + (-3,5) = 30,5$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Interpolasi adalah penggunaan hubungan antar variabel untuk memprediksi nilai yang berada di dalam jangkauan data. Sedangkan pada nomor 6 kalian telah melakukan suatu proses yang disebut ekstrapolasi."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "interpretasi dan sifat prediksi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan selisih nilai prediksi serta analisis posisi nilai variabel independen terhadap jangkauan domain data.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah eksperimen mencatat data waktu pemanasan ($x$, dalam menit) pada rentang $2 \\le x \\le 10$ terhadap suhu cairan ($y$, dalam $^{\\circ}\\text{C}$) dengan persamaan regresi $\\hat{y} = 42 + 4,5x$. Berapakah selisih suhu prediksi antara waktu pemanasan $14$ menit dan $6$ menit, serta apa istilah jenis prediksi yang dilakukan pada saat $x = 14$ menit?",
+      "jawaban_benar": "$36^{\\circ}\\text{C}$ dan ekstrapolasi",
+      "alasan_benar": "Selisih prediksi suhu adalah $b \\times \\Delta x = 4,5 \\times (14 - 6) = 4,5 \\times 8 = 36^{\\circ}\\text{C}$. Karena $x = 14$ berada di luar rentang pengamatan ($2 \\le x \\le 10$), proses prediksi tersebut dinamakan ekstrapolasi.",
+      "distraktor": [
+        {
+          "teks": "$36^{\\circ}\\text{C}$ dan interpolasi",
+          "alasan": "Perhitungan selisih benar, tetapi salah mengidentifikasi proses prediksi di luar rentang data sebagai interpolasi."
+        },
+        {
+          "teks": "$45^{\\circ}\\text{C}$ dan ekstrapolasi",
+          "alasan": "Siswa salah menghitung selisih waktu menjadi $10$ menit sehingga memperoleh selisih $4,5 \\times 10 = 45$."
+        },
+        {
+          "teks": "$63^{\\circ}\\text{C}$ dan interpolasi",
+          "alasan": "Siswa menghitung nilai prediksi $\\hat{y}$ pada $x = 6$ lalu mengiranya sebagai selisih, serta salah mengklasifikasikan metode prediksi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung selisih prediksi suhu antara $x = 14$ dan $x = 6$:\n$$\\hat{y}(14) - \\hat{y}(6) = (42 + 4,5 \\times 14) - (42 + 4,5 \\times 6) = 4,5 \\times (14 - 6) = 4,5 \\times 8 = 36^{\\circ}\\text{C}$$\n\nLangkah 2: Tentukan jenis prediksinya:\nKarena data pengamatan memiliki jangkauan waktu $2 \\le x \\le 10$ menit, nilai $x = 14$ menit berada di luar jangkauan data pengamatan. Oleh karena itu, penggunaan model regresi untuk nilai $x = 14$ menit disebut ekstrapolasi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0121-latihan-34-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "estimasi nilai prediksi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan rumus garis regresi linear dari dua titik rata-rata dan gradien untuk menghitung nilai prediksi pada kondisi tertentu.",
+      "stimulus": "Hubungan antara kecepatan laju mobil ($x$, dalam km/jam) dan jarak reaksi pengereman ($y$, dalam meter) dinyatakan oleh persamaan regresi linear $\\hat{y} = 0,8 + 0,22x$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan persamaan garis regresi tersebut, taksiran jarak reaksi pengereman mobil yang sedang melaju dengan kecepatan $45\\text{ km/jam}$ adalah...",
+      "jawaban_benar": "$10,7\\text{ m}$",
+      "alasan_benar": "Substitusi $x = 45$ ke persamaan: $\\hat{y} = 0,8 + 0,22(45) = 0,8 + 9,9 = 10,7\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$9,9\\text{ m}$",
+          "alasan": "Hanya menghitung nilai $bx = 0,22 \\times 45$ tanpa menjumlahkan konstanta $a = 0,8$."
+        },
+        {
+          "teks": "$11,5\\text{ m}$",
+          "alasan": "Kesalahan aritmetika saat mengalikan $0,22 \\times 45 = 10,7$ lalu ditambah $0,8 = 11,5$."
+        },
+        {
+          "teks": "$17,9\\text{ m}$",
+          "alasan": "Tertukar posisi koefisien menjadi $\\hat{y} = 45 \\times 0,8 - 0,22$ atau operasi tidak beraturan."
+        }
+      ],
+      "pembahasan": "Persamaan regresi: $\\hat{y} = a + bx = 0,8 + 0,22x$.\nSubstitusikan $x = 45$:\n$$\\hat{y} = 0,8 + 0,22(45) = 0,8 + 9,9 = 10,7\\text{ m}$$\nJadi, taksiran jarak reaksi pengereman adalah $10,7\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 118,
+        "bagian": "Latihan 3.3",
+        "nomor": "2",
+        "teks": "Seorang siswa menyelidiki hubungan antara harga (y rupiah) dari 100 gram cokelat dan persentase kandungan cokelat (x %). Data yang diperoleh disajikan pada tabel berikut. Jika diketahui bahwa persamaan garis regresinya adalah yˆ = 1700 + 154x. d. Siswa tersebut ingin memberikan saran harga yang cocok untuk cokelat tersebut. Berapakah prediksi harga yang cocok?",
+        "jawaban": "Rp7.090,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis residu pencilan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis selisih nilai pengamatan terhadap nilai prediksi regresi linear untuk menentukan besarnya residu data.",
+      "stimulus": "Seorang peneliti mencatat harga jual ($y$, dalam ribuan rupiah) dari bubuk kopi kemasan terhadap persentase kemurnian ($x$, dalam persen). Model regresi linearnya adalah $\\hat{y} = 12 + 1,4x$. Salah satu sampel produk dengan kadar kemurnian $60\\%$ dijual dengan harga aktual sebesar Rp105.000,00 ($y = 105$).",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan model regresi tersebut, besar nilai residu ($e = y - \\hat{y}$) untuk produk kopi tersebut adalah...",
+      "jawaban_benar": "Rp9.000,00",
+      "alasan_benar": "$\\hat{y} = 12 + 1,4(60) = 12 + 84 = 96$ (ribu rupiah). Residu: $e = 105 - 96 = 9$ ribu rupiah atau Rp9.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp21.000,00",
+          "alasan": "Lupa menjumlahkan intersep $12$, sehingga $\\hat{y} = 84$, lalu $e = 105 - 84 = 21$ ribu rupiah."
+        },
+        {
+          "teks": "-Rp9.000,00",
+          "alasan": "Tertukar urutan pengurangan residu menjadi $e = \\hat{y} - y = 96 - 105 = -9$ ribu rupiah."
+        },
+        {
+          "teks": "Rp96.000,00",
+          "alasan": "Hanya menghitung nilai prediksi $\\hat{y}$ tanpa menghitung selisih residu."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai estimasi $\\hat{y}$ untuk $x = 60$.\n$$\\hat{y} = 12 + 1,4(60) = 12 + 84 = 96\\text{ (ribu rupiah)}$$\nLangkah 2: Hitung residu ($e = y - \\hat{y}$).\n$$e = 105 - 96 = 9\\text{ (ribu rupiah)} = \\text{Rp9.000,00}$$\nJadi, nilai residunya adalah Rp9.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b03-p0117-latihan-33-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "evaluasi model regresi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengevaluasi dan membandingkan dua kandidat model garis regresi menggunakan kriteria jumlah kuadrat residu.",
+      "stimulus": "| Data ke- | $x$ | $y$ |\n|---|---|---|\n| 1 | $2$ | $5$ |\n| 2 | $4$ | $9$ |\n| 3 | $6$ | $13$ |\n\nTerdapat dua kandidat model regresi linear: Model I: $\\hat{y}_1 = 1 + 2x$ dan Model II: $\\hat{y}_2 = 2 + 1,8x$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan kriteria metode kuadrat terkecil, model yang lebih tepat beserta jumlah kuadrat residunya adalah...",
+      "jawaban_benar": "Model I dengan jumlah kuadrat residu $0$",
+      "alasan_benar": "Untuk Model I: pada $x=2, 4, 6$, $\\hat{y} = 5, 9, 13$. Semua residu bernilai $0$, sehingga jumlah kuadrat residunya $0$.",
+      "distraktor": [
+        {
+          "teks": "Model II dengan jumlah kuadrat residu $0,08$",
+          "alasan": "Keliru memilih model dengan jumlah kuadrat residu lebih besar padahal Model I bernilai 0."
+        },
+        {
+          "teks": "Model I dengan jumlah kuadrat residu $1$",
+          "alasan": "Salah menghitung residu Model I dengan menganggap residu sama dengan intersep."
+        },
+        {
+          "teks": "Model II dengan jumlah kuadrat residu $0,32$",
+          "alasan": "Salah dalam perhitungan kuadrat residu dan salah memilih model optimum."
+        }
+      ],
+      "pembahasan": "Uji Model I ($\\hat{y}_1 = 1 + 2x$):\n- $x = 2 \\Rightarrow \\hat{y}_1 = 1 + 4 = 5$, residu $e_1 = 5 - 5 = 0$.\n- $x = 4 \\Rightarrow \\hat{y}_1 = 1 + 8 = 9$, residu $e_2 = 9 - 9 = 0$.\n- $x = 6 \\Rightarrow \\hat{y}_1 = 1 + 12 = 13$, residu $e_3 = 13 - 13 = 0$.\nJumlah kuadrat residu Model I $= 0^2 + 0^2 + 0^2 = 0$.\nKarena jumlah kuadrat residunya nol (minimum sempurna), Model I adalah model yang lebih tepat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 119,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Oleh karena garis regresi linearnya adalah yˆ = a + bx dan titik ( ~~x~~ , ~~y~~ ) dilalui garis tersebut maka dapat disubstitusikan sehingga menjadi:"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kalkulasi intersep dan prediksi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan sifat titik centroid garis regresi untuk mencari nilai titik potong sumbu-y lalu menghitung prediksi.",
+      "stimulus": "Suatu kumpulan data berpasangan menghasilkan rata-rata nilai variabel bebas $\\bar{x} = 8$ dan rata-rata variabel terikat $\\bar{y} = 26$. Gradien garis regresi yang dihitung dengan metode kuadrat terkecil adalah $b = 2,5$.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis regresi linear data tersebut dan nilai prediksinya saat $x = 10$ adalah...",
+      "jawaban_benar": "$\\hat{y} = 6 + 2,5x$ dan $\\hat{y} = 31$",
+      "alasan_benar": "$a = \\bar{y} - b\\bar{x} = 26 - 2,5(8) = 26 - 20 = 6$. Persamaan $\\hat{y} = 6 + 2,5x$. Untuk $x = 10$, $\\hat{y} = 6 + 2,5(10) = 31$.",
+      "distraktor": [
+        {
+          "teks": "$\\hat{y} = 6 + 2,5x$ dan $\\hat{y} = 25$",
+          "alasan": "Hanya menghitung nilai $2,5 \\times 10 = 25$ tanpa menambahkan konstanta $a=6$."
+        },
+        {
+          "teks": "$\\hat{y} = 46 + 2,5x$ dan $\\hat{y} = 71$",
+          "alasan": "Salah rumus intersep dengan menjumlahkan $a = \\bar{y} + b\\bar{x} = 26 + 20 = 46$."
+        },
+        {
+          "teks": "$\\hat{y} = -6 + 2,5x$ dan $\\hat{y} = 19$",
+          "alasan": "Tertukar tanda operasi pengurangan $a = b\\bar{x} - \\bar{y} = 20 - 26 = -6$."
+        }
+      ],
+      "pembahasan": "Garis regresi selalu melalui titik rata-rata $(\\bar{x}, \\bar{y})$:\n$$\\bar{y} = a + b\\bar{x} \\implies a = \\bar{y} - b\\bar{x}$$\n$$a = 26 - 2,5(8) = 26 - 20 = 6$$\nSehingga persamaan regresinya adalah $\\hat{y} = 6 + 2,5x$.\nUntuk $x = 10$:\n$$\\hat{y} = 6 + 2,5(10) = 6 + 25 = 31$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "2e",
+        "teks": "Hitunglah prediksi tinggi badan anak perempuan yang berumur 5,8 tahun.",
+        "jawaban": "120 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "prediksi nilai variabel",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi nilai variabel bebas ke dalam model regresi linear dan perhitungan aritmetika bertingkat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara umur bibit pohon jati ($x$, dalam tahun) dengan keliling lingkar batangnya ($y$, dalam cm) untuk rentang $1 \\le x \\le 10$ dinyatakan oleh model regresi linear $\\hat{y} = 12,4 + 5,5x$. Berdasarkan model tersebut, prediksi keliling lingkar batang pohon jati yang berumur $6,4$ tahun adalah...",
+      "jawaban_benar": "$47,6\\text{ cm}$",
+      "alasan_benar": "$\\hat{y} = 12,4 + 5,5(6,4) = 12,4 + 35,2 = 47,6\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$35,2\\text{ cm}$",
+          "alasan": "Hanya menghitung suku $bx$ tanpa menjumlahkannya dengan nilai intersep $a$."
+        },
+        {
+          "teks": "$44,3\\text{ cm}$",
+          "alasan": "Melakukan kesalahan operasi desimal pada perkalian $5,5 \\times 6,4 = 31,9$."
+        },
+        {
+          "teks": "$50,2\\text{ cm}$",
+          "alasan": "Tertukar menempatkan nilai variabel bebas ke intersep $a$ atau salah menjumlahkan desimal."
+        }
+      ],
+      "pembahasan": "Substitusikan $x = 6,4$ ke dalam persamaan garis regresi:\n$$\\hat{y} = 12,4 + 5,5(6,4)$$\n$$\\hat{y} = 12,4 + 35,2 = 47,6\\text{ cm}$$\nJadi, prediksi lingkar batangnya adalah $47,6\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 118,
+        "bagian": "Latihan 3.3",
+        "nomor": "2",
+        "teks": "Seorang siswa menyelidiki hubungan antara harga (y rupiah) dari 100 gram cokelat dan persentase kandungan cokelat (x %). Data yang diperoleh disajikan pada tabel berikut.",
+        "jawaban": "Merek D harganya terlalu tinggi karena residunya paling positif",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "deteksi nilai pencilan residu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis beberapa pasangan data terhadap garis regresi dengan menghitung nilai prediksi dan residu terbesar.",
+      "stimulus": "| Merek Madu | Kadar Kemurnian ($x$, %) | Harga ($y$, ribu rupiah) |\n|---|---|---|\n| P | $40$ | $85$ |\n| Q | $50$ | $130$ |\n| R | $60$ | $115$ |\n| S | $80$ | $145$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang peneliti memperoleh model regresi linear $\\hat{y} = 25 + 1,5x$ untuk memprediksi harga sebotol madu ($y$, dalam ribuan rupiah) berdasarkan persentase kemurniannya ($x$). Berdasarkan tabel data di atas, merek madu yang harganya paling jauh lebih mahal daripada harga prediksi model regresi (memiliki residu positif terbesar) adalah...",
+      "jawaban_benar": "Merek Q",
+      "alasan_benar": "Merek Q memiliki residu $130 - (25 + 1,5(50)) = 130 - 100 = +30$ ribu rupiah, paling tinggi di antara semua merek.",
+      "distraktor": [
+        {
+          "teks": "Merek P",
+          "alasan": "Residu merek P adalah $85 - (25 + 1,5(40)) = 85 - 85 = 0$."
+        },
+        {
+          "teks": "Merek R",
+          "alasan": "Residu merek R adalah $115 - (25 + 1,5(60)) = 115 - 115 = 0$."
+        },
+        {
+          "teks": "Merek S",
+          "alasan": "Terkecoh memilih nilai harga $y$ tertinggi di tabel, padahal residunya $145 - (25 + 1,5(80)) = 145 - 145 = 0$."
+        }
+      ],
+      "pembahasan": "Hitung harga prediksi $\\hat{y} = 25 + 1,5x$ dan residu $\\varepsilon = y - \\hat{y}$ tiap merek:\n- P ($x = 40$): $\\hat{y} = 25 + 60 = 85 \\rightarrow \\varepsilon = 85 - 85 = 0$\n- Q ($x = 50$): $\\hat{y} = 25 + 75 = 100 \\rightarrow \\varepsilon = 130 - 100 = +30$\n- R ($x = 60$): $\\hat{y} = 25 + 90 = 115 \\rightarrow \\varepsilon = 115 - 115 = 0$\n- S ($x = 80$): $\\hat{y} = 25 + 120 = 145 \\rightarrow \\varepsilon = 145 - 145 = 0$\nMerek yang harganya paling jauh lebih mahal dari prediksi adalah Merek Q dengan selisih Rp30.000,00 di atas garis.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 119,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilai b dapat dihitung dengan menggunakan kedua jenis jumlah kuadrat di atas sehingga menjadi: Tahap berikutnya kita perlu mencari nilai a. Untuk mencari ini, kita perlu mengetahui bahwa salah satu karakteristik garis regresi yang memenuhi syarat metode kuadrat terkecil adalah titik rata-ratanya ( x , y ) selalu dilalui garis regresi tersebut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penyusunan persamaan regresi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menghitung gradien $b$ dari rasio $SS_{xy}/SS_{xx}$, kemudian menentukan konstanta $a$ lewat koordinat rata-rata $(\\bar{x}, \\bar{y})$.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari pengamatan sekumpulan data bivariat diperoleh $SS_{xy} = 96$, $SS_{xx} = 32$, nilai rata-rata variabel independen $\\bar{x} = 6$, dan nilai rata-rata variabel dependen $\\bar{y} = 22$. Persamaan garis regresi linear yang memenuhi kriteria metode kuadrat terkecil adalah...",
+      "jawaban_benar": "$\\hat{y} = 4 + 3x$",
+      "alasan_benar": "$b = 96/32 = 3$; $a = 22 - 3(6) = 4$. Persamaan regresi $\\hat{y} = 4 + 3x$.",
+      "distraktor": [
+        {
+          "teks": "$\\hat{y} = 3 + 4x$",
+          "alasan": "Tertukar posisi nilai kemiringan garis regresi $b$ dan intersep $a$."
+        },
+        {
+          "teks": "$\\hat{y} = 40 - 3x$",
+          "alasan": "Salah menggunakan rumus titik potong dengan menjumlahkan $a = \\bar{y} + b\\bar{x} = 22 + 18 = 40$."
+        },
+        {
+          "teks": "$\\hat{y} = 14 + 1,33x$",
+          "alasan": "Menghitung gradien terbalik $b = SS_{xx} / SS_{xy} = 32/96 \\approx 0,33$ lalu salah hitung intersep."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan nilai kemiringan garis ($b$):\n$$b = \\frac{SS_{xy}}{SS_{xx}} = \\frac{96}{32} = 3$$\nLangkah 2: Tentukan nilai perpotongan sumbu $y$ ($a$) menggunakan titik rata-rata $(\\bar{x}, \\bar{y})$:\n$$a = \\bar{y} - b\\bar{x} = 22 - 3(6) = 22 - 18 = 4$$\nLangkah 3: Tulis persamaan garis regresi:\n$$\\hat{y} = a + bx \\implies \\hat{y} = 4 + 3x$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 115,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selisih antara nilai variabel dependen yang diamati ( y ) dan nilai variabel dependen yang diprediksi (yˆ) disebut sebagai residu (ε yang dibaca epsilon). Maka dari itu, rumus residu ditulis sebagai berikut. Residu (ε) = y − yˆ"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "perhitungan nilai residu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan nilai prediksi dari persamaan regresi terlebih dahulu sebelum mencari selisihnya dengan nilai pengamatan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Model regresi linear untuk memprediksi hasil panen ($y$, dalam kuintal) berdasarkan luas lahan ($x$, dalam hektare) adalah $\\hat{y} = 3,5 + 4,2x$. Pada suatu petak lahan dengan luas $5$ hektare diperoleh hasil panen riil sebesar $23$ kuintal. Nilai residu pada data pengamatan tersebut adalah...",
+      "jawaban_benar": "$-1,5\\text{ kuintal}$",
+      "alasan_benar": "$\\hat{y} = 3,5 + 4,2(5) = 24,5$; residu $\\varepsilon = y - \\hat{y} = 23 - 24,5 = -1,5$.",
+      "distraktor": [
+        {
+          "teks": "$1,5\\text{ kuintal}$",
+          "alasan": "Terbalik mengurangkan rumus residu menjadi $\\hat{y} - y$."
+        },
+        {
+          "teks": "$-0,5\\text{ kuintal}$",
+          "alasan": "Kesalahan perhitungan pada substitusi $4,2 \\times 5 = 20$ (seharusnya $21$)."
+        },
+        {
+          "teks": "$-2,5\\text{ kuintal}$",
+          "alasan": "Salah menjumlahkan konstanta regresi dengan luas lahan terlebih dahulu."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung nilai prediksi ($\\hat{y}$) saat $x = 5$:\n$$\\hat{y} = 3,5 + 4,2(5) = 3,5 + 21 = 24,5$$\nLangkah 2: Hitung nilai residu:\n$$\\varepsilon = y - \\hat{y} = 23 - 24,5 = -1,5\\text{ kuintal}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Interpolasi adalah penggunaan hubungan antar variabel untuk memprediksi nilai yang berada di dalam jangkauan data. Sedangkan pada nomor 6 kalian telah melakukan suatu proses yang disebut ekstrapolasi. Ekstrapolasi adalah penggunaan hubungan antar variabel untuk memprediksi nilai yang berada di luar jangkauan data dengan asumsi bahwa hubungan ini berlaku meskipun di luar jangkauan data."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "analisis jangkauan prediksi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis keabsahan proses estimasi dengan membandingkan posisi nilai independen terhadap interval data observasi lalu menghitung nilai estimasinya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang ilmuwan mengumpulkan data waktu pemanasan logam ($x$, dalam menit) pada interval $4 \\le x \\le 20$ terhadap pemuaian panjangnya ($y$, dalam mm). Persamaan regresi yang dihasilkan adalah $\\hat{y} = 0,6 + 0,15x$. Jika model tersebut digunakan untuk memprediksi pemuaian panjang pada waktu pemanasan $24$ menit, nilai pemuaian yang diprediksi dan kategori proses prediksi tersebut adalah...",
+      "jawaban_benar": "$4,2\\text{ mm}$ dan ekstrapolasi",
+      "alasan_benar": "$\\hat{y} = 0,6 + 0,15(24) = 4,2\\text{ mm}$; karena $x = 24$ berada di luar rentang sampel $4 \\le x \\le 20$, proses tersebut adalah ekstrapolasi.",
+      "distraktor": [
+        {
+          "teks": "$4,2\\text{ mm}$ dan interpolasi",
+          "alasan": "Menghitung nilai prediksi dengan benar tetapi keliru mengidentifikasi sebagai interpolasi."
+        },
+        {
+          "teks": "$3,6\\text{ mm}$ dan ekstrapolasi",
+          "alasan": "Lupa menambahkan nilai intersep $0,6$ pada hasil perkalian $0,15 \\times 24 = 3,6$."
+        },
+        {
+          "teks": "$4,8\\text{ mm}$ dan ekstrapolasi",
+          "alasan": "Kesalahan aritmetika saat mengalikan $0,15 \\times 24$ menjadi $4,2$ lalu ditambahkan $0,6$ menjadi $4,8$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung nilai prediksi pemuaian ($\\hat{y}$) untuk $x = 24$:\n$$\\hat{y} = 0,6 + 0,15(24) = 0,6 + 3,6 = 4,2\\text{ mm}$$\nLangkah 2: Tinjau rentang nilai variabel independen data pengamatan, yaitu $4 \\le x \\le 20$. Karena nilai $x = 24$ berada di luar jangkauan sampel pengamatan ($24 > 20$), maka penggunaan model tersebut dikategorikan sebagai ekstrapolasi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "2e",
+        "teks": "Hitunglah prediksi tinggi badan anak perempuan yang berumur 5,8 tahun.",
+        "jawaban": "119,7 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "prediksi regresi linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi variabel independen ke dalam persamaan garis regresi dan perhitungan desimal dua langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Hubungan antara usia bibit pohon sengon ($x$, dalam bulan) untuk rentang $2 \\le x \\le 14$ dengan rata-rata tinggi batangnya ($y$, dalam cm) dirumuskan oleh persamaan regresi $\\hat{y} = 42 + 6,8x$. Berdasarkan model tersebut, berapa prediksi tinggi bibit pohon yang berumur $7,5$ bulan?",
+      "jawaban_benar": "$93,0\\text{ cm}$",
+      "alasan_benar": "Substitusi $x = 7,5$ menghasilkan $\\hat{y} = 42 + 6,8(7,5) = 42 + 51,0 = 93,0\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$89,6\\text{ cm}$",
+          "alasan": "Siswa salah mengalikan $6,8 \\times 7 = 47,6$ tanpa memperhitungkan pecahan desimal $0,5$ sehingga $42 + 47,6 = 89,6$."
+        },
+        {
+          "teks": "$95,5\\text{ cm}$",
+          "alasan": "Siswa salah menjumlahkan hasil kali menjadi $53,5$ sehingga memperoleh $42 + 53,5 = 95,5$."
+        },
+        {
+          "teks": "$102,0\\text{ cm}$",
+          "alasan": "Siswa salah memasukkan nilai $x = 7,5$ ke konstanta intersep atau menjumlahkan intersep dengan dua kali hasil perkalian."
+        }
+      ],
+      "pembahasan": "Diketahui persamaan garis regresi $\\hat{y} = 42 + 6,8x$. Untuk memprediksi tinggi tanaman pada usia $x = 7,5$ bulan, substitusikan $x = 7,5$ ke dalam persamaan:\n$$\\hat{y} = 42 + 6,8(7,5)$$\n$$\\hat{y} = 42 + 51,0 = 93,0\\text{ cm}$$\nJadi, prediksi tinggi bibit pohon tersebut adalah $93,0\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 122,
+        "bagian": "Latihan 3.4",
+        "nomor": "2f",
+        "teks": "Hitunglah prediksi tinggi badan seorang perempuan yang sudah berumur 30 tahun.",
+        "jawaban": "260,2 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "evaluasi prediksi regresi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hasil substitusi nilai ekstrim pada persamaan regresi dan mengevaluasi validitasnya di luar rentang data.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah penelitian mengamati hubungan antara kadar pupuk tambahan ($x$, dalam gram) pada rentang $5 \\le x \\le 25$ terhadap pertambahan massa buah melon ($y$, dalam gram) dengan model regresi linear $\\hat{y} = 120 + 14,5x$. Seorang petani menggunakan model tersebut untuk memprediksi pertambahan massa buah melon jika diberikan pupuk sebanyak $80\\text{ gram}$. Berapakah nilai prediksi tersebut dan bagaimana keandalan estimasinya?",
+      "jawaban_benar": "$1.280\\text{ gram}$, prediksi kurang andal karena merupakan ekstrapolasi jauh di luar rentang data",
+      "alasan_benar": "$\\hat{y} = 120 + 14,5(80) = 120 + 1.160 = 1.280\\text{ gram}$, dan $x = 80$ berada jauh di luar interval $5 \\le x \\le 25$ sehingga hasil ekstrapolasi tidak reliabel.",
+      "distraktor": [
+        {
+          "teks": "$1.280\\text{ gram}$, prediksi sangat andal karena merupakan proses interpolasi",
+          "alasan": "Siswa benar menghitung nilai tetapi salah memahami definisi ekstrapolasi sebagai interpolasi."
+        },
+        {
+          "teks": "$1.160\\text{ gram}$, prediksi kurang andal karena merupakan ekstrapolasi jauh di luar rentang data",
+          "alasan": "Siswa lupa menambahkan nilai konstanta intersep $a = 120$."
+        },
+        {
+          "teks": "$1.400\\text{ gram}$, prediksi sangat andal karena diperoleh dari model linear yang valid",
+          "alasan": "Siswa salah melakukan operasi perkalian dan menganggap ekstrapolasi selalu valid tanpa batas."
+        }
+      ],
+      "pembahasan": "Substitusikan nilai $x = 80$ ke persamaan regresi:\n$$\\hat{y} = 120 + 14,5(80) = 120 + 1.160 = 1.280\\text{ gram}$$\nKarena nilai $x = 80\\text{ gram}$ terletak jauh di luar jangkauan sampel pengamatan ($5 \\le x \\le 25$), penaksiran ini merupakan proses ekstrapolasi. Model linear pertumbuhan tidak selalu berlaku di luar rentang uji (efek kejenuhan pupuk), sehingga hasil estimasinya kurang dapat dipercaya (kurang andal).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 121,
+        "bagian": "Latihan 3.4",
+        "nomor": "1f",
+        "teks": "Hitunglah prediksi jarak reaksi jika suatu mobil bergerak dengan kecepatan 55 km/jam.",
+        "jawaban": "11,2 m",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "prediksi nilai bivariat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan nilai variabel terikat dari persamaan garis lurus dengan koefisien desimal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jarak pengereman darurat ($y$, dalam meter) sebuah kendaraan roda dua yang melaju dengan kecepatan ($x$, dalam km/jam) pada selang $20 \\le x \\le 80$ dimodelkan oleh persamaan regresi $\\hat{y} = -2,4 + 0,26x$. Berapakah estimasi jarak pengereman jika kendaraan melaju dengan kecepatan $65\\text{ km/jam}$?",
+      "jawaban_benar": "$14,5\\text{ m}$",
+      "alasan_benar": "$\\hat{y} = -2,4 + 0,26(65) = -2,4 + 16,9 = 14,5\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$16,9\\text{ m}$",
+          "alasan": "Siswa hanya menghitung suku gradien $0,26 \\times 65$ dan mengabaikan intersep negatif."
+        },
+        {
+          "teks": "$19,3\\text{ m}$",
+          "alasan": "Siswa salah menerapkan tanda intersep dengan menjumlahkannya: $2,4 + 16,9 = 19,3$."
+        },
+        {
+          "teks": "$13,9\\text{ m}$",
+          "alasan": "Siswa keliru menghitung perkalian desimal menjadi $16,3$ sehingga $16,3 - 2,4 = 13,9$."
+        }
+      ],
+      "pembahasan": "Persamaan garis regresi: $\\hat{y} = -2,4 + 0,26x$.\nSubstitusi nilai kecepatan $x = 65\\text{ km/jam}$:\n$$\\hat{y} = -2,4 + 0,26(65)$$\n$$\\hat{y} = -2,4 + 16,9 = 14,5\\text{ m}$$\nJadi, perkiraan jarak pengereman yang dibutuhkan adalah $14,5\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 119,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "salah satu karakteristik garis regresi yang memenuhi syarat metode kuadrat terkecil adalah titik rata-ratanya ( x , y ) selalu dilalui garis regresi tersebut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "karakteristik titik rata-rata regresi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan sifat titik $(\\bar{x}, \\bar{y})$ yang dilalui garis regresi untuk menentukan nilai rata-rata variabel dependen.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Garis regresi linear yang diperoleh dari sekumpulan data sampel berpasangan memiliki persamaan $\\hat{y} = 15 + 2,4x$. Jika rata-rata nilai variabel bebas dari data tersebut adalah $\\bar{x} = 8$, berapakah rata-rata nilai variabel terikatnya ($\\bar{y}$)?",
+      "jawaban_benar": "$34,2$",
+      "alasan_benar": "Garis regresi selalu melalui $(\\bar{x}, \\bar{y})$, sehingga $\\bar{y} = 15 + 2,4(8) = 15 + 19,2 = 34,2$.",
+      "distraktor": [
+        {
+          "teks": "$19,2$",
+          "alasan": "Siswa hanya menghitung $b\\bar{x}$ tanpa menambahkan konstanta $a$."
+        },
+        {
+          "teks": "$27,0$",
+          "alasan": "Siswa salah menjumlahkan $15 + 2,4$ terlebih dahulu lalu dikalikan dengan $8$, atau salah operasi aritmetika dasar."
+        },
+        {
+          "teks": "$31,8$",
+          "alasan": "Siswa salah menghitung perkalian desimal $2,4 \\times 8 = 16,8$ lalu menambahkannya dengan $15$."
+        }
+      ],
+      "pembahasan": "Salah satu sifat utama garis regresi linear dengan metode kuadrat terkecil adalah garis tersebut selalu melalui titik koordinat rata-rata data, yaitu $(\\bar{x}, \\bar{y})$.\nDengan menyubstitusikan koordinat rata-rata ke persamaan garis regresi $\\hat{y} = a + bx$:\n$$\\bar{y} = 15 + 2,4(\\bar{x})$$\n$$\\bar{y} = 15 + 2,4(8) = 15 + 19,2 = 34,2$$\nJadi, nilai rata-rata variabel terikatnya adalah $34,2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 115,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Selisih antara nilai variabel dependen yang diamati ( y ) dan nilai variabel dependen yang diprediksi (yˆ) disebut sebagai residu (ε yang dibaca epsilon). Maka dari itu, rumus residu ditulis sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "rekonstruksi nilai pengamatan dari residu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan nilai prediksi terlebih dahulu kemudian membalik rumus residu untuk menemukan nilai asli.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah garis regresi linear memiliki persamaan $\\hat{y} = 7 + 1,6x$. Pada suatu data pengamatan dengan nilai variabel independen $x = 10$, diperoleh nilai residu sebesar $\\varepsilon = -2,5$. Berapakah nilai variabel dependen yang sebenarnya ($y$) dari data pengamatan tersebut?",
+      "jawaban_benar": "$20,5$",
+      "alasan_benar": "$\\hat{y} = 7 + 1,6(10) = 23$. Residu $\\varepsilon = y - \\hat{y} \\Rightarrow -2,5 = y - 23 \\Rightarrow y = 20,5$.",
+      "distraktor": [
+        {
+          "teks": "$25,5$",
+          "alasan": "Siswa keliru menggunakan rumus residu menjadi $\\varepsilon = \\hat{y} - y$ atau menambahkan residu secara positif: $23 + 2,5 = 25,5$."
+        },
+        {
+          "teks": "$23,0$",
+          "alasan": "Siswa hanya menghitung nilai prediksi $\\hat{y}$ tanpa memperhitungkan residu."
+        },
+        {
+          "teks": "$18,0$",
+          "alasan": "Siswa salah menghitung nilai perkalian pada persamaan regresi menjadi $7 + 13,5 = 20,5$ lalu dikurangi $2,5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai prediksi $\\hat{y}$ untuk $x = 10$:\n$$\\hat{y} = 7 + 1,6(10) = 7 + 16 = 23$$\n\nLangkah 2: Menghitung nilai teramati $y$ berdasarkan rumus residu:\n$$\\varepsilon = y - \\hat{y}$$\n$$-2,5 = y - 23$$\n$$y = 23 - 2,5 = 20,5$$\n\nJadi, nilai variabel dependen yang sebenarnya dari data tersebut adalah $20,5$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b03-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 116,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Konsep jumlah kuadrat dari nilai residu dapat memberikan karakteristik khusus untuk membedakan setiap garis regresi yang mungkin terbentuk dari suatu kumpulan data yang tidak dapat diberikan oleh konsep jumlah nilai mutlak residu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kalkulasi jumlah kuadrat residu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai estimasi variabel dependen, penentuan masing-masing nilai residu pengamatan, dan penjumlahan kuadrat dari residu tersebut.",
+      "stimulus": "| $x$ | $y$ |\n|---|---|\n| $2$ | $5$ |\n| $4$ | $8$ |\n| $6$ | $12$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan tabel data pengamatan di atas, sebuah garis regresi linear diajukan dengan persamaan $\\hat{y} = 1,5 + 1,7x$. Jumlah kuadrat residu dari model regresi tersebut adalah...",
+      "jawaban_benar": "$0,19$",
+      "alasan_benar": "Untuk $x = 2$, $\\hat{y} = 1,5 + 1,7(2) = 4,9$, sehingga residu $e_1 = 5 - 4,9 = 0,1$ dan $e_1^2 = 0,01$. Untuk $x = 4$, $\\hat{y} = 1,5 + 1,7(4) = 8,3$, sehingga residu $e_2 = 8 - 8,3 = -0,3$ dan $e_2^2 = 0,09$. Untuk $x = 6$, $\\hat{y} = 1,5 + 1,7(6) = 11,7$, sehingga residu $e_3 = 12 - 11,7 = 0,3$ dan $e_3^2 = 0,09$. Jumlah kuadrat residu $= 0,01 + 0,09 + 0,09 = 0,19$.",
+      "distraktor": [
+        {
+          "teks": "$0,70$",
+          "alasan": "Siswa menjumlahkan nilai mutlak residu tanpa menguadratkannya: $|0,1| + |-0,3| + |0,3| = 0,70$."
+        },
+        {
+          "teks": "$0,10$",
+          "alasan": "Siswa menjumlahkan nilai residu secara langsung tanpa dikuadratkan: $0,1 + (-0,3) + 0,3 = 0,10$."
+        },
+        {
+          "teks": "$0,13$",
+          "alasan": "Siswa salah melakukan operasi kuadrat bilangan desimal: menganggap $(\\pm 0,3)^2 = 0,06$, sehingga diperoleh $0,01 + 0,06 + 0,06 = 0,13$."
+        }
+      ],
+      "pembahasan": "Langkah-langkah menghitung jumlah kuadrat residu:\n1. Hitung nilai prediksi $\\hat{y} = 1,5 + 1,7x$ untuk setiap data:\n- Data 1 ($x=2$): $\\hat{y}_1 = 1,5 + 1,7(2) = 4,9$\n- Data 2 ($x=4$): $\\hat{y}_2 = 1,5 + 1,7(4) = 8,3$\n- Data 3 ($x=6$): $\\hat{y}_3 = 1,5 + 1,7(6) = 11,7$\n\n2. Tentukan nilai residu $e = y - \\hat{y}$:\n- $e_1 = 5 - 4,9 = 0,1$\n- $e_2 = 8 - 8,3 = -0,3$\n- $e_3 = 12 - 11,7 = 0,3$\n\n3. Kuadratkan masing-masing residu lalu jumlahkan:\n- $e_1^2 = (0,1)^2 = 0,01$\n- $e_2^2 = (-0,3)^2 = 0,09$\n- $e_3^2 = (0,3)^2 = 0,09$\n\n$\\sum (y - \\hat{y})^2 = 0,01 + 0,09 + 0,09 = 0,19$.\n\nJadi, jumlah kuadrat residu dari model tersebut adalah $0,19$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

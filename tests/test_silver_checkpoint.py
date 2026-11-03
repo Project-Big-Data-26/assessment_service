@@ -47,7 +47,9 @@ def test_persistent_lock_preserves_previous_and_new_checkpoint(tmp_path, monkeyp
         generator.atomic_write({"successfulRuns": 42}, path)
     assert len(attempts) == 6
     assert json.loads(path.read_text(encoding="utf-8")) == {"previous": True}
-    assert json.loads(path.with_suffix(".json.tmp").read_text(encoding="utf-8")) == {"successfulRuns": 42}
+    recovery = list(path.parent.glob(".write-*.tmp"))
+    assert len(recovery) == 1
+    assert json.loads(recovery[0].read_text(encoding="utf-8")) == {"successfulRuns": 42}
 
 
 def test_unrelated_permission_error_is_not_retried(tmp_path, monkeypatch):

@@ -83,6 +83,9 @@ def _ask(client: NineRouterClient, model: str, soal: List[dict], book: str = "",
 
 
 def verifikasi_buta(path: str, client: NineRouterClient, model: str, *, progress=print) -> VerifyResult:
+    from pathlib import Path
+    from .workflow import require_validation
+    require_validation(Path(path).parent.parent)
     started = time.monotonic()
     blind_path = verify.prepare(path)
     with open(blind_path, encoding="utf-8") as f:
@@ -137,6 +140,9 @@ class CekGambarResult:
 
 
 def cek_butuh_gambar(path: str, client: NineRouterClient, model: str, *, progress=print) -> CekGambarResult:
+    from pathlib import Path
+    from .workflow import require_validation
+    require_validation(Path(path).parent.parent)
     """Solver mengerjakan soal bergambar TANPA gambar. Soal yang tetap cocok dengan kunci = tidak butuh gambar."""
     from app.services.exercise.options import susun
     from app.services.exercise.schema import ExerciseFile

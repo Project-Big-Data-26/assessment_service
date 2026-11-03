@@ -1,0 +1,711 @@
+{
+  "book": "kelas12",
+  "bab_no": 2,
+  "subbab": "E",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 83,
+        "bagian": "Contoh 2.6",
+        "nomor": "2.6",
+        "teks": "Leni meminjam uang di bank sebesar Rp50.000.000,00 dengan bunga 12% per tahun. Leni membayar pinjaman tersebut dengan anuitas sebesar Rp2.000.000,00 per bulan. Berapakah besar angsuran pinjaman yang dibayarkan Leni pada anuitas bulan ke-5?",
+        "jawaban": "Rp1.560.906,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "angsuran pokok bulan ke-n",
+      "alasan_level": "satu rumus langsung a_n = (A - Mi)(1+i)^(n-1) dengan angka kecil",
+      "stimulus": null,
+      "pertanyaan": "Bu Sari meminjam uang di bank sebesar Rp30.000.000,00 dengan bunga 24% per tahun (2% per bulan). Ia membayar pinjaman tersebut dengan anuitas sebesar Rp1.200.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah besar angsuran pinjaman pokok yang dibayarkan Bu Sari pada anuitas bulan ke-3?",
+      "jawaban_benar": "Rp624.240,00",
+      "alasan_benar": "a_3 = (1.200.000 - 0,02 x 30.000.000) x (1,02)^2 = 600.000 x 1,0404 = 624.240",
+      "distraktor": [
+        {
+          "teks": "Rp600.000,00",
+          "alasan": "hanya menghitung angsuran pokok bulan pertama (A - Mi), lupa faktor (1+i)^(n-1)"
+        },
+        {
+          "teks": "Rp1.248.480,00",
+          "alasan": "lupa mengurangkan bunga Mi: memakai A x (1+i)^(n-1)"
+        },
+        {
+          "teks": "Rp636.725,00",
+          "alasan": "memakai pangkat n = 3, bukan n - 1 = 2"
+        }
+      ],
+      "pembahasan": "Bunga 2% per bulan. a_3 = (A - Mi)(1+i)^(n-1) = (1.200.000 - 600.000) x 1,02^2 = 624.240.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-001"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 83,
+        "bagian": "Contoh 2.6",
+        "nomor": "2.6",
+        "teks": "Leni meminjam uang di bank sebesar Rp50.000.000,00 dengan bunga 12% per tahun. Leni membayar pinjaman tersebut dengan anuitas sebesar Rp2.000.000,00 per bulan. Berapakah besar angsuran pinjaman yang dibayarkan Leni pada anuitas bulan ke-5?",
+        "jawaban": "Rp1.560.906,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "angsuran pokok bulan ke-n",
+      "alasan_level": "mengganti dua nilai ke rumus a_n untuk n kecil",
+      "stimulus": null,
+      "pertanyaan": "Pak Dedi mengambil kredit renovasi rumah sebesar Rp40.000.000,00 dengan bunga 12% per tahun (1% per bulan). Kredit itu dilunasi dengan anuitas tetap Rp1.800.000,00 setiap bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah bagian angsuran pokok yang termuat dalam pembayaran anuitas bulan kedua?",
+      "jawaban_benar": "Rp1.414.000,00",
+      "alasan_benar": "a_2 = (1.800.000 - 400.000) x 1,01 = 1.414.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.400.000,00",
+          "alasan": "angsuran pokok bulan pertama, lupa dikalikan (1+i)"
+        },
+        {
+          "teks": "Rp1.428.140,00",
+          "alasan": "memakai pangkat n = 2 (1,01^2), bukan n - 1 = 1"
+        },
+        {
+          "teks": "Rp1.386.000,00",
+          "alasan": "mengalikan dengan (1 - i), bukan (1 + i)"
+        }
+      ],
+      "pembahasan": "a_1 = 1.800.000 - 0,01 x 40.000.000 = 1.400.000. Angsuran pokok naik dengan faktor 1,01: a_2 = 1.414.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-002"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 84,
+        "bagian": "Contoh 2.7",
+        "nomor": "2.7",
+        "teks": "Juan meminjam uang di bank sebesar Rp50.000.000,00 dengan bunga 12% per tahun. Juan membayar hutang tersebut dengan anuitas sebesar Rp2.000.000,00 per bulan. Berapakah jumlah angsuran pinjaman yang telah dibayarkan Juan hingga pada pembayaran anuitas bulan ke-5? Berapakah sisa pinjaman yang masih perlu dibayar?",
+        "jawaban": "jumlah angsuran Rp7.651.507,51; sisa pinjaman Rp42.348.492,49"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sisa pinjaman setelah anuitas ke-n",
+      "alasan_level": "menghitung jumlah angsuran pokok dengan S_n lalu mengurangkannya dari pinjaman",
+      "stimulus": null,
+      "pertanyaan": "Bu Tini meminjam uang di bank sebesar Rp20.000.000,00 dengan bunga 12% per tahun. Ia membayar pinjaman tersebut dengan anuitas sebesar Rp1.000.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah sisa pinjaman Bu Tini setelah anuitas bulan ke-3 dibayarkan?",
+      "jawaban_benar": "Rp17.575.920,00",
+      "alasan_benar": "S_3 = 800.000 x (1,01^3 - 1)/0,01 = 2.424.080; sisa = 20.000.000 - 2.424.080 = 17.575.920",
+      "distraktor": [
+        {
+          "teks": "Rp2.424.080,00",
+          "alasan": "hanya memberi jumlah angsuran pokok S_3, lupa mengurangkan dari pinjaman"
+        },
+        {
+          "teks": "Rp17.000.000,00",
+          "alasan": "mengurangkan seluruh anuitas (3 x 1.000.000) dari pinjaman, padahal sebagian anuitas adalah bunga"
+        },
+        {
+          "teks": "Rp17.600.000,00",
+          "alasan": "menganggap angsuran pokok tiga bulan sama dengan bulan pertama (3 x 800.000)"
+        }
+      ],
+      "pembahasan": "a_1 = 1.000.000 - 200.000 = 800.000, r = 1,01. S_3 = 800.000 x (1,01^3 - 1)/0,01 = 2.424.080. Sisa = 17.575.920.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-003"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 84,
+        "bagian": "Contoh 2.7",
+        "nomor": "2.7",
+        "teks": "Juan meminjam uang di bank sebesar Rp50.000.000,00 dengan bunga 12% per tahun. Juan membayar hutang tersebut dengan anuitas sebesar Rp2.000.000,00 per bulan. Berapakah jumlah angsuran pinjaman yang telah dibayarkan Juan hingga pada pembayaran anuitas bulan ke-5? Berapakah sisa pinjaman yang masih perlu dibayar?",
+        "jawaban": "jumlah angsuran Rp7.651.507,51; sisa pinjaman Rp42.348.492,49"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "jumlah angsuran pokok hingga bulan ke-n",
+      "alasan_level": "menjumlahkan dua suku pertama barisan geometri angsuran pokok",
+      "stimulus": null,
+      "pertanyaan": "Rina memperoleh pinjaman usaha sebesar Rp60.000.000,00 dengan bunga 24% per tahun (2% per bulan). Pinjaman dicicil dengan anuitas tetap Rp2.500.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah jumlah angsuran pokok yang telah terbayar hingga anuitas bulan ke-2?",
+      "jawaban_benar": "Rp2.626.000,00",
+      "alasan_benar": "a_1 = 1.300.000, a_2 = 1.326.000, jumlah = 2.626.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.600.000,00",
+          "alasan": "menganggap angsuran pokok bulan kedua sama dengan bulan pertama (2 x 1.300.000)"
+        },
+        {
+          "teks": "Rp1.300.000,00",
+          "alasan": "hanya menghitung angsuran pokok bulan pertama"
+        },
+        {
+          "teks": "Rp2.652.000,00",
+          "alasan": "mengalikan 2 x a_1 x (1+i), bukan menjumlahkan a_1 dan a_2"
+        }
+      ],
+      "pembahasan": "a_1 = 2.500.000 - 0,02 x 60.000.000 = 1.300.000; a_2 = 1.300.000 x 1,02 = 1.326.000; jumlah 2.626.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-004"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 85,
+        "bagian": "Contoh 2.8",
+        "nomor": "2.8",
+        "teks": "Seseorang meminjam uang di bank dengan bunga 3% per bulan dan melunasinya dengan sistem anuitas. Jika ia harus membayar kepada pihak bank sebesar Rp5.023.104,00 setiap bulan selama satu tahun, maka berapa jumlah pinjaman awal yang diberikan oleh bank?",
+        "jawaban": "Rp50.000.000,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman awal dari anuitas",
+      "alasan_level": "satu rumus nilai sekarang anuitas dengan n = 2",
+      "stimulus": null,
+      "pertanyaan": "Seseorang meminjam uang di bank dengan bunga 2% per bulan dan melunasinya dengan sistem anuitas. Jika ia harus membayar Rp1.040.400,00 pada akhir setiap bulan selama 2 bulan, maka jumlah pinjaman awal yang diberikan oleh bank adalah ....",
+      "jawaban_benar": "Rp2.020.000,00",
+      "alasan_benar": "M = 1.040.400 x (1 - 1,02^-2)/0,02 = 1.020.000 + 1.000.000 = 2.020.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.080.800,00",
+          "alasan": "menjumlahkan dua anuitas tanpa mendiskontokan bunga"
+        },
+        {
+          "teks": "Rp2.040.000,00",
+          "alasan": "mendiskontokan jumlah dua anuitas hanya satu periode"
+        },
+        {
+          "teks": "Rp1.020.000,00",
+          "alasan": "hanya memakai nilai sekarang anuitas pertama"
+        }
+      ],
+      "pembahasan": "M = A[1 - (1+i)^-n]/i = 1.040.400 x (1 - 1,02^-2)/0,02 = 2.020.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-005"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 85,
+        "bagian": "Contoh 2.8",
+        "nomor": "2.8",
+        "teks": "Seseorang meminjam uang di bank dengan bunga 3% per bulan dan melunasinya dengan sistem anuitas. Jika ia harus membayar kepada pihak bank sebesar Rp5.023.104,00 setiap bulan selama satu tahun, maka berapa jumlah pinjaman awal yang diberikan oleh bank?",
+        "jawaban": "Rp50.000.000,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman awal dari anuitas",
+      "alasan_level": "satu rumus nilai sekarang anuitas dengan n = 2 dan periode tahunan",
+      "stimulus": null,
+      "pertanyaan": "Koperasi tani memberi pinjaman kepada Bu Ratna dengan bunga 10% per tahun. Bu Ratna melunasinya dengan sistem anuitas sebesar Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun. Besar pinjaman yang diterima Bu Ratna adalah ....",
+      "jawaban_benar": "Rp2.100.000,00",
+      "alasan_benar": "M = 1.210.000/1,1 + 1.210.000/1,21 = 1.100.000 + 1.000.000 = 2.100.000",
+      "distraktor": [
+        {
+          "teks": "Rp2.420.000,00",
+          "alasan": "menjumlahkan dua anuitas tanpa diskonto bunga"
+        },
+        {
+          "teks": "Rp2.200.000,00",
+          "alasan": "mendiskontokan total dua anuitas hanya satu periode"
+        },
+        {
+          "teks": "Rp1.100.000,00",
+          "alasan": "hanya memakai nilai sekarang anuitas tahun pertama"
+        }
+      ],
+      "pembahasan": "M = A[1 - (1+i)^-n]/i = 1.210.000 x (1 - 1,1^-2)/0,1 = 2.100.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-006"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 85,
+        "bagian": "Contoh 2.9",
+        "nomor": "2.9",
+        "teks": "Kanaya membeli suatu sepeda listrik dari dealer yang menggunakan sistem anuitas pada pembayaran kreditnya. Harga sepeda listrik tersebut adalah Rp12.000.000,00 dengan menggunakan tingkat suku bunga 6% per tahun. Kanaya berencana melunasi kreditnya dengan 8 kali anuitas yang dibayarkan setiap enam bulan. Berapakah besar anuitas yang harus dibayarkan oleh Kanaya?",
+        "jawaban": "sekitar Rp1.709.477,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "besar anuitas (periode semesteran)",
+      "alasan_level": "konversi bunga ke semester lalu satu rumus anuitas dengan n = 2",
+      "stimulus": null,
+      "pertanyaan": "Pak Hari membeli sebuah mesin jahit seharga Rp4.120.000,00 secara kredit dengan sistem anuitas dan suku bunga 12% per tahun. Ia berencana melunasinya dengan 2 kali anuitas yang dibayarkan pada akhir setiap enam bulan (bunga 6% per semester). Besar anuitas yang harus dibayarkan Pak Hari adalah ....",
+      "jawaban_benar": "Rp2.247.200,00",
+      "alasan_benar": "A = 4.120.000 x 0,06/(1 - 1,06^-2) = 2.247.200",
+      "distraktor": [
+        {
+          "teks": "Rp2.060.000,00",
+          "alasan": "membagi pinjaman 2 sama rata tanpa bunga"
+        },
+        {
+          "teks": "Rp2.183.600,00",
+          "alasan": "menambahkan bunga satu periode lalu membagi dua (M(1+i)/2)"
+        },
+        {
+          "teks": "Rp2.437.796,00",
+          "alasan": "memakai 12% per semester (tidak mengonversi bunga tahunan ke semester)"
+        }
+      ],
+      "pembahasan": "i = 6% per semester, n = 2. A = M i /(1 - (1+i)^-n) = 4.120.000 x 0,06/(1 - 1,06^-2) = 2.247.200.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-007"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 85,
+        "bagian": "Contoh 2.9",
+        "nomor": "2.9",
+        "teks": "Kanaya membeli suatu sepeda listrik dari dealer yang menggunakan sistem anuitas pada pembayaran kreditnya. Harga sepeda listrik tersebut adalah Rp12.000.000,00 dengan menggunakan tingkat suku bunga 6% per tahun. Kanaya berencana melunasi kreditnya dengan 8 kali anuitas yang dibayarkan setiap enam bulan. Berapakah besar anuitas yang harus dibayarkan oleh Kanaya?",
+        "jawaban": "sekitar Rp1.709.477,00"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "besar anuitas (periode bulanan)",
+      "alasan_level": "konversi bunga tahunan ke bulanan lalu satu rumus anuitas dengan n = 2",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko menjual kulkas seharga Rp4.030.000,00 dengan kredit sistem anuitas berbunga 18% per tahun (1,5% per bulan). Pembeli melunasinya dengan 2 kali anuitas yang dibayarkan pada akhir tiap bulan. Besar anuitas per bulan adalah ....",
+      "jawaban_benar": "Rp2.060.450,00",
+      "alasan_benar": "A = 4.030.000 x 0,015/(1 - 1,015^-2) = 2.060.450",
+      "distraktor": [
+        {
+          "teks": "Rp2.015.000,00",
+          "alasan": "membagi harga 2 sama rata, tanpa bunga"
+        },
+        {
+          "teks": "Rp2.045.225,00",
+          "alasan": "menambah bunga satu bulan lalu membagi dua (M(1+i)/2)"
+        },
+        {
+          "teks": "Rp2.574.024,00",
+          "alasan": "memakai 18% per bulan (bunga tahunan tidak dikonversi ke bulan)"
+        }
+      ],
+      "pembahasan": "i = 1,5% per bulan, n = 2. A = M i/(1 - (1+i)^-n) = 2.060.450.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-008"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0095-uji-kompetensi-4"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "anuitas dari tabel rencana angsuran",
+      "alasan_level": "menjumlahkan bunga dan angsuran pada satu baris tabel",
+      "stimulus": "Seseorang meminjam uang sebesar Rp12.000.000,00 dengan bunga 3% per bulan dan melunasinya dengan anuitas tetap setiap bulan. Berikut tabel rencana angsuran untuk 3 bulan pertama.\n\n| Bulan | Pinjaman Awal Bulan (Rp) | Bunga (Rp) | Angsuran (Rp) | Pinjaman Akhir Bulan (Rp) |\n|---|---|---|---|---|\n| 1 | 12.000.000 | 360.000 | 1.640.000 | 10.360.000 |\n| 2 | 10.360.000 | 310.800 | 1.689.200 | 8.670.800 |\n| 3 | 8.670.800 | 260.124 | 1.739.876 | 6.930.924 |",
+      "pertanyaan": "Besar anuitas pada sistem angsuran tersebut adalah ....",
+      "jawaban_benar": "Rp2.000.000,00",
+      "alasan_benar": "anuitas = bunga + angsuran dalam satu bulan = 360.000 + 1.640.000 = 2.000.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.640.000,00",
+          "alasan": "hanya mengambil angsuran bulan pertama tanpa bunga"
+        },
+        {
+          "teks": "Rp2.049.200,00",
+          "alasan": "menjumlahkan bunga bulan 1 dengan angsuran bulan 2 (baris tertukar)"
+        },
+        {
+          "teks": "Rp1.950.800,00",
+          "alasan": "menjumlahkan bunga bulan 2 dengan angsuran bulan 1 (baris tertukar)"
+        }
+      ],
+      "pembahasan": "A = a + b. Bulan 1: 360.000 + 1.640.000 = 2.000.000 (sama tiap bulan).",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-009"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0095-uji-kompetensi-4"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "anuitas dari tabel rencana angsuran",
+      "alasan_level": "menjumlahkan bunga dan angsuran pokok pada satu baris tabel",
+      "stimulus": "Bu Wulan mengambil kredit modal warung sebesar Rp8.000.000,00 dengan bunga 2% per bulan. Setiap bulan ia membayar anuitas yang jumlahnya sama. Rencana pelunasan untuk dua bulan pertama sebagai berikut.\n\n| Bulan | Sisa Utang Awal (Rp) | Bunga (Rp) | Angsuran Pokok (Rp) | Sisa Utang Akhir (Rp) |\n|---|---|---|---|---|\n| 1 | 8.000.000 | 160.000 | 1.940.000 | 6.060.000 |\n| 2 | 6.060.000 | 121.200 | 1.978.800 | 4.081.200 |",
+      "pertanyaan": "Pembayaran tetap (anuitas) yang harus dibayar Bu Wulan tiap bulan adalah ....",
+      "jawaban_benar": "Rp2.100.000,00",
+      "alasan_benar": "anuitas = bunga + angsuran pokok = 160.000 + 1.940.000 = 2.100.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.940.000,00",
+          "alasan": "hanya mengambil angsuran pokok tanpa bunga"
+        },
+        {
+          "teks": "Rp2.138.800,00",
+          "alasan": "menjumlahkan bunga bulan 1 dengan angsuran pokok bulan 2 (baris tertukar)"
+        },
+        {
+          "teks": "Rp2.061.200,00",
+          "alasan": "menjumlahkan bunga bulan 2 dengan angsuran pokok bulan 1 (baris tertukar)"
+        }
+      ],
+      "pembahasan": "A = angsuran pokok + bunga = 1.940.000 + 160.000 = 2.100.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b02-p0096-uji-kompetensi-8"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pinjaman awal dari anuitas",
+      "alasan_level": "satu rumus nilai sekarang anuitas dengan n = 3",
+      "stimulus": null,
+      "pertanyaan": "Dewi meminjam uang di bank yang menawarkan bunga 3% per bulan. Pinjaman itu dibayar dengan sistem anuitas sebesar Rp1.092.727,00 pada akhir setiap bulan selama 3 bulan. Besar uang yang dipinjam Dewi adalah ....",
+      "jawaban_benar": "Rp3.090.900,00",
+      "alasan_benar": "M = 1.092.727 x (1 - 1,03^-3)/0,03 = 3.090.900",
+      "distraktor": [
+        {
+          "teks": "Rp3.278.181,00",
+          "alasan": "menjumlahkan tiga anuitas tanpa diskonto bunga"
+        },
+        {
+          "teks": "Rp2.090.900,00",
+          "alasan": "memakai n = 2, bukan n = 3"
+        },
+        {
+          "teks": "Rp3.182.700,00",
+          "alasan": "mendiskontokan total tiga anuitas hanya satu periode"
+        }
+      ],
+      "pembahasan": "M = A[1 - (1+i)^-n]/i dengan i = 0,03 dan n = 3 menghasilkan 3.090.900.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-011"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Pembayaran anuitas (A) terdiri atas bagian angsuran pinjaman pokok yang harus dibayarkan (a) dan bagian bunga (b)."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "hubungan anuitas, angsuran, bunga",
+      "alasan_level": "satu pengurangan dari hubungan A = a + b",
+      "stimulus": null,
+      "pertanyaan": "Pak Eko melunasi pinjaman dengan anuitas sebesar Rp1.500.000,00 per bulan. Pada pembayaran bulan tertentu, bagian bunganya Rp275.000,00. Besar angsuran pinjaman pokok pada bulan tersebut adalah ....",
+      "jawaban_benar": "Rp1.225.000,00",
+      "alasan_benar": "a = A - b = 1.500.000 - 275.000 = 1.225.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.775.000,00",
+          "alasan": "menjumlahkan anuitas dan bunga"
+        },
+        {
+          "teks": "Rp275.000,00",
+          "alasan": "mengambil bunga saja sebagai angsuran pokok"
+        },
+        {
+          "teks": "Rp1.500.000,00",
+          "alasan": "mengira seluruh anuitas adalah angsuran pokok"
+        }
+      ],
+      "pembahasan": "A = a + b sehingga a = 1.500.000 - 275.000 = 1.225.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-012"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 77,
+        "kutipan": "Pembayaran anuitas (A) terdiri atas bagian angsuran pinjaman pokok yang harus dibayarkan (a) dan bagian bunga (b)."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "sisa utang setelah angsuran pertama",
+      "alasan_level": "menghitung bunga, angsuran pokok, lalu sisa utang bulan pertama (dua langkah)",
+      "stimulus": null,
+      "pertanyaan": "Rudi meminjam uang Rp8.000.000,00 dengan bunga 24% per tahun (2% per bulan) dan membayarnya dengan anuitas Rp2.000.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Sisa utang Rudi setelah angsuran pertama dibayarkan adalah ....",
+      "jawaban_benar": "Rp6.160.000,00",
+      "alasan_benar": "B_1 = 160.000; a_1 = 2.000.000 - 160.000 = 1.840.000; sisa = 8.000.000 - 1.840.000 = 6.160.000",
+      "distraktor": [
+        {
+          "teks": "Rp6.000.000,00",
+          "alasan": "mengurangkan seluruh anuitas dari pinjaman, tidak memisahkan bunga"
+        },
+        {
+          "teks": "Rp7.840.000,00",
+          "alasan": "mengurangkan hanya bunga dari pinjaman"
+        },
+        {
+          "teks": "Rp5.840.000,00",
+          "alasan": "mengurangkan anuitas dan bunga sekaligus (bunga dikurangkan dua kali)"
+        }
+      ],
+      "pembahasan": "Bunga = 2% x 8.000.000 = 160.000. Angsuran pokok = 2.000.000 - 160.000 = 1.840.000. Sisa = 6.160.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-013"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 80,
+        "kutipan": "Dari perhitungan yang disajikan dalam Tabel 2.8, dapat dilihat bahwa besar bunga dari bulan ke bulan semakin berkurang, sedangkan besarnya angsuran dari bulan ke bulan semakin besar."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pola bunga dan angsuran tiap bulan",
+      "alasan_level": "mengenali pola dari tabel rencana pelunasan tanpa hitungan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah pinjaman dilunasi dengan sistem anuitas (pembayaran tiap bulan selalu sama besar). Dari bulan ke bulan, perubahan bunga dan angsuran pokok pada pembayaran tersebut adalah ....",
+      "jawaban_benar": "bunga semakin kecil dan angsuran pokok semakin besar",
+      "alasan_benar": "sisa pinjaman berkurang sehingga bunga mengecil; karena anuitas tetap, bagian angsuran pokok membesar",
+      "distraktor": [
+        {
+          "teks": "bunga semakin besar dan angsuran pokok semakin kecil",
+          "alasan": "pola terbalik"
+        },
+        {
+          "teks": "bunga semakin kecil dan angsuran pokok tetap",
+          "alasan": "tertukar dengan sistem angsuran pokok tetap"
+        },
+        {
+          "teks": "bunga dan angsuran pokok keduanya tetap",
+          "alasan": "mengira yang tetap adalah tiap komponen, bukan jumlahnya"
+        }
+      ],
+      "pembahasan": "Bunga = i x sisa pinjaman, makin kecil. Anuitas tetap sehingga angsuran pokok = A - bunga makin besar.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-014"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 82,
+        "kutipan": "Berdasarkan hasil diskusi dari kegiatan Ayo, Berkolaborasi, dapat disimpulkan bahwa besar angsuran membentuk barisan geometri"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "rasio barisan angsuran pokok",
+      "alasan_level": "mengingat rasio r = 1 + i lalu mengonversi persen ke desimal",
+      "stimulus": null,
+      "pertanyaan": "Pada pinjaman dengan sistem anuitas berbunga 2,5% per bulan, angsuran pokok dari bulan ke bulan membentuk barisan geometri. Rasio barisan tersebut adalah ....",
+      "jawaban_benar": "1,025",
+      "alasan_benar": "r = 1 + i = 1 + 0,025 = 1,025",
+      "distraktor": [
+        {
+          "teks": "0,025",
+          "alasan": "memakai i saja sebagai rasio"
+        },
+        {
+          "teks": "2,5",
+          "alasan": "memakai persen tanpa dikonversi dan tanpa tambah 1"
+        },
+        {
+          "teks": "0,975",
+          "alasan": "memakai 1 - i"
+        }
+      ],
+      "pembahasan": "Angsuran pokok membentuk barisan geometri dengan rasio r = 1 + i = 1,025.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-015"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "Perlu diketahui bahwa besar anuitas terakhir dapat berbeda dari sebelumnya karena menyesuaikan besar sisa pinjaman yang ada ditambah bunganya."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "anuitas terakhir",
+      "alasan_level": "sisa pinjaman ditambah bunga satu bulan (dua langkah)",
+      "stimulus": null,
+      "pertanyaan": "Pak Agus melunasi pinjaman dengan anuitas Rp1.000.000,00 per bulan berbunga 2% per bulan. Pada awal bulan pembayaran terakhir, sisa pinjamannya Rp500.000,00 dan seluruhnya lunas pada pembayaran itu. Besar anuitas terakhir yang dibayarkan adalah ....",
+      "jawaban_benar": "Rp510.000,00",
+      "alasan_benar": "anuitas terakhir = sisa pinjaman + bunga = 500.000 + 0,02 x 500.000 = 510.000",
+      "distraktor": [
+        {
+          "teks": "Rp1.000.000,00",
+          "alasan": "mengira anuitas terakhir selalu sama dengan anuitas sebelumnya"
+        },
+        {
+          "teks": "Rp500.000,00",
+          "alasan": "hanya membayar sisa pinjaman, lupa bunga"
+        },
+        {
+          "teks": "Rp490.000,00",
+          "alasan": "mengurangkan bunga dari sisa pinjaman, bukan menambahkan"
+        }
+      ],
+      "pembahasan": "Pembayaran terakhir = 500.000 + 2% x 500.000 = 510.000.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-016"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 83,
+        "kutipan": "maka jumlah angsuran yang sudah dibayarkan hingga anuitas ke-n dapat dicari dengan menggunakan rumus jumlah suku ke-n barisan geometri"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "sisa pinjaman dari jumlah angsuran pokok",
+      "alasan_level": "satu pengurangan: sisa = M - S_n, dengan pembeda anuitas dan angsuran pokok",
+      "stimulus": null,
+      "pertanyaan": "Bu Lina meminjam Rp25.000.000,00 dan melunasinya dengan anuitas Rp1.200.000,00 per bulan. Jumlah angsuran pokok yang telah dibayarkan hingga anuitas bulan ke-6 adalah Rp5.800.000,00. Sisa pinjaman Bu Lina setelah anuitas bulan ke-6 adalah ....",
+      "jawaban_benar": "Rp19.200.000,00",
+      "alasan_benar": "sisa = M - S_6 = 25.000.000 - 5.800.000 = 19.200.000",
+      "distraktor": [
+        {
+          "teks": "Rp30.800.000,00",
+          "alasan": "menjumlahkan pinjaman dan angsuran pokok"
+        },
+        {
+          "teks": "Rp17.800.000,00",
+          "alasan": "mengurangkan 6 x anuitas (termasuk bunga) dari pinjaman"
+        },
+        {
+          "teks": "Rp5.800.000,00",
+          "alasan": "menjawab jumlah angsuran pokok, bukan sisa pinjaman"
+        }
+      ],
+      "pembahasan": "Sisa pinjaman = M - S_n = 25.000.000 - 5.800.000 = 19.200.000. Bunga tidak mengurangi pokok.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-017"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 84,
+        "kutipan": "bahwa perhitungan besar pinjaman awal ini memiliki prosedur yang sama dengan perhitungan nilai sekarang pada anuitas pinjaman"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "konsep pinjaman awal sebagai nilai sekarang",
+      "alasan_level": "mengingat kaitan konsep pinjaman awal dengan nilai sekarang anuitas",
+      "stimulus": null,
+      "pertanyaan": "Menghitung besar pinjaman awal pada pinjaman dengan anuitas memakai prosedur yang sama dengan menghitung ....",
+      "jawaban_benar": "nilai sekarang (present value) anuitas",
+      "alasan_benar": "pinjaman awal adalah nilai sekarang dari seluruh anuitas yang akan dibayar",
+      "distraktor": [
+        {
+          "teks": "nilai masa depan (future value) anuitas",
+          "alasan": "tertukar PV dengan FV"
+        },
+        {
+          "teks": "bunga tunggal dari pinjaman",
+          "alasan": "mengira pinjaman memakai bunga tunggal"
+        },
+        {
+          "teks": "jumlah tak hingga deret geometri",
+          "alasan": "mengacaukan dengan deret geometri tak hingga"
+        }
+      ],
+      "pembahasan": "Besar pinjaman awal M = A[1 - (1+i)^-n]/i adalah rumus nilai sekarang anuitas.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-018"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 78,
+        "kutipan": "Dengan perhitungan yang sama untuk perhitungan bulan berikutnya, coba kamu lengkapi dan jelaskan dengan panduan Tabel 2.7 berikut."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "melanjutkan tabel rencana pelunasan",
+      "alasan_level": "bunga bulan berikutnya dari sisa pinjaman akhir bulan sebelumnya, satu perkalian",
+      "stimulus": "Pinjaman Rp6.000.000,00 berbunga 2% per bulan dilunasi dengan anuitas tetap Rp1.500.000,00 per bulan (dibayar akhir bulan). Rencana pelunasan dua bulan pertama:\n\n| Bulan | Pinjaman Awal Bulan (Rp) | Bunga (Rp) | Angsuran Pokok (Rp) | Pinjaman Akhir Bulan (Rp) |\n|---|---|---|---|---|\n| 1 | 6.000.000 | 120.000 | 1.380.000 | 4.620.000 |\n| 2 | 4.620.000 | 92.400 | 1.407.600 | 3.212.400 |",
+      "pertanyaan": "Besar bunga yang termuat dalam anuitas bulan ketiga adalah ....",
+      "jawaban_benar": "Rp64.248,00",
+      "alasan_benar": "bunga bulan ke-3 = 2% x sisa akhir bulan ke-2 = 0,02 x 3.212.400 = 64.248",
+      "distraktor": [
+        {
+          "teks": "Rp120.000,00",
+          "alasan": "menghitung bunga dari pinjaman awal 6.000.000"
+        },
+        {
+          "teks": "Rp92.400,00",
+          "alasan": "mengulang bunga bulan kedua"
+        },
+        {
+          "teks": "Rp1.435.752,00",
+          "alasan": "menjawab angsuran pokok bulan ketiga (1.500.000 - 64.248), bukan bunga"
+        }
+      ],
+      "pembahasan": "Bunga bulan ke-3 dihitung dari sisa pinjaman 3.212.400: 0,02 x 3.212.400 = 64.248.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-019"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 88,
+        "kutipan": "Semakin lama tenor yang dipilih, semakin kecil anuitasnya."
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "membandingkan tenor pinjaman",
+      "alasan_level": "membandingkan anuitas dan total pembayaran dua tenor dengan dua perkalian",
+      "stimulus": null,
+      "pertanyaan": "Sebuah bank menawarkan pinjaman Rp20.000.000,00 dengan bunga 1% per bulan. Tenor 12 bulan menghasilkan anuitas Rp1.776.976,00 per bulan, sedangkan tenor 24 bulan menghasilkan anuitas Rp941.469,00 per bulan. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "tenor 24 bulan memberi anuitas lebih kecil, tetapi total pembayaran lebih besar",
+      "alasan_benar": "12 x 1776976 = 21323712 sedangkan 24 x 941469 = 22595256; anuitas 24 bulan lebih kecil tetapi totalnya lebih besar",
+      "distraktor": [
+        {
+          "teks": "tenor 24 bulan memberi anuitas lebih kecil dan total pembayaran lebih kecil",
+          "alasan": "mengira anuitas kecil berarti total lebih hemat"
+        },
+        {
+          "teks": "tenor 24 bulan memberi anuitas lebih besar dan total pembayaran lebih besar",
+          "alasan": "mengira tenor lebih panjang menaikkan anuitas"
+        },
+        {
+          "teks": "total pembayaran kedua tenor sama karena pinjaman pokoknya sama",
+          "alasan": "mengabaikan bunga yang bertambah seiring tenor"
+        }
+      ],
+      "pembahasan": "Total tenor 12 bulan = 21323712; total tenor 24 bulan = 22595256. Anuitas turun, total bayar naik.",
+      "catatan": null,
+      "id": "kelas12-b02-e-easy-bt01-020"
+    }
+  ]
+}

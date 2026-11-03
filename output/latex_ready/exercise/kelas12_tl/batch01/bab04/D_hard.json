@@ -1,0 +1,812 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 4,
+  "subbab": "D",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "9 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 263,
+        "bagian": "Latihan Soal Fungsi Peluang",
+        "nomor": "3",
+        "teks": "Sebuah kotak berisi 9 butir telur. Rupanya ada 3 telur busuk. Izza membeli 3 telur secara acak. Jika X menyatakan banyak telur busuk yang dibeli Izza, tentukan distribusi dan fungsi peluang X .",
+        "jawaban": "x = 0, 1, 2, 3 dengan f(x) = 20/84, 45/84, 18/84, 1/84",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi perbandingan peluang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perhitungan distribusi peluang hipergeometrik multi-kondisi kemudian mengevaluasi perbandingan peluang gabungan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah etalase memuat 10 buah kalkulator, dengan 4 di antaranya dalam keadaan rusak. Seorang guru mengambil 3 kalkulator secara acak sekaligus untuk keperluan ujian. Jika variabel acak $X$ menyatakan banyaknya kalkulator rusak yang terambil, perbandingan nilai peluang $P(X \\ge 2)$ terhadap $P(X = 1)$ adalah ....",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Banyak ruang sampel: $\\binom{10}{3} = 120$. Peluang $P(X = 1) = \\frac{\\binom{4}{1} \\times \\binom{6}{2}}{120} = \\frac{4 \\times 15}{120} = \\frac{60}{120}$. Peluang $P(X = 2) = \\frac{\\binom{4}{2} \\times \\binom{6}{1}}{120} = \\frac{36}{120}$, dan $P(X = 3) = \\frac{\\binom{4}{3} \\times \\binom{6}{0}}{120} = \\frac{4}{120}$. Maka $P(X \\ge 2) = \\frac{36 + 4}{120} = \\frac{40}{120}$. Perbandingan $\\frac{P(X \\ge 2)}{P(X = 1)} = \\frac{40/120}{60/120} = \\frac{2}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Siswa lupa memperhitungkan kejadian $X = 3$, hanya menghitung $\\frac{P(X = 2)}{P(X = 1)} = \\frac{36}{60} = \\frac{3}{5}$."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Siswa salah menghitung kombinasi $\\binom{6}{2}$ menjadi 12 sehingga mengira $P(X=1) = \\frac{48}{120}$ lalu menyederhanakan pecahan keliru."
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "Siswa membalik posisi perbandingan menjadi $P(X = 1) : P(X \\ge 2)$."
+        }
+      ],
+      "pembahasan": "Banyak anggota ruang sampel memilih 3 kalkulator dari 10 kalkulator adalah:\n$$n(S) = \\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{3 \\times 2 \\times 1} = 120$$\n\nDistribusi peluang variabel acak $X$ (banyak kalkulator rusak dari 4 rusak dan 6 baik):\n1. Untuk $X = 1$:\n$$P(X = 1) = \\frac{\\binom{4}{1} \\times \\binom{6}{2}}{120} = \\frac{4 \\times 15}{120} = \\frac{60}{120}$$\n\n2. Untuk $X \\ge 2$, yaitu $X = 2$ atau $X = 3$:\n$$P(X = 2) = \\frac{\\binom{4}{2} \\times \\binom{6}{1}}{120} = \\frac{6 \\times 6}{120} = \\frac{36}{120}$$\n$$P(X = 3) = \\frac{\\binom{4}{3} \\times \\binom{6}{0}}{120} = \\frac{4 \\times 1}{120} = \\frac{4}{120}$$\n$$P(X \\ge 2) = P(X = 2) + P(X = 3) = \\frac{36}{120} + \\frac{4}{120} = \\frac{40}{120}$$\n\nPerbandingan yang diminta:\n$$\\frac{P(X \\ge 2)}{P(X = 1)} = \\frac{\\frac{40}{120}}{\\frac{60}{120}} = \\frac{40}{60} = \\frac{2}{3}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penalaran distribusi bersyarat proporsi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan konstanta pengali piecewise dari syarat kesamaan titik peluang dan normalisasi total.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $\\{1, 2, 3, 4, 5\\}$. Fungsi peluang $X$ didefinisikan sebagai:\n$$P(X = x) = \\begin{cases} kx, & \\text{untuk } x = 1, 2, 3 \\\\ c(6 - x), & \\text{untuk } x = 4, 5 \\end{cases}$$\nJika diketahui $P(X = 2) = P(X = 4)$, nilai dari $P(2 \\le X \\le 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{7}{9}$",
+      "alasan_benar": "$P(X = 2) = 2k$ dan $P(X = 4) = 2c$, sehingga $2k = 2c \\implies k = c$. Jumlah total peluang: $(k + 2k + 3k) + (2c + c) = 6k + 3k = 9k = 1 \\implies k = 1/9$. Maka $P(2 \\le X \\le 4) = P(X = 2) + P(X = 3) + P(X = 4) = 2k + 3k + 2k = 7k = 7/9$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Siswa hanya menjumlahkan $P(X = 2) + P(X = 3) = 5k = 5/9$, lupa mengikutsertakan $X = 4$."
+        },
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Siswa salah menghitung total probabilitas $6k + 2c = 8k = 1$ sehingga menghasilkan nilai $k = 1/8$ lalu keliru menjumlahkan."
+        },
+        {
+          "teks": "$\\frac{8}{9}$",
+          "alasan": "Siswa menjumlahkan $P(X \\ge 2)$ secara keseluruhan dari $x = 2$ sampai $x = 5$."
+        }
+      ],
+      "pembahasan": "Diketahui hubungan:\n$$P(X = 2) = 2k$$\n$$P(X = 4) = c(6 - 4) = 2c$$\nKarena $P(X = 2) = P(X = 4)$, maka:\n$$2k = 2c \\implies k = c$$\n\nSyarat total fungsi peluang adalah 1:\n$$\\sum_{x=1}^{5} P(X = x) = 1$$\n$$P(X = 1) + P(X = 2) + P(X = 3) + P(X = 4) + P(X = 5) = 1$$\n$$(k) + (2k) + (3k) + c(6 - 4) + c(6 - 5) = 1$$\n$$6k + 2c + c = 1$$\nKarena $c = k$:\n$$6k + 3k = 1 \\implies 9k = 1 \\implies k = \\frac{1}{9}$$\nDengan demikian $c = \\frac{1}{9}$.\n\nNilai $P(2 \\le X \\le 4)$:\n$$P(2 \\le X \\le 4) = P(X = 2) + P(X = 3) + P(X = 4)$$\n$$P(2 \\le X \\le 4) = 2k + 3k + 2c = 2k + 3k + 2k = 7k = 7\\left(\\frac{1}{9}\\right) = \\frac{7}{9}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 260,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "f ^ x h $ 0 untuk semua x = 0, 1, 2, 3 dipenuhi ,"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi pernyataan fungsi peluang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi kebenaran beberapa klaim sifat distribusi peluang berdasarkan aksioma non-negativitas dan simetri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi peluang suatu variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{k - x^2}{20}, & \\text{untuk } x \\in \\{-2, -1, 0, 1, 2\\} \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nPerhatikan pernyataan-pernyataan berikut:\n(1) Nilai konstanta $k = 6$.\n(2) Nilai peluang $P(X = 0) = \\frac{3}{10}$.\n(3) Nilai peluang $P(X > 0) = \\frac{1}{4}$.\n(4) Fungsi peluang bersifat simetris terhadap titik 0, yaitu $P(X = x) = P(X = -x)$ untuk semua $x$.\n\nPernyataan yang bernilai benar adalah ....",
+      "jawaban_benar": "(1), (2), dan (4)",
+      "alasan_benar": "Total $\\sum f(x) = \\frac{5k - (4+1+0+1+4)}{20} = \\frac{5k - 10}{20} = 1 \\implies k = 6$ (pernyataan 1 benar). $P(X=0) = 6/20 = 3/10$ (pernyataan 2 benar). $P(X>0) = f(1) + f(2) = 5/20 + 2/20 = 7/20 \\ne 1/4$ (pernyataan 3 salah). Karena $x^2 = (-x)^2$, maka $f(x) = f(-x)$ (pernyataan 4 benar).",
+      "distraktor": [
+        {
+          "teks": "(1), (2), dan (3)",
+          "alasan": "Siswa salah menghitung $P(X > 0)$ hanya mengambil $f(1) = 5/20 = 1/4$, lupa bahwa $x = 2$ juga bernilai lebih dari 0."
+        },
+        {
+          "teks": "(2), (3), dan (4)",
+          "alasan": "Siswa salah menentukan nilai $k$ dari pembagi yang tidak dikalikan silang dengan benar."
+        },
+        {
+          "teks": "(1) dan (4) saja",
+          "alasan": "Siswa mengira $P(X = 0)$ harus bernilai 0 karena menganggap variabel di titik asal tidak berpeluang."
+        }
+      ],
+      "pembahasan": "Uji setiap pernyataan secara bertahap:\n\n1. Menentukan nilai $k$:\n$$\\sum_{x=-2}^{2} f(x) = 1$$\n$$\\frac{(k - 4) + (k - 1) + (k - 0) + (k - 1) + (k - 4)}{20} = 1$$\n$$\\frac{5k - 10}{20} = 1 \\implies 5k - 10 = 20 \\implies 5k = 30 \\implies k = 6$$\nUntuk $k = 6$, $f(x) \\ge 0$ terpenuhi untuk seluruh domain (nilai minimum $f(\\pm 2) = 2/20 > 0$).\nMaka pernyataan (1) BENAR.\n\n2. Menentukan $P(X = 0)$:\n$$P(X = 0) = f(0) = \\frac{6 - 0^2}{20} = \\frac{6}{20} = \\frac{3}{10}$$\nMaka pernyataan (2) BENAR.\n\n3. Menentukan $P(X > 0)$:\n$$P(X > 0) = f(1) + f(2) = \\frac{6 - 1^2}{20} + \\frac{6 - 2^2}{20} = \\frac{5}{20} + \\frac{2}{20} = \\frac{7}{20}$$\nKarena $\\frac{7}{20} \\ne \\frac{1}{4}$ (dimana $\\frac{1}{4} = \\frac{5}{20}$), maka pernyataan (3) SALAH.\n\n4. Memeriksa simetri terhadap 0:\nUntuk sembarang $x \\in \\{-2, -1, 0, 1, 2\\}$:\n$$f(-x) = \\frac{6 - (-x)^2}{20} = \\frac{6 - x^2}{20} = f(x)$$\nMaka pernyataan (4) BENAR.\n\nJadi, pernyataan yang bernilai benar adalah (1), (2), dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena X variabel acak diskret, fungsi peluang atau distribusi peluangnya disebut fungsi peluang diskret atau distribusi peluang diskret ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perancangan parameter ganda fungsi peluang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan dua parameter agar fungsi memenuhi kondisi kesetimbangan partisi dan non-negativitas peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan calon fungsi peluang untuk variabel acak diskret $X$ dengan daerah nilai $x \\in \\{1, 2, 3, 4\\}$ sebagai berikut:\n$$f(x) = \\begin{cases} \\frac{k - x}{8}, & \\text{untuk } x = 1, 2 \\\\ \\frac{2x - m}{8}, & \\text{untuk } x = 3, 4 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nJika $f(x)$ sah merupakan fungsi peluang yang membagi dua probabilitas sama besar pada $P(X \\le 2) = P(X \\ge 3)$, nilai dari $2k - m$ adalah ....",
+      "jawaban_benar": "2",
+      "alasan_benar": "Karena $P(X \\le 2) + P(X \\ge 3) = 1$ dan nilainya sama besar, maka masing-masing bernilai $1/2$. Dari $P(X \\le 2) = \\frac{(k-1) + (k-2)}{8} = \\frac{2k-3}{8} = \\frac{1}{2}$, diperoleh $2k - 3 = 4 \\implies 2k = 7$. Dari $P(X \\ge 3) = \\frac{(6-m) + (8-m)}{8} = \\frac{14-2m}{8} = \\frac{1}{2}$, diperoleh $14 - 2m = 4 \\implies 2m = 10 \\implies m = 5$. Maka $2k - m = 7 - 5 = 2$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa salah menghitung persamaan $2k - 3 = 4$ menjadi $2k = 8$ sehingga $2k - m = 8 - 5 = 3$."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa salah menghitung $14 - 2m = 4$ menjadi $2m = 12 \\implies m = 6$, sehingga $7 - 6 = 1$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa lupa mengalikan silang penyebut 8 dengan $1/2$ sehingga mengira ruas kanan bernilai 1."
+        }
+      ],
+      "pembahasan": "Fungsi $f(x)$ merupakan fungsi peluang sah, sehingga:\n$$P(X \\le 2) + P(X \\ge 3) = 1$$\nKarena diketahui $P(X \\le 2) = P(X \\ge 3)$, maka:\n$$P(X \\le 2) = \\frac{1}{2} \\quad \\text{dan} \\quad P(X \\ge 3) = \\frac{1}{2}$$\n\n1. Dari $P(X \\le 2) = \\frac{1}{2}$:\n$$f(1) + f(2) = \\frac{1}{2}$$\n$$\\frac{k - 1}{8} + \\frac{k - 2}{8} = \\frac{1}{2}$$\n$$\\frac{2k - 3}{8} = \\frac{4}{8} \\implies 2k - 3 = 4 \\implies 2k = 7 \\implies k = 3,5$$\n\n2. Dari $P(X \\ge 3) = \\frac{1}{2}$:\n$$f(3) + f(4) = \\frac{1}{2}$$\n$$\\frac{2(3) - m}{8} + \\frac{2(4) - m}{8} = \\frac{1}{2}$$\n$$\\frac{6 - m + 8 - m}{8} = \\frac{4}{8} \\implies 14 - 2m = 4 \\implies 2m = 10 \\implies m = 5$$\n\n3. Uji syarat $f(x) \\ge 0$:\n- $f(1) = \\frac{3,5 - 1}{8} = \\frac{2,5}{8} > 0$\n- $f(2) = \\frac{3,5 - 2}{8} = \\frac{1,5}{8} > 0$\n- $f(3) = \\frac{6 - 5}{8} = \\frac{1}{8} > 0$\n- $f(4) = \\frac{8 - 5}{8} = \\frac{3}{8} > 0$\nSemua nilai peluang tak negatif dan totalnya tepat 1.\n\n4. Menghitung nilai $2k - m$:\n$$2k - m = 7 - 5 = 2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0263-latihan-soal-fungsi-peluang-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi perbandingan peluang kumulatif",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus menyusun ruang sampel kombinatorik, menghitung peluang variabel acak diskret hipergeometrik, dan mengevaluasi perbandingan peluang kumulatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah repositori kode memuat 8 berkas program, dengan 3 di antaranya mengandung celah keamanan (_bug_). Seorang auditor keamanan siber memilih 3 berkas secara acak sekaligus untuk diperiksa. Misalkan variabel acak $X$ menyatakan banyak berkas ber-_bug_ yang terpilih. Perbandingan peluang terpilih paling banyak 1 berkas ber-_bug_ terhadap peluang terpilih minimal 2 berkas ber-_bug_ adalah ....",
+      "jawaban_benar": "$5 : 2$",
+      "alasan_benar": "Menghitung P(X <= 1) = 40/56 dan P(X >= 2) = 16/56, lalu menyederhanakan rasio 40 : 16 menjadi 5 : 2.",
+      "distraktor": [
+        {
+          "teks": "$2 : 5$",
+          "alasan": "Siswa menyusun urutan perbandingan terbalik antara kejadian pertama dan kedua."
+        },
+        {
+          "teks": "$4 : 3$",
+          "alasan": "Siswa lupa memperhitungkan kejadian X = 0 pada saat menghitung peluang paling banyak 1."
+        },
+        {
+          "teks": "$3 : 1$",
+          "alasan": "Siswa salah menghitung kombinasi C(3, 2) * C(5, 1) sehingga rasio tereduksi salah."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan total kemungkinan memilih 3 berkas dari 8 berkas.\n$$n(S) = \\binom{8}{3} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56.$$\n\nLangkah 2: Menentukan distribusi peluang $X$ untuk setiap nilai $x \\in \\{0, 1, 2, 3\\}$.\n- $P(X = 0) = \\frac{\\binom{3}{0} \\binom{5}{3}}{56} = \\frac{1 \\times 10}{56} = \\frac{10}{56}$\n- $P(X = 1) = \\frac{\\binom{3}{1} \\binom{5}{2}}{56} = \\frac{3 \\times 10}{56} = \\frac{30}{56}$\n- $P(X = 2) = \\frac{\\binom{3}{2} \\binom{5}{1}}{56} = \\frac{3 \\times 5}{56} = \\frac{15}{56}$\n- $P(X = 3) = \\frac{\\binom{3}{3} \\binom{5}{0}}{56} = \\frac{1 \\times 1}{56} = \\frac{1}{56}$\n\nLangkah 3: Menghitung $P(X \\le 1)$ dan $P(X \\ge 2)$.\n$$P(X \\le 1) = P(X = 0) + P(X = 1) = \\frac{10}{56} + \\frac{30}{56} = \\frac{40}{56}$$\n$$P(X \\ge 2) = P(X = 2) + P(X = 3) = \\frac{15}{56} + \\frac{1}{56} = \\frac{16}{56}$$\n\nLangkah 4: Menentukan perbandingan.\n$$P(X \\le 1) : P(X \\ge 2) = \\frac{40}{56} : \\frac{16}{56} = 40 : 16 = 5 : 2.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan batas daerah nilai fungsi peluang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa merancang dan menemukan batas atas n dari daerah asal variabel acak diskret menggunakan deret teleskopik dan aksioma kelayakan fungsi peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah fungsi peluang dari variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{c}{x(x+1)}, & \\text{untuk } x \\in \\{1, 2, 3, \\dots, n\\} \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nJika diketahui nilai konstanta $c = \\frac{6}{5}$, nilai batas atas bilangan bulat positif $n$ yang membuat $f(x)$ menjadi fungsi peluang yang sah adalah ....",
+      "jawaban_benar": "5",
+      "alasan_benar": "Menggunakan deret teleskopik sum 1/(x(x+1)) = n/(n+1), lalu menetapkan c * n/(n+1) = 1 dengan c = 6/5 menghasilkan 6n = 5(n+1) sehingga n = 5.",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "Siswa keliru memproses persamaan aljabar saat perkalian silang menjadi 6n - 6 = 5n."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa salah menuliskan bentuk akhir deret pecahan parsial menjadi (n+1)/n bukannya n/(n+1)."
+        },
+        {
+          "teks": "7",
+          "alasan": "Siswa melakukan kesalahan perhitungan pada penjumlahan suku-suku deret parsial."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menguraikan bentuk pecahan ke dalam pecahan parsial.\n$$\\frac{1}{x(x+1)} = \\frac{1}{x} - \\frac{1}{x+1}.$$\n\nLangkah 2: Menghitung jumlah deret dengan sifat teleskopik.\n$$\\sum_{x=1}^n \\frac{1}{x(x+1)} = \\sum_{x=1}^n \\left(\\frac{1}{x} - \\frac{1}{x+1}\\right)$$\n$$= \\left(1 - \\frac{1}{2}\\right) + \\left(\\frac{1}{2} - \\frac{1}{3}\\right) + \\dots + \\left(\\frac{1}{n} - \\frac{1}{n+1}\\right) = 1 - \\frac{1}{n+1} = \\frac{n}{n+1}.$$\n\nLangkah 3: Menerapkan syarat fungsi peluang $\\sum_{x=1}^n f(x) = 1$.\n$$\\sum_{x=1}^n \\frac{c}{x(x+1)} = c \\cdot \\frac{n}{n+1} = 1.$$\n\nLangkah 4: Menyubstitusikan $c = \\frac{6}{5}$ dan menyelesaikan persamaan untuk $n$.\n$$\\frac{6}{5} \\cdot \\frac{n}{n+1} = 1 \\implies 6n = 5(n + 1) \\implies 6n = 5n + 5 \\implies n = 5.$$\nKarena $n = 5$ menghasilkan $f(x) > 0$ untuk setiap $x \\in \\{1, 2, 3, 4, 5\\}$, fungsi tersebut sah memenuhi seluruh syarat fungsi peluang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 260,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Nilai X yang mungkin adalah 0, 1, 2, 3. Distribusi peluang X disajikan pada Tabel 4.9 berikut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi selisih peluang variabel acak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemetaan seluruh titik sampel variabel acak diskret selisih mutlak dua kartu, penentuan fungsi peluang kumulatif, dan evaluasi selisih nilainya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak memuat 8 kartu yang masing-masing diberi nomor 1 sampai 8. Dua lembar kartu diambil secara acak sekaligus. Misalkan variabel acak $D$ menyatakan selisih mutlak dari kedua nomor kartu yang terambil. Nilai dari $P(D \\le 2) - P(D \\ge 5)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Banyak pasangan dengan D <= 2 adalah 13 dan D >= 5 adalah 6 dari total 28 kombinasi, sehingga selisih peluangnya adalah 13/28 - 6/28 = 7/28 = 1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{28}$",
+          "alasan": "Siswa salah menghitung cacah pasangan selisih 2 menjadi hanya 5 pasang."
+        },
+        {
+          "teks": "$\\frac{9}{28}$",
+          "alasan": "Siswa melewatkan pasangan yang memiliki selisih 5 sehingga pengurangnya bernilai terlalu kecil."
+        },
+        {
+          "teks": "$\\frac{3}{14}$",
+          "alasan": "Siswa hanya menghitung nilai P(D >= 5) yaitu 6/28 = 3/14 tanpa mengurangkannya dari P(D <= 2)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan banyak anggota ruang sampel.\nPengambilan 2 kartu dari 8 kartu sekaligus:\n$$n(S) = \\binom{8}{2} = \\frac{8 \\times 7}{2} = 28.$$\n\nLangkah 2: Menghitung banyak kemungkinan untuk kejadian $D \\le 2$ (yaitu selisih mutlak bernilai 1 atau 2).\n- Selisih 1: $\\{1,2\\}, \\{2,3\\}, \\{3,4\\}, \\{4,5\\}, \\{5,6\\}, \\{6,7\\}, \\{7,8\\}$ (ada 7 pasang).\n- Selisih 2: $\\{1,3\\}, \\{2,4\\}, \\{3,5\\}, \\{4,6\\}, \\{5,7\\}, \\{6,8\\}$ (ada 6 pasang).\nTotal untuk $D \\le 2$ adalah $7 + 6 = 13$ pasang, sehingga:\n$$P(D \\le 2) = \\frac{13}{28}.$$\n\nLangkah 3: Menghitung banyak kemungkinan untuk kejadian $D \\ge 5$ (yaitu selisih mutlak bernilai 5, 6, atau 7).\n- Selisih 5: $\\{1,6\\}, \\{2,7\\}, \\{3,8\\}$ (ada 3 pasang).\n- Selisih 6: $\\{1,7\\}, \\{2,8\\}$ (ada 2 pasang).\n- Selisih 7: $\\{1,8\\}$ (ada 1 pasang).\nTotal untuk $D \\ge 5$ adalah $3 + 2 + 1 = 6$ pasang, sehingga:\n$$P(D \\ge 5) = \\frac{6}{28}.$$\n\nLangkah 4: Menghitung nilai selisih peluang.\n$$P(D \\le 2) - P(D \\ge 5) = \\frac{13}{28} - \\frac{6}{28} = \\frac{7}{28} = \\frac{1}{4}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 261,
+        "bagian": "Ayo Mencoba 4.4",
+        "nomor": "1",
+        "teks": "Pabrik ponsel Sigma mengirim 10 ponsel pintar ke sebuah toko elektronik. Ternyata sebanyak 4 ponsel pintar cacat. Beta membeli 2 ponsel pintar dari toko tersebut secara acak. Tentukan distribusi dan fungsi peluang banyak ponsel pintar yang cacat.",
+        "jawaban": "y = 0, 1, 2 dengan f(y) = 15/45, 24/45, 6/45",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi peluang komplementer",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan distribusi peluang hipergeometrik multi-nilai kemudian mengevaluasi perbandingan peluang kejadian komplementer.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah laboratorium komputer menerima kiriman 15 unit diska lepas (_flashdisk_), dengan 5 di antaranya terinfeksi virus. Seorang laboran mengambil 4 unit diska lepas secara acak sekaligus untuk diuji. Misalkan variabel acak $V$ menyatakan banyaknya diska lepas terinfeksi virus yang terambil. Nilai perbandingan $P(V \\ge 2) : P(V < 2)$ adalah ....",
+      "jawaban_benar": "$37 : 54$",
+      "alasan_benar": "Banyak anggota ruang sampel adalah $\\binom{15}{4} = 1.365$. Peluang masing-masing kejadian dihitung: $P(V = 0) = \\frac{\\binom{5}{0}\\binom{10}{4}}{1.365} = \\frac{210}{1.365}$ dan $P(V = 1) = \\frac{\\binom{5}{1}\\binom{10}{3}}{1.365} = \\frac{600}{1.365}$. Maka $P(V < 2) = \\frac{210 + 600}{1.365} = \\frac{810}{1.365}$, dan $P(V \\ge 2) = 1 - \\frac{810}{1.365} = \\frac{555}{1.365}$. Perbandingannya adalah $555 : 810 = 37 : 54$.",
+      "distraktor": [
+        {
+          "teks": "$31 : 60$",
+          "alasan": "Siswa salah menghitung kombinasi $\\binom{10}{3}$ menjadi 100 sehingga mengira $P(V=1) = \\frac{500}{1.365}$."
+        },
+        {
+          "teks": "$54 : 37$",
+          "alasan": "Siswa terbalik meletakkan rasio antara $P(V < 2) : P(V \\ge 2)$."
+        },
+        {
+          "teks": "$37 : 91$",
+          "alasan": "Siswa membandingkan $P(V \\ge 2)$ terhadap peluang total 1, bukan terhadap $P(V < 2)$."
+        }
+      ],
+      "pembahasan": "Banyak cara memilih 4 diska lepas dari total 15 diska lepas:\n$$n(S) = \\binom{15}{4} = \\frac{15 \\times 14 \\times 13 \\times 12}{4 \\times 3 \\times 2 \\times 1} = 1.365$$\n\nNilai $V$ yang memenuhi $V < 2$ adalah $V = 0$ dan $V = 1$:\n- $P(V = 0) = \\frac{\\binom{5}{0} \\times \\binom{10}{4}}{1.365} = \\frac{1 \\times 210}{1.365} = \\frac{210}{1.365}$\n- $P(V = 1) = \\frac{\\binom{5}{1} \\times \\binom{10}{3}}{1.365} = \\frac{5 \\times 120}{1.365} = \\frac{600}{1.365}$\n\nDiperoleh:\n$$P(V < 2) = P(V = 0) + P(V = 1) = \\frac{210 + 600}{1.365} = \\frac{810}{1.365}$$\n$$P(V \\ge 2) = 1 - P(V < 2) = 1 - \\frac{810}{1.365} = \\frac{555}{1.365}$$\n\nMaka rasio perbandingannya:\n$$\\frac{P(V \\ge 2)}{P(V < 2)} = \\frac{555}{810} = \\frac{555 \\div 15}{810 \\div 15} = \\frac{37}{54}$$\nJadi, perbandingannya adalah $37 : 54$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0264-latihan-soal-fungsi-peluang-5",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis perbandingan peluang kejadian",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus menentukan distribusi binomial pelemparan independen lalu membandingkan peluang kumulatif terhadap titik tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dalam suatu kuis cepat, diberikan 6 butir soal bertipe benar atau salah. Seorang peserta menjawab seluruh butir soal dengan menebak secara acak tanpa persiapan. Jika variabel acak $X$ menyatakan banyaknya soal yang dijawab dengan benar, nilai perbandingan $P(X \\ge 5) : P(X = 4)$ adalah ....",
+      "jawaban_benar": "$7 : 15$",
+      "alasan_benar": "Ruang sampel pelemparan 6 soal benar-salah adalah $2^6 = 64$. Diperoleh $P(X = 4) = \\frac{\\binom{6}{4}}{64} = \\frac{15}{64}$, $P(X = 5) = \\frac{\\binom{6}{5}}{64} = \\frac{6}{64}$, dan $P(X = 6) = \\frac{\\binom{6}{6}}{64} = \\frac{1}{64}$. Maka $P(X \\ge 5) = \\frac{6 + 1}{64} = \\frac{7}{64}$. Rasio perbandingannya adalah $7 : 15$.",
+      "distraktor": [
+        {
+          "teks": "$2 : 5$",
+          "alasan": "Siswa hanya menghitung $P(X = 5)$ tanpa menambahkan $P(X = 6)$ pada $P(X \\ge 5)$, sehingga rasionya $6 : 15 = 2 : 5$."
+        },
+        {
+          "teks": "$15 : 7$",
+          "alasan": "Siswa terbalik menuliskan urutan perbandingan kejadian yang ditanyakan."
+        },
+        {
+          "teks": "$1 : 2$",
+          "alasan": "Siswa salah menjumlahkan $\\binom{6}{5} + \\binom{6}{6}$ menjadi 8 sehingga menghasilkan rasio $8 : 16 = 1 : 2$."
+        }
+      ],
+      "pembahasan": "Peluang menjawab benar pada tiap soal adalah $p = \\frac{1}{2}$ dan salah $q = \\frac{1}{2}$.\nTotal kemungkinan jawaban untuk 6 butir soal adalah $n(S) = 2^6 = 64$.\n\nFungsi peluang untuk variabel acak $X$ adalah:\n$$P(X = x) = \\frac{\\binom{6}{x}}{64}$$\n\n1. Menghitung $P(X = 4)$:\n$$P(X = 4) = \\frac{\\binom{6}{4}}{64} = \\frac{15}{64}$$\n\n2. Menghitung $P(X \\ge 5)$:\n$$P(X \\ge 5) = P(X = 5) + P(X = 6) = \\frac{\\binom{6}{5} + \\binom{6}{6}}{64} = \\frac{6 + 1}{64} = \\frac{7}{64}$$\n\n3. Membandingkan kedua peluang:\n$$P(X \\ge 5) : P(X = 4) = \\frac{7}{64} : \\frac{15}{64} = 7 : 15$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 259,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "/ _f_ ^ _x_ h = 1 _dipenuhi (terbukti)_ ,"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis rasio parameter peluang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembentukan sistem persamaan dari sifat simetri dan syarat jumlah fungsi peluang untuk menentukan parameter yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan suatu fungsi peluang untuk variabel acak diskret $X$ dengan daerah nilai $x \\in \\{1, 2, 3, 4, 5\\}$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} c(k - |x - 3|), & \\text{untuk } x \\in \\{1, 2, 3, 4, 5\\} \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nJika fungsi tersebut memenuhi seluruh syarat fungsi peluang dan diketahui $P(X = 3) = \\frac{1}{3}$, nilai konstanta $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "Nilai $|x - 3|$ untuk $x = 1, 2, 3, 4, 5$ berturut-turut adalah $2, 1, 0, 1, 2$. Total peluang $\\sum f(x) = c[(k-2) + (k-1) + k + (k-1) + (k-2)] = c(5k - 6) = 1$. Diketahui $P(X = 3) = ck = \\frac{1}{3}$, sehingga $c = \\frac{1}{3k}$. Substitusikan ke persamaan total peluang: $\\frac{5k - 6}{3k} = 1 \\iff 5k - 6 = 3k \\iff 2k = 6 \\iff k = 3$.",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "Siswa hanya menggunakan batas syarat non-negatif $k - 2 \\ge 0$ sehingga mengira $k = 2$."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa salah menjumlahkan suku konstan $|x-3|$ menjadi $2+1+0+1+2 = 4$ bukan 6."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa salah menyelesaikan persamaan aljabar $5k - 6 = 3k$ menjadi $5k - 3k = 10$."
+        }
+      ],
+      "pembahasan": "Hitung nilai $f(x)$ untuk setiap $x \\in \\{1, 2, 3, 4, 5\\}$:\n- $f(1) = c(k - |1 - 3|) = c(k - 2)$\n- $f(2) = c(k - |2 - 3|) = c(k - 1)$\n- $f(3) = c(k - |3 - 3|) = c(k)$\n- $f(4) = c(k - |4 - 3|) = c(k - 1)$\n- $f(5) = c(k - |5 - 3|) = c(k - 2)$\n\nSyarat fungsi peluang diskret mensyaratkan $\\sum_{x=1}^{5} f(x) = 1$:\n$$c[(k - 2) + (k - 1) + k + (k - 1) + (k - 2)] = 1$$\n$$c(5k - 6) = 1 \\implies c = \\frac{1}{5k - 6}$$\n\nDiketahui pada soal bahwa:\n$$P(X = 3) = f(3) = c \\cdot k = \\frac{1}{3}$$\n\nSubstitusikan nilai $c$:\n$$\\frac{k}{5k - 6} = \\frac{1}{3}$$\n$$3k = 5k - 6$$\n$$2k = 6 \\implies k = 3$$\n\nPeriksa keabsahan: untuk $k = 3$, $c = \\frac{1}{5(3) - 6} = \\frac{1}{9}$. Nilai $f(x) \\ge 0$ untuk setiap $x \\in \\{1, 2, 3, 4, 5\\}$, sehingga memenuhi seluruh kriteria fungsi peluang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesetaraan distribusi peluang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan parameter fungsi kuadratik dari aksioma total peluang, verifikasi tak-negatif, lalu evaluasi pemetaan variabel acak baru.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi peluang suatu variabel acak diskret $Y$ didefinisikan sebagai:\n$$g(y) = \\begin{cases} \\frac{a y^2 + 1}{34}, & \\text{untuk } y \\in \\{-2, -1, 1, 2\\} \\\\ 0, & \\text{untuk } y \\text{ lainnya} \\end{cases}$$\nJika $g(y)$ merupakan fungsi peluang yang sah dan didefinisikan variabel acak baru $W = Y^2$, nilai dari $P(W = 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{13}{17}$",
+      "alasan_benar": "Syarat total peluang $\\sum g(y) = 1$: $\\frac{(4a+1) + (a+1) + (a+1) + (4a+1)}{34} = \\frac{10a + 4}{34} = 1 \\implies 10a + 4 = 34 \\implies a = 3$. Kejadian $W = 4$ terjadi saat $Y^2 = 4$, yaitu $Y = -2$ atau $Y = 2$. Maka $P(W = 4) = g(-2) + g(2) = \\frac{3(-2)^2 + 1}{34} + \\frac{3(2)^2 + 1}{34} = \\frac{13}{34} + \\frac{13}{34} = \\frac{26}{34} = \\frac{13}{17}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{34}$",
+          "alasan": "Siswa hanya menghitung salah satu cabang peluang, yaitu $P(Y = 2)$, tanpa memperhitungkan bahwa $(-2)^2$ juga menghasilkan 4."
+        },
+        {
+          "teks": "$\\frac{4}{17}$",
+          "alasan": "Siswa salah menentukan nilai kejadian $W = 4$ dengan menghitung $P(W = 1)$ yang nilainya $\\frac{8}{34} = \\frac{4}{17}$."
+        },
+        {
+          "teks": "$\\frac{9}{17}$",
+          "alasan": "Siswa salah mencari nilai $a$ menjadi $a = 2$ sehingga mendapatkan $P(W = 4) = \\frac{9+9}{34} = \\frac{9}{17}$."
+        }
+      ],
+      "pembahasan": "1. Menentukan nilai parameter $a$:\nSyarat utama fungsi peluang adalah $\\sum_{y} g(y) = 1$.\n$$g(-2) + g(-1) + g(1) + g(2) = 1$$\n$$\\frac{a(-2)^2 + 1}{34} + \\frac{a(-1)^2 + 1}{34} + \\frac{a(1)^2 + 1}{34} + \\frac{a(2)^2 + 1}{34} = 1$$\n$$\\frac{(4a + 1) + (a + 1) + (a + 1) + (4a + 1)}{34} = 1$$\n$$\\frac{10a + 4}{34} = 1$$\n$$10a + 4 = 34 \\implies 10a = 30 \\implies a = 3$$\n\nPeriksa non-negatif: untuk $a = 3$, $g(y) > 0$ untuk setiap daerah asal, sehingga $g(y)$ sah.\n\n2. Menentukan nilai peluang untuk setiap nilai $y$:\n- $g(-2) = \\frac{3(4) + 1}{34} = \\frac{13}{34}$\n- $g(2) = \\frac{3(4) + 1}{34} = \\frac{13}{34}$\n\n3. Menghitung $P(W = 4)$ dengan $W = Y^2$:\nNilai $W = 4$ terjadi ketika $Y^2 = 4$, yaitu saat $Y = -2$ atau $Y = 2$.\n$$P(W = 4) = P(Y = -2) + P(Y = 2) = \\frac{13}{34} + \\frac{13}{34} = \\frac{26}{34} = \\frac{13}{17}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penalaran pola barisan fungsi peluang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan nilai fungsi peluang ke dalam barisan aritmetika, penyusunan dan penyelesaian SPLDV berbasis sifat total peluang, serta evaluasi peluang interval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $x \\in \\{1, 2, 3, 4, 5\\}$. Nilai-nilai peluang $f(x) = P(X = x)$ diketahui membentuk barisan aritmetika dengan beda tetap $d$. Jika $P(X \\le 2) = \\frac{1}{5}$, nilai dari $P(X \\ge 4)$ adalah ....",
+      "jawaban_benar": "$\\frac{3}{5}$",
+      "alasan_benar": "Berdasarkan sifat total peluang $\\sum_{x=1}^{5} f(x) = 1$, diperoleh $5a + 10d = 1 \\iff a + 2d = \\frac{1}{5}$. Diketahui pula $P(X \\le 2) = f(1) + f(2) = 2a + d = \\frac{1}{5}$. Dari kedua persamaan ini didapat $a = \\frac{1}{15}$ dan $d = \\frac{1}{15}$. Dengan demikian, $P(X \\ge 4) = f(4) + f(5) = (a + 3d) + (a + 4d) = \\frac{4}{15} + \\frac{5}{15} = \\frac{9}{15} = \\frac{3}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{15}$",
+          "alasan": "Hanya menghitung nilai titik $P(X = 4) = f(4)$, lupa menjumlahkan dengan $f(5)$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Salah menafsirkan tanda pertidaksamaan sebagai $P(X > 4) = f(5) = \\frac{5}{15} = \\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Salah mengurangkan atau menghitung nilai komplemen yang keliru."
+        }
+      ],
+      "pembahasan": "Misalkan $f(1) = a$. Karena membentuk barisan aritmetika dengan beda $d$, maka:\n- $f(1) = a$\n- $f(2) = a + d$\n- $f(3) = a + 2d$\n- $f(4) = a + 3d$\n- $f(5) = a + 4d$\n\n1. Sifat fungsi peluang mensyaratkan total seluruh peluang sama dengan 1:\n$$\\sum_{x=1}^{5} f(x) = 1$$\n$$5a + 10d = 1 \\implies a + 2d = \\frac{1}{5} \\quad \\text{...(Persamaan 1)}$$\n\n2. Dari informasi soal:\n$$P(X \\le 2) = f(1) + f(2) = a + (a + d) = 2a + d = \\frac{1}{5} \\quad \\text{...(Persamaan 2)}$$\n\n3. Eliminasi Persamaan (1) dan (2):\n$$2(a + 2d) - (2a + d) = 2\\left(\\frac{1}{5}\\right) - \\frac{1}{5}$$\n$$3d = \\frac{1}{5} \\implies d = \\frac{1}{15}$$\n\nSubstitusikan nilai $d$ ke Persamaan (1):\n$$a + 2\\left(\\frac{1}{15}\\right) = \\frac{3}{15} \\implies a = \\frac{1}{15}$$\n\n4. Menghitung nilai $P(X \\ge 4)$:\n$$P(X \\ge 4) = f(4) + f(5)$$\n$$f(4) = a + 3d = \\frac{1}{15} + \\frac{3}{15} = \\frac{4}{15}$$\n$$f(5) = a + 4d = \\frac{1}{15} + \\frac{4}{15} = \\frac{5}{15}$$\n$$P(X \\ge 4) = \\frac{4}{15} + \\frac{5}{15} = \\frac{9}{15} = \\frac{3}{5}$$\n\nJadi, nilai dari $P(X \\ge 4)$ adalah $\\frac{3}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b04-p0263-latihan-soal-fungsi-peluang-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis perbandingan peluang kumulatif",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan fungsi distribusi peluang dari pengambilan tanpa pengembalian dilanjutkan evaluasi perbandingan peluang majemuk.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kotak suku cadang memuat 6 mur baja, 3 mur tembaga, dan 5 mur kuningan. Sebanyak 3 butir mur diambil secara acak sekaligus dari dalam kotak tersebut. Jika variabel acak $K$ menyatakan banyaknya mur kuningan yang terambil, perbandingan nilai $P(K \\le 1)$ terhadap $P(K \\ge 2)$ adalah ....",
+      "jawaban_benar": "$66 : 25$",
+      "alasan_benar": "Total mur adalah $6 + 3 + 5 = 14$. Banyak cara memilih 3 mur dari 14 mur adalah $\\binom{14}{3} = \\frac{14 \\times 13 \\times 12}{6} = 364$. Mur kuningan berjumlah 5 dan non-kuningan berjumlah 9. Nilai peluang masing-masing: $P(K=0) = \\frac{\\binom{5}{0}\\binom{9}{3}}{364} = \\frac{1 \\times 84}{364} = \\frac{84}{364}$, $P(K=1) = \\frac{\\binom{5}{1}\\binom{9}{2}}{364} = \\frac{5 \\times 36}{364} = \\frac{180}{364}$, $P(K=2) = \\frac{\\binom{5}{2}\\binom{9}{1}}{364} = \\frac{10 \\times 9}{364} = \\frac{90}{364}$, dan $P(K=3) = \\frac{\\binom{5}{3}\\binom{9}{0}}{364} = \\frac{10 \\times 1}{364} = \\frac{10}{364}$. Dengan demikian, $P(K \\le 1) = \\frac{84 + 180}{364} = \\frac{264}{364}$ dan $P(K \\ge 2) = \\frac{90 + 10}{364} = \\frac{100}{364}$. Perbandingannya adalah $264 : 100 = 66 : 25$.",
+      "distraktor": [
+        {
+          "teks": "$33 : 19$",
+          "alasan": "Siswa salah menghitung kombinasi non-kuningan untuk $K=0$ menjadi $\\binom{9}{3} = 72$."
+        },
+        {
+          "teks": "$45 : 19$",
+          "alasan": "Siswa lupa memperhitungkan kasus $K=0$ pada $P(K \\le 1)$ sehingga hanya menghitung $P(K=1) : P(K \\ge 2) = 180 : 100$."
+        },
+        {
+          "teks": "$25 : 66$",
+          "alasan": "Siswa membalik urutan perbandingan menjadi $P(K \\ge 2) : P(K \\le 1)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung ukuran ruang sampel:\n$$n(S) = \\binom{14}{3} = \\frac{14 \\times 13 \\times 12}{3 \\times 2 \\times 1} = 364$$\n\nLangkah 2: Menghitung nilai peluang untuk setiap nilai $K \\in \\{0, 1, 2, 3\\}$:\n- $P(K = 0) = \\frac{\\binom{5}{0}\\binom{9}{3}}{364} = \\frac{1 \\times 84}{364} = \\frac{84}{364}$\n- $P(K = 1) = \\frac{\\binom{5}{1}\\binom{9}{2}}{364} = \\frac{5 \\times 36}{364} = \\frac{180}{364}$\n- $P(K = 2) = \\frac{\\binom{5}{2}\\binom{9}{1}}{364} = \\frac{10 \\times 9}{364} = \\frac{90}{364}$\n- $P(K = 3) = \\frac{\\binom{5}{3}\\binom{9}{0}}{364} = \\frac{10 \\times 1}{364} = \\frac{10}{364}$\n\nLangkah 3: Menghitung peluang kumulatif yang diminta:\n- $P(K \\le 1) = P(K = 0) + P(K = 1) = \\frac{84 + 180}{364} = \\frac{264}{364}$\n- $P(K \\ge 2) = P(K = 2) + P(K = 3) = \\frac{90 + 10}{364} = \\frac{100}{364}$\n\nLangkah 4: Menentukan perbandingan:\n$$\\frac{P(K \\le 1)}{P(K \\ge 2)} = \\frac{264}{100} = \\frac{66}{25}$$\nJadi, perbandingannya adalah $66 : 25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 261,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada Tabel 4.10 ditunjukkan bahwa: f(x) >= 0 dipenuhi, sum f(x) = 1 dipenuhi (terbukti)"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kebenaran fungsi peluang nilai mutlak",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan konstanta fungsi nilai mutlak lalu menguji kebenaran empat pernyataan matematis secara komprehensif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi peluang suatu variabel acak diskret $W$ didefinisikan sebagai:\n$$f(w) = \\begin{cases} c(3 - |w|), & \\text{untuk } w \\in \\{-2, -1, 0, 1, 2\\} \\\\ 0, & \\text{untuk } w \\text{ lainnya} \\end{cases}$$\nPerhatikan pernyataan-pernyataan berikut:\n(1) Nilai $c = \\frac{1}{9}$.\n(2) Nilai $P(W > 0) = \\frac{1}{3}$.\n(3) Nilai $P(W \\le 0) = \\frac{5}{9}$.\n(4) Nilai $P(|W| = 1) = \\frac{4}{9}$.\n\nPernyataan yang bernilai benar adalah ....",
+      "jawaban_benar": "(1), (2), dan (4)",
+      "alasan_benar": "Total peluang: $\\sum_{w=-2}^{2} c(3 - |w|) = c[(3-2) + (3-1) + (3-0) + (3-1) + (3-2)] = c[1 + 2 + 3 + 2 + 1] = 9c = 1 \\implies c = \\frac{1}{9}$ (Pernyataan 1 BENAR). Untuk pernyataan 2: $P(W > 0) = f(1) + f(2) = \\frac{2}{9} + \\frac{1}{9} = \\frac{3}{9} = \\frac{1}{3}$ (BENAR). Untuk pernyataan 3: $P(W \\le 0) = f(-2) + f(-1) + f(0) = \\frac{1}{9} + \\frac{2}{9} + \\frac{3}{9} = \\frac{6}{9} = \\frac{2}{3} \\ne \\frac{5}{9}$ (SALAH). Untuk pernyataan 4: $P(|W| = 1) = f(-1) + f(1) = \\frac{2}{9} + \\frac{2}{9} = \\frac{4}{9}$ (BENAR). Jadi, pernyataan yang benar adalah (1), (2), dan (4).",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2) saja",
+          "alasan": "Siswa tidak menyadari bahwa $|W| = 1$ mencakup $w = -1$ dan $w = 1$ sehingga mengira pernyataan (4) bernilai salah."
+        },
+        {
+          "teks": "(1), (3), dan (4)",
+          "alasan": "Siswa salah mengira $P(W \\le 0)$ tidak mengikutsertakan $w = 0$ sehingga mendapatkan $\\frac{3}{9}$ lalu salah hitung menjadi $\\frac{5}{9}$."
+        },
+        {
+          "teks": "(2) dan (3) saja",
+          "alasan": "Siswa salah menentukan nilai konstanta $c$ dan salah mengevaluasi pernyataan (3)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $c$ agar $\\sum f(w) = 1$:\n$$\\sum_{w=-2}^{2} c(3 - |w|) = c(1 + 2 + 3 + 2 + 1) = 9c = 1 \\implies c = \\frac{1}{9}$$\nKarena $3 - |w| > 0$ untuk seluruh $w \\in \\{-2, -1, 0, 1, 2\\}$, syarat $f(w) \\ge 0$ terpenuhi. Maka pernyataan (1) BENAR.\n\nLangkah 2: Memeriksa pernyataan (2):\n$$P(W > 0) = f(1) + f(2) = \\frac{3 - 1}{9} + \\frac{3 - 2}{9} = \\frac{2}{9} + \\frac{1}{9} = \\frac{3}{9} = \\frac{1}{3}$$\nPernyataan (2) BENAR.\n\nLangkah 3: Memeriksa pernyataan (3):\n$$P(W \\le 0) = f(-2) + f(-1) + f(0) = \\frac{1}{9} + \\frac{2}{9} + \\frac{3}{9} = \\frac{6}{9} = \\frac{2}{3} \\ne \\frac{5}{9}$$\nPernyataan (3) SALAH.\n\nLangkah 4: Memeriksa pernyataan (4):\nKejadian $|W| = 1$ terjadi jika $w = -1$ atau $w = 1$.\n$$P(|W| = 1) = f(-1) + f(1) = \\frac{2}{9} + \\frac{2}{9} = \\frac{4}{9}$$\nPernyataan (4) BENAR.\n\nDengan demikian, pernyataan yang benar adalah (1), (2), dan (4).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Tabel 4.8 di atas dikenal sebagai distribusi peluang atau fungsi peluang untuk variabel acak diskret X ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan fungsi peluang nilai maksimum",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan variabel acak maksimum dari penarikan bertahap, penyusunan fungsi peluang linier, dan penyelesaian sistem persamaan untuk parameter kuadratik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kantong memuat 4 bola bernomor 1, 2, 3, dan 4. Dua bola diambil satu per satu tanpa pengembalian. Misalkan variabel acak $M$ menyatakan nilai terbesar (maksimum) di antara kedua nomor bola yang terambil. Jika fungsi peluang dari $M$ dinyatakan dalam bentuk:\n$$P(M = m) = \\begin{cases} \\frac{a \\cdot m + b}{12}, & \\text{untuk } m \\in \\{2, 3, 4\\} \\\\ 0, & \\text{untuk } m \\text{ lainnya} \\end{cases}$$\nmaka nilai dari $a^2 + b^2$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "Ruang sampel penarikan 2 bola berurutan tanpa pengembalian memiliki $4 \\times 3 = 12$ anggota. Nilai $M$ yang mungkin adalah 2, 3, dan 4. Nilai $M=2$ terjadi pada pasangan (1,2) dan (2,1) (2 hasil), sehingga $P(M=2) = \\frac{2}{12}$. Nilai $M=3$ terjadi pada (1,3), (3,1), (2,3), (3,2) (4 hasil), sehingga $P(M=3) = \\frac{4}{12}$. Nilai $M=4$ terjadi pada (1,4), (4,1), (2,4), (4,2), (3,4), (4,3) (6 hasil), sehingga $P(M=4) = \\frac{6}{12}$. Dari rumus fungsi peluang: untuk $m=2 \\implies 2a + b = 2$, dan untuk $m=3 \\implies 3a + b = 4$. Mengurangkan kedua persamaan menghasilkan $a = 2$. Substitusi ke $2(2) + b = 2$ menghasilkan $b = -2$. Untuk $m=4$, $4(2) + (-2) = 6$ (konsisten). Maka $a^2 + b^2 = 2^2 + (-2)^2 = 4 + 4 = 8$.",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "Siswa hanya menghitung nilai $a^2$ dan mengabaikan $b^2$ karena mengira $b=0$."
+        },
+        {
+          "teks": "0",
+          "alasan": "Siswa keliru menjumlahkan $(a+b)^2 = (2 + (-2))^2 = 0$ alih-alih $a^2 + b^2$."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa keliru menyelesaikan eliminasi sehingga memperoleh $a=3$ dan $b=-1$, menghasilkan $3^2 + (-1)^2 = 10$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan ruang sampel penarikan 2 bola satu per satu tanpa pengembalian:\n$$n(S) = 4 \\times 3 = 12$$\n\nLangkah 2: Menentukan frekuensi kemunculan nilai maksimum $M$:\n- $M = 2$: pasangan $\\{(1,2), (2,1)\\} \\implies n = 2 \\implies P(M=2) = \\frac{2}{12}$\n- $M = 3$: pasangan $\\{(1,3), (3,1), (2,3), (3,2)\\} \\implies n = 4 \\implies P(M=3) = \\frac{4}{12}$\n- $M = 4$: pasangan $\\{(1,4), (4,1), (2,4), (4,2), (3,4), (4,3)\\} \\implies n = 6 \\implies P(M=4) = \\frac{6}{12}$\n\nLangkah 3: Membentuk sistem persamaan linier dari $P(M = m) = \\frac{am + b}{12}$:\nUntuk $m = 2$: $2a + b = 2$\nUntuk $m = 3$: $3a + b = 4$\n\nLangkah 4: Menyelesaikan nilai $a$ dan $b$:\nKurangkan kedua persamaan:\n$$(3a + b) - (2a + b) = 4 - 2 \\implies a = 2$$\nSubstitusikan nilai $a = 2$ ke dalam persamaan pertama:\n$$2(2) + b = 2 \\implies 4 + b = 2 \\implies b = -2$$\nCek pada $m = 4$: $am + b = 2(4) + (-2) = 6$ (sesuai).\n\nLangkah 5: Menghitung nilai $a^2 + b^2$:\n$$a^2 + b^2 = 2^2 + (-2)^2 = 4 + 4 = 8$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Suatu fungsi f disebut fungsi peluang atau distribusi peluang X jika untuk setiap hasil x yang mungkin, memenuhi"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "konstruksi parameter sistem fungsi peluang",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan dan sintesis dua parameter dari sistem persamaan linier yang dibentuk oleh syarat normalisasi fungsi peluang diskret dan perbandingan peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah fungsi peluang dari variabel acak diskret $Y$ didefinisikan sebagai:\n$$f(y) = \\begin{cases} a y + b, & \\text{untuk } y \\in \\{1, 2, 3\\} \\\\ 0, & \\text{untuk } y \\text{ lainnya} \\end{cases}$$\nDiketahui $f(y)$ memenuhi definisi fungsi peluang diskret. Jika nilai peluang $P(Y = 3)$ tepat bernilai dua kali lipat dari $P(Y = 1)$, nilai dari $f(2)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Dari syarat total peluang: $(a+b) + (2a+b) + (3a+b) = 1 \\implies 6a + 3b = 1$. Dari syarat perbandingan: $f(3) = 2f(1) \\implies 3a + b = 2(a + b) \\implies a = b$. Substitusi $a=b$ ke $6a + 3b = 1$ menghasilkan $9a = 1 \\implies a = b = \\frac{1}{9}$. Maka $f(2) = 2a + b = 2\\left(\\frac{1}{9}\\right) + \\frac{1}{9} = \\frac{3}{9} = \\frac{1}{3}$. Nilai ini juga memenuhi $f(y) \\ge 0$ untuk setiap $y$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Siswa keliru menganggap pembagi total adalah 12 sehingga memperoleh $f(2) = \\frac{3}{12} = \\frac{1}{4}$."
+        },
+        {
+          "teks": "$\\frac{2}{9}$",
+          "alasan": "Siswa hanya menghitung komponen $2a$ dari rumus $2a+b$ dan lupa menambahkan suku $+b$."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Siswa salah menjumlahkan koefisien $a$ pada total peluang menjadi $4a+3b=1$ sehingga nilai parameter menjadi tidak tepat."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menuliskan nilai peluang untuk tiap domain $y \\in \\{1, 2, 3\\}$.\n$f(1) = a(1) + b = a + b$\n$f(2) = a(2) + b = 2a + b$\n$f(3) = a(3) + b = 3a + b$\n\nLangkah 2: Menggunakan syarat fungsi peluang $\\sum f(y) = 1$.\n$$(a + b) + (2a + b) + (3a + b) = 1$$\n$$6a + 3b = 1 \\quad \\text{--- (Persamaan 1)}$$\n\nLangkah 3: Menggunakan hubungan $P(Y = 3) = 2 \\cdot P(Y = 1)$.\n$$3a + b = 2(a + b)$$\n$$3a + b = 2a + 2b \\implies a = b \\quad \\text{--- (Persamaan 2)}$$\n\nLangkah 4: Menyelesaikan sistem persamaan linier.\nSubstitusi $b = a$ ke Persamaan 1:\n$$6a + 3(a) = 1 \\implies 9a = 1 \\implies a = \\frac{1}{9}$$\nKarena $a = b$, maka $b = \\frac{1}{9}$.\nSemua nilai peluang tak negatif ($f(1) = \\frac{2}{9} > 0$, $f(2) = \\frac{3}{9} > 0$, $f(3) = \\frac{4}{9} > 0$), sehingga fungsi peluang sah.\n\nLangkah 5: Menghitung $f(2)$.\n$$f(2) = 2a + b = 2\\left(\\frac{1}{9}\\right) + \\frac{1}{9} = \\frac{3}{9} = \\frac{1}{3}$$\nJadi, nilai $f(2) = \\frac{1}{3}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 259,
+        "bagian": "Contoh Soal",
+        "nomor": "4.6",
+        "teks": "Dalam sebuah kotak terdapat 5 bola hijau dan 3 bola kuning. Misalkan diambil 3 bola secara acak. Jika X menyatakan banyak bola kuning yang terambil, tentukan fungsi peluang X.",
+        "jawaban": "f(x) = (C(3, x) * C(5, 3-x)) / 56 untuk x = 0, 1, 2, 3",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi rasio fungsi peluang",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perumusan distribusi peluang hipergeometrik dari konteks nyata, penentuan seluruh nilai fungsi peluang diskret, serta evaluasi rasio perkalian antar-nilai peluang.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah inkubator riset memuat 6 bibit tanaman varietas unggul dan 4 bibit varietas lokal. Sebanyak 3 bibit diambil secara acak sekaligus untuk ditanam di lahan percobaan. Jika variabel acak $Y$ menyatakan banyak bibit varietas lokal yang terambil dengan fungsi peluang $f(y) = P(Y = y)$, nilai dari $\\frac{f(1) \\cdot f(2)}{f(0) \\cdot f(3)}$ adalah ....",
+      "jawaban_benar": "27",
+      "alasan_benar": "Banyak cara memilih 3 bibit dari total 10 bibit adalah $n(S) = \\binom{10}{3} = 120$. Nilai $Y$ yang mungkin adalah $y \\in \\{0, 1, 2, 3\\}$. Nilai peluang untuk tiap $y$ diperoleh melalui rumus kombinasi: $f(0) = \\frac{\\binom{4}{0}\\binom{6}{3}}{120} = \\frac{1 \\times 20}{120} = \\frac{20}{120}$, $f(1) = \\frac{\\binom{4}{1}\\binom{6}{2}}{120} = \\frac{4 \\times 15}{120} = \\frac{60}{120}$, $f(2) = \\frac{\\binom{4}{2}\\binom{6}{1}}{120} = \\frac{6 \\times 6}{120} = \\frac{36}{120}$, dan $f(3) = \\frac{\\binom{4}{3}\\binom{6}{0}}{120} = \\frac{4 \\times 1}{120} = \\frac{4}{120}$. Maka rasio yang dicari adalah $\\frac{f(1) \\cdot f(2)}{f(0) \\cdot f(3)} = \\frac{60 \\times 36}{20 \\times 4} = \\frac{2160}{80} = 27$.",
+      "distraktor": [
+        {
+          "teks": "54",
+          "alasan": "Siswa salah menghitung kombinasi $\\binom{6}{2}$ menjadi 30 (bukan 15) karena lupa membagi dengan $2!$, sehingga memperoleh $f(1) = \\frac{120}{120}$ dan hasil rasio menjadi 54."
+        },
+        {
+          "teks": "18",
+          "alasan": "Siswa salah menghitung nilai $f(2)$ dengan mengalikan $\\binom{4}{2} = 6$ dengan 3 bibit unggul tersisa alih-alih $\\binom{6}{1} = 6$, menghasilkan pembilang yang terbagi dua."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa keliru mengevaluasi operasi perkalian menjadi penjumlahan, yaitu menghitung $\\frac{f(1) + f(2)}{f(0) + f(3)} = \\frac{60 + 36}{20 + 4} = \\frac{96}{24} = 4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan banyak anggota ruang sampel.\nTotal bibit adalah $6 + 4 = 10$ bibit. Diambil 3 bibit sekaligus:\n$$n(S) = \\binom{10}{3} = \\frac{10 \\times 9 \\times 8}{3 \\times 2 \\times 1} = 120$$\n\nLangkah 2: Menentukan fungsi peluang $f(y)$ untuk $y \\in \\{0, 1, 2, 3\\}$.\n$$f(y) = P(Y = y) = \\frac{\\binom{4}{y}\\binom{6}{3-y}}{\\binom{10}{3}}$$\n\nLangkah 3: Menghitung nilai peluang untuk masing-masing nilai $y$:\n- $f(0) = \\frac{\\binom{4}{0}\\binom{6}{3}}{120} = \\frac{1 \\times 20}{120} = \\frac{20}{120}$\n- $f(1) = \\frac{\\binom{4}{1}\\binom{6}{2}}{120} = \\frac{4 \\times 15}{120} = \\frac{60}{120}$\n- $f(2) = \\frac{\\binom{4}{2}\\binom{6}{1}}{120} = \\frac{6 \\times 6}{120} = \\frac{36}{120}$\n- $f(3) = \\frac{\\binom{4}{3}\\binom{6}{0}}{120} = \\frac{4 \\times 1}{120} = \\frac{4}{120}$\n\nLangkah 4: Menghitung nilai ekspresi yang ditanyakan:\n$$\\frac{f(1) \\cdot f(2)}{f(0) \\cdot f(3)} = \\frac{\\frac{60}{120} \\times \\frac{36}{120}}{\\frac{20}{120} \\times \\frac{4}{120}} = \\frac{60 \\times 36}{20 \\times 4} = 3 \\times 9 = 27$$\n\nJadi, nilai dari $\\frac{f(1) \\cdot f(2)}{f(0) \\cdot f(3)}$ adalah 27.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan X adalah variabel acak. Suatu fungsi f disebut fungsi peluang atau distribusi peluang X jika untuk setiap hasil x yang mungkin, memenuhi"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis rasio peluang himpunan bagian",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan konstanta normalisasi dari fungsi nilai mutlak diskret, pemisahan elemen berdasarkan sifat bilangan prima, serta evaluasi rasio dua peluang komplementer.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Fungsi peluang dari suatu variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} c(6 - |x - 4|), & \\text{untuk } x \\in \\{1, 2, 3, 4, 5, 6\\} \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nRasio antara peluang terpilihnya $X$ bernilai bilangan prima terhadap peluang terpilihnya $X$ bukan bilangan prima adalah ....",
+      "jawaban_benar": "$14 : 13$",
+      "alasan_benar": "Evaluasi bobot $w(x) = 6 - |x - 4|$ untuk tiap $x \\in \\{1, 2, 3, 4, 5, 6\\}$ menghasilkan berturut-turut $3, 4, 5, 6, 5, 4$. Total bobot adalah $\\sum w(x) = 3 + 4 + 5 + 6 + 5 + 4 = 27$, sehingga $c = \\frac{1}{27}$. Himpunan bilangan prima pada daerah nilai adalah $\\{2, 3, 5\\}$, dengan peluang $P(X \\text{ prima}) = c(4 + 5 + 5) = 14c = \\frac{14}{27}$. Himpunan bukan prima adalah $\\{1, 4, 6\\}$, dengan peluang $P(X \\text{ bukan prima}) = c(3 + 6 + 4) = 13c = \\frac{13}{27}$. Jadi, rasionya adalah $14 : 13$.",
+      "distraktor": [
+        {
+          "teks": "$13 : 14$",
+          "alasan": "Siswa membalik urutan pembanding (bukan prima terhadap prima)."
+        },
+        {
+          "teks": "$1 : 1$",
+          "alasan": "Siswa berasumsi peluangnya sama karena masing-masing himpunan memiliki tepat 3 anggota tanpa memperhitungkan bobot fungsi peluangnya."
+        },
+        {
+          "teks": "$17 : 10$",
+          "alasan": "Siswa salah menganggap bilangan 1 sebagai bilangan prima sehingga peluang prima dihitung $f(1)+f(2)+f(3)+f(5) = \\frac{17}{27}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung nilai $6 - |x - 4|$ untuk tiap nilai $x$:\n- $f(1) = c(6 - |-3|) = 3c$\n- $f(2) = c(6 - |-2|) = 4c$\n- $f(3) = c(6 - |-1|) = 5c$\n- $f(4) = c(6 - |0|) = 6c$\n- $f(5) = c(6 - |1|) = 5c$\n- $f(6) = c(6 - |2|) = 4c$\n\nLangkah 2: Gunakan syarat $\\sum f(x) = 1$:\n$$(3 + 4 + 5 + 6 + 5 + 4)c = 1 \\implies 27c = 1 \\implies c = \\frac{1}{27}$$\n\nLangkah 3: Kelompokkan nilai $x$:\n- Bilangan prima: $\\{2, 3, 5\\}$\n- Bukan bilangan prima: $\\{1, 4, 6\\}$\n\nLangkah 4: Hitung peluang masing-masing kelompok:\n$$P(X \\text{ prima}) = f(2) + f(3) + f(5) = \\frac{4 + 5 + 5}{27} = \\frac{14}{27}$$\n$$P(X \\text{ bukan prima}) = f(1) + f(4) + f(6) = \\frac{3 + 6 + 4}{27} = \\frac{13}{27}$$\n\nLangkah 5: Tentukan rasio perbandingannya:\n$$\\text{Rasio} = \\frac{14}{27} : \\frac{13}{27} = 14 : 13$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b04-d-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 258,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena X variabel acak diskret, fungsi peluang atau distribusi peluangnya disebut fungsi peluang diskret atau distribusi peluang diskret ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi selisih peluang komposit",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembentukan dan penyelesaian sistem persamaan linear dua variabel dari syarat total peluang dan relasi paritas, kemudian mengevaluasi selisih peluang dua interval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah variabel acak diskret $Y$ memiliki daerah nilai $y \\in \\{0, 1, 2, 3\\}$. Distribusi peluang dari $Y$ diketahui memenuhi:\n- $P(Y = 0) = a$\n- $P(Y = 1) = b$\n- $P(Y = 2) = 2a$\n- $P(Y = 3) = a + b$\n\nJika diketahui bahwa peluang diperolehnya nilai $Y$ bilangan cacah genap bernilai dua kali lipat dari peluang diperolehnya nilai $Y$ bilangan ganjil, maka nilai dari $P(Y \\ge 2) - P(Y < 2)$ adalah ....",
+      "jawaban_benar": "$\\frac{4}{9}$",
+      "alasan_benar": "Syarat total peluang: $a + b + 2a + (a + b) = 1 \\implies 4a + 2b = 1$. Peluang $Y$ genap adalah $P(Y=0) + P(Y=2) = 3a$. Peluang $Y$ ganjil adalah $P(Y=1) + P(Y=3) = a + 2b$. Diketahui $3a = 2(a + 2b) \\implies a = 4b$. Substitusi ke persamaan total menghasilkan $4(4b) + 2b = 1 \\implies 18b = 1 \\implies b = \\frac{1}{18}$ dan $a = \\frac{4}{18}$. Dihitung $P(Y \\ge 2) = 2a + (a + b) = 3a + b = 3\\left(\\frac{4}{18}\\right) + \\frac{1}{18} = \\frac{13}{18}$, serta $P(Y < 2) = a + b = \\frac{4}{18} + \\frac{1}{18} = \\frac{5}{18}$. Selisihnya adalah $\\frac{13}{18} - \\frac{5}{18} = \\frac{8}{18} = \\frac{4}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Siswa keliru menyelesaikan relasi $3a = 2(a+2b)$ menjadi $a = 2b$, sehingga memperoleh parameter yang salah."
+        },
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Siswa salah menghitung selisih dan justru menghitung $1 - 2 P(Y < 2)$ dengan nilai $P(Y < 2) = \\frac{2}{9}$ akibat salah aljabar."
+        },
+        {
+          "teks": "$\\frac{7}{18}$",
+          "alasan": "Siswa lupa mengikutsertakan $P(Y = 3)$ pada perhitungan interval $P(Y \\ge 2)$ sehingga didapat $P(Y=2) - P(Y < 2) = \\frac{8}{18} - \\frac{5}{18} = \\frac{3}{18}$, lalu salah menjumlahkannya."
+        }
+      ],
+      "pembahasan": "Langkah 1: Terapkan sifat fungsi peluang $\\sum_{y=0}^3 P(Y = y) = 1$:\n$$a + b + 2a + (a + b) = 1 \\implies 4a + 2b = 1 \\quad \\dots (1)$$\n\nLangkah 2: Tentukan relasi peluang genap dan ganjil:\n- $Y$ genap: $\\{0, 2\\} \\implies P(Y \\text{ genap}) = P(Y = 0) + P(Y = 2) = a + 2a = 3a$\n- $Y$ ganjil: $\\{1, 3\\} \\implies P(Y \\text{ ganjil}) = P(Y = 1) + P(Y = 3) = b + (a + b) = a + 2b$\n\nDari $P(Y \\text{ genap}) = 2 P(Y \\text{ ganjil})$:\n$$3a = 2(a + 2b) \\implies 3a = 2a + 4b \\implies a = 4b \\quad \\dots (2)$$\n\nLangkah 3: Substitusi persamaan (2) ke (1):\n$$4(4b) + 2b = 1 \\implies 18b = 1 \\implies b = \\frac{1}{18}$$\n$$a = 4\\left(\\frac{1}{18}\\right) = \\frac{4}{18}$$\n\nLangkah 4: Hitung peluang komposit yang ditanyakan:\n$$P(Y \\ge 2) = P(Y = 2) + P(Y = 3) = 2a + (a + b) = 3a + b = 3\\left(\\frac{4}{18}\\right) + \\frac{1}{18} = \\frac{13}{18}$$\n$$P(Y < 2) = P(Y = 0) + P(Y = 1) = a + b = \\frac{4}{18} + \\frac{1}{18} = \\frac{5}{18}$$\n\nLangkah 5: Hitung selisihnya:\n$$P(Y \\ge 2) - P(Y < 2) = \\frac{13}{18} - \\frac{5}{18} = \\frac{8}{18} = \\frac{4}{9}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

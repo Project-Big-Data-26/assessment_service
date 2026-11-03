@@ -47,12 +47,15 @@ Skrip `auto_inserter.py` secara ketat memfilter hanya file yang path-nya berada 
 **Daftar Berkas yang Diproses (Total 21 Berkas):**
 - Exercise (7 berkas):
   - `output/exercise/kelas5/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas6/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas7/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas8/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas9/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas10/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas11/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas11_tl/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas12/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas12_tl/batch01/hasil_validasi/validation_results.json`
 - Pretest (14 berkas):
   - `output/pretest/kelas1` s.d `kelas12_tl` (`.../hasil_validasi/validation_results.json`)
 

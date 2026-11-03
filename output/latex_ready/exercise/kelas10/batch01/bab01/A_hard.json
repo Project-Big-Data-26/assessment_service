@@ -1,0 +1,690 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b01-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim tentang pangkat",
+      "alasan_level": "mengevaluasi empat klaim umum tentang tanda hasil pangkat dengan menguji genap/ganjil dan contoh penyangkal; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $a$ bilangan real dengan $a \\neq 0$ dan $n$ bilangan bulat positif. Pernyataan yang benar untuk semua nilai $a$ tersebut adalah ....",
+      "jawaban_benar": "Jika $n$ genap, maka $(-a)^n = a^n$",
+      "alasan_benar": "$(-a)^n$ memuat $n$ faktor $(-a)$; pada $n$ genap faktor negatif berpasangan sehingga hasilnya positif dan sama dengan $a^n$",
+      "distraktor": [
+        {
+          "teks": "Jika $n$ genap, maka $(-a)^n = -a^n$",
+          "alasan": "mengira tanda negatif selalu tersisa; padahal $(-2)^2 = 4 \\neq -4$"
+        },
+        {
+          "teks": "Jika $n$ ganjil, maka $(-a)^n = a^n$",
+          "alasan": "mengira pangkat ganjil menghilangkan tanda; padahal $(-2)^3 = -8 \\neq 8$"
+        },
+        {
+          "teks": "Nilai $-a^n$ selalu negatif",
+          "alasan": "lupa bahwa $a^n$ dapat negatif, mis. $a = -2$, $n = 3$ memberi $-(-8) = 8$"
+        }
+      ],
+      "pembahasan": "Uji $a = 2$: $(-2)^2 = 4 = 2^2$ (genap benar), $(-2)^3 = -8 \\neq 8$ (ganjil salah), $(-2)^2 = 4 \\neq -4$. Untuk $a=-2$, $n=3$, $-a^n = 8 > 0$ sehingga klaim terakhir juga salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "mencari nilai yang membatalkan klaim umum tentang kuadrat; perlu menguji tiap opsi dan sadar bilangan pecahan di antara 0 dan 1",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim bahwa untuk setiap bilangan real $a$ berlaku $a^2 > a$. Nilai $a$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "$\\left(\\frac{3}{4}\\right)^2 = \\frac{9}{16}$ dan $\\frac{9}{16} < \\frac{3}{4}$ sehingga $a^2 > a$ tidak berlaku",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "$5^2 = 25 > 5$ sehingga justru mendukung klaim"
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "$(-4)^2 = 16 > -4$ sehingga justru mendukung klaim; mengira bilangan negatif pasti menyangkal"
+        },
+        {
+          "teks": "$6$",
+          "alasan": "$6^2 = 36 > 6$ sehingga justru mendukung klaim"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus membuat $a^2 \\le a$. Hanya $\\frac{3}{4}$ yang menghasilkan $\\frac{9}{16} < \\frac{3}{4}$; opsi lain memenuhi $a^2 > a$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menguji klaim aljabar $(a+b)^2 = a^2 + b^2$ dengan beberapa pasangan; tiga pasangan tidak menyangkal karena ada nilai nol",
+      "stimulus": null,
+      "pertanyaan": "Klaim: $(a+b)^2 = a^2 + b^2$ untuk semua bilangan real $a$ dan $b$. Pasangan $(a, b)$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(4, 5)$",
+      "alasan_benar": "$(4+5)^2 = 81$ sedangkan $4^2 + 5^2 = 41$, nilainya berbeda",
+      "distraktor": [
+        {
+          "teks": "$(0, 6)$",
+          "alasan": "$(0+6)^2 = 36 = 0^2 + 6^2$ sehingga sama, bukan penyangkal"
+        },
+        {
+          "teks": "$(7, 0)$",
+          "alasan": "$(7+0)^2 = 49 = 7^2 + 0^2$ sehingga sama, bukan penyangkal"
+        },
+        {
+          "teks": "$(0, 0)$",
+          "alasan": "kedua ruas bernilai 0 sehingga sama, bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Hitung kedua ruas untuk tiap pasangan. Hanya $(4,5)$ memberi nilai berbeda ($81 \\neq 41$); pasangan lain memuat angka 0 sehingga kedua ruas sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perbandingan bilangan berpangkat besar",
+      "alasan_level": "membandingkan pangkat besar tanpa menghitung langsung dengan menyamakan banyaknya kelompok faktor; butuh strategi, bukan hitung panjang",
+      "stimulus": null,
+      "pertanyaan": "Tanpa menghitung nilai lengkapnya, bilangan terbesar di antara $2^{100}$, $3^{64}$, $5^{40}$, dan $10^{30}$ adalah ....",
+      "jawaban_benar": "$3^{64}$",
+      "alasan_benar": "tiap bilangan dapat ditulis sebagai bentuk pangkat 4: $(2^{25})^4$, $(3^{16})^4$, $(5^{10})^4$, $(10^{7,5})^4$; $2^{25} = 33.554.432$, $3^{16} = 43.046.721$, $5^{10} = 9.765.625$, dan $10^{7,5} \\approx 31.622.776$, sehingga $3^{16}$ terbesar",
+      "distraktor": [
+        {
+          "teks": "$2^{100}$",
+          "alasan": "mengira pangkat terbesar menghasilkan nilai terbesar"
+        },
+        {
+          "teks": "$5^{40}$",
+          "alasan": "mengira kombinasi pokok dan pangkat yang sedang paling besar tanpa membandingkan"
+        },
+        {
+          "teks": "$10^{30}$",
+          "alasan": "mengira bilangan pokok terbesar menghasilkan nilai terbesar"
+        }
+      ],
+      "pembahasan": "Semua pangkat habis dibagi 4. Bandingkan faktor ke-4: $2^{25}=33.554.432$, $3^{16}=43.046.721$, $5^{10}=9.765.625$, $10^{7,5} \\approx 3,16 \\times 10^7$. Yang terbesar adalah $3^{16}$, jadi $3^{64}$ terbesar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "angka satuan dan banyak digit",
+      "alasan_level": "menemukan pola angka satuan berulang dari perkalian berulang lalu menerapkan pada pangkat besar; setara medium atas",
+      "stimulus": null,
+      "pertanyaan": "Angka satuan dari $7^{2026}$ adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "angka satuan $7^1, 7^2, 7^3, 7^4$ berturut-turut 7, 9, 3, 1 lalu berulang tiap 4 pangkat; $2026 = 4 \\times 506 + 2$ sehingga sama dengan $7^2 = 49$, satuan 9",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "mengira sisa bagi 2026 oleh 4 adalah 1"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "mengira sisa bagi 2026 oleh 4 adalah 3"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengira 2026 habis dibagi 4 sehingga memilih angka satuan siklus terakhir"
+        }
+      ],
+      "pembahasan": "Pola satuan $7^n$: 7, 9, 3, 1 (periode 4). $2026 \\bmod 4 = 2$, jadi satuannya sama dengan $7^2 = 49$, yaitu 9.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "angka satuan dan banyak digit",
+      "alasan_level": "menggabungkan dua pola angka satuan berperiode 4 pada pangkat besar lalu menjumlahkan satuannya",
+      "stimulus": null,
+      "pertanyaan": "Angka satuan dari $3^{50} + 2^{50}$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "satuan $3^n$ berperiode 4 (3, 9, 7, 1) sehingga $3^{50}$ bersatuan 9; satuan $2^n$ berperiode 4 (2, 4, 8, 6) sehingga $2^{50}$ bersatuan 4; $9 + 4 = 13$, satuan 3",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "menganggap $3^{50}$ bersatuan 3 dan $2^{50}$ bersatuan 4 (salah posisi siklus)"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "menganggap $2^{50}$ bersatuan 2 sehingga $9 + 2 = 11$"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "hanya memakai satuan $3^{50}$"
+        }
+      ],
+      "pembahasan": "$50 \\bmod 4 = 2$. Satuan $3^{50}$ sama dengan $3^2 = 9$; satuan $2^{50}$ sama dengan $2^2 = 4$. Jumlahnya $9+4 = 13$, jadi satuan 3.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "angka satuan dan banyak digit",
+      "alasan_level": "memperkirakan banyak digit pangkat besar dengan mengelompokkan faktor dan memakai batas atas/bawah, tanpa kalkulator",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $2^{10} = 1.024$. Tanpa kalkulator, banyak digit bilangan $2^{40}$ adalah ....",
+      "jawaban_benar": "$13$ digit",
+      "alasan_benar": "$2^{40}$ adalah hasil kali empat faktor $1.024$; $1.000^4 = 10^{12}$ dan $1.100^4 = 1,4641 \\times 10^{12}$, sehingga $10^{12} < 2^{40} < 10^{13}$ dan bilangan itu berdigit 13",
+      "distraktor": [
+        {
+          "teks": "$12$ digit",
+          "alasan": "memperkirakan $2^{40} \\approx 10^{12}$ lalu menghitung 12 digit; $10^{12}$ sendiri berdigit 13"
+        },
+        {
+          "teks": "$14$ digit",
+          "alasan": "menaksir nilai terlalu besar, mengira lebih dari $10^{13}$"
+        },
+        {
+          "teks": "$40$ digit",
+          "alasan": "mengira banyak digit sama dengan pangkatnya"
+        }
+      ],
+      "pembahasan": "$2^{40} = (2^{10})^4$ dengan $1.000 < 1.024 < 1.100$. Maka $10^{12} < 2^{40} < 1,4641 \\times 10^{12} < 10^{13}$. Bilangan di antara $10^{12}$ dan $10^{13}$ berdigit 13 (nilai sebenarnya $1.099.511.627.776$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat n agar pernyataan benar",
+      "alasan_level": "menentukan syarat $n$ agar jumlah dua pangkat bernilai negatif dengan memfaktorkan faktor bersama dan membedakan pangkat genap/ganjil",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat positif $n$ yang memenuhi $(-5)^n + (-5)^{n+1} < 0$ adalah semua bilangan ....",
+      "jawaban_benar": "genap",
+      "alasan_benar": "$(-5)^n + (-5)^{n+1} = (-5)^n(1 + (-5)) = -4 \\cdot (-5)^n$; hasilnya negatif jika $(-5)^n > 0$, yaitu jika $n$ genap",
+      "distraktor": [
+        {
+          "teks": "ganjil",
+          "alasan": "menganggap bilangan negatif dihasilkan dari pangkat ganjil, padahal faktor $-4$ membalik tanda"
+        },
+        {
+          "teks": "bulat positif (semua $n$)",
+          "alasan": "tidak memeriksa tanda $(-5)^n$"
+        },
+        {
+          "teks": "kelipatan 4",
+          "alasan": "mengira kondisi hanya berlaku pada sebagian bilangan genap; $n = 2$ juga memenuhi"
+        }
+      ],
+      "pembahasan": "Faktor bersama $(-5)^n$ memberi $-4 \\cdot (-5)^n$. Pertidaksamaan terpenuhi jika $(-5)^n > 0$, yaitu $n$ genap. Uji $n=2$: $25 - 125 = -100 < 0$; $n=1$: $-5 + 25 = 20 > 0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat n agar pernyataan benar",
+      "alasan_level": "menghitung banyak $n$ yang memenuhi pertidaksamaan campuran tanda pangkat dan batas, dengan jebakan kasus $n=1$",
+      "stimulus": null,
+      "pertanyaan": "Banyak bilangan bulat $n$ dengan $1 \\le n \\le 20$ yang memenuhi $(-2)^n + 5 < 0$ adalah ....",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "untuk $n$ genap $(-2)^n > 0$ sehingga tidak memenuhi; untuk $n$ ganjil, $-2^n + 5 < 0$ jika $2^n > 5$, yaitu $n \\ge 3$; $n$ ganjil dari 3 sampai 19 ada 9",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "menghitung semua $n$ ganjil termasuk $n = 1$, padahal $-2 + 5 = 3 > 0$"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "mengira $(-2)^n$ selalu negatif"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "menganggap $2^3 = 8$ belum melebihi 5 sehingga $n = 3$ dikeluarkan"
+        }
+      ],
+      "pembahasan": "$n$ genap: $2^n + 5 > 0$ (gagal). $n$ ganjil: $5 - 2^n < 0 \\iff 2^n > 5$; $n=1$ gagal ($2<5$), $n=3,5,\\dots,19$ memenuhi: 9 bilangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat n agar pernyataan benar",
+      "alasan_level": "menelusuri nilai $n$ untuk perbandingan pangkat berpokok tetap dan berpangkat tetap, dengan jebakan $n=9$ yang nyaris sama",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat terkecil $n \\ge 2$ yang memenuhi $2^n > n^3$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "untuk $n = 2, \\dots, 9$ berlaku $2^n < n^3$ (mis. $2^9 = 512 < 729$), sedangkan $2^{10} = 1.024 > 1.000 = 10^3$",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "mengira $2^9 = 512$ sudah melebihi $9^3 = 729$ (salah hitung)"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "menyamakan $2^3 = 8$ dengan $n = 8$ sehingga menyimpulkan 8 memenuhi"
+        },
+        {
+          "teks": "$11$",
+          "alasan": "mengambil bilangan yang memenuhi tetapi bukan yang terkecil"
+        }
+      ],
+      "pembahasan": "Bandingkan: $n=8$: $256 < 512$; $n=9$: $512 < 729$; $n=10$: $1.024 > 1.000$. Jadi 10 adalah yang terkecil.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat n agar pernyataan benar",
+      "alasan_level": "menentukan banyak langkah minimum agar perkalian berulang pecahan melampaui batas, dengan membandingkan dua nilai pangkat berurutan",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat positif terkecil $n$ yang memenuhi $\\left(\\frac{3}{2}\\right)^n > 100$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "$\\left(\\frac{3}{2}\\right)^{11} = \\frac{177.147}{2.048} \\approx 86,5 < 100$ dan $\\left(\\frac{3}{2}\\right)^{12} = \\frac{531.441}{4.096} \\approx 129,7 > 100$",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "$\\left(\\frac{3}{2}\\right)^{11} \\approx 86,5$ masih kurang dari 100"
+        },
+        {
+          "teks": "$13$",
+          "alasan": "memilih nilai yang memenuhi tetapi bukan yang terkecil"
+        },
+        {
+          "teks": "$67$",
+          "alasan": "membagi 100 dengan $\\frac{3}{2}$ seperti pada perkalian biasa"
+        }
+      ],
+      "pembahasan": "Pangkat $\\frac{3}{2}$: $n=10 \\to 57,7$; $n=11 \\to 86,5$; $n=12 \\to 129,7$. Yang pertama melebihi 100 adalah $n = 12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "perancangan bentuk pangkat",
+      "alasan_level": "merancang semua pasangan basis-pangkat bulat yang bernilai 729 dengan menimbang basis negatif pada pangkat genap",
+      "stimulus": null,
+      "pertanyaan": "Banyak pasangan bilangan bulat $(a, n)$ dengan $n \\ge 2$ yang memenuhi $a^n = 729$ adalah ....",
+      "jawaban_benar": "$5$ pasangan",
+      "alasan_benar": "$729 = 3^6 = 9^3 = 27^2$; pangkat genap juga dapat berbasis negatif: $(-3)^6$ dan $(-27)^2$; pasangan: $(3,6), (-3,6), (9,3), (27,2), (-27,2)$",
+      "distraktor": [
+        {
+          "teks": "$3$ pasangan",
+          "alasan": "hanya menghitung basis positif"
+        },
+        {
+          "teks": "$4$ pasangan",
+          "alasan": "menghitung basis negatif hanya pada satu pangkat genap"
+        },
+        {
+          "teks": "$6$ pasangan",
+          "alasan": "memasukkan $(-9, 3)$, padahal $(-9)^3 = -729$"
+        }
+      ],
+      "pembahasan": "$729 = 3^6$. Pangkat yang mungkin: 2 ($a=\\pm 27$), 3 ($a=9$; $-9$ memberi $-729$), 6 ($a=\\pm 3$). Totalnya 5 pasangan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "analisis kesalahan",
+      "alasan_level": "mengevaluasi langkah pekerjaan siswa terkait pangkat negatif pada bilangan pokok pecahan negatif dan menentukan nilai benar",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menghitung $\\left(-\\frac{1}{2}\\right)^{-3} = \\left(-\\frac{1}{2}\\right)^{3} = -\\frac{1}{8}$. Pernyataan yang benar tentang pekerjaan tersebut adalah ....",
+      "jawaban_benar": "salah, karena pangkat negatif berarti kebalikan bilangan pokok; nilai yang benar adalah $-8$",
+      "alasan_benar": "$a^{-n} = \\left(\\frac{1}{a}\\right)^n$, sehingga $\\left(-\\frac{1}{2}\\right)^{-3} = (-2)^3 = -8$",
+      "distraktor": [
+        {
+          "teks": "benar, karena pangkat ganjil menghasilkan bilangan negatif",
+          "alasan": "hanya mengecek tanda dan tidak memeriksa bahwa pangkat negatif mengubah bilangan pokok menjadi kebalikannya"
+        },
+        {
+          "teks": "salah, nilai yang benar adalah $8$ karena tanda negatif hilang pada pangkat negatif",
+          "alasan": "mengira pangkat negatif menghapus tanda bilangan pokok"
+        },
+        {
+          "teks": "salah, nilai yang benar adalah $\\frac{1}{8}$ karena pangkat negatif membuat hasil positif",
+          "alasan": "mengira pangkat negatif selalu menghasilkan bilangan positif"
+        }
+      ],
+      "pembahasan": "Pangkat negatif membalik bilangan pokok: $\\left(-\\frac{1}{2}\\right)^{-3} = (-2)^3 = -8$. Siswa hanya membuang tanda minus pada pangkat tanpa membalik bilangan pokok.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat keterdefinisian pangkat negatif",
+      "alasan_level": "memakai syarat $a \\neq 0$ pada definisi pangkat negatif untuk bentuk aljabar kuadrat lalu menjumlahkan akar-akarnya",
+      "stimulus": null,
+      "pertanyaan": "Bentuk $\\left(x^2 - 5x + 6\\right)^{-2}$ tidak terdefinisi untuk beberapa bilangan real $x$. Jumlah semua nilai $x$ tersebut adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "definisi $a^{-n}$ mensyaratkan $a \\neq 0$, sehingga bentuk tidak terdefinisi jika $x^2 - 5x + 6 = 0$, yaitu $x = 2$ atau $x = 3$; jumlahnya 5",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mengalikan akar-akar, bukan menjumlahkan"
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "salah tanda pada jumlah akar ($x_1 + x_2 = -b/a$ dibaca terbalik)"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengurangkan kedua akar"
+        }
+      ],
+      "pembahasan": "$a^{-n} = \\frac{1}{a^n}$ hanya terdefinisi untuk $a \\neq 0$. Syarat gagal: $x^2 - 5x + 6 = (x-2)(x-3) = 0$, jadi $x = 2$ atau $3$. Jumlahnya 5.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "perbandingan bilangan berpangkat besar",
+      "alasan_level": "membandingkan empat bilangan berpangkat pecahan dengan mengubah ke akar dan pangkat, tanpa terjebak pokok atau pangkat terbesar",
+      "stimulus": null,
+      "pertanyaan": "Di antara bilangan $25^{\\frac{3}{2}}$, $9^{\\frac{5}{2}}$, $4^{\\frac{7}{2}}$, dan $27^{\\frac{4}{3}}$, yang bernilai terbesar adalah ....",
+      "jawaban_benar": "$9^{\\frac{5}{2}}$",
+      "alasan_benar": "$25^{\\frac{3}{2}} = 5^3 = 125$; $9^{\\frac{5}{2}} = 3^5 = 243$; $4^{\\frac{7}{2}} = 2^7 = 128$; $27^{\\frac{4}{3}} = 3^4 = 81$; yang terbesar 243",
+      "distraktor": [
+        {
+          "teks": "$25^{\\frac{3}{2}}$",
+          "alasan": "salah menghitung $9^{\\frac{5}{2}}$ sebagai $9^2 = 81$ sehingga 125 tampak terbesar"
+        },
+        {
+          "teks": "$4^{\\frac{7}{2}}$",
+          "alasan": "mengira pangkat terbesar menghasilkan nilai terbesar"
+        },
+        {
+          "teks": "$27^{\\frac{4}{3}}$",
+          "alasan": "mengira bilangan pokok terbesar menghasilkan nilai terbesar"
+        }
+      ],
+      "pembahasan": "Ubah tiap bentuk: $25^{3/2} = (\\sqrt{25})^3 = 125$; $9^{5/2} = 3^5 = 243$; $4^{7/2} = 2^7 = 128$; $27^{4/3} = 3^4 = 81$. Terbesar adalah $9^{5/2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim tentang pangkat",
+      "alasan_level": "menemukan pola tanda $(-1)^k$ yang berganti-ganti dan menyimpulkan jumlah deret panjang tanpa menghitung satu per satu",
+      "stimulus": null,
+      "pertanyaan": "Nilai dari $(-1)^1 + (-1)^2 + (-1)^3 + \\cdots + (-1)^{2025}$ adalah ....",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "suku bergantian $-1, 1, -1, 1, \\dots$; 2024 suku pertama berpasangan dan jumlahnya 0; suku terakhir $(-1)^{2025} = -1$",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "mengira banyak suku genap sehingga semua suku berpasangan"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengira suku terakhir bernilai positif"
+        },
+        {
+          "teks": "$-2025$",
+          "alasan": "mengira setiap suku bernilai $-1$"
+        }
+      ],
+      "pembahasan": "Pangkat ganjil menghasilkan $-1$, pangkat genap $1$. Ada 2025 suku: 1012 suku $+1$ dan 1013 suku $-1$. Jumlahnya $1012 - 1013 = -1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 22,
+        "kutipan": "Dengan memanfaatkan kesimpulan di atas, maka jumlah orang yang mendapatkan hoaks pada fase ke-5 dapat dengan mudah dihitung sebagai berikut."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "pola pertumbuhan dan klaim",
+      "alasan_level": "memeriksa klaim umum pada pola penyebaran berpokok 2 dengan mencoba beberapa fase dan menyimpulkan selisih tetap",
+      "stimulus": null,
+      "pertanyaan": "Sebuah pesan dikirim kepada 2 orang pada fase ke-1. Pada tiap fase berikutnya, setiap penerima meneruskannya kepada 2 orang baru, sehingga banyak penerima fase ke-$n$ adalah $2^n$. Untuk setiap $n \\ge 2$, banyak penerima pada fase ke-$n$ dibandingkan jumlah seluruh penerima pada fase ke-1 sampai ke-$(n-1)$ adalah ....",
+      "jawaban_benar": "selalu lebih banyak tepat 2 orang",
+      "alasan_benar": "$n=2$: $4$ lawan $2$ (selisih 2); $n=3$: $8$ lawan $2+4 = 6$ (selisih 2); $n=4$: $16$ lawan $14$ (selisih 2); polanya $2 + 4 + \\cdots + 2^{n-1} = 2^n - 2$",
+      "distraktor": [
+        {
+          "teks": "selalu lebih banyak tepat 1 orang",
+          "alasan": "ikut menghitung 1 orang pengirim awal pada jumlah sebelumnya"
+        },
+        {
+          "teks": "selalu sama banyak",
+          "alasan": "menganggap fase ke-$n$ hanya menyamai jumlah seluruh fase sebelumnya"
+        },
+        {
+          "teks": "selisihnya makin besar seiring bertambahnya $n$",
+          "alasan": "mengira selisih mengikuti pertumbuhan $2^n$"
+        }
+      ],
+      "pembahasan": "Jumlah fase sebelumnya: $n=2$: 2; $n=3$: 6; $n=4$: 14; $n=5$: 30. Selisihnya dengan $2^n$ selalu 2, sebab $2+4+\\cdots+2^{n-1} = 2^n - 2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Perkalian berulang adalah perkalian yang dilakukan secara berulang dengan faktor yang sama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "menentukan seluruh solusi real persamaan pangkat genap dan menolak anggapan solusi tunggal",
+      "stimulus": null,
+      "pertanyaan": "Himpunan semua bilangan real $x$ yang memenuhi $x^6 = 64$ adalah ....",
+      "jawaban_benar": "$\\{-2,\\ 2\\}$",
+      "alasan_benar": "$2^6 = 64$ dan $(-2)^6 = 64$ karena pangkat genap menghilangkan tanda negatif; tidak ada bilangan lain yang berpangkat 6 sama dengan 64",
+      "distraktor": [
+        {
+          "teks": "$\\{2\\}$",
+          "alasan": "lupa bahwa bilangan pokok negatif pada pangkat genap juga memberi hasil positif"
+        },
+        {
+          "teks": "$\\{-2\\}$",
+          "alasan": "menganggap pokok negatif saja yang memenuhi"
+        },
+        {
+          "teks": "$\\{-8,\\ 8\\}$",
+          "alasan": "menarik akar kuadrat 64 saja tanpa memperhatikan pangkat 6"
+        }
+      ],
+      "pembahasan": "$x^6 = 64 = 2^6$. Karena 6 genap, $(-2)^6 = 64$ juga. Jadi $x = 2$ atau $x = -2$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim tentang pangkat",
+      "alasan_level": "mengevaluasi hubungan nilai pangkat positif dan negatif untuk bilangan pokok di antara 0 dan 1",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $0 < a < 1$ dan $n$ bilangan bulat positif. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$a^n < 1 < a^{-n}$",
+      "alasan_benar": "hasil kali $n$ faktor $a$ yang kurang dari 1 bernilai kurang dari 1, sedangkan $a^{-n} = \\left(\\frac{1}{a}\\right)^n$ dengan $\\frac{1}{a} > 1$ bernilai lebih dari 1",
+      "distraktor": [
+        {
+          "teks": "$a^{-n} < 1$",
+          "alasan": "mengira pangkat negatif selalu memperkecil nilai"
+        },
+        {
+          "teks": "$a^{n} > 1$",
+          "alasan": "mengira pangkat positif selalu memperbesar nilai"
+        },
+        {
+          "teks": "$a^{-n} < a^{n}$",
+          "alasan": "membalik urutan nilai pangkat positif dan negatif"
+        }
+      ],
+      "pembahasan": "Uji $a = \\frac{1}{2}$, $n=2$: $a^2 = \\frac{1}{4} < 1$ dan $a^{-2} = 4 > 1$. Secara umum $0 < a^n < 1 < a^{-n}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-a-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 23,
+        "kutipan": "Berikut adalah beberapa definisi penting yang perlu kamu ketahui."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim tentang pangkat",
+      "alasan_level": "menentukan tanda dan batas nilai pangkat negatif untuk bilangan pokok kurang dari $-1$ dan pangkat ganjil",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $a < -1$ dan $n$ bilangan bulat positif ganjil. Pernyataan yang benar tentang $a^{-n}$ adalah ....",
+      "jawaban_benar": "$-1 < a^{-n} < 0$",
+      "alasan_benar": "$a^n$ bernilai negatif dan $|a^n| > 1$, sehingga $a^{-n} = \\frac{1}{a^n}$ negatif dengan nilai mutlak kurang dari 1",
+      "distraktor": [
+        {
+          "teks": "$a^{-n} < -1$",
+          "alasan": "mengira pangkat negatif memperbesar nilai mutlak"
+        },
+        {
+          "teks": "$0 < a^{-n} < 1$",
+          "alasan": "mengabaikan bahwa pangkat ganjil mempertahankan tanda negatif"
+        },
+        {
+          "teks": "$a^{-n} > 1$",
+          "alasan": "mengira pangkat negatif selalu menghasilkan bilangan positif lebih dari 1"
+        }
+      ],
+      "pembahasan": "Uji $a=-2$, $n=3$: $(-2)^{-3} = -\\frac{1}{8}$, yang terletak di antara $-1$ dan $0$.",
+      "catatan": null
+    }
+  ]
+}

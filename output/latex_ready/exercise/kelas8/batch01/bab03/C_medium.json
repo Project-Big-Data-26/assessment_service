@@ -1,0 +1,540 @@
+{
+  "book": "kelas8",
+  "bab_no": 3,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas8-b03-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 145,
+        "bagian": "Soal Latihan 3.3",
+        "nomor": "3b",
+        "teks": "Bilangan 9 lebihnya dari z tidak lebih dari 21",
+        "jawaban": "9 + z <= 21"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai batas kalimat bilangan",
+      "alasan_level": "memodelkan 'lebihnya dari' dan 'tidak lebih dari', lalu menentukan bilangan bulat terbesar yang memenuhi",
+      "stimulus": null,
+      "pertanyaan": "Bilangan 15 lebihnya dari $z$ tidak lebih dari 38. Jika $z$ bilangan bulat, nilai $z$ terbesar yang memenuhi adalah ....",
+      "jawaban_benar": "23",
+      "alasan_benar": "model $z + 15 \\leq 38$, sehingga $z \\leq 23$ dan bilangan bulat terbesarnya 23",
+      "distraktor": [
+        {
+          "teks": "22",
+          "alasan": "memakai tanda $\\lt$, padahal 'tidak lebih dari' memuat sama dengan"
+        },
+        {
+          "teks": "53",
+          "alasan": "menjumlahkan 15 dan 38, bukan mengurangkan"
+        },
+        {
+          "teks": "24",
+          "alasan": "mengambil bilangan bulat tepat setelah batas, yang justru tidak memenuhi"
+        }
+      ],
+      "pembahasan": "Model: $z + 15 \\leq 38$. Karena $15 + 23 = 38$, $z \\leq 23$. Bilangan bulat terbesar adalah 23.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "bagian": "Contoh 3.5",
+        "nomor": "1b",
+        "teks": "-16 merupakan kurang dari sama dengan 4 lebihnya dari 2 p",
+        "jawaban": "-16 <= 4 + 2p"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "uji anggota HP hasil pemodelan",
+      "alasan_level": "memodelkan kalimat menjadi pertidaksamaan lalu menguji bilangan bulat dengan substitusi",
+      "stimulus": null,
+      "pertanyaan": "Kalimat \"-30 merupakan kurang dari sama dengan 8 lebihnya dari 5 p\" dimodelkan menjadi pertidaksamaan linier satu variabel. Jika $p$ bilangan bulat, bilangan yang merupakan anggota himpunan penyelesaiannya adalah ....",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "model $-30 \\leq 8 + 5p$; untuk $p = -7$: $8 - 35 = -27$ dan $-30 \\leq -27$ benar",
+      "distraktor": [
+        {
+          "teks": "$-8$",
+          "alasan": "menghitung $8 - 40 = -32$ lalu mengira $-30 \\leq -32$ karena 32 lebih besar dari 30"
+        },
+        {
+          "teks": "$-9$",
+          "alasan": "memakai arah tanda terbalik ($8 + 5p \\leq -30$)"
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "mengira bilangan negatif yang lebih kecil memenuhi syarat 'lebih besar dari $-30$'"
+        }
+      ],
+      "pembahasan": "Model: $-30 \\leq 8 + 5p$. $p=-7$: $-27$, benar. $p=-8$: $-32$, salah. $p=-9$: $-37$, salah. $p=-12$: $-52$, salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 146,
+        "bagian": "Ayo Bereksplorasi",
+        "nomor": "1",
+        "teks": "Kalian harus berusia di bawah 16 tahun untuk menjadi Pramuka Penggalang. Ketika masuk jenjang SMP dan belajar selama 3 tahun ini, maka kalian masih memenuhi syarat untuk menjadi anggota Pramuka Penggalang.",
+        "jawaban": "x + 3 < 16"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "model syarat usia dan nilai terbesar",
+      "alasan_level": "memodelkan syarat usia dua tahap dengan tanda $\\leq$ lalu mencari usia bulat terbesar",
+      "stimulus": null,
+      "pertanyaan": "Seorang atlet muda hanya boleh mengikuti turnamen jika usianya tidak lebih dari 21 tahun. Rafi berusia $x$ tahun dan baru akan ikut turnamen itu 4 tahun lagi. Jika $x$ bilangan bulat, usia Rafi sekarang yang terbesar agar ia masih memenuhi syarat adalah ... tahun.",
+      "jawaban_benar": "17",
+      "alasan_benar": "usia saat turnamen $x + 4 \\leq 21$, sehingga $x \\leq 17$",
+      "distraktor": [
+        {
+          "teks": "16",
+          "alasan": "memakai tanda $\\lt$ sehingga batas 17 dianggap tidak termasuk"
+        },
+        {
+          "teks": "21",
+          "alasan": "lupa menambahkan 4 tahun pada usia sekarang"
+        },
+        {
+          "teks": "25",
+          "alasan": "menjumlahkan 21 dan 4, bukan mengurangkan"
+        }
+      ],
+      "pembahasan": "Usia 4 tahun lagi $x + 4$, tidak lebih dari 21: $x + 4 \\leq 21$, $x \\leq 17$. Usia terbesar 17 tahun.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 146,
+        "bagian": "Soal Latihan 3.3",
+        "nomor": "5",
+        "teks": "Nadia mendapat nilai 97, 82, 89 dan 99 pada 4 tes formatif mata pelajaran matematika. Untuk mendapatkan nilai A dalam matematika, rata-rata nilai tes harus sembilan puluh atau lebih. Berapa nilai matematika pada tes ke-5 Nadia untuk mendapatkan nilai A? Tuliskan pertidaksamaan yang mewakili ilustrasi Nadia di atas.",
+        "jawaban": "(97+82+89+99+x)/5 >= 90, x >= 83"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rata-rata nilai minimal",
+      "alasan_level": "menyusun pertidaksamaan rata-rata lima nilai dengan tanda $\\geq$ lalu menentukan nilai terendah bulat, empat langkah",
+      "stimulus": null,
+      "pertanyaan": "Dito memperoleh nilai 70, 80, 85, dan 90 pada empat kali ulangan IPA. Agar lulus, rata-rata nilai dari lima kali ulangan harus 80 atau lebih. Jika nilai ulangan bulat, nilai terendah yang harus diperoleh Dito pada ulangan kelima adalah ....",
+      "jawaban_benar": "75",
+      "alasan_benar": "$\\frac{325 + x}{5} \\geq 80$, sehingga $325 + x \\geq 400$ dan $x \\geq 75$",
+      "distraktor": [
+        {
+          "teks": "76",
+          "alasan": "memakai tanda $\\gt$, padahal 'atau lebih' memuat sama dengan"
+        },
+        {
+          "teks": "80",
+          "alasan": "mengira nilai kelima harus sama dengan rata-rata yang diminta"
+        },
+        {
+          "teks": "15",
+          "alasan": "membagi selisih 400 dan 325 lagi dengan 5"
+        }
+      ],
+      "pembahasan": "Jumlah empat nilai 325. $\\frac{325 + x}{5} \\geq 80$, $325 + x \\geq 400$, $x \\geq 75$. Nilai terendah 75.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "bagian": "Contoh 3.5",
+        "nomor": "1a",
+        "teks": "Bilangan k dikurang 4 hasilnya kurang dari sama dengan 9",
+        "jawaban": "k - 4 <= 9"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "banyak anggota HP cacah",
+      "alasan_level": "memodelkan kalimat bilangan lalu menghitung banyak bilangan cacah yang memenuhi termasuk 0",
+      "stimulus": null,
+      "pertanyaan": "Bilangan $a$ dikurang 8 hasilnya kurang dari sama dengan 13. Jika $a$ anggota bilangan cacah (0, 1, 2, ...), banyak nilai $a$ yang memenuhi adalah ....",
+      "jawaban_benar": "22",
+      "alasan_benar": "model $a - 8 \\leq 13$, sehingga $a \\leq 21$; bilangan cacah 0 sampai 21 ada 22",
+      "distraktor": [
+        {
+          "teks": "21",
+          "alasan": "lupa menghitung bilangan 0 sebagai bilangan cacah"
+        },
+        {
+          "teks": "20",
+          "alasan": "lupa 0 dan memakai tanda $\\lt$ sehingga 21 tidak dihitung"
+        },
+        {
+          "teks": "23",
+          "alasan": "ikut menghitung 22 yang tidak memenuhi karena batas dianggap lebih satu"
+        }
+      ],
+      "pembahasan": "$a - 8 \\leq 13$ berarti $a \\leq 21$. Bilangan cacah 0, 1, ..., 21 sebanyak 22.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b03-p0145-soal-laihan-3-3-2a"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "model kapasitas nilai terbesar",
+      "alasan_level": "memodelkan 'hanya' dan banyak wadah, lalu menentukan nilai bulat terbesar per wadah",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko buah menyimpan sembilan peti jeruk yang hanya berisi 468 jeruk. Jika setiap peti berisi $x$ jeruk (semua peti sama) dan $x$ bilangan bulat, nilai $x$ terbesar yang mungkin adalah ....",
+      "jawaban_benar": "52",
+      "alasan_benar": "model $9x \\leq 468$, sehingga $x \\leq 52$",
+      "distraktor": [
+        {
+          "teks": "51",
+          "alasan": "memakai tanda $\\lt$ sehingga 52 dianggap tidak termasuk"
+        },
+        {
+          "teks": "468",
+          "alasan": "lupa membagi dengan banyak peti"
+        },
+        {
+          "teks": "4.212",
+          "alasan": "mengalikan 468 dengan 9, bukan membagi"
+        }
+      ],
+      "pembahasan": "Model $9x \\leq 468$. Karena $9 \\times 52 = 468$, $x \\leq 52$. Nilai terbesar 52.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 145,
+        "bagian": "Soal Latihan 3.3",
+        "nomor": "2b",
+        "teks": "Kegiatan penanaman pohon yang dilakukan oleh anggota OSIS setidaknya dua ratus lima puluh meter di sepanjang jalan di depan sekolah.",
+        "jawaban": "x >= 250"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "model cerita dua tahap",
+      "alasan_level": "menggabungkan pekerjaan yang sudah selesai dengan sisa pekerjaan ke dalam satu pertidaksamaan",
+      "stimulus": null,
+      "pertanyaan": "Warga membersihkan selokan sepanjang setidaknya seratus lima puluh meter di sepanjang perumahan. Hari ini sudah dibersihkan 45 meter. Jika $x$ adalah panjang selokan yang masih harus dibersihkan pada hari berikutnya, pertidaksamaan yang sesuai adalah ....",
+      "jawaban_benar": "$45 + x \\geq 150$",
+      "alasan_benar": "'setidaknya' berarti $\\geq$, dan panjang total adalah $45 + x$",
+      "distraktor": [
+        {
+          "teks": "$45 + x \\leq 150$",
+          "alasan": "'setidaknya' dikira berarti paling banyak"
+        },
+        {
+          "teks": "$x \\geq 150$",
+          "alasan": "lupa menambahkan 45 meter yang sudah dikerjakan"
+        },
+        {
+          "teks": "$45x \\geq 150$",
+          "alasan": "mengalikan 45 dengan $x$, bukan menjumlahkan"
+        }
+      ],
+      "pembahasan": "Total $45 + x$, setidaknya 150: $45 + x \\geq 150$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 145,
+        "bagian": "Soal Latihan 3.3",
+        "nomor": "2d",
+        "teks": "Andy memarkir sepeda motor di lapangan sekolah yang banyaknya paling sedikit tiga ratus lima puluh sepeda motor",
+        "jawaban": "x >= 350"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "model cerita dua operasi",
+      "alasan_level": "memodelkan perkalian banyak kotak ditambah sisa dengan tanda 'paling sedikit'",
+      "stimulus": null,
+      "pertanyaan": "Sebuah toko roti menjual kue paling sedikit 100 buah dalam sehari, terdiri dari 3 kotak yang berisi kue sama banyak dan 14 kue lepas. Jika $x$ adalah banyak kue dalam satu kotak, pertidaksamaan yang sesuai adalah ....",
+      "jawaban_benar": "$3x + 14 \\geq 100$",
+      "alasan_benar": "isi tiga kotak $3x$ ditambah 14 kue lepas, 'paling sedikit' berarti $\\geq$",
+      "distraktor": [
+        {
+          "teks": "$3x + 14 \\leq 100$",
+          "alasan": "'paling sedikit' dikira berarti paling banyak"
+        },
+        {
+          "teks": "$3(x + 14) \\geq 100$",
+          "alasan": "14 kue lepas ikut dikalikan 3"
+        },
+        {
+          "teks": "$3x \\geq 100$",
+          "alasan": "lupa menjumlahkan 14 kue lepas"
+        }
+      ],
+      "pembahasan": "Total kue $3x + 14$, paling sedikit 100: $3x + 14 \\geq 100$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "kutipan": "Jika bilangan yang ditanyakan terletak pada suatu titik yang diwakili oleh bulatan penuh"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "garis bilangan terbalik",
+      "alasan_level": "membalik penulisan $12 \\geq t$ menjadi $t \\leq 12$ lalu memilih deskripsi garis bilangan dengan jenis bulatan dan arah yang tepat",
+      "stimulus": null,
+      "pertanyaan": "Pertidaksamaan $12 \\geq t$ digambar pada garis bilangan. Deskripsi garis bilangan yang tepat adalah ....",
+      "jawaban_benar": "bulatan penuh di titik 12 dan garis berwarna mengarah ke kiri",
+      "alasan_benar": "$12 \\geq t$ sama dengan $t \\leq 12$: 12 termasuk (bulatan penuh) dan nilai $t$ lebih kecil (ke kiri)",
+      "distraktor": [
+        {
+          "teks": "bulatan penuh di titik 12 dan garis berwarna mengarah ke kanan",
+          "alasan": "membaca $12 \\geq t$ dari kiri ke kanan tanpa membalik sehingga arah dikira ke kanan"
+        },
+        {
+          "teks": "bulatan kosong di titik 12 dan garis berwarna mengarah ke kiri",
+          "alasan": "mengira batas 12 tidak termasuk walau tandanya memuat sama dengan"
+        },
+        {
+          "teks": "bulatan kosong di titik 12 dan garis berwarna mengarah ke kanan",
+          "alasan": "salah arah dan salah jenis bulatan"
+        }
+      ],
+      "pembahasan": "$12 \\geq t$ dibaca $t \\leq 12$. Tanda memuat sama dengan: bulatan penuh di 12. Nilai lebih kecil: garis ke kiri.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 146,
+        "kutipan": "Bilangan -5 merupakan salah satu penyelesaian dari pertidaksamaan linier satu variabel berikut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "uji dua nilai",
+      "alasan_level": "menyubstitusikan dua bilangan ke empat pertidaksamaan dan menyaring yang benar untuk keduanya",
+      "stimulus": null,
+      "pertanyaan": "Bilangan $-5$ dan $2$ keduanya merupakan penyelesaian dari salah satu pertidaksamaan berikut. Pertidaksamaan tersebut adalah ....",
+      "jawaban_benar": "$2x + 3 \\leq 7$",
+      "alasan_benar": "$x=-5$: $-7 \\leq 7$ benar; $x=2$: $7 \\leq 7$ benar",
+      "distraktor": [
+        {
+          "teks": "$2x + 3 \\lt 7$",
+          "alasan": "$x = 2$ menghasilkan $7 \\lt 7$ yang salah; batas dianggap termasuk"
+        },
+        {
+          "teks": "$2x + 3 \\geq 7$",
+          "alasan": "$x = -5$ menghasilkan $-7 \\geq 7$ yang salah; hanya 2 yang diuji"
+        },
+        {
+          "teks": "$5 - x \\leq 6$",
+          "alasan": "$x = -5$ menghasilkan $10 \\leq 6$ yang salah; hanya 2 yang diuji"
+        }
+      ],
+      "pembahasan": "$2x+3 \\leq 7$: $-7 \\leq 7$ benar, $7 \\leq 7$ benar. $2x+3 \\lt 7$: $7 \\lt 7$ salah. $2x+3 \\geq 7$: $-7 \\geq 7$ salah. $5-x \\leq 6$: $10 \\leq 6$ salah.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 145,
+        "kutipan": "lima bus yang dapat mengangkut hanya 290 penumpang"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "model beban maksimum",
+      "alasan_level": "memodelkan beban orang sama berat ditambah barang dengan batas 'tidak lebih dari'",
+      "stimulus": null,
+      "pertanyaan": "Sebuah lift hanya boleh memuat beban tidak lebih dari 600 kg. Di dalam lift ada 3 orang dengan berat badan sama, yaitu $x$ kg tiap orang, dan sebuah barang seberat 90 kg. Pertidaksamaan yang sesuai adalah ....",
+      "jawaban_benar": "$3x + 90 \\leq 600$",
+      "alasan_benar": "berat total $3x + 90$ dan 'tidak lebih dari' berarti $\\leq$",
+      "distraktor": [
+        {
+          "teks": "$3(x + 90) \\leq 600$",
+          "alasan": "barang 90 kg ikut dikalikan 3"
+        },
+        {
+          "teks": "$3x + 90 \\geq 600$",
+          "alasan": "'tidak lebih dari' dikira berarti paling sedikit"
+        },
+        {
+          "teks": "$3x + 90 \\lt 600$",
+          "alasan": "lupa kemungkinan beban tepat 600 kg"
+        }
+      ],
+      "pembahasan": "Berat 3 orang $3x$, ditambah barang 90: $3x + 90 \\leq 600$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 145,
+        "kutipan": "Modelkan beberapa permasalahan berikut menjadi bentuk pertidaksamaan linier satu variabel."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "model anggaran dan nilai terbesar",
+      "alasan_level": "memodelkan anggaran dengan dua jenis barang lalu menafsirkan banyak bulat terbesar yang tidak melebihi uang",
+      "stimulus": null,
+      "pertanyaan": "Dina membawa uang Rp100.000 untuk membeli $x$ buku tulis seharga Rp15.000 per buah dan sebuah penggaris seharga Rp6.000. Uang yang dibelanjakan tidak lebih dari uang yang dibawa. Banyak buku tulis terbanyak yang dapat dibeli adalah ....",
+      "jawaban_benar": "6 buku",
+      "alasan_benar": "model $15.000x + 6.000 \\leq 100.000$, sehingga $x \\leq 6{,}27$ dan bilangan bulat terbesar 6",
+      "distraktor": [
+        {
+          "teks": "7 buku",
+          "alasan": "membulatkan 6,27 atau 6,67 ke atas padahal biayanya melebihi uang"
+        },
+        {
+          "teks": "5 buku",
+          "alasan": "memakai tanda $\\lt$ lalu melepas satu buku yang sebenarnya masih cukup"
+        },
+        {
+          "teks": "16 buku",
+          "alasan": "membagi sisa uang dengan harga penggaris, bukan harga buku"
+        }
+      ],
+      "pembahasan": "$15.000x + 6.000 \\leq 100.000$ sehingga $15.000x \\leq 94.000$ dan $x \\leq 6{,}27$. Untuk $x=6$: $96.000 \\leq 100.000$ benar; $x=7$: $111.000$ salah. Jadi 6 buku.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "kutipan": "Berdasarkan beberapa simbol yang sudah ditunjukkan sebelumnya"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "makna pertidaksamaan terbalik",
+      "alasan_level": "membaca pertidaksamaan yang bentuk dibalik dan mencari penulisan yang bermakna sama",
+      "stimulus": null,
+      "pertanyaan": "Pertidaksamaan $15 \\geq 2m + 1$ memiliki makna yang sama dengan ....",
+      "jawaban_benar": "$2m + 1 \\leq 15$",
+      "alasan_benar": "15 lebih besar atau sama dengan $2m + 1$ berarti $2m + 1$ kurang dari atau sama dengan 15",
+      "distraktor": [
+        {
+          "teks": "$2m + 1 \\geq 15$",
+          "alasan": "tanda tidak ikut dibalik ketika kedua ruas ditukar"
+        },
+        {
+          "teks": "$2m + 1 \\lt 15$",
+          "alasan": "arah benar tetapi sama dengan terlewat"
+        },
+        {
+          "teks": "$2m + 1 \\gt 15$",
+          "alasan": "arah tertukar dan sama dengan terlewat"
+        }
+      ],
+      "pembahasan": "Menukar ruas berarti membalik arah tanda: $15 \\geq 2m + 1$ sama dengan $2m + 1 \\leq 15$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 146,
+        "kutipan": "Pertidaksamaan juga sering dijumpai dalam masalah sehari-hari."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "model anggaran sisa uang",
+      "alasan_level": "memodelkan sisa uang setelah dua pembelian dengan syarat 'lebih dari' dan tanda kurung yang tepat",
+      "stimulus": null,
+      "pertanyaan": "Pak Tono memiliki uang Rp200.000. Ia membeli 4 kaos seharga $x$ rupiah per kaos (semua kaos sama) dan sebuah celana seharga Rp75.000. Setelah itu, sisa uangnya masih lebih dari Rp20.000. Pertidaksamaan yang sesuai adalah ....",
+      "jawaban_benar": "$200.000 - (4x + 75.000) \\gt 20.000$",
+      "alasan_benar": "sisa uang adalah uang awal dikurangi seluruh belanja $4x + 75.000$, dan 'lebih dari' berarti $\\gt$",
+      "distraktor": [
+        {
+          "teks": "$200.000 - 4x + 75.000 \\gt 20.000$",
+          "alasan": "lupa kurung sehingga harga celana ditambahkan"
+        },
+        {
+          "teks": "$200.000 - (4x + 75.000) \\lt 20.000$",
+          "alasan": "'lebih dari' dikira berarti kurang dari"
+        },
+        {
+          "teks": "$200.000 - (4 + x + 75.000) \\gt 20.000$",
+          "alasan": "harga 4 kaos ditulis $4 + x$, bukan $4x$"
+        }
+      ],
+      "pembahasan": "Belanja $4x + 75.000$. Sisa $200.000 - (4x + 75.000)$, lebih dari 20.000.",
+      "catatan": null
+    },
+    {
+      "id": "kelas8-b03-c-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 143,
+        "kutipan": "maka bilangan pada titik tersebut adalah anggota himpunan penyelesaian"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "anggota HP bentuk 3x-1",
+      "alasan_level": "menguji bilangan bulat pada pertidaksamaan dua operasi, termasuk bilangan batas dan bilangan negatif",
+      "stimulus": null,
+      "pertanyaan": "Diketahui pertidaksamaan $3x - 1 \\gt 8$ dengan $x$ bilangan bulat. Di antara bilangan berikut, yang merupakan anggota himpunan penyelesaiannya adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "$3(4) - 1 = 11$ dan $11 \\gt 8$ benar",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "$3(3) - 1 = 8$ dianggap memenuhi walau tandanya $\\gt$ tanpa sama dengan"
+        },
+        {
+          "teks": "2",
+          "alasan": "$3(2) - 1 = 5$ dianggap lebih dari 8"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "$3(-3) - 1 = -10$ dianggap lebih dari 8 karena angka 10 lebih besar"
+        }
+      ],
+      "pembahasan": "$x=4$: $11 \\gt 8$ benar. $x=3$: $8 \\gt 8$ salah. $x=2$: $5 \\gt 8$ salah. $x=-3$: $-10 \\gt 8$ salah.",
+      "catatan": null
+    }
+  ]
+}

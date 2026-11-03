@@ -1,0 +1,670 @@
+{
+  "book": "kelas10",
+  "bab_no": 7,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b07-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "kutipan": "jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim saling lepas",
+      "alasan_level": "mengevaluasi tiga klaim dengan memeriksa irisan lewat paritas jumlah lalu menghitung peluang gabungan",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu setimbang dilempar bersamaan. Tiga siswa berdebat tentang peluang munculnya jumlah kedua mata ganjil atau kedua mata sama (dobel). Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Kedua kejadian saling lepas karena hasil dobel selalu berjumlah genap, sehingga peluangnya $\\frac{2}{3}$",
+      "alasan_benar": "dobel selalu berjumlah genap sehingga tidak ada irisan: 18/36 + 6/36 = 24/36 = 2/3",
+      "distraktor": [
+        {
+          "teks": "Kedua kejadian tidak saling lepas karena dapat terjadi pada pelemparan yang sama, sehingga peluangnya $\\frac{7}{12}$",
+          "alasan": "mengira ada irisan 3 hasil padahal irisannya kosong (18 + 6 - 3 = 21)"
+        },
+        {
+          "teks": "Kedua kejadian saling lepas, sehingga peluangnya $\\frac{1}{2}$",
+          "alasan": "lupa menambahkan peluang dobel, hanya menghitung jumlah ganjil"
+        },
+        {
+          "teks": "Kedua kejadian tidak saling lepas karena $(3,3)$ memenuhi keduanya, sehingga peluangnya $\\frac{23}{36}$",
+          "alasan": "mengira $(3,3)$ berjumlah ganjil padahal jumlahnya 6"
+        }
+      ],
+      "pembahasan": "Jumlah ganjil 18 hasil, dobel 6 hasil. Dobel $(a,a)$ berjumlah $2a$ (genap), jadi irisan kosong. $P=\\frac{18+6}{36}=\\frac{2}{3}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim kejadian bersarang",
+      "alasan_level": "mengevaluasi hitungan yang menganggap dua kejadian saling lepas padahal satu termuat dalam yang lain",
+      "stimulus": null,
+      "pertanyaan": "Dina menghitung peluang terambilnya kartu merah atau kartu hati dari satu set lengkap 52 kartu bridge setimbang (kartu merah adalah hati dan wajik) dengan $\\frac{26}{52}+\\frac{13}{52}=\\frac{39}{52}=\\frac{3}{4}$. Pernyataan yang benar tentang hitungan Dina adalah ....",
+      "jawaban_benar": "Hitungan salah: semua kartu hati berwarna merah sehingga irisannya 13 kartu dan peluang sebenarnya $\\frac{1}{2}$",
+      "alasan_benar": "kartu hati termuat seluruhnya di kartu merah: 26/52 + 13/52 - 13/52 = 26/52 = 1/2",
+      "distraktor": [
+        {
+          "teks": "Hitungan benar karena kartu merah dan kartu hati tidak dapat terambil bersamaan",
+          "alasan": "mengira keduanya saling lepas padahal setiap kartu hati juga kartu merah"
+        },
+        {
+          "teks": "Hitungan salah: peluang sebenarnya $\\frac{1}{4}$ karena hanya kartu hati yang dihitung",
+          "alasan": "mengurangkan seluruh peluang kartu merah sehingga tersisa kartu hati saja"
+        },
+        {
+          "teks": "Hitungan salah: irisannya hanya 1 kartu sehingga peluang sebenarnya $\\frac{38}{52}$",
+          "alasan": "mengira irisan hanya satu kartu (26 + 13 - 1 = 38)"
+        }
+      ],
+      "pembahasan": "Kartu hati (13) adalah himpunan bagian dari kartu merah (26). Irisan 13 kartu, $P=\\frac{26+13-13}{52}=\\frac{26}{52}=\\frac{1}{2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim peluang lebih dari 1",
+      "alasan_level": "mengevaluasi hasil peluang yang mustahil dan menentukan irisan serta peluang gabungan yang benar",
+      "stimulus": null,
+      "pertanyaan": "Tiga koin setimbang dilempar bersamaan. Eko menghitung peluang muncul paling sedikit satu gambar atau paling sedikit satu angka dengan $\\frac{7}{8}+\\frac{7}{8}=\\frac{7}{4}$. Pernyataan yang benar tentang hitungan Eko adalah ....",
+      "jawaban_benar": "Hitungan salah karena peluang tidak boleh lebih dari 1; irisannya 6 hasil sehingga peluang sebenarnya $1$",
+      "alasan_benar": "irisan = hasil bercampur gambar dan angka = 6: 7/8 + 7/8 - 6/8 = 8/8 = 1",
+      "distraktor": [
+        {
+          "teks": "Hitungan benar; peluangnya $\\frac{7}{4}$ karena kedua kejadian saling lepas",
+          "alasan": "tidak menyadari peluang maksimum 1 dan salah menganggap kejadian saling lepas"
+        },
+        {
+          "teks": "Hitungan salah; peluang sebenarnya $\\frac{7}{8}$ karena irisannya 7 hasil",
+          "alasan": "salah menghitung irisan menjadi 7 hasil (7 + 7 - 7 = 7)"
+        },
+        {
+          "teks": "Hitungan salah; peluang sebenarnya $\\frac{6}{8}$ karena irisannya 8 hasil",
+          "alasan": "salah menghitung irisan menjadi 8 hasil (7 + 7 - 8 = 6)"
+        }
+      ],
+      "pembahasan": "Hanya GGG dan AAA yang tidak bercampur, jadi 6 hasil memuat gambar dan angka. $P=\\frac{7+7-6}{8}=1$: salah satu pasti terjadi.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 271,
+        "kutipan": "aturan penjumlahan untuk kejadian saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim saling lepas dari nilai peluang",
+      "alasan_level": "mengevaluasi kemungkinan dua kejadian saling lepas dari batas nilai peluang gabungan",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyatakan bahwa kejadian $A$ dan $B$ saling lepas dengan $P(A)=0{,}7$ dan $P(B)=0{,}6$. Penilaian yang benar atas pernyataan itu adalah ....",
+      "jawaban_benar": "Tidak mungkin benar karena $P(A)+P(B)=1{,}3>1$; apa pun keadaannya $P(A \\text{ dan } B)\\ge 0{,}3$",
+      "alasan_benar": "jika saling lepas maka P(A atau B) = 1,3 > 1, mustahil; P(A dan B) = 1,3 - P(A atau B) >= 0,3",
+      "distraktor": [
+        {
+          "teks": "Mungkin benar; peluang $P(A \\text{ atau } B)$ bernilai $1{,}3$",
+          "alasan": "tidak menyadari peluang gabungan tidak boleh lebih dari 1"
+        },
+        {
+          "teks": "Tidak mungkin benar sebab $P(A \\text{ dan } B)$ harus bernilai $0{,}42$",
+          "alasan": "mencampuradukkan irisan dengan hasil kali kedua peluang"
+        },
+        {
+          "teks": "Mungkin benar, asalkan $P(A \\text{ dan } B)=0{,}1$",
+          "alasan": "saling lepas mensyaratkan irisan 0, bukan 0,1, dan irisan minimal 0,3"
+        }
+      ],
+      "pembahasan": "Bila saling lepas, $P(A \\text{ atau } B)=0{,}7+0{,}6=1{,}3>1$ (mustahil). Karena $P(A \\text{ atau } B)\\le 1$, maka $P(A \\text{ dan } B)=1{,}3-P(A \\text{ atau } B)\\ge 0{,}3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 273,
+        "kutipan": "Apa perbedaan dua kejadian yang saling lepas dan yang tidak saling lepas berdasarkan aturan penjumlahannya?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari contoh penyangkal",
+      "alasan_level": "menguji klaim umum dengan memeriksa dua syarat (jumlah peluang 1 dan ada irisan) pada tiap pilihan",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika $P(A)+P(B)=1$ maka $A$ dan $B$ saling lepas.\" Pada pelemparan sebuah dadu setimbang, contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$A$ = mata genap dan $B$ = mata kurang dari 4",
+      "alasan_benar": "P(A)=P(B)=1/2 sehingga jumlahnya 1, tetapi mata 2 memenuhi keduanya sehingga tidak saling lepas",
+      "distraktor": [
+        {
+          "teks": "$A$ = mata genap dan $B$ = mata ganjil",
+          "alasan": "jumlah peluangnya 1 tetapi saling lepas, sehingga mendukung klaim, bukan membantahnya"
+        },
+        {
+          "teks": "$A$ = mata 1 atau 2 dan $B$ = mata 5 atau 6",
+          "alasan": "saling lepas dan jumlah peluangnya $\\frac{2}{3}$, bukan 1"
+        },
+        {
+          "teks": "$A$ = mata prima dan $B$ = mata kurang dari 3",
+          "alasan": "memang beririsan (mata 2) tetapi jumlah peluangnya $\\frac{5}{6}$, bukan 1, sehingga premis klaim tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus memenuhi premis ($P(A)+P(B)=1$) tetapi gagal pada kesimpulan (tidak saling lepas). Hanya genap dan kurang dari 4: $\\frac{3}{6}+\\frac{3}{6}=1$ dengan irisan $\\{2\\}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari contoh penyangkal",
+      "alasan_level": "menguji klaim tentang P(A atau B)=P(A) dengan memeriksa premis dan kesimpulan tiap pasangan kejadian",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika $P(A \\text{ atau } B)=P(A)$ maka $P(B)=0$.\" Pada pelemparan sebuah dadu setimbang, contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$A$ = mata genap dan $B$ = mata 6",
+      "alasan_benar": "mata 6 termuat dalam mata genap sehingga P(A atau B) = P(A) = 1/2, tetapi P(B) = 1/6 bukan 0",
+      "distraktor": [
+        {
+          "teks": "$A$ = mata genap dan $B$ = mata 5",
+          "alasan": "$P(A \\text{ atau } B)=\\frac{4}{6}\\ne P(A)$ sehingga premis klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$A$ = mata genap dan $B$ = mata ganjil",
+          "alasan": "$P(A \\text{ atau } B)=1\\ne P(A)$ sehingga premis tidak terpenuhi"
+        },
+        {
+          "teks": "$A$ = mata kurang dari 3 dan $B$ = mata lebih dari 4",
+          "alasan": "$P(A \\text{ atau } B)=\\frac{4}{6}\\ne P(A)=\\frac{2}{6}$ sehingga premis tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Premis berlaku bila $B$ termuat dalam $A$ ($P(A \\text{ atau } B)=P(A)+P(B)-P(B)$). Genap dan $\\{6\\}$: gabungannya tetap genap ($\\frac{3}{6}$), namun $P(B)=\\frac{1}{6}\\ne 0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "syarat parameter peluang irisan",
+      "alasan_level": "menalar batas terkecil irisan dari P(A atau B) paling banyak 1",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ pada suatu percobaan memiliki $P(A)=0{,}7$ dan $P(B)=0{,}8$. Nilai terkecil yang mungkin bagi $P(A \\text{ dan } B)$ adalah ....",
+      "jawaban_benar": "$0{,}5$",
+      "alasan_benar": "P(A dan B) = 0,7 + 0,8 - P(A atau B) >= 1,5 - 1 = 0,5",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "mengira nilai terkecil irisan selalu 0 (saling lepas), padahal jumlah peluang lebih dari 1"
+        },
+        {
+          "teks": "$0{,}1$",
+          "alasan": "mengurangkan kedua peluang (0,8 - 0,7)"
+        },
+        {
+          "teks": "$0{,}56$",
+          "alasan": "mengalikan kedua peluang"
+        }
+      ],
+      "pembahasan": "Dari $P(A \\text{ atau } B)=P(A)+P(B)-P(A \\text{ dan } B)\\le 1$ diperoleh $P(A \\text{ dan } B)\\ge 0{,}7+0{,}8-1=0{,}5$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 271,
+        "kutipan": "aturan penjumlahan untuk kejadian saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter kejadian saling lepas",
+      "alasan_level": "memodelkan syarat P(A)+P(B) paling besar 1 untuk kejadian saling lepas dan menyelesaikan pertidaksamaan",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling lepas dengan $P(A)=3p$ dan $P(B)=2p+0{,}1$. Nilai $p$ terbesar yang mungkin adalah ....",
+      "jawaban_benar": "$0{,}18$",
+      "alasan_benar": "saling lepas: 3p + 2p + 0,1 <= 1, 5p <= 0,9, p <= 0,18",
+      "distraktor": [
+        {
+          "teks": "$0{,}2$",
+          "alasan": "lupa menambahkan 0,1 pada $P(B)$ (5p <= 1)"
+        },
+        {
+          "teks": "$0{,}22$",
+          "alasan": "salah tanda: 5p <= 1,1"
+        },
+        {
+          "teks": "$0{,}3$",
+          "alasan": "hanya membatasi $P(A)=3p\\le 0{,}9$"
+        }
+      ],
+      "pembahasan": "Saling lepas: $P(A \\text{ atau } B)=3p+2p+0{,}1\\le 1$ sehingga $5p\\le 0{,}9$ dan $p\\le 0{,}18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter nilai P(A atau B)",
+      "alasan_level": "menentukan rentang nilai P(A atau B) dari batas irisan lalu memilih nilai yang di luar rentang",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ memiliki $P(A)=0{,}55$ dan $P(B)=0{,}8$. Nilai $P(A \\text{ atau } B)$ yang tidak mungkin adalah ....",
+      "jawaban_benar": "$0{,}75$",
+      "alasan_benar": "P(A atau B) >= P(B) = 0,8; 0,75 < 0,8 sehingga irisan 0,6 melebihi P(A)=0,55",
+      "distraktor": [
+        {
+          "teks": "$0{,}8$",
+          "alasan": "mungkin: irisan 0,55 (A termuat dalam B)"
+        },
+        {
+          "teks": "$0{,}9$",
+          "alasan": "mungkin: irisan 0,45"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mungkin: irisan 0,35"
+        }
+      ],
+      "pembahasan": "Irisan $=0{,}55+0{,}8-P(A \\text{ atau } B)$ harus di antara 0 dan $0{,}55$, sehingga $0{,}8\\le P(A \\text{ atau } B)\\le 1$. Hanya $0{,}75$ di luar rentang.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "kutipan": "jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang kejadian",
+      "alasan_level": "merancang kejadian kedua yang memenuhi dua syarat sekaligus (saling lepas dan peluang gabungan tertentu)",
+      "stimulus": null,
+      "pertanyaan": "Pada pelemparan sepasang dadu setimbang, kejadian $A$ adalah jumlah kedua mata 7. Kejadian $B$ yang membuat $A$ dan $B$ saling lepas sekaligus $P(A \\text{ atau } B)=\\frac{1}{3}$ adalah ....",
+      "jawaban_benar": "kedua mata sama (dobel)",
+      "alasan_benar": "jumlah 7 ada 6 hasil; dobel 6 hasil dan semuanya berjumlah genap sehingga tidak beririsan: 12/36 = 1/3",
+      "distraktor": [
+        {
+          "teks": "mata dadu pertama adalah 1",
+          "alasan": "beririsan di $(1,6)$ sehingga gabungannya hanya 11 hasil"
+        },
+        {
+          "teks": "jumlah kedua mata 2 atau 12",
+          "alasan": "saling lepas tetapi hanya 2 hasil sehingga gabungannya 8 hasil"
+        },
+        {
+          "teks": "jumlah kedua mata paling sedikit 9",
+          "alasan": "saling lepas tetapi ada 10 hasil sehingga gabungannya 16 hasil"
+        }
+      ],
+      "pembahasan": "Perlu $B$ dengan 6 hasil dan tanpa hasil berjumlah 7. Dobel: 6 hasil, jumlahnya genap. Total $\\frac{6+6}{36}=\\frac{1}{3}$. Pilihan lain gagal pada salah satu syarat.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang kejadian",
+      "alasan_level": "merancang kejadian B sehingga peluang gabungan tertentu tercapai dengan menghitung hanya kartu yang belum terhitung",
+      "stimulus": null,
+      "pertanyaan": "Satu kartu diambil secara acak dari satu set lengkap 52 kartu bridge setimbang. Kejadian $A$ adalah terambil kartu hati. Kejadian $B$ yang membuat $P(A \\text{ atau } B)=\\frac{20}{52}$ adalah terambil ....",
+      "jawaban_benar": "kartu sekop bernomor 2 sampai 8",
+      "alasan_benar": "sekop 2-8 ada 7 kartu dan tidak ada yang hati: 13/52 + 7/52 = 20/52",
+      "distraktor": [
+        {
+          "teks": "kartu Raja atau Ratu",
+          "alasan": "ada 8 kartu, tetapi 2 di antaranya hati sehingga hanya menambah 6 kartu (19/52)"
+        },
+        {
+          "teks": "kartu wajik bernomor 2 sampai 9",
+          "alasan": "ada 8 kartu tanpa irisan sehingga gabungannya 21/52"
+        },
+        {
+          "teks": "kartu bergambar (J, Q, K)",
+          "alasan": "12 kartu dengan 3 di antaranya hati sehingga gabungannya 22/52"
+        }
+      ],
+      "pembahasan": "Kartu tambahan di luar hati harus 7. Sekop 2-8: 7 kartu, tanpa irisan, $\\frac{13+7}{52}=\\frac{20}{52}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang kejadian",
+      "alasan_level": "merancang kejadian yang tidak saling lepas dengan A sekaligus memberi peluang gabungan tertentu",
+      "stimulus": null,
+      "pertanyaan": "Tiga koin setimbang dilempar bersamaan. Kejadian $A$ adalah muncul tepat dua gambar. Kejadian $B$ yang tidak saling lepas dengan $A$ dan membuat $P(A \\text{ atau } B)=\\frac{5}{8}$ adalah ....",
+      "jawaban_benar": "koin pertama menunjukkan gambar",
+      "alasan_benar": "B = GGG,GGA,GAG,GAA; irisan dengan A (GGA,GAG) 2 hasil: (3 + 4 - 2)/8 = 5/8",
+      "distraktor": [
+        {
+          "teks": "ketiga koin menunjukkan sisi yang sama",
+          "alasan": "gabungannya memang 5/8 tetapi saling lepas (tidak ada irisan)"
+        },
+        {
+          "teks": "paling sedikit dua koin menunjukkan gambar",
+          "alasan": "irisan 3 hasil sehingga gabungannya hanya 4/8"
+        },
+        {
+          "teks": "koin pertama dan koin kedua menunjukkan sisi yang sama",
+          "alasan": "irisan 1 hasil (GGA) sehingga gabungannya 6/8"
+        }
+      ],
+      "pembahasan": "$A=\\{GGA,GAG,AGG\\}$. Untuk $B$ = koin pertama gambar: $B=\\{GGG,GGA,GAG,GAA\\}$, irisan 2 hasil, gabungan $3+4-2=5$ hasil, $\\frac{5}{8}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan langkah penyelesaian",
+      "alasan_level": "menelusuri empat langkah penyelesaian dan memeriksa tiap langkah untuk menemukan kesalahan irisan",
+      "stimulus": "Penyelesaian Sari untuk peluang jumlah kedua mata kurang dari 5 atau selisih mutlak kedua mata 1 pada pelemparan sepasang dadu setimbang:\n\n- Langkah 1: jumlah kurang dari 5 ada 6 hasil.\n- Langkah 2: selisih mutlak 1 ada 10 hasil.\n- Langkah 3: hasil yang memenuhi keduanya hanya $(1,2)$, yaitu 1 hasil.\n- Langkah 4: $P=\\frac{6+10-1}{36}=\\frac{15}{36}$.",
+      "pertanyaan": "Langkah pertama yang mengandung kesalahan pada penyelesaian Sari adalah ....",
+      "jawaban_benar": "Langkah 3 (banyak hasil irisan)",
+      "alasan_benar": "irisan = (1,2) dan (2,1) = 2 hasil, bukan 1; peluang yang benar 14/36",
+      "distraktor": [
+        {
+          "teks": "Langkah 1 (banyak hasil jumlah kurang dari 5)",
+          "alasan": "benar: (1,1),(1,2),(2,1),(1,3),(3,1),(2,2) = 6 hasil"
+        },
+        {
+          "teks": "Langkah 2 (banyak hasil selisih mutlak 1)",
+          "alasan": "benar: 5 pasangan dengan 2 urutan = 10 hasil"
+        },
+        {
+          "teks": "Langkah 4 (penjumlahan akhir)",
+          "alasan": "perhitungan 6 + 10 - 1 = 15 sudah sesuai dengan langkah 3; kesalahannya sudah muncul sebelumnya"
+        }
+      ],
+      "pembahasan": "Irisan: jumlah kurang dari 5 dan selisih 1 adalah $(1,2)$ dan $(2,1)$, jadi 2 hasil. $P=\\frac{6+10-2}{36}=\\frac{14}{36}$. Kesalahan pertama ada di langkah 3.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan penalaran",
+      "alasan_level": "menemukan alasan hitungan keliru dengan memeriksa irisan dua kelipatan dan memeriksa tiap penjelasan",
+      "stimulus": null,
+      "pertanyaan": "Dari kantong berisi 20 bola identik bernomor 1 sampai 20, Tia menghitung peluang terambil bola bernomor kelipatan 4 atau kelipatan 6 sebagai $\\frac{5}{20}+\\frac{3}{20}=\\frac{8}{20}$. Penjelasan yang tepat tentang kesalahan Tia adalah ....",
+      "jawaban_benar": "Tia menganggap tidak ada bola yang kelipatan 4 sekaligus kelipatan 6, padahal bola bernomor 12 memenuhi keduanya",
+      "alasan_benar": "irisan {12} sehingga P = 5/20 + 3/20 - 1/20 = 7/20",
+      "distraktor": [
+        {
+          "teks": "Tia salah menghitung banyak bola kelipatan 6; seharusnya ada 4 bola",
+          "alasan": "kelipatan 6 hanya 6, 12, 18 (3 bola)"
+        },
+        {
+          "teks": "Tia seharusnya mengurangkan 2 bola karena 12 dan 24 memenuhi keduanya",
+          "alasan": "24 tidak ada di antara bola 1 sampai 20"
+        },
+        {
+          "teks": "Peluang kedua kejadian seharusnya dikalikan, bukan dijumlahkan",
+          "alasan": "mengira kata atau berarti perkalian"
+        }
+      ],
+      "pembahasan": "Kelipatan 4: 4, 8, 12, 16, 20 (5 bola). Kelipatan 6: 6, 12, 18 (3 bola). Bola 12 terhitung dua kali, jadi $P=\\frac{5+3-1}{20}=\\frac{7}{20}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan kesalahan penalaran",
+      "alasan_level": "menemukan irisan yang kurang karena jumlah 12 terlewat pada dua kejadian berdasarkan jumlah mata dadu",
+      "stimulus": null,
+      "pertanyaan": "Pada pelemparan sepasang dadu setimbang, Wawan menghitung peluang jumlah kedua mata genap atau kelipatan 3 sebagai $\\frac{18+12-5}{36}=\\frac{25}{36}$ dengan alasan irisannya hanya jumlah 6 (5 hasil). Kesalahan Wawan adalah ....",
+      "jawaban_benar": "irisan seharusnya 6 hasil karena jumlah 12 juga genap dan kelipatan 3",
+      "alasan_benar": "irisan = jumlah 6 (5 hasil) + jumlah 12 (1 hasil) = 6: (18 + 12 - 6)/36 = 24/36",
+      "distraktor": [
+        {
+          "teks": "banyak hasil jumlah genap seharusnya 17",
+          "alasan": "jumlah genap tepat 18 hasil (1+3+5+5+3+1)"
+        },
+        {
+          "teks": "banyak hasil jumlah kelipatan 3 seharusnya 11",
+          "alasan": "jumlah 3, 6, 9, 12 ada 2+5+4+1 = 12 hasil"
+        },
+        {
+          "teks": "irisan tidak perlu dikurangkan karena kedua kejadian saling lepas",
+          "alasan": "keduanya beririsan di jumlah 6 dan 12"
+        }
+      ],
+      "pembahasan": "Jumlah genap: 18 hasil. Jumlah kelipatan 3 (3, 6, 9, 12): 12 hasil. Irisan jumlah 6 dan 12: $5+1=6$. $P=\\frac{18+12-6}{36}=\\frac{24}{36}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan peluang empat skema",
+      "alasan_level": "membandingkan peluang gabungan empat skema dengan memeriksa irisan masing-masing sebelum membandingkan",
+      "stimulus": "Empat skema permainan memakai sepasang dadu setimbang yang dilempar sekali. Pemain menang jika:\n\n- Skema 1: kedua mata sama atau jumlah kedua mata 7.\n- Skema 2: mata dadu pertama 6 atau mata dadu kedua 6.\n- Skema 3: jumlah kedua mata kurang dari 6 atau lebih dari 8.\n- Skema 4: jumlah kedua mata genap atau kedua mata sama.",
+      "pertanyaan": "Skema yang memberi peluang menang terbesar adalah ....",
+      "jawaban_benar": "Skema 3",
+      "alasan_benar": "Skema 1 = 12/36, Skema 2 = 6+6-1 = 11/36, Skema 3 = 10+10 = 20/36 (saling lepas), Skema 4 = 18/36 (dobel termuat dalam genap)",
+      "distraktor": [
+        {
+          "teks": "Skema 1",
+          "alasan": "hanya 12/36: kedua kejadian saling lepas dan masing-masing kecil"
+        },
+        {
+          "teks": "Skema 2",
+          "alasan": "11/36 setelah mengurangkan irisan $(6,6)$"
+        },
+        {
+          "teks": "Skema 4",
+          "alasan": "menjumlahkan 18 + 6 = 24 tanpa mengurangi irisan padahal dobel semuanya genap (sebenarnya 18)"
+        }
+      ],
+      "pembahasan": "Skema 3 paling besar (20/36). Skema 4 tampak 24/36 bila irisan 6 dilupakan, tetapi yang benar 18/36.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 6,
+      "jenis_soal": "membandingkan frekuensi harapan dua permainan",
+      "alasan_level": "menghitung dua frekuensi harapan gabungan (masing-masing dengan irisan) lalu membandingkan selisihnya",
+      "stimulus": null,
+      "pertanyaan": "Permainan I memakai sepasang dadu setimbang: pemain menang jika jumlah kedua mata 5 atau selisih mutlak kedua mata 3. Permainan II memakai tiga koin setimbang: pemain menang jika muncul paling sedikit dua gambar atau koin pertama gambar. Masing-masing permainan dimainkan 360 kali. Frekuensi harapan menang Permainan II lebih banyak daripada Permainan I sebesar ... kali.",
+      "jawaban_benar": "$145$",
+      "alasan_benar": "I: 8/36 x 360 = 80; II: 5/8 x 360 = 225; selisih 145",
+      "distraktor": [
+        {
+          "teks": "$260$",
+          "alasan": "tidak mengurangi irisan pada kedua permainan: 360 - 100"
+        },
+        {
+          "teks": "$125$",
+          "alasan": "tidak mengurangi irisan pada Permainan I: 225 - 100"
+        },
+        {
+          "teks": "$280$",
+          "alasan": "tidak mengurangi irisan pada Permainan II: 360 - 80"
+        }
+      ],
+      "pembahasan": "I: jumlah 5 (4 hasil), selisih 3 (6 hasil), irisan $(1,4),(4,1)$, jadi $\\frac{8}{36}\\times360=80$. II: $4+4-3=5$ hasil, $\\frac{5}{8}\\times360=225$. Selisih $=145$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan peluang dua kotak",
+      "alasan_level": "menghitung dua peluang gabungan dengan irisan berbeda lalu membandingkannya dengan penyebut berbeda",
+      "stimulus": null,
+      "pertanyaan": "Kotak I berisi 20 bola identik bernomor 1 sampai 20 dan Kotak II berisi 30 bola identik bernomor 1 sampai 30. Satu bola diambil secara acak dari masing-masing kotak. Pernyataan yang benar tentang peluang terambil bola bernomor kelipatan 3 atau kelipatan 5 adalah ....",
+      "jawaban_benar": "Peluang pada Kotak II lebih besar dengan selisih $\\frac{1}{60}$",
+      "alasan_benar": "Kotak I: (6 + 4 - 1)/20 = 9/20 = 27/60; Kotak II: (10 + 6 - 2)/30 = 14/30 = 28/60; selisih 1/60",
+      "distraktor": [
+        {
+          "teks": "Peluang pada Kotak I lebih besar dengan selisih $\\frac{1}{60}$",
+          "alasan": "salah menghitung irisan Kotak II menjadi 3 bola (13/30 = 26/60)"
+        },
+        {
+          "teks": "Peluang pada Kotak II lebih besar dengan selisih $\\frac{1}{30}$",
+          "alasan": "tidak mengurangi irisan pada kedua kotak (16/30 dan 10/20)"
+        },
+        {
+          "teks": "Peluang pada Kotak I lebih besar dengan selisih $\\frac{1}{30}$",
+          "alasan": "tidak mengurangi irisan pada Kotak I (10/20), sedangkan Kotak II benar"
+        }
+      ],
+      "pembahasan": "Kotak I: kelipatan 3 ada 6, kelipatan 5 ada 4, irisan {15}: $\\frac{9}{20}=\\frac{27}{60}$. Kotak II: 10 dan 6, irisan {15, 30}: $\\frac{14}{30}=\\frac{28}{60}$. Kotak II lebih besar $\\frac{1}{60}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "kutipan": "jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menentukan pasangan saling lepas atau tidak",
+      "alasan_level": "menalar paritas jumlah dan selisih untuk menyimpulkan satu pasangan tidak beririsan tanpa mendata semua hasil",
+      "stimulus": null,
+      "pertanyaan": "Sepasang dadu setimbang dilempar sekali. Pasangan kejadian yang saling lepas adalah ....",
+      "jawaban_benar": "jumlah kedua mata 8 dan selisih mutlak kedua mata 3",
+      "alasan_benar": "jumlah dan selisih dua bilangan bulat selalu sama paritas: jumlah 8 genap, selisih 3 ganjil sehingga tidak ada hasil bersama",
+      "distraktor": [
+        {
+          "teks": "jumlah kedua mata 9 dan selisih mutlak kedua mata 1",
+          "alasan": "beririsan di $(4,5)$ dan $(5,4)$"
+        },
+        {
+          "teks": "jumlah kedua mata 6 dan selisih mutlak kedua mata 2",
+          "alasan": "beririsan di $(2,4)$ dan $(4,2)$"
+        },
+        {
+          "teks": "jumlah kedua mata 7 dan selisih mutlak kedua mata 5",
+          "alasan": "beririsan di $(1,6)$ dan $(6,1)$"
+        }
+      ],
+      "pembahasan": "Jumlah dan selisih mutlak dua bilangan bulat berparitas sama. Jumlah 8 (genap) dengan selisih 3 (ganjil) mustahil bersamaan. Ketiga pasangan lain beririsan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "kutipan": "jika tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menentukan pasangan saling lepas atau tidak",
+      "alasan_level": "mengevaluasi enam pasangan kejadian satu per satu (setara medium atas) lalu menghitung banyak yang saling lepas",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang dilempar sekali. Didefinisikan kejadian $A$: mata genap, $B$: mata ganjil, $C$: mata prima, dan $D$: mata 6. Dari keenam pasangan kejadian yang dapat dibentuk, banyak pasangan yang saling lepas adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "saling lepas: (A,B), (B,D), (C,D); pasangan lain beririsan di 2, 6, 3 dan 5, serta 2",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "melewatkan satu pasangan, misalnya $C$ dan $D$ (prima tidak memuat 6)"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "menganggap $A$ dan $C$ saling lepas padahal mata 2 genap sekaligus prima"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "hanya mencoret pasangan yang jelas beririsan dan mengabaikan irisan prima dengan genap serta ganjil"
+        }
+      ],
+      "pembahasan": "Pasangan: $AB$ (lepas), $AC$ (irisan 2), $AD$ (irisan 6), $BC$ (irisan 3, 5), $BD$ (lepas), $CD$ (lepas). Jadi 3 pasangan.",
+      "catatan": null
+    }
+  ]
+}

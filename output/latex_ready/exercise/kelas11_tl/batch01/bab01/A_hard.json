@@ -1,0 +1,352 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab A (Jenis-Jenis Matriks, sekitar 8 halaman) hanya memuat definisi jenis matriks, transpos, dan kesamaan; easy+medium sudah memakai 40 soal dan 8 jenis. Penalaran sifat yang tersisa (klaim, penyangkal, parameter dua jenis, pencacahan matriks) hanya cukup untuk sekitar 10 soal hard tanpa kembar; sisanya akan menjadi soal hitung atau di luar materi subbab.",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Matriks Simetris"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim jenis matriks",
+      "alasan_level": "mengevaluasi empat klaim universal dengan mencari contoh penyangkal untuk tiga klaim yang salah",
+      "stimulus": null,
+      "pertanyaan": "Di antara pernyataan berikut, yang benar adalah ....",
+      "jawaban_benar": "Setiap matriks diagonal adalah matriks simetris.",
+      "alasan_benar": "Pada matriks diagonal semua elemen di luar diagonal utama nol, sehingga $a_{ij} = a_{ji} = 0$ untuk $i \\neq j$ dan matriks simetris.",
+      "distraktor": [
+        {
+          "teks": "Setiap matriks simetris adalah matriks diagonal.",
+          "alasan": "membalik arah klaim; $\\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$ simetris tetapi bukan diagonal"
+        },
+        {
+          "teks": "Setiap matriks segitiga atas adalah matriks simetris.",
+          "alasan": "mengira segitiga atas pasti simetris; $\\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$ adalah penyangkalnya"
+        },
+        {
+          "teks": "Transpos dari setiap matriks segitiga atas adalah matriks segitiga atas.",
+          "alasan": "mengira transpos tidak mengubah jenis; transpos $\\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$ adalah segitiga bawah dan bukan segitiga atas"
+        }
+      ],
+      "pembahasan": "Klaim pertama benar karena matriks diagonal pasti simetris. Tiga klaim lain punya penyangkal $2 \\times 2$: $\\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$ dan $\\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 21,
+        "kutipan": "Matriks transpos adalah matriks baru yang diperoleh dengan cara menukar setiap elemen pada baris menjadi elemen pada kolom dan sebaliknya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim jenis matriks",
+      "alasan_level": "menalar bahwa kesamaan $M^t = M$ memaksa ordo yang sama, lalu mengevaluasi empat kesimpulan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah matriks $M$ memenuhi $M^t = M$. Pernyataan yang pasti benar tentang $M$ adalah ....",
+      "jawaban_benar": "$M$ merupakan matriks persegi",
+      "alasan_benar": "Jika $M$ berordo $m \\times n$ maka $M^t$ berordo $n \\times m$. Kedua matriks sama hanya bila $m = n$, sehingga $M$ persegi.",
+      "distraktor": [
+        {
+          "teks": "$M$ merupakan matriks diagonal",
+          "alasan": "menyamakan matriks simetris dengan diagonal; $\\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$ memenuhi syarat tetapi bukan diagonal"
+        },
+        {
+          "teks": "$M$ merupakan matriks identitas",
+          "alasan": "mengira hanya matriks identitas yang sama dengan transposnya"
+        },
+        {
+          "teks": "$M$ memuat paling sedikit satu elemen bernilai nol",
+          "alasan": "mengira kesamaan dengan transpos menuntut elemen nol; $\\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$ tidak memuat nol"
+        }
+      ],
+      "pembahasan": "Ordo $M$ dan $M^t$ harus sama sehingga $M$ persegi. Contoh $\\begin{pmatrix} 1 & 2 \\\\ 2 & 1 \\end{pmatrix}$ menyangkal tiga pilihan lain.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Elemen-elemen pada matriks di atas bernilai nol, kecuali yang terletak pada diagonal utama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menilai penalaran siswa yang keliru tentang syarat diagonal dan menentukan koreksi yang tepat",
+      "stimulus": "$K = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$",
+      "pertanyaan": "Seorang siswa menyatakan bahwa matriks $K$ bukan matriks diagonal karena ada elemen diagonal utama yang bernilai nol. Pernyataan yang tepat tentang penalaran siswa tersebut adalah ....",
+      "jawaban_benar": "Siswa keliru: matriks diagonal hanya mensyaratkan elemen di luar diagonal utama bernilai nol, sehingga $K$ adalah matriks diagonal",
+      "alasan_benar": "Syarat matriks diagonal hanya menyangkut elemen di luar diagonal utama; elemen diagonal utama boleh bernilai nol.",
+      "distraktor": [
+        {
+          "teks": "Siswa benar: pada matriks diagonal semua elemen diagonal utama harus bukan nol, sehingga $K$ bukan matriks diagonal",
+          "alasan": "membenarkan syarat yang tidak ada dalam definisi diagonal"
+        },
+        {
+          "teks": "Siswa keliru: $K$ adalah matriks identitas karena semua elemen di luar diagonal utama bernilai nol",
+          "alasan": "mencampuradukkan diagonal dengan identitas padahal diagonal utama $K$ tidak semuanya satu"
+        },
+        {
+          "teks": "Siswa keliru: $K$ adalah matriks segitiga atas tetapi bukan matriks diagonal",
+          "alasan": "mengira matriks yang memuat nol pada diagonal utama tidak lagi diagonal; elemen di bawah dan di atas diagonal nol"
+        }
+      ],
+      "pembahasan": "Contoh: $K = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$. Semua elemen di luar diagonal utama nol sehingga $K$ diagonal; nol pada diagonal utama diperbolehkan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Matriks Simetris"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak matriks yang memenuhi sifat",
+      "alasan_level": "menalar banyak elemen yang bebas pada matriks simetris lalu menghitung banyak kemungkinan dengan aturan pangkat",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks simetris berordo $3 \\times 3$ dipilih dari himpunan $\\{0, 1\\}$. Banyak matriks yang dapat dibentuk adalah ....",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Elemen yang bebas dipilih: $3$ pada diagonal utama dan $3$ di atas diagonal utama, yaitu $6$. Tiap elemen punya $2$ pilihan sehingga $2^6 = 64$.",
+      "distraktor": [
+        {
+          "teks": "$512$",
+          "alasan": "tidak memakai sifat simetris sehingga menghitung $2^9$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "hanya menghitung elemen diagonal utama ($2^3$)"
+        },
+        {
+          "teks": "$32$",
+          "alasan": "salah menghitung banyak elemen bebas menjadi $5$ ($2^5$)"
+        }
+      ],
+      "pembahasan": "$a_{ij} = a_{ji}$ sehingga hanya $3 + 3 = 6$ elemen yang bebas. Banyak matriks $= 2^6 = 64$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Elemen-elemen pada matriks di atas bernilai nol, kecuali yang terletak pada diagonal utama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak matriks yang memenuhi sifat",
+      "alasan_level": "menalar bahwa dua sifat sekaligus (segitiga bawah dan simetris) menyisakan hanya elemen diagonal bebas lalu menghitung kemungkinan",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks persegi berordo $3 \\times 3$ dipilih dari himpunan $\\{0, 1, 2\\}$. Banyak matriks yang sekaligus merupakan matriks segitiga bawah dan matriks simetris adalah ....",
+      "jawaban_benar": "$27$",
+      "alasan_benar": "Segitiga bawah memaksa elemen di atas diagonal nol; simetris memaksa elemen di bawah diagonal sama dengan pasangannya, yaitu nol. Hanya $3$ elemen diagonal yang bebas: $3^3 = 27$.",
+      "distraktor": [
+        {
+          "teks": "$729$",
+          "alasan": "hanya memakai sifat segitiga bawah ($3^6$ untuk $6$ elemen bebas)"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "mengalikan $3 \\times 3$ alih-alih memangkatkan"
+        },
+        {
+          "teks": "$81$",
+          "alasan": "mengira ada empat elemen yang bebas ($3^4$)"
+        }
+      ],
+      "pembahasan": "Matriksnya pasti diagonal. Tiga elemen diagonal masing-masing punya $3$ pilihan sehingga $3^3 = 27$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Elemen-elemen pada matriks di atas bernilai nol, kecuali yang terletak pada diagonal utama."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter dua jenis sekaligus",
+      "alasan_level": "menggabungkan syarat segitiga atas dan simetris untuk menurunkan empat persamaan parameter lalu menjumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Matriks $M = \\begin{pmatrix} 3 & p + 4 & 0 \\\\ 3q - 6 & 6 & 2r + 2 \\\\ 0 & r + 1 & 8 \\end{pmatrix}$ merupakan matriks segitiga atas sekaligus matriks simetris. Nilai $p + q + r$ adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Segitiga atas: $3q - 6 = 0$ dan $r + 1 = 0$, sehingga $q = 2$ dan $r = -1$. Simetris: $p + 4 = 3q - 6 = 0$ sehingga $p = -4$ (dan $2r + 2 = r + 1 = 0$ terpenuhi). Jadi $p + q + r = -3$.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "salah tanda pada $p$ ($p = 4$)"
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "salah tanda pada $q$ ($q = -2$)"
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "salah tanda pada $r$ ($r = 1$)"
+        }
+      ],
+      "pembahasan": "Elemen di bawah diagonal nol: $q = 2$, $r = -1$. Simetris: $p + 4 = 0$ sehingga $p = -4$. Hasil $-4 + 2 - 1 = -3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "Matriks datar dan matriks tegak kerap disebut matriks persegi panjang."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter dua jenis sekaligus",
+      "alasan_level": "menggabungkan syarat ordo (tegak, bukan kolom) dengan banyak elemen pada ordo berparameter lalu menjumlahkan kasus yang memenuhi",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ berordo $(k + 2) \\times (10 - k)$ dengan $k$ bilangan asli. Jumlah semua kemungkinan banyak elemen $A$ jika $A$ merupakan matriks tegak tetapi bukan matriks kolom adalah ....",
+      "jawaban_benar": "$114$",
+      "alasan_benar": "Tegak: $k + 2 > 10 - k$ sehingga $k > 4$. Bukan kolom: $10 - k \\geq 2$ sehingga $k \\leq 8$. Maka $k = 5, 6, 7, 8$ dengan banyak elemen $35, 32, 27, 20$, jumlahnya $114$.",
+      "distraktor": [
+        {
+          "teks": "$125$",
+          "alasan": "ikut menghitung $k = 9$ ($11 \\times 1$, matriks kolom)"
+        },
+        {
+          "teks": "$150$",
+          "alasan": "ikut menghitung $k = 4$ ($6 \\times 6$, matriks persegi)"
+        },
+        {
+          "teks": "$79$",
+          "alasan": "salah batas $k > 5$ sehingga melewatkan $k = 5$"
+        }
+      ],
+      "pembahasan": "Syarat $k > 4$ dan $k \\leq 8$ menghasilkan $k = 5, 6, 7, 8$. Jumlah $35 + 32 + 27 + 20 = 114$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "Matriks segitiga adalah matriks persegi dengan elemen-elemen yang berada di bawah diagonal utama atau di atas diagonal utama bernilai nol."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "memeriksa empat matriks terhadap syarat klaim dan kesimpulannya untuk menemukan satu penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Diberikan klaim: \"Jika $A$ dan $A^t$ sama-sama matriks segitiga atas, maka $A$ adalah matriks identitas.\" Matriks berordo $3 \\times 3$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$",
+      "alasan_benar": "Matriks ini dan transposnya (sama dengan dirinya) segitiga atas, tetapi diagonal utamanya bukan semuanya satu sehingga bukan identitas.",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
+          "alasan": "ini matriks identitas, memenuhi klaim sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 2 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
+          "alasan": "transposnya segitiga bawah, sehingga syarat klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 1 & 0 & 0 \\\\ 3 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}$",
+          "alasan": "matriks ini sendiri bukan segitiga atas, sehingga syarat klaim tidak terpenuhi"
+        }
+      ],
+      "pembahasan": "Syarat klaim berarti $A$ diagonal. Penyangkal harus diagonal tetapi bukan identitas, yaitu $\\operatorname{diag}(2, 3, 5)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 20,
+        "kutipan": "Matriks Simetris"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rumus elemen dan sifat matriks",
+      "alasan_level": "menguji empat aturan $a_{ij}$ dengan membandingkan $a_{12}$ dan $a_{21}$ untuk memilih aturan yang menghasilkan matriks simetris bukan diagonal",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = (a_{ij})$ berordo $3 \\times 3$ dengan $i$ nomor baris dan $j$ nomor kolom. Aturan elemen yang menghasilkan matriks simetris yang bukan matriks diagonal adalah ....",
+      "jawaban_benar": "$a_{ij} = i + j$",
+      "alasan_benar": "Untuk $i + j$: $a_{ij} = a_{ji}$ sehingga simetris, dan $a_{12} = 3 \\neq 0$ sehingga bukan diagonal.",
+      "distraktor": [
+        {
+          "teks": "$a_{ij} = 2i - j$",
+          "alasan": "$a_{12} = 0$ tetapi $a_{21} = 3$, tidak simetris"
+        },
+        {
+          "teks": "$a_{ij} = i - j$",
+          "alasan": "$a_{12} = -1$ tetapi $a_{21} = 1$, tidak simetris"
+        },
+        {
+          "teks": "$a_{ij} = i^2 j$",
+          "alasan": "$a_{12} = 2$ tetapi $a_{21} = 4$, tidak simetris"
+        }
+      ],
+      "pembahasan": "Periksa $a_{12}$ dan $a_{21}$: hanya $i + j$ yang memberi nilai sama ($3$ dan $3$), dan nilainya tidak nol.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 19,
+        "kutipan": "Matriks segitiga adalah matriks persegi dengan elemen-elemen yang berada di bawah diagonal utama atau di atas diagonal utama bernilai nol."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "banyak elemen khusus",
+      "alasan_level": "membalik arah: dari banyak elemen nol pasti pada segitiga atas menentukan ordo, lalu menghitung elemen tak nol maksimum",
+      "stimulus": null,
+      "pertanyaan": "Sebuah matriks segitiga atas berordo $n \\times n$ memiliki tepat $45$ elemen yang pasti bernilai nol. Banyak elemen yang boleh bernilai tak nol pada matriks tersebut adalah ....",
+      "jawaban_benar": "$55$",
+      "alasan_benar": "Elemen di bawah diagonal utama berjumlah $\\frac{n(n-1)}{2} = 45$ sehingga $n = 10$. Elemen yang boleh tak nol: $\\frac{n(n+1)}{2} = 55$.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "menjawab banyak elemen nol yang diketahui, bukan elemen tak nol"
+        },
+        {
+          "teks": "$100$",
+          "alasan": "menghitung semua elemen $n \\times n$ tanpa memakai sifat segitiga"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "hanya menghitung elemen diagonal utama"
+        }
+      ],
+      "pembahasan": "$\\frac{n(n-1)}{2} = 45 \\Rightarrow n = 10$. Elemen pada dan di atas diagonal utama $= 55$.",
+      "catatan": null
+    }
+  ]
+}
