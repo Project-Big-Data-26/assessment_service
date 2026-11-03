@@ -1,0 +1,702 @@
+{
+  "book": "kelas10",
+  "bab_no": 7,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b07-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 270,
+        "bagian": "Latihan 7.3",
+        "nomor": "2a",
+        "teks": "Hitung frekuensi relatif dari pengujian lampu pijar yang kurang dari 3.000 jam, tetapi lebih dari 1.000 jam.",
+        "jawaban": "47/60"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "frekuensi relatif rentang tabel",
+      "alasan_level": "memilih dua kelas yang memenuhi syarat rentang, menjumlahkan frekuensinya, lalu membagi dengan total",
+      "stimulus": "Sebuah pabrik baterai menguji lama baterai menyala. Hasil uji ditampilkan pada tabel berikut.\n\n| Lama menyala, $h$ (jam) | Frekuensi |\n|---|---|\n| $0 \\le h < 500$ | 20 |\n| $500 \\le h < 1.000$ | 45 |\n| $1.000 \\le h < 1.500$ | 90 |\n| $1.500 \\le h$ | 45 |",
+      "pertanyaan": "Frekuensi relatif dari baterai yang menyala paling sedikit 500 jam tetapi kurang dari 1.500 jam adalah ....",
+      "jawaban_benar": "$\\frac{27}{40}$",
+      "alasan_benar": "kelas yang memenuhi: 45 dan 90, jumlah total 200: (45 + 90)/200 = 135/200 = 27/40",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{40}$",
+          "alasan": "hanya menghitung kelas 500-1.000 (45 dari 200) dan menyederhanakan"
+        },
+        {
+          "teks": "$\\frac{31}{40}$",
+          "alasan": "menghitung semua baterai yang kurang dari 1.500 jam (20 + 45 + 90 = 155)"
+        },
+        {
+          "teks": "$\\frac{9}{20}$",
+          "alasan": "hanya menghitung kelas 1.000-1.500 (90 dari 200)"
+        }
+      ],
+      "pembahasan": "Total $=20+45+90+45=200$. Kelas yang memenuhi: $500\\le h<1.000$ (45) dan $1.000\\le h<1.500$ (90). Frekuensi relatif $=\\frac{135}{200}=\\frac{27}{40}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 270,
+        "bagian": "Latihan 7.3",
+        "nomor": "2a",
+        "teks": "Hitung frekuensi relatif dari pengujian lampu pijar yang kurang dari 3.000 jam, tetapi lebih dari 1.000 jam.",
+        "jawaban": "47/60"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "frekuensi relatif rentang tabel",
+      "alasan_level": "memilih dua kelas berdasarkan batas atas dan bawah, menjumlahkan, lalu membagi dengan total",
+      "stimulus": "Hasil uji jarak tempuh ban sepeda motor sebelum aus.\n\n| Jarak tempuh, $k$ (km) | Frekuensi |\n|---|---|\n| $0 \\le k < 20.000$ | 12 |\n| $20.000 \\le k < 40.000$ | 48 |\n| $40.000 \\le k < 60.000$ | 90 |\n| $60.000 \\le k$ | 50 |",
+      "pertanyaan": "Frekuensi relatif dari ban yang aus pada jarak paling sedikit 20.000 km tetapi kurang dari 60.000 km adalah ....",
+      "jawaban_benar": "$\\frac{69}{100}$",
+      "alasan_benar": "(48 + 90)/200 = 138/200 = 69/100",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "menghitung semua ban yang kurang dari 60.000 km (12 + 48 + 90 = 150)"
+        },
+        {
+          "teks": "$\\frac{47}{50}$",
+          "alasan": "menghitung semua ban yang paling sedikit 20.000 km (48 + 90 + 50 = 188)"
+        },
+        {
+          "teks": "$\\frac{9}{20}$",
+          "alasan": "hanya menghitung kelas 40.000-60.000 (90 dari 200)"
+        }
+      ],
+      "pembahasan": "Total $=200$. Kelas yang memenuhi: 48 dan 90. $\\frac{48+90}{200}=\\frac{138}{200}=\\frac{69}{100}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 270,
+        "bagian": "Latihan 7.3",
+        "nomor": "2b",
+        "teks": "Jika ada pesanan 2.000 dari lampu ini, berapa banyak yang diharapkan (frekuensi harapan) dapat menyala lebih dari 3.000 jam?",
+        "jawaban": "sekitar 233"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "frekuensi harapan dari tabel rentang",
+      "alasan_level": "menentukan total dan frekuensi relatif kelas terakhir, lalu mengalikannya dengan banyak pesanan",
+      "stimulus": "Hasil uji coba daya tahan baterai remote.\n\n| Lama menyala, $h$ (jam) | Frekuensi |\n|---|---|\n| $0 \\le h < 100$ | 24 |\n| $100 \\le h < 200$ | 66 |\n| $200 \\le h < 300$ | 110 |\n| $300 \\le h$ | 50 |",
+      "pertanyaan": "Jika ada pesanan 1.800 baterai jenis ini, banyak baterai yang diharapkan menyala paling sedikit 300 jam adalah ....",
+      "jawaban_benar": "$360$",
+      "alasan_benar": "total 250, kelas terakhir 50: 50/250 x 1.800 = 360",
+      "distraktor": [
+        {
+          "teks": "$1.440$",
+          "alasan": "menghitung baterai yang menyala kurang dari 300 jam (200/250 x 1.800)"
+        },
+        {
+          "teks": "$792$",
+          "alasan": "memakai frekuensi kelas 200-300 (110/250 x 1.800)"
+        },
+        {
+          "teks": "$9.000$",
+          "alasan": "membagi 1.800 dengan frekuensi relatif 0,2 alih-alih mengalikan"
+        }
+      ],
+      "pembahasan": "Total $=250$, frekuensi relatif kelas terakhir $=\\frac{50}{250}=0{,}2$. Frekuensi harapan $=0{,}2\\times1.800=360$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 270,
+        "bagian": "Latihan 7.3",
+        "nomor": "2b",
+        "teks": "Jika ada pesanan 2.000 dari lampu ini, berapa banyak yang diharapkan (frekuensi harapan) dapat menyala lebih dari 3.000 jam?",
+        "jawaban": "sekitar 233"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "frekuensi harapan dari tabel rentang",
+      "alasan_level": "menjumlahkan dua kelas, membagi dengan total, lalu mengalikan dengan banyak pesanan",
+      "stimulus": "Hasil uji ketahanan sepatu sekolah (lama pemakaian sebelum rusak).\n\n| Lama pemakaian, $d$ (hari) | Frekuensi |\n|---|---|\n| $0 \\le d < 100$ | 18 |\n| $100 \\le d < 200$ | 42 |\n| $200 \\le d < 300$ | 95 |\n| $300 \\le d$ | 45 |",
+      "pertanyaan": "Dari pesanan 1.500 pasang sepatu, banyak sepatu yang diharapkan rusak sebelum 200 hari pemakaian adalah ....",
+      "jawaban_benar": "$450$",
+      "alasan_benar": "(18 + 42)/200 x 1.500 = 0,3 x 1.500 = 450",
+      "distraktor": [
+        {
+          "teks": "$1.050$",
+          "alasan": "menghitung yang bertahan paling sedikit 200 hari (140/200 x 1.500)"
+        },
+        {
+          "teks": "$315$",
+          "alasan": "hanya menghitung kelas 100-200 (42/200 x 1.500)"
+        },
+        {
+          "teks": "$135$",
+          "alasan": "hanya menghitung kelas 0-100 (18/200 x 1.500)"
+        }
+      ],
+      "pembahasan": "Total $=200$. Rusak sebelum 200 hari: $18+42=60$. Frekuensi relatif $=0{,}3$. Harapan $=0{,}3\\times1.500=450$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "bagian": "Ayo, Berpikir Kritis",
+        "nomor": "a",
+        "teks": "Melemparkan sepasang dadu dan mendapatkan jumlah 7; mendapatkan angka yang sama pada saat yang sama.",
+        "jawaban": "saling lepas"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menilai pernyataan saling lepas dan P(A atau B)",
+      "alasan_level": "memeriksa irisan dua kejadian lalu memilih aturan penjumlahan yang tepat dan menghitungnya",
+      "pertanyaan": "Sepasang dadu setimbang dilempar sekali. Kejadian $A$ adalah jumlah kedua mata 12 dan kejadian $B$ adalah kedua mata sama. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$A$ dan $B$ tidak saling lepas dan $P(A \\text{ atau } B)=\\frac{6}{36}$",
+      "alasan_benar": "(6,6) memenuhi keduanya sehingga tidak saling lepas; P = 1/36 + 6/36 - 1/36 = 6/36",
+      "distraktor": [
+        {
+          "teks": "$A$ dan $B$ saling lepas dan $P(A \\text{ atau } B)=\\frac{7}{36}$",
+          "alasan": "mengira tidak ada irisan padahal (6,6) memenuhi keduanya"
+        },
+        {
+          "teks": "$A$ dan $B$ tidak saling lepas dan $P(A \\text{ atau } B)=\\frac{7}{36}$",
+          "alasan": "mengenali irisan tetapi lupa mengurangkan peluang irisan"
+        },
+        {
+          "teks": "$A$ dan $B$ saling lepas dan $P(A \\text{ atau } B)=\\frac{6}{36}$",
+          "alasan": "hasil benar tetapi kategori salah: ada irisan (6,6)"
+        }
+      ],
+      "pembahasan": "Jumlah 12: (6,6). Kedua mata sama: 6 hasil termasuk (6,6). Irisan 1 hasil, tidak saling lepas. $P=\\frac{1+6-1}{36}=\\frac{6}{36}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "bagian": "Ayo, Berpikir Kritis",
+        "nomor": "b",
+        "teks": "Melemparkan sepasang dadu dan mendapatkan jumlah 8; mendapatkan angka yang sama pada saat yang sama.",
+        "jawaban": "tidak saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua dadu tidak saling lepas (jumlah kurang dari)",
+      "alasan_level": "mendata hasil tiap kejadian, menemukan irisan dua hasil, lalu memakai aturan penjumlahan umum",
+      "pertanyaan": "Sepasang dadu setimbang dilempar sekali. Peluang mendapatkan jumlah kedua mata kurang dari 6 atau kedua mata sama adalah ....",
+      "jawaban_benar": "$\\frac{14}{36}$",
+      "alasan_benar": "10/36 + 6/36 - 2/36 = 14/36 (irisan (1,1) dan (2,2))",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16}{36}$",
+          "alasan": "menjumlahkan tanpa mengurangi irisan"
+        },
+        {
+          "teks": "$\\frac{15}{36}$",
+          "alasan": "mengurangi irisan hanya 1 hasil"
+        },
+        {
+          "teks": "$\\frac{10}{36}$",
+          "alasan": "hanya menghitung jumlah kurang dari 6"
+        }
+      ],
+      "pembahasan": "Jumlah kurang dari 6: 1+2+3+4=10 hasil. Kedua mata sama: 6 hasil. Irisan: (1,1),(2,2). $P=\\frac{10+6-2}{36}=\\frac{14}{36}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "bagian": "Ayo, Berpikir Kritis",
+        "nomor": "c",
+        "teks": "Abi menggunakan mobil ke sekolah hari ini; Abi menggunakan kendaraan umum ke sekolah hari ini.",
+        "jawaban": "saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "aturan penjumlahan umum dengan nilai peluang",
+      "alasan_level": "menyadari dua kejadian tidak saling lepas dan memakai P(A) + P(B) - P(A dan B)",
+      "pertanyaan": "Peluang Rina naik angkot ke sekolah adalah $0{,}4$, peluang ia naik ojek daring adalah $0{,}35$, dan peluang ia naik keduanya pada hari yang sama (berganti kendaraan di jalan) adalah $0{,}1$. Peluang Rina naik angkot atau ojek daring hari ini adalah ....",
+      "jawaban_benar": "$0{,}65$",
+      "alasan_benar": "0,4 + 0,35 - 0,1 = 0,65",
+      "distraktor": [
+        {
+          "teks": "$0{,}75$",
+          "alasan": "menjumlahkan tanpa mengurangi peluang naik keduanya"
+        },
+        {
+          "teks": "$0{,}55$",
+          "alasan": "mengurangi peluang naik keduanya dua kali"
+        },
+        {
+          "teks": "$0{,}14$",
+          "alasan": "mengalikan peluang angkot dan ojek"
+        }
+      ],
+      "pembahasan": "Keduanya bisa terjadi bersamaan, sehingga tidak saling lepas. $P=0{,}4+0{,}35-0{,}1=0{,}65$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "bagian": "Ayo, Berpikir Kritis",
+        "nomor": "d",
+        "teks": "Zain menggunakan motor ke sekolah hari ini; Zain menggunakan sepeda ke sekolah.",
+        "jawaban": "tidak saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "saling lepas dan peluang komplemen",
+      "alasan_level": "menjumlahkan peluang kejadian saling lepas lalu mengambil komplemennya",
+      "pertanyaan": "Setiap hari Zain berangkat ke sekolah hanya dengan satu cara, yaitu naik motor, naik sepeda, atau berjalan kaki. Peluang ia naik motor adalah $0{,}45$ dan peluang ia naik sepeda adalah $0{,}3$. Peluang Zain berjalan kaki adalah ....",
+      "jawaban_benar": "$0{,}25$",
+      "alasan_benar": "motor dan sepeda saling lepas: 0,45 + 0,3 = 0,75; jalan kaki = 1 - 0,75 = 0,25",
+      "distraktor": [
+        {
+          "teks": "$0{,}75$",
+          "alasan": "berhenti pada peluang motor atau sepeda"
+        },
+        {
+          "teks": "$0{,}15$",
+          "alasan": "mengurangkan peluang motor dengan peluang sepeda"
+        },
+        {
+          "teks": "$0{,}55$",
+          "alasan": "memakai komplemen peluang motor saja (1 - 0,45)"
+        }
+      ],
+      "pembahasan": "Karena hanya satu cara tiap hari, ketiganya saling lepas dan jumlahnya 1. $P=1-(0{,}45+0{,}3)=0{,}25$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "kartu bridge tidak saling lepas (kartu bergambar)",
+      "alasan_level": "menghitung irisan tiga kartu lalu memakai aturan penjumlahan umum",
+      "pertanyaan": "Satu kartu diambil secara acak dari satu set lengkap 52 kartu bridge yang setimbang. Kartu bergambar adalah J, Q, dan K dari keempat jenis. Peluang terambil kartu wajik atau kartu bergambar adalah ....",
+      "jawaban_benar": "$\\frac{22}{52}$",
+      "alasan_benar": "wajik 13, bergambar 12, irisan 3 (J, Q, K wajik): (13 + 12 - 3)/52 = 22/52",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{52}$",
+          "alasan": "menjumlahkan tanpa mengurangi irisan"
+        },
+        {
+          "teks": "$\\frac{19}{52}$",
+          "alasan": "mengurangi irisan dua kali"
+        },
+        {
+          "teks": "$\\frac{12}{52}$",
+          "alasan": "hanya menghitung kartu bergambar"
+        }
+      ],
+      "pembahasan": "$P=\\frac{13}{52}+\\frac{12}{52}-\\frac{3}{52}=\\frac{22}{52}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari P(B) dari aturan penjumlahan",
+      "alasan_level": "membalik rumus P(A atau B) untuk mencari peluang salah satu kejadian",
+      "pertanyaan": "Kejadian $A$ dan $B$ tidak saling lepas dengan $P(A)=0{,}55$, $P(A \\text{ dan } B)=0{,}25$, dan $P(A \\text{ atau } B)=0{,}8$. Nilai $P(B)$ adalah ....",
+      "jawaban_benar": "$0{,}5$",
+      "alasan_benar": "P(B) = P(A atau B) - P(A) + P(A dan B) = 0,8 - 0,55 + 0,25 = 0,5",
+      "distraktor": [
+        {
+          "teks": "$0{,}25$",
+          "alasan": "hanya mengurangkan P(A) dari P(A atau B)"
+        },
+        {
+          "teks": "$0{,}3$",
+          "alasan": "mengurangkan P(A dan B) dari P(A) saja"
+        },
+        {
+          "teks": "$1{,}1$",
+          "alasan": "salah tanda: 0,8 + 0,55 - 0,25"
+        }
+      ],
+      "pembahasan": "$0{,}8=0{,}55+P(B)-0{,}25$, sehingga $P(B)=0{,}8-0{,}55+0{,}25=0{,}5$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 271,
+        "kutipan": "aturan penjumlahan untuk kejadian saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan peluang kejadian saling lepas",
+      "alasan_level": "memodelkan P(A) + P(B) = P(A atau B) menjadi persamaan lalu menyelesaikannya",
+      "pertanyaan": "Kejadian $A$ dan $B$ saling lepas. Peluang $B$ dua kali peluang $A$, dan $P(A \\text{ atau } B)=0{,}63$. Nilai $P(B)$ adalah ....",
+      "jawaban_benar": "$0{,}42$",
+      "alasan_benar": "P(A) = x, P(B) = 2x, 3x = 0,63, x = 0,21, P(B) = 0,42",
+      "distraktor": [
+        {
+          "teks": "$0{,}21$",
+          "alasan": "menjawab P(A), bukan P(B)"
+        },
+        {
+          "teks": "$0{,}315$",
+          "alasan": "membagi 0,63 dengan 2 saja"
+        },
+        {
+          "teks": "$1{,}26$",
+          "alasan": "mengalikan 0,63 dengan 2"
+        }
+      ],
+      "pembahasan": "Misalkan $P(A)=x$ sehingga $P(B)=2x$. Saling lepas: $x+2x=0{,}63$, $x=0{,}21$, $P(B)=0{,}42$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "komplemen dari gabungan dua kejadian",
+      "alasan_level": "menghitung P(A atau B) dengan irisan lalu mengambil komplemennya",
+      "pertanyaan": "Pada suatu percobaan, $P(A)=0{,}45$, $P(B)=0{,}3$, dan $P(A \\text{ dan } B)=0{,}1$. Peluang bahwa tidak terjadi $A$ maupun $B$ adalah ....",
+      "jawaban_benar": "$0{,}35$",
+      "alasan_benar": "P(A atau B) = 0,45 + 0,3 - 0,1 = 0,65; komplemennya 1 - 0,65 = 0,35",
+      "distraktor": [
+        {
+          "teks": "$0{,}65$",
+          "alasan": "berhenti pada P(A atau B), tidak mengambil komplemen"
+        },
+        {
+          "teks": "$0{,}25$",
+          "alasan": "lupa mengurangkan irisan: 1 - 0,75"
+        },
+        {
+          "teks": "$0{,}45$",
+          "alasan": "mengurangi irisan dua kali: 1 - 0,55"
+        }
+      ],
+      "pembahasan": "$P(A \\text{ atau } B)=0{,}45+0{,}3-0{,}1=0{,}65$. Tidak terjadi keduanya: $1-0{,}65=0{,}35$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua dadu kejadian yang termuat dalam kejadian lain",
+      "alasan_level": "menganalisis bahwa irisan sama dengan seluruh kejadian B sehingga gabungan = A",
+      "pertanyaan": "Dua buah dadu setimbang digulirkan bersamaan. Siswa mengamati hasil yang berupa pasangan angka kembar (dobel) ataupun yang berjumlah bilangan genap. Peluang pengamatan tersebut terpenuhi adalah ....",
+      "jawaban_benar": "$\\frac{18}{36}$",
+      "alasan_benar": "genap 18, sama 6, irisan 6 (semua dobel berjumlah genap): 18 + 6 - 6 = 18",
+      "distraktor": [
+        {
+          "teks": "$\\frac{24}{36}$",
+          "alasan": "menjumlahkan 18 + 6 tanpa mengurangi irisan"
+        },
+        {
+          "teks": "$\\frac{12}{36}$",
+          "alasan": "mengurangi irisan dua kali: 18 + 6 - 12"
+        },
+        {
+          "teks": "$\\frac{6}{36}$",
+          "alasan": "hanya menghitung kedua mata sama"
+        }
+      ],
+      "pembahasan": "Jumlah genap: 18 hasil. Kedua mata sama: 6 hasil, semuanya berjumlah genap sehingga irisan 6. $P=\\frac{18+6-6}{36}=\\frac{18}{36}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 273,
+        "kutipan": "Apa perbedaan dua kejadian yang saling lepas dan yang tidak saling lepas berdasarkan aturan penjumlahannya?"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua dadu jumlah kelipatan dan selisih mutlak",
+      "alasan_level": "mendata dua kejadian, menemukan irisan, lalu memakai aturan penjumlahan umum",
+      "pertanyaan": "Sepasang dadu setimbang dilempar sekali. Peluang bahwa jumlah kedua mata adalah kelipatan 5 atau nilai mutlak selisih kedua mata adalah 2 sama dengan ....",
+      "jawaban_benar": "$\\frac{13}{36}$",
+      "alasan_benar": "jumlah 5 atau 10: 7 hasil, selisih 2: 8 hasil, irisan (4,6),(6,4): 2 hasil; 7 + 8 - 2 = 13",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{36}$",
+          "alasan": "menjumlahkan tanpa mengurangi irisan"
+        },
+        {
+          "teks": "$\\frac{14}{36}$",
+          "alasan": "mengurangi irisan hanya 1 hasil"
+        },
+        {
+          "teks": "$\\frac{8}{36}$",
+          "alasan": "hanya menghitung selisih mutlak 2"
+        }
+      ],
+      "pembahasan": "Jumlah 5: 4 hasil, jumlah 10: 3 hasil, total 7. Selisih 2: 8 hasil. Irisan: (4,6),(6,4). $P=\\frac{7+8-2}{36}=\\frac{13}{36}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 267,
+        "kutipan": "salah satu atau kedua-duanya"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "bola bernomor kelipatan atau prima",
+      "alasan_level": "mendata dua kejadian dari 12 bola, menemukan irisan, lalu menghitung peluang gabungan",
+      "pertanyaan": "Sebuah kantong berisi 12 bola identik bernomor 1 sampai 12. Satu bola diambil secara acak. Peluang terambil bola bernomor kelipatan 3 atau bernomor prima adalah ....",
+      "jawaban_benar": "$\\frac{8}{12}$",
+      "alasan_benar": "kelipatan 3: 3,6,9,12 (4); prima: 2,3,5,7,11 (5); irisan {3}: (4 + 5 - 1)/12 = 8/12",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{12}$",
+          "alasan": "menjumlahkan tanpa mengurangi bola bernomor 3 yang terhitung dua kali"
+        },
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "mengurangi irisan 2 padahal hanya bola bernomor 3"
+        },
+        {
+          "teks": "$\\frac{5}{12}$",
+          "alasan": "hanya menghitung bola prima"
+        }
+      ],
+      "pembahasan": "Kelipatan 3: 4 bola. Prima: 5 bola. Bola bernomor 3 termasuk keduanya. $P=\\frac{4+5-1}{12}=\\frac{8}{12}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "kutipan": "tidak mungkin bagi keduanya untuk terjadi pada hasil yang sama"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tiga koin tidak saling lepas",
+      "alasan_level": "mendata ruang sampel tiga koin, menemukan irisan GGG, lalu menghitung gabungan",
+      "pertanyaan": "Tiga koin setimbang dilempar bersamaan. Peluang muncul paling sedikit dua gambar atau ketiga sisi yang muncul sama adalah ....",
+      "jawaban_benar": "$\\frac{5}{8}$",
+      "alasan_benar": "paling sedikit dua gambar 4 hasil, ketiganya sama 2 hasil (GGG, AAA), irisan GGG: 4 + 2 - 1 = 5",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{8}$",
+          "alasan": "menjumlahkan 4 + 2 tanpa mengurangi GGG"
+        },
+        {
+          "teks": "$\\frac{4}{8}$",
+          "alasan": "hanya menghitung paling sedikit dua gambar"
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "mengurangkan irisan dua kali dari penjumlahan: 4 + 2 - 3"
+        }
+      ],
+      "pembahasan": "Paling sedikit dua gambar: GGG, GGA, GAG, AGG. Ketiganya sama: GGG, AAA. $P=\\frac{4+2-1}{8}=\\frac{5}{8}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 267,
+        "kutipan": "salah satu atau kedua-duanya"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "survei dua pilihan tepat satu",
+      "alasan_level": "menganalisis irisan agar hanya menghitung siswa yang menyukai tepat satu kegiatan",
+      "pertanyaan": "Dari 40 siswa, 22 siswa menyukai basket, 18 siswa menyukai voli, dan 9 siswa menyukai keduanya. Seorang siswa dipilih secara acak. Peluang siswa tersebut menyukai tepat satu dari kedua olahraga itu adalah ....",
+      "jawaban_benar": "$\\frac{22}{40}$",
+      "alasan_benar": "hanya basket 13, hanya voli 9, jumlah 22 dari 40",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{40}$",
+          "alasan": "menghitung basket atau voli (termasuk yang menyukai keduanya)"
+        },
+        {
+          "teks": "$\\frac{9}{40}$",
+          "alasan": "hanya menghitung siswa yang menyukai keduanya"
+        },
+        {
+          "teks": "$\\frac{13}{40}$",
+          "alasan": "hanya menghitung siswa yang menyukai basket saja"
+        }
+      ],
+      "pembahasan": "Hanya basket $=22-9=13$, hanya voli $=18-9=9$. Tepat satu: $13+9=22$. $P=\\frac{22}{40}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 272,
+        "kutipan": "untuk dua kejadian tidak saling lepas"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menemukan kesalahan aturan penjumlahan",
+      "alasan_level": "menganalisis langkah yang salah dengan memeriksa irisan dua kejadian",
+      "pertanyaan": "Rudi menghitung peluang terambilnya kartu sekop atau kartu Raja dari satu set 52 kartu bridge setimbang dengan $\\frac{13}{52}+\\frac{4}{52}=\\frac{17}{52}$. Kesalahan Rudi adalah ....",
+      "jawaban_benar": "Raja sekop terhitung dua kali sehingga peluangnya perlu dikurangkan sekali",
+      "alasan_benar": "irisan 1 kartu: seharusnya 13/52 + 4/52 - 1/52 = 16/52",
+      "distraktor": [
+        {
+          "teks": "peluang kedua kejadian seharusnya dikalikan, bukan dijumlahkan",
+          "alasan": "mengira kata atau berarti perkalian"
+        },
+        {
+          "teks": "penyebutnya seharusnya 13 karena hanya ada 13 kartu sekop",
+          "alasan": "mengira ruang sampel menyusut"
+        },
+        {
+          "teks": "hasil seharusnya dikurangi $\\frac{4}{52}$ karena ada empat Raja",
+          "alasan": "salah menghitung irisan: irisannya hanya 1 kartu"
+        }
+      ],
+      "pembahasan": "Irisan sekop dan Raja adalah 1 kartu (Raja sekop). Benar: $\\frac{13+4-1}{52}=\\frac{16}{52}$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 269,
+        "kutipan": "berapa banyak kali hasil yang diharapkan akan muncul"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "frekuensi harapan kejadian gabungan",
+      "alasan_level": "menghitung peluang kejadian saling lepas lalu mengalikan dengan banyak percobaan",
+      "pertanyaan": "Sepasang dadu setimbang dilempar sebanyak 360 kali. Frekuensi harapan munculnya jumlah kedua mata 7 atau 11 adalah ... kali.",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "jumlah 7: 6 hasil, jumlah 11: 2 hasil, saling lepas: 8/36 x 360 = 80",
+      "distraktor": [
+        {
+          "teks": "$60$",
+          "alasan": "hanya menghitung jumlah 7"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "hanya menghitung jumlah 11"
+        },
+        {
+          "teks": "$100$",
+          "alasan": "menganggap jumlah 11 ada 4 hasil"
+        }
+      ],
+      "pembahasan": "Kejadian saling lepas: $P=\\frac{6+2}{36}=\\frac{8}{36}$. Harapan $=\\frac{8}{36}\\times360=80$.",
+      "stimulus": null,
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b07-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 268,
+        "kutipan": "didapatkan dengan membagi jumlah kejadian yang diinginkan dengan jumlah percobaan yang dilakukan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "frekuensi relatif kejadian gabungan",
+      "alasan_level": "menjumlahkan frekuensi tiga mata dadu lalu membagi dengan banyak percobaan",
+      "stimulus": "Hasil percobaan melempar sebuah dadu sebanyak 250 kali.\n\n| Mata dadu | Frekuensi |\n|---|---|\n| 1 | 38 |\n| 2 | 47 |\n| 3 | 45 |\n| 4 | 40 |\n| 5 | 42 |\n| 6 | 38 |",
+      "pertanyaan": "Frekuensi relatif munculnya mata dadu kurang dari 4 dalam percobaan tersebut adalah ....",
+      "jawaban_benar": "$\\frac{13}{25}$",
+      "alasan_benar": "(38 + 47 + 45)/250 = 130/250 = 13/25",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "memakai peluang teoretis 3/6, bukan hasil percobaan"
+        },
+        {
+          "teks": "$\\frac{9}{50}$",
+          "alasan": "hanya menghitung mata 3 (45/250)"
+        },
+        {
+          "teks": "$\\frac{12}{25}$",
+          "alasan": "salah jumlah frekuensi (120 bukan 130)"
+        }
+      ],
+      "pembahasan": "Total percobaan $38+47+45+40+42+38=250$. Mata kurang dari 4: $38+47+45=130$. Frekuensi relatif $=\\frac{130}{250}=\\frac{13}{25}$.",
+      "catatan": null
+    }
+  ]
+}

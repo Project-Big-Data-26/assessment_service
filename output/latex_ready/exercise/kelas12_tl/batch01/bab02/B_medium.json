@@ -1,0 +1,854 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan fungsi aljabar berpangkat pecahan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengubahan bentuk akar ke pangkat eksponen negatif pecahan, penerapan aturan rantai, dan penyederhanaan bentuk akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = \\sqrt{\\dfrac{1}{(4x + 5)^5}}$.",
+      "jawaban_benar": "$y' = -\\dfrac{10}{(4x + 5)^{7/2}}$",
+      "alasan_benar": "Bentuk diubah menjadi $y = (4x + 5)^{-5/2}$. Turunannya adalah $y' = -\\frac{5}{2}(4x + 5)^{-7/2} \\cdot 4 = -10(4x + 5)^{-7/2} = -\\frac{10}{(4x + 5)^{7/2}}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = -\\dfrac{5}{2(4x + 5)^{7/2}}$",
+          "alasan": "Lupa mengalikan dengan turunan fungsi dalam rantai, yaitu 4."
+        },
+        {
+          "teks": "$y' = -\\dfrac{10}{(4x + 5)^{3/2}}$",
+          "alasan": "Salah melakukan pengurangan eksponen, $-5/2 - 1$ dihitung menjadi $-3/2$."
+        },
+        {
+          "teks": "$y' = \\dfrac{10}{(4x + 5)^{7/2}}$",
+          "alasan": "Lupa tanda minus dari pangkat eksponen negatif saat diturunkan."
+        }
+      ],
+      "pembahasan": "Ubah bentuk akar menjadi pangkat pecahan:\n$$y = ((4x + 5)^{-5})^{1/2} = (4x + 5)^{-5/2}$$\n\nGunakan aturan rantai:\n$$y' = -\\frac{5}{2}(4x + 5)^{-\\frac{5}{2} - 1} \\cdot \\frac{d}{dx}(4x + 5)$$\n$$y' = -\\frac{5}{2}(4x + 5)^{-7/2} \\cdot 4$$\n$$y' = -10(4x + 5)^{-7/2} = -\\frac{10}{(4x + 5)^{7/2}}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 135,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan 2 x + sin x = u ^ x h dan cos x = v ^ x h , maka"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan fungsi hasil bagi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan sifat turunan hasil bagi $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$ pada gabungan fungsi trigonometri dan aljabar polinomial.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = \\dfrac{\\sin x}{x^2 + 1}$.",
+      "jawaban_benar": "$f'(x) = \\dfrac{(x^2 + 1)\\cos x - 2x\\sin x}{(x^2 + 1)^2}$",
+      "alasan_benar": "Dengan memisalkan $u(x) = \\sin x$ dan $v(x) = x^2 + 1$, diperoleh $u'(x) = \\cos x$ dan $v'(x) = 2x$. Melalui sifat turunan pembagian, $f'(x) = \\frac{u'v - uv'}{v^2} = \\frac{(x^2 + 1)\\cos x - 2x\\sin x}{(x^2 + 1)^2}$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = \\dfrac{(x^2 + 1)\\cos x + 2x\\sin x}{(x^2 + 1)^2}$",
+          "alasan": "Tertukar rumus pembagian dengan penjumlahan pada pembilang ($u'v + uv'$)."
+        },
+        {
+          "teks": "$f'(x) = \\dfrac{2x\\sin x - (x^2 + 1)\\cos x}{(x^2 + 1)^2}$",
+          "alasan": "Urutan pengurangan pada pembilang terbalik ($uv' - u'v$)."
+        },
+        {
+          "teks": "$f'(x) = \\dfrac{\\cos x}{2x}$",
+          "alasan": "Menurunkan langsung pembilang dan penyebut secara terpisah tanpa sifat hasil bagi."
+        }
+      ],
+      "pembahasan": "Gunakan aturan pembagian $f(x) = \\frac{u(x)}{v(x)}$:\n- $u(x) = \\sin x \\implies u'(x) = \\cos x$\n- $v(x) = x^2 + 1 \\implies v'(x) = 2x$\n\nRumus turunan pembagian:\n$$f'(x) = \\frac{u'(x)v(x) - u(x)v'(x)}{(v(x))^2}$$\n$$f'(x) = \\frac{(\\cos x)(x^2 + 1) - (\\sin x)(2x)}{(x^2 + 1)^2} = \\frac{(x^2 + 1)\\cos x - 2x\\sin x}{(x^2 + 1)^2}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Diberikan h ^ x h = e x 2 - 5 x . Misalkan g ^ x h = e x dan f ^ x h = x 2 - 5 x , maka h ^ x h = e x 2 - 5 x = g ^ f ^ x hh , g l^ x h = e x , dan f l^ x h = 2 x - 5 ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai turunan fungsi eksponensial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aturan perkalian dan turunan eksponensial natural berbasis rantai, kemudian mengevaluasi nilai pada titik tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = (3x - 2)e^{2x}$. Tentukan nilai dari $f'(1)$.",
+      "jawaban_benar": "$5e^2$",
+      "alasan_benar": "Turunan $f'(x) = 3e^{2x} + (3x - 2)(2e^{2x}) = (6x - 1)e^{2x}$. Untuk $x = 1$, diperoleh $f'(1) = (6(1) - 1)e^{2(1)} = 5e^2$.",
+      "distraktor": [
+        {
+          "teks": "$3e^2$",
+          "alasan": "Hanya menurunkan bagian aljabar $(3x - 2)$ dan tidak menerapkan aturan perkalian."
+        },
+        {
+          "teks": "$4e^2$",
+          "alasan": "Lupa mengalikan turunan pangkat dari $e^{2x}$ (mengabaikan faktor 2 pada turunan rantai)."
+        },
+        {
+          "teks": "$7e^2$",
+          "alasan": "Salah melakukan operasi aljabar di dalam tanda kurung menjadi $(6x + 1)e^{2x}$."
+        }
+      ],
+      "pembahasan": "Gunakan aturan perkalian $f(x) = u(x)v(x)$:\n- $u(x) = 3x - 2 \\implies u'(x) = 3$\n- $v(x) = e^{2x} \\implies v'(x) = 2e^{2x}$ (menggunakan aturan rantai)\n\nTurunan pertama:\n$$f'(x) = u'(x)v(x) + u(x)v'(x)$$\n$$f'(x) = 3e^{2x} + (3x - 2)(2e^{2x}) = e^{2x}(3 + 6x - 4) = (6x - 1)e^{2x}$$\n\nSubstitusi nilai $x = 1$:\n$$f'(1) = (6(1) - 1)e^{2(1)} = 5e^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 126,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Perhatikan bahwa 2 x merupakan turunan dari ^1 + x 2h . Misalkan g ^ x h = 1 + x 2 , maka bentuk f ^ x h = ^1 + x 2h k menjadi = k f ^ x h ^ g ^ x hh"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aturan rantai fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aturan rantai bertingkat pada fungsi trigonometri berpangkat yang memiliki fungsi sudut linier.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = \\sin^3(4x)$.",
+      "jawaban_benar": "$f'(x) = 12\\sin^2(4x)\\cos(4x)$",
+      "alasan_benar": "Berdasarkan aturan rantai, $f'(x) = 3\\sin^2(4x) \\cdot \\frac{d}{dx}(\\sin(4x)) = 3\\sin^2(4x) \\cdot (4\\cos(4x)) = 12\\sin^2(4x)\\cos(4x)$.",
+      "distraktor": [
+        {
+          "teks": "$f'(x) = 3\\sin^2(4x)\\cos(4x)$",
+          "alasan": "Lupa mengalikan dengan turunan sudut dalamnya yaitu 4."
+        },
+        {
+          "teks": "$f'(x) = 12\\sin^2(4x)$",
+          "alasan": "Lupa menuliskan turunan dari fungsi sinus yaitu $\\cos(4x)$."
+        },
+        {
+          "teks": "$f'(x) = -12\\sin^2(4x)\\cos(4x)$",
+          "alasan": "Tertukar tanda turunan sinus dengan turunan kosinus (mengira turunan sinus bernilai negatif)."
+        }
+      ],
+      "pembahasan": "Fungsi berbentuk komposisi $f(x) = (u(x))^3$ dengan $u(x) = \\sin(4x)$.\n\nLangkah-langkah dengan aturan rantai:\n1) Turunkan bentuk pangkat terluar:\n$$\\frac{d}{du}(u^3) = 3u^2 = 3\\sin^2(4x)$$\n\n2) Turunkan fungsi trigonometri beserta sudutnya:\n$$\\frac{du}{dx} = \\frac{d}{dx}(\\sin(4x)) = \\cos(4x) \\cdot 4 = 4\\cos(4x)$$\n\n3) Kalikan kedua turunan tersebut:\n$$f'(x) = 3\\sin^2(4x) \\cdot 4\\cos(4x) = 12\\sin^2(4x)\\cos(4x)$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-2a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan luas permukaan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemodelan laju perubahan terkait turunan fungsi komposisi terhadap waktu dengan tiga langkah pengerjaan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jari-jari sebuah bola bertambah panjang dengan laju $5\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $40\\text{ cm}$. Tentukan laju bertambahnya luas permukaan bola.",
+      "jawaban_benar": "$1.600\\pi\\text{ cm}^2/\\text{detik}$",
+      "alasan_benar": "Luas permukaan bola dinyatakan dengan $L = 4\\pi r^2$. Dengan aturan rantai terhadap waktu $t$, laju perubahannya adalah $\\frac{dL}{dt} = 8\\pi r \\frac{dr}{dt}$. Dengan mensubstitusikan $r = 40\\text{ cm}$ dan $\\frac{dr}{dt} = 5\\text{ cm/detik}$, didapatkan $\\frac{dL}{dt} = 8\\pi(40)(5) = 1.600\\pi\\text{ cm}^2/\\text{detik}$.",
+      "distraktor": [
+        {
+          "teks": "$800\\pi\\text{ cm}^2/\\text{detik}$",
+          "alasan": "Lupa mengalikan turunan pangkat 2 pada rumus luas sehingga menggunakan $4\\pi r \\frac{dr}{dt}$."
+        },
+        {
+          "teks": "$3.200\\pi\\text{ cm}^2/\\text{detik}$",
+          "alasan": "Menggunakan nilai diameter $80\\text{ cm}$ sebagai ganti jari-jari $40\\text{ cm}$."
+        },
+        {
+          "teks": "$1.600\\text{ cm}^2/\\text{detik}$",
+          "alasan": "Lupa mengikutsertakan konstanta $\\pi$ pada hasil akhir perhitungan."
+        }
+      ],
+      "pembahasan": "Rumus luas permukaan bola adalah $L(r) = 4\\pi r^2$.\nBerdasarkan aturan rantai turunan terhadap waktu $t$:\n$$\\frac{dL}{dt} = \\frac{dL}{dr} \\cdot \\frac{dr}{dt} = 8\\pi r \\cdot \\frac{dr}{dt}$$\nDiketahui $r = 40\\text{ cm}$ dan $\\frac{dr}{dt} = 5\\text{ cm/detik}$.\n$$\\frac{dL}{dt} = 8\\pi(40)(5) = 1.600\\pi\\text{ cm}^2/\\text{detik}$$\nJadi, laju bertambahnya luas permukaan bola adalah $1.600\\pi\\text{ cm}^2/\\text{detik}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan volume",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menerapkan aturan rantai untuk menghitung laju perubahan volume terhadap waktu dalam tiga langkah matematis.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jari-jari sebuah bola bertambah panjang dengan laju $4\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $15\\text{ cm}$. Tentukan laju bertambahnya volume bola.",
+      "jawaban_benar": "$3.600\\pi\\text{ cm}^3/\\text{detik}$",
+      "alasan_benar": "Volume bola dinyatakan dengan $V = \\frac{4}{3}\\pi r^3$. Laju perubahan volume terhadap waktu adalah $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$. Dengan mensubstitusi $r = 15$ dan $\\frac{dr}{dt} = 4$, diperoleh $\\frac{dV}{dt} = 4\\pi (15)^2 (4) = 4\\pi (225)(4) = 3.600\\pi\\text{ cm}^3/\\text{detik}$.",
+      "distraktor": [
+        {
+          "teks": "$1.200\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Keliru membagi hasil akhir dengan 3 karena mengira koefisien $\\frac{4}{3}$ belum hilang saat menurunkan $r^3$."
+        },
+        {
+          "teks": "$900\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Hanya menghitung $\\pi r^2 \\frac{dr}{dt}$ dan melupakan faktor pengali 4."
+        },
+        {
+          "teks": "$3.600\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Lupa menuliskan konstanta $\\pi$ pada hasil akhir."
+        }
+      ],
+      "pembahasan": "Rumus volume bola adalah $V(r) = \\frac{4}{3}\\pi r^3$.\nTurunan volume terhadap waktu $t$ menggunakan aturan rantai:\n$$\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt} = 4\\pi r^2 \\cdot \\frac{dr}{dt}$$\nSubstitusikan $r = 15\\text{ cm}$ dan $\\frac{dr}{dt} = 4\\text{ cm/detik}$:\n$$\\frac{dV}{dt} = 4\\pi (15)^2 (4) = 4\\pi (225)(4) = 3.600\\pi\\text{ cm}^3/\\text{detik}$$\nJadi, laju bertambahnya volume bola adalah $3.600\\pi\\text{ cm}^3/\\text{detik}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan fungsi aljabar irasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengubahan bentuk akar ke pangkat pecahan negatif sebelum menerapkan aturan rantai turunan fungsi aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = \\sqrt{\\dfrac{1}{(5x - 4)^7}}$.",
+      "jawaban_benar": "$y' = -\\dfrac{35}{2(5x - 4)^{9/2}}$",
+      "alasan_benar": "Fungsi dapat diubah menjadi $y = (5x - 4)^{-7/2}$. Menggunakan aturan rantai, $y' = -\\frac{7}{2}(5x - 4)^{-9/2} \\cdot \\frac{d}{dx}(5x - 4) = -\\frac{7}{2}(5x - 4)^{-9/2} \\cdot 5 = -\\frac{35}{2(5x - 4)^{9/2}}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = -\\dfrac{7}{2(5x - 4)^{9/2}}$",
+          "alasan": "Lupa mengalikan dengan turunan fungsi bagian dalam yaitu 5."
+        },
+        {
+          "teks": "$y' = \\dfrac{35}{2(5x - 4)^{9/2}}$",
+          "alasan": "Salah tanda minus pada penurunan pangkat negatif."
+        },
+        {
+          "teks": "$y' = -\\dfrac{35}{(5x - 4)^{9/2}}$",
+          "alasan": "Lupa membagi dengan 2 dari penyebut pangkat pecahan $-\\frac{7}{2}$."
+        }
+      ],
+      "pembahasan": "Ubah bentuk fungsi ke bentuk eksponen:\n$$y = \\left((5x - 4)^{-7}\\right)^{1/2} = (5x - 4)^{-7/2}$$\nTerapkan aturan rantai turunan:\n$$y' = -\\frac{7}{2}(5x - 4)^{-\\frac{7}{2} - 1} \\cdot \\frac{d}{dx}(5x - 4)$$\n$$y' = -\\frac{7}{2}(5x - 4)^{-9/2} \\cdot 5 = -\\frac{35}{2(5x - 4)^{9/2}}$$\nJadi, turunan pertamanya adalah $y' = -\\dfrac{35}{2(5x - 4)^{9/2}}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 140,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari h ( x ) = ef ( x ) adalah"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik stasioner fungsi eksponensial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis turunan fungsi eksponensial berbasis aturan rantai lalu menyelesaikan persamaan nilai nol turunan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = e^{x^2 - 6x + 8}$. Nilai $x$ yang memenuhi $f'(x) = 0$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Turunan fungsi adalah $f'(x) = (2x - 6)e^{x^2 - 6x + 8}$. Karena $e^{x^2 - 6x + 8} > 0$ untuk setiap $x \\in \\mathbb{R}$, maka $f'(x) = 0$ dipenuhi saat $2x - 6 = 0$, yaitu $x = 3$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Keliru mencari pembuat nol dari fungsi pangkat $x^2 - 6x + 8 = (x - 2)(x - 4) = 0$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Keliru mengambil akar pembuat nol lainnya dari fungsi pangkat eksponen."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Salah menyelesaikan persamaan linear $2x - 6 = 0$ menjadi $x = 6$."
+        }
+      ],
+      "pembahasan": "Diberikan $f(x) = e^{x^2 - 6x + 8}$.\nBerdasarkan aturan turunan fungsi eksponensial $h(x) = e^{g(x)} \\implies h'(x) = g'(x)e^{g(x)}$:\n$$f'(x) = (2x - 6)e^{x^2 - 6x + 8}$$\nSyarat $f'(x) = 0$:\n$$(2x - 6)e^{x^2 - 6x + 8} = 0$$\nKarena nilai $e^{x^2 - 6x + 8} \\neq 0$ untuk seluruh $x$ bilangan real, maka:\n$$2x - 6 = 0 \\implies 2x = 6 \\implies x = 3$$\nJadi, nilai $x$ yang memenuhi adalah $3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-2b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan volume bola",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan rantai laju berkaitan pada rumus volume bola.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jari-jari sebuah bola bertambah panjang dengan laju $3\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $20\\text{ cm}$. Tentukan laju bertambahnya volume bola.",
+      "jawaban_benar": "$4.800\\pi\\text{ cm}^3/\\text{detik}$",
+      "alasan_benar": "Volume bola adalah $V = \\frac{4}{3}\\pi r^3$. Berdasarkan aturan rantai, $\\frac{dV}{dt} = 4\\pi r^2 \\frac{dr}{dt}$. Dengan $r = 20\\text{ cm}$ dan $\\frac{dr}{dt} = 3\\text{ cm/detik}$, diperoleh $\\frac{dV}{dt} = 4\\pi (20)^2 (3) = 4\\pi (400)(3) = 4.800\\pi\\text{ cm}^3/\\text{detik}$.",
+      "distraktor": [
+        {
+          "teks": "$1.600\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Siswa lupa mengalikan dengan laju pertambahan jari-jari $\\frac{dr}{dt} = 3$."
+        },
+        {
+          "teks": "$2.400\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Siswa salah menggunakan rumus turunan volume menjadi $2\\pi r^2 \\frac{dr}{dt}$."
+        },
+        {
+          "teks": "$14.400\\pi\\text{ cm}^3/\\text{detik}$",
+          "alasan": "Siswa tidak membagi dengan 3 saat menurunkan formula volume (turunan $r^3$ tidak dikalikan $\\frac{4}{3}$, melainkan $4 \\times 3$)."
+        }
+      ],
+      "pembahasan": "Rumus volume bola adalah $V = \\frac{4}{3}\\pi r^3$.\nTurunan volume terhadap waktu dengan aturan rantai:\n$$\\frac{dV}{dt} = \\frac{dV}{dr} \\cdot \\frac{dr}{dt} = 4\\pi r^2 \\frac{dr}{dt}$$\nSubstitusikan nilai $r = 20\\text{ cm}$ dan $\\frac{dr}{dt} = 3\\text{ cm/detik}$:\n$$\\frac{dV}{dt} = 4\\pi (20)^2 (3) = 4\\pi (400)(3) = 4.800\\pi\\text{ cm}^3/\\text{detik}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-2a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "laju perubahan luas permukaan bola",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan rantai turunan pada laju pertambahan luas permukaan bola berkaitan waktu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jari-jari sebuah bola bertambah panjang dengan laju $6\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $25\\text{ cm}$. Tentukan laju bertambahnya luas permukaan bola.",
+      "jawaban_benar": "$1.200\\pi\\text{ cm}^2/\\text{detik}$",
+      "alasan_benar": "Luas permukaan bola $L = 4\\pi r^2$. Laju perubahan luas terhadap waktu adalah $\\frac{dL}{dt} = 8\\pi r \\frac{dr}{dt}$. Untuk $r = 25\\text{ cm}$ dan $\\frac{dr}{dt} = 6\\text{ cm/detik}$, diperoleh $\\frac{dL}{dt} = 8\\pi(25)(6) = 1.200\\pi\\text{ cm}^2/\\text{detik}$.",
+      "distraktor": [
+        {
+          "teks": "$600\\pi\\text{ cm}^2/\\text{detik}$",
+          "alasan": "Siswa menurunkan luas bola menjadi $4\\pi r \\frac{dr}{dt}$ (koefisien 2 tidak dikalikan dengan 4)."
+        },
+        {
+          "teks": "$200\\pi\\text{ cm}^2/\\text{detik}$",
+          "alasan": "Siswa lupa mengalikan dengan laju perubahan $\\frac{dr}{dt} = 6$."
+        },
+        {
+          "teks": "$2.400\\pi\\text{ cm}^2/\\text{detik}$",
+          "alasan": "Siswa salah mengalikan konstanta atau mengalikan dua kali turunan."
+        }
+      ],
+      "pembahasan": "Rumus luas permukaan bola adalah $L = 4\\pi r^2$.\nTurunan luas terhadap waktu menggunakan aturan rantai:\n$$\\frac{dL}{dt} = 8\\pi r \\frac{dr}{dt}$$\nSubstitusikan $r = 25\\text{ cm}$ dan $\\frac{dr}{dt} = 6\\text{ cm/detik}$:\n$$\\frac{dL}{dt} = 8\\pi(25)(6) = 1.200\\pi\\text{ cm}^2/\\text{detik}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ^ x h = sin x dan g ^ x h = cos x adalah fungsi-fungsi yang kontinu di R , maka f l^ x h = cos x dan g l^ x h = - sin x ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "turunan penyederhanaan trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan aturan pembagian turunan trigonometri serta penyederhanaan menggunakan identitas Pythagoras trigonometri.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $f(x) = \\dfrac{\\cos x}{1 + \\sin x}$.",
+      "jawaban_benar": "$-\\dfrac{1}{1 + \\sin x}$",
+      "alasan_benar": "Menggunakan aturan turunan hasil bagi $\\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2}$ dengan $u = \\cos x$ dan $v = 1 + \\sin x$: $u' = -\\sin x$, $v' = \\cos x$. Maka pembilangnya adalah $-\\sin x(1 + \\sin x) - \\cos x(\\cos x) = -\\sin x - (\\sin^2 x + \\cos^2 x) = -(\\sin x + 1)$. Dibagi dengan $(1 + \\sin x)^2$, diperoleh $-\\frac{1}{1 + \\sin x}$.",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{1}{1 + \\sin x}$",
+          "alasan": "Siswa salah tanda negatif saat menurunkan $\\cos x$ menjadi $\\sin x$."
+        },
+        {
+          "teks": "$-\\dfrac{\\cos 2x}{(1 + \\sin x)^2}$",
+          "alasan": "Siswa salah mengoperasikan pembilang menjadi $-\\sin x - \\sin^2 x - \\cos^2 x$ tanpa mengenali identitas $\\sin^2 x + \\cos^2 x = 1$."
+        },
+        {
+          "teks": "$-\\dfrac{1}{(1 + \\sin x)^2}$",
+          "alasan": "Siswa langsung mencoret $(1 + \\sin x)$ di pembilang tanpa menyederhanakan pangkat penyebut dengan benar."
+        }
+      ],
+      "pembahasan": "Misalkan $u(x) = \\cos x \\implies u'(x) = -\\sin x$ dan $v(x) = 1 + \\sin x \\implies v'(x) = \\cos x$.\nBerdasarkan aturan turunan hasil bagi:\n$$f'(x) = \\frac{u'(x)v(x) - u(x)v'(x)}{(v(x))^2}$$\n$$f'(x) = \\frac{-\\sin x(1 + \\sin x) - \\cos x(\\cos x)}{(1 + \\sin x)^2}$$\n$$f'(x) = \\frac{-\\sin x - \\sin^2 x - \\cos^2 x}{(1 + \\sin x)^2}$$\n$$f'(x) = \\frac{-\\sin x - (\\sin^2 x + \\cos^2 x)}{(1 + \\sin x)^2}$$\nKarena $\\sin^2 x + \\cos^2 x = 1$:\n$$f'(x) = \\frac{-\\sin x - 1}{(1 + \\sin x)^2} = \\frac{-(1 + \\sin x)}{(1 + \\sin x)^2} = -\\frac{1}{1 + \\sin x}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 139,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari f ^ x h = e x adalah e x ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "aplikasi turunan eksponensial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan aturan perkalian dan rantai pada fungsi eksponensial untuk menyelesaikan masalah pembuat nol turunan pertama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = t^2 e^{-t}$ untuk $t \\ge 0$. Waktu $t > 0$ saat kecepatan partikel bernilai nol adalah ....",
+      "jawaban_benar": "$t = 2$",
+      "alasan_benar": "Kecepatan merupakan turunan pertama dari fungsi posisi $v(t) = s'(t)$. Menggunakan aturan perkalian: $u = t^2 \\implies u' = 2t$, $v = e^{-t} \\implies v' = -e^{-t}$. Sehingga $v(t) = 2t e^{-t} - t^2 e^{-t} = t(2 - t)e^{-t}$. Karena $e^{-t} > 0$ untuk setiap nilai $t$ dan disyaratkan $t > 0$, maka $2 - t = 0 \\implies t = 2$.",
+      "distraktor": [
+        {
+          "teks": "$t = 1$",
+          "alasan": "Siswa salah menurunkan $t^2$ menjadi $t$ sehingga menghasilkan $t(1 - t)e^{-t} = 0$."
+        },
+        {
+          "teks": "$t = 4$",
+          "alasan": "Siswa mengira turunan menghasilkan $t(4 - t)$ karena mengalikan pangkat dengan 2."
+        },
+        {
+          "teks": "$t = \\frac{1}{2}$",
+          "alasan": "Siswa salah menyamakan $2t - t^2 = 0$ menjadi pembagian $t = \\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Kecepatan partikel adalah turunan pertama dari posisi:\n$$v(t) = s'(t)$$\nMisalkan $u(t) = t^2 \\implies u'(t) = 2t$ dan $w(t) = e^{-t} \\implies w'(t) = -e^{-t}$.\nMenggunakan aturan perkalian:\n$$s'(t) = u'(t)w(t) + u(t)w'(t)$$\n$$s'(t) = 2t e^{-t} + t^2(-e^{-t}) = (2t - t^2)e^{-t} = t(2 - t)e^{-t}$$\nKecepatan sama dengan nol saat $s'(t) = 0$:\n$$t(2 - t)e^{-t} = 0$$\nKarena $e^{-t} > 0$ untuk semua bilangan real $t$, pembuat nolnya adalah $t = 0$ atau $2 - t = 0 \\implies t = 2$.\nKarena diminta waktu $t > 0$, maka nilai yang memenuhi adalah $t = 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "aturan rantai fungsi eksponensial akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan turunan eksponensial alami digabung dengan aturan rantai turunan fungsi bentuk akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{6x - 5}}$.",
+      "jawaban_benar": "$y' = \\dfrac{3e^{\\sqrt{6x - 5}}}{\\sqrt{6x - 5}}$",
+      "alasan_benar": "Dengan memisalkan $u = \\sqrt{6x - 5} = (6x - 5)^{1/2}$, maka $u' = \\frac{1}{2}(6x - 5)^{-1/2} \\cdot 6 = \\frac{3}{\\sqrt{6x - 5}}$. Sehingga $y' = e^u \\cdot u' = \\frac{3e^{\\sqrt{6x - 5}}}{\\sqrt{6x - 5}}$.",
+      "distraktor": [
+        {
+          "teks": "$y' = \\dfrac{6e^{\\sqrt{6x - 5}}}{\\sqrt{6x - 5}}$",
+          "alasan": "Siswa lupa mengalikan koefisien $\\frac{1}{2}$ saat menurunkan bentuk akar."
+        },
+        {
+          "teks": "$y' = \\dfrac{e^{\\sqrt{6x - 5}}}{2\\sqrt{6x - 5}}$",
+          "alasan": "Siswa lupa mengalikan dengan turunan fungsi dalam $(6x - 5)' = 6$."
+        },
+        {
+          "teks": "$y' = 3\\sqrt{6x - 5}e^{\\sqrt{6x - 5}}$",
+          "alasan": "Siswa menempatkan suku turunan akar di pembilang bukan di penyebut."
+        }
+      ],
+      "pembahasan": "Misalkan $u = \\sqrt{6x - 5}$.\nTurunan $u$ terhadap $x$ adalah:\n$$u' = \\frac{1}{2\\sqrt{6x - 5}} \\cdot \\frac{\\mathrm{d}}{\\mathrm{d}x}(6x - 5) = \\frac{6}{2\\sqrt{6x - 5}} = \\frac{3}{\\sqrt{6x - 5}}$$\n\nBerdasarkan sifat turunan $y = e^{u(x)}$, diperoleh:\n$$y' = e^{u(x)} \\cdot u'(x) = e^{\\sqrt{6x - 5}} \\cdot \\frac{3}{\\sqrt{6x - 5}} = \\frac{3e^{\\sqrt{6x - 5}}}{\\sqrt{6x - 5}}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan fungsi f kontinu sehingga berlaku STT 2: f ( x ) = tan x , maka f l ( x ) = sec2 x ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai turunan fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan aturan perkalian aljabar dan trigonometri kemudian mengevaluasi nilainya pada absis tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = (2x - 1)\\tan x$. Nilai dari $f'(\\pi)$ adalah ....",
+      "jawaban_benar": "$2\\pi - 1$",
+      "alasan_benar": "$f'(x) = 2\\tan x + (2x - 1)\\sec^2 x$. Untuk $x = \\pi$, $\\tan\\pi = 0$ dan $\\sec\\pi = -1 \\implies \\sec^2\\pi = 1$. Jadi $f'(\\pi) = 2(0) + (2\\pi - 1)(1) = 2\\pi - 1$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa mengabaikan suku kedua dan hanya menghitung $u'v = 2\\tan(\\pi)$ yang disalahartikan atau sebaliknya."
+        },
+        {
+          "teks": "$1 - 2\\pi$",
+          "alasan": "Siswa menganggap $\\sec^2\\pi = -1$ sehingga tanda suku berubah menjadi $-(2\\pi - 1) = 1 - 2\\pi$."
+        },
+        {
+          "teks": "$2\\pi + 1$",
+          "alasan": "Siswa melakukan kesalahan tanda pada faktor aljabar $(2x - 1)$ menjadi $(2x + 1)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan $f(x)$ menggunakan aturan perkalian $u \\cdot v$:\nMisalkan $u(x) = 2x - 1 \\implies u'(x) = 2$\n$v(x) = \\tan x \\implies v'(x) = \\sec^2 x$\n\nMaka:\n$$f'(x) = u'(x)v(x) + u(x)v'(x) = 2\\tan x + (2x - 1)\\sec^2 x$$\n\nLangkah 2: Menghitung nilai $f'(\\pi)$:\nSubstitusi $x = \\pi$:\n$$\\tan\\pi = 0$$\n$$\\sec\\pi = \\frac{1}{\\cos\\pi} = \\frac{1}{-1} = -1 \\implies \\sec^2\\pi = (-1)^2 = 1$$\n\nLangkah 3: Evaluasi hasil akhir:\n$$f'(\\pi) = 2(0) + (2\\pi - 1)(1) = 2\\pi - 1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 140,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Turunan dari h ( x ) = e f ( x ) adalah"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "garis singgung kurva eksponensial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan turunan pertama untuk mencari gradien garis singgung kurva eksponensial di titik berabsis tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Gradien garis singgung kurva $f(x) = e^{2x^2 - 4x + 1}$ di titik yang berabsis $x = 2$ adalah ....",
+      "jawaban_benar": "$4e$",
+      "alasan_benar": "$f'(x) = (4x - 4)e^{2x^2 - 4x + 1}$. Untuk $x = 2$, gradien $m = f'(2) = (4(2) - 4)e^{2(4) - 4(2) + 1} = 4e^1 = 4e$.",
+      "distraktor": [
+        {
+          "teks": "$e$",
+          "alasan": "Siswa hanya menghitung nilai fungsi $f(2)$ tanpa menurunkan fungsi."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa hanya mengambil turunan pangkat $(4x - 4)$ saat $x = 2$ dan melupakan faktor eksponensialnya."
+        },
+        {
+          "teks": "$8e$",
+          "alasan": "Siswa salah menurunkan $2x^2$ menjadi $4x$ lalu lupa mengurangi turunan $-4x$ sehingga menghitung $4(2)e = 8e$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan pertama kurva $f(x)$ menggunakan aturan turunan $e^{u(x)}$:\nMisalkan $u(x) = 2x^2 - 4x + 1$, sehingga $u'(x) = 4x - 4$.\n$$f'(x) = u'(x)e^{u(x)} = (4x - 4)e^{2x^2 - 4x + 1}$$\n\nLangkah 2: Menghitung nilai gradien $m = f'(2)$:\nSubstitusi $x = 2$:\n$$m = f'(2) = (4(2) - 4)e^{2(2)^2 - 4(2) + 1}$$\n$$m = (8 - 4)e^{8 - 8 + 1} = 4e^1 = 4e$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 142,
+        "bagian": "Ayo Mencoba 2.5",
+        "nomor": "3",
+        "teks": "Dengan menggunakan Aturan Rantai dan Sifat Turunan a x pada y = 4 x 2 + 5 , diperoleh",
+        "jawaban": "y' = 2x(4^{x^2+5})\\ln 4",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan eksponensial aturan rantai",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan aturan rantai yang digabungkan dengan sifat turunan fungsi eksponensial basis bilangan real positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi eksponensial $y = 6^{2x^3 - 5}$.",
+      "jawaban_benar": "$y' = 6x^2 \\cdot 6^{2x^3 - 5} \\ln 6$",
+      "alasan_benar": "Turunan dari $a^{g(x)}$ adalah $g'(x) \\cdot a^{g(x)} \\ln a$. Dengan $g(x) = 2x^3 - 5$, maka $g'(x) = 6x^2$, sehingga $y' = 6x^2 \\cdot 6^{2x^3 - 5} \\ln 6$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 6x^2 \\cdot 6^{2x^3 - 5}$",
+          "alasan": "Siswa lupa mengalikan dengan faktor $\\ln a$ pada turunan fungsi eksponensial non-natural."
+        },
+        {
+          "teks": "$y' = 2x^2 \\cdot 6^{2x^3 - 5} \\ln 6$",
+          "alasan": "Siswa salah menurunkan eksponen $2x^3 - 5$ menjadi $2x^2$, bukan $6x^2$."
+        },
+        {
+          "teks": "$y' = (2x^3 - 5) \\cdot 6^{2x^3 - 6} \\ln 6$",
+          "alasan": "Siswa keliru menerapkan aturan pangkat aljabar biasa pada fungsi eksponensial."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan turunan dari fungsi pangkat $g(x) = 2x^3 - 5$.\n$$g'(x) = 2(3x^2) = 6x^2$$\n\nLangkah 2: Menggunakan aturan turunan eksponensial $y = a^{g(x)} \\implies y' = g'(x) \\cdot a^{g(x)} \\ln a$.\n$$y' = 6x^2 \\cdot 6^{2x^3 - 5} \\ln 6$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 134,
+        "bagian": "Contoh Soal 2.6",
+        "nomor": "2",
+        "teks": "y = 2 sin x tan x .",
+        "jawaban": "y' = 2(sin x + tan x sec x)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan perkalian fungsi trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan aturan perkalian dua fungsi trigonometri dan penyederhanaan menggunakan identitas trigonometri dasar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi trigonometri $y = 5\\cos x \\cot x$.",
+      "jawaban_benar": "$y' = -5(\\cos x + \\cot x \\csc x)$",
+      "alasan_benar": "Dengan aturan perkalian $(uv)' = u'v + uv'$, turunan dari $5\\cos x \\cot x$ adalah $5(-\\sin x \\cot x - \\cos x \\csc^2 x)$. Karena $\\sin x \\cot x = \\cos x$ dan $\\cos x \\csc^2 x = \\cot x \\csc x$, maka hasilnya $-5(\\cos x + \\cot x \\csc x)$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 5(\\cos x - \\cot x \\csc x)$",
+          "alasan": "Siswa salah mengingat turunan $\\cos x$ sebagai $\\sin x$ positif."
+        },
+        {
+          "teks": "$y' = -5(\\cos x - \\cot x \\csc x)$",
+          "alasan": "Siswa salah mengingat turunan $\\cot x$ sebagai $\\csc^2 x$ positif."
+        },
+        {
+          "teks": "$y' = 5\\sin x \\csc^2 x$",
+          "alasan": "Siswa menurunkan fungsi secara terpisah tanpa menggunakan kaidah turunan hasil kali."
+        }
+      ],
+      "pembahasan": "Langkah 1: Misalkan $u(x) = \\cos x$ dan $v(x) = \\cot x$.\nTurunannya masing-masing:\n$$u'(x) = -\\sin x$$\n$$v'(x) = -\\csc^2 x$$\n\nLangkah 2: Gunakan aturan turunan perkalian $y' = 5(u'v + uv')$.\n$$y' = 5\\left[(-\\sin x)(\\cot x) + (\\cos x)(-\\csc^2 x)\\right]$$\n$$y' = -5\\left(\\sin x \\cot x + \\cos x \\csc^2 x\\right)$$\n\nLangkah 3: Sederhanakan menggunakan identitas trigonometri:\n$$\\sin x \\cot x = \\sin x \\cdot \\frac{\\cos x}{\\sin x} = \\cos x$$\n$$\\cos x \\csc^2 x = \\cos x \\cdot \\frac{1}{\\sin^2 x} = \\frac{\\cos x}{\\sin x} \\cdot \\frac{1}{\\sin x} = \\cot x \\csc x$$\nDiperoleh:\n$$y' = -5(\\cos x + \\cot x \\csc x)$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 133,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan f ^ x h = sin x dan g ^ x h = cos x adalah fungsi-fungsi yang kontinu di R , maka f l^ x h = cos x dan g l^ x h = - sin x ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai turunan pembagian trigonometri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan aturan hasil bagi pada fungsi trigonometri, penyederhanaan dengan identitas dasar, dan substitusi nilai variabel.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\dfrac{\\cos x}{2 - \\sin x}$. Nilai dari $f'(0)$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Turunan pertama adalah $f'(x) = \\frac{-\\sin x(2 - \\sin x) - \\cos x(-\\cos x)}{(2 - \\sin x)^2} = \\frac{1 - 2\\sin x}{(2 - \\sin x)^2}$. Substitusi $x = 0$ menghasilkan $f'(0) = \\frac{1 - 0}{(2 - 0)^2} = \\frac{1}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$-\\frac{1}{4}$",
+          "alasan": "Siswa tertukar tanda dalam rumus pembagian $(u'v + uv')$ bukan $(u'v - uv')$, sehingga pembilang menjadi $\\sin^2 x - \\cos^2 x - 2\\sin x$, menghasilkan $-\\frac{1}{4}$."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Siswa lupa mengkuadratkan penyebut pada rumus turunan hasil bagi sehingga membagi dengan $2$ bukan $4$."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Siswa langsung menurunkan pembilang menjadi $-\\sin 0 = 0$ dan menyimpulkan nilai turunan sama dengan nol."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan komponen aturan hasil bagi $f(x) = \\frac{u}{v}$.\n$$u = \\cos x \\implies u' = -\\sin x$$\n$$v = 2 - \\sin x \\implies v' = -\\cos x$$\n\nLangkah 2: Menerapkan aturan hasil bagi $f'(x) = \\frac{u'v - uv'}{v^2}$.\n$$f'(x) = \\frac{-\\sin x(2 - \\sin x) - \\cos x(-\\cos x)}{(2 - \\sin x)^2}$$\n$$f'(x) = \\frac{-2\\sin x + \\sin^2 x + \\cos^2 x}{(2 - \\sin x)^2}$$\nKarena $\\sin^2 x + \\cos^2 x = 1$, maka:\n$$f'(x) = \\frac{1 - 2\\sin x}{(2 - \\sin x)^2}$$\n\nLangkah 3: Menghitung nilai $f'(0)$.\n$$f'(0) = \\frac{1 - 2\\sin(0)}{(2 - \\sin(0))^2} = \\frac{1 - 0}{(2 - 0)^2} = \\frac{1}{4}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-019",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b02-p0142-latihan-soal-sifat-sifat-turunan-fungsi-1a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "turunan perkalian aljabar dan cosinus",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pemisahan faktor fungsi, penentuan masing-masing turunan, dan penerapan aturan perkalian fungsi dalam tiga langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan turunan pertama dari fungsi $y = (8x^2 + 7)\\cos x$.",
+      "jawaban_benar": "$y' = 16x\\cos x - (8x^2 + 7)\\sin x$",
+      "alasan_benar": "Menggunakan aturan perkalian fungsi $y = u(x)v(x)$ dengan $u(x) = 8x^2 + 7$ dan $v(x) = \\cos x$, maka $u'(x) = 16x$ dan $v'(x) = -\\sin x$, sehingga $y' = u'v + uv' = 16x\\cos x - (8x^2 + 7)\\sin x$.",
+      "distraktor": [
+        {
+          "teks": "$y' = 16x\\cos x + (8x^2 + 7)\\sin x$",
+          "alasan": "Lupa tanda negatif saat menurunkan fungsi cosinus sehingga menganggap turunan $\\cos x$ adalah $\\sin x$."
+        },
+        {
+          "teks": "$y' = -16x\\sin x$",
+          "alasan": "Mengalikan langsung turunan kedua faktor $u'(x) \\cdot v'(x)$ tanpa menggunakan sifat turunan perkalian."
+        },
+        {
+          "teks": "$y' = 16x\\sin x + (8x^2 + 7)\\cos x$",
+          "alasan": "Tertukar memasangkan fungsi dan turunannya pada aturan perkalian."
+        }
+      ],
+      "pembahasan": "Misalkan fungsi dinyatakan sebagai perkalian dua fungsi $y = u(x)v(x)$, dengan:\n- $u(x) = 8x^2 + 7 \\implies u'(x) = 16x$\n- $v(x) = \\cos x \\implies v'(x) = -\\sin x$\n\nBerdasarkan sifat turunan perkalian dua fungsi:\n$$y' = u'(x)v(x) + u(x)v'(x)$$\n$$y' = 16x(\\cos x) + (8x^2 + 7)(-\\sin x)$$\n$$y' = 16x\\cos x - (8x^2 + 7)\\sin x$$\n\nJadi, turunan pertama fungsi tersebut adalah $y' = 16x\\cos x - (8x^2 + 7)\\sin x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b02-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 134,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "STT 4: f ^ x h = sec x , maka f l^ x h = sec x tan x ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai turunan fungsi trigonometri secan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan aturan rantai bertingkat pada fungsi trigonometri dan substitusi sudut untuk mencari nilai turunan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sec^2(2x)$. Nilai dari $f'\\left(\\dfrac{\\pi}{8}\\right)$ adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "Menggunakan aturan rantai: $f'(x) = 2\\sec(2x) \\cdot \\frac{d}{dx}(\\sec(2x)) = 2\\sec(2x) \\cdot (2\\sec(2x)\\tan(2x)) = 4\\sec^2(2x)\\tan(2x)$. Untuk $x = \\frac{\\pi}{8}$, diperoleh $2x = \\frac{\\pi}{4}$. Maka $f'\\left(\\frac{\\pi}{8}\\right) = 4\\sec^2\\left(\\frac{\\pi}{4}\\right)\\tan\\left(\\frac{\\pi}{4}\\right) = 4(\\sqrt{2})^2(1) = 8$.",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "Lupa mengalikan dengan turunan fungsi dalam sudut $2x$."
+        },
+        {
+          "teks": "16",
+          "alasan": "Keliru menentukan nilai $\\sec(\\pi/4) = 2$ sehingga menghasilkan $4(2^2)(1) = 16$."
+        },
+        {
+          "teks": "2",
+          "alasan": "Hanya menurunkan pangkat luar tanpa mengalikan turunan dari fungsi dalam $\\sec(2x)$."
+        }
+      ],
+      "pembahasan": "Berdasarkan aturan rantai, jika $f(x) = [\\sec(2x)]^2$, maka:\n$$\\begin{aligned} f'(x) &= 2\\sec(2x) \\cdot \\frac{d}{dx}(\\sec(2x)) \\\\ &= 2\\sec(2x) \\cdot (\\sec(2x)\\tan(2x) \\cdot 2) \\\\ &= 4\\sec^2(2x)\\tan(2x) \\end{aligned}$$\nSubstitusikan $x = \\dfrac{\\pi}{8}$:\n$$\\begin{aligned} f'\\left(\\dfrac{\\pi}{8}\\right) &= 4\\sec^2\\left(2 \\cdot \\dfrac{\\pi}{8}\\right)\\tan\\left(2 \\cdot \\dfrac{\\pi}{8}\\right) \\\\ &= 4\\sec^2\\left(\\dfrac{\\pi}{4}\\right)\\tan\\left(\\dfrac{\\pi}{4}\\right) \\\\ &= 4(\\sqrt{2})^2(1) \\\\ &= 4(2)(1) = 8 \\end{aligned}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

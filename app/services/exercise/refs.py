@@ -25,6 +25,15 @@ def numbers(text: str) -> List[str]:
 def gambar_path(book: str, rel: str) -> str:
     """Path berkas gambar soal (rel = 'img/xxx.png' dari image_refs pretest)."""
     from app.services.exercise.config import GAMBAR_ROOT
+    from app.services.exercise.config import OUT_ROOT as exercise_root
+    from pathlib import Path
+    if rel.startswith("exercise_assets/"):
+        reference = rel.removeprefix("exercise_assets/")
+        root = Path(exercise_root).resolve()
+        target = (root / reference).resolve()
+        if not target.is_relative_to(root / book) or ".." in Path(reference).parts or "\\" in reference:
+            raise ValueError("generated visual must stay inside its exercise book")
+        return str(target)
     return os.path.join(GAMBAR_ROOT, book, "siswa", rel)
 
 

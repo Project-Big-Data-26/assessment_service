@@ -1,0 +1,854 @@
+{
+  "book": "kelas11",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11-b01-c-easy-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hanya fungsi bijektif (injektif dan surjektif) saja yang memiliki invers ."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "syarat keberadaan invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat syarat keberadaan fungsi invers secara langsung dari konsep buku teks.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Syarat utama agar suatu fungsi $f: A \\to B$ memiliki fungsi invers $f^{-1}: B \\to A$ adalah fungsi $f$ harus bersifat ....",
+      "jawaban_benar": "bijektif (injektif dan surjektif)",
+      "alasan_benar": "Berdasarkan materi Buku Siswa halaman 50, hanya fungsi yang bijektif (gabungan injektif dan surjektif) yang memiliki fungsi invers.",
+      "distraktor": [
+        {
+          "teks": "injektif saja",
+          "alasan": "Mengira sifat satu-satu cukup tanpa memastikan seluruh anggota kodomain memiliki pasangan (surjektif)."
+        },
+        {
+          "teks": "surjektif saja",
+          "alasan": "Mengira sifat pada cukup tanpa memastikan setiap anggota memiliki tepat satu pasangan asal (injektif)."
+        },
+        {
+          "teks": "konstan",
+          "alasan": "Keliru mengidentifikasi jenis relasi khusus yang jelas tidak memiliki invers berupa fungsi."
+        }
+      ],
+      "pembahasan": "Agar relasi kebalikan dari suatu fungsi juga merupakan fungsi, setiap anggota kodomain harus memiliki tepat satu pasangan di domain. Hal ini berarti fungsi asal harus bersifat injektif (satu-satu) dan surjektif (pada), yang bersama-sama dinamakan fungsi bijektif.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan, f dan g adalah fungsi. Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "sifat komposisi fungsi invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memahami sifat identitas komposisi antara sebuah fungsi dan fungsi inversnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $f$ adalah fungsi bijektif dan $f^{-1}$ adalah fungsi invers dari $f$. Bentuk komposisi $(f \\circ f^{-1})(x)$ untuk setiap $x$ pada daerah asal $f^{-1}$ adalah ....",
+      "jawaban_benar": "$x$",
+      "alasan_benar": "Komposisi fungsi dengan inversnya selalu menghasilkan fungsi identitas, yaitu $(f \\circ f^{-1})(x) = x$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengira invers berarti pembalikan nilai aritmetika seperti $x \\cdot \\frac{1}{x} = 1$."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Mengira invers berarti saling meniadakan atau mengurangkan menjadi nol."
+        },
+        {
+          "teks": "$-x$",
+          "alasan": "Terkecoh menganggap tanda invers $-1$ sebagai perkalian dengan bilangan negatif satu."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat fungsi invers, komposisi suatu fungsi dengan inversnya menghasilkan fungsi identitas, yaitu $(f \\circ f^{-1})(x) = x$ dan $(f^{-1} \\circ f)(x) = x$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2b",
+        "teks": "b. f (x) = −3x + 1",
+        "jawaban": "f^{-1}(x) = \\frac{1 - x}{3}",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menyelesaikan aljabar sederhana dua langkah untuk mencari variabel peubah invers fungsi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 5x - 7$ dengan domain himpunan bilangan real. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+      "jawaban_benar": "$\\frac{x + 7}{5}$",
+      "alasan_benar": "Dari $y = 5x - 7$, diperoleh $5x = y + 7$ sehingga $x = \\frac{y + 7}{5}$. Jadi, $f^{-1}(x) = \\frac{x + 7}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{x - 7}{5}$",
+          "alasan": "Salah dalam memindahkan konstanta $-7$ ke ruas seberang tanpa membalik tanda menjadi positif."
+        },
+        {
+          "teks": "$\\frac{x + 5}{7}$",
+          "alasan": "Tertukar posisi koefisien $x$ dengan nilai konstanta."
+        },
+        {
+          "teks": "$5x + 7$",
+          "alasan": "Hanya mengganti tanda minus menjadi plus tanpa membagi dengan koefisien perkalian 5."
+        }
+      ],
+      "pembahasan": "Misalkan $y = f(x)$:\n$y = 5x - 7$\n$y + 7 = 5x$\n$x = \\frac{y + 7}{5}$\nDengan menukar variabel $y$ menjadi $x$, diperoleh $f^{-1}(x) = \\frac{x + 7}{5}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0055-latihan-15-2c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Mengubah fungsi bentuk akar satu variabel menjadi bentuk kuadrat melalui dua langkah aljabar dasar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{x + 8}$ dengan daerah asal $x \\ge -8$. Rumus fungsi invers $f^{-1}(x)$ untuk $x \\ge 0$ adalah ....",
+      "jawaban_benar": "$x^2 - 8$",
+      "alasan_benar": "Dari $y = \\sqrt{x + 8}$, dikuadratkan menjadi $y^2 = x + 8$, sehingga diperoleh $x = y^2 - 8$.",
+      "distraktor": [
+        {
+          "teks": "$x^2 + 8$",
+          "alasan": "Salah memindahkan tanda konstanta positif ketika mengisolasi variabel $x$."
+        },
+        {
+          "teks": "$(x - 8)^2$",
+          "alasan": "Melakukan pengurangan sebelum pengkuadratan nilai fungsi."
+        },
+        {
+          "teks": "$x^2 - 64$",
+          "alasan": "Mengkuadratkan nilai konstanta 8 menjadi 64."
+        }
+      ],
+      "pembahasan": "Misalkan $y = \\sqrt{x + 8}$ untuk $y \\ge 0$.\nKuadratkan kedua ruas:\n$y^2 = x + 8$\n$x = y^2 - 8$\nSubstitusikan kembali variabel $x$, sehingga $f^{-1}(x) = x^2 - 8$ dengan domain $x \\ge 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 57,
+        "bagian": "Uji Kompetensi",
+        "nomor": "5",
+        "teks": "5. Perhatikan diagram panah di bawah ini. Apakah fungsi g(x) mempunyai fungsi invers? Jelaskan.",
+        "jawaban": "Mempunyai invers karena merupakan fungsi bijektif (berkorespondensi satu-satu).",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers pasangan berurutan",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memahami dan menentukan relasi kebalikan pada himpunan pasangan berurutan dalam satu langkah identifikasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi bijektif $g = \\{(2, 6), (4, 8), (6, 10)\\}$. Himpunan pasangan berurutan yang menyatakan fungsi invers $g^{-1}$ adalah ....",
+      "jawaban_benar": "$\\{(6, 2), (8, 4), (10, 6)\\}$",
+      "alasan_benar": "Fungsi invers diperoleh dengan menukar elemen masukan dan keluaran pada setiap pasangan berurutan $(x, y)$ menjadi $(y, x)$.",
+      "distraktor": [
+        {
+          "teks": "$\\{(-2, -6), (-4, -8), (-6, -10)\\}$",
+          "alasan": "Mengira invers berarti mengubah setiap nilai menjadi lawan negatifnya."
+        },
+        {
+          "teks": "$\\{(2, -6), (4, -8), (6, -10)\\}$",
+          "alasan": "Hanya membalik tanda keluaran tanpa menukar urutan pasangan."
+        },
+        {
+          "teks": "$\\{(\\frac{1}{2}, \\frac{1}{6}), (\\frac{1}{4}, \\frac{1}{8}), (\\frac{1}{6}, \\frac{1}{10})\\}$",
+          "alasan": "Mengartikan invers sebagai kebalikan nilai pecahan aritmetika."
+        }
+      ],
+      "pembahasan": "Jika fungsi $g$ memetakan $x$ ke $y$ dalam bentuk pasangan berurutan $(x, y)$, maka fungsi invers $g^{-1}$ memetakan balik $y$ ke $x$, yaitu $(y, x)$. Oleh karena itu, $g^{-1} = \\{(6, 2), (8, 4), (10, 6)\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2a",
+        "teks": "a. f (x) = x^3",
+        "jawaban": "f^-1(x) = akar pangkat 3 dari x",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi pangkat",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan satu langkah langsung untuk menentukan invers bentuk fungsi pangkat sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rumus fungsi invers dari $f(x) = x^5$ untuk setiap bilangan real $x$ adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\sqrt[5]{x}$",
+      "alasan_benar": "Misalkan $y = x^5$, maka $x = \\sqrt[5]{y}$. Dengan mengganti variabel, diperoleh $f^{-1}(x) = \\sqrt[5]{x}$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = x^5$",
+          "alasan": "Siswa mengira fungsi invers sama dengan fungsi asalnya."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{1}{x^5}$",
+          "alasan": "Siswa menganggap notasi invers berpangkat -1 sebagai pecahan aljabar satu per f(x)."
+        },
+        {
+          "teks": "$f^{-1}(x) = 5x$",
+          "alasan": "Siswa mengacaukan invers fungsi pangkat dengan perkalian koefisien turunan."
+        }
+      ],
+      "pembahasan": "Langkah penyelesaian:\n1. Tuliskan dalam bentuk persamaan: $y = x^5$\n2. Nyatakan $x$ dalam bentuk $y$: $x = \\sqrt[5]{y}$\n3. Ganti $x$ dengan $f^{-1}(x)$ dan $y$ dengan $x$: $f^{-1}(x) = \\sqrt[5]{x}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2b",
+        "teks": "b. f (x) = −3x + 1",
+        "jawaban": "f^-1(x) = (1 - x)/3",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi linear negatif",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menentukan invers fungsi linear dengan koefisien negatif dalam dua langkah aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rumus fungsi invers dari $f(x) = -4x + 7$ adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{7 - x}{4}$",
+      "alasan_benar": "Jika $y = -4x + 7$, maka $4x = 7 - y$, sehingga $x = \\frac{7 - y}{4}$. Jadi, $f^{-1}(x) = \\frac{7 - x}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{x + 7}{4}$",
+          "alasan": "Siswa salah saat memindahkan tanda negatif dari variabel x."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{x - 7}{4}$",
+          "alasan": "Siswa membalik tanda pembilang tetapi lupa membagi dengan negatif empat."
+        },
+        {
+          "teks": "$f^{-1}(x) = -4x - 7$",
+          "alasan": "Siswa hanya membalik tanda operasi konstanta tanpa mengubah relasi perkalian x."
+        }
+      ],
+      "pembahasan": "Misalkan $y = f(x)$:\n$y = -4x + 7$\n$4x = 7 - y$\n$x = \\frac{7 - y}{4}$\n\nDengan menukar variabel, diperoleh:\n$f^{-1}(x) = \\frac{7 - x}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 57,
+        "bagian": "Uji Kompetensi",
+        "nomor": "5",
+        "teks": "Perhatikan diagram panah di bawah ini. Apakah fungsi g(x) mempunyai fungsi invers? Jelaskan.",
+        "jawaban": "Mempunyai fungsi invers karena merupakan fungsi bijektif.",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "uji keberadaan invers relasi",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memeriksa sifat fungsi satu-satu untuk memastikan syarat ada atau tidaknya fungsi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $h: \\{1, 2, 3\\} \\to \\{p, q, r\\}$ dinyatakan dalam pasangan berurutan $h = \\{(1, p), (2, q), (3, q)\\}$. Alasan mengapa fungsi $h$ tidak memiliki fungsi invers adalah ....",
+      "jawaban_benar": "fungsi $h$ tidak bersifat injektif karena terdapat dua anggota domain yang memiliki pasangan keluaran yang sama",
+      "alasan_benar": "Elemen 2 dan 3 keduanya dipetakan ke $q$, sehingga saat dibalik, elemen $q$ akan memiliki dua pasangan (bukan fungsi).",
+      "distraktor": [
+        {
+          "teks": "fungsi $h$ bukan merupakan sebuah fungsi yang sah",
+          "alasan": "Siswa mengira fungsi h sendiri bukan fungsi, padahal setiap domain memiliki tepat satu pasangan."
+        },
+        {
+          "teks": "semua anggota kodomain telah memiliki pasangan di domain",
+          "alasan": "Siswa salah memahami konsep surjektif dan mengabaikan elemen r yang tidak berpasangan."
+        },
+        {
+          "teks": "banyaknya anggota domain tidak sama dengan banyaknya anggota kodomain",
+          "alasan": "Siswa mengira jumlah himpunan asalnya berbeda padahal keduanya sama-sama memiliki 3 anggota."
+        }
+      ],
+      "pembahasan": "Suatu fungsi memiliki fungsi invers jika dan hanya jika fungsi tersebut bersifat bijektif (injektif dan surjektif).\nPada fungsi $h$, anggota domain 2 dan 3 sama-sama menghasilkan bayangan $q$. Karena ada masukan berbeda yang menghasilkan keluaran sama, fungsi $h$ tidak injektif (satu-satu). Akibatnya, relasi kebalikannya bukan merupakan fungsi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi ini memetakan anggota yang ada di range fungsi asal ke anggota yang ada di domain fungsi asal."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "domain dan range fungsi invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengingat hubungan dasar bahwa range fungsi invers sama dengan domain fungsi asal.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu fungsi bijektif $f$ memiliki daerah asal (domain) $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 2\\}$ dan daerah hasil (range) $R_f = \\{y \\in \\mathbb{R} \\mid y \\ge 0\\}$. Daerah hasil (range) dari fungsi invers $f^{-1}$ adalah ....",
+      "jawaban_benar": "$\\{y \\in \\mathbb{R} \\mid y \\ge 2\\}$",
+      "alasan_benar": "Berdasarkan definisi fungsi invers, daerah hasil (range) dari $f^{-1}$ adalah daerah asal (domain) dari fungsi asal $f$, yaitu $y \\ge 2$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\ge 0\\}$",
+          "alasan": "Siswa tertukar antara daerah asal fungsi invers dengan daerah hasil fungsi invers."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\le 2\\}$",
+          "alasan": "Siswa membalik tanda pertidaksamaan karena mengira invers berarti membalik arah pertidaksamaan."
+        },
+        {
+          "teks": "$\\{y \\in \\mathbb{R} \\mid y \\le 0\\}$",
+          "alasan": "Siswa memakai rentang nilai range fungsi asal sekaligus membalik arah tandanya."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat fungsi invers:\n- Domain $f^{-1} = \\text{Range } f = \\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$\n- Range $f^{-1} = \\text{Domain } f = \\{y \\in \\mathbb{R} \\mid y \\ge 2\\}\n\nOleh karena itu, daerah hasil (range) dari $f^{-1}$ adalah $\\{y \\in \\mathbb{R} \\mid y \\ge 2\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "pemeriksaan fungsi invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menerapkan sifat komposisi fungsi invers $(f \\circ g)(x) = x$ pada fungsi linear sederhana.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = x + 9$. Rumus fungsi $g(x)$ yang memenuhi kondisi $(f \\circ g)(x) = x$ untuk setiap bilangan real $x$ adalah ....",
+      "jawaban_benar": "$g(x) = x - 9$",
+      "alasan_benar": "Agar $(f \\circ g)(x) = f(g(x)) = g(x) + 9 = x$, maka $g(x) = x - 9$.",
+      "distraktor": [
+        {
+          "teks": "$g(x) = x + 9$",
+          "alasan": "Siswa mengira fungsi g sama persis dengan fungsi f."
+        },
+        {
+          "teks": "$g(x) = 9 - x$",
+          "alasan": "Siswa tertukar urutan pengurangan antara variabel dan konstanta."
+        },
+        {
+          "teks": "$g(x) = \\frac{x}{9}$",
+          "alasan": "Siswa mengira invers dari penjumlahan adalah pembagian."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi:\n$(f \\circ g)(x) = x$\n$f(g(x)) = x$\n$g(x) + 9 = x$\n$g(x) = x - 9$\n\nFungsi $g(x) = x - 9$ merupakan fungsi invers dari $f(x)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "2a",
+        "teks": "Tentukan fungsi invers (jika ada) dari fungsi-fungsi di bawah ini, juga domain dan range-nya.\na. f (x) = x^3",
+        "jawaban": "f^-1(x) = x^(1/3)",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi kubik",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah aljabar sederhana untuk mengubah variabel x menjadi bentuk akar pangkat tiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rumus fungsi invers dari $f(x) = x^3 - 7$ untuk setiap $x \\in \\mathbb{R}$ adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\sqrt[3]{x + 7}$",
+      "alasan_benar": "Misalkan $y = x^3 - 7$, maka $x^3 = y + 7$, sehingga $x = \\sqrt[3]{y + 7}$. Dengan demikian, diperoleh $f^{-1}(x) = \\sqrt[3]{x + 7}$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\sqrt[3]{x - 7}$",
+          "alasan": "Kesalahan tanda saat memindahkan konstanta ke ruas lain."
+        },
+        {
+          "teks": "$f^{-1}(x) = (x + 7)^3$",
+          "alasan": "Terbalik dalam menerapkan operasi invers, memangkatkan tiga bukannya menarik akar pangkat tiga."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{1}{x^3 - 7}$",
+          "alasan": "Menafsirkan lambang fungsi invers sebagai pangkat negatif atau kebalikan pecahan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tuliskan persamaan $y = f(x)$, yaitu $y = x^3 - 7$.\nLangkah 2: Nyatakan $x$ dalam $y$:\n$x^3 = y + 7$\n$x = \\sqrt[3]{y + 7}$\nJadi, rumus fungsi inversnya adalah $f^{-1}(x) = \\sqrt[3]{x + 7}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11-b01-p0055-latihan-15-2c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "evaluasi nilai invers fungsi akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Hanya membutuhkan substitusi ke persamaan invers sederhana dan satu operasi kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = \\sqrt{x - 5}$ terdefinisi untuk $x \\ge 5$. Nilai dari $f^{-1}(4)$ adalah ....",
+      "jawaban_benar": "21",
+      "alasan_benar": "Berdasarkan definisi fungsi invers, jika $f^{-1}(4) = k$, maka $f(k) = 4$. Diperoleh $\\sqrt{k - 5} = 4 \\implies k - 5 = 16 \\implies k = 21$.",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "Lupa menguadratkan nilai masukan dan langsung menjumlahkan: 4 + 5 = 9."
+        },
+        {
+          "teks": "11",
+          "alasan": "Salah melakukan operasi tanda pada konstanta: 16 - 5 = 11 bukannya 16 + 5."
+        },
+        {
+          "teks": "13",
+          "alasan": "Mengalikan dengan dua alih-alih menguadratkan: 4 x 2 + 5 = 13."
+        }
+      ],
+      "pembahasan": "Misalkan $f^{-1}(4) = x$, maka:\n$f(x) = 4$\n$\\sqrt{x - 5} = 4$\nKuadratkan kedua ruas:\n$x - 5 = 16$\n$x = 16 + 5 = 21$\nJadi, nilai dari $f^{-1}(4) = 21$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 59,
+        "bagian": "Uji Kompetensi",
+        "nomor": "8",
+        "teks": "Perhatikan f (x) = 3x + 1 dan g(x) = (x− 1)/3 .",
+        "jawaban": "g(x) adalah fungsi invers dari f(x)",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi linear pecahan",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua manipulasi aljabar langsung untuk mengisolasi variabel x pada fungsi linear.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rumus fungsi invers $f^{-1}(x)$ dari fungsi linear $f(x) = 6x + 5$ adalah ....",
+      "jawaban_benar": "$f^{-1}(x) = \\frac{x - 5}{6}$",
+      "alasan_benar": "Dari $y = 6x + 5$, diperoleh $6x = y - 5$, sehingga $x = \\frac{y - 5}{6}$. Maka $f^{-1}(x) = \\frac{x - 5}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$f^{-1}(x) = \\frac{x + 5}{6}$",
+          "alasan": "Kesalahan tanda saat memindahkan konstanta positif ke ruas kiri."
+        },
+        {
+          "teks": "$f^{-1}(x) = 6x - 5$",
+          "alasan": "Hanya mengubah tanda konstanta tanpa membagi dengan koefisien x."
+        },
+        {
+          "teks": "$f^{-1}(x) = \\frac{6}{x - 5}$",
+          "alasan": "Keliru memposisikan koefisien sebagai pembilang dalam pecahan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Misalkan $y = f(x)$:\n$y = 6x + 5$\nLangkah 2: Selesaikan untuk $x$:\n$6x = y - 5$\n$x = \\frac{y - 5}{6}$\nGanti variabel $y$ dengan $x$ sehingga $f^{-1}(x) = \\frac{x - 5}{6}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi ini memetakan anggota yang ada di range fungsi asal ke anggota yang ada di domain fungsi asal."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "evaluasi invers dari pasangan nilai",
+      "jumlah_langkah": 1,
+      "alasan_level": "Hanya memerlukan pemahaman definisi pemetaan terbalik fungsi invers dalam satu langkah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi bijektif $f$ memenuhi $f(7) = 15$. Nilai dari $f^{-1}(15)$ adalah ....",
+      "jawaban_benar": "7",
+      "alasan_benar": "Sesuai definisi fungsi invers, jika $f(a) = b$, maka fungsi inversnya memetakan kembali nilai $b$ ke $a$, yaitu $f^{-1}(b) = a$. Karena $f(7) = 15$, maka $f^{-1}(15) = 7$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{15}$",
+          "alasan": "Mengira notasi pangkat minus satu berarti kebalikan pecahan atau 1 dibagi 15."
+        },
+        {
+          "teks": "-7",
+          "alasan": "Mengira invers berarti membalik tanda nilai masukan menjadi negatif."
+        },
+        {
+          "teks": "-15",
+          "alasan": "Mengira fungsi invers bernilai lawan tanda dari keluarannya."
+        }
+      ],
+      "pembahasan": "Fungsi invers $f^{-1}$ membalikkan arah pemetaan fungsi asal $f$. Berdasarkan definisi, $f(x) = y \\iff f^{-1}(y) = x$. Karena diketahui $f(7) = 15$, maka secara langsung diperoleh $f^{-1}(15) = 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 50,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hanya fungsi bijektif (injektif dan surjektif) saja yang memiliki invers ."
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "identifikasi fungsi yang memiliki invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Memerlukan pengenalan satu bentuk fungsi yang bijektif pada domain bilangan real secara konseptual.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Di antara fungsi-fungsi berikut yang terdefinisi pada daerah asal seluruh bilangan real $\\mathbb{R}$, manakah fungsi yang memiliki fungsi invers?",
+      "jawaban_benar": "$f(x) = 4x - 9$",
+      "alasan_benar": "Fungsi linear $f(x) = 4x - 9$ dengan koefisien $x \\ne 0$ bersifat satu-satu (injektif) dan daerah hasilnya mencakup seluruh bilangan real (surjektif), sehingga bersifat bijektif dan memiliki invers.",
+      "distraktor": [
+        {
+          "teks": "$g(x) = x^2 + 1$",
+          "alasan": "Keliru menganggap fungsi kuadrat memiliki invers pada seluruh bilangan real, padahal tidak injektif karena $g(-1) = g(1) = 2$."
+        },
+        {
+          "teks": "$h(x) = |x|$",
+          "alasan": "Keliru menganggap fungsi nilai mutlak memiliki invers pada seluruh bilangan real, padahal tidak injektif karena $h(-2) = h(2) = 2$."
+        },
+        {
+          "teks": "$k(x) = 8$",
+          "alasan": "Keliru menganggap fungsi konstan memiliki invers, padahal semua masukan memetakan ke keluaran yang sama sehingga tidak injektif."
+        }
+      ],
+      "pembahasan": "Syarat mutlak agar suatu fungsi memiliki fungsi invers adalah fungsi tersebut harus bersifat bijektif (injektif dan surjektif). Pada domain seluruh bilangan real $\\mathbb{R}$:\n- $f(x) = 4x - 9$ adalah fungsi linear tak-konstan yang selalu injektif dan surjektif (bijektif), sehingga memiliki fungsi invers.\n- $g(x) = x^2 + 1$ tidak injektif (bukan bijektif).\n- $h(x) = |x|$ tidak injektif (bukan bijektif).\n- $k(x) = 8$ tidak injektif (bukan bijektif).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 59,
+        "bagian": "Uji Kompetensi",
+        "nomor": "8",
+        "teks": "Perhatikan f (x) = 3x + 1 dan g(x) = (x - 1)/3 . b. Lakukan fungsi komposisi (f ◦ g)(x) dan (g ◦ f )(x). Jelaskan hasil yang diperoleh.",
+        "jawaban": "(f ◦ g)(x) = x dan (g ◦ f)(x) = x",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "komposisi fungsi saling invers",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi langsung fungsi ke dalam fungsi lain untuk membuktikan hasil identitas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $f(x) = 5x - 4$ dan $g(x) = \\frac{x + 4}{5}$ untuk setiap bilangan real $x$. Rumus komposisi fungsi $(g \\circ f)(x)$ adalah ....",
+      "jawaban_benar": "$x$",
+      "alasan_benar": "$(g \\circ f)(x) = g(f(x)) = \\frac{(5x - 4) + 4}{5} = \\frac{5x}{5} = x$.",
+      "distraktor": [
+        {
+          "teks": "$5x$",
+          "alasan": "Siswa lupa membagi dengan 5 pada penyebut setelah menjumlahkan pembilang."
+        },
+        {
+          "teks": "$x - 4$",
+          "alasan": "Siswa hanya memasukkan suku konstan tanpa membagi koefisien dengan benar."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Siswa salah mengira variabel $x$ saling menghilangkan menjadi bernilai 1."
+        }
+      ],
+      "pembahasan": "Hitung $(g \\circ f)(x) = g(5x - 4) = \\frac{(5x - 4) + 4}{5} = \\frac{5x}{5} = x$. Kedua fungsi merupakan fungsi yang saling invers.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 55,
+        "bagian": "Latihan 1.5",
+        "nomor": "3",
+        "teks": "Berikut ini adalah grafik dari fungsi g (x) = akar(2x - 3), b. Temukan persamaan matematis untuk fungsi invers g^-1 (x).",
+        "jawaban": "g^-1(x) = (x^2 + 3)/2",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "invers fungsi bentuk akar linier",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemangkatan kedua ruas dan isolasi variabel linear dalam dua langkah aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $g(x) = \\sqrt{4x - 7}$ terdefinisi untuk $x \\ge \\frac{7}{4}$. Rumus fungsi invers $g^{-1}(x)$ untuk $x \\ge 0$ adalah ....",
+      "jawaban_benar": "$g^{-1}(x) = \\frac{x^2 + 7}{4}$",
+      "alasan_benar": "Misalkan $y = \\sqrt{4x - 7} \\Rightarrow y^2 = 4x - 7 \\Rightarrow 4x = y^2 + 7 \\Rightarrow x = \\frac{y^2 + 7}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$g^{-1}(x) = \\frac{x^2 - 7}{4}$",
+          "alasan": "Siswa salah memindahkan tanda negatif saat mengisolasi variabel."
+        },
+        {
+          "teks": "$g^{-1}(x) = \\frac{(x + 7)^2}{4}$",
+          "alasan": "Siswa menjumlahkan 7 terlebih dahulu sebelum melakukan kuadrat."
+        },
+        {
+          "teks": "$g^{-1}(x) = 4x^2 + 7$",
+          "alasan": "Siswa mengalikan dengan 4 bukan membagi koefisien $x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tulis $y = \\sqrt{4x - 7}$. Kuadratkan kedua sisi: $y^2 = 4x - 7$.\nLangkah 2: Selesaikan untuk $x$: $4x = y^2 + 7 \\Rightarrow x = \\frac{y^2 + 7}{4}$. Diperoleh $g^{-1}(x) = \\frac{x^2 + 7}{4}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 54,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika (f ◦ g) (x) = x dan (g ◦ f ) (x) = x maka g adalah fungsi invers dari f dan f adalah fungsi invers dari g."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "definisi hubungan dua fungsi invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Mengenali definisi formal keterbalikan dua fungsi lewat komposisi identitas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui dua buah fungsi $f$ dan $g$ terdefinisi pada bilangan real. Jika berlaku $(f \\circ g)(x) = x$ dan $(g \\circ f)(x) = x$ untuk setiap nilai $x$, maka hubungan yang benar antara fungsi $f$ dan $g$ adalah ....",
+      "jawaban_benar": "Fungsi $g$ adalah invers dari fungsi $f$",
+      "alasan_benar": "Sesuai definisi pada buku teks, jika komposisi timbal balik menghasilkan fungsi identitas $x$, maka kedua fungsi saling invers.",
+      "distraktor": [
+        {
+          "teks": "Fungsi $g$ adalah turunan dari fungsi $f$",
+          "alasan": "Siswa tertukar konsep invers dengan materi kalkulus turunan."
+        },
+        {
+          "teks": "Fungsi $g$ adalah lawan negatif dari fungsi $f$",
+          "alasan": "Siswa mengira invers sama dengan invers aditif (negatif fungsi)."
+        },
+        {
+          "teks": "Fungsi $g$ merupakan fungsi kuadrat dari $f$",
+          "alasan": "Siswa menebak hubungan aljabar yang tidak berdasar definisi."
+        }
+      ],
+      "pembahasan": "Berdasarkan definisi fungsi invers: Jika $(f \\circ g)(x) = x$ dan $(g \\circ f)(x) = x$, maka $g$ merupakan fungsi invers dari $f$ (ditulis $g = f^{-1}$) dan sebaliknya.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Fungsi ini memetakan anggota yang ada di range fungsi asal ke anggota yang ada di domain fungsi asal."
+      },
+      "cognitive_c": "C1",
+      "jenis_soal": "pemetaan domain kodomain invers",
+      "jumlah_langkah": 1,
+      "alasan_level": "Menyebutkan konsep arah pemetaan domain dan kodomain pada fungsi invers.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika suatu fungsi bijektif $f$ memetakan himpunan $A$ ke himpunan $B$ ($f: A \\to B$), maka fungsi invers $f^{-1}$ memetakan ....",
+      "jawaban_benar": "Himpunan $B$ ke himpunan $A$",
+      "alasan_benar": "Fungsi invers membalik arah relasi pemetaan dari daerah hasil/kodomain kembali ke daerah asal.",
+      "distraktor": [
+        {
+          "teks": "Himpunan $A$ ke himpunan $A$",
+          "alasan": "Siswa mengira fungsi invers memetakan elemen ke himpunannya sendiri."
+        },
+        {
+          "teks": "Himpunan $A$ ke himpunan $B$",
+          "alasan": "Siswa mengira fungsi invers memiliki arah pemetaan yang sama dengan fungsi asal."
+        },
+        {
+          "teks": "Himpunan $B$ ke himpunan $B$",
+          "alasan": "Siswa mengira pemetaan terjadi di dalam himpunan target saja."
+        }
+      ],
+      "pembahasan": "Secara definisi, fungsi invers $f^{-1}$ membalik arah relasi fungsi asal. Jika $f: A \\to B$, maka $f^{-1}: B \\to A$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b01-c-easy-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 51,
+        "bagian": "Eksplorasi 1.6",
+        "nomor": "Masalah Kedua",
+        "teks": "Harga suatu pakaian setelah mendapatkan diskon 40% dan kemudian diberikan potongan harga Rp15.000,00 adalah Rp45.000,00. Berapa harga awal pakaian?",
+        "jawaban": "Rp100.000,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C2",
+      "jenis_soal": "masalah kontekstual fungsi invers",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua operasi aritmetika terbalik untuk menentukan nilai asal dari masalah diskon bertingkat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Harga suatu pakaian setelah mendapatkan diskon 30% dan kemudian diberikan potongan harga Rp25.000,00 adalah Rp80.000,00. Berapa harga awal pakaian tersebut?",
+      "jawaban_benar": "Rp150.000,00",
+      "alasan_benar": "Harga sebelum potongan langsung adalah Rp80.000,00 + Rp25.000,00 = Rp105.000,00. Karena mendapat diskon 30%, nilai ini adalah 70% dari harga awal, sehingga harga awal adalah Rp105.000,00 / 0,7 = Rp150.000,00.",
+      "distraktor": [
+        {
+          "teks": "Rp136.500,00",
+          "alasan": "Siswa mengalikan Rp105.000,00 dengan 1,30 alih-alih membaginya dengan 0,70."
+        },
+        {
+          "teks": "Rp121.428,00",
+          "alasan": "Siswa langsung membagi harga akhir Rp80.000,00 dengan 0,70 baru menambahkan Rp25.000,00."
+        },
+        {
+          "teks": "Rp175.000,00",
+          "alasan": "Siswa salah menghitung persentase sisa bayar menjadi 60% (105.000 / 0,6)."
+        }
+      ],
+      "pembahasan": "Misalkan harga awal adalah $x$.\n1. Setelah diskon 30%, harga menjadi $(1 - 0{,}30)x = 0{,}70x$.\n2. Setelah potongan harga Rp25.000,00, harga menjadi $0{,}70x - 25.000 = 80.000$.\n\nSelesaikan persamaan:\n$$0{,}70x = 80.000 + 25.000$$\n$$0{,}70x = 105.000$$\n$$x = \\frac{105.000}{0{,}70} = 150.000$$\n\nJadi, harga awal pakaian tersebut adalah Rp150.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

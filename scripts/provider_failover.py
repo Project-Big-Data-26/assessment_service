@@ -36,12 +36,20 @@ def archive_bytes(stage, raw):
 
 
 def activate_checkpoint(name, batch, provider):
+    from app.services.exercise.workflow import batch_lock
+    with batch_lock(exercise.paths(name, batch)["exercise"]):
+        return _activate_checkpoint(name, batch, provider)
+
+
+def _activate_checkpoint(name, batch, provider):
     """Keep completed decisions and their actual provider/model, including older models."""
     if exercise.VALIDATION_NAMESPACE != "failover":
         raise ValueError("provider failover requires its separate checkpoint namespace")
     select_provider(provider)
     settings = settings_for(provider)
     target = exercise.paths(name, batch)
+    from app.services.exercise.workflow import require_validation
+    require_validation(target["exercise"])
     grade, track = exercise.CLASSES[name]
     previous_path = target["checkpoint"] if target["checkpoint"].exists() else None
     if previous_path is None:

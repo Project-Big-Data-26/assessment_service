@@ -88,6 +88,8 @@ def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
     for question in questions.values():
         for ref in question.get("image_url") or []:
             assert (source.parent / ref).is_file(), ref
+            if question.get("_visualAssetHashes"):
+                assert digest(source.parent / ref) == question["_visualAssetHashes"][ref], ref
 
 
 def verify_bundle(source: Path, bundle: Path) -> None:

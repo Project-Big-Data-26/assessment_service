@@ -1,0 +1,854 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 6,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 287,
+        "bagian": "Pemahaman Konsep",
+        "nomor": "4",
+        "teks": "Jika daerah asal fungsi akar adalah himpunan bilangan real, daerah hasilnya juga merupakan himpunan bilangan real.",
+        "jawaban": "Salah",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi daerah hasil fungsi akar",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menuntut evaluasi kebenaran klaim daerah hasil fungsi akar dengan menentukan rentang nilai radikan terlebih dahulu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan fungsi akar $f(x) = 8 - \\sqrt{25 - x^2}$ pada daerah asal alaminya. Seorang siswa mengklaim bahwa daerah hasil fungsi tersebut adalah $R_f = \\{y \\mid y \\le 8, y \\in \\mathbb{R}\\}$. Evaluasi yang tepat mengenai klaim tersebut adalah ....",
+      "jawaban_benar": "Salah, karena nilai maksimum $\\sqrt{25 - x^2}$ adalah $5$ sehingga daerah hasil yang benar adalah $R_f = \\{y \\mid 3 \\le y \\le 8, y \\in \\mathbb{R}\\}$.",
+      "alasan_benar": "Nilai radikan dibatasi $0 \\le 25 - x^2 \\le 25$, sehingga $0 \\le \\sqrt{25 - x^2} \\le 5$. Akibatnya, nilai $y = 8 - \\sqrt{25 - x^2}$ berada pada interval $[8 - 5, 8 - 0] = [3, 8]$.",
+      "distraktor": [
+        {
+          "teks": "Benar, karena nilai bentuk akar selalu tak negatif sehingga nilai terbesar dari $f(x)$ tercapai saat bentuk akar bernilai nol.",
+          "alasan": "Mengabaikan batas nilai maksimum bentuk akar $\\sqrt{25 - x^2}$ yang ditentukan oleh batas daerah asalnya."
+        },
+        {
+          "teks": "Salah, karena nilai di dalam akar tidak boleh negatif sehingga daerah hasilnya adalah $R_f = \\{y \\mid y \\ge 8, y \\in \\mathbb{R}\\}$.",
+          "alasan": "Salah mengalikan tanda negatif pada bentuk akar sehingga mengira fungsi selalu bernilai $\\ge 8$."
+        },
+        {
+          "teks": "Salah, karena daerah asal fungsi adalah himpunan bilangan real sehingga daerah hasilnya adalah $R_f = \\{y \\mid -5 \\le y \\le 5, y \\in \\mathbb{R}\\}$.",
+          "alasan": "Tertukar antara interval nilai $x$ (daerah asal) dengan daerah hasil fungsi $f(x)$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan syarat terdefinisi bentuk akar: $25 - x^2 \\ge 0 \\iff -5 \\le x \\le 5$.\nLangkah 2: Tentukan rentang nilai dari $u = 25 - x^2$. Karena $x^2 \\ge 0$, nilai minimum $x^2$ adalah $0$ (saat $x = 0$) dan nilai maksimumnya adalah $25$ (saat $x = \\pm 5$). Maka $0 \\le 25 - x^2 \\le 25$.\nLangkah 3: Ambil nilai akar kuadrat: $0 \\le \\sqrt{25 - x^2} \\le 5$.\nLangkah 4: Kalikan dengan $-1$ dan jumlahkan dengan 8:\n$$-5 \\le -\\sqrt{25 - x^2} \\le 0$$\n$$8 - 5 \\le 8 - \\sqrt{25 - x^2} \\le 8 - 0 \\iff 3 \\le f(x) \\le 8$$\nLangkah 5: Simpulkan bahwa klaim siswa salah karena daerah hasil yang benar adalah terikat dalam rentang $3 \\le y \\le 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 279,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekati garis y = mx + b ketika nilai x mendekati positif tak hingga atau x mendekati negatif tak hingga, maka garis y = mx + b disebut asimtot miring ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "parameter asimtot miring",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembagian polinomial aljabar berparameter dan penyusunan persamaan garis untuk menentukan nilai konstanta.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{2x^2 + kx - 5}{x + 1}$ dengan $k$ adalah konstanta real. Jika garis asimtot miring dari grafik fungsi $f$ melalui titik $(3, 8)$, maka nilai $k$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Hasil bagi pembagian bersusun adalah $y = 2x + (k - 2)$. Substitusi titik $(3, 8)$ menghasilkan $8 = 2(3) + k - 2 \\implies k = 4$.",
+      "distraktor": [
+        {
+          "teks": "0",
+          "alasan": "Lupa mengurangkan konstanta 2 pada hasil bagi pembagian bersusun sehingga menghitung $8 = 2(3) + k$."
+        },
+        {
+          "teks": "8",
+          "alasan": "Salah tanda saat membagi dengan $(x + 1)$, menganggap hasil bagi adalah $2x + (k + 2)$ lalu salah operasi hitung."
+        },
+        {
+          "teks": "-4",
+          "alasan": "Kesalahan tanda aljabar saat memindahkan ruas konstanta ke sisi lain persamaan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Lakukan pembagian bersusun pembilang $(2x^2 + kx - 5)$ oleh penyebut $(x + 1)$:\n$$2x^2 + kx - 5 = (x + 1)(2x + k - 2) + (-5 - (k - 2))$$\nLangkah 2: Ambil komponen hasil bagi linear untuk menentukan persamaan asimtot miring:\n$$y = 2x + k - 2$$\nLangkah 3: Substitusikan koordinat titik $(3, 8)$ ke dalam persamaan asimtot miring:\n$$8 = 2(3) + k - 2$$\n$$8 = 6 + k - 2$$\n$$8 = k + 4$$\nLangkah 4: Selesaikan persamaan untuk memperoleh nilai $k$:\n$$k = 8 - 4 = 4$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 287,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Modelkan fungsi biaya rata-rata B untuk memproduksi x loyang kue bronis."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis biaya rata-rata",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembentukan pertidaksamaan dari model fungsi rasional dan penyelesaian nilai minimum batas produksi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah produsen makanan ringan memodelkan fungsi biaya rata-rata produksi $x$ kotak keripik (dalam rupiah per kotak) dengan fungsi rasional $\\bar{B}(x) = \\frac{18.000.000 + 45.000x}{x}$. Agar biaya rata-rata per kotak tidak melebihi Rp60.000,00, jumlah minimum kotak keripik yang harus diproduksi adalah ....",
+      "jawaban_benar": "1.200 kotak",
+      "alasan_benar": "Pertidaksamaan $\\frac{18.000.000 + 45.000x}{x} \\le 60.000$ dengan $x > 0$ menghasilkan $x \\ge 1.200$.",
+      "distraktor": [
+        {
+          "teks": "800 kotak",
+          "alasan": "Salah menjumlahkan biaya variabel dengan target biaya rata-rata alih-alih mengurangkannya ($18.000.000 / (60.000 - 45.000)$ salah dihitung menjadi $18.000.000 / 22.500$)."
+        },
+        {
+          "teks": "1.500 kotak",
+          "alasan": "Kesalahan aritmetika saat membagi $18.000.000$ dengan $12.000$ bukan $15.000$."
+        },
+        {
+          "teks": "300 kotak",
+          "alasan": "Membagi biaya tetap $18.000.000$ langsung dengan target biaya rata-rata $60.000$ tanpa memperhitungkan biaya variabel $45.000x$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Susun pertidaksamaan berdasarkan syarat biaya rata-rata:\n$$\\bar{B}(x) \\le 60.000 \\iff \\frac{18.000.000 + 45.000x}{x} \\le 60.000$$\nLangkah 2: Karena $x$ menyatakan banyaknya produksi barang, maka $x > 0$. Kalikan kedua ruas dengan $x$ tanpa mengubah tanda pertidaksamaan:\n$$18.000.000 + 45.000x \\le 60.000x$$\nLangkah 3: Kurangkan kedua ruas dengan $45.000x$:\n$$18.000.000 \\le 60.000x - 45.000x$$\n$$18.000.000 \\le 15.000x$$\nLangkah 4: Bagi kedua ruas dengan $15.000$:\n$$x \\ge \\frac{18.000.000}{15.000} \\iff x \\ge 1.200$$\nJadi, jumlah produksi minimum adalah 1.200 kotak.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-5a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "daerah hasil fungsi rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis faktorisasi, pembuat nol penyebut, lubang kontinuitas kurva, dan asimtot horizontal untuk menentukan daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah hasil dari fungsi rasional $f(x) = \\frac{4x - 12}{x^2 - 5x + 6}$ untuk daerah asal alaminya pada himpunan bilangan real adalah ....",
+      "jawaban_benar": "$\\{y \\mid y \\neq 0 \\text{ dan } y \\neq 4, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Fungsi dapat difaktorkan menjadi $f(x) = \\frac{4(x - 3)}{(x - 2)(x - 3)}$. Daerah asal alaminya adalah $D_f = \\{x \\mid x \\neq 2 \\text{ dan } x \\neq 3, x \\in \\mathbb{R}\\}$. Untuk $x \\neq 3$, fungsi bernilai $f(x) = \\frac{4}{x - 2}$. Karena $x \\neq 3$, maka nilai $f(x) \\neq \\frac{4}{3 - 2} = 4$. Selain itu, bentuk pecahan $\\frac{4}{x - 2}$ tidak pernah bernilai nol untuk nilai real $x$ mana pun. Jadi daerah hasil fungsi adalah $R_f = \\{y \\mid y \\neq 0 \\text{ dan } y \\neq 4, y \\in \\mathbb{R}\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{y \\mid y \\neq 0, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengidentifikasi asimtot horizontal $y = 0$, tetapi mengabaikan titik lubang pada kurva saat $x = 3$ sehingga nilai $y = 4$ tidak dikeluarkan dari daerah hasil."
+        },
+        {
+          "teks": "$\\{y \\mid y \\neq 4, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa menemukan nilai lubang di $y = 4$, tetapi lupa bahwa fungsi rasional tersebut juga memiliki asimtot horizontal di $y = 0$ sehingga $0$ tidak termasuk daerah hasil."
+        },
+        {
+          "teks": "$\\{y \\mid y \\neq 2 \\text{ dan } y \\neq 3, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa tertukar antara nilai terlarang pada daerah asal ($x \\neq 2, x \\neq 3$) dengan nilai terlarang pada daerah hasil."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan domain alami dengan memfaktorkan penyebut:\n$$x^2 - 5x + 6 = (x - 2)(x - 3) \\neq 0 \\implies x \\neq 2 \\text{ dan } x \\neq 3$$\nLangkah 2: Sederhanakan fungsi untuk $x \\neq 3$:\n$$f(x) = \\frac{4(x - 3)}{(x - 2)(x - 3)} = \\frac{4}{x - 2}$$\nLangkah 3: Cari nilai tak terdefinisi dari grafik akibat titik lubang pada $x = 3$:\n$$y_{\\text{lubang}} = \\frac{4}{3 - 2} = 4$$\nLangkah 4: Tentukan asimtot horizontal fungsi:\nUntuk $x \\to \\pm\\infty$, $\\frac{4}{x - 2} \\to 0$, dan pembilang tidak pernah nol sehingga $y \\neq 0$.\nDengan demikian, daerah hasil fungsi adalah $\\{y \\mid y \\neq 0 \\text{ dan } y \\neq 4, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai x mendekati positif tak hingga atau mendekati negatif tak hingga, nilai h ( x ) tidak mendekati nol. Oleh karena itu, kita mengubah fungsi tersebut menggunakan pembagian bersusun"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "parameter fungsi rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penentuan nilai dua parameter tak diketahui melalui dekonstruksi algoritma pembagian polinomial dan sifat asimtot miring.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{a x^2 + 7x - 4}{x - 2}$ dengan $a$ adalah konstanta bilangan real bukan nol. Jika grafik fungsi $f$ memiliki garis asimtot miring $y = 3x + b$, maka nilai dari $a \\cdot b$ adalah ....",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Melalui pembagian bersusun $(ax^2 + 7x - 4) : (x - 2)$, suku pertama hasil bagi adalah $ax$. Karena persamaan asimtot miring memiliki gradien $3$, maka haruslah $a = 3$. Selanjutnya, pembagian $(3x^2 + 7x - 4) : (x - 2)$ menghasilkan $3x + 13$ dengan sisa $22$. Jadi, persamaan asimtot miringnya adalah $y = 3x + 13$, yang berarti $b = 13$. Dengan demikian, $a \\cdot b = 3 \\cdot 13 = 39$.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Siswa mengira $b$ diperoleh langsung dari koefisien $x$ pada pembilang yaitu $7$, sehingga menghitung $3 \\cdot 7 = 21$."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Siswa salah melakukan pembagian aljabar sehingga mendapatkan $b = 1$ dan mengalikan $3 \\cdot 1 = 3$."
+        },
+        {
+          "teks": "$-39$",
+          "alasan": "Siswa salah menghitung tanda pembagian pada suku linear sisa sehingga memperoleh $b = -13$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Lakukan pembagian polinomial pembilang oleh penyebut:\n$$ax^2 + 7x - 4 = (x - 2)(ax + c) + r$$\n$$ax^2 + 7x - 4 = ax^2 + (c - 2a)x - 2c + r$$\n\nLangkah 2: Samakan hasil bagi $ax + c$ dengan bentuk asimtot miring $y = 3x + b$:\nKoefisien derajat tertinggi: $a = 3$.\n\nLangkah 3: Hitung suku konstanta hasil bagi $c$:\nKoefisien suku $x$: $c - 2a = 7$\n$$c - 2(3) = 7 \\implies c - 6 = 7 \\implies c = 13$$\nKarena hasil bagi adalah $3x + 13$, maka $b = 13$.\n\nLangkah 4: Hitung nilai perkalian $a \\cdot b$:\n$$a \\cdot b = 3 \\cdot 13 = 39$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap ( n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g ( x ) yang tidak menyebabkan g ( x ) < 0."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "domain fungsi campuran akar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi pertidaksamaan simultan yang melibatkan dua bentuk akar pada pembilang dan penyebut serta menentukan irisan intervalnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dari fungsi $f(x) = \\frac{\\sqrt{25 - x^2}}{\\sqrt{x - 3}}$ pada himpunan bilangan real adalah $D_f$. Jika $D_f$ dinyatakan dalam bentuk selang $(a, b]$, maka nilai dari $a^2 + b^2$ adalah ....",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Agar fungsi terdefinisi, bagian pembilang mensyaratkan $25 - x^2 \\ge 0 \\implies -5 \\le x \\le 5$. Bagian penyebut di bawah tanda akar berakar genap dan tidak boleh bernilai nol, sehingga $x - 3 > 0 \\implies x > 3$. Irisan dari kedua syarat tersebut adalah $3 < x \\le 5$, yang dituliskan dalam bentuk selang $(3, 5]$. Dengan demikian, diperoleh $a = 3$ dan $b = 5$, sehingga $a^2 + b^2 = 3^2 + 5^2 = 9 + 25 = 34$.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Siswa mengabaikan syarat penyebut dan hanya memakai batas dari pembilang $-5$ dan $5$ sehingga menghitung $(-5)^2 + 5^2 = 50$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Siswa salah mengoperasikan penyebut dengan mengira $a = 0$ dan $b = 4$ sehingga memperoleh nilai $16$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Siswa salah mencari pembuat nol dari $x - 3 > 0$ menjadi $x > 1$, sehingga menghitung $1^2 + 5^2 = 26$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan syarat terdefinisi untuk pembilang:\nBentuk $\\sqrt{25 - x^2}$ terdefinisi pada bilangan real jika radicand tidak negatif:\n$$25 - x^2 \\ge 0 \\implies x^2 \\le 25 \\implies -5 \\le x \\le 5$$\n\nLangkah 2: Tentukan syarat terdefinisi untuk penyebut:\nBentuk $\\sqrt{x - 3}$ berada di penyebut, sehingga selain radicand tidak boleh negatif, penyebut juga tidak boleh bernilai nol:\n$$x - 3 > 0 \\implies x > 3$$\n\nLangkah 3: Tentukan irisan dari kedua syarat:\n$$\\{-5 \\le x \\le 5\\} \\cap \\{x > 3\\} = 3 < x \\le 5$$\nDalam notasi interval, selang ini adalah $(3, 5]$, sehingga $a = 3$ dan $b = 5$.\n\nLangkah 4: Hitung nilai $a^2 + b^2$:\n$$a^2 + b^2 = 3^2 + 5^2 = 9 + 25 = 34$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 281,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "F = ma dengan a = vt dan v = st Keterangan: F = gaya t = waktu a = percepatan m = massa v = kecepatan s = jarak perpindahan"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan gaya fungsi rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan fungsi rasional berdasarkan konsep fisika di buku teks dan menyelesaikan pertidaksamaan rasional ganda untuk membatasi nilai variabel waktu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah benda bermassa $m = 600\\text{ kg}$ ditarik dari keadaan diam sehingga menempuh jarak perpindahan tetap $s = 48\\text{ meter}$. Besar gaya dorong yang bekerja dimodelkan sebagai fungsi rasional terhadap waktu tempuh $t$ (dalam detik), yaitu $F(t) = \\frac{m \\cdot s}{t^2}$. Jika gaya yang diberikan dibatasi paling sedikit $200\\text{ N}$ dan paling banyak $800\\text{ N}$, maka rentang waktu tempuh $t$ yang memenuhi adalah ....",
+      "jawaban_benar": "$6 \\le t \\le 12$",
+      "alasan_benar": "Model fungsi gaya adalah $F(t) = \\frac{600 \\cdot 48}{t^2} = \\frac{28.800}{t^2}$. Syarat gaya yang diizinkan adalah $200 \\le F(t) \\le 800$, sehingga $200 \\le \\frac{28.800}{t^2} \\le 800$. Karena $t > 0$, maka $\\frac{28.800}{800} \\le t^2 \\le \\frac{28.800}{200}$, yang menghasilkan $36 \\le t^2 \\le 144$. Dengan menarik akar untuk nilai $t > 0$, diperoleh $6 \\le t \\le 12$ detik.",
+      "distraktor": [
+        {
+          "teks": "$36 \\le t \\le 144$",
+          "alasan": "Siswa sudah menemukan batas nilai $t^2$, tetapi lupa menarik akar kuadrat untuk mendapatkan batas waktu $t$."
+        },
+        {
+          "teks": "$4 \\le t \\le 10$",
+          "alasan": "Siswa salah melakukan pembagian numerik pada konstanta gaya dan perpindahan."
+        },
+        {
+          "teks": "$t \\le 6 \\text{ atau } t \\ge 12$",
+          "alasan": "Siswa salah membalik arah tanda pertidaksamaan saat membalik pecahan variabel."
+        }
+      ],
+      "pembahasan": "Langkah 1: Susun model fungsi rasional gaya:\n$$F(t) = \\frac{m \\cdot s}{t^2} = \\frac{600 \\cdot 48}{t^2} = \\frac{28.800}{t^2}$$\n\nLangkah 2: Buat model pertidaksamaan sesuai batasan nilai gaya:\n$$200 \\le \\frac{28.800}{t^2} \\le 800$$\n\nLangkah 3: Karena $t > 0$, kalikan semua ruas dengan $t^2$ lalu bagi dengan konstanta pembatas:\n$$200 t^2 \\le 28.800 \\implies t^2 \\le \\frac{28.800}{200} = 144$$\n$$800 t^2 \\ge 28.800 \\implies t^2 \\ge \\frac{28.800}{800} = 36$$\nDiperoleh:\n$$36 \\le t^2 \\le 144$$\n\nLangkah 4: Karena waktu $t$ harus bernilai positif, tarik akar kuadrat pada setiap sisi:\n$$\\sqrt{36} \\le t \\le \\sqrt{144} \\implies 6 \\le t \\le 12$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 286,
+        "bagian": "Pemahaman Konsep",
+        "nomor": "2",
+        "teks": "Misalkan f(x) = p(x)/q(x) adalah fungsi rasional dengan derajat q(x) minimal 1. Dengan demikian, asimtot vertikal grafik f bersesuaian dengan penyelesaian persamaan q(x) = 0.",
+        "jawaban": "Salah",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi asimtot vertikal",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap klaim mengenai pembuat nol penyebut dan asimtot vertikal akibat adanya faktor persekutuan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang siswa mengklaim bahwa grafik fungsi rasional $f(x) = \\frac{x^2 - 4x - 12}{x^2 - 8x + 12}$ memiliki dua garis asimtot vertikal, yaitu $x = 2$ dan $x = 6$, karena penyebutnya bernilai nol pada kedua nilai tersebut. Manakah evaluasi yang paling tepat mengenai klaim siswa tersebut?",
+      "jawaban_benar": "Klaim salah, karena grafik hanya memiliki satu asimtot vertikal yaitu $x = 2$, sedangkan pada $x = 6$ grafik membentuk lubang (hole).",
+      "alasan_benar": "Faktorisasi pembilang dan penyebut menghasilkan $(x - 6)(x + 2)$ dan $(x - 6)(x - 2)$. Faktor $(x - 6)$ saling menghilangkan sehingga $x = 6$ bukan asimtot melainkan lubang.",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, karena setiap pembuat nol dari fungsi polinomial penyebut selalu menghasilkan garis asimtot vertikal.",
+          "alasan": "Mengabaikan syarat bahwa pembilang dan penyebut tidak boleh memiliki faktor persekutuan."
+        },
+        {
+          "teks": "Klaim salah, karena grafik tidak memiliki asimtot vertikal sama sekali melainkan hanya memiliki asimtot horizontal $y = 1$.",
+          "alasan": "Mengira pembatalan faktor menghilangkan semua asimtot vertikal."
+        },
+        {
+          "teks": "Klaim salah, karena garis asimtot vertikal fungsi tersebut yang benar adalah $x = -2$ dan $x = 2$.",
+          "alasan": "Menganggap pembuat nol pembilang sebagai asimtot vertikal."
+        }
+      ],
+      "pembahasan": "Faktorkan fungsi $f(x)$:\n$$f(x) = \\frac{x^2 - 4x - 12}{x^2 - 8x + 12} = \\frac{(x - 6)(x + 2)}{(x - 6)(x - 2)}$$\nUntuk $x \\neq 6$, fungsi disederhanakan menjadi $f(x) = \\frac{x + 2}{x - 2}$.\nPembuat nol penyebut setelah penyederhanaan adalah $x - 2 = 0 \\Rightarrow x = 2$. Oleh karena itu, asimtot vertikal satu-satunya adalah garis $x = 2$. Pada nilai $x = 6$, grafik fungsi tidak terdefinisi dan membentuk titik berlubang (hole), bukan asimtot vertikal. Jadi, klaim siswa tersebut salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 287,
+        "bagian": "Latihan B",
+        "nomor": "8a",
+        "teks": "Jika jari-jari bumi diasumsikan 6.371 km, modelkan fungsi jarak d (dalam km) ke horizon untuk sebuah benda yang berada pada ketinggian h km di atas permukaan bumi.",
+        "jawaban": "d(h) = \\sqrt{h^2 + 12.742h}",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan jarak horizon",
+      "jumlah_langkah": 4,
+      "alasan_level": "Melibatkan pemodelan fungsi akar geometri dan penyelesaian persamaan irasional/kuadrat untuk merancang ketinggian orbit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah satelit pengamat dirancang mengorbit sebuah planet berkeadaan bulat sempurna dengan jari-jari $R = 4.000\\text{ km}$. Jarak pandang garis singgung ke horizon dari satelit pada ketinggian $h\\text{ km}$ di atas permukaan planet dimodelkan oleh fungsi akar $d(h) = \\sqrt{h^2 + 2Rh}$. Jika satelit tersebut harus ditempatkan pada ketinggian tertentu agar jarak pandangnya ke horizon tepat bernilai $3.000\\text{ km}$, berapakah nilai ketinggian $h$ yang harus dipilih?",
+      "jawaban_benar": "$1.000\\text{ km}$",
+      "alasan_benar": "Persamaan $h^2 + 8.000h = 3.000^2$ menghasilkan $h^2 + 8.000h - 9.000.000 = 0$, dengan akar positif $h = 1.000$.",
+      "distraktor": [
+        {
+          "teks": "$1.500\\text{ km}$",
+          "alasan": "Kesalahan membagi jarak horizon dengan 2 tanpa menyelesaikan persamaan kuadrat."
+        },
+        {
+          "teks": "$2.000\\text{ km}$",
+          "alasan": "Kesalahan mengabaikan suku $h^2$ dan hanya menghitung $2Rh = 3.000^2$ dengan aproksimasi keliru."
+        },
+        {
+          "teks": "$9.000\\text{ km}$",
+          "alasan": "Mengambil nilai mutlak dari akar negatif pemfaktoran $(h + 9.000)(h - 1.000) = 0$."
+        }
+      ],
+      "pembahasan": "Diketahui model jarak horizon:\n$$d(h) = \\sqrt{h^2 + 2(4.000)h} = \\sqrt{h^2 + 8.000h}$$\nDiketahui $d(h) = 3.000$, maka:\n$$\\sqrt{h^2 + 8.000h} = 3.000$$\nKuadratkan kedua ruas:\n$$h^2 + 8.000h = 9.000.000$$\n$$h^2 + 8.000h - 9.000.000 = 0$$\nFaktorkan persamaan kuadrat:\n$$(h + 9.000)(h - 1.000) = 0$$\nDiperoleh $h = -9.000$ atau $h = 1.000$.\nKarena ketinggian $h$ harus bernilai positif, maka ketinggian orbit yang dipilih adalah $h = 1.000\\text{ km}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 275,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Daerah asal fungsi rasional mencakup himpunan bilangan real yang tidak menyebabkan penyebut bernilai nol."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "parameter daerah asal fungsi rasional",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penentuan nilai batas parameter agar penyebut fungsi rasional definit positif sehingga tidak pernah bernilai nol pada himpunan bilangan real.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{2x + 7}{x^2 - 2mx + (m + 12)}$ terdefinisi untuk seluruh bilangan real ($D_f = \\mathbb{R}$). Himpunan seluruh nilai konstanta real $m$ yang memenuhi kondisi tersebut adalah ....",
+      "jawaban_benar": "$\\{m \\mid -3 < m < 4, m \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Agar penyebut tidak pernah bernilai nol, diskriminan persamaan kuadrat harus memenuhi $D < 0$, menghasilkan $-3 < m < 4$.",
+      "distraktor": [
+        {
+          "teks": "$\\{m \\mid m < -3 \\text{ atau } m > 4, m \\in \\mathbb{R}\\}$",
+          "alasan": "Menggunakan syarat $D > 0$ yang justru membuat penyebut memiliki dua pembuat nol real."
+        },
+        {
+          "teks": "$\\{m \\mid -4 < m < 3, m \\in \\mathbb{R}\\}$",
+          "alasan": "Kesalahan tanda saat memfaktorkan bentuk kuadrat $m^2 - m - 12$."
+        },
+        {
+          "teks": "$\\{m \\mid -3 \\le m \\le 4, m \\in \\mathbb{R}\\}$",
+          "alasan": "Menyertakan tanda sama dengan ($D \\le 0$), padahal saat $D = 0$ terdapat satu nilai pembuat nol pada penyebut."
+        }
+      ],
+      "pembahasan": "Daerah asal fungsi $f(x)$ adalah seluruh himpunan bilangan real jika dan hanya jika penyebut tidak pernah bernilai nol untuk setiap $x \\in \\mathbb{R}$:\n$$x^2 - 2mx + (m + 12) \\neq 0, \\quad \\forall x \\in \\mathbb{R}$$\nBentuk kuadrat dengan koefisien $x^2$ positif ($a = 1 > 0$) tidak memiliki pembuat nol real apabila diskriminannya bernilai negatif ($D < 0$):\n$$D = b^2 - 4ac < 0$$\n$$(-2m)^2 - 4(1)(m + 12) < 0$$\n$$4m^2 - 4m - 48 < 0$$\nBagi kedua ruas dengan 4:\n$$m^2 - m - 12 < 0$$\n$$(m - 4)(m + 3) < 0$$\nPertaksamaan ini terpenuhi pada selang $-3 < m < 4$.\nJadi, himpunan nilai $m$ yang memenuhi adalah $\\{m \\mid -3 < m < 4, m \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekat ke garis y = b ketika nilai x mendekati positif tak hingga atau x mendekati negatif tak hingga, maka garis y = b disebut asimtot horizontal."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis asimtot fungsi rasional kuadrat",
+      "jumlah_langkah": 5,
+      "alasan_level": "Mengombinasikan analisis asimtot horizontal untuk mencari koefisien pembilang dan analisis pembuat nol penyebut untuk mencari asimtot vertikal positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{a x^2 + 8x - 5}{2x^2 - 5x - 3}$ dengan $a$ adalah suatu konstanta bilangan real. Jika grafik fungsi $f$ memiliki garis asimtot horizontal $y = 3$ dan salah satu garis asimtot vertikalnya adalah $x = p$ dengan $p > 0$, maka nilai dari $a + 2p$ adalah ....",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Dari asimtot horizontal diperoleh $a / 2 = 3 \\Rightarrow a = 6$. Asimtot vertikal positif dari $(2x + 1)(x - 3) = 0$ adalah $x = 3$, sehingga $a + 2p = 6 + 2(3) = 12$.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Hanya menghitung nilai $a + p = 6 + 3 = 9$ tanpa mengalikan $p$ dengan 2."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Menggunakan asimtot vertikal negatif $x = -\\frac{1}{2}$ sehingga $6 + 2(-\\frac{1}{2}) = 5$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Salah mengidentifikasi koefisien asimtot horizontal dengan menganggap $a = 3$ dan $p = 6$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $a$.\nUntuk fungsi rasional dengan derajat pembilang dan penyebut sama, asimtot horizontal ditentukan oleh perbandingan koefisien pangkat tertinggi:\n$$y = \\frac{a}{2}$$\nDiketahui asimtot horizontal adalah $y = 3$, maka:\n$$\\frac{a}{2} = 3 \\Rightarrow a = 6$$\n\nLangkah 2: Menentukan asimtot vertikal.\nPenyebut bernilai nol saat:\n$$2x^2 - 5x - 3 = 0$$\n$$(2x + 1)(x - 3) = 0$$\nDiperoleh $x = -\\frac{1}{2}$ atau $x = 3$.\nPeriksa pembilang $6x^2 + 8x - 5$:\nUntuk $x = 3$, pembilang bernilai $6(3)^2 + 8(3) - 5 = 73 \\neq 0$.\nKarena pembilang tidak nol di $x = 3$, maka garis $x = 3$ adalah asimtot vertikal.\nKarena disyaratkan $p > 0$, maka $p = 3$.\n\nLangkah 3: Menghitung nilai yang diminta:\n$$a + 2p = 6 + 2(3) = 12$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap (n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g(x) yang tidak menyebabkan g(x) < 0."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan domain fungsi akar",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perancangan analisis pertidaksamaan rasional dalam bentuk akar berorde genap dengan memperhatikan batas terbuka/tertutup domain.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal alami dari fungsi akar $f(x) = \\sqrt{\\frac{x - 2}{x^2 - 7x + 12}}$ pada himpunan bilangan real dapat dinyatakan dalam bentuk selang (interval) sebagai ....",
+      "jawaban_benar": "$[2, 3) \\cup (4, \\infty)$",
+      "alasan_benar": "Syarat radikan $\\ge 0$ dan penyebut $\\neq 0$ menghasilkan pembuat nol pembilang $x = 2$ (tertutup) dan penyebut $x = 3, 4$ (terbuka), dengan tanda positif pada $[2, 3) \\cup (4, \\infty)$.",
+      "distraktor": [
+        {
+          "teks": "$[2, 3] \\cup [4, \\infty)$",
+          "alasan": "Memasukkan nilai pembuat nol penyebut ($x = 3$ dan $x = 4$) ke dalam daerah asal."
+        },
+        {
+          "teks": "$(2, 3) \\cup (4, \\infty)$",
+          "alasan": "Menggunakan kurung buka pada $x = 2$, seolah-olah nilai nol pada pembilang tidak diperbolehkan."
+        },
+        {
+          "teks": "$(-\\infty, 2] \\cup (3, 4)$",
+          "alasan": "Terbalik dalam menentukan interval hasil uji tanda positif dan negatif pada garis bilangan."
+        }
+      ],
+      "pembahasan": "Fungsi $f(x)$ merupakan fungsi akar berorde genap ($n = 2$), sehingga terdefinisi pada bilangan real jika nilai di dalam akar tidak negatif dan penyebut tidak sama dengan nol:\n$$\\frac{x - 2}{x^2 - 7x + 12} \\ge 0$$\nFaktorkan penyebut:\n$$\\frac{x - 2}{(x - 3)(x - 4)} \\ge 0$$\nSyarat penyebut tidak sama dengan nol:\n$$(x - 3)(x - 4) \\neq 0 \\Rightarrow x \\neq 3 \\text{ dan } x \\neq 4$$\nTitik kritis pembuat nol adalah $x = 2$, $x = 3$, dan $x = 4$.\nUji tanda pada interval:\n- Untuk $x < 2$ (misal $x = 0$): $\\frac{-}{(-)(-)} = \\frac{-}{+} < 0$ (negatif)\n- Untuk $2 \\le x < 3$ (misal $x = 2,5$): $\\frac{+}{(-)(-)} = \\frac{+}{+} > 0$ (positif, termasuk $x = 2$)\n- Untuk $3 < x < 4$ (misal $x = 3,5$): $\\frac{+}{(+)(-)} = \\frac{+}{-} < 0$ (negatif)\n- Untuk $x > 4$ (misal $x = 5$): $\\frac{+}{(+)(+)} = \\frac{+}{+} > 0$ (positif)\n\nDaerah yang memenuhi syarat $\\ge 0$ adalah $2 \\le x < 3$ atau $x > 4$.\nDalam notasi selang (interval), daerah asal tersebut ditulis sebagai $[2, 3) \\cup (4, \\infty)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-5a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "daerah asal dan hasil fungsi rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis pembuat nol penyebut dan manipulasi bentuk kuadrat melalui syarat diskriminan untuk menentukan rentang daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan daerah asal dan daerah hasil fungsi berikut. $f(x) = \\frac{x}{x^2 + 4}$",
+      "jawaban_benar": "Daerah asal $\\{x \\mid x \\in \\mathbb{R}\\}$ dan daerah hasil $\\{y \\mid -\\frac{1}{4} \\le y \\le \\frac{1}{4}, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Penyebut $x^2 + 4 > 0$ untuk setiap $x \\in \\mathbb{R}$, sehingga daerah asal adalah $\\mathbb{R}$. Untuk daerah hasil, dari $y(x^2 + 4) = x \\iff yx^2 - x + 4y = 0$. Jika $y = 0$, diperoleh $x = 0$ (terdefinisi). Jika $y \\neq 0$, agar persamaan memiliki solusi real $x$, syaratnya $D \\ge 0 \\Rightarrow (-1)^2 - 4(y)(4y) \\ge 0 \\Rightarrow 1 - 16y^2 \\ge 0 \\Rightarrow y^2 \\le \\frac{1}{16}$, yaitu $-\\frac{1}{4} \\le y \\le \\frac{1}{4}$.",
+      "distraktor": [
+        {
+          "teks": "Daerah asal $\\{x \\mid x \\neq \\pm 2, x \\in \\mathbb{R}\\}$ dan daerah hasil $\\{y \\mid y \\neq 0, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah mengira pembuat nol penyebut adalah $x^2 + 4 = 0 \\Rightarrow x = \\pm 2$ dan menganggap daerah hasil fungsi rasional selalu $y \\neq 0$."
+        },
+        {
+          "teks": "Daerah asal $\\{x \\mid x \\in \\mathbb{R}\\}$ dan daerah hasil $\\{y \\mid y \\neq 0, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa mengenali domain dengan benar tetapi gagal menganalisis nilai maksimum/minimum pecahan kuadratik sehingga hanya menebak asimtot horizontal $y = 0$."
+        },
+        {
+          "teks": "Daerah asal $\\{x \\mid x \\in \\mathbb{R}\\}$ dan daerah hasil $\\{y \\mid -2 \\le y \\le 2, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa salah menghitung pertidaksamaan diskriminan dengan menarik akar dari $4$ dan bukan dari $\\frac{1}{16}$."
+        }
+      ],
+      "pembahasan": "1. Daerah Asal:\nPenyebut fungsi adalah $x^2 + 4$. Karena untuk setiap bilangan real $x$, $x^2 \\ge 0$, maka $x^2 + 4 \\ge 4 > 0$. Penyebut tidak pernah bernilai nol untuk bilangan real mana pun. Dengan demikian, daerah asal fungsi adalah $D_f = \\{x \\mid x \\in \\mathbb{R}\\}$.\n\n2. Daerah Hasil:\nMisalkan $y = \\frac{x}{x^2 + 4}$.\nKalikan kedua ruas dengan $x^2 + 4$:\n$y(x^2 + 4) = x \\iff yx^2 - x + 4y = 0$.\n- Kasus $y = 0$:\n$0 \\cdot x^2 - x + 0 = 0 \\Rightarrow -x = 0 \\Rightarrow x = 0$.\nKarena $x = 0 \\in D_f$, maka $y = 0$ termasuk dalam daerah hasil.\n- Kasus $y \\neq 0$:\nPersamaan $yx^2 - x + 4y = 0$ merupakan persamaan kuadrat dalam $x$. Agar $x$ bernilai real, nilai diskriminannya harus memenuhi $D \\ge 0$:\n$D = b^2 - 4ac = (-1)^2 - 4(y)(4y) \\ge 0$\n$1 - 16y^2 \\ge 0$\n$16y^2 \\le 1$\n$y^2 \\le \\frac{1}{16}$\n$-\\frac{1}{4} \\le y \\le \\frac{1}{4}$.\n\nKarena $y = 0$ termuat di dalam selang $[-\\frac{1}{4}, \\frac{1}{4}]$, daerah hasil fungsi adalah $R_f = \\{y \\mid -\\frac{1}{4} \\le y \\le \\frac{1}{4}, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 275,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita asumsikan bahwa P ( x ) dan Q ( x ) tidak memiliki faktor persekutuan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesamaan fungsi rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap klaim kesamaan dua fungsi aljabar dengan meneliti syarat domain alami dan keberadaan titik berlubang (hole).",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan dua buah fungsi $f(x) = \\frac{x^2 - 4x + 3}{x - 3}$ dan $g(x) = x - 1$. Seorang siswa mengklaim bahwa $f(x) = g(x)$ untuk seluruh himpunan bilangan real karena bentuk aljabar pembilang dapat difaktorkan dan disederhanakan dengan membagi suku $(x - 3)$. Evaluasi yang paling tepat mengenai klaim siswa tersebut adalah ....",
+      "jawaban_benar": "Klaim salah, karena $D_f = \\{x \\mid x \\neq 3, x \\in \\mathbb{R}\\}$ sedangkan $D_g = \\mathbb{R}$, sehingga grafik $f(x)$ memiliki titik berlubang (hole) di $(3, 2)$ sedangkan grafik $g(x)$ garis lurus kontinu",
+      "alasan_benar": "Dua fungsi dikatakan sama jika memiliki aturan dan domain yang sama. Pada $f(x)$, nilai $x = 3$ membuat penyebut nol sehingga $3 \\notin D_f$, membentuk titik lubang $(3, 2)$. Sedangkan fungsi linear $g(x)$ terdefinisi untuk seluruh bilangan real tanpa lubang.",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, karena sifat pembagian aljabar menjamin bahwa kedua fungsi memiliki nilai keluaran yang sama untuk setiap input bilangan real",
+          "alasan": "Siswa mengabaikan pembatasan daerah asal penyebut tidak boleh nol dalam penyederhanaan aljabar rasional."
+        },
+        {
+          "teks": "Klaim salah, karena garis $x = 3$ merupakan asimtot vertikal bagi grafik $f(x)$, sedangkan grafik $g(x)$ tidak memiliki asimtot",
+          "alasan": "Siswa keliru membedakan antara titik berlubang (hole yang disebabkan faktor persekutuan yang saling membagi) dengan asimtot vertikal."
+        },
+        {
+          "teks": "Klaim salah, karena daerah hasil kedua fungsi berbeda yaitu $R_f = \\mathbb{R}$ sedangkan $R_g = \\{y \\mid y \\neq 2, y \\in \\mathbb{R}\\}$",
+          "alasan": "Siswa tertukar antara daerah hasil fungsi $f$ dan daerah hasil fungsi $g$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tinjau definisi kesamaan dua fungsi.\nDua fungsi $f$ dan $g$ dikatakan sama ($f = g$) jika dan hanya jika keduanya memiliki daerah asal yang sama ($D_f = D_g$) dan $f(x) = g(x)$ untuk setiap $x$ dalam daerah asal tersebut.\n\nLangkah 2: Tentukan daerah asal masing-masing fungsi.\n- Fungsi $f(x) = \\frac{x^2 - 4x + 3}{x - 3}$ terdefinisi jika penyebutnya tidak sama dengan nol: $x - 3 \\neq 0 \\implies x \\neq 3$. Jadi, $D_f = \\{x \\mid x \\neq 3, x \\in \\mathbb{R}\\}$.\n- Fungsi $g(x) = x - 1$ adalah fungsi linear polinomial, sehingga daerah asalnya adalah seluruh bilangan real: $D_g = \\mathbb{R}$.\n\nLangkah 3: Analisis karakteristik grafik saat $x \\to 3$.\nUntuk setiap $x \\neq 3$:\n$f(x) = \\frac{(x - 3)(x - 1)}{x - 3} = x - 1$.\nKarena faktor persekutuan $(x - 3)$ saling membatalkan, grafik fungsi $f(x)$ tidak memiliki asimtot vertikal di $x = 3$, melainkan memiliki titik berlubang (removable discontinuity / hole) pada koordinat $(3, 3 - 1) = (3, 2)$.\nSebaliknya, grafik fungsi $g(x) = x - 1$ merupakan garis lurus penuh yang kontinu dan memuat titik $(3, 2)$.\n\nLangkah 4: Evaluasi klaim.\nKarena daerah asal kedua fungsi tidak identik ($D_f \\neq D_g$), klaim siswa tersebut salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 287,
+        "bagian": "Pemahaman Konsep",
+        "nomor": "4",
+        "teks": "Jika daerah asal fungsi akar adalah himpunan bilangan real, daerah hasilnya juga merupakan himpunan bilangan real.",
+        "jawaban": "Salah",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi relasi domain kodomain fungsi akar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Siswa harus mengevaluasi klaim matematis mengenai daerah hasil fungsi akar dengan menganalisis nilai ekstrem fungsi sanggahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang siswa mengklaim bahwa jika suatu fungsi akar berindeks genap $f(x) = \\sqrt{g(x)} + c$ memiliki daerah asal seluruh himpunan bilangan real ($D_f = \\mathbb{R}$), maka daerah hasilnya ($R_f$) pasti selalu berupa selang $[c, \\infty)$. Untuk menguji klaim tersebut, seorang guru memberikan fungsi $f(x) = \\sqrt{x^2 + 9} + 2$. Berdasarkan fungsi tersebut, kesimpulan evaluasi yang tepat terhadap klaim siswa adalah ....",
+      "jawaban_benar": "Klaim salah, karena untuk setiap $x \\in \\mathbb{R}$ berlaku $x^2 + 9 \\ge 9$, sehingga daerah hasilnya adalah $[5, \\infty)$, bukan $[2, \\infty)$.",
+      "alasan_benar": "Karena $x^2 \\ge 0$, nilai minimum $x^2 + 9$ adalah 9, sehingga nilai minimum $f(x)$ adalah $\\sqrt{9} + 2 = 5$. Maka daerah hasilnya $[5, \\infty)$, membuktikan klaim bahwa daerah hasil selalu $[c, \\infty)$ adalah salah.",
+      "distraktor": [
+        {
+          "teks": "Klaim benar, karena pembuat nol dari bentuk akar adalah $x = 0$ sehingga nilai minimum fungsinya adalah $f(0) = 2$ dan $R_f = [2, \\infty)$.",
+          "alasan": "Siswa keliru menganggap nilai akar bernilai 0 ketika $x = 0$ tanpa menghitung $\\sqrt{0 + 9} = 3$."
+        },
+        {
+          "teks": "Klaim salah, karena fungsi akar berderajat genap tidak dapat memiliki daerah asal seluruh bilangan real $\\mathbb{R}$.",
+          "alasan": "Siswa keliru memahami syarat daerah asal akar, padahal $x^2 + 9 > 0$ untuk setiap bilangan real $x$."
+        },
+        {
+          "teks": "Klaim benar, karena setiap fungsi akar yang terdefinisi pada $\\mathbb{R}$ memiliki nilai terkecil fungsi tepat di $y = c$.",
+          "alasan": "Siswa berasumsi salah bahwa batas bawah bentuk akar $\\sqrt{g(x)}$ selalu mencapai nilai nol."
+        }
+      ],
+      "pembahasan": "Untuk fungsi $f(x) = \\sqrt{x^2 + 9} + 2$:\n1. Karena $x^2 \\ge 0$ untuk seluruh $x \\in \\mathbb{R}$, maka $x^2 + 9 \\ge 9 > 0$. Dengan demikian, fungsi terdefinisi untuk seluruh bilangan real ($D_f = \\mathbb{R}$).\n2. Nilai minimum dari bentuk $\\sqrt{x^2 + 9}$ tercapai saat $x = 0$, yaitu $\\sqrt{0 + 9} = 3$.\n3. Nilai minimum fungsi adalah $f(0) = 3 + 2 = 5$.\n4. Karena nilai $\\sqrt{x^2 + 9}$ dapat membesar tanpa batas seiring $|x| \\to \\infty$, daerah hasil fungsinya adalah $R_f = [5, \\infty)$.\nHal ini membuktikan bahwa klaim siswa salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap ( n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g ( x ) yang tidak menyebabkan g ( x ) < 0."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "daerah asal fungsi akar irasional",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pertidaksamaan irasional bersarang dengan analisis syarat ganda untuk menentukan irisan domain alami.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dari fungsi $f(x) = \\sqrt{6 - x - \\sqrt{x + 6}}$ pada himpunan bilangan real adalah $D_f$. Banyaknya bilangan bulat yang termuat di dalam $D_f$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "Syarat domain menghasilkan $-6 \\le x \\le 3$, sehingga terdapat 10 bilangan bulat yaitu $-6, -5, -4, -3, -2, -1, 0, 1, 2, 3$.",
+      "distraktor": [
+        {
+          "teks": "9",
+          "alasan": "Siswa menghitung selisih batas $3 - (-6) = 9$ tanpa menambahkan 1 untuk kedua batas inklusif."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa hanya memperhitungkan bilangan bulat tak negatif dalam rentang $[0, 3]$."
+        },
+        {
+          "teks": "7",
+          "alasan": "Siswa keliru menyelesaikan pertidaksamaan kuadrat sehingga mendapatkan batas bawah $-3$."
+        }
+      ],
+      "pembahasan": "Fungsi $f(x) = \\sqrt{6 - x - \\sqrt{x + 6}}$ terdefinisi pada $\\mathbb{R}$ jika memenuhi dua syarat:\n1. Bentuk akar dalam: $x + 6 \\ge 0 \\implies x \\ge -6$.\n2. Bentuk akar luar: $6 - x - \\sqrt{x + 6} \\ge 0 \\implies \\sqrt{x + 6} \\le 6 - x$.\nKarena $\\sqrt{x + 6} \\ge 0$, maka harus berlaku $6 - x \\ge 0 \\implies x \\le 6$.\nKuadratkan kedua ruas:\n$x + 6 \\le (6 - x)^2$\n$x + 6 \\le 36 - 12x + x^2$\n$x^2 - 13x + 30 \\ge 0$\n$(x - 3)(x - 10) \\ge 0$\nDiperoleh $x \\le 3$ atau $x \\ge 10$.\nIrisan dari seluruh syarat:\n$x \\ge -6$, $x \\le 6$, dan ($x \\le 3$ atau $x \\ge 10$)\nDiperoleh $D_f = [-6, 3]$.\nBilangan bulat pada $D_f$: $-6, -5, -4, -3, -2, -1, 0, 1, 2, 3$.\nBanyaknya bilangan bulat = $3 - (-6) + 1 = 10$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekat ke garis y = b ketika nilai x mendekati positif tak hingga atau x mendekati negatif tak hingga, maka garis y = b disebut asimtot horizontal ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "parameter asimtot horizontal",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perumusan parameter fungsi rasional berdasarkan sifat asimtot horizontal dan perpotongannya dengan kurva.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{a x^2 + b x + 6}{2x^2 - 8}$ dengan $a$ dan $b$ adalah konstanta bilangan real. Garis $y = 3$ merupakan asimtot horizontal dari grafik fungsi $f$. Jika grafik fungsi $f$ memotong garis asimtot horizontal tersebut pada titik dengan absis $x = 5$, nilai dari $a + b$ adalah ....",
+      "jawaban_benar": "0",
+      "alasan_benar": "Dari asimtot didapat $a/2 = 3 \\implies a = 6$, dan dari $f(5) = 3$ didapat $b = -6$, sehingga $a + b = 6 + (-6) = 0$.",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "Siswa salah tanda saat menyelesaikan persamaan titik potong sehingga menghasilkan $b = 6$, lalu $a + b = 12$."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa hanya menghitung nilai parameter $a$ dan mengabaikan penjumlahan dengan parameter $b$."
+        },
+        {
+          "teks": "-6",
+          "alasan": "Siswa hanya menyebutkan nilai dari parameter $b$."
+        }
+      ],
+      "pembahasan": "1. Derajat pembilang sama dengan derajat penyebut (sama-sama 2). Asimtot horizontal ditentukan oleh rasio koefisien pangkat tertinggi:\n$y = \\frac{a}{2}$.\nDiketahui asimtot horizontal adalah $y = 3$, maka:\n$\\frac{a}{2} = 3 \\implies a = 6$.\n\n2. Grafik fungsi memotong garis asimtot horizontal $y = 3$ di $x = 5$, artinya $f(5) = 3$:\n$f(5) = \\frac{6(5^2) + b(5) + 6}{2(5^2) - 8} = 3$\n$\\frac{6(25) + 5b + 6}{2(25) - 8} = 3$\n$\\frac{156 + 5b}{42} = 3$\n$156 + 5b = 126$\n$5b = 126 - 156$\n$5b = -30 \\implies b = -6$.\n\n3. Nilai $a + b = 6 + (-6) = 0$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 279,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekati garis y = mx + b ketika nilai x mendekati positif tak hingga atau x mendekati negatif tak hingga, maka garis y = mx + b disebut asimtot miring ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis asimtot miring dan parabola",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perpaduan aljabar pembagian polinomial untuk mencari asimtot miring serta penentuan titik ekstrem parabola.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi rasional $f(x) = \\frac{3x^2 + m x + 8}{x - 2}$ dengan $m$ adalah suatu konstanta bilangan real. Garis asimtot miring dari grafik fungsi $f$ melalui titik puncak dari grafik fungsi kuadrat $g(x) = -x^2 + 4x + 1$. Nilai dari konstanta $m$ adalah ....",
+      "jawaban_benar": "-7",
+      "alasan_benar": "Asimtot miring adalah $y = 3x + m + 6$. Titik puncak $g(x)$ adalah $(2, 5)$. Substitusi $(2, 5)$ menghasilkan $5 = 3(2) + m + 6 \\implies m = -7$.",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "Siswa salah memindahkan suku saat aljabar akhir sehingga memperoleh $m = 12 - 5 = 7$."
+        },
+        {
+          "teks": "-5",
+          "alasan": "Siswa salah menentukan ordinat puncak parabola dengan menghitung $g(2) = 3$ bukan $5$."
+        },
+        {
+          "teks": "1",
+          "alasan": "Siswa salah melakukan pembagian bersusun dengan mengabaikan perkalian $(-2)$ sehingga konstanta menjadi $m - 6$."
+        }
+      ],
+      "pembahasan": "1. Pembagian polinomial untuk $f(x)$:\n$\\frac{3x^2 + mx + 8}{x - 2} = 3x + (m + 6) + \\frac{2m + 20}{x - 2}$.\nMaka persamaan asimtot miring grafik fungsi $f$ adalah $y = 3x + m + 6$.\n\n2. Menentukan titik puncak grafik fungsi kuadrat $g(x) = -x^2 + 4x + 1$:\n$x_p = -\\frac{b}{2a} = -\\frac{4}{2(-1)} = 2$.\n$y_p = g(2) = -(2)^2 + 4(2) + 1 = -4 + 8 + 1 = 5$.\nJadi titik puncak $g(x)$ adalah $(2, 5)$.\n\n3. Garis asimtot miring melalui $(2, 5)$:\n$5 = 3(2) + m + 6$\n$5 = 6 + m + 6$\n$5 = m + 12$\n$m = 5 - 12 = -7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 278,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekat ke garis y = b ketika nilai x mendekati positif tak hingga atau x mendekati negatif tak hingga, maka garis y = b disebut asimtot horizontal ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi perpotongan asimtot fungsi rasional",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap miskonsepsi umum bahwa kurva fungsi rasional tidak dapat memotong garis asimtot horizontal melalui analisis aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang siswa menyatakan bahwa kurva dari grafik suatu fungsi rasional tidak akan pernah memotong garis asimtotnya. Untuk menguji pernyataan tersebut, guru menyajikan fungsi rasional $f(x) = \\frac{2x^2 - 4x + 6}{x^2 + 2}$. Berdasarkan analisis terhadap fungsi $f(x)$, simpulan yang paling tepat mengenai pernyataan siswa tersebut adalah ....",
+      "jawaban_benar": "Pernyataan siswa salah, karena grafik $f(x)$ memotong asimtot horizontalnya di titik $\\left(\\frac{1}{2}, 2\\right)$",
+      "alasan_benar": "Asimtot horizontal $f(x)$ adalah garis $y = 2$, dan substitusi $f(x) = 2$ menghasilkan perpotongan tepat di titik $\\left(\\frac{1}{2}, 2\\right)$.",
+      "distraktor": [
+        {
+          "teks": "Pernyataan siswa benar, karena persamaan $f(x) = 2$ tidak memiliki solusi pada himpunan bilangan real",
+          "alasan": "Mengira grafik fungsi tidak boleh memotong asimtot horizontal dan salah menyelesaikan persamaan aljabar perpotongan."
+        },
+        {
+          "teks": "Pernyataan siswa benar, karena fungsi $f(x)$ tidak memiliki asimtot horizontal maupun asimtot vertikal",
+          "alasan": "Gagal mengenali keberadaan asimtot horizontal akibat pembagian derajat polinomial yang sama."
+        },
+        {
+          "teks": "Pernyataan siswa salah, karena grafik $f(x)$ memotong asimtot vertikal di titik $(1, 0)$",
+          "alasan": "Tertukar antara konsep asimtot vertikal dan horizontal, padahal penyebut $x^2 + 2 > 0$ tidak memiliki pembuat nol real."
+        }
+      ],
+      "pembahasan": "Langkah-langkah evaluasi:\n1. Tentukan asimtot vertikal: Penyebut fungsi adalah $x^2 + 2$. Karena $x^2 + 2 > 0$ untuk setiap $x \\in \\mathbb{R}$, penyebut tidak pernah bernilai nol. Jadi, grafik $f(x)$ tidak memiliki asimtot vertikal.\n2. Tentukan asimtot horizontal: Karena derajat pembilang dan penyebut sama, yaitu 2, maka asimtot horizontal diperoleh dari rasio koefisien pangkat tertinggi:\n$$y = \\lim_{x \\to \\pm\\infty} \\frac{2x^2 - 4x + 6}{x^2 + 2} = 2$$\n3. Periksa titik potong grafik $f(x)$ dengan garis asimtot horizontal $y = 2$:\n$$\\frac{2x^2 - 4x + 6}{x^2 + 2} = 2$$\n$$2x^2 - 4x + 6 = 2(x^2 + 2)$$\n$$2x^2 - 4x + 6 = 2x^2 + 4$$\n$$-4x + 6 = 4 \\implies -4x = -2 \\implies x = \\frac{1}{2}$$\n4. Koordinat titik potongnya adalah $\\left(\\frac{1}{2}, 2\\right)$. Dengan demikian, pernyataan siswa salah karena kurva fungsi memotong asimtot horizontalnya di titik $\\left(\\frac{1}{2}, 2\\right)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-hard-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap ( n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g ( x ) yang tidak menyebabkan g ( x ) < 0."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "parameter domain fungsi akar",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perancangan dan evaluasi syarat definit non-negatif serta peninjauan kasus khusus koefisien nol agar domain fungsi akar mencakup seluruh bilangan real.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi akar $f(x) = \\sqrt{k x^2 - 4k x + (k + 12)}$ dengan $k$ adalah suatu konstanta bilangan real. Agar fungsi $f(x)$ terdefinisi untuk seluruh bilangan real (daerah asal $D_f = \\mathbb{R}$), himpunan semua nilai $k$ yang memenuhi adalah ....",
+      "jawaban_benar": "$\\{k \\mid 0 \\le k \\le 4, k \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Syarat $g(x) \\ge 0$ untuk setiap $x \\in \\mathbb{R}$ dipenuhi saat $k = 0$ (menghasilkan fungsi konstan $\\sqrt{12}$) atau saat $k > 0$ dan $D \\le 0$ ($0 < k \\le 4$), sehingga gabungannya adalah $0 \\le k \\le 4$.",
+      "distraktor": [
+        {
+          "teks": "$\\{k \\mid 0 < k \\le 4, k \\in \\mathbb{R}\\}$",
+          "alasan": "Lupa menguji kasus linier/konstan ketika $k = 0$ yang juga membuat fungsi terdefinisi pada seluruh bilangan real."
+        },
+        {
+          "teks": "$\\{k \\mid k \\le 0 \\text{ atau } k \\ge 4, k \\in \\mathbb{R}\\}$",
+          "alasan": "Keliru menerapkan syarat diskriminan dengan menggunakan $D \\ge 0$ alih-alih $D \\le 0$."
+        },
+        {
+          "teks": "$\\{k \\mid -4 \\le k \\le 0, k \\in \\mathbb{R}\\}$",
+          "alasan": "Salah melakukan pemfaktoran pada pertidaksamaan diskriminan $12k^2 - 48k \\le 0$."
+        }
+      ],
+      "pembahasan": "Langkah-langkah penyelesaian:\n1. Syarat agar fungsi akar $f(x) = \\sqrt{g(x)}$ terdefinisi pada seluruh $\\mathbb{R}$ adalah $g(x) \\ge 0$ untuk setiap $x \\in \\mathbb{R}$, yaitu:\n$$k x^2 - 4k x + (k + 12) \\ge 0$$\n2. Tinjau Kasus 1 ($k = 0$):\nSubstitusikan $k = 0$ ke dalam fungsi:\n$$f(x) = \\sqrt{0 \\cdot x^2 - 0 \\cdot x + 12} = \\sqrt{12}$$\nKarena $\\sqrt{12}$ terdefinisi untuk semua $x \\in \\mathbb{R}$, maka $k = 0$ memenuhi syarat.\n3. Tinjau Kasus 2 ($k \\neq 0$):\nBentuk kuadrat bernilai non-negatif untuk setiap $x \\in \\mathbb{R}$ (definit positif atau menyinggung sumbu-$x$) jika:\n- Koefisien $x^2 > 0 \\implies k > 0$\n- Diskriminan $D \\le 0$:\n$$D = (-4k)^2 - 4(k)(k + 12) \\le 0$$\n$$16k^2 - 4k^2 - 48k \\le 0$$\n$$12k^2 - 48k \\le 0$$\n$$12k(k - 4) \\le 0$$\nPenyelesaian pertidaksamaan ini adalah $0 \\le k \\le 4$. Karena disyaratkan $k > 0$, maka diperoleh selang $0 < k \\le 4$.\n4. Gabungkan hasil dari Kasus 1 dan Kasus 2:\n$$\\{k = 0\\} \\cup \\{k \\mid 0 < k \\le 4\\} = \\{k \\mid 0 \\le k \\le 4, k \\in \\mathbb{R}\\}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "book": "kelas7",
+  "bab_no": 4,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Materi subbab A tipis (istilah variabel, suku, koefisien, konstanta, substitusi). Acuan pretest habis di easy/medium, sisa acuan siswa hanya 3b (terlalu mudah) dan Ayo Berpikir Kritis 1a/2a (2a ambigu); soal bergambar tidak dapat dipakai. Penalaran hard di luar 12 soal ini akan menjadi nyaris kembar atau di luar materi.",
+  "soal": [
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Suku adalah bilangan, variabel atau campuran perkalian bilangan dan variabel yang dipisahkan oleh operasi penjumlahan dan pengurangan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menelusuri tiap langkah substitusi bilangan negatif untuk menemukan langkah pertama yang keliru, lalu menghitung nilai benar",
+      "stimulus": null,
+      "pertanyaan": "Rani menghitung nilai bentuk aljabar $5 - 3x + 2y$ untuk $x = -2$ dan $y = 4$ dengan langkah berikut. Langkah 1: $5 - 3(-2) + 2(4)$. Langkah 2: $5 - 6 + 8$. Langkah 3: $7$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+      "jawaban_benar": "langkah 2 keliru dan nilai yang benar adalah $19$",
+      "alasan_benar": "$-3 \\times (-2) = +6$, bukan $-6$; nilai benar $5 + 6 + 8 = 19$",
+      "distraktor": [
+        {
+          "teks": "langkah 3 keliru dan nilai yang benar adalah $19$",
+          "alasan": "langkah 3 sudah benar menurut langkah 2 ($5 - 6 + 8 = 7$); kesalahan ada di langkah 2"
+        },
+        {
+          "teks": "langkah 1 keliru dan nilai yang benar adalah $19$",
+          "alasan": "substitusi di langkah 1 sudah tepat"
+        },
+        {
+          "teks": "langkah 2 keliru dan nilai yang benar adalah $3$",
+          "alasan": "tanda $-3(-2)$ diperbaiki, tetapi $2(4) = 8$ dihitung $-8$"
+        }
+      ],
+      "pembahasan": "Substitusi di langkah 1 benar. Di langkah 2, $-3(-2) = 6$ sehingga bentuknya $5 + 6 + 8 = 19$. Langkah 3 hanya melanjutkan hasil yang salah.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-001"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Koefisien adalah bilangan yang menyatakan faktor pengali dari suatu variabel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "mengevaluasi klaim umum tentang koefisien positif dengan memilih contoh yang memenuhi syarat klaim namun hasilnya menyangkal",
+      "stimulus": null,
+      "pertanyaan": "Dika berkata, \"Jika koefisien variabel pada suatu bentuk aljabar positif, nilai bentuk itu pasti positif untuk setiap bilangan bulat pengganti variabelnya.\" Contoh yang menunjukkan bahwa pernyataan Dika salah adalah ....",
+      "jawaban_benar": "$3x + 2$ untuk $x = -1$",
+      "alasan_benar": "koefisien $3$ positif, tetapi $3(-1) + 2 = -1$ yang negatif",
+      "distraktor": [
+        {
+          "teks": "$-3x + 2$ untuk $x = 1$",
+          "alasan": "nilainya negatif, tetapi koefisiennya negatif sehingga tidak memenuhi syarat klaim"
+        },
+        {
+          "teks": "$3x + 8$ untuk $x = -2$",
+          "alasan": "koefisien positif tetapi nilainya $2$, masih positif"
+        },
+        {
+          "teks": "$4x - 5$ untuk $x = 2$",
+          "alasan": "koefisien positif dan nilainya $3$, masih positif"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memiliki koefisien positif dan bernilai tidak positif. Hanya $3x + 2$ untuk $x = -1$ ($-1$) yang memenuhi.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-002"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Koefisien adalah bilangan yang menyatakan faktor pengali dari suatu variabel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menentukan parameter",
+      "alasan_level": "menggunakan dua nilai bentuk aljabar pada dua nilai variabel untuk menelusuri koefisien dan konstanta yang belum diketahui",
+      "stimulus": null,
+      "pertanyaan": "Pada bentuk aljabar $px + q$, $p$ dan $q$ adalah bilangan bulat. Bentuk tersebut bernilai $11$ untuk $x = 2$ dan bernilai $-4$ untuk $x = -1$. Koefisien $x$ dan konstanta bentuk aljabar itu berturut-turut adalah ....",
+      "jawaban_benar": "$5$ dan $1$",
+      "alasan_benar": "$2p + q = 11$ dan $-p + q = -4$; selisih nilai $15$ untuk selisih $x$ sebesar $3$ sehingga $p = 5$, lalu $q = 11 - 10 = 1$",
+      "distraktor": [
+        {
+          "teks": "$5$ dan $-1$",
+          "alasan": "koefisien benar, tetapi konstanta salah tanda ($10 - 1 = 9$, bukan $11$)"
+        },
+        {
+          "teks": "$-5$ dan $21$",
+          "alasan": "kenaikan nilai dianggap penurunan; tidak cocok untuk $x = -1$ ($5 + 21 = 26$)"
+        },
+        {
+          "teks": "$3$ dan $5$",
+          "alasan": "selisih $x$ ($3$) dianggap koefisien lalu konstanta dicari dari $x = 2$; tidak cocok untuk $x = -1$"
+        }
+      ],
+      "pembahasan": "Saat $x$ naik dari $-1$ ke $2$ (naik $3$), nilai naik dari $-4$ ke $11$ (naik $15$), sehingga koefisien $x$ adalah $15 \\div 3 = 5$. Dari $x = 2$: $5(2) + q = 11$ sehingga $q = 1$. Cek $x = -1$: $-5 + 1 = -4$.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-003"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Suku adalah bilangan, variabel atau campuran perkalian bilangan dan variabel yang dipisahkan oleh operasi penjumlahan dan pengurangan."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 3,
+      "jenis_soal": "merancang bentuk aljabar",
+      "alasan_level": "memilih bentuk aljabar yang memenuhi empat syarat unsur sekaligus (banyak suku, dua koefisien, konstanta bertanda)",
+      "stimulus": null,
+      "pertanyaan": "Dani merancang sebuah bentuk aljabar yang memenuhi syarat berikut: terdiri atas tepat tiga suku, hanya memuat variabel $x$ dan $y$, koefisien $x$ adalah $-1$, koefisien $y$ adalah $4$, dan konstantanya $6$. Bentuk aljabar yang memenuhi semua syarat itu adalah ....",
+      "jawaban_benar": "$-x + 4y + 6$",
+      "alasan_benar": "tiga suku $-x$, $4y$, $6$; koefisien $x$ adalah $-1$, koefisien $y$ adalah $4$, konstanta $6$",
+      "distraktor": [
+        {
+          "teks": "$x + 4y + 6$",
+          "alasan": "koefisien $x$ bernilai $1$, bukan $-1$"
+        },
+        {
+          "teks": "$-x + 4y - 6$",
+          "alasan": "konstanta bernilai $-6$, bukan $6$"
+        },
+        {
+          "teks": "$6x + 4y - 1$",
+          "alasan": "koefisien $x$ dan konstanta tertukar"
+        }
+      ],
+      "pembahasan": "Setiap syarat diperiksa: hanya $-x + 4y + 6$ yang memiliki koefisien $x = -1$, koefisien $y = 4$, dan konstanta $6$ dengan tiga suku.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-004"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Koefisien adalah bilangan yang menyatakan faktor pengali dari suatu variabel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan dua model",
+      "alasan_level": "membandingkan dua bentuk aljabar biaya untuk mencari batas banyak jam dengan mengujinya di sekitar titik perpotongan",
+      "stimulus": null,
+      "pertanyaan": "Paket sewa A menarik biaya $20.000 + 5.000n$ rupiah untuk $n$ jam, sedangkan paket B menarik biaya $8.000n$ rupiah untuk $n$ jam. Untuk $n$ bilangan bulat, banyak jam terbanyak agar biaya paket B kurang dari biaya paket A adalah ....",
+      "jawaban_benar": "$6$ jam",
+      "alasan_benar": "$n = 6$: B $= 48.000$ dan A $= 50.000$ (B lebih murah); $n = 7$: B $= 56.000$ dan A $= 55.000$ (B lebih mahal)",
+      "distraktor": [
+        {
+          "teks": "$7$ jam",
+          "alasan": "pada $7$ jam biaya B ($56.000$) sudah lebih besar dari A ($55.000$)"
+        },
+        {
+          "teks": "$5$ jam",
+          "alasan": "biaya B memang lebih kecil, tetapi bukan jam terbanyak karena $6$ jam masih memenuhi"
+        },
+        {
+          "teks": "$4$ jam",
+          "alasan": "hanya membagi biaya tetap dengan tarif per jam A ($20.000 \\div 5.000$)"
+        }
+      ],
+      "pembahasan": "Uji $n = 6$: B $= 48.000 < 50.000 =$ A. Uji $n = 7$: B $= 56.000 > 55.000 =$ A. Jadi jam terbanyak adalah $6$.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-005"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Konstanta adalah bilangan yang nilainya tetap."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi klaim proporsional dengan memperhitungkan konstanta (biaya tetap) pada bentuk aljabar",
+      "stimulus": null,
+      "pertanyaan": "Biaya fotokopi di sebuah toko dinyatakan dengan $2.000 + 300n$ rupiah untuk $n$ lembar, dengan $2.000$ adalah biaya tetap. Pernyataan yang benar tentang biaya $40$ lembar dibandingkan biaya $20$ lembar adalah ....",
+      "jawaban_benar": "biaya $40$ lembar kurang dari dua kali biaya $20$ lembar karena biaya tetap hanya dibayar sekali",
+      "alasan_benar": "biaya $20$ lembar $= 8.000$, biaya $40$ lembar $= 14.000 < 16.000$",
+      "distraktor": [
+        {
+          "teks": "biaya $40$ lembar tepat dua kali biaya $20$ lembar, yaitu Rp16.000,00",
+          "alasan": "konstanta ikut dikalikan dua padahal tetap"
+        },
+        {
+          "teks": "biaya $40$ lembar lebih dari dua kali biaya $20$ lembar karena biaya tetap ikut bertambah",
+          "alasan": "konstanta nilainya tetap, tidak ikut bertambah"
+        },
+        {
+          "teks": "biaya $40$ lembar sama dengan biaya $20$ lembar ditambah Rp8.000,00",
+          "alasan": "biaya $20$ lembar dianggap ditambahkan utuh termasuk biaya tetap ($8.000 + 8.000 = 16.000$)"
+        }
+      ],
+      "pembahasan": "$20$ lembar: $2.000 + 6.000 = 8.000$. $40$ lembar: $2.000 + 12.000 = 14.000$. Dua kali $8.000$ adalah $16.000$, jadi $14.000$ kurang dari dua kali.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-006"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Suku adalah bilangan, variabel atau campuran perkalian bilangan dan variabel yang dipisahkan oleh operasi penjumlahan dan pengurangan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "mendiagnosis satu pola kesalahan yang menyebabkan tiga jawaban unsur sekaligus keliru",
+      "stimulus": null,
+      "pertanyaan": "Untuk bentuk aljabar $-4x + 7y - 5$, Beni menulis: suku-sukunya $4x$, $7y$, dan $5$; koefisien $x$ adalah $4$; konstantanya $5$. Kesalahan yang menyebabkan ketiga jawaban Beni keliru adalah ....",
+      "jawaban_benar": "tanda negatif di depan $4x$ dan $5$ diabaikan",
+      "alasan_benar": "suku seharusnya $-4x$, $7y$, $-5$; koefisien $x$ adalah $-4$; konstanta $-5$",
+      "distraktor": [
+        {
+          "teks": "koefisien dan konstanta tertukar",
+          "alasan": "jika tertukar, koefisien $x$ akan ditulis $-5$ atau $5$, bukan $4$"
+        },
+        {
+          "teks": "bilangan di depan variabel dianggap konstanta",
+          "alasan": "Beni tetap menulis $4$ sebagai koefisien $x$, jadi bukan itu penyebabnya"
+        },
+        {
+          "teks": "suku yang bernilai positif dihitung dua kali",
+          "alasan": "banyak suku Beni tetap tiga, sama dengan banyak suku sebenarnya"
+        }
+      ],
+      "pembahasan": "Suku-suku sebenarnya $-4x$, $7y$, $-5$. Beni menulis $4x$ dan $5$, jadi tanda negatif diabaikan; akibatnya koefisien $x$ ($4$ bukan $-4$) dan konstanta ($5$ bukan $-5$) ikut keliru.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-007"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Variabel adalah suatu huruf atau simbol yang digunakan untuk menyatakan suatu kuantitas yang berubah-ubah atau kuantitas yang tidak diketahui."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "membandingkan dua model",
+      "alasan_level": "membandingkan dua bentuk aljabar pada beberapa nilai variabel dan memilih nilai terkecil dengan syarat kurang dari (bukan sama dengan)",
+      "stimulus": null,
+      "pertanyaan": "Bentuk aljabar $P = 10 - 3x$ dan $Q = 2x - 5$. Bilangan cacah $x$ terkecil sehingga nilai $P$ kurang dari nilai $Q$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$x = 3$: $P = 1$, $Q = 1$ (sama); $x = 4$: $P = -2$, $Q = 3$ sehingga $P < Q$",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "pada $x = 3$ kedua nilai sama ($1$), padahal diminta kurang dari"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "memenuhi $P < Q$ tetapi bukan yang terkecil karena $x = 4$ sudah memenuhi"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "pada $x = 2$ nilai $P = 4$ lebih besar dari $Q = -1$"
+        }
+      ],
+      "pembahasan": "Uji berurutan: $x = 0$ ($10$ dan $-5$), $1$ ($7$ dan $-3$), $2$ ($4$ dan $-1$), $3$ ($1$ dan $1$), $4$ ($-2$ dan $3$). Pertama kali $P < Q$ pada $x = 4$.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-008"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Koefisien adalah bilangan yang menyatakan faktor pengali dari suatu variabel."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi tafsir koefisien bertanda negatif dalam konteks dan memeriksanya dengan mencari nilai variabel yang membuat bentuk bernilai nol",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tangki berisi $60$ liter air. Volume air dalam tangki setelah $t$ menit dinyatakan dengan $60 - 4t$ liter. Pernyataan yang benar tentang situasi tersebut adalah ....",
+      "jawaban_benar": "volume air berkurang $4$ liter tiap menit dan tangki kosong setelah $15$ menit",
+      "alasan_benar": "koefisien $-4$ berarti berkurang $4$ liter tiap menit; $60 - 4t = 0$ untuk $t = 15$",
+      "distraktor": [
+        {
+          "teks": "volume air bertambah $4$ liter tiap menit dan tangki kosong setelah $15$ menit",
+          "alasan": "tanda negatif pada koefisien ditafsirkan sebagai penambahan"
+        },
+        {
+          "teks": "volume air berkurang $4$ liter tiap menit dan tangki kosong setelah $60$ menit",
+          "alasan": "konstanta dianggap lama waktu kosong"
+        },
+        {
+          "teks": "volume air berkurang $60$ liter tiap menit dan tangki kosong setelah $4$ menit",
+          "alasan": "konstanta dan koefisien tertukar"
+        }
+      ],
+      "pembahasan": "Konstanta $60$ adalah volume awal, koefisien $-4$ berarti berkurang $4$ liter per menit. Kosong saat $60 - 4t = 0$, yaitu $t = 15$ (cek: $60 - 4(15) = 0$).",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-009"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Koefisien adalah bilangan yang menyatakan faktor pengali dari suatu variabel."
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang bentuk aljabar",
+      "alasan_level": "mencari pasangan koefisien dan konstanta yang memenuhi syarat nilai dan syarat urutan sekaligus; tiap pilihan lain melanggar tepat satu syarat",
+      "stimulus": null,
+      "pertanyaan": "Pada bentuk aljabar $mx + n$, $m$ dan $n$ adalah bilangan bulat positif. Bentuk tersebut harus bernilai $17$ untuk $x = 3$, dan konstantanya harus lebih besar dari koefisien $x$. Pasangan $m$ dan $n$ yang memenuhi kedua syarat adalah ....",
+      "jawaban_benar": "$m = 3$ dan $n = 8$",
+      "alasan_benar": "$3(3) + 8 = 17$ dan $8 > 3$",
+      "distraktor": [
+        {
+          "teks": "$m = 5$ dan $n = 2$",
+          "alasan": "bernilai $17$ tetapi konstanta $2$ lebih kecil dari koefisien $5$"
+        },
+        {
+          "teks": "$m = 2$ dan $n = 9$",
+          "alasan": "konstanta lebih besar dari koefisien tetapi nilainya $6 + 9 = 15$, bukan $17$"
+        },
+        {
+          "teks": "$m = 4$ dan $n = 6$",
+          "alasan": "konstanta lebih besar dari koefisien tetapi nilainya $12 + 6 = 18$, bukan $17$"
+        }
+      ],
+      "pembahasan": "Cek dua syarat tiap pasangan. Hanya $m = 3$, $n = 8$ yang bernilai $3(3) + 8 = 17$ dan memiliki $8 > 3$.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Ekspresi matematika yang menggunakan huruf ini disebut sebagai bentuk aljabar."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menemukan kesalahan tanda pada pemodelan dua perubahan berlawanan, lalu membuktikan dengan substitusi",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kolam berisi $80$ liter air. Air masuk $6$ liter tiap menit dan air keluar $2$ liter tiap menit. Rina menulis volume air setelah $t$ menit sebagai $80 + 6t + 2t$. Pernyataan yang benar tentang bentuk yang seharusnya dan volume air setelah $10$ menit adalah ....",
+      "jawaban_benar": "bentuk yang seharusnya $80 + 6t - 2t$ dan volumenya $120$ liter",
+      "alasan_benar": "air keluar mengurangi volume: $80 + 60 - 20 = 120$",
+      "distraktor": [
+        {
+          "teks": "bentuk Rina sudah benar dan volumenya $160$ liter",
+          "alasan": "air keluar dianggap menambah volume"
+        },
+        {
+          "teks": "bentuk yang seharusnya $80 - 6t - 2t$ dan volumenya $0$ liter",
+          "alasan": "air masuk dianggap mengurangi volume"
+        },
+        {
+          "teks": "bentuk yang seharusnya $80 + 6t - 2$ dan volumenya $138$ liter",
+          "alasan": "pengurangan $2$ tidak dikalikan $t$"
+        }
+      ],
+      "pembahasan": "Air masuk menambah $6t$, air keluar mengurangi $2t$, sehingga $80 + 6t - 2t$. Untuk $t = 10$: $80 + 60 - 20 = 120$ liter.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 151,
+        "kutipan": "Konstanta adalah bilangan yang nilainya tetap."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi pernyataan ganda (nilai dan tafsir unsur) pada bentuk aljabar berkoefisien berbeda tanda dalam konteks",
+      "stimulus": null,
+      "pertanyaan": "Saldo usaha kue Pak Tono dinyatakan dengan $50.000 + 8.000a - 3.000b$ rupiah, dengan $a$ banyak kue terjual dan $b$ banyak kue gagal. Jika $a = 6$ dan $b = 5$, pernyataan yang benar adalah ....",
+      "jawaban_benar": "saldonya Rp83.000,00 dan koefisien $b$ menunjukkan saldo berkurang Rp3.000,00 tiap kue gagal",
+      "alasan_benar": "$50.000 + 48.000 - 15.000 = 83.000$; koefisien $-3.000$ berarti berkurang $3.000$ tiap kue gagal",
+      "distraktor": [
+        {
+          "teks": "saldonya Rp113.000,00 dan koefisien $b$ menunjukkan saldo berkurang Rp3.000,00 tiap kue gagal",
+          "alasan": "suku $-3.000b$ dihitung $+15.000$"
+        },
+        {
+          "teks": "saldonya Rp98.000,00 dan koefisien $b$ menunjukkan saldo berkurang Rp3.000,00 tiap kue gagal",
+          "alasan": "suku kue gagal tidak dihitung"
+        },
+        {
+          "teks": "saldonya Rp83.000,00 dan konstanta $50.000$ bertambah Rp8.000,00 tiap kue terjual",
+          "alasan": "konstanta nilainya tetap; yang bertambah adalah suku $8.000a$"
+        }
+      ],
+      "pembahasan": "Nilai: $50.000 + 8.000(6) - 3.000(5) = 83.000$. Konstanta $50.000$ tetap, koefisien $-3.000$ berarti saldo berkurang tiap kue gagal.",
+      "catatan": null,
+      "id": "kelas7-b04-a-hard-bt01-012"
+    }
+  ]
+}

@@ -1,0 +1,644 @@
+{
+  "book": "kelas9",
+  "bab_no": 3,
+  "subbab": "E",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas9-b03-e-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0217-ayo-mencoba-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "koordinat bayangan dilatasi segitiga",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan koordinat bayangan tiga titik sudut segitiga secara bertahap menggunakan perkalian faktor skala pecahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segitiga $PQR$ dengan koordinat titik sudut $P(-6, 9)$, $Q(3, -6)$, dan $R(12, 15)$. Koordinat bayangan titik-titik sudut segitiga $PQR$ setelah didilatasikan terhadap pusat titik asal $O(0,0)$ dengan faktor skala $\\frac{1}{3}$ adalah ....",
+      "jawaban_benar": "$P'(-2, 3)$, $Q'(1, -2)$, dan $R'(4, 5)$",
+      "alasan_benar": "Mengalikan setiap absis dan ordinat titik sudut dengan faktor skala $\\frac{1}{3}$: $P'(\\frac{1}{3} \\times (-6), \\frac{1}{3} \\times 9) = P'(-2, 3)$, $Q'(\\frac{1}{3} \\times 3, \\frac{1}{3} \\times (-6)) = Q'(1, -2)$, dan $R'(\\frac{1}{3} \\times 12, \\frac{1}{3} \\times 15) = R'(4, 5)$.",
+      "distraktor": [
+        {
+          "teks": "$P'(2, -3)$, $Q'(-1, 2)$, dan $R'(-4, -5)$",
+          "alasan": "Siswa salah memasukkan tanda faktor skala menjadi negatif ($-\\frac{1}{3}$)."
+        },
+        {
+          "teks": "$P'(-18, 27)$, $Q'(9, -18)$, dan $R'(36, 45)$",
+          "alasan": "Siswa mengalikan koordinat dengan 3, bukan membagi dengan 3 (salah operasi faktor skala pecahan)."
+        },
+        {
+          "teks": "$P'(3, -2)$, $Q'(-2, 1)$, dan $R'(5, 4)$",
+          "alasan": "Siswa menukar posisi nilai absis dan ordinat pada koordinat bayangan."
+        }
+      ],
+      "pembahasan": "Rumus bayangan titik $(x, y)$ oleh dilatasi $[O, k]$ adalah $(kx, ky)$.\\n1. Untuk titik $P(-6, 9)$:\\n$x' = \\frac{1}{3} \\times (-6) = -2$\\n$y' = \\frac{1}{3} \\times 9 = 3$\\nDiperoleh $P'(-2, 3)$.\\n\\n2. Untuk titik $Q(3, -6)$:\\n$x' = \\frac{1}{3} \\times 3 = 1$\\n$y' = \\frac{1}{3} \\times (-6) = -2$\\nDiperoleh $Q'(1, -2)$.\\n\\n3. Untuk titik $R(12, 15)$:\\n$x' = \\frac{1}{3} \\times 12 = 4$\\n$y' = \\frac{1}{3} \\times 15 = 5$\\nDiperoleh $R'(4, 5)$.\\n\\nJadi, koordinat bayangannya adalah $P'(-2, 3)$, $Q'(1, -2)$, dan $R'(4, 5)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 218,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Diketahui persegi panjang KLMN dengan K(4, -2), L(4, -4), M(4,6) dan N(2,4). Tentukan bayangan persegi panjang tersebut yang didilatasikan terhadap [ P (2,2), - 2]! Gambarkan segi empat tersebut beserta bayangannya pada bidang koordinat!",
+        "jawaban": "K'(-2, 10), L'(-2, 14), M'(-2, -6), N'(2, -2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "bayangan dilatasi titik pusat P(a,b)",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan rumus dilatasi dengan titik pusat bukan titik asal $(a, b)$ dan faktor skala bernilai negatif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bayangan titik $A(5, -1)$ oleh dilatasi dengan pusat $P(2, 1)$ dan faktor skala $-2$ adalah ....",
+      "jawaban_benar": "$(-4, 5)$",
+      "alasan_benar": "Menggunakan rumus dilatasi pusat $(a, b)$: $x' = k(x - a) + a = -2(5 - 2) + 2 = -4$ dan $y' = k(y - b) + b = -2(-1 - 1) + 1 = 5$.",
+      "distraktor": [
+        {
+          "teks": "$(-6, 4)$",
+          "alasan": "Siswa lupa menambahkan kembali koordinat pusat $(a, b)$ di akhir perhitungan sehingga hanya menghitung $k(x - a)$ dan $k(y - b)$."
+        },
+        {
+          "teks": "$(-10, 2)$",
+          "alasan": "Siswa memperlakukan dilatasi seolah-olah berpusat di titik asal $O(0,0)$ dengan langsung mengalikan $(kx, ky)$."
+        },
+        {
+          "teks": "$(-4, -3)$",
+          "alasan": "Siswa melakukan kesalahan perhitungan tanda negatif saat menghitung ordinat: $-2(-1 - 1) = -4$, lalu $-4 + 1 = -3$."
+        }
+      ],
+      "pembahasan": "Rumus bayangan dilatasi titik $A(x, y)$ terhadap pusat $P(a, b)$ dengan faktor skala $k$ adalah:\\n$A'(k(x - a) + a, k(y - b) + b)$\\n\\nDiketahui $x = 5$, $y = -1$, $a = 2$, $b = 1$, dan $k = -2$.\\n1. Menentukan absis $x'$:\\n$x' = -2(5 - 2) + 2$\\n$x' = -2(3) + 2$\\n$x' = -6 + 2 = -4$\\n\\n2. Menentukan ordinat $y'$:\\n$y' = -2(-1 - 1) + 1$\\n$y' = -2(-2) + 1$\\n$y' = 4 + 1 = 5$\\n\\nJadi, bayangan titik $A$ adalah $(-4, 5)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": "Penerapan Konsep",
+        "nomor": "F",
+        "teks": "Gambarlah Δ OVW dengan O(0,0), V( - 4,0), dan W(0,6). 1 a. Gambarkan Δ OV'W' dengan dilatasi [O, - 1 2 ]! Gambarkan 1 juga Δ OV''W'' dengan dilatasi [ O , 1 2 ]! b. Tuliskan koordinat V',W',V'' dan W''! c. Tentukan faktor skala dilatasi Δ OV'W' ke Δ OV''W''!",
+        "jawaban": "-1",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "faktor skala dilatasi bertingkat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan analisis koordinat bayangan perantara terlebih dahulu, kemudian menentukan faktor skala antara dua bayangan bertingkat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(6, -8)$ didilatasikan terhadap titik pusat $O(0,0)$ dengan faktor skala $\\frac{1}{2}$ menghasilkan bayangan titik $A'$. Jika bayangan lanjutan dari titik $A'$ oleh suatu dilatasi dengan pusat $O(0,0)$ adalah titik $A''(9, -12)$, maka faktor skala dilatasi dari titik $A'$ ke titik $A''$ adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "Koordinat $A'$ adalah $(3, -4)$. Dilatasi dari $A'(3, -4)$ ke $A''(9, -12)$ memiliki faktor skala $k = \\frac{9}{3} = 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "Siswa menghitung faktor skala total dari titik awal $A(6, -8)$ langsung ke $A''(9, -12)$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Siswa membalik perbandingan titik akhir dengan titik awal ($A'$ terhadap $A''$)."
+        },
+        {
+          "teks": "6",
+          "alasan": "Siswa mengalikan selisih koordinat atau salah melakukan operasi pembagian."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan koordinat bayangan pertama $A'$.\\nTitik $A(6, -8)$ didilatasikan dengan pusat $O(0,0)$ dan faktor skala $k_1 = \\frac{1}{2}$:\\n$A' = \\left(\\frac{1}{2} \\times 6, \\frac{1}{2} \\times (-8)\\right) = (3, -4)$\\n\\nLangkah 2: Menentukan faktor skala dilatasi dari $A'$ ke $A''$.\\nTitik $A'(3, -4)$ didilatasikan ke $A''(9, -12)$ dengan pusat $O(0,0)$ dan faktor skala $k_2$:\\n$x'' = k_2 \\times x' \\implies 9 = k_2 \\times 3 \\implies k_2 = 3$\\n$y'' = k_2 \\times y' \\implies -12 = k_2 \\times (-4) \\implies k_2 = 3$\\n\\nJadi, faktor skala dilatasi dari $A'$ ke $A''$ adalah 3.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A ( x,y ) yang didilatasikan terhadap pusat P ( a,b ) dan faktor skala k adalah A' ( k ( x-a ) +a,k ( y-b ) +b )."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik asal dari dilatasi pusat P(a,b)",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan proses aljabar pembalikan rumus (invers) untuk menemukan koordinat titik asal dari bayangan dan pusat yang diketahui, lalu menjumlahkannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(x, y)$ didilatasikan terhadap titik pusat $P(3, -2)$ dengan faktor skala 3 sehingga menghasilkan bayangan $A'(9, 7)$. Nilai dari $x + y$ adalah ....",
+      "jawaban_benar": "6",
+      "alasan_benar": "Mencari $x$: $9 = 3(x - 3) + 3 \\implies x = 5$. Mencari $y$: $7 = 3(y - (-2)) + (-2) \\implies y = 1$. Maka $x + y = 5 + 1 = 6$.",
+      "distraktor": [
+        {
+          "teks": "4",
+          "alasan": "Siswa menghitung nilai selisih $x - y = 5 - 1 = 4$, bukan penjumlahan $x + y$."
+        },
+        {
+          "teks": "10",
+          "alasan": "Siswa salah memasukkan tanda ordinat titik pusat $P$ menjadi $b = 2$ sehingga memperoleh $y = 5$ dan $x + y = 10$."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa salah mengoperasikan persamaan aljabar pada absis sehingga memperoleh $x = 6$ dan $y = 2$."
+        }
+      ],
+      "pembahasan": "Berdasarkan rumus dilatasi terhadap pusat $P(a, b)$ dengan faktor skala $k$:\\n$x' = k(x - a) + a$\\n$y' = k(y - b) + b$\\n\\nDiketahui $a = 3$, $b = -2$, $k = 3$, $x' = 9$, dan $y' = 7$.\\n\\n1. Menentukan nilai $x$:\\n$9 = 3(x - 3) + 3$\\n$9 - 3 = 3(x - 3)$\\n$6 = 3(x - 3)$\\n$2 = x - 3 \\implies x = 5$\\n\\n2. Menentukan nilai $y$:\\n$7 = 3(y - (-2)) + (-2)$\\n$7 = 3(y + 2) - 2$\\n$7 + 2 = 3(y + 2)$\\n$9 = 3(y + 2)$\\n$3 = y + 2 \\implies y = 1$\\n\\n3. Menghitung $x + y$:\\n$x + y = 5 + 1 = 6$.\\n\\nJadi, nilai dari $x + y$ adalah 6.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 221,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hitunglah luas bangun awal dan bayangannya!"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas bayangan hasil dilatasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan dimensi bangun awal pada koordinat kartesius, luas bangun awal, dan penerapan sifat pengaruh faktor skala terhadap luas bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persegi panjang $ABCD$ memiliki koordinat titik sudut $A(1, 1)$, $B(5, 1)$, $C(5, 4)$, dan $D(1, 4)$. Jika persegi panjang tersebut didilatasikan terhadap titik pusat $O(0,0)$ dengan faktor skala $-2$, maka luas bayangan persegi panjang $A'B'C'D'$ adalah ....",
+      "jawaban_benar": "$48\\text{ satuan luas}$",
+      "alasan_benar": "Panjang awal $= 5 - 1 = 4$, lebar awal $= 4 - 1 = 3$. Luas awal $= 4 \\times 3 = 12$. Luas bayangan $= k^2 \\times \\text{Luas awal} = (-2)^2 \\times 12 = 4 \\times 12 = 48\\text{ satuan luas}$.",
+      "distraktor": [
+        {
+          "teks": "$24\\text{ satuan luas}$",
+          "alasan": "Siswa mengalikan luas awal dengan $|k|$ bukan dengan $k^2$ ($12 \\times 2 = 24$)."
+        },
+        {
+          "teks": "$28\\text{ satuan luas}$",
+          "alasan": "Siswa menghitung keliling dari bayangan persegi panjang, bukan luasnya ($2 \\times (8 + 6) = 28$)."
+        },
+        {
+          "teks": "$56\\text{ satuan luas}$",
+          "alasan": "Siswa mengalikan keliling bangun awal dengan $k^2$ ($14 \\times 4 = 56$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan ukuran panjang dan lebar persegi panjang awal $ABCD$.\\n- Panjang $AB = 5 - 1 = 4\\text{ satuan}$\\n- Lebar $BC = 4 - 1 = 3\\text{ satuan}$\\n\\nLangkah 2: Menghitung luas persegi panjang awal.\\n$\\text{Luas awal} = 4 \\times 3 = 12\\text{ satuan luas}$\\n\\nLangkah 3: Menghitung luas bayangan hasil dilatasi.\\nPada dilatasi dengan faktor skala $k$, luas bayangan memenuhi hubungan:\\n$\\text{Luas bayangan} = k^2 \\times \\text{Luas awal}$\\n\\nDengan $k = -2$:\\n$\\text{Luas bayangan} = (-2)^2 \\times 12 = 4 \\times 12 = 48\\text{ satuan luas}$.\\n\\nJadi, luas bayangan persegi panjang tersebut adalah $48\\text{ satuan luas}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0221-latihan-e-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas bayangan segitiga siku-siku",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan luas segitiga awal kemudian menerapkan sifat faktor skala kuadrat pada luas bayangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu segitiga $PQR$ siku-siku di titik $Q$ memiliki panjang sisi $PQ = 12\\text{ cm}$, $QR = 16\\text{ cm}$, dan $PR = 20\\text{ cm}$. Jika segitiga $P'Q'R'$ merupakan hasil dilatasi dari segitiga $PQR$ dengan faktor skala $\\frac{1}{2}$, maka luas segitiga $P'Q'R'$ adalah ....",
+      "jawaban_benar": "$24\\text{ cm}^2$",
+      "alasan_benar": "Luas awal segitiga $PQR$ adalah $\\frac{1}{2} \\times 12 \\times 16 = 96\\text{ cm}^2$. Luas hasil dilatasi segitiga $P'Q'R'$ adalah $k^2 \\times \\text{Luas } PQR = \\left(\\frac{1}{2}\\right)^2 \\times 96 = \\frac{1}{4} \\times 96 = 24\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$48\\text{ cm}^2$",
+          "alasan": "Hanya mengalikan luas awal dengan faktor skala $k = \\frac{1}{2}$, bukan dengan $k^2$."
+        },
+        {
+          "teks": "$96\\text{ cm}^2$",
+          "alasan": "Hanya menghitung luas segitiga mula-mula tanpa melakukan dilatasi."
+        },
+        {
+          "teks": "$12\\text{ cm}^2$",
+          "alasan": "Mengalikan luas awal dengan $k^3 = \\frac{1}{8}$ seolah-olah menghitung perbesaran volume."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas segitiga siku-siku awal $PQR$.\n$$\\text{Luas } PQR = \\frac{1}{2} \\times PQ \\times QR = \\frac{1}{2} \\times 12 \\times 16 = 96\\text{ cm}^2$$\n\nLangkah 2: Menghitung luas segitiga bayangan $P'Q'R'$ setelah didilatasi dengan faktor skala $k = \\frac{1}{2}$.\n$$\\text{Luas } P'Q'R' = k^2 \\times \\text{Luas } PQR = \\left(\\frac{1}{2}\\right)^2 \\times 96 = \\frac{1}{4} \\times 96 = 24\\text{ cm}^2$$\n\nJadi, luas segitiga $P'Q'R'$ adalah $24\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": "Contoh 3.15",
+        "nomor": "-",
+        "teks": "Diketahui persegi panjang EFGH dengan E(1,0), F(3,0), G(3,1) dan H(1,1). Tentukan bayangan persegi panjang EFGH yang didilatasikan terhadap [P(2,3), 2]!",
+        "jawaban": "E'(0,-3), F'(4,-3), G'(4,-1), dan H'(0,-1)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "keliling bayangan persegi panjang",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan dimensi keliling awal dan penerapan perbesaran keliling linier oleh faktor skala dilatasi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui persegi panjang $KLMN$ memiliki titik-titik sudut $K(2, 1)$, $L(8, 1)$, $M(8, 5)$, dan $N(2, 5)$. Jika persegi panjang tersebut didilatasikan terhadap pusat $P(3, 2)$ dengan faktor skala 3, keliling bayangan persegi panjang $K'L'M'N'$ adalah ....",
+      "jawaban_benar": "$60\\text{ satuan}$",
+      "alasan_benar": "Panjang awal $KL = 8 - 2 = 6\\text{ satuan}$ dan lebar $LM = 5 - 1 = 4\\text{ satuan}$. Keliling awal $= 2 \\times (6 + 4) = 20\\text{ satuan}$. Keliling bayangan $= |k| \\times \\text{keliling awal} = 3 \\times 20 = 60\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$180\\text{ satuan}$",
+          "alasan": "Keliru mengalikan keliling dengan faktor skala kuadrat $k^2 = 9$ (rumus luas)."
+        },
+        {
+          "teks": "$20\\text{ satuan}$",
+          "alasan": "Hanya menghitung keliling bangun awal dan lupa mengalikannya dengan faktor skala."
+        },
+        {
+          "teks": "$30\\text{ satuan}$",
+          "alasan": "Hanya mengalikan setengah keliling (panjang ditambah lebar) dengan faktor skala."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung keliling persegi panjang awal $KLMN$.\n- Panjang $p = 8 - 2 = 6\\text{ satuan}$\n- Lebar $l = 5 - 1 = 4\\text{ satuan}$\n$$\\text{Keliling awal} = 2 \\times (p + l) = 2 \\times (6 + 4) = 20\\text{ satuan}$$\n\nLangkah 2: Menghitung keliling bayangan persegi panjang $K'L'M'N'$.\nPerubahan keliling pada dilatasi berbanding lurus dengan nilai mutlak faktor skala $|k|$.\n$$\\text{Keliling bayangan} = |k| \\times \\text{Keliling awal} = 3 \\times 20 = 60\\text{ satuan}$$\n\nJadi, keliling bayangan persegi panjang $K'L'M'N'$ adalah $60\\text{ satuan}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat P(a,b) dan faktor skala k adalah A'(k(x-a)+a, k(y-b)+b)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "menentukan pusat dilatasi P(a,b)",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis rumus koordinat bayangan dilatasi dengan pusat sembarang untuk mencari variabel titik pusat yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(5, 3)$ didilatasikan dengan faktor skala $k = 3$ sehingga menghasilkan bayangan $A'(11, 7)$. Jika dilatasi tersebut berpusat di titik $P(a, b)$, koordinat titik $P$ adalah ....",
+      "jawaban_benar": "$(2, 1)$",
+      "alasan_benar": "Menggunakan rumus bayangan $x' = k(x - a) + a$ diperoleh $11 = 3(5 - a) + a \\iff 11 = 15 - 2a \\iff 2a = 4 \\iff a = 2$. Untuk sumbu $y$, $y' = k(y - b) + b$ diperoleh $7 = 3(3 - b) + b \\iff 7 = 9 - 2b \\iff 2b = 2 \\iff b = 1$. Pusat dilatasi adalah $(2, 1)$.",
+      "distraktor": [
+        {
+          "teks": "$(1, 2)$",
+          "alasan": "Tertukar antara nilai absis $a$ dan ordinat $b$."
+        },
+        {
+          "teks": "$(-2, -1)$",
+          "alasan": "Salah tanda aljabar saat memindahkan suku pada persamaan linier."
+        },
+        {
+          "teks": "$(3, 2)$",
+          "alasan": "Salah dalam operasi aljabar saat membagi koefisien variabel."
+        }
+      ],
+      "pembahasan": "Rumus bayangan dilatasi terhadap pusat $P(a, b)$ dengan faktor skala $k$ adalah:\n$$x' = k(x - a) + a$$\n$$y' = k(y - b) + b$$\n\nLangkah 1: Menentukan absis titik pusat $a$.\n$$11 = 3(5 - a) + a$$\n$$11 = 15 - 3a + a$$\n$$11 = 15 - 2a$$\n$$2a = 15 - 11$$\n$$2a = 4 \\implies a = 2$$\n\nLangkah 2: Menentukan ordinat titik pusat $b$.\n$$7 = 3(3 - b) + b$$\n$$7 = 9 - 3b + b$$\n$$7 = 9 - 2b$$\n$$2b = 9 - 7$$\n$$2b = 2 \\implies b = 1$$\n\nJadi, koordinat pusat dilatasi $P$ adalah $(2, 1)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat O(0,0) dengan faktor skala k adalah A'(kx, ky)."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik awal dari dilatasi berurutan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis dua proses dilatasi berurutan dari bayangan akhir mundur untuk menentukan koordinat awal dan mengoperasikannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $M(p, q)$ didilatasikan terhadap pusat $O(0,0)$ dengan faktor skala $-3$, kemudian bayangannya didilatasikan kembali terhadap pusat $O(0,0)$ dengan faktor skala $\\frac{1}{2}$ sehingga menghasilkan bayangan akhir $M''(-6, 9)$. Nilai dari $p - q$ adalah ....",
+      "jawaban_benar": "10",
+      "alasan_benar": "Faktor skala gabungan adalah $k = -3 \\times \\frac{1}{2} = -\\frac{3}{2}$. Maka $-\\frac{3}{2}p = -6 \\iff p = 4$, dan $-\\frac{3}{2}q = 9 \\iff q = -6$. Nilai $p - q = 4 - (-6) = 10$.",
+      "distraktor": [
+        {
+          "teks": "$-2$",
+          "alasan": "Menghitung penjumlahan $p + q = 4 + (-6) = -2$ bukan pengurangan $p - q$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Terbalik mengurangkan menjadi $q - p = -6 - 4 = -10$."
+        },
+        {
+          "teks": "2",
+          "alasan": "Keliru menentukan tanda koordinat $p = -4$ dan $q = -6$ sehingga $-4 - (-6) = 2$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan faktor skala total dari dua dilatasi berpusat di $O(0,0)$.\n$$k_{\\text{total}} = k_1 \\times k_2 = -3 \\times \\frac{1}{2} = -\\frac{3}{2}$$\n\nLangkah 2: Menentukan nilai $p$ dan $q$ dari koordinat bayangan akhir $M''(-6, 9)$.\n$$p' = k_{\\text{total}} \\times p \\implies -6 = -\\frac{3}{2}p \\implies p = -6 \\times \\left(-\\frac{2}{3}\\right) = 4$$\n$$q' = k_{\\text{total}} \\times q \\implies 9 = -\\frac{3}{2}q \\implies q = 9 \\times \\left(-\\frac{2}{3}\\right) = -6$$\n\nLangkah 3: Menghitung nilai $p - q$.\n$$p - q = 4 - (-6) = 4 + 6 = 10$$\n\nJadi, nilai dari $p - q$ adalah 10.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A(x,y) yang didilatasikan terhadap pusat P(a,b) dan faktor skala k adalah A'(k(x-a)+a, k(y-b)+b)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "menentukan faktor skala dilatasi pusat P(a,b)",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menyusun persamaan dari hubungan bayangan terhadap titik pusat sembarang dan menyelesaikannya untuk menemukan faktor skala k.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $B(2, -3)$ didilatasikan terhadap titik pusat $P(-1, 1)$ menghasilkan bayangan $B'(-10, 13)$. Faktor skala dilatasi tersebut adalah ....",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Berdasarkan rumus $x' = k(x - a) + a$, diperoleh $-10 = k(2 - (-1)) + (-1) \\iff -10 = 3k - 1 \\iff 3k = -9 \\iff k = -3$. Hasil ini konsisten pada ordinat $y' = -3(-3 - 1) + 1 = 13$.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Lupa tanda negatif saat membagi $-9$ dengan $3$."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Salah memindahkan konstanta sehingga menghitung $-10 - 2 = -12$ lalu dibagi $3$."
+        },
+        {
+          "teks": "$-\\frac{1}{3}$",
+          "alasan": "Terbalik membagi pembilang dan penyebut saat menghitung nilai $k$."
+        }
+      ],
+      "pembahasan": "Rumus bayangan dilatasi dengan pusat $P(a, b)$ dan faktor skala $k$ adalah:\n$$x' = k(x - a) + a$$\n\nDiketahui $x = 2$, $y = -3$, $a = -1$, $b = 1$, $x' = -10$, dan $y' = 13$.\n\nLangkah 1: Substitusi nilai-nilai absis ke dalam rumus untuk mencari $k$.\n$$-10 = k(2 - (-1)) + (-1)$$\n$$-10 = k(2 + 1) - 1$$\n$$-10 = 3k - 1$$\n$$3k = -10 + 1$$\n$$3k = -9$$\n$$k = -3$$\n\nLangkah 2: Memeriksa kesesuaian nilai $k$ pada koordinat ordinat $y$.\n$$y' = k(y - b) + b = -3(-3 - 1) + 1 = -3(-4) + 1 = 12 + 1 = 13 \\quad (\\text{sesuai})$$\n\nJadi, faktor skala dilatasi tersebut adalah $-3$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": "Contoh 3.14",
+        "nomor": "3.14",
+        "teks": "Diketahui Δ ABC dengan A ( - 2,1), B (2,2) dan C (1,4). Tentukan bayangannya jika segitiga tersebut didilatasikan dengan [ O ,2]! Gambarkan segitiga tersebut beserta bayangannya pada bidang koordinat!",
+        "jawaban": "A'(-4,2), B'(4,4), C'(2,8)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "koordinat bayangan segitiga dilatasi pusat O",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan rumus dilatasi pusat O dengan faktor skala negatif terhadap tiga koordinat titik sudut secara berurutan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui segitiga $KLM$ memiliki koordinat titik-titik sudut $K(-1, 3)$, $L(4, 2)$, dan $M(2, -3)$. Jika segitiga tersebut didilatasikan terhadap pusat titik asal dengan faktor skala $-3$, koordinat bayangan titik-titik sudutnya adalah ....",
+      "jawaban_benar": "$K'(3, -9)$, $L'(-12, -6)$, dan $M'(-6, 9)$",
+      "alasan_benar": "Mengalikan setiap absis dan ordinat titik dengan faktor skala $k = -3$ menghasilkan $K'(-1 \\times (-3), 3 \\times (-3)) = K'(3, -9)$, $L'(4 \\times (-3), 2 \\times (-3)) = L'(-12, -6)$, dan $M'(2 \\times (-3), -3 \\times (-3)) = M'(-6, 9)$.",
+      "distraktor": [
+        {
+          "teks": "$K'(-3, 9)$, $L'(12, 6)$, dan $M'(6, -9)$",
+          "alasan": "Siswa mengalikan dengan 3 tanpa memperhatikan tanda negatif pada faktor skala."
+        },
+        {
+          "teks": "$K'(3, -9)$, $L'(-12, -6)$, dan $M'(-6, -9)$",
+          "alasan": "Siswa lupa mengalikan tanda minus saat mengalikan ordinat $M(-3)$ dengan $-3$."
+        },
+        {
+          "teks": "$K'(-4, 0)$, $L'(1, -1)$, dan $M'(-1, -6)$",
+          "alasan": "Siswa menjumlahkan koordinat titik dengan faktor skala $-3$, bukan mengalikannya."
+        }
+      ],
+      "pembahasan": "Rumus bayangan dilatasi dengan pusat $O(0,0)$ dan faktor skala $k$ adalah $A'(kx, ky)$.\nDengan $k = -3$:\n- $K(-1, 3) \\rightarrow K'(-3 \\times (-1), -3 \\times 3) = K'(3, -9)$\n- $L(4, 2) \\rightarrow L'(-3 \\times 4, -3 \\times 2) = L'(-12, -6)$\n- $M(2, -3) \\rightarrow M'(-3 \\times 2, -3 \\times (-3)) = M'(-6, 9)$\n\nJadi, bayangan segitiga $KLM$ adalah $K'(3, -9)$, $L'(-12, -6)$, dan $M'(-6, 9)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas9-b03-p0221-latihan-e-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "luas bayangan segitiga siku-siku dilatasi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan perhitungan luas segitiga awal terlebih dahulu kemudian mengalikannya dengan kuadrat faktor skala.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Suatu segitiga siku-siku $DEF$ siku-siku di titik $E$ memiliki panjang $DE = 5\\text{ cm}$, $EF = 12\\text{ cm}$, dan $DF = 13\\text{ cm}$. Jika segitiga $D'E'F'$ merupakan hasil dilatasi dari segitiga $DEF$ dengan faktor skala 4, maka luas segitiga $D'E'F'$ adalah ....",
+      "jawaban_benar": "$480\\text{ cm}^2$",
+      "alasan_benar": "Luas segitiga awal adalah $\\frac{1}{2} \\times 5 \\times 12 = 30\\text{ cm}^2$. Luas hasil dilatasi dengan faktor skala $k = 4$ adalah $k^2 \\times \\text{luas awal} = 16 \\times 30 = 480\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$120\\text{ cm}^2$",
+          "alasan": "Siswa mengalikan luas awal dengan $k$, bukan $k^2$ ($30 \\times 4 = 120$)."
+        },
+        {
+          "teks": "$240\\text{ cm}^2$",
+          "alasan": "Siswa lupa membagi dua pada perhitungan luas segitiga awal lalu mengalikan dengan $k$ ($60 \\times 4 = 240$)."
+        },
+        {
+          "teks": "$960\\text{ cm}^2$",
+          "alasan": "Siswa tidak membagi dua pada rumus luas segitiga siku-siku sebelum dikalikan $k^2$ ($60 \\times 16 = 960$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung luas $\\Delta DEF$ mula-mula:\n$$\\text{Luas} = \\frac{1}{2} \\times DE \\times EF = \\frac{1}{2} \\times 5\\text{ cm} \\times 12\\text{ cm} = 30\\text{ cm}^2$$\n\nLangkah 2: Menghitung luas bayangan setelah dilatasi dengan faktor skala $k = 4$:\n$$\\text{Luas } \\Delta D'E'F' = k^2 \\times \\text{Luas } \\Delta DEF = 4^2 \\times 30 = 16 \\times 30 = 480\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 218,
+        "bagian": "Ayo Mencoba",
+        "nomor": "-",
+        "teks": "Diketahui persegi panjang KLMN dengan K (4, - 2), L (4, - 4), M (4,6) dan N (2,4). Tentukan bayangan persegi panjang tersebut yang didilatasikan terhadap [ P (2,2), - 2]! Gambarkan segi empat tersebut beserta bayangannya pada bidang koordinat!",
+        "jawaban": "K'(-2,10), L'(-2,14), M'(-2,-6), N'(2,-2)",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "bayangan dua titik dilatasi pusat P(a,b)",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan substitusi koordinat ke rumus dilatasi pusat sembarang $P(a, b)$ dengan faktor skala negatif untuk dua titik berbeda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui titik $A(5, -1)$ dan $B(1, 4)$. Jika kedua titik tersebut didilatasikan terhadap pusat $P(2, 1)$ dengan faktor skala $-3$, koordinat bayangan titik $A$ dan $B$ berturut-turut adalah ....",
+      "jawaban_benar": "$A'(-7, 7)$ dan $B'(5, -8)$",
+      "alasan_benar": "Menggunakan rumus $(k(x-a)+a, k(y-b)+b)$, untuk $A(5, -1)$ diperoleh $(-3(5-2)+2, -3(-1-1)+1) = (-7, 7)$ dan untuk $B(1, 4)$ diperoleh $(-3(1-2)+2, -3(4-1)+1) = (5, -8)$.",
+      "distraktor": [
+        {
+          "teks": "$A'(-15, 3)$ dan $B'(-3, -12)$",
+          "alasan": "Siswa mendilatasikan langsung terhadap pusat titik asal $O(0,0)$ dan mengabaikan pusat $P(2,1)$."
+        },
+        {
+          "teks": "$A'(-9, 6)$ dan $B'(3, -9)$",
+          "alasan": "Siswa lupa menambahkan kembali $(a, b)$ di akhir perhitungan rumus dilatasi."
+        },
+        {
+          "teks": "$A'(-7, -5)$ dan $B'(5, 10)$",
+          "alasan": "Siswa salah memperlakukan tanda negatif pada pengalian ordinat."
+        }
+      ],
+      "pembahasan": "Rumus bayangan dilatasi terhadap pusat $P(a, b)$ dengan faktor skala $k$:\n$$x' = k(x - a) + a$$\n$$y' = k(y - b) + b$$\n\nPusat $P(2, 1)$ sehingga $a = 2$, $b = 1$, dan $k = -3$.\n\nUntuk titik $A(5, -1)$:\n$$x' = -3(5 - 2) + 2 = -3(3) + 2 = -9 + 2 = -7$$\n$$y' = -3(-1 - 1) + 1 = -3(-2) + 1 = 6 + 1 = 7$$\nJadi, $A'(-7, 7)$.\n\nUntuk titik $B(1, 4)$:\n$$x' = -3(1 - 2) + 2 = -3(-1) + 2 = 3 + 2 = 5$$\n$$y' = -3(4 - 1) + 1 = -3(3) + 1 = -9 + 1 = -8$$\nJadi, $B'(5, -8)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 219,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bayangan dari titik A ( x,y ) yang didilatasikan terhadap pusat P ( a,b ) dan faktor skala k adalah A' ( k ( x-a ) +a,k ( y-b ) +b )."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "nilai variabel koordinat dilatasi pusat P(a,b)",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembalikan rumus dilatasi pusat $P(a,b)$ untuk mencari absis asal dan ordinat bayangan melalui persamaan aljabar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $A(p, -2)$ didilatasikan terhadap titik pusat $P(1, 2)$ dengan faktor skala 2 menghasilkan bayangan $A'(7, q)$. Nilai dari $p + q$ adalah ....",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Dari $x' = 2(p - 1) + 1 = 7$, didapat $p = 4$. Dari $y' = 2(-2 - 2) + 2 = q$, didapat $q = -6$. Nilai $p + q = 4 + (-6) = -2$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Siswa salah tanda saat menghitung ordinat sehingga memperoleh $q = -2$ dan $p+q = 2$."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Siswa lupa menambahkan pusat $a=1$ pada persamaan absis sehingga diperoleh $p = 4,5$ atau keliru dalam operasi penjumlahan aljabar."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Siswa mengabaikan tanda minus pada $q$ sehingga menghitung $4 + 6 = 10$."
+        }
+      ],
+      "pembahasan": "Rumus dilatasi terhadap pusat $P(a, b)$ dengan faktor skala $k$ adalah:\n$$x' = k(x - a) + a$$\n$$y' = k(y - b) + b$$\n\nDiketahui $P(1, 2) \\rightarrow a = 1, b = 2$, dan faktor skala $k = 2$.\n\n1. Menentukan nilai $p$ dari absis bayangan:\n$$7 = 2(p - 1) + 1$$\n$$6 = 2(p - 1)$$\n$$3 = p - 1 \\implies p = 4$$\n\n2. Menentukan nilai $q$ dari ordinat bayangan:\n$$q = 2(-2 - 2) + 2$$\n$$q = 2(-4) + 2 = -8 + 2 = -6$$\n\n3. Menghitung $p + q$:\n$$p + q = 4 + (-6) = -2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas9-b03-e-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setiap titik A yang didilatasikan pada pusat O dan faktor skala k berlaku AO ' = kOA ."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "panjang ruas garis bayangan dilatasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis konsep perbesaran jarak antar titik menggunakan teorema Pythagoras pada titik asal lalu mengalikannya dengan faktor skala.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui ruas garis menghubungkan titik $A(2, 1)$ dan $B(5, 5)$. Ruas garis tersebut didilatasikan terhadap titik pusat tertentu dengan faktor skala $-3$ sehingga menghasilkan bayangan ruas garis $A'B'$. Panjang ruas garis $A'B'$ adalah ....",
+      "jawaban_benar": "$15\\text{ satuan}$",
+      "alasan_benar": "Panjang awal $AB = \\sqrt{(5-2)^2 + (5-1)^2} = \\sqrt{9+16} = 5\\text{ satuan}$. Panjang bayangan adalah $|k| \\times AB = |-3| \\times 5 = 15\\text{ satuan}$.",
+      "distraktor": [
+        {
+          "teks": "$5\\text{ satuan}$",
+          "alasan": "Siswa hanya menghitung panjang ruas garis awal $AB$ dan lupa mengalikannya dengan faktor skala."
+        },
+        {
+          "teks": "$-15\\text{ satuan}$",
+          "alasan": "Siswa mengalikan panjang ruas garis dengan faktor skala negatif tanpa mengambil nilai mutlak panjang garis."
+        },
+        {
+          "teks": "$45\\text{ satuan}$",
+          "alasan": "Siswa mengalikan panjang ruas garis dengan $k^2 = 9$ karena tertukar dengan sifat perbesaran luas."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung panjang ruas garis $AB$ mula-mula dengan rumus jarak dua titik:\n$$AB = \\sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$$\n$$AB = \\sqrt{(5 - 2)^2 + (5 - 1)^2} = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5\\text{ satuan}$$\n\nLangkah 2: Sifat dilatasi menyatakan bahwa panjang bayangan suatu segmen garis berbanding lurus dengan nilai mutlak faktor skalanya:\n$$A'B' = |k| \\times AB$$\n$$A'B' = |-3| \\times 5 = 3 \\times 5 = 15\\text{ satuan}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

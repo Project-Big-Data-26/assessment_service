@@ -180,6 +180,7 @@ class AssessmentStore:
                 "nextItemUrl": f"/api/v1/sessions/{row['id']}/items/next"}
 
     def next_item(self, session_id: str, token: str):
+        from app.presentation.latex import normalize_document
         with self.connection() as db:
             participant = self._participant(db, token)
             session = self._owned_session(db, session_id, participant)
@@ -190,7 +191,7 @@ class AssessmentStore:
                 delivery = json.loads(pending[0])
                 if self._held(db, delivery["item"]["questionVersionId"]):
                     raise AssessmentError("item version is held for AI revalidation")
-                return delivery["public"]
+                return normalize_document(delivery["public"])
             sequence = db.execute("SELECT COUNT(*) FROM deliveries WHERE session_id=?", (session_id,)).fetchone()[0]
             if sequence >= len(assessment["items"]):
                 return {"sessionId": session_id, "finished": True, "item": None}
@@ -208,7 +209,7 @@ class AssessmentStore:
                       "timing": {"deliveredAt": now().isoformat(), "expiresAt": session["expires_at"]}}
             document = {"public": public, "mapping": mapping, "item": item}
             db.execute("INSERT INTO deliveries VALUES (?,?,?,?)", (delivery_id, session_id, sequence, encode(document)))
-            return public
+            return normalize_document(public)
 
     def respond(self, payload: ResponseCreate, token: str):
         digest = canonical_json_hash(payload.model_dump(mode="json"))

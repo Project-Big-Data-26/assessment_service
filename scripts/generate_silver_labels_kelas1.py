@@ -37,18 +37,8 @@ DEFAULT_OUTPUT = ROOT / "output/pretest/kelas1/silver_labels_gemini.json"
 
 
 def atomic_write(payload: dict, path: Path) -> None:
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    # Windows readers (including editors and antivirus) can briefly block a
-    # replace. Retry the completed file, preserving both files if it stays locked.
-    for attempt in range(6):
-        try:
-            os.replace(temporary, path)
-            return
-        except PermissionError as exc:
-            if getattr(exc, "winerror", None) not in (5, 32, 33) or attempt == 5:
-                raise
-            time.sleep(0.1 * 2 ** attempt)
+    from app.services.exercise.workflow import atomic_json
+    atomic_json(path, payload)
 
 
 def input_hash(item: dict) -> str:
@@ -230,6 +220,23 @@ def main() -> int:
         raise ValueError("bounded quota-safe execution requires one worker")
     source_hash = hashlib.sha256(args.source.read_bytes()).hexdigest()
     provider = getattr(args, "provider", "gemini")
+    origin = args.source.parent / "exercise_batch.json"
+    if origin.exists():
+        from app.services.exercise.workflow import load, require_validation
+        identity = load(origin)
+        name, batch = identity["class"], identity["batch"]
+        import re
+        if not re.fullmatch(r"kelas(?:[1-9]|1[0-2])(?:_tl)?", name) or not re.fullmatch(r"batch[0-9]+", batch):
+            raise ValueError("invalid exercise origin")
+        require_validation(ROOT / "output/exercise" / name / batch)
+    source_items = json.loads(args.source.read_text(encoding="utf-8"))
+    if provider != "gemini" and any(item.get("image_url") for item in source_items):
+        raise ValueError("the selected silver provider does not support exercise visual validation")
+    for item in source_items:
+        for ref, expected in item.get("_visualAssetHashes", {}).items():
+            from app.services.exercise.workflow import safe_asset, digest
+            if digest(safe_asset(args.source.parent, ref)) != expected:
+                raise ValueError("visual input checksum differs from the staged paid input")
     settings = settings_for(provider)
     if provider == "gemini":
         settings = replace(settings, live_enabled=True)

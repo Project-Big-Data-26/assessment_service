@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 2,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b02-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 93,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pilihlah sebarang bilangan ganjil yang dimisalkan sebagai panjang sisi terpendek dari suatu segitiga"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan nilai parameter",
+      "jumlah_langkah": 4,
+      "alasan_level": "Siswa harus menyusun persamaan aljabar dari aturan tripel bilangan ganjil Pak Ahmad, menyelesaikan persamaan kuadrat, dan menentukan panjang hipotenusa.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan aturan pembentukan tripel Pythagoras dengan sisi terpendek berupa bilangan ganjil $S$, panjang sisi tegak lainnya dihitung dengan rumus $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa adalah $H = M + 1$. Suatu segitiga siku-siku dibentuk mengikuti aturan tersebut. Jika jumlah keliling segitiga dan panjang sisi terpendeknya sama dengan $63\\text{ cm}$, maka panjang hipotenusa segitiga tersebut adalah ....",
+      "jawaban_benar": "$25\\text{ cm}$",
+      "alasan_benar": "Keliling segitiga $K = S + M + H = S + M + (M + 1) = S + 2M + 1$. Karena $2M = S^2 - 1$, maka $K = S + (S^2 - 1) + 1 = S^2 + S$. Jumlah keliling dan sisi terpendek: $K + S = S^2 + 2S = 63 \\implies S^2 + 2S - 63 = 0 \\implies (S - 7)(S + 9) = 0$. Karena $S > 0$, maka $S = 7$. Maka $M = \\frac{7^2 - 1}{2} = 24\\text{ cm}$ dan hipotenusa $H = 24 + 1 = 25\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$24\\text{ cm}$",
+          "alasan": "Siswa menghitung panjang sisi tegak $M$, bukan panjang hipotenusa $H$."
+        },
+        {
+          "teks": "$13\\text{ cm}$",
+          "alasan": "Siswa keliru memfaktorkan persamaan menjadi $S = 5$, sehingga mendapatkan hipotenusa $H = 13$."
+        },
+        {
+          "teks": "$41\\text{ cm}$",
+          "alasan": "Siswa salah menjumlahkan bentuk aljabar menjadi $S^2 - 2S - 63 = 0$ sehingga diperoleh $S = 9$ dan $H = 41$."
+        }
+      ],
+      "pembahasan": "Diketahui hubungan sisi-sisi segitiga siku-siku:\n- Sisi terpendek: $S$\n- Sisi tegak lainnya: $M = \\frac{S^2 - 1}{2}$\n- Hipotenusa: $H = M + 1 = \\frac{S^2 + 1}{2}$\n\nKeliling segitiga dinyatakan oleh:\n$$K = S + M + H = S + \\frac{S^2 - 1}{2} + \\frac{S^2 + 1}{2} = S + S^2$$\nJumlah keliling dan panjang sisi terpendek adalah $63\\text{ cm}$:\n$$K + S = 63$$\n$$(S^2 + S) + S = 63$$\n$$S^2 + 2S - 63 = 0$$\n$$(S - 7)(S + 9) = 0$$\nKarena panjang sisi harus bernilai positif, maka $S = 7$.\n\nHipotenusa segitiga tersebut adalah:\n$$H = \\frac{S^2 + 1}{2} = \\frac{7^2 + 1}{2} = \\frac{49 + 1}{2} = 25\\text{ cm}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga, tiga bilangan a , b , c dengan a 1 b 1 c dikatakan tripel Pythagoras jika memenuhi hubungan persamaan c 2 = a 2 + b 2 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kondisi pertidaksamaan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi gabungan dari syarat pembentuk segitiga (ketaksamaan segitiga), eksistensi panjang sisi, dan kriteria kebalikan Pythagoras untuk segitiga tumpul.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tiga sisi sebuah segitiga dinyatakan berturut-turut oleh $(x - 2)\\text{ cm}$, $(x + 5)\\text{ cm}$, dan $(x + 7)\\text{ cm}$, dengan $(x + 7)\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan ketaksamaan segitiga, agar segitiga tersebut merupakan segitiga tumpul, banyaknya nilai $x$ bilangan bulat yang memenuhi adalah ....",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Syarat panjang sisi positif: $x - 2 > 0 \\implies x > 2$. Syarat ketaksamaan segitiga: $(x - 2) + (x + 5) > (x + 7) \\implies 2x + 3 > x + 7 \\implies x > 4$. Syarat segitiga tumpul ($c^2 > a^2 + b^2$): $(x + 7)^2 > (x - 2)^2 + (x + 5)^2 \\implies x^2 + 14x + 49 > 2x^2 + 6x + 29 \\implies x^2 - 8x - 20 < 0 \\implies (x - 10)(x + 2) < 0 \\implies -2 < x < 10$. Irisan semua syarat adalah $4 < x < 10$. Bilangan bulat yang memenuhi: $x \\in \\{5, 6, 7, 8, 9\\}$, ada sebanyak 5 nilai.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Siswa lupa menguji syarat ketaksamaan segitiga ($x > 4$), hanya memakai $x > 2$ sehingga mengambil $x \\in \\{3, 4, 5, 6, 7, 8, 9\\}$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Siswa salah menentukan batas ketidaksamaan menjadi $5 < x < 10$ sehingga hanya menghitung 4 bilangan bulat."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Siswa hanya menggunakan batas atas $x < 10$ dan menganggap semua bilangan bulat dari $1$ sampai $9$ memenuhi."
+        }
+      ],
+      "pembahasan": "Agar terbentuk segitiga tumpul dengan sisi terpanjang $(x + 7)$, harus dipenuhi tiga syarat:\n\n1. Syarat panjang sisi positif:\n$$x - 2 > 0 \\implies x > 2$$\n\n2. Syarat ketaksamaan segitiga (jumlah dua sisi terpendek lebih besar dari sisi terpanjang):\n$$(x - 2) + (x + 5) > (x + 7)$$\n$$2x + 3 > x + 7 \\implies x > 4$$\n\n3. Syarat segitiga tumpul di hadapan sisi terpanjang ($c^2 > a^2 + b^2$):\n$$(x + 7)^2 > (x - 2)^2 + (x + 5)^2$$\n$$x^2 + 14x + 49 > (x^2 - 4x + 4) + (x^2 + 10x + 25)$$\n$$x^2 + 14x + 49 > 2x^2 + 6x + 29$$\n$$0 > x^2 - 8x - 20$$\n$$x^2 - 8x - 20 < 0$$\n$$(x - 10)(x + 2) < 0$$\n$$-2 < x < 10$$\n\nIrisan ketiga syarat tersebut adalah:\n$$4 < x < 10$$\nNilai $x$ bilangan bulat yang memenuhi adalah $5, 6, 7, 8, 9$. Terdapat tepat 5 nilai.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada kebalikan dari teorema Pythagoras dapat dinyatakan bahwa dalam T ABC , jika c 2 = a 2 + b 2 , maka + C siku-siku."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan kombinasi ukuran",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan kreasi/penelusuran seluruh kemungkinan pasangan tripel Pythagoras bilangan bulat dengan keliling tetap bernilai sama, lalu membandingkan luasnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah segitiga siku-siku yang tidak kongruen memiliki keliling yang sama, yaitu $60\\text{ cm}$. Jika panjang setiap sisi dari kedua segitiga tersebut merupakan bilangan bulat yang membentuk tripel Pythagoras, maka selisih luas antara kedua segitiga tersebut adalah ....",
+      "jawaban_benar": "$30\\text{ cm}^2$",
+      "alasan_benar": "Tripel Pythagoras dasar yang kelilingnya membagi 60 adalah: (1) $(3, 4, 5)$ dengan keliling 12, dikali 5 menjadi $(15, 20, 25)$ dengan keliling 60, luasnya $\\frac{1}{2} \\times 15 \\times 20 = 150\\text{ cm}^2$; (2) $(5, 12, 13)$ dengan keliling 30, dikali 2 menjadi $(10, 24, 26)$ dengan keliling 60, luasnya $\\frac{1}{2} \\times 10 \\times 24 = 120\\text{ cm}^2$. Selisih luas kedua segitiga = $150 - 120 = 30\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$15\\text{ cm}^2$",
+          "alasan": "Siswa salah menghitung salah satu luas segitiga atau salah melakukan operasi pengurangan."
+        },
+        {
+          "teks": "$60\\text{ cm}^2$",
+          "alasan": "Siswa mengira selisih luas sama dengan nilai kelilingnya."
+        },
+        {
+          "teks": "$45\\text{ cm}^2$",
+          "alasan": "Siswa salah menggunakan tripel kelipatan $(3, 4, 5)$ dengan luas $165\\text{ cm}^2$."
+        }
+      ],
+      "pembahasan": "Cari semua tripel Pythagoras bilangan bulat $(a, b, c)$ dengan $a + b + c = 60$:\n\n1. Kelipatan tripel primitif $(3, 4, 5)$:\n   - Keliling dasar $= 3 + 4 + 5 = 12$.\n   - Karena keliling yang diinginkan $60$, faktor pengali $= \\frac{60}{12} = 5$.\n   - Ukuran sisi segitiga pertama: $15\\text{ cm}, 20\\text{ cm}, 25\\text{ cm}$.\n   - Luas segitiga pertama: $L_1 = \\frac{1}{2} \\times 15 \\times 20 = 150\\text{ cm}^2$.\n\n2. Kelipatan tripel primitif $(5, 12, 13)$:\n   - Keliling dasar $= 5 + 12 + 13 = 30$.\n   - Faktor pengali $= \\frac{60}{30} = 2$.\n   - Ukuran sisi segitiga kedua: $10\\text{ cm}, 24\\text{ cm}, 26\\text{ cm}$.\n   - Luas segitiga kedua: $L_2 = \\frac{1}{2} \\times 10 \\times 24 = 120\\text{ cm}^2$.\n\nTidak ada tripel Pythagoras bilangan bulat lain dengan keliling $60$.\n\nSelisih luas kedua segitiga adalah:\n$$|L_1 - L_2| = |150 - 120| = 30\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 93,
+        "bagian": "Contoh 2.3",
+        "nomor": "2",
+        "teks": "DG = 10 cm , GE = 24 cm , dan FG = 15 cm . a. Hitunglah panjang DF dan EF . b. Tentukan jenis T DEF .",
+        "jawaban": "segitiga tumpul di F",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi jenis segitiga gabungan",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kuadrat sisi-sisi pada dua segitiga siku-siku terpisah untuk membuktikan jenis segitiga gabungan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik $D$, $G$, dan $E$ terletak segaris mendatar dengan $G$ berada di antara $D$ dan $E$. Garis tegak lurus ditarik dari $G$ ke titik $F$ di atas garis $DE$. Diketahui panjang $DG = 9\\text{ cm}$, $GE = 16\\text{ cm}$, dan $FG = 12\\text{ cm}$. Berdasarkan kebalikan Teorema Pythagoras, jenis $\\triangle DEF$ dan hubungan antarsisi yang benar adalah ....",
+      "jawaban_benar": "segitiga siku-siku di $F$ karena $DE^2 = DF^2 + EF^2$",
+      "alasan_benar": "$DF^2 = 9^2 + 12^2 = 225$ ($DF = 15$), $EF^2 = 12^2 + 16^2 = 400$ ($EF = 20$), $DE = 9 + 16 = 25$ sehingga $DE^2 = 625$. Karena $15^2 + 20^2 = 225 + 400 = 625 = 25^2$, maka $\\triangle DEF$ siku-siku di $F$.",
+      "distraktor": [
+        {
+          "teks": "segitiga lancip karena $DE^2 < DF^2 + EF^2$",
+          "alasan": "Siswa salah menjumlahkan panjang sisi terpanjang $DE$ atau keliru menghitung kuadrat sisi-sisinya."
+        },
+        {
+          "teks": "segitiga tumpul di $F$ karena $DE^2 > DF^2 + EF^2$",
+          "alasan": "Siswa mengabaikan perhitungan kuadrat dan menyimpulkan segitiga tumpul seperti pada contoh buku aslinya."
+        },
+        {
+          "teks": "segitiga siku-siku di $D$ karena $EF^2 = DF^2 + DE^2$",
+          "alasan": "Siswa salah menentukan hipotenusa dan letak sudut siku-siku pada segitiga gabungan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung kuadrat panjang sisi $DF$ pada $\\triangle DGF$ siku-siku di $G$:\n$DF^2 = DG^2 + FG^2 = 9^2 + 12^2 = 81 + 144 = 225$.\n\nLangkah 2: Menghitung kuadrat panjang sisi $EF$ pada $\\triangle EGF$ siku-siku di $G$:\n$EF^2 = GE^2 + FG^2 = 16^2 + 12^2 = 256 + 144 = 400$.\n\nLangkah 3: Menghitung panjang $DE$ dan kuadratnya:\n$DE = DG + GE = 9 + 16 = 25\\text{ cm}$.\n$DE^2 = 25^2 = 625$.\n\nLangkah 4: Membandingkan $DE^2$ dengan $DF^2 + EF^2$:\n$DF^2 + EF^2 = 225 + 400 = 625$.\nKarena $DE^2 = DF^2 + EF^2 = 625$, maka berdasarkan kebalikan Teorema Pythagoras, $\\triangle DEF$ merupakan segitiga siku-siku di titik $F$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0095-soal-laihan-2-2-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemecahan masalah bertingkat",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pemodelan geometris dua segitiga siku-siku bersusun untuk mengevaluasi jarak vertikal dari data pengamatan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah drone pemantau melayang diam di atas sebuah gedung. Pengamat $A$ berada di lantai dasar tepat di bawah lintasan vertikal drone. Pengamat $B$ berdiri di tanah berjarak horizontal $36\\text{ meter}$ dari pengamat $A$. Jarak pandang langsung dari pengamat $B$ ke drone adalah $45\\text{ meter}$. Jika seorang teknisi lain berada di atap gedung yang tingginya $12\\text{ meter}$ tepat tegak lurus di atas pengamat $A$, jarak vertikal dari drone ke teknisi di atap gedung tersebut adalah ....",
+      "jawaban_benar": "$15\\text{ meter}$",
+      "alasan_benar": "Tinggi drone dari tanah = $\\sqrt{45^2 - 36^2} = \\sqrt{2025 - 1296} = \\sqrt{729} = 27\\text{ m}$. Jarak ke teknisi di atap = $27 - 12 = 15\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$27\\text{ meter}$",
+          "alasan": "Siswa hanya menghitung tinggi drone dari tanah tanpa mengurangkan tinggi atap gedung."
+        },
+        {
+          "teks": "$18\\text{ meter}$",
+          "alasan": "Siswa salah mengurangkan jarak horizontal terhadap hasil perhitungan tinggi drone ($36 - 18$)."
+        },
+        {
+          "teks": "$39\\text{ meter}$",
+          "alasan": "Siswa menjumlahkan tinggi drone dari tanah dengan tinggi atap gedung ($27 + 12$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan posisi dalam model segitiga siku-siku antara pengamat $A$, pengamat $B$, dan drone.\nJarak horizontal $AB = 36\\text{ m}$, jarak miring drone ke $B = 45\\text{ m}$. Sudut di $A$ adalah sudut siku-siku ($90^\\circ$).\n\nLangkah 2: Menghitung tinggi drone dari permukaan tanah ($h_1$):\n$h_1^2 = 45^2 - 36^2 = 2.025 - 1.296 = 729$\n$h_1 = \\sqrt{729} = 27\\text{ meter}$.\n\nLangkah 3: Menentukan posisi teknisi di atap gedung ($h_2$):\n$h_2 = 12\\text{ meter}$ dari tanah.\n\nLangkah 4: Menghitung jarak vertikal drone ke teknisi:\n$\\Delta h = h_1 - h_2 = 27 - 12 = 15\\text{ meter}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 89,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada gambar di atas diketahui bahwa segitiga siku-siku dengan panjang hipotenusa p 2 + q 2 dan panjang sisi siku-siku yang lain adalah p 2 - q 2 dan 2 pq ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis sistem rumus tripel",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis sistem aljabar dua variabel dari keliling dan luas segitiga yang disusun oleh generator tripel Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga siku-siku dibentuk menggunakan rumus tripel Pythagoras dengan panjang sisi $(p^2 - q^2)$, $2pq$, dan hipotenusa $(p^2 + q^2)$, di mana $p$ dan $q$ adalah bilangan asli dengan $p > q$. Jika keliling segitiga tersebut adalah $90\\text{ cm}$ dan diketahui $p = 9 - q$, maka luas segitiga siku-siku tersebut adalah ....",
+      "jawaban_benar": "$180\\text{ cm}^2$",
+      "alasan_benar": "Keliling = $(p^2 - q^2) + 2pq + (p^2 + q^2) = 2p^2 + 2pq = 2p(p + q) = 90$. Karena $p + q = 9$, maka $2p(9) = 90 \\implies 18p = 90 \\implies p = 5$. Maka $q = 4$. Sisi siku-sikunya adalah $p^2 - q^2 = 25 - 16 = 9\\text{ cm}$ dan $2pq = 2(5)(4) = 40\\text{ cm}$. Luas = $\\frac{1}{2} \\times 9 \\times 40 = 180\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$360\\text{ cm}^2$",
+          "alasan": "Siswa lupa mengalikan dengan faktor $\\frac{1}{2}$ pada rumus luas segitiga ($9 \\times 40$)."
+        },
+        {
+          "teks": "$162\\text{ cm}^2$",
+          "alasan": "Siswa keliru menghitung nilai $p$ dan $q$ sehingga menghasilkan ukuran sisi $18$ dan $18$."
+        },
+        {
+          "teks": "$270\\text{ cm}^2$",
+          "alasan": "Siswa salah mengalikan salah satu sisi tegak dengan hipotenusa ($p^2+q^2 = 41$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menuliskan rumus keliling segitiga siku-siku:\n$K = (p^2 - q^2) + 2pq + (p^2 + q^2) = 2p^2 + 2pq = 2p(p + q)$.\n\nLangkah 2: Memanfaatkan hubungan $p = 9 - q \\iff p + q = 9$:\n$2p(9) = 90$\n$18p = 90 \\implies p = 5$.\n\nLangkah 3: Menentukan nilai $q$:\n$q = 9 - p = 9 - 5 = 4$.\n\nLangkah 4: Menghitung panjang kedua sisi siku-sikunya:\nSisi $1 = p^2 - q^2 = 5^2 - 4^2 = 25 - 16 = 9\\text{ cm}$.\nSisi $2 = 2pq = 2 \\times 5 \\times 4 = 40\\text{ cm}$.\n(Hipotenusa $= p^2 + q^2 = 25 + 16 = 41\\text{ cm}$, cek keliling: $9 + 40 + 41 = 90$, sesuai).\n\nLangkah 5: Menghitung luas segitiga siku-siku:\n$L = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi} = \\frac{1}{2} \\times 9 \\times 40 = 180\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 94,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Gunakan rumus M = (S^2 - 1)/2 , S = panjang sisi terpendek , M = sisi tegak lainnya"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan pembuktian rumus",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembuktian relasi keliling dan perancangan nilai numerik berdasarkan aturan tripel bilangan ganjil Pak Ahmad.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Metode Pak Ahmad menyatakan bahwa jika sisi terpendek segitiga siku-siku adalah bilangan ganjil $S$, maka sisi tegak lainnya adalah $M = \\frac{S^2 - 1}{2}$ dan hipotenusanya adalah $c = \\frac{S^2 + 1}{2}$. Seorang perancang ingin membuat rangka segitiga siku-siku dengan ketentuan metode tersebut sedemikian sehingga keliling segitiga tepat sama dengan hasil kali sisi terpendek $S$ dengan suatu bilangan bulat $k$. Jika $S = 13$, berapakah nilai keliling rangka segitiga tersebut?",
+      "jawaban_benar": "$182\\text{ cm}$",
+      "alasan_benar": "Jika $S = 13$, maka $M = \\frac{13^2 - 1}{2} = \\frac{168}{2} = 84$, dan $c = \\frac{13^2 + 1}{2} = \\frac{170}{2} = 85$. Keliling segitiga = $S + M + c = 13 + 84 + 85 = 182\\text{ cm}$ (yang senilai dengan $13 \\times 14$).",
+      "distraktor": [
+        {
+          "teks": "$169\\text{ cm}$",
+          "alasan": "Siswa menghitung nilai $S^2 = 13^2 = 169$."
+        },
+        {
+          "teks": "$196\\text{ cm}$",
+          "alasan": "Siswa salah menghitung keliling dengan rumus $(S + 1)^2 = 14^2 = 196$."
+        },
+        {
+          "teks": "$170\\text{ cm}$",
+          "alasan": "Siswa hanya menjumlahkan dua sisi $M + c = 84 + 85$ tanpa sisi terpendek $S$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan panjang sisi siku-siku terpendek:\n$S = 13$.\n\nLangkah 2: Menghitung sisi tegak lainnya ($M$) menggunakan rumus Pak Ahmad:\n$M = \\frac{S^2 - 1}{2} = \\frac{13^2 - 1}{2} = \\frac{169 - 1}{2} = \\frac{168}{2} = 84\\text{ cm}$.\n\nLangkah 3: Menghitung panjang hipotenusa ($c$):\n$c = \\frac{S^2 + 1}{2} = \\frac{169 + 1}{2} = \\frac{170}{2} = 85\\text{ cm}$.\n\nLangkah 4: Menguji tripel Pythagoras:\n$13^2 + 84^2 = 169 + 7.056 = 7.225 = 85^2$ (terbukti tripel Pythagoras).\n\nLangkah 5: Menghitung keliling rangka segitiga:\n$K = S + M + c = 13 + 84 + 85 = 182\\text{ cm}$.\n(Catatan: $K = 182 = 13 \\times 14$, memenuhi syarat hasil kali $S$ dengan bilangan bulat $k = 14$).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 94,
+        "bagian": "Soal Laihan 2.2",
+        "nomor": "1",
+        "teks": "Sesuaikan tiga bilangan berikut dengan pasangan yang sesuai apakah termasuk segitiga siku-siku, segitiga lancip, dan segitiga tumpul.",
+        "jawaban": "12, 16, 20 dan 17, 15, 8 segitiga siku-siku; 7, 10, 12 dan 120, 110, 50 segitiga lancip; 10, 22, 26 dan 19, 16, 10 dan 2, 5, 29 segitiga tumpul",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi jenis segitiga",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi terhadap empat klaim berbeda menggunakan hubungan kuadrat sisi untuk menentukan kesimpulan yang valid.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Empat orang siswa menguji kelompok panjang sisi suatu segitiga untuk menentukan jenisnya dengan membandingkan kuadrat sisi terpanjang terhadap jumlah kuadrat dua sisi lainnya. Berikut adalah pernyataan mereka:\n- Andi: Segitiga dengan sisi $8\\text{ cm}$, $15\\text{ cm}$, dan $18\\text{ cm}$ adalah segitiga lancip karena $18^2 < 8^2 + 15^2$.\n- Budi: Segitiga dengan sisi $11\\text{ cm}$, $24\\text{ cm}$, dan $26\\text{ cm}$ adalah segitiga tumpul karena $26^2 > 11^2 + 24^2$.\n- Citra: Segitiga dengan sisi $12\\text{ cm}$, $16\\text{ cm}$, dan $21\\text{ cm}$ adalah segitiga tumpul karena $21^2 > 12^2 + 16^2$.\n- Dedi: Segitiga dengan sisi $15\\text{ cm}$, $20\\text{ cm}$, dan $25\\text{ cm}$ adalah segitiga lancip karena $25^2 < 15^2 + 20^2$.\n\nSiswa yang membuat analisis dan kesimpulan yang tepat adalah ....",
+      "jawaban_benar": "Citra",
+      "alasan_benar": "Pada segitiga Citra, sisi terpanjang adalah $21\\text{ cm}$. Nilai $21^2 = 441$, sedangkan $12^2 + 16^2 = 144 + 256 = 400$. Karena $441 > 400$ ($c^2 > a^2 + b^2$), segitiga tersebut terbukti segitiga tumpul.",
+      "distraktor": [
+        {
+          "teks": "Andi",
+          "alasan": "Andi salah menghitung nilai kuadrat; $18^2 = 324$ dan $8^2 + 15^2 = 289$, sehingga seharusnya $324 > 289$ (segitiga tumpul)."
+        },
+        {
+          "teks": "Budi",
+          "alasan": "Budi salah menghitung perbandingan; $26^2 = 676$ dan $11^2 + 24^2 = 121 + 576 = 697$, sehingga $676 < 697$ (segitiga lancip)."
+        },
+        {
+          "teks": "Dedi",
+          "alasan": "Dedi salah menyimpulkan; $25^2 = 625$ dan $15^2 + 20^2 = 225 + 400 = 625$, sehingga $c^2 = a^2 + b^2$ merupakan segitiga siku-siku."
+        }
+      ],
+      "pembahasan": "Kita uji pernyataan masing-masing siswa:\n1. Andi: Sisi $8, 15, 18$.\n   $18^2 = 324$\n   $8^2 + 15^2 = 64 + 225 = 289$\n   Karena $324 > 289$, segitiga adalah segitiga tumpul. Analisis Andi salah.\n2. Budi: Sisi $11, 24, 26$.\n   $26^2 = 676$\n   $11^2 + 24^2 = 121 + 576 = 697$\n   Karena $676 < 697$, segitiga adalah segitiga lancip. Analisis Budi salah.\n3. Citra: Sisi $12, 16, 21$.\n   $21^2 = 441$\n   $12^2 + 16^2 = 144 + 256 = 400$\n   Karena $441 > 400$, segitiga adalah segitiga tumpul. Analisis Citra benar.\n4. Dedi: Sisi $15, 20, 25$.\n   $25^2 = 625$\n   $15^2 + 20^2 = 225 + 400 = 625$\n   Karena $625 = 625$, segitiga adalah segitiga siku-siku. Analisis Dedi salah.\n\nJadi, siswa yang membuat analisis dan kesimpulan tepat adalah Citra.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 89,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "segitiga siku-siku dengan panjang hipotenusa p 2 + q 2 dan panjang sisi siku-siku yang lain adalah p 2 - q 2 dan 2 pq ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "pemodelan aljabar tripel",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penguraian bentuk aljabar kuadrat dari sistem tripel Pythagoras untuk menemukan faktor pembentuk dan menghitung luas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga siku-siku dibentuk menggunakan rumus tripel Pythagoras dengan panjang hipotenusa $(p^2 + q^2)\\text{ cm}$ serta sisi-sisi siku-siku $(p^2 - q^2)\\text{ cm}$ dan $2pq\\text{ cm}$, di mana $p$ dan $q$ adalah bilangan asli ($p > q$). Jika panjang hipotenusa segitiga tersebut adalah $65\\text{ cm}$ dan diketahui nilai $p + q = 11$, berapakah luas segitiga siku-siku tersebut?",
+      "jawaban_benar": "$924\\text{ cm}^2$",
+      "alasan_benar": "Dari $(p + q)^2 = p^2 + q^2 + 2pq$, diperoleh $121 = 65 + 2pq$, sehingga $2pq = 56$ dan $pq = 28$. Pasangan bilangan asli yang memenuhi $p + q = 11$ dan $pq = 28$ dengan $p > q$ adalah $p = 7$ dan $q = 4$. Panjang sisi siku-siku lainnya adalah $p^2 - q^2 = 7^2 - 4^2 = 49 - 16 = 33\\text{ cm}$. Luas segitiga = $\\frac{1}{2} \\times 33 \\times 56 = 924\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$462\\text{ cm}^2$",
+          "alasan": "Siswa membagi dua sisi siku-siku sebanyak dua kali dalam perhitungan luas segitiga."
+        },
+        {
+          "teks": "$1.056\\text{ cm}^2$",
+          "alasan": "Siswa salah menghitung selisih kuadrat $p^2 - q^2$ sehingga mengira panjang sisi tegak adalah $32\\text{ cm}$ lalu dikalikan $66$ dibagi dua."
+        },
+        {
+          "teks": "$1.848\\text{ cm}^2$",
+          "alasan": "Siswa lupa membagi dengan 2 pada rumus luas segitiga (mengalikan langsung kedua sisi siku-siku $33 \\times 56$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menggunakan identitas aljabar untuk menentukan nilai $2pq$.\n$(p + q)^2 = (p^2 + q^2) + 2pq$\n$11^2 = 65 + 2pq$\n$121 = 65 + 2pq$\n$2pq = 121 - 65 = 56\\text{ cm}$.\nIni merupakan panjang sisi siku-siku pertama.\n\nLangkah 2: Menentukan nilai $p$ dan $q$.\nDari $2pq = 56$, diperoleh $pq = 28$.\nKarena $p + q = 11$ dan $pq = 28$, akar-akarnya adalah $p = 7$ dan $q = 4$ (karena $p > q$).\n\nLangkah 3: Menghitung panjang sisi siku-siku kedua.\n$p^2 - q^2 = 7^2 - 4^2 = 49 - 16 = 33\\text{ cm}$.\n\nLangkah 4: Menghitung luas segitiga siku-siku.\n$\\text{Luas} = \\frac{1}{2} \\times \\text{alas} \\times \\text{tinggi}$\n$\\text{Luas} = \\frac{1}{2} \\times 33 \\times 56 = 33 \\times 28 = 924\\text{ cm}^2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 94,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hitunglah panjang hipotenusa menggunakan rumus c 2 = a 2 + b 2"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "analisis selisih tripel berurutan",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan perumusan hubungan aljabar hipotenusa dari aturan sisi ganjil Pak Ahmad, penyelesaian sistem persamaan selisih kuadrat, dan penentuan keliling segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan metode Pak Ahmad, sisi siku-siku terpendek berupa bilangan ganjil $S$ menghasilkan sisi tegak lainnya $M = \\frac{S^2 - 1}{2}$ dan panjang hipotenusa $c = \\frac{S^2 + 1}{2}$. Dua buah segitiga siku-siku, $T_1$ dan $T_2$, dibentuk menggunakan aturan tersebut dengan sisi terpendek berturut-turut $S_1$ dan $S_2$ berupa bilangan ganjil ($S_2 > S_1$). Jika selisih panjang hipotenusa kedua segitiga tersebut ($c_2 - c_1$) adalah $40\\text{ cm}$ dan jumlah kedua sisi terpendeknya ($S_1 + S_2$) adalah $40\\text{ cm}$, berapakah keliling segitiga siku-siku $T_2$?",
+      "jawaban_benar": "$462\\text{ cm}$",
+      "alasan_benar": "Selisih hipotenusa adalah $c_2 - c_1 = \\frac{S_2^2 - S_1^2}{2} = \\frac{(S_2 - S_1)(S_2 + S_1)}{2} = 40$. Karena $S_1 + S_2 = 40$, diperoleh $S_2 - S_1 = 2$. Dari sistem persamaan didapat $S_2 = 21\\text{ cm}$. Sisi tegak lainnya $M_2 = \\frac{21^2 - 1}{2} = 220\\text{ cm}$ dan hipotenusa $c_2 = 221\\text{ cm}$. Keliling $T_2 = 21 + 220 + 221 = 462\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$380\\text{ cm}$",
+          "alasan": "Siswa menghitung keliling segitiga $T_1$ yang sisi terpendeknya $S_1 = 19\\text{ cm}$ ($19 + 180 + 181 = 380\\text{ cm}$)."
+        },
+        {
+          "teks": "$420\\text{ cm}$",
+          "alasan": "Siswa salah menghitung nilai $M_2$ dan $c_2$ sehingga keliling tidak menyertakan hipotenusa secara tepat."
+        },
+        {
+          "teks": "$441\\text{ cm}$",
+          "alasan": "Siswa mengira keliling sama dengan nilai kuadrat sisi terpendek $S_2^2 = 21^2 = 441\\text{ cm}$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menuliskan rumus hipotenusa untuk kedua segitiga.\n$c_1 = \\frac{S_1^2 + 1}{2}$ dan $c_2 = \\frac{S_2^2 + 1}{2}$.\n\nLangkah 2: Menghitung selisih hipotenusa kedua segitiga.\n$c_2 - c_1 = \\frac{S_2^2 + 1}{2} - \\frac{S_1^2 + 1}{2} = \\frac{S_2^2 - S_1^2}{2} = \\frac{(S_2 - S_1)(S_2 + S_1)}{2}$.\n\nLangkah 3: Menentukan nilai $(S_2 - S_1)$.\nDiketahui $c_2 - c_1 = 40$ dan $S_1 + S_2 = 40$.\n$40 = \\frac{(S_2 - S_1) \\times 40}{2}$\n$40 = 20(S_2 - S_1) \\implies S_2 - S_1 = 2$.\n\nLangkah 4: Menentukan nilai $S_2$.\nDari sistem persamaan:\n$S_2 + S_1 = 40$\n$S_2 - S_1 = 2$\nJumlahkan kedua persamaan:\n$2S_2 = 42 \\implies S_2 = 21\\text{ cm}$ (bilangan ganjil, memenuhi).\n\nLangkah 5: Menghitung sisi-sisi segitiga $T_2$.\n- Sisi terpendek: $S_2 = 21\\text{ cm}$\n- Sisi tegak lain: $M_2 = \\frac{21^2 - 1}{2} = \\frac{441 - 1}{2} = 220\\text{ cm}$\n- Hipotenusa: $c_2 = \\frac{21^2 + 1}{2} = \\frac{442}{2} = 221\\text{ cm}$\n\nLangkah 6: Menghitung keliling segitiga $T_2$.\n$\\text{Keliling} = 21 + 220 + 221 = 462\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 92,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Karena c 2 ! a 2 + b 2 , maka segitiga tersebut bukan segitiga siku-siku. Nilai c 2 1 a 2 + b 2 , maka segitiga tersebut adalah segitiga lancip."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis interval ketaksamaan segitiga",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi irisan dari tiga pertidaksamaan majemuk (ketaksamaan segitiga, sisi terpanjang, dan syarat segitiga tumpul $c^2 > a^2 + b^2$) untuk menentukan banyaknya bilangan bulat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga memiliki panjang sisi-sisi berturut-turut $x\\text{ cm}$, $(x + 3)\\text{ cm}$, dan $15\\text{ cm}$, dengan $15\\text{ cm}$ merupakan sisi terpanjang. Berdasarkan kebalikan Teorema Pythagoras dan syarat ketaksamaan panjang sisi segitiga, berapakah banyak nilai bilangan bulat $x$ yang mungkin agar segitiga tersebut terbentuk dan merupakan segitiga tumpul?",
+      "jawaban_benar": "2",
+      "alasan_benar": "Ketaksamaan segitiga memberi syarat $x + (x + 3) > 15 \\implies x > 6$. Sisi terpanjang $15\\text{ cm}$ memberi syarat $x + 3 < 15 \\implies x < 12$. Syarat segitiga tumpul adalah $15^2 > x^2 + (x + 3)^2 \\implies 2x^2 + 6x - 216 < 0 \\implies x^2 + 3x - 108 < 0 \\implies (x + 12)(x - 9) < 0$, sehingga $x < 9$. Irisan ketiganya adalah $6 < x < 9$. Nilai bilangan bulat $x$ yang memenuhi adalah $7$ dan $8$, sehingga terdapat tepat 2 nilai.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa memasukkan nilai $x = 9$, padahal saat $x = 9$ berlaku $15^2 = 9^2 + 12^2$ yang menghasilkan segitiga siku-siku, bukan segitiga tumpul."
+        },
+        {
+          "teks": "4",
+          "alasan": "Siswa hanya menggunakan batas ketaksamaan segitiga $6 < x < 11$ tanpa menerapkan syarat segitiga tumpul ($c^2 > a^2 + b^2$)."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa mengabaikan syarat ketaksamaan segitiga dan hanya menguji nilai positif yang lebih kecil dari $9$."
+        }
+      ],
+      "pembahasan": "Untuk menentukan banyak nilai bilangan bulat $x$, kita uji tiga kondisi geometris:\n\nLangkah 1: Syarat eksistensi segitiga (ketaksamaan segitiga).\nJumlah dua sisi terpendek harus lebih panjang dari sisi terpanjang:\n$x + (x + 3) > 15$\n$2x + 3 > 15$\n$2x > 12 \\implies x > 6$.\n\nLangkah 2: Syarat $15\\text{ cm}$ adalah sisi terpanjang.\n$x + 3 < 15 \\implies x < 12$.\n\nLangkah 3: Syarat segitiga tumpul.\nKuadrat sisi terpanjang harus lebih besar dari jumlah kuadrat dua sisi lainnya:\n$15^2 > x^2 + (x + 3)^2$\n$225 > x^2 + x^2 + 6x + 9$\n$225 > 2x^2 + 6x + 9$\n$2x^2 + 6x - 216 < 0$\nBagi kedua ruas dengan 2:\n$x^2 + 3x - 108 < 0$\n$(x + 12)(x - 9) < 0$\nKarena panjang sisi harus positif ($x > 0$), penyelesaian pertidaksamaan ini adalah $0 < x < 9$.\n\nLangkah 4: Menentukan irisan dari seluruh syarat.\n- Dari Langkah 1: $x > 6$\n- Dari Langkah 2: $x < 12$\n- Dari Langkah 3: $x < 9$\nIrisan ketiga pertidaksamaan tersebut adalah:\n$6 < x < 9$.\n\nLangkah 5: Menghitung banyak nilai bilangan bulat $x$.\nBilangan bulat dalam rentang $6 < x < 9$ adalah $x = 7$ dan $x = 8$.\nJadi, ada tepat 2 nilai bilangan bulat yang mungkin.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 95,
+        "bagian": "Soal Laihan 2.2",
+        "nomor": "4",
+        "teks": "Kusen jendela yang berbentuk persegi panjang memiliki tinggi 40,8 cm dan panjang 30,6 cm, serta panjang salah satu diagonalnya 52,5 cm. Apakah kusen jendela benar-benar persegi panjang? Jelaskan.",
+        "jawaban": "Bukan persegi panjang karena 40,8^2 + 30,6^2 != 52,5^2",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kelurusan sudut bidang",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kesesuaian sudut siku-siku bingkai dengan membandingkan kuadrat sisi-sisi terhadap kuadrat diagonalnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kusen jendela direncanakan berbentuk persegi panjang dengan ukuran tinggi $36\\text{ cm}$ dan panjang $77\\text{ cm}$. Tukang kayu mengukur panjang salah satu diagonal kusen tersebut dan memperoleh hasil $85\\text{ cm}$. Apakah kusen jendela tersebut sudah benar-benar berbentuk persegi panjang?",
+      "jawaban_benar": "Ya, benar-benar persegi panjang karena $36^2 + 77^2 = 85^2$",
+      "alasan_benar": "Penjumlahan kuadrat sisi siku-siku $36^2 + 77^2 = 1.296 + 5.929 = 7.225$ sama persis dengan kuadrat panjang diagonalnya $85^2 = 7.225$.",
+      "distraktor": [
+        {
+          "teks": "Bukan persegi panjang karena $36^2 + 77^2 < 85^2$",
+          "alasan": "Kesalahan perhitungan nilai kuadrat sehingga menyimpulkan sudut tumpul."
+        },
+        {
+          "teks": "Bukan persegi panjang karena $36^2 + 77^2 > 85^2$",
+          "alasan": "Kesalahan penjumlahan kuadrat sehingga menyimpulkan sudut lancip."
+        },
+        {
+          "teks": "Ya, benar-benar persegi panjang karena $36 + 77 > 85$",
+          "alasan": "Menggunakan ketaksamaan segitiga biasa, bukan syarat kebalikan Teorema Pythagoras untuk sudut siku-siku."
+        }
+      ],
+      "pembahasan": "Kusen jendela berbentuk persegi panjang jika sudut pertemuan antara panjang dan tingginya membentuk sudut siku-siku ($90^\\circ$). Berdasarkan kebalikan Teorema Pythagoras:\n1. Hitung jumlah kuadrat sisi tegak: $36^2 + 77^2 = 1.296 + 5.929 = 7.225$.\n2. Hitung kuadrat panjang diagonal: $85^2 = 7.225$.\n3. Karena $36^2 + 77^2 = 85^2$, maka segitiga yang dibentuk oleh panjang, tinggi, dan diagonal adalah segitiga siku-siku. Dengan demikian, kusen jendela tersebut benar-benar berbentuk persegi panjang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 89,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada gambar di atas diketahui bahwa segitiga siku-siku dengan panjang hipotenusa p 2 + q 2 dan panjang sisi siku-siku yang lain adalah p 2 - q 2 dan 2 pq ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "optimasi hipotenusa rumus tripel",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan aljabar kesetaraan keliling dan luas, faktorisasi syarat parameter, serta evaluasi beberapa kandidat tripel untuk menemukan nilai hipotenusa minimum.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segitiga siku-siku dibentuk dari rumus tripel Pythagoras dengan panjang hipotenusa $(p^2 + q^2)\\text{ cm}$ dan sisi-sisi siku-siku $(p^2 - q^2)\\text{ cm}$ serta $2pq\\text{ cm}$, di mana $p$ dan $q$ adalah bilangan asli dengan $p > q$. Jika nilai numerik luas segitiga tersebut tepat sama dengan $3$ kali nilai numerik kelilingnya, berapakah panjang hipotenusa terpendek yang mungkin dari segitiga-segitiga tersebut?",
+      "jawaban_benar": "$29\\text{ cm}$",
+      "alasan_benar": "Keliling dinyatakan sebagai $K = (p^2 - q^2) + 2pq + (p^2 + q^2) = 2p(p + q)$ dan luas sebagai $L = \\frac{1}{2}(p^2 - q^2)(2pq) = pq(p - q)(p + q)$. Persamaan $L = 3K$ menghasilkan $pq(p - q)(p + q) = 6p(p + q)$, sehingga $q(p - q) = 6$. Pasangan bilangan asli $(p, q)$ yang memenuhi adalah $(7, 1)$, $(5, 2)$, $(5, 3)$, dan $(7, 6)$. Nilai hipotenusa $p^2 + q^2$ masing-masing adalah $50\\text{ cm}$, $29\\text{ cm}$, $34\\text{ cm}$, dan $85\\text{ cm}$, dengan nilai terkecil $29\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$25\\text{ cm}$",
+          "alasan": "Siswa mengira tripel dasar kelipatan $(3, 4, 5)$ yang memenuhi tanpa menghitung parameter pembentuk dari persamaan luas dan keliling."
+        },
+        {
+          "teks": "$34\\text{ cm}$",
+          "alasan": "Siswa hanya menguji salah satu pasangan faktor yaitu $q = 3$ dan $p = 5$ sehingga memperoleh $5^2 + 3^2 = 34\\text{ cm}$ dan tidak memeriksa pasangan dengan hipotenusa lebih kecil."
+        },
+        {
+          "teks": "$50\\text{ cm}$",
+          "alasan": "Siswa hanya menguji faktor pertama $q = 1$ dan $p - q = 6$ ($p = 7$) sehingga mendapatkan $7^2 + 1^2 = 50\\text{ cm}$."
+        }
+      ],
+      "pembahasan": "Keliling segitiga siku-siku:\n$$K = (p^2 - q^2) + 2pq + (p^2 + q^2) = 2p^2 + 2pq = 2p(p + q)$$\nLuas segitiga siku-siku:\n$$L = \\frac{1}{2} \\times (p^2 - q^2) \\times 2pq = pq(p - q)(p + q)$$\nBerdasarkan syarat soal, $L = 3K$:\n$$pq(p - q)(p + q) = 3 \\times 2p(p + q)$$\nKarena $p$ dan $q$ bilangan asli, maka $p(p + q) \\neq 0$. Kedua ruas dapat dibagi dengan $p(p + q)$:\n$$q(p - q) = 6$$\nKarena $p$ dan $q$ bilangan asli serta $p > q$, nilai $q$ dan $(p - q)$ merupakan faktor positif dari $6$:\n1. $q = 1 \\implies p - 1 = 6 \\implies p = 7$, hipotenusa $= 7^2 + 1^2 = 49 + 1 = 50\\text{ cm}$.\n2. $q = 2 \\implies p - 2 = 3 \\implies p = 5$, hipotenusa $= 5^2 + 2^2 = 25 + 4 = 29\\text{ cm}$.\n3. $q = 3 \\implies p - 3 = 2 \\implies p = 5$, hipotenusa $= 5^2 + 3^2 = 25 + 9 = 34\\text{ cm}$.\n4. $q = 6 \\implies p - 6 = 1 \\implies p = 7$, hipotenusa $= 7^2 + 6^2 = 49 + 36 = 85\\text{ cm}$.\n\nDari keempat kemungkinan tersebut, panjang hipotenusa terpendek adalah $29\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga, tiga bilangan a , b , c dengan a 1 b 1 c dikatakan tripel Pythagoras jika memenuhi hubungan persamaan c 2 = a 2 + b 2 ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan banyak kombinasi tripel",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemfaktoran selisih kuadrat, analisis paritas bilangan bulat, serta penentuan seluruh pasangan faktor untuk menyimpulkan banyak segitiga siku-siku yang valid.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Banyaknya segitiga siku-siku berbeda (tidak saling kongruen) dengan panjang semua sisinya merupakan bilangan asli dan memiliki salah satu panjang sisi siku-siku tepat $28\\text{ cm}$ adalah ....",
+      "jawaban_benar": "4",
+      "alasan_benar": "Dari persamaan $c^2 - b^2 = 28^2 = 784$, difaktorkan menjadi $(c - b)(c + b) = 784$. Karena $c - b$ dan $c + b$ memiliki paritas yang sama dan perkaliannya bernilai genap, keduanya harus genap. Misalkan $c - b = 2m$ dan $c + b = 2n$, diperoleh $m \\times n = 196$. Pasangan bilangan asli $(m, n)$ dengan $m < n$ adalah $(1, 196)$, $(2, 98)$, $(4, 49)$, dan $(7, 28)$, yang menghasilkan tepat 4 pasang nilai $(b, c)$ bilangan asli berbeda.",
+      "distraktor": [
+        {
+          "teks": "3",
+          "alasan": "Siswa melewatkan pasangan faktor $(7, 28)$ karena salah memfaktorkan $196$."
+        },
+        {
+          "teks": "5",
+          "alasan": "Siswa mengikutsertakan kasus $m = n = 14$ yang menghasilkan $b = 0$, padahal panjang sisi segitiga harus lebih dari nol."
+        },
+        {
+          "teks": "8",
+          "alasan": "Siswa mengalikan jumlah pasangan dengan 2 karena menganggap urutan $b$ dan $c$ dapat saling tertukar, padahal $c$ harus selalu merupakan sisi terpanjang (hipotenusa)."
+        }
+      ],
+      "pembahasan": "Misalkan segitiga siku-siku memiliki sisi siku-siku $a = 28\\text{ cm}$ dan $b\\text{ cm}$, serta hipotenusa $c\\text{ cm}$ dengan $b$ dan $c$ bilangan asli ($c > b$).\nBerdasarkan Teorema Pythagoras:\n$$c^2 = b^2 + 28^2$$\n$$c^2 - b^2 = 784$$\n$$(c - b)(c + b) = 784$$\n\nPerhatikan bahwa $(c + b) - (c - b) = 2b$ (bilangan genap), sehingga faktor $(c - b)$ dan $(c + b)$ harus sama-sama bernilai genap.\nMisalkan $c - b = 2m$ dan $c + b = 2n$ dengan $m, n$ bilangan asli dan $m < n$:\n$$2m \\times 2n = 784$$\n$$4mn = 784$$\n$$mn = 196$$\n\nFaktorisasi prima dari $196$ adalah $196 = 2^2 \\times 7^2$.\nFaktor-faktor positif dari $196$ adalah $1, 2, 4, 7, 14, 28, 49, 98, 196$.\nPasangan bilangan asli $(m, n)$ dengan $m < n$ adalah:\n1. $m = 1, n = 196 \\implies c - b = 2, c + b = 392 \\implies c = 197, b = 195$\n2. $m = 2, n = 98 \\implies c - b = 4, c + b = 196 \\implies c = 100, b = 96$\n3. $m = 4, n = 49 \\implies c - b = 8, c + b = 98 \\implies c = 53, b = 45$\n4. $m = 7, n = 28 \\implies c - b = 14, c + b = 56 \\implies c = 35, b = 21$\n\nUntuk $m = 14, n = 14$, diperoleh $b = 0$, yang tidak membentuk segitiga.\nJadi, terdapat tepat 4 buah segitiga siku-siku berbeda yang memenuhi syarat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 86,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pada kebalikan dari teorema Pythagoras dapat dinyatakan bahwa dalam T ABC , jika c 2 = a 2 + b 2 , maka + C siku-siku."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi pernyataan geometris tripel",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan pemodelan sistem persamaan kuadrat non-linear untuk menentukan ketiga ukuran tripel, dilanjutkan dengan mengevaluasi validitas empat pernyataan berbeda.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah taman bermain berbentuk segitiga siku-siku memiliki keliling $84\\text{ meter}$. Diketahui panjang semua sisinya merupakan bilangan asli dan selisih antara panjang hipotenusa dengan sisi siku-siku terpanjangnya adalah $2\\text{ meter}$. Perhatikan pernyataan-pernyataan berikut:\n(1) Panjang hipotenusa taman bermain tersebut adalah $37\\text{ meter}$.\n(2) Panjang sisi siku-siku terpendek taman bermain tersebut adalah $14\\text{ meter}$.\n(3) Luas area taman bermain tersebut adalah $210\\text{ meter}^2$.\n(4) Selisih panjang antara kedua sisi siku-sikunya adalah $21\\text{ meter}$.\n\nPernyataan yang bernilai benar adalah ....",
+      "jawaban_benar": "(1) dan (3)",
+      "alasan_benar": "Dari $c - b = 2$ dan $a + b + c = 84$, diperoleh sistem yang menghasilkan sisi-sisi segitiga $12\\text{ m}$, $35\\text{ m}$, dan $37\\text{ m}$, sehingga pernyataan (1) dan (3) terbukti tepat.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (4)",
+          "alasan": "Siswa salah menghitung selisih kedua sisi siku-siku dengan mengurangkan $35 - 14 = 21$ akibat keliru menentukan sisi siku-siku terpendek bernilai $14$."
+        },
+        {
+          "teks": "(2) dan (3)",
+          "alasan": "Siswa keliru mengambil akar positif dari persamaan $(a + 14)(a - 12) = 0$ menjadi $a = 14$ sehingga menganggap pernyataan (2) benar."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Siswa menganggap $a = 14$ benar dan menghitung selisih sisi siku-siku $35 - 14 = 21$ sehingga memilih (2) dan (4)."
+        }
+      ],
+      "pembahasan": "Misalkan sisi-sisi segitiga siku-siku tersebut adalah $a$, $b$, dan $c$ dengan $a < b < c$ ($c$ adalah hipotenusa).\n\n1. Diketahui $c - b = 2 \\iff c = b + 2$.\n2. Keliling segitiga:\n   $a + b + c = 84$\n   $a + b + (b + 2) = 84$\n   $a + 2b = 82 \\iff 2b = 82 - a$.\n3. Berdasarkan Teorema Pythagoras:\n   $a^2 + b^2 = c^2$\n   $a^2 = c^2 - b^2$\n   $a^2 = (b + 2)^2 - b^2$\n   $a^2 = 4b + 4$\n4. Kalikan hubungan $a^2 = 4b + 4$ dengan $2$ lalu substitusikan $2b$:\n   $a^2 = 2(2b) + 4$\n   $a^2 = 2(82 - a) + 4$\n   $a^2 = 164 - 2a + 4$\n   $a^2 + 2a - 168 = 0$\n   $(a + 14)(a - 12) = 0$\n   Karena panjang sisi harus bernilai positif, maka $a = 12\\text{ m}$.\n5. Menentukan nilai $b$ dan $c$:\n   $2b = 82 - 12 = 70 \\iff b = 35\\text{ m}$.\n   $c = 35 + 2 = 37\\text{ m}$.\n   (Ketiga bilangan $12, 35, 37$ merupakan tripel Pythagoras karena $12^2 + 35^2 = 144 + 1.225 = 1.369 = 37^2$).\n6. Evaluasi setiap pernyataan:\n   - Pernyataan (1): Hipotenusa $c = 37\\text{ m}$ (Benar).\n   - Pernyataan (2): Sisi siku-siku terpendek $a = 12\\text{ m}$ (Salah, bukan $14\\text{ m}$).\n   - Pernyataan (3): $\\text{Luas} = \\frac{1}{2} \\times a \\times b = \\frac{1}{2} \\times 12 \\times 35 = 210\\text{ m}^2$ (Benar).\n   - Pernyataan (4): Selisih kedua sisi siku-siku $= 35 - 12 = 23\\text{ m}$ (Salah, bukan $21\\text{ m}$).\n\nJadi, pernyataan yang benar adalah (1) dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

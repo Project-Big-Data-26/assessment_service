@@ -1,0 +1,644 @@
+{
+  "book": "kelas7",
+  "bab_no": 6,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas7-b06-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi operasi data",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap keabsahan matematis dari operasi rata-rata pada berbagai variabel berbentuk bilangan.",
+      "stimulus": "Dalam sistem basis data sebuah klinik kesehatan, tercatat lima variabel pasien yang seluruhnya ditulis menggunakan lambang angka:\n1. Nomor rekam medis pasien (misal: 1042, 1043, 1044)\n2. Suhu badan pasien saat diperiksa dalam $^{\\circ}\\text{C}$ (misal: 36,5; 37,2)\n3. Nomor antrean pendaftaran poliklinik (misal: 1, 2, 3)\n4. Banyak obat tablet yang wajib diminum per hari (misal: 2, 3, 4)\n5. Kode pos wilayah domisili pasien (misal: 55281, 55282)",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Manajemen klinik berencana menghitung nilai rata-rata (mean) secara otomatis untuk setiap variabel tersebut guna pelaporan bulanan. Manakah evaluasi yang paling tepat mengenai rencana perhitungan rata-rata tersebut?",
+      "jawaban_benar": "Perhitungan rata-rata hanya valid dan bermakna secara matematis untuk variabel 2 dan 4 karena keduanya merupakan data numerik sejati.",
+      "alasan_benar": "Data 1, 3, dan 5 merupakan data kategorik (label/identitas/peringkat) yang tidak memiliki makna nilai kuantitatif untuk dihitung rata-ratanya, sedangkan data 2 dan 4 adalah data numerik yang dapat dioperasikan secara matematika.",
+      "distraktor": [
+        {
+          "teks": "Perhitungan rata-rata valid untuk semua variabel karena seluruhnya disajikan dalam wujud bilangan real dan bulat.",
+          "alasan": "Siswa keliru menganggap semua data yang berbentuk angka otomatis merupakan data numerik yang boleh dioperasikan."
+        },
+        {
+          "teks": "Perhitungan rata-rata hanya tidak valid untuk variabel 5 karena kode pos terdiri atas lima digit angka yang terlalu besar.",
+          "alasan": "Siswa mengira validitas operasi tergantung besar-kecilnya angka, bukan sifat kategorik atau numeriknya."
+        },
+        {
+          "teks": "Perhitungan rata-rata valid untuk variabel 1, 2, dan 3 karena nomornya berurutan secara teratur.",
+          "alasan": "Siswa mengira keteraturan urutan angka membuat nomor rekam medis dan nomor antrean menjadi data numerik."
+        }
+      ],
+      "pembahasan": "Berdasarkan sifat data:\n- Variabel 1 (nomor rekam medis), variabel 3 (nomor antrean), dan variabel 5 (kode pos) adalah data kategorik yang disajikan dengan bilangan. Angka-angka ini hanya berfungsi sebagai label, identitas, atau urutan penanda sehingga operasi penambahan dan pembagian (rata-rata) tidak memiliki arti matematis.\n- Variabel 2 (suhu badan) dan variabel 4 (banyak tablet obat) adalah data numerik yang menyatakan ukuran kuantitatif dan hasil pencacahan sehingga sah dan bermakna untuk dihitung nilai rata-ratanya.\nJadi, perhitungan rata-rata hanya valid dan bermakna untuk variabel 2 dan 4.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0222-latihan-6-2-5c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kecukupan data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap ketercukupan informasi pada tabel data numerik dan kategorik untuk membuktikan sebuah klaim perbandingan.",
+      "stimulus": "Dua kelompok ekstrakurikuler mendata anggotanya menggunakan format berikut:\n\n**Kelompok A (Data Numerik: Banyak Buku yang Dimiliki)**\n\n| Banyak Buku | Banyak Anggota |\n| :---: | :---: | \n| 4 | 5 |\n| 5 | 8 |\n| 6 | 7 |\n\n**Kelompok B (Data Kategorik: Genre Buku Favorit)**\n\n| Genre Favorit | Banyak Anggota |\n| :---: | :---: | \n| Fiksi | 9 |\n| Sains | 7 |\n| Sejarah | 5 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang ketua OSIS mengklaim bahwa Kelompok A memiliki total perolehan buku yang pasti lebih banyak daripada Kelompok B. Bagaimana keabsahan klaim tersebut berdasarkan sifat jenis data pada kedua tabel?",
+      "jawaban_benar": "Klaim tidak dapat dipastikan kebenarannya karena Kelompok B menyajikan data kategorik sehingga total fisik buku yang dimiliki tiap anggotanya tidak dapat dihitung dari tabel tersebut.",
+      "alasan_benar": "Data kategorik hanya mencatat pengelompokan preferensi genre tanpa memuat kuantitas atau jumlah buku fisik yang dimiliki oleh masing-masing anggota Kelompok B.",
+      "distraktor": [
+        {
+          "teks": "Klaim pasti benar karena Kelompok A memiliki total 106 buku sedangkan Kelompok B hanya memiliki 21 anggota.",
+          "alasan": "Siswa salah menganggap jumlah frekuensi anggota pada data kategorik sebagai representasi total buku yang dimiliki."
+        },
+        {
+          "teks": "Klaim pasti salah karena Kelompok B memiliki 21 anggota sedangkan Kelompok A hanya memiliki 20 anggota sehingga Kelompok B pasti memiliki buku lebih banyak.",
+          "alasan": "Siswa keliru menyimpulkan bahwa banyaknya frekuensi data kategorik langsung berbanding lurus dengan kuantitas numerik objek."
+        },
+        {
+          "teks": "Klaim pasti benar karena data numerik selalu bernilai lebih besar secara matematis dibandingkan frekuensi pada data kategorik.",
+          "alasan": "Siswa salah memahami konsep dengan mengira data numerik secara inheren lebih besar nilainya daripada data kategorik."
+        }
+      ],
+      "pembahasan": "Pada Kelompok A, datanya berbentuk numerik: $(4 \\times 5) + (5 \\times 8) + (6 \\times 7) = 20 + 40 + 42 = 102$ buku dengan 20 anggota. Pada Kelompok B, datanya berbentuk kategorik (genre favorit) dengan total 21 anggota ($9 + 7 + 5$). Karena tabel Kelompok B hanya mendata kategori kegemaran dan bukan data numerik kuantitas buku yang dimiliki, jumlah riil buku anggota Kelompok B tidak diketahui (bisa jauh lebih banyak atau lebih sedikit dari 102). Oleh karena itu, klaim ketua OSIS tidak dapat dipastikan kebenarannya.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0222-latihan-6-2-5e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "kalkulasi kuantitas data numerik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis kriteria bertingkat dan perhitungan perkalian frekuensi berbobot untuk membuktikan sebuah hipotesis.",
+      "stimulus": "Tabel berikut menyajikan data numerik tentang banyaknya jam belajar mandiri mingguan dari sekelompok siswa berprestasi:\n\n| Jam Belajar per Minggu | Frekuensi |\n| :---: | :---: | \n| 6 | 4 |\n| 8 | 9 |\n| 10 | 6 |\n| 12 | 5 |\n| 15 | 2 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Guru pembimbing menetapkan bahwa program bimbingan lanjutan hanya diberikan jika total jam belajar dari seluruh siswa yang belajar minimal 10 jam per minggu mencapai sedikitnya 150 jam. Berdasarkan data tersebut, kesimpulan evaluasi yang tepat adalah ....",
+      "jawaban_benar": "Program bimbingan lanjutan disetujui karena kelompok siswa tersebut mengumpulkan total 150 jam belajar",
+      "alasan_benar": "Total jam belajar siswa pada kategori $\\ge 10$ jam adalah $(10 \\times 6) + (12 \\times 5) + (15 \\times 2) = 60 + 60 + 30 = 150$ jam, memenuhi syarat batas minimal 150 jam.",
+      "distraktor": [
+        {
+          "teks": "Program bimbingan lanjutan ditolak karena kelompok siswa tersebut hanya mengumpulkan total 120 jam belajar",
+          "alasan": "Siswa tidak menyertakan kategori 15 jam per minggu atau salah menghitung baris terakhir."
+        },
+        {
+          "teks": "Program bimbingan lanjutan ditolak karena siswa yang memenuhi kriteria hanya berjumlah 13 orang",
+          "alasan": "Siswa salah fokus pada jumlah frekuensi orang ($6+5+2=13$), bukan total akumulasi jam belajar."
+        },
+        {
+          "teks": "Program bimbingan lanjutan disetujui karena total jam belajar seluruh siswa di tabel mencapai 246 jam",
+          "alasan": "Siswa menjumlahkan seluruh baris data tanpa memfilter kriteria minimal 10 jam per minggu."
+        }
+      ],
+      "pembahasan": "Kriteria siswa: belajar minimal 10 jam per minggu (kategori 10, 12, dan 15 jam).\nLangkah 1: Kategori 10 jam $\\rightarrow 10 \\times 6 = 60$ jam.\nLangkah 2: Kategori 12 jam $\\rightarrow 12 \\times 5 = 60$ jam.\nLangkah 3: Kategori 15 jam $\\rightarrow 15 \\times 2 = 30$ jam.\nLangkah 4: Total jam belajar yang memenuhi syarat $= 60 + 60 + 30 = 150$ jam.\nKarena syarat 'mencapai sedikitnya 150 jam' terpenuhi tepat pada angka 150 jam, maka program disetujui.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi keabsahan operasi statistik",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengevaluasi kesahihan matematis penerapan operasi statistika terhadap atribut data yang memuat angka tetapi berkarakteristik kategorik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang analis data sekolah menghitung nilai selisih dan rata-rata dari empat variabel berikut:\n(1) Peringkat kelas paralel siswa (Juara 1, 2, 3, ...)\n(2) Nilai capaian asesmen akhir matematika (skala 0–100)\n(3) Kode pos domisili tempat tinggal siswa\n(4) Waktu tempuh perjalanan siswa dari rumah ke sekolah (menit)\n\nManakah kesimpulan yang benar mengenai keabsahan perhitungan operasi tambah dan kurang pada variabel-variabel tersebut?",
+      "jawaban_benar": "Operasi tambah dan kurang hanya bermakna matematis pada variabel (2) dan (4) karena keduanya merupakan data numerik sejati",
+      "alasan_benar": "Nilai asesmen dan waktu tempuh merupakan data numerik yang merepresentasikan ukuran riil, sedangkan peringkat dan kode pos adalah data kategorik berbentuk lambang bilangan yang tidak bermakna bila dioperasikan matematis.",
+      "distraktor": [
+        {
+          "teks": "Semua variabel dapat dioperasikan secara matematis karena seluruh datanya tercatat dalam bentuk bilangan",
+          "alasan": "Siswa berasumsi salah bahwa setiap data berbentuk angka otomatis merupakan data numerik."
+        },
+        {
+          "teks": "Operasi tambah dan kurang valid untuk variabel (1), (2), dan (4), tetapi tidak valid untuk variabel (3)",
+          "alasan": "Siswa keliru menganggap peringkat (ordinal) sebagai data numerik yang dapat dijumlahkan/dikurangkan."
+        },
+        {
+          "teks": "Hanya variabel (4) yang dapat dioperasikan karena memiliki satuan waktu fisik yang jelas",
+          "alasan": "Siswa tidak menyadari bahwa nilai capaian asesmen juga merupakan data numerik yang sah dihitung selisih dan rata-ratanya."
+        }
+      ],
+      "pembahasan": "Berdasarkan materi Buku Siswa halaman 217, data kategorik dapat berbentuk bilangan (seperti peringkat kelas atau nomor kode pos), namun angka tersebut hanya label pengenal atau tingkatan posisi, bukan kuantitas terukur sehingga operasi tambah dan kurang tidak bermakna secara matematis. Sebaliknya, nilai ujian (variabel 2) dan waktu tempuh (variabel 4) merupakan data numerik murni hasil pengukuran/perhitungan yang valid dioperasikan secara aljabar.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0222-latihan-6-2-5c",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi konsistensi data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi konsistensi total responden pada dua representasi data (numerik dan kategorik) yang saling berkaitan untuk mendeteksi data yang hilang.",
+      "stimulus": "Dalam survei minat baca mandiri terhadap seluruh siswa Kelas 7D, diperoleh dua tabel pencatatan berikut:\n\n**Tabel 1: Data Numerik (Banyak Buku Dipinjam per Siswa)**\n| Banyak Buku ($x$) | Frekuensi Siswa ($f$) |\n| :---: | :---: |\n| 0 | 4 |\n| 1 | 9 |\n| 2 | 11 |\n| 3 | 8 |\n| 4 | 4 |\n\n**Tabel 2: Data Kategorik (Genre Buku Utama yang Dipilih)**\n| Genre Buku Utama | Frekuensi Siswa |\n| :--- | :---: |\n| Sains & Teknologi | 10 |\n| Petualangan/Fiksi | 12 |\n| Ensiklopedia | 6 |\n| Komik Edukasi | $k$ |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Setiap siswa yang meminjam minimal 1 buku diwajibkan memilih tepat satu genre buku utama yang paling disukainya, sedangkan siswa yang tidak meminjam buku ($x = 0$) tidak mengisi angket genre. Setelah data diperiksa, pengurus perpustakaan menyatakan bahwa pengisian angket Tabel 2 sudah lengkap dan konsisten dengan Tabel 1. Berdasarkan informasi tersebut, berapakah nilai frekuensi $k$ yang tepat untuk memastikan klaim pengurus perpustakaan benar?",
+      "jawaban_benar": "4 siswa",
+      "alasan_benar": "Total siswa pada Tabel 1 adalah $4 + 9 + 11 + 8 + 4 = 36$ siswa. Siswa yang meminjam minimal 1 buku adalah mereka dengan $x \\ge 1$, yaitu $36 - 4 = 32$ siswa. Pada Tabel 2, siswa yang sudah mengisi genre berjumlah $10 + 12 + 6 = 28$ siswa. Agar konsisten dengan jumlah siswa peminjam ($32$ siswa), maka $k = 32 - 28 = 4$ siswa.",
+      "distraktor": [
+        {
+          "teks": "8 siswa",
+          "alasan": "Siswa lupa mengurangkan frekuensi siswa yang tidak meminjam buku ($x=0$) dari total responden ($36 - 28 = 8$)."
+        },
+        {
+          "teks": "6 siswa",
+          "alasan": "Siswa salah menjumlahkan frekuensi peminjam buku menjadi 34 siswa lalu mengurangkan dengan 28."
+        },
+        {
+          "teks": "2 siswa",
+          "alasan": "Siswa salah menghitung total frekuensi Tabel 2 atau hanya menghitung selisih frekuensi siswa peminjam 4 buku terhadap frekuensi siswa tidak meminjam ($4 - 2$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung total seluruh siswa dari Tabel 1:\n$n = 4 + 9 + 11 + 8 + 4 = 36$ siswa.\n\nLangkah 2: Tentukan banyaknya siswa yang berhak mengisi Tabel 2 (meminjam $\\ge 1$ buku, yaitu $x \\ne 0$):\n$n_{\\text{peminjam}} = 36 - 4 = 32$ siswa.\n\nLangkah 3: Jumlahkan frekuensi genre yang sudah tercatat pada Tabel 2:\n$10 + 12 + 6 = 28$ siswa.\n\nLangkah 4: Hitung nilai $k$:\n$k = 32 - 28 = 4$ siswa.\n\nJadi, nilai frekuensi $k$ yang tepat adalah 4 siswa.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi penalaran sifat data",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengevaluasi keabsahan empat klaim operasi aritmetika pada data berupa angka yang memiliki sifat data berbeda (numerik vs kategorik).",
+      "stimulus": "Panitia lomba cerdas cermat mencatat empat atribut dari setiap regu peserta:\n1. Nomor undian regu (misal: Regu 1, Regu 2, Regu 3)\n2. Peringkat hasil babak penyisihan (Peringkat 1, 2, 3, 4)\n3. Skor perolehan babak final (misal: 150 poin, 225 poin, 310 poin)\n4. Banyaknya anggota tiap regu (3 orang, 4 orang, 5 orang)",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang anggota panitia membuat beberapa klaim mengenai operasi matematika terhadap atribut-atribut tersebut. Klaim manakah yang bernilai BENAR secara konsep statistika?",
+      "jawaban_benar": "Operasi penjumlahan skor babak final (atribut 3) bermakna matematis karena merupakan data numerik, sedangkan penjumlahan peringkat (atribut 2) tidak menghasilkan makna besaran baru.",
+      "alasan_benar": "Atribut 3 adalah data numerik yang menyatakan besaran skor sehingga sah dijumlahkan, sedangkan atribut 2 adalah peringkat (data kategorik ordinal) yang angkanya hanya melambangkan posisi urutan sehingga operasi penjumlahan tidak bermakna kuantitatif.",
+      "distraktor": [
+        {
+          "teks": "Nilai rata-rata dari nomor undian regu (atribut 1) dapat dihitung dan digunakan sebagai representasi mutu seluruh regu peserta.",
+          "alasan": "Siswa menganggap nomor urut/label yang berupa angka dapat dirata-ratakan secara bermakna."
+        },
+        {
+          "teks": "Selisih peringkat antara Juara 1 dan Juara 3 pasti setara dengan selisih kemampuan skor antara dua peringkat tersebut.",
+          "alasan": "Siswa mengira jarak antar-peringkat memiliki skala selisih numerik yang setara secara kuantitatif."
+        },
+        {
+          "teks": "Keempat atribut tersebut seluruhnya merupakan data numerik murni karena semuanya dicatat menggunakan lambang bilangan bulat positif.",
+          "alasan": "Siswa beranggapan bahwa semua data berwujud angka otomatis merupakan data numerik."
+        }
+      ],
+      "pembahasan": "Langkah 1: Klasifikasikan keempat atribut:\n- Atribut 1 (Nomor undian): Angka sebagai label/identitas $\\rightarrow$ Data kategorik.\n- Atribut 2 (Peringkat): Angka sebagai urutan/posisi $\\rightarrow$ Data kategorik.\n- Atribut 3 (Skor): Angka sebagai ukuran/besaran poin $\\rightarrow$ Data numerik.\n- Atribut 4 (Banyak anggota): Angka sebagai hasil penghitungan cacah $\\rightarrow$ Data numerik.\n\nLangkah 2: Evaluasi hakikat operasi matematika:\nSesuai konsep pada buku siswa, bilangan pada kategori/peringkat tidak dapat dioperasikan dengan operasi matematika (seperti tambah, kurang, atau rata-rata) karena tidak menyatakan besaran kuantitas riil.\n\nLangkah 3: Periksa setiap klaim:\nPenjumlahan atribut 3 bermakna besaran total perolehan nilai, sedangkan operasi tambah pada atribut 2 tidak menghasilkan makna besaran baru.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 218,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Salah satu kegiatan yang paling banyak dilakukan di Indonesia adalah mengakses media sosial. Tahukah kalian media sosial mana yang paling banyak diakses oleh para pengguna internet di Indonesia?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis agregasi data persentase",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan antara jenis data kategorik pilihan ganda majemuk dengan validitas penjumlahan persentase data.",
+      "stimulus": "Dalam laporan survei mengenai media sosial yang digunakan oleh 100 siswa SMP, diperoleh data persentase pengguna dalam sebulan terakhir sebagai berikut:\n- Aplikasi A: 92%\n- Aplikasi B: 85%\n- Aplikasi C: 64%\n- Aplikasi D: 40%\n\nSeorang siswa menyimpulkan: *\"Karena total persentasenya adalah $92\\% + 85\\% + 64\\% + 40\\% = 281\\%$, maka data survei ini keliru dan tidak valid karena jumlah persentase dalam statistika tidak boleh melebihi $100\\%$.\"*",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Bagaimanakah evaluasi yang tepat terhadap kesimpulan siswa tersebut?",
+      "jawaban_benar": "Kesimpulan siswa salah, karena data kategorik ini berasal dari pertanyaan dengan pilihan ganda majemuk (satu responden dapat menggunakan lebih dari satu aplikasi), sehingga jumlah persentase wajar melebihi 100%.",
+      "alasan_benar": "Survei tersebut mencatat data kategorik di mana setiap responden boleh memilih lebih dari satu kategori, sehingga basis persentase dihitung terhadap total responden per kategori secara independen.",
+      "distraktor": [
+        {
+          "teks": "Kesimpulan siswa benar, karena total seluruh persentase dari kategori data apa pun dalam ilmu statistika wajib bernilai tepat 100%.",
+          "alasan": "Siswa mengabaikan sifat respons ganda (multiple response) dan menyamakan dengan data kategorik bersyarat saling lepas tunggal."
+        },
+        {
+          "teks": "Kesimpulan siswa salah, karena data persentase tersebut tergolong data numerik kontinu yang perhitungannya tidak mengenal batas maksimum persentase.",
+          "alasan": "Siswa salah mengira bahwa persentase pemakaian aplikasi adalah data numerik murni dari suatu subjek tunggal."
+        },
+        {
+          "teks": "Kesimpulan siswa benar, kesalahan terjadi karena surveyor menghitung frekuensi siswa yang tidak menggunakan media sosial sama sekali.",
+          "alasan": "Siswa mengira anomali jumlah persentase disebabkan oleh kesalahan pencacahan siswa bukan pengguna."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi variabel yang diukur:\nVariabel survei adalah macam aplikasi media sosial yang digunakan siswa (data kategorik).\n\nLangkah 2: Analisis mekanisme pengumpulan data:\nDalam kehidupan sehari-hari, seorang individu pengguna internet dapat mengakses beberapa aplikasi sekaligus dalam sebulan (misal menggunakan Aplikasi A dan Aplikasi B sekaligus). Persentase tiap aplikasi dihitung dari $\\frac{\\text{banyak pengguna aplikasi}}{\\text{total responden}} \\times 100\\%$.\n\nLangkah 3: Evaluasi klaim:\nKarena satu responden dapat terhitung di lebih dari satu kategori (respons jamak), jumlah seluruh persentase kategori dapat melebihi 100%. Oleh sebab itu, klaim siswa bahwa data survei keliru adalah kesimpulan yang salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Data Numerik : Data yang selalu berbentuk angka, misalnya tinggi badan, panjang nama, jumlah medali dalam olimpiade, jumlah gol dalam pertandingan sepakbola, suhu badan, dan lainnya."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "sintesis kriteria pengelompokan data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Merancang dan menyintesis batasan kuantitatif dari tabel distribusi data numerik berbobot untuk memenuhi kriteria target persentase kelulusan.",
+      "stimulus": "Sebuah kelas beranggotakan 40 siswa mengikuti tes kebugaran berupa penilaian banyaknya push-up dalam satu menit (data numerik). Hasilnya tersaji pada tabel frekuensi berikut:\n\n| Banyak Push-Up ($x$) | Banyak Siswa ($f$) |\n| :---: | :---: |\n| 10 | 4 |\n| 15 | 6 |\n| 20 | 12 |\n| 25 | 10 |\n| 30 | 5 |\n| 35 | 3 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Guru olahraga menetapkan kriteria predikat kategorik \"Sangat Bugar\" jika banyaknya push-up seorang siswa mencapai minimal $M$ kali. Guru menghendaki agar banyaknya siswa yang memperoleh predikat \"Sangat Bugar\" berada dalam rentang tepat $40\\%$ hingga $50\\%$ dari seluruh siswa di kelas. Nilai ambang minimum $M$ yang harus ditetapkan guru adalah ....",
+      "jawaban_benar": "25 push-up",
+      "alasan_benar": "Rentang 40% sampai 50% dari 40 siswa adalah 16 sampai 20 siswa. Untuk $x \\ge 25$, jumlah siswa adalah $10 + 5 + 3 = 18$ siswa. Karena $16 \\le 18 \\le 20$, nilai $M = 25$ memenuhi kriteria tersebut.",
+      "distraktor": [
+        {
+          "teks": "20 push-up",
+          "alasan": "Siswa menghitung untuk $x \\ge 20$ menghasilkan $12 + 10 + 5 + 3 = 30$ siswa (75%), yang melebihi batas 50%."
+        },
+        {
+          "teks": "30 push-up",
+          "alasan": "Siswa hanya menjumlahkan $5 + 3 = 8$ siswa (20%), yang kurang dari batas minimum 40%."
+        },
+        {
+          "teks": "15 push-up",
+          "alasan": "Siswa salah memperlakukan data sebagai kumulatif dari bawah atau mengambil nilai push-up yang berada di persentil bawah."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung batas banyak siswa target:\nBatas bawah: $40\\% \\times 40 = 16$ siswa.\nBatas atas: $50\\% \\times 40 = 20$ siswa.\nJadi, banyak siswa yang terpilih harus berada pada rentang $16 \\le n \\le 20$.\n\nLangkah 2: Uji kumulatif frekuensi dari nilai tertinggi ($x$ terbesar ke terkecil):\n- Untuk $M = 35$: frekuensi = 3 siswa ($3 < 16$, belum memenuhi).\n- Untuk $M = 30$: frekuensi = $3 + 5 = 8$ siswa ($8 < 16$, belum memenuhi).\n- Untuk $M = 25$: frekuensi = $3 + 5 + 10 = 18$ siswa.\n\nLangkah 3: Periksa syarat:\nNilai 18 berada dalam rentang $[16, 20]$, dengan persentase $\\frac{18}{40} \\times 100\\% = 45\\%$.\n\nLangkah 4: Uji alternatif lain:\n- Untuk $M = 20$: frekuensi = $18 + 12 = 30$ siswa ($\\frac{30}{40} = 75\\% > 50\\%$, tidak memenuhi).\n\nJadi, nilai ambang minimum $M$ yang harus dipilih adalah 25 push-up.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan bentuknya, data dapat dibagi menjadi 2 kelompok jenis data: DATA Kategorik Numerik"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi validitas inferensi data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi validitas kesimpulan riset berdasarkan analisis kecocokan tipe data yang dikumpulkan (kategorik vs numerik).",
+      "stimulus": "Seorang peneliti OSIS ingin mengetahui faktor kenyamanan belajar siswa di perpustakaan. Peneliti mengumpulkan 4 variabel data berikut:\n- Variabel P: Tingkat kepuasan siswa (Sangat Puas, Puas, Cukup, Kurang)\n- Variabel Q: Suhu ruangan perpustakaan dalam $^{\\circ}\\text{C}$ yang diukur tiap jam\n- Variabel R: Kode klasifikasi lemari buku (100: Filsafat, 500: Sains, 800: Sastra)\n- Variabel S: Durasi belajar siswa di perpustakaan (dalam menit)\n\nPeneliti menyusun empat draf kesimpulan awal dari analisis data tersebut:\n1. \"Rata-rata nomor kode lemari buku yang paling sering dikunjungi siswa adalah 466,7 sehingga perpustakaan perlu memperbanyak koleksi di lemari tersebut.\"\n2. \"Rata-rata durasi belajar siswa (Variabel S) dan rata-rata suhu ruangan (Variabel Q) dapat dihitung untuk melihat korelasi matematis waktu kunjung terhadap temperatur ruang.\"\n3. \"Frekuensi modus pada Variabel P dapat digunakan untuk menentukan tingkat kepuasan mayoritas pengunjung perpustakaan.\"\n4. \"Selisih antara kode lemari 800 dan 500 bernilai 300, yang membuktikan bahwa buku Sastra memiliki bobot 300 satuan lebih unggul daripada buku Sains.\"",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan konsep klasifikasi data yang benar, manakah pasangan pernyataan draf kesimpulan yang bernilai VALID secara statistika?",
+      "jawaban_benar": "2 dan 3",
+      "alasan_benar": "Pernyataan 2 valid karena Variabel Q dan S adalah data numerik yang bermakna untuk dirata-ratakan, dan pernyataan 3 valid karena data kategorik ordinal (Variabel P) tepat dianalisis frekuensinya menggunakan ukuran modus.",
+      "distraktor": [
+        {
+          "teks": "1 dan 3",
+          "alasan": "Siswa mengira kode lemari buku (data kategorik) sah untuk dihitung nilai rata-ratanya."
+        },
+        {
+          "teks": "2 dan 4",
+          "alasan": "Siswa mengira pengurangan kode nomor lemari buku memiliki makna matematis kuantitatif."
+        },
+        {
+          "teks": "1 dan 4",
+          "alasan": "Siswa terjebak menganggap angka kode lemari buku sebagai besaran numerik sejati."
+        }
+      ],
+      "pembahasan": "Langkah 1: Identifikasi jenis data setiap variabel:\n- P: Data kategorik (kualitatif bertingkat).\n- Q: Data numerik (pengukuran suhu dalam $^{\\circ}\\text{C}$).\n- R: Data kategorik (angka hanya kode pengelompokan klasifikasi subjek buku).\n- S: Data numerik (penghitungan durasi waktu dalam menit).\n\nLangkah 2: Evaluasi pernyataan 1 dan 4 (terkait Variabel R):\nKarena Variabel R adalah data kategorik berupa kode penamaan, angka tersebut tidak dapat dioperasikan secara matematika (tidak sah dirata-ratakan pada pernyataan 1 dan tidak bermakna selisihnya pada pernyataan 4). Jadi, pernyataan 1 dan 4 TIDAK VALID.\n\nLangkah 3: Evaluasi pernyataan 2 (terkait Variabel Q dan S):\nVariabel Q dan S adalah data numerik murni hasil pengukuran kontinu. Nilai rata-rata keduanya bermakna secara matematis. Jadi, pernyataan 2 VALID.\n\nLangkah 4: Evaluasi pernyataan 3 (terkait Variabel P):\nVariabel P adalah data kategorik. Nilai yang paling banyak muncul (modus atau frekuensi terbanyak) merupakan metode yang sah dan tepat untuk menentukan kategori mayoritas. Jadi, pernyataan 3 VALID.\n\nDengan demikian, pasangan pernyataan yang valid adalah 2 dan 3.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0222-latihan-6-2-5e",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi agregasi data numerik",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perhitungan nilai agregat bertingkat dan evaluasi kebenaran klaim persentase berdasarkan data numerik.",
+      "stimulus": "| Banyak Buku Dipinjam ($x$) | Frekuensi Siswa ($f$) |\n| :---: | :---: | \n| 1 | 4 |\n| 2 | 7 |\n| 3 | 11 |\n| 4 | 5 |\n| 5 | 3 |\n\nTabel di atas menyajikan data numerik peminjaman buku paket matematika oleh 30 siswa kelas 7C.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pengurus perpustakaan menyatakan: \"Kelompok siswa yang meminjam lebih dari 2 buku menyumbang lebih dari $75\\%$ dari total seluruh buku yang sedang dipinjam.\" Evaluasilah kebenaran pernyataan tersebut berdasarkan data pada tabel!",
+      "jawaban_benar": "Pernyataan benar, karena kelompok tersebut meminjam 68 dari total 86 buku yang dipinjam (sekitar $79{,}1\\%$).",
+      "alasan_benar": "Total seluruh buku yang dipinjam adalah $(1 \\times 4) + (2 \\times 7) + (3 \\times 11) + (4 \\times 5) + (5 \\times 3) = 4 + 14 + 33 + 20 + 15 = 86$ buku. Kelompok yang meminjam lebih dari 2 buku adalah kategori 3, 4, dan 5 buku dengan total buku $33 + 20 + 15 = 68$ buku. Persentasenya adalah $\\frac{68}{86} \\times 100\\% \\approx 79{,}07\\% > 75\\%$. Jadi, pernyataan pengurus perpustakaan benar.",
+      "distraktor": [
+        {
+          "teks": "Pernyataan salah, karena kelompok tersebut hanya menyumbang 68 dari total 86 buku yang dipinjam (sekitar $68{,}0\\%$).",
+          "alasan": "Siswa salah mengira bahwa jumlah 68 buku langsung setara dengan nilai persentase $68\\%$ tanpa membaginya dengan total 86 buku."
+        },
+        {
+          "teks": "Pernyataan salah, karena kelompok tersebut meminjam 48 dari total 86 buku yang dipinjam (sekitar $55{,}8\\%$).",
+          "alasan": "Siswa salah menentukan kelompok 'lebih dari 2 buku' dengan hanya menjumlahkan kategori 3 dan 5 buku serta melewatkan kategori 4 buku."
+        },
+        {
+          "teks": "Pernyataan benar, karena kelompok tersebut meminjam 72 dari total 90 buku yang dipinjam (sekitar $80{,}0\\%$).",
+          "alasan": "Siswa melakukan kesalahan perhitungan perkalian frekuensi sehingga mendapatkan angka total yang keliru."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung total seluruh buku yang dipinjam:\nTotal $= (1 \\times 4) + (2 \\times 7) + (3 \\times 11) + (4 \\times 5) + (5 \\times 3) = 4 + 14 + 33 + 20 + 15 = 86$ buku.\n\nLangkah 2: Menentukan kelompok peminjam lebih dari 2 buku (yaitu 3, 4, dan 5 buku):\nBuku dari kategori 3 $= 3 \\times 11 = 33$\nBuku dari kategori 4 $= 4 \\times 5 = 20$\nBuku dari kategori 5 $= 5 \\times 3 = 15$\nTotal kelompok ini $= 33 + 20 + 15 = 68$ buku.\n\nLangkah 3: Menghitung persentase kontribusi kelompok terhadap total buku:\n$\\text{Persentase} = \\frac{68}{86} \\times 100\\% \\approx 79{,}07\\%$.\n\nLangkah 4: Membandingkan dengan klaim:\nKarena $79{,}07\\% > 75\\%$, maka pernyataan pengurus perpustakaan terbukti BENAR.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kelayakan operasi matematis",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap penerapan operasi rata-rata matematika pada variabel data yang memuat lambang bilangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Panitia lomba mendata empat atribut dari 20 regu peserta:\n(1) Nomor urut pendaftaran regu ($1, 2, 3, \\dots, 20$)\n(2) Skor akumulasi nilai juri (skala $100 - 500$)\n(3) Peringkat hasil akhir lomba (Juara $1, 2, 3, \\dots, 20$)\n(4) Waktu penyelesaian tugas lomba (dalam menit)\n\nKetua panitia mengusulkan dua rencana:\n- Rencana I: Menghitung nilai rata-rata dari skor juri dan waktu penyelesaian tugas seluruh regu.\n- Rencana II: Menghitung nilai rata-rata dari nomor urut pendaftaran dan peringkat untuk menentukan \"regu tengah\".\n\nEvaluasilah keabsahan kedua rencana tersebut berdasarkan konsep jenis data!",
+      "jawaban_benar": "Rencana I absah secara matematis karena skor dan waktu merupakan data numerik, sedangkan Rencana II tidak bermakna karena nomor pendaftaran dan peringkat merupakan data kategorik.",
+      "alasan_benar": "Skor juri dan waktu penyelesaian tugas adalah data numerik yang menyatakan besaran kuantitas terukur sehingga absah dikenai operasi penjumlahan dan rata-rata. Sebaliknya, nomor urut dan peringkat adalah data kategorik (berfungsi sebagai label dan urutan posisi), sehingga operasi aritmetika pada bilangan tersebut tidak memiliki interpretasi matematis yang bermakna.",
+      "distraktor": [
+        {
+          "teks": "Kedua rencana absah secara matematis karena seluruh atribut dinyatakan menggunakan lambang bilangan asli yang dapat dijumlahkan dan dibagi.",
+          "alasan": "Siswa keliru menganggap setiap data yang berbentuk angka otomatis merupakan data numerik yang boleh dioperasikan secara matematis."
+        },
+        {
+          "teks": "Rencana II absah secara matematis karena peringkat memiliki selisih angka yang konstan, sedangkan Rencana I tidak absah karena rentang skor terlalu lebar.",
+          "alasan": "Siswa salah memahami konsep peringkat dan mengabaikan kaidah bahwa peringkat tidak dapat dijumlahkan atau dirata-rata."
+        },
+        {
+          "teks": "Rencana I tidak absah karena skor juri bersifat kualitatif subjektif, sedangkan Rencana II absah untuk menentukan posisi tengah peserta.",
+          "alasan": "Siswa keliru mengklasifikasikan skor penilaian kuantitatif sebagai data kualitatif serta mengira rata-rata nomor urut bermakna."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan jenis data masing-masing atribut:\n- (1) Nomor urut pendaftaran: Data kategorik (berupa angka hanya sebagai label pengenal).\n- (2) Skor akumulasi nilai juri: Data numerik (menyatakan jumlah poin terukur).\n- (3) Peringkat hasil akhir: Data kategorik (urutan/peringkat, tidak dapat dioperasikan tambah/kurang).\n- (4) Waktu penyelesaian: Data numerik (besaran fisik waktu terukur).\n\nLangkah 2: Menilai keterterapan operasi rata-rata:\n- Operasi rata-rata mensyaratkan penjumlahan nilai yang bermakna kuantitatif (data numerik).\n- Menghitung rata-rata skor dan waktu (Rencana I) valid dan menghasilkan informasi representatif.\n- Menghitung rata-rata nomor urut pendaftaran atau peringkat (Rencana II) tidak memberikan makna statistika yang absah karena keduanya adalah data kategorik.\n\nLangkah 3: Menarik kesimpulan evaluasi:\nRencana I absah secara matematis, sedangkan Rencana II tidak bermakna.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 216,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Berdasarkan bentuknya, data dapat dibagi menjadi 2 kelompok jenis data: DATA Kategorik Numerik"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "sintesis klasifikasi variabel ganda",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan sintesis dan penapisan multi-variabel untuk membedakan data numerik operasional dengan data kategorik berbentuk lambang bilangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pengurus perpustakaan menyusun draf formulir dengan 6 variabel pendataan:\n(1) Nomor kartu anggota perpustakaan (contoh: 2024-001)\n(2) Lama waktu membaca di ruang perpustakaan (dalam menit)\n(3) Kategori genre buku yang dipinjam (Fiksi, Sains, Sejarah)\n(4) Banyak halaman buku yang telah dibaca siswa (halaman)\n(5) Tingkat kepuasan layanan (Sangat Puas, Puas, Cukup, Kurang)\n(6) Kode klasifikasi rak penempatan buku (contoh: 100, 300, 500)\n\nJika pengurus hanya ingin memilih variabel data numerik yang absah dikenai operasi penjumlahan dan rata-rata untuk laporan kuantitatif, variabel mana saja yang tepat dipilih serta berapa persentasenya terhadap seluruh variabel yang tersedia?",
+      "jawaban_benar": "Variabel (2) dan (4), dengan persentase sebesar $33\\frac{1}{3}\\%$ dari seluruh variabel.",
+      "alasan_benar": "Hanya variabel (2) dan (4) yang merupakan data numerik murni hasil pengukuran/pencacahan yang bermakna saat dijumlahkan atau dirata-ratakan. Variabel (1) dan (6) berbentuk angka tetapi berfungsi sebagai tanda pengenal/klasifikasi (data kategorik), sedangkan variabel (3) dan (5) adalah data kategorik kualitatif. Jumlah variabel terpilih adalah 2 dari 6 variabel, yaitu $\\frac{2}{6} \\times 100\\% = 33\\frac{1}{3}\\%$.",
+      "distraktor": [
+        {
+          "teks": "Variabel (2), (4), dan (6), dengan persentase sebesar $50\\%$ dari seluruh variabel.",
+          "alasan": "Siswa keliru menganggap kode klasifikasi rak penempatan buku (variabel 6) sebagai data numerik hanya karena dituliskan dengan angka 100, 300, 500."
+        },
+        {
+          "teks": "Variabel (1), (2), (4), dan (6), dengan persentase sebesar $66\\frac{2}{3}\\%$ dari seluruh variabel.",
+          "alasan": "Siswa memasukkan seluruh variabel yang memuat angka digit tanpa memeriksa sifat operasinya."
+        },
+        {
+          "teks": "Hanya Variabel (4), dengan persentase sebesar $16\\frac{2}{3}\\%$ dari seluruh variabel.",
+          "alasan": "Siswa keliru mengira lama waktu membaca (variabel 2) bukan data numerik kuantitatif perpustakaan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Mengidentifikasi karakteristik jenis data tiap variabel:\n- (1) Nomor kartu anggota: Data kategorik (angka sebagai identitas unik/label).\n- (2) Lama waktu membaca: Data numerik (besaran rasio waktu yang dapat dijumlahkan dan dirata-rata).\n- (3) Kategori genre buku: Data kategorik (kualitatif non-bilangan).\n- (4) Banyak halaman dibaca: Data numerik (hasil cacahan yang dapat dijumlahkan dan dirata-rata).\n- (5) Tingkat kepuasan: Data kategorik (skala kualitatif bertingkat).\n- (6) Kode klasifikasi rak: Data kategorik (angka sebagai sistem pengodean kategori lokasi buku).\n\nLangkah 2: Memilah variabel numerik yang absah dioperasikan secara matematis:\nVariabel yang memenuhi syarat adalah variabel (2) dan (4) (ada 2 variabel).\n\nLangkah 3: Menghitung persentase terhadap total 6 variabel:\n$\\text{Persentase} = \\frac{2}{6} \\times 100\\% = \\frac{1}{3} \\times 100\\% = 33\\frac{1}{3}\\%$.\n\nLangkah 4: Menentukan kesimpulan opsi yang sesuai:\nVariabel (2) dan (4) dengan persentase $33\\frac{1}{3}\\%$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesahihan interpretasi data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap empat klaim berbeda mengenai keabsahan penerapan operasi matematika pada data numerik dan data kategorik.",
+      "stimulus": "Dua kelompok data hasil survei gawai pada 32 siswa Kelas 7B tersaji dalam dua tabel berikut:\n\n**Tabel 1: Banyak Aplikasi Permainan Online dalam Gawai**\n| Banyak Aplikasi ($x$) | Banyak Siswa ($f$) |\n| :---: | :---: |\n| 0 | 1 |\n| 1 | 3 |\n| 2 | 7 |\n| 3 | 10 |\n| 4 | 8 |\n| 5 | 2 |\n| 6 | 1 |\n\n**Tabel 2: Aplikasi Permainan Online Favorit**\n| Nama Aplikasi | Banyak Siswa |\n| :--- | :---: |\n| Mobile Legends | 12 |\n| Wormszone.io | 6 |\n| PUBG Mobile | 5 |\n| Among Us! | 4 |\n| Hago | 3 |\n| Candy Crush Saga | 1 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Empat siswa memberikan pernyataan terkait pengolahan data pada kedua tabel tersebut:\n- **Alif**: \"Pada Tabel 2, kita dapat menghitung nilai rata-rata jenis permainan dengan menjumlahkan frekuensi lalu membaginya dengan 6, karena nama aplikasi merupakan data numerik.\"\n- **Bima**: \"Pada Tabel 1, kita sah menghitung total seluruh aplikasi yang dimiliki siswa dengan melakukan perkalian dan penjumlahan $\\sum (x \\times f) = 95$ aplikasi, karena banyak aplikasi merupakan data numerik.\"\n- **Cahyo**: \"Pada Tabel 1, angka 0 sampai 6 pada kolom banyak aplikasi tidak boleh dijumlahkan karena angka tersebut hanya berperan sebagai label kategorik seperti nomor urut kelas.\"\n- **Dina**: \"Pada Tabel 2, data nama aplikasi berubah menjadi data numerik saat kita menghitung selisih frekuensi antara Mobile Legends dan Candy Crush Saga ($12 - 1 = 11$).\"\n\nEvaluasi manakah yang paling tepat berdasarkan konsep jenis data?",
+      "jawaban_benar": "Pernyataan Bima tepat, karena banyak aplikasi merupakan data numerik berupa hasil pencacahan sehingga nilainya sah dioperasikan dengan operasi matematika untuk mencari kuantitas total.",
+      "alasan_benar": "Banyak aplikasi adalah data numerik (kuantitatif) sehingga nilai bilangannya memiliki makna ukuran dan dapat dikenai operasi kali dan tambah. Total aplikasi = (0x1) + (1x3) + (2x7) + (3x10) + (4x8) + (5x2) + (6x1) = 0 + 3 + 14 + 30 + 32 + 10 + 6 = 95 aplikasi.",
+      "distraktor": [
+        {
+          "teks": "Pernyataan Alif tepat, karena keberadaan angka frekuensi pemilih secara otomatis mengubah variabel nama aplikasi menjadi data numerik yang dapat dirata-ratakan.",
+          "alasan": "Siswa keliru membedakan antara variabel yang diamati (nama aplikasi = data kategorik) dengan frekuensi pemilihnya; data kategorik tidak dapat dirata-ratakan."
+        },
+        {
+          "teks": "Pernyataan Cahyo tepat, karena semua data cacahan diskret yang memuat nilai nol hanya berfungsi sebagai kode pengelompokan kategorik.",
+          "alasan": "Siswa salah mengira data cacahan bernilai bulat kecil sebagai data kategorik, padahal bilangan tersebut menyatakan kuantitas nyata yang dapat dioperasikan."
+        },
+        {
+          "teks": "Pernyataan Dina tepat, karena pengurangan frekuensi antarkategori mengubah sifat kualitatif dari nama aplikasi menjadi besaran peringkat numerik.",
+          "alasan": "Siswa keliru menganggap operasi pengurangan pada frekuensi dapat mengubah sifat dasar variabel nama aplikasi yang tetap merupakan data kategorik kualitatif."
+        }
+      ],
+      "pembahasan": "Langkah-langkah evaluasi:\n1. **Identifikasi Variabel**:\n   - Tabel 1: Variabel yang diukur adalah 'Banyak Aplikasi Permainan Online'. Data ini berupa bilangan hasil pencacahan (kuantitas nyata), sehingga merupakan **data numerik**.\n   - Tabel 2: Variabel yang diukur adalah 'Nama Aplikasi Permainan Online Favorit'. Data ini berbentuk kata/kualitatif (nama objek), sehingga merupakan **data kategorik**.\n2. **Evaluasi Pernyataan Alif**: Salah. Nama aplikasi adalah data kategorik, sehingga tidak memiliki nilai rata-rata jenis aplikasi.\n3. **Evaluasi Pernyataan Cahyo**: Salah. Angka 0 hingga 6 pada Tabel 1 bukan label identitas (seperti nomor urut absen atau urutan kelas), melainkan banyaknya unit aplikasi yang dimiliki tiap siswa.\n4. **Evaluasi Pernyataan Dina**: Salah. Pengurangan frekuensi hanya membandingkan banyak pemilih, bukan mengubah variabel 'nama aplikasi' menjadi data numerik.\n5. **Evaluasi Pernyataan Bima**: Benar. Karena banyak aplikasi adalah data numerik, operasi perkalian nilai variabel dengan frekuensinya serta penjumlahannya bermakna matematis:\n   $$\\text{Total} = (0 \\times 1) + (1 \\times 3) + (2 \\times 7) + (3 \\times 10) + (4 \\times 8) + (5 \\times 2) + (6 \\times 1)$$\n   $$\\text{Total} = 0 + 3 + 14 + 30 + 32 + 10 + 6 = 95 \\text{ aplikasi}$$\n\nDengan demikian, pernyataan Bima adalah evaluasi yang paling tepat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk urutan kelas data 7-1, 7-2, 7-3, walaupun jawabannya berupa bilangan yaitu urutan kelas, jenis data ini adalah data kategorik, bukan numerik karena bilangan pada peringkat tidak dapat dioperasikan dengan operasi matematika seperti operasi tambah atau kurang. Contoh data kategorik lainnya yang berupa bilangan adalah nomor absen siswa di kelas kalian."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "investigasi kesesuaian jenis data",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap keabsahan penerapan operasi rata-rata pada data numerik dibandingkan dengan data kategorik berbentuk bilangan angka kode label.",
+      "stimulus": "Dalam kegiatan survei literasi terhadap 30 siswa Kelas 7, diperoleh dua ringkasan data berikut:\n\n**Data A (Banyak Novel yang Dibaca dalam Sebulan)**\n| Banyak Novel | Frekuensi Siswa |\n| :---: | :---: |\n| 1 | 8 |\n| 2 | 12 |\n| 3 | 6 |\n| 4 | 4 |\n\n**Data B (Kode Genre Novel Paling Diminati Siswa)**\n| Kode Genre | Keterangan Genre | Frekuensi Siswa |\n| :---: | :---: | :---: |\n| 1 | Fantasi | 10 |\n| 2 | Misteri | 11 |\n| 3 | Sains | 9 |\n\nSeorang siswa menghitung nilai rata-rata dari kedua kelompok data tersebut dan menyatakan bahwa:\n1. Rata-rata Data A adalah $2,2$ novel per siswa.\n2. Rata-rata Data B adalah $1,97$ sehingga genre rata-rata siswa mendekati genre Misteri (Kode 2).",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan sifat dan kaidah matematis jenis data, bagaimanakah evaluasi yang tepat terhadap analisis siswa tersebut?",
+      "jawaban_benar": "Analisis Data A tepat dan absah karena merupakan data numerik, sedangkan analisis Data B tidak absah secara matematis karena angka kode tersebut adalah data kategorik.",
+      "alasan_benar": "Data A menyajikan banyak novel (data numerik hasil pencacahan) sehingga perhitungan total novel $(8+24+18+16=66)$ dan rata-rata $(66/30=2,2)$ bermakna matematis. Data B menyajikan kode pengenal kelompok/genre (data kategorik) yang tidak dapat dikenai operasi matematika seperti penjumlahan atau pembagian nilai kode.",
+      "distraktor": [
+        {
+          "teks": "Kedua analisis tepat dan absah secara matematis karena seluruh nilainya berupa angka yang dapat dijumlahkan dan dibagi total frekuensi.",
+          "alasan": "Siswa mengabaikan konsep bahwa bilangan kode pada data kategorik hanya berfungsi sebagai label pembeda kategori, bukan nilai besaran yang dapat dihitung rata-ratanya."
+        },
+        {
+          "teks": "Analisis Data B tepat dan absah karena menunjukkan kecenderungan minat genre, sedangkan Data A tidak absah karena nilainya berupa bilangan bulat.",
+          "alasan": "Siswa keliru mengira bahwa data diskret tidak dapat dihitung rata-rata desimalnya serta salah memahami bahwa label kategorik dapat dicari nilai rata-ratanya."
+        },
+        {
+          "teks": "Kedua analisis tidak absah secara matematis karena perhitungan rata-rata hanya boleh dilakukan jika seluruh data dikumpulkan dari minimal 100 orang responden.",
+          "alasan": "Siswa mengasumsikan aturan ukuran sampel secara subjektif tanpa dasar konsep klasifikasi data numerik dan kategorik."
+        }
+      ],
+      "pembahasan": "Langkah evaluasi:\n1. Identifikasi Data A: Banyak novel yang dibaca merupakan data numerik (kuantitatif). Operasi perkalian frekuensi dan pembagian total frekuensi absah secara matematis:\n$\\text{Total novel} = (1 \\times 8) + (2 \\times 12) + (3 \\times 6) + (4 \\times 4) = 8 + 24 + 18 + 16 = 66$.\n$\\text{Rata-rata} = \\frac{66}{30} = 2,2$ novel per siswa (analisis absah).\n2. Identifikasi Data B: Kode genre novel (1, 2, 3) adalah data kategorik yang dinyatakan dengan bilangan sebagai label nama kelompok, bukan ukuran kuantitas.\n3. Berdasarkan konsep buku teks, data kategorik berupa bilangan tidak dapat dioperasikan secara matematika (tambah, kurang, atau bagi).\n4. Oleh karena itu, operasi rata-rata pada Data B tidak memiliki interpretasi atau makna matematis yang absah.\nKesimpulan: Analisis Data A absah, sedangkan analisis Data B tidak absah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 217,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Data Numerik : Data yang selalu berbentuk angka, misalnya tinggi badan, panjang nama, jumlah medali dalam olimpiade, jumlah gol dalam pertandingan sepakbola, suhu badan, dan lainnya."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis komparasi representasi data",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penelaahan sifat dua representasi data berangka, pemilahan kelayakan operasi agregasi kuantitatif, dan penghitungan nilai rata-rata tertimbang.",
+      "stimulus": "Pelatih tim futsal sekolah mencatat performa dan identitas 20 siswa dalam dua tabel berikut:\n\n**Tabel 1: Banyak Gol Selama Turnamen**\n| Banyak Gol ($x$) | Frekuensi Pemain ($f$) |\n| :---: | :---: |\n| 1 | 5 |\n| 2 | 8 |\n| 3 | 4 |\n| 4 | 2 |\n| 5 | 1 |\n\n**Tabel 2: Nomor Punggung Pemain Berdasarkan Posisi Utama**\n| Posisi | Nomor Punggung yang Dipakai | Frekuensi Pemain |\n| :---: | :---: | :---: |\n| Kiper | 1, 20 | 2 |\n| Bertahan | 2, 3, 4, 5, 12, 14 | 6 |\n| Sayap | 6, 7, 8, 11, 13, 15, 17 | 7 |\n| Penyerang | 9, 10, 16, 18, 19 | 5 |\n\nPelatih bermaksud menghitung dua besaran:\n- Besaran I: Rata-rata banyak gol yang dicetak per pemain dari 20 pemain tersebut.\n- Besaran II: Rata-rata nomor punggung pemain untuk menentukan representasi nomor tengah tim.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan konsep klasifikasi data, evaluasilah besaran manakah yang absah secara matematis untuk dihitung serta berapakah nilainya jika absah?",
+      "jawaban_benar": "Hanya Besaran I yang absah dihitung, dengan nilai rata-rata sebesar $2,3$ gol per pemain.",
+      "alasan_benar": "Banyak gol adalah data numerik sehingga absah dihitung rata-ratanya: total gol adalah $(1\\times 5)+(2\\times 8)+(3\\times 4)+(4\\times 2)+(5\\times 1) = 5+16+12+8+5 = 46$, dan rata-ratanya $46/20 = 2,3$. Nomor punggung pada Tabel 2 adalah data kategorik (identitas pengenal), sehingga operasi rata-rata pada Besaran II tidak bermakna secara matematis.",
+      "distraktor": [
+        {
+          "teks": "Hanya Besaran I yang absah dihitung, dengan nilai rata-rata sebesar $3,0$ gol per pemain.",
+          "alasan": "Siswa salah menghitung rata-rata dengan hanya merata-ratakan nilai sumbu $x$ yaitu $(1+2+3+4+5)/5 = 3,0$ tanpa memperhitungkan bobot frekuensi tiap nilai."
+        },
+        {
+          "teks": "Kedua besaran absah dihitung karena keduanya disajikan dalam bentuk angka pada tabel.",
+          "alasan": "Siswa terkecoh menganggap semua data yang berwujud bilangan merupakan data numerik yang dapat dioperasikan secara matematis."
+        },
+        {
+          "teks": "Hanya Besaran II yang absah dihitung, karena nomor punggung memiliki rentang nilai yang seragam dari 1 sampai 20.",
+          "alasan": "Siswa tertukar antara makna data numerik dan data kategorik, serta mengabaikan bahwa banyak gol adalah data kuantitas yang sah untuk dihitung rata-ratanya."
+        }
+      ],
+      "pembahasan": "Langkah evaluasi dan penyelesaian:\n1. Tinjau Besaran I (Tabel 1): Variabel banyak gol merupakan data numerik (menyatakan jumlah/kuantitas capaian). Perhitungan rata-rata absah secara matematis.\n2. Hitung total gol dari seluruh pemain:\n$\\text{Total gol} = (1 \\times 5) + (2 \\times 8) + (3 \\times 4) + (4 \\times 2) + (5 \\times 1) = 5 + 16 + 12 + 8 + 5 = 46$ gol.\n3. Hitung rata-rata banyak gol per pemain:\n$\\text{Rata-rata} = \\frac{46}{20} = 2,3$ gol per pemain.\n4. Tinjau Besaran II (Tabel 2): Nomor punggung pemain berbentuk angka, namun berfungsi sebagai penanda/identitas pemain (data kategorik). Sesuai kaidah statistika, data kategorik tidak dapat dikenai operasi aritmetika (seperti jumlah atau rata-rata) karena hasilnya tidak memiliki makna kuantitas.\n5. Kesimpulan: Hanya Besaran I yang absah secara matematis dengan nilai $2,3$ gol per pemain.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

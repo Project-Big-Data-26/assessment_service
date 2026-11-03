@@ -1,0 +1,854 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 6,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 282,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apabila v ditulis sebagai fungsi f terhadap x, diperoleh f(x) = 169 - x^2. Fungsi f merupakan contoh fungsi akar yang didefinisikan sebagai berikut."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah asal fungsi akar kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pembentukan pertidaksamaan kuadrat di dalam akar dan penyelesaian intervalnya pada garis bilangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dari fungsi akar $f(x) = \\sqrt{25 - x^2}$ pada himpunan bilangan real adalah ....",
+      "jawaban_benar": "$\\{x \\mid -5 \\le x \\le 5, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Fungsi akar berindeks genap terdefinisi pada himpunan bilangan real jika nilai di dalam tanda akar tidak negatif, yaitu $25 - x^2 \\ge 0 \\iff x^2 \\le 25 \\iff -5 \\le x \\le 5$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid x \\le -5 \\text{ atau } x \\ge 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Terbalik dalam menentukan arah pertidaksamaan kuadrat."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Hanya meninjau batas atas dan mengabaikan batas bawah interval."
+        },
+        {
+          "teks": "$\\{x \\mid 0 \\le x \\le 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Mengira nilai $x$ harus bernilai nonnegatif saja."
+        }
+      ],
+      "pembahasan": "Agar fungsi akar $f(x) = \\sqrt{25 - x^2}$ terdefinisi pada bilangan real, nilai di bawah tanda akar harus tak-negatif:\n$$25 - x^2 \\ge 0$$\n$$x^2 - 25 \\le 0$$\n$$(x - 5)(x + 5) \\le 0$$\nPembuat nol adalah $x = -5$ dan $x = 5$. Melalui uji tanda pada garis bilangan, interval yang memenuhi adalah $-5 \\le x \\le 5$.\nJadi, daerah asalnya adalah $D_f = \\{x \\mid -5 \\le x \\le 5, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 274,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Pemasangan kawat harmonika (lihat Gambar 6.5) hampir mengelilingi kandang berbentuk persegi panjang sehingga keliling kawat (K) dinyatakan sebagai fungsi terhadap variabel p (atau l). Fungsi K(p) tersebut merupakan fungsi rasional."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "pemodelan fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis hubungan luas dan keliling pada bangun persegi panjang dengan celah pintu untuk menyusun fungsi rasional.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebidang kebun sayur berbentuk persegi panjang memiliki luas $360\\text{ m}^2$. Kebun tersebut akan dipagari kawat di sekelilingnya, kecuali satu bagian selebar $3\\text{ m}$ disisakan untuk pintu masuk yang tidak dipasang kawat. Jika panjang kebun dimisalkan $p$ (dalam meter), model fungsi rasional untuk panjang kawat pagar $K(p)$ adalah ....",
+      "jawaban_benar": "$K(p) = 2p + \\frac{720}{p} - 3$",
+      "alasan_benar": "Luas $L = p \\times l = 360$, sehingga lebar $l = \\frac{360}{p}$. Keliling kawat pagar adalah keliling persegi panjang dikurangi lebar pintu: $K(p) = 2p + 2l - 3 = 2p + 2\\left(\\frac{360}{p}\\right) - 3 = 2p + \\frac{720}{p} - 3$.",
+      "distraktor": [
+        {
+          "teks": "$K(p) = 2p + \\frac{360}{p} - 3$",
+          "alasan": "Lupa mengalikan lebar dengan 2 pada rumus keliling persegi panjang."
+        },
+        {
+          "teks": "$K(p) = 2p + \\frac{720}{p} + 3$",
+          "alasan": "Menjumlahkan lebar pintu alih-alih menguranginya dari keliling."
+        },
+        {
+          "teks": "$K(p) = p + \\frac{720}{p} - 3$",
+          "alasan": "Hanya menghitung satu sisi panjang kebun."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Luas $L = 360\\text{ m}^2 \\implies p \\times l = 360 \\implies l = \\frac{360}{p}$\n- Keliling pagar kawat sama dengan keliling persegi panjang dikurangi lebar pintu gerbang ($3\\text{ m}$):\n$$K(p) = 2p + 2l - 3$$\nSubstitusikan nilai $l = \\frac{360}{p}$:\n$$K(p) = 2p + 2\\left(\\frac{360}{p}\\right) - 3 = 2p + \\frac{720}{p} - 3$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 277,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekat ke garis x = a ketika nilai y mendekati positif tak hingga atau y mendekati negatif tak hingga, maka garis x = a disebut asimtot vertikal."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik potong asimtot fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis dan menentukan asimtot vertikal serta horizontal secara simultan untuk menemukan titik potong kedua garis asimtot.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Titik potong antara garis asimtot vertikal dan garis asimtot horizontal dari grafik fungsi rasional $f(x) = \\frac{6x + 5}{2x - 8}$ adalah ....",
+      "jawaban_benar": "$(4, 3)$",
+      "alasan_benar": "Asimtot vertikal didapat dari pembuat nol penyebut: $2x - 8 = 0 \\iff x = 4$. Asimtot horizontal didapat dari rasio koefisien derajat tertinggi: $y = \\frac{6}{2} = 3$. Titik potong kedua garis $x = 4$ dan $y = 3$ adalah $(4, 3)$.",
+      "distraktor": [
+        {
+          "teks": "$(4, 6)$",
+          "alasan": "Mengambil koefisien pembilang secara langsung tanpa membaginya dengan koefisien penyebut."
+        },
+        {
+          "teks": "$\\left(-\\frac{5}{6}, 3\\right)$",
+          "alasan": "Menggunakan pembuat nol pembilang sebagai absis asimtot vertikal."
+        },
+        {
+          "teks": "(-4, 3)",
+          "alasan": "Kesalahan tanda saat menyelesaikan $2x - 8 = 0$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan asimtot vertikal.\nPenyebut bernilai nol jika $2x - 8 = 0 \\iff 2x = 8 \\iff x = 4$.\nKarena pembilang $6(4) + 5 = 29 \\neq 0$, maka asimtot vertikalnya adalah garis $x = 4$.\n\nLangkah 2: Tentukan asimtot horizontal.\nKarena derajat pembilang sama dengan derajat penyebut (sama-sama berderajat 1), asimtot horizontalnya adalah:\n$$y = \\lim_{x \\to \\pm\\infty} \\frac{6x + 5}{2x - 8} = \\frac{6}{2} = 3$$\n\nLangkah 3: Tentukan titik potong kedua asimtot.\nKedua garis asimtot adalah $x = 4$ dan $y = 3$, sehingga titik potongnya adalah $(4, 3)$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-5a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah asal dan hasil fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Melibatkan penentuan nilai pembuat nol penyebut dan manipulasi bentuk fungsi invers untuk daerah hasil.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dan daerah hasil dari fungsi rasional $f(x) = \\frac{5x + 6}{x - 8}$ pada himpunan bilangan real berturut-turut adalah ....",
+      "jawaban_benar": "$\\{x \\mid x \\neq 8, x \\in \\mathbb{R}\\}$ dan $\\{y \\mid y \\neq 5, y \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Penyebut $x - 8 = 0 \\implies x = 8$, sehingga $D_f = \\{x \\mid x \\neq 8, x \\in \\mathbb{R}\\}$. Menyatakan $x$ dalam $y$: $y(x - 8) = 5x + 6 \\implies x(y - 5) = 8y + 6 \\implies x = \\frac{8y + 6}{y - 5}$, terdefinisi saat $y \\neq 5$, sehingga $R_f = \\{y \\mid y \\neq 5, y \\in \\mathbb{R}\\}$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid x \\neq -8, x \\in \\mathbb{R}\\}$ dan $\\{y \\mid y \\neq 5, y \\in \\mathbb{R}\\}$",
+          "alasan": "Salah tanda pada nilai pembuat nol penyebut."
+        },
+        {
+          "teks": "$\\{x \\mid x \\neq 8, x \\in \\mathbb{R}\\}$ dan $\\{y \\mid y \\neq -5, y \\in \\mathbb{R}\\}$",
+          "alasan": "Salah memindahkan ruas suku linear saat mencari fungsi invers $x$ terhadap $y$."
+        },
+        {
+          "teks": "$\\{x \\mid x \\neq 8, x \\in \\mathbb{R}\\}$ dan $\\{y \\mid y \\neq 0, y \\in \\mathbb{R}\\}$",
+          "alasan": "Mengira asimtot horizontal selalu berada pada sumbu-$x$ ($y=0$)."
+        }
+      ],
+      "pembahasan": "1. Daerah asal ($D_f$):\nPenyebut pecahan tidak boleh nol:\n$$x - 8 \\neq 0 \\implies x \\neq 8$$\nJadi, $D_f = \\{x \\mid x \\neq 8, x \\in \\mathbb{R}\\}$.\n\n2. Daerah hasil ($R_f$):\nNyatakan $x$ dalam bentuk variabel $y$:\n$$y = \\frac{5x + 6}{x - 8}$$\n$$y(x - 8) = 5x + 6$$\n$$xy - 8y = 5x + 6$$\n$$x(y - 5) = 8y + 6$$\n$$x = \\frac{8y + 6}{y - 5}$$\nNilai $x$ tidak terdefinisi jika penyebut bernilai nol, yaitu $y - 5 = 0 \\implies y = 5$.\nJadi, $R_f = \\{y \\mid y \\neq 5, y \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 287,
+        "bagian": "Penerapan Konsep",
+        "nomor": "8 a",
+        "teks": "Jika jari-jari bumi diasumsikan 6.371 km, modelkan fungsi jarak d (dalam km) ke horizon untuk sebuah benda yang berada pada ketinggian h km di atas permukaan bumi.",
+        "jawaban": "d = \\sqrt{h^2 + 12742h}",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan fungsi akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan teorema Pythagoras pada konfigurasi geometri bola untuk membentuk fungsi akar eksplisit.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah satelit mengorbit planet yang memiliki jari-jari $3.400\\text{ km}$. Jika $h$ menyatakan ketinggian satelit (dalam km) di atas permukaan planet, model matematika fungsi jarak pandang $d$ (dalam km) dari satelit ke horizon planet adalah ....",
+      "jawaban_benar": "$d(h) = \\sqrt{h^2 + 6.800h}$",
+      "alasan_benar": "Garis singgung pandang ke horizon tegak lurus jari-jari planet: $(R + h)^2 = R^2 + d^2 \\implies d^2 = h^2 + 2Rh \\implies d(h) = \\sqrt{h^2 + 2(3.400)h} = \\sqrt{h^2 + 6.800h}$.",
+      "distraktor": [
+        {
+          "teks": "$d(h) = \\sqrt{h^2 + 3.400h}$",
+          "alasan": "Lupa mengalikan jari-jari dengan 2 saat menjabarkan bentuk kuadrat $(R+h)^2$."
+        },
+        {
+          "teks": "$d(h) = \\sqrt{h^2 - 6.800h}$",
+          "alasan": "Salah menggunakan tanda pengurangan pada penjabaran sisi miring segitiga siku-siku."
+        },
+        {
+          "teks": "$d(h) = h + 3.400$",
+          "alasan": "Menarik akar kuadrat suku per suku secara keliru: $\\sqrt{a^2 + b^2} = a + b$."
+        }
+      ],
+      "pembahasan": "Misalkan titik pusat planet adalah $O$, posisi satelit adalah $S$, dan titik singgung pandang ke horizon adalah $T$.\nSegitiga $OTS$ siku-siku di $T$, dengan $OT = R = 3.400\\text{ km}$, $OS = R + h = 3.400 + h$, dan panjang jarak ke horizon adalah $ST = d$.\nBerdasarkan teorema Pythagoras:\n$$OS^2 = OT^2 + ST^2$$\n$$(3.400 + h)^2 = 3.400^2 + d^2$$\n$$3.400^2 + 2(3.400)h + h^2 = 3.400^2 + d^2$$\n$$d^2 = h^2 + 6.800h$$\n$$d(h) = \\sqrt{h^2 + 6.800h}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap ( n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g ( x ) yang tidak menyebabkan g ( x ) < 0."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "daerah asal fungsi akar pecahan",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis syarat radikan bernilai tak negatif sekaligus penyebut tidak sama dengan nol menggunakan garis bilangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dari fungsi $f(x) = \\sqrt{\\frac{x - 3}{x + 5}}$ pada himpunan bilangan real adalah ....",
+      "jawaban_benar": "$\\{x \\mid x < -5 \\text{ atau } x \\ge 3, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Fungsi akar genap mensyaratkan $\\frac{x - 3}{x + 5} \\ge 0$ dan penyebut $x + 5 \\neq 0$. Melalui uji tanda diperoleh interval $x < -5$ atau $x \\ge 3$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid -5 < x \\le 3, x \\in \\mathbb{R}\\}$",
+          "alasan": "Mengambil daerah uji bertanda negatif (hasil bagi $< 0$)."
+        },
+        {
+          "teks": "$\\{x \\mid x \\le -5 \\text{ atau } x \\ge 3, x \\in \\mathbb{R}\\}$",
+          "alasan": "Memasukkan nilai pembuat nol penyebut $x = -5$ ke dalam himpunan penyelesaian."
+        },
+        {
+          "teks": "$\\{x \\mid x \\ge 3, x \\in \\mathbb{R}\\}$",
+          "alasan": "Mengabaikan daerah ketika pembilang dan penyebut sama-sama bernilai negatif."
+        }
+      ],
+      "pembahasan": "Agar fungsi terdefinisi pada bilangan real, nilai di dalam akar pangkat genap harus tidak negatif dan penyebut tidak boleh nol:\n$$\\frac{x - 3}{x + 5} \\ge 0 \\quad \\text{dan} \\quad x + 5 \\neq 0$$\nTitik pembuat nol pembilang adalah $x = 3$ (termasuk solusi karena tanda $\\ge$).\nTitik pembuat nol penyebut adalah $x = -5$ (tidak termasuk solusi karena penyebut tidak boleh nol, $x \\neq -5$).\n\nUji tanda pada ketiga interval:\n- Untuk $x < -5$ (misal $x = -6$): $\\frac{-9}{-1} > 0$ (positif)\n- Untuk $-5 < x < 3$ (misal $x = 0$): $\\frac{-3}{5} < 0$ (negatif)\n- Untuk $x > 3$ (misal $x = 4$): $\\frac{1}{9} > 0$ (positif)\n\nDaerah yang memenuhi adalah $x < -5$ atau $x \\ge 3$.\nJadi, daerah asalnya adalah $\\{x \\mid x < -5 \\text{ atau } x \\ge 3, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 286,
+        "bagian": "Eksplorasi Penerapan Fungsi Akar",
+        "nomor": "5",
+        "teks": "Tentukan kecepatan tsunami jika kedalaman laut adalah 3.000 m.",
+        "jawaban": "171,46 m/s",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "penerapan fungsi akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan rumus kecepatan berbasis fungsi akar dengan substitusi nilai besaran dan penarikan akar kuadrat.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kecepatan gelombang tsunami dinyatakan dengan rumus $v = \\sqrt{g \\cdot d}$, dengan $g$ adalah percepatan gravitasi bumi dan $d$ adalah kedalaman laut. Jika percepatan gravitasi bumi $g = 9{,}8\\text{ m/s}^2$ dan kedalaman laut di suatu palung adalah $2.000\\text{ meter}$, kecepatan gelombang tsunami yang melintasi palung tersebut adalah ....",
+      "jawaban_benar": "$140\\text{ m/s}$",
+      "alasan_benar": "Menghitung $v = \\sqrt{9{,}8 \\times 2.000} = \\sqrt{19.600} = 140\\text{ m/s}$.",
+      "distraktor": [
+        {
+          "teks": "$196\\text{ m/s}$",
+          "alasan": "Mengabaikan penarikan akar kuadrat dari bilangan ratusan, hanya melihat angka $196$ lalu mengalikan $1$."
+        },
+        {
+          "teks": "$70\\text{ m/s}$",
+          "alasan": "Membagi hasil akhir dengan 2 karena mengira akar kuadrat sama dengan membagi dua."
+        },
+        {
+          "teks": "$14\\text{ m/s}$",
+          "alasan": "Kesalahan perhitungan desimal dan penempatan nilai tempat puluhan/ratusan."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Percepatan gravitasi $g = 9{,}8\\text{ m/s}^2$\n- Kedalaman laut $d = 2.000\\text{ m}$\n\nSubstitusikan ke dalam fungsi kecepatan:\n$$v = \\sqrt{g \\cdot d} = \\sqrt{9{,}8 \\times 2.000}$$\n$$v = \\sqrt{19.600} = 140\\text{ m/s}$$\n\nJadi, kecepatan gelombang tsunami adalah $140\\text{ m/s}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 281,
+        "bagian": "Eksplorasi Penerapan Fungsi Rasional",
+        "nomor": "1",
+        "teks": "1. Tentukan fungsi f yang merupakan fungsi besar gaya. Gunakan rumus gaya: F = ma dengan a = vt dan v = st Keterangan: F = gaya t = waktu a = percepatan m = massa v = kecepatan s = jarak perpindahan",
+        "jawaban": "f(t) = 36.000/t^2",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "pemodelan gaya fungsi rasional",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghubungkan rumus fisika secara bertahap untuk menyusun fungsi rasional terhadap variabel waktu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah mobil derek bermassa $800\\text{ kg}$ mendorong sebuah beban hingga berpindah sejauh $50\\text{ meter}$. Misalkan $t$ menyatakan waktu tempuh dalam detik. Jika percepatan dinyatakan sebagai $a = \\frac{v}{t}$ dan kecepatan rata-rata $v = \\frac{s}{t}$, model fungsi rasional yang menyatakan besar gaya dorong $F(t)$ (dalam newton) terhadap waktu $t$ adalah ....",
+      "jawaban_benar": "$F(t) = \\frac{40.000}{t^2}$",
+      "alasan_benar": "Menyusun $v(t) = \\frac{50}{t}$, sehingga $a(t) = \\frac{50}{t^2}$, lalu $F(t) = m \\cdot a = 800 \\times \\frac{50}{t^2} = \\frac{40.000}{t^2}$.",
+      "distraktor": [
+        {
+          "teks": "$F(t) = \\frac{40.000}{t}$",
+          "alasan": "Menggunakan kecepatan rata-rata langsung sebagai percepatan tanpa membaginya kembali dengan waktu $t$."
+        },
+        {
+          "teks": "$F(t) = \\frac{16}{t^2}$",
+          "alasan": "Membagi massa dengan jarak alih-alih mengalikannya."
+        },
+        {
+          "teks": "$F(t) = \\frac{800}{50t^2}$",
+          "alasan": "Tertukar posisi pembilang dan penyebut pada perpindahan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan percepatan sebagai fungsi terhadap $t$.\n$$v(t) = \\frac{s}{t} = \\frac{50}{t}$$\n$$a(t) = \\frac{v(t)}{t} = \\frac{\\frac{50}{t}}{t} = \\frac{50}{t^2}$$\n\nLangkah 2: Tentukan rumus besar gaya dorong $F(t)$.\n$$F(t) = m \\cdot a(t) = 800 \\cdot \\frac{50}{t^2} = \\frac{40.000}{t^2}$$\n\nJadi, fungsi besar gayanya adalah $F(t) = \\frac{40.000}{t^2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 280,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Titik potong grafik fungsi dengan sumbu- x dapat ditentukan dengan y = 0."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "titik potong sumbu koordinat fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis pembuat nol pembilang fungsi rasional serta menentukan nilai ekspresi dari absis kedua titik potong.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi rasional $f(x) = \\frac{x^2 - 4x - 5}{x + 2}$ memotong sumbu-$x$ di titik $(x_1, 0)$ dan $(x_2, 0)$ dengan $x_1 < x_2$. Nilai dari $2x_1 + 3x_2$ adalah ....",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Pembuat nol adalah $x = -1$ dan $x = 5$. Dengan $x_1 = -1$ dan $x_2 = 5$, diperoleh $2(-1) + 3(5) = 13$.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Tertukar nilai $x_1$ dan $x_2$ sehingga menghitung $2(5) + 3(-1) = 7$."
+        },
+        {
+          "teks": "$-13$",
+          "alasan": "Salah dalam memfaktorkan persamaan kuadrat menjadi $(x + 5)(x - 1) = 0$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Menganggap nilai $x_1 = 1$ dan $x_2 = 5$ tanpa tanda negatif pada faktor pertama."
+        }
+      ],
+      "pembahasan": "Titik potong grafik dengan sumbu-$x$ terjadi saat $f(x) = 0$:\n$$\\frac{x^2 - 4x - 5}{x + 2} = 0$$\nSyarat penyebut: $x + 2 \\neq 0 \\iff x \\neq -2$.\n\nSelesaikan pembuat nol pembilang:\n$$x^2 - 4x - 5 = 0$$\n$$(x - 5)(x + 1) = 0$$\nDiperoleh $x = 5$ atau $x = -1$.\n\nKarena disyaratkan $x_1 < x_2$, maka:\n$$x_1 = -1 \\quad \\text{dan} \\quad x_2 = 5$$\n\nHitung nilai dari $2x_1 + 3x_2$:\n$$2(-1) + 3(5) = -2 + 15 = 13$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap ( n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g ( x ) yang tidak menyebabkan g ( x ) < 0."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "irisan daerah asal fungsi akar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis syarat terdefinisi dua fungsi akar berakar genap lalu menentukan banyaknya bilangan bulat pada daerah asal bersama.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dari fungsi $f(x) = \\sqrt{2x - 6} + \\sqrt{10 - x}$ pada himpunan bilangan real adalah $D_f$. Banyaknya bilangan bulat yang termuat di dalam $D_f$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Daerah asal fungsi adalah irisan dari $x \\ge 3$ dan $x \\le 10$, yaitu $3 \\le x \\le 10$, yang memuat 8 bilangan bulat.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Lupa mengikutsertakan salah satu batas tepi pada pertidaksamaan non-ketat ($10 - 3 = 7$)."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Menghitung salah satu batas secara keliru dari nilai $2$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Menggunakan pertidaksamaan ketat $3 < x < 10$ sehingga hanya menghitung $4, 5, 6, 7, 8, 9$."
+        }
+      ],
+      "pembahasan": "Fungsi $f(x) = \\sqrt{2x - 6} + \\sqrt{10 - x}$ terdefinisi pada bilangan real jika kedua bentuk di bawah tanda akar bernilai tak negatif:\n1. Syarat akar pertama:\n   $$2x - 6 \\ge 0 \\iff 2x \\ge 6 \\iff x \\ge 3$$\n2. Syarat akar kedua:\n   $$10 - x \\ge 0 \\iff x \\le 10$$\n\nIrisan dari kedua syarat tersebut menghasilkan daerah asal:\n$$D_f = \\{x \\mid 3 \\le x \\le 10, x \\in \\mathbb{R}\\}$$\n\nBilangan bulat yang terletak pada interval $[3, 10]$ adalah:\n$$3, 4, 5, 6, 7, 8, 9, 10$$\n\nBanyaknya bilangan bulat adalah $10 - 3 + 1 = 8$ buah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "asimtot miring fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pembagian polinomial bersusun untuk memisahkan hasil bagi linear dan sisa sebelum menentukan persamaan garis asimtot.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis asimtot miring dari grafik fungsi rasional $f(x) = \\frac{8x^3 - 6x^2 + 9}{x^2 + 7}$ adalah ....",
+      "jawaban_benar": "$y = 8x - 6$",
+      "alasan_benar": "Hasil pembagian bersusun $(8x^3 - 6x^2 + 9) : (x^2 + 7)$ menghasilkan hasil bagi $8x - 6$ dengan sisa $-56x + 51$, sehingga asimtot miringnya adalah $y = 8x - 6$.",
+      "distraktor": [
+        {
+          "teks": "$y = 8x + 6$",
+          "alasan": "Kesalahan tanda saat melakukan pembagian suku konstan pada pembagian bersusun."
+        },
+        {
+          "teks": "$y = 8x$",
+          "alasan": "Hanya membagi suku berderajat tertinggi tanpa meneruskan pembagian untuk suku berderajat satu tingkat di bawahnya."
+        },
+        {
+          "teks": "$y = -6x + 8$",
+          "alasan": "Tertukar antara koefisien $x$ dan suku konstanta dari hasil bagi."
+        }
+      ],
+      "pembahasan": "Bagi pembilang $8x^3 - 6x^2 + 9$ dengan penyebut $x^2 + 7$:\n\n1. Bagi suku pertama: $\\frac{8x^3}{x^2} = 8x$.\n   Kalikan: $8x(x^2 + 7) = 8x^3 + 56x$.\n   Kurangkan: $(8x^3 - 6x^2 + 9) - (8x^3 + 56x) = -6x^2 - 56x + 9$.\n2. Bagi suku berikutnya: $\\frac{-6x^2}{x^2} = -6$.\n   Kalikan: $-6(x^2 + 7) = -6x^2 - 42$.\n   Kurangkan: $(-6x^2 - 56x + 9) - (-6x^2 - 42) = -56x + 51$.\n3. Bentuk fungsinya menjadi:\n   $$f(x) = 8x - 6 + \\frac{-56x + 51}{x^2 + 7}$$\n   Ketika $x \\to \\pm\\infty$, nilai $\\frac{-56x + 51}{x^2 + 7} \\to 0$.\n\nJadi, persamaan asimtot miringnya adalah garis $y = 8x - 6$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-5a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "nilai parameter daerah asal dan hasil",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis daerah asal lewat pembuat nol penyebut dan menentukan daerah hasil lewat fungsi invers/asimtot sebelum menghitung kombinasi linear parameternya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika daerah asal dari fungsi rasional $f(x) = \\frac{2x - 8}{3x + 9}$ adalah $D_f = \\{x \\mid x \\neq a, x \\in \\mathbb{R}\\}$ dan daerah hasilnya adalah $R_f = \\{y \\mid y \\neq b, y \\in \\mathbb{R}\\}$, nilai dari $a + 3b$ adalah ....",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Pembuat nol penyebut adalah $3x + 9 = 0 \\implies a = -3$, dan asimtot horizontal adalah $y = \\frac{2}{3} \\implies b = \\frac{2}{3}$, sehingga $a + 3b = -3 + 3\\left(\\frac{2}{3}\\right) = -1$.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Salah tanda pada nilai $a$ (mengambil $a = 3$, sehingga $3 + 2 = 5$)."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Keliru pada tanda operasi penjumlahan bilangan bulat, menghitung $3 - 2 = 1$."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Salah tanda pada nilai $b$ menjadi $-\\frac{2}{3}$, sehingga $-3 + 3\\left(-\\frac{2}{3}\\right) = -5$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan daerah asal ($D_f$).\nFungsi terdefinisi jika penyebut tidak sama dengan nol:\n$$3x + 9 \\neq 0 \\implies 3x \\neq -9 \\implies x \\neq -3$$\nDiperoleh $a = -3$.\n\nLangkah 2: Tentukan daerah hasil ($R_f$).\nNyatakan $x$ dalam $y$:\n$$y = \\frac{2x - 8}{3x + 9}$$\n$$y(3x + 9) = 2x - 8$$\n$$3xy + 9y = 2x - 8$$\n$$3xy - 2x = -9y - 8$$\n$$x(3y - 2) = -9y - 8$$\n$$x = \\frac{-9y - 8}{3y - 2}$$\nNilai $x$ terdefinisi jika $3y - 2 \\neq 0 \\implies y \\neq \\frac{2}{3}$.\nDiperoleh $b = \\frac{2}{3}$.\n\nLangkah 3: Hitung $a + 3b$.\n$$a + 3b = -3 + 3\\left(\\frac{2}{3}\\right) = -3 + 2 = -1$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-7a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "biaya rata-rata fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memodelkan fungsi biaya rata-rata rasional dari permasalahan kontekstual dan mengevaluasi nilainya untuk kuantitas produksi tertentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah industri tas ransel memiliki biaya operasional tetap sebesar Rp12.000.000,00 per bulan dan biaya variabel produksi sebesar Rp60.000,00 per unit. Fungsi biaya rata-rata per unit dinyatakan sebagai $\\bar{B}(x) = \\frac{B(x)}{x}$, dengan $B(x)$ adalah biaya total dan $x$ adalah banyaknya unit tas yang diproduksi. Biaya rata-rata per unit untuk memproduksi 300 unit tas dalam satu bulan adalah ....",
+      "jawaban_benar": "Rp100.000,00",
+      "alasan_benar": "Biaya total untuk 300 unit adalah $12.000.000 + 60.000(300) = 30.000.000$, sehingga biaya rata-rata per unit adalah $\\frac{30.000.000}{300} = 100.000$.",
+      "distraktor": [
+        {
+          "teks": "Rp40.000,00",
+          "alasan": "Hanya membagi biaya operasional tetap dengan 300 tanpa menambahkan biaya variabel per unit."
+        },
+        {
+          "teks": "Rp60.000,00",
+          "alasan": "Hanya menyebutkan biaya variabel per unit tanpa memperhitungkan pembagian biaya operasional tetap."
+        },
+        {
+          "teks": "Rp120.000,00",
+          "alasan": "Salah menghitung total biaya variabel menjadi Rp24.000.000,00 sehingga rata-rata per unit menjadi Rp120.000,00."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan fungsi biaya total $B(x)$.\n$$B(x) = 12.000.000 + 60.000x$$\n\nLangkah 2: Tentukan fungsi biaya rata-rata $\\bar{B}(x)$.\n$$\\bar{B}(x) = \\frac{B(x)}{x} = \\frac{12.000.000 + 60.000x}{x} = \\frac{12.000.000}{x} + 60.000$$\n\nLangkah 3: Hitung untuk $x = 300$.\n$$\\bar{B}(300) = \\frac{12.000.000}{300} + 60.000 = 40.000 + 60.000 = 100.000$$\n\nJadi, biaya rata-rata per unit adalah Rp100.000,00.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 283,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika nilai n genap ( n = 2, 4, 6, …), maka daerah asal fungsi akar f mencakup semua nilai pada daerah asal g ( x ) yang tidak menyebabkan g ( x ) < 0."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "daerah asal fungsi akar pertidaksamaan kuadrat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan syarat bilangan di dalam akar tak negatif, memfaktorkan bentuk kuadrat, dan menentukan himpunan penyelesaian pertidaksamaan pada garis bilangan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Daerah asal dari fungsi akar $f(x) = \\sqrt{x^2 - 3x - 10}$ pada himpunan bilangan real adalah ....",
+      "jawaban_benar": "$\\{x \\mid x \\le -2 \\text{ atau } x \\ge 5, x \\in \\mathbb{R}\\}$",
+      "alasan_benar": "Syarat fungsi akar terdefinisi pada bilangan real adalah $x^2 - 3x - 10 \\ge 0 \\iff (x - 5)(x + 2) \\ge 0$, yang dipenuhi oleh interval $x \\le -2$ atau $x \\ge 5$.",
+      "distraktor": [
+        {
+          "teks": "$\\{x \\mid -2 \\le x \\le 5, x \\in \\mathbb{R}\\}$",
+          "alasan": "Keliru menganggap daerah penyelesaian pertidaksamaan $\\ge 0$ berada di antara kedua pembuat nol."
+        },
+        {
+          "teks": "$\\{x \\mid x \\le -5 \\text{ atau } x \\ge 2, x \\in \\mathbb{R}\\}$",
+          "alasan": "Salah memfaktorkan persamaan kuadrat menjadi $(x + 5)(x - 2)$ sehingga batas nilainya tertukar tanda."
+        },
+        {
+          "teks": "$\\{x \\mid -5 \\le x \\le 2, x \\in \\mathbb{R}\\}$",
+          "alasan": "Kombinasi kesalahan pemfaktoran tanda akar dan kesalahan memilih interval bagian dalam."
+        }
+      ],
+      "pembahasan": "Langkah 1: Terapkan syarat fungsi akar berpangkat genap.\nFungsi $f(x) = \\sqrt{x^2 - 3x - 10}$ terdefinisi pada bilangan real jika radikan tak negatif:\n$$x^2 - 3x - 10 \\ge 0$$\n\nLangkah 2: Faktorkan bentuk kuadrat untuk menemukan pembuat nol.\n$$(x - 5)(x + 2) = 0 \\implies x = 5 \\text{ atau } x = -2$$\n\nLangkah 3: Uji tanda pada garis bilangan.\n- Untuk $x < -2$ (misal $x = -3$): $(-8)(-1) = 8 > 0$ (memenuhi).\n- Untuk $-2 < x < 5$ (misal $x = 0$): $(-5)(2) = -10 < 0$ (tidak memenuhi).\n- Untuk $x > 5$ (misal $x = 6$): $(1)(8) = 8 > 0$ (memenuhi).\n\nJadi, daerah asalnya adalah $\\{x \\mid x \\le -2 \\text{ atau } x \\ge 5, x \\in \\mathbb{R}\\}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 275,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kita asumsikan bahwa P ( x ) dan Q ( x ) tidak memiliki faktor persekutuan."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "banyaknya asimtot vertikal fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis eksistensi asimtot vertikal dengan memeriksa ada tidaknya faktor persekutuan antara pembilang dan penyebut sebelum menentukan garis asimtot.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Banyaknya garis asimtot vertikal dari grafik fungsi rasional $f(x) = \\frac{x^2 - 16}{x^2 + 2x - 24}$ adalah ....",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Faktorisasi menghasilkan $\\frac{(x - 4)(x + 4)}{(x - 4)(x + 6)}$. Karena faktor $(x - 4)$ saling membagi, garis asimtot vertikal hanya berasal dari faktor penyebut yang tersisa yaitu $x + 6 = 0 \\implies x = -6$ (hanya 1 garis).",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Langsung menganggap kedua pembuat nol penyebut ($x = 4$ dan $x = -6$) sebagai asimtot vertikal tanpa memfaktorkan pembilang."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Keliru berasumsi bahwa karena pembilang dan penyebut memiliki faktor sekutu, fungsi tersebut tidak memiliki asimtot sama sekali."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Menghitung total seluruh pembuat nol pembilang dan penyebut secara bersamaan."
+        }
+      ],
+      "pembahasan": "Langkah 1: Faktorkan pembilang dan penyebut fungsi rasional.\nPembilang: $x^2 - 16 = (x - 4)(x + 4)$\nPenyebut: $x^2 + 2x - 24 = (x - 4)(x + 6)$\n\nLangkah 2: Sederhanakan fungsi untuk nilai $x \\neq 4$.\n$$f(x) = \\frac{(x - 4)(x + 4)}{(x - 4)(x + 6)} = \\frac{x + 4}{x + 6}, \\quad x \\neq 4$$\n\nLangkah 3: Identifikasi asimtot vertikal.\n- Pada $x = 4$, grafik fungsi memiliki lubang (titik tak terdefinisi yang dapat dihilangkan), bukan asimtot vertikal.\n- Pada $x = -6$, penyebut bernilai nol sedangkan pembilang bernilai $-6 + 4 = -2 \\neq 0$. Oleh karena itu, $x = -6$ adalah satu-satunya asimtot vertikal.\n\nJadi, banyaknya garis asimtot vertikal adalah 1.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-016",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 286,
+        "bagian": "Eksplorasi Penerapan Fungsi Akar",
+        "nomor": "5",
+        "teks": "Tentukan kecepatan tsunami jika kedalaman laut adalah 3.000 m.",
+        "jawaban": "sekitar 171,46 m/s",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "kecepatan gelombang tsunami fungsi akar",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan substitusi nilai kedalaman laut ke rumus fungsi akar dan penarikan akar kuadrat dari bilangan besar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Kecepatan gelombang tsunami di lautan ditentukan oleh fungsi akar $v = \\sqrt{g \\cdot d}$, dengan $g$ menyatakan percepatan gravitasi bumi dan $d$ menyatakan kedalaman laut. Jika percepatan gravitasi bumi $g = 9{,}8\\text{ m/s}^2$, kecepatan gelombang tsunami pada lautan yang memiliki kedalaman $8.000\\text{ meter}$ adalah ....",
+      "jawaban_benar": "$280\\text{ m/s}$",
+      "alasan_benar": "Substitusi $g = 9{,}8$ dan $d = 8.000$ menghasilkan $v = \\sqrt{9{,}8 \\times 8.000} = \\sqrt{78.400} = 280\\text{ m/s}$.",
+      "distraktor": [
+        {
+          "teks": "$140\\text{ m/s}$",
+          "alasan": "Siswa salah membagi dua hasil perkalian di bawah tanda akar sebelum menarik akar kuadrat."
+        },
+        {
+          "teks": "$240\\text{ m/s}$",
+          "alasan": "Siswa salah memperkirakan nilai akar kuadrat dari $78.400$ menjadi $240$ ($240^2 = 57.600$)."
+        },
+        {
+          "teks": "$320\\text{ m/s}$",
+          "alasan": "Siswa salah melakukan penarikan akar kuadrat ($320^2 = 102.400$)."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Rumus kecepatan tsunami: $v = \\sqrt{g \\cdot d}$\n- $g = 9{,}8\\text{ m/s}^2$\n- $d = 8.000\\text{ m}$\n\nSubstitusikan nilai yang diketahui ke dalam fungsi kecepatan:\n$$\\begin{aligned} v &= \\sqrt{9{,}8 \\times 8.000} \\\\ &= \\sqrt{78.400} \\\\ &= 280\\text{ m/s} \\end{aligned}$$\n\nJadi, kecepatan gelombang tsunami tersebut adalah $280\\text{ m/s}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 287,
+        "bagian": "Latihan B Fungsi Aljabar",
+        "nomor": "8 a",
+        "teks": "Jika jari-jari bumi diasumsikan 6.371 km, modelkan fungsi jarak d (dalam km) ke horizon untuk sebuah benda yang berada pada ketinggian h km di atas permukaan bumi.",
+        "jawaban": "$d(h) = \\sqrt{h^2 + 12.742h}$",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "fungsi jarak horizon satelit",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemodelan fungsi akar dengan menjabarkan bentuk kuadrat suku dua dan menyederhanakannya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah wahana antariksa mengorbit bulan pada ketinggian $h\\text{ km}$ di atas permukaan bulan. Jari-jari bulan diasumsikan $1.738\\text{ km}$. Berdasarkan teorema Pythagoras, jarak pandang dari wahana ke horizon bulan dapat dinyatakan dengan fungsi $d(h) = \\sqrt{(r + h)^2 - r^2}$, dengan $r$ adalah jari-jari bulan. Bentuk sederhana dari fungsi jarak $d(h)$ tersebut adalah ....",
+      "jawaban_benar": "$d(h) = \\sqrt{h^2 + 3.476h}$",
+      "alasan_benar": "Menjabarkan $(h + 1.738)^2 - 1.738^2 = h^2 + 2(1.738)h + 1.738^2 - 1.738^2 = h^2 + 3.476h$.",
+      "distraktor": [
+        {
+          "teks": "$d(h) = \\sqrt{h^2 + 1.738h}$",
+          "alasan": "Siswa lupa mengalikan dengan $2$ pada suku tengah saat menjabarkan bentuk kuadrat $(h + 1.738)^2$."
+        },
+        {
+          "teks": "$d(h) = h + 1.738$",
+          "alasan": "Siswa keliru menganggap $\\sqrt{(r+h)^2 - r^2} = (r+h) - r$ tanpa mengoperasikannya di bawah akar."
+        },
+        {
+          "teks": "$d(h) = \\sqrt{h^2 - 3.476h}$",
+          "alasan": "Siswa salah tanda operasi pengurangan pada suku tengah hasil penjabaran aljabar."
+        }
+      ],
+      "pembahasan": "Diketahui jari-jari bulan $r = 1.738\\text{ km}$.\nSubstitusikan $r = 1.738$ ke dalam fungsi jarak:\n$$\\begin{aligned} d(h) &= \\sqrt{(1.738 + h)^2 - 1.738^2} \\\\ &= \\sqrt{h^2 + 2(1.738)h + 1.738^2 - 1.738^2} \\\\ &= \\sqrt{h^2 + 3.476h} \\end{aligned}$$\n\nJadi, model fungsi jarak horizon adalah $d(h) = \\sqrt{h^2 + 3.476h}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 279,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jika grafik fungsi f akan terus mendekati garis y = mx + b ketika nilai x mendekati positif tak hingga atau x mendekati negatif tak hingga, maka garis y = mx + b disebut asimtot miring ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "asimtot miring pecahan kuadrat linear",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pembagian bersusun suku banyak untuk memisahkan fungsi rasional menjadi bentuk linear dan pecahan sisa.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis asimtot miring dari grafik fungsi rasional $f(x) = \\frac{3x^2 - 4x + 7}{x - 2}$ adalah ....",
+      "jawaban_benar": "$y = 3x + 2$",
+      "alasan_benar": "Hasil bagi dari $(3x^2 - 4x + 7)$ oleh $(x - 2)$ adalah $3x + 2$ dengan sisa $11$, sehingga asimtot miringnya $y = 3x + 2$.",
+      "distraktor": [
+        {
+          "teks": "$y = 3x - 2$",
+          "alasan": "Siswa salah menghitung tanda pada suku konstanta saat melakukan proses pembagian bersusun."
+        },
+        {
+          "teks": "$y = 3x + 10$",
+          "alasan": "Siswa keliru menghitung $-4x - (-6x)$ menjadi $-10x$ sehingga konstanta hasil bagi menjadi $+10$."
+        },
+        {
+          "teks": "$y = 3x - 4$",
+          "alasan": "Siswa langsung mengambil koefisien suku derajat satu dan konstanta pembilang tanpa membaginya dengan penyebut."
+        }
+      ],
+      "pembahasan": "Untuk menentukan asimtot miring, lakukan pembagian bersusun antara pembilang dan penyebut:\n$$\\begin{aligned} \\frac{3x^2 - 4x + 7}{x - 2} &= \\frac{3x(x - 2) + 2(x - 2) + 11}{x - 2} \\\\ &= 3x + 2 + \\frac{11}{x - 2} \\end{aligned}$$\n\nKetika $x \\to \\pm\\infty$, nilai $\\frac{11}{x - 2} \\to 0$. Dengan demikian, nilai fungsi $f(x)$ mendekati garis $y = 3x + 2$.\n\nJadi, persamaan asimtot miring grafik fungsi tersebut adalah $y = 3x + 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 280,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Titik potong grafik fungsi dengan sumbu- x dapat ditentukan dengan y = 0."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "jarak antar titik potong sumbu koordinat",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik potong pada kedua sumbu koordinat kemudian menerapkan rumus jarak dua titik.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Grafik fungsi rasional $f(x) = \\frac{4x - 12}{2x + 6}$ memotong sumbu-$x$ di titik $A$ dan memotong sumbu-$y$ di titik $B$. Jarak antara titik $A$ dan titik $B$ pada bidang koordinat Cartesius adalah ....",
+      "jawaban_benar": "$\\sqrt{13}$",
+      "alasan_benar": "Titik $A$ adalah $(3, 0)$ dan titik $B$ adalah $(0, -2)$. Jarak $AB = \\sqrt{(3 - 0)^2 + (0 - (-2))^2} = \\sqrt{9 + 4} = \\sqrt{13}$.",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{5}$",
+          "alasan": "Siswa salah menggunakan operasi pengurangan pada rumus jarak $\\sqrt{3^2 - 2^2} = \\sqrt{5}$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Siswa salah menjumlahkan absis dan ordinat tanpa rumus jarak $3 + 2 = 5$ atau mengira tripel Pythagoras $3, 4, 5$."
+        },
+        {
+          "teks": "$\\sqrt{15}$",
+          "alasan": "Siswa salah menghitung kuadrat dari $-2$ menjadi $6$ sehingga $9 + 6 = 15$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan titik potong sumbu-$x$ ($y = 0$)\n$$\\begin{aligned} \\frac{4x - 12}{2x + 6} &= 0 \\\\ 4x - 12 &= 0 \\\\ 4x &= 12 \\\\ x &= 3 \\end{aligned}$$\nTitik potong sumbu-$x$ adalah $A(3, 0)$.\n\nLangkah 2: Menentukan titik potong sumbu-$y$ ($x = 0$)\n$$y = f(0) = \\frac{4(0) - 12}{2(0) + 6} = \\frac{-12}{6} = -2$$\nTitik potong sumbu-$y$ adalah $B(0, -2)$.\n\nLangkah 3: Menghitung jarak antara titik $A(3, 0)$ dan titik $B(0, -2)$\n$$\\begin{aligned} d(A, B) &= \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2} \\\\ &= \\sqrt{(0 - 3)^2 + (-2 - 0)^2} \\\\ &= \\sqrt{(-3)^2 + (-2)^2} \\\\ &= \\sqrt{9 + 4} = \\sqrt{13} \\end{aligned}$$\n\nJadi, jarak antara titik $A$ dan titik $B$ adalah $\\sqrt{13}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11_tl-b06-b-medium-bt01-020",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b06-p0287-latihan-b-6",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "asimtot miring fungsi rasional",
+      "jumlah_langkah": 3,
+      "alasan_level": "Soal memerlukan tiga langkah penyelesaian melalui pembagian polinomial bersusun untuk menentukan hasil bagi linear sebagai asimtot miring.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Persamaan garis asimtot miring dari fungsi $g(x) = \\frac{7x^7 - 9x^6 + 8}{x^6 + 6}$ adalah ....",
+      "jawaban_benar": "$y = 7x - 9$",
+      "alasan_benar": "Hasil bagi pembagian bersusun pembilang oleh penyebut adalah $7x - 9$, sehingga ketika $x \\to \\pm\\infty$, sisa pembagian mendekati nol dan grafik mendekati garis $y = 7x - 9$.",
+      "distraktor": [
+        {
+          "teks": "$y = 7x + 9$",
+          "alasan": "salah tanda pada konstanta akibat keliru membagi suku $-9x^6$ dengan $x^6$"
+        },
+        {
+          "teks": "$y = 7x - 6$",
+          "alasan": "menggunakan nilai konstanta penyebut sebagai konstanta persamaan asimtot miring"
+        },
+        {
+          "teks": "$y = 7x$",
+          "alasan": "hanya membagi suku berpangkat tertinggi dan mengabaikan hasil bagi dari suku berderajat berikutnya"
+        }
+      ],
+      "pembahasan": "Untuk menentukan asimtot miring dari fungsi rasional $g(x) = \\frac{7x^7 - 9x^6 + 8}{x^6 + 6}$, lakukan pembagian bersusun antara pembilang dan penyebut:\n\n1. Bagilah suku berderajat tertinggi pembilang dengan suku berderajat tertinggi penyebut:\n$$\\frac{7x^7}{x^6} = 7x$$\nKalikan $7x$ dengan penyebut $(x^6 + 6)$:\n$$7x(x^6 + 6) = 7x^7 + 42x$$\n\n2. Kurangkan dari pembilang:\n$$(7x^7 - 9x^6 + 8) - (7x^7 + 42x) = -9x^6 - 42x + 8$$\n\n3. Bagilah suku berderajat tertinggi sisa dengan penyebut:\n$$\\frac{-9x^6}{x^6} = -9$$\nKalikan $-9$ dengan penyebut $(x^6 + 6)$:\n$$-9(x^6 + 6) = -9x^6 - 54$$\n\n4. Kurangkan kembali:\n$$(-9x^6 - 42x + 8) - (-9x^6 - 54) = -42x + 62$$\n\nDengan demikian, bentuk fungsi dapat ditulis sebagai:\n$$g(x) = 7x - 9 + \\frac{-42x + 62}{x^6 + 6}$$\n\nKetika nilai $x$ mendekati positif tak hingga atau negatif tak hingga, nilai $\\frac{-42x + 62}{x^6 + 6}$ mendekati nol. Oleh karena itu, grafik fungsi $g(x)$ mendekati garis $y = 7x - 9$.\n\nJadi, persamaan garis asimtot miringnya adalah $y = 7x - 9$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

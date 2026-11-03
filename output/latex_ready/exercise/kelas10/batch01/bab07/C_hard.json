@@ -1,0 +1,690 @@
+{
+  "book": "kelas10",
+  "bab_no": 7,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 274,
+        "kutipan": "Pasangan kejadian pada masalah di atas adalah saling bebas, yaitu kejadian yang satu tidak memengaruhi peluang kejadian yang lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi klaim bahwa kejadian bebas tidak mungkin terjadi bersamaan lewat nilai $P(A \\text{ dan } B)$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A$ dan $B$ dua kejadian yang saling bebas dengan $P(A) = 0,3$ dan $P(B) = 0,4$. Wulan berkata, \"Karena saling bebas dan tidak saling memengaruhi, kejadian $A$ dan $B$ tidak mungkin terjadi bersamaan.\" Pernyataan yang benar tentang klaim Wulan adalah ....",
+      "jawaban_benar": "Klaim salah; $P(A \\text{ dan } B) = 0,3 \\times 0,4 = 0,12 > 0$ sehingga keduanya dapat terjadi bersamaan",
+      "alasan_benar": "kejadian bebas memenuhi $P(A \\text{ dan } B) = P(A) \\times P(B) = 0,12$, bukan 0",
+      "distraktor": [
+        {
+          "teks": "Klaim benar; $P(A \\text{ dan } B) = 0$ sebab kejadian yang tidak saling memengaruhi tidak beririsan",
+          "alasan": "mencampuradukkan saling bebas dengan tidak dapat terjadi bersamaan"
+        },
+        {
+          "teks": "Klaim benar; karena $P(A) + P(B) = 0,7 < 1$ keduanya pasti tidak dapat terjadi bersamaan",
+          "alasan": "menjumlahkan peluang dan mengira jumlah kurang dari 1 berarti tidak beririsan"
+        },
+        {
+          "teks": "Klaim benar; $P(A \\text{ dan } B) = 0,12$ terlalu kecil sehingga dianggap tidak mungkin terjadi",
+          "alasan": "menganggap peluang kecil sama dengan mustahil"
+        }
+      ],
+      "pembahasan": "Untuk kejadian bebas, $P(A \\text{ dan } B) = 0,3 \\times 0,4 = 0,12$. Karena lebih dari 0, kedua kejadian dapat terjadi bersamaan. Jadi bebas tidak sama dengan tidak dapat terjadi bersamaan.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-001"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Perlu diperhatikan bahwa aturan ini tidak berlaku jika kedua kejadian tidak saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "mencari contoh penyangkal terhadap klaim aturan perkalian berlaku untuk semua kejadian dengan memeriksa tiap situasi",
+      "stimulus": null,
+      "pertanyaan": "Bima berkata, \"Untuk setiap dua kejadian $A$ dan $B$ berlaku $P(A \\text{ dan } B) = P(A) \\times P(B)$.\" Semua kartu bernomor 1 sampai 5 pada situasi berikut diambil secara acak. Situasi manakah yang menjadi contoh penyangkal klaim Bima?",
+      "jawaban_benar": "Dua kartu bernomor 1 sampai 5 diambil satu per satu tanpa pengembalian; $A$: kartu pertama ganjil, $B$: kartu kedua ganjil",
+      "alasan_benar": "$P(A) = P(B) = \\frac{3}{5}$ tetapi $P(A \\text{ dan } B) = \\frac{3}{5} \\times \\frac{2}{4} = \\frac{3}{10} \\neq \\frac{9}{25}$",
+      "distraktor": [
+        {
+          "teks": "Dua kartu bernomor 1 sampai 5 diambil satu per satu dengan pengembalian; $A$: kartu pertama ganjil, $B$: kartu kedua ganjil",
+          "alasan": "pada pengambilan dengan pengembalian kejadian bebas sehingga rumus berlaku: $\\frac{9}{25}$"
+        },
+        {
+          "teks": "Sebuah koin setimbang dilempar dua kali; $A$: lemparan pertama angka, $B$: lemparan kedua gambar",
+          "alasan": "lemparan koin saling bebas, hasil $\\frac{1}{4} = \\frac{1}{2} \\times \\frac{1}{2}$"
+        },
+        {
+          "teks": "Sebuah dadu setimbang dilempar dua kali; $A$: lemparan pertama genap, $B$: lemparan kedua lebih dari 4",
+          "alasan": "lemparan dadu saling bebas, hasil $\\frac{1}{6} = \\frac{1}{2} \\times \\frac{1}{3}$"
+        }
+      ],
+      "pembahasan": "Hanya pengambilan tanpa pengembalian yang tidak bebas: $P(A \\text{ dan } B) = \\frac{3}{5} \\times \\frac{2}{4} = \\frac{3}{10}$, sedangkan $P(A) \\times P(B) = \\frac{9}{25}$. Tiga situasi lain bebas sehingga rumus berlaku.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-002"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Namun jika setelah ambil bola pertama, kamu tidak mengembalikan bola pertama, maka kejadiannya tidak saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "bandingkan skema",
+      "alasan_level": "membandingkan empat skema pengambilan dengan komposisi dan aturan pengembalian berbeda sehingga intuisi saja tidak cukup",
+      "stimulus": null,
+      "pertanyaan": "Empat skema undian mengambil dua bola satu per satu secara acak dan menang jika kedua bola merah. Skema I: tas berisi 5 merah dan 5 biru, dengan pengembalian. Skema II: tas berisi 5 merah dan 3 biru, tanpa pengembalian. Skema III: tas berisi 6 merah dan 4 biru, dengan pengembalian. Skema IV: tas berisi 7 merah dan 5 biru, tanpa pengembalian. Skema yang peluang menangnya terbesar adalah ....",
+      "jawaban_benar": "Skema III",
+      "alasan_benar": "peluangnya $\\frac{9}{25} = 0,36$; skema II $\\frac{5}{14} \\approx 0,357$, skema I $\\frac{1}{4}$, skema IV $\\frac{7}{22} \\approx 0,318$",
+      "distraktor": [
+        {
+          "teks": "Skema II",
+          "alasan": "mengira tanpa pengembalian selalu lebih besar karena bola berkurang; padahal $\\frac{5}{14} < \\frac{9}{25}$"
+        },
+        {
+          "teks": "Skema I",
+          "alasan": "memilih komposisi seimbang saja; peluangnya hanya $\\frac{1}{4}$"
+        },
+        {
+          "teks": "Skema IV",
+          "alasan": "memilih tas terbesar tanpa menghitung; peluangnya $\\frac{7}{22}$"
+        }
+      ],
+      "pembahasan": "I: $\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$. II: $\\frac{5}{8} \\times \\frac{4}{7} = \\frac{5}{14}$. III: $\\frac{3}{5} \\times \\frac{3}{5} = \\frac{9}{25}$. IV: $\\frac{7}{12} \\times \\frac{6}{11} = \\frac{7}{22}$. Karena $\\frac{9}{25} = \\frac{126}{350} > \\frac{125}{350} = \\frac{5}{14}$, skema III terbesar.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-003"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Namun jika setelah ambil bola pertama, kamu tidak mengembalikan bola pertama, maka kejadiannya tidak saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menilai langkah penyelesaian siswa pada pengambilan tanpa pengembalian dan memperbaikinya",
+      "stimulus": null,
+      "pertanyaan": "Andi menghitung peluang mengambil tiga kartu berturut-turut dari satu set 52 kartu bridge (tanpa pengembalian) dan ketiganya As: $P = \\frac{4}{52} \\times \\frac{3}{52} \\times \\frac{2}{52}$. Penilaian yang benar atas hitungan Andi adalah ....",
+      "jawaban_benar": "Salah: penyebutnya seharusnya 52, 51, 50 sehingga hasil benar $\\frac{24}{132.600} = \\frac{1}{5.525}$",
+      "alasan_benar": "tiap kartu tidak dikembalikan, jadi jumlah kartu berkurang satu pada tiap pengambilan",
+      "distraktor": [
+        {
+          "teks": "Benar, karena tiap pengambilan memakai aturan perkalian",
+          "alasan": "mengira aturan perkalian tanpa menyesuaikan banyak kartu yang tersisa"
+        },
+        {
+          "teks": "Salah: peluang ketiganya seharusnya dijumlahkan sehingga hasilnya $\\frac{9}{52}$",
+          "alasan": "mengganti perkalian menjadi penjumlahan"
+        },
+        {
+          "teks": "Salah: penyebutnya 52, 51, 50 tetapi pembilangnya 4, 4, 4 sehingga hasilnya $\\frac{64}{132.600} = \\frac{8}{16.575}$",
+          "alasan": "tidak mengurangi jumlah As yang tersisa"
+        }
+      ],
+      "pembahasan": "Setelah satu As terambil tersisa 3 As dari 51 kartu, lalu 2 As dari 50 kartu: $\\frac{4}{52} \\times \\frac{3}{51} \\times \\frac{2}{50} = \\frac{24}{132.600} = \\frac{1}{5.525}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-004"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 274,
+        "kutipan": "Pasangan kejadian pada masalah di atas adalah saling bebas, yaitu kejadian yang satu tidak memengaruhi peluang kejadian yang lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi klaim umum bahwa semua kejadian dari dua dadu bebas, dengan menguji pasangan kejadian lewat perhitungan",
+      "stimulus": null,
+      "pertanyaan": "Sepasang dadu setimbang (merah dan putih) dilempar bersamaan. $A$: jumlah kedua mata paling sedikit 10; $B$: dadu merah menunjukkan mata 6. Sari berkata, \"Dadu tidak saling memengaruhi, jadi $A$ dan $B$ pasti saling bebas.\" Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Klaim salah; $P(A \\text{ dan } B) = \\frac{1}{12}$, padahal $P(A) \\times P(B) = \\frac{1}{36}$",
+      "alasan_benar": "$A \\text{ dan } B$ = $\\{(6,4),(6,5),(6,6)\\}$ sehingga $\\frac{3}{36} = \\frac{1}{12}$, sedangkan $P(A) = P(B) = \\frac{1}{6}$",
+      "distraktor": [
+        {
+          "teks": "Klaim benar; dadu tidak saling memengaruhi sehingga semua kejadian dari kedua dadu saling bebas",
+          "alasan": "menyamaratakan kebebasan kedua dadu dengan kebebasan setiap pasangan kejadian"
+        },
+        {
+          "teks": "Klaim salah; $P(A \\text{ dan } B) = \\frac{1}{6}$, padahal $P(A) \\times P(B) = \\frac{1}{36}$",
+          "alasan": "menganggap $P(A \\text{ dan } B)$ sama dengan $P(B)$ saja"
+        },
+        {
+          "teks": "Klaim benar; $P(A \\text{ dan } B) = \\frac{1}{12}$ sama dengan $P(A) + P(B)$ dikali $\\frac{1}{4}$",
+          "alasan": "membuat kesamaan keliru untuk membenarkan klaim"
+        }
+      ],
+      "pembahasan": "$P(A) = \\frac{6}{36} = \\frac{1}{6}$ dan $P(B) = \\frac{1}{6}$. Irisan $\\{(6,4),(6,5),(6,6)\\}$ berpeluang $\\frac{1}{12} \\neq \\frac{1}{36}$, sehingga $A$ dan $B$ tidak bebas meskipun dadunya terpisah.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-005"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rancang kejadian atau skema",
+      "alasan_level": "merancang komposisi tas yang memenuhi syarat peluang dengan menguji tiap rancangan",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tas berisi 10 bola yang hanya berwarna merah atau biru. Dua bola diambil satu per satu secara acak dengan pengembalian. Panitia ingin peluang kedua bola berbeda warna tepat $0,42$. Komposisi isi tas yang memenuhi adalah ....",
+      "jawaban_benar": "3 bola merah dan 7 bola biru",
+      "alasan_benar": "peluang beda warna $2 \\times \\frac{3}{10} \\times \\frac{7}{10} = 0,42$",
+      "distraktor": [
+        {
+          "teks": "2 bola merah dan 8 bola biru",
+          "alasan": "peluang beda warna menjadi $2 \\times 0,2 \\times 0,8 = 0,32$"
+        },
+        {
+          "teks": "4 bola merah dan 6 bola biru",
+          "alasan": "peluang beda warna menjadi $2 \\times 0,4 \\times 0,6 = 0,48$"
+        },
+        {
+          "teks": "5 bola merah dan 5 bola biru",
+          "alasan": "peluang beda warna menjadi $2 \\times 0,5 \\times 0,5 = 0,50$"
+        }
+      ],
+      "pembahasan": "Beda warna = merah lalu biru atau biru lalu merah: $2 \\times \\frac{m}{10} \\times \\frac{10-m}{10}$. Untuk $m = 3$ hasilnya $0,42$; opsi lain menghasilkan $0,32$, $0,48$, dan $0,50$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-006"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 274,
+        "kutipan": "Pasangan kejadian pada masalah di atas adalah saling bebas, yaitu kejadian yang satu tidak memengaruhi peluang kejadian yang lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi klaim bahwa satu kartu yang memenuhi dua sifat berarti tidak bebas, dengan menguji rumus perkalian",
+      "stimulus": null,
+      "pertanyaan": "Satu kartu diambil secara acak dari 52 kartu bridge. $H$: kartu berjenis hati; $S$: kartu As. Tono berkata, \"Hanya ada satu kartu yang hati sekaligus As, jadi $H$ dan $S$ pasti tidak saling bebas.\" Pernyataan yang benar tentang klaim Tono adalah ....",
+      "jawaban_benar": "Klaim salah; $P(H \\text{ dan } S) = \\frac{1}{52} = \\frac{1}{4} \\times \\frac{1}{13}$",
+      "alasan_benar": "$P(H) = \\frac{1}{4}$, $P(S) = \\frac{1}{13}$, dan $P(H \\text{ dan } S) = \\frac{1}{52}$ sama dengan hasil kalinya",
+      "distraktor": [
+        {
+          "teks": "Klaim benar; $P(H \\text{ dan } S) = \\frac{1}{52}$ lebih kecil daripada $P(H) \\times P(S)$",
+          "alasan": "salah membandingkan: kedua nilai sama-sama $\\frac{1}{52}$"
+        },
+        {
+          "teks": "Klaim benar; $P(H \\text{ dan } S) = \\frac{1}{52}$ sedangkan $P(H) \\times P(S) = \\frac{1}{4} + \\frac{1}{13} = \\frac{17}{52}$",
+          "alasan": "menjumlahkan peluang, bukan mengalikannya"
+        },
+        {
+          "teks": "Klaim benar; kedua kejadian dapat terjadi bersamaan sehingga pasti tidak bebas",
+          "alasan": "mengira dapat terjadi bersamaan berarti tidak bebas"
+        }
+      ],
+      "pembahasan": "$P(H) = \\frac{13}{52} = \\frac{1}{4}$, $P(S) = \\frac{4}{52} = \\frac{1}{13}$, $P(H \\text{ dan } S) = \\frac{1}{52}$. Karena $\\frac{1}{4} \\times \\frac{1}{13} = \\frac{1}{52}$, $H$ dan $S$ saling bebas.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-007"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Ada satu bola lebih sedikit untuk pilihan kedua sehingga peluangnya akan berubah."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "bandingkan skema",
+      "alasan_level": "membandingkan dua aturan pengembalian pada kejadian tepat satu berhadiah lalu menilai selisih dan arahnya",
+      "stimulus": null,
+      "pertanyaan": "Dalam kotak undian ada 6 kertas, 2 di antaranya berhadiah. Dua orang mengambil satu kertas masing-masing secara bergantian. Skema P: kertas dikembalikan setelah pengambilan pertama. Skema Q: kertas tidak dikembalikan. Peluang tepat satu dari kedua orang mendapat hadiah dibandingkan pada kedua skema. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Skema Q lebih besar, dengan selisih $\\frac{4}{45}$",
+      "alasan_benar": "P: $\\frac{4}{9} = \\frac{20}{45}$, Q: $\\frac{8}{15} = \\frac{24}{45}$, selisih $\\frac{4}{45}$",
+      "distraktor": [
+        {
+          "teks": "Skema P lebih besar, dengan selisih $\\frac{4}{45}$",
+          "alasan": "membalik arah perbandingan"
+        },
+        {
+          "teks": "Skema Q lebih besar, dengan selisih $\\frac{8}{45}$",
+          "alasan": "salah hitung selisih dengan menghitung satu urutan saja pada salah satu skema"
+        },
+        {
+          "teks": "Kedua skema sama besar karena banyak kertas berhadiah sama",
+          "alasan": "mengira aturan pengembalian tidak memengaruhi peluang"
+        }
+      ],
+      "pembahasan": "P: $2 \\times \\frac{2}{6} \\times \\frac{4}{6} = \\frac{4}{9}$. Q: $2 \\times \\frac{2}{6} \\times \\frac{4}{5} = \\frac{8}{15}$. Selisihnya $\\frac{24}{45} - \\frac{20}{45} = \\frac{4}{45}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-008"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 274,
+        "kutipan": "Pasangan kejadian pada masalah di atas adalah saling bebas, yaitu kejadian yang satu tidak memengaruhi peluang kejadian yang lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "contoh penyangkal",
+      "alasan_level": "mencari contoh penyangkal terhadap klaim peluang masing-masing setengah selalu menghasilkan seperempat, dengan menguji empat pasangan",
+      "stimulus": null,
+      "pertanyaan": "Sepasang dadu setimbang (merah dan putih) dilempar bersamaan. Rudi berkata, \"Jika $P(A) = P(B) = \\frac{1}{2}$, maka pasti $P(A \\text{ dan } B) = \\frac{1}{4}$.\" Pasangan kejadian manakah yang menjadi contoh penyangkal klaim Rudi?",
+      "jawaban_benar": "$A$: dadu merah genap; $B$: dadu merah lebih dari 3",
+      "alasan_benar": "keduanya berpeluang $\\frac{1}{2}$ tetapi irisannya $\\{4,6\\}$ berpeluang $\\frac{1}{3} \\neq \\frac{1}{4}$",
+      "distraktor": [
+        {
+          "teks": "$A$: dadu merah genap; $B$: dadu putih ganjil",
+          "alasan": "bebas sehingga $\\frac{1}{4}$; bukan penyangkal"
+        },
+        {
+          "teks": "$A$: dadu merah lebih dari 3; $B$: jumlah kedua mata genap",
+          "alasan": "irisan berpeluang $\\frac{9}{36} = \\frac{1}{4}$; bukan penyangkal"
+        },
+        {
+          "teks": "$A$: dadu merah kurang dari 4; $B$: dadu putih lebih dari 3",
+          "alasan": "bebas sehingga $\\frac{1}{4}$; bukan penyangkal"
+        }
+      ],
+      "pembahasan": "Pada opsi $A$: merah genap dan $B$: merah lebih dari 3, kejadian bergantung pada dadu yang sama: irisan $\\{4,6\\}$ sehingga $\\frac{2}{6} = \\frac{1}{3}$. Tiga pasangan lain memberi tepat $\\frac{1}{4}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-009"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Kamu dapat menghitung peluang terjadinya dua kejadian yang saling bebas, A dan B, baik ketika kedua kejadian tersebut terjadi secara berurutan, maupun terjadi pada saat yang bersamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menilai penyelesaian siswa yang melewatkan urutan kejadian dan menentukan nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Sepasang dadu setimbang dilempar dua kali. Budi menghitung peluang tepat satu dari kedua lemparan menghasilkan angka dobel: $\\frac{1}{6} \\times \\frac{5}{6} = \\frac{5}{36}$. Penilaian yang benar atas hitungan Budi adalah ....",
+      "jawaban_benar": "Salah: ada dua urutan (dobel lalu tidak dobel, atau tidak dobel lalu dobel); hasil benar $\\frac{5}{18}$",
+      "alasan_benar": "$2 \\times \\frac{1}{6} \\times \\frac{5}{6} = \\frac{10}{36} = \\frac{5}{18}$",
+      "distraktor": [
+        {
+          "teks": "Benar, karena tepat satu dobel hanya terjadi pada satu urutan",
+          "alasan": "tidak menyadari dobel dapat muncul pada lemparan pertama maupun kedua"
+        },
+        {
+          "teks": "Salah: seharusnya $\\frac{1}{6} \\times \\frac{1}{6} = \\frac{1}{36}$",
+          "alasan": "menghitung peluang dobel dua kali"
+        },
+        {
+          "teks": "Salah: seharusnya $\\frac{5}{36} + \\frac{1}{36} = \\frac{1}{6}$",
+          "alasan": "menjumlahkan dengan peluang dobel dua kali, bukan menghitung dua urutan"
+        }
+      ],
+      "pembahasan": "Dua urutan yang saling berbeda: (dobel, tidak dobel) dan (tidak dobel, dobel), masing-masing $\\frac{5}{36}$. Jumlahnya $\\frac{10}{36} = \\frac{5}{18}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Ada satu bola lebih sedikit untuk pilihan kedua sehingga peluangnya akan berubah."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rancang kejadian atau skema",
+      "alasan_level": "merancang permainan yang adil dengan menguji empat rancangan pengambilan yang berbeda aturan pengembaliannya",
+      "stimulus": null,
+      "pertanyaan": "Dua pemain mengambil dua bola satu per satu secara acak. Pemain X menang jika kedua bola berwarna sama, pemain Y menang jika berbeda warna. Rancangan manakah yang membuat permainan adil (peluang X menang sama dengan peluang Y menang)?",
+      "jawaban_benar": "Tas berisi 2 bola merah dan 2 bola biru, dengan pengembalian",
+      "alasan_benar": "$P(\\text{sama}) = \\frac{2}{4} \\times \\frac{2}{4} + \\frac{2}{4} \\times \\frac{2}{4} = \\frac{1}{2} = P(\\text{beda})$",
+      "distraktor": [
+        {
+          "teks": "Tas berisi 2 bola merah dan 2 bola biru, tanpa pengembalian",
+          "alasan": "peluang sama hanya $\\frac{1}{3}$ dan beda $\\frac{2}{3}$"
+        },
+        {
+          "teks": "Tas berisi 3 bola merah dan 1 bola biru, dengan pengembalian",
+          "alasan": "peluang sama $\\frac{5}{8}$ dan beda $\\frac{3}{8}$"
+        },
+        {
+          "teks": "Tas berisi 3 bola merah dan 3 bola biru, tanpa pengembalian",
+          "alasan": "peluang sama $\\frac{2}{5}$ dan beda $\\frac{3}{5}$"
+        }
+      ],
+      "pembahasan": "Adil bila $P(\\text{sama}) = \\frac{1}{2}$. Opsi 1: $\\frac{1}{2}$. Opsi 2: $2 \\times \\frac{2}{4} \\times \\frac{1}{3} = \\frac{1}{3}$. Opsi 3: $\\frac{9+1}{16} = \\frac{5}{8}$. Opsi 4: $\\frac{3 \\cdot 2 + 3 \\cdot 2}{6 \\cdot 5} = \\frac{2}{5}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Kamu dapat menghitung peluang terjadinya dua kejadian yang saling bebas, A dan B, baik ketika kedua kejadian tersebut terjadi secara berurutan, maupun terjadi pada saat yang bersamaan."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "bandingkan skema",
+      "alasan_level": "membandingkan dua skema berulang dengan peluang setidaknya satu keberhasilan sehingga harus memakai komplemen dan aturan perkalian",
+      "stimulus": null,
+      "pertanyaan": "Skema P: sebuah dadu setimbang dilempar 4 kali; menang jika setidaknya satu kali muncul mata 6. Skema Q: sepasang dadu setimbang dilempar 3 kali; menang jika setidaknya satu kali muncul angka dobel. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Skema P lebih besar, yaitu $\\frac{671}{1.296}$ dibanding $\\frac{91}{216}$",
+      "alasan_benar": "$P_P = 1 - (\\frac{5}{6})^4 = \\frac{671}{1.296}$ dan $P_Q = 1 - (\\frac{5}{6})^3 = \\frac{91}{216} = \\frac{546}{1.296}$",
+      "distraktor": [
+        {
+          "teks": "Skema P lebih besar, yaitu $\\frac{2}{3}$ dibanding $\\frac{1}{2}$",
+          "alasan": "menjumlahkan $4 \\times \\frac{1}{6}$ dan $3 \\times \\frac{1}{6}$ padahal kejadiannya tidak saling lepas"
+        },
+        {
+          "teks": "Skema Q lebih besar, yaitu $\\frac{125}{216}$ dibanding $\\frac{625}{1.296}$",
+          "alasan": "lupa komplemen sehingga menghitung peluang tidak ada kejadian sama sekali"
+        },
+        {
+          "teks": "Kedua skema sama besar karena peluang tiap lemparan sama-sama $\\frac{1}{6}$",
+          "alasan": "mengabaikan perbedaan banyak lemparan"
+        }
+      ],
+      "pembahasan": "Peluang dobel pada sepasang dadu $\\frac{6}{36} = \\frac{1}{6}$, sama dengan peluang mata 6 pada satu dadu. P: $1 - (\\frac{5}{6})^4 = \\frac{671}{1.296}$. Q: $1 - (\\frac{5}{6})^3 = \\frac{91}{216} = \\frac{546}{1.296}$. Jadi P lebih besar.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 277,
+        "kutipan": "Mengapa masuk akal untuk mengalikan masing-masing peluang dari dua kejadian saling bebas untuk mendapatkan peluang untuk kedua kejadian terjadi bersama?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rancang kejadian atau skema",
+      "alasan_level": "merancang jumlah kertas berhadiah yang memaksimalkan peluang tepat satu hadiah dengan membandingkan beberapa rancangan",
+      "stimulus": null,
+      "pertanyaan": "Dalam kotak ada 10 kertas, sebagian berhadiah. Seorang peserta mengambil satu kertas secara acak, mencatatnya, mengembalikannya, lalu mengambil lagi. Panitia ingin peluang peserta mendapat tepat satu hadiah dari kedua pengambilan sebesar mungkin. Dari opsi berikut, banyak kertas berhadiah yang harus dipasang adalah ....",
+      "jawaban_benar": "5 kertas",
+      "alasan_benar": "peluang tepat satu hadiah $2 \\times 0,5 \\times 0,5 = 0,50$, tertinggi di antara opsi",
+      "distraktor": [
+        {
+          "teks": "1 kertas",
+          "alasan": "peluangnya hanya $2 \\times 0,1 \\times 0,9 = 0,18$"
+        },
+        {
+          "teks": "3 kertas",
+          "alasan": "peluangnya $2 \\times 0,3 \\times 0,7 = 0,42$"
+        },
+        {
+          "teks": "8 kertas",
+          "alasan": "peluangnya $2 \\times 0,8 \\times 0,2 = 0,32$; mengira makin banyak hadiah makin besar peluang"
+        }
+      ],
+      "pembahasan": "Dengan $k$ kertas berhadiah, $P = 2 \\times \\frac{k}{10} \\times \\frac{10-k}{10}$. Untuk $k = 1, 3, 5, 8$ diperoleh $0,18$; $0,42$; $0,50$; $0,32$. Maksimum di $k = 5$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "uji kebebasan dari data",
+      "alasan_level": "menilai kebebasan dua pasang kejadian dari data survei dengan membandingkan $P(A \\text{ dan } B)$ terhadap hasil kali",
+      "stimulus": null,
+      "pertanyaan": "Sebanyak 100 siswa disurvei. Sebanyak 60 siswa suka basket, 50 siswa suka voli, dan 40 siswa suka renang. Siswa yang suka basket dan voli ada 30 orang, sedangkan yang suka basket dan renang ada 20 orang. Seorang siswa dipilih secara acak dari 100 siswa itu. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Suka basket dan suka voli saling bebas, tetapi suka basket dan suka renang tidak saling bebas",
+      "alasan_benar": "$0,6 \\times 0,5 = 0,3 = P(\\text{basket dan voli})$, tetapi $0,6 \\times 0,4 = 0,24 \\neq 0,2$",
+      "distraktor": [
+        {
+          "teks": "Suka basket dan suka voli saling bebas, begitu pula suka basket dan suka renang",
+          "alasan": "tidak menguji hasil kali pada pasangan basket dan renang"
+        },
+        {
+          "teks": "Suka basket dan suka voli tidak saling bebas, tetapi suka basket dan suka renang saling bebas",
+          "alasan": "menukar hasil pengujian kedua pasangan"
+        },
+        {
+          "teks": "Kedua pasangan kejadian tidak saling bebas",
+          "alasan": "tidak menguji hasil kali pada pasangan basket dan voli"
+        }
+      ],
+      "pembahasan": "Basket dan voli: $P = \\frac{30}{100} = 0,3$ dan $0,6 \\times 0,5 = 0,3$ sehingga bebas. Basket dan renang: $P = 0,2$, sedangkan $0,6 \\times 0,4 = 0,24$ sehingga tidak bebas.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Perlu diperhatikan bahwa aturan ini tidak berlaku jika kedua kejadian tidak saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi klaim tentang kebebasan kejadian dengan komplemennya dan nilai kedua hasil perkalian",
+      "stimulus": null,
+      "pertanyaan": "Kejadian $A$ dan $B$ saling bebas dengan $P(A) = 0,7$ dan $P(B) = 0,4$. Rina menyatakan, \"$P(A \\text{ dan bukan } B) = 0,42$ dan $P(\\text{bukan } A \\text{ dan bukan } B) = 0,18$.\" Penilaian yang benar atas pernyataan Rina adalah ....",
+      "jawaban_benar": "Keduanya benar, karena $0,7 \\times 0,6 = 0,42$ dan $0,3 \\times 0,6 = 0,18$",
+      "alasan_benar": "bila $A$ dan $B$ bebas, komplemen $B$ pun bebas dari $A$ dan dari komplemen $A$",
+      "distraktor": [
+        {
+          "teks": "Hanya yang pertama benar; yang kedua seharusnya $0,3 \\times 0,4 = 0,12$",
+          "alasan": "memakai $P(B)$, bukan $P(\\text{bukan } B)$, pada faktor kedua"
+        },
+        {
+          "teks": "Hanya yang kedua benar; yang pertama seharusnya $0,7 \\times 0,4 = 0,28$",
+          "alasan": "memakai $P(B)$, bukan $P(\\text{bukan } B)$, pada hitungan pertama"
+        },
+        {
+          "teks": "Keduanya salah, karena $A$ dan bukan $B$ tidak saling bebas sehingga tidak dapat dikalikan",
+          "alasan": "mengira komplemen merusak kebebasan"
+        }
+      ],
+      "pembahasan": "$P(\\text{bukan } B) = 0,6$ dan $P(\\text{bukan } A) = 0,3$. Karena $A$, $B$ bebas, $P(A \\text{ dan bukan } B) = 0,7 \\times 0,6 = 0,42$ dan $P(\\text{bukan } A \\text{ dan bukan } B) = 0,3 \\times 0,6 = 0,18$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Namun jika setelah ambil bola pertama, kamu tidak mengembalikan bola pertama, maka kejadiannya tidak saling bebas."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "peluang bertingkat tiga pengambilan",
+      "alasan_level": "menilai perbandingan urutan berbeda pada tiga pengambilan tanpa pengembalian dan menentukan nilai bersama",
+      "stimulus": null,
+      "pertanyaan": "Tas berisi 4 bola merah dan 5 bola biru. Tiga bola diambil satu per satu secara acak tanpa pengembalian. Urutan warna MMB berarti merah, merah, biru; demikian pula MBM dan BMM. Pernyataan yang benar tentang ketiga urutan itu adalah ....",
+      "jawaban_benar": "Ketiga urutan berpeluang sama, yaitu $\\frac{5}{42}$",
+      "alasan_benar": "$\\frac{4}{9} \\times \\frac{3}{8} \\times \\frac{5}{7} = \\frac{4}{9} \\times \\frac{5}{8} \\times \\frac{3}{7} = \\frac{5}{9} \\times \\frac{4}{8} \\times \\frac{3}{7} = \\frac{5}{42}$",
+      "distraktor": [
+        {
+          "teks": "Urutan MMB paling besar karena dua bola merah diambil lebih dulu",
+          "alasan": "mengira urutan menentukan peluang padahal pembilang dan penyebut hanya tersusun ulang"
+        },
+        {
+          "teks": "Urutan BMM paling besar karena bola biru lebih banyak diambil lebih dulu",
+          "alasan": "hanya melihat faktor pertama"
+        },
+        {
+          "teks": "Ketiga urutan berpeluang sama, yaitu $\\frac{80}{729}$",
+          "alasan": "memakai perhitungan dengan pengembalian"
+        }
+      ],
+      "pembahasan": "Pembilang selalu $4 \\times 3 \\times 5$ dan penyebut $9 \\times 8 \\times 7$ untuk ketiga urutan, hanya susunan faktornya berbeda: $\\frac{60}{504} = \\frac{5}{42}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 274,
+        "kutipan": "Pasangan kejadian pada masalah di atas adalah saling bebas, yaitu kejadian yang satu tidak memengaruhi peluang kejadian yang lainnya."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rancang kejadian atau skema",
+      "alasan_level": "merancang kejadian yang bebas dari kejadian tertentu pada satu dadu dengan menguji tiap calon kejadian",
+      "stimulus": null,
+      "pertanyaan": "Sebuah dadu setimbang dilempar sekali. $A$: muncul mata genap. Kejadian $B$ manakah yang saling bebas dengan $A$?",
+      "jawaban_benar": "$B$: muncul mata 1 atau 2",
+      "alasan_benar": "$P(A \\text{ dan } B) = P(\\{2\\}) = \\frac{1}{6} = \\frac{1}{2} \\times \\frac{1}{3} = P(A) \\times P(B)$",
+      "distraktor": [
+        {
+          "teks": "$B$: muncul mata 1, 2, atau 3",
+          "alasan": "$P(A \\text{ dan } B) = \\frac{1}{6}$ tetapi $P(A) \\times P(B) = \\frac{1}{4}$"
+        },
+        {
+          "teks": "$B$: muncul mata 2 atau 4",
+          "alasan": "$P(A \\text{ dan } B) = \\frac{1}{3}$ tetapi $P(A) \\times P(B) = \\frac{1}{6}$"
+        },
+        {
+          "teks": "$B$: muncul mata 4, 5, atau 6",
+          "alasan": "$P(A \\text{ dan } B) = \\frac{1}{3}$ tetapi $P(A) \\times P(B) = \\frac{1}{4}$"
+        }
+      ],
+      "pembahasan": "$A = \\{2,4,6\\}$, $P(A) = \\frac{1}{2}$. Hanya $B = \\{1,2\\}$ yang memenuhi $P(A \\text{ dan } B) = P(A) \\times P(B)$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "jika dua kejadian adalah saling bebas, maka untuk menentukan peluang terjadinya kedua kejadian tersebut dapat menggunakan aturan perkalian."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "bandingkan skema",
+      "alasan_level": "membandingkan empat skema tembakan dan menetapkan skema terbesar sekaligus terkecil",
+      "stimulus": null,
+      "pertanyaan": "Peluang pemanah A mengenai sasaran pada tiap tembakan adalah $0,6$ dan pemanah B adalah $0,7$; semua tembakan saling bebas. Tim berhasil jika semua tembakan pada skemanya mengenai sasaran. Skema I: A menembak sekali dan B menembak sekali. Skema II: A menembak dua kali. Skema III: B menembak dua kali. Skema IV: A menembak sekali dan B menembak dua kali. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Peluang terbesar pada Skema III ($0,49$) dan terkecil pada Skema IV ($0,294$)",
+      "alasan_benar": "I: $0,42$; II: $0,36$; III: $0,49$; IV: $0,6 \\times 0,49 = 0,294$",
+      "distraktor": [
+        {
+          "teks": "Peluang terbesar pada Skema I ($0,42$) dan terkecil pada Skema II ($0,36$)",
+          "alasan": "mengabaikan skema III dan IV"
+        },
+        {
+          "teks": "Peluang terbesar pada Skema III ($0,49$) dan terkecil pada Skema II ($0,36$)",
+          "alasan": "tidak menghitung skema IV yang lebih kecil lagi"
+        },
+        {
+          "teks": "Peluang terbesar pada Skema I ($0,42$) dan terkecil pada Skema IV ($0,294$)",
+          "alasan": "mengira skema yang memakai kedua pemanah selalu terbesar"
+        }
+      ],
+      "pembahasan": "I: $0,6 \\times 0,7 = 0,42$. II: $0,6^2 = 0,36$. III: $0,7^2 = 0,49$. IV: $0,6 \\times 0,7^2 = 0,294$. Terbesar III, terkecil IV.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 275,
+        "kutipan": "Ada satu bola lebih sedikit untuk pilihan kedua sehingga peluangnya akan berubah."
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim",
+      "alasan_level": "mengevaluasi klaim kesamaan dua urutan pada pengambilan tanpa pengembalian lewat perhitungan kedua urutan",
+      "stimulus": null,
+      "pertanyaan": "Tas berisi 3 bola merah dan 5 bola biru. Dua bola diambil satu per satu secara acak tanpa pengembalian. Rani berkata, \"Peluang bola pertama merah dan bola kedua biru sama dengan peluang bola pertama biru dan bola kedua merah.\" Pernyataan yang benar adalah ....",
+      "jawaban_benar": "Klaim benar; keduanya bernilai $\\frac{15}{56}$",
+      "alasan_benar": "$\\frac{3}{8} \\times \\frac{5}{7} = \\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}$",
+      "distraktor": [
+        {
+          "teks": "Klaim benar; keduanya bernilai $\\frac{15}{64}$",
+          "alasan": "lupa mengurangi banyak bola pada pengambilan kedua"
+        },
+        {
+          "teks": "Klaim salah; peluang biru lalu merah lebih besar karena bola biru lebih banyak",
+          "alasan": "hanya melihat faktor pertama"
+        },
+        {
+          "teks": "Klaim salah; peluang merah lalu biru lebih kecil karena $\\frac{3}{8} < \\frac{5}{8}$",
+          "alasan": "membandingkan faktor pertama saja"
+        }
+      ],
+      "pembahasan": "Merah lalu biru: $\\frac{3}{8} \\times \\frac{5}{7} = \\frac{15}{56}$. Biru lalu merah: $\\frac{5}{8} \\times \\frac{3}{7} = \\frac{15}{56}$. Faktor yang sama hanya tersusun ulang.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 277,
+        "kutipan": "Mengapa masuk akal untuk mengalikan masing-masing peluang dari dua kejadian saling bebas untuk mendapatkan peluang untuk kedua kejadian terjadi bersama?"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "temukan kesalahan",
+      "alasan_level": "menilai hasil yang melebihi 1 sebagai tanda kesalahan konsep dan memperbaikinya dengan komplemen",
+      "stimulus": null,
+      "pertanyaan": "Tiga koin setimbang dilempar. Dewi menghitung peluang setidaknya satu koin menunjukkan angka dengan menjumlahkan: $\\frac{1}{2} + \\frac{1}{2} + \\frac{1}{2} = \\frac{3}{2}$. Penilaian yang benar atas hitungan Dewi adalah ....",
+      "jawaban_benar": "Salah: peluang tidak mungkin lebih dari 1; hasil benar $1 - (\\frac{1}{2})^3 = \\frac{7}{8}$",
+      "alasan_benar": "kejadian tidak saling lepas tidak boleh dijumlahkan; komplemennya semua gambar $(\\frac{1}{2})^3 = \\frac{1}{8}$",
+      "distraktor": [
+        {
+          "teks": "Salah: hasil benar $(\\frac{1}{2})^3 = \\frac{1}{8}$",
+          "alasan": "menghitung peluang semua gambar, bukan setidaknya satu angka"
+        },
+        {
+          "teks": "Salah: hasil benar $\\frac{3}{8}$",
+          "alasan": "menghitung peluang tepat satu angka"
+        },
+        {
+          "teks": "Benar, karena peluang boleh lebih dari 1 asalkan lemparannya saling bebas",
+          "alasan": "tidak tahu bahwa peluang paling besar 1"
+        }
+      ],
+      "pembahasan": "Penjumlahan menghasilkan $\\frac{3}{2} > 1$, tidak mungkin. Gunakan komplemen: tidak ada angka sama sekali berpeluang $(\\frac{1}{2})^3 = \\frac{1}{8}$, sehingga hasilnya $1 - \\frac{1}{8} = \\frac{7}{8}$.",
+      "catatan": null,
+      "id": "kelas10-b07-c-hard-bt01-020"
+    }
+  ]
+}

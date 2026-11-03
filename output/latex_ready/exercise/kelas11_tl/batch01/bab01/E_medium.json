@@ -1,0 +1,706 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 1,
+  "subbab": "E",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0052-latihan-e-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "determinan dari persamaan matriks",
+      "alasan_level": "menghitung dua determinan 2x2 lalu memakai $|AC| = |A||C|$ untuk memperoleh $|C|$ tanpa mencari $C$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 7 & 3 \\\\ 4 & 2 \\end{pmatrix}$, $B = \\begin{pmatrix} 9 & -4 \\\\ 5 & 6 \\end{pmatrix}$, dan matriks $C$ memenuhi $AC = B$. Nilai determinan $C$ adalah ....",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "$|A| = 2$ dan $|B| = 74$; dari $|A||C| = |B|$ diperoleh $|C| = 37$",
+      "distraktor": [
+        {
+          "teks": "$148$",
+          "alasan": "mengalikan $|B|$ dengan $|A|$, bukan membagi"
+        },
+        {
+          "teks": "$72$",
+          "alasan": "mengurangkan determinan, bukan membagi"
+        },
+        {
+          "teks": "$76$",
+          "alasan": "menjumlahkan determinan, bukan membagi"
+        }
+      ],
+      "pembahasan": "$AC = B$ sehingga $|A||C| = |B|$. $|A| = 14 - 12 = 2$, $|B| = 54 + 20 = 74$, jadi $|C| = \\frac{74}{2} = 37$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas11_tl-b01-p0052-latihan-e-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "determinan dari persamaan matriks",
+      "alasan_level": "memakai sifat hasil kali determinan dengan determinan pembagi bertanda negatif, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P = \\begin{pmatrix} 2 & 7 \\\\ 3 & 6 \\end{pmatrix}$ dan $Q = \\begin{pmatrix} 4 & -5 \\\\ 6 & 6 \\end{pmatrix}$. Jika matriks $R$ memenuhi $PR = Q$, nilai $|R|$ adalah ....",
+      "jawaban_benar": "$-6$",
+      "alasan_benar": "$|P| = -9$, $|Q| = 54$, sehingga $|R| = \\frac{54}{-9} = -6$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "mengabaikan tanda negatif pada $|P|$"
+        },
+        {
+          "teks": "$-486$",
+          "alasan": "mengalikan $|Q|$ dengan $|P|$, bukan membagi"
+        },
+        {
+          "teks": "$63$",
+          "alasan": "mengurangkan, $54 - (-9)$, bukan membagi"
+        }
+      ],
+      "pembahasan": "Dari $PR = Q$ diperoleh $|P||R| = |Q|$. $|P| = 12 - 21 = -9$ dan $|Q| = 24 + 30 = 54$. Jadi $|R| = \\frac{54}{-9} = -6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan E",
+        "nomor": "6",
+        "teks": "Ahli biologi menempatkan tiga jenis bakteri ke dalam tabung reaksi yang diberi tanda Strain I, Strain II, dan Strain III. Ada tiga jenis makanan berbeda yang disediakan setiap hari, yaitu 980 satuan makanan A, 740 satuan makanan B, dan 680 satuan makanan C.",
+        "jawaban": "Strain I 200, Strain II 120, Strain III 100 (dihitung sendiri dari matriks pada gambar halaman 53)"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "SPL tiga variabel dengan determinan",
+      "alasan_level": "memodelkan SPL tiga variabel dari tabel lalu menyelesaikannya dengan determinan (tiga determinan 3x3)",
+      "stimulus": "Tabel berikut menunjukkan banyak satuan makanan yang dikonsumsi setiap bakteri per hari.\n\n| Makanan | Strain I | Strain II | Strain III |\n|---|---|---|---|\n| A | 2 | 1 | 3 |\n| B | 1 | 2 | 2 |\n| C | 3 | 1 | 1 |",
+      "pertanyaan": "Seorang peneliti menempatkan tiga jenis bakteri dalam satu tabung. Setiap hari tersedia 630 satuan makanan A, 580 satuan makanan B, dan 590 satuan makanan C, dan semuanya habis dikonsumsi. Berdasarkan tabel, banyak bakteri Strain II adalah ....",
+      "jawaban_benar": "150",
+      "alasan_benar": "model: $2x + y + 3z = 630$, $x + 2y + 2z = 580$, $3x + y + z = 590$; $D = -10$, $D_y = -1500$, $y = 150$",
+      "distraktor": [
+        {
+          "teks": "120",
+          "alasan": "mengambil banyak bakteri Strain I ($x$), bukan Strain II"
+        },
+        {
+          "teks": "80",
+          "alasan": "mengambil banyak bakteri Strain III ($z$), bukan Strain II"
+        },
+        {
+          "teks": "-1500",
+          "alasan": "memakai $D_y$ tanpa membaginya dengan $D$"
+        }
+      ],
+      "pembahasan": "Misalkan banyak bakteri Strain I, II, III adalah $x$, $y$, $z$. Model: $2x+y+3z=630$, $x+2y+2z=580$, $3x+y+z=590$. $D = -10$, $D_y = -1500$, sehingga $y = \\frac{D_y}{D} = 150$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "bagian": "Latihan E",
+        "nomor": "6",
+        "teks": "Ahli biologi menempatkan tiga jenis bakteri ke dalam tabung reaksi yang diberi tanda Strain I, Strain II, dan Strain III. Ada tiga jenis makanan berbeda yang disediakan setiap hari, yaitu 980 satuan makanan A, 740 satuan makanan B, dan 680 satuan makanan C.",
+        "jawaban": "Strain I 200, Strain II 120, Strain III 100 (dihitung sendiri dari matriks pada gambar halaman 53)"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "SPL tiga variabel dengan determinan",
+      "alasan_level": "menganalisis tabel konsumsi pakan menjadi SPL tiga variabel lalu menyelesaikannya dengan invers atau determinan",
+      "stimulus": "Banyak kilogram pakan yang dihabiskan seekor ternak per bulan.\n\n| Pakan | Ayam | Bebek | Puyuh |\n|---|---|---|---|\n| Dedak | 1 | 2 | 1 |\n| Jagung | 2 | 1 | 3 |\n| Konsentrat | 1 | 1 | 2 |",
+      "pertanyaan": "Sebuah peternakan memelihara ayam, bebek, dan puyuh. Selama sebulan, tersedia 120 kg dedak, 195 kg jagung, dan 125 kg konsentrat yang habis terpakai sesuai tabel. Banyak puyuh yang dipelihara adalah ....",
+      "jawaban_benar": "30",
+      "alasan_benar": "model: $a + 2b + c = 120$, $2a + b + 3c = 195$, $a + b + 2c = 125$; $D = -2$, $D_c = -60$, $c = 30$",
+      "distraktor": [
+        {
+          "teks": "40",
+          "alasan": "mengambil banyak ayam, bukan puyuh"
+        },
+        {
+          "teks": "25",
+          "alasan": "mengambil banyak bebek, bukan puyuh"
+        },
+        {
+          "teks": "-60",
+          "alasan": "memakai $D_c$ tanpa membaginya dengan $D$"
+        }
+      ],
+      "pembahasan": "Misalkan banyak ayam, bebek, puyuh adalah $a$, $b$, $c$. Model: $a+2b+c=120$, $2a+b+3c=195$, $a+b+2c=125$. $D = -2$, $D_c = -60$, sehingga $c = \\frac{D_c}{D} = 30$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "bagian": "Mari Mencoba 1.10",
+        "nomor": "1.10",
+        "teks": "Diketahui X dan Y . Tentukan matriks X<sup>–1</sup> + Y<sup>–1</sup> . Apakah matriks X<sup>–1</sup> + Y<sup>–1</sup> sama dengan matriks ( X + Y )<sup>–1</sup> ?",
+        "jawaban": "Tidak sama; X^-1 + Y^-1 = [[3,2],[-1/2,-1]]"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah invers dua matriks 2x2",
+      "alasan_level": "mencari dua invers 2x2 (determinan 1 dan 2) lalu menjumlahkannya, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $X = \\begin{pmatrix} 3 & 1 \\\\ 5 & 2 \\end{pmatrix}$ dan $Y = \\begin{pmatrix} 2 & 4 \\\\ 1 & 3 \\end{pmatrix}$. Matriks $X^{-1} + Y^{-1}$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} \\frac{7}{2} & -3 \\\\ -\\frac{11}{2} & 4 \\end{pmatrix}$",
+      "alasan_benar": "$X^{-1} = \\begin{pmatrix} 2 & -1 \\\\ -5 & 3 \\end{pmatrix}$, $Y^{-1} = \\begin{pmatrix} \\frac{3}{2} & -2 \\\\ -\\frac{1}{2} & 1 \\end{pmatrix}$, lalu dijumlahkan",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} 5 & -5 \\\\ -6 & 5 \\end{pmatrix}$",
+          "alasan": "lupa mengalikan adjoin $Y$ dengan $\\frac{1}{|Y|}$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} -1 & 1 \\\\ \\frac{6}{5} & -1 \\end{pmatrix}$",
+          "alasan": "menghitung $(X+Y)^{-1}$, mengira sama dengan $X^{-1} + Y^{-1}$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} \\frac{7}{2} & -\\frac{3}{2} \\\\ -7 & 4 \\end{pmatrix}$",
+          "alasan": "adjoin $Y$ ditranspos (diagonal samping saling bertukar tempat)"
+        }
+      ],
+      "pembahasan": "$|X| = 6 - 5 = 1$ sehingga $X^{-1} = \\begin{pmatrix} 2 & -1 \\\\ -5 & 3 \\end{pmatrix}$. $|Y| = 6 - 4 = 2$ sehingga $Y^{-1} = \\frac{1}{2}\\begin{pmatrix} 3 & -4 \\\\ -1 & 2 \\end{pmatrix}$. Jumlahnya $\\begin{pmatrix} \\frac{7}{2} & -3 \\\\ -\\frac{11}{2} & 4 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "bagian": "Mari Mencoba 1.10",
+        "nomor": "1.10",
+        "teks": "Diketahui X dan Y . Tentukan matriks X<sup>–1</sup> + Y<sup>–1</sup> . Apakah matriks X<sup>–1</sup> + Y<sup>–1</sup> sama dengan matriks ( X + Y )<sup>–1</sup> ?",
+        "jawaban": "Tidak sama; X^-1 + Y^-1 = [[3,2],[-1/2,-1]]"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "invers jumlah dua matriks",
+      "alasan_level": "menjumlahkan dua matriks, menentukan determinan dan invers, lalu memilih satu elemen; menguji kekeliruan $(X+Y)^{-1} = X^{-1}+Y^{-1}$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $X = \\begin{pmatrix} 4 & 3 \\\\ 1 & 1 \\end{pmatrix}$ dan $Y = \\begin{pmatrix} 5 & 2 \\\\ 3 & 2 \\end{pmatrix}$. Elemen baris pertama kolom kedua dari matriks $(X + Y)^{-1}$ adalah ....",
+      "jawaban_benar": "$-\\frac{5}{7}$",
+      "alasan_benar": "$X + Y = \\begin{pmatrix} 9 & 5 \\\\ 4 & 3 \\end{pmatrix}$, $|X+Y| = 7$, $(X+Y)^{-1} = \\frac{1}{7}\\begin{pmatrix} 3 & -5 \\\\ -4 & 9 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{7}$",
+          "alasan": "tanda elemen diagonal samping tidak diubah"
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{|X+Y|}$"
+        },
+        {
+          "teks": "$-\\frac{7}{2}$",
+          "alasan": "memakai $X^{-1} + Y^{-1}$ sebagai pengganti $(X+Y)^{-1}$"
+        }
+      ],
+      "pembahasan": "$X + Y = \\begin{pmatrix} 9 & 5 \\\\ 4 & 3 \\end{pmatrix}$ dengan $|X+Y| = 27 - 20 = 7$. Maka $(X+Y)^{-1} = \\frac{1}{7}\\begin{pmatrix} 3 & -5 \\\\ -4 & 9 \\end{pmatrix}$ dan elemen baris 1 kolom 2 adalah $-\\frac{5}{7}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "bagian": "Mari Berpikir Kreatif",
+        "nomor": "MBK2",
+        "teks": "Jika A merupakan matriks berordo n × n dan k merupakan skalar, maka |kA| = k^n |A|.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "determinan skalar kali matriks 3x3",
+      "alasan_level": "menghitung determinan 3x3 lalu memakai $|kA| = k^n|A|$ dengan $n = 3$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $M = \\begin{pmatrix} 2 & -1 & 4 \\\\ 0 & 3 & 1 \\\\ 5 & 2 & -2 \\end{pmatrix}$. Nilai $|2M|$ adalah ....",
+      "jawaban_benar": "$-648$",
+      "alasan_benar": "$|M| = -81$ dan $|2M| = 2^3 \\cdot (-81) = -648$",
+      "distraktor": [
+        {
+          "teks": "$-162$",
+          "alasan": "memakai $k|M|$, lupa memangkatkan $k$ dengan ordo"
+        },
+        {
+          "teks": "$-324$",
+          "alasan": "memangkatkan $k$ dengan 2 (ordo dikira $2 \\times 2$)"
+        },
+        {
+          "teks": "$648$",
+          "alasan": "salah tanda pada determinan $M$"
+        }
+      ],
+      "pembahasan": "Dengan Metode Sarrus diperoleh $|M| = -81$. Karena $M$ berordo $3 \\times 3$, $|2M| = 2^3 |M| = 8 \\cdot (-81) = -648$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "bagian": "Mari Berpikir Kreatif",
+        "nomor": "MBK1",
+        "teks": "Jika |A|, |B|, dan |C|, maka |ABC| = |A||B||C|.",
+        "jawaban": "Benar"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "determinan hasil kali tiga matriks",
+      "alasan_level": "dua determinan 2x2 lalu perluasan $|ABC| = |A||B||C|$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 3 & 1 \\\\ 2 & 4 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 1 & -2 \\\\ 3 & 5 \\end{pmatrix}$. Jika $C$ matriks berordo $2 \\times 2$ dengan $|C| = -2$, nilai $|ABC|$ adalah ....",
+      "jawaban_benar": "$-220$",
+      "alasan_benar": "$|A| = 10$, $|B| = 11$, sehingga $|ABC| = 10 \\cdot 11 \\cdot (-2) = -220$",
+      "distraktor": [
+        {
+          "teks": "$220$",
+          "alasan": "mengabaikan tanda negatif pada $|C|$"
+        },
+        {
+          "teks": "$-20$",
+          "alasan": "melupakan $|B|$ dalam hasil kali"
+        },
+        {
+          "teks": "$19$",
+          "alasan": "menjumlahkan ketiga determinan, $10 + 11 + (-2)$"
+        }
+      ],
+      "pembahasan": "$|A| = 12 - 2 = 10$ dan $|B| = 5 + 6 = 11$. Karena $|ABC| = |A||B||C|$, maka $|ABC| = 10 \\cdot 11 \\cdot (-2) = -220$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Metode Sarrus digunakan untuk menentukan determinan matriks berordo 3 × 3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "determinan 3x3 (Sarrus)",
+      "alasan_level": "menerapkan Metode Sarrus pada matriks 3x3 dengan elemen negatif dan nol; enam hasil kali dengan tanda berbeda",
+      "stimulus": null,
+      "pertanyaan": "Dengan Metode Sarrus, nilai $\\begin{vmatrix} 2 & -1 & 3 \\\\ 4 & 0 & -2 \\\\ 1 & 5 & 3 \\end{vmatrix}$ adalah ....",
+      "jawaban_benar": "$94$",
+      "alasan_benar": "diagonal turun $0 + 2 + 60 = 62$, diagonal naik $0 - 20 - 12 = -32$, determinan $62 - (-32) = 94$",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "menjumlahkan jumlah diagonal naik ($-32$) tanpa mengubah tandanya: $62 + (-32)$"
+        },
+        {
+          "teks": "$-94$",
+          "alasan": "mengurangkan dalam urutan terbalik (diagonal naik dikurangi diagonal turun)"
+        },
+        {
+          "teks": "$62$",
+          "alasan": "hanya memakai tiga diagonal turun"
+        }
+      ],
+      "pembahasan": "Diagonal turun: $2\\cdot0\\cdot3 + (-1)(-2)(1) + 3\\cdot4\\cdot5 = 62$. Diagonal naik: $3\\cdot0\\cdot1 + 2(-2)(5) + (-1)\\cdot4\\cdot3 = -32$. Determinan $= 62 - (-32) = 94$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 45,
+        "kutipan": "Metode Ekspansi Kofaktor digunakan untuk menentukan determinan berordo lebih dari 2 × 2."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "determinan 3x3 (ekspansi kofaktor)",
+      "alasan_level": "memilih kolom dengan dua elemen nol, menentukan minor 2x2 dan memperhatikan tanda $(-1)^{i+j}$",
+      "stimulus": null,
+      "pertanyaan": "Determinan $\\begin{vmatrix} 0 & 3 & 2 \\\\ 5 & 1 & -1 \\\\ 0 & 4 & 6 \\end{vmatrix}$ jika dihitung dengan ekspansi kofaktor sepanjang kolom pertama adalah ....",
+      "jawaban_benar": "$-50$",
+      "alasan_benar": "hanya $a_{21} = 5$ yang tidak nol; $M_{21} = 18 - 8 = 10$, $k_{21} = (-1)^{3} \\cdot 10 = -10$, determinan $5 \\cdot (-10) = -50$",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "lupa faktor tanda $(-1)^{2+1}$ pada kofaktor $k_{21}$"
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "lupa mengalikan kofaktor dengan elemen $a_{21} = 5$"
+        },
+        {
+          "teks": "$-130$",
+          "alasan": "minor dihitung dengan menjumlahkan hasil kali: $18 + 8 = 26$, lalu $5 \\cdot (-26)$"
+        }
+      ],
+      "pembahasan": "Pada kolom pertama hanya $a_{21} = 5$ yang tidak nol. $M_{21} = \\begin{vmatrix} 3 & 2 \\\\ 4 & 6 \\end{vmatrix} = 10$, $k_{21} = (-1)^{2+1} \\cdot 10 = -10$. Jadi determinan $= 5 \\cdot (-10) = -50$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Matriks _A_ disebut _matriks singular_ jika | _A_ |= 0"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter matriks singular 3x3",
+      "alasan_level": "menyusun determinan 3x3 berparameter dengan Sarrus lalu menyelesaikan persamaan linear $|A| = 0$",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = \\begin{pmatrix} 2 & 3 & 1 \\\\ 1 & x & 2 \\\\ 4 & 1 & 3 \\end{pmatrix}$ merupakan matriks singular. Nilai $x$ adalah ....",
+      "jawaban_benar": "$-6$",
+      "alasan_benar": "$|A| = 2x + 12 = 0$ sehingga $x = -6$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "salah tanda: $2x - 12 = 0$"
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "tidak membagi dengan koefisien $x$ setelah memperoleh $2x = -12$"
+        },
+        {
+          "teks": "$-24$",
+          "alasan": "mengalikan dengan 2, bukan membagi, dari $2x = -12$"
+        }
+      ],
+      "pembahasan": "Metode Sarrus: diagonal turun $6x + 24 + 1 = 6x + 25$, diagonal naik $4x + 4 + 9 = 4x + 13$. $|A| = 2x + 12$. Singular jika $|A| = 0$, jadi $x = -6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Matriks _A_ disebut _matriks nonsingular_ jika | _A_ |≠ 0"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "parameter matriks singular kuadrat",
+      "alasan_level": "menyusun $|A| = 0$ berbentuk kuadrat, memfaktorkan, lalu memilih akar terbesar",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A = \\begin{pmatrix} x & 6 \\\\ 1 & x - 5 \\end{pmatrix}$ tidak mempunyai invers. Nilai $x$ terbesar yang mungkin adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$|A| = x(x-5) - 6 = x^2 - 5x - 6 = (x-6)(x+1) = 0$, akar terbesar $6$",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "mengambil akar yang lain, bukan yang terbesar"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "salah tanda pada faktor: akar dikira $x = 1$ dan $x = -6$"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "mengambil konstanta $-5$ pada $x - 5$ sebagai nilai $x$"
+        }
+      ],
+      "pembahasan": "Tidak mempunyai invers berarti $|A| = 0$: $x(x-5) - 6 = x^2 - 5x - 6 = (x-6)(x+1) = 0$, sehingga $x = 6$ atau $x = -1$. Nilai terbesar adalah $6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 49,
+        "kutipan": "Invers Matriks Berordo 2 × 2"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "invers 2x2 berparameter",
+      "alasan_level": "menulis elemen invers sebagai pecahan berparameter $\\frac{-x}{15-2x}$ lalu menyelesaikan persamaannya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 3 & x \\\\ 2 & 5 \\end{pmatrix}$. Jika elemen baris pertama kolom kedua dari $A^{-1}$ bernilai $2$, nilai $x$ adalah ....",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "$A^{-1} = \\frac{1}{15-2x}\\begin{pmatrix} 5 & -x \\\\ -2 & 3 \\end{pmatrix}$; $\\frac{-x}{15-2x} = 2$ memberi $x = 10$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "tanda diagonal samping tidak diubah: $\\frac{x}{15-2x} = 2$ memberi $x = 6$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "mengambil elemen baris kedua kolom pertama ($-2$) sebagai elemen yang dimaksud"
+        },
+        {
+          "teks": "$30$",
+          "alasan": "dari $3x = 30$ tidak dibagi 3"
+        }
+      ],
+      "pembahasan": "$|A| = 15 - 2x$ dan $A^{-1} = \\frac{1}{15-2x}\\begin{pmatrix} 5 & -x \\\\ -2 & 3 \\end{pmatrix}$. Elemen $(1,2)$: $\\frac{-x}{15-2x} = 2$, sehingga $-x = 30 - 4x$ dan $x = 10$. (Determinan $= -5 \\neq 0$.)",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 52,
+        "kutipan": "maka penyelesaian sistem persamaan linear _AX_ = _B_ dapat ditentukan dengan _X_ = _A_<sup>–1</sup> _B_"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks AX = B",
+      "alasan_level": "menentukan $A^{-1}$ dari $A$ (determinan dan adjoin) lalu mengalikannya di sebelah kiri $B$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 2 & 1 \\\\ 5 & 4 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 5 & 3 \\\\ 17 & 6 \\end{pmatrix}$. Matriks $X$ yang memenuhi $AX = B$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 1 & 2 \\\\ 3 & -1 \\end{pmatrix}$",
+      "alasan_benar": "$A^{-1} = \\frac{1}{3}\\begin{pmatrix} 4 & -1 \\\\ -5 & 2 \\end{pmatrix}$, $X = A^{-1}B$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} \\frac{5}{3} & \\frac{1}{3} \\\\ \\frac{38}{3} & -\\frac{5}{3} \\end{pmatrix}$",
+          "alasan": "urutan perkalian tertukar: $BA^{-1}$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 3 & 6 \\\\ 9 & -3 \\end{pmatrix}$",
+          "alasan": "lupa mengalikan adjoin dengan $\\frac{1}{|A|}$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} \\frac{37}{3} & 6 \\\\ \\frac{59}{3} & 9 \\end{pmatrix}$",
+          "alasan": "diagonal samping tidak diubah tandanya saat menyusun adjoin"
+        }
+      ],
+      "pembahasan": "$|A| = 8 - 5 = 3$, $A^{-1} = \\frac{1}{3}\\begin{pmatrix} 4 & -1 \\\\ -5 & 2 \\end{pmatrix}$. Maka $X = A^{-1}B = \\frac{1}{3}\\begin{pmatrix} 4 & -1 \\\\ -5 & 2 \\end{pmatrix}\\begin{pmatrix} 5 & 3 \\\\ 17 & 6 \\end{pmatrix} = \\begin{pmatrix} 1 & 2 \\\\ 3 & -1 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "kutipan": "Berdasarkan pengetahuan tersebut, invers matriks dapat didefinisikan sebagai berikut."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "persamaan matriks XA = B",
+      "alasan_level": "menyadari bahwa $A^{-1}$ harus dikalikan di sebelah kanan ($X = BA^{-1}$), lalu menghitung invers dan perkaliannya",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 4 & 3 \\\\ 3 & 3 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 5 & 3 \\\\ 13 & 12 \\end{pmatrix}$. Matriks $X$ yang memenuhi $XA = B$ adalah ....",
+      "jawaban_benar": "$\\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\end{pmatrix}$",
+      "alasan_benar": "$X = BA^{-1}$ dengan $A^{-1} = \\frac{1}{3}\\begin{pmatrix} 3 & -3 \\\\ -3 & 4 \\end{pmatrix}$",
+      "distraktor": [
+        {
+          "teks": "$\\begin{pmatrix} -8 & -9 \\\\ \\frac{37}{3} & 13 \\end{pmatrix}$",
+          "alasan": "mengalikan $A^{-1}$ dari kiri, $X = A^{-1}B$, padahal persamaannya $XA = B$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 6 & -3 \\\\ 3 & 9 \\end{pmatrix}$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{|A|}$"
+        },
+        {
+          "teks": "$\\begin{pmatrix} 2 & 1 \\\\ -1 & 3 \\end{pmatrix}$",
+          "alasan": "hasil benar yang barisnya dan kolomnya tertukar (transpos)"
+        }
+      ],
+      "pembahasan": "$XA = B$ dikalikan $A^{-1}$ dari kanan: $X = BA^{-1}$. $|A| = 12 - 9 = 3$, $A^{-1} = \\frac{1}{3}\\begin{pmatrix} 3 & -3 \\\\ -3 & 4 \\end{pmatrix}$. $X = \\begin{pmatrix} 5 & 3 \\\\ 13 & 12 \\end{pmatrix} A^{-1} = \\begin{pmatrix} 2 & -1 \\\\ 1 & 3 \\end{pmatrix}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 42,
+        "kutipan": "Konsep determinan matriks memiliki kaitan dengan penyelesaian sistem persamaan linear."
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "soal cerita SPLDV dengan matriks",
+      "alasan_level": "memodelkan dua transaksi menjadi $AX = B$, menyelesaikan dengan invers, lalu menghitung biaya baru",
+      "stimulus": null,
+      "pertanyaan": "Anto membeli 3 buku dan 2 pensil dengan membayar Rp21.000,00. Budi membeli 5 buku dan 4 pensil dengan membayar Rp37.000,00. Jika sistem persamaannya diselesaikan dengan invers matriks, harga 4 buku dan 3 pensil adalah ....",
+      "jawaban_benar": "Rp29.000,00",
+      "alasan_benar": "$3x + 2y = 21.000$ dan $5x + 4y = 37.000$ memberi $x = 5.000$ dan $y = 3.000$; $4x + 3y = 29.000$",
+      "distraktor": [
+        {
+          "teks": "Rp27.000,00",
+          "alasan": "harga buku dan pensil tertukar: $4 \\cdot 3.000 + 3 \\cdot 5.000$"
+        },
+        {
+          "teks": "Rp58.000,00",
+          "alasan": "lupa mengalikan adjoin dengan $\\frac{1}{|A|}$ sehingga harga satuan dua kali lipat"
+        },
+        {
+          "teks": "Rp8.000,00",
+          "alasan": "hanya menjumlahkan harga satu buku dan satu pensil"
+        }
+      ],
+      "pembahasan": "Misalkan harga buku $x$ dan pensil $y$ (ribu rupiah). $\\begin{pmatrix} 3 & 2 \\\\ 5 & 4 \\end{pmatrix}\\begin{pmatrix} x \\\\ y \\end{pmatrix} = \\begin{pmatrix} 21 \\\\ 37 \\end{pmatrix}$, $|A| = 2$, $X = \\frac{1}{2}\\begin{pmatrix} 4 & -2 \\\\ -5 & 3 \\end{pmatrix}\\begin{pmatrix} 21 \\\\ 37 \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 3 \\end{pmatrix}$. Jadi $4(5.000) + 3(3.000) = 29.000$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 50,
+        "kutipan": "Invers Matriks Berordo 3 × 3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "invers matriks 3x3 (satu elemen)",
+      "alasan_level": "determinan 3x3, satu minor, tanda kofaktor, dan transpos untuk adjoin; hanya satu elemen dihitung",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $A = \\begin{pmatrix} 1 & 2 & 1 \\\\ 0 & 3 & 1 \\\\ 2 & 1 & 4 \\end{pmatrix}$. Elemen baris pertama kolom ketiga dari $A^{-1}$ adalah ....",
+      "jawaban_benar": "$-\\frac{1}{9}$",
+      "alasan_benar": "$|A| = 9$; elemen $(1,3)$ dari $Adjoin(A)$ adalah kofaktor $k_{31} = (-1)^{4}\\begin{vmatrix} 2 & 1 \\\\ 3 & 1 \\end{vmatrix} = -1$, sehingga $-\\frac{1}{9}$",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "lupa mengalikan dengan $\\frac{1}{|A|}$"
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "salah tanda kofaktor"
+        },
+        {
+          "teks": "$-\\frac{2}{3}$",
+          "alasan": "memakai kofaktor $k_{13} = -6$ (adjoin tidak ditranspos)"
+        }
+      ],
+      "pembahasan": "Dengan Sarrus $|A| = 9$. $Adjoin(A)$ adalah transpos matriks kofaktor, sehingga elemen $(1,3)$ adjoin $= k_{31} = (-1)^{3+1}M_{31} = \\begin{vmatrix} 2 & 1 \\\\ 3 & 1 \\end{vmatrix} = -1$. Jadi elemen $(1,3)$ dari $A^{-1}$ adalah $-\\frac{1}{9}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Himpunan penyelesaian sistem persamaan linear tiga variabel (SPLTV) adalah himpunan yang memuat tripel berurutan"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan Cramer SPL tiga variabel",
+      "alasan_level": "menghitung $D$ dan $D_z$ dengan Metode Sarrus lalu $z = D_z/D$",
+      "stimulus": null,
+      "pertanyaan": "Dengan determinan, nilai $z$ dari sistem $\\begin{cases} 2x + y + z = 6 \\\\ x - y + 3z = 12 \\\\ 3x + 2y - z = 1 \\end{cases}$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$D = 5$, $D_z = 15$, sehingga $z = \\frac{D_z}{D} = 3$",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "memakai $D_z$ tanpa membaginya dengan $D$"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "mengambil nilai $x$ (kolom yang diganti tertukar)"
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "mengambil nilai $y$ (kolom yang diganti tertukar)"
+        }
+      ],
+      "pembahasan": "$D = \\begin{vmatrix} 2 & 1 & 1 \\\\ 1 & -1 & 3 \\\\ 3 & 2 & -1 \\end{vmatrix} = 5$. $D_z = \\begin{vmatrix} 2 & 1 & 6 \\\\ 1 & -1 & 12 \\\\ 3 & 2 & 1 \\end{vmatrix} = 15$. Jadi $z = \\frac{15}{5} = 3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 45,
+        "kutipan": "Minor dan Kofaktor Matriks"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "minor dan kofaktor berparameter",
+      "alasan_level": "menentukan baris dan kolom yang dihapus untuk $M_{23}$ (parameter $x$ ikut terhapus di satu tempat), tanda $(-1)^{2+3}$, lalu persamaan linear",
+      "stimulus": null,
+      "pertanyaan": "Pada matriks $A = \\begin{pmatrix} 2 & x & 1 \\\\ 4 & 3 & x \\\\ 1 & 5 & 2 \\end{pmatrix}$, kofaktor $k_{23} = -4$. Nilai $x$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$M_{23} = \\begin{vmatrix} 2 & x \\\\ 1 & 5 \\end{vmatrix} = 10 - x$, $k_{23} = -(10 - x) = -4$ sehingga $x = 6$",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "lupa faktor $(-1)^{2+3}$: $10 - x = -4$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "memakai minor $M_{32}$ (baris ke-3, kolom ke-2 dihapus)"
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "minor ditulis $10 + x$ sehingga $-(10 + x) = -4$"
+        }
+      ],
+      "pembahasan": "Hapus baris ke-2 dan kolom ke-3: $M_{23} = 2 \\cdot 5 - x \\cdot 1 = 10 - x$. $k_{23} = (-1)^{2+3}M_{23} = x - 10 = -4$, sehingga $x = 6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas11_tl-b01-e-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 48,
+        "kutipan": "Selidiki apakah pernyataan berikut berlaku untuk semua matriks."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sifat determinan gabungan",
+      "alasan_level": "menggabungkan $|AB| = |A||B|$ dan $|kA| = k^n|A|$ pada ordo $3 \\times 3$",
+      "stimulus": null,
+      "pertanyaan": "Matriks $A$ dan $B$ berordo $3 \\times 3$ dengan $|A| = 2$ dan $|B| = -3$. Nilai $|2AB|$ adalah ....",
+      "jawaban_benar": "$-48$",
+      "alasan_benar": "$|2AB| = 2^3|AB| = 8 \\cdot (2)(-3) = -48$",
+      "distraktor": [
+        {
+          "teks": "$-12$",
+          "alasan": "memakai $k|AB|$, lupa memangkatkan $k$ dengan ordo"
+        },
+        {
+          "teks": "$-24$",
+          "alasan": "memangkatkan $k$ dengan 2, bukan ordo 3"
+        },
+        {
+          "teks": "$48$",
+          "alasan": "salah tanda hasil kali $|A||B|$"
+        }
+      ],
+      "pembahasan": "$|AB| = |A||B| = 2 \\cdot (-3) = -6$. Karena $2AB$ berordo $3 \\times 3$, $|2AB| = 2^3 \\cdot (-6) = -48$.",
+      "catatan": null
+    }
+  ]
+}

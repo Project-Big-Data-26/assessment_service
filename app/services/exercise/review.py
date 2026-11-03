@@ -34,6 +34,11 @@ def _blok(i: int, row: dict, m: dict) -> str:
             f"{' (' + m['variasi_cara'] + ')' if m.get('variasi_cara') else ''} | {m['cognitive_c']} | "
             f"{m['jumlah_langkah']} langkah | jenis: {m.get('jenis_soal') or '-'}")
     out = [judul, f"*{info}*" + (f"  **[{'; '.join(tanda)}]**" if tanda else ""), "", row["soal_text"], ""]
+    for asset in row.get("image_url") or []:
+        target = "../" + asset if asset.startswith("assets/") else asset
+        out.extend([f"![Gambar soal](<{target}>)", ""])
+    if m.get("validation_status") == "validation_pending":
+        out.extend(["> Kandidat generation; belum divalidasi AI.", ""])
     for o in row["options"]:
         benar = o["option_id"] == row["jawaban"]
         out.append(f"- {'**' if benar else ''}{o['option_id']}. {o['text']}{'** ✅' if benar else ''}  \n  <sub>{o['alasan']}</sub>")

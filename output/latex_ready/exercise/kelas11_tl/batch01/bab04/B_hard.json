@@ -1,0 +1,507 @@
+{
+  "book": "kelas11_tl",
+  "bab_no": 4,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "contoh penyangkal klaim",
+      "alasan_level": "mengevaluasi klaim pembatalan u.v = u.w dan memeriksa tiga syarat contoh penyangkal sekaligus",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim: \"Jika $\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{u} \\cdot \\mathbf{w}$ dan $\\mathbf{u}$ bukan vektor nol, maka $\\mathbf{v} = \\mathbf{w}$.\" Contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$\\mathbf{u} = \\langle 1, 2\\rangle$, $\\mathbf{v} = \\langle 4, 1\\rangle$, $\\mathbf{w} = \\langle 2, 2\\rangle$",
+      "alasan_benar": "u.v = 4+2 = 6 dan u.w = 2+4 = 6 (sama), u bukan vektor nol, tetapi v tidak sama dengan w",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{u} = \\langle 1, 2\\rangle$, $\\mathbf{v} = \\langle 3, 1\\rangle$, $\\mathbf{w} = \\langle 2, 2\\rangle$",
+          "alasan": "u.v = 5 dan u.w = 6 tidak sama, sehingga syarat klaim tidak terpenuhi"
+        },
+        {
+          "teks": "$\\mathbf{u} = \\langle 1, 2\\rangle$, $\\mathbf{v} = \\langle 4, 1\\rangle$, $\\mathbf{w} = \\langle 4, 1\\rangle$",
+          "alasan": "v = w sehingga bukan penyangkal klaim"
+        },
+        {
+          "teks": "$\\mathbf{u} = \\langle 0, 0\\rangle$, $\\mathbf{v} = \\langle 4, 1\\rangle$, $\\mathbf{w} = \\langle 2, 2\\rangle$",
+          "alasan": "u adalah vektor nol, melanggar syarat klaim"
+        }
+      ],
+      "pembahasan": "Penyangkal harus memenuhi syarat klaim (u.v = u.w, u bukan nol) tetapi kesimpulan salah (v tidak sama dengan w). Hanya pilihan pertama: $6 = 6$ dengan $v \\neq w$. Operasi titik tidak dapat 'dibagi' $u$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 194,
+        "kutipan": "sifat distributif: u ∙ ( v + w) = u ∙ v + u ∙ w"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim dua vektor ortogonal ke vektor yang sama",
+      "alasan_level": "menalar bahwa di bidang hanya ada satu arah tegak lurus u, lalu menyingkirkan tiga kesimpulan keliru dengan contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Pada bidang, $\\mathbf{u}$ adalah vektor tak nol, sedangkan $\\mathbf{v}$ dan $\\mathbf{w}$ juga vektor tak nol dengan $\\mathbf{u} \\cdot \\mathbf{v} = 0$ dan $\\mathbf{u} \\cdot \\mathbf{w} = 0$. Kesimpulan yang pasti benar adalah ....",
+      "jawaban_benar": "$\\mathbf{v}$ dan $\\mathbf{w}$ sejajar",
+      "alasan_benar": "v dan w sama-sama tegak lurus pada u; di bidang hanya ada satu garis yang tegak lurus u, sehingga v dan w segaris",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{v} = \\mathbf{w}$",
+          "alasan": "panjang dan arah keduanya belum tentu sama; mis. $\\langle 1, 2\\rangle$ dan $\\langle 2, 4\\rangle$ terhadap $\\langle 2, -1\\rangle$"
+        },
+        {
+          "teks": "$\\mathbf{v} \\cdot \\mathbf{w} = 0$",
+          "alasan": "mengira ortogonal berantai; untuk $v = w$ diperoleh $v.w = |v|^2 > 0$"
+        },
+        {
+          "teks": "$\\mathbf{v} + \\mathbf{w} = \\mathbf{0}$ (vektor nol)",
+          "alasan": "mengira kedua vektor berlawanan; $v = w$ memenuhi syarat tetapi jumlahnya bukan nol"
+        }
+      ],
+      "pembahasan": "Untuk $u \\ne 0$, himpunan vektor $p$ dengan $u \\cdot p = 0$ adalah satu garis lewat titik asal. Maka $v$ dan $w$ pada garis yang sama, yakni sejajar. Pilihan lain gagal untuk $v = w \\ne 0$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 199,
+        "kutipan": "Vektor-vektor u dan v ortogonal jika u ∙ v = 0."
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter sudut tumpul dan kasus berlawanan arah",
+      "alasan_level": "tanda hasil kali titik saja tidak cukup: harus menyisihkan nilai parameter yang membuat sudut tepat 180 derajat",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{u} = \\langle k, 2\\rangle$ dan $\\mathbf{v} = \\langle 2, k\\rangle$ dengan $k$ bilangan real. Sudut di antara $\\mathbf{u}$ dan $\\mathbf{v}$ merupakan sudut tumpul (lebih dari $90^\\circ$ dan kurang dari $180^\\circ$) tepat untuk ....",
+      "jawaban_benar": "$k < 0$ dan $k \\neq -2$",
+      "alasan_benar": "u.v = 4k < 0 memberi k < 0; untuk k = -2, u = <-2,2> dan v = <2,-2> berlawanan arah sehingga sudutnya 180 derajat (bukan tumpul)",
+      "distraktor": [
+        {
+          "teks": "$k < 0$",
+          "alasan": "lupa bahwa k = -2 menghasilkan sudut lurus 180 derajat"
+        },
+        {
+          "teks": "$k < 0$ dan $k \\neq 2$",
+          "alasan": "mengecualikan nilai yang salah (k = 2 saja sudah tidak termasuk k < 0)"
+        },
+        {
+          "teks": "$k > 0$ dan $k \\neq 2$",
+          "alasan": "tanda hasil kali titik terbalik; k > 0 memberi sudut lancip atau 0 derajat"
+        }
+      ],
+      "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=4k<0 \\Rightarrow k<0$. Sudut 180 derajat bila $\\mathbf{u}=c\\mathbf{v}$ dengan $c<0$: $k=2c$, $2=ck$ sehingga $k^2=4$, $k=-2$. Jadi $k<0$, $k\\ne-2$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 198,
+        "kutipan": "adalah sudut tumpul jika dan hanya jika u ∙ v < 0"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "syarat parameter sudut lancip (ketaksamaan kuadrat)",
+      "alasan_level": "mengubah syarat sudut lancip menjadi ketaksamaan kuadrat, menyelesaikannya, dan memeriksa batas k = 0 dan k = 1",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{u} = \\langle k, 3\\rangle$ dan $\\mathbf{v} = \\langle k-4, k\\rangle$ dengan $k$ bilangan real. Sudut di antara kedua vektor tersebut merupakan sudut lancip tepat untuk ....",
+      "jawaban_benar": "$k < 0$ atau $k > 1$",
+      "alasan_benar": "u.v = k(k-4) + 3k = k^2 - k > 0 sehingga k < 0 atau k > 1; k = 0 dan k = 1 memberi u.v = 0 (siku-siku)",
+      "distraktor": [
+        {
+          "teks": "$0 < k < 1$",
+          "alasan": "daerah ketaksamaan terbalik, padahal itu daerah u.v < 0 (tumpul)"
+        },
+        {
+          "teks": "$k > 1$",
+          "alasan": "hanya mengambil satu daerah, melupakan k < 0"
+        },
+        {
+          "teks": "$k \\leq 0$ atau $k \\geq 1$",
+          "alasan": "batas ikut dimasukkan padahal u.v = 0 memberi sudut siku-siku"
+        }
+      ],
+      "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=k^2-4k+3k=k^2-k=k(k-1)>0$ untuk $k<0$ atau $k>1$. Vektor tidak pernah sejajar karena $k^2-3k+12>0$, dan keduanya tak nol.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 198,
+        "kutipan": "adalah sudut lancip jika dan hanya jika u ∙ v > 0"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan rumus sudut",
+      "alasan_level": "mengevaluasi pekerjaan siswa: mengenali penyebut yang salah dan memperbaikinya sampai sudut eksak",
+      "stimulus": null,
+      "pertanyaan": "Untuk $\\mathbf{u} = \\langle 3, 3\\rangle$ dan $\\mathbf{v} = \\langle 0, 5\\rangle$, seorang siswa menulis: $\\cos\\theta = \\dfrac{\\mathbf{u} \\cdot \\mathbf{v}}{\\|\\mathbf{u}\\| + \\|\\mathbf{v}\\|} = \\dfrac{15}{3\\sqrt{2} + 5}$. Pernyataan yang tepat mengenai pekerjaan siswa itu adalah ....",
+      "jawaban_benar": "penyebut seharusnya $\\|\\mathbf{u}\\|\\|\\mathbf{v}\\| = 15\\sqrt{2}$, sehingga $\\cos\\theta = \\frac{\\sqrt{2}}{2}$ dan $\\theta = 45^\\circ$",
+      "alasan_benar": "rumus sudut memakai hasil kali panjang, bukan jumlah: cos = 15/(3 akar2 . 5) = akar2/2, sudut 45 derajat",
+      "distraktor": [
+        {
+          "teks": "pembilang seharusnya $\\|\\mathbf{u}\\|\\|\\mathbf{v}\\|$, sehingga $\\cos\\theta = 1$ dan $\\theta = 0^\\circ$",
+          "alasan": "menukar peran pembilang dan penyebut; pembilang memang hasil kali titik 15"
+        },
+        {
+          "teks": "penyebut seharusnya $\\|\\mathbf{u}\\|\\|\\mathbf{v}\\| = 15\\sqrt{2}$, sehingga $\\cos\\theta = \\frac{\\sqrt{3}}{2}$ dan $\\theta = 30^\\circ$",
+          "alasan": "perbaikan penyebut benar tetapi hasil bagi salah hitung"
+        },
+        {
+          "teks": "penyebut seharusnya $\\|\\mathbf{u}\\|\\|\\mathbf{v}\\| = 15\\sqrt{2}$, sehingga $\\cos\\theta = \\frac{1}{2}$ dan $\\theta = 60^\\circ$",
+          "alasan": "perbaikan penyebut benar tetapi hasil bagi salah hitung"
+        }
+      ],
+      "pembahasan": "Rumus 4.4: $\\cos\\theta=\\frac{u\\cdot v}{\\|u\\|\\|v\\|}$. $u\\cdot v=15$, $\\|u\\|=3\\sqrt2$, $\\|v\\|=5$, sehingga $\\cos\\theta=\\frac{15}{15\\sqrt2}=\\frac{\\sqrt2}{2}$ dan $\\theta=45^\\circ$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 197,
+        "kutipan": "Jika θ adalah besar sudut di antara vektor u dan vektor v"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "temukan kesalahan langkah proyeksi vektor",
+      "alasan_level": "memeriksa tiga langkah pekerjaan siswa, menemukan langkah yang keliru, dan menentukan hasil yang benar",
+      "stimulus": null,
+      "pertanyaan": "Siswa menghitung proyeksi vektor $\\mathbf{v} = \\langle 5, -5\\rangle$ ke $\\mathbf{u} = \\langle 3, 4\\rangle$ dengan langkah: (1) $\\mathbf{u} \\cdot \\mathbf{v} = -5$; (2) $\\|\\mathbf{u}\\| = 5$; (3) $\\text{proy}_{\\mathbf{u}}\\mathbf{v} = \\dfrac{\\mathbf{u} \\cdot \\mathbf{v}}{\\|\\mathbf{u}\\|}\\mathbf{u} = \\dfrac{-5}{5}\\langle 3, 4\\rangle = \\langle -3, -4\\rangle$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "langkah (3) salah; pembaginya seharusnya $\\|\\mathbf{u}\\|^2 = 25$, sehingga hasil yang benar $\\langle -\\frac{3}{5}, -\\frac{4}{5}\\rangle$",
+      "alasan_benar": "langkah (1) dan (2) benar; proyeksi vektor = (u.v / |u|^2) u = (-5/25)<3,4> = <-3/5,-4/5>",
+      "distraktor": [
+        {
+          "teks": "langkah (1) salah karena $\\mathbf{u} \\cdot \\mathbf{v} = 5$, sehingga hasil yang benar $\\langle 3, 4\\rangle$",
+          "alasan": "u.v = 15 - 20 = -5 sudah benar; menyimpulkan tanda positif tanpa menghitung"
+        },
+        {
+          "teks": "langkah (3) salah; pembaginya seharusnya $\\|\\mathbf{u}\\|^2 = 25$, sehingga hasil yang benar $\\langle \\frac{3}{5}, \\frac{4}{5}\\rangle$",
+          "alasan": "letak kesalahan benar tetapi tanda negatif u.v hilang pada hasil"
+        },
+        {
+          "teks": "langkah (3) salah; proyeksi vektor seharusnya hanya $\\frac{-5}{5} = -1$ tanpa dikalikan vektor",
+          "alasan": "mencampur proyeksi skalar dengan proyeksi vektor; proyeksi vektor tetap berupa vektor"
+        }
+      ],
+      "pembahasan": "Proyeksi skalar $=\\frac{u\\cdot v}{\\|u\\|}=-1$. Proyeksi vektor = proyeksi skalar kali vektor satuan $\\frac{u}{\\|u\\|}$, yaitu $\\frac{u\\cdot v}{\\|u\\|^2}u=-\\frac{1}{5}\\langle 3,4\\rangle$. Siswa mengalikan $u$ (bukan vektor satuan) sehingga panjang hasil salah.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 202,
+        "kutipan": "Proyeksi skalar vektor v ke vektor u dinotasikan dengan komp"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "batas hasil kali titik dari rumus kosinus",
+      "alasan_level": "mengevaluasi kemungkinan data memakai batas -1 <= cos <= 1 pada u.v = |u||v| cos(theta)",
+      "stimulus": null,
+      "pertanyaan": "Dua vektor $\\mathbf{u}$ dan $\\mathbf{v}$ pada bidang memiliki $\\|\\mathbf{u}\\| = 3$ dan $\\|\\mathbf{v}\\| = 4$. Nilai hasil kali titik yang **tidak mungkin** terjadi adalah ....",
+      "jawaban_benar": "$\\mathbf{u} \\cdot \\mathbf{v} = 13$",
+      "alasan_benar": "u.v = 12 cos(theta) hanya bernilai di antara -12 dan 12, sedangkan 13 > 12",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{u} \\cdot \\mathbf{v} = 12$",
+          "alasan": "mungkin: sudut 0 derajat (searah) memberi 12"
+        },
+        {
+          "teks": "$\\mathbf{u} \\cdot \\mathbf{v} = -12$",
+          "alasan": "mungkin: sudut 180 derajat (berlawanan arah) memberi -12"
+        },
+        {
+          "teks": "$\\mathbf{u} \\cdot \\mathbf{v} = 5$",
+          "alasan": "mungkin: cos(theta) = 5/12 berada di dalam [-1, 1]"
+        }
+      ],
+      "pembahasan": "$\\mathbf{u}\\cdot\\mathbf{v}=12\\cos\\theta$ dan $-1\\le\\cos\\theta\\le1$, jadi nilainya harus pada $[-12, 12]$. Nilai 13 di luar rentang.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 196,
+        "kutipan": "Jika θ adalah besar sudut di antara vektor-vektor tak nol u dan v"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "batas panjang jumlah dua vektor",
+      "alasan_level": "mengevaluasi data yang mustahil lewat |u+v|^2 = |u|^2 + |v|^2 + 2|u||v|cos(theta) dengan batas cos",
+      "stimulus": null,
+      "pertanyaan": "Vektor $\\mathbf{u}$ dan $\\mathbf{v}$ memiliki $\\|\\mathbf{u}\\| = 5$ dan $\\|\\mathbf{v}\\| = 12$. Nilai berikut yang **tidak mungkin** untuk $\\|\\mathbf{u} + \\mathbf{v}\\|$ adalah ....",
+      "jawaban_benar": "$\\|\\mathbf{u} + \\mathbf{v}\\| = 6$",
+      "alasan_benar": "|u+v|^2 = 169 + 120 cos(theta) berada di antara 49 dan 289, jadi |u+v| di antara 7 dan 17; 6 di luar rentang",
+      "distraktor": [
+        {
+          "teks": "$\\|\\mathbf{u} + \\mathbf{v}\\| = 7$",
+          "alasan": "mungkin: sudut 180 derajat (berlawanan arah) memberi 12 - 5 = 7"
+        },
+        {
+          "teks": "$\\|\\mathbf{u} + \\mathbf{v}\\| = 13$",
+          "alasan": "mungkin: sudut 90 derajat memberi akar(25+144) = 13"
+        },
+        {
+          "teks": "$\\|\\mathbf{u} + \\mathbf{v}\\| = 17$",
+          "alasan": "mungkin: sudut 0 derajat (searah) memberi 5 + 12 = 17"
+        }
+      ],
+      "pembahasan": "$\\|u+v\\|^2=\\|u\\|^2+\\|v\\|^2+2u\\cdot v=169+120\\cos\\theta\\in[49,289]$, sehingga $\\|u+v\\|\\in[7,17]$. Nilai 6 tidak mungkin.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 196,
+        "kutipan": "Jika θ adalah besar sudut di antara vektor-vektor tak nol u dan v"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi kesimpulan dari syarat panjang",
+      "alasan_level": "menjabarkan |u+v|^2 dan |u-v|^2 dengan sifat 4.3, lalu menolak kesimpulan yang tampak masuk akal tetapi tidak pasti",
+      "stimulus": null,
+      "pertanyaan": "Vektor tak nol $\\mathbf{u}$ dan $\\mathbf{v}$ pada bidang memenuhi $\\|\\mathbf{u} + \\mathbf{v}\\| = \\|\\mathbf{u} - \\mathbf{v}\\|$. Kesimpulan yang pasti benar adalah ....",
+      "jawaban_benar": "$\\mathbf{u} \\cdot \\mathbf{v} = 0$",
+      "alasan_benar": "kuadrat kedua ruas: |u|^2 + 2u.v + |v|^2 = |u|^2 - 2u.v + |v|^2, sehingga 4u.v = 0",
+      "distraktor": [
+        {
+          "teks": "$\\|\\mathbf{u}\\| = \\|\\mathbf{v}\\|$",
+          "alasan": "tidak pasti; $\\langle 1, 0\\rangle$ dan $\\langle 0, 2\\rangle$ memenuhi syarat tetapi panjangnya berbeda"
+        },
+        {
+          "teks": "$\\mathbf{u}$ dan $\\mathbf{v}$ searah",
+          "alasan": "justru bila searah |u+v| lebih besar dari |u-v| (kecuali salah satu nol)"
+        },
+        {
+          "teks": "$\\mathbf{u} = \\mathbf{v}$",
+          "alasan": "u = v memberi |u-v| = 0 sehingga syarat tidak terpenuhi untuk u tak nol"
+        }
+      ],
+      "pembahasan": "Dari $\\|u+v\\|^2=\\|u-v\\|^2$ dan sifat $v\\cdot v=\\|v\\|^2$ serta distributif, diperoleh $4u\\cdot v=0$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 194,
+        "kutipan": "sifat distributif: u ∙ ( v + w) = u ∙ v + u ∙ w"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menyimpulkan hubungan arah dari data panjang",
+      "alasan_level": "dari tiga panjang harus disimpulkan kasus ekstrem cos = -1 dan hubungan skalar kedua vektor, bukan sekadar menghitung sudut",
+      "stimulus": null,
+      "pertanyaan": "Vektor $\\mathbf{u}$ dan $\\mathbf{v}$ memenuhi $\\|\\mathbf{u}\\| = 6$, $\\|\\mathbf{v}\\| = 8$, dan $\\|\\mathbf{u} + \\mathbf{v}\\| = 2$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$\\mathbf{v}$ berlawanan arah dengan $\\mathbf{u}$ dan $\\mathbf{v} = -\\frac{4}{3}\\mathbf{u}$",
+      "alasan_benar": "u.v = (4 - 36 - 64)/2 = -48 = -|u||v| sehingga cos = -1: berlawanan arah, v = -(8/6)u = -(4/3)u",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{u}$ dan $\\mathbf{v}$ saling tegak lurus",
+          "alasan": "tegak lurus berarti u.v = 0 dan |u+v| = 10"
+        },
+        {
+          "teks": "$\\mathbf{v}$ searah dengan $\\mathbf{u}$ dan $\\mathbf{v} = \\frac{4}{3}\\mathbf{u}$",
+          "alasan": "searah memberi |u+v| = 14, bukan 2"
+        },
+        {
+          "teks": "$\\mathbf{v}$ berlawanan arah dengan $\\mathbf{u}$ dan $\\mathbf{v} = -\\frac{3}{4}\\mathbf{u}$",
+          "alasan": "arah benar tetapi perbandingan panjang terbalik (|v| lebih besar dari |u|)"
+        }
+      ],
+      "pembahasan": "$4=\\|u+v\\|^2=36+64+2u\\cdot v\\Rightarrow u\\cdot v=-48=-\\|u\\|\\|v\\|$, jadi $\\cos\\theta=-1$ ($\\theta=180^\\circ$). Karena $\\|v\\|=\\frac{4}{3}\\|u\\|$ dan arahnya berlawanan, $v=-\\frac{4}{3}u$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 196,
+        "kutipan": "Jika θ adalah besar sudut di antara vektor-vektor tak nol u dan v"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim sifat asosiatif",
+      "alasan_level": "mengevaluasi klaim 'asosiatif' dengan menyadari u.v skalar, lalu membuktikan ketidaksamaan lewat contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim bahwa $(\\mathbf{u} \\cdot \\mathbf{v})\\mathbf{w} = \\mathbf{u}(\\mathbf{v} \\cdot \\mathbf{w})$ selalu berlaku untuk semua vektor $\\mathbf{u}$, $\\mathbf{v}$, $\\mathbf{w}$ pada bidang. Pernyataan yang tepat adalah ....",
+      "jawaban_benar": "klaim tidak selalu benar; contohnya $\\mathbf{u} = \\langle 1, 0\\rangle$, $\\mathbf{v} = \\langle 1, 1\\rangle$, $\\mathbf{w} = \\langle 0, 1\\rangle$ memberi ruas kiri $\\langle 0, 1\\rangle$ dan ruas kanan $\\langle 1, 0\\rangle$",
+      "alasan_benar": "ruas kiri = 1.<0,1> = <0,1>, ruas kanan = <1,0> . 1 = <1,0>; keduanya tidak sama",
+      "distraktor": [
+        {
+          "teks": "klaim selalu benar karena hasil kali titik bersifat asosiatif",
+          "alasan": "hasil kali titik tidak asosiatif; u.v adalah skalar sehingga (u.v).w tidak bermakna sebagai titik antara dua vektor"
+        },
+        {
+          "teks": "klaim tidak bermakna karena $\\mathbf{u} \\cdot \\mathbf{v}$ bukan vektor sehingga kedua ruas tidak dapat dibandingkan",
+          "alasan": "kedua ruas adalah perkalian skalar dengan vektor sehingga keduanya vektor dan dapat dibandingkan"
+        },
+        {
+          "teks": "klaim benar apabila $\\mathbf{u} \\cdot \\mathbf{v} = \\mathbf{v} \\cdot \\mathbf{w}$; contoh $\\langle 1, 0\\rangle$, $\\langle 1, 1\\rangle$, $\\langle 0, 1\\rangle$ memenuhinya",
+          "alasan": "contoh itu justru memenuhi u.v = v.w = 1 tetapi kedua ruas tidak sama"
+        }
+      ],
+      "pembahasan": "$u\\cdot v$ dan $v\\cdot w$ adalah skalar, sehingga $(u\\cdot v)w$ sejajar $w$ dan $u(v\\cdot w)$ sejajar $u$. Pada contoh, $u$ dan $w$ tidak sejajar sehingga keduanya berbeda.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 194,
+        "kutipan": "sifat komutatif: u ∙ v = v ∙ u"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim kesamaan dua proyeksi skalar",
+      "alasan_level": "mengubah komp_u v = komp_v u menjadi u.v(1/|u| - 1/|v|) = 0 lalu menolak tiga klaim dengan contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Untuk vektor tak nol $\\mathbf{v}$ dan $\\mathbf{u}$ pada bidang, proyeksi skalar $\\mathbf{u}$ ke $\\mathbf{v}$ dan proyeksi skalar $\\mathbf{v}$ ke $\\mathbf{u}$ bernilai sama tepat ketika ....",
+      "jawaban_benar": "$\\|\\mathbf{u}\\| = \\|\\mathbf{v}\\|$ atau $\\mathbf{u} \\cdot \\mathbf{v} = 0$",
+      "alasan_benar": "komp_u v = u.v/|u| dan komp_v u = u.v/|v|; sama bila u.v = 0 atau |u| = |v|",
+      "distraktor": [
+        {
+          "teks": "selalu, karena hasil kali titik bersifat komutatif",
+          "alasan": "pembaginya berbeda; u=<1,0>, v=<2,2> memberi 2 dan akar2/2 (tidak sama)"
+        },
+        {
+          "teks": "$\\mathbf{u}$ dan $\\mathbf{v}$ sejajar",
+          "alasan": "u=<1,0> dan v=<0,1> tidak sejajar tetapi keduanya bernilai 0"
+        },
+        {
+          "teks": "$\\mathbf{u} \\cdot \\mathbf{v} = 0$ saja",
+          "alasan": "u=<3,4> dan v=<4,3> berpanjang sama, u.v = 24, dan kedua proyeksi skalar sama dengan 24/5"
+        }
+      ],
+      "pembahasan": "$\\text{komp}_u v=\\frac{u\\cdot v}{\\|u\\|}$ dan $\\text{komp}_v u=\\frac{u\\cdot v}{\\|v\\|}$. Persamaan keduanya $\\iff u\\cdot v\\left(\\frac1{\\|u\\|}-\\frac1{\\|v\\|}\\right)=0$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 202,
+        "kutipan": "Proyeksi skalar vektor v ke vektor u dinotasikan dengan komp"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim diagonal tegak lurus",
+      "alasan_level": "menurunkan (u+v).(u-v) = |u|^2 - |v|^2 dan menguji tiga syarat alternatif dengan contoh penyangkal",
+      "stimulus": null,
+      "pertanyaan": "Untuk vektor tak nol $\\mathbf{u}$ dan $\\mathbf{v}$ pada bidang, vektor $\\mathbf{u} + \\mathbf{v}$ ortogonal terhadap $\\mathbf{u} - \\mathbf{v}$ jika dan hanya jika ....",
+      "jawaban_benar": "$\\|\\mathbf{u}\\| = \\|\\mathbf{v}\\|$",
+      "alasan_benar": "(u+v).(u-v) = u.u - u.v + v.u - v.v = |u|^2 - |v|^2",
+      "distraktor": [
+        {
+          "teks": "$\\mathbf{u}$ ortogonal terhadap $\\mathbf{v}$",
+          "alasan": "u=<1,0>, v=<0,2> ortogonal tetapi (u+v).(u-v) = -3, bukan 0"
+        },
+        {
+          "teks": "$\\mathbf{u}$ dan $\\mathbf{v}$ sejajar",
+          "alasan": "u=<1,0>, v=<0,1> tidak sejajar tetapi (u+v).(u-v) = 0"
+        },
+        {
+          "teks": "$\\mathbf{u} \\cdot \\mathbf{v} = \\|\\mathbf{u}\\|^2$",
+          "alasan": "tidak ekuivalen; u=<2,0>, v=<2,2> memenuhi u.v = |u|^2 = 4 tetapi (u+v).(u-v) = -4"
+        }
+      ],
+      "pembahasan": "$(u+v)\\cdot(u-v)=u\\cdot u-v\\cdot v=\\|u\\|^2-\\|v\\|^2$ (sifat komutatif dan distributif), nol tepat bila $\\|u\\|=\\|v\\|$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 194,
+        "kutipan": "sifat distributif: u ∙ ( v + w) = u ∙ v + u ∙ w"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "syarat parameter sudut tumpul pada segitiga",
+      "alasan_level": "membentuk ketaksamaan kuadrat dari vektor CA dan CB, mencari akar tak bulat, lalu menghitung bilangan bulat di dalam intervalnya",
+      "stimulus": null,
+      "pertanyaan": "Pada bidang koordinat terdapat titik $A(0, 0)$, $B(4, 0)$, dan $C(x, 1)$ dengan $x$ bilangan bulat. Banyak nilai $x$ yang membuat sudut $ACB$ tumpul adalah ....",
+      "jawaban_benar": "3",
+      "alasan_benar": "CA = <-x,-1>, CB = <4-x,-1>; CA.CB = x^2 - 4x + 1 < 0 untuk 2 - akar3 < x < 2 + akar3 (kira-kira 0,27 < x < 3,73), bilangan bulat 1, 2, 3",
+      "distraktor": [
+        {
+          "teks": "2",
+          "alasan": "mengira batas pembuatnya x = 1 dan x = 3 tidak termasuk, atau menghitung hanya x = 1 dan 3"
+        },
+        {
+          "teks": "4",
+          "alasan": "mengira interval 0 <= x <= 4 dikurangi satu titik; akar sebenarnya 2 -/+ akar3, bukan 0 dan 4"
+        },
+        {
+          "teks": "5",
+          "alasan": "memakai batas 0 <= x <= 4 (seolah titik C pada diameter y = 0) sehingga mendapat 0,1,2,3,4"
+        }
+      ],
+      "pembahasan": "$\\overrightarrow{CA}\\cdot\\overrightarrow{CB}=(-x)(4-x)+(-1)(-1)=x^2-4x+1<0$ untuk $2-\\sqrt3<x<2+\\sqrt3\\approx(0{,}27;\\,3{,}73)$. Bilangan bulatnya 1, 2, 3.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 198,
+        "kutipan": "adalah sudut tumpul jika dan hanya jika u ∙ v < 0"
+      }
+    },
+    {
+      "id": "kelas11_tl-b04-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang vektor dengan sudut yang sama",
+      "alasan_level": "merancang w yang membentuk sudut sama dengan dua vektor: menyamakan cos sudut dan menormalkan panjang vektor yang diketahui",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $\\mathbf{u} = \\langle 1, 0\\rangle$ dan $\\mathbf{v} = \\langle 3, 4\\rangle$. Vektor $\\mathbf{w} = \\langle 1, k\\rangle$ dengan $k > 0$ membentuk sudut yang sama besar dengan $\\mathbf{u}$ dan dengan $\\mathbf{v}$. Nilai $k$ adalah ....",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "cos(w,u) = 1/|w| dan cos(w,v) = (3+4k)/(5|w|); sama bila 3 + 4k = 5, k = 1/2",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "mengira w = <1,1> sebagai garis bagi tanpa memperhitungkan |v| = 5"
+        },
+        {
+          "teks": "$\\frac{4}{3}$",
+          "alasan": "mengambil kemiringan v sebagai kemiringan w; itu membuat w searah v, bukan sudut sama"
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "menyamakan 3 + 4k dengan 5 lalu keliru menyelesaikan (4k = 6)"
+        }
+      ],
+      "pembahasan": "$\\cos\\angle(w,u)=\\frac{1}{\\|w\\|}$ dan $\\cos\\angle(w,v)=\\frac{3+4k}{5\\|w\\|}$. Sama bila $3+4k=5$, jadi $k=\\frac12$.",
+      "catatan": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 197,
+        "kutipan": "Jika θ adalah besar sudut di antara vektor u dan vektor v"
+      }
+    }
+  ],
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Hard subbab Hasil Kali Titik hanya memuat satu rumus inti (u.v = |u||v|cos theta, tanda sudut, ortogonal, proyeksi). Soal hard sungguhan (evaluasi klaim, contoh penyangkal, kesalahan langkah, syarat parameter, perancangan) habis di sekitar 15; sisanya hanya hitung langsung atau soal kembar berangka beda yang tidak dipaksa."
+}

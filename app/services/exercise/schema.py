@@ -10,6 +10,7 @@ from __future__ import annotations
 from typing import List, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+from .visual_assets import VisualSpec
 
 Level = Literal["easy", "medium", "hard"]
 Kognitif = Literal["C1", "C2", "C3", "C4", "C5", "C6"]
@@ -57,6 +58,7 @@ class Soal(_Strict):
     # deskripsi_gambar = fakta yang dibaca generator dari gambar (angka, label, bentuk); TIDAK diberikan ke solver.
     gambar: List[str] = []
     deskripsi_gambar: Optional[str] = Field(None, min_length=10)
+    visual_spec: Optional[VisualSpec] = None
     pertanyaan: str = Field(min_length=3)
     jawaban_benar: str = Field(min_length=1)
     alasan_benar: str = Field(min_length=3)
@@ -74,6 +76,8 @@ class Soal(_Strict):
             raise ValueError("soal bergambar wajib mengisi deskripsi_gambar")
         if self.deskripsi_gambar and not self.gambar:
             raise ValueError("deskripsi_gambar diisi tetapi gambar kosong")
+        if self.visual_spec and not self.gambar:
+            raise ValueError("visual_spec requires a rendered image")
         if self.tipe_generate == "variasi":
             if self.variasi_cara is None:
                 raise ValueError("variasi wajib mengisi variasi_cara ('angka' atau 'konteks')")

@@ -1,0 +1,812 @@
+{
+  "book": "kelas12_tl",
+  "bab_no": 3,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "4 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-13",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Sifat linear integral tentu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan sifat kelinearan integral tentu untuk mengalikan konstanta dan mengurangkan nilai integral dua fungsi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan $\\int_2^7 f(x)\\,dx = 11$ dan $\\int_2^7 g(x)\\,dx = 4$. Nilai dari $\\int_2^7 [6f(x) - 5g(x)]\\,dx$ adalah ....",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Berdasarkan sifat linear integral tentu, $\\int_2^7 [6f(x) - 5g(x)]\\,dx = 6\\int_2^7 f(x)\\,dx - 5\\int_2^7 g(x)\\,dx = 6(11) - 5(4) = 66 - 20 = 46$.",
+      "distraktor": [
+        {
+          "teks": "$86$",
+          "alasan": "Salah menggunakan operasi penjumlahan pada pengurang: $66 + 20 = 86$."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Tertukar koefisien pengali fungsi: $5(11) - 6(4) = 55 - 24 = 31$ lalu salah hitung, atau $(11 - 4) \\times (6 - 5) \\times 5$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Hanya mengurangkan nilai integral tanpa mengalikan dengan koefisien skalar: $11 - 4 = 7$."
+        }
+      ],
+      "pembahasan": "Gunakan sifat linear integral tentu:\n$$\\int_a^b [k_1 f(x) + k_2 g(x)]\\,dx = k_1 \\int_a^b f(x)\\,dx + k_2 \\int_a^b g(x)\\,dx$$\n\nSubstitusikan nilai yang diketahui:\n$$\\int_2^7 [6f(x) - 5g(x)]\\,dx = 6\\int_2^7 f(x)\\,dx - 5\\int_2^7 g(x)\\,dx$$\n$$= 6(11) - 5(4) = 66 - 20 = 46$$\n\nJadi, nilai integral tersebut adalah $46$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 196,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Jumlahan di atas dinamakan Jumlahan Riemann ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Jumlahan Riemann",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan lebar partisi, pencarian nilai fungsi pada titik-titik sampel ujung kanan, dan penjumlahan hasil kali luas partisi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 2x + 1$ pada interval $[1, 5]$. Jika interval tersebut dipartisi menjadi $4$ subinterval sama panjang dan titik wakil yang digunakan adalah titik ujung kanan dari tiap subinterval, nilai Jumlahan Riemann tersebut adalah ....",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Lebar subinterval $\\Delta x = \\frac{5 - 1}{4} = 1$. Titik ujung kanan: $x_1 = 2, x_2 = 3, x_3 = 4, x_4 = 5$. Nilai fungsi: $f(2)=5, f(3)=7, f(4)=9, f(5)=11$. Jumlahan Riemann $= (5 + 7 + 9 + 11) \\times 1 = 32$.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Keliru menggunakan titik ujung kiri ($x = 1, 2, 3, 4$): $(3 + 5 + 7 + 9) \\times 1 = 24$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Keliru menggunakan titik tengah subinterval ($x = 1,5; 2,5; 3,5; 4,5$): $(4 + 6 + 8 + 10) \\times 1 = 28$."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Salah menghitung nilai fungsi atau salah menjumlahkan suku-suku deret."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan lebar tiap subinterval $(\\Delta x)$:\n$$\\Delta x = \\frac{b - a}{n} = \\frac{5 - 1}{4} = 1$$\n\nLangkah 2: Tentukan subinterval dan titik wakil ujung kanannya:\n- Subinterval 1: $[1, 2] \\rightarrow x_1 = 2$\n- Subinterval 2: $[2, 3] \\rightarrow x_2 = 3$\n- Subinterval 3: $[3, 4] \\rightarrow x_3 = 4$\n- Subinterval 4: $[4, 5] \\rightarrow x_4 = 5$\n\nLangkah 3: Hitung nilai fungsi pada titik wakil:\n$$f(2) = 2(2) + 1 = 5$$\n$$f(3) = 2(3) + 1 = 7$$\n$$f(4) = 2(4) + 1 = 9$$\n$$f(5) = 2(5) + 1 = 11$$\n\nLangkah 4: Hitung Jumlahan Riemann:\n$$R_4 = \\sum_{i=1}^4 f(x_i)\\,\\Delta x = (5 + 7 + 9 + 11) \\times 1 = 32$$\n\nJadi, nilai Jumlahan Riemann tersebut adalah $32$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 212,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Mari, mengingat kembali pada submateri Integral Tak Tentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Integral substitusi tentu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan teknik integrasi substitusi aljabar serta transformasi batas integrasi sebelum menghitung nilai akhir.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai dari $\\int_0^1 6x(x^2 + 1)^2\\,dx$ adalah ....",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Misal $u = x^2 + 1$, maka $du = 2x\\,dx$ sehingga $6x\\,dx = 3\\,du$. Batas integrasi berubah: saat $x=0 \\Rightarrow u=1$, saat $x=1 \\Rightarrow u=2$. Maka $\\int_1^2 3u^2\\,du = [u^3]_1^2 = 2^3 - 1^3 = 8 - 1 = 7$.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Hanya mengevaluasi batas atas $u = 2$ yaitu $2^3 = 8$ tanpa mengurangkan batas bawah."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Lupa mengalikan faktor penyesuaian $\\frac{1}{2}$ pada turunan $du$, sehingga mengintegralkan sebagai $6u^2$ menjadi $[2u^3]_1^2 = 16 - 2 = 14$ atau salah hitung substitusi."
+        },
+        {
+          "teks": "$\\frac{7}{3}$",
+          "alasan": "Lupa mengalikan koefisien 3 saat mengubah $6x\\,dx$ menjadi $3\\,du$, sehingga menghitung $[\\frac{1}{3}u^3]_1^2 = \\frac{7}{3}$."
+        }
+      ],
+      "pembahasan": "Gunakan metode substitusi:\nMisalkan $u = x^2 + 1$, maka turunan diferensialnya adalah:\n$$du = 2x\\,dx \\implies 3\\,du = 6x\\,dx$$\n\nUbah batas integral:\n- Batas bawah: untuk $x = 0 \\implies u = 0^2 + 1 = 1$\n- Batas atas: untuk $x = 1 \\implies u = 1^2 + 1 = 2$\n\nBentuk integral menjadi:\n$$\\int_0^1 6x(x^2 + 1)^2\\,dx = \\int_1^2 3u^2\\,du$$\n$$= [u^3]_1^2 = 2^3 - 1^3 = 8 - 1 = 7$$\n\nJadi, nilai integral tentu tersebut adalah $7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 213,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "luas kurva yang dibatasi kurva y = f ^ x h , sumbu- x , garis x = a , dan garis x = b"
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Luas daerah bidang datar",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis titik potong kurva dengan sumbu-x sebagai batas pengintegralan, kemudian merumuskan dan menghitung luas daerah bidang datar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas bidang datar yang dibatasi oleh kurva $y = 6x - x^2$ dan sumbu-$x$ adalah .... satuan luas.",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Titik potong kurva dengan sumbu-$x$ adalah $6x - x^2 = 0 \\Rightarrow x = 0$ dan $x = 6$. Karena kurva di atas sumbu-$x$ pada $[0, 6]$, maka $L = \\int_0^6 (6x - x^2)\\,dx = [3x^2 - \\frac{1}{3}x^3]_0^6 = 3(36) - \\frac{1}{3}(216) = 108 - 72 = 36$.",
+      "distraktor": [
+        {
+          "teks": "$72$",
+          "alasan": "Salah menentukan antiturunan dari $6x$ menjadi $6x^2$ alih-alih $3x^2$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Salah membagi pada langkah akhir atau salah menghitung $108 - 72 = 36$ dibagi $2$."
+        },
+        {
+          "teks": "$54$",
+          "alasan": "Salah melakukan pengurangan pecahan atau keliru mengevaluasi batas atas."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan batas integrasi dengan mencari perpotongan kurva terhadap sumbu-$x$ ($y = 0$):\n$$6x - x^2 = 0$$\n$$x(6 - x) = 0 \\implies x = 0 \\text{ atau } x = 6$$\n\nLangkah 2: Untuk interval $0 \\le x \\le 6$, kurva $y = 6x - x^2 \\ge 0$ (berada di atas sumbu-$x$). Maka luas daerahnya adalah:\n$$L = \\int_0^6 (6x - x^2)\\,dx$$\n\nLangkah 3: Hitung integral tentu menggunakan Teorema Dasar Kalkulus II:\n$$L = \\left[ 3x^2 - \\frac{1}{3}x^3 \\right]_0^6$$\n$$L = \\left( 3(6)^2 - \\frac{1}{3}(6)^3 \\right) - 0$$\n$$L = (3 \\times 36) - \\left(\\frac{1}{3} \\times 216\\right)$$\n$$L = 108 - 72 = 36$$\n\nJadi, luas daerah bidang datar tersebut adalah $36$ satuan luas.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 218,
+        "bagian": "Latihan Soal Integral Tentu",
+        "nomor": "1",
+        "teks": "Diketahui fungsi f ( x ) = 2 + x pada interval [0, 2] . Tentukan Jumlahan Riemann dengan 4 subinterval sama panjang dan titik wakilnya menggunakan titik ujung kiri tiap subinterval.",
+        "jawaban": "6",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Jumlahan Riemann ujung kiri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan partisi, evaluasi fungsi pada ujung kiri setiap subinterval, dan perkalian dengan lebar subinterval.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3 + 2x$ pada interval $[1, 7]$. Jika interval tersebut dipartisi menjadi $3$ subinterval sama panjang dan titik wakilnya menggunakan titik ujung kiri tiap subinterval, nilai Jumlahan Riemann fungsi tersebut adalah ....",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Lebar subinterval $\\Delta x = \\frac{7-1}{3} = 2$. Ujung kiri tiap subinterval adalah $x_1 = 1, x_2 = 3, x_3 = 5$. Nilai fungsi: $f(1)=5, f(3)=9, f(5)=13$. Jumlahan Riemann $= (5 + 9 + 13) \\times 2 = 27 \\times 2 = 54$.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Siswa lupa mengalikan jumlahan nilai fungsi dengan lebar subinterval $\\Delta x = 2$."
+        },
+        {
+          "teks": "$78$",
+          "alasan": "Siswa keliru menggunakan titik ujung kanan ($x = 3, 5, 7$) sehingga diperoleh $(9 + 13 + 17) \\times 2 = 78$."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Siswa keliru menggunakan titik tengah subinterval ($x = 2, 4, 6$) sehingga diperoleh $(7 + 11 + 15) \\times 2 = 66$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan lebar tiap subinterval:\n$$\\Delta x = \\frac{b - a}{n} = \\frac{7 - 1}{3} = 2$$\n\nLangkah 2: Menentukan titik ujung kiri dan nilai fungsinya pada setiap subinterval:\n- Subinterval 1: $[1, 3] \\implies x_1 = 1$, maka $f(1) = 3 + 2(1) = 5$\n- Subinterval 2: $[3, 5] \\implies x_2 = 3$, maka $f(3) = 3 + 2(3) = 9$\n- Subinterval 3: $[5, 7] \\implies x_3 = 5$, maka $f(5) = 3 + 2(5) = 13$\n\nLangkah 3: Menghitung Jumlahan Riemann:\n$$\\sum_{i=1}^{3} f(x_i)\\,\\Delta x = (5 + 9 + 13) \\times 2 = 27 \\times 2 = 54$$\n\nJadi, nilai Jumlahan Riemann tersebut adalah $54$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-14b",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Jarak tempuh gerak partikel",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan titik balik arah kecepatan, pemecahan interval integral, dan perhitungan nilai mutlak luas perpindahan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah partikel bergerak sepanjang garis lurus dengan kecepatan pada waktu $t$ ditentukan oleh $v(t) = 2t - 4$ (dalam meter per detik). Jarak yang ditempuh partikel tersebut selama periode waktu $0 \\le t \\le 3$ adalah ....",
+      "jawaban_benar": "$5\\text{ meter}$",
+      "alasan_benar": "Kecepatan nol pada $t = 2$. Pada interval $[0, 2]$, $v(t) \\le 0$, jarak $= -\\int_0^2 (2t - 4)\\,dt = 4$. Pada $[2, 3]$, $v(t) \\ge 0$, jarak $= \\int_2^3 (2t - 4)\\,dt = 1$. Total jarak $= 4 + 1 = 5\\text{ meter}$.",
+      "distraktor": [
+        {
+          "teks": "$3\\text{ meter}$",
+          "alasan": "Siswa menghitung perpindahan net $\\int_0^3 (2t - 4)\\,dt = [t^2 - 4t]_0^3 = 9 - 12 = -3$ lalu memutlakkan menjadi $3$, bukan jarak tempuh total."
+        },
+        {
+          "teks": "$4\\text{ meter}$",
+          "alasan": "Siswa hanya menghitung jarak pada interval pertama saat partikel bergerak mundur ($0 \\le t \\le 2$)."
+        },
+        {
+          "teks": "$7\\text{ meter}$",
+          "alasan": "Siswa salah saat mengevaluasi nilai integral pada interval kedua sehingga memperoleh $4 + 3 = 7$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan kapan partikel berbalik arah ($v(t) = 0$):\n$$2t - 4 = 0 \\iff t = 2$$\nPada $0 \\le t \\le 2$, $v(t) \\le 0$.\nPada $2 \\le t \\le 3$, $v(t) \\ge 0$.\n\nLangkah 2: Menghitung jarak pada masing-masing selang waktu:\n- Untuk $0 \\le t \\le 2$:\n$$s_1 = \\int_0^2 |2t - 4|\\,dt = -\\int_0^2 (2t - 4)\\,dt = -[t^2 - 4t]_0^2 = -(4 - 8) = 4\\text{ m}$$\n- Untuk $2 \\le t \\le 3$:\n$$s_2 = \\int_2^3 (2t - 4)\\,dt = [t^2 - 4t]_2^3 = (9 - 12) - (4 - 8) = -3 - (-4) = 1\\text{ m}$$\n\nLangkah 3: Menjumlahkan kedua jarak:\n$$\\text{Total jarak} = s_1 + s_2 = 4 + 1 = 5\\text{ meter}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 206,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan fungsi f kontinu pada selang tertutup [ a , b ] dan x sebarang bilangan di dalam [ a , b ] . Jika fungsi F adalah fungsi yang didefinisikan oleh F ( x ) = # a x f ( t ) dt , maka F l ( x ) = f ( x ) ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Aplikasi Teorema Dasar Kalkulus I",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penerapan Teorema Dasar Kalkulus I untuk mencari turunan pertama, penurunan ulang untuk turunan kedua, dan substitusi nilai.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi didefinisikan oleh $F(x) = \\int_2^x (3t^2 - 4t + 1)\\,dt$. Nilai dari turunan kedua $F''(3)$ adalah ....",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Berdasarkan Teorema Dasar Kalkulus I, $F'(x) = 3x^2 - 4x + 1$. Maka $F''(x) = 6x - 4$. Untuk $x = 3$, $F''(3) = 6(3) - 4 = 14$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Siswa mengevaluasi nilai turunan pertama $F'(3) = 3(3^2) - 4(3) + 1 = 27 - 12 + 1 = 16$, bukan turunan kedua."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Siswa salah melakukan turunan kedua menjadi $F''(x) = 6x + 4$ sehingga diperoleh $6(3) + 4 = 22$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Siswa hanya mengambil koefisien $x$ dari turunan kedua tanpa mengevaluasi $6(3) - 4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menerapkan Teorema Dasar Kalkulus I:\n$$F'(x) = \\frac{d}{dx}\\left[ \\int_2^x (3t^2 - 4t + 1)\\,dt \\right] = 3x^2 - 4x + 1$$\n\nLangkah 2: Menentukan turunan kedua $F''(x)$:\n$$F''(x) = \\frac{d}{dx}(3x^2 - 4x + 1) = 6x - 4$$\n\nLangkah 3: Menghitung nilai $F''(3)$:\n$$F''(3) = 6(3) - 4 = 18 - 4 = 14$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 197,
+        "bagian": "Ayo Mencoba 3.6",
+        "nomor": "1",
+        "teks": "Diketahui suatu fungsi f(x) = x^2 pada interval [0, 3]. Tentukan Jumlahan Riemann dengan cara membuat partisi interval [0, 3] menjadi 6 subinterval sama panjang dan titik wakilnya menggunakan titik ujung kiri tiap subinterval.",
+        "jawaban": "6,875",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Jumlahan Riemann ujung kiri",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan lebar subinterval, evaluasi nilai fungsi pada titik-titik ujung kiri, dan perkalian jumlahan dengan lebar partisi.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi $f(x) = x^2$ pada interval $[1, 5]$. Nilai Jumlahan Riemann dengan membuat partisi interval $[1, 5]$ menjadi $4$ subinterval sama panjang dan titik wakilnya menggunakan titik ujung kiri tiap subinterval adalah ....",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Lebar subinterval $\\Delta x = \\frac{5 - 1}{4} = 1$. Titik-titik ujung kiri subinterval adalah $x_0 = 1, x_1 = 2, x_2 = 3, x_3 = 4$. Nilai fungsi: $f(1) = 1$, $f(2) = 4$, $f(3) = 9$, $f(4) = 16$. Jumlahan Riemann $= (1 + 4 + 9 + 16) \\times 1 = 30$.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Menggunakan titik ujung kanan subinterval ($x = 2, 3, 4, 5$) sehingga hasilnya $(4 + 9 + 16 + 25) \\times 1 = 54$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hanya menjumlahkan tiga subinterval pertama ($1 + 4 + 9 = 14$)."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Menggunakan titik tengah subinterval ($1{,}5; 2{,}5; 3{,}5; 4{,}5$) menghasilkan $2{,}25 + 6{,}25 + 12{,}25 + 20{,}25 = 41$ lalu salah hitung menjadi $42$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan lebar tiap subinterval.\n$$\\Delta x = \\frac{b - a}{n} = \\frac{5 - 1}{4} = 1$$\n\nLangkah 2: Tentukan titik wakil ujung kiri pada setiap subinterval $[x_{i-1}, x_i]$.\nSubinterval: $[1, 2], [2, 3], [3, 4], [4, 5]$.\nTitik wakil ujung kiri: $x_1^* = 1$, $x_2^* = 2$, $x_3^* = 3$, $x_4^* = 4$.\n\nLangkah 3: Hitung Jumlahan Riemann.\n$$R_4 = \\sum_{i=1}^4 f(x_i^*) \\Delta x = [f(1) + f(2) + f(3) + f(4)] \\times 1$$\n$$R_4 = (1^2 + 2^2 + 3^2 + 4^2) \\times 1 = (1 + 4 + 9 + 16) \\times 1 = 30$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Integral tentu polinomial",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pengintegralan fungsi polinomial berderajat dua kemudian substitusi batas atas dan batas bawah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 6x - x^2$ pada interval $[0, 5]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 5]$ atau $\\int_0^5 (6x - x^2)\\,dx$ adalah ....",
+      "jawaban_benar": "$\\frac{100}{3}$",
+      "alasan_benar": "Antiturunan dari $6x - x^2$ adalah $3x^2 - \\frac{1}{3}x^3$. Evaluasi pada batas $[0, 5]$ menghasilkan $[3(25) - \\frac{125}{3}] - 0 = 75 - \\frac{125}{3} = \\frac{100}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{350}{3}$",
+          "alasan": "Salah tanda operasi antiturunan menjadi $3x^2 + \\frac{1}{3}x^3$ sehingga $75 + \\frac{125}{3} = \\frac{350}{3}$."
+        },
+        {
+          "teks": "$-50$",
+          "alasan": "Lupa membagi koefisien derajat tiga dengan $3$, menghitung $3(25) - 125 = -50$."
+        },
+        {
+          "teks": "$\\frac{200}{3}$",
+          "alasan": "Salah mengintegralkan $6x$ menjadi $6x^2$ alih-alih $3x^2$ kemudian salah operasi aritmetika."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan antiturunan dari fungsi yang diintegralkan.\n$$\\int (6x - x^2)\\,dx = 3x^2 - \\frac{1}{3}x^3 + C$$\n\nLangkah 2: Terapkan Teorema Dasar Kalkulus II dengan batas $0$ sampai $5$.\n$$\\int_0^5 (6x - x^2)\\,dx = \\left[ 3x^2 - \\frac{1}{3}x^3 \\right]_0^5$$\n$$= \\left( 3(5)^2 - \\frac{1}{3}(5)^3 \\right) - \\left( 3(0)^2 - \\frac{1}{3}(0)^3 \\right)$$\n$$= \\left( 75 - \\frac{125}{3} \\right) - 0 = \\frac{225 - 125}{3} = \\frac{100}{3}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-13",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Sifat kelinieran integral tentu",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan sifat linear integral tentu untuk menguraikan kombinasi linear dua fungsi sebelum mensubstitusi nilai yang diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Misalkan $\\int_1^4 f(x)\\,dx = 12$ dan $\\int_1^4 g(x)\\,dx = 7$. Nilai dari $\\int_1^4 [3f(x) - 4g(x)]\\,dx$ adalah ....",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Berdasarkan sifat linear: $3\\int_1^4 f(x)\\,dx - 4\\int_1^4 g(x)\\,dx = 3(12) - 4(7) = 36 - 28 = 8$.",
+      "distraktor": [
+        {
+          "teks": "$64$",
+          "alasan": "Salah menggunakan tanda operasi, menjumlahkan suku-suku alih-alih mengurangkannya ($36 + 28 = 64$)."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Tertukar koefisien pengali fungsi $f(x)$ dan $g(x)$ sehingga menghitung $4(12) - 3(7) = 48 - 21 = 27$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Hanya mengurangkan nilai integral tanpa mengalikannya dengan koefisien skalar ($12 - 7 = 5$)."
+        }
+      ],
+      "pembahasan": "Langkah 1: Gunakan sifat kelinieran integral tentu.\n$$\\int_1^4 [3f(x) - 4g(x)]\\,dx = 3\\int_1^4 f(x)\\,dx - 4\\int_1^4 g(x)\\,dx$$\n\nLangkah 2: Substitusikan nilai-nilai integral yang diketahui.\n$$= 3(12) - 4(7) = 36 - 28 = 8$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 206,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan fungsi f kontinu pada selang tertutup [a, b] dan x sebarang bilangan di dalam [a, b]. Jika fungsi F adalah fungsi yang didefinisikan oleh F(x) = \\int_a^x f(t) dt, maka F'(x) = f(x)."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Gradien fungsi dari Teorema Dasar Kalkulus I",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan turunan pertama menggunakan Teorema Dasar Kalkulus I lalu mengevaluasinya pada absis tertentu untuk memperoleh gradien.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi didefinisikan oleh $F(x) = \\int_1^x (4t^3 - 6t)\\,dt$. Gradien garis singgung grafik fungsi $F(x)$ pada titik dengan absis $x = 2$ adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Berdasarkan Teorema Dasar Kalkulus I, $F'(x) = 4x^3 - 6x$. Gradien garis singgung adalah $m = F'(2) = 4(2)^3 - 6(2) = 32 - 12 = 20$.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Turunan kedua yang dihitung alih-alih turunan pertama: $F''(x) = 12x^2 - 6 \\implies F''(2) = 48 - 6 = 42$, atau salah tanda $32 + 12 = 44$ lalu salah hitung menjadi $36$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Menghitung nilai fungsi $F(2)$ alih-alih turunan $F'(2)$: $[t^4 - 3t^2]_1^2 = (16 - 12) - (1 - 3) = 4 - (-2) = 6$ lalu salah substitusi batas."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Salah menghitung pangkat pada $4(2)^3$ menjadi $4 \\times 6 = 24$ sehingga $24 - 12 = 12$, atau keliru menghitung $4(2) - 6 = 2$ lalu dikali $4$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Tentukan turunan pertama $F'(x)$ menggunakan Teorema Dasar Kalkulus I.\nKarena $F(x) = \\int_1^x (4t^3 - 6t)\\,dt$, maka:\n$$F'(x) = 4x^3 - 6x$$\n\nLangkah 2: Tentukan gradien garis singgung $m$ di absis $x = 2$.\n$$m = F'(2) = 4(2)^3 - 6(2) = 4(8) - 12 = 32 - 12 = 20$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 213,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Namun, luas adalah bilangan positif sehingga luas daerah yang dibatasi oleh y = f(x) , garis x = a , x = b , dan y = 0 berupa bilangan positif."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Luas daerah di bawah sumbu-x",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis posisi kurva terhadap sumbu-x pada interval yang diberikan, pembentukan rumus integral luas dengan tanda pembalik, serta perhitungan integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah bidang datar yang dibatasi oleh kurva $y = x^2 - 4x$, sumbu-$x$, garis $x = 1$, dan garis $x = 3$ adalah .... satuan luas.",
+      "jawaban_benar": "$\\frac{22}{3}$",
+      "alasan_benar": "Pada interval $[1, 3]$, kurva $y = x^2 - 4x \\le 0$ (berada di bawah sumbu-$x$). Maka $L = -\\int_1^3 (x^2 - 4x)\\,dx = \\int_1^3 (4x - x^2)\\,dx = [2x^2 - \\frac{1}{3}x^3]_1^3 = (18 - 9) - (2 - \\frac{1}{3}) = 9 - \\frac{5}{3} = \\frac{22}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16}{3}$",
+          "alasan": "Mengintegralkan dengan batas yang salah dari $x = 0$ sampai $x = 2$ menghasilkan $\\frac{16}{3}$."
+        },
+        {
+          "teks": "$\\frac{32}{3}$",
+          "alasan": "Salah tanda saat mengurangkan nilai batas bawah: $9 + \\frac{5}{3} = \\frac{32}{3}$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Lupa mengurangkan suku pecahan pada batas bawah, menghitung $9 - 2 = 7$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Analisis kedudukan kurva terhadap sumbu-$x$.\nUntuk fungsi $y = x(x - 4)$, kurva memotong sumbu-$x$ pada $x = 0$ dan $x = 4$. Pada interval $[1, 3]$, nilai $y < 0$ sehingga kurva berada di bawah sumbu-$x$.\n\nLangkah 2: Susun integral untuk menghitung luas daerah.\n$$L = -\\int_1^3 (x^2 - 4x)\\,dx = \\int_1^3 (4x - x^2)\\,dx$$\n\nLangkah 3: Hitung nilai integral tentu.\n$$L = \\left[ 2x^2 - \\frac{1}{3}x^3 \\right]_1^3$$\n$$L = \\left( 2(3)^2 - \\frac{1}{3}(3)^3 \\right) - \\left( 2(1)^2 - \\frac{1}{3}(1)^3 \\right)$$\n$$L = (18 - 9) - \\left( 2 - \\frac{1}{3} \\right) = 9 - \\frac{5}{3} = \\frac{27 - 5}{3} = \\frac{22}{3}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-013",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 210,
+        "bagian": "Ayo Mencoba 3.8",
+        "nomor": "2",
+        "teks": "Tentukan panjang lintasan yang ditempuh oleh sebuah objek yang bergerak dengan kecepatan v(t)=(5-t) cm/detik dari t=0 detik sampai t=5 detik.",
+        "jawaban": "12,5 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Aplikasi kecepatan gerak",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan rumus panjang lintasan menggunakan integral tentu dan mengevaluasi hasilnya pada batas waktu yang diberikan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tentukan panjang lintasan yang ditempuh oleh sebuah objek yang bergerak dengan kecepatan $v(t) = (9 - 3t)\\text{ cm/detik}$ dari $t = 0\\text{ detik}$ sampai $t = 3\\text{ detik}$.",
+      "jawaban_benar": "$13{,}5\\text{ cm}$",
+      "alasan_benar": "$s = \\int_0^3 (9 - 3t)\\,dt = [9t - \\frac{3}{2}t^2]_0^3 = (27 - 13{,}5) - 0 = 13{,}5\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$27\\text{ cm}$",
+          "alasan": "Hanya menghitung $[9t]_0^3$ dan mengabaikan suku kuadrat $-\\frac{3}{2}t^2$."
+        },
+        {
+          "teks": "$18\\text{ cm}$",
+          "alasan": "Salah mengintegralkan $-3t$ menjadi $-t^2$ sehingga memperoleh $27 - 9 = 18$."
+        },
+        {
+          "teks": "$9\\text{ cm}$",
+          "alasan": "Hanya menghitung nilai kecepatan awal $v(0)$ dikurangi selisih waktu tanpa melakukan integrasi fungsi."
+        }
+      ],
+      "pembahasan": "Panjang lintasan diperoleh dengan mengintegralkan fungsi kecepatan pada selang waktu yang diberikan:\n$$\ns = \\int_0^3 v(t)\\,dt = \\int_0^3 (9 - 3t)\\,dt\n$$\nMenentukan antiturunan:\n$$\n\\int (9 - 3t)\\,dt = 9t - \\frac{3}{2}t^2\n$$\nEvaluasi batas dari $t = 0$ sampai $t = 3$:\n$$\ns = \\left[9t - \\frac{3}{2}t^2\\right]_0^3 = \\left(9(3) - \\frac{3}{2}(3)^2\\right) - 0 = 27 - \\frac{27}{2} = 13{,}5\\text{ cm}\n$$\nJadi, panjang lintasan yang ditempuh adalah $13{,}5\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-014",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-9",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Integral tentu fungsi kuadrat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan antiturunan polinomial berderajat dua kemudian mensubstitusikan batas atas dan batas bawah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 2x^2 - 5x + 3$ pada interval $[0, 3]$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 (2x^2 - 5x + 3)\\,dx$ adalah ....",
+      "jawaban_benar": "$\\frac{9}{2}$",
+      "alasan_benar": "Antiturunan adalah $\\frac{2}{3}x^3 - \\frac{5}{2}x^2 + 3x$. Substitusi batas menghasilkan $(18 - \\frac{45}{2} + 9) - 0 = 27 - 22{,}5 = 4{,}5 = \\frac{9}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{2}$",
+          "alasan": "Salah melakukan integrasi pada suku kuadrat menjadi $x^3$ sehingga menghasilkan $(27 - 22{,}5 + 3)$."
+        },
+        {
+          "teks": "$\\frac{99}{2}$",
+          "alasan": "Salah tanda pada suku kedua menjadi $+ \\frac{5}{2}x^2$ sehingga diperoleh $18 + 22{,}5 + 9 = \\frac{99}{2}$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Lupa membagi dengan koefisien pecahan saat evaluasi batas sehingga menghasilkan nilai bilangan bulat."
+        }
+      ],
+      "pembahasan": "Menghitung integral tentu:\n$$\n\\int_0^3 (2x^2 - 5x + 3)\\,dx = \\left[ \\frac{2}{3}x^3 - \\frac{5}{2}x^2 + 3x \\right]_0^3\n$$\nSubstitusi batas atas $x = 3$ dan batas bawah $x = 0$:\n$$\n= \\left( \\frac{2}{3}(3)^3 - \\frac{5}{2}(3)^2 + 3(3) \\right) - 0\n$$\n$$\n= \\left( 18 - \\frac{45}{2} + 9 \\right) = 27 - \\frac{45}{2} = \\frac{54 - 45}{2} = \\frac{9}{2}\n$$\nJadi, nilai integral tentu tersebut adalah $\\frac{9}{2}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Luas daerah pada Gambar 3.14 yang dibatasi oleh kurva y = f(x), y = g(x) , garis x = a , dan garis x = b yang didekati oleh [a, b] adalah"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Luas daerah antara dua kurva",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pencarian titik potong antarkurva sebagai batas integral, pembentukan selisih fungsi, dan penghitungan luas menggunakan integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Luas daerah bidang datar yang dibatasi oleh kurva $y = 8 - x^2$ dan kurva $y = x^2$ adalah .... satuan luas.",
+      "jawaban_benar": "$\\frac{64}{3}$",
+      "alasan_benar": "Titik potong kurva adalah $x = -2$ dan $x = 2$. Luas $L = \\int_{-2}^2 (8 - 2x^2)\\,dx = [8x - \\frac{2}{3}x^3]_{-2}^2 = (16 - \\frac{16}{3}) - (-16 + \\frac{16}{3}) = \\frac{64}{3}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{32}{3}$",
+          "alasan": "Hanya menghitung separuh luas dari interval $[0, 2]$ tanpa mengalikan dua untuk interval $[-2, 2]$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hanya menghitung $[8x]_{-2}^2 = 32$ dan mengurangi nilai sembarang tanpa mengintegralkan suku $-2x^2$ dengan benar."
+        },
+        {
+          "teks": "$\\frac{128}{3}$",
+          "alasan": "Salah menentukan batas integrasi menjadi $[-4, 4]$ akibat keliru menarik akar persamaan $2x^2 = 8$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan batas integrasi dengan mencari absis titik potong kedua kurva:\n$$\n8 - x^2 = x^2 \\implies 2x^2 = 8 \\implies x^2 = 4 \\implies x = -2 \\text{ atau } x = 2\n$$\nPada interval $[-2, 2]$, grafik $y = 8 - x^2$ berada di atas grafik $y = x^2$.\n\nLangkah 2: Menyusun rumus luas daerah:\n$$\nL = \\int_{-2}^2 ((8 - x^2) - x^2)\\,dx = \\int_{-2}^2 (8 - 2x^2)\\,dx\n$$\n\nLangkah 3: Menghitung integral tentu:\n$$\nL = \\left[ 8x - \\frac{2}{3}x^3 \\right]_{-2}^2\n$$\n$$\n= \\left( 8(2) - \\frac{2}{3}(2)^3 \\right) - \\left( 8(-2) - \\frac{2}{3}(-2)^3 \\right)\n$$\n$$\n= \\left( 16 - \\frac{16}{3} \\right) - \\left( -16 + \\frac{16}{3} \\right) = \\frac{32}{3} - \\left( -\\frac{32}{3} \\right) = \\frac{64}{3}\n$$\nJadi, luas daerah tersebut adalah $\\frac{64}{3}$ satuan luas.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 212,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sifat 3.6 Aturan Integrasi Substitusi Misalkan g(x) = ..., maka g'(x) = ... dx."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Integral substitusi tentu batas baru",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan teknik substitusi pemisalan variabel, transformasi batas integrasi, dan penghitungan nilai integral tentu.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Nilai dari $\\int_0^1 4x(2x^2 + 1)^3\\,dx$ adalah ....",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Substitusi $u = 2x^2 + 1 \\implies du = 4x\\,dx$. Batas: $x = 0 \\to u = 1$ dan $x = 1 \\to u = 3$. Hasil: $\\int_1^3 u^3\\,du = [\\frac{u^4}{4}]_1^3 = \\frac{81 - 1}{4} = 20$.",
+      "distraktor": [
+        {
+          "teks": "$80$",
+          "alasan": "Lupa membagi dengan pangkat integrasi baru 4 sehingga menghitung $[u^4]_1^3 = 81 - 1 = 80$."
+        },
+        {
+          "teks": "$\\frac{81}{4}$",
+          "alasan": "Hanya menghitung batas atas $\\frac{3^4}{4}$ dan lupa mengurangkan evaluasi batas bawah $\\frac{1^4}{4}$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Salah menurunkan diferensial dan membagi dua kembali hasil integrasi secara tidak perlu."
+        }
+      ],
+      "pembahasan": "Gunakan metode integrasi substitusi:\nMisalkan $u = 2x^2 + 1$, maka $\\frac{du}{dx} = 4x \\implies du = 4x\\,dx$.\n\nUbah batas integrasi:\n- Untuk $x = 0$, maka $u = 2(0)^2 + 1 = 1$.\n- Untuk $x = 1$, maka $u = 2(1)^2 + 1 = 3$.\n\nIntegral tentu menjadi:\n$$\n\\int_0^1 4x(2x^2 + 1)^3\\,dx = \\int_1^3 u^3\\,du\n$$\nEvaluasi hasil integral:\n$$\n= \\left[ \\frac{1}{4}u^4 \\right]_1^3 = \\frac{1}{4}(3^4) - \\frac{1}{4}(1^4) = \\frac{81}{4} - \\frac{1}{4} = \\frac{80}{4} = 20\n$$\nJadi, nilai integral tersebut adalah $20$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-017",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12_tl-b03-p0219-latihan-soal-integral-tentu-10",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Perhitungan integral tentu polinomial",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan antiturunan fungsi kuadrat tiga suku dan evaluasi batas atas serta batas bawah.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui fungsi $f(x) = 3x^2 - 6x + 7$ pada interval $[2, 6]$. Nilai integral tentu dari $f(x)$ pada interval $[2, 6]$ atau $\\int_2^6 (3x^2 - 6x + 7)\\,dx$ adalah ....",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "Antiturunan dari $f(x)$ adalah $F(x) = x^3 - 3x^2 + 7x$. Evaluasi pada batas: $F(6) = 6^3 - 3(6)^2 + 7(6) = 216 - 108 + 42 = 150$, dan $F(2) = 2^3 - 3(2)^2 + 7(2) = 8 - 12 + 14 = 10$. Maka, $\\int_2^6 (3x^2 - 6x + 7)\\,dx = 150 - 10 = 140$.",
+      "distraktor": [
+        {
+          "teks": "$150$",
+          "alasan": "Siswa hanya menghitung nilai antiturunan pada batas atas $F(6)$ dan lupa mengurangkan dengan nilai batas bawah $F(2)$."
+        },
+        {
+          "teks": "$332$",
+          "alasan": "Siswa keliru menggunakan tanda tambah pada suku kedua saat integrasi ($x^3 + 3x^2 + 7x$), menghasilkan $366 - 34 = 332$."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Siswa lupa mengalikan konstanta $7$ dengan variabel $x$ pada proses integrasi sehingga hanya menghitung $[x^3 - 3x^2]_2^6 + 7 = 112 + 7 = 119$."
+        }
+      ],
+      "pembahasan": "Gunakan Teorema Dasar Kalkulus II:\n$$\\int_2^6 (3x^2 - 6x + 7)\\,dx = \\left[ x^3 - 3x^2 + 7x \\right]_2^6$$\n\nSubstitusikan batas atas ($x = 6$):\n$$F(6) = 6^3 - 3(6^2) + 7(6) = 216 - 108 + 42 = 150$$\n\nSubstitusikan batas bawah ($x = 2$):\n$$F(2) = 2^3 - 3(2^2) + 7(2) = 8 - 12 + 14 = 10$$\n\nKurangkan batas atas dengan batas bawah:\n$$F(6) - F(2) = 150 - 10 = 140$$\n\nJadi, nilai integral tentu tersebut adalah $140$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 208,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Misalkan fungsi _f_ kontinu pada interval tertutup 6 _a_ , _b_ @ dan _F_ suatu fungsi = sedemikian sehingga _F_ l^ _x_ h _f_ ^ _x_ h ."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Penentuan batas atas integral tentu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan pengintegralan fungsi aljabar, substitusi batas pengintegralan menjadi persamaan aljabar, dan penyelesaian nilai parameter positif.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui $\\int_0^k (3x^2 + 2x)\\,dx = 12$ dengan nilai $k > 0$. Nilai $k$ yang memenuhi persamaan tersebut adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Antiturunan dari $3x^2 + 2x$ adalah $x^3 + x^2$. Menghitung batas: $[x^3 + x^2]_0^k = k^3 + k^2 - 0 = k^3 + k^2$. Diperoleh persamaan $k^3 + k^2 - 12 = 0$. Dengan menguji nilai real positif, $(k - 2)(k^2 + 3k + 6) = 0$. Karena $k^2 + 3k + 6 = 0$ tidak memiliki akar real, nilai real positif yang memenuhi adalah $k = 2$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Hanya menghitung nilai fungsi antiturunan pada saat $x = 1$, yaitu $1^3 + 1^2 = 2$, bukan mencocokkan dengan hasil integral 12."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Kesalahan dalam penyelesaian persamaan, menduga $k$ adalah pembagi dari 12 tanpa menyubstitusikan ke bentuk kubik."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Keliru mengintegralkan $3x^2$ menjadi $x^2$ sehingga menyelesaikan persamaan kuadrat $x^2 + x^2 = 12$ yang mendekati nilai 4."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan antiturunan fungsi integran.\n$$\\int (3x^2 + 2x)\\,dx = x^3 + x^2$$\n\nLangkah 2: Menghitung integral tentu dengan batas $0$ sampai $k$.\n$$\\int_0^k (3x^2 + 2x)\\,dx = \\left[ x^3 + x^2 \\right]_0^k = (k^3 + k^2) - (0^3 + 0^2) = k^3 + k^2$$\n\nLangkah 3: Menyelesaikan persamaan aljabar untuk $k > 0$.\n$$k^3 + k^2 = 12$$\n$$k^3 + k^2 - 12 = 0$$\n$$(k - 2)(k^2 + 3k + 6) = 0$$\nUntuk faktor kuadrat $k^2 + 3k + 6$, diskriminannya adalah $D = 3^2 - 4(1)(6) = -15 < 0$, sehingga tidak ada penyelesaian real lainnya.\nJadi, nilai $k$ yang memenuhi adalah $k = 2$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas12_tl-b03-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 204,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setelah mengetahui sifat-sifat integral tak tentu, kali ini kita akan mengeksplorasi berbagai sifat integral tentu."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Sifat adisi dan kelinieran integral tentu",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah perhitungan yaitu menguraikan interval integral, menerapkan sifat kelinieran integral, dan mengevaluasi integral tentu fungsi konstan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu fungsi $f$ kontinu pada interval $[1, 7]$ dengan $\\int_1^7 f(x)\\,dx = 13$ dan $\\int_4^7 f(x)\\,dx = 5$. Nilai dari $\\int_1^4 [2f(x) + 3]\\,dx$ adalah ....",
+      "jawaban_benar": "25",
+      "alasan_benar": "Berdasarkan sifat pemecahan interval, $\\int_1^4 f(x)\\,dx = \\int_1^7 f(x)\\,dx - \\int_4^7 f(x)\\,dx = 13 - 5 = 8$. Selanjutnya, $\\int_1^4 [2f(x) + 3]\\,dx = 2\\int_1^4 f(x)\\,dx + \\int_1^4 3\\,dx = 2(8) + [3x]_1^4 = 16 + 3(4 - 1) = 16 + 9 = 25$.",
+      "distraktor": [
+        {
+          "teks": "19",
+          "alasan": "Siswa lupa mengintegralkan suku konstanta terhadap selang interval dan hanya menambahkan konstanta 3 secara langsung: $2(8) + 3 = 19$."
+        },
+        {
+          "teks": "28",
+          "alasan": "Siswa mengalikan suku konstanta dengan batas atas saja tanpa mengurangkan batas bawah: $2(8) + 3(4) = 16 + 12 = 28$."
+        },
+        {
+          "teks": "45",
+          "alasan": "Siswa keliru menjumlahkan nilai integral kedua selang alih-alih mengurangkannya sehingga $\\int_1^4 f(x)\\,dx = 13 + 5 = 18$, menghasilkan $2(18) + 9 = 45$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menentukan nilai $\\int_1^4 f(x)\\,dx$ menggunakan sifat penjumlahan interval:\n$$\\int_1^7 f(x)\\,dx = \\int_1^4 f(x)\\,dx + \\int_4^7 f(x)\\,dx$$\n$$13 = \\int_1^4 f(x)\\,dx + 5 \\implies \\int_1^4 f(x)\\,dx = 13 - 5 = 8$$\n\nLangkah 2: Menerapkan sifat kelinieran integral tentu:\n$$\\int_1^4 [2f(x) + 3]\\,dx = 2\\int_1^4 f(x)\\,dx + \\int_1^4 3\\,dx$$\n\nLangkah 3: Menghitung nilai integral:\n$$2(8) + [3x]_1^4 = 16 + (3(4) - 3(1)) = 16 + (12 - 3) = 16 + 9 = 25$$\n\nJadi, nilai dari $\\int_1^4 [2f(x) + 3]\\,dx$ adalah $25$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

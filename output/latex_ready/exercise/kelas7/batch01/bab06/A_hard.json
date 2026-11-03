@@ -1,0 +1,644 @@
+{
+  "book": "kelas7",
+  "bab_no": 6,
+  "subbab": "A",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas7-b06-a-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0214-eksplorasi-6-1-4",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi proporsi data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kebenaran klaim berdasarkan persentase ambang batas dari data distribusi frekuensi.",
+      "stimulus": "| Durasi Belajar (menit) | Frekuensi (Siswa) |\n| :---: | :---: |\n| 30 | 4 |\n| 45 | 7 |\n| 60 | 11 |\n| 75 | 5 |\n| 90 | 3 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang konselor sekolah menyatakan bahwa lebih dari sepertiga siswa belajar mandiri lebih dari 60 menit per hari. Berdasarkan tabel di atas, evaluasilah pernyataan konselor tersebut!",
+      "jawaban_benar": "Pernyataan salah, karena proporsi siswa yang belajar lebih dari 60 menit hanya $\\frac{8}{30}$ (sekitar 26,67%), yang kurang dari sepertiga.",
+      "alasan_benar": "Siswa dengan durasi > 60 menit adalah durasi 75 dan 90 menit, berjumlah 5 + 3 = 8 siswa dari total 30 siswa (26,67% < 33,33%).",
+      "distraktor": [
+        {
+          "teks": "Pernyataan benar, karena terdapat 19 siswa dari 30 siswa (sekitar 63,33%) yang belajar lebih dari 60 menit.",
+          "alasan": "Menghitung data yang berdurasi 60 menit ke bawah (4 + 7 + 11 = 22, atau keliru menyertakan nilai 60)."
+        },
+        {
+          "teks": "Pernyataan benar, karena terdapat 19 siswa dari 30 siswa yang memenuhi kriteria jika durasi 60 menit diikutsertakan.",
+          "alasan": "Menyertakan durasi 60 menit (11 + 5 + 3 = 19), padahal syaratnya 'lebih dari 60 menit'."
+        },
+        {
+          "teks": "Pernyataan salah, karena jumlah siswa yang belajar lebih dari 60 menit adalah 3 siswa dari 30 siswa (hanya 10%).",
+          "alasan": "Hanya menghitung frekuensi kategori durasi tertinggi (90 menit)."
+        }
+      ],
+      "pembahasan": "Total siswa = $4 + 7 + 11 + 5 + 3 = 30$ siswa.\nBanyak siswa yang belajar lebih dari 60 menit = frekuensi(75 menit) + frekuensi(90 menit) = $5 + 3 = 8$ siswa.\nProporsi = $\\frac{8}{30} \\approx 26,67\\%$.\nNilai sepertiga = $\\frac{1}{3} \\approx 33,33\\%$.\nKarena $26,67\\% < 33,33\\%$, klaim konselor bahwa 'lebih dari sepertiga siswa' adalah salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 211,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjawab pertanyaan-pertanyaan di atas menggunakan investigasi statistika, tentunya kalian perlu melakukan formulasi pertanyaan yang dapat menjawab pertanyaan-pertanyaan tersebut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi instrumen investigasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap kesesuaian teknik pengumpulan data dan formulasi pertanyaan statistika.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tim peneliti OSIS ingin mengetahui apakah penyediaan sarapan bergizi di kantin sekolah dapat meningkatkan konsentrasi belajar siswa SMP. Rencana investigasi statistika yang paling valid dan sistematis untuk menguji hipotesis tersebut adalah ....",
+      "jawaban_benar": "Mencatat daftar nilai konsentrasi siswa sebelum dan sesudah program sarapan berjalan dalam periode tertentu pada kelompok siswa yang sama.",
+      "alasan_benar": "Menilai efektivitas suatu perlakuan membutuhkan perbandingan data sebelum dan sesudah program dengan subjek yang sama (variabel terkontrol).",
+      "distraktor": [
+        {
+          "teks": "Menanyakan langsung kepada pengelola kantin tentang berapa banyak porsi menu sarapan sehat yang terjual setiap minggu.",
+          "alasan": "Hanya mengukur volume penjualan, bukan mengukur dampak sarapan terhadap konsentrasi belajar siswa."
+        },
+        {
+          "teks": "Menghitung rata-rata uang saku seluruh siswa kelas VII untuk memperkirakan daya beli terhadap makanan kantin.",
+          "alasan": "Mengukur variabel ekonomi (uang saku), tidak menginvestigasi hubungan antara konsentrasi dan sarapan."
+        },
+        {
+          "teks": "Menyebarkan kuesioner kepada guru mengenai makanan favorit para guru saat mengajar di kelas.",
+          "alasan": "Subjek penelitian salah (guru) dan tidak relevan dengan konsentrasi belajar siswa."
+        }
+      ],
+      "pembahasan": "Dalam investigasi statistika, formulasi pertanyaan dan metode pengumpulan data harus relevan langsung dengan tujuan pengujian.\nUntuk mengetahui apakah sarapan bergizi meningkatkan konsentrasi:\n1. Diperlukan data tingkat konsentrasi belajar siswa.\n2. Diperlukan perbandingan kondisi sebelum (pre-test) dan sesudah (post-test) program diterapkan pada subjek yang relevan (siswa).\nOpsi yang mencatat daftar nilai sebelum dan sesudah program merupakan investigasi statistika yang valid.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0215-ayo-berpikir-kritis-8",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi kesalahan interpretasi diagram",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap kekeliruan pemahaman antara nilai variabel pada sumbu horizontal dengan frekuensi pada sumbu vertikal diagram batang.",
+      "stimulus": "| Jarak Lompatan (meter) | 3,2 | 3,4 | 3,6 | 3,8 | 4,0 |\n| :--- | :---: | :---: | :---: | :---: | :---: | \n| Frekuensi (Siswa) | 4 | 9 | 12 | 7 | 1 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah diagram batang dibuat berdasarkan data hasil tes lompat jauh siswa kelas VII D pada tabel di atas. Gilang berhasil melompat sejauh 4,0 meter dan berpendapat bahwa karena lompatannya paling jauh, maka tinggi batang untuk nilai 4,0 meter seharusnya paling tinggi di antara yang lain. Evaluasi yang paling tepat terhadap pendapat Gilang adalah ....",
+      "jawaban_benar": "Pendapat Gilang keliru karena tinggi batang merepresentasikan frekuensi pemunculan data (banyaknya siswa), bukan besarnya jarak lompatan yang dicapai.",
+      "alasan_benar": "Pada diagram batang distribusi frekuensi, sumbu horizontal menyatakan nilai data (jarak lompatan) sedangkan tinggi batang pada sumbu vertikal menyatakan frekuensi (banyaknya siswa yang mencapai jarak tersebut). Karena hanya 1 siswa yang melompat sejauh 4,0 m, batang tersebut justru menjadi yang terpendek.",
+      "distraktor": [
+        {
+          "teks": "Pendapat Gilang benar asalkan diagram batang tersebut digambar secara horizontal dan bukan vertikal.",
+          "alasan": "Siswa keliru mengira orientasi diagram (horizontal vs vertikal) mengubah hubungan antara variabel dan representasi frekuensi."
+        },
+        {
+          "teks": "Pendapat Gilang keliru karena nilai 4,0 meter harus digabungkan ke kelompok nilai 3,8 meter agar batangnya menjadi paling tinggi.",
+          "alasan": "Siswa membenarkan klaim dengan memanipulasi pengelompokan data secara sembarangan tanpa kaidah statistika."
+        },
+        {
+          "teks": "Pendapat Gilang benar karena dalam investigasi statistika nilai terbesar selalu memiliki batang tertinggi untuk menandakan pencapaian terbaik.",
+          "alasan": "Siswa salah kaprah menyamakan nilai capaian numerik tertinggi dengan frekuensi data terbanyak."
+        }
+      ],
+      "pembahasan": "Pada diagram batang frekuensi, sumbu mendatar menunjukkan nilai kuantitatif data (jarak lompatan dalam meter), sedangkan sumbu tegak menunjukkan frekuensi (jumlah siswa yang memperoleh nilai tersebut). Jarak 4,0 meter memiliki frekuensi terkecil (1 siswa), sehingga batang untuk 4,0 meter adalah batang terpendek. Pendapat Gilang salah kaprah karena menukar konsep nilai data dengan frekuensi data.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 211,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Setelah kalian memformulasikan pertanyaan, maka langkah selanjutnya adalah melakukan pengumpulan data yang terkait dengan pertanyaan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi validitas instrumen investigasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan evaluasi terhadap kesesuaian data yang dikumpulkan dengan pertanyaan investigasi statistika yang telah dirumuskan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Seorang anggota tim mading sekolah memformulasikan pertanyaan investigasi: \"Apakah siswa kelas VII lebih banyak menghabiskan waktu luang untuk membaca buku dibandingkan bermain gawai?\". Untuk menjawab pertanyaan tersebut, ia membagikan angket yang menanyakan: \"Berapa judul buku cerita yang pernah kalian baca selama satu tahun terakhir?\". Evaluasi yang paling tepat mengenai ketepatan pengumpulan data tersebut adalah ....",
+      "jawaban_benar": "Pengumpulan data tidak tepat karena mengukur jumlah buku tahunan, bukan durasi waktu luang membaca harian/mingguan dan tidak mengumpulkan data durasi penggunaan gawai.",
+      "alasan_benar": "Pertanyaan investigasi berfokus pada pembandingan alokasi waktu luang (durasi) antara dua aktivitas (membaca vs bermain gawai). Data yang dikumpulkan hanya mencatat volume buku dalam setahun tanpa mencatat durasi waktu dan tanpa menyertakan variabel bermain gawai.",
+      "distraktor": [
+        {
+          "teks": "Pengumpulan data sudah tepat karena jumlah buku yang dibaca secara langsung berbanding lurus dengan lama waktu bermain gawai.",
+          "alasan": "Siswa membuat asumsi korelasi yang tidak berdasar tanpa adanya pengumpulan data pembanding."
+        },
+        {
+          "teks": "Pengumpulan data tidak tepat karena seharusnya responden angket dibatasi khusus untuk anggota ekstrakurikuler literasi saja.",
+          "alasan": "Siswa menyarankan sampling bias yang justru merusak keterwakilan populasi siswa kelas VII."
+        },
+        {
+          "teks": "Pengumpulan data sudah tepat karena satu pertanyaan angket sudah cukup mewakili seluruh kebiasaan siswa di luar sekolah.",
+          "alasan": "Siswa mengabaikan perlunya kelengkapan variabel data yang relevan dengan rumusan masalah investigasi."
+        }
+      ],
+      "pembahasan": "Dalam investigasi statistika, data yang dikumpulkan harus relevan dan menjawab rumusan masalah. Pertanyaan investigasi membandingkan alokasi waktu (durasi) antara dua aktivitas: membaca buku dan bermain gawai. Instrumen yang digunakan gagal mengukur durasi waktu luang dan sepenuhnya mengabaikan data mengenai gawai, sehingga data yang terkumpul tidak dapat digunakan untuk menjawab pertanyaan investigasi.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjelaskan bagaimana data terdistribusi, kalian dapat melihat di daerah mana kebanyakan data terletak, berapa beda frekuensi antar data dan data mana yang memiliki frekuensi paling banyak dan paling sedikit."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "rekonstruksi frekuensi kendala ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan penyusunan dan penentuan nilai frekuensi yang belum diketahui dengan memadukan sistem persamaan linier dan kendala modus tunggal.",
+      "stimulus": "| Waktu Belajar (jam/hari) | 1 | 2 | 3 | 4 | 5 |\n| :--- | :---: | :---: | :---: | :---: | :---: | \n| Frekuensi Siswa | 4 | $p$ | 12 | $q$ | 2 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebanyak 35 siswa disurvei mengenai waktu belajar mandiri di rumah. Data tersebut memiliki modus tunggal yaitu 3 jam/hari. Jika selisih antara frekuensi siswa yang belajar 2 jam/hari dan 4 jam/hari adalah 3 orang dengan $p > q$, maka banyaknya siswa yang belajar selama 2 jam/hari adalah ....",
+      "jawaban_benar": "10 orang",
+      "alasan_benar": "Total siswa: $4 + p + 12 + q + 2 = 35 \\implies p + q = 17$. Diketahui selisih $p - q = 3$. Dengan menjumlahkan kedua persamaan: $2p = 20 \\implies p = 10$, sehingga $q = 7$. Cek syarat modus tunggal: nilai 3 memiliki frekuensi 12; karena $p = 10 < 12$ dan $q = 7 < 12$, syarat modus tunggal terpenuhi. Jadi, banyaknya siswa yang belajar 2 jam/hari ($p$) adalah 10 orang.",
+      "distraktor": [
+        {
+          "teks": "7 orang",
+          "alasan": "Siswa menghitung nilai $q$ (frekuensi belajar 4 jam/hari), bukan nilai $p$."
+        },
+        {
+          "teks": "11 orang",
+          "alasan": "Siswa salah melakukan pembagian saat eliminasi persamaan sistem ($2p = 22$ karena salah menjumlahkan $17 + 3$ atau salah menghitung total frekuensi awal)."
+        },
+        {
+          "teks": "13 orang",
+          "alasan": "Siswa mengabaikan syarat modus tunggal bahwa frekuensi nilai lain tidak boleh melebihi 12."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung jumlah frekuensi yang belum diketahui:\n$4 + p + 12 + q + 2 = 35$\n$p + q + 18 = 35 \\implies p + q = 17$\n\nLangkah 2: Gunakan informasi selisih dengan $p > q$:\n$p - q = 3$\n\nLangkah 3: Selesaikan sistem persamaan dengan metode eliminasi/substitusi:\n$(p + q) + (p - q) = 17 + 3$\n$2p = 20 \\implies p = 10$\n\nLangkah 4: Tentukan nilai $q$:\n$q = 17 - 10 = 7$\n\nLangkah 5: Periksa syarat modus tunggal:\nFrekuensi pada 3 jam adalah 12. Karena $p = 10 < 12$ dan $q = 7 < 12$, maka 3 jam tetap menjadi modus tunggal yang valid. Jadi, banyak siswa yang belajar 2 jam/hari ($p$) adalah 10 orang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 212,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Formulasi Pertanyaan Investigasi Statistika Pengumpulan Data Analisis Data Interpretasi Hasil"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi metodologi investigasi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Mengevaluasi letak kekeliruan alur kerja dan penarikan kesimpulan yang melompati tahapan investigasi statistika.",
+      "stimulus": "Rani ingin mengetahui rasa minuman kemasan yang paling disukai oleh seluruh siswa kelas VII di sekolahnya yang berjumlah 200 siswa. Berikut adalah langkah-langkah yang dilakukan Rani:\n1. Merumuskan pertanyaan: \"Minuman rasa apa yang paling disukai siswa kelas VII?\"\n2. Menanyakan rasa minuman favorit kepada 5 orang teman terdekatnya di bangku sebelahnya.\n3. Langsung menyimpulkan dalam mading sekolah bahwa 80% siswa kelas VII menyukai rasa cokelat.",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan alur investigasi statistika yang benar, kelemahan metodologis paling mendasar pada kegiatan Rani terletak pada tahap ....",
+      "jawaban_benar": "Pengumpulan data, karena ukuran sampel terlalu kecil dan pemilihan responden tidak mewakili keseluruhan populasi siswa kelas VII",
+      "alasan_benar": "Pengambilan data hanya dari 5 teman sebangku (2,5% populasi) tidak representatif untuk menggambarkan preferensi 200 siswa kelas VII, sehingga tahap pengumpulan data cacat secara metodologis dan menghasilkan interpretasi yang bias.",
+      "distraktor": [
+        {
+          "teks": "Formulasi pertanyaan, karena pertanyaan rasa favorit tidak dapat diteliti menggunakan metode statistika",
+          "alasan": "Siswa tidak memahami bahwa pertanyaan mengenai preferensi terpopuler merupakan salah satu bentuk formulasi pertanyaan statistika yang sah (kategori modus)."
+        },
+        {
+          "teks": "Interpretasi hasil, karena persentase seharusnya dihitung dari perbandingan harga minuman bukan banyak siswa",
+          "alasan": "Siswa memasukkan variabel harga yang tidak relevan dengan rumusan rasa terfavorit."
+        },
+        {
+          "teks": "Analisis data, karena diagram yang digunakan seharusnya line plot dan bukan penghitungan persentase",
+          "alasan": "Siswa terpaku pada bentuk diagram tertentu padahal data kategori rasa minuman tidak cocok disajikan dengan line plot garis bilangan kontinu."
+        }
+      ],
+      "pembahasan": "Dalam proses investigasi statistika (Formulasi Pertanyaan -> Pengumpulan Data -> Analisis Data -> Interpretasi Hasil), kesimpulan yang valid bergantung pada mutu pengumpulan data. Mengambil sampel 5 teman terdekat dari total 200 siswa melanggar prinsip keterwakilan (representativeness) dalam pengumpulan data. Akibat cacat pada tahap pengumpulan data ini, tahap analisis dan interpretasi menghasilkan generalisasi keliru.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0213-eksplorasi-6-1-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis distribusi frekuensi",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan perhitungan nilai variabel frekuensi yang belum diketahui berdasarkan syarat jumlah total anggota sebelum mengevaluasi banyak anggota yang sama panjang namanya.",
+      "stimulus": "| Panjang Nama (Banyak Huruf) | Frekuensi (Anggota) |\n| :---: | :---: |\n| 10 | 4 |\n| 12 | 7 |\n| 14 | $x$ |\n| 16 | 6 |\n| 18 | 3 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Jika seorang anggota baru bernama Satria Dewantara memiliki panjang nama 15 huruf, dan total seluruh anggota sanggar tari adalah 25 orang dengan frekuensi nama 14 huruf adalah $x$, berapakah banyak anggota sanggar yang memiliki panjang nama lebih pendek daripada Satria Dewantara?",
+      "jawaban_benar": "16 orang",
+      "alasan_benar": "$x = 25 - (4 + 7 + 6 + 3) = 25 - 20 = 5$. Anggota dengan panjang nama lebih pendek dari 15 huruf adalah kategori 10, 12, dan 14 huruf, yaitu $4 + 7 + 5 = 16$ orang.",
+      "distraktor": [
+        {
+          "teks": "11 orang",
+          "alasan": "Hanya menjumlahkan frekuensi panjang nama 10 dan 12 huruf tanpa menyertakan 14 huruf"
+        },
+        {
+          "teks": "19 orang",
+          "alasan": "Menjumlahkan frekuensi dengan salah menghitung nilai x menjadi 8 orang"
+        },
+        {
+          "teks": "9 orang",
+          "alasan": "Menghitung sisa anggota yang memiliki panjang nama lebih panjang dari Satria (frekuensi 16 dan 18 huruf)"
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung nilai $x$.\nTotal anggota = 25.\n$4 + 7 + x + 6 + 3 = 25$\n$20 + x = 25 \\implies x = 5$.\n\nLangkah 2: Menentukan batas panjang nama Satria Dewantara.\nSatria (6 huruf) + Dewantara (9 huruf) = 15 huruf.\n\nLangkah 3: Menghitung banyak anggota yang panjang namanya kurang dari 15 huruf (kategori 10, 12, dan 14 huruf).\nBanyak anggota = $4 + 7 + 5 = 16$ orang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjelaskan bagaimana data terdistribusi, kalian dapat melihat di daerah mana kebanyakan data terletak, berapa beda frekuensi antar data dan data mana yang memiliki frekuensi paling banyak dan paling sedikit."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komparasi sebaran data",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan perbandingan sebaran frekuensi, modus, dan konsentrasi data dari dua kelas untuk mengevaluasi pernyataan yang valid secara statistika.",
+      "stimulus": "| Banyak Buku | Frekuensi Kelas 7A | Frekuensi Kelas 7B |\n| :---: | :---: | :---: |\n| 1 | 2 | 6 |\n| 2 | 5 | 8 |\n| 3 | 12 | 5 |\n| 4 | 7 | 4 |\n| 5 | 4 | 2 |\n| **Total** | **30** | **25** |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua kelompok data menyajikan jumlah peminjaman buku perpustakaan oleh siswa kelas 7A dan 7B dalam satu semester. Berdasarkan analisis distribusi data pada tabel tersebut, manakah pernyataan evaluasi yang paling tepat mengenai sebaran kedua data?",
+      "jawaban_benar": "Sebagian besar siswa kelas 7A meminjam 3 buku atau lebih, sedangkan sebagian besar siswa kelas 7B meminjam kurang dari 3 buku.",
+      "alasan_benar": "Pada kelas 7A, siswa yang meminjam $\\ge 3$ buku adalah $12 + 7 + 4 = 23$ dari 30 siswa ($76,7\\%$). Pada kelas 7B, siswa yang meminjam $< 3$ buku adalah $6 + 8 = 14$ dari 25 siswa ($56\\%$).",
+      "distraktor": [
+        {
+          "teks": "Kedua kelas memiliki pemusatan data yang identik karena frekuensi tertinggi di kedua kelas sama-sama terjadi pada peminjaman 2 buku.",
+          "alasan": "Salah membaca tabel; frekuensi tertinggi kelas 7A terjadi pada 3 buku, bukan 2 buku"
+        },
+        {
+          "teks": "Persentase siswa yang meminjam 4 atau 5 buku di kelas 7B lebih tinggi daripada persentase siswa di kelas 7A.",
+          "alasan": "Kelas 7B memiliki $(4+2)/25 = 24\\%$, sedangkan kelas 7A memiliki $(7+4)/30 = 36,7\\%$, sehingga kelas 7B justru lebih rendah"
+        },
+        {
+          "teks": "Sebaran data kelas 7B lebih merata daripada kelas 7A karena total siswa kelas 7B lebih sedikit.",
+          "alasan": "Mengaitkan kerataan sebaran data dengan ukuran total sampel secara keliru"
+        }
+      ],
+      "pembahasan": "Langkah 1: Analisis distribusi data kelas 7A.\nSiswa meminjam $\\ge 3$ buku: $12 + 7 + 4 = 23$ siswa.\nProporsi: $\\frac{23}{30} \\approx 76,7\\%$ (mayoritas berada di 3 buku atau lebih).\n\nLangkah 2: Analisis distribusi data kelas 7B.\nSiswa meminjam $< 3$ buku: $6 + 8 = 14$ siswa.\nProporsi: $\\frac{14}{25} = 56\\%$ (mayoritas berada di bawah 3 buku).\n\nLangkah 3: Menilai opsi pembanding.\nOpsi yang menyatakan bahwa mayoritas kelas 7A meminjam $\\ge 3$ buku dan mayoritas kelas 7B meminjam $< 3$ buku terbukti benar secara matematis.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas7-b06-p0214-ayo-berpikir-kritis-3",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "komparasi panjang nama ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan perhitungan panjang nama stimulus, evaluasi frekuensi teman dengan mengeliminasi diri sendiri, serta komparasi kelipatan panjang nama pada sebaran data.",
+      "stimulus": "| Panjang Nama (Huruf) | Frekuensi (Siswa) |\n| :---: | :---: |\n| 8 | 3 |\n| 10 | 5 |\n| 12 | 4 |\n| 16 | 2 |\n| 20 | 3 |\n| 24 | 3 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan data panjang nama 20 anggota ekstrakurikuler PMR. Jika Alika Putri adalah salah seorang anggota PMR tersebut, berapakah banyak rekan Alika yang memiliki panjang nama sama dengannya, dan berapakah banyak anggota PMR yang memiliki panjang nama tepat dua kali lipat dari panjang nama Alika?",
+      "jawaban_benar": "4 rekan dan 3 anggota",
+      "alasan_benar": "Panjang nama Alika Putri adalah 5 + 5 = 10 huruf. Frekuensi siswa dengan 10 huruf adalah 5 orang, sehingga rekan Alika yang sama panjang adalah 5 - 1 = 4 rekan. Dua kali lipat panjang nama Alika adalah 2 x 10 = 20 huruf, yang memiliki frekuensi 3 anggota.",
+      "distraktor": [
+        {
+          "teks": "5 rekan dan 3 anggota",
+          "alasan": "Lupa mengurangkan Alika sendiri dari total frekuensi siswa yang memiliki 10 huruf."
+        },
+        {
+          "teks": "4 rekan dan 5 anggota",
+          "alasan": "Keliru mengartikan dua kali lipat panjang nama sebagai nilai frekuensi nama Alika."
+        },
+        {
+          "teks": "5 rekan dan 2 anggota",
+          "alasan": "Lupa mengurangkan Alika sendiri dan salah membaca frekuensi baris 16 huruf bukannya 20 huruf."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung panjang nama Alika Putri. Terdiri dari kata 'Alika' (5 huruf) dan 'Putri' (5 huruf), total = 10 huruf.\nLangkah 2: Tentukan banyak rekan yang sama panjang. Pada baris 10 huruf, frekuensi tercatat 5 siswa. Karena Alika tidak dihitung sebagai rekannya sendiri, banyak rekannya adalah $5 - 1 = 4$ rekan.\nLangkah 3: Hitung dua kali lipat panjang nama Alika, yaitu $2 \\times 10 = 20$ huruf.\nLangkah 4: Baca frekuensi untuk panjang nama 20 huruf pada tabel, yaitu 3 anggota.\nJadi, terdapat 4 rekan dan 3 anggota.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjelaskan bagaimana data terdistribusi, kalian dapat melihat di daerah mana kebanyakan data terletak, berapa beda frekuensi antar data dan data mana yang memiliki frekuensi paling banyak dan paling sedikit."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi klaim sebaran data",
+      "jumlah_langkah": 5,
+      "alasan_level": "Siswa harus menghitung total data, mengevaluasi klaim proporsi rentang data, dan memverifikasi selisih frekuensi ekstrem sebaran.",
+      "stimulus": "| Panjang Nama (Huruf) | Frekuensi |\n| :---: | :---: |\n| 11 | 3 |\n| 13 | 7 |\n| 15 | 8 |\n| 17 | 6 |\n| 19 | 4 |\n| 21 | 2 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Berdasarkan tabel distribusi panjang nama 30 siswa kelas VII di atas, seorang siswa membuat dua klaim:\n(1) Lebih dari 70% siswa memiliki panjang nama antara 13 hingga 17 huruf.\n(2) Beda frekuensi antara data dengan frekuensi terbanyak dan frekuensi tersedikit adalah 5 siswa.\n\nEvaluasi yang tepat terhadap kedua klaim tersebut adalah ....",
+      "jawaban_benar": "Kedua klaim salah, karena proporsi siswa dengan nama 13–17 huruf tepat 70% dan selisih frekuensi ekstremnya adalah 6 siswa.",
+      "alasan_benar": "Banyak siswa dengan panjang nama 13–17 huruf adalah 7 + 8 + 6 = 21 siswa. Proporsinya 21/30 = 70% (tidak lebih dari 70%). Frekuensi terbanyak adalah 8 dan tersedikit adalah 2, sehingga selisihnya 8 - 2 = 6 siswa.",
+      "distraktor": [
+        {
+          "teks": "Klaim (1) benar, tetapi klaim (2) salah karena selisih frekuensi ekstremnya adalah 6 siswa.",
+          "alasan": "Menganggap nilai tepat 70% memenuhi kriteria 'lebih dari 70%'."
+        },
+        {
+          "teks": "Klaim (1) salah, tetapi klaim (2) benar karena selisih frekuensi ekstremnya adalah 5 siswa.",
+          "alasan": "Keliru mengurangkan frekuensi tersedikit dengan nilai 3 bukan 2 sehingga $8 - 3 = 5$."
+        },
+        {
+          "teks": "Kedua klaim benar, karena 21 dari 30 siswa sudah mencakup mayoritas kelas dan sebaran frekuensinya berjarak 5.",
+          "alasan": "Menilai secara intuitif tanpa melakukan perhitungan persentase dan selisih frekuensi secara presisi."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung total siswa: $3 + 7 + 8 + 6 + 4 + 2 = 30$ siswa.\nLangkah 2: Hitung jumlah siswa berpanjang nama 13 sampai 17 huruf (13, 15, dan 17): $7 + 8 + 6 = 21$ siswa.\nLangkah 3: Hitung persentasenya: $\\frac{21}{30} \\times 100\\% = 70\\%$. Klaim (1) menyatakan 'lebih dari 70%', padahal nilainya tepat 70%, sehingga klaim (1) salah.\nLangkah 4: Tentukan frekuensi terbanyak ($f_{\\max} = 8$ pada 15 huruf) dan tersedikit ($f_{\\min} = 2$ pada 21 huruf).\nLangkah 5: Hitung beda frekuensi: $8 - 2 = 6$ siswa. Klaim (2) menyebut 5 siswa, sehingga klaim (2) salah.\nKesimpulan: Kedua klaim salah.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Bagaimana kalian mencari total banyaknya huruf di seluruh nama siswa 7A menggunakan kedua diagram di atas?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perhitungan total huruf berbobot kendala ganda",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemecahan sistem persamaan linear untuk mencari dua frekuensi yang hilang sebelum menghitung jumlah total huruf tertimbang.",
+      "stimulus": "| Panjang Nama (Huruf) | Frekuensi |\n| :---: | :---: |\n| 9 | 4 |\n| 12 | $x$ |\n| 15 | $y$ |\n| 18 | 3 |\n| 21 | 2 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan data panjang nama dari 25 siswa. Catatan frekuensi untuk panjang nama 12 huruf ($x$) dan 15 huruf ($y$) sempat terhapus, tetapi diketahui bahwa frekuensi nama 15 huruf adalah 2 lebih banyak daripada frekuensi nama 12 huruf. Berapakah total seluruh huruf dari nama 25 siswa tersebut?",
+      "jawaban_benar": "351 huruf",
+      "alasan_benar": "Jumlah frekuensi yang diketahui = 4 + 3 + 2 = 9, maka x + y = 25 - 9 = 16. Karena y = x + 2, diperoleh x = 7 dan y = 9. Total huruf = (9 x 4) + (12 x 7) + (15 x 9) + (18 x 3) + (21 x 2) = 36 + 84 + 135 + 54 + 42 = 351 huruf.",
+      "distraktor": [
+        {
+          "teks": "345 huruf",
+          "alasan": "Tertukar menetapkan nilai $x = 9$ dan $y = 7$ saat mengalikan dengan panjang huruf."
+        },
+        {
+          "teks": "366 huruf",
+          "alasan": "Salah menjumlahkan total frekuensi menjadi 27 sehingga menghasilkan $x = 8$ dan $y = 10$."
+        },
+        {
+          "teks": "327 huruf",
+          "alasan": "Salah dalam perkalian $15 \\times 9$ menjadi 111 bukannya 135."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung total frekuensi data yang diketahui: $4 + 3 + 2 = 9$.\nLangkah 2: Susun persamaan untuk $x$ dan $y$: $x + y = 25 - 9 = 16$.\nLangkah 3: Gunakan informasi $y = x + 2$:\n$x + (x + 2) = 16$\n$2x + 2 = 16 \\implies 2x = 14 \\implies x = 7$.\nMaka $y = 7 + 2 = 9$.\nLangkah 4: Hitung perkalian bobot setiap baris:\n- $9 \\times 4 = 36$\n- $12 \\times 7 = 84$\n- $15 \\times 9 = 135$\n- $18 \\times 3 = 54$\n- $21 \\times 2 = 42$\nLangkah 5: Jumlahkan seluruh huruf: $36 + 84 + 135 + 54 + 42 = 351$ huruf.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 211,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjawab pertanyaan-pertanyaan di atas menggunakan investigasi statistika, tentunya kalian perlu melakukan formulasi pertanyaan yang dapat menjawab pertanyaan-pertanyaan tersebut. Misalnya untuk mencari tahu siapa pemain sepakbola yang paling hebat, kita dapat bertanya, “Berapakah rata-rata jumlah gol yang dihasilkan selama 1 musim kompetisi?”"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi komparasi performa investigasi",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan analisis ukuran pemusatan (rata-rata) dan sebaran (rentang data) dari dua set data untuk memvalidasi kesimpulan investigasi komparatif.",
+      "stimulus": "| Pemain | Pertandingan 1 | Pertandingan 2 | Pertandingan 3 | Pertandingan 4 | Pertandingan 5 |\n| :---: | :---: | :---: | :---: | :---: | :---: |\n| Arka | 2 | 4 | 1 | 5 | 3 |\n| Bayu | 3 | 3 | 3 | 2 | 4 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan catatan gol yang dicetak Arka dan Bayu selama 5 pertandingan futsal. Seorang pelatih menyimpulkan: 'Rata-rata gol per pertandingan Arka dan Bayu bernilai sama, namun performa Bayu lebih konsisten karena sebaran golnya lebih merata.' Berdasarkan konsep investigasi statistika, evaluasi yang tepat untuk kesimpulan tersebut adalah ....",
+      "jawaban_benar": "Tepat, karena rata-rata kedua pemain sama-sama 3,0 gol per pertandingan dan rentang gol Bayu (2 gol) lebih kecil daripada Arka (4 gol).",
+      "alasan_benar": "Rata-rata Arka = (2+4+1+5+3)/5 = 15/5 = 3,0. Rata-rata Bayu = (3+3+3+2+4)/5 = 15/5 = 3,0. Rentang Arka = 5 - 1 = 4 gol, sedangkan rentang Bayu = 4 - 2 = 2 gol. Bayu memiliki sebaran lebih sempit sehingga lebih konsisten.",
+      "distraktor": [
+        {
+          "teks": "Keliru, karena rata-rata gol Arka sebenarnya lebih tinggi, yaitu 3,2 gol per pertandingan dibandingkan Bayu yang hanya 3,0 gol per pertandingan.",
+          "alasan": "Salah menjumlahkan total gol Arka menjadi 16."
+        },
+        {
+          "teks": "Keliru, karena Arka lebih hebat setelah berhasil mencetak rekor tertinggi yaitu 5 gol dalam satu pertandingan.",
+          "alasan": "Hanya melihat nilai ekstrem tertinggi tanpa mempertimbangkan ukuran pemusatan dan sebaran secara keseluruhan."
+        },
+        {
+          "teks": "Tepat, namun rata-rata gol Bayu sebenarnya lebih tinggi (3,2 gol per pertandingan) daripada Arka (2,8 gol per pertandingan).",
+          "alasan": "Salah melakukan pembagian rata-rata pada kedua data pemain."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung total dan rata-rata gol Arka:\nTotal = $2 + 4 + 1 + 5 + 3 = 15$ gol.\nRata-rata Arka = $\\frac{15}{5} = 3,0$ gol/pertandingan.\nLangkah 2: Hitung total dan rata-rata gol Bayu:\nTotal = $3 + 3 + 3 + 2 + 4 = 15$ gol.\nRata-rata Bayu = $\\frac{15}{5} = 3,0$ gol/pertandingan.\nLangkah 3: Bandingkan rata-rata: Keduanya sama, yaitu 3,0 gol.\nLangkah 4: Hitung rentang sebaran gol:\nRentang Arka = $5 - 1 = 4$ gol.\nRentang Bayu = $4 - 2 = 2$ gol.\nLangkah 5: Evaluasi kesimpulan pelatih: Karena rata-rata sama dan rentang gol Bayu lebih sempit (2 < 4), sebaran gol Bayu lebih merata/konsisten. Kesimpulan pelatih tepat.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 215,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Di kelas 7A, 19 dari 27 siswa atau sekitar 70% memiliki panjang nama antara 10 sampai 20 huruf. Bagaimana dengan kelas kalian?"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "rekonstruksi frekuensi berbasis persentase rentang",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan penerjemahan persentase rentang sebaran data ke dalam jumlah frekuensi serta penyelesaian SPLDV untuk menentukan frekuensi spesifik.",
+      "stimulus": "| Panjang Nama (Huruf) | Frekuensi |\n| :---: | :---: |\n| 8 | 3 |\n| 11 | $p$ |\n| 14 | 12 |\n| 17 | $q$ |\n| 20 | 5 |\n| 23 | 2 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan data panjang nama 40 siswa kelas VII B. Diketahui bahwa tepat 75% dari seluruh siswa memiliki panjang nama antara 11 sampai 17 huruf. Selain itu, banyak siswa dengan panjang nama 11 huruf adalah 2 orang lebih banyak daripada siswa dengan panjang nama 17 huruf. Nilai $p$ dan $q$ berturut-turut adalah ....",
+      "jawaban_benar": "$p = 10$ dan $q = 8$",
+      "alasan_benar": "Banyak siswa pada rentang 11–17 huruf adalah 75% x 40 = 30 siswa. Komponen rentang adalah p + 12 + q = 30, sehingga p + q = 18. Karena p = q + 2, maka (q + 2) + q = 18 -> 2q = 16 -> q = 8, dan p = 10.",
+      "distraktor": [
+        {
+          "teks": "$p = 8$ dan $q = 10$",
+          "alasan": "Tertukar dalam menetapkan variabel $p$ dan $q$ terhadap syarat $p = q + 2$."
+        },
+        {
+          "teks": "$p = 11$ dan $q = 9$",
+          "alasan": "Salah menghitung nilai $p + q = 20$ karena mengabaikan atau salah mengurangkan frekuensi 12."
+        },
+        {
+          "teks": "$p = 9$ dan $q = 7$",
+          "alasan": "Salah menghitung 75% dari 40 menjadi 28 siswa sehingga $p + q = 16$."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hitung banyak siswa pada rentang 11 sampai 17 huruf: $75\\% \\times 40 = \\frac{75}{100} \\times 40 = 30$ siswa.\nLangkah 2: Data yang berada dalam rentang 11–17 huruf adalah panjang nama 11, 14, dan 17 huruf.\nLangkah 3: Susun persamaan jumlah frekuensi rentang: $p + 12 + q = 30$.\nLangkah 4: Sederhanakan: $p + q = 30 - 12 = 18$.\nLangkah 5: Masukkan syarat $p = q + 2$ ke dalam persamaan:\n$(q + 2) + q = 18$\n$2q + 2 = 18 \\implies 2q = 16 \\implies q = 8$.\nLangkah 6: Hitung $p$: $p = 8 + 2 = 10$.\nJadi, $p = 10$ dan $q = 8$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 211,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjawab pertanyaan-pertanyaan di atas menggunakan investigasi statistika, tentunya kalian perlu melakukan formulasi pertanyaan yang dapat menjawab pertanyaan-pertanyaan tersebut."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi desain instrumen investigasi",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi kritis terhadap keselarasan formulasi pertanyaan, metode pengumpulan data, dan validitas perbandingan dua kelompok dalam investigasi statistika.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pengurus OSIS ingin menyelidiki permasalahan: \"Apakah siswa kelas VII memiliki kebiasaan sarapan yang lebih teratur dibandingkan siswa kelas VIII?\"\n\nEmpat rancangan investigasi statistika berikut diajukan oleh anggota tim OSIS:\n- **Rancangan P**: Menanyakan menu sarapan favorit kepada 5 siswa dari setiap kelas, lalu membandingkan kelas mana yang memilih menu paling bergizi.\n- **Rancangan Q**: Menanyakan pertanyaan \"Kelas mana yang memiliki persentase siswa sarapan setiap hari lebih tinggi?\", mengumpulkan data frekuensi sarapan per minggu dari seluruh siswa kelas VII dan VIII dengan angket, lalu membandingkan persentase siswa yang sarapan rutin setiap hari pada kedua tingkatan kelas.\n- **Rancangan R**: Mengamati 10 siswa pertama yang tiba di gerbang sekolah setiap pagi selama 3 hari, mencatat apakah mereka membawa bekal sarapan, lalu menyimpulkan tingkatan kelas yang lebih teratur sarapan.\n- **Rancangan S**: Membagikan artikel tentang manfaat sarapan bagi konsentrasi belajar kepada seluruh perwakilan kelas, lalu mendata siswa yang setuju bahwa sarapan itu penting.\n\nRancangan investigasi statistika yang paling tepat dan valid untuk menjawab permasalahan tersebut adalah ....",
+      "jawaban_benar": "Rancangan Q, karena merumuskan pertanyaan terukur, mengumpulkan data frekuensi yang relevan secara representatif, serta membandingkan keteraturan sarapan antarkelompok secara objektif",
+      "alasan_benar": "Rancangan Q memformulasikan pertanyaan terukur (\"persentase siswa sarapan setiap hari\"), mengambil sampel/populasi menyeluruh dari kedua kelompok, dan indikator yang diukur (frekuensi sarapan per minggu) menjawab langsung masalah kebiasaan sarapan.",
+      "distraktor": [
+        {
+          "teks": "Rancangan P, karena menu makanan bergizi merupakan indikator utama dari kebiasaan sarapan yang teratur",
+          "alasan": "Siswa keliru mengira jenis menu sarapan sama dengan keteraturan sarapan dan mengabaikan bias dari sampel yang terlalu kecil (hanya 5 siswa)."
+        },
+        {
+          "teks": "Rancangan R, karena observasi langsung di gerbang sekolah lebih akurat dan objektif dibandingkan data dari pengisian angket",
+          "alasan": "Siswa terkecoh oleh metode observasi langsung tanpa menyadari adanya bias pemilihan sampel (hanya siswa yang datang paling pagi) dan tidak mencakup siswa yang sudah sarapan di rumah."
+        },
+        {
+          "teks": "Rancangan S, karena tingkat kesadaran siswa tentang pentingnya sarapan berbanding lurus dengan kebiasaan sarapan mereka setiap hari",
+          "alasan": "Siswa menyamakan sikap/pengetahuan siswa terhadap teori sarapan dengan tindakan nyata/perilaku sarapan sehari-hari."
+        }
+      ],
+      "pembahasan": "Untuk membandingkan kebiasaan sarapan antara dua kelompok secara statistika:\n1. Formulasi pertanyaan harus dapat dijawab dengan data kuantitatif yang relevan dengan 'keteraturan' sarapan, bukan jenis makanan atau opini.\n2. Metode pengumpulan data harus representatif mencakup kedua kelompok secara adil tanpa bias pemilihan sampel.\n\nAnalisis rancangan:\n- Rancangan P mengukur menu bergizi (bukan keteraturan) dengan sampel terlalu sedikit (5 siswa).\n- Rancangan Q memformulasikan pertanyaan terukur tentang persentase keteraturan sarapan, mengumpulkan data frekuensi sarapan per minggu seluruh siswa, dan membandingkannya secara proporsional. Ini rancangan yang paling valid.\n- Rancangan R memiliki bias seleksi sampel (hanya yang datang paling awal dan hanya yang membawa bekal).\n- Rancangan S mengukur kesetujuan terhadap opini/teori, bukan perilaku nyata sarapan siswa.\n\nJadi, rancangan yang paling tepat adalah Rancangan Q.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas7-b06-a-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 214,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Untuk menjelaskan bagaimana data terdistribusi, kalian dapat melihat di daerah mana kebanyakan data terletak, berapa beda frekuensi antar data dan data mana yang memiliki frekuensi paling banyak dan paling sedikit."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "penalaran frekuensi bertingkat",
+      "jumlah_langkah": 6,
+      "alasan_level": "Memerlukan penyusunan dan penyelesaian sistem kendala berbasis total frekuensi, persentase rentang data, dan rasio antarfrekuensi.",
+      "stimulus": "| Banyak Huruf dalam Nama Siswa | Frekuensi |\n| :---: | :---: | \n| 8 | 3 |\n| 10 | $a$ |\n| 12 | $b$ |\n| 15 | 5 |\n| 18 | $c$ |\n| 20 | 2 |",
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Tabel di atas menyajikan data panjang nama dari 25 orang anggota ekstrakurikuler majalah dinding di sebuah SMP. \n\nDiketahui:\n- Sebanyak 76% dari seluruh anggota memiliki panjang nama antara 10 hingga 15 huruf (inklusif).\n- Rasio banyaknya anggota yang memiliki panjang nama 10 huruf terhadap anggota yang memiliki panjang nama 18 huruf adalah $6 : 1$.\n\nBerdasarkan data tersebut, banyaknya anggota ekstrakurikuler yang memiliki panjang nama 12 huruf adalah ....",
+      "jawaban_benar": "8 orang",
+      "alasan_benar": "Total $a + b + c = 25 - (3 + 5 + 2) = 15$. Dari rentang 10 sampai 15 huruf, frekuensinya $76\\% \\times 25 = 19$, sehingga $a + b + 5 = 19 \\Rightarrow a + b = 14$. Akibatnya $c = 15 - 14 = 1$. Dengan perbandingan $a : c = 6 : 1$, diperoleh $a = 6$, sehingga $b = 14 - 6 = 8$ orang.",
+      "distraktor": [
+        {
+          "teks": "6 orang",
+          "alasan": "Siswa menghitung nilai $a$ (panjang nama 10 huruf), bukan nilai $b$ (panjang nama 12 huruf)."
+        },
+        {
+          "teks": "9 orang",
+          "alasan": "Siswa salah menghitung $76\\% \\times 25$ menjadi 20 orang, sehingga memperoleh $a + b = 15$ dan $b = 9$ orang."
+        },
+        {
+          "teks": "7 orang",
+          "alasan": "Siswa lupa memperhitungkan frekuensi nilai 15 (yaitu 5 orang) saat menghitung rentang 10 hingga 15 huruf."
+        }
+      ],
+      "pembahasan": "Langkah 1: Menghitung jumlah frekuensi yang belum diketahui ($a + b + c$):\n$$\\text{Total anggota} = 3 + a + b + 5 + c + 2 = 25$$\n$$a + b + c + 10 = 25$$\n$$a + b + c = 15$$\n\nLangkah 2: Menghitung banyak anggota dengan panjang nama antara 10 hingga 15 huruf:\n$$\\text{Banyak anggota} = 76\\% \\times 25 = \\frac{76}{100} \\times 25 = 19\\text{ orang}$$\n\nLangkah 3: Menyusun persamaan untuk rentang 10 hingga 15 huruf:\nRentang tersebut mencakup data 10, 12, dan 15 huruf:\n$$a + b + 5 = 19$$\n$$a + b = 14$$\n\nLangkah 4: Menentukan nilai $c$:\n$$c = (a + b + c) - (a + b) = 15 - 14 = 1$$\n\nLangkah 5: Menentukan nilai $a$ menggunakan rasio frekuensi:\n$$a : c = 6 : 1$$\n$$a = 6 \\times c = 6 \\times 1 = 6$$\n\nLangkah 6: Menghitung nilai $b$ (banyaknya anggota dengan panjang nama 12 huruf):\n$$b = 14 - a = 14 - 6 = 8\\text{ orang}$$\n\nJadi, banyaknya anggota yang memiliki panjang nama 12 huruf adalah 8 orang.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

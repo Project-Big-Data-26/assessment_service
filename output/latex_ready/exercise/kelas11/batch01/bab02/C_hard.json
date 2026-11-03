@@ -1,0 +1,518 @@
+{
+  "book": "kelas11",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "22 soal dibuang karena tidak cocok dengan solver independen setelah 2 perbaikan otomatis",
+  "soal": [
+    {
+      "id": "kelas11-b02-c-hard-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 90,
+        "bagian": "Latihan 2.3",
+        "nomor": "6",
+        "teks": "Kincir air berikut digunakan untuk pembangkit energi dan irigasi. Pada diagram sebelah kanan, roda dengan diameter 10 m diletakkan pada sungai sehingga titik terendah roda terletak pada kedalaman 1 m.",
+        "jawaban": "6 m",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis kedalaman kincir air",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memodelkan penampang kincir air sebagai lingkaran, menentukan apotema dari kedalaman, dan menghitung lebar permukaan air menggunakan relasi Pythagoras.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah roda kincir air berbentuk lingkaran dengan diameter $20\\text{ m}$ dipasang vertikal pada saluran irigasi. Titik terendah roda tersebut berada pada kedalaman $2\\text{ m}$ di bawah permukaan air. Jarak horizontal antara dua titik pada roda yang tepat bersentuhan dengan permukaan air adalah ....",
+      "jawaban_benar": "$12\\text{ m}$",
+      "alasan_benar": "Jari-jari lingkaran $r = \\frac{20}{2} = 10\\text{ m}$. Kedalaman $d = 2\\text{ m}$, sehingga jarak titik pusat ke permukaan air (apotema) adalah $a = r - d = 10 - 2 = 8\\text{ m}$. Setengah panjang tali busur permukaan air adalah $\\sqrt{r^2 - a^2} = \\sqrt{10^2 - 8^2} = 6\\text{ m}$. Jarak total kedua titik adalah $2 \\times 6 = 12\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$6\\text{ m}$",
+          "alasan": "Hanya menghitung setengah panjang tali busur dan lupa mengalikan dua."
+        },
+        {
+          "teks": "$16\\text{ m}$",
+          "alasan": "Menggunakan nilai apotema $8\\text{ m}$ lalu langsung mengalikannya dengan dua."
+        },
+        {
+          "teks": "$4\\sqrt{6}\\text{ m}$",
+          "alasan": "Keliru mengurangkan jari-jari dengan kedalaman langsung pada kuadrat Pythagoras: $2\\sqrt{10^2 - 2^2} = 8\\sqrt{6}$."
+        }
+      ],
+      "pembahasan": "Diketahui:\n- Jari-jari roda: $r = 10\\text{ m}$\n- Kedalaman bagian terendah: $h = 2\\text{ m}$\n\nRuas garis dari pusat ke tali busur permukaan air (apotema):\n$$a = r - h = 10 - 2 = 8\\text{ m}$$\n\nBerdasarkan teorema apotema tegak lurus membagi dua tali busur sama panjang:\n$$\\text{setengah tali busur} = \\sqrt{r^2 - a^2} = \\sqrt{10^2 - 8^2} = \\sqrt{36} = 6\\text{ m}$$\n\nPanjang tali busur permukaan air:\n$$\\text{Jarak} = 2 \\times 6 = 12\\text{ m}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 88,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Buktikan bahwa 4CDP ⇠4CAB"
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perpotongan dua tali busur",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pembuktian kesebangunan segitiga dari sudut keliling sehadap untuk merumuskan perkalian ruas garis dari dua tali busur yang berpotongan di dalam lingkaran.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah tali busur $AC$ dan $BD$ pada sebuah lingkaran berpotongan di titik $X$. Panjang segmen $AX = 4\\text{ cm}$, $CX = 9\\text{ cm}$, dan panjang total tali busur $BD$ adalah $15\\text{ cm}$. Jika panjang segmen $BX$ lebih pendek daripada $DX$, maka perbandingan panjang $BX : DX$ adalah ....",
+      "jawaban_benar": "$1 : 4$",
+      "alasan_benar": "Dari kesebangunan $\\triangle ABX \\sim \\triangle DCX$, berlaku $AX \\cdot CX = BX \\cdot DX$. Maka $BX \\cdot DX = 4 \\cdot 9 = 36$. Diketahui $BX + DX = 15$. Pasangan faktor dari $36$ dengan jumlah $15$ adalah $3$ dan $12$. Karena $BX < DX$, maka $BX = 3\\text{ cm}$ dan $DX = 12\\text{ cm}$. Perbandingannya $BX : DX = 3 : 12 = 1 : 4$.",
+      "distraktor": [
+        {
+          "teks": "$2 : 3$",
+          "alasan": "Membuat perbandingan dari akar kuadrat $4$ dan $9$ tanpa menghitung panjang $BD$."
+        },
+        {
+          "teks": "$1 : 3$",
+          "alasan": "Keliru membagi $15$ menjadi $3$ dan $9$."
+        },
+        {
+          "teks": "$4 : 9$",
+          "alasan": "Langsung menyamakan perbandingan $BX : DX$ dengan $AX : CX$."
+        }
+      ],
+      "pembahasan": "Pada lingkaran, sudut keliling $\\angle ABD$ dan $\\angle ACD$ menghadap busur yang sama, sehingga $\\angle ABX = \\angle DCX$. Begitu pula $\\angle BAX = \\angle CDX$. Akibatnya, $\\triangle ABX \\sim \\triangle DCX$.\n\nDari kesebangunan tersebut diperoleh:\n$$\\frac{AX}{DX} = \\frac{BX}{CX} \\implies AX \\cdot CX = BX \\cdot DX$$\n$$4 \\times 9 = BX \\cdot DX \\implies BX \\cdot DX = 36$$\n\nDiketahui panjang $BD = BX + DX = 15\\text{ cm}$.\nMisalkan $BX = t$, maka $DX = 15 - t$:\n$$t(15 - t) = 36$$\n$$t^2 - 15t + 36 = 0$$\n$$(t - 3)(t - 12) = 0$$\n\nKarena $BX < DX$, maka $BX = 3\\text{ cm}$ dan $DX = 12\\text{ cm}$.\n\nRasio perbandingannya:\n$$\\frac{BX}{DX} = \\frac{3}{12} = \\frac{1}{4}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 94,
+        "bagian": "Pengayaan",
+        "nomor": "Gambar 2.8",
+        "teks": "Gambar 2.8 menunjukkan segitiga sama sisi. Titik P terletak pada lingkaran luar segitiga ABC. Titik P dihubungkan dengan setiap titik sudut segitiga ABC. Jika AP lebih panjang daripada BP dan CP , buktikan bahwa: AP = BP + CP",
+        "jawaban": "Terbukti bahwa AP = BP + CP dengan Teorema Ptolemeus pada segiempat tali busur ABPC.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi teorema van schooten",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan pembuktian relasi jarak titik pada lingkaran luar segitiga sama sisi serta evaluasi nilai kebenaran dari empat pernyataan jarak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah menara pandang $T$ dibangun di atas busur $BC$ pada lingkaran luar panggung pertunjukan berbentuk segitiga sama sisi $ABC$. Seorang pengamat mengukur jarak pandang lurus dari $T$ ke ketiga sudut panggung, yaitu $TA$, $TB$, dan $TC$. Diketahui panjang jarak $TB = 15\\text{ m}$ dan $TC = 20\\text{ m}$. Berdasarkan Teorema van Schooten yang diturunkan dari Teorema Ptolemeus pada segiempat tali busur $ABTC$, evaluasilah kebenaran dari jarak $TA$ dan perbandingan jaraknya!",
+      "jawaban_benar": "$TA = 35\\text{ m}$ dan $\\frac{TA}{TB + TC} = 1$",
+      "alasan_benar": "Berdasarkan Teorema van Schooten untuk titik $T$ pada busur $BC$ dari segitiga sama sisi $ABC$, berlaku $TA = TB + TC$. Maka $TA = 15 + 20 = 35\\text{ m}$ dan rasionya bernilai $1$.",
+      "distraktor": [
+        {
+          "teks": "$TA = 25\\text{ m}$ dan $\\frac{TA}{TB + TC} = \\frac{5}{7}$",
+          "alasan": "Siswa salah mengira segitiga siku-siku $TB^2 + TC^2 = TA^2$ sehingga $TA = \\sqrt{15^2 + 20^2} = 25\\text{ m}$."
+        },
+        {
+          "teks": "$TA = 300\\text{ m}$ dan $\\frac{TA}{TB + TC} = \\frac{60}{7}$",
+          "alasan": "Siswa mengira $TA$ adalah hasil perkalian $TB \\times TC = 15 \\times 20 = 300\\text{ m}$."
+        },
+        {
+          "teks": "$TA = 17{,}5\\text{ m}$ dan $\\frac{TA}{TB + TC} = \\frac{1}{2}$",
+          "alasan": "Siswa menghitung rata-rata dari kedua jarak: $(15 + 20)/2 = 17{,}5\\text{ m}$."
+        }
+      ],
+      "pembahasan": "Pada segiempat tali busur $ABTC$, panjang sisi segitiga sama sisi adalah $s = AB = BC = CA$. Berdasarkan Teorema Ptolemeus: $TA \\cdot BC = TB \\cdot CA + TC \\cdot AB$. Karena $AB = BC = CA = s$, persamaan disederhanakan menjadi $TA \\cdot s = s(TB + TC) \\implies TA = TB + TC$ (Teorema van Schooten). Dengan $TB = 15\\text{ m}$ dan $TC = 20\\text{ m}$, diperoleh $TA = 15 + 20 = 35\\text{ m}$, sehingga rasio $\\frac{TA}{TB + TC} = 1$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 90,
+        "bagian": "Latihan 2.3",
+        "nomor": "6",
+        "teks": "Kincir air berikut digunakan untuk pembangkit energi dan irigasi. Pada diagram sebelah kanan, roda dengan diameter 10 m diletakkan pada sungai sehingga titik terendah roda terletak pada kedalaman 1 m. a. Tentukan ketinggian titik A dari permukaan air. b. Permukaan air ditunjukkan oleh tali busur DE . Tentukan besar ∠ DAE. c. Tentukan jarak dua titik pada roda yang terletak di permukaan air.",
+        "jawaban": "a. Ketinggian pusat kincir dari permukaan air = 4 m. b. ∠ DAE = 2 arcsin(3/5) ≈ 73,74°. c. Panjang tali busur DE = 6 m.",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "analisis pemodelan kincir air",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan beberapa langkah geometris bertingkat: menghitung apotema dari kedalaman, mengaplikasikan dalil Pythagoras untuk setengah tali busur, serta mengevaluasi panjang bentang basah kincir air.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kincir air berbentuk lingkaran dengan diameter $16\\text{ m}$ dipasang vertikal pada saluran irigasi. Titik terendah roda kincir tercelup ke dalam air hingga kedalaman $2\\text{ m}$ di bawah permukaan air datar. Permukaan air memotong roda kincir pada dua titik membentuk sebuah tali busur. Jika titik pusat roda berada di atas permukaan air, berapakah panjang ruas garis permukaan air yang terpotong oleh roda kincir tersebut?",
+      "jawaban_benar": "$4\\sqrt{7}\\text{ m}$",
+      "alasan_benar": "Jari-jari roda $r = 8\\text{ m}$. Jarak pusat kincir ke permukaan air adalah $d = 8 - 2 = 6\\text{ m}$. Setengah panjang tali busur adalah $\\sqrt{8^2 - 6^2} = \\sqrt{28} = 2\\sqrt{7}\\text{ m}$, sehingga panjang seluruhnya $2 \\times 2\\sqrt{7} = 4\\sqrt{7}\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$2\\sqrt{7}\\text{ m}$",
+          "alasan": "Siswa hanya menghitung setengah panjang tali busur dan lupa mengalikan dua."
+        },
+        {
+          "teks": "$4\\sqrt{15}\\text{ m}$",
+          "alasan": "Siswa salah menghitung jarak pusat ke permukaan air sebagai $2\\text{ m}$ sehingga $\\sqrt{8^2 - 2^2} = \\sqrt{60} = 2\\sqrt{15}$, lalu dikali dua menjadi $4\\sqrt{15}\\text{ m}$."
+        },
+        {
+          "teks": "$12\\text{ m}$",
+          "alasan": "Siswa salah menerapkan tripel Pythagoras $6, 8, 10$ dengan menganggap jari-jari adalah sisi tegak dan sisi miring bernilai $10$."
+        }
+      ],
+      "pembahasan": "Diameter kincir $d = 16\\text{ m}$, sehingga jari-jari kincir $r = 8\\text{ m}$. Kedalaman titik terendah dari permukaan air adalah $h = 2\\text{ m}$. Apotema (jarak tegak lurus dari titik pusat kincir ke permukaan air) adalah $a = r - h = 8 - 2 = 6\\text{ m}$. Berdasarkan teorema Pythagoras pada segitiga siku-siku yang dibentuk oleh jari-jari, apotema, dan setengah tali busur: $(\\frac{1}{2} L)^2 = r^2 - a^2 = 8^2 - 6^2 = 64 - 36 = 28$. Maka $\\frac{1}{2} L = \\sqrt{28} = 2\\sqrt{7}\\text{ m}$. Panjang tali busur utuh adalah $L = 2 \\times 2\\sqrt{7}\\text{ m} = 4\\sqrt{7}\\text{ m}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 92,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hasil kali diagonal sama besarnya dengan jumlah dari hasil kali sisi yang berhadapan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi diagonal teorema ptolemeus",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi kebenaran beberapa klaim geometris dan perhitungan panjang segiempat tali busur menggunakan Teorema Ptolemeus.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah jendela kaca berbentuk segiempat tali busur $ABCD$ memiliki panjang sisi berurutan $AB = 7\\text{ cm}$, $BC = 15\\text{ cm}$, $CD = 20\\text{ cm}$, dan $DA = 24\\text{ cm}$. Diketahui panjang diagonal $AC = 25\\text{ cm}$.\n\nPerhatikan pernyataan-pernyataan berikut:\n(1) Nilai dari perkalian diagonal $AC \\cdot BD$ adalah $500\\text{ cm}^2$.\n(2) Panjang diagonal $BD$ adalah $20\\text{ cm}$.\n(3) Sudut $\\angle B$ dan sudut $\\angle D$ saling berpelurus sehingga $\\angle B + \\angle D = 180^\\circ$.\n(4) Diagonal $BD$ lebih panjang daripada diagonal $AC$.\n\nPernyataan yang bernilai benar adalah ....",
+      "jawaban_benar": "(1), (2), dan (3)",
+      "alasan_benar": "Berdasarkan Teorema Ptolemeus: $AC \\cdot BD = (AB \\cdot CD) + (BC \\cdot DA) = (7 \\times 20) + (15 \\times 24) = 140 + 360 = 500\\text{ cm}^2$ (pernyataan 1 benar). Panjang diagonal $BD = \\frac{500}{25} = 20\\text{ cm}$ (pernyataan 2 benar). Sudut berhadapan segiempat tali busur saling berpelurus (pernyataan 3 benar). Karena $BD = 20 < AC = 25$, pernyataan 4 salah.",
+      "distraktor": [
+        {
+          "teks": "(1) dan (2) saja",
+          "alasan": "Siswa tidak menyadari bahwa sifat dasar sudut segiempat tali busur saling berpelurus selalu berlaku."
+        },
+        {
+          "teks": "(2) dan (4)",
+          "alasan": "Siswa salah membandingkan panjang diagonal atau salah melakukan pembagian."
+        },
+        {
+          "teks": "(1), (3), dan (4)",
+          "alasan": "Siswa salah mengira $BD = 500 / 20 = 25\\text{ cm}$ sehingga menganggap $BD$ lebih panjang."
+        }
+      ],
+      "pembahasan": "Mari evaluasi setiap pernyataan:\n1. Teorema Ptolemeus menyatakan bahwa pada segiempat tali busur:\n$$AC \\cdot BD = (AB \\cdot CD) + (BC \\cdot DA)$$\n$$AC \\cdot BD = (7 \\times 20) + (15 \\times 24) = 140 + 360 = 500\\text{ cm}^2$$\nPernyataan (1) BENAR.\n\n2. Diketahui $AC = 25\\text{ cm}$, maka:\n$$BD = \\frac{500}{AC} = \\frac{500}{25} = 20\\text{ cm}$$\nPernyataan (2) BENAR.\n\n3. Sifat segiempat tali busur menyatakan bahwa pasangan sudut yang berhadapan saling berpelurus, sehingga $\\angle B + \\angle D = 180^\\circ$.\nPernyataan (3) BENAR.\n\n4. Karena $BD = 20\\text{ cm}$ dan $AC = 25\\text{ cm}$, maka $BD < AC$ (diagonal $BD$ lebih pendek daripada $AC$).\nPernyataan (4) SALAH.\n\nJadi, pernyataan yang bernilai benar adalah (1), (2), dan (3).",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 91,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "BD dan CD adalah garis singgung pada lingkaran A."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan tali busur dari dua garis singgung",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan analisis sifat garis singgung yang tegak lurus jari-jari lingkaran, perhitungan panjang garis singgung via Pythagoras, dan analisis kesebangunan luas segitiga untuk menentukan panjang tali busur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dari sebuah titik $P$ di luar lingkaran yang berpusat di $O$ dan berjari-jari $9\\text{ cm}$, ditarik dua garis singgung yang menyinggung lingkaran masing-masing di titik $A$ dan $B$. Jarak titik $P$ ke titik pusat $O$ adalah $15\\text{ cm}$. Ruas garis $AB$ adalah tali busur yang menghubungkan kedua titik singgung tersebut. Panjang tali busur $AB$ adalah ....",
+      "jawaban_benar": "$14,4\\text{ cm}$",
+      "alasan_benar": "Garis singgung tegak lurus jari-jari sehingga $\\angle OAP = 90^\\circ$. Panjang garis singgung $AP = \\sqrt{15^2 - 9^2} = 12\\text{ cm}$. Ruas garis $OP$ memotong tegak lurus tali busur $AB$ di titik $M$. Dari luas $\\triangle OAP$, tinggi $AM = \\frac{OA \\cdot AP}{OP} = \\frac{9 \\cdot 12}{15} = 7,2\\text{ cm}$. Panjang tali busur $AB = 2 \\times AM = 2 \\times 7,2 = 14,4\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$7,2\\text{ cm}$",
+          "alasan": "Siswa hanya menghitung setengah panjang tali busur ($AM$) dan lupa mengalikannya dengan 2."
+        },
+        {
+          "teks": "$12,0\\text{ cm}$",
+          "alasan": "Siswa mengira panjang tali busur penghubung kedua titik singgung sama dengan panjang garis singgung $AP$."
+        },
+        {
+          "teks": "$22,5\\text{ cm}$",
+          "alasan": "Siswa terbalik dalam perbandingan kesebangunan dengan menghitung $AM = \\frac{OA \\cdot OP}{AP} = \\frac{9 \\cdot 15}{12} = 11,25\\text{ cm}$, lalu dikalikan 2."
+        }
+      ],
+      "pembahasan": "Langkah 1: Garis singgung $AP$ tegak lurus terhadap jari-jari $OA$, sehingga $\\triangle OAP$ merupakan segitiga siku-siku di $A$. Hitung panjang $AP$ menggunakan teorema Pythagoras:\n$$AP = \\sqrt{OP^2 - OA^2} = \\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12\\text{ cm}$$\n\nLangkah 2: Ruas garis $OP$ merupakan sumbu simetri yang membagi dua sama panjang tali busur $AB$ secara tegak lurus di titik $M$. Ruas garis $AM$ merupakan garis tinggi dari titik $A$ ke hipotenusa $OP$ pada $\\triangle OAP$.\n\nLangkah 3: Hitung panjang $AM$ menggunakan kesamaan luas $\\triangle OAP$:\n$$\\text{Luas } \\triangle OAP = \\frac{1}{2} \\times OA \\times AP = \\frac{1}{2} \\times OP \\times AM$$\n$$OA \\times AP = OP \\times AM$$\n$$9 \\times 12 = 15 \\times AM \\implies 108 = 15 \\times AM \\implies AM = 7,2\\text{ cm}$$\n\nLangkah 4: Hitung panjang tali busur $AB$:\n$$AB = 2 \\times AM = 2 \\times 7,2 = 14,4\\text{ cm}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 89,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Apotema adalah ruas garis dari pusat lingkaran dan tegak lurus tali busur. Buktikan bahwa BD = DC."
+      },
+      "cognitive_c": "C6",
+      "jenis_soal": "perancangan jarak dua tali busur sejajar",
+      "jumlah_langkah": 5,
+      "alasan_level": "Menganalisis dua kasus geometri berbeda (sepihak vs berseberangan dari pusat) untuk merancang rentang jarak antartali busur sejajar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lingkaran dengan pusat $O$ memiliki dua tali busur sejajar, yaitu $AB$ dengan panjang $24\\text{ cm}$ dan $CD$ dengan panjang $10\\text{ cm}$. Jika panjang jari-jari lingkaran tersebut adalah $13\\text{ cm}$, berapakah perbandingan selisih jarak kedua tali busur jika keduanya berada pada sisi berlawanan terhadap titik pusat $O$, dibandingkan jika keduanya berada pada sisi yang sama terhadap titik pusat $O$?",
+      "jawaban_benar": "$17 : 7$",
+      "alasan_benar": "Jari-jari $r = 13\\text{ cm}$. Apotema ke $AB$: $d_1 = \\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = \\sqrt{25} = 5\\text{ cm}$. Apotema ke $CD$: $d_2 = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12\\text{ cm}$. Jika kedua tali busur berseberangan (sisi berlawanan) terhadap pusat, jaraknya adalah $d_1 + d_2 = 5 + 12 = 17\\text{ cm}$. Jika sepihak (sisi yang sama), jaraknya adalah $d_2 - d_1 = 12 - 5 = 7\\text{ cm}$. Perbandingannya adalah $17 : 7$.",
+      "distraktor": [
+        {
+          "teks": "$7 : 17$",
+          "alasan": "Siswa membalik urutan perbandingan kasus sepihak dan berseberangan."
+        },
+        {
+          "teks": "$12 : 5$",
+          "alasan": "Siswa membandingkan panjang masing-masing apotema $d_2 : d_1$ bukan jarak antartali busur."
+        },
+        {
+          "teks": "$24 : 10$",
+          "alasan": "Siswa membandingkan langsung panjang kedua tali busur."
+        }
+      ],
+      "pembahasan": "1. Apotema membagi tali busur menjadi dua bagian yang sama panjang dan tegak lurus terhadap tali busur.\n2. Hitung jarak apotema lingkaran ($r = 13\\text{ cm}$) ke masing-masing tali busur:\n   - Untuk tali busur $AB = 24\\text{ cm}$, setengah panjangnya adalah $12\\text{ cm}$. Jarak apotema $d_1 = \\sqrt{13^2 - 12^2} = \\sqrt{25} = 5\\text{ cm}$.\n   - Untuk tali busur $CD = 10\\text{ cm}$, setengah panjangnya adalah $5\\text{ cm}$. Jarak apotema $d_2 = \\sqrt{13^2 - 5^2} = \\sqrt{144} = 12\\text{ cm}$.\n3. Kasus 1 (sisi berlawanan terhadap titik pusat): jarak antara kedua tali busur adalah jumlah kedua apotema, yaitu $d_1 + d_2 = 5 + 12 = 17\\text{ cm}$.\n4. Kasus 2 (sisi yang sama terhadap titik pusat): jarak antara kedua tali busur adalah selisih kedua apotema, yaitu $d_2 - d_1 = 12 - 5 = 7\\text{ cm}$.\n5. Perbandingan jarak kasus 1 terhadap kasus 2 adalah $17 : 7$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 88,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Segiempat yang keempat sisinya merupakan tali busur sebuah lingkaran disebut segiempat tali busur. Pada segiempat tali busur, sudut-sudut yang berhadapan jumlahnya"
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi eksistensi segiempat tali busur",
+      "jumlah_langkah": 4,
+      "alasan_level": "Mengevaluasi apakah empat titik dapat membentuk segiempat tali busur melalui syarat konsistensi sudut berhadapan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diberikan segiempat konveks $ABCD$. Besar sudut dinyatakan berturut-turut oleh $\\angle A = (2x + 35)^\\circ$, $\\angle B = (3y - 10)^\\circ$, $\\angle C = (3x - 10)^\\circ$, dan $\\angle D = (2y + 40)^\\circ$. Evaluasilah apakah segiempat $ABCD$ dapat membentuk segiempat tali busur, dan jika dapat, tentukan nilai selisih $(x - y)$.",
+      "jawaban_benar": "$1\\text{, segiempat tersebut adalah segiempat tali busur}$",
+      "alasan_benar": "Agar segiempat tali busur, $\\angle A + \\angle C = 180^\\circ \\Rightarrow 5x + 25 = 180 \\Rightarrow x = 31$, dan $\\angle B + \\angle D = 180^\\circ \\Rightarrow 5y + 30 = 180 \\Rightarrow y = 30$. Keduanya menghasilkan sudut positif valid dengan selisih $x - y = 31 - 30 = 1$.",
+      "distraktor": [
+        {
+          "teks": "$2\\text{, segiempat tersebut adalah segiempat tali busur}$",
+          "alasan": "Salah menghitung nilai $x$ menjadi $32$ sehingga selisihnya menjadi $2$."
+        },
+        {
+          "teks": "$-1\\text{, segiempat tersebut adalah segiempat tali busur}$",
+          "alasan": "Tertukar menghitung $y - x$ alih-alih $x - y$."
+        },
+        {
+          "teks": "$\\text{Tidak dapat ditentukan karena bukan segiempat tali busur}$",
+          "alasan": "Keliru menganggap persamaan sudut tidak konsisten sehingga menyimpulkan bukan segiempat tali busur."
+        }
+      ],
+      "pembahasan": "Agar segiempat $ABCD$ merupakan segiempat tali busur, jumlah pasangan sudut yang berhadapan harus sama dengan $180^\\circ$.\n1. Sudut $\\angle A$ berhadapan dengan $\\angle C$:\n$$\\angle A + \\angle C = 180^\\circ$$\n$$(2x + 35)^\\circ + (3x - 10)^\\circ = 180^\\circ$$\n$$5x + 25 = 180$$\n$$5x = 155 \\implies x = 31$$\n2. Sudut $\\angle B$ berhadapan dengan $\\angle D$:\n$$\\angle B + \\angle D = 180^\\circ$$\n$$(3y - 10)^\\circ + (2y + 40)^\\circ = 180^\\circ$$\n$$5y + 30 = 180$$\n$$5y = 150 \\implies y = 30$$\n3. Periksa besar sudut:\n$\\angle A = 97^\\circ, \\angle C = 83^\\circ, \\angle B = 80^\\circ, \\angle D = 100^\\circ$. Semua sudut positif dan totalnya $360^\\circ$, sehingga segiempat $ABCD$ benar merupakan segiempat tali busur.\n4. Hitung selisih $(x - y)$:\n$$x - y = 31 - 30 = 1$$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 93,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Dua tali busur, AC dan BD pada lingkaran dengan pusat O, berpotongan tegak lurus pada titik P ."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi relasi panjang tali busur tegak lurus",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan evaluasi geometri koordinat/teorema tali busur tegak lurus untuk menemukan hubungan diameter lingkaran dengan segmen-segmen tali busur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Dua buah tali busur $AC$ dan $BD$ pada sebuah lingkaran saling berpotongan tegak lurus di titik $P$. Titik $P$ membagi tali busur $AC$ menjadi segmen $AP = 2\\text{ cm}$ dan $PC = 6\\text{ cm}$, serta membagi tali busur $BD$ menjadi segmen $BP = 3\\text{ cm}$ dan $PD = 4\\text{ cm}$. Berapakah panjang diameter lingkaran tersebut?",
+      "jawaban_benar": "$\\sqrt{65}\\text{ cm}$",
+      "alasan_benar": "Pada dua tali busur yang saling berpotongan tegak lurus di $P$, kuadrat diameter lingkaran $D^2 = AP^2 + PC^2 + BP^2 + PD^2$. Maka $D^2 = 2^2 + 6^2 + 3^2 + 4^2 = 4 + 36 + 9 + 16 = 65$, sehingga $D = \\sqrt{65}\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$2\\sqrt{13}\\text{ cm}$",
+          "alasan": "Hanya menjumlahkan kuadrat dari dua segmen terbesar $6^2 + 4^2 = 52$ sehingga $D = \\sqrt{52} = 2\\sqrt{13}\\text{ cm}$."
+        },
+        {
+          "teks": "$8\\text{ cm}$",
+          "alasan": "Mengira diameter sama dengan panjang tali busur terpanjang $AP + PC = 2 + 6 = 8\\text{ cm}$."
+        },
+        {
+          "teks": "$\\sqrt{45}\\text{ cm}$",
+          "alasan": "Lupa mengkuadratkan salah satu segmen tali busur."
+        }
+      ],
+      "pembahasan": "Ketika dua tali busur $AC$ dan $BD$ saling berpotongan tegak lurus di titik $P$, berlaku teorema geometris:\n$$AP^2 + PC^2 + BP^2 + PD^2 = 4R^2 = D^2$$\ndi mana $R$ adalah jari-jari dan $D$ adalah diameter lingkaran.\n\nSubstitusikan panjang masing-masing segmen:\n$$D^2 = 2^2 + 6^2 + 3^2 + 4^2$$\n$$D^2 = 4 + 36 + 9 + 16 = 65$$\n$$D = \\sqrt{65}\\text{ cm}$$.\nJadi, panjang diameter lingkaran tersebut adalah $\\sqrt{65}\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 94,
+        "bagian": "Uji Kompetensi",
+        "nomor": "6",
+        "teks": "Segiempat BDCE adalah segiempat tali busur, O adalah titik pusat lingkaran, dan besar ∠ BOC = 130 ◦ . Tentukan besar ∠ BEC.",
+        "jawaban": "115°",
+        "kutipan": null
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "evaluasi selisih sudut tali busur",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan evaluasi hubungan sudut pusat mayor-minor terhadap dua sudut keliling berhadapan pada segiempat tali busur.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segiempat $BDCE$ merupakan segiempat tali busur pada lingkaran yang berpusat di titik $O$, dengan titik $D$ dan $E$ berada pada busur yang berlawanan terhadap tali busur $BC$. Diketahui besar sudut pusat refleks $\\angle BOC = 224^\\circ$. Berapakah selisih mutlak antara besar sudut keliling $\\angle BEC$ dan besar sudut keliling $\\angle BDC$?",
+      "jawaban_benar": "$44^\\circ$",
+      "alasan_benar": "Sudut pusat minor $\\angle BOC = 360^\\circ - 224^\\circ = 136^\\circ$. Maka $\\angle BDC = \\frac{1}{2} \\times 136^\\circ = 68^\\circ$. Karena $BDCE$ segiempat tali busur, $\\angle BEC = 180^\\circ - 68^\\circ = 112^\\circ$. Selisih mutlaknya $|112^\\circ - 68^\\circ| = 44^\\circ$.",
+      "distraktor": [
+        {
+          "teks": "$34^\\circ$",
+          "alasan": "Kesalahan menghitung selisih dengan mengurangkan sudut keliling dari nilai sudut lancip yang salah hitung."
+        },
+        {
+          "teks": "$56^\\circ$",
+          "alasan": "Mengurangkan sudut pusat minor langsung dengan besar sudut keliling $\\angle BDC$."
+        },
+        {
+          "teks": "$68^\\circ$",
+          "alasan": "Mengambil besar sudut keliling $\\angle BDC$ langsung tanpa mencari selisihnya dengan $\\angle BEC$."
+        }
+      ],
+      "pembahasan": "Sudut pusat minor $\\angle BOC = 360^\\circ - 224^\\circ = 136^\\circ$. Sudut keliling $\\angle BDC = \\frac{1}{2} \\times 136^\\circ = 68^\\circ$. Karena sudut yang berhadapan pada segiempat tali busur saling berpelurus, $\\angle BEC = 180^\\circ - 68^\\circ = 112^\\circ$. Selisihnya $|112^\\circ - 68^\\circ| = 44^\\circ$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 92,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sudut-sudut yang berhadapan saling berpelurus."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "penentuan parameter sudut segiempat tali busur",
+      "jumlah_langkah": 5,
+      "alasan_level": "Memerlukan pemodelan sistem persamaan linear dua variabel dari sifat sudut berhadapan segiempat tali busur lalu mengevaluasi nilai parameternya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segiempat $ABCD$ merupakan segiempat tali busur. Besar sudut-sudutnya dinyatakan berturut-turut oleh $\\angle A = (5x + y)^\\circ$, $\\angle B = (4x + 6y)^\\circ$, $\\angle C = (3x + 3y)^\\circ$, dan $\\angle D = (2x + 2y + 10)^\\circ$. Nilai dari $x + y$ adalah ....",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Sudut berhadapan saling berpelurus: $(5x+y)+(3x+3y)=180 \\implies 2x+y=45$ dan $(4x+6y)+(2x+2y+10)=180 \\implies 3x+4y=85$. Dari SPLDV diperoleh $x=19$ dan $y=7$, sehingga $x+y=26$.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Kesalahan eliminasi pada koefisien variabel $y$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Salah dalam memindahkan konstanta 10 derajat sehingga menghasilkan ruas kanan 190."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Menjumlahkan pasangan sudut bersebelahan bukan pasangan sudut yang berhadapan."
+        }
+      ],
+      "pembahasan": "Pada segiempat tali busur: $\\angle A + \\angle C = 180^\\circ \\implies 8x + 4y = 180 \\implies 2x + y = 45$. Sudut $\\angle B + \\angle D = 180^\\circ \\implies 6x + 8y + 10 = 180 \\implies 3x + 4y = 85$. Kalikan persamaan pertama dengan 4: $8x + 4y = 180$. Kurangkan dengan persamaan kedua: $5x = 95 \\implies x = 19$. Maka $y = 45 - 2(19) = 7$. Nilai $x + y = 19 + 7 = 26$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas11-b02-c-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 92,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Hasil kali diagonal sama besarnya dengan jumlah dari hasil kali sisi yang berhadapan."
+      },
+      "cognitive_c": "C5",
+      "jenis_soal": "perhitungan sisi dari teorema ptolemeus",
+      "jumlah_langkah": 4,
+      "alasan_level": "Memerlukan penerapan Teorema Ptolemeus secara terbalik untuk menentukan panjang satu sisi segiempat tali busur yang belum diketahui.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah segiempat tali busur $PQRS$ memiliki panjang diagonal $PR = 15\\text{ cm}$ dan diagonal $QS = 14\\text{ cm}$. Tiga sisinya telah diukur memiliki panjang berturut-turut $PQ = 9\\text{ cm}$, $QR = 8\\text{ cm}$, dan $RS = 6\\text{ cm}$. Berdasarkan Teorema Ptolemeus, panjang sisi keempat $SP$ adalah ....",
+      "jawaban_benar": "$19,5\\text{ cm}$",
+      "alasan_benar": "Menurut Teorema Ptolemeus, $PR \\cdot QS = PQ \\cdot RS + QR \\cdot SP$. Maka $15 \\cdot 14 = (9 \\cdot 6) + (8 \\cdot SP) \\implies 210 = 54 + 8 \\cdot SP \\implies 8 \\cdot SP = 156 \\implies SP = 19,5\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$18,5\\text{ cm}$",
+          "alasan": "Kesalahan pembagian $148/8$ akibat keliru menghitung $210 - 54$."
+        },
+        {
+          "teks": "$20,5\\text{ cm}$",
+          "alasan": "Salah menjumlahkan hasil kali diagonal dengan hasil kali sisi pertama alih-alih mengurangkannya."
+        },
+        {
+          "teks": "$21,0\\text{ cm}$",
+          "alasan": "Menggunakan pasangan sisi yang keliru pada relasi sisi berhadapan."
+        }
+      ],
+      "pembahasan": "Berdasarkan Teorema Ptolemeus: $PR \\cdot QS = (PQ \\cdot RS) + (QR \\cdot SP)$. Substitusi nilai yang diketahui: $15 \\times 14 = (9 \\times 6) + (8 \\times SP) \\iff 210 = 54 + 8SP \\iff 8SP = 156 \\iff SP = 19,5\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}

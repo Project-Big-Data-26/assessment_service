@@ -1,0 +1,658 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "hard",
+  "batch": 1,
+  "skill_versi": "v1",
+  "kapasitas_kurang": true,
+  "alasan_kapasitas": "Subbab B (Sifat-Sifat Eksponen, p23-p26) hanya memuat 7 sifat dan acuan siswa sudah habis; hard dibatasi pada penalaran (klaim, contoh penyangkal, ekspresi bersyarat, parameter, perancangan). Sisa soal akan nyaris kembar dengan easy/medium, sehingga hanya 19 soal yang layak ditulis.",
+  "soal": [
+    {
+      "id": "kelas10-b01-b-hard-bt01-001",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( ab )m = a m × b m dengan a, b 6 = 0, dan m bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim: contoh penyangkal",
+      "alasan_level": "mengevaluasi klaim $(a+b)^{n}=a^{n}+b^{n}$ dengan menguji tiap kandidat, termasuk kasus khusus yang kebetulan sama",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa mengklaim bahwa $(a+b)^{n} = a^{n} + b^{n}$ berlaku untuk semua bilangan real $a$, $b$ dan bilangan bulat positif $n$. Tripel $(a, b, n)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+      "jawaban_benar": "$(-3, 2, 2)$",
+      "alasan_benar": "$(-3+2)^{2}=1$, sedangkan $(-3)^{2}+2^{2}=13$; kedua ruas tidak sama",
+      "distraktor": [
+        {
+          "teks": "$(-2, 2, 3)$",
+          "alasan": "kedua ruas sama-sama 0 ($0^{3}=-8+8$), kebetulan sama sehingga bukan penyangkal"
+        },
+        {
+          "teks": "$(4, 0, 5)$",
+          "alasan": "salah satu bilangan 0 membuat kedua ruas sama-sama $4^{5}$"
+        },
+        {
+          "teks": "$(7, 5, 1)$",
+          "alasan": "untuk $n=1$ kedua ruas selalu sama ($12=12$)"
+        }
+      ],
+      "pembahasan": "Contoh penyangkal harus membuat kedua ruas berbeda. $(-3,2,2)$: $1\\neq13$. Ketiga tripel lain membuat kedua ruas sama.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-002",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( ab )m = a m × b m dengan a, b 6 = 0, dan m bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "evaluasi klaim: syarat berlakunya kesamaan",
+      "alasan_level": "menganalisis kapan $a^{m}b^{n}=(ab)^{m+n}$ benar, yaitu $a^{n}b^{m}=1$, lalu menguji tiap kandidat",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menulis $a^{m} \\cdot b^{n} = (ab)^{m+n}$. Kesamaan ini ternyata tidak berlaku umum. Empat bilangan $(a, b, m, n)$ yang membuat kesamaan tersebut benar adalah ....",
+      "jawaban_benar": "$\\left(2, \\tfrac{1}{2}, 3, 3\\right)$",
+      "alasan_benar": "ruas kiri $2^{3}\\cdot\\left(\\tfrac12\\right)^{3}=1$ dan ruas kanan $1^{6}=1$",
+      "distraktor": [
+        {
+          "teks": "$\\left(3, \\tfrac{1}{3}, 2, 1\\right)$",
+          "alasan": "ruas kiri $9\\cdot\\tfrac13=3$, ruas kanan $1^{3}=1$; hanya memeriksa $ab=1$ tanpa memeriksa pangkat"
+        },
+        {
+          "teks": "$(2, 3, 2, 2)$",
+          "alasan": "ruas kiri $4\\cdot9=36$, ruas kanan $6^{4}=1296$; menganggap kesamaan selalu benar bila $m=n$"
+        },
+        {
+          "teks": "$(2, 4, 3, 1)$",
+          "alasan": "ruas kiri $8\\cdot4=32$, ruas kanan $8^{4}=4096$; menjumlahkan pangkat tanpa memangkatkan kedua basis"
+        }
+      ],
+      "pembahasan": "Ruas kanan $=a^{m+n}b^{m+n}$, sehingga kesamaan benar jika $a^{n}b^{m}=1$. Hanya $\\left(2,\\tfrac12,3,3\\right)$ yang memenuhi: $2^{3}\\cdot2^{-3}=1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-003",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menemukan langkah pertama yang salah",
+      "alasan_level": "mengevaluasi urutan penyederhanaan empat langkah, menemukan letak kesalahan dan nilai yang benar",
+      "stimulus": null,
+      "pertanyaan": "Dina menyederhanakan $\\dfrac{\\left(2^{3}\\right)^{2} \\cdot 4^{-1}}{8^{-2}}$ sebagai berikut. (1) $=\\dfrac{2^{6} \\cdot 2^{-2}}{2^{-6}}$. (2) $=\\dfrac{2^{4}}{2^{-6}}$. (3) $=2^{4-6}=2^{-2}$. (4) $=\\dfrac{1}{4}$. Pernyataan yang benar tentang pekerjaan Dina adalah ....",
+      "jawaban_benar": "kesalahan pertama pada langkah (3); nilai yang benar $1.024$",
+      "alasan_benar": "langkah (3) seharusnya $2^{4-(-6)}=2^{10}=1.024$",
+      "distraktor": [
+        {
+          "teks": "kesalahan pertama pada langkah (2); nilai yang benar $1.024$",
+          "alasan": "langkah (2) benar ($6+(-2)=4$); salah menunjuk langkah"
+        },
+        {
+          "teks": "kesalahan pertama pada langkah (3); nilai yang benar $64$",
+          "alasan": "letak kesalahan tepat tetapi nilai benar keliru: memakai $2^{6}$ dengan mengabaikan pangkat negatif"
+        },
+        {
+          "teks": "tidak ada kesalahan; nilai $\\dfrac14$",
+          "alasan": "tidak menyadari pengurangan pangkat negatif harus menjadi penjumlahan"
+        }
+      ],
+      "pembahasan": "Langkah (1) dan (2) benar. Langkah (3): $2^{4-(-6)}=2^{10}=1.024$, bukan $2^{-2}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar kesamaan berlaku",
+      "alasan_level": "menyusun persamaan kuadrat dari pangkat dari pangkat berparameter lalu menyaring akar dengan syarat bilangan asli",
+      "stimulus": null,
+      "pertanyaan": "Untuk $x \\neq 0$ dan $k$ bilangan asli, kesamaan $\\left(x^{k}\\right)^{k} \\cdot x^{-2k} = x^{3}$ benar untuk nilai $k$ sebesar ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$x^{k^{2}-2k}=x^{3}$ sehingga $k^{2}-2k-3=0$ dan $k=3$ atau $k=-1$; hanya $k=3$ yang asli",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "akar lain persamaan kuadrat, tetapi bukan bilangan asli"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "menganggap $k(k-2)=3$ dipenuhi faktor 1 dan 3 tanpa memeriksa"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "menyamakan $k$ dan $k-2$ dengan 3 sekaligus ($k-2=3$)"
+        }
+      ],
+      "pembahasan": "$\\left(x^{k}\\right)^{k}=x^{k^{2}}$, jadi $k^{2}-2k=3$, $(k-3)(k+1)=0$. Syarat bilangan asli menyisakan $k=3$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai ekspresi bersyarat",
+      "alasan_level": "mengubah jumlah pangkat menjadi bentuk kuadrat $(2^{x}+2^{-x})^{2}$ tanpa mencari $x$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $2^{x} + 2^{-x} = 5$. Nilai dari $4^{x} + 4^{-x}$ adalah ....",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "$\\left(2^{x}+2^{-x}\\right)^{2}=4^{x}+2+4^{-x}=25$, sehingga $4^{x}+4^{-x}=23$",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "hanya mengkuadratkan 5 dan lupa mengurangi suku tengah 2"
+        },
+        {
+          "teks": "$27$",
+          "alasan": "suku tengah 2 ditambahkan, bukan dikurangkan"
+        },
+        {
+          "teks": "$10$",
+          "alasan": "mengira $4^{x}+4^{-x}=2\\left(2^{x}+2^{-x}\\right)$"
+        }
+      ],
+      "pembahasan": "Kuadratkan kedua ruas: $4^{x}+2\\cdot2^{x}2^{-x}+4^{-x}=25$, jadi $4^{x}+4^{-x}=23$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-006",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "nilai ekspresi bersyarat",
+      "alasan_level": "kuadrat selisih pangkat menghasilkan jumlah pangkat ganda ditambah 2, perlu ketelitian tanda",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $3^{x} - 3^{-x} = 2$. Nilai dari $9^{x} + 9^{-x}$ adalah ....",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "$\\left(3^{x}-3^{-x}\\right)^{2}=9^{x}-2+9^{-x}=4$, sehingga $9^{x}+9^{-x}=6$",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "hanya mengkuadratkan 2 dan lupa suku tengah $-2$"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "suku tengah $-2$ dipindahkan dengan tanda salah ($4-2$)"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "mengira $9^{x}+9^{-x}=2\\left(3^{x}-3^{-x}\\right)^{2}$"
+        }
+      ],
+      "pembahasan": "Kuadratkan: $9^{x}-2\\cdot3^{x}3^{-x}+9^{-x}=4$, sehingga $9^{x}+9^{-x}=4+2=6$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-007",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "dengan a > 0 , m n dan p n bilangan rasional dengan n 6 = 0"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "nilai ekspresi bersyarat",
+      "alasan_level": "memakai pangkat rasional dan identitas pangkat tiga untuk pangkat $\\tfrac{3}{2}$ dari informasi pangkat $\\tfrac{1}{2}$",
+      "stimulus": null,
+      "pertanyaan": "Untuk $a > 0$ diketahui $a^{\\frac{1}{2}} + a^{-\\frac{1}{2}} = 3$. Nilai dari $a^{\\frac{3}{2}} + a^{-\\frac{3}{2}}$ adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "$\\left(a^{\\frac12}+a^{-\\frac12}\\right)^{3}=a^{\\frac32}+a^{-\\frac32}+3\\left(a^{\\frac12}+a^{-\\frac12}\\right)$ sehingga $27=\\text{hasil}+9$ dan hasil $=18$",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "hanya memangkatkan tiga angka 3 tanpa mengurangi suku campuran"
+        },
+        {
+          "teks": "$24$",
+          "alasan": "mengurangi 3, bukan $3\\cdot3=9$, pada suku campuran"
+        },
+        {
+          "teks": "$9$",
+          "alasan": "mengira $a^{\\frac32}+a^{-\\frac32}=\\left(a^{\\frac12}+a^{-\\frac12}\\right)^{2}$"
+        }
+      ],
+      "pembahasan": "Pangkatkan tiga: $27=a^{\\frac32}+3a^{\\frac12}+3a^{-\\frac12}+a^{-\\frac32}=\\left(a^{\\frac32}+a^{-\\frac32}\\right)+3\\cdot3$, jadi hasilnya $18$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mengurutkan bilangan berpangkat tanpa menghitung",
+      "alasan_level": "menyamakan pangkat luar menjadi 10 pada tiga bilangan berbasis berbeda lalu membandingkan basis",
+      "stimulus": null,
+      "pertanyaan": "Urutan yang benar dari yang terkecil ke yang terbesar untuk bilangan $2^{100}$, $3^{70}$, dan $5^{50}$ adalah ....",
+      "jawaban_benar": "$2^{100} < 3^{70} < 5^{50}$",
+      "alasan_benar": "$2^{100}=\\left(2^{10}\\right)^{10}=1024^{10}$, $3^{70}=\\left(3^{7}\\right)^{10}=2187^{10}$, $5^{50}=\\left(5^{5}\\right)^{10}=3125^{10}$",
+      "distraktor": [
+        {
+          "teks": "$5^{50} < 3^{70} < 2^{100}$",
+          "alasan": "mengurutkan berdasarkan pangkat terbesar, bukan nilai"
+        },
+        {
+          "teks": "$3^{70} < 2^{100} < 5^{50}$",
+          "alasan": "menukar $2^{100}$ dan $3^{70}$ karena hanya membandingkan basis 3 dan 2 sebagian"
+        },
+        {
+          "teks": "$2^{100} < 5^{50} < 3^{70}$",
+          "alasan": "menukar $3^{70}$ dan $5^{50}$ karena mengira basis 5 yang dipangkatkan 50 lebih kecil dari $3^{7}$ dipangkatkan 10"
+        }
+      ],
+      "pembahasan": "Pangkat 100, 70, 50 semuanya kelipatan 10. Bandingkan $1024^{10}<2187^{10}<3125^{10}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "membandingkan banyak bentuk setara",
+      "alasan_level": "mengubah lima bilangan berpangkat ke basis 2 dan menghitung yang sama dengan $2^{60}$",
+      "stimulus": null,
+      "pertanyaan": "Di antara lima bilangan $4^{30}$, $8^{20}$, $16^{14}$, $32^{12}$, dan $64^{9}$, banyak bilangan yang nilainya sama dengan $2^{60}$ adalah ....",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "$4^{30}=2^{60}$, $8^{20}=2^{60}$, $16^{14}=2^{56}$, $32^{12}=2^{60}$, $64^{9}=2^{54}$; tiga bilangan sama",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "melewatkan $32^{12}$ karena memeriksa basis 4 dan 8 saja"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "menganggap $16^{14}$ juga $2^{60}$ (menghitung $4\\times14=56$ dibulatkan)"
+        },
+        {
+          "teks": "$5$",
+          "alasan": "menganggap semua basis pangkat dua menghasilkan $2^{60}$"
+        }
+      ],
+      "pembahasan": "Ubah ke basis 2: $2^{60},2^{60},2^{56},2^{60},2^{54}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "merancang pasangan basis dan eksponen",
+      "alasan_level": "menghitung banyak pasangan terurut yang memenuhi $mn=12$ dengan syarat $m,n\\geq2$",
+      "stimulus": null,
+      "pertanyaan": "Banyak pasangan terurut bilangan asli $(m, n)$ dengan $m \\geq 2$ dan $n \\geq 2$ yang memenuhi $\\left(2^{m}\\right)^{n} = 2^{12}$ adalah ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "$mn=12$ dengan $m,n\\geq2$: $(2,6),(3,4),(4,3),(6,2)$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "ikut menghitung pasangan dengan faktor 1: $(1,12)$ dan $(12,1)$"
+        },
+        {
+          "teks": "$2$",
+          "alasan": "menghitung pasangan tak terurut saja"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "melewatkan satu pasangan pada daftar faktor 12"
+        }
+      ],
+      "pembahasan": "$\\left(2^{m}\\right)^{n}=2^{mn}$ sehingga $mn=12$. Faktor $\\geq2$ yang berpasangan membentuk empat pasangan terurut.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-011",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "evaluasi klaim: pangkat dari pangkat",
+      "alasan_level": "menguji klaim $(2^{m})^{n}=2^{m+n}$ menjadi $(m-1)(n-1)=1$ dan menghitung semua pasangan bulat, termasuk $(0,0)$",
+      "stimulus": null,
+      "pertanyaan": "Seorang siswa menyamakan $\\left(2^{m}\\right)^{n}$ dengan $2^{m+n}$. Kesamaan ini hanya benar untuk pasangan tertentu. Banyak pasangan bilangan bulat $(m, n)$ yang membuat kesamaan itu benar adalah ....",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "$mn=m+n$ ekuivalen $(m-1)(n-1)=1$, sehingga $(m-1,n-1)=(1,1)$ atau $(-1,-1)$, yaitu $(2,2)$ dan $(0,0)$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "melewatkan pasangan $(0,0)$"
+        },
+        {
+          "teks": "$3$",
+          "alasan": "menghitung $(2,2)$, $(0,0)$ dan $(1,1)$; padahal $(1,1)$ memberi $2^{1}\\neq2^{2}$"
+        },
+        {
+          "teks": "$4$",
+          "alasan": "menghitung pasangan tak terurut ganda untuk faktor $\\pm1$"
+        }
+      ],
+      "pembahasan": "$2^{mn}=2^{m+n}$ berarti $mn=m+n$, yaitu $(m-1)(n-1)=1$. Dua faktor bulat bernilai 1 hanya $1\\cdot1$ dan $(-1)(-1)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-012",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "menyederhanakan dengan faktorisasi pangkat",
+      "alasan_level": "memfaktorkan $4^{n}$ dari pembilang dan penyebut berpangkat variabel sehingga $n$ hilang",
+      "stimulus": null,
+      "pertanyaan": "Untuk setiap bilangan bulat $n$, nilai dari $\\dfrac{4^{n+1} - 2^{2n}}{2^{2n+1} + 4^{n-1}}$ adalah ....",
+      "jawaban_benar": "$\\dfrac{4}{3}$",
+      "alasan_benar": "pembilang $4^{n}(4-1)=3\\cdot4^{n}$; penyebut $4^{n}\\left(2+\\tfrac14\\right)=\\tfrac94\\cdot4^{n}$; hasil $\\tfrac{3}{9/4}=\\tfrac43$",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "menganggap $4^{n-1}=4^{n}$ sehingga penyebut $3\\cdot4^{n}$"
+        },
+        {
+          "teks": "$\\dfrac{3}{2}$",
+          "alasan": "mengabaikan suku $4^{n-1}$ pada penyebut"
+        },
+        {
+          "teks": "$\\dfrac{12}{7}$",
+          "alasan": "mengurangi $\\tfrac14$ dari 2 pada penyebut ($2-\\tfrac14$)"
+        }
+      ],
+      "pembahasan": "Ubah $2^{2n}=4^{n}$, $2^{2n+1}=2\\cdot4^{n}$, $4^{n-1}=\\tfrac14 4^{n}$, lalu faktor $4^{n}$ dicoret.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim: jumlah suku pangkat sama",
+      "alasan_level": "mengoreksi klaim $3^{n}+3^{n}+3^{n}=3^{3n}$ dengan mengenali penjumlahan sebagai pengganda, bukan perkalian pangkat",
+      "stimulus": null,
+      "pertanyaan": "Dina mengklaim bahwa untuk setiap bilangan bulat $n$ berlaku $3^{n} + 3^{n} + 3^{n} = 3^{3n}$. Bentuk pangkat yang benar untuk jumlah tersebut, berlaku untuk setiap bilangan bulat $n$, adalah ....",
+      "jawaban_benar": "$3^{n+1}$",
+      "alasan_benar": "$3\\cdot3^{n}=3^{1}\\cdot3^{n}=3^{n+1}$",
+      "distraktor": [
+        {
+          "teks": "$3^{3n}$",
+          "alasan": "menganggap penjumlahan tiga suku sama dengan pengalian pangkat tiga kali"
+        },
+        {
+          "teks": "$9^{n}$",
+          "alasan": "menjumlahkan basis ($3+3+3=9$) dan mempertahankan pangkat"
+        },
+        {
+          "teks": "$3^{n+3}$",
+          "alasan": "menjumlahkan pangkat dengan banyak suku (3), bukan memakai faktor 3"
+        }
+      ],
+      "pembahasan": "Tiga suku sama berarti $3\\cdot3^{n}=3^{n+1}$ untuk setiap $n$ bulat. Bentuk lain hanya cocok pada nilai $n$ tertentu.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C6",
+      "jumlah_langkah": 5,
+      "jenis_soal": "merancang faktor agar pangkat sempurna",
+      "alasan_level": "merancang bilangan pengali terkecil supaya semua pangkat prima menjadi kelipatan 3",
+      "stimulus": null,
+      "pertanyaan": "Bilangan asli terkecil $n$ sehingga $2^{5} \\cdot 3^{4} \\cdot n$ merupakan pangkat tiga dari suatu bilangan asli adalah ....",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "pangkat 2 menjadi 6 dan pangkat 3 menjadi 6: $n=2^{1}\\cdot3^{2}=18$ dan $2^{6}3^{6}=\\left(6^{2}\\right)^{3}$",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "menambah satu faktor 2 dan satu faktor 3 saja"
+        },
+        {
+          "teks": "$36$",
+          "alasan": "menambah $2^{2}$ dan $3^{2}$; pangkat 2 menjadi 7 (bukan kelipatan 3)"
+        },
+        {
+          "teks": "$54$",
+          "alasan": "menambah $2^{1}\\cdot3^{3}$; pangkat 3 menjadi 7 (bukan kelipatan 3)"
+        }
+      ],
+      "pembahasan": "Agar menjadi pangkat tiga, pangkat tiap faktor prima harus kelipatan 3. Pangkat 5 naik ke 6 (tambah $2^{1}$), pangkat 4 naik ke 6 (tambah $3^{2}$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-015",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( ab )m = a m × b m dengan a, b 6 = 0, dan m bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "memilih pernyataan yang benar di antara kekeliruan umum",
+      "alasan_level": "menguji empat pernyataan berisi kekeliruan umum pada pangkat negatif, jumlah pangkat, dan tumpukan pangkat",
+      "stimulus": null,
+      "pertanyaan": "Pernyataan berikut yang benar adalah ....",
+      "jawaban_benar": "$\\left(\\dfrac{3}{2}\\right)^{-2} = \\dfrac{4}{9}$",
+      "alasan_benar": "$\\left(\\tfrac32\\right)^{-2}=\\left(\\tfrac23\\right)^{2}=\\tfrac49$",
+      "distraktor": [
+        {
+          "teks": "$\\left(2^{-1} + 4^{-1}\\right)^{-1} = 2 + 4$",
+          "alasan": "nilai sebenarnya $\\left(\\tfrac34\\right)^{-1}=\\tfrac43$; mengira pangkat negatif dapat dibagikan ke tiap suku jumlah"
+        },
+        {
+          "teks": "$2^{-1} + 4^{-1} = 8^{-1}$",
+          "alasan": "nilai sebenarnya $\\tfrac34$; mengalikan basis pada penjumlahan"
+        },
+        {
+          "teks": "$2^{3^{2}} = \\left(2^{3}\\right)^{2}$",
+          "alasan": "$2^{9}=512$ sedangkan $\\left(2^{3}\\right)^{2}=64$; menyamakan tumpukan pangkat dengan pangkat dari pangkat"
+        }
+      ],
+      "pembahasan": "Hanya $\\left(\\tfrac32\\right)^{-2}=\\tfrac49$ yang benar. Ketiga pernyataan lain bernilai berbeda di kedua ruasnya.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-016",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "parameter agar kesamaan berlaku",
+      "alasan_level": "menyusun pangkat $y$ dari tiga faktor berparameter dan menentukan parameter agar $y$ hilang",
+      "stimulus": null,
+      "pertanyaan": "Untuk $x \\neq 0$ dan $y \\neq 0$, bentuk sederhana dari $\\dfrac{\\left(x^{2}y^{k}\\right)^{3}}{y^{k+8}}$ tidak memuat $y$ untuk nilai $k$ sebesar ....",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "pangkat $y$: $3k-(k+8)=2k-8=0$ sehingga $k=4$ (bentuknya $x^{6}$)",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "salah tanda pada penyebut: $3k-k+8=0$"
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "hanya menyamakan pangkat penyebut $k+8=0$"
+        },
+        {
+          "teks": "$8$",
+          "alasan": "menyamakan $k+8$ dengan $2k$ tanpa memangkatkan tiga"
+        }
+      ],
+      "pembahasan": "$\\left(x^{2}y^{k}\\right)^{3}=x^{6}y^{3k}$, lalu dibagi $y^{k+8}$ menghasilkan $x^{6}y^{2k-8}$. Tidak memuat $y$ bila $2k-8=0$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-017",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "menyederhanakan pangkat negatif aljabar",
+      "alasan_level": "memfaktorkan selisih kuadrat pada pangkat negatif lalu mencoret faktor sekutu",
+      "stimulus": null,
+      "pertanyaan": "Untuk $a \\neq 0$, $b \\neq 0$, dan $a + b \\neq 0$, bentuk sederhana dari $\\dfrac{a^{-2} - b^{-2}}{a^{-1} + b^{-1}}$ adalah ....",
+      "jawaban_benar": "$\\dfrac{b - a}{ab}$",
+      "alasan_benar": "$a^{-2}-b^{-2}=\\left(a^{-1}-b^{-1}\\right)\\left(a^{-1}+b^{-1}\\right)$ sehingga hasil $a^{-1}-b^{-1}=\\dfrac{b-a}{ab}$",
+      "distraktor": [
+        {
+          "teks": "$\\dfrac{a - b}{ab}$",
+          "alasan": "tanda terbalik saat menyamakan penyebut $\\tfrac1a-\\tfrac1b$"
+        },
+        {
+          "teks": "$\\dfrac{a + b}{ab}$",
+          "alasan": "menganggap hasil bagi sama dengan $a^{-1}+b^{-1}$"
+        },
+        {
+          "teks": "$\\dfrac{1}{a - b}$",
+          "alasan": "mengubah $a^{-1}-b^{-1}$ menjadi $(a-b)^{-1}$"
+        }
+      ],
+      "pembahasan": "Gunakan $p^{2}-q^{2}=(p-q)(p+q)$ dengan $p=a^{-1}$, $q=b^{-1}$. Uji: $a=2$, $b=3$ memberi $\\tfrac16$ pada kedua bentuk.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-018",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 3,
+      "jenis_soal": "evaluasi klaim: pangkat negatif pada jumlah",
+      "alasan_level": "mengevaluasi klaim $(x^{-1}+y^{-1})^{-1}=x+y$ dan memperbaikinya dengan mengubah pangkat negatif menjadi pecahan",
+      "stimulus": null,
+      "pertanyaan": "Rina menyatakan bahwa untuk $x \\neq 0$, $y \\neq 0$, dan $x + y \\neq 0$ berlaku $\\left(x^{-1} + y^{-1}\\right)^{-1} = x + y$. Bentuk yang benar adalah ....",
+      "jawaban_benar": "$\\dfrac{xy}{x + y}$",
+      "alasan_benar": "$x^{-1}+y^{-1}=\\dfrac{x+y}{xy}$, sehingga kebalikannya $\\dfrac{xy}{x+y}$",
+      "distraktor": [
+        {
+          "teks": "$x + y$",
+          "alasan": "menyamakan pangkat $-1$ pada jumlah dengan membalik pangkat tiap suku (kekeliruan Rina)"
+        },
+        {
+          "teks": "$\\dfrac{x + y}{xy}$",
+          "alasan": "lupa membalik hasil penjumlahan pecahan"
+        },
+        {
+          "teks": "$xy$",
+          "alasan": "menganggap jumlah kebalikan sama dengan kebalikan hasil kali"
+        }
+      ],
+      "pembahasan": "Pangkat $-1$ tidak bisa dibagikan pada penjumlahan. $x^{-1}+y^{-1}=\\tfrac{x+y}{xy}$, kebalikannya $\\tfrac{xy}{x+y}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-b-hard-bt01-019",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 24,
+        "kutipan": "( a m ) n = a m ⇥ n, dengan a 6 = 0 , m, n bilangan bulat"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 5,
+      "jenis_soal": "nilai ekspresi bersyarat dari dua kesamaan",
+      "alasan_level": "menjumlahkan dan mengalikan pangkat menjadi $x+y=9$ dan $xy=20$, lalu memakai identitas kuadrat tanpa mencari $x$ dan $y$",
+      "stimulus": null,
+      "pertanyaan": "Bilangan real $x$ dan $y$ memenuhi $2^{x} \\cdot 2^{y} = 512$ dan $\\left(2^{x}\\right)^{y} = 2^{20}$. Nilai $x^{2} + y^{2}$ adalah ....",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "$x+y=9$ dan $xy=20$, sehingga $x^{2}+y^{2}=(x+y)^{2}-2xy=81-40=41$",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "mengurangkan $xy$ (20), bukan $2xy$"
+        },
+        {
+          "teks": "$101$",
+          "alasan": "menambahkan $xy$ (20), bukan mengurangkan $2xy$"
+        },
+        {
+          "teks": "$121$",
+          "alasan": "menambahkan $2xy$ ke $(x+y)^{2}$"
+        }
+      ],
+      "pembahasan": "$512=2^{9}$ sehingga $x+y=9$; $2^{xy}=2^{20}$ sehingga $xy=20$. Kuadrat selisih memberi 41.",
+      "catatan": null
+    }
+  ]
+}

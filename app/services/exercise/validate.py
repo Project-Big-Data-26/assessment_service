@@ -142,6 +142,13 @@ def validate_file(path: str, partial: bool = False):
 
     book = get_book(data.book)
     kuota = C.KUOTA_GAMBAR_MAKS if data.bergambar else C.KUOTA_PER_LEVEL[book.jenjang]
+    from .visual_plan import slot_count
+    try:
+        planned = slot_count(path, data)
+    except (ValueError, OSError, KeyError) as exc:
+        return data, [f"generation plan: {exc}"], []
+    if planned is not None:
+        kuota = planned
     spec = C.LEVEL_SPEC[data.level]
     prefix = f"{data.book}-b{data.bab_no:02d}-{data.subbab.lower()}-{data.level}-bt{data.batch:02d}-{'g' if data.bergambar else ''}"
 
@@ -156,6 +163,8 @@ def validate_file(path: str, partial: bool = False):
             errors.append(f"jumlah soal bergambar {n} > maks {kuota}")
         if n == 0 and not partial:
             errors.append("berkas bergambar kosong")
+        if planned is not None and n != kuota and not partial:
+            errors.append(f"jumlah soal bergambar {n} != target rencana {kuota}")
     elif data.kapasitas_kurang:
         if not data.alasan_kapasitas:
             errors.append("kapasitas_kurang=true wajib disertai alasan_kapasitas")
@@ -199,6 +208,23 @@ def validate_file(path: str, partial: bool = False):
             if not os.path.exists(gambar_path(data.book, g)):
                 errors.append(f"{s.id}: berkas gambar tidak ada: {g}")
             pakai_gambar[g] = pakai_gambar.get(g, 0) + 1
+        if s.visual_spec:
+            from pathlib import Path
+            from .workflow import digest, load
+            try:
+                if len(s.gambar) != 1:
+                    raise ValueError("one semantic spec must reference exactly one rendered asset")
+                asset = Path(gambar_path(data.book, s.gambar[0]))
+                proof = load(asset.with_suffix(".json"))
+                if (proof.get("semanticSpec") != s.visual_spec.model_dump(mode="json")
+                        or proof.get("pngSha256") != digest(asset)
+                        or proof.get("svgSha256") != digest(asset.with_suffix(".svg"))):
+                    raise ValueError("semantic spec or rendered asset checksum differs")
+                from PIL import Image
+                with Image.open(asset) as image:
+                    image.verify()
+            except (ValueError, OSError, KeyError) as exc:
+                errors.append(f"{s.id}: generated visual: {exc}")
         if not s.gambar and _GAMBAR_RE.search(soal_text(s.stimulus, s.pertanyaan)):
             errors.append(f"{s.id}: soal merujuk gambar/buku, padahal gambar belum didukung -- tulis datanya di stimulus")
         _opsi_unik(s, errors, warns)

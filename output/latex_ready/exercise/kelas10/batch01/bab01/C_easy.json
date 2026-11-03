@@ -1,0 +1,698 @@
+{
+  "book": "kelas10",
+  "bab_no": 1,
+  "subbab": "C",
+  "level": "easy",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
+    {
+      "id": "kelas10-b01-c-easy-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 26,
+        "bagian": "Ayo, Bereksplorasi (Eksplorasi 2.3)",
+        "nomor": "1",
+        "teks": "Seseorang terjangkit virus dan menulari 3 orang lainnya. Pada fase selanjutnya, setiap orang menulari 3 orang lainnya lagi.",
+        "jawaban": "Setiap fase banyak orang yang tertular menjadi 3 kali sebelumnya; pada fase ke-x banyaknya $3^{x}$ orang"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai fungsi dari cerita",
+      "alasan_level": "menerapkan pola kelipatan tetap per fase menjadi pangkat 4, satu operasi langsung",
+      "stimulus": null,
+      "pertanyaan": "Seseorang terjangkit virus dan menulari 5 orang lainnya. Pada fase berikutnya, setiap orang yang baru tertular menulari 5 orang lainnya lagi, begitu seterusnya. Banyak orang yang baru tertular pada fase ke-4 adalah ....",
+      "jawaban_benar": "$625$ orang",
+      "alasan_benar": "fase ke-$x$ menghasilkan $5^{x}$ orang, sehingga fase ke-4 adalah $5^{4}=625$",
+      "distraktor": [
+        {
+          "teks": "$20$ orang",
+          "alasan": "mengalikan $5 \\times 4$ alih-alih memangkatkan"
+        },
+        {
+          "teks": "$1024$ orang",
+          "alasan": "menukar basis dan pangkat: $4^{5}$"
+        },
+        {
+          "teks": "$125$ orang",
+          "alasan": "salah menghitung sebagai fase ke-3: $5^{3}$"
+        }
+      ],
+      "pembahasan": "Pola fase 1: $5$, fase 2: $25$, fase 3: $125$, fase 4: $5^{4}=625$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "bagian": "Contoh 3",
+        "nomor": "1",
+        "teks": "Pada inang tersebut, terdapat 30 bakteri. Setelah diamati, bakteri tersebut membelah menjadi dua setiap 30 menit.",
+        "jawaban": "$f(x) = 30 \\cdot 2^{x}$"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menyusun model",
+      "alasan_level": "menyusun model $f(x)=n\\cdot a^{x}$ dari nilai awal dan faktor pembelahan",
+      "stimulus": null,
+      "pertanyaan": "Pada awal pengamatan terdapat 40 bakteri pada sebuah inang. Bakteri tersebut membelah menjadi tiga setiap 15 menit. Jika $x$ menyatakan banyak fase pembelahan (setiap 15 menit), model banyak bakteri yang tepat adalah ....",
+      "jawaban_benar": "$f(x) = 40 \\cdot 3^{x}$",
+      "alasan_benar": "nilai awal 40 dan setiap fase menjadi 3 kali sehingga $f(x)=40\\cdot3^{x}$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 3 \\cdot 40^{x}$",
+          "alasan": "menukar nilai awal dengan bilangan pokok"
+        },
+        {
+          "teks": "$f(x) = 40 \\cdot x^{3}$",
+          "alasan": "menukar posisi basis dan pangkat sehingga bukan fungsi eksponensial"
+        },
+        {
+          "teks": "$f(x) = 40 + 3x$",
+          "alasan": "memakai pertambahan tetap (linear) alih-alih pengali tetap"
+        }
+      ],
+      "pembahasan": "$f(0)=40$, $f(1)=120$, $f(2)=360$, sehingga $f(x)=40\\cdot3^{x}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 33,
+        "bagian": "Latihan 2.2",
+        "nomor": "1b",
+        "teks": "Seorang peneliti mengamati pertumbuhan 50 bakteri ini pada sepotong makanan dan menemukan bahwa bakteri ini membelah menjadi 2 setiap seperempat jam.",
+        "jawaban": "$f(x) = 50 \\cdot 2^{x}$ dengan $x$ banyak seperempat jam"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai fungsi dari cerita",
+      "alasan_level": "satu pemodelan pangkat lalu satu perkalian dengan nilai awal",
+      "stimulus": null,
+      "pertanyaan": "Pada sebuah media terdapat 6 bakteri. Setiap jam, setiap bakteri membelah menjadi 4 bakteri. Banyak bakteri setelah 3 jam adalah ....",
+      "jawaban_benar": "$384$ bakteri",
+      "alasan_benar": "$6\\cdot4^{3}=6\\cdot64=384$",
+      "distraktor": [
+        {
+          "teks": "$72$ bakteri",
+          "alasan": "mengalikan semua bilangan $6\\cdot4\\cdot3$"
+        },
+        {
+          "teks": "$13824$ bakteri",
+          "alasan": "memangkatkan hasil kali: $(6\\cdot4)^{3}$"
+        },
+        {
+          "teks": "$64$ bakteri",
+          "alasan": "lupa mengalikan dengan banyak bakteri awal"
+        }
+      ],
+      "pembahasan": "Model $f(x)=6\\cdot4^{x}$, sehingga $f(3)=6\\cdot64=384$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b01-p0033-latihan-22-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menyusun model",
+      "alasan_level": "menyatakan pertambahan persentase tetap sebagai faktor $1{,}04$ dalam fungsi eksponensial",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kota berpenduduk 800.000 jiwa. Jumlah penduduknya diprediksi bertambah secara eksponen sebesar 4% setiap tahun. Jika $x$ menyatakan banyak tahun dari sekarang, model jumlah penduduk kota tersebut adalah ....",
+      "jawaban_benar": "$f(x) = 800.000\\,(1{,}04)^{x}$",
+      "alasan_benar": "bertambah 4% berarti faktor pengali per tahun $1+0{,}04=1{,}04$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 800.000\\,(0{,}04)^{x}$",
+          "alasan": "memakai persentase 4% langsung sebagai bilangan pokok"
+        },
+        {
+          "teks": "$f(x) = 800.000\\,(1{,}4)^{x}$",
+          "alasan": "salah mengubah 4% menjadi 0,4"
+        },
+        {
+          "teks": "$f(x) = 800.000\\,(4)^{x}$",
+          "alasan": "memakai 4 sebagai bilangan pokok"
+        }
+      ],
+      "pembahasan": "Faktor tahunan $1{,}04$, sehingga $f(x)=800.000\\,(1{,}04)^{x}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b01-p0036-latihan-23-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menyusun model",
+      "alasan_level": "menyatakan peluruhan persentase tetap sebagai faktor $1-0{,}4$",
+      "stimulus": null,
+      "pertanyaan": "Massa suatu zat radioaktif mula-mula adalah 2,4 kg. Zat tersebut meluruh 40% setiap jam. Jika $x$ menyatakan banyak jam, model massa zat tersebut adalah ....",
+      "jawaban_benar": "$f(x) = 2{,}4\\,(0{,}6)^{x}$",
+      "alasan_benar": "meluruh 40% berarti tersisa 60% sehingga faktor $0{,}6$ per jam",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 2{,}4\\,(0{,}4)^{x}$",
+          "alasan": "memakai tingkat peluruhan sebagai faktor, bukan sisanya"
+        },
+        {
+          "teks": "$f(x) = 2{,}4\\,(1{,}4)^{x}$",
+          "alasan": "menambah 40% seolah pertumbuhan"
+        },
+        {
+          "teks": "$f(x) = 2{,}4 - 0{,}4x$",
+          "alasan": "mengira peluruhan berkurang tetap (linear)"
+        }
+      ],
+      "pembahasan": "Sisa tiap jam 60%, jadi $f(x)=2{,}4\\,(0{,}6)^{x}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "bagian": "Contoh 5",
+        "nomor": "1",
+        "teks": "Dosis obat yang disuntikkan adalah 50 mikrogram. Satu jam setelah penyuntikan, setengah dosis tersebut akan luruh dan dikeluarkan dari dalam tubuh.",
+        "jawaban": "Setelah 3 jam tersisa 6,25 mikrogram"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluruhan dari model cerita",
+      "alasan_level": "menerapkan pengurangan setengah dosis berulang tiga kali",
+      "stimulus": null,
+      "pertanyaan": "Dosis obat sebesar 96 mikrogram disuntikkan kepada seorang pasien. Setiap jam, setengah dosis yang ada di dalam tubuh akan luruh dan dikeluarkan. Dosis yang tersisa setelah 3 jam adalah ....",
+      "jawaban_benar": "$12$ mikrogram",
+      "alasan_benar": "$96\\cdot(\\tfrac12)^{3}=96\\cdot\\tfrac18=12$",
+      "distraktor": [
+        {
+          "teks": "$48$ mikrogram",
+          "alasan": "hanya menghitung 1 jam"
+        },
+        {
+          "teks": "$32$ mikrogram",
+          "alasan": "membagi dengan 3 alih-alih membagi dua tiga kali"
+        },
+        {
+          "teks": "$24$ mikrogram",
+          "alasan": "hanya menghitung 2 jam"
+        }
+      ],
+      "pembahasan": "96 -> 48 -> 24 -> 12 mikrogram.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 36,
+        "bagian": "Latihan 2.3",
+        "nomor": "1",
+        "teks": "Jika setiap 1 jam 50% zat tersebut dikeluarkan dari dalam tubuh pasien, berapa mg zat tersebut yang masih tersisa di dalam tubuh pasien setelah 5 jam?",
+        "jawaban": "$200 \\cdot (0{,}5)^{5} = 6{,}25$ mg"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "peluruhan dari model cerita",
+      "alasan_level": "menghitung sisa setelah dua kali peluruhan 20%, satu pemangkatan faktor 0,8",
+      "stimulus": null,
+      "pertanyaan": "Sebanyak 1.000 mg zat disuntikkan ke dalam tubuh pasien. Setiap jam 20% zat yang ada dikeluarkan dari tubuh. Zat yang masih tersisa setelah 2 jam adalah ....",
+      "jawaban_benar": "$640$ mg",
+      "alasan_benar": "$1000\\cdot(0{,}8)^{2}=640$",
+      "distraktor": [
+        {
+          "teks": "$600$ mg",
+          "alasan": "mengurangi 20% dari nilai awal dua kali (peluruhan linear)"
+        },
+        {
+          "teks": "$800$ mg",
+          "alasan": "hanya menghitung 1 jam"
+        },
+        {
+          "teks": "$40$ mg",
+          "alasan": "memakai faktor 0,2 sebagai bilangan pokok"
+        }
+      ],
+      "pembahasan": "Tersisa 80% tiap jam: $1000\\to800\\to640$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "bagian": "Contoh 3",
+        "nomor": "3",
+        "teks": "Pada jam ke-5 berapa banyak bakteri baru yang tumbuh?",
+        "jawaban": "30.720 bakteri"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai fungsi dari cerita",
+      "alasan_level": "mengubah satuan waktu menjadi fase lalu menghitung $n\\cdot2^{x}$",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu media terdapat 12 bakteri yang membelah menjadi dua setiap 20 menit. Banyak bakteri setelah 1 jam adalah ....",
+      "jawaban_benar": "$96$ bakteri",
+      "alasan_benar": "1 jam = 3 fase, sehingga $12\\cdot2^{3}=96$",
+      "distraktor": [
+        {
+          "teks": "$24$ bakteri",
+          "alasan": "menganggap 1 jam hanya 1 fase"
+        },
+        {
+          "teks": "$36$ bakteri",
+          "alasan": "menjumlahkan $12\\cdot3$ alih-alih memangkatkan"
+        },
+        {
+          "teks": "$192$ bakteri",
+          "alasan": "menghitung 4 fase"
+        }
+      ],
+      "pembahasan": "20 menit per fase, 3 fase: $12\\to24\\to48\\to96$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 26,
+        "bagian": "Ayo, Bereksplorasi (Eksplorasi 2.3)",
+        "nomor": "1",
+        "teks": "Seseorang terjangkit virus dan menulari 3 orang lainnya. Pada fase selanjutnya, setiap orang menulari 3 orang lainnya lagi.",
+        "jawaban": "Setiap fase banyak orang yang tertular menjadi 3 kali sebelumnya; pada fase ke-x banyaknya $3^{x}$ orang"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "menyusun model",
+      "alasan_level": "menerjemahkan penyebaran berantai ke rumus $f(x)=a^{x}$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah pesan berantai dikirim oleh 1 orang kepada 6 orang. Pada tahap berikutnya, setiap penerima baru meneruskannya kepada 6 orang lain, dan seterusnya. Jika $x$ adalah nomor tahap, banyak penerima baru pada tahap ke-$x$ dinyatakan dengan ....",
+      "jawaban_benar": "$f(x) = 6^{x}$",
+      "alasan_benar": "tahap 1: 6, tahap 2: 36, tahap 3: 216, sehingga $6^{x}$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 6x$",
+          "alasan": "mengira pertambahan tetap 6 tiap tahap"
+        },
+        {
+          "teks": "$f(x) = x^{6}$",
+          "alasan": "menukar basis dan pangkat"
+        },
+        {
+          "teks": "$f(x) = 6^{x+1}$",
+          "alasan": "menggeser pangkat sehingga tahap 1 bernilai 36"
+        }
+      ],
+      "pembahasan": "Tiap tahap dikali 6, jadi $f(x)=6^{x}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas10-b01-p0033-latihan-22-2"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai fungsi dari cerita",
+      "alasan_level": "menerapkan faktor 1,2 tiga kali dengan satu pemangkatan",
+      "stimulus": null,
+      "pertanyaan": "Banyak pengguna sebuah aplikasi saat ini 5.000 orang dan bertambah 20% setiap tahun secara eksponen. Banyak pengguna 3 tahun lagi adalah ....",
+      "jawaban_benar": "$8.640$ orang",
+      "alasan_benar": "$5000\\cdot(1{,}2)^{3}=5000\\cdot1{,}728=8640$",
+      "distraktor": [
+        {
+          "teks": "$8.000$ orang",
+          "alasan": "menambah 20% dari nilai awal tiga kali (pertumbuhan linear)"
+        },
+        {
+          "teks": "$7.200$ orang",
+          "alasan": "hanya menghitung 2 tahun"
+        },
+        {
+          "teks": "$18.000$ orang",
+          "alasan": "mengalikan faktor $1{,}2\\times3=3{,}6$"
+        }
+      ],
+      "pembahasan": "$5000\\to6000\\to7200\\to8640$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 34,
+        "kutipan": "Fungsi eksponensial juga menggambarkan penurunan secara konsisten pada periode waktu tertentu. Ini disebut peluruhan eksponen."
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "pertumbuhan atau peluruhan",
+      "alasan_level": "mengenali bentuk peluruhan eksponensial dari bilangan pokok antara 0 dan 1",
+      "stimulus": null,
+      "pertanyaan": "Fungsi berikut yang menyatakan peluruhan eksponensial adalah ....",
+      "jawaban_benar": "$f(x) = 7\\,(0{,}4)^{x}$",
+      "alasan_benar": "bilangan pokok $0{,}4$ berada di antara 0 dan 1",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 7\\,(2{,}5)^{x}$",
+          "alasan": "bilangan pokok lebih dari 1 adalah pertumbuhan"
+        },
+        {
+          "teks": "$f(x) = 7 - 0{,}4x$",
+          "alasan": "fungsi linear menurun, bukan eksponensial"
+        },
+        {
+          "teks": "$f(x) = 7\\cdot1^{x}$",
+          "alasan": "bilangan pokok 1 menghasilkan fungsi konstan"
+        }
+      ],
+      "pembahasan": "Peluruhan: $f(x)=n\\cdot a^{x}$ dengan $0<a<1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 29,
+        "kutipan": "Fungsi pertumbuhan eksponen dituliskan dengan"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "pertumbuhan atau peluruhan",
+      "alasan_level": "memeriksa bilangan pokok dua fungsi, satu lebih dari 1 dan satu kurang dari 1",
+      "stimulus": null,
+      "pertanyaan": "Diberikan $f(x)=\\left(\\frac{3}{2}\\right)^{x}$ dan $g(x)=\\left(\\frac{2}{3}\\right)^{x}$. Pernyataan yang benar adalah ....",
+      "jawaban_benar": "$f$ pertumbuhan eksponensial dan $g$ peluruhan eksponensial",
+      "alasan_benar": "$\\frac{3}{2}>1$ sehingga $f$ tumbuh, $0<\\frac{2}{3}<1$ sehingga $g$ meluruh",
+      "distraktor": [
+        {
+          "teks": "$f$ dan $g$ keduanya pertumbuhan eksponensial",
+          "alasan": "mengabaikan bahwa $\\frac{2}{3}<1$"
+        },
+        {
+          "teks": "$f$ peluruhan eksponensial dan $g$ pertumbuhan eksponensial",
+          "alasan": "menukar kategori kedua fungsi"
+        },
+        {
+          "teks": "$f$ dan $g$ keduanya peluruhan eksponensial",
+          "alasan": "mengabaikan bahwa $\\frac{3}{2}>1$"
+        }
+      ],
+      "pembahasan": "Pertumbuhan jika $a>1$, peluruhan jika $0<a<1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Sebuah fungsi eksponensial dinyatakan dengan"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "syarat bilangan pokok",
+      "alasan_level": "mengingat syarat $a>0$ dan $a\\neq1$ pada definisi",
+      "stimulus": null,
+      "pertanyaan": "Bilangan berikut yang dapat dipakai sebagai bilangan pokok $a$ pada fungsi eksponensial $f(x)=a^{x}$ adalah ....",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "$\\frac{2}{5}>0$ dan tidak sama dengan 1",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "bilangan pokok tidak boleh 1"
+        },
+        {
+          "teks": "$0$",
+          "alasan": "bilangan pokok harus positif"
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "bilangan pokok tidak boleh negatif"
+        }
+      ],
+      "pembahasan": "Syarat definisi: $a>0$ dan $a\\neq1$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 27,
+        "kutipan": "Bagaimana jika a = 1 ?"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "syarat bilangan pokok",
+      "alasan_level": "memahami akibat $a=1$ terhadap bentuk fungsi",
+      "stimulus": null,
+      "pertanyaan": "Jika bilangan pokok $a=1$, fungsi $f(x)=a^{x}$ berubah menjadi ....",
+      "jawaban_benar": "fungsi konstan $f(x)=1$",
+      "alasan_benar": "$1^{x}=1$ untuk setiap $x$",
+      "distraktor": [
+        {
+          "teks": "fungsi pertumbuhan eksponensial",
+          "alasan": "mengira bilangan pokok 1 membuat nilai naik"
+        },
+        {
+          "teks": "fungsi peluruhan eksponensial",
+          "alasan": "mengira bilangan pokok 1 membuat nilai turun"
+        },
+        {
+          "teks": "fungsi linear $f(x)=x$",
+          "alasan": "mengira pangkat tetap dipertahankan"
+        }
+      ],
+      "pembahasan": "Karena nilainya selalu 1, grafiknya bukan kurva eksponensial; itu sebabnya $a=1$ dikecualikan.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pertumbuhan bakteri dapat dimodelkan dengan fungsi eksponensial"
+      },
+      "cognitive_c": "C1",
+      "jumlah_langkah": 1,
+      "jenis_soal": "nilai fungsi dari rumus",
+      "alasan_level": "substitusi langsung $x=2$ pada $f(x)=n\\cdot a^{x}$",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=2\\cdot5^{x}$. Nilai $f(2)$ adalah ....",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "$2\\cdot5^{2}=2\\cdot25=50$",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "mengalikan lebih dulu: $(2\\cdot5)^{2}$"
+        },
+        {
+          "teks": "$20$",
+          "alasan": "menghitung $2\\cdot5\\cdot2$"
+        },
+        {
+          "teks": "$25$",
+          "alasan": "lupa mengalikan dengan 2"
+        }
+      ],
+      "pembahasan": "$f(2)=2\\cdot5^{2}=50$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pada awal pengamatan, bakteri yang diamati berjumlah 30"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "nilai awal dan titik",
+      "alasan_level": "nilai awal adalah $f(0)=n$",
+      "stimulus": null,
+      "pertanyaan": "Sebuah populasi dimodelkan dengan $f(x)=250\\,(0{,}8)^{x}$ dengan $x$ menyatakan banyak hari. Populasi awal (saat $x=0$) adalah ....",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "$f(0)=250\\cdot(0{,}8)^{0}=250$",
+      "distraktor": [
+        {
+          "teks": "$200$",
+          "alasan": "menghitung $250\\cdot0{,}8$ (nilai untuk $x=1$)"
+        },
+        {
+          "teks": "$0{,}8$",
+          "alasan": "mengira bilangan pokok adalah nilai awal"
+        },
+        {
+          "teks": "$1$",
+          "alasan": "mengira pangkat nol menghasilkan seluruh fungsi bernilai 1"
+        }
+      ],
+      "pembahasan": "$(0{,}8)^{0}=1$, jadi $f(0)=250$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Untuk x = 0, banyak bakteri = 30"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "nilai awal dan titik",
+      "alasan_level": "menentukan perpotongan sumbu-$y$ dari $f(0)=n$",
+      "stimulus": null,
+      "pertanyaan": "Grafik fungsi $f(x)=6\\cdot3^{x}$ memotong sumbu-$y$ di titik ....",
+      "jawaban_benar": "$(0, 6)$",
+      "alasan_benar": "$f(0)=6\\cdot3^{0}=6$",
+      "distraktor": [
+        {
+          "teks": "$(0, 1)$",
+          "alasan": "mengira $a^{0}=1$ tanpa mengalikan 6"
+        },
+        {
+          "teks": "$(6, 0)$",
+          "alasan": "menukar absis dan ordinat"
+        },
+        {
+          "teks": "$(0, 18)$",
+          "alasan": "memakai $f(1)$ sebagai nilai di sumbu-$y$"
+        }
+      ],
+      "pembahasan": "Sumbu-$y$ saat $x=0$: $f(0)=6$, titiknya $(0,6)$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pertumbuhan bakteri dapat dimodelkan dengan fungsi eksponensial"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "fungsi dari tabel",
+      "alasan_level": "mencari nilai awal dan rasio dari tabel pertumbuhan",
+      "stimulus": "| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 5 | 15 | 45 | 135 |",
+      "pertanyaan": "Perhatikan tabel berikut. Fungsi eksponensial yang sesuai dengan tabel adalah ....",
+      "jawaban_benar": "$f(x) = 5\\cdot3^{x}$",
+      "alasan_benar": "$f(0)=5$ dan rasio tiap kenaikan $x$ adalah $15/5=3$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 3\\cdot5^{x}$",
+          "alasan": "menukar nilai awal dan rasio"
+        },
+        {
+          "teks": "$f(x) = 5 + 10x$",
+          "alasan": "memakai pertambahan tetap, tidak cocok untuk $f(2)=45$"
+        },
+        {
+          "teks": "$f(x) = 15^{x}$",
+          "alasan": "tidak sesuai karena $f(0)=1$, bukan 5"
+        }
+      ],
+      "pembahasan": "Rasio 3 dan nilai awal 5 memberi $f(x)=5\\cdot3^{x}$; cek $f(3)=135$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 35,
+        "kutipan": "Jadi, dosis pada 1 jam pertama tersisa 25 mikrogram, pada 2 jam pertama tersisa 12,5 mikrogram"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "fungsi dari tabel",
+      "alasan_level": "mencari nilai awal dan rasio $\\frac12$ dari tabel peluruhan",
+      "stimulus": "| $x$ | 0 | 1 | 2 | 3 |\n|---|---|---|---|---|\n| $f(x)$ | 64 | 32 | 16 | 8 |",
+      "pertanyaan": "Perhatikan tabel berikut. Fungsi eksponensial yang sesuai dengan tabel adalah ....",
+      "jawaban_benar": "$f(x) = 64\\left(\\frac{1}{2}\\right)^{x}$",
+      "alasan_benar": "$f(0)=64$ dan rasio tiap kenaikan $x$ adalah $\\frac{32}{64}=\\frac12$",
+      "distraktor": [
+        {
+          "teks": "$f(x) = 64\\cdot2^{x}$",
+          "alasan": "menukar rasio $\\frac12$ dengan 2 (pertumbuhan)"
+        },
+        {
+          "teks": "$f(x) = 64 - 32x$",
+          "alasan": "memakai pengurangan tetap, tidak cocok untuk $f(2)=16$"
+        },
+        {
+          "teks": "$f(x) = \\frac{1}{2}\\cdot64^{x}$",
+          "alasan": "menukar nilai awal dan rasio"
+        }
+      ],
+      "pembahasan": "Nilai awal 64, rasio $\\frac12$, cek $f(3)=8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas10-b01-c-easy-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 30,
+        "kutipan": "Pertumbuhan bakteri dapat dimodelkan dengan fungsi eksponensial"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "tafsir faktor pertumbuhan",
+      "alasan_level": "menafsirkan bilangan pokok sebagai faktor pengali per satuan waktu",
+      "stimulus": null,
+      "pertanyaan": "Banyak ikan di sebuah kolam dimodelkan dengan $f(x)=75\\cdot4^{x}$ dengan $x$ menyatakan banyak tahun. Setiap tahun, banyak ikan menjadi ... kali banyak ikan tahun sebelumnya.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "bilangan pokok 4 adalah pengali tiap tahun",
+      "distraktor": [
+        {
+          "teks": "$75$",
+          "alasan": "mengira nilai awal adalah pengali"
+        },
+        {
+          "teks": "$79$",
+          "alasan": "menjumlahkan 75 dan 4"
+        },
+        {
+          "teks": "$300$",
+          "alasan": "mengalikan $75\\cdot4$"
+        }
+      ],
+      "pembahasan": "$f(x+1)/f(x)=4$, jadi menjadi 4 kali lipat.",
+      "catatan": null
+    }
+  ]
+}

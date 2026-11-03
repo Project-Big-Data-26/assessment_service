@@ -1,0 +1,644 @@
+{
+  "book": "kelas8",
+  "bab_no": 2,
+  "subbab": "C",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "9router:ag/gemini-3.8-flash",
+  "bergambar": false,
+  "kapasitas_kurang": false,
+  "alasan_kapasitas": null,
+  "soal": [
+    {
+      "id": "kelas8-b02-c-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 100,
+        "bagian": "Contoh 2.5",
+        "nomor": "Contoh 2.5",
+        "teks": "Pada T ABC , + B = 60° dan + A = 30° . Panjang BC = 12 cm , hitunglah panjang: a. AC b. AB",
+        "jawaban": "AC = 12√3 cm dan AB = 24 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Luas segitiga siku-siku 30-60-90",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan panjang sisi tegak lain menggunakan rasio sudut istimewa 30-60-90 sebelum menghitung luas segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada segitiga siku-siku $ABC$, diketahui $\\angle C = 90^\\circ$, $\\angle A = 30^\\circ$, dan $\\angle B = 60^\\circ$. Jika panjang sisi $BC = 6\\text{ cm}$, maka luas segitiga $ABC$ adalah ....",
+      "jawaban_benar": "$18\\sqrt{3}\\text{ cm}^2$",
+      "alasan_benar": "Sisi $BC$ di hadapan sudut $30^\\circ$ bernilai $6\\text{ cm}$, sehingga $AC = BC\\sqrt{3} = 6\\sqrt{3}\\text{ cm}$. Luas segitiga $= \\frac{1}{2} \\times AC \\times BC = \\frac{1}{2} \\times 6\\sqrt{3} \\times 6 = 18\\sqrt{3}\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$36\\sqrt{3}\\text{ cm}^2$",
+          "alasan": "Lupa mengalikan dengan faktor setengah pada rumus luas segitiga ($6 \\times 6\\sqrt{3}$)."
+        },
+        {
+          "teks": "$18\\text{ cm}^2$",
+          "alasan": "Mengabaikan faktor $\\sqrt{3}$ pada panjang sisi alas."
+        },
+        {
+          "teks": "$9\\sqrt{3}\\text{ cm}^2$",
+          "alasan": "Salah membagi dua dua kali berturut-turut pada perhitungan alas dan tinggi."
+        }
+      ],
+      "pembahasan": "Pada segitiga siku-siku dengan sudut $30^\\circ - 60^\\circ - 90^\\circ$, perbandingan panjang sisi-sisinya adalah $BC : AC : AB = 1 : \\sqrt{3} : 2$.\nKarena panjang $BC = 6\\text{ cm}$ (di hadapan $30^\\circ$), maka panjang $AC$ (di hadapan $60^\\circ$) adalah:\n$$AC = 6\\sqrt{3}\\text{ cm}$$\nLuas segitiga $ABC$ dihitung dengan:\n$$\\text{Luas} = \\frac{1}{2} \\times AC \\times BC = \\frac{1}{2} \\times 6\\sqrt{3} \\times 6 = 18\\sqrt{3}\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0102-soal-laihan-2-3-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Keliling segitiga siku-siku 30-60-90",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan dua sisi yang belum diketahui dengan konsep rasio istimewa 30-60-90 kemudian menjumlahkan kelilingnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah taman berbentuk segitiga siku-siku memiliki salah satu sudut $30^\\circ$. Jika panjang sisi terpendek taman tersebut adalah $10\\text{ m}$, keliling taman tersebut adalah ....",
+      "jawaban_benar": "$(30 + 10\\sqrt{3})\\text{ m}$",
+      "alasan_benar": "Sisi terpendek adalah sisi di hadapan sudut $30^\\circ$, yaitu $a = 10\\text{ m}$. Sisi miring $c = 2a = 20\\text{ m}$ dan sisi siku-siku lainnya $b = a\\sqrt{3} = 10\\sqrt{3}\\text{ m}$. Keliling $= 10 + 20 + 10\\sqrt{3} = (30 + 10\\sqrt{3})\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$(20 + 10\\sqrt{3})\\text{ m}$",
+          "alasan": "Hanya menjumlahkan sisi miring dan sisi alas tanpa menambahkan sisi tegak terpendek."
+        },
+        {
+          "teks": "$(30 + 20\\sqrt{3})\\text{ m}$",
+          "alasan": "Keliru mengalikan $\\sqrt{3}$ pada sisi miring, bukan pada sisi siku-siku kedua."
+        },
+        {
+          "teks": "$40\\sqrt{3}\\text{ m}$",
+          "alasan": "Menjumlahkan suku aljabar rasional dengan bentuk akar secara keliru ($30 + 10\\sqrt{3} = 40\\sqrt{3}$)."
+        }
+      ],
+      "pembahasan": "Sisi terpendek segitiga siku-siku dengan sudut $30^\\circ$ dan $60^\\circ$ berada di depan sudut $30^\\circ$, yaitu $a = 10\\text{ m}$.\nBerdasarkan perbandingan $1 : \\sqrt{3} : 2$:\n- Sisi di hadapan sudut $60^\\circ$: $b = 10\\sqrt{3}\\text{ m}$\n- Sisi miring (hipotenusa): $c = 2 \\times 10 = 20\\text{ m}$\nKeliling segitiga:\n$$\\text{Keliling} = a + b + c = 10 + 10\\sqrt{3} + 20 = (30 + 10\\sqrt{3})\\text{ m}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 103,
+        "bagian": "Soal Laihan 2.3",
+        "nomor": "4",
+        "teks": "Suatu tembok pembatas berbentuk trapesium akan di cat dasar untuk diberikan gambar mural. Jika dalam satu kaleng cat dapat digunakan mengecat untuk 1, 5 m 2 dengan harga Rp. 22.500,00. Tentukan biaya yang harus dihabiskan untuk mengecat tembok tersebut.( 3 = 1, 73)",
+        "jawaban": "Rp195.000,00",
+        "kutipan": null
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Luas trapesium sama kaki",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis bangun trapesium sama kaki dengan sudut $60^\\circ$ untuk mencari tinggi dan panjang sisi alas sebelum menghitung luas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah bidang tanah berbentuk trapesium sama kaki memiliki panjang sisi sejajar bagian atas $6\\text{ m}$ dan kedua sisi miringnya masing-masing $4\\text{ m}$. Jika sudut antara sisi miring dan sisi alas bawah adalah $60^\\circ$, maka luas tanah tersebut adalah ....",
+      "jawaban_benar": "$16\\sqrt{3}\\text{ m}^2$",
+      "alasan_benar": "Tinggi trapesium $t = 4 \\times \\frac{1}{2}\\sqrt{3} = 2\\sqrt{3}\\text{ m}$. Proyeksi sisi alas $= 4 \\times \\frac{1}{2} = 2\\text{ m}$. Panjang alas bawah $= 6 + 2(2) = 10\\text{ m}$. Luas $= \\frac{6 + 10}{2} \\times 2\\sqrt{3} = 16\\sqrt{3}\\text{ m}^2$.",
+      "distraktor": [
+        {
+          "teks": "$32\\sqrt{3}\\text{ m}^2$",
+          "alasan": "Lupa membagi dua jumlah sisi sejajar saat menghitung luas trapesium."
+        },
+        {
+          "teks": "$12\\sqrt{3}\\text{ m}^2$",
+          "alasan": "Menggunakan panjang alas bawah sama dengan panjang sisi atas tanpa menambahkan kedua proyeksi."
+        },
+        {
+          "teks": "$20\\sqrt{3}\\text{ m}^2$",
+          "alasan": "Salah menghitung penambahan panjang alas bawah hanya dari satu sisi proyeksi ($6 + 2 = 8\\text{ m}$)."
+        }
+      ],
+      "pembahasan": "Tarik garis tinggi dari kedua ujung sisi atas ke alas bawah sehingga terbentuk segitiga siku-siku dengan sudut $60^\\circ$ dan hipotenusa $4\\text{ m}$:\n1. Bagian alas segitiga siku-siku: $x = 4 \\times \\cos 60^\\circ = 4 \\times \\frac{1}{2} = 2\\text{ m}$.\n2. Tinggi trapesium: $t = 4 \\times \\sin 60^\\circ = 4 \\times \\frac{1}{2}\\sqrt{3} = 2\\sqrt{3}\\text{ m}$.\n3. Panjang alas bawah: $b = 6 + 2(x) = 6 + 2(2) = 10\\text{ m}$.\n4. Luas trapesium:\n$$\\text{Luas} = \\frac{a + b}{2} \\times t = \\frac{6 + 10}{2} \\times 2\\sqrt{3} = 8 \\times 2\\sqrt{3} = 16\\sqrt{3}\\text{ m}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-004",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 97,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Sehingga, pada segitiga istimewa dengan sudut 45°, 90°, dan 45° memiliki panjang sisi miring 2 kali panjang dari sisi yang lain."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Luas segitiga siku-siku sama kaki",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penentuan panjang sisi penyiku dari hipotenusa segitiga siku-siku sama kaki terlebih dahulu sebelum menghitung luas.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah kain taplak meja berbentuk segitiga siku-siku sama kaki memiliki panjang sisi hipotenusa $10\\text{ cm}$. Luas kain tersebut adalah ....",
+      "jawaban_benar": "$25\\text{ cm}^2$",
+      "alasan_benar": "Panjang sisi siku-siku $a = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2}\\text{ cm}$. Luas segitiga $= \\frac{1}{2} \\times a^2 = \\frac{1}{2} \\times (5\\sqrt{2})^2 = \\frac{1}{2} \\times 50 = 25\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$50\\text{ cm}^2$",
+          "alasan": "Keliru mengalikan hipotenusa dikuadratkan dibagi dua, atau lupa mengalikan setengah pada perkalian sisi penyiku."
+        },
+        {
+          "teks": "$25\\sqrt{2}\\text{ cm}^2$",
+          "alasan": "Mengira hasil akhir luas masih memuat faktor bentuk akar $\\sqrt{2}$."
+        },
+        {
+          "teks": "$12,5\\text{ cm}^2$",
+          "alasan": "Membagi dua kembali hasil perhitungan luas yang sudah benar."
+        }
+      ],
+      "pembahasan": "Pada segitiga siku-siku sama kaki, perbandingan sisi-sisinya adalah $1 : 1 : \\sqrt{2}$.\nJika hipotenusa $c = 10\\text{ cm}$, maka panjang sisi siku-siku $s$ adalah:\n$$s = \\frac{10}{\\sqrt{2}} = 5\\sqrt{2}\\text{ cm}$$\nLuas segitiga siku-siku sama kaki:\n$$\\text{Luas} = \\frac{1}{2} \\times s \\times s = \\frac{1}{2} \\times 5\\sqrt{2} \\times 5\\sqrt{2} = \\frac{1}{2} \\times 50 = 25\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-005",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 99,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Kalian coba buktikan bahwa pada segitiga siku-siku yang sudut-sudutnya 30° dan 60°, perbandingan sisi terpendek dan sisi lainnya adalah 1 | 2 | 3"
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Luas segitiga sama sisi",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan perbandingan sisi pada segitiga siku-siku $30^\\circ-60^\\circ-90^\\circ$ untuk mencari tinggi segitiga sama sisi, kemudian menentukan luasnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah lempeng seng berbentuk segitiga sama sisi dengan panjang sisi $12\\text{ cm}$. Luas lempeng seng tersebut adalah ....",
+      "jawaban_benar": "$36\\sqrt{3}\\text{ cm}^2$",
+      "alasan_benar": "Garis tinggi membagi segitiga sama sisi menjadi dua segitiga siku-siku dengan sudut $30^\\circ$ dan $60^\\circ$. Panjang setengah sisi alas adalah $6\\text{ cm}$, sehingga tingginya $t = 6\\sqrt{3}\\text{ cm}$. Luas segitiga $= \\frac{1}{2} \\times 12 \\times 6\\sqrt{3} = 36\\sqrt{3}\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$72\\sqrt{3}\\text{ cm}^2$",
+          "alasan": "Lupa mengalikan dengan faktor $\\frac{1}{2}$ pada rumus luas segitiga."
+        },
+        {
+          "teks": "$36\\text{ cm}^2$",
+          "alasan": "Mengabaikan komponen $\\sqrt{3}$ dari tinggi segitiga."
+        },
+        {
+          "teks": "$18\\sqrt{3}\\text{ cm}^2$",
+          "alasan": "Menggunakan setengah alas ($6\\text{ cm}$) sebagai panjang alas total segitiga."
+        }
+      ],
+      "pembahasan": "Garis tinggi ditarik dari salah satu titik sudut segitiga sama sisi ke sisi di hadapannya, membagi segitiga menjadi dua segitiga siku-siku dengan sudut $30^\\circ - 60^\\circ - 90^\\circ$.\n- Sisi di hadapan $30^\\circ$ (setengah alas): $6\\text{ cm}$\n- Sisi di hadapan $60^\\circ$ (tinggi $t$): $6\\sqrt{3}\\text{ cm}$\nLuas segitiga sama sisi:\n$$\\text{Luas} = \\frac{1}{2} \\times \\text{alas} \\times t = \\frac{1}{2} \\times 12 \\times 6\\sqrt{3} = 36\\sqrt{3}\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 98,
+        "bagian": "Contoh 2.4",
+        "nomor": "2.4",
+        "teks": "Diketahui suatu segitiga siku-siku sama kaki T ABC dengan + C = 90° dan AB = 15 2 cm . Hitunglah panjang AC .",
+        "jawaban": "15 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Sisi siku-siku dari hipotenusa bulat",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan pemahaman perbandingan segitiga 45-45-90 dan perasionlan bentuk akar.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui sebuah segitiga siku-siku sama kaki $\\triangle KLM$ siku-siku di $M$. Jika panjang hipotenusa $KL = 18\\text{ cm}$, panjang sisi $KM$ adalah ....",
+      "jawaban_benar": "$9\\sqrt{2}\\text{ cm}$",
+      "alasan_benar": "Pada segitiga siku-siku sama kaki, perbandingan sisi siku-siku terhadap hipotenusa adalah $1 : \\sqrt{2}$. Maka $KM = \\frac{KL}{\\sqrt{2}} = \\frac{18}{\\sqrt{2}} = \\frac{18\\sqrt{2}}{2} = 9\\sqrt{2}\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$9\\text{ cm}$",
+          "alasan": "Siswa membagi panjang hipotenusa dengan 2 tanpa mengalikan kembali dengan akar 2."
+        },
+        {
+          "teks": "$18\\sqrt{2}\\text{ cm}$",
+          "alasan": "Siswa mengira sisi siku-siku diperoleh dengan mengalikan hipotenusa dengan akar 2."
+        },
+        {
+          "teks": "$6\\sqrt{2}\\text{ cm}$",
+          "alasan": "Siswa salah membagi 18 dengan 3 alih-alih dengan 2 saat merasionalkan penyebut."
+        }
+      ],
+      "pembahasan": "Segitiga siku-siku sama kaki memiliki perbandingan sisi $KM : ML : KL = 1 : 1 : \\sqrt{2}$.\\nDiketahui $KL = 18\\text{ cm}$, maka:\\n$$\\frac{KM}{KL} = \\frac{1}{\\sqrt{2}}$$\\n$$KM = \\frac{18}{\\sqrt{2}} = \\frac{18}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{18\\sqrt{2}}{2} = 9\\sqrt{2}\\text{ cm}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 100,
+        "bagian": "Contoh 2.5",
+        "nomor": "2.5",
+        "teks": "Pada T ABC , + B = 60° dan + A = 30° . Panjang BC = 12 cm , hitunglah panjang: a. AC b. AB",
+        "jawaban": "AC = 12√3 cm dan AB = 24 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Panjang sisi depan 60 derajat dari hipotenusa",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan perbandingan sisi pada segitiga siku-siku 30-60-90 dua langkah dari hipotenusa.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada segitiga siku-siku $PQR$, diketahui besar $\\angle P = 30^\\circ$, $\\angle Q = 90^\\circ$, dan $\\angle R = 60^\\circ$. Jika panjang hipotenusa $PR = 20\\text{ cm}$, panjang sisi $PQ$ adalah ....",
+      "jawaban_benar": "$10\\sqrt{3}\\text{ cm}$",
+      "alasan_benar": "Sisi di depan sudut 30 derajat adalah $QR = \\frac{1}{2} \\times PR = 10\\text{ cm}$. Sisi di depan sudut 60 derajat adalah $PQ = QR\\sqrt{3} = 10\\sqrt{3}\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$10\\text{ cm}$",
+          "alasan": "Siswa menghitung panjang sisi di depan sudut 30 derajat ($QR$), bukan sisi $PQ$."
+        },
+        {
+          "teks": "$20\\sqrt{3}\\text{ cm}$",
+          "alasan": "Siswa mengalikan langsung panjang hipotenusa dengan akar 3 tanpa membagi 2 terlebih dahulu."
+        },
+        {
+          "teks": "$10\\sqrt{2}\\text{ cm}$",
+          "alasan": "Siswa tertukar menggunakan rasio segitiga 45-45-90."
+        }
+      ],
+      "pembahasan": "Pada $\\triangle PQR$ siku-siku di $Q$:\\nPerbandingan sisi di hadapan sudut $30^\\circ : 60^\\circ : 90^\\circ$ adalah $QR : PQ : PR = 1 : \\sqrt{3} : 2$.\\n1. Tentukan $QR$:\\n$$QR = \\frac{1}{2} \\times PR = \\frac{1}{2} \\times 20 = 10\\text{ cm}$$\\n2. Tentukan $PQ$:\\n$$PQ = QR \\times \\sqrt{3} = 10\\sqrt{3}\\text{ cm}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-008",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 97,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Semua segitiga siku-siku sama kaki adalah setengah persegi."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Keliling persegi dari diagonal",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menghubungkan diagonal persegi sebagai hipotenusa segitiga istimewa lalu menentukan kelilingnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi $ABCD$ memiliki panjang diagonal sisi $AC = 14\\text{ cm}$. Keliling persegi tersebut adalah ....",
+      "jawaban_benar": "$28\\sqrt{2}\\text{ cm}$",
+      "alasan_benar": "Sisi persegi $s = \\frac{14}{\\sqrt{2}} = 7\\sqrt{2}\\text{ cm}$. Keliling persegi $K = 4s = 4 \\times 7\\sqrt{2} = 28\\sqrt{2}\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$14\\sqrt{2}\\text{ cm}$",
+          "alasan": "Siswa hanya menghitung dua kali panjang sisi persegi bukan empat kali."
+        },
+        {
+          "teks": "$56\\text{ cm}$",
+          "alasan": "Siswa langsung mengalikan panjang diagonal dengan 4 mengabaikan faktor akar 2."
+        },
+        {
+          "teks": "$28\\text{ cm}$",
+          "alasan": "Siswa membagi 14 dengan 2 lalu mengalikan 4, melupakan bentuk akar 2."
+        }
+      ],
+      "pembahasan": "Diagonal persegi membagi persegi menjadi dua segitiga siku-siku sama kaki. Jika panjang sisi persegi adalah $s$, maka:\\n$$s\\sqrt{2} = AC$$\\n$$s\\sqrt{2} = 14$$\\n$$s = \\frac{14}{\\sqrt{2}} = 7\\sqrt{2}\\text{ cm}$$\\nKeliling persegi adalah:\\n$$K = 4 \\times s = 4 \\times 7\\sqrt{2} = 28\\sqrt{2}\\text{ cm}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-009",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 101,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Roda Theodorus dimulai dengan segitiga siku-siku dengan panjang kedua sisinya adalah 1 satuan panjang dan bergerak berlawanan arah jarum jam yang ditunjukkan seperti gambar berikut."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Hipotenusa spiral Theodorus",
+      "jumlah_langkah": 3,
+      "alasan_level": "Menganalisis deret segitiga siku-siku bertingkat (Theodorus) secara rekursif hingga langkah ketiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Pada konstruksi Roda Theodorus, segitiga siku-siku pertama memiliki panjang kedua sisi tegak masing-masing $1\\text{ cm}$. Hipotenusa segitiga pertama menjadi salah satu sisi tegak segitiga siku-siku kedua dengan sisi tegak lainnya berukuran $1\\text{ cm}$. Pola ini berlanjut sehingga hipotenusa segitiga kedua menjadi sisi tegak segitiga siku-siku ketiga dengan sisi tegak lainnya $1\\text{ cm}$. Panjang hipotenusa segitiga siku-siku ketiga adalah ....",
+      "jawaban_benar": "$2\\text{ cm}$",
+      "alasan_benar": "Hipotenusa pertama $\\sqrt{1^2+1^2}=\\sqrt{2}$. Hipotenusa kedua $\\sqrt{(\\sqrt{2})^2+1^2}=\\sqrt{3}$. Hipotenusa ketiga $\\sqrt{(\\sqrt{3})^2+1^2}=\\sqrt{4}=2\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$\\sqrt{3}\\text{ cm}$",
+          "alasan": "Siswa berhenti pada segitiga siku-siku kedua."
+        },
+        {
+          "teks": "$\\sqrt{5}\\text{ cm}$",
+          "alasan": "Siswa salah menghitung satu tingkat lebih lanjut ke segitiga keempat."
+        },
+        {
+          "teks": "$3\\text{ cm}$",
+          "alasan": "Siswa mengira hipotenusa bertambah 1 satuan setiap langkah."
+        }
+      ],
+      "pembahasan": "Langkah 1: Hipotenusa segitiga ke-1:\\n$$c_1 = \\sqrt{1^2 + 1^2} = \\sqrt{2}\\text{ cm}$$\\nLangkah 2: Hipotenusa segitiga ke-2:\\n$$c_2 = \\sqrt{(\\sqrt{2})^2 + 1^2} = \\sqrt{2 + 1} = \\sqrt{3}\\text{ cm}$$\\nLangkah 3: Hipotenusa segitiga ke-3:\\n$$c_3 = \\sqrt{(\\sqrt{3})^2 + 1^2} = \\sqrt{3 + 1} = \\sqrt{4} = 2\\text{ cm}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-010",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 100,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menggunakan perbandingan pada segitiga istimewa yaitu panjang sisi miring adalah 2 kali sisi terpendek dan panjang sisi lainnya adalah 3 kali sisi terpendek."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Aplikasi sudut istimewa pada tangga",
+      "jumlah_langkah": 2,
+      "alasan_level": "Menerapkan perbandingan sisi segitiga 30-60-90 pada permasalahan kontekstual tangga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah tangga disandarkan pada dinding tegak sehingga membentuk sudut $60^\\circ$ terhadap tanah mendatar. Jika tinggi ujung atas tangga pada dinding adalah $6\\sqrt{3}\\text{ meter}$, panjang tangga tersebut adalah ....",
+      "jawaban_benar": "$12\\text{ meter}$",
+      "alasan_benar": "Tinggi dinding berada di hadapan sudut 60 derajat, sehingga sisi terpendek (jarak kaki tangga ke dinding) adalah 6 meter. Panjang tangga (sisi miring) adalah 2 kali sisi terpendek = 12 meter.",
+      "distraktor": [
+        {
+          "teks": "$6\\text{ meter}$",
+          "alasan": "Siswa hanya menghitung jarak kaki tangga ke dinding (sisi terpendek)."
+        },
+        {
+          "teks": "$18\\text{ meter}$",
+          "alasan": "Siswa mengalikan tinggi dinding dengan akar 3 alih-alih membaginya untuk mencari sisi terpendek."
+        },
+        {
+          "teks": "$12\\sqrt{3}\\text{ meter}$",
+          "alasan": "Siswa langsung mengalikan tinggi tangga dengan 2 tanpa menghilangkan faktor akar 3."
+        }
+      ],
+      "pembahasan": "Tangga, tanah, dan dinding membentuk segitiga siku-siku dengan sudut $30^\\circ$, $60^\\circ$, dan $90^\\circ$.\\n- Sudut terhadap tanah $= 60^\\circ$, maka sisi di hadapan sudut $60^\\circ$ adalah tinggi dinding $= 6\\sqrt{3}\\text{ m}$.\\n- Berdasarkan perbandingan $1 : \\sqrt{3} : 2$, sisi terpendek (jarak kaki tangga ke dinding) adalah:\\n$$a = \\frac{6\\sqrt{3}}{\\sqrt{3}} = 6\\text{ m}$$\\n- Panjang tangga adalah sisi hipotenusa:\\n$$\\text{Panjang tangga} = 2a = 2 \\times 6 = 12\\text{ m}.$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-011",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 98,
+        "bagian": "Contoh 2.4",
+        "nomor": "2.4",
+        "teks": "Diketahui suatu segitiga siku-siku sama kaki T _ABC_ dengan + _C_ = 90° dan _AB_ = 15 2 _cm_ . Hitunglah panjang _AC_ .",
+        "jawaban": "15 cm",
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Keliling segitiga siku-siku sama kaki",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan dua langkah perhitungan yaitu merasionalkan panjang sisi siku-siku dari hipotenusa bulat lalu menghitung keliling segitiga.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Diketahui suatu segitiga siku-siku sama kaki $\\triangle ABC$ dengan $\\angle C = 90^\\circ$. Jika panjang sisi hipotenusa $AB = 16\\text{ cm}$, maka keliling segitiga $ABC$ tersebut adalah ....",
+      "jawaban_benar": "$(16 + 16\\sqrt{2})\\text{ cm}$",
+      "alasan_benar": "Pada segitiga siku-siku sama kaki dengan perbandingan sisi $1 : 1 : \\sqrt{2}$, panjang sisi siku-siku $AC = BC = \\frac{16}{\\sqrt{2}} = 8\\sqrt{2}\\text{ cm}$. Keliling segitiga adalah $AC + BC + AB = 8\\sqrt{2} + 8\\sqrt{2} + 16 = (16 + 16\\sqrt{2})\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$(16 + 8\\sqrt{2})\\text{ cm}$",
+          "alasan": "Siswa hanya menjumlahkan satu sisi siku-siku dengan sisi hipotenusa."
+        },
+        {
+          "teks": "$(16 + 32\\sqrt{2})\\text{ cm}$",
+          "alasan": "Siswa salah saat merasionalkan sisi siku-siku menjadi $16\\sqrt{2}$ bukannya $8\\sqrt{2}$."
+        },
+        {
+          "teks": "$24\\sqrt{2}\\text{ cm}$",
+          "alasan": "Siswa salah melakukan operasi bentuk aljabar akar dengan menjumlahkan langsung bilangan bulat dan koefisien akar ($16 + 8\\sqrt{2} = 24\\sqrt{2}$)."
+        }
+      ],
+      "pembahasan": "Pada $\\triangle ABC$ siku-siku sama kaki dengan hipotenusa $AB$:\n1. Tentukan panjang sisi siku-siku:\n$$AC = BC = \\frac{AB}{\\sqrt{2}} = \\frac{16}{\\sqrt{2}} \\times \\frac{\\sqrt{2}}{\\sqrt{2}} = \\frac{16\\sqrt{2}}{2} = 8\\sqrt{2}\\text{ cm}$$\n2. Tentukan keliling $\\triangle ABC$:\n$$\\text{Keliling} = AB + BC + AC = 16 + 8\\sqrt{2} + 8\\sqrt{2} = (16 + 16\\sqrt{2})\\text{ cm}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-012",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0102-soal-laihan-2-3-1",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Tinggi kerangka atap segitiga sama kaki",
+      "jumlah_langkah": 2,
+      "alasan_level": "Memerlukan penerapan Teorema Pythagoras melalui dua tahap: membagi alas simetris dan menghitung tinggi bidang tegak.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Rencana kerangka atap sebuah bangunan tampak depan berbentuk segitiga sama kaki. Kedua sisi miring atap masing-masing memiliki panjang $15\\text{ m}$. Jika lebar bentang horizontal dasar atap tersebut adalah $18\\text{ m}$, tinggi atap bangunan tersebut adalah ....",
+      "jawaban_benar": "$12\\text{ m}$",
+      "alasan_benar": "Garis tinggi segitiga sama kaki membagi alas sama panjang menjadi $18 : 2 = 9\\text{ m}$. Tinggi atap dihitung dengan Teorema Pythagoras: $t = \\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12\\text{ m}$.",
+      "distraktor": [
+        {
+          "teks": "$9\\text{ m}$",
+          "alasan": "Siswa keliru menganggap tinggi atap sama dengan setengah dari bentang dasar."
+        },
+        {
+          "teks": "$3\\sqrt{11}\\text{ m}$",
+          "alasan": "Siswa langsung mengurangkan kuadrat bentang dasar penuh dengan kuadrat sisi miring: $\\sqrt{18^2 - 15^2} = \\sqrt{99} = 3\\sqrt{11}$."
+        },
+        {
+          "teks": "$3\\sqrt{41}\\text{ m}$",
+          "alasan": "Siswa menjumlahkan kuadrat sisi miring dan setengah bentang: $\\sqrt{15^2 + 9^2} = \\sqrt{306} = 3\\sqrt{34}$ atau salah hitung kuadrat."
+        }
+      ],
+      "pembahasan": "Kerangka atap membentuk segitiga sama kaki:\n1. Hitung setengah panjang bentang alas:\n$$\\text{alas siku-siku} = \\frac{18}{2} = 9\\text{ m}$$\n2. Hitung tinggi atap menggunakan Teorema Pythagoras:\n$$t = \\sqrt{15^2 - 9^2} = \\sqrt{225 - 81} = \\sqrt{144} = 12\\text{ m}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 100,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Menggunakan perbandingan pada segitiga istimewa yaitu panjang sisi miring adalah 2 kali sisi terpendek dan panjang sisi lainnya adalah 3 kali sisi terpendek."
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Luas persegi panjang dari diagonal bersudut istimewa",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan penentuan kedua sisi persegi panjang lewat perbandingan sudut istimewa 30-60-90 kemudian menghitung luasnya.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah persegi panjang $ABCD$ memiliki diagonal $AC$ dengan panjang $16\\text{ cm}$. Jika diagonal $AC$ membentuk sudut $30^\\circ$ terhadap sisi $AB$, luas persegi panjang $ABCD$ adalah ....",
+      "jawaban_benar": "$64\\sqrt{3}\\text{ cm}^2$",
+      "alasan_benar": "Pada $\\triangle ABC$ siku-siku di $B$ dengan $\\angle CAB = 30^\\circ$ dan hipotenusa $AC = 16\\text{ cm}$, diperoleh lebar $BC = 8\\text{ cm}$ dan panjang $AB = 8\\sqrt{3}\\text{ cm}$. Luas $ABCD = 8\\sqrt{3} \\times 8 = 64\\sqrt{3}\\text{ cm}^2$.",
+      "distraktor": [
+        {
+          "teks": "$32\\sqrt{3}\\text{ cm}^2$",
+          "alasan": "Siswa mengalikan dengan $\\frac{1}{2}$ karena mengira mencari luas segitiga siku-siku."
+        },
+        {
+          "teks": "$64\\text{ cm}^2$",
+          "alasan": "Siswa mengira kedua sisi persegi panjang sama panjang ($8 \\times 8$)."
+        },
+        {
+          "teks": "$128\\sqrt{3}\\text{ cm}^2$",
+          "alasan": "Siswa langsung mengalikan diagonal dengan panjang sisi ($16 \\times 8\\sqrt{3}$)."
+        }
+      ],
+      "pembahasan": "Diagonal $AC$ membagi persegi panjang menjadi segitiga siku-siku $ABC$ dengan $\\angle B = 90^\\circ$ dan $\\angle CAB = 30^\\circ$:\n1. Panjang sisi terpendek (lebar $BC$ di depan sudut $30^\\circ$):\n$$BC = \\frac{1}{2} \\times AC = \\frac{1}{2} \\times 16 = 8\\text{ cm}$$\n2. Panjang sisi lainnya (panjang $AB$ di hadapan sudut $60^\\circ$):\n$$AB = BC \\times \\sqrt{3} = 8\\sqrt{3}\\text{ cm}$$\n3. Luas persegi panjang $ABCD$:\n$$\\text{Luas} = AB \\times BC = 8\\sqrt{3} \\times 8 = 64\\sqrt{3}\\text{ cm}^2$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "variasi_cara": null,
+      "acuan": {
+        "sumber": "siswa",
+        "id": null,
+        "halaman": 97,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": "Semua segitiga siku-siku sama kaki adalah setengah persegi."
+      },
+      "cognitive_c": "C4",
+      "jenis_soal": "Sisi hipotenusa segitiga gabungan sudut istimewa",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan analisis geometri gabungan dua segitiga istimewa berbeda (45-45-90 dan 30-60-90) dalam 3 langkah berurutan.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Segitiga siku-siku sama kaki $\\triangle ABC$ siku-siku di $B$ memiliki panjang sisi penyiku $AB = BC = 6\\sqrt{2}\\text{ cm}$. Pada sisi hipotenusa $AC$, dibuat segitiga siku-siku kedua $\\triangle ACD$ yang siku-siku di $C$ dengan $\\angle CAD = 30^\\circ$. Panjang sisi hipotenusa $AD$ adalah ....",
+      "jawaban_benar": "$8\\sqrt{3}\\text{ cm}$",
+      "alasan_benar": "Hipotenusa $\\triangle ABC$ adalah $AC = 6\\sqrt{2} \\times \\sqrt{2} = 12\\text{ cm}$. Pada $\\triangle ACD$ siku-siku di $C$, sisi $AC$ berada di depan sudut $60^\\circ$, sehingga sisi $CD = \\frac{12}{\\sqrt{3}} = 4\\sqrt{3}\\text{ cm}$. Maka hipotenusa $AD = 2 \\times CD = 8\\sqrt{3}\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$4\\sqrt{3}\\text{ cm}$",
+          "alasan": "Siswa hanya menghitung sisi tegak $CD$ dan lupa mencari hipotenusa $AD$."
+        },
+        {
+          "teks": "$24\\text{ cm}$",
+          "alasan": "Siswa keliru menganggap $AC$ sebagai sisi di hadapan sudut $30^\\circ$ sehingga menghitung $AD = 2 \\times 12 = 24$."
+        },
+        {
+          "teks": "$12\\sqrt{2}\\text{ cm}$",
+          "alasan": "Siswa keliru menganggap $\\triangle ACD$ juga segitiga siku-siku sama kaki sehingga mengalikan $12$ dengan $\\sqrt{2}$."
+        }
+      ],
+      "pembahasan": "Penyelesaian langkah demi langkah:\n1. Hitung sisi miring $AC$ pada $\\triangle ABC$ (sudut $45^\\circ-45^\\circ-90^\\circ$):\n$$AC = AB \\times \\sqrt{2} = 6\\sqrt{2} \\times \\sqrt{2} = 12\\text{ cm}$$\n2. Pada $\\triangle ACD$ siku-siku di $C$ dengan $\\angle CAD = 30^\\circ$, maka $\\angle ADC = 60^\\circ$. Sisi $AC$ berhadapan dengan sudut $60^\\circ$, gunakan rasio $1 : \\sqrt{3} : 2$:\n$$CD = \\frac{AC}{\\sqrt{3}} = \\frac{12}{\\sqrt{3}} = 4\\sqrt{3}\\text{ cm}$$\n3. Hitung hipotenusa $AD$:\n$$AD = 2 \\times CD = 2 \\times 4\\sqrt{3} = 8\\sqrt{3}\\text{ cm}$$",
+      "catatan": null,
+      "dipaksa_kuota": false
+    },
+    {
+      "id": "kelas8-b02-c-medium-bt01-015",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas8-b02-p0102-soal-laihan-2-3-3a",
+        "halaman": null,
+        "bagian": null,
+        "nomor": null,
+        "teks": null,
+        "jawaban": null,
+        "kutipan": null
+      },
+      "cognitive_c": "C3",
+      "jenis_soal": "Keliling segitiga 30-60-90 dari hipotenusa",
+      "jumlah_langkah": 3,
+      "alasan_level": "Memerlukan tiga langkah penyelesaian yaitu menentukan kedua sisi penyiku dari hipotenusa menggunakan perbandingan sudut istimewa 30°-60°-90° kemudian menjumlahkan seluruh sisi untuk mencari keliling.",
+      "stimulus": null,
+      "gambar": [],
+      "deskripsi_gambar": null,
+      "pertanyaan": "Sebuah pelat baja berbentuk segitiga siku-siku memiliki salah satu sudut sebesar $30^\\circ$. Jika panjang sisi miring (hipotenusa) pelat tersebut adalah $24\\text{ cm}$, keliling pelat baja tersebut adalah ....",
+      "jawaban_benar": "$(36 + 12\\sqrt{3})\\text{ cm}$",
+      "alasan_benar": "Perbandingan sisi segitiga siku-siku bersudut $30^\\circ : 60^\\circ : 90^\\circ$ adalah $1 : \\sqrt{3} : 2$. Dengan hipotenusa $24\\text{ cm}$, sisi terpendek adalah $\\frac{1}{2} \\times 24 = 12\\text{ cm}$ dan sisi lainnya $12\\sqrt{3}\\text{ cm}$. Keliling segitiga adalah $24 + 12 + 12\\sqrt{3} = (36 + 12\\sqrt{3})\\text{ cm}$.",
+      "distraktor": [
+        {
+          "teks": "$(12 + 12\\sqrt{3})\\text{ cm}$",
+          "alasan": "Siswa lupa menjumlahkan panjang hipotenusa ke dalam keliling dan hanya menjumlahkan kedua sisi penyiku."
+        },
+        {
+          "teks": "$(36 + 24\\sqrt{3})\\text{ cm}$",
+          "alasan": "Siswa keliru mengalikan hipotenusa langsung dengan $\\sqrt{3}$ untuk menentukan sisi di depan sudut $60^\\circ$ bukannya dari sisi terpendek."
+        },
+        {
+          "teks": "$(24 + 24\\sqrt{2})\\text{ cm}$",
+          "alasan": "Siswa keliru menggunakan aturan perbandingan segitiga siku-siku sama kaki ($45^\\circ$-$45^\\circ$-$90^\\circ$)."
+        }
+      ],
+      "pembahasan": "Pada segitiga siku-siku dengan salah satu sudut $30^\\circ$, sudut lainnya adalah $60^\\circ$ dan $90^\\circ$.\nPerbandingan panjang sisi di hadapan sudut $30^\\circ$, $60^\\circ$, dan $90^\\circ$ adalah $1 : \\sqrt{3} : 2$.\n\n1. Panjang sisi di hadapan sudut $30^\\circ$:\n$$\\text{sisi depan } 30^\\circ = \\frac{1}{2} \\times 24\\text{ cm} = 12\\text{ cm}$$\n\n2. Panjang sisi di hadapan sudut $60^\\circ$:\n$$\\text{sisi depan } 60^\\circ = 12 \\times \\sqrt{3}\\text{ cm} = 12\\sqrt{3}\\text{ cm}$$\n\n3. Keliling pelat baja:\n$$K = 24 + 12 + 12\\sqrt{3} = (36 + 12\\sqrt{3})\\text{ cm}$$\n\nJadi, keliling pelat baja tersebut adalah $(36 + 12\\sqrt{3})\\text{ cm}$.",
+      "catatan": null,
+      "dipaksa_kuota": false
+    }
+  ]
+}
