@@ -20,6 +20,22 @@ Menghasilkan JSON dan Markdown lengkap per subbab. Katalog dibaca dari
 bukan sumber ID MongoDB. `--curriculum-report` menerima laporan lain berformat
 sama. Inventaris tidak memperhitungkan riwayat siswa dan bukan audit production.
 
+Berkas ditemukan otomatis dari ekspor resmi. Saat ini terdapat **24 berkas**:
+
+- Exercise (10 berkas):
+  - `output/exercise/kelas5/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas6/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas7/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas8/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas9/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas10/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas11/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas11_tl/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas12/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas12_tl/batch01/hasil_validasi/validation_results.json`
+- Pretest (14 berkas):
+  - `output/pretest/kelas1` s.d `kelas12_tl` (`.../hasil_validasi/validation_results.json`)
+
 Batas dihitung **per level dalam setiap subbab**: SD 10, SMP 15, SMA 20.
 Surplus easy tidak menutup kekurangan medium/hard, dan surplus subbab lain tidak
 menutup kekurangan subbab ini. Bab cukup hanya jika semua subbab dan levelnya
