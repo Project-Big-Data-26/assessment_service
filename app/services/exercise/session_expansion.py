@@ -41,6 +41,31 @@ def base_for(name):
     return ROOT / 'output/exercise' / name / 'batch01'
 
 
+def verify_baseline(name,plan,live=False):
+    baseline=RUN/'baseline'/name/'batch01';base=base_for(name)
+    manifest=load(baseline/'hasil_validasi/manifest.json')
+    assert digest(baseline/'hasil_validasi/manifest.json')==plan['baselines'][name]['manifestHash'],'Frozen manifest changed'
+    marker=baseline/'snapshot_complete.json'
+    if not marker.exists():
+        # Early checkpoints predate atomic snapshot markers. Verify their old
+        # source hashes and preserved live rows before sealing those snapshots.
+        for relative,sha in manifest.get('inputs',{}).items():
+            if not relative.startswith('assets/') and (baseline/relative).exists():assert digest(baseline/relative)==sha,('Historical source changed',name,relative)
+        for info in manifest.get('liveInputs',{}).values():
+            path=Path(info['path'])
+            if path.is_relative_to(base):assert digest(baseline/path.relative_to(base))==info['sha256']
+        if load(base/'hasil_validasi/manifest.json').get('roundId')!=plan['roundId']:
+            for relative in ['soal_exercise_db.json','soal_exercise_meta.json','hasil_validasi/validation_results.json','hasil_validasi/validation_results_meta.json']:
+                assert (baseline/relative).read_bytes()==(base/relative).read_bytes(),('Live baseline differs',name,relative)
+        atomic_json(marker,{'legacyCheckpointBootstrap':True,'files':{p.relative_to(baseline).as_posix():digest(p) for p in baseline.rglob('*') if p.is_file() and p!=marker}})
+    frozen=load(marker)['files']
+    assert all(digest(baseline/p)==sha for p,sha in frozen.items()),'Baseline snapshot changed after it was frozen'
+    if live:
+        for relative,sha in frozen.items():
+            if relative.startswith('hasil_validasi/') or re.fullmatch(r'bab\d+/[A-Z]_(easy|medium|hard)\.json',relative) or relative in ('soal_exercise_db.json','soal_exercise_meta.json','reference_replenishment_state.json'):
+                assert digest(base/relative)==sha,('Live question content changed before publication',name,relative)
+
+
 def grade(name):
     return int(name.split('_')[0][5:])
 
@@ -251,6 +276,36 @@ def make_candidate(name,job,model,review,serial,r,reference,reference_path,stage
             'referenceOrigin':{k:reference[k] for k in ('class','chapter','code','conceptAdaptation')},'job':job}
 
 
+def effective_jobs(name,plan,stage):
+    """Allocate the class-level picture quota only to supported subject families."""
+    jobs=deepcopy([j for j in plan['jobs'] if j['class_key']==name])
+    if grade(name)<=4:return jobs
+    path=stage/'visual_allocation.json'
+    if path.exists():
+        result=load(path);assert result['roundId']==plan['roundId'];return result['jobs']
+    module=provider(name);eligible=[]
+    for i,job in enumerate(jobs):
+        if job['needVisual']+job['needText']==0:continue
+        for attempt in range(3):
+            rng=random.Random(int(h([plan['roundId'],name,i,attempt])[:16],16))
+            try:
+                model=module.generate(name,job['chapter_no'],job['code'],job['level'],rng,True,100+attempt)
+                if model and model.get('scene') and review_model(name,model)['assessment']['assessedLevel']==job['level']:
+                    eligible.append(i);break
+            except (AssertionError,ValueError,KeyError,TypeError,ZeroDivisionError):continue
+        if i%15==0:print(json.dumps({'phase':'visual_preflight','class':name,'checked':i+1,'total':len(jobs)}),flush=True)
+    desired=sum(j['needVisual'] for j in jobs)
+    capacity=sum(jobs[i]['needVisual']+jobs[i]['needText'] for i in eligible)
+    assert capacity>=desired,('Not enough eligible essential-visual families',name,capacity,desired)
+    exact={i:desired*(jobs[i]['needVisual']+jobs[i]['needText'])/capacity for i in eligible}
+    allocated={i:int(v) for i,v in exact.items()}
+    for i in sorted(eligible,key=lambda i:(-(exact[i]-allocated[i]),i))[:desired-sum(allocated.values())]:allocated[i]+=1
+    for i,job in enumerate(jobs):
+        count=job['needVisual']+job['needText'];job['needVisual']=allocated.get(i,0);job['needText']=count-job['needVisual']
+    atomic_json(path,{'roundId':plan['roundId'],'jobs':jobs,'eligibleVisualJobs':eligible,'newVisualMinimum':desired})
+    return jobs
+
+
 def progress(plan,phase=None,last=None):
     counts={};complete=0;candidate=0;images=0
     for name in plan['classes']:
@@ -270,13 +325,15 @@ def generate_class(name,plan,pilot=False):
     state_path=stage/'checkpoint.json'
     with batch_lock(base):
         recover(name)
+        archive_stale_publications(name)
         final=base/'hasil_validasi'
         if load(final/'manifest.json').get('roundId')==plan['roundId']:
             verify_publication(final);return {'alreadyPublished':True}
         assert digest(final/'manifest.json')==plan['baselines'][name]['manifestHash'],'Live baseline changed before publication'
+        verify_baseline(name,plan,live=True)
         state=load(state_path) if state_path.exists() else {'roundId':plan['roundId'],'jobs':{}}
         assert state['roundId']==plan['roundId']
-        jobs=[j for j in plan['jobs'] if j['class_key']==name]
+        jobs=effective_jobs(name,plan,stage)
         if pilot:jobs=[j for j in jobs if (j['chapter_no'],j['code'])==(jobs[0]['chapter_no'],jobs[0]['code'])]
         refs,refpath=references(name,plan)
         identities=set();semantics=set();old_raw={}
@@ -361,6 +418,15 @@ def _bab_id(name,bab):
     return f'{prefix}{g}{track}-B{bab}'
 
 
+def archive_stale_publications(name):
+    base=base_for(name).resolve()
+    for path in base.glob('.session-publication-*'):
+        source=path.resolve();assert source.is_relative_to(base) and source.name.startswith('.session-publication-')
+        target=(RUN/'stale_publications'/name/(source.name+'_'+datetime.now(timezone.utc).strftime('%Y%m%d%H%M%S%f'))).resolve()
+        assert target.is_relative_to(RUN.resolve());target.parent.mkdir(parents=True,exist_ok=True)
+        source.rename(target)
+
+
 def recover(name):
     """Recover a process interrupted between raw writes and canonical rename."""
     stage=RUN/'staging'/name;journal=stage/'publication_journal.json'
@@ -388,6 +454,7 @@ def publish_class(name,plan):
         if load(final/'manifest.json').get('roundId')==plan['roundId']:
             verify_publication(final);return load(final/'manifest.json')['summary']
         assert digest(final/'manifest.json')==plan['baselines'][name]['manifestHash']
+        verify_baseline(name,plan,live=True)
         state=load(stage/'checkpoint.json');jobs=[j for j in plan['jobs'] if j['class_key']==name]
         assert len(state['jobs'])==len(jobs),'The full class must be generated before publication'
         candidates=[]
@@ -395,11 +462,13 @@ def publish_class(name,plan):
             assert digest(stage/info['file'])==info['sha256'];candidates.extend(load(stage/info['file'])['items'])
         # Recompute, rather than reuse generation's cached content decisions.
         _review_cached.cache_clear()
-        for c in candidates:
+        for review_index,c in enumerate(candidates,1):
             fresh=review_model(name,c['model']);assert fresh['assessment']['assessedLevel']==c['review']['assessment']['assessedLevel']
+            if review_index%100==0:
+                print(json.dumps({'phase':'validating','class':name,'reviewed':review_index,'total':len(candidates)}),flush=True)
             if c['source']['image_url']:
                 asset=base/c['source']['image_url'][0]
-                if asset.exists():
+                if all(asset.with_suffix(suffix).exists() for suffix in ('.png','.svg','.json')):
                     c['visualProvenance']={**c['visualProvenance'],'svgSha256':digest(asset.with_suffix('.svg')),
                         'retainedAssetMetadataSha256':digest(asset.with_suffix('.json')),'retainedExistingAsset':True}
         raw_files={p.relative_to(baseline).as_posix():load(p) for p in baseline.glob('bab*/*_*.json') if re.fullmatch(r'[A-Z]_(easy|medium|hard)\.json',p.name)}
@@ -441,6 +510,9 @@ def publish_class(name,plan):
         atomic_json(prior/'raw.json',previous_raw);shutil.copyfile(baseline/'hasil_validasi/manifest.json',prior/'manifest.json')
         atomic_json(publication/'validation_results.json',rows);atomic_json(publication/'validation_results_meta.json',meta)
         atomic_json(publication/'bukti_validasi/codex_session_review.json',{'policyVersion':POLICY,'roundId':plan['roundId'],'apiCalls':0,'items':proofs})
+        shutil.copyfile(RUN/('latex_'+name+'.json'),publication/'bukti_validasi/session_latex_expressions.json')
+        atomic_json(publication/'bukti_validasi/session_latex_render.json',rendered)
+        shutil.copyfile(RUN/'references'/(name+'.json'),publication/'bukti_validasi/session_reference_blueprints.json')
         assets={}
         for row in rows:
             if row['status']!='active':continue
@@ -459,8 +531,10 @@ def publish_class(name,plan):
             if p.exists() and p.is_relative_to(ROOT):
                 dest=code/p.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,dest)
         # Assets are immutable: publishing new addresses cannot invalidate old ones.
-        for src in (stage/'assets').glob('*'):
-            copy_asset(src,base/'assets'/src.name)
+        used_assets={Path(asset).stem for c in candidates for asset in c['source']['image_url']}
+        for stem in used_assets:
+            for suffix in ('.png','.svg','.json'):
+                src=stage/'assets'/(stem+suffix);copy_asset(src,base/'assets'/src.name)
         mutated=[*raw_files,'soal_exercise_db.json','soal_exercise_meta.json','reference_replenishment_state.json']
         journal=stage/'publication_journal.json';atomic_json(journal,{'phase':'prepared','mutated':mutated,'roundId':plan['roundId']})
         old=RUN/'publication_backups'/name;old.parent.mkdir(parents=True,exist_ok=True);assert not old.exists()
@@ -510,12 +584,22 @@ def verify_publication(bundle):
     proof=load(bundle/'bukti_validasi/codex_session_review.json');new={r['questionId']:r for r in proof['items']}
     assert len(new)==len(proof['items']) and set(new)==set(by)-{r['_id'] for r in old}
     assert proof['apiCalls']==0 and proof['policyVersion']==POLICY
+    reference_file=bundle/'bukti_validasi/session_reference_blueprints.json'
+    if not reference_file.exists():reference_file=RUN/'references'/(manifest['class']+'.json')
+    references_by={r['id']:r for pool in load(reference_file).values() for r in pool}
     for qid,item in new.items():
         row=by[qid];info=meta[qid];q=raw_by[item['workingId']]
         assert h(q)==item['rawHash'] and h(row)==item['publishedHash'] and h(sources[qid])==item['sourceHash']
         checked=review_model(manifest['class'],item['model']);level=checked['assessment']['assessedLevel']
         assert row['cognitive_level']==level and row['cognitive_score']==SCORES[level] and row['status']=='active' and row['confidence_score']==0
         assert q['pertanyaan']==row['soal_text']==item['model']['question']
+        assert {k:v for k,v in row.items() if k not in ('status','cognitive_level','cognitive_score','confidence_score')}=={k:v for k,v in sources[qid].items() if k not in ('status','cognitive_level','cognitive_score','confidence_score')}
+        has_scene=bool(item['model'].get('scene'))
+        assert bool(row['image_url'])==bool(q.get('gambar'))==has_scene
+        assert (q.get('visual_spec') or {}).get('scene')==item['model'].get('scene')
+        if has_scene:
+            assert len(row['image_url'])==1 and q['gambar']==['exercise_assets/'+manifest['class']+'/batch01/'+row['image_url'][0]]
+            assert q['visual_spec']['kind']==item['model'].get('visual_kind','sd_scene')
         from scripts.generate_sd_bank_local import answer_identity
         assert answer_identity(q['jawaban_benar'])==answer_identity(item['model']['answer'])
         expected_options={answer_identity(v) for v in [q['jawaban_benar'],*[d['teks'] for d in q['distraktor']]]}
@@ -523,6 +607,9 @@ def verify_publication(bundle):
         assert expected_options=={answer_identity(o['text']) for o in row['options']}
         assert len(expected_options)==4 and answer_identity(next(o['text'] for o in row['options'] if o['option_id']==row['jawaban']))==answer_identity(q['jawaban_benar'])
         assert q['pembahasan']==q['alasan_benar']==item['model']['explanation']
+        reference=references_by[q['acuan']['id']]
+        assert q['acuan']['source_sha256']==digest(reference_file)
+        assert q['acuan']['teks']==reference['text'] and q['acuan']['jawaban']==reference['answer'] and q['acuan']['sumber']==reference['sourceKind']
         assert info['validasi']['api_runs']==0 and info['validasi']['training_evidence_qualified'] is False
         assert sources[qid]['status']=='inactive' and sources[qid]['cognitive_level'] is None
         for asset in row['image_url']:
@@ -537,17 +624,48 @@ def verify_publication(bundle):
     if grade(name)<=4:assert all(visual[k]>=7*sessions and counts[k]-visual[k]>=3*sessions for k in counts)
     else:assert sum(visual.values())*10>=sum(counts.values())*3
     assert load(base/'reference_replenishment_state.json')['reviewMode']=='local_without_external_api'
+    summary=manifest['summary']
+    assert summary['active']==sum(r['status']=='active' for r in rows)
+    assert summary['inactive']==sum(r['status']!='active' for r in rows)
+    assert summary['added']==len(new)
+    assert summary['levels']==dict(Counter(r['cognitive_level'] for r in rows if r['status']=='active'))
+    assert summary['activeVisual']==sum(r['status']=='active' and bool(r['image_url']) for r in rows)
+    assert not summary['rendering']['errors']
     return manifest['summary']
 
 
 def audit(plan):
     from PIL import Image
     from app.ingestion.question_sync import class_from_chapter
-    summaries=[];assignments={};all_ids=set();new_pictures=0
+    from scripts.generate_sd_bank_local import check_latex
+    summaries=[];assignments={};all_ids=set();new_pictures=0;rendered_total=0;png_files=0
     for name in plan['classes']:
         base=base_for(name);final=base/'hasil_validasi'
         summary=verify_publication(final);summaries.append(summary)
+        new_proofs=load(final/'bukti_validasi/codex_session_review.json')['items']
+        raw_by={q['id']:q for path in base.glob('bab*/*_*.json') if re.fullmatch(r'[A-Z]_(easy|medium|hard)\.json',path.name) for q in load(path)['soal']}
+        rendered=check_latex([raw_by[p['workingId']] for p in new_proofs],RUN/('final_latex_'+name+'.json'))
+        atomic_json(RUN/('final_render_'+name+'.json'),rendered);rendered_total+=rendered['checked']
+        # Early resumed publications predate self-contained blueprint/KaTeX
+        # evidence. Add only missing evidence, committing its manifest last.
+        with batch_lock(base):
+            additions={
+                'session_reference_blueprints.json':RUN/'references'/(name+'.json'),
+                'session_latex_expressions.json':RUN/('final_latex_'+name+'.json'),
+                'session_latex_render.json':RUN/('final_render_'+name+'.json')}
+            changed=False
+            for filename,src in additions.items():
+                dest=final/'bukti_validasi'/filename
+                if not dest.exists():
+                    atomic_json(dest,load(src));changed=True
+            if changed:
+                manifest=load(final/'manifest.json')
+                manifest['outputs']={p.relative_to(final).as_posix():digest(p) for p in final.rglob('*') if p.is_file() and p!=final/'manifest.json'}
+                atomic_json(final/'manifest.json',manifest)
         rows=load(final/'validation_results.json');meta=load(base/'soal_exercise_meta.json')
+        for path in (base/'assets').glob('*.png'):
+            with Image.open(path) as source_image:source_image.verify()
+            png_files+=1
         grouped=defaultdict(list)
         for row in rows:
             assert row['_id'] not in all_ids;all_ids.add(row['_id'])
@@ -573,7 +691,7 @@ def audit(plan):
                 sessions=[order[i*n:(i+1)*n] for i in range(plan['sessions'])]
             assert all(len(s)==n for s in sessions) and len(set(q for s in sessions for q in s))==n*plan['sessions']
             assignments[f'{name}/{bab:02d}/{code}/{level}']=sessions
-        new_pictures+=sum(bool(item['model'].get('scene')) for item in load(final/'bukti_validasi/codex_session_review.json')['items'])
+        new_pictures+=sum(bool(item['model'].get('scene')) for item in new_proofs)
         print(json.dumps({'phase':'audit','class':name,**summary}),flush=True)
     inventory=coverage(load_sources(ROOT/'output'),plan['catalog'],sessions=plan['sessions'])
     assert inventory['under_threshold_levels']==0 and inventory['under_threshold']==0
@@ -582,14 +700,19 @@ def audit(plan):
             'added':sum(c['added'] for c in summaries),'active':sum(c['active'] for c in summaries),'inactive':sum(c['inactive'] for c in summaries),
             'activeVisual':sum(c['activeVisual'] for c in summaries),'newVisual':new_pictures,'shortfall':inventory['shortfall_questions'],
             'subchapters':len(plan['catalog']),'levelSlots':len(assignments),'classes':summaries,'coverage':inventory,
-            'mathExpressionsRendered':sum(c['rendering']['checked'] for c in summaries),'renderErrors':0,'pretestFilesUnchanged':len(frozen)}
+            'mathExpressionsRendered':rendered_total,'mathExpressionScope':'added_questions','renderErrors':0,'pngFilesOpened':png_files,'pretestFilesUnchanged':len(frozen)}
+    test_summary=RUN/'test_summary.json'
+    if test_summary.exists():
+        tests=load(test_summary);assert tests['failed']==0
+        result['tests']=tests
     atomic_json(RUN/'session_assignments.json',assignments);atomic_json(RUN/'final_audit.json',result)
     lines=['# Tiga sesi latihan seluruh kelas','',f'**{result["active"]:,} soal aktif; tambahan {result["added"]:,}; kekurangan {result["shortfall"]}.**','',
            '| Kelas | Easy | Medium | Hard | Aktif | Bergambar | Tambahan |','|---|---:|---:|---:|---:|---:|---:|']
     for c in summaries:lines.append(f'| {c["class"]} | {c["levels"].get("easy",0)} | {c["levels"].get("medium",0)} | {c["levels"].get("hard",0)} | {c["active"]} | {c["activeVisual"]} | {c["added"]} |')
     lines+=['',f'{len(assignments)} kombinasi subbab-level memenuhi tiga sesi tanpa ID berulang; SD 10, SMP 15, SMA/TL 20 soal per sesi.',
             'Kelas 1–4 memiliki minimal 21 gambar dan 9 teks pada setiap subbab-level. Kelas 5–12/TL minimal 30% gambar pada stok aktif tiap kelas.',
-            f'KaTeX: {result["mathExpressionsRendered"]} ekspresi, 0 error. PNG dapat dibuka. Soal lama, penilaiannya, dan pretest dipertahankan.',
+            f'KaTeX soal tambahan: {result["mathExpressionsRendered"]} ekspresi, 0 error. PNG dapat dibuka. Soal lama, penilaiannya, dan pretest dipertahankan.',
             'Confidence 0 berarti belum diukur; label hasil penilaian lokal Codex, bukan validasi AI independen atau kalibrasi empiris. API calls 0; production tidak disinkronkan.','']
+    if result.get('tests'):lines+= [f'Tes otomatis: {result["tests"]["passed"]} kasus lolos, {result["tests"]["failed"]} gagal.','']
     (RUN/'REPORT.md').write_text('\n'.join(lines),encoding='utf-8')
     return result

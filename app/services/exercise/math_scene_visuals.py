@@ -123,6 +123,8 @@ def validate_scene(scene: dict) -> dict:
                 raise ValueError("segment endpoints must identify two different points")
             if segment.get("label"):
                 _label(segment["label"])
+            if "label_position" in segment and not .1<=_number(segment['label_position'],'label position')<=.9:
+                raise ValueError('segment label position must stay away from endpoints')
         circles = _sequence(scene.get("circles", []), "circles", 0, 6)
         for circle in circles:
             _pair(circle.get("center"), "circle center")
@@ -271,7 +273,8 @@ def _draw_geometry(scene,canvas):
         a=points[segment['start']];b=points[segment['end']];x1,y1=p(a['x'],a['y']);x2,y2=p(b['x'],b['y'])
         canvas.line(x1,y1,x2,y2,width=3)
         if segment.get('label'):
-            length=max(math.hypot(x2-x1,y2-y1),1);canvas.text((x1+x2)/2-(y2-y1)/length*24,(y1+y2)/2+(x2-x1)/length*24,segment['label'],size=23,width=155)
+            length=max(math.hypot(x2-x1,y2-y1),1);fraction=segment.get('label_position',.5)
+            canvas.text(x1+(x2-x1)*fraction-(y2-y1)/length*24,y1+(y2-y1)*fraction+(x2-x1)/length*24,segment['label'],size=23,width=155)
     for point in points:
         x,y=p(point['x'],point['y']);canvas.ellipse(x-3,y-3,6,6,fill=INK,width=1)
         if point.get('label'):canvas.text(x+17,y-24,point['label'],size=23,width=100)

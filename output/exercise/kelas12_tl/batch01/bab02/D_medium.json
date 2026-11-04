@@ -849,6 +849,1031 @@
       "pembahasan": "Misalkan $B(x)$ menyatakan total biaya proyek selama $x$ hari.\n$$B(x) = x \\cdot \\left(3x - 180 + \\frac{3.000}{x}\\right) = 3x^2 - 180x + 3.000 \\text{ (dalam juta rupiah)}$$\n\nAgar biaya minimum, turunan pertama $B'(x)$ harus bernilai nol:\n$$B'(x) = 6x - 180 = 0$$\n$$6x = 180 \\implies x = 30$$\n\nSubstitusikan $x = 30$ ke dalam fungsi biaya total $B(x)$:\n$$\\begin{aligned} B(30) &= 3(30)^2 - 180(30) + 3.000 \\\\ &= 3(900) - 5.400 + 3.000 \\\\ &= 2.700 - 5.400 + 3.000 \\\\ &= 300 \\text{ juta rupiah} \\end{aligned}$$\n\nJadi, biaya minimum proyek perbaikan jalan tersebut adalah Rp300.000.000,00.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cd63a90779951b0ea95a3f1f",
+        "teks": "Keuntungan produksi suatu barang dinyatakan dengan fungsi $f(x) = 360x - 3x^2$, dengan $f(x)$ dalam ribuan rupiah dan $x$ menyatakan banyak unit barang. Tentukan jumlah unit barang yang harus diproduksi agar keuntungan mencapai maksimum.",
+        "jawaban": "$60$ unit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $1$.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{2}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $1$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/6f760d15b9dbd4e521eae77c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "p",
+              17
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 7], [\"c\", 4], [\"p\", 17]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e5b9a7783550f0962c66770e",
+        "teks": "Ketinggian sebuah bola yang dilempar vertikal ke atas dari tanah setelah $t$ detik diberikan oleh fungsi $h(t) = 48t - 6t^2$ meter. Kecepatan sesaat bola pada saat $t = 3$ detik adalah ....",
+        "jawaban": "$12\\text{ m/s}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{413}{4}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{413}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{417}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{409}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{413}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{413}{4}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/70b31a402718907857151f4b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              13
+            ],
+            [
+              "c",
+              7
+            ],
+            [
+              "p",
+              76
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 13], [\"c\", 7], [\"p\", 76]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1fba63d8d31eae264a583235",
+        "teks": "Sebuah perusahaan memproduksi $x$ unit barang dengan fungsi biaya total $C(x) = 0,25x^2 + 40x + 500$ (dalam ribuan rupiah). Jika perusahaan saat ini memproduksi $80$ unit barang, laju perubahan biaya total terhadap perubahan jumlah produksi adalah ....",
+        "jawaban": "$80$ ribu rupiah per unit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $-2$.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $-2$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/02d9b30efc6b038c1544d1be.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "c",
+              7
+            ],
+            [
+              "p",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 5], [\"c\", 7], [\"p\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6fd5037bcaf8b9b50affd92",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = t^3 - 3t^2 + 8t$ ($s$ dalam meter dan $t$ dalam detik). Percepatan partikel tersebut pada saat $t = 4$ detik adalah ....",
+        "jawaban": "$18\\text{ m/s}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{31}{2}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{31}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{33}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{31}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/15e6e07dd9bd7883609b4c48.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "c",
+              7
+            ],
+            [
+              "p",
+              33
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 3], [\"c\", 7], [\"p\", 33]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc0e6365a27093ae8ccf4dc2",
+        "teks": "Posisi sebuah benda yang bergerak dinyatakan oleh rumus $s(t) = 5t^2 - 4t + 10$, dengan $s$ dalam meter dan $t$ dalam detik. Kecepatan benda saat $t = 3$ detik adalah ....",
+        "jawaban": "$26\\text{ m/s}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $15$.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $15$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/f63e0132620d7f56b51acee6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              6
+            ],
+            [
+              "c",
+              3
+            ],
+            [
+              "p",
+              18
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 6], [\"c\", 3], [\"p\", 18]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "435c3ab10f48c8f7ed8f3e19",
+        "teks": "Konsentrasi suatu obat dalam darah pasien (dalam mg/L) setelah $t$ jam diberikan oleh fungsi $C(t) = \\frac{18t}{t + 2}$. Laju perubahan konsentrasi obat terhadap waktu saat $t = 4$ jam adalah ....",
+        "jawaban": "$1\\text{ mg/(L}\\cdot\\text{jam)}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $41$.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $41$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/934f3754497734cab9788920.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              10
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "p",
+              38
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 10], [\"c\", 8], [\"p\", 38]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9cfbe5b6ab9dab1e8f64687",
+        "teks": "Keuntungan penjualan suatu produk rumahan dinyatakan oleh fungsi $f(x) = 180x - 2x^2$ (dalam ribuan rupiah), dengan $x$ menyatakan banyak unit barang yang terjual. Banyaknya barang yang harus terjual agar diperoleh keuntungan maksimum adalah ....",
+        "jawaban": "$45\\text{ unit}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{45}{4}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{45}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{49}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{41}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{45}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{45}{4}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/cc710c02fb4ab8d6870f3a6f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              2
+            ],
+            [
+              "c",
+              9
+            ],
+            [
+              "p",
+              29
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 2], [\"c\", 9], [\"p\", 29]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c561617a5ddbe5ee939018c",
+        "teks": "Posisi sebuah partikel yang bergerak lurus dinyatakan oleh persamaan $s(t) = 2t^3 - 5t^2 + 4t$ (dengan $s$ dalam meter dan $t$ dalam detik). Rumus fungsi percepatan $a(t)$ dari gerak partikel tersebut adalah ....",
+        "jawaban": "$a(t) = 12t - 10$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{181}{4}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{181}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{185}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{177}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{181}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{181}{4}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7f37f2dd2fa0f63282c701f7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              9
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "c",
+              11
+            ],
+            [
+              "p",
+              50
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 9], [\"b\", 5], [\"c\", 11], [\"p\", 50]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa4ba2660e362e3f2bd1ce26",
+        "teks": "Sebuah objek berosilasi pada suatu lintasan dengan persamaan posisi $s(t) = \\sin(2t) + 5t$ ($s$ dalam meter dan $t$ dalam detik). Kecepatan objek saat $t = 0$ detik adalah ....",
+        "jawaban": "$7\\text{ m/s}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{135}{4}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{135}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{139}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{131}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{135}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{135}{4}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f8a5a3f09546edb3e063e9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "c",
+              10
+            ],
+            [
+              "p",
+              44
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 9], [\"c\", 10], [\"p\", 44]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d7c2d8ba893c9cc77e51211",
+        "teks": "Tentukan dua bilangan real positif dengan jumlah kedua bilangan itu minimum dan mempunyai hasil kali $100$.",
+        "jawaban": "Kedua bilangan bernilai sama, yaitu $10$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $8$.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $8$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4cffe16603164ff9c5b1f8d8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "p",
+              23
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 7], [\"c\", 8], [\"p\", 23]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ac6575d9338218c0168e2de6",
+        "teks": "Sebuah perusahaan memproduksi $x$ unit barang dengan fungsi biaya total $C(x) = 0,05x^2 + 20x + 500$ (dalam ribuan rupiah). Jika perusahaan saat ini memproduksi $200$ unit barang, laju perubahan biaya total terhadap perubahan jumlah produksi adalah ....",
+        "jawaban": "$40$ ribu rupiah per unit",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $0$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $0$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/751f0e69553673ab8dc3451c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "c",
+              8
+            ],
+            [
+              "p",
+              28
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 12], [\"c\", 8], [\"p\", 28]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c58261466eefeaeec88d6a36",
+        "teks": "Ketinggian sebuah bola yang dilempar vertikal ke atas dari tanah setelah $t$ detik diberikan oleh fungsi $h(t) = 60t - 5t^2$ meter. Kecepatan sesaat bola pada saat $t = 4$ detik adalah ....",
+        "jawaban": "$20\\text{ m/s}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$104$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $104$.",
+      "distraktor": [
+        {
+          "teks": "$105$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$103$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$208$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $104$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ee50506deb1c2e1fc100d660.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "b",
+              13
+            ],
+            [
+              "c",
+              4
+            ],
+            [
+              "p",
+              85
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"b\", 13], [\"c\", 4], [\"p\", 85]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08d977b690fc5c9d2c6c252f",
+        "teks": "Jika suatu partikel bergerak sepanjang garis lurus dengan posisi dinyatakan oleh fungsi $s(t)$, laju perubahan sesaat dari posisi terhadap waktu $t$, yaitu $\\frac{ds}{dt}$, menyatakan ....",
+        "jawaban": "kecepatan sesaat partikel",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; b = $6$; c = $7$; p = $10$. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $-5$.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $-5$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f611a18e4face7c22f6b5190",
+        "teks": "Kecepatan sebuah partikel yang bergerak sepanjang garis lurus dimodelkan oleh $v(t) = 8t + 3$ (dalam m/s). Besar percepatan partikel tersebut pada saat $t = 5$ detik adalah ....",
+        "jawaban": "$8\\text{ m/s}^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; b = $10$; c = $8$; p = $82$. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$136$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $136$.",
+      "distraktor": [
+        {
+          "teks": "$137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$135$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$272$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $136$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "abfafe1b0f1ddf7615555039",
+        "teks": "Konsentrasi obat dalam aliran darah pasien setelah $t$ jam disuntikkan diberikan oleh fungsi $C(t) = \\frac{36t}{t + 1}$ mg/L. Laju perubahan konsentrasi obat terhadap waktu pada saat $t = 2$ jam adalah ....",
+        "jawaban": "$4\\text{ mg/(L}\\cdot\\text{jam)}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; b = $9$; c = $11$; p = $23$. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{27}{2}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{27}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{27}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c004d2a9b990bd2c3a1480c5",
+        "teks": "Sebuah anak panah ditembakkan secara vertikal ke udara dan lintasannya setelah $t$ detik diberikan oleh persamaan $s(t) = -5t^2 + 70t$ ($s$ dalam meter dan $t$ dalam detik). Kecepatan anak panah setelah $4$ detik adalah ....",
+        "jawaban": "$30\\text{ m/s}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $13$; c = $5$; p = $37$. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $31$.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $31$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48f38f90a7fd141402d228b7",
+        "teks": "Kecepatan sesaat suatu partikel yang bergerak lurus dinyatakan oleh fungsi $v(t) = 6t^2 - 4t + 5$ (dalam m/s). Fungsi percepatan sesaat $a(t)$ dari partikel tersebut adalah ....",
+        "jawaban": "$a(t) = 12t - 4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_derivative_application_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $4$; c = $7$; p = $25$. Pendapatan produksi q unit adalah $R(q)=pq$ dan biayanya $C(q)=aq^2+bq+c$, dengan a positif dan p>b. Untuk q real tak negatif, berapa keuntungan maksimum?",
+      "jawaban_benar": "$\\frac{35}{4}$",
+      "alasan_benar": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{35}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{39}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{35}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Bentuk fungsi keuntungan sebagai pendapatan dikurangi biaya, optimalkan dengan turunan, kemudian evaluasi keuntungannya. Hasilnya $\\frac{35}{4}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b02-d-medium-bt01-037"
     }
   ]
 }

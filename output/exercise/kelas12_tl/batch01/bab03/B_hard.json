@@ -2329,6 +2329,2066 @@
       "pembahasan": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 4.",
       "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
       "id": "kelas12_tl-b03-b-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "11db6daf0d034918ba746db3",
+        "teks": "Misalkan $\\int_1^5 f(x)\\,dx = 8$ dan $\\int_1^5 g(x)\\,dx = 5$. Nilai dari $\\int_1^5 [4f(x) - 2g(x)]\\,dx$ adalah ....",
+        "jawaban": "$22$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{9}{2}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1024}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=17/2 dan a/3+b/2=9/2; maka a=3, b=7. Integralkan x²(3x+7) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{512}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2048}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1024}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=17/2 dan a/3+b/2=9/2; maka a=3, b=7. Integralkan x²(3x+7) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b9eb914a511b800719588d84.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              17
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 17]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9ba075420fe358847e69c69",
+        "teks": "Jika fungsi $F(x) = \\int_1^x (t^3 + 5t)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$x^3 + 5x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{11375}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=11/3; maka a=5, b=4. Integralkan x²(5x+4) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11375}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11375}{6}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{11375}{12}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=11/3; maka a=5, b=4. Integralkan x²(5x+4) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-062",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/95853df00eb2aad659aae7a4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              13
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 13]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b03837a7d3ddbb1d816ab062",
+        "teks": "Bentuk integral tentu yang menyatakan luas daerah bidang datar yang dibatasi oleh kurva $y = x^2 + 2$, sumbu-$x$, garis $x = 1$, dan garis $x = 3$ adalah ....",
+        "jawaban": "$\\int_1^3 (x^2 + 2)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{423}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{423}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{423}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{423}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-063",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/95853df00eb2aad659aae7a4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              13
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 13]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1aa54cce2e49b9243eee6a5e",
+        "teks": "Misalkan $\\int_4^8 f(x)\\,dx = 15$ dan $\\int_4^8 g(x)\\,dx = 6$. Nilai dari $\\int_4^8 [5f(x) - 7g(x)]\\,dx$ adalah ....",
+        "jawaban": "$33$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$2232$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$2231$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2233$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4464$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-064",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d72f286f176b2bf942f76ce0",
+        "teks": "Diketahui fungsi $f(x) = 3x^2$ pada interval $[0, 2]$. Nilai dari $\\int_0^2 3x^2\\,dx$ adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=3$, dan $\\int_0^1 xf(x)\\,dx=\\frac{T_1}{3}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$792$",
+      "alasan_benar": "Integral data memberi a/2+b=3 dan a/3+b/2=5/3; maka a=2, b=2. Integralkan x²(2x+2) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$791$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$793$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1584$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=3 dan a/3+b/2=5/3; maka a=2, b=2. Integralkan x²(2x+2) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-065",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aecb7307c13ce2f189b84c90",
+        "teks": "Misalkan terdapat fungsi $f(x) = 4x$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 4x\\,dx$ adalah ....",
+        "jawaban": "$18$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{25}{6}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{11875}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=25/6; maka a=5, b=5. Integralkan x²(5x+5) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11875}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11875}{6}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{11875}{12}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=25/6; maka a=5, b=5. Integralkan x²(5x+5) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-066",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "82ce34376cd45b875395b5ba",
+        "teks": "Berdasarkan Teorema Dasar Kalkulus I, jika suatu fungsi didefinisikan oleh $F(x) = \\int_2^x (5t^4 - 2t)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$5x^4 - 2x$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{297}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=6 dan a/3+b/2=7/2; maka a=6, b=3. Integralkan x²(6x+3) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{297}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$297$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{297}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=6 dan a/3+b/2=7/2; maka a=6, b=3. Integralkan x²(6x+3) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-067",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a65e4617241f325ae495b31",
+        "teks": "Nilai dari $\\int_5^5 (9x^4 - 3x^2 + 7)\\,dx$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1125}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1125}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$1125$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1125}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-068",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1daf6ec3eeab04f7219efc2d",
+        "teks": "Diketahui fungsi $f(x) = 3x^2 - 2x + 5$ pada interval $[0, 2]$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 2]$ atau $\\int_0^2 (3x^2 - 2x + 5)\\,dx$ adalah ....",
+        "jawaban": "$14$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{3}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1080$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1079$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1081$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2160$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-069",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd3ea861de1b1b08b028aad9",
+        "teks": "Nilai dari $\\int_2^6 (4x - 3)\\,dx$ adalah ....",
+        "jawaban": "$52$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{29}{6}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{2750}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1375}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{5500}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{2750}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-070",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1ee68aa2c839f38c79c380d0",
+        "teks": "Diketahui fungsi $f(x) = 5 + 2x$ pada interval $[0, 3]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 3]$ atau $\\int_0^3 (5 + 2x)\\,dx$ adalah ....",
+        "jawaban": "$24$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{8}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{10375}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10375}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{10375}{6}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{10375}{12}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-071",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "401a1336977854691adcb489",
+        "teks": "Misalkan $f$ kontinu pada interval tertutup $[1, 4]$ dan $F$ adalah antiturunan dari $f$ sedemikian sehingga $F'(x) = f(x)$. Jika $F(4) = 19$ dan $F(1) = 7$, maka nilai dari $\\int_1^4 f(t)\\,dt$ adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{8}{3}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{153}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=5 dan a/3+b/2=8/3; maka a=2, b=4. Integralkan x²(2x+4) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{153}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$153$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{153}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=5 dan a/3+b/2=8/3; maka a=2, b=4. Integralkan x²(2x+4) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-072",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7d9b726a9666e6618b3e286",
+        "teks": "Suatu fungsi $f(x)$ bernilai kontinu dan positif pada interval $[2, 6]$. Jika luas daerah bidang datar yang dibatasi oleh kurva $y = f(x)$, sumbu-$x$, garis $x = 2$, dan garis $x = 6$ adalah $15$ satuan luas, maka nilai dari $\\int_2^6 f(x)\\,dx$ adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=2$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{315}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{315}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{315}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{315}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-073",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd6c72f8d8e3ec0b57a4e56b",
+        "teks": "Diketahui fungsi $f(x) = 3x^2 + 6x + 2$ pada interval $[0, 3]$. Nilai dari $\\int_0^3 (3x^2 + 6x + 2)\\,dx$ adalah ....",
+        "jawaban": "$60$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{19}{6}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{513}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{513}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{513}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{513}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-074",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8a4a92f37176b7fe933c5597",
+        "teks": "Diketahui fungsi $f(x) = 6x^2 - 2x$ pada interval $[0, 2]$. Nilai dari $\\int_0^2 (6x^2 - 2x)\\,dx$ adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$320$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$319$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$321$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$640$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-075",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "de13d73c992e2e41bc8a72d1",
+        "teks": "Jika fungsi $f$ kontinu dan positif pada interval $a \\le x \\le b$, maka luas daerah $L$ yang dibatasi oleh kurva $y = f(x)$, sumbu-$x$, garis $x = a$, dan garis $x = b$ dirumuskan dengan ....",
+        "jawaban": "$L = \\int_a^b f(x)\\,dx$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1408}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{704}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2816}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1408}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-076",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "32d71ddb920bbc335289d899",
+        "teks": "Diketahui fungsi $f(x) = 3x^2 - 2x + 7$ pada interval $[1, 5]$. Nilai integral tentu dari $f(x)$ pada interval $[1, 5]$ atau $\\int_1^5 (3x^2 - 2x + 7)\\,dx$ adalah ....",
+        "jawaban": "$128$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{2}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{369}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=10 dan a/3+b/2=11/2; maka a=6, b=7. Integralkan x²(6x+7) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{369}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$369$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{369}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=10 dan a/3+b/2=11/2; maka a=6, b=7. Integralkan x²(6x+7) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-077",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f8d62aba3e60289ae99972c",
+        "teks": "Diketahui fungsi $f(x) = 6 + 5x$ pada interval $[0, 4]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 4]$ atau $\\int_0^4 (6 + 5x)\\,dx$ adalah ....",
+        "jawaban": "$64$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{23}{6}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1656$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=23/6; maka a=4, b=5. Integralkan x²(4x+5) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1655$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1657$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3312$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=23/6; maka a=4, b=5. Integralkan x²(4x+5) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-078",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "706c91465b89ed873c15489b",
+        "teks": "Diketahui fungsi $f(x) = 6x^2 + 8x + 9$ pada interval $[0, 3]$. Nilai dari $\\int_0^3 (6x^2 + 8x + 9)\\,dx$ adalah ....",
+        "jawaban": "$117$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{7625}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7625}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7625}{6}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{7625}{12}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-079",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c41ea1ee008a31dc4e8d5b37.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              11
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 11]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ecbaece6f9841308f4a3c44",
+        "teks": "Berdasarkan Teorema Dasar Kalkulus I, jika suatu fungsi didefinisikan oleh $F(x) = \\int_3^x (7t^2 - 4t + 5)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$7x^2 - 4x + 5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1404$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1403$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1405$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2808$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-080",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaf16afa434d23db929843d7",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus sehingga kecepatannya pada waktu $t$ ditentukan oleh $v(t) = 3t^2 - 12t + 9$ (dalam meter per detik). Jarak yang ditempuh partikel tersebut selama periode waktu $0 \\le t \\le 4$ adalah ....",
+        "jawaban": "$12\\text{ meter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=5$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{351}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=5; maka a=6, b=6. Integralkan x²(6x+6) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{351}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$351$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{351}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=5; maka a=6, b=6. Integralkan x²(6x+6) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-081",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a7e4ad2bce2d9259129417",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = 9x - x^3$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{81}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{29}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1216}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{608}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2432}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1216}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-082",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f25679391a660a2beb15862d",
+        "teks": "Luas daerah bidang datar yang dibatasi oleh kurva parabola $y = x^2$ dan garis $y = 2x + 3$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{32}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{315}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{315}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$315$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{315}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-083",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d500e9bcc4c82d16a0ae8bc",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^2 - 6t + 8)\\,dt$ untuk setiap bilangan real $x$. Nilai maksimum lokal dari $F(x)$ tercapai pada saat $x = \\dots.$",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{8}{3}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{477}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{477}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{477}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{477}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-084",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "644ae3fae0e9ef11ca7f537f",
+        "teks": "Suatu fungsi linier $f(x) = ax + b$ memenuhi persamaan $\\int_0^2 f(x)\\,dx = 8$ dan $\\int_0^4 f(x)\\,dx = 24$. Nilai dari $\\int_2^6 f(x)\\,dx$ adalah ....",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=3$, dan $\\int_0^1 xf(x)\\,dx=\\frac{T_1}{3}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{117}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=3 dan a/3+b/2=5/3; maka a=2, b=2. Integralkan x²(2x+2) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{117}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$117$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{117}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=3 dan a/3+b/2=5/3; maka a=2, b=2. Integralkan x²(2x+2) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-085",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f62e517cb92741f7b1f123",
+        "teks": "Nilai dari $\\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{3}{n} \\left( 2 + \\frac{3i}{n} \\right)^2$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{459}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{459}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{459}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{459}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-086",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7896736defcc497221dcc5ca.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              15
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 15]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ad93cb9c8477aa0bffa93dc",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus sehingga kecepatannya pada waktu $t$ ditentukan oleh $v(t) = 6t - 3t^2$ (dalam meter per detik). Jarak yang ditempuh partikel selama periode waktu $0 \\le t \\le 3$ detik adalah ....",
+        "jawaban": "$8\\text{ meter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{14}{3}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$2052$",
+      "alasan_benar": "Integral data memberi a/2+b=17/2 dan a/3+b/2=14/3; maka a=5, b=6. Integralkan x²(5x+6) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$2051$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2053$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4104$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=17/2 dan a/3+b/2=14/3; maka a=5, b=6. Integralkan x²(5x+6) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-087",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b9eb914a511b800719588d84.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              17
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 17]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "021826cbd606953108b8a1f6",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 6x^2 + 8x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{T_1}{2}$, dan $\\int_0^1 xf(x)\\,dx=2$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{704}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{352}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1408}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{704}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-088",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3cd9e71fbb4992abc1b48051",
+        "teks": "Daerah yang dibatasi oleh kurva $y = 3x^2$, sumbu-$x$, dan garis $x = 2$ dibagi menjadi dua daerah dengan luas yang sama oleh garis vertikal $x = k$ (dengan $0 < k < 2$). Nilai $k$ adalah ....",
+        "jawaban": "$\\sqrt[3]{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=T_1$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{2}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$2448$",
+      "alasan_benar": "Integral data memberi a/2+b=10 dan a/3+b/2=11/2; maka a=6, b=7. Integralkan x²(6x+7) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$2447$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2449$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4896$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=10 dan a/3+b/2=11/2; maka a=6, b=7. Integralkan x²(6x+7) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-089",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72aaa5fb4037d39506ded581",
+        "teks": "Nilai dari $\\int_{-2}^{2} (5x^7 - 3x^3 + 4x^2 - 1)\\,dx$ adalah ....",
+        "jawaban": "$\\frac{52}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{19}{6}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{513}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{513}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{513}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{513}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-090"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1174ed8db70a0e9d882c473a",
+        "teks": "Diketahui suatu fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^3 - 6t^2 + 9t)\\,dt$ untuk setiap bilangan real $x$. Jumlah semua absis dari titik belok grafik fungsi $F(x)$ adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=4$, dan $\\int_0^1 xf(x)\\,dx=\\frac{13}{6}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{135}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{135}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$135$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{135}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-091"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6e85824cb8bc323cd33889ae",
+        "teks": "Luas bidang datar yang dibatasi oleh kurva parabola $y = 12 - x^2$ dan $y = x^2 - 6$ adalah .... satuan luas.",
+        "jawaban": "$72$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{387}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{387}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{387}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{387}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-092"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f1425a37b6ee48a04eefa56",
+        "teks": "Diketahui suatu fungsi $f(x)$ kontinu pada himpunan bilangan real dan memenuhi $\\int_0^3 f(x)\\,dx = 7$, $\\int_0^5 f(x)\\,dx = 15$, serta $\\int_2^5 f(x)\\,dx = 11$. Nilai dari $\\int_2^3 [4f(x) - 5]\\,dx$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=9$, dan $\\int_0^1 xf(x)\\,dx=5$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$512$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=5; maka a=6, b=6. Integralkan x²(6x+6) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$511$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$513$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1024$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=5; maka a=6, b=6. Integralkan x²(6x+6) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-093"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "57b5ead89fdefa2e85b0cc09",
+        "teks": "Sebuah partikel bergerak sepanjang garis sehingga kecepatannya pada waktu $t$ adalah $v(t) = 3t^2 - 12t + 9$ (dalam meter per detik). Tentukan perpindahan partikel dalam periode waktu $0 \\le t \\le 5$.",
+        "jawaban": "$20\\text{ meter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=6$, dan $\\int_0^1 xf(x)\\,dx=\\frac{19}{6}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1008$",
+      "alasan_benar": "Integral data memberi a/2+b=6 dan a/3+b/2=19/6; maka a=2, b=5. Integralkan x²(2x+5) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1007$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1009$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2016$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=6 dan a/3+b/2=19/6; maka a=2, b=5. Integralkan x²(2x+5) pada batas 0 hingga 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-094"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff392c0d8eeb853167986a5a",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_{-1}^x (3t^2 - 6t - 9)\\,dt$ untuk setiap bilangan real $x$. Nilai minimum relatif dari fungsi $F(x)$ adalah ....",
+        "jawaban": "$-32$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{19}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{31}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1408}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=19/2 dan a/3+b/2=31/6; maka a=5, b=7. Integralkan x²(5x+7) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{704}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2816}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{1408}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=19/2 dan a/3+b/2=31/6; maka a=5, b=7. Integralkan x²(5x+7) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-095"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a8d9acfc42edbd6d03c09672",
+        "teks": "Diketahui suatu fungsi kuadrat $f(x) = 3x^2 + 2ax + b$ memenuhi $\\int_0^1 f(x)\\,dx = 4$ dan $\\int_0^2 f(x)\\,dx = 16$. Nilai dari $f(3)$ adalah ....",
+        "jawaban": "$35$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{9}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{5}{2}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$256$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=5/2; maka a=3, b=3. Integralkan x²(3x+3) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$255$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$257$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$512$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=5/2; maka a=3, b=3. Integralkan x²(3x+3) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-096"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3335bd8149412890d0a16bc5",
+        "teks": "Luas daerah bidang datar yang dibatasi oleh kurva parabola $y = x^2 - 2x$ dan garis $y = x + 4$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{125}{6}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=3$, dan $\\int_0^1 xf(x)\\,dx=\\frac{5}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{2375}{6}$",
+      "alasan_benar": "Integral data memberi a/2+b=3 dan a/3+b/2=5/3; maka a=2, b=2. Integralkan x²(2x+2) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2375}{12}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{2375}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{2375}{6}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=3 dan a/3+b/2=5/3; maka a=2, b=2. Integralkan x²(2x+2) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-097"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd303f7d52f3e84c32898b70",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 16x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "128",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=5$, dan $\\int_0^1 xf(x)\\,dx=\\frac{17}{6}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$108$",
+      "alasan_benar": "Integral data memberi a/2+b=5 dan a/3+b/2=17/6; maka a=4, b=3. Integralkan x²(4x+3) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$216$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=5 dan a/3+b/2=17/6; maka a=4, b=3. Integralkan x²(4x+3) pada batas 0 hingga 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-098"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaaaa1b4e95a4b60effdf1ea",
+        "teks": "Diketahui suatu fungsi $F(x) = \\int_2^x (3t^2 - 8t + 1)\\,dt$ untuk setiap bilangan real $x$. Jika garis singgung grafik fungsi $F(x)$ di titik berabsis $x = a$ (dengan $a > 0$) tegak lurus terhadap garis $x + 4y - 12 = 0$, maka nilai $a$ adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=4$, dan $\\int_0^1 xf(x)\\,dx=\\frac{13}{6}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{875}{2}$",
+      "alasan_benar": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{875}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$875$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{875}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-099"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "89c6807ca44c87d046a40fa5",
+        "teks": "Misalkan $\\int_2^7 f(x)\\,dx = 11$ dan $\\int_2^7 g(x)\\,dx = 4$. Nilai dari $\\int_2^7 [6f(x) - 5g(x)]\\,dx$ adalah ....",
+        "jawaban": "$46$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{832}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{416}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1664}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{832}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b03-b-hard-bt01-100"
     }
   ]
 }

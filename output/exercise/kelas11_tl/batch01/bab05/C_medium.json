@@ -849,6 +849,2179 @@
       "pembahasan": "Langkah 1: Menentukan pusat lingkaran awal.\nDari persamaan $(x - 3)^2 + (y - 5)^2 = 16$, diperoleh pusat lingkaran di titik $P(3, 5)$.\n\nLangkah 2: Menentukan matriks komposisi transformasi.\nTransformasi pertama ($T_1$) adalah rotasi $180^\\circ$ terhadap pusat $O(0, 0)$:\n$$M_1 = \\begin{pmatrix} \\cos 180^\\circ & -\\sin 180^\\circ \\\\ \\sin 180^\\circ & \\cos 180^\\circ \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nTransformasi kedua ($T_2$) adalah pencerminan terhadap sumbu-$x$:\n$$M_2 = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$$\n\nMatriks komposisi $M = M_2 M_1$:\n$$M = \\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix} \\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$$\n\nLangkah 3: Menentukan bayangan titik pusat $P'(x', y')$.\n$$\\begin{pmatrix} x' \\\\ y' \\end{pmatrix} = \\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix} \\begin{pmatrix} 3 \\\\ 5 \\end{pmatrix} = \\begin{pmatrix} -3 \\\\ 5 \\end{pmatrix}$$\n\nJadi, koordinat titik pusat lingkaran bayangannya adalah $(-3, 5)$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "251c261e13ca0ae50aa7b3e3",
+        "teks": "Tentukan peta dari titik $(7, -3)$ yang dicerminkan terhadap sumbu-$x$, kemudian dicerminkan terhadap sumbu-$y$.",
+        "jawaban": "$(-7, 3)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$94$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $94$.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$188$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $94$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/123afc4fc55e06a9361badf1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              6
+            ],
+            [
+              "b",
+              2
+            ],
+            [
+              "x",
+              15
+            ],
+            [
+              "y",
+              -2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 6], [\"b\", 2], [\"x\", 15], [\"y\", -2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a6e70df8b74c8f4659042e0",
+        "teks": "Tentukan peta dari titik $(-8, 9)$ yang dicerminkan terhadap sumbu-$y$, kemudian dicerminkan terhadap garis $y = x$.",
+        "jawaban": "$(9, 8)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-29$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-29$.",
+      "distraktor": [
+        {
+          "teks": "$-28$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-58$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-29$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/04335fa4af568b0b5f0ef481.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              2
+            ],
+            [
+              "x",
+              -5
+            ],
+            [
+              "y",
+              -3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 2], [\"x\", -5], [\"y\", -3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6b3c4fdc8c953bba8799317",
+        "teks": "Tentukan peta dari titik $(6, -7)$ yang ditransformasikan oleh komposisi dari pencerminan sumbu-$y$ yang dilanjutkan dengan rotasi $90^\\circ$ terhadap titik pusat $O$.",
+        "jawaban": "$(7, -6)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $33$.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $33$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/68d96045fee289d3f3be41f4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              7
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "y",
+              -4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 7], [\"x\", 1], [\"y\", -4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "943578a4386705fd5c298c83",
+        "teks": "Tentukan peta dari titik $(8, -5)$ yang ditransformasikan oleh komposisi dari pencerminan sumbu-$x$ yang dilanjutkan dengan rotasi $270^\\circ$ terhadap titik pusat $O$.",
+        "jawaban": "$(5, -8)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-45$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-45$.",
+      "distraktor": [
+        {
+          "teks": "$-44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-45$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/5fe6a5fbbe86a48f635e1a95.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              3
+            ],
+            [
+              "b",
+              12
+            ],
+            [
+              "x",
+              -11
+            ],
+            [
+              "y",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 3], [\"b\", 12], [\"x\", -11], [\"y\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e1c4a334347e5297dc3610e9",
+        "teks": "Carilah matriks yang berkaitan dengan pencerminan terhadap sumbu-$x$ dilanjutkan dengan rotasi $90^\\circ$ terhadap titik pusat.",
+        "jawaban": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-75$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-75$.",
+      "distraktor": [
+        {
+          "teks": "$-74$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-76$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-150$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-75$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/829a9bb9272b3c2a3dc3ef16.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "y",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 5], [\"x\", 0], [\"y\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "56970fa38ebd9bb62681947d",
+        "teks": "Carilah matriks yang berkaitan dengan pencerminan terhadap garis $y = -x$ dilanjutkan dengan rotasi $270^\\circ$ terhadap titik pusat.",
+        "jawaban": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$93$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $93$.",
+      "distraktor": [
+        {
+          "teks": "$94$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$186$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $93$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/6ddaf7130cc802ca756284c0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "x",
+              12
+            ],
+            [
+              "y",
+              -9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 5], [\"x\", 12], [\"y\", -9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "88e1a7205a12d069fb18f902",
+        "teks": "Pencerminan terhadap garis $y = x$ dilakukan lebih dahulu, kemudian hasilnya dicerminkan terhadap sumbu-$x$. Dua pencerminan berurutan ini ekuivalen dengan ....",
+        "jawaban": "rotasi terhadap titik pusat $O$ sebesar $-90^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-36$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-36$.",
+      "distraktor": [
+        {
+          "teks": "$-35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-37$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-72$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-36$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/441d2e35aff342ad1588e690.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "x",
+              3
+            ],
+            [
+              "y",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"b\", 9], [\"x\", 3], [\"y\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5eb8a998e056b4848ad4d5e3",
+        "teks": "Titik $P(a, b)$ dicerminkan terhadap sumbu-$y$, lalu bayangannya dicerminkan terhadap garis $y = -x$. Koordinat peta akhir titik $P$ adalah ....",
+        "jawaban": "$P'(-b, a)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-173$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-173$.",
+      "distraktor": [
+        {
+          "teks": "$-172$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-174$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-346$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-173$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/af8063e69f8deab103ef6be9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "x",
+              -3
+            ],
+            [
+              "y",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 11], [\"x\", -3], [\"y\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b9b5d408f2b25ef90e023157",
+        "teks": "Sebuah titik $P(p, q)$ diputar $90^\\circ$ terhadap titik pusat $O$, kemudian hasilnya dicerminkan terhadap sumbu-$x$. Peta akhir titik $P$ adalah ....",
+        "jawaban": "$P'(-q, -p)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $0$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $0$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/3fdbc6fe4cf963a07645254f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "x",
+              6
+            ],
+            [
+              "y",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 3], [\"x\", 6], [\"y\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e99a08495f74e89097e6d55e",
+        "teks": "Garis $y = x$ dan garis $y = -x$ dipakai sebagai cermin secara berurutan: bidang dicerminkan terhadap garis $y = x$, lalu terhadap garis $y = -x$. Satu transformasi tunggal yang menghasilkan peta yang sama adalah ....",
+        "jawaban": "rotasi terhadap titik pusat $O$ sebesar $180^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-51$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-51$.",
+      "distraktor": [
+        {
+          "teks": "$-50$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-52$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-102$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-51$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/782475d89d116f7c7885069a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              4
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "x",
+              -15
+            ],
+            [
+              "y",
+              -3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 4], [\"b\", 3], [\"x\", -15], [\"y\", -3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1e2a52a2c831b67c4de6333a",
+        "teks": "Sebuah titik digeser dengan translasi $\\begin{pmatrix} 4 \\\\ -3 \\end{pmatrix}$, kemudian digeser lagi dengan translasi $\\begin{pmatrix} -7 \\\\ 5 \\end{pmatrix}$. Dua translasi itu setara dengan satu translasi ....",
+        "jawaban": "$\\begin{pmatrix} -3 \\\\ 2 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-33$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-33$.",
+      "distraktor": [
+        {
+          "teks": "$-32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-66$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-33$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/4477610e90009889c89b9946.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              3
+            ],
+            [
+              "x",
+              0
+            ],
+            [
+              "y",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 3], [\"x\", 0], [\"y\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "79820fccc2bce4d82fca81f9",
+        "teks": "Transformasi $T_1$ bermatriks $\\begin{pmatrix} 3 & 0 \\\\ 1 & 2 \\end{pmatrix}$ dilanjutkan dengan transformasi $T_2$ bermatriks $\\begin{pmatrix} 1 & 4 \\\\ 0 & 2 \\end{pmatrix}$. Matriks komposisi $T_2 \\circ T_1$ adalah ....",
+        "jawaban": "$\\begin{pmatrix} 7 & 8 \\\\ 2 & 4 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $47$.",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$94$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $47$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/cb28bfe4dbb85eae468e3cb4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "x",
+              7
+            ],
+            [
+              "y",
+              -3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 11], [\"x\", 7], [\"y\", -3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "859ab45cbf3b7a47a90ceb01",
+        "teks": "Transformasi $T_1$ bermatriks $A$ dikerjakan lebih dahulu, kemudian dilanjutkan transformasi $T_2$ bermatriks $B$. Matriks komposisi $T_2 \\circ T_1$ adalah ....",
+        "jawaban": "$BA$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-60$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-60$.",
+      "distraktor": [
+        {
+          "teks": "$-59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/3a9e1062409635e8173743fc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              5
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "x",
+              1
+            ],
+            [
+              "y",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 5], [\"b\", 5], [\"x\", 1], [\"y\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0c84fe39551417e578641546",
+        "teks": "Matriks komposisi dari dua transformasi adalah $\\begin{pmatrix} 0 & 1 \\\\ -1 & 0 \\end{pmatrix}$. Peta dari titik $(5, -2)$ oleh komposisi tersebut adalah ....",
+        "jawaban": "$(-2, -5)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$101$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $101$.",
+      "distraktor": [
+        {
+          "teks": "$102$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$202$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $101$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/f4f6229f67e077f1c045e873.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              4
+            ],
+            [
+              "x",
+              15
+            ],
+            [
+              "y",
+              1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 4], [\"x\", 15], [\"y\", 1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "558d318f43f3be80730a8943",
+        "teks": "Pencerminan terhadap sumbu-$x$ dilakukan dua kali berturut-turut. Matriks komposisinya adalah ....",
+        "jawaban": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$111$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $111$.",
+      "distraktor": [
+        {
+          "teks": "$112$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$222$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $111$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/5d5c26327385f7de2b9a8e93.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              10
+            ],
+            [
+              "b",
+              11
+            ],
+            [
+              "x",
+              10
+            ],
+            [
+              "y",
+              -1
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 10], [\"b\", 11], [\"x\", 10], [\"y\", -1]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c6f862fb80d97450657d07e",
+        "teks": "Dilatasi dengan pusat $O$ dan faktor skala $4$ dilanjutkan dengan dilatasi pusat $O$ dan faktor skala $5$. Matriks komposisinya adalah ....",
+        "jawaban": "$\\begin{pmatrix} 20 & 0 \\\\ 0 & 20 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-196$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-196$.",
+      "distraktor": [
+        {
+          "teks": "$-195$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-197$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-392$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-196$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/b462132f62db3e6951ca911d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              7
+            ],
+            [
+              "b",
+              9
+            ],
+            [
+              "x",
+              -10
+            ],
+            [
+              "y",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 7], [\"b\", 9], [\"x\", -10], [\"y\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "842c6577a41e84b215f75bfa",
+        "teks": "Titik $(4, 7)$ dirotasikan $90^\\circ$ terhadap titik pusat $O$, kemudian hasilnya dicerminkan terhadap garis $y = x$. Petanya adalah ....",
+        "jawaban": "$(4, -7)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-299$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-299$.",
+      "distraktor": [
+        {
+          "teks": "$-298$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-300$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-598$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-299$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/6edbe967ecb1a5d9bf9a3420.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              13
+            ],
+            [
+              "x",
+              -13
+            ],
+            [
+              "y",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 13], [\"x\", -13], [\"y\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "449165757245f8c53da90ac1",
+        "teks": "Dua transformasi pada bidang Kartesius masing-masing dinyatakan oleh matriks berordo $2 \\times 2$. Matriks komposisi kedua transformasi tersebut berordo ....",
+        "jawaban": "$2 \\times 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$186$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $186$.",
+      "distraktor": [
+        {
+          "teks": "$187$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$185$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$372$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $186$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/48a4dfa008694e344dc2abcf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              11
+            ],
+            [
+              "b",
+              8
+            ],
+            [
+              "x",
+              6
+            ],
+            [
+              "y",
+              -15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 11], [\"b\", 8], [\"x\", 6], [\"y\", -15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aeb222d1c89656d6ae89504d",
+        "teks": "Matriks yang merepresentasikan pencerminan terhadap sumbu-$x$ adalah ....",
+        "jawaban": "$\\begin{pmatrix} 1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-73$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-73$.",
+      "distraktor": [
+        {
+          "teks": "$-72$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-74$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-146$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-73$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/c2c81fe63129e3c04d08da3e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              8
+            ],
+            [
+              "b",
+              5
+            ],
+            [
+              "x",
+              -1
+            ],
+            [
+              "y",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 8], [\"b\", 5], [\"x\", -1], [\"y\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e817f6330b0f104b7ba37737",
+        "teks": "Rotasi $90^\\circ$ terhadap titik pusat $O$ dilakukan dua kali berturut-turut. Matriks komposisinya adalah ....",
+        "jawaban": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-8$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-8$.",
+      "distraktor": [
+        {
+          "teks": "$-7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-8$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/b52001b1a6e8e4ad9338ac11.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              12
+            ],
+            [
+              "b",
+              4
+            ],
+            [
+              "x",
+              -5
+            ],
+            [
+              "y",
+              -13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 12], [\"b\", 4], [\"x\", -5], [\"y\", -13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9df5089712a00815b13eebb8",
+        "teks": "Persamaan bayangan dari kurva parabola $y = x^2 - 6x + 8$ oleh pencerminan terhadap sumbu-$x$ dilanjutkan rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$, kemudian dilanjutkan dengan translasi oleh vektor $\\begin{pmatrix} 2 \\\\ -5 \\end{pmatrix}$ adalah ....",
+        "jawaban": "$x = y^2 + 4y + 5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-134$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-134$.",
+      "distraktor": [
+        {
+          "teks": "$-133$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-135$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-268$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-134$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/8c2891289c65456e995431d9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "a",
+              2
+            ],
+            [
+              "b",
+              8
+            ],
+            [
+              "x",
+              -11
+            ],
+            [
+              "y",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"a\", 2], [\"b\", 8], [\"x\", -11], [\"y\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "231c5613eb24edd5639f1bdd",
+        "teks": "Sebuah transformasi $T$ merupakan komposisi dari rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$. Jika transformasi $T$ tersebut diterapkan secara berulang sebanyak $2025$ kali berturut-turut pada titik $P(5, -3)$, koordinat bayangan akhir titik $P$ adalah ....",
+        "jawaban": "$(5, 3)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $5$; x = $13$; y = $7$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $56$.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $56$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e53986ea890ab35adb85900",
+        "teks": "Diberikan dua transformasi: $T_1$ adalah pencerminan terhadap sumbu-$x$, dan $T_2$ adalah rotasi sebesar sudut $\\theta$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$. Seorang siswa menyatakan bahwa kedua transformasi tersebut selalu bersifat komutatif ($T_2 \\circ T_1 = T_1 \\circ T_2$) untuk sembarang nilai $\\theta$. Pernyataan berikut yang paling tepat mengevaluasi klaim siswa tersebut untuk interval $0 \\le \\theta < 2\\pi$ adalah ....",
+        "jawaban": "Klaim salah, karena $T_2 \\circ T_1 = T_1 \\circ T_2$ hanya terpenuhi ketika $\\theta = 0$ atau $\\theta = \\pi$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $10$; x = $7$; y = $-14$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $168$.",
+      "distraktor": [
+        {
+          "teks": "$169$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$167$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$336$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $168$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b42249a769a4e0825992e5c9",
+        "teks": "Diberikan matriks transformasi $T_1 = \\begin{pmatrix} 1 & 2 \\\\ 0 & 1 \\end{pmatrix}$ dan $T_2 = \\begin{pmatrix} a & 0 \\\\ 1 & b \\end{pmatrix}$. Komposisi transformasi $T = T_2 \\circ T_1$ memetakan setiap titik pada garis $y = 2x$ tepat ke dirinya sendiri. Jika $a$ dan $b$ adalah bilangan real, nilai dari $a + 2b$ adalah ....",
+        "jawaban": "$-2{,}8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $3$; x = $9$; y = $7$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $78$.",
+      "distraktor": [
+        {
+          "teks": "$79$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$77$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $78$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9541c7bdce9287609a3fe801",
+        "teks": "Sebuah daerah datar $\\mathcal{D}$ memiliki luas $12\\text{ satuan luas}$. Daerah tersebut ditransformasikan berturut-turut oleh:\n1. Transformasi yang bersesuaian dengan matriks $M_1 = \\begin{pmatrix} 2 & k \\\\ -1 & 3 \\end{pmatrix}$,\n2. Pencerminan terhadap garis $y = -x$,\n3. Rotasi sebesar $90^\\circ$ searah jarum jam terhadap titik asal $O(0, 0)$.\n\nJika luas bayangan akhir dari daerah tersebut menjadi $120\\text{ satuan luas}$ dan diketahui $k < 0$, nilai $k$ adalah ....",
+        "jawaban": "$-16$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $13$; x = $5$; y = $-1$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $48$.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $48$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "91d2c926dae44956c2315fcd",
+        "teks": "Sebuah transformasi $T_1$ adalah rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$. Diinginkan sebuah transformasi linear $T_2$ yang bersesuaian dengan matriks $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ sedemikian sehingga komposisi $T_2 \\circ T_1$ ekuivalen dengan pencerminan terhadap sumbu-$x$. Matriks $A$ yang memenuhi rancangan tersebut adalah ....",
+        "jawaban": "$\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $8$; b = $3$; x = $0$; y = $6$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-18$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-18$.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-36$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "856975ee71762f4ff906a1ac",
+        "teks": "Diberikan beberapa pernyataan mengenai sifat komposisi transformasi pada bidang Kartesius:\n(1) Pencerminan terhadap sumbu-$x$ bersifat komutatif dengan pencerminan terhadap sumbu-$y$.\n(2) Rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik asal bersifat komutatif dengan pencerminan terhadap garis $y = x$.\n(3) Dilatasi berpusat di titik asal $O(0, 0)$ dengan faktor skala $k$ selalu bersifat komutatif terhadap sembarang transformasi linear yang berpusat di titik asal.\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1) dan (3) saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $2$; b = $7$; x = $-13$; y = $5$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-61$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-61$.",
+      "distraktor": [
+        {
+          "teks": "$-60$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-122$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-61$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f76a0481854043ba4e76443",
+        "teks": "Diberikan transformasi $R$ yaitu rotasi sebesar $180^\\circ$ terhadap titik asal $O(0, 0)$, serta transformasi $M$ yaitu pencerminan terhadap suatu garis sembarang $y = mx$ yang melalui titik asal. Pernyataan yang benar mengenai hubungan komposisi $R \\circ M$ dan $M \\circ R$ adalah ....",
+        "jawaban": "$R \\circ M = M \\circ R$ untuk setiap nilai gradien $m$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $4$; b = $10$; x = $-13$; y = $4$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-92$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-92$.",
+      "distraktor": [
+        {
+          "teks": "$-91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-92$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "66e234dd910505a15b074e90",
+        "teks": "Sebuah komposisi transformasi didefinisikan sebagai pencerminan terhadap sumbu-$x$ dilanjutkan dengan transformasi linear yang bersesuaian dengan matriks $A$. Jika komposisi tersebut memetakan titik $(1, 2)$ ke $(5, -1)$ dan memetakan titik $(2, -1)$ ke $(4, 3)$, maka matriks $A$ adalah ....",
+        "jawaban": "$\\begin{pmatrix} \\frac{13}{5} & -\\frac{6}{5} \\\\ 1 & 1 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $12$; b = $8$; x = $-12$; y = $-15$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-24$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-24$.",
+      "distraktor": [
+        {
+          "teks": "$-23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-48$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "421f50c9a047db5843ce88c5",
+        "teks": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$x$, dan $T_2$ adalah pencerminan terhadap garis $y = x\\sqrt{3}$. Komposisi transformasi $T_2 \\circ T_1$ ekuivalen dengan rotasi terhadap titik asal $O(0, 0)$ berlawanan arah jarum jam sebesar sudut $\\theta$. Nilai $\\theta$ yang memenuhi dengan $0^\\circ \\le \\theta < 360^\\circ$ adalah ....",
+        "jawaban": "$120^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $2$; x = $-10$; y = $-5$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-60$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-60$.",
+      "distraktor": [
+        {
+          "teks": "$-59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e42ef245c93eb6d0ed30573a",
+        "teks": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$x$ dan $T_2$ adalah rotasi sebesar $\\theta$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$. Pada interval $0^\\circ \\le \\theta < 360^\\circ$, banyaknya nilai $\\theta$ yang menyebabkan komposisi kedua transformasi tersebut bersifat komutatif ($T_1 \\circ T_2 = T_2 \\circ T_1$) adalah ....",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $9$; x = $1$; y = $-12$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$119$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $119$.",
+      "distraktor": [
+        {
+          "teks": "$120$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$238$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $119$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "63aff5c32d970cfcfad55697",
+        "teks": "Sebuah lingkaran memiliki persamaan $(x - 3)^2 + (y + 1)^2 = 16$. Lingkaran tersebut ditransformasikan oleh transformasi $T = T_2 \\circ T_1$, dengan $T_1$ adalah rotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$ dan $T_2$ adalah pencerminan terhadap garis $y = -x$. Persamaan bayangan lingkaran tersebut adalah ....",
+        "jawaban": "$(x + 3)^2 + (y + 1)^2 = 16$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $7$; x = $-5$; y = $10$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-105$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-105$.",
+      "distraktor": [
+        {
+          "teks": "$-104$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-106$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-210$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-105$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36ef1a67d6119f14f3bc62df",
+        "teks": "Sebuah transformasi $T$ merupakan komposisi dari rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik asal $O(0, 0)$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$. Jika transformasi $T$ diterapkan sebanyak 101 kali berturut-turut pada titik $P(8, -6)$, koordinat bayangan akhir titik $P$ adalah ....",
+        "jawaban": "$(8, 6)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $9$; x = $-1$; y = $7$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-70$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-70$.",
+      "distraktor": [
+        {
+          "teks": "$-69$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-70$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c476ddf124f7c888d6339273",
+        "teks": "Matriks $A = \\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix}$ merepresentasikan suatu transformasi linear pada bidang Kartesius. Transformasi tersebut bersifat komutatif terhadap setiap transformasi rotasi $R_\\theta$ terhadap titik asal $O(0, 0)$ (yakni $A R_\\theta = R_\\theta A$ untuk setiap $\\theta \\in \\mathbb{R}$) jika dan hanya jika elemen-elemen matriks $A$ memenuhi syarat ....",
+        "jawaban": "$a = d$ dan $b = -c$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $2$; x = $-3$; y = $15$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-63$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-63$.",
+      "distraktor": [
+        {
+          "teks": "$-62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-64$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-126$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-63$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0ab7ed12503fc4c26dde3ac5",
+        "teks": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$x$, kemudian dilanjutkan oleh transformasi $T_2$ yang bersesuaian dengan matriks $\\begin{pmatrix} 4 & 1 \\\\ p & 2 \\end{pmatrix}$. Jika komposisi transformasi $T = T_2 \\circ T_1$ memetakan seluruh titik pada garis $y = 3x$ menjadi garis $y = -x$, nilai parameter $p$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $11$; b = $10$; x = $2$; y = $-8$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$102$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $102$.",
+      "distraktor": [
+        {
+          "teks": "$103$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$101$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$204$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $102$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea0b4ab9e0db5956fd25fb1e",
+        "teks": "Sebuah transformasi $T$ merupakan komposisi dari rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$ yang dilanjutkan dengan dilatasi berpusat di titik $O(0, 0)$ dengan faktor skala $2$. Jika bayangan titik $A$ oleh komposisi transformasi $T$ adalah $A'(6, -10)$, koordinat titik asal $A$ adalah ....",
+        "jawaban": "$(-5, -3)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $7$; b = $7$; x = $14$; y = $-5$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$133$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $133$.",
+      "distraktor": [
+        {
+          "teks": "$134$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$132$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$266$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $133$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "97524fdf0fc3ae35f475424a",
+        "teks": "Perhatikan pernyataan-pernyataan mengenai sifat matriks komposisi transformasi pada bidang Kartesius berikut:\n(1) Komposisi dari dua pencerminan terhadap dua garis yang saling tegak lurus selalu ekuivalen dengan rotasi sebesar $180^\\circ$ terhadap titik potong kedua garis tersebut.\n(2) Untuk setiap matriks transformasi pencerminan $M_1$ dan $M_2$, selalu berlaku sifat komutatif $M_1 M_2 = M_2 M_1$.\n(3) Jika suatu transformasi linear yang direpresentasikan oleh matriks $2 \\times 2$ memiliki determinan bernilai negatif, maka transformasi tersebut membalik orientasi bidang.\n(4) Komposisi dari dua rotasi yang masing-masing berpusat di titik asal $O(0, 0)$ selalu bersifat komutatif.\n\nPernyataan yang bernilai BENAR adalah ....",
+        "jawaban": "(1), (3), dan (4)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $9$; b = $5$; x = $-6$; y = $0$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-54$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-54$.",
+      "distraktor": [
+        {
+          "teks": "$-53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-108$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c430c9eb1fc5289f6bc7341a",
+        "teks": "Perhatikan klaim berikut:\n\"Pencerminan terhadap sumbu-$x$ yang dilanjutkan dengan pencerminan terhadap garis $y = x$ ekuivalen dengan rotasi sebesar $90^\\circ$ searah jarum jam terhadap titik pusat $O(0, 0)$.\"\n\nEvaluasilah kebenaran klaim tersebut beserta alasannya!",
+        "jawaban": "Salah, karena komposisi tersebut ekuivalen dengan rotasi sebesar $90^\\circ$ berlawanan arah jarum jam terhadap titik pusat $O(0, 0)$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; b = $3$; x = $-14$; y = $5$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-57$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-57$.",
+      "distraktor": [
+        {
+          "teks": "$-56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-114$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-57$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47087c9926c080172a4f5cc1",
+        "teks": "Transformasi $T_1$ adalah pencerminan terhadap sumbu-$y$, sedangkan transformasi $T_2$ bersesuaian dengan matriks $M = \\begin{pmatrix} 2 & k \\\\ k - 2 & 2 \\end{pmatrix}$. Komposisi transformasi $T = T_2 \\circ T_1$ memiliki sifat involusi, yaitu jika diterapkan dua kali berturut-turut pada sembarang titik pada bidang, titik tersebut kembali ke posisi semula ($T \\circ T = I$, dengan $I$ adalah matriks identitas). Nilai $k$ bulat positif yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $3$; b = $3$; x = $-15$; y = $-13$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$-6$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-6$.",
+      "distraktor": [
+        {
+          "teks": "$-5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $-6$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "68197d88726e104d208f4901",
+        "teks": "Diberikan dua transformasi pada bidang Kartesius: transformasi $T_1$ adalah rotasi terhadap titik asal $O(0, 0)$ sebesar sudut $\\theta$ dengan $0^\\circ \\le \\theta < 360^\\circ$, dan transformasi $T_2$ adalah pencerminan terhadap garis $y = x$. Jika komposisi transformasi $T_2 \\circ T_1$ ($T_1$ dilanjutkan oleh $T_2$) ekuivalen dengan pencerminan terhadap sumbu-$x$, besar sudut $\\theta$ adalah ....",
+        "jawaban": "$90^\\circ$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_composed_transform_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui a = $10$; b = $9$; x = $12$; y = $-3$. Titik P$(x,y)$ dikenai transformasi diagonal $\\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.",
+      "jawaban_benar": "$147$",
+      "alasan_benar": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $147$.",
+      "distraktor": [
+        {
+          "teks": "$148$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$146$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$294$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran. Hasilnya $147$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b05-c-medium-bt01-060"
     }
   ]
 }

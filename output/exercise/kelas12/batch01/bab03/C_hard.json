@@ -813,6 +813,2095 @@
       "pembahasan": "Pisahkan menurut jumlah perempuan j≥2. Untuk tiap j, hitung C(perempuan,j)×C(laki-laki,k-j), lalu kurangi tim yang memuat A dan B sekaligus dengan memilih anggota laki-laki sisanya dari selain A,B. Jumlah seluruh kasus memberi 616.",
       "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
       "id": "kelas12-b03-c-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bacdc036db4eea7c2b3e4396",
+        "teks": "Pak Doni sebagai guru pembimbing Olimpiade Fisika meminta 9 siswa untuk membuat masing-masing satu soal fisika. Setelah semua soal terkumpul, Pak Doni akan memilih 4 soal terbaik untuk dibahas dalam diskusi kelompok. Berapa banyak cara berbeda Pak Doni dapat memilih 4 soal dari 9 soal yang tersedia?",
+        "jawaban": "126 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$303270$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $303270$.",
+      "distraktor": [
+        {
+          "teks": "$303271$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$303269$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$606540$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $303270$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/b246a7ca6a1d3627eb385e73.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              13
+            ],
+            [
+              "w",
+              11
+            ],
+            [
+              "k",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 13], [\"w\", 11], [\"k\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ad0f92a2fa73070f78da50",
+        "teks": "Bu Sinta sebagai pembina klub Kimia meminta 12 anggota klub untuk menulis masing-masing satu usulan judul penelitian. Bu Sinta akan memilih 3 judul terbaik untuk diajukan ke sekolah. Berapa banyak cara berbeda Bu Sinta dapat memilih 3 judul dari 12 judul yang tersedia?",
+        "jawaban": "220 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$13117$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $13117$.",
+      "distraktor": [
+        {
+          "teks": "$13118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13116$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26234$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $13117$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f6a991f07b2b9c4ec744efb7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              15
+            ],
+            [
+              "w",
+              13
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 15], [\"w\", 13], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f8fd8a8e035505c9026c2e8",
+        "teks": "Dina adalah perancang kerajinan yang akan memadukan manik-manik pada gelang. Terdapat 8 jenis manik-manik berwarna merah, kuning, biru, hijau, putih, ungu, jingga, dan cokelat. Jika Dina hanya memadukan empat warna manik-manik pada satu gelang dan susunan warnanya tidak dibedakan, berapa banyak paduan warna yang dapat dihasilkan?",
+        "jawaban": "70 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$460460$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $460460$.",
+      "distraktor": [
+        {
+          "teks": "$460461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$460459$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$920920$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $460460$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/854bb4b360def7305876aa67.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              18
+            ],
+            [
+              "w",
+              12
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 18], [\"w\", 12], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f219dd3c0bf55a3bb454134a",
+        "teks": "Raka seorang pelukis yang akan memadukan cat untuk karya terbarunya. Tersedia 6 warna cat, yaitu merah, kuning, biru, hijau, putih, dan hitam. Jika Raka hanya mencampur dua warna cat dan urutan pencampuran tidak memengaruhi hasil, berapa banyak campuran warna yang dapat dibuat?",
+        "jawaban": "15 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$267$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $267$.",
+      "distraktor": [
+        {
+          "teks": "$268$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$266$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$534$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $267$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8f66a9d817c0266a3144d53c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              7
+            ],
+            [
+              "w",
+              4
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 7], [\"w\", 4], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "22aea833d03290e7b8c23651",
+        "teks": "SMA Cendekia akan memilih 3 dari 11 siswa untuk menjadi perwakilan sekolah dalam lomba cerdas cermat. Ketiga siswa akan mewakili tim sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "165 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$92310$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $92310$.",
+      "distraktor": [
+        {
+          "teks": "$92311$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92309$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$184620$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $92310$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/92140f15a8292ed0f422330c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              13
+            ],
+            [
+              "w",
+              8
+            ],
+            [
+              "k",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 13], [\"w\", 8], [\"k\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dc4c5d53bca171de1a3a41aa",
+        "teks": "SMA Nusantara akan memilih 2 dari 14 siswa untuk menjadi perwakilan sekolah dalam lomba pidato antarsekolah. Kedua siswa akan mewakili sekolah tanpa peran khusus masing-masing. Berapa banyak cara pemilihan dapat dilakukan?",
+        "jawaban": "91 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$70928$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $70928$.",
+      "distraktor": [
+        {
+          "teks": "$70929$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$70927$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$141856$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $70928$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/4e8118c8efc1257f7e42f854.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              16
+            ],
+            [
+              "w",
+              12
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 16], [\"w\", 12], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "feba36f6e11d696771f303a4",
+        "teks": "Sekolah memiliki 5 guru laki-laki dan 4 guru perempuan. Kepala sekolah akan memilih 3 guru laki-laki dan 2 guru perempuan sebagai panitia ujian. Berapa banyak susunan panitia yang mungkin terbentuk?",
+        "jawaban": "60 susunan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$2744$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $2744$.",
+      "distraktor": [
+        {
+          "teks": "$2745$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2743$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5488$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $2744$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/5bed5737e33c01662fd04837.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              15
+            ],
+            [
+              "w",
+              7
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 15], [\"w\", 7], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dbbdb31fdc094e149770091f",
+        "teks": "Klub drama beranggotakan 8 siswa putra dan 5 siswa putri. Untuk sebuah pementasan dipilih 2 siswa putra dan 3 siswa putri sebagai pemeran. Berapa banyak susunan pemeran yang dapat dibentuk?",
+        "jawaban": "280 susunan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$35750$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $35750$.",
+      "distraktor": [
+        {
+          "teks": "$35751$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35749$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$71500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $35750$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/284ed820aea4dc145442e36b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              7
+            ],
+            [
+              "w",
+              11
+            ],
+            [
+              "k",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 7], [\"w\", 11], [\"k\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1d64178f68fedd1e8b6d4c5f",
+        "teks": "Sebuah toko roti menyediakan roti cokelat, roti keju, dan roti kacang, masing-masing sebanyak enam potong. Seorang pembeli akan memilih lima potong roti, dan jenis yang sama boleh dipilih lebih dari satu potong. Berapa banyak cara pembeli memilih lima potong roti tersebut?",
+        "jawaban": "21 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$55407$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $55407$.",
+      "distraktor": [
+        {
+          "teks": "$55408$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$55406$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$110814$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $55407$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/e0e17d149fcde497f11ced27.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              16
+            ],
+            [
+              "w",
+              11
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 16], [\"w\", 11], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9075c5660d33ef35189fabce",
+        "teks": "Kedai es krim menawarkan rasa vanila, cokelat, stroberi, dan durian dengan persediaan yang melimpah. Seorang anak akan memesan tiga skop es krim dalam satu cup, dan rasa yang sama boleh dipesan lebih dari satu skop. Berapa banyak komposisi rasa yang mungkin dipesan?",
+        "jawaban": "20 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$985$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $985$.",
+      "distraktor": [
+        {
+          "teks": "$986$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$984$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1970$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $985$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/934e9031378410d803c354c6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              18
+            ],
+            [
+              "w",
+              4
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 18], [\"w\", 4], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9938a5f12b4ec70f92c3738",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 9$.",
+        "jawaban": "55",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$7898$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $7898$.",
+      "distraktor": [
+        {
+          "teks": "$7899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7897$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$15796$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $7898$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/15ccb5c5b682eb234a2b2cd0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              6
+            ],
+            [
+              "w",
+              12
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 6], [\"w\", 12], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2bdab6420f50fbeb4291593",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $p + q + r + s = 6$.",
+        "jawaban": "84",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$26272$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $26272$.",
+      "distraktor": [
+        {
+          "teks": "$26273$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26271$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$52544$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $26272$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/558e4445f007323fb5bd2cc8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              10
+            ],
+            [
+              "w",
+              8
+            ],
+            [
+              "k",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 10], [\"w\", 8], [\"k\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d90ea4fb3c8a45fe9e297056",
+        "teks": "Pernyataan yang tepat tentang kombinasi adalah ....",
+        "jawaban": "susunan objek yang tidak memperhatikan urutan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$191850$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $191850$.",
+      "distraktor": [
+        {
+          "teks": "$191851$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$191849$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$383700$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $191850$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/88704975a96588d303c1f4da.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              18
+            ],
+            [
+              "w",
+              6
+            ],
+            [
+              "k",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 18], [\"w\", 6], [\"k\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c712b703f29ab546ba81302a",
+        "teks": "Di antara situasi berikut, situasi yang diselesaikan dengan konsep kombinasi adalah ....",
+        "jawaban": "memilih 3 anggota panitia dari 8 siswa tanpa pembagian jabatan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$6937$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $6937$.",
+      "distraktor": [
+        {
+          "teks": "$6938$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6936$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13874$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $6937$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/91b7a619f33e5386c015d73a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              12
+            ],
+            [
+              "w",
+              5
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 12], [\"w\", 5], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9bc8953f774c22cc5b826e5",
+        "teks": "Nilai dari $C(9,2)$ adalah ....",
+        "jawaban": "36",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$5472$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $5472$.",
+      "distraktor": [
+        {
+          "teks": "$5473$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5471$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10944$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $5472$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/df4e4df21060daa6f5af2bee.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              7
+            ],
+            [
+              "w",
+              10
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 7], [\"w\", 10], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0aebc8110c47ecd5caee1886",
+        "teks": "Nilai dari $C(15,15) + C(15,1)$ adalah ....",
+        "jawaban": "16",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$3768$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $3768$.",
+      "distraktor": [
+        {
+          "teks": "$3769$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3767$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7536$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $3768$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/0eb453053f23f9f844bcca22.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              7
+            ],
+            [
+              "w",
+              9
+            ],
+            [
+              "k",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 7], [\"w\", 9], [\"k\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f7c6dbe2303953acc76b85d",
+        "teks": "Diketahui $P(8,3) = 336$. Nilai $C(8,3)$ adalah ....",
+        "jawaban": "56",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$165501$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $165501$.",
+      "distraktor": [
+        {
+          "teks": "$165502$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$165500$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$331002$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $165501$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6157b94a71cefe3c3647a342.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              13
+            ],
+            [
+              "w",
+              8
+            ],
+            [
+              "k",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 13], [\"w\", 8], [\"k\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "58f6b4ebb23f22ec272c7474",
+        "teks": "Enam permen yang identik akan dibagikan kepada tiga orang anak, dan setiap anak boleh menerima berapa pun permen, termasuk tidak menerima sama sekali. Banyak cara membagikan permen tersebut adalah ....",
+        "jawaban": "28 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1193$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1193$.",
+      "distraktor": [
+        {
+          "teks": "$1194$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1192$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2386$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1193$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/abee78edc22b13f0f6bb6728.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              8
+            ],
+            [
+              "w",
+              5
+            ],
+            [
+              "k",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 8], [\"w\", 5], [\"k\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "86d7f9795348641ea23681fe",
+        "teks": "Dalam sebuah pertemuan hadir 12 orang. Setiap dua orang saling berjabat tangan tepat satu kali. Banyak jabat tangan yang terjadi adalah ....",
+        "jawaban": "66 kali",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1085$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1085$.",
+      "distraktor": [
+        {
+          "teks": "$1086$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1084$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2170$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1085$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/0fa1ef917be0c35a65bb79ef.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              9
+            ],
+            [
+              "w",
+              7
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 9], [\"w\", 7], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c44af1f668492d2275479e0d",
+        "teks": "Pada suatu ujian terdapat 10 soal, dan peserta wajib mengerjakan 8 soal pilihannya sendiri. Banyak cara peserta memilih 8 soal tersebut adalah ....",
+        "jawaban": "45 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1260369$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1260369$.",
+      "distraktor": [
+        {
+          "teks": "$1260370$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1260368$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2520738$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1260369$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/c396b20140cf19568e9693eb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              17
+            ],
+            [
+              "w",
+              9
+            ],
+            [
+              "k",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 17], [\"w\", 9], [\"k\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "631d66f80e9babeddb600039",
+        "teks": "Dewi menghitung banyak cara memilih 3 pengurus dari 7 siswa tanpa pembagian jabatan dengan $\\frac{P(7,3)}{2!} = 105$. Pernyataan yang benar mengenai hitungan Dewi adalah ....",
+        "jawaban": "Salah; pembagi seharusnya $3!$, sehingga banyak caranya 35",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1022$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1022$.",
+      "distraktor": [
+        {
+          "teks": "$1023$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1021$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2044$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1022$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/0e083344365b1dbfb699624f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "m",
+              7
+            ],
+            [
+              "w",
+              8
+            ],
+            [
+              "k",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"m\", 7], [\"w\", 8], [\"k\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cd6263d37a09391676765da6",
+        "teks": "Dari 6 siswa putra dan 3 siswa putri dibentuk tim beranggotakan 4 orang dengan paling sedikit 1 putri. Andi menghitung $3 \\times C(8,3) = 168$ (memilih 1 putri dahulu, lalu 3 orang dari 8 sisanya). Hitungan Andi melebihi banyak tim yang sebenarnya sebesar ....",
+        "jawaban": "57 tim",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $15$; w = $6$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$73764$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $73764$.",
+      "distraktor": [
+        {
+          "teks": "$73765$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$73763$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$147528$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $73764$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "09f97440aa257ad3fc7dbe41",
+        "teks": "Banyak solusi bilangan cacah $x$ dari $C(25, x+4) = C(25, 2x-3)$ menghasilkan dua nilai $x$. Jumlah semua nilai $x$ yang memenuhi adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $7$; w = $12$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$44176$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $44176$.",
+      "distraktor": [
+        {
+          "teks": "$44177$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$44175$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$88352$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $44176$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a0e6c1d35503bdc5fc273b1",
+        "teks": "Dari 6 putra dan 4 putri dibentuk panitia beranggotakan 5 orang dengan paling banyak 2 putri. Ekspresi yang tepat untuk menyatakan banyak panitia adalah ....",
+        "jawaban": "$C(6,5) + C(4,1) \\times C(6,4) + C(4,2) \\times C(6,3)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $17$; w = $8$; k = $5$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$27426$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $27426$.",
+      "distraktor": [
+        {
+          "teks": "$27427$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$27425$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54852$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $27426$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "393f77e603988c4cb8f9efe9",
+        "teks": "Dari 10 siswa akan dibentuk tim beranggotakan 5 orang. Fani wajib menjadi anggota, dan $k$ siswa lain tidak boleh menjadi anggota. Agar banyak tim yang dapat dibentuk tepat 35, nilai $k$ adalah ....",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $18$; w = $12$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1709136$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1709136$.",
+      "distraktor": [
+        {
+          "teks": "$1709137$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1709135$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3418272$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1709136$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef621073122b467e7f0f567c",
+        "teks": "Banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 10$ dengan syarat $a \\leq 5$ adalah ....",
+        "jawaban": "51",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $12$; w = $5$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$12335$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $12335$.",
+      "distraktor": [
+        {
+          "teks": "$12336$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12334$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24670$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $12335$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "168dfb6519a36a64a36df19d",
+        "teks": "Sebuah panitia beranggotakan 5 orang dipilih dari 4 guru, 3 siswa, dan 3 alumni dengan syarat setiap kelompok terwakili paling sedikit satu orang. Rani menghitung $4 \\times 3 \\times 3 \\times C(7,2) = 756$ (satu wakil tiap kelompok, lalu 2 orang dari 7 sisanya), tetapi hasil itu terlalu besar. Banyak panitia yang sebenarnya adalah ....",
+        "jawaban": "204 panitia",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $13$; w = $10$; k = $5$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$24597$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $24597$.",
+      "distraktor": [
+        {
+          "teks": "$24598$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24596$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49194$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $24597$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7931a7ebcf27b76a6de627d",
+        "teks": "Delapan pemain tenis meja dibagi menjadi 4 pasangan latihan. Pasangan-pasangan tersebut tidak diberi nama atau nomor, sehingga yang dibedakan hanya siapa dipasangkan dengan siapa. Banyak cara pembagian pasangan adalah ....",
+        "jawaban": "105 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $16$; w = $7$; k = $8$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$360117$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $360117$.",
+      "distraktor": [
+        {
+          "teks": "$360118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$360116$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$720234$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $360117$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cbb692c4de9bdc414d7c134c",
+        "teks": "Banyak solusi bilangan bulat non-negatif dari pertidaksamaan $a + b + c \\leq 9$ adalah ....",
+        "jawaban": "220",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $17$; w = $11$; k = $5$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$64922$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $64922$.",
+      "distraktor": [
+        {
+          "teks": "$64923$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$64921$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$129844$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $64922$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0cc72ceb81d26a793ac4302",
+        "teks": "Diketahui $n$ bilangan bulat positif dengan $P(n,2) - C(n,2) = 45$. Nilai $C(n,4)$ adalah ....",
+        "jawaban": "210",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $11$; w = $12$; k = $6$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$90090$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $90090$.",
+      "distraktor": [
+        {
+          "teks": "$90091$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90089$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$180180$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $90090$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f2655780af3751ca273e386e",
+        "teks": "Seorang siswa mengklaim: \"untuk bilangan bulat $0 \\leq r < s \\leq 10$, selalu berlaku $C(10,r) < C(10,s)$.\" Pasangan $(r,s)$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$r = 5$ dan $s = 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $15$; w = $5$; k = $5$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$5536$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $5536$.",
+      "distraktor": [
+        {
+          "teks": "$5537$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5535$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11072$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $5536$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72c2ddcda51c829df109cd62",
+        "teks": "Banyak diagonal sebuah segi-$n$ sama dengan banyak pasangan titik sudut dikurangi banyak sisi, yaitu $C(n,2)-n$. Jika sebuah segi-$n$ memiliki 35 diagonal, nilai $n$ adalah ....",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $17$; w = $9$; k = $8$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1260369$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1260369$.",
+      "distraktor": [
+        {
+          "teks": "$1260370$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1260368$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2520738$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1260369$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a1c0b63c5dae0727c61fe4a8",
+        "teks": "Pada suatu ujian terdapat 12 soal. Peserta harus memilih 7 soal untuk dikerjakan, dengan syarat memilih paling sedikit 3 soal dari 5 soal nomor pertama. Banyak cara peserta memilih ketujuh soal adalah ....",
+        "jawaban": "546 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $8$; w = $14$; k = $5$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$24388$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $24388$.",
+      "distraktor": [
+        {
+          "teks": "$24389$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24387$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48776$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $24388$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e794a264d29097fd6a339620",
+        "teks": "Sebuah toko menyediakan 8 rasa permen dengan persediaan setiap rasa melimpah. Pembeli memilih 4 permen. Selisih antara banyak komposisi pilihan jika rasa yang sama boleh dipilih berulang dan banyak komposisi jika setiap rasa harus berbeda adalah ....",
+        "jawaban": "260",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $11$; w = $11$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$151140$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $151140$.",
+      "distraktor": [
+        {
+          "teks": "$151141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$151139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$302280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $151140$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6baaf50528e28afb8f7b93b",
+        "teks": "Sebuah panitia beranggotakan $r$ orang akan dipilih dari 15 siswa, dengan $r$ bilangan genap. Nilai $r$ yang membuat banyak panitia yang mungkin terbentuk paling besar adalah ....",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $16$; w = $12$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$1024738$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1024738$.",
+      "distraktor": [
+        {
+          "teks": "$1024739$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1024737$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2049476$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $1024738$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0b581e3eb79b2494ead104b2",
+        "teks": "Diketahui $n$ bilangan bulat dengan $n \\geq 2$ dan $C(n,2) + C(n+1,2) = 169$. Nilai $n$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $7$; w = $11$; k = $8$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$35750$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $35750$.",
+      "distraktor": [
+        {
+          "teks": "$35751$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35749$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$71500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $35750$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "284a0b74e1f02f7b98b9e708",
+        "teks": "Pengurus Palang Merah Remaja SMA Nusa Bangsa akan mengirim relawan untuk kegiatan donor darah. Berdasarkan anggota yang aktif, terdapat 9 putra dan 8 putri, tetapi yang dipilih sebagai relawan adalah 5 putra dan 2 putri. Berapa banyak susunan relawan yang dapat terbentuk?",
+        "jawaban": "3.528 susunan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $13$; w = $4$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$9647$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $9647$.",
+      "distraktor": [
+        {
+          "teks": "$9648$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9646$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19294$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $9647$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04bc54f9b0e648e106948906",
+        "teks": "Seorang guru memiliki 7 pensil identik dan 3 penghapus identik untuk dibagikan kepada 3 siswa. Setiap siswa boleh menerima lebih dari satu pensil atau penghapus, bahkan boleh tidak menerima sama sekali. Berapa banyak cara pembagian kedua jenis alat tulis tersebut?",
+        "jawaban": "360 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $7$; w = $6$; k = $5$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$961$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $961$.",
+      "distraktor": [
+        {
+          "teks": "$962$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$960$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1922$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $961$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "224d2943f45544a7e33a5623",
+        "teks": "Sebuah toko donat menyediakan 5 rasa donat, yaitu cokelat, keju, stroberi, kopi, dan pandan, dengan persediaan setiap rasa lebih dari 6 buah. Seorang pembeli akan memilih 6 donat untuk satu kotak, dan rasa yang sama boleh dipilih lebih dari satu kali. Berapa banyak komposisi rasa yang mungkin dalam kotak tersebut?",
+        "jawaban": "210 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $15$; w = $10$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$399003$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $399003$.",
+      "distraktor": [
+        {
+          "teks": "$399004$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$399002$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$798006$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $399003$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b15d37e2dd8e8259b0edc5f4",
+        "teks": "Bu Ratna meminta 11 siswa untuk menulis masing-masing satu soal Fisika. Dari 11 soal yang terkumpul, Bu Ratna akan memilih 6 soal untuk ujian tengah semester, dan soal buatan Dimas sudah pasti dipilih. Berapa banyak cara berbeda Bu Ratna dapat memilih keenam soal tersebut?",
+        "jawaban": "252 cara",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_combination_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui m = $10$; w = $8$; k = $7$. Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$26272$",
+      "alasan_benar": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $26272$.",
+      "distraktor": [
+        {
+          "teks": "$26273$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26271$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$52544$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama. Hasilnya $26272$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b03-c-hard-bt01-064"
     }
   ]
 }

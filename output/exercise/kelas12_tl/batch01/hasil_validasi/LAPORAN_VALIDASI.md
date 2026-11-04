@@ -1,5 +1,5 @@
-# Tambahan sesuai kekurangan — kelas12_tl
+# Latihan kelas12_tl: tiga sesi
 
-360 soal baru, confidence 0, pemeriksaan lokal Codex tanpa API.
+Tambahan 1456 soal; aktif 3278. Target setiap subbab-level: 60 soal aktif.
 
-Soal lama dipertahankan persis. Label adalah intended difficulty berdasarkan isi dan profil penyelesaian, bukan kalibrasi empiris atau hasil blind Gemini. Sertifikat matematika dapat dihitung ulang.
+Confidence 0: belum diukur. Label penilaian lokal Codex, bukan validasi AI independen atau kalibrasi empiris. Tanpa API dan tanpa sinkronisasi production. Soal, label lama dan pretest dipertahankan.

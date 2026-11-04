@@ -1,9 +1,5 @@
-# Penilaian ulang kesulitan — kelas3
+# Latihan kelas3: tiga sesi
 
-540 soal awal dinilai dari isi dan solusi minimum. Ditambahkan 46 soal untuk memenuhi level tanpa memaksa label.
+Tambahan 1044 soal; aktif 1620. Target setiap subbab-level: 30 soal aktif.
 
-Aktif 576, inactive 10. Setiap subbab mempunyai minimal 10 easy, 10 medium, dan 10 hard; setiap level minimal 7 bergambar dan 3 teks.
-
-Confidence 0: belum diukur; tanpa API. Label merupakan penilaian lokal, bukan validasi AI independen atau kalibrasi empiris.
-
-Bukti per soal: `bukti_validasi/codex_local_review.json`. Status gambar terkini: `bukti_validasi/assets_validation_results.json`. JSON pada folder assets mencatat tahap render awal, bukan hasil pemeriksaan akhir.
+Confidence 0: belum diukur. Label penilaian lokal Codex, bukan validasi AI independen atau kalibrasi empiris. Tanpa API dan tanpa sinkronisasi production. Soal, label lama dan pretest dipertahankan.

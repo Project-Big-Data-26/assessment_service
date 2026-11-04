@@ -566,6 +566,2072 @@
       ],
       "pembahasan": "$1.000.000 \\times 1,1^3 + A \\times 3,31 = 6.296.000$, sehingga $1.331.000 + 3,31A = 6.296.000$ dan $A = 4.965.000 : 3,31 = 1.500.000$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0e38fad7e5cab3807561c42",
+        "teks": "Dewi selalu menyisihkan uangnya sebesar Rp4.000.000,00 per tahun pada akhir tahun dan memasukkannya ke dalam rekening deposito dengan bunga majemuk 5% per tahun. Berapa nilai masa depan tabungan Dewi dalam 3 tahun?",
+        "jawaban": "Rp12.610.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{189689241413}{78125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{189689241413}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{189689319538}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{189689163288}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{379378482826}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{189689241413}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/bcaf5735b2965771b949ded6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2152000
+            ],
+            [
+              "V",
+              2205040
+            ],
+            [
+              "W",
+              "11295704/5"
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2152000], [\"V\", 2205040], [\"W\", \"11295704/5\"], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5355bd358c91d6141dc0065",
+        "teks": "Pak Rudi rutin menabung Rp1.000.000,00 pada akhir setiap bulan di sebuah bank yang memberikan bunga majemuk 2% per bulan. Tentukan nilai masa depan seluruh tabungan Pak Rudi setelah 4 bulan.",
+        "jawaban": "Rp4.121.608,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{6559373522}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{6559373522}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6559376647}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{6559370397}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13118747044}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{6559373522}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/2594d6b830f3b9cfdfe2acdf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1524000
+            ],
+            [
+              "V",
+              1655440
+            ],
+            [
+              "W",
+              "8973832/5"
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1524000], [\"V\", 1655440], [\"W\", \"8973832/5\"], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ee09b45ea0e08791f2254bbe",
+        "teks": "Seorang pengusaha menabung sejumlah uang di bank dan mendapat bunga majemuk 10% per tahun. Pada akhir setiap tahun selama 3 tahun, ia mengambil Rp2.662.000,00 dari tabungan itu sehingga tabungannya habis tepat setelah pengambilan ketiga. Berapakah uang yang harus ia tabung di awal?",
+        "jawaban": "Rp6.620.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{3897764941808}{1953125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{3897764941808}{1953125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3897766894933}{1953125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3897762988683}{1953125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7795529883616}{1953125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{3897764941808}{1953125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/e2dc4b52618cd3bcaabb67c9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              934000
+            ],
+            [
+              "V",
+              1078720
+            ],
+            [
+              "W",
+              "6175088/5"
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 934000], [\"V\", 1078720], [\"W\", \"6175088/5\"], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "89a697347539c208ba13ba42",
+        "teks": "Sebuah yayasan ingin memberi beasiswa sebesar Rp2.205.000,00 pada akhir setiap tahun kepada seorang siswa selama 2 tahun. Dana beasiswa disimpan di bank berbunga majemuk 5% per tahun dan habis tepat setelah pemberian kedua. Dana yang harus disimpan yayasan di awal adalah ....",
+        "jawaban": "Rp4.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$4614683$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $4614683$.",
+      "distraktor": [
+        {
+          "teks": "$4614684$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4614682$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9229366$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $4614683$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/eff07f9878eb6ed1d2796c8b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2600000
+            ],
+            [
+              "V",
+              2930000
+            ],
+            [
+              "W",
+              3293000
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2600000], [\"V\", 2930000], [\"W\", 3293000], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c1383ea9f79933e7f3641c1",
+        "teks": "Pak Doni ingin menerima penghasilan Rp3.000.000,00 pada akhir setiap bulan selama 2 bulan setelah pensiun dari tabungannya. Bank memberi bunga majemuk 24% per tahun yang dihitung tiap bulan (2% per bulan). Besar uang tabungan yang harus ia siapkan adalah ....",
+        "jawaban": "Rp5.824.683,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{7159961808}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{7159961808}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7159964933}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7159958683}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{14319923616}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{7159961808}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d34dafda38abae3f71a0f4f0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1386000
+            ],
+            [
+              "V",
+              1586880
+            ],
+            [
+              "W",
+              "9019152/5"
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1386000], [\"V\", 1586880], [\"W\", \"9019152/5\"], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e450daf452783a3a045ecda0",
+        "teks": "Bu Mirna ingin menerima Rp3.630.000,00 pada akhir setiap semester selama 1 tahun dari tabungannya. Bank memberi bunga majemuk 20% per tahun yang dihitung tiap semester. Tabungan awal yang harus ia siapkan adalah ....",
+        "jawaban": "Rp6.300.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{1336760344307253}{500000000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{1336760344307253}{500000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1336760844307253}{500000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1336759844307253}{500000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1336760344307253}{250000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{1336760344307253}{500000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/18b6edb32fe8cc13b6f1f4ce.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1914000
+            ],
+            [
+              "V",
+              2031420
+            ],
+            [
+              "W",
+              "10761813/5"
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1914000], [\"V\", 2031420], [\"W\", \"10761813/5\"], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "85f79c7b4c34fd610b570a51",
+        "teks": "Rina menabung Rp1.000.000,00 pada akhir setiap bulan ke rekening deposito yang memberikan bunga majemuk 12% per tahun, dihitung tiap bulan. Nilai masa depan tabungannya setelah 3 bulan adalah ....",
+        "jawaban": "Rp3.030.100,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{191532907407}{80000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{191532907407}{80000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{191532987407}{80000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{191532827407}{80000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{191532907407}{40000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{191532907407}{80000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/b83d85d9615ae76b130b9305.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1625000
+            ],
+            [
+              "V",
+              1758750
+            ],
+            [
+              "W",
+              "3803725/2"
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1625000], [\"V\", 1758750], [\"W\", \"3803725/2\"], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e7a3cc762e0826fbff4c646",
+        "teks": "Tia menabung Rp5.000.000,00 pada akhir setiap semester di sebuah bank dengan bunga majemuk 6% per tahun, dihitung tiap semester. Nilai masa depan tabungannya setelah satu setengah tahun adalah ....",
+        "jawaban": "Rp15.454.500,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{306528265456}{78125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{306528265456}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{306528343581}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{306528187331}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{613056530912}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{306528265456}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/780a43eee77b1ec0863bc16d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1974000
+            ],
+            [
+              "V",
+              2280880
+            ],
+            [
+              "W",
+              "13122928/5"
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1974000], [\"V\", 2280880], [\"W\", \"13122928/5\"], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59581c8ece0a936d8afbc614",
+        "teks": "Eko menabung Rp2.000.000,00 pada akhir setiap tahun di bank dengan bunga majemuk 10% per tahun. Agar nilai masa depan tabungannya mencapai Rp6.620.000,00, Eko harus menabung selama .... tahun.",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{290190445309}{100000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{290190445309}{100000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{290190545309}{100000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{290190345309}{100000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{290190445309}{50000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{290190445309}{100000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/3393f321cdd3c17945cca859.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1909000
+            ],
+            [
+              "V",
+              2132630
+            ],
+            [
+              "W",
+              "23719141/10"
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1909000], [\"V\", 2132630], [\"W\", \"23719141/10\"], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "84dbc6b3454474090cb24bdc",
+        "teks": "Sari menabung Rp5.000.000,00 pada akhir setiap triwulan di bank dengan bunga majemuk 4% per triwulan. Agar nilai masa depan tabungannya mencapai Rp10.200.000,00, Sari harus menabung selama .... triwulan.",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{2703782545688599}{1000000000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{2703782545688599}{1000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2703783545688599}{1000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2703781545688599}{1000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2703782545688599}{500000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{2703782545688599}{1000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/db1abd0ff4dcfbb01415a046.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1831000
+            ],
+            [
+              "V",
+              1965930
+            ],
+            [
+              "W",
+              "21049079/10"
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1831000], [\"V\", 1965930], [\"W\", \"21049079/10\"], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5501adaca7a070ee0b2b02a",
+        "teks": "Dalam investasi, anuitas adalah ....",
+        "jawaban": "sistem pembayaran atau penerimaan pada periode waktu yang teratur dengan jumlah yang sama",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{5500658886832}{1953125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{5500658886832}{1953125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5500660839957}{1953125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5500656933707}{1953125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11001317773664}{1953125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{5500658886832}{1953125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/107b56110a208f2e033035d7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1754000
+            ],
+            [
+              "V",
+              1914160
+            ],
+            [
+              "W",
+              "10403632/5"
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1754000], [\"V\", 1914160], [\"W\", \"10403632/5\"], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "69b561040b00b78e6bb3aa0a",
+        "teks": "Pak Anto menyetor Rp1.000.000,00 ke tabungan berjangka pada tanggal 1 setiap bulan, yaitu di awal tiap bulan, dengan jumlah yang selalu sama. Jenis anuitas pada penyetoran Pak Anto adalah ....",
+        "jawaban": "anuitas terutang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{94628474896}{78125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{94628474896}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{94628553021}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{94628396771}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{189256949792}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{94628474896}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/bb75de0d7fceba66d0ccb9ee.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              862000
+            ],
+            [
+              "V",
+              926480
+            ],
+            [
+              "W",
+              "4967696/5"
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 862000], [\"V\", 926480], [\"W\", \"4967696/5\"], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "92d85b665fa3e0d0148f6d1c",
+        "teks": "Nilai akhir tiap setoran pada anuitas beserta bunganya membentuk deret geometri dengan rasio $(1+i)$. Jika bunga majemuk 8% per tahun, rasio deret tersebut adalah ....",
+        "jawaban": "1,08",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$4092581$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $4092581$.",
+      "distraktor": [
+        {
+          "teks": "$4092582$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4092580$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8185162$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $4092581$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d4e0f0f812b86cd21db599aa.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2510000
+            ],
+            [
+              "V",
+              2851000
+            ],
+            [
+              "W",
+              3226100
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2510000], [\"V\", 2851000], [\"W\", 3226100], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5696be872271bcd3c4272d2c",
+        "teks": "Pada konsep bunga majemuk, nilai sekarang ($PV$) menyatakan ....",
+        "jawaban": "besarnya tabungan awal",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{32230666462899}{10000000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{32230666462899}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{32230676462899}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{32230656462899}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{32230666462899}{5000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{32230666462899}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/649395b7fbed998cb1da67d5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2257000
+            ],
+            [
+              "V",
+              2424990
+            ],
+            [
+              "W",
+              "26047393/10"
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2257000], [\"V\", 2424990], [\"W\", \"26047393/10\"], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1803ade9d4f456ce31af8f14",
+        "teks": "Hubungan nilai sekarang dan nilai masa depan adalah $FV = PV \\times (1+i)^n$. Jika $PV$ = Rp2.500.000,00, bunga majemuk 4% per tahun, dan $n$ = 2 tahun, maka $FV$ adalah ....",
+        "jawaban": "Rp2.704.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{275107772853}{100000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{275107772853}{100000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{275107872853}{100000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{275107672853}{100000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{275107772853}{50000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{275107772853}{100000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/ab5fc9b485c58fe35ecd9a8c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1533000
+            ],
+            [
+              "V",
+              1791630
+            ],
+            [
+              "W",
+              "20787093/10"
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1533000], [\"V\", 1791630], [\"W\", \"20787093/10\"], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca4c70ad1920a12004f9d7a3",
+        "teks": "Bank memberi bunga majemuk 9% per tahun, dan Hana menyetor tabungan tiap triwulan (3 bulan). Suku bunga per triwulan ($i$) yang dipakai adalah ....",
+        "jawaban": "2,25%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{7648289104}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{7648289104}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7648292229}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7648285979}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{15296578208}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{7648289104}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/66ec5facb9a3726ee3e1d57d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1838000
+            ],
+            [
+              "V",
+              1981520
+            ],
+            [
+              "W",
+              "10653904/5"
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1838000], [\"V\", 1981520], [\"W\", \"10653904/5\"], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aa3c07f94e7dfc639c2bf4cc",
+        "teks": "Dika menyetor tabungan anuitas setiap semester selama 4 tahun. Banyak periode setoran ($n$) adalah ....",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{209358881}{50}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{209358881}{50}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{209358931}{50}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{209358831}{50}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{209358881}{25}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{209358881}{50}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/685d4db92a0c4ba7726b6baa.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2320000
+            ],
+            [
+              "V",
+              2562000
+            ],
+            [
+              "W",
+              2828200
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2320000], [\"V\", 2562000], [\"W\", 2828200], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb1c8d1b56297aa898f34efe",
+        "teks": "Seseorang menabung sebesar $A$ pada akhir setiap periode dengan suku bunga majemuk $i$ per periode selama $n$ periode. Rumus nilai masa depan ($FV$) tabungannya adalah ....",
+        "jawaban": "$FV = A \\times \\frac{(1+i)^n - 1}{i}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{40875796344}{15625}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{40875796344}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{40875811969}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{40875780719}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{81751592688}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{40875796344}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/b92cb8892ee5fec02b42fcda.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1660000
+            ],
+            [
+              "V",
+              1829600
+            ],
+            [
+              "W",
+              2009376
+            ],
+            [
+              "n",
+              3
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1660000], [\"V\", 1829600], [\"W\", 2009376], [\"n\", 3]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e4ec1e6c8f71a2e78d610866",
+        "teks": "Seseorang ingin mengambil uang sebesar $A$ pada akhir setiap periode selama $n$ periode dari tabungan yang berbunga majemuk $i$ per periode. Rumus tabungan awal yang diperlukan ($PV$) adalah ....",
+        "jawaban": "$PV = A \\times \\frac{1-(1+i)^{-n}}{i}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{20587262397}{10000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{20587262397}{10000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{20587272397}{10000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{20587252397}{10000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{20587262397}{5000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{20587262397}{10000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/eaadf899fded2cd0dc848697.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1170000
+            ],
+            [
+              "V",
+              1358700
+            ],
+            [
+              "W",
+              1568157
+            ],
+            [
+              "n",
+              2
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1170000], [\"V\", 1358700], [\"W\", 1568157], [\"n\", 2]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fca2da892b8a99b5611ae3b6",
+        "teks": "Lani menyetor Rp1.500.000,00 pada akhir tahun pertama dan Rp1.500.000,00 pada akhir tahun kedua ke bank dengan bunga majemuk 8% per tahun. Nilai tabungan Lani tepat setelah setoran kedua adalah ....",
+        "jawaban": "Rp3.120.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{3935705626205063}{1000000000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{3935705626205063}{1000000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3935706626205063}{1000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3935704626205063}{1000000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3935705626205063}{500000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{3935705626205063}{1000000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9de34a92e950b211981bc305.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1943000
+            ],
+            [
+              "V",
+              2207870
+            ],
+            [
+              "W",
+              "24965783/10"
+            ],
+            [
+              "n",
+              4
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1943000], [\"V\", 2207870], [\"W\", \"24965783/10\"], [\"n\", 4]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "278f10a57ed0b86ee035e4a6",
+        "teks": "Dina menghitung nilai masa depan setoran Rp2.000.000,00 pada akhir setiap tahun selama 4 tahun dengan bunga majemuk 10% per tahun. Ia menulis $FV = 2.000.000 \\times \\frac{(1,1)^4}{0,1} = 29.282.000$. Pernyataan yang benar tentang pekerjaan Dina adalah ....",
+        "jawaban": "Salah: pembilang seharusnya $(1,1)^4 - 1$, sehingga nilai masa depan yang benar Rp9.282.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1872000$; V = $2054320$; W = $\\frac{11237896}{5}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{8342437466}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{8342437466}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8342440591}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8342434341}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{16684874932}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{8342437466}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f34e643892355e43f63da39f",
+        "teks": "Dua orang masing-masing menyetor Rp1.000.000,00 pada akhir setiap tahun selama 3 tahun. Orang pertama mendapat bunga majemuk 10% per tahun dan orang kedua 20% per tahun. Pernyataan yang benar adalah ....",
+        "jawaban": "Total bunga orang kedua (Rp640.000,00) lebih dari dua kali total bunga orang pertama (Rp310.000,00)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1976000$; V = $2164320$; W = $\\frac{11829112}{5}$; n = $4$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{207694232018039}{62500000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{207694232018039}{62500000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{207694294518039}{62500000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{207694169518039}{62500000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{207694232018039}{31250000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{207694232018039}{62500000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c916970e8ab3d65426404167",
+        "teks": "Dua skema menabung selama 2 tahun dengan bunga majemuk 20% per tahun. Skema 1: menyetor Rp1.000.000,00 pada akhir setiap semester dengan bunga dihitung tiap semester. Skema 2: menyetor Rp2.000.000,00 pada akhir setiap tahun dengan bunga dihitung tiap tahun. Kesimpulan yang benar adalah ....",
+        "jawaban": "Skema 1 lebih besar, selisih nilai masa depan Rp241.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $2100000$; V = $2204000$; W = $2312160$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{317704032}{125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{317704032}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{317704157}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{317703907}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{635408064}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{317704032}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24b01ef6595c3f99af35bea8",
+        "teks": "Rendi ingin tabungannya paling sedikit Rp10.000.000,00 tepat setelah setoran ke-4. Ia menyetor sejumlah yang sama pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun, dan besar setoran harus kelipatan Rp100.000,00. Setoran tahunan terkecil yang memenuhi adalah ....",
+        "jawaban": "Rp2.200.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1316000$; V = $1441280$; W = $\\frac{7882912}{5}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{5876642848}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{5876642848}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5876645973}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5876639723}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{11753285696}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{5876642848}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cfbc9100185c14c5f23eee86",
+        "teks": "Fira menyetor Rp2.000.000,00 pada akhir setiap tahun ke bank berbunga majemuk 10% per tahun. Ia ingin nilai masa depan tabungannya lebih dari Rp15.000.000,00 tepat setelah setoran terakhir. Banyak setoran paling sedikit yang diperlukan adalah ....",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1890000$; V = $2099000$; W = $2328900$; n = $3$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{31659659}{10}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{31659659}{10}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31659669}{10}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31659649}{10}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31659659}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{31659659}{10}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b971243d30a88c167b45089",
+        "teks": "Gita ingin menarik Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun dari tabungan berbunga majemuk 10% per tahun, hingga tabungan habis. Untuk mencari tabungan awal ia menghitung $1.210.000 \\times \\frac{(1,1)^2 - 1}{0,1} = 2.541.000$. Pernyataan yang benar adalah ....",
+        "jawaban": "Gita keliru memakai rumus nilai masa depan; tabungan awal yang benar Rp2.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $2805000$; V = $3143550$; W = $\\frac{7038681}{2}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{87989588601}{20000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{87989588601}{20000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{87989608601}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{87989568601}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{87989588601}{10000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{87989588601}{20000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1832b1cebd5daa2f7602f26d",
+        "teks": "Bu Lia menyimpan Rp3.200.000,00 di bank berbunga majemuk 10% per tahun. Pada akhir setiap tahun, mulai akhir tahun pertama, ia menarik Rp1.000.000,00. Banyak penarikan penuh Rp1.000.000,00 yang dapat ia lakukan paling banyak adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1215000$; V = $1335750$; W = $\\frac{2925075}{2}$; n = $3$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{1204620783}{640}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{1204620783}{640}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1204621423}{640}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1204620143}{640}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1204620783}{320}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{1204620783}{640}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f9d0cdb1a6a02f8d1407db9",
+        "teks": "Rama menyetor Rp1.000.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun. Sari ingin nilai masa depan tabungannya sama dengan Rama tepat saat setoran terakhir, tetapi hanya menyetor selama 2 tahun di bank yang sama. Setoran tahunan Sari yang harus ia lakukan adalah ....",
+        "jawaban": "Rp2.210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $2490000$; V = $2809000$; W = $3159900$; n = $4$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{495127959}{100}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{495127959}{100}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{495128059}{100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{495127859}{100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{495127959}{50}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{495127959}{100}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c407c07f158fb4c2588a1a9d",
+        "teks": "Hana menyetor Rp500.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 20% per tahun. Ia menghitung nilai masa depan sebagai $500.000 \\times (1,2^4 + 1,2^3 + 1,2^2 + 1,2) = 3.220.800$. Pernyataan yang benar adalah ....",
+        "jawaban": "Hana keliru karena setoran terakhir tidak berbunga; nilai masa depan yang benar Rp2.684.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1342000$; V = $1492520$; W = $\\frac{8260356}{5}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{6251460001}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{6251460001}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6251463126}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{6251456876}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{12502920002}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{6251460001}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0b5f7e2923d17102b091676",
+        "teks": "Seseorang menarik jumlah yang sama pada akhir setiap tahun selama 3 tahun dari tabungan berbunga majemuk 10% per tahun, hingga tabungan habis tepat setelah penarikan ketiga. Tepat setelah penarikan pertama, saldo tabungan Rp2.310.000,00. Besar penarikan tiap tahun adalah ....",
+        "jawaban": "Rp1.331.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $2070000$; V = $2367000$; W = $2693700$; n = $4$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{436153617}{100}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{436153617}{100}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{436153717}{100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{436153517}{100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{436153617}{50}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{436153617}{100}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c84e75d72d9764cc3d029e06",
+        "teks": "Dani menyetor Rp1.000.000,00 pada akhir setiap tahun ke bank berbunga majemuk 10% per tahun, sebanyak $n$ kali. Ia ingin nilai masa depan tabungan tepat setelah setoran terakhir paling sedikit Rp6.000.000,00, sedangkan total uang yang ia setor tidak lebih dari Rp8.000.000,00. Banyak nilai $n$ bulat positif yang memenuhi kedua syarat adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $824000$; V = $962880$; W = $\\frac{5592128}{5}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{4649228352}{3125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{4649228352}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4649231477}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4649225227}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9298456704}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{4649228352}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c96ddcde625d90408b89b8d6",
+        "teks": "Wulan menyetor Rp1.000.000,00 pada akhir tahun pertama dan akhir tahun kedua ke bank berbunga majemuk 10% per tahun. Setelah itu ia tidak menyetor lagi, melainkan menarik jumlah yang sama pada akhir tahun ketiga dan akhir tahun keempat sehingga tabungan habis tepat setelah penarikan keempat. Besar penarikan tiap tahun adalah ....",
+        "jawaban": "Rp1.210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $520000$; V = $540400$; W = $561208$; n = $3$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{9783787801}{15625}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{9783787801}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9783803426}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{9783772176}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19567575602}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{9783787801}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9adf1bd913d81a6eebe6774",
+        "teks": "Seorang penjual menawarkan dua pilihan pembayaran: menerima Rp3.300.000,00 tunai sekarang, atau menerima Rp1.331.000,00 pada akhir setiap tahun selama 3 tahun. Suku bunga majemuk yang berlaku 10% per tahun. Kesimpulan yang benar adalah ....",
+        "jawaban": "Pilihan 3 kali penerimaan lebih menguntungkan karena nilai sekarangnya Rp10.000,00 lebih besar daripada tunai",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $3240000$; V = $3492000$; W = $3756600$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{8652303}{2}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{8652303}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8652305}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8652301}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8652303$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{8652303}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a923b46657fdcd52cf61ad4d",
+        "teks": "Gilang menyetor Rp1.000.000,00 pada akhir setiap tahun selama 4 tahun ke bank berbunga majemuk 10% per tahun. Pernyataan yang benar tentang bunga yang dihasilkan masing-masing setoran sampai akhir tahun ke-4 adalah ....",
+        "jawaban": "Setoran pertama menghasilkan bunga Rp331.000,00, setoran kedua Rp210.000,00, dan setoran keempat tidak menghasilkan bunga",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $3211000$; V = $3549990$; W = $\\frac{39194891}{10}$; n = $3$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{52397570496839}{10000000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{52397570496839}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{52397580496839}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{52397560496839}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{52397570496839}{5000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{52397570496839}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6d6fcf762cd81ffc17266238",
+        "teks": "Seseorang menyimpan Rp3.310.000,00 di bank berbunga majemuk 10% per tahun, lalu menarik Rp1.331.000,00 pada akhir setiap tahun selama 3 tahun hingga tabungan habis. Bunga yang diterima pada tahun pertama lebih besar daripada bunga yang diterima pada tahun ketiga sebesar ....",
+        "jawaban": "Rp210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $585000$; V = $674250$; W = $\\frac{1535925}{2}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{31029717}{32}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{31029717}{32}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31029749}{32}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31029685}{32}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31029717}{16}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{31029717}{32}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47521eae34ca174c8830313a",
+        "teks": "Bayu berkata, \"Jika lama menabung dilipatduakan, nilai masa depan tabunganku juga menjadi dua kali.\" Bayu menyetor sejumlah yang sama pada akhir setiap tahun dengan bunga majemuk 20% per tahun. Perbandingan nilai masa depan tabungan setelah 4 tahun terhadap setelah 2 tahun adalah ...., sehingga klaim Bayu keliru.",
+        "jawaban": "2,44",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1292000$; V = $1507040$; W = $\\frac{8739424}{5}$; n = $3$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{207665335648}{78125}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{207665335648}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{207665413773}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{207665257523}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{415330671296}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{207665335648}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eae15b0730bd59e35aa42d0f",
+        "teks": "Eko mendepositokan Rp1.000.000,00 hari ini, lalu menyetor sejumlah yang sama pada akhir setiap tahun selama 3 tahun ke bank yang sama berbunga majemuk 10% per tahun. Ia menginginkan saldo tepat setelah setoran ketiga sebesar Rp6.296.000,00. Besar setoran tahunan yang harus dilakukan adalah ....",
+        "jawaban": "Rp1.500.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $791000$; V = $884730$; W = $\\frac{9812719}{10}$; n = $2$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{118313135871}{100000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{118313135871}{100000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{118313235871}{100000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{118313035871}{100000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{118313135871}{50000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{118313135871}{100000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c7c9c154d68fee28eecf2b7",
+        "teks": "Bu Ratna menabung Rp2.000.000,00 pada akhir setiap triwulan selama 1 tahun di bank yang memberi bunga majemuk 20% per tahun, dihitung setiap triwulan. Nilai masa depan seluruh tabungan Bu Ratna setelah 1 tahun adalah ....",
+        "jawaban": "Rp8.620.250,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $1791000$; V = $1884730$; W = $\\frac{19812719}{10}$; n = $3$. Sebuah investasi mempunyai saldo awal tak diketahui dan setoran akhir tahun tetap D. Bunga majemuk tahunan mempunyai faktor tetap f>1. Saldo sesudah setoran tahun pertama, kedua, ketiga adalah U,V,W. Jika pola diteruskan tanpa transaksi lain, berapa saldo n tahun setelah pengamatan ketiga?",
+      "jawaban_benar": "$\\frac{22886252994713}{10000000}$",
+      "alasan_benar": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{22886252994713}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{22886262994713}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{22886242994713}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{22886252994713}{5000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Rasio dua perubahan saldo menentukan faktor bunga; data dua saldo lalu menentukan setoran. Majemukkan saldo ketiga dan anuitas setoran berikutnya. Hasilnya $\\frac{22886252994713}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-c-hard-bt01-055"
     }
   ],
   "kapasitas_kurang": true,

@@ -568,6 +568,1825 @@
       ],
       "pembahasan": "Sisa pembagian oleh $x+1$ adalah $P(-1)$. $(-1)^{2025}=-1$, $(-1)^{2024}=1$; hanya $(-1)^{2025}+1=0$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4836d092ba0bec8f64c7fb91",
+        "teks": "Hasil bagi $H(x)$ dan sisa $S(x)$ setelah $P(x) = x^3 + 4x^2 - 6x + 7$ dibagi $Q(x) = x^2 + 5x - 4$ adalah ....",
+        "jawaban": "$H(x) = x - 1$ dan $S(x) = 3x + 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$3072$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $3072$.",
+      "distraktor": [
+        {
+          "teks": "$3073$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3071$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $3072$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/c11139f219f35f4f58365c75.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -8
+            ],
+            [
+              "V",
+              0
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "q",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -8], [\"V\", 0], [\"t\", 3], [\"q\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65241b6a20c1ba9ddfbce23c",
+        "teks": "Hasil bagi dan sisa dari pembagian $x^3 + 7$ oleh $x - 2$ dengan menggunakan metode Horner adalah ....",
+        "jawaban": "hasil bagi $x^2 + 2x + 4$, sisa $15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$872$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $872$.",
+      "distraktor": [
+        {
+          "teks": "$873$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$871$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1744$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $872$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/a2cbe10d3ea4519373f12654.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -63
+            ],
+            [
+              "V",
+              27
+            ],
+            [
+              "t",
+              8
+            ],
+            [
+              "q",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -63], [\"V\", 27], [\"t\", 8], [\"q\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b86b933852e1d56ca5d020da",
+        "teks": "Hasil bagi pada pembagian $4x^3 - 7x + 8$ oleh $x + 1$ dengan metode Horner adalah ....",
+        "jawaban": "$4x^2 - 4x - 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1038$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1038$.",
+      "distraktor": [
+        {
+          "teks": "$1039$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1037$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2076$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1038$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/35f17e10b63baa3ebf7df70e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -33
+            ],
+            [
+              "V",
+              15
+            ],
+            [
+              "t",
+              4
+            ],
+            [
+              "q",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -33], [\"V\", 15], [\"t\", 4], [\"q\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "49adc01c1d643acc18ba7409",
+        "teks": "Sisa pembagian $P(x) = 9x^3 + 12x^2 - 11x + 13$ oleh $x - 2$ dengan Teorema Sisa adalah ....",
+        "jawaban": "$111$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$288$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $288$.",
+      "distraktor": [
+        {
+          "teks": "$289$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$287$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$576$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $288$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/816267da591ff15781e5308d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -126
+            ],
+            [
+              "V",
+              -108
+            ],
+            [
+              "t",
+              8
+            ],
+            [
+              "q",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -126], [\"V\", -108], [\"t\", 8], [\"q\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59128a47567632e4d4a3d15b",
+        "teks": "Jika $P(x) = 7x^3 + 8x^2 - 6x + 12$ dibagi $x + 1$, diperoleh hasil bagi $7x^2 + x - 7$ dan sisa $19$. Dengan menggunakan Teorema Sisa, nilai $P(-1)$ adalah ....",
+        "jawaban": "$19$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$576$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $576$.",
+      "distraktor": [
+        {
+          "teks": "$577$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$575$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1152$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $576$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/10c6496f8011c1c137c251bd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -24
+            ],
+            [
+              "V",
+              0
+            ],
+            [
+              "t",
+              7
+            ],
+            [
+              "q",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -24], [\"V\", 0], [\"t\", 7], [\"q\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aab83dd062ff282363220108",
+        "teks": "Hasil pembagian $3x^3 + 8x^2 - 5x + 7$ oleh $x^2 + 5x - 2$ yang ditulis dalam bentuk algoritma pembagian adalah ....",
+        "jawaban": "$3x^3 + 8x^2 - 5x + 7 = (x^2 + 5x - 2)(3x - 7) + 36x - 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2673$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2673$.",
+      "distraktor": [
+        {
+          "teks": "$2674$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2672$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5346$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2673$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/79d45f6159a20adc3db76a4e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -63
+            ],
+            [
+              "V",
+              -15
+            ],
+            [
+              "t",
+              4
+            ],
+            [
+              "q",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -63], [\"V\", -15], [\"t\", 4], [\"q\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "64532365ee68effbae11731c",
+        "teks": "Sebuah polinomial dibagi oleh polinomial pembagi yang berderajat $4$. Derajat tertinggi yang mungkin dimiliki sisa pembagian tersebut adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$540$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $540$.",
+      "distraktor": [
+        {
+          "teks": "$541$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$539$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1080$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $540$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/1ca0cafbec8e7b5a7700b660.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -60
+            ],
+            [
+              "V",
+              -30
+            ],
+            [
+              "t",
+              5
+            ],
+            [
+              "q",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -60], [\"V\", -30], [\"t\", 5], [\"q\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "55356e6794614569bcaa2f2f",
+        "teks": "Polinomial $P(x)$ dibagi $x + 5$ menghasilkan sisa $-8$. Nilai $P(-5)$ adalah ....",
+        "jawaban": "$-8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1890$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1890$.",
+      "distraktor": [
+        {
+          "teks": "$1891$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1889$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3780$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1890$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/d858e73bf95189a48b6590e7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -126
+            ],
+            [
+              "V",
+              -126
+            ],
+            [
+              "t",
+              8
+            ],
+            [
+              "q",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -126], [\"V\", -126], [\"t\", 8], [\"q\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d630c57716d2ad1a1b66b300",
+        "teks": "Diketahui $x^3 + x^2 - 33x - 42 = (x - 6)(x^2 + 7x + 9) + 12$. Jika polinomial $x^3 + x^2 - 33x - 42$ dibagi $x - 6$, hasil bagi dan sisanya berturut-turut adalah ....",
+        "jawaban": "$x^2 + 7x + 9$ dan $12$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$3190$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $3190$.",
+      "distraktor": [
+        {
+          "teks": "$3191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3189$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6380$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $3190$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/e5bcdf03357b0c044c8ae762.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -38
+            ],
+            [
+              "V",
+              12
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "q",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -38], [\"V\", 12], [\"t\", 3], [\"q\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ab2137562c4a3fe6e4d046ad",
+        "teks": "Hasil bagi dan sisa pembagian $(x^3 + 64) : (x + 4)$ adalah ....",
+        "jawaban": "hasil bagi $x^2 - 4x + 16$, sisa $0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$4524$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $4524$.",
+      "distraktor": [
+        {
+          "teks": "$4525$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4523$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9048$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $4524$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/1e469a60bd022361525e19c3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -12
+            ],
+            [
+              "V",
+              12
+            ],
+            [
+              "t",
+              2
+            ],
+            [
+              "q",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -12], [\"V\", 12], [\"t\", 2], [\"q\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ff51a86cb85ae6b51bdbbcc",
+        "teks": "Misalkan $P(x) = 8x^3 - 14x^2 + 9x - 10$ dan $c = \\frac{1}{2}$. Dengan metode Horner dan Teorema Sisa, nilai $P(c)$ adalah ....",
+        "jawaban": "$-8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2007$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2007$.",
+      "distraktor": [
+        {
+          "teks": "$2008$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2006$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4014$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2007$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/31685c73f91c6011b84e37ed.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -28
+            ],
+            [
+              "V",
+              -8
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "q",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -28], [\"V\", -8], [\"t\", 3], [\"q\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ad875be1020494fc064d3fd4",
+        "teks": "Pembagi $x + 6$ dapat ditulis $x - (-6)$. Bilangan yang menggantikan pembagi tersebut dalam skema Horner adalah ....",
+        "jawaban": "$-6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$624$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $624$.",
+      "distraktor": [
+        {
+          "teks": "$625$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$623$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1248$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $624$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/5373335ade2b95332139217c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -96
+            ],
+            [
+              "V",
+              -96
+            ],
+            [
+              "t",
+              7
+            ],
+            [
+              "q",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -96], [\"V\", -96], [\"t\", 7], [\"q\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2385c2e440c85fe55a74d0ab",
+        "teks": "Polinomial $5x^4 - 2x + 7$ akan dibagi dengan metode Horner. Deretan koefisien yang ditulis pada skema Horner adalah ....",
+        "jawaban": "$5, 0, 0, -2, 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2340$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2340$.",
+      "distraktor": [
+        {
+          "teks": "$2341$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2339$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4680$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2340$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/9a118cba0ebc9c949f4d37dd.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -36
+            ],
+            [
+              "V",
+              0
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "q",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -36], [\"V\", 0], [\"t\", 3], [\"q\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5f78feccf9594df350eaf288",
+        "teks": "Polinomial $P(x)$ dibagi $Q(x) = x - 5$ menghasilkan hasil bagi $H(x) = x + 6$ dan sisa $S(x) = 4$. Polinomial $P(x)$ adalah ....",
+        "jawaban": "$x^2 + x - 26$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$388$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $388$.",
+      "distraktor": [
+        {
+          "teks": "$389$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$387$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$776$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $388$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/fb9bed69a93f8fe01493e9a8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -161
+            ],
+            [
+              "V",
+              -63
+            ],
+            [
+              "t",
+              8
+            ],
+            [
+              "q",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -161], [\"V\", -63], [\"t\", 8], [\"q\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a53a8c0e5525e41469e8391f",
+        "teks": "Sebelum dibagi secara bersusun oleh $x^2 + x - 1$, polinomial $x^3 - 5x + 2$ perlu ditulis lengkap menjadi ....",
+        "jawaban": "$x^3 + 0x^2 - 5x + 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$4381$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $4381$.",
+      "distraktor": [
+        {
+          "teks": "$4382$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4380$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8762$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $4381$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/062af47c463f467fd60a6230.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -15
+            ],
+            [
+              "V",
+              -3
+            ],
+            [
+              "t",
+              2
+            ],
+            [
+              "q",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -15], [\"V\", -3], [\"t\", 2], [\"q\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0f07cf15ee3804205fa1850",
+        "teks": "Diketahui $P(x) = (x - 3)(x^2 + 2x + 5) + 4$. Nilai $P(3)$ adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2007$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2007$.",
+      "distraktor": [
+        {
+          "teks": "$2008$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2006$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4014$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2007$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/f43f7085d455ed7fbd9e8efc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -57
+            ],
+            [
+              "V",
+              -65
+            ],
+            [
+              "t",
+              4
+            ],
+            [
+              "q",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -57], [\"V\", -65], [\"t\", 4], [\"q\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccb3eb29297a7fa099d19c2e",
+        "teks": "Pembagian $3x^3 - 5x^2 + 2x + 9$ oleh $x - 2$ dengan metode Horner menghasilkan baris bawah $3, 1, 4, 17$. Hasil bagi dan sisa pembagian tersebut adalah ....",
+        "jawaban": "hasil bagi $3x^2 + x + 4$, sisa $17$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1080$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1080$.",
+      "distraktor": [
+        {
+          "teks": "$1081$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1079$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2160$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1080$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas11_tl/batch01/assets/7903715d888a6acda16c7675.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              -80
+            ],
+            [
+              "V",
+              0
+            ],
+            [
+              "t",
+              6
+            ],
+            [
+              "q",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", -80], [\"V\", 0], [\"t\", 6], [\"q\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9a4e282662877eb6c89421e",
+        "teks": "Pada pembagian bersusun $6x^3 + 7x^2 - 4x + 5$ oleh $2x - 1$, suku pertama hasil bagi adalah ....",
+        "jawaban": "$3x^2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-72$; V = $-72$; t = $5$; q = $14$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2268$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2268$.",
+      "distraktor": [
+        {
+          "teks": "$2269$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2267$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4536$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2268$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c52c8d960472e283a037ca4",
+        "teks": "Bilangan $58$ dibagi $9$ memberi hasil bagi $6$ dan sisa $4$. Bentuk algoritma pembagian yang sesuai adalah ....",
+        "jawaban": "$58 = 9 \\cdot 6 + 4$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-22$; V = $-30$; t = $2$; q = $10$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1400$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1400$.",
+      "distraktor": [
+        {
+          "teks": "$1401$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1399$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1400$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "679f1d18014771bcc25d4d8c",
+        "teks": "Metode Horner dapat dipakai secara langsung jika pembaginya berbentuk $x - c$. Pembagi berikut yang dapat langsung memakai metode Horner adalah ....",
+        "jawaban": "$x - 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-88$; V = $12$; t = $5$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1572$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1572$.",
+      "distraktor": [
+        {
+          "teks": "$1573$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1571$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1572$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77909071fab7e237ae915f82",
+        "teks": "Ahmad menduga bahwa sisa pembagian $P(x)$ oleh $ax - b$ sama dengan $P\\left(\\frac{a}{b}\\right)$. Untuk menguji dugaan itu, ia memakai $P(x) = 8x^3 + 6x^2 - 13x + 9$ yang dibagi $2x - 3$. Pernyataan yang benar adalah ....",
+        "jawaban": "Dugaan Ahmad salah; sisa sebenarnya $P\\left(\\frac{3}{2}\\right) = 30$, sedangkan $P\\left(\\frac{2}{3}\\right) = \\frac{145}{27}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-20$; V = $0$; t = $3$; q = $9$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$780$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $780$.",
+      "distraktor": [
+        {
+          "teks": "$781$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$779$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1560$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $780$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "de5914501175be642de5e788",
+        "teks": "Seorang siswa mengklaim: \"Jika $P(2) = P(-2)$, maka $P(x)$ habis dibagi $x^2 - 4$.\" Polinomial yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$x^4 - 3x^2 + 5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-105$; V = $-49$; t = $6$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1055$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1055$.",
+      "distraktor": [
+        {
+          "teks": "$1056$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1054$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2110$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1055$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c6493392c2196c43964b3f20",
+        "teks": "Wulan membagi $P(x) = x^4 - 7x^2 + 3x - 9$ oleh $x - 2$ dengan metode Horner. Ia menuliskan koefisien $1, -7, 3, -9$ dan memakai $c = 2$ sehingga memperoleh baris bawah $1, -5, -7, -23$, lalu menyimpulkan sisanya $-23$. Pernyataan yang benar mengenai pekerjaan Wulan adalah ....",
+        "jawaban": "Ia salah karena koefisien $x^3$ yang bernilai nol tidak ditulis; sisa sebenarnya $-15$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-12$; V = $18$; t = $2$; q = $15$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$4706$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $4706$.",
+      "distraktor": [
+        {
+          "teks": "$4707$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4705$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9412$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $4706$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f10bb8b77fdf99522f59d2ce",
+        "teks": "Raka membagi $P(x) = 3x^3 - 4x^2 - 17x + 9$ oleh $(x - 2)(x + 1)$ dengan Horner dua kali: pertama dibagi $x - 2$, lalu hasil baginya dibagi $x + 1$. Ia memperoleh sisa tahap pertama $-17$ dan sisa tahap kedua $-12$, kemudian menyatakan bahwa sisa pembagian $P(x)$ oleh $(x - 2)(x + 1)$ adalah $-12$. Pernyataan yang benar adalah ....",
+        "jawaban": "Raka keliru; sisa yang benar adalah $-12x + 7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-77$; V = $-27$; t = $8$; q = $10$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$292$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $292$.",
+      "distraktor": [
+        {
+          "teks": "$293$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$291$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$584$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $292$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fdf9967589fa13b8e64f1fa5",
+        "teks": "Doni membagi $P(x) = 2x^3 - 3x^2 - 7x + 4$ oleh $Q(x) = x^2 - 2x + 5$ secara bersusun. Suku pertama hasil bagi ia tulis $2x$, lalu ia mengurangkan $2x \\cdot Q(x) = 2x^3 - 4x^2 + 10x$ dan menuliskan sisa sementara $x^2 + 3x + 4$. Lanjutannya ia peroleh hasil bagi $2x + 1$ dan sisa $5x - 1$. Pernyataan yang benar mengenai pekerjaan Doni adalah ....",
+        "jawaban": "Doni salah pada pengurangan suku $x$ (seharusnya $-7x - 10x = -17x$); hasil bagi $2x + 1$ benar dan sisa yang benar $-15x - 1$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-135$; V = $-21$; t = $6$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1335$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1335$.",
+      "distraktor": [
+        {
+          "teks": "$1336$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1334$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2670$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1335$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "97b0d631325c238f8c7289d2",
+        "teks": "Polinomial $P(x) = 2x^3 + kx^2 - 6x + 5$ dirancang agar sisa pembagian oleh $x - 3$ sama dengan sisa pembagian oleh $x + 2$. Sisa yang sama tersebut adalah ....",
+        "jawaban": "$-31$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-18$; V = $0$; t = $4$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1092$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1092$.",
+      "distraktor": [
+        {
+          "teks": "$1093$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1091$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1092$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "835c97ce0e3b9c89ceafcbee",
+        "teks": "Polinomial $P(x) = x^4 + ax^3 + bx - 12$ habis dibagi $(x - 2)(x + 1)$. Jika hasil bagi pembagian tersebut adalah $H(x)$, nilai $H(3)$ adalah ....",
+        "jawaban": "$27$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-24$; V = $-18$; t = $2$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2106$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2106$.",
+      "distraktor": [
+        {
+          "teks": "$2107$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2105$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4212$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2106$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c71834bb48c92df9884ea8e5",
+        "teks": "Polinomial $P(x)$ jika dibagi $x^2 + x - 2$ bersisa $2x + 5$, dan jika dibagi $x^2 - 2x - 8$ bersisa $3x + 7$. Sisa pembagian $P(x)$ oleh $x^2 - 5x + 4$ adalah ....",
+        "jawaban": "$4x + 3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-140$; V = $18$; t = $8$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$750$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $750$.",
+      "distraktor": [
+        {
+          "teks": "$751$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$749$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1500$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $750$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c35a74ff30ac3e016c2ed73",
+        "teks": "Beni membagi $P(x) = 8x^3 - 4x^2 + 10x - 7$ dengan $x - \\frac{1}{2}$ dan dengan $2x - 1$. Ia mengklaim bahwa kedua pembagian memberi hasil bagi yang sama dan sisa yang sama karena $2x - 1 = 2\\left(x - \\frac{1}{2}\\right)$. Pernyataan yang benar mengenai klaim Beni adalah ....",
+        "jawaban": "Salah: hasil baginya berbeda (hasil bagi oleh $2x - 1$ adalah $4x^2 + 5$), sedangkan sisanya sama, yaitu $-2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-54$; V = $30$; t = $4$; q = $9$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$970$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $970$.",
+      "distraktor": [
+        {
+          "teks": "$971$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$969$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1940$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $970$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bed6a6ea6e4b584773e3709a",
+        "teks": "Sebuah polinomial monik berderajat $3$, $P(x) = x^3 + ax^2 + bx + c$, dirancang agar jika dibagi $x - 1$ bersisa $1$, jika dibagi $x - 2$ bersisa $7$, dan jika dibagi $x + 1$ bersisa $-11$. Nilai $P(3)$ adalah ....",
+        "jawaban": "$21$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-20$; V = $-18$; t = $2$; q = $13$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$2992$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2992$.",
+      "distraktor": [
+        {
+          "teks": "$2993$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2991$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5984$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $2992$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ec2796137b473ef7b6d3e38",
+        "teks": "Untuk menentukan sisa pembagian $P(x)$ oleh $x^2 - x - 6$ secara tunggal (tanpa mengetahui $P(x)$ sepenuhnya), informasi yang cukup adalah ....",
+        "jawaban": "sisa pembagian $P(x)$ oleh $x - 3$ dan sisa pembagian $P(x)$ oleh $x + 2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-24$; V = $32$; t = $3$; q = $11$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1856$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1856$.",
+      "distraktor": [
+        {
+          "teks": "$1857$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1855$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3712$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1856$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0cba7bdfeaef6529a3bc616",
+        "teks": "Polinomial $P(x)$ dibagi $x - 2$ bersisa $9$ dengan hasil bagi $H(x)$, dan $H(x)$ dibagi $x + 3$ bersisa $-4$. Rina menyimpulkan bahwa sisa pembagian $P(x)$ oleh $(x - 2)(x + 3)$ adalah $5$ (jumlah kedua sisa). Pernyataan yang benar adalah ....",
+        "jawaban": "Rina keliru; sisa yang benar adalah $-4x + 17$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-42$; V = $-10$; t = $4$; q = $9$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$710$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $710$.",
+      "distraktor": [
+        {
+          "teks": "$711$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$709$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1420$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $710$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a5797e09949428c7708476c1",
+        "teks": "Polinomial $P(x)$ dibagi $x - c$ bersisa $s$. Polinomial berikut yang pasti habis dibagi $x - c$, untuk sembarang $P(x)$, $c$, dan $s$ yang memenuhi, adalah ....",
+        "jawaban": "$P(x) - s$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-51$; V = $-25$; t = $4$; q = $12$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1808$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1808$.",
+      "distraktor": [
+        {
+          "teks": "$1809$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1807$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3616$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1808$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7f182a46a4cb04f8450a362f",
+        "teks": "Polinomial $P(x) = 2x^3 - 5x^2 + kx + 7$ dibagi $x^2 - 1$. Sisa pembagian berbentuk $px + q$. Jika sisanya berupa konstanta (nilai $p = 0$), maka pernyataan yang benar adalah ....",
+        "jawaban": "$k = -2$ dan sisanya $2$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas11_tl.json",
+        "source_sha256": "7153507c4307b1f90f1b9abe2770ae282c3863df418afb3f097461d154b4b446"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_polynomial_remainder_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $-150$; V = $-24$; t = $7$; q = $12$. Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.",
+      "jawaban_benar": "$1445$",
+      "alasan_benar": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1445$.",
+      "distraktor": [
+        {
+          "teks": "$1446$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1444$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2890$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru. Hasilnya $1445$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas11_tl-b02-c-hard-bt01-051"
     }
   ]
 }

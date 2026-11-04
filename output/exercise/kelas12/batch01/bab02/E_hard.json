@@ -685,6 +685,2058 @@
       "pembahasan": "Sisa akhir tahun: 10.000.000 x 1,1 - 3.800.000 = 7.200.000; 7.200.000 x 1,1 - 3.800.000 = 4.120.000; 4.120.000 x 1,1 - 3.800.000 = 732.000. Pembayaran ke-4 = 732.000 x 1,1 = 805.200. Total bayar = 3 x 3.800.000 + 805.200 = 12.205.200. Total bunga = 12.205.200 - 10.000.000 = 2.205.200.",
       "catatan": null,
       "id": "kelas12-b02-e-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "778da55277f4aa0ca0e48c1d",
+        "teks": "Bu Sari meminjam uang di bank sebesar Rp30.000.000,00 dengan bunga 24% per tahun (2% per bulan). Ia membayar pinjaman tersebut dengan anuitas sebesar Rp1.200.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah besar angsuran pinjaman pokok yang dibayarkan Bu Sari pada anuitas bulan ke-3?",
+        "jawaban": "Rp624.240,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$836460$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $836460$.",
+      "distraktor": [
+        {
+          "teks": "$836461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$836459$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1672920$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $836460$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/87cdd7d2f4071da29a847a19.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4650000
+            ],
+            [
+              "V",
+              4491000
+            ],
+            [
+              "W",
+              4322460
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4650000], [\"V\", 4491000], [\"W\", 4322460]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "41dde14c76ac049449d9e4f3",
+        "teks": "Pak Dedi mengambil kredit renovasi rumah sebesar Rp40.000.000,00 dengan bunga 12% per tahun (1% per bulan). Kredit itu dilunasi dengan anuitas tetap Rp1.800.000,00 setiap bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah bagian angsuran pokok yang termuat dalam pembayaran anuitas bulan kedua?",
+        "jawaban": "Rp1.414.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$549408$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $549408$.",
+      "distraktor": [
+        {
+          "teks": "$549409$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$549407$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1098816$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $549408$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9ff69e74e7609e71ad7c86af.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4580000
+            ],
+            [
+              "V",
+              4455200
+            ],
+            [
+              "W",
+              4325408
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4580000], [\"V\", 4455200], [\"W\", 4325408]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1b0e5fab8008462b185464f1",
+        "teks": "Bu Tini meminjam uang di bank sebesar Rp20.000.000,00 dengan bunga 12% per tahun. Ia membayar pinjaman tersebut dengan anuitas sebesar Rp1.000.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah sisa pinjaman Bu Tini setelah anuitas bulan ke-3 dibayarkan?",
+        "jawaban": "Rp17.575.920,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$285568$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $285568$.",
+      "distraktor": [
+        {
+          "teks": "$285569$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$285567$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$571136$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $285568$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a3c0b993c4d1e839d2d10a9c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2380000
+            ],
+            [
+              "V",
+              2359200
+            ],
+            [
+              "W",
+              2337568
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2380000], [\"V\", 2359200], [\"W\", 2337568]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aaa8426a35db1258e24d6e80",
+        "teks": "Rina memperoleh pinjaman usaha sebesar Rp60.000.000,00 dengan bunga 24% per tahun (2% per bulan). Pinjaman dicicil dengan anuitas tetap Rp2.500.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Berapakah jumlah angsuran pokok yang telah terbayar hingga anuitas bulan ke-2?",
+        "jawaban": "Rp2.626.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1645900$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1645900$.",
+      "distraktor": [
+        {
+          "teks": "$1645901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1645899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3291800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1645900$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/3b7000ba9262be0222bf20ec.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              5490000
+            ],
+            [
+              "V",
+              5369000
+            ],
+            [
+              "W",
+              5235900
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 5490000], [\"V\", 5369000], [\"W\", 5235900]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3bd1eabc04cbb8cd4ad1da90",
+        "teks": "Seseorang meminjam uang di bank dengan bunga 2% per bulan dan melunasinya dengan sistem anuitas. Jika ia harus membayar Rp1.040.400,00 pada akhir setiap bulan selama 2 bulan, maka jumlah pinjaman awal yang diberikan oleh bank adalah ....",
+        "jawaban": "Rp2.020.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$461020$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $461020$.",
+      "distraktor": [
+        {
+          "teks": "$461021$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$461019$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$922040$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $461020$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/fd7797d07f55ecba49ae6f93.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2200000
+            ],
+            [
+              "V",
+              1986000
+            ],
+            [
+              "W",
+              1757020
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2200000], [\"V\", 1986000], [\"W\", 1757020]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a5b47d51f85ba07756c1074",
+        "teks": "Koperasi tani memberi pinjaman kepada Bu Ratna dengan bunga 10% per tahun. Bu Ratna melunasinya dengan sistem anuitas sebesar Rp1.210.000,00 pada akhir setiap tahun selama 2 tahun. Besar pinjaman yang diterima Bu Ratna adalah ....",
+        "jawaban": "Rp2.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$194980$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $194980$.",
+      "distraktor": [
+        {
+          "teks": "$194981$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$194979$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$389960$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $194980$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/e3b75e2ef5367d0c523e8ffb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              3250000
+            ],
+            [
+              "V",
+              3199000
+            ],
+            [
+              "W",
+              3146980
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 3250000], [\"V\", 3199000], [\"W\", 3146980]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6d31dc6541a839957e7cc677",
+        "teks": "Pak Hari membeli sebuah mesin jahit seharga Rp4.120.000,00 secara kredit dengan sistem anuitas dan suku bunga 12% per tahun. Ia berencana melunasinya dengan 2 kali anuitas yang dibayarkan pada akhir setiap enam bulan (bunga 6% per semester). Besar anuitas yang harus dibayarkan Pak Hari adalah ....",
+        "jawaban": "Rp2.247.200,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$400455$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $400455$.",
+      "distraktor": [
+        {
+          "teks": "$400456$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$400454$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$800910$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $400455$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/c88595741d55ea146e3ddebb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4450000
+            ],
+            [
+              "V",
+              4398500
+            ],
+            [
+              "W",
+              4345455
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4450000], [\"V\", 4398500], [\"W\", 4345455]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "42f2b68dd330375e6a2de8b7",
+        "teks": "Sebuah toko menjual kulkas seharga Rp4.030.000,00 dengan kredit sistem anuitas berbunga 18% per tahun (1,5% per bulan). Pembeli melunasinya dengan 2 kali anuitas yang dibayarkan pada akhir tiap bulan. Besar anuitas per bulan adalah ....",
+        "jawaban": "Rp2.060.450,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$686700$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $686700$.",
+      "distraktor": [
+        {
+          "teks": "$686701$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$686699$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1373400$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $686700$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/af31a851ad214fb1f5305671.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4580000
+            ],
+            [
+              "V",
+              4454000
+            ],
+            [
+              "W",
+              4321700
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4580000], [\"V\", 4454000], [\"W\", 4321700]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "96af4c6f35fe732622667384",
+        "teks": "Seseorang meminjam uang sebesar Rp12.000.000,00 dengan bunga 3% per bulan dan melunasinya dengan anuitas tetap setiap bulan. Berikut tabel rencana angsuran untuk 3 bulan pertama.\n\n| Bulan | Pinjaman Awal Bulan (Rp) | Bunga (Rp) | Angsuran (Rp) | Pinjaman Akhir Bulan (Rp) |\n|---|---|---|---|---|\n| 1 | 12.000.000 | 360.000 | 1.640.000 | 10.360.000 |\n| 2 | 10.360.000 | 310.800 | 1.689.200 | 8.670.800 |\n| 3 | 8.670.800 | 260.124 | 1.739.876 | 6.930.924 |\n\nBesar anuitas pada sistem angsuran tersebut adalah ....",
+        "jawaban": "Rp2.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$473148$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $473148$.",
+      "distraktor": [
+        {
+          "teks": "$473149$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$473147$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$946296$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $473148$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d72a5c876e8caee9e191343c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2630000
+            ],
+            [
+              "V",
+              2555800
+            ],
+            [
+              "W",
+              2477148
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2630000], [\"V\", 2555800], [\"W\", 2477148]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff05190f01423bd3bbc1e5a4",
+        "teks": "Bu Wulan mengambil kredit modal warung sebesar Rp8.000.000,00 dengan bunga 2% per bulan. Setiap bulan ia membayar anuitas yang jumlahnya sama. Rencana pelunasan untuk dua bulan pertama sebagai berikut.\n\n| Bulan | Sisa Utang Awal (Rp) | Bunga (Rp) | Angsuran Pokok (Rp) | Sisa Utang Akhir (Rp) |\n|---|---|---|---|---|\n| 1 | 8.000.000 | 160.000 | 1.940.000 | 6.060.000 |\n| 2 | 6.060.000 | 121.200 | 1.978.800 | 4.081.200 |\n\nPembayaran tetap (anuitas) yang harus dibayar Bu Wulan tiap bulan adalah ....",
+        "jawaban": "Rp2.100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1249700$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1249700$.",
+      "distraktor": [
+        {
+          "teks": "$1249701$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1249699$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2499400$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1249700$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/3a0987be7a58bb071233203c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4170000
+            ],
+            [
+              "V",
+              4027000
+            ],
+            [
+              "W",
+              3869700
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4170000], [\"V\", 4027000], [\"W\", 3869700]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1033e63f670f97a312a9c5be",
+        "teks": "Dewi meminjam uang di bank yang menawarkan bunga 3% per bulan. Pinjaman itu dibayar dengan sistem anuitas sebesar Rp1.092.727,00 pada akhir setiap bulan selama 3 bulan. Besar uang yang dipinjam Dewi adalah ....",
+        "jawaban": "Rp3.090.900,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$286752$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $286752$.",
+      "distraktor": [
+        {
+          "teks": "$286753$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$286751$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$573504$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $286752$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a3c53ab37cfa5c3ad52ba42e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4780000
+            ],
+            [
+              "V",
+              4657600
+            ],
+            [
+              "W",
+              4532752
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4780000], [\"V\", 4657600], [\"W\", 4532752]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "67adbfe2412f15789ac8b276",
+        "teks": "Pak Eko melunasi pinjaman dengan anuitas sebesar Rp1.500.000,00 per bulan. Pada pembayaran bulan tertentu, bagian bunganya Rp275.000,00. Besar angsuran pinjaman pokok pada bulan tersebut adalah ....",
+        "jawaban": "Rp1.225.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$641400$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $641400$.",
+      "distraktor": [
+        {
+          "teks": "$641401$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$641399$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1282800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $641400$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/96a49ddf2e446feba4c2abff.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2140000
+            ],
+            [
+              "V",
+              2074000
+            ],
+            [
+              "W",
+              2001400
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2140000], [\"V\", 2074000], [\"W\", 2001400]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a6449108866d4bbb9d007cb4",
+        "teks": "Rudi meminjam uang Rp8.000.000,00 dengan bunga 24% per tahun (2% per bulan) dan membayarnya dengan anuitas Rp2.000.000,00 per bulan. Anuitas dibayar pada akhir tiap bulan dan bunga dihitung dari sisa pinjaman. Sisa utang Rudi setelah angsuran pertama dibayarkan adalah ....",
+        "jawaban": "Rp6.160.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$505824$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $505824$.",
+      "distraktor": [
+        {
+          "teks": "$505825$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$505823$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1011648$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $505824$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/97f057efe8d809959a73fe52.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2110000
+            ],
+            [
+              "V",
+              2012800
+            ],
+            [
+              "W",
+              1907824
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2110000], [\"V\", 2012800], [\"W\", 1907824]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d61999a5f055b6a5ab1e8419",
+        "teks": "Sebuah pinjaman dilunasi dengan sistem anuitas (pembayaran tiap bulan selalu sama besar). Dari bulan ke bulan, perubahan bunga dan angsuran pokok pada pembayaran tersebut adalah ....",
+        "jawaban": "bunga semakin kecil dan angsuran pokok semakin besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$216524$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $216524$.",
+      "distraktor": [
+        {
+          "teks": "$216525$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$216523$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$433048$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $216524$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/86c63c8731fd6559740cae05.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              3610000
+            ],
+            [
+              "V",
+              3416200
+            ],
+            [
+              "W",
+              3218524
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 3610000], [\"V\", 3416200], [\"W\", 3218524]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ba4f5b6d646d9dec3ecb1d15",
+        "teks": "Pada pinjaman dengan sistem anuitas berbunga 2,5% per bulan, angsuran pokok dari bulan ke bulan membentuk barisan geometri. Rasio barisan tersebut adalah ....",
+        "jawaban": "1,025",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$617800$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $617800$.",
+      "distraktor": [
+        {
+          "teks": "$617801$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$617799$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1235600$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $617800$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/aa8eac736984fba698101f46.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              4120000
+            ],
+            [
+              "V",
+              4036000
+            ],
+            [
+              "W",
+              3947800
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 4120000], [\"V\", 4036000], [\"W\", 3947800]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e628d11d7b5570fd3492122a",
+        "teks": "Pak Agus melunasi pinjaman dengan anuitas Rp1.000.000,00 per bulan berbunga 2% per bulan. Pada awal bulan pembayaran terakhir, sisa pinjamannya Rp500.000,00 dan seluruhnya lunas pada pembayaran itu. Besar anuitas terakhir yang dibayarkan adalah ....",
+        "jawaban": "Rp510.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1036296$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1036296$.",
+      "distraktor": [
+        {
+          "teks": "$1036297$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1036295$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2072592$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1036296$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f900ebe72b9aee6d8d0b7d6b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              5760000
+            ],
+            [
+              "V",
+              5611600
+            ],
+            [
+              "W",
+              5454296
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 5760000], [\"V\", 5611600], [\"W\", 5454296]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "32b2d40d0a0abd676f7e3bed",
+        "teks": "Bu Lina meminjam Rp25.000.000,00 dan melunasinya dengan anuitas Rp1.200.000,00 per bulan. Jumlah angsuran pokok yang telah dibayarkan hingga anuitas bulan ke-6 adalah Rp5.800.000,00. Sisa pinjaman Bu Lina setelah anuitas bulan ke-6 adalah ....",
+        "jawaban": "Rp19.200.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$645804$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $645804$.",
+      "distraktor": [
+        {
+          "teks": "$645805$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$645803$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1291608$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $645804$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/891ededf4347d1f5ab318b08.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              3590000
+            ],
+            [
+              "V",
+              3473400
+            ],
+            [
+              "W",
+              3349804
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 3590000], [\"V\", 3473400], [\"W\", 3349804]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d0e787a77d34357b95117923",
+        "teks": "Menghitung besar pinjaman awal pada pinjaman dengan anuitas memakai prosedur yang sama dengan menghitung ....",
+        "jawaban": "nilai sekarang (present value) anuitas",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$336132$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $336132$.",
+      "distraktor": [
+        {
+          "teks": "$336133$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$336131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$672264$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $336132$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/34d58b7146251f23d75badbe.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              1870000
+            ],
+            [
+              "V",
+              1732200
+            ],
+            [
+              "W",
+              1586132
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 1870000], [\"V\", 1732200], [\"W\", 1586132]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0119d911358d749e4b063202",
+        "teks": "Pinjaman Rp6.000.000,00 berbunga 2% per bulan dilunasi dengan anuitas tetap Rp1.500.000,00 per bulan (dibayar akhir bulan). Rencana pelunasan dua bulan pertama:\n\n| Bulan | Pinjaman Awal Bulan (Rp) | Bunga (Rp) | Angsuran Pokok (Rp) | Pinjaman Akhir Bulan (Rp) |\n|---|---|---|---|---|\n| 1 | 6.000.000 | 120.000 | 1.380.000 | 4.620.000 |\n| 2 | 4.620.000 | 92.400 | 1.407.600 | 3.212.400 |\n\nBesar bunga yang termuat dalam anuitas bulan ketiga adalah ....",
+        "jawaban": "Rp64.248,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$519183$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $519183$.",
+      "distraktor": [
+        {
+          "teks": "$519184$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$519182$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1038366$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $519183$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/339e59cf38ce2227e5d32efe.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              5770000
+            ],
+            [
+              "V",
+              5636100
+            ],
+            [
+              "W",
+              5498183
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 5770000], [\"V\", 5636100], [\"W\", 5498183]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8ebd8a569d2445085b91910e",
+        "teks": "Sebuah bank menawarkan pinjaman Rp20.000.000,00 dengan bunga 1% per bulan. Tenor 12 bulan menghasilkan anuitas Rp1.776.976,00 per bulan, sedangkan tenor 24 bulan menghasilkan anuitas Rp941.469,00 per bulan. Pernyataan yang benar adalah ....",
+        "jawaban": "tenor 24 bulan memberi anuitas lebih kecil, tetapi total pembayaran lebih besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$386460$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $386460$.",
+      "distraktor": [
+        {
+          "teks": "$386461$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$386459$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$772920$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $386460$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/55cd079f9f0a9e6353f0c4fa.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              2150000
+            ],
+            [
+              "V",
+              1991000
+            ],
+            [
+              "W",
+              1822460
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 2150000], [\"V\", 1991000], [\"W\", 1822460]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3af808785a1856527da398c",
+        "teks": "Pak Wahyu meminjam Rp50.000.000,00 dengan bunga 1% per bulan dan membayarnya dengan anuitas Rp2.000.000,00 per bulan (dibayar akhir bulan, bunga dihitung dari sisa pinjaman). Tiga pernyataan tentang pinjaman itu: (I) angsuran pokok bulan ke-2 adalah Rp1.515.000,00; (II) bagian bunga dalam anuitas bulan ke-2 adalah Rp485.000,00; (III) sisa pinjaman setelah anuitas bulan ke-2 adalah Rp47.000.000,00. Pernyataan yang benar adalah ....",
+        "jawaban": "I dan II saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$205772$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $205772$.",
+      "distraktor": [
+        {
+          "teks": "$205773$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$205771$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$411544$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $205772$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f1a16476d0c1105d985d92e4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              3430000
+            ],
+            [
+              "V",
+              3358600
+            ],
+            [
+              "W",
+              3285772
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 3430000], [\"V\", 3358600], [\"W\", 3285772]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a659190adcc530fa53f36c5",
+        "teks": "Pak Rudi meminjam Rp2.040.000,00 dengan bunga 4% per tahun dan melunasinya dengan 2 kali anuitas tahunan sebesar Rp1.081.600,00 (dibayar akhir tahun, bunga dihitung dari sisa pinjaman). Rani menyatakan, \"Sisa pinjaman setelah anuitas pertama adalah pinjaman dikurangi anuitas, yaitu Rp958.400,00.\" Penilaian yang tepat terhadap pernyataan Rani adalah ....",
+        "jawaban": "Pernyataan salah; sisa yang benar Rp1.040.000,00 karena sebagian anuitas adalah bunga",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4700000$; V = $4492000$; W = $4275680$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$563680$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $563680$.",
+      "distraktor": [
+        {
+          "teks": "$563681$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$563679$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1127360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $563680$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d4d96bc9a5e5184fa89f2fa7",
+        "teks": "Pada pinjaman dengan anuitas tetap, angsuran pokok bulan ke-1, ke-2, dan ke-3 berturut-turut adalah Rp1.200.000,00, Rp1.236.000,00, dan Rp1.273.080,00. Kesimpulan yang benar tentang pola angsuran pokok dan nilai $a_4$ adalah ....",
+        "jawaban": "barisan geometri dengan rasio 1,03, sehingga $a_4$ = Rp1.311.272,40",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $5450000$; V = $5397500$; W = $5342375$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$817375$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $817375$.",
+      "distraktor": [
+        {
+          "teks": "$817376$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$817374$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1634750$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $817375$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fe35fc8550e4442c7f160d1b",
+        "teks": "Bu Citra meminjam Rp20.000.000,00 dengan bunga 2% per bulan dan berencana membayar anuitas Rp300.000,00 pada akhir tiap bulan (bunga dihitung dari sisa pinjaman). Pernyataan yang benar tentang rencana tersebut adalah ....",
+        "jawaban": "pinjaman tidak akan pernah lunas, karena bunga bulan pertama Rp400.000,00 lebih besar dari anuitas sehingga sisa pinjaman bertambah",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4230000$; V = $4054900$; W = $3874547$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$380547$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $380547$.",
+      "distraktor": [
+        {
+          "teks": "$380548$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$380546$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$761094$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $380547$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7f716a4031c67dc5fa9d1d0e",
+        "teks": "Pinjaman Rp24.000.000,00 berbunga 12% per tahun dilunasi dengan anuitas Rp2.400.000,00 per bulan. Bayu menghitung bunga bulan pertama = 12% x 24.000.000 = Rp2.880.000,00, lalu menyimpulkan angsuran pokok bulan pertama bernilai negatif sehingga pinjaman tidak dapat dilunasi. Kesalahan Bayu dan perhitungan yang benar adalah ....",
+        "jawaban": "bunga 12% adalah per tahun, sehingga bunga bulan pertama seharusnya 1% x 24.000.000 = Rp240.000,00 dan angsuran pokok bulan pertama Rp2.160.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4330000$; V = $4257900$; W = $4183637$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$389637$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $389637$.",
+      "distraktor": [
+        {
+          "teks": "$389638$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$389636$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$779274$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $389637$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6cf126f30d41d796f7e9d097",
+        "teks": "Pinjaman dengan bunga 10% per tahun dilunasi dengan 3 kali anuitas sebesar Rp1.331.000,00 pada akhir tiap tahun. Nanda menghitung sisa pinjaman sesaat setelah anuitas pertama dibayar dengan rumus nilai sekarang anuitas, memakai n = 3, dan memperoleh Rp3.310.000,00. Kesalahan Nanda dan sisa pinjaman yang benar adalah ....",
+        "jawaban": "setelah anuitas pertama tinggal 2 anuitas, sehingga sisa = 1.331.000/1,1 + 1.331.000/1,21 = Rp2.310.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $2500000$; V = $2393000$; W = $2278510$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$524510$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $524510$.",
+      "distraktor": [
+        {
+          "teks": "$524511$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$524509$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1049020$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $524510$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eff44d7d6eb0fdfd10ad40d5",
+        "teks": "Pinjaman Rp10.000.000,00 berbunga 3% per bulan dilunasi dengan anuitas tetap Rp1.500.000,00 per bulan (dibayar akhir bulan). Rencana pelunasan yang disusun seorang petugas:\n\n| Bulan | Pinjaman Awal Bulan (Rp) | Bunga (Rp) | Angsuran Pokok (Rp) | Pinjaman Akhir Bulan (Rp) |\n|---|---|---|---|---|\n| 1 | 10.000.000 | 300.000 | 1.200.000 | 8.800.000 |\n| 2 | 8.800.000 | 300.000 | 1.200.000 | 7.600.000 |\n\nKesalahan pertama pada tabel rencana pelunasan tersebut adalah ....",
+        "jawaban": "bunga bulan ke-2 dihitung dari pinjaman awal bulan ke-1, seharusnya 3% x 8.800.000 = Rp264.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4160000$; V = $4006000$; W = $3836600$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1246600$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1246600$.",
+      "distraktor": [
+        {
+          "teks": "$1246601$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1246599$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2493200$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1246600$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0a1d1ac46729360f596f5d2d",
+        "teks": "Sebuah pinjaman Rp2.060.000,00 berbunga 12% per tahun dilunasi dengan 2 kali anuitas sebesar Rp1.123.600,00 yang dibayar pada akhir tiap semester (bunga dihitung dari sisa pinjaman). Dani menghitung sisa pinjaman setelah anuitas pertama = 2.060.000 x 1,12 - 1.123.600 = Rp1.183.600,00. Kesalahan Dani dan sisa pinjaman yang benar adalah ....",
+        "jawaban": "bunga per semester seharusnya 12% : 2 = 6%, sehingga sisa = 2.060.000 x 1,06 - 1.123.600 = Rp1.060.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $5290000$; V = $5174500$; W = $5053225$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$793225$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $793225$.",
+      "distraktor": [
+        {
+          "teks": "$793226$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$793224$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1586450$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $793225$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "060830ec6c9924636892ff00",
+        "teks": "Bu Ayu meminjam Rp10.000.000,00 dengan bunga 2% per bulan dan ingin pinjamannya lunas dalam 12 bulan dengan anuitas tetap akhir bulan. Bank hanya menerima anuitas berupa kelipatan Rp1.000,00. Anuitas terkecil yang dapat dipilih Bu Ayu agar pinjaman lunas paling lambat dalam 12 bulan adalah ....",
+        "jawaban": "Rp946.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $5000000$; V = $4897000$; W = $4790910$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$449910$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $449910$.",
+      "distraktor": [
+        {
+          "teks": "$449911$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$449909$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$899820$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $449910$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f79ff8a0ae14bfa9d4e132cf",
+        "teks": "Pinjaman Rp40.000.000,00 berbunga 2% per bulan akan dilunasi dengan anuitas tetap akhir bulan. Angsuran pokok bulan ke-3 harus sedikitnya Rp1.200.000,00. Anuitas terkecil (kelipatan Rp10.000,00) yang memenuhi syarat itu adalah ....",
+        "jawaban": "Rp1.960.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4090000$; V = $3969000$; W = $3835900$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1225900$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1225900$.",
+      "distraktor": [
+        {
+          "teks": "$1225901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1225899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2451800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1225900$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62208be1e68e587779cc0e50",
+        "teks": "Penghasilan bersih Pak Anto Rp13.310.000,00 per tahun dan ia membatasi anuitas tidak lebih dari 20% penghasilan bersih. Bank menawarkan bunga 10% per tahun dengan 3 kali anuitas yang dibayar pada akhir tiap tahun. Pinjaman terbesar yang dapat diambil Pak Anto tanpa melanggar batas tersebut adalah ....",
+        "jawaban": "Rp6.620.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $2230000$; V = $2056600$; W = $1879732$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$133732$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $133732$.",
+      "distraktor": [
+        {
+          "teks": "$133733$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$133731$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$267464$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $133732$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a43b6dcbc4a0f02f27cd5db2",
+        "teks": "Pinjaman Rp50.000.000,00 berbunga 10% per tahun dilunasi dengan anuitas Rp7.000.000,00 pada akhir tiap tahun. Setelah pembayaran anuitas tahun ke berapa untuk pertama kalinya sisa pinjaman kurang dari setengah pinjaman awal (kurang dari Rp25.000.000,00)?",
+        "jawaban": "tahun ke-9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $5980000$; V = $5958400$; W = $5935072$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1435072$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1435072$.",
+      "distraktor": [
+        {
+          "teks": "$1435073$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1435071$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2870144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1435072$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a790d3645f5331684e4d7f3",
+        "teks": "Sebuah bank memberi pinjaman Rp100.000.000,00 dengan bunga 1% per bulan. Anuitas tenor 12 bulan adalah Rp8.884.879,00 per bulan dan anuitas tenor 24 bulan adalah Rp4.707.347,00 per bulan. Pernyataan yang benar tentang kedua tenor tersebut adalah ....",
+        "jawaban": "anuitas tenor 24 bulan lebih dari separuh anuitas tenor 12 bulan, dan total pembayarannya lebih besar Rp6.357.780,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $3690000$; V = $3569000$; W = $3435900$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1105900$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1105900$.",
+      "distraktor": [
+        {
+          "teks": "$1105901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1105899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2211800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1105900$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd63aa4e2c3238dbd85c84de",
+        "teks": "Pinjaman X dan pinjaman Y masing-masing Rp20.000.000,00 dengan anuitas yang sama, Rp1.000.000,00 per bulan, dibayar akhir bulan dan bunga dihitung dari sisa pinjaman. Bunga pinjaman X adalah 2% per bulan, sedangkan pinjaman Y 1% per bulan. Setelah anuitas bulan ke-2 dibayarkan, pernyataan yang benar tentang sisa pinjaman kedua pinjaman adalah ....",
+        "jawaban": "sisa pinjaman Y lebih kecil Rp396.000,00 daripada sisa pinjaman X",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $3350000$; V = $3194000$; W = $3031760$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$401760$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $401760$.",
+      "distraktor": [
+        {
+          "teks": "$401761$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$401759$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$803520$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $401760$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "82578bddcaa336bc9cf4ae85",
+        "teks": "Bank menawarkan pinjaman Rp60.000.000,00 dengan bunga 1% per bulan. Anuitas per bulan untuk tiap tenor:\n\n| Tenor | Anuitas per bulan |\n|---|---|\n| 12 bulan | Rp5.330.927,00 |\n| 24 bulan | Rp2.824.408,00 |\n| 36 bulan | Rp1.992.859,00 |\n| 48 bulan | Rp1.580.030,00 |\n\nPenghasilan bersih Bu Gina Rp14.000.000,00 per bulan. Ia mensyaratkan anuitas tidak lebih dari 25% penghasilan bersih dan total seluruh pembayaran tidak lebih dari Rp70.000.000,00. Tenor yang memenuhi kedua syarat tersebut adalah ....",
+        "jawaban": "24 bulan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4130000$; V = $3944700$; W = $3742723$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1113723$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1113723$.",
+      "distraktor": [
+        {
+          "teks": "$1113724$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1113722$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2227446$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1113723$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aef6714e550c8b97e2e48142",
+        "teks": "Pinjaman Rp40.000.000,00 berbunga 2% per bulan dilunasi dengan anuitas tetap akhir bulan. Anuitas yang dipilih harus memenuhi dua syarat: angsuran pokok bulan ke-2 sedikitnya Rp1.000.000,00 dan anuitas tidak lebih dari Rp1.900.000,00. Anuitas yang memenuhi kedua syarat adalah ....",
+        "jawaban": "Rp1.800.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $4040000$; V = $3872000$; W = $3695600$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$605600$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $605600$.",
+      "distraktor": [
+        {
+          "teks": "$605601$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$605599$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1211200$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $605600$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b4894ce5ad061e3f064ec1c6",
+        "teks": "Suatu pinjaman dilunasi dengan anuitas Rp2.000.000,00 per bulan (dibayar akhir bulan, bunga dihitung dari sisa pinjaman). Bagian bunga dalam anuitas bulan ke-1 adalah Rp800.000,00 dan dalam anuitas bulan ke-2 adalah Rp776.000,00. Besar pinjaman awal adalah ....",
+        "jawaban": "Rp40.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $3120000$; V = $3034400$; W = $2942808$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$654808$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $654808$.",
+      "distraktor": [
+        {
+          "teks": "$654809$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$654807$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1309616$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $654808$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c87d816dac8d2c1ad96a2aa",
+        "teks": "Pinjaman Rp2.320.500,00 berbunga 10% per tahun dilunasi tepat dengan anuitas tetap Rp732.050,00 pada akhir tiap tahun. Banyak anuitas yang dibayarkan sampai pinjaman lunas adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $5960000$; V = $5916400$; W = $5868876$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$1608876$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1608876$.",
+      "distraktor": [
+        {
+          "teks": "$1608877$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1608875$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3217752$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $1608876$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78bed925db5fd0654162b8c5",
+        "teks": "Pinjaman Rp3.152.500,00 berbunga 5% per tahun dilunasi dengan 3 kali anuitas tahunan sebesar Rp1.157.625,00. Setelah anuitas pertama dibayar, bank menaikkan bunga menjadi 10% per tahun untuk sisa pinjaman, dan sisanya harus lunas dalam 2 kali anuitas tahunan baru yang sama besar. Besar anuitas baru tersebut adalah ....",
+        "jawaban": "Rp1.240.250,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_loan_annuity_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $3370000$; V = $3229600$; W = $3077968$. Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?",
+      "jawaban_benar": "$807968$",
+      "alasan_benar": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $807968$.",
+      "distraktor": [
+        {
+          "teks": "$807969$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$807967$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1615936$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran. Hasilnya $807968$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-e-hard-bt01-059"
     }
   ]
 }

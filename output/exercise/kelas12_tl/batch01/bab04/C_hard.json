@@ -2329,6 +2329,2559 @@
       "pembahasan": "Data distribusi campuran memberi p+q/2=1/5 dan p+q+(1-p-q)/3=8/15. Maka p=1/10, q=1/5. Interval pertanyaan mencakup separuh interval pertama dan 3/4 interval kedua, sehingga peluang p/2+3q/4=1/5.",
       "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
       "id": "kelas12_tl-b04-c-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ca29a3ec8556d3f695544971",
+        "teks": "Sebuah proses pemanasan logam menghasilkan suhu pelat yang berkisar dari $41,5^\\circ\\text{C}$ hingga $48,0^\\circ\\text{C}$. Misalkan $X$ adalah variabel acak yang menyatakan suhu pelat tersebut dalam derajat Celsius. Bentuk ruang sampel $S$ dari variabel acak $X$ adalah ....",
+        "jawaban": "$S = \\{x \\mid 41,5 \\le x \\le 48,0,\\ x \\in \\mathbb{R}\\}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$109$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $109$.",
+      "distraktor": [
+        {
+          "teks": "$110$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$108$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$218$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $109$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-061",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ce66242ce68aada9172209bf.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              37
+            ],
+            [
+              "V",
+              97
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              73
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 37], [\"V\", 97], [\"p\", \"1/4\"], [\"q\", \"2/3\"], [\"C\", 73]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d20a0cb4cdb27909030faee5",
+        "teks": "Berat sekarung beras hasil pengemasan pabrik berkisar antara $49,5\\text{ kg}$ hingga $50,5\\text{ kg}$. Jika $W$ menyatakan berat karung beras tersebut dalam kg, apakah semua kemungkinan nilai $W$ dapat dihitung satu per satu? Berikan alasan yang tepat.",
+        "jawaban": "Tidak dapat, karena $W$ memuat semua bilangan real dalam interval tersebut sehingga nilainya tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$115$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $115$.",
+      "distraktor": [
+        {
+          "teks": "$116$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$114$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$230$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $115$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-062",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ae7f259c34b6cd631056af5d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              49
+            ],
+            [
+              "V",
+              93
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "7/12"
+            ],
+            [
+              "C",
+              82
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 49], [\"V\", 93], [\"p\", \"1/4\"], [\"q\", \"7/12\"], [\"C\", 82]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9addfcd536ac4f7028fd59bd",
+        "teks": "Sebuah dispenser otomatis mengisi botol oli dengan volume nominal $800\\text{ mL}$. Akibat variasi tekanan pompa, volume oli yang terisi berada pada rentang $792\\text{ mL}$ hingga $808\\text{ mL}$. Misalkan $V$ menyatakan volume oli yang terisi. Pernyataan yang paling tepat mengenai variabel acak $V$ adalah ....",
+        "jawaban": "$V$ merupakan variabel acak kontinu karena nilainya diperoleh melalui pengukuran dan membentuk interval bilangan real",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$127$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $127$.",
+      "distraktor": [
+        {
+          "teks": "$128$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$254$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $127$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-063",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/dae65710afb973676abadd32.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              43
+            ],
+            [
+              "V",
+              139
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              91
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 43], [\"V\", 139], [\"p\", \"1/6\"], [\"q\", \"5/6\"], [\"C\", 91]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f153d1904e906a274415dd17",
+        "teks": "Di antara variabel acak berikut, manakah yang merupakan contoh variabel acak kontinu?",
+        "jawaban": "Waktu yang dibutuhkan seorang atlet untuk menyelesaikan lari $400\\text{ meter}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $37$.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $37$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-064",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/8ab18362f237044cc615e0f3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              23
+            ],
+            [
+              "V",
+              33
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "7/12"
+            ],
+            [
+              "C",
+              31
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 23], [\"V\", 33], [\"p\", \"1/6\"], [\"q\", \"7/12\"], [\"C\", 31]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "86d5488cca4bedb421cf1a47",
+        "teks": "Dalam suatu perlombaan renang gaya dada lintasan $50\\text{ meter}$, waktu tempuh setiap perenang dicatat dalam detik. Misalkan $T$ adalah variabel acak yang menyatakan waktu tempuh perenang dan nilainya berada pada rentang $28,4\\text{ detik}$ hingga $32,6\\text{ detik}$. Bentuk ruang sampel $S$ dari variabel acak waktu tempuh tersebut adalah ....",
+        "jawaban": "$S = \\{t \\mid 28,4 \\le t \\le 32,6,\\ t \\in \\mathbb{R}\\}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$55$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $55$.",
+      "distraktor": [
+        {
+          "teks": "$56$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$54$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $55$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-065",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/94c7d963cc353ecbde80db2a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              13
+            ],
+            [
+              "V",
+              49
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              37
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 13], [\"V\", 49], [\"p\", \"1/6\"], [\"q\", \"2/3\"], [\"C\", 37]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b3df81dd955883031306954",
+        "teks": "Sebuah mesin pengemas semen otomatis mengisi kantong dengan berat nominal $40\\text{ kg}$. Akibat fluktuasi mekanis, berat riil semen per kantong bervariasi dari $39,2\\text{ kg}$ sampai $40,8\\text{ kg}$. Jika $Y$ menyatakan berat semen dalam suatu kantong, alasan yang paling tepat mengapa $Y$ merupakan variabel acak kontinu adalah ....",
+        "jawaban": "nilai $Y$ mencakup semua bilangan real dalam rentang $[39,2; 40,8]$ dan tidak dapat dihitung satu per satu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$133$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $133$.",
+      "distraktor": [
+        {
+          "teks": "$134$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$132$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$266$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $133$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-066",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4a8d00e18c153990dc6b16af.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              61
+            ],
+            [
+              "V",
+              133
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "3/4"
+            ],
+            [
+              "C",
+              97
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 61], [\"V\", 133], [\"p\", \"1/4\"], [\"q\", \"3/4\"], [\"C\", 97]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f90d23608d0f4e60adad2a8d",
+        "teks": "Tekanan udara di dalam ban sebuah truk ekspedisi berada pada rentang $110,0\\text{ psi}$ hingga $125,0\\text{ psi}$. Misalkan $P$ menyatakan tekanan udara ban tersebut dalam satuan psi. Apakah seluruh kemungkinan nilai $P$ dalam ruang sampel tersebut dapat dihitung satu per satu (tercacah)?",
+        "jawaban": "Tidak dapat, karena nilai $P$ memuat semua bilangan real dalam interval tersebut sehingga sifatnya tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $37$.",
+      "distraktor": [
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $37$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-067",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/90639a78187a058eaa2de214.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              19
+            ],
+            [
+              "V",
+              40
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              28
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 19], [\"V\", 40], [\"p\", \"1/4\"], [\"q\", \"5/6\"], [\"C\", 28]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "258c48506e1fb0705533fec8",
+        "teks": "Berdasarkan karakteristiknya pada materi statistika, nilai-nilai dari suatu variabel acak kontinu pada umumnya diperoleh melalui proses ....",
+        "jawaban": "pengukuran menggunakan alat ukur",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$58$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $58$.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $58$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-068",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/be48920a606ec2b08914bff8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              22
+            ],
+            [
+              "V",
+              58
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "3/4"
+            ],
+            [
+              "C",
+              40
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 22], [\"V\", 58], [\"p\", \"1/4\"], [\"q\", \"3/4\"], [\"C\", 40]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e774365ca4184933fe589a02",
+        "teks": "Pada garis bilangan, nilai-nilai dari suatu variabel acak kontinu direpresentasikan dalam bentuk ....",
+        "jawaban": "deretan titik yang terhubung membentuk ruas garis",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $45$.",
+      "distraktor": [
+        {
+          "teks": "$46$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $45$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-069",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/93bc09f885ed7b1d4ec42e01.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              21
+            ],
+            [
+              "V",
+              41
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              33
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 21], [\"V\", 41], [\"p\", \"1/4\"], [\"q\", \"2/3\"], [\"C\", 33]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61282e0a3f4fc91eadc98d5b",
+        "teks": "Kadar kelembapan biji kopi yang baru dikeringkan berkisar dari $10,5\\%$ hingga $14,0\\%$. Misalkan $K$ adalah variabel acak kontinu yang menyatakan kadar kelembapan biji kopi tersebut (dalam persen). Taksiran bentuk notasi ruang sampel $S$ dari variabel acak tersebut adalah ....",
+        "jawaban": "$S = \\{k \\mid 10,5 \\le k \\le 14,0,\\ k \\in \\mathbb{R}\\}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $23$.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $23$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-070",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/a56aeb65ba2ad1906ced7399.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              11
+            ],
+            [
+              "V",
+              25
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              17
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 11], [\"V\", 25], [\"p\", \"1/4\"], [\"q\", \"5/6\"], [\"C\", 17]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c3055f4a286b9134ae8b6c4",
+        "teks": "Tegangan listrik pada suatu instalasi laboratorium berfluktuasi secara kontinu pada rentang $218,5\\text{ V}$ hingga $224,2\\text{ V}$. Jika $V$ menyatakan variabel acak tegangan listrik tersebut, maka penulisan ruang sampel $S$ yang tepat adalah ....",
+        "jawaban": "$S = \\{v \\mid 218,5 \\le v \\le 224,2,\\ v \\in \\mathbb{R}\\}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$125$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $125$.",
+      "distraktor": [
+        {
+          "teks": "$126$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$124$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$250$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $125$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-071",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/58743541cc0f769b688d7c4b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              41
+            ],
+            [
+              "V",
+              137
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              89
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 41], [\"V\", 137], [\"p\", \"1/6\"], [\"q\", \"5/6\"], [\"C\", 89]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e973650b4fd911c4fe543f0",
+        "teks": "Perhatikan variabel-variabel acak berikut:\n(1) Jumlah penonton di sebuah bioskop\n(2) Panjang bentang kabel transmisi listrik\n(3) Banyaknya kendaraan yang melintasi gerbang tol\n(4) Banyak gol yang dicetak dalam pertandingan sepak bola\n\nVariabel acak yang memiliki nilai tak terhitung banyaknya (uncountable) dalam suatu rentang adalah ....",
+        "jawaban": "(2)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$44$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $44$.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $44$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-072",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/569ee44d9dabba550495cc17.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              20
+            ],
+            [
+              "V",
+              47
+            ],
+            [
+              "p",
+              "1/12"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              35
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 20], [\"V\", 47], [\"p\", \"1/12\"], [\"q\", \"5/6\"], [\"C\", 35]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a655acd78918174ae228282",
+        "teks": "Tinggi kecambah kacang hijau pada hari ketiga pengamatan berada pada interval $4,0\\text{ cm}$ hingga $5,0\\text{ cm}$. Berdasarkan sifat variabel acak kontinu, di antara nilai tinggi $4,2\\text{ cm}$ dan $4,3\\text{ cm}$ pasti terdapat kemungkinan muncul nilai tinggi lain karena ....",
+        "jawaban": "nilai variabel acak kontinu berupa bilangan real yang membentuk rentang tak terputus",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $43$.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $43$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-073",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9c25541c7eb7e36b6c3e3f27.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              25
+            ],
+            [
+              "V",
+              37
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "7/12"
+            ],
+            [
+              "C",
+              34
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 25], [\"V\", 37], [\"p\", \"1/4\"], [\"q\", \"7/12\"], [\"C\", 34]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "593d7971e0056516de4b94f1",
+        "teks": "Alasan utama besaran hasil pengukuran seperti volume cairan atau tinggi badan dikelompokkan sebagai variabel acak kontinu adalah karena ....",
+        "jawaban": "nilainya dapat berupa bilangan desimal dalam rentang tertentu dan tidak dapat dihitung satu per satu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $43$.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $43$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-074",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/7c026aed0e95e7d5299a2539.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              15
+            ],
+            [
+              "V",
+              43
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "3/4"
+            ],
+            [
+              "C",
+              31
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 15], [\"V\", 43], [\"p\", \"1/6\"], [\"q\", \"3/4\"], [\"C\", 31]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "836caeffa31978346da41600",
+        "teks": "Perhatikan variabel-variabel acak berikut:\n(1) Banyaknya telur ayam dalam sebuah rak penyimpanan\n(2) Lama waktu pengisian daya baterai telepon pintar\n(3) Banyaknya kendaraan yang parkir di sebuah gedung\n(4) Jumlah lembaran uang kertas di dalam dompet\n\nBerdasarkan keempat variabel acak tersebut, variabel yang memiliki kemungkinan nilai tak terhitung banyaknya dalam suatu rentang kontinu adalah ....",
+        "jawaban": "(2)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $84$.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$83$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $84$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-075",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/c8d3cfe798e59c3b08eeec97.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              20
+            ],
+            [
+              "V",
+              76
+            ],
+            [
+              "p",
+              "1/12"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              60
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 20], [\"V\", 76], [\"p\", \"1/12\"], [\"q\", \"2/3\"], [\"C\", 60]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a738467ba30b7e51e1225134",
+        "teks": "Nilai-nilai pada variabel acak kontinu seperti waktu tempuh atau massa benda tidak dapat dihitung satu per satu (uncountable). Penyebab utama hal tersebut adalah karena nilainya ....",
+        "jawaban": "mencakup seluruh bilangan real pada suatu interval tanpa terputus",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$59$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $59$.",
+      "distraktor": [
+        {
+          "teks": "$60$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $59$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-076",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/2ccebd9194b160bbf915f31f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              31
+            ],
+            [
+              "V",
+              59
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "3/4"
+            ],
+            [
+              "C",
+              47
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 31], [\"V\", 59], [\"p\", \"1/6\"], [\"q\", \"3/4\"], [\"C\", 47]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "43f79d6827583fc3e2f3c1b5",
+        "teks": "Sebuah variabel acak kontinu $X$ menyatakan suhu cairan pada suatu termometer dengan rentang $74,0^\\circ\\text{C} \\le X \\le 78,0^\\circ\\text{C}$. Nilai berikut yang mungkin merupakan salah satu nilai dari variabel acak $X$ tersebut adalah ....",
+        "jawaban": "$76,45^\\circ\\text{C}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$112$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $112$.",
+      "distraktor": [
+        {
+          "teks": "$113$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$111$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$224$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $112$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-077",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/70a53d4d7db874ec68374d17.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              24
+            ],
+            [
+              "V",
+              123
+            ],
+            [
+              "p",
+              "1/12"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              79
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 24], [\"V\", 123], [\"p\", \"1/12\"], [\"q\", \"5/6\"], [\"C\", 79]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb9b136ad095b7cb64e648b5",
+        "teks": "Ruang sampel suatu percobaan acak yang terdiri atas titik-titik hasil yang tak berhingga banyaknya dan tidak dapat dihitung satu per satu disebut ....",
+        "jawaban": "ruang sampel kontinu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $48$.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $48$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-078",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/b359028b38a435b41472ee65.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              27
+            ],
+            [
+              "V",
+              48
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "3/4"
+            ],
+            [
+              "C",
+              39
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 27], [\"V\", 48], [\"p\", \"1/6\"], [\"q\", \"3/4\"], [\"C\", 39]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc0fc54a1e9f044f84021f6b",
+        "teks": "Salah satu ciri utama dari variabel acak kontinu adalah nilainya membentuk rentang tak terputus. Hal ini memiliki arti bahwa di antara dua nilai sembarang pada rentang tersebut selalu ....",
+        "jawaban": "mungkin terdapat nilai lain yang termasuk dalam variabel tersebut",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $49$.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $49$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-079",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5cdde0564010cc8d940c0d14.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              28
+            ],
+            [
+              "V",
+              46
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              40
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 28], [\"V\", 46], [\"p\", \"1/6\"], [\"q\", \"2/3\"], [\"C\", 40]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2e9dd7b1a252dbe0ea56b67a",
+        "teks": "Variabel acak yang didefinisikan pada ruang sampel kontinu disebut ....",
+        "jawaban": "variabel acak kontinu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-080",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/ba8dd8489e5bc69125ba4954.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              7
+            ],
+            [
+              "V",
+              17
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "7/12"
+            ],
+            [
+              "C",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 7], [\"V\", 17], [\"p\", \"1/6\"], [\"q\", \"7/12\"], [\"C\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5fc3801202d3b277c65ad0cc",
+        "teks": "Sebuah mesin otomatis mengemas bubuk detergen ke dalam kantong dengan target massa $1.000\\text{ gram}$. Akibat getaran mekanik corong tuang, massa detergen riil $M$ terdistribusi acak dalam rentang $990\\text{ gram} \\le M \\le 1.010\\text{ gram}$. Seorang teknisi menyatakan bahwa $M$ bukan variabel acak kontinu dengan alasan: timbangan digital pabrik hanya memiliki presisi satu desimal ($0,1\\text{ gram}$), sehingga nilai $M$ yang mungkin dicatat hanyalah nilai-nilai diskret kelipatan $0,1\\text{ gram}$ sebanyak 201 kemungkinan nilai.\n\nBagaimanakah penilaian yang benar terhadap klaim teknisi tersebut berdasarkan konsep variabel acak kontinu?",
+        "jawaban": "Klaim salah, karena diskretisasi pencatatan oleh timbangan hanyalah aproksimasi pengukuran, sedangkan massa fisik detergen sebenarnya mencakup seluruh nilai real tak terhitung pada interval $[990, 1010]$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$67$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $67$.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$134$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $67$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-081",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4451cd0522319f08d305c6aa.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              31
+            ],
+            [
+              "V",
+              61
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              49
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 31], [\"V\", 61], [\"p\", \"1/4\"], [\"q\", \"2/3\"], [\"C\", 49]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5cc46ecb42c8489a5e7530ab",
+        "teks": "Diberikan empat model matematis himpunan nilai suatu variabel acak $X$:\n(1) $R_1 = \\{x \\in \\mathbb{R} \\mid 2 < x < 5\\}$\n(2) $R_2 = \\{x \\in \\mathbb{Q} \\mid 2 \\le x \\le 5\\}$\n(3) $R_3 = \\{x \\in \\mathbb{R} \\mid x = 2 + 0,1k,\\ k \\in \\mathbb{Z},\\ 0 \\le k \\le 30\\}$\n(4) $R_4 = [2, 3] \\cup [4, 5]$ dengan $x \\in \\mathbb{R}$\n\nHimpunan manakah yang jika digambarkan pada garis bilangan secara teoretis benar-benar membentuk segmen garis padat tak terputus (memenuhi representasi variabel acak kontinu)?",
+        "jawaban": "(1) saja di antara (1), (2), dan (3), serta komponen rentang pada (4) masing-masing berupa garis padat.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $63$.",
+      "distraktor": [
+        {
+          "teks": "$64$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $63$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-082",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/203d77f6a2b844d5af13a336.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              27
+            ],
+            [
+              "V",
+              57
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              45
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 27], [\"V\", 57], [\"p\", \"1/4\"], [\"q\", \"2/3\"], [\"C\", 45]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf2e16e063f5c68d5c08db60",
+        "teks": "Seorang guru meminta dua siswa membandingkan dua variabel acak:\n- Variabel $A$: Banyaknya tetesan air hujan yang jatuh pada suatu wadah dalam selang waktu 1 menit.\n- Variabel $B$: Volume total air hujan (dalam mililiter) yang terkumpul dalam wadah tersebut selama 1 menit.\n\nSiswa 1 menyatakan: \"Kedua variabel acak bernilai tak hingga, sehingga keduanya sama-sama tergolong variabel acak kontinu.\"\nSiswa 2 menyatakan: \"Variabel $A$ dapat didaftar satu per satu nilainya menggunakan bilangan cacah $\\{0, 1, 2, \\dots\\}$, sedangkan nilai variabel $B$ membentuk selang bilangan real tak terputus sehingga tak terhitung (uncountable). Oleh karena itu, $A$ diskret dan $B$ kontinu.\"\n\nPernyataan evaluasi yang paling tepat mengenai pendapat kedua siswa tersebut adalah ....",
+        "jawaban": "Pendapat Siswa 2 benar, karena variabel acak diskret dapat memiliki nilai tak terhingga asalkan terhitung (countable), sedangkan variabel acak kontinu bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$93$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $93$.",
+      "distraktor": [
+        {
+          "teks": "$94$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$186$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $93$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-083",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/14d56add52230ea32534640d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              45
+            ],
+            [
+              "V",
+              101
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              69
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 45], [\"V\", 101], [\"p\", \"1/4\"], [\"q\", \"5/6\"], [\"C\", 69]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a2772ad0dc1b18e60f63e66",
+        "teks": "Dalam uji coba termal mesin, suhu fluida pendingin $T$ berfluktuasi secara kontinu pada rentang $82,5^\\circ\\text{C}$ hingga $91,0^\\circ\\text{C}$. Seorang asisten laboratorium berpendapat bahwa seluruh kemungkinan nilai $T$ dalam ruang sampel tersebut dapat didaftar dan dihitung satu per satu karena termometer digital yang digunakan memiliki resolusi pembacaan hingga 3 desimal ($0,001^\\circ\\text{C}$). Bagaimana evaluasi yang tepat terhadap pendapat asisten tersebut?",
+        "jawaban": "Pendapat salah, karena resolusi alat ukur hanya membatasi pembacaan teknis, sedangkan nilai riil $T$ mencakup seluruh bilangan real pada rentang tersebut yang bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$97$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $97$.",
+      "distraktor": [
+        {
+          "teks": "$98$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$194$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $97$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-084",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4fd96b5e4315cc28d6abb7a9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              33
+            ],
+            [
+              "V",
+              105
+            ],
+            [
+              "p",
+              "1/12"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              73
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 33], [\"V\", 105], [\"p\", \"1/12\"], [\"q\", \"5/6\"], [\"C\", 73]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "01a12ebc41aee2451522047d",
+        "teks": "Diberikan empat usulan ruang sampel untuk memodelkan suatu variabel acak pengukuran:\n1. $S_1 = \\{x \\in \\mathbb{Q} \\mid 0 \\le x \\le 5\\}$\n2. $S_2 = \\{x \\in \\mathbb{R} \\mid 0 \\le x \\le 5\\}$\n3. $S_3 = \\{x \\in \\mathbb{R} \\mid x = \\frac{n}{100},\\ n \\in \\mathbb{N},\\ 0 \\le n \\le 500\\}$\n4. $S_4 = (1, 2) \\cup (3, 4)$ dengan seluruh titik merupakan bilangan real\n\nBerdasarkan Definisi 4.3 mengenai variabel acak kontinu, model ruang sampel yang valid sebagai ruang sampel variabel acak kontinu adalah ....",
+        "jawaban": "$S_2$ dan $S_4$ saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $43$.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $43$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-085",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/9b6f3cb886e84b78fe6ecf04.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              15
+            ],
+            [
+              "V",
+              47
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "5/6"
+            ],
+            [
+              "C",
+              31
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 15], [\"V\", 47], [\"p\", \"1/6\"], [\"q\", \"5/6\"], [\"C\", 31]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8166c2b01dd233fb1d10749",
+        "teks": "Sebuah instrumen presisi mencatat waktu reaksi kimia $T$ (dalam detik) sebagai variabel acak kontinu pada interval $10,00 \\le T \\le 15,00$. Dalam dua kali percobaan berturut-turut, terukur waktu reaksi $t_1 = 12,450\\text{ detik}$ dan $t_2 = 12,451\\text{ detik}$. Seorang peneliti menyimpulkan bahwa tidak ada nilai waktu reaksi riil lain yang mungkin terjadi di antara kedua hasil pengukuran tersebut karena selisihnya sudah merupakan batas toleransi terkecil instrumen ($0,001\\text{ detik}$). Evaluasi manakah yang paling tepat terhadap kesimpulan tersebut?",
+        "jawaban": "Kesimpulan tersebut salah, karena di antara dua nilai sembarang pada rentang variabel acak kontinu selalu terdapat tak hingga banyak nilai riil lain yang mungkin secara teoretis.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $60$.",
+      "distraktor": [
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $60$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-086",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/4d91ccb93ceb8a4b3e4e79f9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              36
+            ],
+            [
+              "V",
+              52
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "7/12"
+            ],
+            [
+              "C",
+              48
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 36], [\"V\", 52], [\"p\", \"1/4\"], [\"q\", \"7/12\"], [\"C\", 48]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a100d32b5e341f70595e806a",
+        "teks": "Dua buah sensor suhu, Sensor A dan Sensor B, bekerja pada suatu bejana pemanas. Variabel acak $X$ menyatakan suhu yang terdeteksi oleh Sensor A dengan ruang sampel $S_A = \\{x \\in \\mathbb{R} \\mid 50,0 \\le x \\le 85,0\\}$. Variabel acak $Y$ menyatakan suhu yang terdeteksi oleh Sensor B dengan ruang sampel $S_B = \\{y \\in \\mathbb{R} \\mid 70,0 < y \\le 100,0\\}$. Suatu sistem kendali otomatis hanya aktif jika kedua sensor mendeteksi suhu secara bersamaan dalam rentang kerja masing-masing (irisan dari kedua ruang sampel).\n\nBentuk representasi matematis dan visualisasi garis bilangan yang tepat untuk memodelkan rentang kerja sistem kendali otomatis tersebut adalah ....",
+        "jawaban": "Ruang sampel $S = \\{t \\in \\mathbb{R} \\mid 70,0 < t \\le 85,0\\}$, direpresentasikan sebagai ruas garis padat yang menghubungkan $70,0$ dan $85,0$ dengan titik berlubang di $70,0$ dan titik penuh di $85,0$.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $52$.",
+      "distraktor": [
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $52$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-087",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/94ed1750fcd07a64d906d366.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              22
+            ],
+            [
+              "V",
+              52
+            ],
+            [
+              "p",
+              "1/4"
+            ],
+            [
+              "q",
+              "3/4"
+            ],
+            [
+              "C",
+              37
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 22], [\"V\", 52], [\"p\", \"1/4\"], [\"q\", \"3/4\"], [\"C\", 37]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06f3df6644985c6860cfdb15",
+        "teks": "Dua orang siswa memperdebatkan klasifikasi dua variabel acak berikut:\n- Variabel $P$: Tekanan hidrostatis di dasar tangki penampungan minyak (dalam kilopascal).\n- Variabel $Q$: Banyaknya tetesan minyak yang keluar per menit dari keran pengeluaran tangki.\n\nSiswa 1 menyatakan: \"Variabel $P$ dan $Q$ keduanya adalah variabel acak kontinu karena keduanya berkaitan dengan zat cair dan nilainya sama-sama diperoleh dari pengamatan di laboratorium.\"\nSiswa 2 menyatakan: \"Variabel $P$ adalah variabel acak kontinu karena nilainya merupakan hasil pengukuran yang membentuk rentang tak terputus, sedangkan $Q$ adalah variabel acak diskret karena nilainya diperoleh melalui pencacahan (counting) dan berupa bilangan bulat nonnegatif.\"\n\nManakah evaluasi yang paling tepat mengenai perdebatan kedua siswa tersebut?",
+        "jawaban": "Pernyataan Siswa 2 benar, sedangkan pernyataan Siswa 1 salah karena klasifikasi variabel acak didasarkan pada sifat keterhitungan ruang sampel dan cara perolehannya, bukan pada wujud fisik materi yang diamati.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $56$.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $56$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-088",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/5c80d0b77102f323f87b621f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              16
+            ],
+            [
+              "V",
+              51
+            ],
+            [
+              "p",
+              "1/12"
+            ],
+            [
+              "q",
+              "2/3"
+            ],
+            [
+              "C",
+              41
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 16], [\"V\", 51], [\"p\", \"1/12\"], [\"q\", \"2/3\"], [\"C\", 41]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77df21fa0a8ba413e1432e2b",
+        "teks": "Debit aliran fluida $Q$ (dalam liter/detik) yang keluar dari suatu pipa venturi berfluktuasi secara acak pada rentang $14,5\\text{ L/s}$ hingga $18,2\\text{ L/s}$. Empat orang siswa mengusulkan penulisan ruang sampel $S$ untuk variabel acak kontinu $Q$ tersebut sebagai berikut:\n\n1. $S_1 = \\{14,5;\\ 14,6;\\ 14,7;\\ \\dots;\\ 18,2\\}$\n2. $S_2 = \\{q \\in \\mathbb{Q} \\mid 14,5 \\le q \\le 18,2\\}$\n3. $S_3 = \\{q \\in \\mathbb{R} \\mid 14,5 \\le q \\le 18,2\\}$\n4. $S_4 = \\{q \\in \\mathbb{Z} \\mid 15 \\le q \\le 18\\}$\n\nBerdasarkan definisi variabel acak kontinu, usulan notasi ruang sampel yang tepat secara matematis adalah ....",
+        "jawaban": "$S_3$ saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$99$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $99$.",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$198$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $99$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-089",
+      "gambar": [
+        "exercise_assets/kelas12_tl/batch01/assets/d260d7156368d1bf4899b5a4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "U",
+              36
+            ],
+            [
+              "V",
+              81
+            ],
+            [
+              "p",
+              "1/6"
+            ],
+            [
+              "q",
+              "7/12"
+            ],
+            [
+              "C",
+              72
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"U\", 36], [\"V\", 81], [\"p\", \"1/6\"], [\"q\", \"7/12\"], [\"C\", 72]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf11b9923f31326281129b05",
+        "teks": "Sebuah eksperimen mengukur konsentrasi larutan garam $C$ (dalam g/L) yang berada pada rentang $22,4\\text{ g/L}$ hingga $27,8\\text{ g/L}$. Seorang peneliti menyatakan bahwa ruang sampel variabel acak $C$ dapat dituliskan sebagai interval tertutup $[22,4;\\ 27,8]$ pada garis bilangan real $\\mathbb{R}$. Asisten peneliti mengajukan kritik bahwa jika alat ukur hanya menampilkan 2 angka desimal, maka model interval kontinu tersebut keliru dan harus diganti menjadi himpunan bilangan desimal dua angka di belakang koma. Bagaimana evaluasi yang benar terhadap kritik asisten tersebut?",
+        "jawaban": "Kritik asisten keliru, karena keterbatasan resolusi alat ukur tidak mengubah sifat variabel acak konsentrasi yang secara alami bernilai kontinu pada rentang real.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $30$; V = $65$; p = $\\frac{1}{12}$; q = $\\frac{2}{3}$; C = $55$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$70$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $70$.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$69$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $70$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-090"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8879954ec441fb28e88d9a4",
+        "teks": "Sebuah termometer inframerah mendeteksi suhu permukaan pipa uap $T$ pada interval $105,0^\\circ\\text{C} \\le T \\le 115,0^\\circ\\text{C}$. Dua orang teknisi berdiskusi mengenai nilai-nilai suhu yang mungkin terjadi:\n\n- Teknisi A berpendapat bahwa di antara nilai suhu $108,25^\\circ\\text{C}$ dan $108,26^\\circ\\text{C}$ tidak mungkin ada nilai suhu lain karena selisihnya sudah mencapai batas ketelitian $0,01^\\circ\\text{C}$.\n- Teknisi B berpendapat bahwa secara teoretis selalu terdapat tak berhingga banyaknya kemungkinan nilai suhu di antara $108,25^\\circ\\text{C}$ dan $108,26^\\circ\\text{C}$.\n\nBerdasarkan karakteristik variabel acak kontinu, manakah simpulan yang tepat mengenai pendapat kedua teknisi?",
+        "jawaban": "Teknisi B benar, karena variabel acak kontinu membentuk rentang tak terputus sehingga di antara dua nilai sembarang selalu terdapat nilai real lainnya.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $8$; V = $26$; p = $\\frac{1}{12}$; q = $\\frac{7}{12}$; C = $23$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $32$.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $32$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-091"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "57023a4a5c9dba0a1ba56cf2",
+        "teks": "Seorang mahasiswa merancang empat model himpunan nilai $R$ untuk mendeskripsikan hasil suatu pengukuran:\n\n1. $R_1 = \\{x \\in \\mathbb{R} \\mid 5 < x < 9\\}$\n2. $R_2 = \\{x \\in \\mathbb{Q} \\mid 5 \\le x \\le 9\\}$\n3. $R_3 = \\{5 + 0,1k \\mid k \\in \\mathbb{N}\\text{ dan } 0 \\le k \\le 40\\}$\n4. $R_4 = [5, 9] \\setminus \\{7\\}$ dengan domain semesta $\\mathbb{R}$\n\nBerdasarkan Definisi 4.3 bahwa variabel acak kontinu memiliki ruang nilai tak terhitung (*uncountable*), model himpunan nilai yang memenuhi kriteria variabel acak kontinu adalah ....",
+        "jawaban": "$R_1$ dan $R_4$ saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $30$; V = $58$; p = $\\frac{1}{6}$; q = $\\frac{3}{4}$; C = $46$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$58$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $58$.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $58$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-092"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a9f9174f6c606043d1ff2826",
+        "teks": "Perhatikan argumen berikut mengenai klasifikasi variabel acak:\n\"Sebuah timbangan digital di laboratorium analitik memiliki tampilan dengan presisi hingga $0,0001\\text{ gram}$. Karena angka pembacaannya selalu melompat dengan selisih kelipatan $0,0001\\text{ gram}$ dan tidak dapat menampilkan angka di antaranya, maka massa zat kimia yang ditimbang dengan alat tersebut pada dasarnya merupakan variabel acak diskret, bukan kontinu.\"\n\nEvaluasi yang paling tepat terhadap argumen di atas adalah ....",
+        "jawaban": "Argumen salah, karena sifat kontinu ditentukan oleh besaran fisis massa yang dapat bernilai sembarang bilangan real tak terputus, bukan oleh keterbatasan pembacaan digit alat ukur.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $24$; V = $78$; p = $\\frac{1}{12}$; q = $\\frac{5}{6}$; C = $54$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $72$.",
+      "distraktor": [
+        {
+          "teks": "$73$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$71$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $72$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-093"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0251c5428873e7627be42578",
+        "teks": "Sebuah eksperimen mengamati waktu pengeringan lapisan cat pelindung pipa minyak, $T$ (dalam jam), yang bervariasi pada selang 4,2 jam hingga 8,6 jam. Empat peneliti merumuskan model ruang sampel $S$ untuk variabel acak $T$ sebagai berikut:\n\n1. $S_1 = \\{t \\in \\mathbb{Q} \\mid 4,2 \\le t \\le 8,6\\}$\n2. $S_2 = \\{t \\in \\mathbb{R} \\mid 4,2 < t < 8,6\\}$\n3. $S_3 = \\{t \\in \\mathbb{R} \\mid 4,2 \\le t \\le 8,6\\}$\n4. $S_4 = \\{4,2;\\ 4,3;\\ 4,4;\\ \\dots;\\ 8,6\\}$\n\nBerdasarkan hakikat variabel acak kontinu yang merepresentasikan seluruh kemungkinan nilai waktu pengeringan pada selang tersebut, model ruang sampel yang tepat secara matematis adalah ....",
+        "jawaban": "$S_3$ saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $33$; V = $99$; p = $\\frac{1}{6}$; q = $\\frac{2}{3}$; C = $77$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$110$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $110$.",
+      "distraktor": [
+        {
+          "teks": "$111$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$109$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$220$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $110$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-094"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "758b772cf950e62f95ffaf9e",
+        "teks": "Dua orang analis memperdebatkan representasi grafis himpunan nilai dari dua variabel acak pada garis bilangan:\n- Analis 1: \"Variabel acak $X$ menyatakan massa serbuk kimia dalam rentang $3\\text{ gram} \\le X \\le 7\\text{ gram}$. Jika direpresentasikan pada garis bilangan, grafiknya berupa deretan titik-titik terpisah yang sangat rapat dan berhingga banyaknya.\"\n- Analis 2: \"Variabel acak $Y$ menyatakan jumlah gelembung udara dalam cairan reaksi ($0 \\le Y \\le 50$). Jika direpresentasikan pada garis bilangan, grafiknya berupa ruas garis padat tak terputus dari angka 0 hingga 50.\"\n\nEvaluasi yang benar mengenai pernyataan kedua analis tersebut adalah ....",
+        "jawaban": "Kedua analis salah dalam mengidentifikasi bentuk representasi grafis masing-masing variabel",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $12$; V = $92$; p = $\\frac{1}{12}$; q = $\\frac{3}{4}$; C = $62$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$92$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $92$.",
+      "distraktor": [
+        {
+          "teks": "$93$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $92$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-095"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "57ff08aa3affcde28f86865a",
+        "teks": "Perhatikan empat definisi himpunan hasil kemungkinan nilai variabel acak berikut:\n\n1. $H_1 = \\{x \\in \\mathbb{Z} \\mid x > 0\\}$\n2. $H_2 = \\{x \\in \\mathbb{Q} \\mid 0 \\le x \\le 1\\}$\n3. $H_3 = \\{x \\in \\mathbb{R} \\mid 5 < x < 6\\}$\n4. $H_4 = \\{x \\in \\mathbb{R} \\mid x = 2k + 1,\\ k \\in \\mathbb{N}\\}$\n\nBerdasarkan Definisi 4.3 pada materi variabel acak kontinu, himpunan yang memenuhi syarat sebagai ruang sampel dari suatu variabel acak kontinu karena beranggotakan himpunan yang tak terhitung (*uncountable*) adalah ....",
+        "jawaban": "$H_3$ saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $8$; V = $50$; p = $\\frac{1}{12}$; q = $\\frac{2}{3}$; C = $38$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $56$.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $56$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-096"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b31452b707b7d17c7673346",
+        "teks": "Dalam suatu uji coba aerodinamika, kecepatan aliran udara $V$ (dalam m/s) pada permukaan sayap pesawat berfluktuasi secara kontinu pada selang $65,0 \\le V \\le 72,0$. Sebuah sensor kecepatan berkecepatan tinggi mencatat dua data berturut-turut pada saat uji coba, yaitu $68,421\\text{ m/s}$ dan $68,422\\text{ m/s}$. Seorang teknisi menyimpulkan:\n\"Karena selisih kedua data tersebut sangat kecil ($0,001\\text{ m/s}$), tidak ada lagi nilai kecepatan fisik aliran udara yang mungkin terjadi di antara kedua angka tersebut.\"\n\nPenilaian yang paling tepat terhadap kesimpulan teknisi tersebut adalah ....",
+        "jawaban": "Salah, karena sifat bilangan real pada variabel acak kontinu menjamin adanya tak hingga banyak kemungkinan nilai lain di antara dua nilai sembarang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $15$; V = $40$; p = $\\frac{1}{6}$; q = $\\frac{7}{12}$; C = $35$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $50$.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $50$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-097"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9cb70373979dba2fc1fc2ae1",
+        "teks": "Perhatikan argumen berikut:\n\"Variabel acak $W$ menyatakan waktu tunggu transaksi di mesin ATM (dalam detik). Jika pencatatan dilakukan dengan membulatkan nilai waktu ke detik bulat terdekat (misalnya 15 detik, 16 detik, 17 detik), maka variabel acak waktu tunggu tersebut otomatis berubah status hakikinya menjadi variabel acak diskret.\"\n\nEvaluasi yang tepat terhadap argumen di atas adalah ....",
+        "jawaban": "Argumen tidak tepat, karena pembulatan atau batasan instrumen pengukuran tidak mengubah sifat intrinsik waktu tunggu sebagai variabel acak kontinu yang bernilai pada ruang kontinu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $30$; V = $54$; p = $\\frac{1}{4}$; q = $\\frac{3}{4}$; C = $42$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$54$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $54$.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$108$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $54$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-098"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "151becb55ea1f855183e96c7",
+        "teks": "Sebuah tungku induksi pabrik diatur untuk memanaskan cairan baja pada suhu target $1.500^\\circ\\text{C}$. Karena kestabilan tegangan listrik yang tidak selalu konstan, suhu cairan baja yang dihasilkan berfluktuasi dari $1.485^\\circ\\text{C}$ hingga $1.515^\\circ\\text{C}$. Misalkan $T$ menyatakan suhu cairan baja yang dihasilkan oleh tungku tersebut. Apakah $T$ memenuhi kriteria sebagai variabel acak kontinu? Evaluasilah simpulan dan alasan teoritis berikut yang paling tepat.",
+        "jawaban": "$T$ merupakan variabel acak kontinu karena nilainya diperoleh melalui proses pengukuran dan ruang nilainya mencakup semua bilangan real dalam rentang $[1.485, 1.515]$ sehingga tak terhitung banyaknya",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $13$; V = $97$; p = $\\frac{1}{12}$; q = $\\frac{2}{3}$; C = $73$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$109$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $109$.",
+      "distraktor": [
+        {
+          "teks": "$110$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$108$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$218$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $109$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-099"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1987f71f91c0af977f98bcb4",
+        "teks": "Perhatikan empat pernyataan evaluatif mengenai konsep ruang sampel dan variabel acak kontinu berikut:\n(1) Setiap variabel acak yang memiliki ruang sampel berupa himpunan tak berhingga pasti tergolong sebagai variabel acak kontinu.\n(2) Ruang sampel kontinu dicirikan oleh himpunan nilai yang tak terhitung banyaknya (*uncountable*) yang membentuk rentang tak terputus pada bilangan real.\n(3) Suatu variabel acak yang nilainya diperoleh dari proses mencacah objek berulang tanpa batas waktu tergolong sebagai variabel acak kontinu.\n(4) Di antara dua nilai sembarang pada rentang variabel acak kontinu selalu dapat ditemukan kemungkinan nilai lain yang termasuk dalam variabel tersebut.\n\nPernyataan yang bernilai benar berdasarkan konsep teoretis variabel acak kontinu adalah ....",
+        "jawaban": "(2) dan (4)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12_tl.json",
+        "source_sha256": "9d87654e059e2a3ded5db113ea1797bcfcebda7e34fbb69e1403537df0a0a09b"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_continuous_variable_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui U = $32$; V = $62$; p = $\\frac{1}{4}$; q = $\\frac{3}{4}$; C = $47$. X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\\le U)=p$ dan $P(X\\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\\mid X>C)$.",
+      "jawaban_benar": "$62$",
+      "alasan_benar": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $62$.",
+      "distraktor": [
+        {
+          "teks": "$63$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$124$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat. Hasilnya $62$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12_tl-b04-c-hard-bt01-100"
     }
   ]
 }

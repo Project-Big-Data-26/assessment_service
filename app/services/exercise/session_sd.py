@@ -76,7 +76,8 @@ def assess(model, grade):
                 'policyVersion':POLICY,'confidenceScore':0,'confidenceMeasured':False,'apiCalls':0,'steps':2}
     if family in {'session_sd_units_read', 'session_sd_place_compose',
                   'session_sd_unit_fraction_groups', 'session_sd_fraction_quantity',
-                  'session_sd_clock_minutes','session_sd_add_pair','session_sd_subtract_pair'}:
+                  'session_sd_clock_minutes','session_sd_add_pair','session_sd_subtract_pair',
+                  'session_sd_parallel_pairs'}:
         level = 'easy'
         reason = 'Membaca satu representasi atau menentukan satu bagian sama besar melalui satu konsep langsung.'
     elif family == 'session_sd_identical_shape_property':
@@ -343,6 +344,31 @@ def _shape_easy(grade,code,r,visual):
     return model
 
 
+def _parallel_pairs(r,visual):
+    count=r.randint(3,5);chosen=r.randrange(4)
+    directions=[chosen,chosen,*[r.randrange(4) for _ in range(count-2)]]
+    # At least two directions keep every instance informative and all wrong
+    # options inside the possible number of pairs. No angle arithmetic is used.
+    if len(set(directions))==1:directions[-1]=(chosen+1)%4
+    r.shuffle(directions);segments=[]
+    for index,direction in enumerate(directions):
+        offset=2+index*3
+        segments.append(([[0,offset],[12,offset]] if direction==0 else
+                         [[offset,0],[offset,12]] if direction==1 else
+                         [[0,offset],[12,offset+12]] if direction==2 else
+                         [[0,offset+12],[12,offset]]))
+    words=['mendatar','tegak','miring naik dari kiri ke kanan','miring turun dari kiri ke kanan']
+    scene={'kind':'lines','segments':segments,'labels':[str(i+1) for i in range(count)]} if visual else None
+    intro='Perhatikan garis-garis bernomor pada gambar.' if visual else 'Arah garis bernomor adalah '+', '.join(f'{i+1} {words[d]}' for i,d in enumerate(directions))+'. Semua garis miring naik sejajar satu sama lain; demikian pula semua garis miring turun.'
+    cert={'type':'sd_high_lines','segments':segments,'removed':[],'query':'parallel'}
+    if visual:
+        cert['visual_bindings']=[{'input':'segments','input_path':[i,1,axis],'path':['segments',i,1,axis]} for i in range(count) for axis in (0,1)]
+    pairs=sum(directions[i]==directions[j] for i in range(count) for j in range(i+1,count))
+    return _make(intro+' Berapa pasangan garis sejajar? Setiap pasangan dihitung satu kali.',
+                 None,{},f'Bandingkan arah setiap pasangan garis. Ada {pairs} pasangan yang memiliki arah sama',
+                 'session_sd_parallel_pairs',scene,cert=cert)
+
+
 def generate(name,bab,code,level,r,visual,index):
     grade=int(str(name).split('_')[0].replace('kelas',''))
     assert 1<=grade<=4
@@ -370,6 +396,8 @@ def generate(name,bab,code,level,r,visual,index):
             model=_clock_interval(r,visual)
         elif level=='easy' and ((grade==3 and bab==4 and code in 'AB') or (grade==4 and bab==5 and code=='A')) and r.randrange(2):
             model=_shape_easy(grade,code,r,visual)
+        elif grade==3 and bab==4 and code=='C' and level=='easy':
+            model=_parallel_pairs(r,visual)
         else:
             factory=reviewed.generate if r.randrange(2) else base
             model=factory(grade,bab,code,level,r,visual,index)

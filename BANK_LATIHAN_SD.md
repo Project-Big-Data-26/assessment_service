@@ -1,5 +1,7 @@
 # Bank latihan lokal kelas 1–4
 
+> Target terbaru adalah tiga sesi. Lihat [panduan tiga sesi](EXERCISE_TIGA_SESI.md) dan [laporan putaran terbaru](runs/exercise_sessions_3/REPORT.md). Angka di bawah mencatat penilaian satu sesi sebelumnya.
+
 **Penilaian ulang selesai: 2.921 soal tersimpan, 2.911 aktif, 10 ditahan.**
 Kekurangan satu sesi pada 85 subbab dan 255 kombinasi subbab-level: **0**.
 Database production belum disinkronkan.

@@ -31,7 +31,7 @@ def test_every_primary_location_has_an_actually_assessed_family(grade,bab,code,l
 
 @pytest.mark.parametrize('grade,bab,code,level',[
     (1,5,'C','easy'),(2,5,'A','easy'),(2,6,'B','easy'),(2,6,'B','medium'),
-    (3,4,'A','easy'),(3,4,'B','easy'),(4,2,'A','easy'),
+    (3,4,'A','easy'),(3,4,'B','easy'),(3,4,'C','easy'),(4,2,'A','easy'),
     (4,2,'A','hard'),(4,5,'A','easy')])
 def test_previously_finite_families_have_real_visual_and_text_capacity(grade,bab,code,level):
     for visual,minimum in [(True,21),(False,9)]:
@@ -77,6 +77,16 @@ def test_two_fraction_repairs_retain_two_distinct_targets():
     assert bank.solve(m['certificate'])==p['k1']-p['a']+p['b']-p['k2']
     assert bank.assess(m,2)['assessedLevel']=='hard'
     bank.check_visual(m)
+
+
+def test_parallel_pairs_vary_actual_directions_without_secondary_angle_arithmetic():
+    rng=random.Random(7);values=set();texts=set()
+    for i in range(60):
+        model=bank._parallel_pairs(rng,False)
+        values.add(bank.solve(model['certificate']));texts.add(model['question'])
+        assert 'derajat' not in model['question']
+        assert bank.assess(model,3)['assessedLevel']=='easy'
+    assert len(values)>2 and len(texts)>=20
 
 
 def test_name_or_colours_do_not_create_another_semantic_variation():

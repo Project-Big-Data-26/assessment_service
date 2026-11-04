@@ -1,670 +1,2890 @@
 {
- "book": "kelas12",
- "bab_no": 1,
- "subbab": "B",
- "level": "medium",
- "batch": 1,
- "skill_versi": "v1",
- "soal": [
-  {
-   "id": "kelas12-b01-b-medium-bt01-001",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0042-latihan-1-3-3"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "mencari a dan b dari dua jumlah deret",
-   "alasan_level": "menyusun dua persamaan dari $S_8$ dan $S_{16}$ lalu eliminasi, tiga langkah",
-   "stimulus": null,
-   "pertanyaan": "Diberikan deret aritmetika dengan $S_8 = 160$ dan $S_{16} = 576$. Seorang siswa menyimpulkan bahwa suku pertama ($a$) adalah 7 dan beda ($b$) adalah 3. Nilai $a$ dan $b$ yang sebenarnya adalah ....",
-   "jawaban_benar": "$a = 6$ dan $b = 4$",
-   "alasan_benar": "$2a + 7b = 40$ dan $2a + 15b = 72$, selisih $8b = 32$ sehingga $b = 4$, $a = 6$",
-   "distraktor": [
+  "book": "kelas12",
+  "bab_no": 1,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "soal": [
     {
-     "teks": "$a = 4$ dan $b = 6$",
-     "alasan": "nilai $a$ dan $b$ tertukar"
+      "id": "kelas12-b01-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0042-latihan-1-3-3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "mencari a dan b dari dua jumlah deret",
+      "alasan_level": "menyusun dua persamaan dari $S_8$ dan $S_{16}$ lalu eliminasi, tiga langkah",
+      "stimulus": null,
+      "pertanyaan": "Diberikan deret aritmetika dengan $S_8 = 160$ dan $S_{16} = 576$. Seorang siswa menyimpulkan bahwa suku pertama ($a$) adalah 7 dan beda ($b$) adalah 3. Nilai $a$ dan $b$ yang sebenarnya adalah ....",
+      "jawaban_benar": "$a = 6$ dan $b = 4$",
+      "alasan_benar": "$2a + 7b = 40$ dan $2a + 15b = 72$, selisih $8b = 32$ sehingga $b = 4$, $a = 6$",
+      "distraktor": [
+        {
+          "teks": "$a = 4$ dan $b = 6$",
+          "alasan": "nilai $a$ dan $b$ tertukar"
+        },
+        {
+          "teks": "$a = 7$ dan $b = 3$",
+          "alasan": "mengikuti kesimpulan siswa tanpa memeriksa $S_8$ dan $S_{16}$"
+        },
+        {
+          "teks": "$a = 5$ dan $b = 5$",
+          "alasan": "salah eliminasi sehingga $a$ dan $b$ keliru"
+        }
+      ],
+      "pembahasan": "$S_8 = 4(2a + 7b) = 160 \\Rightarrow 2a + 7b = 40$. $S_{16} = 8(2a + 15b) = 576 \\Rightarrow 2a + 15b = 72$. Kurangkan: $8b = 32$, $b = 4$, $a = 6$.",
+      "catatan": null
     },
     {
-     "teks": "$a = 7$ dan $b = 3$",
-     "alasan": "mengikuti kesimpulan siswa tanpa memeriksa $S_8$ dan $S_{16}$"
+      "id": "kelas12-b01-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0042-latihan-1-3-3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua jumlah deret lalu suku ke-n",
+      "alasan_level": "menentukan $a$ dan $b$ dari dua jumlah lalu menghitung suku ke-10 dalam konteks produksi",
+      "stimulus": null,
+      "pertanyaan": "Seorang pengrajin membuat gelang dengan pertambahan produksi tetap setiap hari. Jumlah gelang yang dibuat selama 6 hari pertama adalah 75 dan selama 12 hari pertama adalah 258. Banyak gelang yang dibuat pada hari ke-10 adalah ....",
+      "jawaban_benar": "32",
+      "alasan_benar": "$2a + 5b = 25$ dan $2a + 11b = 43$ sehingga $b = 3$, $a = 5$, $U_{10} = 5 + 9 \\times 3 = 32$",
+      "distraktor": [
+        {
+          "teks": "35",
+          "alasan": "memakai $a + 10b$ (n bukan n-1)"
+        },
+        {
+          "teks": "48",
+          "alasan": "nilai $a$ dan $b$ tertukar ($a = 3$, $b = 5$)"
+        },
+        {
+          "teks": "29",
+          "alasan": "memakai $n = 9$ (salah menghitung hari ke-10)"
+        }
+      ],
+      "pembahasan": "$S_6 = 3(2a + 5b) = 75$ dan $S_{12} = 6(2a + 11b) = 258$. Diperoleh $b = 3$, $a = 5$, jadi $U_{10} = 5 + 9 \\times 3 = 32$.",
+      "catatan": null
     },
     {
-     "teks": "$a = 5$ dan $b = 5$",
-     "alasan": "salah eliminasi sehingga $a$ dan $b$ keliru"
+      "id": "kelas12-b01-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0042-latihan-1-3-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tiga bilangan deret aritmetika",
+      "alasan_level": "memisalkan tiga bilangan $x - d, x, x + d$ lalu menyelesaikan $d^2$",
+      "stimulus": null,
+      "pertanyaan": "Tiga bilangan membentuk deret aritmetika. Jika jumlah mereka 36 dan hasil kalinya 1.680, bilangan terbesar di antara ketiga bilangan tersebut adalah ....",
+      "jawaban_benar": "14",
+      "alasan_benar": "bilangan tengah 12, $12(144 - d^2) = 1.680 \\Rightarrow d^2 = 4$, bilangan 10, 12, 14",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "memilih bilangan tengah"
+        },
+        {
+          "teks": "10",
+          "alasan": "memilih bilangan terkecil"
+        },
+        {
+          "teks": "16",
+          "alasan": "memakai $d = 4$ (lupa mengakarkan $d^2 = 4$)"
+        }
+      ],
+      "pembahasan": "Misalkan bilangan $x - d$, $x$, $x + d$. Jumlah $3x = 36$ sehingga $x = 12$. Hasil kali $12(144 - d^2) = 1.680 \\Rightarrow d^2 = 4$, $d = \\pm 2$. Bilangannya 10, 12, 14.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0042-latihan-1-3-4"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "tiga bilangan deret aritmetika (konteks)",
+      "alasan_level": "memisalkan tiga panjang tali dengan beda tetap lalu mencari bilangan terkecil",
+      "stimulus": null,
+      "pertanyaan": "Panjang tiga potong tali membentuk deret aritmetika. Jika jumlah panjang ketiga potong tali itu 45 cm dan hasil kali panjangnya 3.135 cm$^3$, panjang potongan terpendek adalah ....",
+      "jawaban_benar": "11 cm",
+      "alasan_benar": "potongan tengah 15 cm, $15(225 - d^2) = 3.135 \\Rightarrow d^2 = 16$, panjangnya 11, 15, 19",
+      "distraktor": [
+        {
+          "teks": "15 cm",
+          "alasan": "memilih potongan tengah"
+        },
+        {
+          "teks": "19 cm",
+          "alasan": "memilih potongan terpanjang"
+        },
+        {
+          "teks": "7 cm",
+          "alasan": "mengira $d = 8$ (membagi 16 dengan 2 bukan mengakarkan)"
+        }
+      ],
+      "pembahasan": "Misalkan $x - d$, $x$, $x + d$. $3x = 45 \\Rightarrow x = 15$. $15(225 - d^2) = 3.135 \\Rightarrow d^2 = 16$, $d = 4$. Panjangnya 11, 15, 19 cm; terpendek 11 cm.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0042-latihan-1-3-5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "suku bergantian menjadi suku tengah",
+      "alasan_level": "menyederhanakan lima suku bertanda bergantian menjadi $U_7$ lalu memakai $S_n = n \\times U_{tengah}$",
+      "stimulus": null,
+      "pertanyaan": "Jika $U_n$ menyatakan suku ke-$n$ suatu barisan aritmetika dan diketahui $U_3 - U_5 + U_7 - U_9 + U_{11} = 15$, berapa jumlah 13 suku pertama barisan tersebut?",
+      "jawaban_benar": "195",
+      "alasan_benar": "$U_3 + U_{11} = U_5 + U_9 = 2U_7$ sehingga ekspresi $= U_7 = 15$; $S_{13} = 13 \\times U_7 = 195$",
+      "distraktor": [
+        {
+          "teks": "390",
+          "alasan": "memakai $S_{13} = 13(a + U_{13})$ tanpa membagi 2"
+        },
+        {
+          "teks": "105",
+          "alasan": "mengalikan $U_7$ dengan 7 (mengira banyak suku 7)"
+        },
+        {
+          "teks": "165",
+          "alasan": "mengalikan $U_7$ dengan 11 (mengira banyak suku 11)"
+        }
+      ],
+      "pembahasan": "Karena $U_3 + U_{11} = 2U_7$ dan $U_5 + U_9 = 2U_7$, maka $U_3 - U_5 + U_7 - U_9 + U_{11} = U_7 = 15$. $S_{13} = \\frac{13}{2}(a + U_{13}) = \\frac{13}{2} \\times 2U_7 = 13 \\times 15 = 195$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0047-latihan-1-4-2"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua suku geometri lalu jumlah deret",
+      "alasan_level": "mencari rasio dan suku pertama dari dua suku lalu jumlah lima suku",
+      "stimulus": null,
+      "pertanyaan": "Suku ke-3 suatu deret geometri dengan rasio positif adalah 24 dan suku ke-5 adalah 96. Jumlah 5 suku pertama deret tersebut adalah ....",
+      "jawaban_benar": "186",
+      "alasan_benar": "$r^2 = \\frac{96}{24} = 4$, $r = 2$, $a = 6$, $S_5 = \\frac{6(2^5 - 1)}{2 - 1} = 186$",
+      "distraktor": [
+        {
+          "teks": "93",
+          "alasan": "salah suku pertama: $a = 3$ sehingga jumlahnya setengah"
+        },
+        {
+          "teks": "378",
+          "alasan": "menjumlahkan 6 suku, bukan 5"
+        },
+        {
+          "teks": "90",
+          "alasan": "menjumlahkan 4 suku, bukan 5"
+        }
+      ],
+      "pembahasan": "$\\frac{U_5}{U_3} = r^2 = 4$, $r = 2$ (positif). $a = \\frac{24}{4} = 6$. $S_5 = \\frac{6(32 - 1)}{1} = 186$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0047-latihan-1-4-2"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua suku geometri lalu jumlah deret (konteks)",
+      "alasan_level": "mencari rasio dan suku pertama dari dua suku dalam konteks lalu menjumlah empat suku",
+      "stimulus": null,
+      "pertanyaan": "Banyak pengunjung suatu situs bertambah dengan pola barisan geometri berrasio positif. Pengunjung pada hari kedua 60 orang dan pada hari keempat 540 orang. Jumlah pengunjung selama 4 hari pertama adalah ....",
+      "jawaban_benar": "800 orang",
+      "alasan_benar": "$r^2 = \\frac{540}{60} = 9$, $r = 3$, $a = 20$, $S_4 = \\frac{20(3^4 - 1)}{3 - 1} = 800$",
+      "distraktor": [
+        {
+          "teks": "260 orang",
+          "alasan": "menjumlahkan 3 hari saja"
+        },
+        {
+          "teks": "2.420 orang",
+          "alasan": "menjumlahkan 5 hari"
+        },
+        {
+          "teks": "1.600 orang",
+          "alasan": "lupa membagi dengan $(r - 1)$"
+        }
+      ],
+      "pembahasan": "$U_4 / U_2 = r^2 = 9$, $r = 3$. $a = \\frac{60}{3} = 20$. $S_4 = \\frac{20(81 - 1)}{2} = 800$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0047-latihan-1-4-3"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "panjang lintasan bola memantul",
+      "alasan_level": "menjumlahkan lintasan turun dan naik dengan dua deret tak hingga",
+      "stimulus": null,
+      "pertanyaan": "Suatu bola dijatuhkan dari ketinggian 12 meter. Setiap pantulan mencapai $\\frac{3}{4}$ dari tinggi sebelumnya. Hitung total seluruh jarak yang ditempuh oleh bola tersebut hingga berhenti.",
+      "jawaban_benar": "84 meter",
+      "alasan_benar": "naik pertama 9 m: lintasan $= 12 + 2 \\times \\frac{9}{1 - 3/4} = 12 + 72 = 84$",
+      "distraktor": [
+        {
+          "teks": "48 meter",
+          "alasan": "hanya menjumlahkan lintasan turun $\\frac{12}{1 - 3/4}$"
+        },
+        {
+          "teks": "96 meter",
+          "alasan": "menghitung lintasan turun dan naik sama-sama $\\frac{12}{1 - 3/4}$ lalu dikali 2"
+        },
+        {
+          "teks": "72 meter",
+          "alasan": "hanya menjumlahkan lintasan naik dan turun setelah pantulan, tanpa jatuh awal 12 m"
+        }
+      ],
+      "pembahasan": "Jatuh awal 12 m. Setelah itu naik-turun: tinggi pantulan pertama 9 m, rasio $\\frac{3}{4}$, jumlah satu arah $= \\frac{9}{1 - 3/4} = 36$, dua arah 72. Total $12 + 72 = 84$ m.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0048-latihan-1-4-5"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "membandingkan dua deret geometri",
+      "alasan_level": "menghitung dua jumlah deret geometri lalu membandingkan dan mencari selisih",
+      "stimulus": null,
+      "pertanyaan": "Diberikan dua deret geometri. Deret A dengan $a = 5$, $r = 4$, dan $n = 4$, sedangkan deret B dengan $a = 7$, $r = 5$ dan $n = 3$. Pernyataan yang benar mengenai jumlah suku kedua deret tersebut adalah ....",
+      "jawaban_benar": "Deret A lebih besar dengan selisih 208",
+      "alasan_benar": "$S_A = \\frac{5(4^4 - 1)}{3} = 425$, $S_B = \\frac{7(5^3 - 1)}{4} = 217$, selisih 208",
+      "distraktor": [
+        {
+          "teks": "Deret B lebih besar dengan selisih 208",
+          "alasan": "membandingkan dengan arah terbalik"
+        },
+        {
+          "teks": "Deret A lebih besar dengan selisih 407",
+          "alasan": "lupa membagi dengan $(r - 1)$ pada kedua deret"
+        },
+        {
+          "teks": "Deret A lebih besar dengan selisih 63",
+          "alasan": "memakai $n - 1$ suku pada kedua deret"
+        }
+      ],
+      "pembahasan": "$S_A = \\frac{5 \\times 255}{3} = 425$. $S_B = \\frac{7 \\times 124}{4} = 217$. $425 - 217 = 208$ sehingga deret A lebih besar.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest",
+        "id": "kelas12-b01-p0051-uji-kompetensi-5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah bilangan bersyarat pada deret",
+      "alasan_level": "memisahkan dua deret aritmetika (kelipatan 3 dan kelipatan 9) lalu mengurangkan",
+      "stimulus": null,
+      "pertanyaan": "Diketahui deret bilangan $15 + 16 + 17 + 18 + \\dots + 94$. Dari deret bilangan tersebut, jumlah bilangan yang habis dibagi tiga tetapi tidak habis dibagi sembilan adalah ....",
+      "jawaban_benar": "972",
+      "alasan_benar": "kelipatan 3: $15, \\dots, 93$ ($n = 27$) jumlah 1.458; kelipatan 9: $18, \\dots, 90$ ($n = 9$) jumlah 486; selisih 972",
+      "distraktor": [
+        {
+          "teks": "1.458",
+          "alasan": "menjumlahkan semua kelipatan 3 tanpa mengeluarkan kelipatan 9"
+        },
+        {
+          "teks": "486",
+          "alasan": "hanya menghitung jumlah kelipatan 9"
+        },
+        {
+          "teks": "1.944",
+          "alasan": "menjumlahkan kelipatan 3 dan kelipatan 9, bukan mengurangkan"
+        }
+      ],
+      "pembahasan": "Kelipatan 3: $S = \\frac{27}{2}(15 + 93) = 1.458$. Kelipatan 9: $S = \\frac{9}{2}(18 + 90) = 486$. Hasil: $1.458 - 486 = 972$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-011",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 39,
+        "kutipan": "Deret aritmetika adalah suatu deret yang diperoleh dari menjumlahkan sukusuku pada barisan aritmetika."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "dua suku diketahui lalu jumlah deret aritmetika",
+      "alasan_level": "mencari $b$ dan $a$ dari dua suku lalu menghitung $S_{10}$",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu deret aritmetika, suku ke-3 adalah 11 dan suku ke-8 adalah 31. Jumlah 10 suku pertama deret tersebut adalah ....",
+      "jawaban_benar": "210",
+      "alasan_benar": "$5b = 20$, $b = 4$, $a = 3$, $S_{10} = 5(6 + 36) = 210$",
+      "distraktor": [
+        {
+          "teks": "250",
+          "alasan": "salah suku pertama: $a = U_3 - b = 7$"
+        },
+        {
+          "teks": "230",
+          "alasan": "memakai $n \\times b$ bukan $(n-1)b$ pada rumus jumlah"
+        },
+        {
+          "teks": "420",
+          "alasan": "lupa membagi 2 pada rumus jumlah"
+        }
+      ],
+      "pembahasan": "$U_8 - U_3 = 5b = 20 \\Rightarrow b = 4$. $a = 11 - 2 \\times 4 = 3$. $S_{10} = \\frac{10}{2}(2 \\times 3 + 9 \\times 4) = 210$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-012",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah geometri diketahui lalu mencari suku",
+      "alasan_level": "menyelesaikan persamaan kuadrat untuk $r$ dari $S_3$ lalu mencari $U_5$",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret geometri memiliki suku pertama 5 dan rasio positif. Jika jumlah 3 suku pertamanya 105, suku ke-5 deret tersebut adalah ....",
+      "jawaban_benar": "1.280",
+      "alasan_benar": "$5(1 + r + r^2) = 105 \\Rightarrow r^2 + r - 20 = 0 \\Rightarrow r = 4$, $U_5 = 5 \\times 4^4 = 1.280$",
+      "distraktor": [
+        {
+          "teks": "320",
+          "alasan": "memakai $r^3$ (suku ke-4), bukan $r^4$"
+        },
+        {
+          "teks": "5.120",
+          "alasan": "memakai $r^5$ (suku ke-6), bukan $r^4$"
+        },
+        {
+          "teks": "1.024",
+          "alasan": "lupa mengalikan dengan suku pertama 5"
+        }
+      ],
+      "pembahasan": "$S_3 = 5(1 + r + r^2) = 105$ sehingga $r^2 + r - 20 = 0$, $(r + 5)(r - 4) = 0$, $r = 4$ (positif). $U_5 = ar^4 = 5 \\times 256 = 1.280$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-013",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 46,
+        "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "deret tak hingga: cari rasio lalu suku",
+      "alasan_level": "menentukan $r$ dari $S_\\infty = \\frac{a}{1 - r}$ lalu menghitung $U_3$",
+      "stimulus": null,
+      "pertanyaan": "Suatu deret geometri tak hingga memiliki suku pertama 9 dan jumlah 12. Suku ke-3 deret tersebut adalah ....",
+      "jawaban_benar": "$\\frac{9}{16}$",
+      "alasan_benar": "$12 = \\frac{9}{1 - r} \\Rightarrow r = \\frac{1}{4}$, $U_3 = 9 \\times \\frac{1}{16} = \\frac{9}{16}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "memberi suku ke-2 ($ar$), bukan suku ke-3"
+        },
+        {
+          "teks": "$\\frac{9}{64}$",
+          "alasan": "memberi suku ke-4 ($ar^3$), bukan suku ke-3"
+        },
+        {
+          "teks": "$\\frac{81}{16}$",
+          "alasan": "memakai $r = \\frac{3}{4}$ (mengambil $1 - r$ sebagai rasio)"
+        }
+      ],
+      "pembahasan": "$S_\\infty = \\frac{a}{1 - r}$: $12(1 - r) = 9 \\Rightarrow 1 - r = \\frac{3}{4}$, $r = \\frac{1}{4}$. $U_3 = ar^2 = 9 \\times \\frac{1}{16} = \\frac{9}{16}$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-014",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Panjang lintasan dihitung menggunakan rumus geometri tak hingga berikut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rasio dari perbandingan jumlah tak hingga",
+      "alasan_level": "membentuk persamaan $\\frac{1}{1 - r} = 3$ lalu menyelesaikannya",
+      "stimulus": null,
+      "pertanyaan": "Jumlah suatu deret geometri tak hingga sama dengan 3 kali suku pertamanya. Rasio deret tersebut adalah ....",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "$\\frac{a}{1 - r} = 3a \\Rightarrow 1 - r = \\frac{1}{3} \\Rightarrow r = \\frac{2}{3}$",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "mengira $r$ sama dengan nilai $1 - r$"
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "menyelesaikan $1 - r = 3$"
+        },
+        {
+          "teks": "$\\frac{4}{3}$",
+          "alasan": "menyelesaikan $r - 1 = \\frac{1}{3}$ (tanda tertukar), padahal $|r| > 1$ tidak konvergen"
+        }
+      ],
+      "pembahasan": "$S_\\infty = \\frac{a}{1 - r} = 3a \\Rightarrow 1 - r = \\frac{1}{3} \\Rightarrow r = \\frac{2}{3}$ (memenuhi $|r| < 1$).",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-015",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah kelipatan bilangan di antara dua batas",
+      "alasan_level": "menentukan suku pertama, terakhir, dan banyak suku kelipatan 7 lalu menjumlahkan",
+      "stimulus": null,
+      "pertanyaan": "Jumlah semua bilangan bulat kelipatan 7 yang terletak di antara 100 dan 300 adalah ....",
+      "jawaban_benar": "5.586",
+      "alasan_benar": "kelipatan 7 dari 105 sampai 294, $n = \\frac{294 - 105}{7} + 1 = 28$, $S = 14 \\times 399 = 5.586$",
+      "distraktor": [
+        {
+          "teks": "11.172",
+          "alasan": "lupa membagi 2 pada rumus jumlah"
+        },
+        {
+          "teks": "5.187",
+          "alasan": "salah menghitung banyak suku ($n = 26$)"
+        },
+        {
+          "teks": "5.985",
+          "alasan": "salah menghitung banyak suku ($n = 30$)"
+        }
+      ],
+      "pembahasan": "Suku pertama 105, terakhir 294, beda 7. $n = \\frac{294 - 105}{7} + 1 = 28$. $S_{28} = \\frac{28}{2}(105 + 294) = 5.586$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-016",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "menabung bertambah tetap: cari banyak bulan",
+      "alasan_level": "menyusun $S_n$ dalam $n$, lalu menyelesaikan persamaan kuadrat",
+      "stimulus": null,
+      "pertanyaan": "Rina menabung Rp50.000 pada bulan pertama, kemudian setiap bulan berikutnya tabungannya Rp10.000 lebih banyak daripada bulan sebelumnya. Rina berhenti menabung ketika jumlah seluruh tabungannya tepat Rp1.260.000. Rina menabung selama .... bulan.",
+      "jawaban_benar": "12",
+      "alasan_benar": "$S_n = \\frac{n}{2}(100 + 10(n-1)) = 5n^2 + 45n = 1.260$ (dalam ribuan) $\\Rightarrow n = 12$",
+      "distraktor": [
+        {
+          "teks": "11",
+          "alasan": "$S_{11}$ = Rp1.100.000, belum mencapai Rp1.260.000"
+        },
+        {
+          "teks": "13",
+          "alasan": "$S_{13}$ = Rp1.430.000, melebihi Rp1.260.000"
+        },
+        {
+          "teks": "14",
+          "alasan": "$S_{14}$ = Rp1.610.000, melebihi Rp1.260.000"
+        }
+      ],
+      "pembahasan": "Dalam ribuan rupiah: $\\frac{n}{2}(2 \\times 50 + (n - 1)10) = 5n^2 + 45n = 1.260 \\Rightarrow n^2 + 9n - 252 = 0 \\Rightarrow (n + 21)(n - 12) = 0$, $n = 12$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-017",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 44,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "mencari banyak suku deret geometri",
+      "alasan_level": "menyamakan $S_n$ dengan nilai diketahui lalu menyelesaikan $2^n$",
+      "stimulus": null,
+      "pertanyaan": "Deret geometri $4 + 8 + 16 + \\dots$ memiliki jumlah 1.020. Banyak suku pada deret tersebut adalah ....",
+      "jawaban_benar": "8",
+      "alasan_benar": "$\\frac{4(2^n - 1)}{2 - 1} = 1.020 \\Rightarrow 2^n = 256 \\Rightarrow n = 8$",
+      "distraktor": [
+        {
+          "teks": "7",
+          "alasan": "$S_7 = 508$, kurang dari 1.020"
+        },
+        {
+          "teks": "9",
+          "alasan": "$S_9 = 2.044$, melebihi 1.020"
+        },
+        {
+          "teks": "255",
+          "alasan": "mengambil nilai $2^n - 1$ sebagai banyak suku"
+        }
+      ],
+      "pembahasan": "$r = 2$, $a = 4$. $S_n = 4(2^n - 1) = 1.020 \\Rightarrow 2^n - 1 = 255 \\Rightarrow 2^n = 256 \\Rightarrow n = 8$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-018",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "jumlah n suku dan satu suku diketahui",
+      "alasan_level": "dari $S_9$ dan $U_3$ menyusun dua persamaan untuk $a$ dan $b$ lalu mencari $U_{12}$",
+      "stimulus": null,
+      "pertanyaan": "Pada suatu deret aritmetika, jumlah 9 suku pertama adalah 225 dan suku ke-3 adalah 13. Suku ke-12 deret tersebut adalah ....",
+      "jawaban_benar": "67",
+      "alasan_benar": "$a + 4b = 25$ dan $a + 2b = 13$ sehingga $b = 6$, $a = 1$, $U_{12} = 1 + 66 = 67$",
+      "distraktor": [
+        {
+          "teks": "61",
+          "alasan": "memakai $n = 11$ (suku ke-11)"
+        },
+        {
+          "teks": "73",
+          "alasan": "memakai $n = 13$ (suku ke-13)"
+        },
+        {
+          "teks": "66",
+          "alasan": "lupa menambahkan suku pertama pada $U_{12}$"
+        }
+      ],
+      "pembahasan": "$S_9 = \\frac{9}{2}(2a + 8b) = 9(a + 4b) = 225 \\Rightarrow a + 4b = 25$. $U_3 = a + 2b = 13$. Kurangkan: $2b = 12$, $b = 6$, $a = 1$. $U_{12} = 1 + 11 \\times 6 = 67$.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-019",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 41,
+        "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "dua deret aritmetika dengan jumlah sama",
+      "alasan_level": "menyamakan dua rumus $S_n$ lalu menyelesaikan persamaan linear dalam $n$",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika pertama memiliki suku pertama 5 dan beda 4, sedangkan deret aritmetika kedua memiliki suku pertama 41 dan beda $-2$. Jumlah $n$ suku pertama kedua deret itu sama untuk $n$ bilangan asli sebesar ....",
+      "jawaban_benar": "13",
+      "alasan_benar": "$\\frac{n}{2}(10 + 4(n-1)) = \\frac{n}{2}(82 - 2(n-1))$, sehingga $4n + 6 = 84 - 2n$ dan $n = 13$",
+      "distraktor": [
+        {
+          "teks": "12",
+          "alasan": "salah menyelesaikan $6n = 78$ (memakai 72)"
+        },
+        {
+          "teks": "14",
+          "alasan": "salah menyelesaikan $6n = 78$ (memakai 84)"
+        },
+        {
+          "teks": "26",
+          "alasan": "mengalikan hasil $n$ dengan 2 (mengira $\\frac{n}{2} = 13$)"
+        }
+      ],
+      "pembahasan": "$S_n^{(1)} = \\frac{n}{2}(4n + 6)$ dan $S_n^{(2)} = \\frac{n}{2}(84 - 2n)$. Samakan, $n \\neq 0$: $4n + 6 = 84 - 2n \\Rightarrow 6n = 78 \\Rightarrow n = 13$. Keduanya 377.",
+      "catatan": null
+    },
+    {
+      "id": "kelas12-b01-b-medium-bt01-020",
+      "tipe_generate": "orisinal",
+      "acuan": {
+        "sumber": "siswa",
+        "halaman": 47,
+        "kutipan": "Panjang lintasan dihitung menggunakan rumus geometri tak hingga berikut."
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 2,
+      "jenis_soal": "deret tak hingga dalam konteks pertumbuhan",
+      "alasan_level": "mengenali rasio $\\frac{3}{4}$ lalu satu kali $S_\\infty$ dalam konteks",
+      "stimulus": null,
+      "pertanyaan": "Pertambahan tinggi sebuah tanaman pada tahun pertama 60 cm dan pada setiap tahun berikutnya sama dengan $\\frac{3}{4}$ dari pertambahan tahun sebelumnya. Jika tinggi awal dianggap 0 cm, batas tinggi tanaman itu setelah waktu yang sangat lama adalah ....",
+      "jawaban_benar": "240 cm",
+      "alasan_benar": "$S_\\infty = \\frac{60}{1 - 3/4} = 240$",
+      "distraktor": [
+        {
+          "teks": "80 cm",
+          "alasan": "membagi 60 dengan $r$, bukan dengan $(1 - r)$"
+        },
+        {
+          "teks": "180 cm",
+          "alasan": "hanya menjumlahkan pertambahan mulai tahun kedua ($\\frac{45}{1 - 3/4}$)"
+        },
+        {
+          "teks": "45 cm",
+          "alasan": "hanya mengambil pertambahan tahun kedua"
+        }
+      ],
+      "pembahasan": "Deret geometri tak hingga $a = 60$, $r = \\frac{3}{4}$ ($|r| < 1$). $S_\\infty = \\frac{a}{1 - r} = \\frac{60}{1/4} = 240$ cm.",
+      "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2174a805831925f54fdfe5dd",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 7 dan beda 5. Tentukan suku ke-12 dan jumlah 12 suku pertama.",
+        "jawaban": "$U_{12} = 62$ dan $S_{12} = 414$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$561$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $561$.",
+      "distraktor": [
+        {
+          "teks": "$562$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$560$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1122$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $561$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/65f6d9e2857ede3491131926.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              2
+            ],
+            [
+              "q",
+              8
+            ],
+            [
+              "u",
+              15
+            ],
+            [
+              "v",
+              69
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 2], [\"q\", 8], [\"u\", 15], [\"v\", 69], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "10dd396bfc58bbc1ab54e1c6",
+        "teks": "Sebuah toko kue menjual 5 kotak pada hari pertama, dan penjualan bertambah 6 kotak setiap hari. Tentukan penjualan hari ke-9 dan jumlah penjualan selama 9 hari pertama.",
+        "jawaban": "$U_9 = 53$ dan $S_9 = 261$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$258$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $258$.",
+      "distraktor": [
+        {
+          "teks": "$259$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$257$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$516$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $258$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9f84e836866e55107d96445a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              2
+            ],
+            [
+              "q",
+              5
+            ],
+            [
+              "u",
+              8
+            ],
+            [
+              "v",
+              17
+            ],
+            [
+              "n",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 2], [\"q\", 5], [\"u\", 8], [\"v\", 17], [\"n\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b0259754afeccf21dda88f19",
+        "teks": "Seorang petani menata buah jeruk dalam tumpukan berbentuk segitiga. Tumpukan paling bawah berisi 62 jeruk, di atasnya 58 jeruk, kemudian 54 jeruk, dan seterusnya hingga tumpukan terakhir hanya berisi 6 jeruk. Hitunglah total jeruk yang ditumpuk.",
+        "jawaban": "510",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$384$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $384$.",
+      "distraktor": [
+        {
+          "teks": "$385$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$383$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$768$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $384$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/4b1e8efc4d0b0587de67354b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              6
+            ],
+            [
+              "u",
+              30
+            ],
+            [
+              "v",
+              66
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 6], [\"u\", 30], [\"v\", 66], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1431e22a6cae1a1430699453",
+        "teks": "Seorang tukang menyusun batako berbentuk tangga. Lapisan paling bawah berisi 33 batako, di atasnya 30 batako, kemudian 27 batako, dan seterusnya hingga lapisan teratas hanya berisi 3 batako. Banyak seluruh batako yang disusun adalah ....",
+        "jawaban": "198",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$650$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $650$.",
+      "distraktor": [
+        {
+          "teks": "$651$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$649$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1300$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $650$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/94a72dbc4b44d5715a1d50d2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              5
+            ],
+            [
+              "q",
+              7
+            ],
+            [
+              "u",
+              34
+            ],
+            [
+              "v",
+              50
+            ],
+            [
+              "n",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 5], [\"q\", 7], [\"u\", 34], [\"v\", 50], [\"n\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e86be4e2e9ad822f3cdc21a",
+        "teks": "Suatu deret geometri memiliki suku pertama $a = 3$ dan rasio $r = 4$. Hitunglah jumlah 4 suku pertama deret tersebut.",
+        "jawaban": "255",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$132$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $132$.",
+      "distraktor": [
+        {
+          "teks": "$133$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$131$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$264$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $132$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/bb0ad9c80df6df8a75185247.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              2
+            ],
+            [
+              "q",
+              6
+            ],
+            [
+              "u",
+              9
+            ],
+            [
+              "v",
+              21
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 2], [\"q\", 6], [\"u\", 9], [\"v\", 21], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "156e6337f624574ee6136d0b",
+        "teks": "Sebuah kabar tersebar dengan pola: pada hari pertama 7 orang mengetahuinya, dan setiap hari banyak orang yang baru mengetahuinya menjadi 3 kali lipat hari sebelumnya. Jumlah orang yang mengetahui kabar itu selama 4 hari pertama adalah ....",
+        "jawaban": "280",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$1192$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $1192$.",
+      "distraktor": [
+        {
+          "teks": "$1193$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2384$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $1192$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8e7a83c8995e28973e8fcb22.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              9
+            ],
+            [
+              "u",
+              25
+            ],
+            [
+              "v",
+              79
+            ],
+            [
+              "n",
+              16
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 9], [\"u\", 25], [\"v\", 79], [\"n\", 16]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39e883c7d99e37d01754d4e0",
+        "teks": "Pengertian deret bilangan yang tepat adalah ....",
+        "jawaban": "jumlah suku-suku penyusun suatu barisan bilangan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$578$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $578$.",
+      "distraktor": [
+        {
+          "teks": "$579$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$577$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1156$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $578$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/4fc5b0c2472d457135197a6f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              4
+            ],
+            [
+              "q",
+              10
+            ],
+            [
+              "u",
+              19
+            ],
+            [
+              "v",
+              37
+            ],
+            [
+              "n",
+              17
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 4], [\"q\", 10], [\"u\", 19], [\"v\", 37], [\"n\", 17]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0dd5c0243041aa32c579793e",
+        "teks": "Deret berikut yang merupakan deret aritmetika adalah ....",
+        "jawaban": "$4 + 9 + 14 + 19 + \\dots$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$376$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $376$.",
+      "distraktor": [
+        {
+          "teks": "$377$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$375$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$752$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $376$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/116bedd5d968c954fff8f783.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              2
+            ],
+            [
+              "q",
+              4
+            ],
+            [
+              "u",
+              22
+            ],
+            [
+              "v",
+              42
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 2], [\"q\", 4], [\"u\", 22], [\"v\", 42], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5def05c0d797c6525301a56e",
+        "teks": "Suatu deret aritmetika memiliki pola 8 + 13 + 18 + .... Berapa jumlah 20 suku pertama deret tersebut?",
+        "jawaban": "1.110",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$192$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $192$.",
+      "distraktor": [
+        {
+          "teks": "$193$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$384$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $192$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/3307ca121cba669505f1f383.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              8
+            ],
+            [
+              "u",
+              9
+            ],
+            [
+              "v",
+              19
+            ],
+            [
+              "n",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 8], [\"u\", 9], [\"v\", 19], [\"n\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8ad0eeadd99b1eb735e9d83d",
+        "teks": "Sebuah perpustakaan menerima sumbangan buku: bulan pertama 13 buku, bulan kedua 19 buku, bulan ketiga 25 buku, dan seterusnya dengan pertambahan tetap. Berapa jumlah buku yang diterima selama 14 bulan pertama?",
+        "jawaban": "728",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$1066$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $1066$.",
+      "distraktor": [
+        {
+          "teks": "$1067$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1065$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2132$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $1066$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8e5aa2d3a7f23805518b05e1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              2
+            ],
+            [
+              "q",
+              7
+            ],
+            [
+              "u",
+              22
+            ],
+            [
+              "v",
+              82
+            ],
+            [
+              "n",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 2], [\"q\", 7], [\"u\", 22], [\"v\", 82], [\"n\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14d17557a99f22f08722006d",
+        "teks": "Tempat duduk di suatu gedung diatur mulai dari barisan depan ke belakang dengan banyak kursi di baris belakang 4 kursi lebih banyak dari baris di depannya. Jika dalam gedung tersebut terdapat 15 baris kursi dan baris terdepan ada 10 kursi, jumlah seluruh kursi dalam gedung tersebut ada ....",
+        "jawaban": "570",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$195$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $195$.",
+      "distraktor": [
+        {
+          "teks": "$196$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$194$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$390$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $195$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/2f46046aa05fb7088797f453.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              8
+            ],
+            [
+              "u",
+              12
+            ],
+            [
+              "v",
+              27
+            ],
+            [
+              "n",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 8], [\"u\", 12], [\"v\", 27], [\"n\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a232e81295f1fc9597ada5d",
+        "teks": "Pak Budi menanam pohon jati pada sebuah lahan. Baris pertama ditanami 6 pohon dan setiap baris berikutnya ditanami 5 pohon lebih banyak dari baris sebelumnya. Jika lahan itu memiliki 9 baris, banyak pohon jati seluruhnya adalah ....",
+        "jawaban": "234",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$495$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $495$.",
+      "distraktor": [
+        {
+          "teks": "$496$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$494$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$990$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $495$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/14b0559135058808348aa8d2.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              6
+            ],
+            [
+              "u",
+              21
+            ],
+            [
+              "v",
+              45
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 6], [\"u\", 21], [\"v\", 45], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d75d634ffe1055f20026e0d4",
+        "teks": "Seorang petani jeruk mencatat hasil panennya selama 9 hari pertama. Setiap harinya, hasil panen mengalami kenaikan tetap dimulai hari pertama, kedua, ketiga berturut-turut 20 kg, 24 kg, 28 kg, dan seterusnya. Jumlah hasil panen selama 9 hari pertama adalah ....",
+        "jawaban": "324 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$1320$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $1320$.",
+      "distraktor": [
+        {
+          "teks": "$1321$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1319$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2640$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $1320$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/04dec34cd6b1f00f1932ead0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              5
+            ],
+            [
+              "q",
+              8
+            ],
+            [
+              "u",
+              52
+            ],
+            [
+              "v",
+              88
+            ],
+            [
+              "n",
+              15
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 5], [\"q\", 8], [\"u\", 52], [\"v\", 88], [\"n\", 15]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "41722a67de3dbcdd33edb0e6",
+        "teks": "Seorang nelayan mencatat tangkapan ikannya selama 13 hari pertama. Setiap harinya, tangkapan mengalami kenaikan tetap dimulai hari pertama, kedua, ketiga berturut-turut 6 kg, 10 kg, 14 kg, dan seterusnya. Jumlah tangkapan selama 13 hari pertama adalah ....",
+        "jawaban": "390 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$861$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $861$.",
+      "distraktor": [
+        {
+          "teks": "$862$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$860$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1722$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $861$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/0565f0e1cd311bdf86b6d7b9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              4
+            ],
+            [
+              "q",
+              10
+            ],
+            [
+              "u",
+              30
+            ],
+            [
+              "v",
+              84
+            ],
+            [
+              "n",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 4], [\"q\", 10], [\"u\", 30], [\"v\", 84], [\"n\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "83d2698acc235bf6018b8284",
+        "teks": "Dengan cara Gauss, suku pertama dipasangkan dengan suku terakhir, suku kedua dengan suku sebelum terakhir, dan seterusnya sehingga tiap pasangan berjumlah sama. Jumlah $1 + 2 + 3 + \\dots + 80$ adalah ....",
+        "jawaban": "3.240",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$264$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $264$.",
+      "distraktor": [
+        {
+          "teks": "$265$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$263$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$528$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $264$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/a20e6b27aa273d649f7d0ab0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              4
+            ],
+            [
+              "q",
+              8
+            ],
+            [
+              "u",
+              18
+            ],
+            [
+              "v",
+              30
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 4], [\"q\", 8], [\"u\", 18], [\"v\", 30], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0c902c500fca4eacfc660d9a",
+        "teks": "Jumlah 5 suku pertama deret geometri $2 + 10 + 50 + 250 + \\dots$ adalah ....",
+        "jawaban": "1.562",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$216$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $216$.",
+      "distraktor": [
+        {
+          "teks": "$217$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$215$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$432$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $216$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/0abd544b7fd9f027706ee315.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              7
+            ],
+            [
+              "u",
+              14
+            ],
+            [
+              "v",
+              34
+            ],
+            [
+              "n",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 7], [\"u\", 14], [\"v\", 34], [\"n\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a84f7729cd8dea4610c830a7",
+        "teks": "Jumlah deret geometri tak hingga $18 + 6 + 2 + \\frac{2}{3} + \\dots$ adalah ....",
+        "jawaban": "27",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$384$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $384$.",
+      "distraktor": [
+        {
+          "teks": "$385$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$383$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$768$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $384$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/c32ff606edee13103e4f4675.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              5
+            ],
+            [
+              "q",
+              9
+            ],
+            [
+              "u",
+              17
+            ],
+            [
+              "v",
+              25
+            ],
+            [
+              "n",
+              16
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 5], [\"q\", 9], [\"u\", 17], [\"v\", 25], [\"n\", 16]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07599093ffecadea5fe713f0",
+        "teks": "**Tabel** Banyak Rumah Tangga yang Membuang Sampah dalam 5 Bulan\n\n| Bulan | Agustus 2024 | September 2024 | Oktober 2024 | November 2024 | Desember 2024 |\n|---|---|---|---|---|---|\n| Jumlah Rumah Tangga | 2 | 6 | 18 | 54 | 162 |\n\nBanyak rumah tangga yang membuang sampah ke sungai pada bulan September, Oktober, dan November 2024 dijumlahkan menjadi satu deret. Jumlah rumah tangga pada ketiga bulan tersebut adalah ....",
+        "jawaban": "78",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$192$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $192$.",
+      "distraktor": [
+        {
+          "teks": "$193$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$191$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$384$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $192$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/aabfb0e306912f4a83493bd9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              5
+            ],
+            [
+              "u",
+              9
+            ],
+            [
+              "v",
+              13
+            ],
+            [
+              "n",
+              12
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 5], [\"u\", 9], [\"v\", 13], [\"n\", 12]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "241e29ee867c3870c0386b05",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 9 dan suku ke-14 sama dengan 61. Jumlah 14 suku pertama deret tersebut adalah ....",
+        "jawaban": "490",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$429$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $429$.",
+      "distraktor": [
+        {
+          "teks": "$430$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$428$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$858$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $429$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/d67711e11159753ccd774eff.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              9
+            ],
+            [
+              "u",
+              21
+            ],
+            [
+              "v",
+              57
+            ],
+            [
+              "n",
+              11
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 9], [\"u\", 21], [\"v\", 57], [\"n\", 11]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ebb03116f8ecc455d73e948",
+        "teks": "Suatu deret geometri tak hingga memiliki suku pertama 6. Agar deret tersebut memiliki jumlah (konvergen), rasio yang mungkin adalah ....",
+        "jawaban": "$r = -\\frac{3}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$312$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $312$.",
+      "distraktor": [
+        {
+          "teks": "$313$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$311$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$624$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $312$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9c53276afbfff8e60274a519.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              4
+            ],
+            [
+              "q",
+              6
+            ],
+            [
+              "u",
+              34
+            ],
+            [
+              "v",
+              54
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 4], [\"q\", 6], [\"u\", 34], [\"v\", 54], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b3839ca0842ea062ff86c7c",
+        "teks": "Rina menghitung jumlah 10 suku pertama deret $4 + 7 + 10 + \\dots$ dengan cara $S_{10} = \\frac{10}{2}(2 \\cdot 4 + 10 \\cdot 3) = 190$. Pernyataan yang benar tentang pekerjaan Rina adalah ....",
+        "jawaban": "Salah, seharusnya memakai $(n-1)b$ sehingga $S_{10} = 175$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$240$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $240$.",
+      "distraktor": [
+        {
+          "teks": "$241$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$239$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$480$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $240$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/1980365081ef06f76f36fcf3.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              3
+            ],
+            [
+              "q",
+              5
+            ],
+            [
+              "u",
+              18
+            ],
+            [
+              "v",
+              34
+            ],
+            [
+              "n",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", 3], [\"q\", 5], [\"u\", 18], [\"v\", 34], [\"n\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "28ea4083bfb7a5211a8ec4d7",
+        "teks": "Deret geometri tak hingga berikut yang memiliki jumlah (konvergen) adalah ....",
+        "jawaban": "$9 - 6 + 4 - \\frac{8}{3} + \\dots$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $5$; q = $10$; u = $16$; v = $26$; n = $14$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$294$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $294$.",
+      "distraktor": [
+        {
+          "teks": "$295$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$293$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$588$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $294$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "671aeeb75242bd83c8b80649",
+        "teks": "Deret geometri tak hingga $5 + \\frac{5k}{3} + \\frac{5k^2}{9} + \\dots$ memiliki rasio $\\frac{k}{3}$ dengan $k$ bilangan bulat. Banyak nilai $k$ agar deret tersebut memiliki jumlah adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $5$; q = $11$; u = $44$; v = $104$; n = $13$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$832$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $832$.",
+      "distraktor": [
+        {
+          "teks": "$833$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$831$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1664$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $832$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "523bd782381673221912abdd",
+        "teks": "Panitia menata kursi pertunjukan. Baris pertama berisi 3 kursi dan setiap baris berikutnya berisi 2 kursi lebih banyak dari baris di depannya. Semua baris terisi penuh. Banyak kursi seluruhnya yang mungkin adalah ....",
+        "jawaban": "120",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $2$; q = $8$; u = $10$; v = $52$; n = $13$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$585$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $585$.",
+      "distraktor": [
+        {
+          "teks": "$586$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$584$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1170$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $585$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6ff491a7ccab8d20aa980f28",
+        "teks": "Dina berpendapat bahwa untuk setiap deret geometri tak hingga dengan suku pertama positif yang memiliki jumlah, jumlah tak hingganya selalu lebih besar daripada suku pertamanya. Contoh penyangkal pendapat Dina adalah ....",
+        "jawaban": "$8 - 4 + 2 - 1 + \\dots$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $10$; u = $18$; v = $48$; n = $15$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$570$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $570$.",
+      "distraktor": [
+        {
+          "teks": "$571$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$569$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1140$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $570$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "469f2c81fff77d2f647b3854",
+        "teks": "Dua orang menabung setiap hari. Andi menabung Rp10.000 pada hari pertama dan setiap hari berikutnya Rp10.000 lebih banyak dari hari sebelumnya. Budi menabung Rp1.000 pada hari pertama dan setiap hari berikutnya dua kali lipat dari hari sebelumnya. Total tabungan Budi untuk pertama kali melebihi total tabungan Andi pada hari ke- ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $3$; q = $6$; u = $15$; v = $24$; n = $12$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$306$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $306$.",
+      "distraktor": [
+        {
+          "teks": "$307$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$305$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$612$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $306$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "44f6e4c97481cdc17ce02bfd",
+        "teks": "Tono menghitung banyak suku deret $7 + 11 + 15 + \\dots + 95$ dengan $\\frac{95 - 7}{4} = 22$ suku, lalu menjumlahkannya. Jumlah deret yang sebenarnya adalah ....",
+        "jawaban": "1.173",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $2$; q = $8$; u = $19$; v = $85$; n = $11$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$693$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $693$.",
+      "distraktor": [
+        {
+          "teks": "$694$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$692$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1386$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $693$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "97bd90dbd09ff2ece4490eaf",
+        "teks": "Tiga bilangan membentuk deret aritmetika dengan beda positif dan berjumlah 18. Jika bilangan ketiga ditambah 1 (bilangan lain tetap), ketiganya membentuk deret geometri. Hasil kali ketiga bilangan semula adalah ....",
+        "jawaban": "192",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $3$; q = $5$; u = $12$; v = $22$; n = $7$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$119$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $119$.",
+      "distraktor": [
+        {
+          "teks": "$120$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$238$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $119$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "364be7064db72766f61296c1",
+        "teks": "Pada hari pertama sebuah percobaan ada 3 sel. Setiap hari, banyak sel baru yang muncul dua kali lipat dari hari sebelumnya. Jika yang dihitung adalah jumlah seluruh sel yang pernah muncul sejak hari pertama, jumlah tersebut pertama kali melebihi 3.000 pada hari ke- ....",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $2$; q = $8$; u = $19$; v = $79$; n = $11$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$649$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $649$.",
+      "distraktor": [
+        {
+          "teks": "$650$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$648$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1298$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $649$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e187822e01458dac9844382a",
+        "teks": "Sinta menghitung jumlah 5 suku pertama deret $3 - 6 + 12 - 24 + 48$ dengan rasio $r = 2$ sehingga $S_5 = \\frac{3(2^5 - 1)}{2 - 1} = 93$. Pernyataan yang benar adalah ....",
+        "jawaban": "Salah, rasio seharusnya $-2$ dan $S_5 = 33$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $9$; u = $39$; v = $84$; n = $12$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$738$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $738$.",
+      "distraktor": [
+        {
+          "teks": "$739$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$737$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1476$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $738$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4845890c2a238b7474c5dda8",
+        "teks": "Sebuah bola dijatuhkan dari ketinggian 10 m dan setiap kali memantul mencapai tinggi $r$ kali tinggi sebelumnya dengan $0 < r < 1$. Agar total panjang lintasan bola sampai berhenti tidak lebih dari 30 m, nilai $r$ terbesar yang mungkin adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $10$; u = $15$; v = $27$; n = $17$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$425$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $425$.",
+      "distraktor": [
+        {
+          "teks": "$426$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$424$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$850$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $425$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "caac041ed92e0e74b7dc330e",
+        "teks": "Deret geometri tak hingga memiliki suku pertama 12 dan jumlah 18. Jumlah tak hingga dari suku-suku bernomor ganjil saja ($U_1 + U_3 + U_5 + \\dots$) adalah ....",
+        "jawaban": "$\\frac{27}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $2$; q = $4$; u = $14$; v = $32$; n = $10$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$455$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $455$.",
+      "distraktor": [
+        {
+          "teks": "$456$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$454$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$910$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $455$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d70bf2ae8c0afe0ae2661b37",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 30 dan memenuhi $S_8 = S_{13}$. Nilai terbesar yang dapat dicapai oleh $S_n$ adalah ....",
+        "jawaban": "165",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $7$; u = $33$; v = $57$; n = $10$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$450$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $450$.",
+      "distraktor": [
+        {
+          "teks": "$451$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$449$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$900$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $450$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6f09702626db3099b6f95dd",
+        "teks": "Jumlah $n$ suku pertama suatu deret aritmetika adalah $S_n = 3n^2 + 2n$. Suku pertama $a$ dan beda $b$ deret tersebut berturut-turut adalah ....",
+        "jawaban": "$a = 5$ dan $b = 6$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $3$; q = $8$; u = $23$; v = $53$; n = $13$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$611$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $611$.",
+      "distraktor": [
+        {
+          "teks": "$612$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$610$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1222$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $611$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a5eeb491339282ec8f9317b",
+        "teks": "Suatu deret aritmetika memiliki banyak suku ganjil. Jumlah suku-suku pada urutan ganjil ($U_1 + U_3 + U_5 + \\dots$) adalah 108, sedangkan jumlah suku-suku pada urutan genap ($U_2 + U_4 + \\dots$) adalah 96. Banyak suku deret tersebut adalah ....",
+        "jawaban": "17",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $6$; u = $36$; v = $56$; n = $10$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$510$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $510$.",
+      "distraktor": [
+        {
+          "teks": "$511$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$509$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1020$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $510$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "570977d45b29d1fec4cf624d",
+        "teks": "Deret $80 + 40 + 20 + 10 + \\dots$ dijumlahkan sebanyak $n$ suku. Agar selisih antara jumlah tak hingganya dan $S_n$ kurang dari 0,1, banyak suku minimal yang diperlukan adalah ....",
+        "jawaban": "11",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $7$; u = $26$; v = $44$; n = $12$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$492$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $492$.",
+      "distraktor": [
+        {
+          "teks": "$493$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$491$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$984$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $492$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "52ea8e48aab20f89f719dcb4",
+        "teks": "Pada suatu deret aritmetika diketahui $S_5 = 0$. Pernyataan yang pasti benar adalah ....",
+        "jawaban": "$U_3 = 0$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $8$; u = $23$; v = $51$; n = $11$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$407$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $407$.",
+      "distraktor": [
+        {
+          "teks": "$408$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$406$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$814$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $407$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5031ef1da85a6091e978a43d",
+        "teks": "Deret $4 + 7 + 10 + 13 + \\dots$ dijumlahkan suku demi suku. Jumlahnya pertama kali lebih dari 1.000 setelah dijumlahkan sebanyak ... suku.",
+        "jawaban": "26",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $4$; q = $9$; u = $12$; v = $22$; n = $11$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$176$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $176$.",
+      "distraktor": [
+        {
+          "teks": "$177$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$175$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$352$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $176$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d11ecdc31d674831c0c0e531",
+        "teks": "Deret geometri memiliki suku pertama 3 dan jumlah tiga suku pertamanya 63. Jika rasionya negatif, jumlah empat suku pertama deret tersebut adalah ....",
+        "jawaban": "-312",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_arithmetic_sum_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $2$; q = $4$; u = $15$; v = $23$; n = $11$. Barisan aritmetika memenuhi $U_p=u$ dan $U_q=v$. Hitung jumlah $n$ suku pertama.",
+      "jawaban_benar": "$341$",
+      "alasan_benar": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $341$.",
+      "distraktor": [
+        {
+          "teks": "$342$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$340$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$682$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Cari beda dan suku pertama dari dua data, lalu gunakan rumus jumlah deret. Hasilnya $341$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b01-b-medium-bt01-059"
     }
-   ],
-   "pembahasan": "$S_8 = 4(2a + 7b) = 160 \\Rightarrow 2a + 7b = 40$. $S_{16} = 8(2a + 15b) = 576 \\Rightarrow 2a + 15b = 72$. Kurangkan: $8b = 32$, $b = 4$, $a = 6$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-002",
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0042-latihan-1-3-3"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "dua jumlah deret lalu suku ke-n",
-   "alasan_level": "menentukan $a$ dan $b$ dari dua jumlah lalu menghitung suku ke-10 dalam konteks produksi",
-   "stimulus": null,
-   "pertanyaan": "Seorang pengrajin membuat gelang dengan pertambahan produksi tetap setiap hari. Jumlah gelang yang dibuat selama 6 hari pertama adalah 75 dan selama 12 hari pertama adalah 258. Banyak gelang yang dibuat pada hari ke-10 adalah ....",
-   "jawaban_benar": "32",
-   "alasan_benar": "$2a + 5b = 25$ dan $2a + 11b = 43$ sehingga $b = 3$, $a = 5$, $U_{10} = 5 + 9 \\times 3 = 32$",
-   "distraktor": [
-    {
-     "teks": "35",
-     "alasan": "memakai $a + 10b$ (n bukan n-1)"
-    },
-    {
-     "teks": "48",
-     "alasan": "nilai $a$ dan $b$ tertukar ($a = 3$, $b = 5$)"
-    },
-    {
-     "teks": "29",
-     "alasan": "memakai $n = 9$ (salah menghitung hari ke-10)"
-    }
-   ],
-   "pembahasan": "$S_6 = 3(2a + 5b) = 75$ dan $S_{12} = 6(2a + 11b) = 258$. Diperoleh $b = 3$, $a = 5$, jadi $U_{10} = 5 + 9 \\times 3 = 32$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-003",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0042-latihan-1-3-4"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "tiga bilangan deret aritmetika",
-   "alasan_level": "memisalkan tiga bilangan $x - d, x, x + d$ lalu menyelesaikan $d^2$",
-   "stimulus": null,
-   "pertanyaan": "Tiga bilangan membentuk deret aritmetika. Jika jumlah mereka 36 dan hasil kalinya 1.680, bilangan terbesar di antara ketiga bilangan tersebut adalah ....",
-   "jawaban_benar": "14",
-   "alasan_benar": "bilangan tengah 12, $12(144 - d^2) = 1.680 \\Rightarrow d^2 = 4$, bilangan 10, 12, 14",
-   "distraktor": [
-    {
-     "teks": "12",
-     "alasan": "memilih bilangan tengah"
-    },
-    {
-     "teks": "10",
-     "alasan": "memilih bilangan terkecil"
-    },
-    {
-     "teks": "16",
-     "alasan": "memakai $d = 4$ (lupa mengakarkan $d^2 = 4$)"
-    }
-   ],
-   "pembahasan": "Misalkan bilangan $x - d$, $x$, $x + d$. Jumlah $3x = 36$ sehingga $x = 12$. Hasil kali $12(144 - d^2) = 1.680 \\Rightarrow d^2 = 4$, $d = \\pm 2$. Bilangannya 10, 12, 14.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-004",
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0042-latihan-1-3-4"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "tiga bilangan deret aritmetika (konteks)",
-   "alasan_level": "memisalkan tiga panjang tali dengan beda tetap lalu mencari bilangan terkecil",
-   "stimulus": null,
-   "pertanyaan": "Panjang tiga potong tali membentuk deret aritmetika. Jika jumlah panjang ketiga potong tali itu 45 cm dan hasil kali panjangnya 3.135 cm$^3$, panjang potongan terpendek adalah ....",
-   "jawaban_benar": "11 cm",
-   "alasan_benar": "potongan tengah 15 cm, $15(225 - d^2) = 3.135 \\Rightarrow d^2 = 16$, panjangnya 11, 15, 19",
-   "distraktor": [
-    {
-     "teks": "15 cm",
-     "alasan": "memilih potongan tengah"
-    },
-    {
-     "teks": "19 cm",
-     "alasan": "memilih potongan terpanjang"
-    },
-    {
-     "teks": "7 cm",
-     "alasan": "mengira $d = 8$ (membagi 16 dengan 2 bukan mengakarkan)"
-    }
-   ],
-   "pembahasan": "Misalkan $x - d$, $x$, $x + d$. $3x = 45 \\Rightarrow x = 15$. $15(225 - d^2) = 3.135 \\Rightarrow d^2 = 16$, $d = 4$. Panjangnya 11, 15, 19 cm; terpendek 11 cm.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-005",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0042-latihan-1-3-5"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 3,
-   "jenis_soal": "suku bergantian menjadi suku tengah",
-   "alasan_level": "menyederhanakan lima suku bertanda bergantian menjadi $U_7$ lalu memakai $S_n = n \\times U_{tengah}$",
-   "stimulus": null,
-   "pertanyaan": "Jika $U_n$ menyatakan suku ke-$n$ suatu barisan aritmetika dan diketahui $U_3 - U_5 + U_7 - U_9 + U_{11} = 15$, berapa jumlah 13 suku pertama barisan tersebut?",
-   "jawaban_benar": "195",
-   "alasan_benar": "$U_3 + U_{11} = U_5 + U_9 = 2U_7$ sehingga ekspresi $= U_7 = 15$; $S_{13} = 13 \\times U_7 = 195$",
-   "distraktor": [
-    {
-     "teks": "390",
-     "alasan": "memakai $S_{13} = 13(a + U_{13})$ tanpa membagi 2"
-    },
-    {
-     "teks": "105",
-     "alasan": "mengalikan $U_7$ dengan 7 (mengira banyak suku 7)"
-    },
-    {
-     "teks": "165",
-     "alasan": "mengalikan $U_7$ dengan 11 (mengira banyak suku 11)"
-    }
-   ],
-   "pembahasan": "Karena $U_3 + U_{11} = 2U_7$ dan $U_5 + U_9 = 2U_7$, maka $U_3 - U_5 + U_7 - U_9 + U_{11} = U_7 = 15$. $S_{13} = \\frac{13}{2}(a + U_{13}) = \\frac{13}{2} \\times 2U_7 = 13 \\times 15 = 195$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-006",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0047-latihan-1-4-2"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "dua suku geometri lalu jumlah deret",
-   "alasan_level": "mencari rasio dan suku pertama dari dua suku lalu jumlah lima suku",
-   "stimulus": null,
-   "pertanyaan": "Suku ke-3 suatu deret geometri dengan rasio positif adalah 24 dan suku ke-5 adalah 96. Jumlah 5 suku pertama deret tersebut adalah ....",
-   "jawaban_benar": "186",
-   "alasan_benar": "$r^2 = \\frac{96}{24} = 4$, $r = 2$, $a = 6$, $S_5 = \\frac{6(2^5 - 1)}{2 - 1} = 186$",
-   "distraktor": [
-    {
-     "teks": "93",
-     "alasan": "salah suku pertama: $a = 3$ sehingga jumlahnya setengah"
-    },
-    {
-     "teks": "378",
-     "alasan": "menjumlahkan 6 suku, bukan 5"
-    },
-    {
-     "teks": "90",
-     "alasan": "menjumlahkan 4 suku, bukan 5"
-    }
-   ],
-   "pembahasan": "$\\frac{U_5}{U_3} = r^2 = 4$, $r = 2$ (positif). $a = \\frac{24}{4} = 6$. $S_5 = \\frac{6(32 - 1)}{1} = 186$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-007",
-   "tipe_generate": "variasi",
-   "variasi_cara": "konteks",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0047-latihan-1-4-2"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 4,
-   "jenis_soal": "dua suku geometri lalu jumlah deret (konteks)",
-   "alasan_level": "mencari rasio dan suku pertama dari dua suku dalam konteks lalu menjumlah empat suku",
-   "stimulus": null,
-   "pertanyaan": "Banyak pengunjung suatu situs bertambah dengan pola barisan geometri berrasio positif. Pengunjung pada hari kedua 60 orang dan pada hari keempat 540 orang. Jumlah pengunjung selama 4 hari pertama adalah ....",
-   "jawaban_benar": "800 orang",
-   "alasan_benar": "$r^2 = \\frac{540}{60} = 9$, $r = 3$, $a = 20$, $S_4 = \\frac{20(3^4 - 1)}{3 - 1} = 800$",
-   "distraktor": [
-    {
-     "teks": "260 orang",
-     "alasan": "menjumlahkan 3 hari saja"
-    },
-    {
-     "teks": "2.420 orang",
-     "alasan": "menjumlahkan 5 hari"
-    },
-    {
-     "teks": "1.600 orang",
-     "alasan": "lupa membagi dengan $(r - 1)$"
-    }
-   ],
-   "pembahasan": "$U_4 / U_2 = r^2 = 9$, $r = 3$. $a = \\frac{60}{3} = 20$. $S_4 = \\frac{20(81 - 1)}{2} = 800$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-008",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0047-latihan-1-4-3"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "panjang lintasan bola memantul",
-   "alasan_level": "menjumlahkan lintasan turun dan naik dengan dua deret tak hingga",
-   "stimulus": null,
-   "pertanyaan": "Suatu bola dijatuhkan dari ketinggian 12 meter. Setiap pantulan mencapai $\\frac{3}{4}$ dari tinggi sebelumnya. Hitung total seluruh jarak yang ditempuh oleh bola tersebut hingga berhenti.",
-   "jawaban_benar": "84 meter",
-   "alasan_benar": "naik pertama 9 m: lintasan $= 12 + 2 \\times \\frac{9}{1 - 3/4} = 12 + 72 = 84$",
-   "distraktor": [
-    {
-     "teks": "48 meter",
-     "alasan": "hanya menjumlahkan lintasan turun $\\frac{12}{1 - 3/4}$"
-    },
-    {
-     "teks": "96 meter",
-     "alasan": "menghitung lintasan turun dan naik sama-sama $\\frac{12}{1 - 3/4}$ lalu dikali 2"
-    },
-    {
-     "teks": "72 meter",
-     "alasan": "hanya menjumlahkan lintasan naik dan turun setelah pantulan, tanpa jatuh awal 12 m"
-    }
-   ],
-   "pembahasan": "Jatuh awal 12 m. Setelah itu naik-turun: tinggi pantulan pertama 9 m, rasio $\\frac{3}{4}$, jumlah satu arah $= \\frac{9}{1 - 3/4} = 36$, dua arah 72. Total $12 + 72 = 84$ m.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-009",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0048-latihan-1-4-5"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "membandingkan dua deret geometri",
-   "alasan_level": "menghitung dua jumlah deret geometri lalu membandingkan dan mencari selisih",
-   "stimulus": null,
-   "pertanyaan": "Diberikan dua deret geometri. Deret A dengan $a = 5$, $r = 4$, dan $n = 4$, sedangkan deret B dengan $a = 7$, $r = 5$ dan $n = 3$. Pernyataan yang benar mengenai jumlah suku kedua deret tersebut adalah ....",
-   "jawaban_benar": "Deret A lebih besar dengan selisih 208",
-   "alasan_benar": "$S_A = \\frac{5(4^4 - 1)}{3} = 425$, $S_B = \\frac{7(5^3 - 1)}{4} = 217$, selisih 208",
-   "distraktor": [
-    {
-     "teks": "Deret B lebih besar dengan selisih 208",
-     "alasan": "membandingkan dengan arah terbalik"
-    },
-    {
-     "teks": "Deret A lebih besar dengan selisih 407",
-     "alasan": "lupa membagi dengan $(r - 1)$ pada kedua deret"
-    },
-    {
-     "teks": "Deret A lebih besar dengan selisih 63",
-     "alasan": "memakai $n - 1$ suku pada kedua deret"
-    }
-   ],
-   "pembahasan": "$S_A = \\frac{5 \\times 255}{3} = 425$. $S_B = \\frac{7 \\times 124}{4} = 217$. $425 - 217 = 208$ sehingga deret A lebih besar.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-010",
-   "tipe_generate": "variasi",
-   "variasi_cara": "angka",
-   "acuan": {
-    "sumber": "pretest",
-    "id": "kelas12-b01-p0051-uji-kompetensi-5"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "jumlah bilangan bersyarat pada deret",
-   "alasan_level": "memisahkan dua deret aritmetika (kelipatan 3 dan kelipatan 9) lalu mengurangkan",
-   "stimulus": null,
-   "pertanyaan": "Diketahui deret bilangan $15 + 16 + 17 + 18 + \\dots + 94$. Dari deret bilangan tersebut, jumlah bilangan yang habis dibagi tiga tetapi tidak habis dibagi sembilan adalah ....",
-   "jawaban_benar": "972",
-   "alasan_benar": "kelipatan 3: $15, \\dots, 93$ ($n = 27$) jumlah 1.458; kelipatan 9: $18, \\dots, 90$ ($n = 9$) jumlah 486; selisih 972",
-   "distraktor": [
-    {
-     "teks": "1.458",
-     "alasan": "menjumlahkan semua kelipatan 3 tanpa mengeluarkan kelipatan 9"
-    },
-    {
-     "teks": "486",
-     "alasan": "hanya menghitung jumlah kelipatan 9"
-    },
-    {
-     "teks": "1.944",
-     "alasan": "menjumlahkan kelipatan 3 dan kelipatan 9, bukan mengurangkan"
-    }
-   ],
-   "pembahasan": "Kelipatan 3: $S = \\frac{27}{2}(15 + 93) = 1.458$. Kelipatan 9: $S = \\frac{9}{2}(18 + 90) = 486$. Hasil: $1.458 - 486 = 972$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-011",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 39,
-    "kutipan": "Deret aritmetika adalah suatu deret yang diperoleh dari menjumlahkan sukusuku pada barisan aritmetika."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "dua suku diketahui lalu jumlah deret aritmetika",
-   "alasan_level": "mencari $b$ dan $a$ dari dua suku lalu menghitung $S_{10}$",
-   "stimulus": null,
-   "pertanyaan": "Pada suatu deret aritmetika, suku ke-3 adalah 11 dan suku ke-8 adalah 31. Jumlah 10 suku pertama deret tersebut adalah ....",
-   "jawaban_benar": "210",
-   "alasan_benar": "$5b = 20$, $b = 4$, $a = 3$, $S_{10} = 5(6 + 36) = 210$",
-   "distraktor": [
-    {
-     "teks": "250",
-     "alasan": "salah suku pertama: $a = U_3 - b = 7$"
-    },
-    {
-     "teks": "230",
-     "alasan": "memakai $n \\times b$ bukan $(n-1)b$ pada rumus jumlah"
-    },
-    {
-     "teks": "420",
-     "alasan": "lupa membagi 2 pada rumus jumlah"
-    }
-   ],
-   "pembahasan": "$U_8 - U_3 = 5b = 20 \\Rightarrow b = 4$. $a = 11 - 2 \\times 4 = 3$. $S_{10} = \\frac{10}{2}(2 \\times 3 + 9 \\times 4) = 210$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-012",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 44,
-    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "jumlah geometri diketahui lalu mencari suku",
-   "alasan_level": "menyelesaikan persamaan kuadrat untuk $r$ dari $S_3$ lalu mencari $U_5$",
-   "stimulus": null,
-   "pertanyaan": "Suatu deret geometri memiliki suku pertama 5 dan rasio positif. Jika jumlah 3 suku pertamanya 105, suku ke-5 deret tersebut adalah ....",
-   "jawaban_benar": "1.280",
-   "alasan_benar": "$5(1 + r + r^2) = 105 \\Rightarrow r^2 + r - 20 = 0 \\Rightarrow r = 4$, $U_5 = 5 \\times 4^4 = 1.280$",
-   "distraktor": [
-    {
-     "teks": "320",
-     "alasan": "memakai $r^3$ (suku ke-4), bukan $r^4$"
-    },
-    {
-     "teks": "5.120",
-     "alasan": "memakai $r^5$ (suku ke-6), bukan $r^4$"
-    },
-    {
-     "teks": "1.024",
-     "alasan": "lupa mengalikan dengan suku pertama 5"
-    }
-   ],
-   "pembahasan": "$S_3 = 5(1 + r + r^2) = 105$ sehingga $r^2 + r - 20 = 0$, $(r + 5)(r - 4) = 0$, $r = 4$ (positif). $U_5 = ar^4 = 5 \\times 256 = 1.280$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-013",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 46,
-    "kutipan": "Hal ini berarti, kamu menjumlahkan suku-suku suatu barisan geometri dan menghasilkan hasil tanpa henti."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "deret tak hingga: cari rasio lalu suku",
-   "alasan_level": "menentukan $r$ dari $S_\\infty = \\frac{a}{1 - r}$ lalu menghitung $U_3$",
-   "stimulus": null,
-   "pertanyaan": "Suatu deret geometri tak hingga memiliki suku pertama 9 dan jumlah 12. Suku ke-3 deret tersebut adalah ....",
-   "jawaban_benar": "$\\frac{9}{16}$",
-   "alasan_benar": "$12 = \\frac{9}{1 - r} \\Rightarrow r = \\frac{1}{4}$, $U_3 = 9 \\times \\frac{1}{16} = \\frac{9}{16}$",
-   "distraktor": [
-    {
-     "teks": "$\\frac{9}{4}$",
-     "alasan": "memberi suku ke-2 ($ar$), bukan suku ke-3"
-    },
-    {
-     "teks": "$\\frac{9}{64}$",
-     "alasan": "memberi suku ke-4 ($ar^3$), bukan suku ke-3"
-    },
-    {
-     "teks": "$\\frac{81}{16}$",
-     "alasan": "memakai $r = \\frac{3}{4}$ (mengambil $1 - r$ sebagai rasio)"
-    }
-   ],
-   "pembahasan": "$S_\\infty = \\frac{a}{1 - r}$: $12(1 - r) = 9 \\Rightarrow 1 - r = \\frac{3}{4}$, $r = \\frac{1}{4}$. $U_3 = ar^2 = 9 \\times \\frac{1}{16} = \\frac{9}{16}$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-014",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 47,
-    "kutipan": "Panjang lintasan dihitung menggunakan rumus geometri tak hingga berikut."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 2,
-   "jenis_soal": "rasio dari perbandingan jumlah tak hingga",
-   "alasan_level": "membentuk persamaan $\\frac{1}{1 - r} = 3$ lalu menyelesaikannya",
-   "stimulus": null,
-   "pertanyaan": "Jumlah suatu deret geometri tak hingga sama dengan 3 kali suku pertamanya. Rasio deret tersebut adalah ....",
-   "jawaban_benar": "$\\frac{2}{3}$",
-   "alasan_benar": "$\\frac{a}{1 - r} = 3a \\Rightarrow 1 - r = \\frac{1}{3} \\Rightarrow r = \\frac{2}{3}$",
-   "distraktor": [
-    {
-     "teks": "$\\frac{1}{3}$",
-     "alasan": "mengira $r$ sama dengan nilai $1 - r$"
-    },
-    {
-     "teks": "$-2$",
-     "alasan": "menyelesaikan $1 - r = 3$"
-    },
-    {
-     "teks": "$\\frac{4}{3}$",
-     "alasan": "menyelesaikan $r - 1 = \\frac{1}{3}$ (tanda tertukar), padahal $|r| > 1$ tidak konvergen"
-    }
-   ],
-   "pembahasan": "$S_\\infty = \\frac{a}{1 - r} = 3a \\Rightarrow 1 - r = \\frac{1}{3} \\Rightarrow r = \\frac{2}{3}$ (memenuhi $|r| < 1$).",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-015",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 41,
-    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "jumlah kelipatan bilangan di antara dua batas",
-   "alasan_level": "menentukan suku pertama, terakhir, dan banyak suku kelipatan 7 lalu menjumlahkan",
-   "stimulus": null,
-   "pertanyaan": "Jumlah semua bilangan bulat kelipatan 7 yang terletak di antara 100 dan 300 adalah ....",
-   "jawaban_benar": "5.586",
-   "alasan_benar": "kelipatan 7 dari 105 sampai 294, $n = \\frac{294 - 105}{7} + 1 = 28$, $S = 14 \\times 399 = 5.586$",
-   "distraktor": [
-    {
-     "teks": "11.172",
-     "alasan": "lupa membagi 2 pada rumus jumlah"
-    },
-    {
-     "teks": "5.187",
-     "alasan": "salah menghitung banyak suku ($n = 26$)"
-    },
-    {
-     "teks": "5.985",
-     "alasan": "salah menghitung banyak suku ($n = 30$)"
-    }
-   ],
-   "pembahasan": "Suku pertama 105, terakhir 294, beda 7. $n = \\frac{294 - 105}{7} + 1 = 28$. $S_{28} = \\frac{28}{2}(105 + 294) = 5.586$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-016",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 41,
-    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "menabung bertambah tetap: cari banyak bulan",
-   "alasan_level": "menyusun $S_n$ dalam $n$, lalu menyelesaikan persamaan kuadrat",
-   "stimulus": null,
-   "pertanyaan": "Rina menabung Rp50.000 pada bulan pertama, kemudian setiap bulan berikutnya tabungannya Rp10.000 lebih banyak daripada bulan sebelumnya. Rina berhenti menabung ketika jumlah seluruh tabungannya tepat Rp1.260.000. Rina menabung selama .... bulan.",
-   "jawaban_benar": "12",
-   "alasan_benar": "$S_n = \\frac{n}{2}(100 + 10(n-1)) = 5n^2 + 45n = 1.260$ (dalam ribuan) $\\Rightarrow n = 12$",
-   "distraktor": [
-    {
-     "teks": "11",
-     "alasan": "$S_{11}$ = Rp1.100.000, belum mencapai Rp1.260.000"
-    },
-    {
-     "teks": "13",
-     "alasan": "$S_{13}$ = Rp1.430.000, melebihi Rp1.260.000"
-    },
-    {
-     "teks": "14",
-     "alasan": "$S_{14}$ = Rp1.610.000, melebihi Rp1.260.000"
-    }
-   ],
-   "pembahasan": "Dalam ribuan rupiah: $\\frac{n}{2}(2 \\times 50 + (n - 1)10) = 5n^2 + 45n = 1.260 \\Rightarrow n^2 + 9n - 252 = 0 \\Rightarrow (n + 21)(n - 12) = 0$, $n = 12$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-017",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 44,
-    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret geometri adalah"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 2,
-   "jenis_soal": "mencari banyak suku deret geometri",
-   "alasan_level": "menyamakan $S_n$ dengan nilai diketahui lalu menyelesaikan $2^n$",
-   "stimulus": null,
-   "pertanyaan": "Deret geometri $4 + 8 + 16 + \\dots$ memiliki jumlah 1.020. Banyak suku pada deret tersebut adalah ....",
-   "jawaban_benar": "8",
-   "alasan_benar": "$\\frac{4(2^n - 1)}{2 - 1} = 1.020 \\Rightarrow 2^n = 256 \\Rightarrow n = 8$",
-   "distraktor": [
-    {
-     "teks": "7",
-     "alasan": "$S_7 = 508$, kurang dari 1.020"
-    },
-    {
-     "teks": "9",
-     "alasan": "$S_9 = 2.044$, melebihi 1.020"
-    },
-    {
-     "teks": "255",
-     "alasan": "mengambil nilai $2^n - 1$ sebagai banyak suku"
-    }
-   ],
-   "pembahasan": "$r = 2$, $a = 4$. $S_n = 4(2^n - 1) = 1.020 \\Rightarrow 2^n - 1 = 255 \\Rightarrow 2^n = 256 \\Rightarrow n = 8$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-018",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 41,
-    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 3,
-   "jenis_soal": "jumlah n suku dan satu suku diketahui",
-   "alasan_level": "dari $S_9$ dan $U_3$ menyusun dua persamaan untuk $a$ dan $b$ lalu mencari $U_{12}$",
-   "stimulus": null,
-   "pertanyaan": "Pada suatu deret aritmetika, jumlah 9 suku pertama adalah 225 dan suku ke-3 adalah 13. Suku ke-12 deret tersebut adalah ....",
-   "jawaban_benar": "67",
-   "alasan_benar": "$a + 4b = 25$ dan $a + 2b = 13$ sehingga $b = 6$, $a = 1$, $U_{12} = 1 + 66 = 67$",
-   "distraktor": [
-    {
-     "teks": "61",
-     "alasan": "memakai $n = 11$ (suku ke-11)"
-    },
-    {
-     "teks": "73",
-     "alasan": "memakai $n = 13$ (suku ke-13)"
-    },
-    {
-     "teks": "66",
-     "alasan": "lupa menambahkan suku pertama pada $U_{12}$"
-    }
-   ],
-   "pembahasan": "$S_9 = \\frac{9}{2}(2a + 8b) = 9(a + 4b) = 225 \\Rightarrow a + 4b = 25$. $U_3 = a + 2b = 13$. Kurangkan: $2b = 12$, $b = 6$, $a = 1$. $U_{12} = 1 + 11 \\times 6 = 67$.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-019",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 41,
-    "kutipan": "Rumus untuk menghitung jumlah suku-suku deret aritmetika adalah"
-   },
-   "cognitive_c": "C4",
-   "jumlah_langkah": 4,
-   "jenis_soal": "dua deret aritmetika dengan jumlah sama",
-   "alasan_level": "menyamakan dua rumus $S_n$ lalu menyelesaikan persamaan linear dalam $n$",
-   "stimulus": null,
-   "pertanyaan": "Deret aritmetika pertama memiliki suku pertama 5 dan beda 4, sedangkan deret aritmetika kedua memiliki suku pertama 41 dan beda $-2$. Jumlah $n$ suku pertama kedua deret itu sama untuk $n$ bilangan asli sebesar ....",
-   "jawaban_benar": "13",
-   "alasan_benar": "$\\frac{n}{2}(10 + 4(n-1)) = \\frac{n}{2}(82 - 2(n-1))$, sehingga $4n + 6 = 84 - 2n$ dan $n = 13$",
-   "distraktor": [
-    {
-     "teks": "12",
-     "alasan": "salah menyelesaikan $6n = 78$ (memakai 72)"
-    },
-    {
-     "teks": "14",
-     "alasan": "salah menyelesaikan $6n = 78$ (memakai 84)"
-    },
-    {
-     "teks": "26",
-     "alasan": "mengalikan hasil $n$ dengan 2 (mengira $\\frac{n}{2} = 13$)"
-    }
-   ],
-   "pembahasan": "$S_n^{(1)} = \\frac{n}{2}(4n + 6)$ dan $S_n^{(2)} = \\frac{n}{2}(84 - 2n)$. Samakan, $n \\neq 0$: $4n + 6 = 84 - 2n \\Rightarrow 6n = 78 \\Rightarrow n = 13$. Keduanya 377.",
-   "catatan": null
-  },
-  {
-   "id": "kelas12-b01-b-medium-bt01-020",
-   "tipe_generate": "orisinal",
-   "acuan": {
-    "sumber": "siswa",
-    "halaman": 47,
-    "kutipan": "Panjang lintasan dihitung menggunakan rumus geometri tak hingga berikut."
-   },
-   "cognitive_c": "C3",
-   "jumlah_langkah": 2,
-   "jenis_soal": "deret tak hingga dalam konteks pertumbuhan",
-   "alasan_level": "mengenali rasio $\\frac{3}{4}$ lalu satu kali $S_\\infty$ dalam konteks",
-   "stimulus": null,
-   "pertanyaan": "Pertambahan tinggi sebuah tanaman pada tahun pertama 60 cm dan pada setiap tahun berikutnya sama dengan $\\frac{3}{4}$ dari pertambahan tahun sebelumnya. Jika tinggi awal dianggap 0 cm, batas tinggi tanaman itu setelah waktu yang sangat lama adalah ....",
-   "jawaban_benar": "240 cm",
-   "alasan_benar": "$S_\\infty = \\frac{60}{1 - 3/4} = 240$",
-   "distraktor": [
-    {
-     "teks": "80 cm",
-     "alasan": "membagi 60 dengan $r$, bukan dengan $(1 - r)$"
-    },
-    {
-     "teks": "180 cm",
-     "alasan": "hanya menjumlahkan pertambahan mulai tahun kedua ($\\frac{45}{1 - 3/4}$)"
-    },
-    {
-     "teks": "45 cm",
-     "alasan": "hanya mengambil pertambahan tahun kedua"
-    }
-   ],
-   "pembahasan": "Deret geometri tak hingga $a = 60$, $r = \\frac{3}{4}$ ($|r| < 1$). $S_\\infty = \\frac{a}{1 - r} = \\frac{60}{1/4} = 240$ cm.",
-   "catatan": null
-  }
- ]
+  ]
 }

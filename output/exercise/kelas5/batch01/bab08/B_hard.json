@@ -238,6 +238,946 @@
       ],
       "pembahasan": "Banyak simbol = data : 50. Hasilnya 3; 4,5; 1,5; 6, dengan 4,5 berarti 4 simbol penuh dan 1 setengah simbol.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b5ff5e802200c51b8dedf17",
+        "teks": "Tabel berikut adalah hasil penjualan kue apem selama seminggu yang dicatat Anggi.\n\n|Hari|Banyaknya Penjualan Kue Apem|\n|---|---|\n|Senin|52|\n|Selasa|48|\n|Rabu|41|\n|Kamis|46|\n|Jumat|38|\n|Sabtu|45|\n\nBerapa banyaknya kue apem yang berhasil dijual selama seminggu?",
+        "jawaban": "270 kue apem",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 24 lembar masuk, termasuk 2 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah $T_1$, 3, x, 3. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Lembar sah awal 24-2=22. Kurangi kategori selain jeruk 14 memberi jeruk 8. Tambah 1 data tertinggal menjadi 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 24-2=22. Kurangi kategori selain jeruk 14 memberi jeruk 8. Tambah 1 data tertinggal menjadi 9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-008",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "83fee5e35abba907bfe4d9aa",
+        "teks": "Pak Chandra memiliki kebun sayuran. Ia memanen tomat seminggu sekali.\n\n|Minggu ke-|Hasil Panen (kg)|\n|---|---|\n|1|15|\n|2|22|\n|3|35|\n|4|18|\n|5|8|\n\nBerapa total hasil panen tomat Pak Chandra selama 5 minggu?",
+        "jawaban": "98 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 34 lembar masuk, termasuk 4 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 7, $T_1$, x, 5. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Lembar sah awal 34-4=30. Kurangi kategori selain jeruk 21 memberi jeruk 9. Tambah 1 data tertinggal menjadi 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 34-4=30. Kurangi kategori selain jeruk 21 memberi jeruk 9. Tambah 1 data tertinggal menjadi 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-009",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6240a80644aaf88ff907d37d",
+        "teks": "Hasil panen tomat Pak Chandra setiap minggu dicatat sebagai berikut.\n\n|Minggu ke-|Hasil Panen (kg)|\n|---|---|\n|1|17|\n|2|13|\n|3|19|\n|4|26|\n|5|22|\n\nKapan hasil panen mengalami kenaikan?",
+        "jawaban": "Minggu ke-3 dan minggu ke-4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 42 lembar masuk, termasuk 7 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 9, 8, x, 9. Ternyata $T_1$ siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Lembar sah awal 42-7=35. Kurangi kategori selain jeruk 26 memberi jeruk 9. Tambah 3 data tertinggal menjadi 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 42-7=35. Kurangi kategori selain jeruk 26 memberi jeruk 9. Tambah 3 data tertinggal menjadi 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-010",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "745813f5edc56eb7c3837084",
+        "teks": "Hasil panen tomat Pak Chandra selama 5 minggu.\n\n|Minggu ke-|Hasil Panen (kg)|\n|---|---|\n|1|28|\n|2|35|\n|3|19|\n|4|42|\n|5|31|\n\nTentukan selisih antara hasil panen tertinggi dan yang terendah.",
+        "jawaban": "23 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 28 lembar masuk, termasuk 2 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 3, $T_1$, x, 5. Ternyata 3 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Lembar sah awal 28-2=26. Kurangi kategori selain jeruk 17 memberi jeruk 9. Tambah 3 data tertinggal menjadi 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 28-2=26. Kurangi kategori selain jeruk 17 memberi jeruk 9. Tambah 3 data tertinggal menjadi 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-011",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/ecedd1bf4e800e44792aadf4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              9
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 9]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b4657dd7030a1fef7a254b47",
+        "teks": "Piktogram penjualan es lilin Bu Rani selama 4 hari ditulis sebagai berikut. Satu simbol mewakili 6 es lilin.\n\n|Hari|Banyak simbol|\n|---|---|\n|Senin|5|\n|Selasa|3|\n|Rabu|4|\n|Kamis|6|\n\nBerapa banyak es lilin yang berhasil terjual selama 4 hari?",
+        "jawaban": "108 es lilin",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 21 lembar masuk, termasuk 1 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 8, 6, x, $T_1$. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Lembar sah awal 21-1=20. Kurangi kategori selain jeruk 17 memberi jeruk 3. Tambah 1 data tertinggal menjadi 4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 21-1=20. Kurangi kategori selain jeruk 17 memberi jeruk 3. Tambah 1 data tertinggal menjadi 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-012",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3808e1906d8c4fc5413cd555",
+        "teks": "Piktogram banyak buku yang dipinjam di perpustakaan sekolah selama 5 hari ditulis sebagai berikut. Satu simbol mewakili 8 buku.\n\n|Hari|Banyak simbol|\n|---|---|\n|Senin|7|\n|Selasa|4|\n|Rabu|9|\n|Kamis|3|\n|Jumat|6|\n\nBerapa selisih buku yang dipinjam pada hari paling ramai dan hari paling sepi?",
+        "jawaban": "48 buku",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 30 lembar masuk, termasuk 1 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 7, 9, x, 9. Ternyata $T_1$ siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Lembar sah awal 30-1=29. Kurangi kategori selain jeruk 25 memberi jeruk 4. Tambah 3 data tertinggal menjadi 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 30-1=29. Kurangi kategori selain jeruk 25 memberi jeruk 4. Tambah 3 data tertinggal menjadi 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aa163cd38dd53b9e171a2777",
+        "teks": "Penyajian data dengan menggunakan gambar atau simbol, dan setiap gambar atau simbol mewakili suatu nilai tertentu, disebut ....",
+        "jawaban": "piktogram",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 22 lembar masuk, termasuk 1 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 5, $T_1$, x, 4. Ternyata 2 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Lembar sah awal 22-1=21. Kurangi kategori selain jeruk 12 memberi jeruk 9. Tambah 2 data tertinggal menjadi 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 22-1=21. Kurangi kategori selain jeruk 12 memberi jeruk 9. Tambah 2 data tertinggal menjadi 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8cae77c39ec826b7468bfc1",
+        "teks": "Pada piktogram hasil kumpulan buku bekas, satu simbol mewakili 20 buku. Kelas VA mendapat 7 simbol. Berapa buku yang dikumpulkan kelas VA?",
+        "jawaban": "140 buku",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 34 lembar masuk, termasuk 5 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 6, 9, x, 6. Ternyata $T_1$ siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Lembar sah awal 34-5=29. Kurangi kategori selain jeruk 21 memberi jeruk 8. Tambah 3 data tertinggal menjadi 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 34-5=29. Kurangi kategori selain jeruk 21 memberi jeruk 8. Tambah 3 data tertinggal menjadi 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-015",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "517cbc97491dfb1798e5691f",
+        "teks": "Pada piktogram penjualan jeruk, satu simbol penuh mewakili 10 kg. Pada hari Senin tergambar 3 simbol penuh dan 1 setengah simbol. Berapa kilogram jeruk yang terjual hari Senin?",
+        "jawaban": "35 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 31 lembar masuk, termasuk 4 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 8, 5, x, $T_1$. Ternyata 2 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Lembar sah awal 31-4=27. Kurangi kategori selain jeruk 20 memberi jeruk 7. Tambah 2 data tertinggal menjadi 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 31-4=27. Kurangi kategori selain jeruk 20 memberi jeruk 7. Tambah 2 data tertinggal menjadi 9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/61f872e9f0594bd215d0e5f5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              7
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 7]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaba86adf1f85209edd0c013",
+        "teks": "Data banyak buah jambu yang dipetik Sinta: hari Senin 24 buah, Selasa 40 buah, Rabu 16 buah, Kamis 32 buah.\n\nData tersebut akan disajikan dalam piktogram dengan satu simbol mewakili 8 buah. Berapa simbol yang digambar untuk hari Selasa?",
+        "jawaban": "5 simbol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Survei pilihan buah memiliki 31 lembar masuk, termasuk $T_1$ lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 9, 6, x, 6. Ternyata 2 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Lembar sah awal 31-5=26. Kurangi kategori selain jeruk 21 memberi jeruk 5. Tambah 2 data tertinggal menjadi 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 31-5=26. Kurangi kategori selain jeruk 21 memberi jeruk 5. Tambah 2 data tertinggal menjadi 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas5/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e86ed5f5395c934ae5861d4f",
+        "teks": "Dua toko kue mencatat penjualan dalam piktogram. Di Toko A, satu simbol mewakili 12 kue. Di Toko B, satu simbol mewakili 8 kue.\n\n|Hari|Simbol Toko A|Simbol Toko B|\n|---|---|---|\n|Senin|5|8|\n|Selasa|6|9|\n|Rabu|4|7|\n|Kamis|7|10|\n\nPernyataan yang benar tentang penjualan kedua toko adalah ....",
+        "jawaban": "Pada hari Selasa, kedua toko menjual kue sama banyak.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 28 lembar masuk, termasuk 2 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 5, 4, x, 8. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Lembar sah awal 28-2=26. Kurangi kategori selain jeruk 17 memberi jeruk 9. Tambah 1 data tertinggal menjadi 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 28-2=26. Kurangi kategori selain jeruk 17 memberi jeruk 9. Tambah 1 data tertinggal menjadi 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f57f04a8e57fee3342c6a69b",
+        "teks": "Piktogram hasil panen cabai Pak Dedi selama 4 hari ditulis sebagai berikut. Satu simbol mewakili 15 kg.\n\n|Hari|Banyak simbol|\n|---|---|\n|Senin|4|\n|Selasa|6|\n|Rabu|3|\n|Kamis|5|\n\nAni menghitung total panen selama 4 hari dan mendapat 255 kg, padahal jawabannya salah. Kesalahan Ani yang paling mungkin adalah ....",
+        "jawaban": "ia menjumlahkan banyak simbol menjadi 17, padahal seharusnya 18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 26 lembar masuk, termasuk 3 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 3, 4, x, 8. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Lembar sah awal 26-3=23. Kurangi kategori selain jeruk 15 memberi jeruk 8. Tambah 1 data tertinggal menjadi 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 26-3=23. Kurangi kategori selain jeruk 15 memberi jeruk 8. Tambah 1 data tertinggal menjadi 9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8d73f25321b3dfe6da9d1bd9",
+        "teks": "Data banyak bibit yang ditanam siswa: Senin 30 batang, Selasa 45 batang, Rabu 75 batang, Kamis 105 batang.\n\nData tersebut akan disajikan dalam piktogram yang hanya memakai simbol penuh dan setengah simbol. Nilai satu simbol penuh terbesar yang dapat dipakai adalah ....",
+        "jawaban": "30 batang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 31 lembar masuk, termasuk 4 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 7, 9, x, 6. Ternyata 3 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Lembar sah awal 31-4=27. Kurangi kategori selain jeruk 22 memberi jeruk 5. Tambah 3 data tertinggal menjadi 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 31-4=27. Kurangi kategori selain jeruk 22 memberi jeruk 5. Tambah 3 data tertinggal menjadi 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "429ab1c24cdba0de7ca99735",
+        "teks": "Data banyak buku yang dipinjam di perpustakaan: Senin 120 buku, Selasa 180 buku, Rabu 240 buku, Kamis 300 buku.\n\nDina akan membuat piktogram dengan simbol penuh saja, tanpa simbol sisa, dan memakai nilai satu simbol sebesar mungkin. Berapa banyak simbol yang ia gambar seluruhnya?",
+        "jawaban": "14 simbol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 28 lembar masuk, termasuk 4 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 8, 8, x, 4. Ternyata 3 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Lembar sah awal 28-4=24. Kurangi kategori selain jeruk 20 memberi jeruk 4. Tambah 3 data tertinggal menjadi 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 28-4=24. Kurangi kategori selain jeruk 20 memberi jeruk 4. Tambah 3 data tertinggal menjadi 7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4d56f562581a5449145c1b23",
+        "teks": "Piktogram sampah kertas yang dikumpulkan siswa pada 5 hari ditulis sebagai berikut. Satu simbol penuh mewakili 20 kg dan setengah simbol mewakili 10 kg. Data hari Jumat belum ditulis. Total sampah kertas selama 5 hari adalah 330 kg.\n\n|Hari|Simbol penuh|Setengah simbol|\n|---|---|---|\n|Senin|3|1|\n|Selasa|2|0|\n|Rabu|4|1|\n|Kamis|1|1|\n|Jumat|?|0|\n\nAgar total sesuai, berapa simbol penuh yang harus digambar pada hari Jumat?",
+        "jawaban": "5 simbol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 23 lembar masuk, termasuk 3 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 5, 3, x, 8. Ternyata 2 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Lembar sah awal 23-3=20. Kurangi kategori selain jeruk 16 memberi jeruk 4. Tambah 2 data tertinggal menjadi 6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 23-3=20. Kurangi kategori selain jeruk 16 memberi jeruk 4. Tambah 2 data tertinggal menjadi 6.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7fae8fcdf10832c85d49b38a",
+        "teks": "Piktogram banyak air mineral kemasan yang terjual selama 4 hari ditulis sebagai berikut. Satu simbol penuh mewakili 40 botol dan setengah simbol mewakili 20 botol.\n\n|Hari|Simbol penuh|Setengah simbol|\n|---|---|---|\n|Senin|3|1|\n|Selasa|2|1|\n|Rabu|4|1|\n|Kamis|1|1|\n\nRina menuliskan banyak botol tiap hari: Senin 140, Selasa 100, Rabu 200, Kamis 60. Tepat satu nilai yang ditulis Rina salah.\n\nHari yang nilainya salah dan nilai yang benar adalah ....",
+        "jawaban": "Rabu, seharusnya 180 botol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 29 lembar masuk, termasuk 4 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 4, 5, x, 8. Ternyata 2 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Lembar sah awal 29-4=25. Kurangi kategori selain jeruk 17 memberi jeruk 8. Tambah 2 data tertinggal menjadi 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 29-4=25. Kurangi kategori selain jeruk 17 memberi jeruk 8. Tambah 2 data tertinggal menjadi 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0b144f42efe8ddff1abb8f96",
+        "teks": "Data banyak es teh yang terjual: Senin 150 gelas, Selasa 225 gelas, Rabu 75 gelas, Kamis 300 gelas.\n\nData tersebut disajikan dalam piktogram dengan satu simbol penuh mewakili 50 gelas dan setengah simbol mewakili 25 gelas. Rancangan banyak simbol (Senin ; Selasa ; Rabu ; Kamis) yang tepat adalah ....",
+        "jawaban": "3 ; 4,5 ; 1,5 ; 6 simbol",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 25 lembar masuk, termasuk 1 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 8, 4, x, 3. Ternyata 3 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Lembar sah awal 25-1=24. Kurangi kategori selain jeruk 15 memberi jeruk 9. Tambah 3 data tertinggal menjadi 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 25-1=24. Kurangi kategori selain jeruk 15 memberi jeruk 9. Tambah 3 data tertinggal menjadi 12.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ffcf5f890d83545fb0958e0",
+        "teks": "Tabel berikut adalah hasil penjualan kue klepon selama 5 hari yang dicatat Dewi.\n\n|Hari|Banyaknya Penjualan Kue Klepon|\n|---|---|\n|Senin|25|\n|Selasa|32|\n|Rabu|18|\n|Kamis|29|\n|Jumat|36|\n\nSatu kue klepon dibeli ibu Dewi seharga Rp2.400,00 dan dijual dengan harga Rp3.000,00. Tentukan keuntungan yang diperoleh ibu Dewi dari hasil penjualan kue klepon tersebut.",
+        "jawaban": "Rp84.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 26 lembar masuk, termasuk 1 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 6, 6, x, 6. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Lembar sah awal 26-1=25. Kurangi kategori selain jeruk 18 memberi jeruk 7. Tambah 1 data tertinggal menjadi 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 26-1=25. Kurangi kategori selain jeruk 18 memberi jeruk 7. Tambah 1 data tertinggal menjadi 8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2e023d195e9d1b29810e080",
+        "teks": "Piktogram penjualan pensil di koperasi sekolah selama 4 hari ditulis sebagai berikut. Satu simbol mewakili 12 pensil.\n\n|Hari|Banyak simbol|\n|---|---|\n|Senin|4|\n|Selasa|6|\n|Rabu|5|\n|Kamis|3|\n\nKoperasi membeli tiap pensil Rp1.500,00 dan menjualnya Rp2.000,00. Berapa keuntungan koperasi dari penjualan pensil selama 4 hari?",
+        "jawaban": "Rp108.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 21 lembar masuk, termasuk 3 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 6, 4, x, 5. Ternyata 1 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Lembar sah awal 21-3=18. Kurangi kategori selain jeruk 15 memberi jeruk 3. Tambah 1 data tertinggal menjadi 4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 21-3=18. Kurangi kategori selain jeruk 15 memberi jeruk 3. Tambah 1 data tertinggal menjadi 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "600d1ed94fbc545929ebdb28",
+        "teks": "Pak Anton menanam kentang. Hasil panennya dicatat setiap minggu.\n\n|Minggu ke-|Hasil Panen (kg)|\n|---|---|\n|1|11|\n|2|30|\n|3|24|\n|4|9|\n|5|15|\n\nKapan hasil panen mengalami penurunan paling banyak dan berapa banyak penurunannya?",
+        "jawaban": "Minggu ke-4, turun 15 kg",
+        "snapshot": "runs/exercise_sessions_3/references/kelas5.json",
+        "source_sha256": "b63c44ff3de10ee4ce4cd9c361f1300789ce7d0f5f5047ccc57a3ebf88b98944"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_pengumpulan_data_duplikat_hilang",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Survei pilihan buah memiliki 26 lembar masuk, termasuk 2 lembar duplikat yang harus dihapus. Setelah dihapus, kategori apel,mangga,jeruk,pisang berjumlah 6, 3, x, 7. Ternyata 3 siswa lain belum dicatat dan semuanya memilih jeruk. Berapa frekuensi jeruk setelah audit lengkap?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Lembar sah awal 26-2=24. Kurangi kategori selain jeruk 16 memberi jeruk 8. Tambah 3 data tertinggal menjadi 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Lembar sah awal 26-2=24. Kurangi kategori selain jeruk 16 memberi jeruk 8. Tambah 3 data tertinggal menjadi 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas5-b08-b-hard-bt01-027"
     }
   ]
 }

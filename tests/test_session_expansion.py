@@ -41,6 +41,10 @@ def provider():
 
 def setup(tmp_path,monkeypatch):
     base,old_plan=primary_fixture(tmp_path,monkeypatch)
+    def checked_latex(questions,path):
+        bank.atomic_json(path,[])
+        return {'checked':0,'errors':[]}
+    monkeypatch.setattr(bank,'check_latex',checked_latex)
     monkeypatch.setattr(expansion,'ROOT',tmp_path);monkeypatch.setattr(expansion,'RUN',tmp_path/'session_run')
     monkeypatch.setattr(expansion,'report_catalog',lambda path:[{'class_key':'kelas1','chapter_no':1,'code':'A','name':'Bilangan'}])
     monkeypatch.setattr(expansion,'provider',lambda name:provider())

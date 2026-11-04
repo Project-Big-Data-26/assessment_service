@@ -781,6 +781,1027 @@
       ],
       "pembahasan": "Gabungkan 13+10=23. Tambah 3 menjadi 26; kurangi 2, tersisa 24.",
       "catatan": "Tambahan setelah penilaian ulang kesulitan lokal; tanpa API; confidence belum diukur."
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sd_low_penjumlahan_konteks_berubah",
+      "alasan_level": "Beberapa keadaan atau syarat yang saling bergantung harus digabungkan, dibalik, dipilih, atau dibandingkan sesuai usia kelas.",
+      "stimulus": null,
+      "pertanyaan": "Damar memiliki kartu pada kelompok A dan B di gambar. Kedua kelompok digabung, ditambah 2 benda dari teman, lalu 1 benda diberikan kepada adik. Berapa jumlah akhirnya?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Gabungkan 8+2=10. Tambah 2 menjadi 12; kurangi 1, tersisa 11.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan 8+2=10. Tambah 2 menjadi 12; kurangi 1, tersisa 11.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-016",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/b2ce22059b54d668e214f694.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "tally",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            8,
+            2
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"tally\", \"labels\": [\"A\", \"B\"], \"values\": [8, 2], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 3 benda lagi, sedangkan B mendapat 2 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "A menjadi 11, B menjadi 50. Bandingkan kedua hasil tersebut Hasilnya $39$.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 11, B menjadi 50. Bandingkan kedua hasil tersebut Hasilnya $39$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-017",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/24e6741686bdac3a27fff757.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "groups",
+          "groups": [
+            {
+              "label": "A",
+              "count": 8,
+              "shape": "circle"
+            },
+            {
+              "label": "B",
+              "count": 48,
+              "shape": "circle"
+            }
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"groups\", \"groups\": [{\"label\": \"A\", \"count\": 8, \"shape\": \"circle\"}, {\"label\": \"B\", \"count\": 48, \"shape\": \"circle\"}]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sd_low_penjumlahan_konteks_berubah",
+      "alasan_level": "Beberapa keadaan atau syarat yang saling bergantung harus digabungkan, dibalik, dipilih, atau dibandingkan sesuai usia kelas.",
+      "stimulus": null,
+      "pertanyaan": "Lani memiliki kelereng pada kelompok A dan B di gambar. Kedua kelompok digabung, ditambah 3 benda dari teman, lalu 1 benda diberikan kepada adik. Berapa jumlah akhirnya?",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Gabungkan 15+16=31. Tambah 3 menjadi 34; kurangi 1, tersisa 33.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan 15+16=31. Tambah 3 menjadi 34; kurangi 1, tersisa 33.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-018",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/96bf87ea423a05eacc6997c8.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "pictogram",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            15,
+            16
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"pictogram\", \"labels\": [\"A\", \"B\"], \"values\": [15, 16], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 2 benda lagi, sedangkan B mendapat 3 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "A menjadi 14, B menjadi 10. Bandingkan kedua hasil tersebut Hasilnya $4$.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 14, B menjadi 10. Bandingkan kedua hasil tersebut Hasilnya $4$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-019",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/a988b4f5f8e31866b995dba3.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "pictogram",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            12,
+            7
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"pictogram\", \"labels\": [\"A\", \"B\"], \"values\": [12, 7], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 1 benda lagi, sedangkan B mendapat 3 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "A menjadi 35, B menjadi 17. Bandingkan kedua hasil tersebut Hasilnya $18$.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 35, B menjadi 17. Bandingkan kedua hasil tersebut Hasilnya $18$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-020",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/99f2004e70b83ed9f25aadd6.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "pictogram",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            34,
+            14
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"pictogram\", \"labels\": [\"A\", \"B\"], \"values\": [34, 14], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sd_low_penjumlahan_konteks_berubah",
+      "alasan_level": "Beberapa keadaan atau syarat yang saling bergantung harus digabungkan, dibalik, dipilih, atau dibandingkan sesuai usia kelas.",
+      "stimulus": null,
+      "pertanyaan": "Siti memiliki kancing pada kelompok A dan B di gambar. Kedua kelompok digabung, ditambah 1 benda dari teman, lalu 2 benda diberikan kepada adik. Berapa jumlah akhirnya?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Gabungkan 1+4=5. Tambah 1 menjadi 6; kurangi 2, tersisa 4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan 1+4=5. Tambah 1 menjadi 6; kurangi 2, tersisa 4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-021",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/33c438f13f410951cae173b7.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "groups",
+          "groups": [
+            {
+              "label": "A",
+              "count": 1,
+              "shape": "circle"
+            },
+            {
+              "label": "B",
+              "count": 4,
+              "shape": "circle"
+            }
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"groups\", \"groups\": [{\"label\": \"A\", \"count\": 1, \"shape\": \"circle\"}, {\"label\": \"B\", \"count\": 4, \"shape\": \"circle\"}]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 3 benda lagi, sedangkan B mendapat 2 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "A menjadi 17, B menjadi 34. Bandingkan kedua hasil tersebut Hasilnya $17$.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 17, B menjadi 34. Bandingkan kedua hasil tersebut Hasilnya $17$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-022",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/3e202e36a0827521bbe511dd.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "tally",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            14,
+            32
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"tally\", \"labels\": [\"A\", \"B\"], \"values\": [14, 32], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 2 benda lagi, sedangkan B mendapat 1 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "A menjadi 48, B menjadi 27. Bandingkan kedua hasil tersebut Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 48, B menjadi 27. Bandingkan kedua hasil tersebut Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-023",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/279aea2de4ccdc74dd1c2310.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "groups",
+          "groups": [
+            {
+              "label": "A",
+              "count": 46,
+              "shape": "circle"
+            },
+            {
+              "label": "B",
+              "count": 26,
+              "shape": "circle"
+            }
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"groups\", \"groups\": [{\"label\": \"A\", \"count\": 46, \"shape\": \"circle\"}, {\"label\": \"B\", \"count\": 26, \"shape\": \"circle\"}]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 3 benda lagi, sedangkan B mendapat 1 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "A menjadi 7, B menjadi 31. Bandingkan kedua hasil tersebut Hasilnya $24$.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 7, B menjadi 31. Bandingkan kedua hasil tersebut Hasilnya $24$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-024",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/fffa0b8952058f9158c5389c.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "pictogram",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            4,
+            30
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"pictogram\", \"labels\": [\"A\", \"B\"], \"values\": [4, 30], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 3 benda lagi, sedangkan B mendapat 2 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "A menjadi 50, B menjadi 50. Bandingkan kedua hasil tersebut Hasilnya $0$.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 50, B menjadi 50. Bandingkan kedua hasil tersebut Hasilnya $0$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/363eb9774225fea9709f752b.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "pictogram",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            47,
+            48
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"pictogram\", \"labels\": [\"A\", \"B\"], \"values\": [47, 48], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 1 benda lagi, sedangkan B mendapat 2 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "A menjadi 24, B menjadi 38. Bandingkan kedua hasil tersebut Hasilnya $14$.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 24, B menjadi 38. Bandingkan kedua hasil tersebut Hasilnya $14$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/1dc1610c74a3ce9a215a2031.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "tally",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            23,
+            36
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"tally\", \"labels\": [\"A\", \"B\"], \"values\": [23, 36], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 3 benda lagi, sedangkan B mendapat 2 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "A menjadi 35, B menjadi 38. Bandingkan kedua hasil tersebut Hasilnya $3$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 35, B menjadi 38. Bandingkan kedua hasil tersebut Hasilnya $3$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/70701daa0cba2db1c840d09f.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "pictogram",
+          "labels": [
+            "A",
+            "B"
+          ],
+          "values": [
+            32,
+            36
+          ],
+          "unit": 1
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"pictogram\", \"labels\": [\"A\", \"B\"], \"values\": [32, 36], \"unit\": 1}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sd_low_penjumlahan_konteks_berubah",
+      "alasan_level": "Beberapa keadaan atau syarat yang saling bergantung harus digabungkan, dibalik, dipilih, atau dibandingkan sesuai usia kelas.",
+      "stimulus": null,
+      "pertanyaan": "Mira memiliki kartu pada kelompok A dan B di gambar. Kedua kelompok digabung, ditambah 2 benda dari teman, lalu 1 benda diberikan kepada adik. Berapa jumlah akhirnya?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Gabungkan 8+8=16. Tambah 2 menjadi 18; kurangi 1, tersisa 17.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan 8+8=16. Tambah 2 menjadi 18; kurangi 1, tersisa 17.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/35def2b18566090a4b625512.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "groups",
+          "groups": [
+            {
+              "label": "A",
+              "count": 8,
+              "shape": "circle"
+            },
+            {
+              "label": "B",
+              "count": 8,
+              "shape": "circle"
+            }
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"groups\", \"groups\": [{\"label\": \"A\", \"count\": 8, \"shape\": \"circle\"}, {\"label\": \"B\", \"count\": 8, \"shape\": \"circle\"}]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok benda A dan B tampak pada gambar. A mendapat 3 benda lagi, sedangkan B mendapat 2 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "A menjadi 29, B menjadi 50. Bandingkan kedua hasil tersebut Hasilnya $21$.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 29, B menjadi 50. Bandingkan kedua hasil tersebut Hasilnya $21$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas2/batch01/assets/583e13c8470ca5d8ac5d34ff.png"
+      ],
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "groups",
+          "groups": [
+            {
+              "label": "A",
+              "count": 26,
+              "shape": "circle"
+            },
+            {
+              "label": "B",
+              "count": 48,
+              "shape": "circle"
+            }
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"groups\", \"groups\": [{\"label\": \"A\", \"count\": 26, \"shape\": \"circle\"}, {\"label\": \"B\", \"count\": 48, \"shape\": \"circle\"}]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sd_low_penjumlahan_konteks_berubah",
+      "alasan_level": "Beberapa keadaan atau syarat yang saling bergantung harus digabungkan, dibalik, dipilih, atau dibandingkan sesuai usia kelas.",
+      "stimulus": null,
+      "pertanyaan": "Lani mempunyai 2 manik-manik di A dan 7 di B. Kedua kelompok digabung, ditambah 3 benda dari teman, lalu 2 benda diberikan kepada adik. Berapa jumlah akhirnya?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Gabungkan 2+7=9. Tambah 3 menjadi 12; kurangi 2, tersisa 10.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan 2+7=9. Tambah 3 menjadi 12; kurangi 2, tersisa 10.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "A mula-mula berisi 36 benda dan B 4 benda. A mendapat 2 benda lagi, sedangkan B mendapat 3 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "A menjadi 38, B menjadi 7. Bandingkan kedua hasil tersebut Hasilnya $31$.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 38, B menjadi 7. Bandingkan kedua hasil tersebut Hasilnya $31$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "A mula-mula berisi 9 benda dan B 10 benda. A mendapat 1 benda lagi, sedangkan B mendapat 3 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "A menjadi 10, B menjadi 13. Bandingkan kedua hasil tersebut Hasilnya $3$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 10, B menjadi 13. Bandingkan kedua hasil tersebut Hasilnya $3$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sd_low_penjumlahan_konteks_berubah",
+      "alasan_level": "Beberapa keadaan atau syarat yang saling bergantung harus digabungkan, dibalik, dipilih, atau dibandingkan sesuai usia kelas.",
+      "stimulus": null,
+      "pertanyaan": "Beni mempunyai 6 stiker di A dan 7 di B. Kedua kelompok digabung, ditambah 2 benda dari teman, lalu 1 benda diberikan kepada adik. Berapa jumlah akhirnya?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Gabungkan 6+7=13. Tambah 2 menjadi 15; kurangi 1, tersisa 14.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan 6+7=13. Tambah 2 menjadi 15; kurangi 1, tersisa 14.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "86ef303fdabf175f3223919d",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa jumlah semua kupu-kupu?",
+        "jawaban": "18",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "A mula-mula berisi 24 benda dan B 29 benda. A mendapat 3 benda lagi, sedangkan B mendapat 1 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "A menjadi 27, B menjadi 30. Bandingkan kedua hasil tersebut Hasilnya $3$.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 27, B menjadi 30. Bandingkan kedua hasil tersebut Hasilnya $3$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "c0bf29e80c730eba9378deaf",
+        "teks": "Di atas bunga hinggap kupu-kupu merah, kuning, dan hijau. Ada 5 kupu-kupu merah. Ada 6 kupu-kupu hijau. Banyaknya kupu-kupu kuning 2 lebihnya dari banyak kupu-kupu merah.\n\nBerapa banyak kupu-kupu kuning?",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas2.json",
+        "source_sha256": "b1cdd729010df249bb83df4799a77d7727ac271920c146c075a9802d587e4263"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "session_sd_compare_updated",
+      "alasan_level": "Perbarui dua keadaan yang berbeda, tentukan hasil masing-masing, kemudian bandingkan hasil akhirnya.",
+      "stimulus": null,
+      "pertanyaan": "A mula-mula berisi 10 benda dan B 31 benda. A mendapat 3 benda lagi, sedangkan B mendapat 1 benda lagi. Berapa selisih banyak benda kedua kelompok pada akhir kegiatan?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "A menjadi 13, B menjadi 32. Bandingkan kedua hasil tersebut Hasilnya $19$.",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "A menjadi 13, B menjadi 32. Bandingkan kedua hasil tersebut Hasilnya $19$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas2-b02-c-hard-bt01-035"
     }
   ]
 }

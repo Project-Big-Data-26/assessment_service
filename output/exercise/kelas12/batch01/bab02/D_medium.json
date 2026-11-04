@@ -903,6 +903,2179 @@
       "pembahasan": "Akhir tahun pertama utang 805000, setelah bayar 765000. Majemukkan sisa dua tahun: 2023425/2.",
       "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
       "id": "kelas12-b02-d-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8c438206fe8aa69f9e5e5c7",
+        "teks": "Pak Wahyu meminjam dana sebesar Rp45.000.000,00 yang diangsur selama 9 bulan (pokok tetap) dengan bunga 15% per tahun. Angsuran pokok per bulan adalah ....",
+        "jawaban": "Rp5.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$3367430$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3367430$.",
+      "distraktor": [
+        {
+          "teks": "$3367431$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3367429$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6734860$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3367430$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/45be7eb9d6195b235b42888f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2100000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              10000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2100000], [\"r\", 10], [\"n\", 5], [\"D\", 10000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f44f3ee5a2de6722e3dfe68",
+        "teks": "Bu Rina mengambil kredit di koperasi sebesar Rp36.000.000,00 untuk modal usaha. Kredit dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan, bunga koperasi 18% per tahun. Besar angsuran pokok tiap bulan adalah ....",
+        "jawaban": "Rp3.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{406904214689}{78125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{406904214689}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{406904292814}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{406904136564}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{813808429378}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{406904214689}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/973ba475241f90686660f042.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3700000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              30000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3700000], [\"r\", 6], [\"n\", 6], [\"D\", 30000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f036860b61ef39efd80008ee",
+        "teks": "Pak Hendra meminjam dana sebesar Rp30.000.000,00 yang diangsur selama 10 bulan (pokok tetap) dengan bunga 12% per tahun. Besar bunga pada bulan ke-4 adalah ....",
+        "jawaban": "Rp210.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$4078880$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $4078880$.",
+      "distraktor": [
+        {
+          "teks": "$4078881$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4078879$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$8157760$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $4078880$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/6c22df5b27f16afd435ea5da.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3800000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              2
+            ],
+            [
+              "D",
+              30000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3800000], [\"r\", 4], [\"n\", 2], [\"D\", 30000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54fa9bc96fbf7329f0266531",
+        "teks": "Seorang karyawan mengambil kredit sepeda motor Rp24.000.000,00 yang dilunasi dalam 8 bulan dengan angsuran pokok tetap. Bunga kredit 18% per tahun dan dikenakan pada sisa pokok. Bunga yang harus dibayar pada bulan ke-3 adalah ....",
+        "jawaban": "Rp270.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{226660096}{125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{226660096}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{226660221}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{226659971}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{453320192}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{226660096}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/03f4dea8cc4dd503130d26b5.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1500000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              10000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1500000], [\"r\", 4], [\"n\", 5], [\"D\", 10000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b00ee86b35c23947b66590c",
+        "teks": "Bu Tari meminjam dana sebesar Rp20.000.000,00 yang diangsur selama 2 bulan (pokok tetap) dengan bunga 12% per tahun. Total bunga yang dibayar selama 2 bulan adalah ....",
+        "jawaban": "Rp300.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{193700066201}{50000}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{193700066201}{50000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{193700116201}{50000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{193700016201}{50000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{193700066201}{25000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{193700066201}{50000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f6fa31f6bc60290e334faad0.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3400000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              60000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3400000], [\"r\", 3], [\"n\", 5], [\"D\", 60000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ed52cb3cbd46aac38322337",
+        "teks": "Sebuah koperasi memberi pinjaman Rp30.000.000,00 kepada seorang peternak. Pinjaman dilunasi dalam 2 bulan dengan angsuran pokok yang sama dan bunga 18% per tahun dari sisa pokok. Jumlah seluruh bunga yang dibayar peternak adalah ....",
+        "jawaban": "Rp675.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{459856776704}{78125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{459856776704}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{459856854829}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{459856698579}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{919713553408}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{459856776704}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/13e831cfb9a9334a929faa54.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4700000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              50000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4700000], [\"r\", 4], [\"n\", 6], [\"D\", 50000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "45edfdbf24d748b9f87e3c0e",
+        "teks": "Andi meminjam uang sebesar Rp20.000.000,00 di bank dengan bunga 18% per tahun yang diangsur selama 8 bulan dengan pokok tetap. Total angsuran (pokok + bunga) pada bulan ke-2 adalah ....",
+        "jawaban": "Rp2.762.500,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{80698981677}{20000}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{80698981677}{20000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{80699001677}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{80698961677}{20000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{80698981677}{10000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{80698981677}{20000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/2903c1a6ac5e16918c2d039c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3500000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3500000], [\"r\", 3], [\"n\", 5], [\"D\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "00fe103324186d560100ef16",
+        "teks": "Rina membeli laptop dengan kredit Rp12.000.000,00 yang dilunasi selama 6 bulan, angsuran pokok sama tiap bulan, bunga 12% per tahun dari sisa pokok. Total angsuran yang dibayar Rina pada bulan terakhir adalah ....",
+        "jawaban": "Rp2.020.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$3894430$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3894430$.",
+      "distraktor": [
+        {
+          "teks": "$3894431$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3894429$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$7788860$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3894430$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/9ff6f972b8d06d4e160f5bfb.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3700000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              2
+            ],
+            [
+              "D",
+              30000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3700000], [\"r\", 3], [\"n\", 2], [\"D\", 30000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fa925be1180b2413fa2fb60",
+        "teks": "Pak Budi meminjam Rp16.000.000,00 di bank dengan suku bunga 12% per tahun. Pinjaman dikembalikan dalam 8 bulan dengan angsuran pokok tetap dan bunga menurun. Besar bunga pada cicilan ke-5 adalah ....",
+        "jawaban": "Rp80.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$4692204$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $4692204$.",
+      "distraktor": [
+        {
+          "teks": "$4692205$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4692203$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$9384408$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $4692204$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/59a6d3c7b3d2ed95bd2e111e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4500000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              3
+            ],
+            [
+              "D",
+              80000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4500000], [\"r\", 2], [\"n\", 3], [\"D\", 80000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "945dc2f8bfe82645098aa927",
+        "teks": "Bu Dewi memperoleh pinjaman usaha Rp25.000.000,00 dengan bunga 6% per tahun. Pinjaman dibayar lunas dalam 5 bulan, angsuran pokok tetap dan bunga dihitung dari sisa pinjaman. Bunga yang dibayar pada cicilan ke-2 adalah ....",
+        "jawaban": "Rp100.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{334928256}{125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{334928256}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{334928381}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{334928131}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{669856512}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{334928256}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/f47920f44687fd7a89e0df60.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2300000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              4
+            ],
+            [
+              "D",
+              10000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2300000], [\"r\", 4], [\"n\", 4], [\"D\", 10000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39de85557bdbb08440c6681c",
+        "teks": "Pada pinjaman bunga majemuk dengan angsuran pokok tetap, besar bunga yang dibayar dari bulan ke bulan akan ....",
+        "jawaban": "semakin kecil karena dihitung dari sisa pokok yang menurun",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{125829207}{32}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{125829207}{32}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{125829239}{32}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{125829175}{32}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{125829207}{16}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{125829207}{32}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/3a16e6289fde2abc924a1184.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              3100000
+            ],
+            [
+              "r",
+              5
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 3100000], [\"r\", 5], [\"n\", 5], [\"D\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "14cca2bb1b2d8a14d99fbfd0",
+        "teks": "Sebuah pinjaman berbunga 9% per tahun dengan bunga dihitung tiap bulan. Persentase bunga per bulan adalah ....",
+        "jawaban": "0,75%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$554140$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $554140$.",
+      "distraktor": [
+        {
+          "teks": "$554141$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$554139$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1108280$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $554140$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/22ffa5b1ebcf5c3940c133c9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              600000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              2
+            ],
+            [
+              "D",
+              80000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 600000], [\"r\", 3], [\"n\", 2], [\"D\", 80000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b38c2abad15656f5c2a3a403",
+        "teks": "Pak Joko meminjam Rp40.000.000,00 dengan bunga 1,5% per bulan. Besar bunga pada bulan pertama adalah ....",
+        "jawaban": "Rp600.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{67969974447}{31250}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{67969974447}{31250}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{67970005697}{31250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{67969943197}{31250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{67969974447}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{67969974447}{31250}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8a66fa84f656cac2a18f9d19.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2000000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              70000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2000000], [\"r\", 2], [\"n\", 6], [\"D\", 70000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f75619d1b1d2a5d92e238baa",
+        "teks": "Pinjaman Rp60.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok tetap. Sisa pokok pinjaman pada awal bulan ke-6 (setelah 5 kali angsuran pokok) adalah ....",
+        "jawaban": "Rp35.000.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{5514993169}{6250}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{5514993169}{6250}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5514999419}{6250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5514986919}{6250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5514993169}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{5514993169}{6250}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/602e8e8e048374c9fbfc5e03.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              800000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 800000], [\"r\", 3], [\"n\", 5], [\"D\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "505aebdb4f717f61ccfabccf",
+        "teks": "| Bulan ke-n | Sisa pinjaman (Rp) | Angsuran pokok (Rp) | Bunga 2% (Rp) | Total angsuran (Rp) |\n|---|---|---|---|---|\n| 1 | 10.000.000 | 2.000.000 | 200.000 | 2.200.000 |\n| 2 | 8.000.000 | 2.000.000 | 160.000 | 2.160.000 |\n| 3 | 6.000.000 | 2.000.000 | 120.000 | 2.120.000 |\n\nTabel di atas menunjukkan angsuran 3 bulan pertama dari pinjaman Rp10.000.000,00 yang diangsur 5 bulan dengan pokok tetap dan bunga 2% per bulan. Total angsuran pada bulan ke-4 adalah ....",
+        "jawaban": "Rp2.080.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{431151372288}{78125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{431151372288}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{431151450413}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{431151294163}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{862302744576}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{431151372288}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/8e0dfd135d558dff3048d4e6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4400000
+            ],
+            [
+              "r",
+              4
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4400000], [\"r\", 4], [\"n\", 6], [\"D\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8fa49185c7849e20ddce201b",
+        "teks": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Total angsuran bulan pertama lebih besar daripada total angsuran bulan kedua sebesar ....",
+        "jawaban": "Rp20.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{225301488903}{156250}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{225301488903}{156250}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{225301645153}{156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{225301332653}{156250}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{225301488903}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{225301488903}{156250}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/12a91b57544303e2a7c40e96.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1300000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1300000], [\"r\", 2], [\"n\", 6], [\"D\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0738aa85583125c00864f3c8",
+        "teks": "Pada rumus besar bunga pinjaman majemuk setiap bulan $B_k = [P_a - A \\times (k-1)] \\times \\frac{b}{12}$, lambang $A$ menyatakan ....",
+        "jawaban": "angsuran pokok tiap bulan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1664891491}{625}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{1664891491}{625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1664892116}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1664890866}{625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3329782982}{625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{1664891491}{625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/bd1d25ac8469f8a98f38ebe4.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2000000
+            ],
+            [
+              "r",
+              6
+            ],
+            [
+              "n",
+              5
+            ],
+            [
+              "D",
+              10000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2000000], [\"r\", 6], [\"n\", 5], [\"D\", 10000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37884e52dec3df1b10bc67b4",
+        "teks": "Pada pinjaman bunga majemuk dengan angsuran pokok tetap, total angsuran yang dibayar pada suatu bulan sama dengan ....",
+        "jawaban": "angsuran pokok ditambah bunga pada bulan itu",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{48492434527969}{10000000}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{48492434527969}{10000000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{48492444527969}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{48492424527969}{10000000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{48492434527969}{5000000}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{48492434527969}{10000000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/7e992073cd767e1bd99028c9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              4100000
+            ],
+            [
+              "r",
+              3
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              40000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 4100000], [\"r\", 3], [\"n\", 6], [\"D\", 40000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d71007dc3e16bd8abb1c6680",
+        "teks": "Pinjaman Rp48.000.000,00 dilunasi dalam 16 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Bunga yang dibayar pada bulan terakhir (bulan ke-16) adalah ....",
+        "jawaban": "Rp30.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$1932612$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $1932612$.",
+      "distraktor": [
+        {
+          "teks": "$1932613$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1932611$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3865224$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $1932612$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/69025e7a334f87ca9512de99.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              1100000
+            ],
+            [
+              "r",
+              10
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              10000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 1100000], [\"r\", 10], [\"n\", 6], [\"D\", 10000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "683e456a4a746e1230f3a123",
+        "teks": "Pinjaman X sebesar Rp20.000.000,00 berbunga 12% per tahun, sedangkan pinjaman Y sebesar Rp15.000.000,00 berbunga 18% per tahun. Bunga dihitung tiap bulan dari pokok pinjaman. Selisih bunga pada bulan pertama antara kedua pinjaman adalah ....",
+        "jawaban": "Rp25.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{290651460192}{78125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{290651460192}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{290651538317}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{290651382067}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{581302920384}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{290651460192}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/e0de7e384f3035ad06e7bfa8.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2400000
+            ],
+            [
+              "r",
+              8
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              60000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2400000], [\"r\", 8], [\"n\", 6], [\"D\", 60000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "825a0528917b3a8aa6e998d1",
+        "teks": "Pinjaman dilunasi dalam 12 bulan dengan angsuran pokok tetap dan bunga dihitung dari sisa pokok tiap bulan. Bunga bulan pertama Rp240.000,00. Dito menghitung total bunga seluruh masa dengan rumus $\\frac{1}{2} \\times 12 \\times 240.000 = 1.440.000$. Total bunga yang benar adalah ....",
+        "jawaban": "Rp1.560.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{191834039556}{78125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{191834039556}{78125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{191834117681}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{191833961431}{78125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{383668079112}{78125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{191834039556}{78125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas12/batch01/assets/1d2bde1244bd7fd51f124ce9.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "P",
+              2200000
+            ],
+            [
+              "r",
+              2
+            ],
+            [
+              "n",
+              6
+            ],
+            [
+              "D",
+              20000
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"P\", 2200000], [\"r\", 2], [\"n\", 6], [\"D\", 20000]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24eb70276065e189610ca778",
+        "teks": "Rani menyatakan: \"Jika dua pinjaman berbunga sama dan memakai angsuran pokok tetap, pinjaman dengan pokok lebih besar pasti membayar bunga bulan ke-5 lebih besar.\" Sebagai pembanding, pinjaman X sebesar Rp40.000.000,00 dilunasi dalam 20 bulan. Pinjaman Y yang menjadi contoh penyangkal klaim Rani (pokok lebih besar dari X, tetapi bunga bulan ke-5 lebih kecil) adalah ....",
+        "jawaban": "Rp48.000.000,00 dilunasi dalam 8 bulan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $1000000$; r = $5$; n = $3$; D = $20000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$1135575$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $1135575$.",
+      "distraktor": [
+        {
+          "teks": "$1135576$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1135574$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2271150$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $1135575$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07d943a2f1d05c59d9213fd3",
+        "teks": "Seorang nasabah meminjam Rp36.000.000,00 dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Ia ingin total bunga seluruh masa pinjaman tidak lebih dari Rp1.800.000,00. Lama pinjaman terpanjang yang memenuhi (dalam bulan bulat) adalah .... bulan.",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4200000$; r = $10$; n = $3$; D = $30000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$5553900$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $5553900$.",
+      "distraktor": [
+        {
+          "teks": "$5553901$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5553899$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$11107800$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $5553900$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "33b483cea8f1511df9d39737",
+        "teks": "Bank menetapkan total angsuran (pokok + bunga) bulan pertama tidak boleh melebihi Rp3.500.000,00. Pinjaman Rp30.000.000,00 memakai angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Lama pinjaman paling singkat yang memenuhi (dalam bulan bulat) adalah .... bulan.",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3300000$; r = $3$; n = $4$; D = $70000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{3637688183}{1000}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3637688183}{1000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3637689183}{1000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3637687183}{1000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3637688183}{500}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3637688183}{1000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6765f4971c84455020ca360",
+        "teks": "| Bulan | Sisa pokok awal bulan | Bunga |\n|---|---|---|\n| 1 | Rp18.000.000,00 | Rp180.000,00 |\n| 2 | Rp15.000.000,00 | Rp150.000,00 |\n| 3 | Rp12.000.000,00 | Rp90.000,00 |\n| 4 | Rp9.000.000,00 | Rp90.000,00 |\n\nPak Joko membuat tabel angsuran untuk pinjaman Rp18.000.000,00 yang dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Empat baris pertama tabel tersebut memuat tepat satu kesalahan pada kolom bunga. Pernyataan yang benar adalah ....",
+        "jawaban": "kesalahan pada bulan ke-3; bunga seharusnya Rp120.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $2800000$; r = $8$; n = $2$; D = $50000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$3211920$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3211920$.",
+      "distraktor": [
+        {
+          "teks": "$3211921$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3211919$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6423840$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3211920$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48e82359d7c3e5d6007b9284",
+        "teks": "Suatu pinjaman dengan angsuran pokok tetap berbunga 12% per tahun dari sisa pokok. Bunga bulan ke-3 sebesar Rp480.000,00 dan bunga bulan terakhir Rp120.000,00. Lama pinjaman tersebut adalah .... bulan.",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $1100000$; r = $2$; n = $4$; D = $40000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{143528382}{125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{143528382}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{143528507}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{143528257}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{287056764}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{143528382}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "150da281248eebaeb733db92",
+        "teks": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan. Bank A menghitung bunga 12% per tahun dari sisa pokok. Bank B menghitung bunga 7% per tahun dari pokok awal dan besarnya sama untuk selama 12 bulan itu. Pernyataan yang benar tentang total bunga yang dibayar adalah ....",
+        "jawaban": "Bank A lebih murah Rp120.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $2100000$; r = $10$; n = $5$; D = $20000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$3352789$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3352789$.",
+      "distraktor": [
+        {
+          "teks": "$3352790$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3352788$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6705578$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $3352789$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36f3284e12ba5d6c20a85d33",
+        "teks": "Pinjaman Rp20.000.000,00 dilunasi dalam 10 bulan dengan angsuran pokok tetap dan bunga 6% per tahun dari sisa pokok. Pernyataan yang benar adalah ....",
+        "jawaban": "Total bunga seluruh masa pinjaman adalah Rp550.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $700000$; r = $8$; n = $5$; D = $50000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{3001578768}{3125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3001578768}{3125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3001581893}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3001575643}{3125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{6003157536}{3125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3001578768}{3125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7d7c3ecc8862e731ffc7b7e",
+        "teks": "Pinjaman Rp30.000.000,00 dilunasi dalam 10 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Nasabah membayar angsuran bulan ke-1 sampai ke-4 sesuai jadwal. Pada bulan ke-5 ia membayar bunga bulan ke-5 dan melunasi seluruh sisa pokok, sehingga tidak ada bunga setelah bulan ke-5. Bunga yang dihemat dibandingkan jika pinjaman dilunasi sesuai jadwal adalah ....",
+        "jawaban": "Rp450.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3100000$; r = $3$; n = $4$; D = $40000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{3445368231}{1000}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3445368231}{1000}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3445369231}{1000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3445367231}{1000}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3445368231}{500}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3445368231}{1000}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34e2ad0f06b7143bca775d19",
+        "teks": "Sebuah koperasi menawarkan pinjaman dengan pokok kelipatan Rp4.000.000,00, dilunasi dalam 8 bulan dengan angsuran pokok tetap dan bunga 12% per tahun dari sisa pokok. Nasabah menginginkan bunga bulan ke-3 tidak kurang dari Rp200.000,00 dan tidak lebih dari Rp300.000,00. Banyak pilihan pokok pinjaman yang memenuhi adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $2800000$; r = $3$; n = $2$; D = $50000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$2919020$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $2919020$.",
+      "distraktor": [
+        {
+          "teks": "$2919021$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2919019$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$5838040$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $2919020$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "96d97e7bc3213b3329ccf6f9",
+        "teks": "Pinjaman dilunasi dalam 15 bulan dengan angsuran pokok tetap dan bunga 1,5% per bulan dari sisa pokok. Bunga bulan ke-3 adalah Rp780.000,00. Bunga bulan ke-11 adalah ....",
+        "jawaban": "Rp300.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4900000$; r = $12$; n = $3$; D = $40000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{34169856}{5}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{34169856}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{34169861}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{34169851}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{68339712}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{34169856}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51ea6e77e34f0178af837e5a",
+        "teks": "Pinjaman Rp36.000.000,00 dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 6% per tahun dari sisa pokok. Seorang nasabah mengklaim: \"Jika persen bunga dan lama pinjaman sama-sama dijadikan dua kali lipat (12% per tahun dan 12 bulan), total bunga menjadi tepat 4 kali lipat.\" Pernyataan yang benar adalah ....",
+        "jawaban": "Total bunga baru Rp2.340.000,00 dan klaim salah karena kurang dari 4 kali lipat",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $1500000$; r = $3$; n = $3$; D = $80000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{3108437}{2}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3108437}{2}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3108439}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3108435}{2}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3108437$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{3108437}{2}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3275d04bbe5741c8480e68d",
+        "teks": "Bu Sari memiliki dua pinjaman yang dimulai pada bulan yang sama, keduanya dengan angsuran pokok tetap dan bunga 1% per bulan dari sisa pokok. Pinjaman I sebesar Rp24.000.000,00 dilunasi dalam 8 bulan dan pinjaman II sebesar Rp18.000.000,00 dilunasi dalam 6 bulan. Jumlah bunga kedua pinjaman yang dibayar pada bulan ke-7 adalah ....",
+        "jawaban": "Rp60.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $900000$; r = $5$; n = $6$; D = $10000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{763726887}{640}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{763726887}{640}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{763727527}{640}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{763726247}{640}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{763726887}{320}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{763726887}{640}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c2a0bf19243af266f6c9074",
+        "teks": "Dua pinjaman berpokok sama masing-masing memakai angsuran pokok tetap dan bunga dari sisa pokok. Pinjaman I dilunasi dalam 11 bulan dengan bunga 12% per tahun. Pinjaman II dilunasi dalam 5 bulan. Agar total bunga kedua pinjaman sama besar, suku bunga pinjaman II harus ....",
+        "jawaban": "24% per tahun",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3200000$; r = $8$; n = $3$; D = $80000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{19688832}{5}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{19688832}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19688837}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19688827}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39377664}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{19688832}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec26563095c22ba980237113",
+        "teks": "Pak Surya meminjam dana sebesar Rp54.000.000,00 yang diangsur selama 9 bulan (pokok tetap) dengan bunga 9% per tahun. Besar bunga pada bulan ke-7 adalah ....",
+        "jawaban": "Rp135.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3500000$; r = $12$; n = $6$; D = $80000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{105740500992}{15625}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{105740500992}{15625}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{105740516617}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{105740485367}{15625}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{211481001984}{15625}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{105740500992}{15625}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f108a45c4e1e8cce2a490069",
+        "teks": "Seorang pedagang mengambil kredit renovasi kios sebesar Rp36.000.000,00 yang dilunasi dalam 12 bulan dengan angsuran pokok tetap. Bunga kredit 10% per tahun dan dikenakan pada sisa pokok. Bunga yang harus dibayar pedagang pada bulan ke-10 adalah ....",
+        "jawaban": "Rp75.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $4200000$; r = $12$; n = $3$; D = $30000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{29315328}{5}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{29315328}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29315333}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{29315323}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{58630656}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{29315328}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2b0f67f3c9caa5870ff05bd",
+        "teks": "Pak Rudi meminjam dana sebesar Rp40.000.000,00 yang diangsur selama 8 bulan (pokok tetap) dengan bunga 9% per tahun. Total bunga keseluruhan yang dibayar adalah ....",
+        "jawaban": "Rp1.350.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3200000$; r = $5$; n = $4$; D = $70000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{15234345}{4}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{15234345}{4}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15234349}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{15234341}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{15234345}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{15234345}{4}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd592c04b35d8cb08ff6601c",
+        "teks": "Seorang petani mengambil pinjaman Rp24.000.000,00 dari koperasi untuk membeli bibit. Pinjaman itu dilunasi dalam 6 bulan dengan angsuran pokok yang sama tiap bulan dan bunga 6% per tahun dari sisa pokok. Jumlah seluruh bunga yang dibayar petani adalah ....",
+        "jawaban": "Rp420.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $3900000$; r = $4$; n = $4$; D = $60000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{561869568}{125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{561869568}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{561869693}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{561869443}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1123739136}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{561869568}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b349424ba39dd0dd7364b63b",
+        "teks": "Dimas meminjam uang sebesar Rp28.000.000,00 di bank dengan bunga 15% per tahun yang diangsur selama 14 bulan dengan pokok tetap. Total angsuran (pokok + bunga) pada bulan ke-6 adalah ....",
+        "jawaban": "Rp2.225.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $1200000$; r = $4$; n = $4$; D = $80000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{164230144}{125}$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{164230144}{125}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{164230269}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{164230019}{125}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{328460288}{125}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $\\frac{164230144}{125}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a0e5c386a1610ebced07fa4",
+        "teks": "Sinta mengajukan pinjaman sebesar Rp21.000.000,00 pada sebuah koperasi dengan bunga 18% per tahun yang diangsur selama 7 bulan dengan pokok tetap. Total angsuran bulan pertama lebih besar daripada total angsuran bulan terakhir sebesar ....",
+        "jawaban": "Rp270.000,00",
+        "snapshot": "runs/exercise_sessions_3/references/kelas12.json",
+        "source_sha256": "f4eaf0d55cd6d398c19d9a1a6b497fbc77cc6ed42270395d88e213d851ba843e"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "session_sma_compound_loan_linked",
+      "alasan_level": "Menghubungkan data dengan parameter, batas, atau hasil antara sebelum menghitung kuantitas yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui P = $1800000$; r = $6$; n = $2$; D = $80000$. Utang awal $P$ berbunga majemuk $r$ persen per tahun. Pada akhir tahun pertama dibayar $D$. Tanpa pembayaran lain, berapa sisa utang akhir tahun ke-$n$, tanpa pembulatan?",
+      "jawaban_benar": "$1937680$",
+      "alasan_benar": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $1937680$.",
+      "distraktor": [
+        {
+          "teks": "$1937681$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$1937679$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$3875360$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Perbarui saldo setelah bunga dan pembayaran pertama, lalu majemukkan saldo sisa untuk tahun-tahun berikutnya. Hasilnya $1937680$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas12-b02-d-medium-bt01-066"
     }
   ]
 }

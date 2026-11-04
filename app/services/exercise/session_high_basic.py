@@ -4,17 +4,22 @@ The registry describes the actual task; a requested quota is never a label input
 """
 from __future__ import annotations
 import math
+import re
 import sympy as s
 
 POLICY='codex-session-content-v3'
+DIRECT_TOPICS=frozenset("""akar banding banding_pecahan banding_peluang banding_rasional bangun_ruang bentuk_baku bijeksi bilangan_bulat ciri_segiempat ciri_segitiga data_baca desimal diagram_lingkaran dilatasi empiris faktor faktor_bulat faktor_persekutuan fpb_prima fungsi garis_gradien harapan hubungan_luas hubungan_sudut jarak jenis_data keliling keliling_gabungan_terpandu keliling_poligon keliling_segitiga kelipatan kelipatan_persekutuan kesebangunan komposisi kongruen konstruksi_kubus laju letak_rasional lingkaran lokasi luas luas_gabungan luas_lengkung luas_permukaan model_aljabar nilai_tempat operasi_aljabar operasi_bulat operasi_cacah operasi_pecahan operasi_rasional pangkat peluang pemusatan penerapan_rasio penyebaran persamaan_linear pertidaksamaan piktogram pilih_diagram pldv pythagoras rasio rasio_senilai refleksi relasi rotasi sampel segitiga_istimewa skala skala_peluang spldv statistika_data sudut_siku translasi ukur_sudut unsur_aljabar visualisasi_spasial volume volume_lengkung""".split())
+DIRECT_TOPICS=DIRECT_TOPICS|{'melukis_sudut','pengumpulan_data','investigasi_statistika'}
 
 
 def solve(cert):
     if cert['type']=='session_basic_linked':
         a=solve(cert['left']);b=solve(cert['right'])
-        return s.simplify(a+b if cert['operation']=='sum' else a-b)
+        if cert['operation']=='sum':return s.simplify(a+b)
+        if cert['operation']=='absolute_difference':return s.simplify(s.Abs(a-b))
+        return s.simplify(a-b)
     assert cert['type']=='session_basic_expression'
-    names={k:s.sympify(v) for k,v in cert['inputs'].items()};names.update(Max=s.Max,Min=s.Min,floor=s.floor,ceiling=s.ceiling,sqrt=s.sqrt,pi=s.pi,gcd=s.gcd,lcm=s.lcm,Mod=s.Mod,factorial=s.factorial)
+    names={k:s.sympify(v) for k,v in cert['inputs'].items()};names.update(Max=s.Max,Min=s.Min,floor=s.floor,ceiling=s.ceiling,sqrt=s.sqrt,pi=s.pi,gcd=s.gcd,lcm=s.lcm,Mod=s.Mod,factorial=s.factorial,divisor_count=s.divisor_count)
     value=s.simplify(s.sympify(cert['expression'],locals=names));assert not value.free_symbols and value.is_finite is True
     return value
 
@@ -22,28 +27,58 @@ def solve(cert):
 def fmt(value):return '$'+s.latex(s.sympify(value))+'$'
 
 
+def _probability_family(kind):
+    return kind in {'s6_skala_peluang','s6_banding_peluang','s9_peluang','s9_empiris'}
+
+
+def _wrong_options(value,*,nonnegative=False,domain=None):
+    proposals=[value+1,value-1,value+2,value/2,2*value,-value,value+3,value+4]
+    if domain is not None:
+        lo,hi=domain
+        proposals=[-value,1-value,value/2,(value+1)/2,value**2,
+                   s.Rational(1,3),s.Rational(2,3),s.Rational(1,4),s.Rational(3,4),
+                   0,1,-s.Rational(1,3),-s.Rational(2,3),-1]
+    elif 0<value<1:
+        proposals=[1-value,value/2,(value+1)/2,value**2,s.Rational(1,3),s.Rational(2,3)]
+    wrong=[]
+    for t in proposals:
+        t=s.simplify(t)
+        if t==value or t in wrong or nonnegative and t<0:continue
+        if domain is not None and not lo<=t<=hi:continue
+        wrong.append(t)
+        if len(wrong)==3:break
+    assert len(wrong)==3
+    return list(map(fmt,wrong))
+
+
+def _elementary_text(question,inputs):
+    # Group names in prose stay intact; math placeholders become actual data.
+    def numbers(match):
+        body=match.group(1)
+        for key,value in sorted(inputs.items(),key=lambda kv:-len(kv[0])):
+            body=body.replace(key,'{'+s.latex(s.sympify(value))+'}')
+        return '$'+body+'$'
+    return re.sub(r'\$([^$]+)\$',numbers,question)
+
+
 def model(question,expression,inputs,kind,explanation,visual=False):
     cert={'type':'session_basic_expression','expression':expression,'inputs':inputs,'reviewedTask':'direct_concept_procedure','family':kind}
     value=solve(cert);scene=None
     if visual:
         # Symbols in the question refer to factual data in the retained table.
-        scene={'kind':'table','headers':['Data','Nilai'],'rows':[[key,str(v)] for key,v in inputs.items()]}
-        cert['visual_bindings']=[{'input':key,'path':['rows',i,1],'display_string':True} for i,key in enumerate(inputs)]
+        visible=[(key,value) for key,value in inputs.items() if not (kind.endswith('_nilai_tempat') and key=='P')]
+        scene={'kind':'table','headers':['Data','Nilai'],'rows':[[key,str(v)] for key,v in visible]}
+        cert['visual_bindings']=[{'input':key,'path':['rows',i,1],'display_string':True} for i,(key,value) in enumerate(visible)]
         if kind.endswith('_nilai_tempat'):
-            cert['visual_bindings']=[{'input':'N','path':['rows',0,1],'alternatives':[inputs['N']+inputs['P'],inputs['N']-inputs['P']]}]
+            cert['visual_bindings']=[{'input':'N','path':['rows',0,1],'alternatives':[inputs['N']+inputs['P'],inputs['N']-inputs['P'],inputs['N']+10*inputs['P'],inputs['N']-10*inputs['P']]}]
         question='Gunakan data pada tabel gambar. '+question
     else:
-        question='Diketahui '+', '.join(f'${key}={s.latex(s.sympify(v))}$' for key,v in inputs.items())+'. '+question
-    wrong=[]
-    proposals=[value+1,value-1,value+2,value/2,2*value,-value]
-    if 0<value<1:proposals=[1-value,value/2,(value+1)/2,value**2,s.Rational(1,3),s.Rational(2,3)]
-    for t in proposals:
-        t=s.simplify(t)
-        if t==value or t in wrong:continue
-        wrong.append(t)
-        if len(wrong)==3:break
+        question=(_elementary_text(question,inputs) if kind.startswith(('s5_','s6_')) else
+                  'Diketahui '+', '.join(f'${key}={s.latex(s.sympify(v))}$' for key,v in inputs.items())+'. '+question)
+    wrong=_wrong_options(value,nonnegative=kind.startswith(('s5_','s6_')),
+                         domain=(0,1) if _probability_family(kind) else None)
     answer=fmt(value)
-    result={'question':question,'answer':answer,'wrong':list(map(fmt,wrong)),'explanation':explanation+' Substitusi data memberi '+answer+'.','kind':kind,'steps':1,'rationale':'Menerapkan satu konsep melalui prosedur langsung; data dan hubungan yang diperlukan diberikan.','scene':scene,'visual_kind':'math_scene','certificate':cert}
+    result={'question':question,'answer':answer,'wrong':wrong,'explanation':explanation+' Perhitungan dengan data tersebut memberi '+answer+'.','kind':kind,'steps':1,'rationale':'Menerapkan satu konsep melalui prosedur langsung; data dan hubungan yang diperlukan diberikan.','scene':scene,'visual_kind':'math_scene','certificate':cert}
     result['assessment']=assess(result,0);return result
 
 
@@ -51,9 +86,12 @@ def assess(item,grade):
     cert=item['certificate'];kind=cert['type']
     if kind=='session_basic_expression':
         assert cert['reviewedTask']=='direct_concept_procedure' and cert['family'].startswith(('s5_','s6_','s7_','s8_','s9_'))
+        assert cert['family'].split('_',1)[1] in DIRECT_TOPICS,'Unreviewed direct family'
         level='easy';reason='Satu konsep dengan data dan rumus/hubungan langsung yang cukup; tidak ada parameter tersembunyi.';steps=1
     elif kind=='session_basic_linked':
         assert cert['left']['type']==cert['right']['type']=='session_basic_expression'
+        if cert['left']['inputs']==cert['right']['inputs'] and cert['left']['expression']==cert['right']['expression']:
+            return {'assessedLevel':'easy','reason':'Kedua situasi identik, sehingga selisihnya langsung nol tanpa menjalankan dua prosedur.','steps':1,'flags':['identical_situations'],'policyVersion':POLICY,'confidenceScore':0,'confidenceMeasured':False,'apiCalls':0}
         level='medium';reason='Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.';steps=3
     else:raise ValueError('Unreviewed basic task')
     return {'assessedLevel':level,'reason':reason,'steps':steps,'flags':[],'policyVersion':POLICY,'confidenceScore':0,'confidenceMeasured':False,'apiCalls':0}
@@ -65,14 +103,14 @@ def direct(grade,bab,code,r,visual=False):
     if grade==5:
         if bab in (1,9):
             limit=100000 if bab==1 else 1000000;n=r.randint(limit//10,limit-1);pos=r.choice([10,100,1000,10000])
-            if code=='A':return q('Tentukan nilai tempat digit pada posisi $P$ dalam bilangan $N$. Gunakan $((N\\div P)\\text{ dibulatkan ke bawah}\\bmod10)P$.','Mod(floor(N/P),10)*P',{'N':n,'P':pos},'nilai_tempat','Ambil digit pada posisi P, lalu kalikan dengan nilai posisinya')
+            if code=='A':return q('Tentukan nilai digit pada tempat '+{10:'puluhan',100:'ratusan',1000:'ribuan',10000:'puluh ribuan'}[pos]+' dalam bilangan $N$.','Mod(floor(N/P),10)*P',{'N':n,'P':pos},'nilai_tempat','Baca angka pada tempat yang ditanyakan, lalu kalikan dengan nilai tempatnya')
             if code=='B':return q('Manakah bilangan terbesar di antara $A,B,C$?','Max(A,B,C)',{'A':n,'B':r.randint(limit//10,limit-1),'C':r.randint(limit//10,limit-1)},'banding','Bandingkan digit mulai nilai tempat terbesar')
             if code=='C':return q('Bilangan tersusun dari $A$ puluh ribuan, $B$ ribuan, dan $C$ satuan. Tentukan bilangan itu.','10000*A+1000*B+C',{'A':r.randint(1,9) if bab==1 else r.randint(10,89),'B':r.randint(1,9),'C':r.randint(1,999)},'komposisi','Jumlahkan nilai setiap kelompok')
             return q('Terdapat $A$ benda dan datang lagi $B$ benda. Berapa jumlahnya?','A+B',{'A':r.randint(1000,40000),'B':r.randint(1000,40000)},'operasi_cacah','Penjumlahan menggabungkan kedua jumlah')
         if bab==2:
             if code=='A':return q('Berapa kelipatan positif ke-$K$ dari $A$?','A*K',{'A':a,'K':k},'kelipatan','Kelipatan ke-K adalah A dikali K')
             if code=='B':return q('Kelipatan persekutuan terkecil $A$ dan $B$ adalah ....','lcm(A,B)',{'A':a,'B':b},'kelipatan_persekutuan','Cari kelipatan positif terkecil yang habis dibagi kedua bilangan')
-            if code=='C':return q('Bilangan $N$ memiliki faktor prima berbentuk $p^Aq^B$, dengan p dan q berbeda. Banyak faktornya diberikan oleh $(A+1)(B+1)$. Tentukan banyak faktor tersebut.','(A+1)*(B+1)',{'A':r.randint(1,7),'B':r.randint(1,6)},'faktor','Eksponen faktor dapat dipilih dari nol sampai pangkat masing-masing')
+            if code=='C':return q('Berapa banyak faktor positif dari bilangan $N$?','divisor_count(N)',{'N':r.randint(12,100)},'faktor','Daftarkan pasangan bilangan yang hasil kalinya N, lalu hitung semua faktor positif tanpa mengulang')
             if code=='D':return q('Tentukan faktor persekutuan terbesar dari $A$ dan $B$.','gcd(A,B)',{'A':a*k,'B':b*k},'faktor_persekutuan','Faktor yang membagi kedua bilangan dipilih yang terbesar')
             return q('Faktorisasi dua bilangan adalah $2^A3^B$ dan $2^C3^D$. Tentukan FPB-nya dengan mengambil pangkat terkecil setiap prima.','2**Min(A,C)*3**Min(B,D)',{'A':r.randint(1,5),'B':r.randint(1,4),'C':r.randint(1,5),'D':r.randint(1,4)},'fpb_prima','FPB memakai pangkat terkecil pada setiap faktor prima')
         if bab==3:
@@ -87,15 +125,17 @@ def direct(grade,bab,code,r,visual=False):
             return q('Persegi panjang mempunyai panjang $A$ cm dan lebar $B$ cm. Tentukan kelilingnya.','2*(A+B)',{'A':a+20,'B':b},'keliling','Keliling merupakan dua panjang ditambah dua lebar')
         if bab==5:
             if code=='C':return q('Dua daerah persegi panjang berukuran $A\\times B$ dan $C\\times D$ cm tidak bertumpang tindih. Tentukan luas gabungannya.','A*B+C*D',{'A':a,'B':b,'C':c,'D':k},'luas_gabungan','Jumlahkan luas dua daerah yang tidak bertumpang tindih')
-            if code=='D':return q('Persegi mempunyai sisi $S$ cm. Tentukan luasnya.','S**2',{'S':a},'hubungan_luas','Persegi luasnya sisi dikali sisi')
+            if code=='D':return q('Keliling sebuah persegi adalah $K$ cm. Berapa luas daerah persegi itu dalam cm persegi?','(K/4)**2',{'K':4*a},'hubungan_luas','Panjang sisi adalah keliling dibagi empat. Luas diperoleh dengan mengalikan panjang sisi dengan dirinya sendiri')
             return q('Daerah persegi panjang terdiri atas $A$ baris dan $B$ petak satuan tiap baris. Tentukan luas dalam petak satuan.','A*B',{'A':a,'B':b},'luas','Luas dihitung dari banyak seluruh petak satuan')
         if bab==6:
             if code=='A':return q('Ada $N$ persegi panjang. Setiap bangun memiliki empat sudut siku-siku. Berapa sudut siku-siku seluruhnya?','4*N',{'N':a},'sudut_siku','Setiap persegi panjang menyumbang empat sudut siku-siku')
+            if code=='D':return q('Untuk melukis sudut, sinar awal berada pada skala $A$ derajat pada busur. Sinar kedua harus membentuk sudut $B$ derajat ke arah pertambahan skala. Pada skala berapa sinar kedua harus dibuat?','A+B',{'A':r.randint(5,60),'B':r.randint(10,100)},'melukis_sudut','Mulai pada skala sinar pertama lalu tambahkan besar sudut yang hendak dilukis; jumlahnya tetap di dalam skala 180 derajat')
             return q('Dua sinar dibaca pada skala busur yang sama, masing-masing $A$ dan $B$ derajat, dengan A>B. Besar sudut di antaranya adalah ....','A-B',{'A':r.randint(100,170),'B':r.randint(5,85)},'ukur_sudut','Selisih pembacaan pada skala yang sama memberi besar sudut')
         if bab==7:
             if code=='A':return q('Segitiga memiliki dua sudut $A$ dan $B$ derajat. Tentukan sudut ketiganya.','180-A-B',{'A':r.randint(25,70),'B':r.randint(25,70)},'ciri_segitiga','Jumlah sudut segitiga adalah 180 derajat')
             return q('Setiap persegi dan persegi panjang mempunyai empat sudut siku-siku. Ada $A$ persegi dan $B$ persegi panjang. Berapa seluruh sudut siku-sikunya?','4*(A+B)',{'A':a,'B':b},'ciri_segiempat','Kedua jenis bangun sama-sama memiliki empat sudut siku-siku')
         if bab==8:
+            if code=='A':return q('Survei direncanakan melibatkan $N$ anak yang berbeda. Data dari $A$ anak sudah dicatat satu kali. Berapa anak lagi yang datanya perlu dikumpulkan?','N-A',{'N':a+b,'A':a},'pengumpulan_data','Kurangi target responden dengan banyak anak yang datanya sudah dicatat')
             if code=='B':return q('Satu simbol piktogram mewakili $S$ siswa. Ada $N$ simbol utuh. Berapa siswa yang ditunjukkan?','S*N',{'S':r.randint(2,8),'N':a},'piktogram','Kalikan banyak simbol dengan nilai setiap simbol')
             return q('Data banyak benda pada kategori A, B, C adalah $A,B,C$. Berapa banyak pada kategori terbanyak?','Max(A,B,C)',{'A':a,'B':b,'C':c},'data_baca','Bandingkan ketiga frekuensi dan ambil yang terbesar')
     if grade==6:
@@ -136,6 +176,7 @@ def direct(grade,bab,code,r,visual=False):
             if code=='A':return q('Dua sudut saling berpelurus. Jika satu sudut $A$ derajat, tentukan yang lain.','180-A',{'A':r.randint(12,167)},'hubungan_sudut','Sudut berpelurus berjumlah 180 derajat')
             return q('Dua segitiga sebangun memiliki faktor skala $K$. Sisi bersesuaian pada segitiga kecil $A$ cm. Berapa sisi pada segitiga besar?','A*K',{'A':a,'K':k},'kesebangunan','Sisi bersesuaian dikalikan faktor skala yang sama')
         if bab==6:
+            if code=='A':return q('Dalam rencana investigasi statistika, seluruh siswa dari dua kelas berbeda akan diwawancarai. Kedua kelas masing-masing berisi $A$ dan $B$ siswa. Berapa jumlah responden dalam rencana pengumpulan data itu?','A+B',{'A':a,'B':b},'investigasi_statistika','Kedua kelas terpisah, sehingga jumlah responden adalah gabungan seluruh siswa keduanya')
             if code=='E':return q('Kategori memiliki frekuensi $F$ dari total $N$ data. Berapa sudut sektornya pada diagram lingkaran?','360*F/N',{'F':a,'N':a+b+c},'diagram_lingkaran','Sudut kategori adalah proporsi dikali 360 derajat')
             if code=='B':return q('Dari $N$ responden, $A$ jawaban berupa data numerik dan sisanya nama kategori. Berapa jawaban berupa data kategori?','N-A',{'N':a+b,'A':a},'jenis_data','Pisahkan jawaban numerik dan kategori dari jumlah seluruh responden')
             if code=='F':return q('Data berupa frekuensi $A,B,C$ untuk tiga kategori. Bila disajikan dengan diagram batang, berapa tinggi batang kategori terbanyak?','Max(A,B,C)',{'A':a,'B':b,'C':c},'pilih_diagram','Diagram batang membandingkan frekuensi kategori; batang tertinggi sesuai frekuensi terbesar')
@@ -192,18 +233,26 @@ def generate(grade,bab,code,level,r,visual,index):
     if level=='easy':return direct(grade,bab,code,r,visual)
     if level!='medium':return None
     left=direct(grade,bab,code,r,visual);right=direct(grade,bab,code,r,visual)
-    cert={'type':'session_basic_linked','left':left['certificate'],'right':right['certificate'],'operation':'difference'}
+    if left['certificate']['inputs']==right['certificate']['inputs']:return None
+    cert={'type':'session_basic_linked','left':left['certificate'],'right':right['certificate'],'operation':'absolute_difference' if grade<=6 else 'difference'}
     value=solve(cert)
     scene=None
     if visual:
         # Both panels retain their own meaningful input labels.
-        scene={'kind':'table','headers':['Situasi','Data','Nilai'],'rows':[['I',key,str(v)] for key,v in cert['left']['inputs'].items()]+[['II',key,str(v)] for key,v in cert['right']['inputs'].items()]}
+        rows=[];bindings=[]
+        for side,label,part in [('left','I',left),('right','II',right)]:
+            offset=len(rows);rows.extend([[label,*row] for row in part['scene']['rows']])
+            for binding in part['certificate']['visual_bindings']:
+                item={'certificate_path':[side,'inputs',binding['input']],
+                      'path':['rows',offset+binding['path'][1],2]}
+                if 'alternatives' in binding:item['alternatives']=binding['alternatives']
+                bindings.append(item)
+        scene={'kind':'table','headers':['Situasi','Data','Nilai'],'rows':rows}
+        cert['visual_bindings']=bindings
     first=left['question'].replace('Gunakan data pada tabel gambar. ','');second=right['question'].replace('Gunakan data pada tabel gambar. ','')
-    text='Kerjakan dua situasi berikut secara terpisah. Situasi I: '+first+' Situasi II: '+second+' Berapa hasil situasi I dikurangi hasil situasi II?'
+    text='Kerjakan dua situasi berikut secara terpisah. Situasi I: '+first+' Situasi II: '+second+(' Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.' if grade<=6 else ' Berapa hasil situasi I dikurangi hasil situasi II?')
     if visual:text='Data masing-masing situasi terdapat pada tabel gambar. '+text
-    answer=fmt(value);wrong=[]
-    for t in [value+1,value-1,value+2,-value,2*value]:
-        if t!=value and t not in wrong:wrong.append(t)
-        if len(wrong)==3:break
-    item={'question':text,'answer':answer,'wrong':list(map(fmt,wrong)),'explanation':'Selesaikan situasi I: '+left['explanation']+' Situasi II: '+right['explanation']+' Selisih hasilnya '+answer+'.','kind':left['kind']+'_linked','steps':3,'rationale':'Dua penerapan konsep rutin dihubungkan melalui selisih hasil.','scene':scene,'visual_kind':'math_scene','certificate':cert}
+    answer=fmt(value);wrong=_wrong_options(value,nonnegative=grade<=6,
+                                         domain=((0,1) if grade<=6 else (-1,1)) if _probability_family(left['kind']) else None)
+    item={'question':text,'answer':answer,'wrong':wrong,'explanation':'Selesaikan situasi I: '+left['explanation']+' Situasi II: '+right['explanation']+' Selisih hasilnya '+answer+'.','kind':left['kind']+'_linked','steps':3,'rationale':'Dua penerapan konsep rutin dihubungkan melalui selisih hasil.','scene':scene,'visual_kind':'math_scene','certificate':cert}
     item['assessment']=assess(item,grade);return item

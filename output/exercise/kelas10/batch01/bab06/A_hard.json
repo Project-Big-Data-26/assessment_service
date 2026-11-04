@@ -1036,6 +1036,1886 @@
       "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=50; persamaan rata-rata memakai titik tengah [4, 9, 16]. Penyelesaian a=2, b=7; rasio 2/7.",
       "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
       "id": "kelas10-b06-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b75d5ada216fea6e0d5a700",
+        "teks": "Sebuah histogram frekuensi relatif menampilkan nilai ulangan Fisika. Pada histogram itu, kelas interval 60 sampai 70 memiliki frekuensi relatif 24%. Jika seluruhnya ada 150 siswa yang mengikuti ulangan, banyak siswa pada kelas interval tersebut adalah ....",
+        "jawaban": "36 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [3,5), [5,12), [12,21]. Frekuensi kelas terakhir 10, jumlah seluruh data 32, dan rata-rata berdasarkan titik tengah $\\frac{79}{T_1}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=22; persamaan rata-rata memakai titik tengah [4, 17/2, 33/2]. Penyelesaian a=4, b=2; rasio 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=22; persamaan rata-rata memakai titik tengah [4, 17/2, 33/2]. Penyelesaian a=4, b=2; rasio 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc150711803df4ae71006966",
+        "teks": "Histogram frekuensi relatif nilai tes memiliki lima kelas interval. Empat kelas pertama berturut-turut memiliki persentase 12%, 20%, 28%, dan 25%. Persentase kelas kelima adalah ....",
+        "jawaban": "15%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [$T_1$,10), [10,16), [16,25]. Frekuensi kelas terakhir 24, jumlah seluruh data 76, dan rata-rata berdasarkan titik tengah $\\frac{257}{19}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{7}{4}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=52; persamaan rata-rata memakai titik tengah [8, 13, 41/2]. Penyelesaian a=7, b=4; rasio 7/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{7}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=52; persamaan rata-rata memakai titik tengah [8, 13, 41/2]. Penyelesaian a=7, b=4; rasio 7/4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2783c1418817717fa57cf5a9",
+        "teks": "Pada diagram batang nilai ujian Rani, sumbu tegak dimulai dari 60 sehingga tinggi batang bulan ke-4 tampak 5 kali tinggi batang bulan ke-1. Nilai Rani pada bulan ke-1 adalah 64 dan pada bulan ke-4 adalah 80. Nilai bulan ke-4 sebenarnya adalah .... kali nilai bulan ke-1.",
+        "jawaban": "1,25",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [$T_1$,7), [7,12), [12,22]. Frekuensi kelas terakhir 18, jumlah seluruh data 57, dan rata-rata berdasarkan titik tengah $\\frac{1325}{114}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=39; persamaan rata-rata memakai titik tengah [6, 19/2, 17]. Penyelesaian a=2, b=7; rasio 2/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{7}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{49}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 10/49 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=39; persamaan rata-rata memakai titik tengah [6, 19/2, 17]. Penyelesaian a=2, b=7; rasio 2/7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c929dd3d3a1625a489118c57",
+        "teks": "Kelas A terdiri atas 20 siswa dan 8 di antaranya gemar membaca. Kelas B terdiri atas 50 siswa dan 15 di antaranya gemar membaca. Pernyataan yang benar tentang perbandingan kedua kelas adalah ....",
+        "jawaban": "Kelas A 40% dan kelas B 30%, sehingga proporsi siswa gemar membaca lebih besar di kelas A",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [5,7), [7,14), [14,23]. Frekuensi kelas terakhir 24, jumlah seluruh data 92, dan rata-rata berdasarkan titik tengah $T_1$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=68; persamaan rata-rata memakai titik tengah [6, 21/2, 37/2]. Penyelesaian a=6, b=8; rasio 3/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/16 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=68; persamaan rata-rata memakai titik tengah [6, 21/2, 37/2]. Penyelesaian a=6, b=8; rasio 3/4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "84df8cb191803365c05ada0b",
+        "teks": "Seorang guru mencatat tinggi badan 40 siswa, lalu mengelompokkannya ke dalam interval 150-154, 155-159, 160-164, dan seterusnya. Penyajian yang paling tepat dan ciri batangnya adalah ....",
+        "jawaban": "histogram, batang-batangnya saling menempel",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [3,5), [5,11), [11,19]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 72, dan rata-rata berdasarkan titik tengah $\\frac{175}{18}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=52; persamaan rata-rata memakai titik tengah [4, 8, 15]. Penyelesaian a=2, b=8; rasio 1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/16 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=52; persamaan rata-rata memakai titik tengah [4, 8, 15]. Penyelesaian a=2, b=8; rasio 1/4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/5de06487ee6f656ea886637c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              20
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 20]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d62deaf87d938471eaec45b",
+        "teks": "Pada sebuah histogram, satu batang memiliki lebar kelas 5 dan frekuensi 12. Luas persegi panjang batang tersebut adalah ....",
+        "jawaban": "60",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [4,6), [6,11), [11,21]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 32, dan rata-rata berdasarkan titik tengah $\\frac{305}{32}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=22; persamaan rata-rata memakai titik tengah [5, 17/2, 16]. Penyelesaian a=6, b=2; rasio 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=22; persamaan rata-rata memakai titik tengah [5, 17/2, 16]. Penyelesaian a=6, b=2; rasio 3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/37834fb1691e1493e8892951.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              10
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 10]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [$T_1$,6), [6,11), [11,19]. Frekuensi kelas terakhir 24, jumlah seluruh data 61, dan rata-rata berdasarkan titik tengah $\\frac{1253}{122}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{4}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=37; persamaan rata-rata memakai titik tengah [9/2, 17/2, 15]. Penyelesaian a=4, b=5; rasio 4/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{16}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/25 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=37; persamaan rata-rata memakai titik tengah [9/2, 17/2, 15]. Penyelesaian a=4, b=5; rasio 4/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/4af3f667d90e5a07ec18e271.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              3
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 3]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ebe0a3f8604e2b8f0051ee70",
+        "teks": "Pada sebuah histogram, lebar batang tiap kelas berbeda-beda. Frekuensi setiap kelas dibaca dari ....",
+        "jawaban": "luas persegi panjang masing-masing batang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [$T_1$,10), [10,16), [16,26]. Frekuensi kelas terakhir 10, jumlah seluruh data 56, dan rata-rata berdasarkan titik tengah $\\frac{167}{14}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{7}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=46; persamaan rata-rata memakai titik tengah [8, 13, 21]. Penyelesaian a=7, b=3; rasio 7/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{6}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{14}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{7}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=46; persamaan rata-rata memakai titik tengah [8, 13, 21]. Penyelesaian a=7, b=3; rasio 7/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9332696d42382f9bd3ef9dc1",
+        "teks": "Skor sebuah permainan berkisar dari 0 sampai 119 dan dikelompokkan dengan panjang kelas 20: kelas pertama 0-19, kelas kedua 20-39, dan seterusnya. Banyak kelas yang diperlukan sampai skor 119 adalah ....",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [2,4), [4,9), [9,$T_1$]. Frekuensi kelas terakhir 14, jumlah seluruh data 32, dan rata-rata berdasarkan titik tengah $\\frac{139}{16}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=18; persamaan rata-rata memakai titik tengah [3, 13/2, 27/2]. Penyelesaian a=4, b=2; rasio 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=18; persamaan rata-rata memakai titik tengah [3, 13/2, 27/2]. Penyelesaian a=4, b=2; rasio 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/c9a1de6d9f060ebe437d24a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              18
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 18]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78175d6e5d8f2863ab0c04eb",
+        "teks": "| Waktu lari (menit:detik) |\n|---|\n| 10:00-11:59 |\n| 12:00-13:59 |\n| 14:00-15:59 |\n| 16:00-17:59 |\n\nSeorang pelari mencatat waktu 13:45. Catatan tersebut dimasukkan ke kelas interval ....",
+        "jawaban": "12:00-13:59",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [$T_1$,8), [8,13), [13,23]. Frekuensi kelas terakhir 16, jumlah seluruh data 69, dan rata-rata berdasarkan titik tengah $\\frac{515}{46}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{6}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=53; persamaan rata-rata memakai titik tengah [13/2, 21/2, 18]. Penyelesaian a=6, b=7; rasio 6/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{36}{49}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6/49 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=53; persamaan rata-rata memakai titik tengah [13/2, 21/2, 18]. Penyelesaian a=6, b=7; rasio 6/7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a9d3deb4650fe2ed2b79b67c",
+        "teks": "Nilai 20 siswa: 55, 62, 78, 64, 91, 67, 73, 85, 69, 60, 72, 88, 66, 79, 95, 61, 70, 83, 68, 75.\n\nJika data dikelompokkan dengan panjang kelas 10, banyak siswa pada kelas interval 60-69 adalah ....",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [8,11), [11,17), [17,26]. Frekuensi kelas terakhir 12, jumlah seluruh data $T_1$, dan rata-rata berdasarkan titik tengah $\\frac{565}{38}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=45; persamaan rata-rata memakai titik tengah [19/2, 14, 43/2]. Penyelesaian a=3, b=6; rasio 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/4 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=45; persamaan rata-rata memakai titik tengah [19/2, 14, 43/2]. Penyelesaian a=3, b=6; rasio 1/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/6e63f6d81ee5aa481ed0952b.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              57
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 57]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d303d64825488c164d87a42",
+        "teks": "| Nilai | Frekuensi |\n|---|---|\n| 40-49 | 3 |\n| 50-59 | 7 |\n| 60-69 | 12 |\n| 70-79 | 9 |\n| 80-89 | 4 |\n\nKelas interval tempat kebanyakan data berada adalah ....",
+        "jawaban": "60-69",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [9,11), [11,16), [16,24]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 66, dan rata-rata berdasarkan titik tengah $\\frac{500}{33}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{3}{8}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=46; persamaan rata-rata memakai titik tengah [10, 27/2, 20]. Penyelesaian a=3, b=8; rasio 3/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{64}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 15/64 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{16}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=46; persamaan rata-rata memakai titik tengah [10, 27/2, 20]. Penyelesaian a=3, b=8; rasio 3/8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/5de06487ee6f656ea886637c.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              20
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 20]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a568c718beac3c2bd8278b04",
+        "teks": "Dari 36 siswa, ada 9 siswa yang nilainya berada pada suatu kelas interval. Frekuensi relatif kelas tersebut adalah ....",
+        "jawaban": "25%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [4,6), [6,11), [11,21]. Frekuensi kelas terakhir 20, jumlah seluruh data 50, dan rata-rata berdasarkan titik tengah $\\frac{54}{T_1}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{4}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=30; persamaan rata-rata memakai titik tengah [5, 17/2, 16]. Penyelesaian a=5, b=4; rasio 5/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{5}{2}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{5}{4}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=30; persamaan rata-rata memakai titik tengah [5, 17/2, 16]. Penyelesaian a=5, b=4; rasio 5/4.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ffff132a12e50765cb01dfbc",
+        "teks": "Sebuah diagram batang menampilkan penjualan dua toko: toko P sebesar 92 unit dan toko Q sebesar 96 unit. Batang toko Q tampak dua kali lebih tinggi daripada batang toko P.\n\nHal yang membuat penyajian data penjualan itu menyesatkan adalah ....",
+        "jawaban": "sumbu tegak tidak dimulai dari nol sehingga selisih kecil tampak besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [10,12), [12,18), [18,27]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 50, dan rata-rata berdasarkan titik tengah $\\frac{35}{2}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=28; persamaan rata-rata memakai titik tengah [11, 15, 45/2]. Penyelesaian a=5, b=3; rasio 5/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{10}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{5}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=28; persamaan rata-rata memakai titik tengah [11, 15, 45/2]. Penyelesaian a=5, b=3; rasio 5/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/299cf087cb1d9ab68a182068.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              22
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 22]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c2c5a7f2edda9e29538b4df",
+        "teks": "| Waktu bersama keluarga | Siswa laki-laki (persen) | Siswa perempuan (persen) |\n|---|---|---|\n| Sepanjang Sabtu dan Minggu | 36,0 | 44,5 |\n| Hanya satu hari | 30,5 | 28,0 |\n| Kurang dari satu hari | 33,5 | 27,5 |\n\nSelisih persentase siswa perempuan dan siswa laki-laki pada kategori Sepanjang Sabtu dan Minggu adalah ....",
+        "jawaban": "8,5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [10,12), [12,17), [17,$T_1$]. Frekuensi kelas terakhir 20, jumlah seluruh data 45, dan rata-rata berdasarkan titik tengah $\\frac{299}{18}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=25; persamaan rata-rata memakai titik tengah [11, 29/2, 21]. Penyelesaian a=5, b=3; rasio 5/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{10}{3}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{5}{3}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=25; persamaan rata-rata memakai titik tengah [11, 29/2, 21]. Penyelesaian a=5, b=3; rasio 5/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/95a895cd8e2867d01f9b2c98.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              25
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 25]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70275bc6bebd4b76dcf64d34",
+        "teks": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-5 | 5 | 4 |\n| 5-10 | 5 | 6 |\n| 10-20 | 10 | 2 |\n| 20-40 | 20 | 1,5 |\n\nSebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel, dan luas seluruh batang adalah 100%. Pernyataan yang benar tentang histogram tersebut adalah ....",
+        "jawaban": "Kelas 20-40 memuat data sama banyak dengan kelas 5-10",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [1,5), [5,10), [10,19]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 81, dan rata-rata berdasarkan titik tengah $\\frac{389}{54}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=69; persamaan rata-rata memakai titik tengah [3, 15/2, 29/2]. Penyelesaian a=6, b=9; rasio 2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=69; persamaan rata-rata memakai titik tengah [3, 15/2, 29/2]. Penyelesaian a=6, b=9; rasio 2/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-045",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/166022d1a900c72f68ae117e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              12
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 12]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e8d41b3840bb2a84f80929b",
+        "teks": "| Kelas | Peserta sekolah P | Lulus sekolah P | Peserta sekolah Q | Lulus sekolah Q |\n|---|---|---|---|---|\n| Pagi | 80 | 64 | 20 | 18 |\n| Sore | 20 | 4 | 80 | 24 |\n\nDua sekolah, P dan Q, mengikuti seleksi dengan hasil pada tabel. Pak Rudi berkata, \"Persentase lulus Q lebih tinggi daripada P di kelas pagi maupun kelas sore, jadi persentase lulus Q secara keseluruhan pasti lebih tinggi.\" Kesimpulan yang tepat tentang klaim Pak Rudi adalah ....",
+        "jawaban": "Klaim keliru: persentase lulus keseluruhan sekolah P adalah 68% dan sekolah Q 42%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [0,4), [4,11), [11,19]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 67, dan rata-rata berdasarkan titik tengah $\\frac{861}{134}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{6}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=59; persamaan rata-rata memakai titik tengah [2, 15/2, 15]. Penyelesaian a=6, b=5; rasio 6/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{12}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{6}{5}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=59; persamaan rata-rata memakai titik tengah [2, 15/2, 15]. Penyelesaian a=6, b=5; rasio 6/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-046",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/58c76f90e79379928a68be88.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              8
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 8]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94148e5dd37033d714e044d1",
+        "teks": "Dinas pendidikan ingin membandingkan bentuk sebaran lama belajar harian siswa SMA di kota A (1.200 siswa) dan kota B (300 siswa). Lama belajar tiap siswa dicatat dalam jam dan dikelompokkan ke interval 0-2, 2-4, 4-6, dan seterusnya. Penyajian yang paling tepat adalah ....",
+        "jawaban": "dua histogram frekuensi relatif (persen) dengan interval yang sama",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [$T_1$,8), [8,13), [13,21]. Frekuensi kelas terakhir 12, jumlah seluruh data 72, dan rata-rata berdasarkan titik tengah $\\frac{43}{4}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{9}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=60; persamaan rata-rata memakai titik tengah [13/2, 21/2, 17]. Penyelesaian a=5, b=9; rasio 5/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{25}{81}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 20/81 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5}{18}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=60; persamaan rata-rata memakai titik tengah [13/2, 21/2, 17]. Penyelesaian a=5, b=9; rasio 5/9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-047",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/35870162cc2a40a7a789f99f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              5
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 5]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9191fc556332dcaad132ba9b",
+        "teks": "Nilai tes 52 siswa adalah bilangan bulat dari 47 sampai 98 (nilai terendah 47 dan tertinggi 98). Guru ingin membuat histogram dengan 4 kelas berpanjang sama, tanpa tumpang tindih, dan memuat semua nilai. Rancangan kelas yang memenuhi syarat adalah ....",
+        "jawaban": "47-59, 60-72, 73-85, 86-98",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [8,10), [10,17), [17,26]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 65, dan rata-rata berdasarkan titik tengah $\\frac{387}{26}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{6}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=47; persamaan rata-rata memakai titik tengah [9, 27/2, 43/2]. Penyelesaian a=6, b=5; rasio 6/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{12}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{6}{5}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=47; persamaan rata-rata memakai titik tengah [9, 27/2, 43/2]. Penyelesaian a=6, b=5; rasio 6/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-048",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/c9a1de6d9f060ebe437d24a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              18
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 18]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f60ac85a35c6515004a68a18",
+        "teks": "| Lama belajar (jam) | Lebar kelas | Tinggi batang (persen per jam) |\n|---|---|---|\n| 0-2 | 2 | 15 |\n| 2-6 | 4 | 10 |\n| 6-10 | 4 | 7,5 |\n\nPada histogram frekuensi relatif dengan data pada tabel, Dina menyimpulkan, \"Siswa yang belajar 2 sampai 6 jam ada 10%.\" Penilaian yang tepat terhadap kesimpulan Dina adalah ....",
+        "jawaban": "keliru: tinggi batang bukan persen; persentase kelas 2-6 adalah luas batangnya, yaitu 40%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan nilai $T_1$ pada tabel gambar sebagai data soal. Histogram kepadatan terdiri dari kelas [4,7), [7,13), [13,22]. Frekuensi kelas terakhir $T_1$, jumlah seluruh data 54, dan rata-rata berdasarkan titik tengah $\\frac{28}{3}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{6}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=48; persamaan rata-rata memakai titik tengah [11/2, 10, 35/2]. Penyelesaian a=6, b=5; rasio 6/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{12}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{6}{5}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=48; persamaan rata-rata memakai titik tengah [11/2, 10, 35/2]. Penyelesaian a=6, b=5; rasio 6/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-049",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/40508db3b7c512904e639606.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "T1",
+              6
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Data\", \"Nilai\"], \"rows\": [[\"T1\", 6]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3eef2bbec5c449e72fbd4a8e",
+        "teks": "| Nilai | Frekuensi |\n|---|---|\n| 50-59 | 5 |\n| 60-69 | 10 |\n| 70-79 | 14 |\n| 80-89 | 8 |\n| 90-99 | 3 |\n\nNilai ujian 40 siswa (bilangan bulat) hanya tersedia dalam tabel distribusi frekuensi tersebut. Pernyataan yang dapat dipastikan benar berdasarkan tabel saja adalah ....",
+        "jawaban": "Banyak siswa yang nilainya 70 atau lebih adalah 25 orang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [0,3), [3,10), [10,19]. Frekuensi kelas terakhir 20, jumlah seluruh data 74, dan rata-rata berdasarkan titik tengah $\\frac{581}{74}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+7b=54; persamaan rata-rata memakai titik tengah [3/2, 13/2, 29/2]. Penyelesaian a=4, b=6; rasio 2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+7b=54; persamaan rata-rata memakai titik tengah [3/2, 13/2, 29/2]. Penyelesaian a=4, b=6; rasio 2/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2850eac33bfe9ad334056111",
+        "teks": "| Kelas | Frekuensi | Frekuensi relatif |\n|---|---|---|\n| 1 | 4 | 17% |\n| 2 | 4 | 17% |\n| 3 | 4 | 17% |\n| 4 | 4 | 17% |\n| 5 | 4 | 17% |\n| 6 | 4 | 17% |\n\nRani membuat tabel dari data 24 siswa dan menghitung frekuensi relatif tiap kelas hingga persen bulat. Ia heran karena jumlah seluruh persen adalah 102%, bukan 100%. Penjelasan yang benar adalah ....",
+        "jawaban": "Datanya benar; $16{,}67\\%$ pada tiap kelas dibulatkan menjadi 17%, sehingga jumlahnya menjadi 102%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [5,9), [9,16), [16,26]. Frekuensi kelas terakhir 10, jumlah seluruh data 81, dan rata-rata berdasarkan titik tengah $\\frac{2107}{162}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{9}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=71; persamaan rata-rata memakai titik tengah [7, 25/2, 21]. Penyelesaian a=2, b=9; rasio 2/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{81}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 14/81 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=71; persamaan rata-rata memakai titik tengah [7, 25/2, 21]. Penyelesaian a=2, b=9; rasio 2/9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "66d24b677a67abab101be964",
+        "teks": "| Kelas umur (tahun) | Lebar kelas | Banyak pengunjung |\n|---|---|---|\n| 10-20 | 10 | 60 |\n| 20-30 | 10 | 80 |\n| 30-60 | 30 | 90 |\n| 60-80 | 20 | 40 |\n\nSeorang pembuat grafik menggambar histogram umur pengunjung dengan tinggi batang sama dengan banyak pengunjung tiap kelas, padahal lebar kelas berbeda. Kelas yang batangnya tampak berluas terbesar pada grafik itu dan kelas yang sebenarnya paling padat (pengunjung per satu tahun umur) berturut-turut adalah ....",
+        "jawaban": "30-60 dan 20-30",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [4,6), [6,11), [11,19]. Frekuensi kelas terakhir 6, jumlah seluruh data 41, dan rata-rata berdasarkan titik tengah $\\frac{705}{82}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=35; persamaan rata-rata memakai titik tengah [5, 17/2, 15]. Penyelesaian a=5, b=5; rasio 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=35; persamaan rata-rata memakai titik tengah [5, 17/2, 15]. Penyelesaian a=5, b=5; rasio 1.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b8b971eaaa4b134617f2b1",
+        "teks": "| Nilai | Kelompok 1 (80 siswa) | Kelompok 2 (200 siswa) |\n|---|---|---|\n| kurang dari 60 | 30% | 8% |\n| 60 sampai 79 | 45% | 77% |\n| 80 ke atas | 25% | 15% |\n\nPerhatikan tiga pernyataan berikut. (i) Proporsi siswa bernilai 80 ke atas lebih besar di kelompok 1. (ii) Banyak siswa bernilai 80 ke atas lebih besar di kelompok 2. (iii) Banyak siswa bernilai kurang dari 60 lebih besar di kelompok 2 karena jumlah siswanya lebih banyak. Pernyataan yang benar adalah ....",
+        "jawaban": "(i) dan (ii) saja",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [7,11), [11,16), [16,25]. Frekuensi kelas terakhir 22, jumlah seluruh data 55, dan rata-rata berdasarkan titik tengah $\\frac{1721}{110}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=33; persamaan rata-rata memakai titik tengah [9, 27/2, 41/2]. Penyelesaian a=2, b=5; rasio 2/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6/25 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=33; persamaan rata-rata memakai titik tengah [9, 27/2, 41/2]. Penyelesaian a=2, b=5; rasio 2/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d9cf67b3a5623065ec0647e",
+        "teks": "| Minggu | 1 | 2 | 3 | 4 | 5 |\n|---|---|---|---|---|---|\n| Nilai kuis Dani | 62 | 65 | 68 | 71 | 74 |\n\nDani akan membuat diagram batang dari nilai kuisnya yang diperlihatkan pada tabel agar orang tuanya mendapat gambaran jujur tentang perkembangan nilainya. Rancangan sumbu tegak yang membuat perbandingan tinggi batang sama dengan perbandingan nilai adalah ....",
+        "jawaban": "dimulai dari 0 sampai 100",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [10,13), [13,19), [19,29]. Frekuensi kelas terakhir 22, jumlah seluruh data 67, dan rata-rata berdasarkan titik tengah $\\frac{2415}{134}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=45; persamaan rata-rata memakai titik tengah [23/2, 16, 24]. Penyelesaian a=3, b=6; rasio 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/4 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=45; persamaan rata-rata memakai titik tengah [23/2, 16, 24]. Penyelesaian a=3, b=6; rasio 1/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bd0e717a1438cfc817b22f40",
+        "teks": "| Kelas | Frekuensi | Frekuensi relatif |\n|---|---|---|\n| 1 | 6 | 15% |\n| 2 | 10 | 30% |\n| 3 | 12 | 25% |\n| 4 | 8 | 20% |\n| 5 | 4 | 10% |\n\nData 40 siswa disajikan pada tabel. Budi mengatakan tabel itu pasti benar karena jumlah frekuensi relatifnya tepat 100%. Penilaian yang tepat terhadap tabel tersebut adalah ....",
+        "jawaban": "Ada kesalahan: kelas 2 seharusnya 25% dan kelas 3 seharusnya 30% (nilainya tertukar)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [3,7), [7,12), [12,20]. Frekuensi kelas terakhir 18, jumlah seluruh data 59, dan rata-rata berdasarkan titik tengah $\\frac{1211}{118}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{4}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=41; persamaan rata-rata memakai titik tengah [5, 19/2, 16]. Penyelesaian a=4, b=5; rasio 4/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{16}{25}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/25 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=41; persamaan rata-rata memakai titik tengah [5, 19/2, 16]. Penyelesaian a=4, b=5; rasio 4/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "97be517f382a51a640b6fbfc",
+        "teks": "Sebuah histogram frekuensi relatif memiliki empat kelas interval dengan persentase berturut-turut $x\\%$, $2x\\%$, $3x\\%$, dan $4x\\%$. Jika data berasal dari 350 siswa, banyak siswa pada kelas interval ketiga adalah ....",
+        "jawaban": "105 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [5,8), [8,14), [14,23]. Frekuensi kelas terakhir 8, jumlah seluruh data 56, dan rata-rata berdasarkan titik tengah $\\frac{649}{56}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=48; persamaan rata-rata memakai titik tengah [13/2, 11, 37/2]. Penyelesaian a=2, b=7; rasio 2/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{7}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{4}{49}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 10/49 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=48; persamaan rata-rata memakai titik tengah [13/2, 11, 37/2]. Penyelesaian a=2, b=7; rasio 2/7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff92aff36b295725bee3b48c",
+        "teks": "Nilai tertinggi kuis Fisika adalah 100. Pada diagram batang nilai kuis Maya, sumbu tegak dimulai dari 60. Nilai kuis ke-1 adalah 65 dan batang kuis ke-5 tampak tepat 3 kali setinggi batang kuis ke-1. Nilai kuis ke-5 Maya yang sebenarnya adalah ....",
+        "jawaban": "75",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [0,4), [4,9), [9,19]. Frekuensi kelas terakhir 22, jumlah seluruh data 74, dan rata-rata berdasarkan titik tengah $8$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{3}{8}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=52; persamaan rata-rata memakai titik tengah [2, 13/2, 14]. Penyelesaian a=3, b=8; rasio 3/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{64}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 15/64 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{16}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=52; persamaan rata-rata memakai titik tengah [2, 13/2, 14]. Penyelesaian a=3, b=8; rasio 3/8.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "02bf15a431cd25a785f3a538",
+        "teks": "Tiga ekstrakurikuler memiliki jumlah anggota berbeda. Pramuka beranggotakan 80 siswa dengan 28 siswa hadir pada setiap latihan, PMR beranggotakan 50 siswa dengan 20 siswa hadir pada setiap latihan, dan Paskibra beranggotakan 40 siswa dengan 18 siswa hadir pada setiap latihan. Ekstrakurikuler yang proporsi anggota hadir pada setiap latihannya paling besar beserta persentasenya adalah ....",
+        "jawaban": "Paskibra, 45%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [10,13), [13,19), [19,29]. Frekuensi kelas terakhir 14, jumlah seluruh data 32, dan rata-rata berdasarkan titik tengah $\\frac{597}{32}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=18; persamaan rata-rata memakai titik tengah [23/2, 16, 24]. Penyelesaian a=2, b=2; rasio 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=18; persamaan rata-rata memakai titik tengah [23/2, 16, 24]. Penyelesaian a=2, b=2; rasio 1.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "414a4c93e08b2e940c613978",
+        "teks": "Seorang peneliti mengumpulkan tiga data dari 60 siswa. Data P: merek ponsel yang dipakai. Data Q: tinggi badan yang dikelompokkan dalam interval 150-154, 155-159, 160-164, dan seterusnya. Data R: ekstrakurikuler pilihan siswa. Penyajian yang paling tepat untuk P, Q, dan R berturut-turut adalah ....",
+        "jawaban": "P diagram batang, Q histogram, R diagram batang",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [10,14), [14,20), [20,29]. Frekuensi kelas terakhir 10, jumlah seluruh data 90, dan rata-rata berdasarkan titik tengah $\\frac{289}{18}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=80; persamaan rata-rata memakai titik tengah [12, 17, 49/2]. Penyelesaian a=8, b=8; rasio 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=80; persamaan rata-rata memakai titik tengah [12, 17, 49/2]. Penyelesaian a=8, b=8; rasio 1.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46d9ef22240d2d9bb1e30961",
+        "teks": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-10 | 10 | 4 |\n| 10-20 | 10 | 2 |\n| 20-30 | 10 | 1 |\n| 30-50 | 20 | $h$ |\n\nSebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel. Luas seluruh batang adalah 100%. Nilai $h$ adalah ....",
+        "jawaban": "1,5",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [0,2), [2,8), [8,17]. Frekuensi kelas terakhir 8, jumlah seluruh data 52, dan rata-rata berdasarkan titik tengah $\\frac{72}{13}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=44; persamaan rata-rata memakai titik tengah [1, 5, 25/2]. Penyelesaian a=4, b=6; rasio 2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=44; persamaan rata-rata memakai titik tengah [1, 5, 25/2]. Penyelesaian a=4, b=6; rasio 2/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c037248f1314680418b19f30",
+        "teks": "| Kelas interval | Lebar kelas | Frekuensi |\n|---|---|---|\n| 10-20 | 10 | 20 |\n| 20-30 | 10 | 30 |\n| 30-50 | 20 | 45 |\n| 50-55 | 5 | 10 |\n\nData pada tabel digambar sebagai histogram dengan frekuensi sama dengan luas batang. Kelas interval yang batangnya paling tinggi adalah ....",
+        "jawaban": "20-30",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [2,4), [4,11), [11,20]. Frekuensi kelas terakhir 6, jumlah seluruh data 55, dan rata-rata berdasarkan titik tengah $\\frac{159}{22}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{7}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=49; persamaan rata-rata memakai titik tengah [3, 15/2, 31/2]. Penyelesaian a=7, b=5; rasio 7/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{10}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{14}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{7}{5}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=49; persamaan rata-rata memakai titik tengah [3, 15/2, 31/2]. Penyelesaian a=7, b=5; rasio 7/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c795276a80c9c92d634e6b1",
+        "teks": "Sebuah histogram memiliki kelas 0-2 dengan tinggi batang 9 dan kelas 2-6 dengan tinggi batang 6. Kedua kelas digabung menjadi kelas 0-6 tanpa mengubah data. Tinggi batang kelas 0-6 adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [8,12), [12,18), [18,27]. Frekuensi kelas terakhir 8, jumlah seluruh data 40, dan rata-rata berdasarkan titik tengah $14$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{2}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=32; persamaan rata-rata memakai titik tengah [10, 15, 45/2]. Penyelesaian a=5, b=2; rasio 5/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{5}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=32; persamaan rata-rata memakai titik tengah [10, 15, 45/2]. Penyelesaian a=5, b=2; rasio 5/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6cb66e54a12e947a323e5643",
+        "teks": "Nilai 25 siswa: 47, 52, 63, 58, 71, 66, 45, 74, 69, 81, 62, 55, 68, 77, 64, 59, 72, 65, 88, 61, 53, 67, 70, 60, 79.\n\nData nilai dikelompokkan dengan panjang kelas 10 mulai dari 40-49. Frekuensi relatif kelas interval yang memuat paling banyak siswa adalah ....",
+        "jawaban": "40%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [6,8), [8,15), [15,23]. Frekuensi kelas terakhir 16, jumlah seluruh data 91, dan rata-rata berdasarkan titik tengah $\\frac{2225}{182}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=75; persamaan rata-rata memakai titik tengah [7, 23/2, 19]. Penyelesaian a=6, b=9; rasio 2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1/6 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=75; persamaan rata-rata memakai titik tengah [7, 23/2, 19]. Penyelesaian a=6, b=9; rasio 2/3.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d79f19a03f518fe1a88edfa1",
+        "teks": "Hasil kali $a \\times b$ dengan $a$ dan $b$ bilangan bulat dari 0 sampai 12 ditulis pada tabel perkalian berukuran 13 baris dan 13 kolom (169 sel, sehingga $3 \\times 7$ dan $7 \\times 3$ dihitung sebagai dua sel). Hasil kali dikelompokkan dengan panjang kelas 10: 0-9, 10-19, 20-29, dan seterusnya. Banyak sel yang hasil kalinya berada pada kelas 20-29 adalah ....",
+        "jawaban": "19",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [9,11), [11,17), [17,26]. Frekuensi kelas terakhir 24, jumlah seluruh data 56, dan rata-rata berdasarkan titik tengah $\\frac{233}{14}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=32; persamaan rata-rata memakai titik tengah [10, 14, 43/2]. Penyelesaian a=4, b=4; rasio 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=32; persamaan rata-rata memakai titik tengah [10, 14, 43/2]. Penyelesaian a=4, b=4; rasio 1.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-064"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c7b1ed2b64399b0c3e47b8f",
+        "teks": "| Waktu bersama keluarga | Siswa laki-laki (persen) | Siswa perempuan (persen) |\n|---|---|---|\n| Sepanjang Sabtu dan Minggu | 40,5 | 49,6 |\n| Hanya di salah satu hari saja | 18,6 | 21,8 |\n| Kurang dari satu hari | 40,9 | 28,6 |\n\nSurvei dilakukan terhadap 200 siswa laki-laki dan 250 siswa perempuan. Banyak seluruh siswa (laki-laki dan perempuan) yang menghabiskan Sabtu dan Minggu sepanjang hari bersama keluarga adalah ....",
+        "jawaban": "205 siswa",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [10,12), [12,18), [18,27]. Frekuensi kelas terakhir 24, jumlah seluruh data 74, dan rata-rata berdasarkan titik tengah $17$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{4}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=50; persamaan rata-rata memakai titik tengah [11, 15, 45/2]. Penyelesaian a=4, b=7; rasio 4/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{16}{49}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 12/49 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2}{7}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=50; persamaan rata-rata memakai titik tengah [11, 15, 45/2]. Penyelesaian a=4, b=7; rasio 4/7.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-065"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4deaeacabe84dcca2262bd7c",
+        "teks": "Penjualan toko A adalah 90 unit dan toko B adalah 70 unit. Sebuah diagram batang dibuat dengan sumbu tegak tidak dimulai dari nol. Agar batang toko A tampak tepat 2 kali setinggi batang toko B, sumbu tegak harus dimulai dari angka ....",
+        "jawaban": "50",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [10,12), [12,18), [18,27]. Frekuensi kelas terakhir 6, jumlah seluruh data 26, dan rata-rata berdasarkan titik tengah $\\frac{31}{2}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=20; persamaan rata-rata memakai titik tengah [11, 15, 45/2]. Penyelesaian a=4, b=2; rasio 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+6b=20; persamaan rata-rata memakai titik tengah [11, 15, 45/2]. Penyelesaian a=4, b=2; rasio 2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-066"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "373d3c06100e783fb0046c38",
+        "teks": "| Nilai | Frekuensi |\n|---|---|\n| 30-39 | 4 |\n| 40-49 | 9 |\n| 50-59 | 15 |\n| 60-69 | 12 |\n| 70-79 | 7 |\n| 80-89 | 3 |\n\nPersentase siswa yang nilainya kurang dari 60 adalah ....",
+        "jawaban": "56%",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [3,6), [6,13), [13,22]. Frekuensi kelas terakhir 20, jumlah seluruh data 79, dan rata-rata berdasarkan titik tengah $\\frac{1581}{158}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{8}{5}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+7b=59; persamaan rata-rata memakai titik tengah [9/2, 19/2, 35/2]. Penyelesaian a=8, b=5; rasio 8/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{16}{5}$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{8}{5}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+7b=59; persamaan rata-rata memakai titik tengah [9/2, 19/2, 35/2]. Penyelesaian a=8, b=5; rasio 8/5.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-067"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48519372fac901be109f3634",
+        "teks": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 6. Frekuensinya 10 dan 15. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+        "jawaban": "$\\frac{25}{12}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [6,10), [10,15), [15,23]. Frekuensi kelas terakhir 20, jumlah seluruh data 50, dan rata-rata berdasarkan titik tengah $\\frac{133}{10}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{2}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=30; persamaan rata-rata memakai titik tengah [8, 25/2, 19]. Penyelesaian a=5, b=2; rasio 5/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Hasil dihitung dua kali, padahal bagian tersebut hanya digunakan sekali."
+        },
+        {
+          "teks": "$- \\frac{5}{2}$",
+          "alasan": "Tanda hasil dibalik, sehingga tidak sesuai arah atau operasi yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=30; persamaan rata-rata memakai titik tengah [8, 25/2, 19]. Penyelesaian a=5, b=2; rasio 5/2.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-068"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "953c4f82c0497926d8b47221",
+        "teks": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 3. Frekuensinya 7 dan 15. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+        "jawaban": "$\\frac{11}{3}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 4,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun dan menghubungkan kendala pada parameter tersembunyi, memilih cabang atau kemungkinan yang sah, lalu mengevaluasi hasil yang diminta.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [1,3), [3,10), [10,20]. Frekuensi kelas terakhir 8, jumlah seluruh data 79, dan rata-rata berdasarkan titik tengah $\\frac{1091}{158}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{4}{9}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=71; persamaan rata-rata memakai titik tengah [2, 13/2, 15]. Penyelesaian a=4, b=9; rasio 4/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{16}{81}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 20/81 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2}{9}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+7b=71; persamaan rata-rata memakai titik tengah [2, 13/2, 15]. Penyelesaian a=4, b=9; rasio 4/9.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b06-a-hard-bt01-069"
     }
   ]
 }

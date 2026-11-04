@@ -5,6 +5,7 @@ are never inputs to assessment. Certificates preserve all visible parameters and
 the mathematical expression, rather than storing a claimed answer as a constant.
 """
 from copy import deepcopy
+import math
 import sympy as s
 
 from .replenishment_math import m
@@ -30,6 +31,59 @@ def solve(cert):
     if cert['type'] != 'session_sma_expression':
         raise ValueError('Unknown session SMA certificate')
     values={key:s.sympify(value) for key,value in cert['inputs'].items()}
+    operation=cert['operation']
+    probability_parameters={
+        'random_variable_direct':('p',),'random_variable_linked':('p',),
+        'discrete_variable_direct':('p',),'discrete_variable_linked':('p',),
+        'binomial_direct':('p',),'binomial_linked':('p',),'joint_probability_direct':('p','q')}
+    if any(not 0<=values[key]<=1 for key in probability_parameters.get(operation,())):
+        raise ValueError('A source probability lies outside zero to one')
+    if operation=='correlation_direct' and not -1<=values['r']<=1:raise ValueError('Correlation lies outside minus one to one')
+    if operation in {'normal_linked','normal_reconstruct'}:
+        cdf=[values[key] for key in ('F1','F2','F3','F4') if key in values]
+        if not all(0<=v<=1 for v in cdf) or any(a>=b for a,b in zip(cdf,cdf[1:])):
+            raise ValueError('Normal cumulative table is invalid')
+    if operation in {'continuous_variable_direct','continuous_variable_linked'} and not values['a']<values['t']<values['b']:
+        raise ValueError('Uniform interval and conditional cutoff disagree')
+    if operation in {'density_direct','density_linked'} and not 0<values['t']<values['L']:
+        raise ValueError('Density cutoff must lie inside its support')
+    if operation in {'polynomial_factor_linked','polynomial_factor_reconstruct'}:
+        if values['u']**3+values['a']*values['u']**2+values['b']*values['u']+values['c']!=0:
+            raise ValueError('The supplied polynomial root is not a root')
+    if operation=='joint_probability_reconstruct':
+        p=(values['U']+values['I'])*values['k']/(values['k']+1);q=(values['U']+values['I'])/(values['k']+1)
+        if not 0<=values['I']<=min(p,q) or not max(p,q)<1 or not 0<=values['U']<=1:
+            raise ValueError('The event constraints are infeasible')
+    if operation=='chord_reconstruct':
+        larger=(values['c']-values['a']+s.sqrt((values['c']-values['a'])**2-4*values['b']*values['c']))/2
+        smaller=(values['c']-values['a']-s.sqrt((values['c']-values['a'])**2-4*values['b']*values['c']))/2
+        if not smaller<values['t']<larger or not larger-values['b']>0 or not larger+values['a']>0:
+            raise ValueError('Chord cutoff does not select one physically valid root')
+    if operation=='unit_circle_reconstruct' and not -1<values['S']<1:
+        raise ValueError('Unit-circle sum does not identify a point in quadrant two')
+    if operation=='trig_identity_reconstruct' and (not 1<values['S']<s.sqrt(2) or values['e'] not in (-1,1)):
+        raise ValueError('Acute trigonometric pair or ordering is invalid')
+    if operation=='integral_area_reconstruct' and not 0<values['H']<s.Rational(3,2)*values['T']/values['L']:
+        raise ValueError('Horizontal line must cut the parabola twice inside the interval')
+    if operation=='stationary_reconstruct':
+        u,v,w,Z=(values[k] for k in ('u','v','w','Z'))
+        factor=w**3-s.Rational(3,2)*(u+v)*w*w+3*u*v*w
+        if not u<v<w or factor==0 or Z/factor<=0:
+            raise ValueError('Stationary data do not identify a positive leading coefficient')
+    if cert['operation']=='counting_linked':
+        nn,ee,kk=(values[k] for k in ('n','e','k'))
+        if any(v.is_Integer is not True for v in (nn,ee,kk)) or not 2<=kk<=nn<=9 or not 1<=ee<=4 or not 0<=nn-ee<=5:
+            raise ValueError('Invalid distinct nonzero decimal digit pool')
+    if cert['operation']=='binomial_reconstruct':
+        probability=1-values['V']/values['M'];trials=s.simplify(values['M']/probability)
+        if not 0<probability<1 or trials.is_Integer is not True or trials<1 or not 0<=values['k']<=trials:
+            raise ValueError('Moments do not identify a valid binomial model')
+    if cert['operation']=='arc_linked' and not 0<values['s']<2*s.pi*values['r']:
+        raise ValueError('A single sector needs a positive arc shorter than its circumference')
+    if operation=='distribution_reconstruct':
+        faces=s.sqrt(2/values['p'])
+        if faces.is_Integer is not True or not 2<=values['t']<=faces or not 2<=values['s']<=2*faces:
+            raise ValueError('Dice facts do not identify a valid sample space')
     functions={'sqrt':s.sqrt,'pi':s.pi,'sin':s.sin,'cos':s.cos,'tan':s.tan,
                'log':s.log,'binomial':s.binomial,'factorial':s.factorial,
                'Max':s.Max,'Min':s.Min,'Abs':s.Abs,'Piecewise':s.Piecewise,'Eq':s.Eq}
@@ -37,6 +91,7 @@ def solve(cert):
     result=s.simplify(expression.subs({s.Symbol(key):value for key,value in values.items()}))
     if result.free_symbols or result.is_real is not True or result.is_finite is not True:
         raise ValueError('Mathematical query is not a finite real value')
+    if cert.get('probabilityQuery') and not 0<=result<=1:raise ValueError('Query is outside the probability range')
     return result
 
 
@@ -68,10 +123,48 @@ def _plain(value):
     return int(value) if value.is_Integer else str(value)
 
 
+def _scene_for(layout,inputs):
+    """Derive the full plotted geometry and labels from the same factual inputs."""
+    p={key:s.sympify(value) for key,value in inputs.items()}
+    if layout=='digits':
+        nn,ee,kk=(int(p[k]) for k in ('n','e','k'))
+        if not 2<=kk<=nn<=9 or not 1<=ee<=4 or not 0<=nn-ee<=5:raise ValueError('Invalid decimal digit pool')
+        digits=sorted([2,4,6,8][:ee]+[1,3,5,7,9][:nn-ee])
+        return {'kind':'table','title':'Digit untuk membentuk bilangan','headers':['Informasi','Data'],
+                'rows':[['Digit tersedia',', '.join(map(str,digits))],['Banyak angka',kk]]}
+    if layout=='scatter':
+        points=[{'x':int(p['x1']),'y':int(p['y1']),'label':f"A ({p['x1']}; {p['y1']})"},
+                {'x':int(p['x2']),'y':int(p['y2']),'label':f"B ({p['x2']}; {p['y2']})"}]
+        xmin=min(v['x'] for v in points)-2;xmax=max(v['x'] for v in points)+2
+        ymin=min(v['y'] for v in points)-3;ymax=max(v['y'] for v in points)+3
+        return {'kind':'coordinate_graph','title':'Dua titik pengamatan','x_range':[xmin,xmax],'y_range':[ymin,ymax],
+                'tick_step':[max(1,math.ceil((xmax-xmin)/12)),max(1,math.ceil((ymax-ymin)/12))],
+                'points':points,'polylines':[[[v['x'],v['y']] for v in points]]}
+    if layout=='tower':
+        distance=float(p['d']);theta=float(p['theta']);height=distance*math.tan(math.pi*theta/180)
+        if not 0<theta<90 or distance<=0:raise ValueError('Invalid elevation triangle')
+        return {'kind':'geometry','title':'Sudut elevasi ke puncak menara',
+                'points':[{'x':0,'y':0,'label':'P'},{'x':distance,'y':0,'label':'K'},
+                          {'x':distance,'y':height,'label':'T'},
+                          {'x':distance*.18,'y':height*.09,'label':str(p['theta'])}],
+                'segments':[{'start':0,'end':1,'label':_plain(p['d'])},{'start':1,'end':2},{'start':0,'end':2}]}
+    if layout=='tangent':
+        radius=float(p['r']);distance=float(p['d'])
+        if not 0<radius<distance:raise ValueError('Tangent requires an exterior point')
+        tx=radius*radius/distance;ty=radius*math.sqrt(distance*distance-radius*radius)/distance
+        return {'kind':'geometry','title':'Garis singgung dari titik luar',
+                'points':[{'x':0,'y':0,'label':'O'},{'x':distance,'y':0,'label':'P'},{'x':tx,'y':ty,'label':'T'}],
+                'segments':[{'start':0,'end':1,'label':_plain(p['d']),'label_position':.78},
+                            {'start':0,'end':2,'label':_plain(p['r'])},{'start':1,'end':2}],
+                'circles':[{'center':[0,0],'radius':radius}]}
+    raise ValueError('Unknown SMA visual layout')
+
+
 def _make(base,tier,question,inputs,expression,explanation,visual,labels=None,probability=False):
     data={key:_plain(value) for key,value in inputs.items()}
     operation=base+'_'+tier
     cert={'type':'session_sma_expression','operation':operation,'inputs':data,'expression':str(expression)}
+    if probability:cert['probabilityQuery']=True
     value=solve(cert)
     proposals=([1-value,value/2,(value+1)/2,value**2,s.Rational(1,3),s.Rational(2,3),s.Rational(1,4),s.Rational(3,4)]
                if probability else [value+1,value-1,value*2,value/2,value+2,-value,value+3])
@@ -90,6 +183,28 @@ def _make(base,tier,question,inputs,expression,explanation,visual,labels=None,pr
         scene={'kind':'table','headers':['Besaran','Nilai'],'rows':rows,'title':'Data untuk soal'}
         cert['visual_bindings']=[{'input':key,'path':['rows',i,1]} for i,key in enumerate(data)]
         stem='Gunakan data pada tabel. '+question
+        if base=='scatter':
+            cert['visual_layout']='scatter';scene=_scene_for('scatter',data)
+            cert['visual_bindings']=[{'input':key,'path':['points',i,axis]} for i,(x,y) in enumerate([('x1','y1'),('x2','y2')]) for key,axis in [(x,'x'),(y,'y')]]
+            stem=('Titik A dan B pada grafik menyatakan dua data yang terletak tepat pada satu garis. '
+                  'Koordinat tepat kedua titik dicantumkan di sampingnya. '
+                  +('Tentukan gradien garis tersebut.' if tier=='direct' else
+                    'Berapa nilai y pada garis ketika x='+m(s.sympify(data['t']))+'?'))
+        elif base=='trig_application' and tier=='direct':
+            cert['visual_layout']='tower';scene=_scene_for('tower',data)
+            cert['visual_bindings']=[{'input':'d','path':['segments',0,'label']},{'input':'theta','path':['points',3,'label']}]
+            stem=('Pengamat P berada di tanah. Angka di dekat P menunjukkan sudut elevasi ke puncak T dalam derajat, '
+                  'sedangkan angka pada PK menunjukkan jarak mendatar dalam meter. Berapa tinggi menara KT?')
+        elif base=='tangent' and tier=='direct':
+            cert['visual_layout']='tangent';scene=_scene_for('tangent',data)
+            cert['visual_bindings']=[{'input':'d','path':['segments',0,'label']},{'input':'r','path':['segments',1,'label']}]
+            stem=('O adalah pusat lingkaran dan PT menyinggung lingkaran di T. '
+                  'Angka pada ruas OP dan OT menyatakan panjang dalam sentimeter. Tentukan panjang PT.')
+        elif base=='counting' and tier=='linked':
+            cert['visual_layout']='digits';scene=_scene_for('digits',data)
+            cert['visual_bindings']=[{'input':'k','path':['rows',1,1]}]
+            stem=('Dari digit yang tersedia pada gambar dibentuk bilangan genap dengan banyak angka sesuai data. '
+                  'Digit tidak boleh berulang dalam satu bilangan. Berapa bilangan yang dapat dibentuk?')
     else:
         facts='; '.join((labels.get(key,key)+' = '+m(s.sympify(value))) for key,value in data.items())
         stem='Diketahui '+facts+'. '+question
@@ -105,16 +220,35 @@ def check_visual(model):
     if not model.get('scene'):return {'status':'text_question'}
     from .math_scene_visuals import validate_scene
     validate_scene(model['scene']);cert=model['certificate'];original=solve(cert);passed=[]
+    if cert.get('visual_layout') and model['scene']!=_scene_for(cert['visual_layout'],cert['inputs']):
+        raise ValueError('Derived diagram or label differs from the factual inputs')
+    def at(value,path):
+        for key in path:value=value[key]
+        return value
     for binding in cert['visual_bindings']:
-        key=binding['input'];i=binding['path'][1]
-        if s.sympify(model['scene']['rows'][i][1])!=s.sympify(cert['inputs'][key]):
+        key=binding['input'];path=binding['path']
+        if s.simplify(s.sympify(at(model['scene'],path))-s.sympify(cert['inputs'][key]))!=0:
             raise ValueError('Visible data and arithmetic certificate disagree')
-        for delta in (1,-1,2):
+        for delta in (1,-1,2,-2,s.Rational(1,100),-s.Rational(1,100)):
             changed=deepcopy(cert);changed['inputs'][key]=_plain(s.sympify(cert['inputs'][key])+delta)
+            if cert['operation']=='distribution_reconstruct' and key=='p':
+                faces=s.sqrt(2/s.sympify(cert['inputs']['p']));changed['inputs']['p']=_plain(2/(faces+abs(delta))**2)
+            if cert['operation'] in {'polynomial_factor_linked','polynomial_factor_reconstruct'}:
+                p={k:s.sympify(v) for k,v in changed['inputs'].items()}
+                changed['inputs']['c']=_plain(-p['u']**3-p['a']*p['u']**2-p['b']*p['u'])
             try:new=solve(changed)
             except (ValueError,ZeroDivisionError):continue
             if new!=original:
-                scene=deepcopy(model['scene']);scene['rows'][i][1]=changed['inputs'][key];validate_scene(scene)
+                if cert.get('visual_layout'):
+                    try:scene=_scene_for(cert['visual_layout'],changed['inputs'])
+                    except ValueError:continue
+                else:
+                    scene=deepcopy(model['scene']);cursor=scene
+                    for b in cert['visual_bindings']:
+                        cursor=scene
+                        for segment in b['path'][:-1]:cursor=cursor[segment]
+                        cursor[b['path'][-1]]=changed['inputs'][b['input']]
+                validate_scene(scene)
                 passed.append(key);break
     if not passed:raise ValueError('Image supplies no pivotal facts')
     return {'status':'verified_locally','pivotalInputs':passed}
@@ -150,15 +284,15 @@ def generate(name,bab,code,level,r,visual,index):
             if code=='C':
                 if level=='easy':return make('exponential_model','Populasi mula-mula $P$ dan menjadi $a$ kali setiap periode. Berapa populasinya setelah $t$ periode?',{'P':a*100,'a':r.randint(2,4),'t':r.randint(2,5)},'P*a**t','Gunakan model pertumbuhan eksponensial.')
                 return make('exponential_model','Dua kultur mula-mula berisi $P$ dan $Q$ organisme. Kultur pertama berlipat $a$ dan kedua berlipat $b$ setiap periode. Berapa selisih mutlak populasinya setelah $t$ periode?',{'P':a*100,'Q':b*100,'a':2,'b':3,'t':r.randint(2,5)},'Abs(P*a**t-Q*b**t)','Hitung perkembangan kedua kultur secara terpisah, lalu bandingkan hasilnya.')
-            data={'a':a,'b':b,'c':c,'d':r.choice([2,3,5,6,7])}
+            data={'a':a,'b':b,'c':c,'d':r.choice([2,3,5,6,7,10,11,13])}
             if level=='easy':return make('radicals',r'Sederhanakan $\sqrt{a^2d}$.',{'a':a,'d':data['d']},'a*sqrt(d)','Keluarkan faktor kuadrat sempurna dari akar.')
             return make('radicals',r'Sederhanakan $\sqrt{a^2d}-\sqrt{b^2d}+\sqrt{c^2d}$.',data,'(a-b+c)*sqrt(d)','Sederhanakan masing-masing akar menjadi suku sejenis, kemudian gabungkan koefisiennya.')
         if bab==3:
             if code=='A':
-                u=r.randint(3,12);v=r.randint(1,u-1);legs={'p':u*u-v*v,'q':2*u*v,'h':u*u+v*v}
+                u=r.randint(3,16);v=r.randint(1,u-1);legs={'p':u*u-v*v,'q':2*u*v,'h':u*u+v*v}
                 return make('trig_ratio',r'Segitiga siku-siku mempunyai sisi depan sudut $\theta$ sebesar $p$, sisi samping $q$, dan sisi miring $h$. Tentukan '+(r'$\sin\theta$.' if level=='easy' else r'$\sin\theta+\cos\theta$.'),legs,'p/h' if level=='easy' else '(p+q)/h','Gunakan perbandingan sisi depan dan samping terhadap sisi miring.')
             angle=r.choice([30,45,60])
-            if level=='easy':return make('trig_application',r'Pengamat di tanah melihat puncak menara dengan sudut elevasi $\theta$ derajat dan jarak mendatar $d$ meter. Berapa tinggi menara?',{'theta':angle,'d':a*3},'d*tan(pi*theta/180)','Perbandingan tangen menghubungkan tinggi dengan jarak mendatar.')
+            if level=='easy':return make('trig_application',r'Pengamat di tanah melihat puncak menara dengan sudut elevasi $\theta$ derajat dan jarak mendatar $d$ meter. Berapa tinggi menara?',{'theta':angle,'d':r.randint(8,80)},'d*tan(pi*theta/180)','Perbandingan tangen menghubungkan tinggi dengan jarak mendatar.')
             return make('trig_application',r'Tinggi menara $h$ meter dan tinggi mata pengamat $e$ meter. Sudut elevasi dari mata ke puncak adalah $\theta$ derajat. Berapa jarak mendatar pengamat ke menara?',{'theta':angle,'h':a*4,'e':r.randint(1,3)},'(h-e)/tan(pi*theta/180)','Tentukan selisih tinggi terhadap mata, lalu gunakan perbandingan tangen.')
         if bab==4:
             if code=='A':
@@ -190,7 +324,7 @@ def generate(name,bab,code,level,r,visual,index):
             if code=='B':
                 if level=='easy':return make('probability_union','Dalam $N$ siswa, $a$ mengikuti klub A dan $b$ mengikuti klub B. Kedua klub tidak beririsan. Berapa peluang siswa acak mengikuti A atau B?',{'N':4*(a+b),'a':a,'b':b},'(a+b)/N','Untuk kejadian saling lepas, jumlahkan peluang masing-masing.',probability=True)
                 overlap=r.randint(1,min(a,b)-1)
-                return make('probability_union','Dari $N$ siswa, $a$ mengikuti A, $b$ mengikuti B, dan $k$ mengikuti keduanya. Berapa peluang siswa acak tidak mengikuti kedua klub itu?',{'N':4*(a+b),'a':a,'b':b,'k':overlap},'(N-a-b+k)/N','Gunakan inklusi-eksklusi untuk gabungan, lalu ambil komplemennya.',probability=True)
+                return make('probability_union','Dari $N$ siswa, $a$ mengikuti A, $b$ mengikuti B, dan $k$ mengikuti keduanya. Berapa peluang siswa acak tidak mengikuti klub A maupun klub B?',{'N':4*(a+b),'a':a,'b':b,'k':overlap},'(N-a-b+k)/N','Gunakan inklusi-eksklusi untuk gabungan, lalu ambil komplemennya.',probability=True)
             if level=='easy':return make('probability_product','Tersedia $a$ pilihan baju dan $b$ pilihan celana. Berapa pasangan satu baju dan satu celana yang mungkin?',{'a':a,'b':b},'a*b','Gunakan aturan perkalian untuk dua tahap pilihan.')
             return make('probability_product','Kotak berisi $r$ bola merah dan $b$ bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Berapa peluang keduanya merah?',{'r':a,'b':b},'r*(r-1)/((r+b)*(r+b-1))','Setelah bola merah pertama diambil, perbarui pembilang dan penyebut untuk pengambilan kedua.',probability=True)
     if not tl and grade==11:
@@ -207,7 +341,7 @@ def generate(name,bab,code,level,r,visual,index):
         if bab==2:
             if code=='A':
                 if level=='easy':return make('arc',r'Lingkaran berjari-jari $r$ mempunyai busur dengan sudut pusat $t$ derajat. Berapa panjang busurnya dalam bentuk $\pi$?',{'r':a,'t':r.choice([30,45,60,72,90,120,135,150])},'2*pi*r*t/360','Ambil bagian t/360 dari keliling lingkaran.')
-                return make('arc','Sebuah juring mempunyai jari-jari $r$ dan panjang busur $s$. Berapa luas juring tersebut?',{'r':a,'s':b*c},'r*s/2','Hubungkan panjang busur dengan sudut pusat; substitusi ke luas juring memberi setengah hasil kali jari-jari dan busur.')
+                return make('arc','Sebuah juring mempunyai jari-jari $r$ dan panjang busur $s$, dengan busur lebih pendek daripada satu keliling lingkaran. Berapa luas juring tersebut?',{'r':a,'s':r.randint(1,math.floor(2*math.pi*a))},'r*s/2','Hubungkan panjang busur dengan sudut pusat; substitusi ke luas juring memberi setengah hasil kali jari-jari dan busur.')
             if code=='B':
                 if level=='easy':return make('tangent','Jarak titik P ke pusat lingkaran adalah $d$ dan jari-jari lingkaran $r$. Tentukan panjang garis singgung dari P.',{'d':a+b,'r':a},'sqrt(d*d-r*r)','Jari-jari tegak lurus garis singgung; gunakan teorema Pythagoras.')
                 return make('tangent','Dua lingkaran berjari-jari $r,s$ mempunyai jarak pusat $d$ dengan $d>r+s$. Berapa panjang ruas garis singgung persekutuan luarnya?',{'r':a,'s':b,'d':a+b+c},'sqrt(d*d-(r-s)**2)','Bentuk segitiga siku-siku dengan sisi tegak selisih jari-jari dan sisi miring jarak pusat.')
@@ -221,14 +355,14 @@ def generate(name,bab,code,level,r,visual,index):
             if code=='B':
                 if level=='easy':return make('regression',r'Garis regresi adalah $\hat y=ax+b$. Berapa prediksi $y$ ketika $x=t$?',{'a':a,'b':b,'t':t},'a*t+b','Substitusikan nilai prediktor ke garis regresi.')
                 return make('regression',r'Garis regresi adalah $\hat y=ax+b$ dengan $a>0$. Berapa nilai $x$ yang menghasilkan prediksi $y=q$?',{'a':a,'b':b,'q':a*t+b},'(q-b)/a','Gunakan prediksi yang diketahui untuk membentuk persamaan linear, lalu selesaikan terhadap prediktor.')
-            if level=='easy':return make('correlation','Koefisien korelasi adalah $r$. Tentukan koefisien determinasi dalam persen.',{'r':s.Rational(r.randint(1,9),10)},'100*r*r','Koefisien determinasi adalah kuadrat korelasi dikali seratus persen.')
+            if level=='easy':return make('correlation','Koefisien korelasi adalah $r$. Tentukan koefisien determinasi dalam persen.',{'r':s.Rational(r.choice([-1,1])*r.randint(1,99),100)},'100*r*r','Koefisien determinasi adalah kuadrat korelasi dikali seratus persen.')
             sx=r.randint(2,9);sy=r.randint(2,9);cov=sx*sy*s.Rational(r.randint(1,9),10)
             return make('correlation','Kovarians dua variabel adalah $c$, dengan simpangan baku $s,t$. Tentukan koefisien determinasinya dalam persen.',{'c':cov,'s':sx,'t':sy},'100*(c/(s*t))**2','Hitung korelasi dari kovarians dan dua simpangan baku, kemudian kuadratkan untuk memperoleh determinasi.')
     if not tl and grade==12:
         if bab==3:
             if code=='A':
                 if level=='easy':return make('counting','Kode terdiri dari satu simbol A, satu simbol B, dan satu simbol C. Tersedia $a,b,c$ pilihan untuk masing-masing posisi. Berapa kode yang mungkin?',{'a':a,'b':b,'c':c},'a*b*c','Gunakan aturan perkalian untuk tiga posisi independen.')
-                nn=r.randint(6,20);length=r.randint(3,min(6,nn));even=r.randint(1,nn-1)
+                nn=r.randint(4,9);length=r.randint(2,nn);even=r.randint(max(1,nn-5),min(4,nn))
                 return make('counting','Terdapat $n$ digit berbeda yang semuanya bukan nol; tepat $e$ di antaranya genap. Berapa bilangan genap $k$ angka tanpa pengulangan yang dapat dibentuk?',{'n':nn,'e':even,'k':length},'e*factorial(n-1)/factorial(n-k)','Isi posisi terakhir dengan digit genap, kemudian susun posisi lain dari digit yang tersisa.')
             if code=='B':
                 nn=r.randint(7,24);kk=r.randint(3,min(6,nn))
@@ -329,7 +463,7 @@ def _tl11(bab,code,tier,r,visual):
             if easy:return make('sine_rule','Segitiga ABC mempunyai sudut A dan B masing-masing $u,v$ derajat. Sisi di depan A panjangnya $a$. Tentukan sisi di depan B.',{'u':angle_a,'v':angle_b,'a':a},'a*sin(pi*v/180)/sin(pi*u/180)','Gunakan aturan sinus untuk dua sisi dan sudut di hadapannya.')
             return make('sine_rule','Segitiga ABC mempunyai sudut A dan B masing-masing $u,v$ derajat. Sisi di depan A panjangnya $a$. Tentukan sisi di depan C.',{'u':angle_a,'v':angle_b,'a':a},'a*sin(pi*(180-u-v)/180)/sin(pi*u/180)','Tentukan sudut ketiga dari jumlah sudut segitiga, kemudian terapkan aturan sinus.')
         if easy:return make('cosine_rule','Dua sisi segitiga panjangnya $a,b$ dengan sudut apit $t$ derajat. Tentukan panjang sisi di depan sudut apit tersebut.',{'a':a,'b':b,'t':r.choice([60,90,120])},'sqrt(a*a+b*b-2*a*b*cos(pi*t/180))','Gunakan aturan kosinus untuk sisi di depan sudut apit.')
-        u=r.randint(3,9);v=r.randint(1,u-1);legs={'a':u*u-v*v,'b':2*u*v,'c':u*u+v*v}
+        u=r.randint(3,15);v=r.randint(1,u-1);legs={'a':u*u-v*v,'b':2*u*v,'c':u*u+v*v}
         return make('cosine_rule','Segitiga mempunyai tiga sisi $a,b,c$. Gunakan aturan kosinus pada sudut di antara sisi a dan b, lalu tentukan luas segitiganya.',legs,'a*b*sqrt(1-((a*a+b*b-c*c)/(2*a*b))**2)/2','Dapatkan kosinus sudut apit, gunakan identitas kuadrat untuk sinus positif, lalu hitung setengah ab sinus sudut apit.')
     if bab==4:
         ux=r.randint(-12,12);uy=r.randint(-12,12);vx=r.randint(-12,12);vy=r.randint(-12,12)
@@ -359,7 +493,8 @@ def _tl11(bab,code,tier,r,visual):
         return make('composed_transform',r'Titik P$(x,y)$ dikenai transformasi diagonal $\operatorname{diag}(a,b)$ lalu rotasi 90 derajat berlawanan arah jarum jam terhadap O. Tentukan jumlah koordinat bayangannya.',{'a':a,'b':b,'x':px,'y':py},'a*x-b*y','Terapkan skala pada kedua komponen, lalu aturan rotasi seperempat putaran.')
     if bab==6:
         if code=='A':
-            base=r.randint(2,6);power=r.randint(2,8)
+            base=r.randint(2,12);power=r.randint(2,8)
+            while base**power>100000000:power-=1
             if easy:return make('logarithm',r'Tentukan $\log_a N$.',{'a':base,'N':base**power},'log(N)/log(a)','Definisi logaritma mencari eksponen yang menghasilkan N dari basis a.')
             u=r.randint(1,5);v=r.randint(1,5)
             return make('logarithm',r'Tentukan $\log_a M+\log_a N$.',{'a':base,'M':base**u,'N':base**v},'log(M*N)/log(a)','Gabungkan logaritma penjumlahan menjadi logaritma hasil kali, lalu gunakan definisi eksponen.')
@@ -448,9 +583,72 @@ def _tl12(bab,code,tier,r,visual):
 
 def _hard_missing(name,bab,code,r,visual):
     make=lambda base,q,data,expr,why,**kw:_make(base,'reconstruct',q,data,expr,why,visual,**kw)
+    if name=='kelas12_tl' and bab==2 and code=='C':
+        u=r.randint(1,15);v=u+r.randint(2,12);w=v+r.randint(2,10);a=r.randint(2,15)
+        factor=lambda t:s.Rational(t**3)-s.Rational(3,2)*(u+v)*t*t+3*u*v*t
+        while factor(w)==0:w+=1
+        Z=a*factor(w)
+        return make('stationary',r'Fungsi kubik $f(x)=ax^3+bx^2+cx+d$ mempunyai a>0 dan tepat dua titik stasioner pada x=u dan x=v. Diketahui $f(w)-f(0)=Z$, dengan u<v<w. Tentukan selisih nilai maksimum lokal dan minimum lokal f.',{'u':u,'v':v,'w':w,'Z':Z},'Z*(v-u)**3/(2*(w**3-3*(u+v)*w*w/2+3*u*v*w))','Dua titik stasioner menentukan bentuk turunan sebagai 3a(x-u)(x-v), sehingga koefisien b dan c bergantung pada a. Data selisih fungsi menentukan a. Turunan kedua membedakan maksimum dan minimum, lalu evaluasi selisih kedua nilai ekstrem.')
+    if name=='kelas10' and bab==1 and code=='B':
+        a=r.randint(2,20);b=r.randint(2,20);p=a*a;q=b*b
+        aa='((P*Q)**(1/3))';bb=f'(P/{aa})'
+        return make('exponent_rules',r'Bilangan positif x dan y memenuhi $xy=P$ dan $x^2/y=Q$. Dengan sifat pangkat, tentukan $\sqrt{x}+1/\sqrt{y}$.',{'P':p*q,'Q':s.Rational(p*p,q)},f'sqrt({aa})+1/sqrt({bb})','Kalikan kedua hubungan untuk mendapatkan pangkat tiga x. Pilih akar positif, temukan y dari hasil kali, lalu sederhanakan bentuk pangkat pecahan yang diminta.')
+    if name=='kelas10' and bab==7 and code=='A':
+        n=r.randint(5,22);cut=r.randint(2,n-1);total=r.randint(cut+1,min(2*n-1,n+cut+2));nn='sqrt(2/p)'
+        return make('distribution',r'Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?',{'p':s.Rational(2,n*n),'t':cut,'s':total},f'Max(0,Min({nn},s-1)-Max(t,s-{nn})+1)/({nn}*({nn}-t+1))','Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru.',probability=True)
+    if name=='kelas10' and bab==7 and code=='C':
+        red=r.randint(3,25);blue=r.randint(3,25);total=red+blue;first=s.Rational(red,total);both=s.Rational(red*(red-1),total*(total-1));nn='((p-q)/(p*p-q))'
+        return make('probability_product',r'Kotak hanya berisi bola merah dan biru. Pengambilan berurutan dilakukan tanpa pengembalian. Peluang merah pada pengambilan pertama p, sedangkan peluang dua pengambilan pertama sama-sama merah q. Setelah satu bola biru dan satu merah diketahui telah diambil, berapa peluang bola berikutnya merah?',{'p':first,'q':both},f'(p*{nn}-1)/({nn}-2)','Gabungkan peluang tahap pertama dengan dua tahap tanpa pengembalian untuk merekonstruksi jumlah bola dan banyak merah. Perbarui isi kotak sesuai dua hasil yang diketahui, lalu hitung peluang berikutnya.',probability=True)
+    if name=='kelas10' and bab==1 and code=='D':
+        a=r.randint(5,25);b=r.randint(1,a-1)
+        return make('radicals',r'Bilangan x>y>0 memenuhi $\sqrt x+\sqrt y=S$ dan $x-y=D$. Tentukan $\sqrt{x/y}+\sqrt{y/x}$.',{'S':a+b,'D':a*a-b*b},'4*S**4/(S**4-D*D)-2','Faktorkan selisih x dan y sebagai hasil kali jumlah serta selisih akarnya. Rekonstruksi hasil kali akar dari kedua hubungan, lalu gabungkan dua pecahan akar yang diminta.')
+    if name=='kelas11_tl' and bab==1 and code=='A':
+        aa=r.randint(2,15);cc=r.randint(2,8);ratio=r.randint(2,7);y=r.randint(2,20);dd=aa-(cc-1)*ratio
+        S=2*(ratio+aa)*y;rat='((a-d)/(c-1))';yy=f'(S/(2*(a+{rat})))'
+        return make('matrix_types',r'Matriks $M=\begin{pmatrix}x+ay&0\\0&cx+dy\end{pmatrix}$ merupakan matriks skalar. Jumlah kedua elemen diagonalnya S. Tentukan $x^2+y^2$.',{'a':aa,'c':cc,'d':dd,'S':S},f'{yy}**2*(1+{rat}**2)','Sifat matriks skalar menyamakan kedua elemen diagonal, sedangkan jumlahnya menentukan nilai setiap diagonal. Selesaikan dua persamaan linear untuk x dan y, lalu hitung jumlah kuadrat.')
+    if name=='kelas11_tl' and bab==1 and code=='B':
+        x=r.randint(5,30);y=r.randint(1,x-1)
+        return make('matrix_equal',r'Matriks $\begin{pmatrix}x+y&xy\\0&1\end{pmatrix}$ sama dengan $\begin{pmatrix}S&P\\0&1\end{pmatrix}$. Jika x>y>0, tentukan $x^3-y^3$.',{'S':x+y,'P':x*y},'sqrt(S*S-4*P)*(S*S-P)','Kesamaan elemen memberikan jumlah dan hasil kali dua parameter. Pilih selisih akar positif lalu gunakan identitas selisih kubik.')
+    if name=='kelas11_tl' and bab==1 and code=='C':
+        x=r.randint(4,25);y=r.randint(1,20)
+        return make('matrix_sum',r'Matriks $P=\begin{pmatrix}0&x-y\\2x+y&0\end{pmatrix}$ dan $Q=\begin{pmatrix}1&-e\\-f&1\end{pmatrix}$ mempunyai jumlah berupa matriks diagonal. Tentukan $x^3+y^3$.',{'e':x-y,'f':2*x+y},'((e+f)/3)**3+((f-2*e)/3)**3','Jumlahkan elemen luar diagonal dan gunakan syarat bahwa keduanya nol. Selesaikan dua parameter, kemudian evaluasi jumlah kubiknya.')
+    if name=='kelas11_tl' and bab==1 and code=='D':
+        a=r.randint(2,12);b=r.randint(2,12);x=r.randint(2,20);y=r.randint(2,20)
+        xx='((U-1)/a)';yy='(V/b)'
+        return make('matrix_product',r'Matriks $A=\begin{pmatrix}x&1\\0&y\end{pmatrix}$ dan $B=\begin{pmatrix}1&a\\b&1\end{pmatrix}$ memenuhi $(AB)_{12}=U$ dan $(AB)_{21}=V$. Tentukan jumlah elemen diagonal dari $BA^2$.',{'a':a,'b':b,'U':a*x+1,'V':b*y},f'{xx}**2+{yy}**2+b*({xx}+{yy})','Gunakan dua elemen hasil kali untuk menemukan x dan y. Kuadratkan A, kalikan dari kiri dengan B, lalu jumlahkan diagonal hasilnya.')
+    if name=='kelas11_tl' and bab==2 and code=='B':
+        a=r.randint(5,30);b=r.randint(1,a-1);sumcoef=a+b;lincoef=b*(a+1);bb='((C+1-sqrt((C+1)**2-4*L))/2)'
+        return make('polynomial_product',r'Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$, dengan a>b>0. Koefisien $x^2$ dalam PQ adalah C dan koefisien x adalah L. Tentukan koefisien $x^2$ dalam $P^2-Q^2$.',{'C':sumcoef,'L':lincoef},f'(C-{bb})**2+2*{bb}-1','Persamaan koefisien memberikan a+b=C dan b(a+1)=L. Selesaikan kuadrat dengan cabang a>b>0, lalu hitung koefisien pada selisih dua kuadrat polinomial.')
+    if name=='kelas11_tl' and bab==2 and code=='C':
+        t=r.randint(2,8);a=r.randint(2,12);b=r.randint(1,15);q=r.randint(9,15)
+        u=(1-t)*(1+a+b);v=(-1-t)*(1-a+b)
+        return make('polynomial_remainder',r'Polinomial monik P berderajat tiga memiliki sisa U ketika dibagi x-1, sisa V ketika dibagi x+1, dan habis dibagi x-t. Tentukan sisa pembagian P oleh x-q.',{'U':u,'V':v,'t':t,'q':q},'q**3+(U-1)*(q+1)*(q-t)/(2*(1-t))+(V+1)*(q-1)*(q-t)/(2*(1+t))-t**3*(q-1)*(q+1)/((t-1)*(t+1))','Teorema sisa memberi tiga nilai P pada titik berbeda. Kurangi suku monik kubik untuk memperoleh kuadrat yang dapat direkonstruksi dari tiga data, lalu evaluasi pada pembagi baru.')
+    if name=='kelas11_tl' and bab==2 and code=='D':
+        u=r.randint(2,9);v=r.randint(6,25);w=r.randint(1,v-1)
+        if u in (v,w):return None
+        aa=-(u+v+w);bb=u*v+u*w+v*w;cc=-u*v*w;sm='(-a-u)';pr='(-c/u)'
+        return make('polynomial_factor',r'Polinomial $P(x)=x^3+ax^2+bx+c$ mempunyai akar u. Dua akar lainnya p>q>0. Tentukan $p^3-q^3$.',{'a':aa,'b':bb,'c':cc,'u':u},f'sqrt({sm}**2-4*{pr})*({sm}**2-{pr})','Faktor yang diketahui dan hubungan Vieta menentukan jumlah serta hasil kali dua akar lain. Pilih selisih positif dan gunakan identitas selisih kubik.')
+    if name=='kelas11_tl' and bab==2 and code=='E':
+        a=r.randint(5,30);b=r.randint(1,a-1);n=r.randint(4,10);one=n*(a+b);two=s.binomial(n,2)*(a*a+b*b);S='(C1/n)';Q='(C2/binomial(n,2))'
+        return make('polynomial_identity',r'Dalam identitas $(x+a)^n+(x+b)^n$ dengan a>b>0, koefisien $x^{n-1}$ adalah C1 dan koefisien $x^{n-2}$ adalah C2. Tentukan $a^3-b^3$.',{'n':n,'C1':one,'C2':two},f'sqrt(2*{Q}-{S}**2)*({S}**2+{Q})/2','Koefisien binomial menentukan jumlah parameter dan jumlah kuadratnya. Pilih selisih parameter positif lalu gunakan identitas selisih kubik.')
+    if name=='kelas11_tl' and bab==6 and code=='A':
+        base=r.randint(2,20);power=r.randint(2,6)
+        return make('logarithm',r'Basis a>1 memenuhi $\log_a X=1$, $\log_a Y=2$, dan $X+Y=S$. Tentukan $\log_a N$.',{'S':base+base*base,'N':base**power},'log(N)/log((sqrt(1+4*S)-1)/2)','Definisi logaritma memberikan X=a dan Y=a kuadrat. Selesaikan persamaan basis dengan syarat a>1, kemudian evaluasi logaritma yang diminta.')
+    if name=='kelas11_tl' and bab==6 and code=='B':
+        h=r.randint(2,12);mult=r.randint(2,15);k=h*mult;shift=r.randint(1,20)
+        return make('algebraic_function',r'Fungsi $f(t)=(t^2-H^2)/(t-H)$ memiliki domain $t\ne H$, dan $g(x)=K/(x-s)$. Tentukan jumlah seluruh bilangan bulat x pada interval $[s-3,s+2K]$ yang membuat $(f\circ g)(x)>H+1/2$. Data memenuhi K/H bilangan bulat positif.',{'H':h,'K':k,'s':shift},'(2*K-1)*(s+K)-s-K/H','Penyederhanaan f tetap mengecualikan t=H. Ketaksamaan memberi x-s antara 1 dan 2K-1; keluarkan juga titik lubang komposisi x=s+K/H. Jumlahkan bilangan bulat yang sah.')
     if name=='kelas10' and bab==5 and code=='A':
         a=r.randint(5,20);b=r.randint(1,a-1);total=a+b;square=a*a+b*b
         return make('quadratic_equation','Dua akar positif persamaan kuadrat adalah p dan q dengan p>q. Diketahui $p+q=S$ dan $p^2+q^2=Q$. Tentukan $p^3-q^3$.',{'S':total,'Q':square},'sqrt(2*Q-S*S)*(S*S+Q)/2','Rekonstruksi hasil kali akar dari kedua kendala, pilih selisih akar positif, lalu gunakan identitas selisih kubik.')
+    if name=='kelas11' and bab==2 and code=='C':
+        b=r.randint(2,8);u=b*r.randint(4,15);v=b*r.randint(2,3);c=u*v//b;a=c-u-v;threshold=(u+v)//2
+        return make('chord',r'Tali busur AB dan CD berpotongan di X. Panjang $AX=x$, $XB=x+a$, $CX=x-b$, dan $XD=c$. Diketahui $AX>t$. Tentukan panjang seluruh tali busur AB.',{'a':a,'b':b,'c':c,'t':threshold},'c+sqrt((c-a)**2-4*b*c)','Teorema tali busur membentuk persamaan kuadrat untuk AX. Kedua akar mungkin positif; gunakan batas AX>t untuk memilih cabang lebih besar, kemudian jumlahkan AX dan XB.')
+    if name=='kelas12' and bab==1 and code=='B':
+        first=r.randint(2,15);diff=r.randint(2,10);p=r.randint(2,6);q=p+r.randint(2,6);n=q+r.randint(2,8)
+        # Two partial sums determine both the first term and common difference.
+        pp=s.Rational(p)*(2*first+(p-1)*diff)/2;qq=s.Rational(q)*(2*first+(q-1)*diff)/2
+        dd='(2*(V/q-U/p)/(q-p))';aa=f'(U/p-(p-1)*{dd}/2)'
+        return make('arithmetic_sum',r'Deret aritmetika mempunyai jumlah p suku pertama U dan jumlah q suku pertama V. Tentukan jumlah n suku pertamanya.',{'p':p,'q':q,'U':pp,'V':qq,'n':n},f'n*(2*{aa}+(n-1)*{dd})/2','Ubah dua data jumlah menjadi dua persamaan suku pertama dan beda. Selesaikan parameter tersebut sebelum menghitung jumlah pada indeks baru.')
     if name=='kelas12' and bab==2 and code=='C':
         principal=r.randint(5,30)*100000;deposit=r.randint(1,9)*10000;f=1+s.Rational(r.randint(2,12),100);n=r.randint(2,4)
         u=principal*f+deposit;v=u*f+deposit;w=v*f+deposit
@@ -460,11 +658,34 @@ def _hard_missing(name,bab,code,r,visual):
         principal=r.randint(10,40)*100000;payment=r.randint(1,8)*100000;f=1+s.Rational(r.randint(3,12),100);u=principal*f*f;v=principal*f**4-payment*f
         factor='((D+sqrt(D*D+4*U*V))/(2*U))'
         return make('compound_loan','Pinjaman awal P mempunyai faktor bunga tahunan tetap f>1. Utang akhir tahun kedua U. Tepat akhir tahun ketiga dibayar D dan utang akhir tahun keempat menjadi V. Tidak ada pembayaran lain. Tentukan P.',{'U':u,'V':v,'D':payment},f'U/{factor}**2','Hubungkan kedua saldo untuk persamaan kuadrat faktor bunga. Pilih akar positif f>1, kemudian kembalikan saldo tahun kedua ke modal pinjaman awal.')
+    if name=='kelas12' and bab==2 and code in ('E','F'):
+        principal=r.randint(20,60)*100000;rate=s.Rational(r.randint(2,10),100);f=1+rate;payment=principal*rate+r.randint(2,20)*10000
+        u=principal*f-payment;v=u*f-payment;w=v*f-payment;factor='((W-V)/(V-U))';pay=f'(U*{factor}-V)';original=f'((U+{pay})/{factor})'
+        return make('loan_annuity' if code=='E' else 'financial_parameter',r'Suatu pinjaman mempunyai faktor bunga per periode f>1 dan anuitas akhir periode A yang keduanya belum diketahui. Saldo utang setelah pembayaran pertama, kedua, dan ketiga adalah U,V,W. Tidak ada biaya atau transaksi lain. Berapa total bunga yang telah dibayar pada tiga pembayaran pertama?',{'U':u,'V':v,'W':w},f'3*{pay}-{original}+W','Tiga saldo berurutan menentukan faktor bunga dari rasio perubahannya. Temukan anuitas dan pinjaman awal, lalu kurangkan pengurangan pokok dari total tiga pembayaran.')
+    if name=='kelas12' and bab==4 and code=='A':
+        red=r.randint(3,25);blue=r.randint(3,25)
+        return make('single_probability',r'Tiga bola diambil sekaligus secara acak dari kotak berisi r bola merah dan b bola biru. Diketahui sedikitnya satu bola merah terambil. Berapa peluang tepat dua bola merah terambil?',{'r':red,'b':blue},'binomial(r,2)*b/(binomial(r+b,3)-binomial(b,3))','Bentuk ruang sampel bersyarat dengan mengecualikan tiga bola biru. Hitung pilihan dua merah dan satu biru, lalu bagi dengan banyak pilihan bersyarat.',probability=True)
     if name=='kelas12' and bab==4 and code=='B':
-        p=s.Rational(r.randint(4,8),10);q=s.Rational(r.randint(2,3),10);intersection=s.Rational(r.randint(1,2),10);union=p+q-intersection
-        if union>1:return None
+        pp=r.randint(25,90);qq=r.randint(15,60);ii=r.randint(max(1,pp+qq-100),min(pp,qq)-1)
+        p=s.Rational(pp,100);q=s.Rational(qq,100);intersection=s.Rational(ii,100);union=p+q-intersection
         qb='((U+I)/(k+1))';pa=f'(k*{qb})'
         return make('joint_probability',r'Dua kejadian A dan B memenuhi $P(A\cup B)=U$, $P(A\cap B)=I$, dan $P(A)=kP(B)$. Tentukan $P(A\mid B^c)$.',{'U':union,'I':intersection,'k':p/q},f'({pa}-I)/(1-{qb})','Inklusi-eksklusi memberi jumlah dua peluang. Gunakan rasio untuk menentukan masing-masing peluang, lalu bentuk peluang bersyarat pada komplemen B.',probability=True)
+    if name=='kelas12' and bab==3 and code in ('B','C','D'):
+        men=r.randint(6,18);women=r.randint(4,14);team=r.randint(4,8)
+        if code=='C':
+            expr='binomial(m+w,k)-binomial(m,k)-w*binomial(m,k-1)-binomial(m+w-2,k-2)+binomial(m-2,k-2)+w*binomial(m-2,k-3)'
+            return make('combination',r'Tim k orang dipilih dari m laki-laki dan w perempuan. Tim memuat sedikitnya dua perempuan, dan dua laki-laki tertentu A,B tidak boleh terpilih bersama. Berapa tim yang memenuhi?',{'m':men,'w':women,'k':team},expr,'Hitung tim dengan sedikitnya dua perempuan menggunakan komplemen, lalu kurangi tim yang sekaligus memuat kedua laki-laki terlarang dengan syarat perempuan yang sama.')
+        return make('permutation' if code=='B' else 'mixed_counting',r'Tim k orang dari m laki-laki dan w perempuan mempunyai ketua dan wakil yang keduanya perempuan. Tim juga wajib memuat setidaknya seorang laki-laki. Anggota lain tidak mempunyai jabatan. Berapa susunan tim beserta jabatannya?',{'m':men,'w':women,'k':team},'w*(w-1)*(binomial(m+w-2,k-2)-binomial(w-2,k-2))','Pilih dua pejabat perempuan berurutan, kemudian pilih anggota lain tanpa urutan sambil mengecualikan tim yang seluruhnya perempuan.')
+    if name=='kelas11_tl' and bab==3 and code=='A':
+        u=r.randint(3,25);v=r.randint(1,u-1);den=u*u+v*v;sin=s.Rational(2*u*v,den);cos=s.Rational(u*u-v*v,den);k=r.randint(2,15)
+        return make('unit_circle',r'Sudut t berada di kuadran II dan $\sin t+\cos t=S$. Tentukan $\sin t-k\cos t$.',{'S':sin-cos,'k':k},'((1-k)*S+(1+k)*sqrt(2-S*S))/2','Identitas lingkaran satuan memberi kuadrat selisih sinus dan kosinus. Tanda pada kuadran II menentukan cabang; rekonstruksi kedua nilai sebelum menghitung kombinasi baru.')
+    if name=='kelas11_tl' and bab==3 and code=='C':
+        u=r.randint(3,25);v=r.randint(1,u-1);den=u*u+v*v;sin=s.Rational(2*u*v,den);cos=s.Rational(u*u-v*v,den);k=r.randint(2,15);sign=1 if sin>cos else -1
+        aa='((S+e*sqrt(2-S*S))/2)';bb='((S-e*sqrt(2-S*S))/2)'
+        return make('trig_identity',r'Sudut t lancip, $\sin t+\cos t=S$, dan e bernilai 1 jika $\sin t>\cos t$ atau -1 jika $\sin t<\cos t$. Tentukan $\sec t+k\tan t$.',{'S':sin+cos,'e':sign,'k':k},f'(1+k*{aa})/{bb}','Gunakan identitas kuadrat untuk menemukan selisih sinus dan kosinus. Informasi urutan memilih cabang, kemudian ubah sekan dan tangen menjadi perbandingan sinus-kosinus.')
+    if name=='kelas11_tl' and bab==3 and code=='D':
+        half=r.randint(3,30);side_a=r.randint(half+1,2*half-1);side_b=2*half
+        return make('sine_rule',r'Segitiga ABC mempunyai sudut A=30 derajat. Sisi di depan A panjangnya a dan sisi di depan B panjangnya b. Data memenuhi b/2<a<b sehingga terdapat dua segitiga. Jika dua panjang sisi di depan C adalah $c_1,c_2$, tentukan $c_1^2+c_2^2$.',{'a':side_a,'b':side_b},'b*b+2*a*a','Aturan sinus menghasilkan dua kemungkinan sudut B. Aturan kosinus terhadap A membentuk kuadrat untuk sisi c; gunakan jumlah dan hasil kali kedua akar untuk jumlah kuadratnya.')
     if name=='kelas11_tl' and bab==3 and code=='E':
         a=r.randint(6,20);b=r.randint(2,a-1);theta=r.choice([60,90,120]);sq=a*a+b*b-2*a*b*s.cos(s.pi*theta/180)
         prod='((S*S-Q)/(2*(1+cos(pi*t/180))))'
@@ -478,4 +699,14 @@ def _hard_missing(name,bab,code,r,visual):
         sigma='((B-A)/3)';mu=f'(A+{sigma})';zval=f'((C-{mu})/{sigma})'
         expr=f'1-Piecewise((F1,Eq({zval},-1)),(F2,Eq({zval},1)),(F3,Eq({zval},2)))'
         return make('normal',r'X berdistribusi normal dengan parameter belum diketahui. Nilai A mempunyai skor baku -1, sedangkan B mempunyai skor baku 2. Tabel memberikan $\Phi(-1)=F1$, $\Phi(1)=F2$, dan $\Phi(2)=F3$. Tentukan $P(X>C)$.',{'A':x1,'B':x2,'C':cut,'F1':s.Rational(1587,10000),'F2':s.Rational(8413,10000),'F3':s.Rational(9772,10000)},expr,'Dua data skor baku menentukan simpangan baku dan rata-rata. Standardisasi batas baru, baca tabel, lalu ambil peluang ekor kanan.',probability=True)
+    if name=='kelas12_tl' and bab==3 and code=='C':
+        a=r.randint(2,15);L=r.randint(6,20);root=r.randint(1,(L-1)//2);T=s.Rational(a*L**3,6);H=a*root*(L-root);aa='(6*T/L**3)';bb=f'((L-sqrt(L*L-4*H/{aa}))/2)'
+        return make('integral_area',r'Kurva $y=ax(L-x)$ dengan a>0 membatasi luas T terhadap sumbu x pada interval [0,L]. Tentukan luas seluruh daerah antara kurva dan garis $y=H$ pada interval yang sama.',{'L':L,'T':T,'H':H},f'T-H*L+4*(H*{bb}-{aa}*L*{bb}**2/2+{aa}*{bb}**3/3)','Luas awal menentukan koefisien kurva. Cari dua perpotongan dengan garis horizontal, pisahkan interval menurut kurva yang berada di atas, lalu jumlahkan integral selisih positif.')
+    if name=='kelas12_tl' and bab==4 and code=='C':
+        lo=r.randint(1,25);width=12*r.randint(2,12);first=s.Rational(r.randint(1,3),12);second=s.Rational(r.randint(7,10),12);u=lo+width*first;v=lo+width*second;cut=lo+width/2
+        span='((V-U)/(q-p))';left=f'(U-p*{span})';right=f'({left}+{span})'
+        return make('continuous_variable',r'X seragam kontinu pada interval [a,b] yang belum diketahui. Data memberi $P(X\le U)=p$ dan $P(X\le V)=q$, dengan 0<p<q<1. Tentukan $E(X\mid X>C)$.',{'U':u,'V':v,'p':first,'q':second,'C':int(cut)},f'(C+{right})/2','Dua nilai distribusi kumulatif menentukan panjang interval dan batas bawahnya. Dapatkan batas atas, kemudian potong dukungan menurut kondisi X>C dan hitung titik tengah interval bersyarat.')
+    if name=='kelas12_tl' and bab==4 and code=='F':
+        trials=r.randint(5,22);p=s.Rational(r.randint(1,9),10);mean=trials*p;var=mean*(1-p);k=r.randint(1,trials-1);prob='(1-V/M)';nn=f'(M/{prob})'
+        return make('binomial',r'X berdistribusi binomial dengan parameter n dan p belum diketahui. Diberikan $E(X)=M$ dan $\operatorname{Var}(X)=V$. Tentukan $P(X=k)$.',{'M':mean,'V':var,'k':k},f'binomial({nn},k)*{prob}**k*(1-{prob})**({nn}-k)','Gunakan rasio varians terhadap harapan untuk memperoleh p, tentukan n, kemudian terapkan fungsi peluang binomial.',probability=True)
     return None

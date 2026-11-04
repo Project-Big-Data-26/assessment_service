@@ -429,6 +429,416 @@
       "pembahasan": "Peluang merah di P adalah 8 dari 20, di Q 5 dari 10, dan di R 9 dari 30. Perbandingannya: 1/2 lebih besar dari 2/5, dan 2/5 lebih besar dari 3/10. Urutannya Q, P, R.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "052865535b090588ba49baf4",
+        "teks": "Dalam lomba, kategori SD memiliki 28 peserta dan kategori SMP memiliki 19 peserta. Jika peluang menang setiap peserta sama, peluang menang peserta SMP dibanding peserta SD lebih besar atau lebih kecil?",
+        "jawaban": "Lebih besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_banding_peluang_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Situasi II: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$\\frac{47}{440}$",
+      "alasan_benar": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{2}{11}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{3}{40}$. Selisih hasilnya $\\frac{47}{440}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{393}{440}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{47}{880}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{487}{880}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 393/880 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{2}{11}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{3}{40}$. Selisih hasilnya $\\frac{47}{440}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b04-b-medium-bt01-011",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/c822d058af8551ee157bb62e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "10"
+            ],
+            [
+              "I",
+              "B",
+              "6"
+            ],
+            [
+              "I",
+              "N",
+              "22"
+            ],
+            [
+              "II",
+              "A",
+              "19"
+            ],
+            [
+              "II",
+              "B",
+              "16"
+            ],
+            [
+              "II",
+              "N",
+              "40"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"10\"], [\"I\", \"B\", \"6\"], [\"I\", \"N\", \"22\"], [\"II\", \"A\", \"19\"], [\"II\", \"B\", \"16\"], [\"II\", \"N\", \"40\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5083798cecd0a1e400c96069",
+        "teks": "Sebuah keping permainan setimbang memiliki dua sisi, merah dan biru. Peluang muncul sisi merah dibanding peluang muncul sisi biru adalah ....",
+        "jawaban": "Sama besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_banding_peluang_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Situasi II: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$\\frac{311}{1050}$",
+      "alasan_benar": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{8}{25}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{1}{42}$. Selisih hasilnya $\\frac{311}{1050}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{739}{1050}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{311}{2100}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1361}{2100}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 739/2100 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{8}{25}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{1}{42}$. Selisih hasilnya $\\frac{311}{1050}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b04-b-medium-bt01-012",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/0aeb44a26c8923595edab2fc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "28"
+            ],
+            [
+              "I",
+              "B",
+              "12"
+            ],
+            [
+              "I",
+              "N",
+              "50"
+            ],
+            [
+              "II",
+              "A",
+              "13"
+            ],
+            [
+              "II",
+              "B",
+              "14"
+            ],
+            [
+              "II",
+              "N",
+              "42"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"28\"], [\"I\", \"B\", \"12\"], [\"I\", \"N\", \"50\"], [\"II\", \"A\", \"13\"], [\"II\", \"B\", \"14\"], [\"II\", \"N\", \"42\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "54f0f1475dd45da053484d90",
+        "teks": "Dua pemain melempar koin setimbang. Pemain A menang jika sisi gambar muncul. Pemain B menang jika sisi angka muncul.\n\nApakah peluang menang kedua pemain sama?",
+        "jawaban": "Ya, sama besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_banding_peluang_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Situasi II: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$\\frac{2}{225}$",
+      "alasan_benar": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{3}{25}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{1}{9}$. Selisih hasilnya $\\frac{2}{225}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{223}{225}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{225}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{227}{450}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 223/450 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{3}{25}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{1}{9}$. Selisih hasilnya $\\frac{2}{225}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b04-b-medium-bt01-013",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/1b40b8a1d8630f5cfbd3410a.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "15"
+            ],
+            [
+              "I",
+              "B",
+              "21"
+            ],
+            [
+              "I",
+              "N",
+              "50"
+            ],
+            [
+              "II",
+              "A",
+              "11"
+            ],
+            [
+              "II",
+              "B",
+              "8"
+            ],
+            [
+              "II",
+              "N",
+              "27"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"15\"], [\"I\", \"B\", \"21\"], [\"I\", \"N\", \"50\"], [\"II\", \"A\", \"11\"], [\"II\", \"B\", \"8\"], [\"II\", \"N\", \"27\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a8b2e566555981f3fa812699",
+        "teks": "Dalam undian, 8 anak mengikuti kelompok A dan 20 anak mengikuti kelompok B. Setiap anak memiliki peluang sama dalam kelompoknya. Peluang menang seorang anak di kelompok A dibandingkan anak di kelompok B adalah ....",
+        "jawaban": "Lebih besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_banding_peluang_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Data masing-masing situasi terdapat pada tabel gambar. Kerjakan dua situasi berikut secara terpisah. Situasi I: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Situasi II: Dua kantong masing-masing mempunyai $A$ dan $B$ bola merah dari total sama, yaitu $N$ bola. Berapa selisih peluang merah keduanya? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$\\frac{20}{1833}$",
+      "alasan_benar": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{26}{47}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{22}{39}$. Selisih hasilnya $\\frac{20}{1833}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1813}{1833}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{10}{1833}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{1853}{3666}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 1813/3666 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{26}{47}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{22}{39}$. Selisih hasilnya $\\frac{20}{1833}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b04-b-medium-bt01-014",
+      "gambar": [
+        "exercise_assets/kelas6/batch01/assets/6f07ee2ae7df858aaf2350ce.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Situasi",
+            "Data",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "I",
+              "A",
+              "31"
+            ],
+            [
+              "I",
+              "B",
+              "5"
+            ],
+            [
+              "I",
+              "N",
+              "47"
+            ],
+            [
+              "II",
+              "A",
+              "26"
+            ],
+            [
+              "II",
+              "B",
+              "4"
+            ],
+            [
+              "II",
+              "N",
+              "39"
+            ]
+          ]
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Situasi\", \"Data\", \"Nilai\"], \"rows\": [[\"I\", \"A\", \"31\"], [\"I\", \"B\", \"5\"], [\"I\", \"N\", \"47\"], [\"II\", \"A\", \"26\"], [\"II\", \"B\", \"4\"], [\"II\", \"N\", \"39\"]]}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3526ac6abffb503b5149cdee",
+        "teks": "Sebuah koin setimbang memiliki sisi merah dan putih. Peluang muncul sisi putih adalah ....",
+        "jawaban": "1 dari 2 kemungkinan",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_banding_peluang_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Dua kantong masing-masing mempunyai ${14}$ dan ${11}$ bola merah dari total sama, yaitu ${36}$ bola. Berapa selisih peluang merah keduanya? Situasi II: Dua kantong masing-masing mempunyai ${11}$ dan ${21}$ bola merah dari total sama, yaitu ${39}$ bola. Berapa selisih peluang merah keduanya? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$\\frac{9}{52}$",
+      "alasan_benar": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{1}{12}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{10}{39}$. Selisih hasilnya $\\frac{9}{52}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{52}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{104}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{61}{104}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 43/104 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{1}{12}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{10}{39}$. Selisih hasilnya $\\frac{9}{52}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b04-b-medium-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8da4523aaf90e10cd8d9dc82",
+        "teks": "Kotak P berisi 6 bola merah dan 4 bola kuning. Kotak Q berisi 3 bola merah dan 2 bola kuning. Semua bola diambil secara acak.\n\nDi kotak mana peluang mengambil bola merah lebih besar?",
+        "jawaban": "Sama besar",
+        "snapshot": "runs/exercise_sessions_3/references/kelas6.json",
+        "source_sha256": "23916221bfced206edae355de34ea78c15a5a256632c6396ba4e503cc4d504ef"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "s6_banding_peluang_linked",
+      "alasan_level": "Menyelesaikan dua penerapan rutin pada data berbeda lalu menghubungkan kedua hasil sesuai pertanyaan.",
+      "stimulus": null,
+      "pertanyaan": "Kerjakan dua situasi berikut secara terpisah. Situasi I: Dua kantong masing-masing mempunyai ${32}$ dan ${6}$ bola merah dari total sama, yaitu ${41}$ bola. Berapa selisih peluang merah keduanya? Situasi II: Dua kantong masing-masing mempunyai ${16}$ dan ${16}$ bola merah dari total sama, yaitu ${35}$ bola. Berapa selisih peluang merah keduanya? Berapa selisih kedua hasil? Kurangi hasil yang lebih kecil dari hasil yang lebih besar.",
+      "jawaban_benar": "$\\frac{26}{41}$",
+      "alasan_benar": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{26}{41}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $0$. Selisih hasilnya $\\frac{26}{41}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{41}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{13}{41}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{67}{82}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 15/82 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Selesaikan situasi I: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $\\frac{26}{41}$. Situasi II: Total sama, selisih peluang adalah selisih banyak merah dibagi total Perhitungan dengan data tersebut memberi $0$. Selisih hasilnya $\\frac{26}{41}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas6-b04-b-medium-bt01-016"
     }
   ]
 }

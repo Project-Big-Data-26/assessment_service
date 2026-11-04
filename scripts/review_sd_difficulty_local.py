@@ -38,6 +38,9 @@ def evaluate(raw,grade,certificate):
 
 
 def verify(bundle):
+    if load(Path(bundle)/'manifest.json').get('schemaVersion')=='codex-exercise-sessions-local-v3':
+        from app.services.exercise.session_expansion import verify_publication
+        return verify_publication(bundle)
     bundle=Path(bundle);base=bundle.parent;manifest=load(bundle/'manifest.json');assert manifest['schemaVersion']==SCHEMA
     for name,sha in manifest['inputs'].items():assert digest(base/name)==sha
     for name,sha in manifest['outputs'].items():assert digest(bundle/name)==sha
@@ -221,6 +224,9 @@ def finalize_reports(grade):
 
 
 def audit_all():
+    if all(load(bank.base_for(g)/'hasil_validasi/manifest.json').get('schemaVersion')=='codex-exercise-sessions-local-v3' for g in range(1,5)):
+        from app.services.exercise.session_expansion import audit,prepare
+        return audit(prepare())
     from PIL import Image
     summaries=[];ids=set();pictures=0;raw_count=0
     for grade in range(1,5):
@@ -250,7 +256,7 @@ def audit_all():
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--classes',nargs='+',type=int,choices=range(1,5),default=[1,2,3,4]);p.add_argument('--audit-only',action='store_true');args=p.parse_args();RUN.mkdir(parents=True,exist_ok=True)
     if args.audit_only:
-        result=audit_all();print(json.dumps({k:v for k,v in result.items() if k not in ('classes','inventory')}),flush=True);return
+        result=audit_all();print(json.dumps({k:v for k,v in result.items() if k not in ('classes','inventory','coverage')}),flush=True);return
     for grade in args.classes:run_class(grade)
     summaries=[]
     for grade in range(1,5):

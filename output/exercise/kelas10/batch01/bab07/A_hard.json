@@ -833,6 +833,2066 @@
       "pembahasan": "Ruang sampel bersyarat memuat pasangan (i,j) dengan jumlah genap. Pilih lagi pasangan berjumlah ≥9. Menghitung pasangan terurut dari 64 kemungkinan memberi perbandingan 1/2.",
       "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
       "id": "kelas10-b07-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5c51db34a83d735cd268980a",
+        "teks": "Dina bermain ular tangga dan melempar dua dadu setimbang sekali. Peluang jumlah kedua mata dadu yang muncul adalah 4 atau 6 sama dengan ....",
+        "jawaban": "$\\frac{8}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{13}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{13}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{13}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{26}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{13}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6/13 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{13}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-025",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/2e0414c2eb0693e9cf0fa7e1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/169"
+            ],
+            [
+              "t",
+              9
+            ],
+            [
+              "s",
+              14
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/169\"], [\"t\", 9], [\"s\", 14]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8861478f64579d618d872901",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang munculnya jumlah mata dadu lebih besar daripada 9 adalah ....",
+        "jawaban": "$\\frac{6}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{75}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{75}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{74}{75}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{150}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{38}{75}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 37/75 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{75}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-026",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/3e112149cceff6fb96e68cfc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/225"
+            ],
+            [
+              "t",
+              6
+            ],
+            [
+              "s",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/225\"], [\"t\", 6], [\"s\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c41dff96e5bde86eef83456c",
+        "teks": "Seorang pemain melempar sepasang dadu setimbang. Berapa peluang bahwa jumlah kedua mata dadu setidaknya 8?",
+        "jawaban": "$\\frac{15}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{3}{40}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{3}{40}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{40}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3}{80}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{43}{80}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 37/80 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{3}{40}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-027",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/c090a4813b8f454025c150bc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/32"
+            ],
+            [
+              "t",
+              4
+            ],
+            [
+              "s",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/32\"], [\"t\", 4], [\"s\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d89ab231bf1f43eb88e7723a",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang munculnya jumlah mata dadu lebih kecil daripada 6 adalah ....",
+        "jawaban": "$\\frac{10}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{96}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{96}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{95}{96}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{192}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{97}{192}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 95/192 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{96}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-028",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/db38db9b0e9ef1ad86b205bc.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/72"
+            ],
+            [
+              "t",
+              5
+            ],
+            [
+              "s",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/72\"], [\"t\", 5], [\"s\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2a9397306717b00c33aaa32",
+        "teks": "Dua dadu setimbang dilempar satu kali dan dicatat angka yang lebih besar dari kedua dadu (jika angkanya sama, catat angka tersebut). Peluang bahwa angka yang lebih besarnya adalah 4 adalah ....",
+        "jawaban": "$\\frac{7}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{154}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{154}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{153}{154}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{308}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{155}{308}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 153/308 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{154}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-029",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/c8aca791fef39fe42cb6ffd7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/242"
+            ],
+            [
+              "t",
+              2
+            ],
+            [
+              "s",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/242\"], [\"t\", 2], [\"s\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "262e686b2eab6cfc80af317a",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang bahwa nilai mutlak dari selisih kedua angka yang muncul adalah 4 adalah ....",
+        "jawaban": "$\\frac{4}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{5}{198}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{5}{198}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{193}{198}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{5}{396}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{203}{396}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 193/396 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{5}{198}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-030",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/05849353aeb3592fd693d11f.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/162"
+            ],
+            [
+              "t",
+              8
+            ],
+            [
+              "s",
+              13
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/162\"], [\"t\", 8], [\"s\", 13]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7729e61e1e25c0815c254a48",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang munculnya jumlah mata dadu 10 adalah ....",
+        "jawaban": "$\\frac{3}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5/12 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{6}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-031",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/cacfab557042c78f71c47f67.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/18"
+            ],
+            [
+              "t",
+              2
+            ],
+            [
+              "s",
+              8
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/18\"], [\"t\", 2], [\"s\", 8]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "342c746cc3bc0688c6c6a9e4",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang munculnya jumlah mata dadu tidak lebih daripada 7 adalah ....",
+        "jawaban": "$\\frac{21}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{19}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{19}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{18}{19}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{38}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{10}{19}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 9/19 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{19}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-032",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/003fbacf52849726b636ec06.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/361"
+            ],
+            [
+              "t",
+              12
+            ],
+            [
+              "s",
+              24
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/361\"], [\"t\", 12], [\"s\", 24]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "398475cd180441fbed0ae468",
+        "teks": "Sepasang dadu adil dilempar sekali. Besar peluang jumlah mata yang muncul paling sedikit 6 adalah ....",
+        "jawaban": "$\\frac{26}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{144}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{144}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{143}{144}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{288}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{145}{288}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 143/288 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{144}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-033",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/42ccab178d443e579cc77d1e.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/162"
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "s",
+              5
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/162\"], [\"t\", 3], [\"s\", 5]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f0431bf629dbdc88701d9897",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang kedua dadu menunjukkan angka yang sama atau berjumlah 7 adalah ....",
+        "jawaban": "$\\frac{12}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{40}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{40}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{39}{40}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{80}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{41}{80}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 39/80 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{40}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-034",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/def30a7695c1c08cda492355.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/200"
+            ],
+            [
+              "t",
+              17
+            ],
+            [
+              "s",
+              39
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/200\"], [\"t\", 17], [\"s\", 39]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fae36e1821eb133e0f72a9fa",
+        "teks": "Dua buah dadu setimbang dilempar bersama dan kedua mata yang muncul dikalikan. Peluang hasil kalinya bilangan ganjil adalah ....",
+        "jawaban": "$\\frac{9}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{22}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{22}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{22}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{44}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{23}{44}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 21/44 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{22}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-035",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/30be5c4d5f99edc26a3ba78d.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/242"
+            ],
+            [
+              "t",
+              17
+            ],
+            [
+              "s",
+              23
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/242\"], [\"t\", 17], [\"s\", 23]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "46c7b43ba3ef77512f85d79b",
+        "teks": "Dadu merah dan dadu biru, keduanya setimbang, dilempar bersamaan. Peluang jumlah kedua mata dadu itu 6 atau 7 adalah ....",
+        "jawaban": "$\\frac{11}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5/12 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{6}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-036",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/487caa60d4e9448bc38fd6a6.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/18"
+            ],
+            [
+              "t",
+              4
+            ],
+            [
+              "s",
+              10
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/18\"], [\"t\", 4], [\"s\", 10]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb1132015a9700da91a84cc4",
+        "teks": "Sebuah koin setimbang dilempar tiga kali berturut-turut. Banyak anggota ruang sampel percobaan ini adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{3}{64}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{3}{64}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{61}{64}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{3}{128}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{67}{128}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 61/128 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{3}{64}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-037",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/7baabeeacc87ef93e3e29a00.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/128"
+            ],
+            [
+              "t",
+              13
+            ],
+            [
+              "s",
+              30
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/128\"], [\"t\", 13], [\"s\", 30]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d4b94c382a3902243326a83",
+        "teks": "Dua keping uang logam setimbang dilempar bersamaan. Peluang muncul tepat satu gambar adalah ....",
+        "jawaban": "$\\frac{1}{2}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/5 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-038",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/3a7d5fa88d221e05ecd17fea.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/25"
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "s",
+              6
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/25\"], [\"t\", 3], [\"s\", 6]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "19db1b949b1a49de8de5acac",
+        "teks": "Tabel berikut adalah distribusi peluang banyak pelanggan $X$ yang membeli sebuah produk dalam satu jam.\n\n|$X$|0|1|2|3|\n|---|---|---|---|---|\n|$P(X)$|$0,10$|$0,35$|$p$|$0,25$|\n\nNilai $p$ pada tabel distribusi peluang tersebut adalah ....",
+        "jawaban": "$0,30$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{5}{72}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{5}{72}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{67}{72}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{5}{144}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{77}{144}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 67/144 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{5}{72}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-039",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/8521d1bf610fdb4bb307a969.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/81"
+            ],
+            [
+              "t",
+              2
+            ],
+            [
+              "s",
+              7
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/81\"], [\"t\", 2], [\"s\", 7]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "107dd88604e2a133d08c2ca7",
+        "teks": "Tabel berikut adalah distribusi peluang banyak gol $X$ dalam sebuah pertandingan.\n\n|$X$|1|2|3|4|5|\n|---|---|---|---|---|---|\n|$P(X)$|$0,05$|$0,25$|$0,30$|$0,15$|$0,25$|\n\nPeluang terjadi gol sebanyak paling sedikit 4 adalah ....",
+        "jawaban": "$0,40$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{12}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{12}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{12}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{13}{24}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 11/24 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{12}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-040",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/926c71af96e253dbc6f2ca83.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/72"
+            ],
+            [
+              "t",
+              10
+            ],
+            [
+              "s",
+              21
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/72\"], [\"t\", 10], [\"s\", 21]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8edcb72f2ca79c5987cdc8d9",
+        "teks": "Nilai berikut yang dapat menjadi peluang suatu kejadian adalah ....",
+        "jawaban": "$\\frac{7}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{22}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{22}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{22}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{44}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{23}{44}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 21/44 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{22}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-041",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/909be2db4ca9943da2263ad7.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/242"
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "s",
+              23
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/242\"], [\"t\", 3], [\"s\", 23]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9c40ae052f2282518ff40e2f",
+        "teks": "Tiga keping uang logam setimbang dilempar bersamaan. Peluang muncul tepat dua gambar adalah ....",
+        "jawaban": "$\\frac{3}{8}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{7}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{7}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{7}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{14}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{4}{7}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 3/7 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{7}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-042",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/a7e74db6483c71de5cd134a1.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/49"
+            ],
+            [
+              "t",
+              5
+            ],
+            [
+              "s",
+              9
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/49\"], [\"t\", 5], [\"s\", 9]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "71536564a8a42ca2ffd8fb9d",
+        "teks": "Dua dadu setimbang dilempar satu kali. Peluang kedua dadu menunjukkan angka yang berbeda adalah ....",
+        "jawaban": "$\\frac{30}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{7}{99}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{7}{99}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{92}{99}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{7}{198}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{53}{99}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 46/99 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{7}{99}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-043",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/8712cb8861bef9c7bcf00301.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "2/121"
+            ],
+            [
+              "t",
+              3
+            ],
+            [
+              "s",
+              16
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"2/121\"], [\"t\", 3], [\"s\", 16]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7ad082dbf0e1806bd0b997cf",
+        "teks": "Sebuah dadu merah dan sebuah dadu putih yang setimbang dilempar satu kali. Banyak pasangan hasil (merah, putih) yang berbeda dengan jumlah mata 6 adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Gunakan data pada tabel. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{24}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{24}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{24}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{48}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{25}{48}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 23/48 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{24}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-044",
+      "gambar": [
+        "exercise_assets/kelas10/batch01/assets/5389bfdce3a8b998dbd9a8df.png"
+      ],
+      "visual_spec": {
+        "kind": "math_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Besaran",
+            "Nilai"
+          ],
+          "rows": [
+            [
+              "p",
+              "1/200"
+            ],
+            [
+              "t",
+              15
+            ],
+            [
+              "s",
+              20
+            ]
+          ],
+          "title": "Data untuk soal"
+        }
+      },
+      "deskripsi_gambar": "Fakta pada gambar: {\"kind\": \"table\", \"headers\": [\"Besaran\", \"Nilai\"], \"rows\": [[\"p\", \"1/200\"], [\"t\", 15], [\"s\", 20]], \"title\": \"Data untuk soal\"}"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2e3c0e345b131c003e4e5da",
+        "teks": "Dua dadu setimbang dilempar satu kali. Pernyataan berikut yang benar adalah ....",
+        "jawaban": "Peluang jumlah kedua mata genap sama dengan peluang jumlah kedua mata ganjil.",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{200}$; t = $6$; s = $22$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{20}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{20}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{20}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{40}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{21}{40}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 19/40 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{20}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a5a1e6363eb6db5c1e46e6f5",
+        "teks": "Seorang siswa mengatakan bahwa peluang hasil kali dua dadu berupa bilangan genap hanya sedikit lebih besar daripada peluang berupa bilangan ganjil. Dua dadu setimbang dilempar satu kali dan kedua angka dikalikan. Peluang hasil kali genap adalah .... kali peluang hasil kali ganjil.",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{169}$; t = $4$; s = $17$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{13}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{13}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{13}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{26}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{13}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6/13 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{13}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "251d82cb4a06b67a84a24c0d",
+        "teks": "Seorang siswa menduga bahwa semua jumlah mata pada pelemparan dua dadu setimbang sama kemungkinannya. Dengan distribusi peluang yang benar, peluang jumlah 7 adalah .... kali peluang jumlah 2 atau 12.",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{121}$; t = $2$; s = $4$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{55}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{55}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{54}{55}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{110}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{28}{55}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 27/55 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{55}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5b114221eab6f7d72029933",
+        "teks": "Rina menghitung peluang jumlah kedua mata genap atau hasil kali kedua mata ganjil pada pelemparan dua dadu setimbang dengan menjumlahkan kedua peluang, dan memperoleh $\\frac{27}{36}$. Peluang yang benar untuk kejadian tersebut adalah ....",
+        "jawaban": "$\\frac{18}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{169}$; t = $10$; s = $14$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{13}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{13}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{13}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{26}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{13}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 6/13 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{13}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e624f818b72a8fea234a1195",
+        "teks": "Klaim: \"Jika $P(A) + P(B) = 1$, maka $A$ dan $B$ pasti saling komplemen.\" Dua dadu setimbang dilempar satu kali. Pasangan kejadian $A$ dan $B$ yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$A$: jumlah kedua mata genap; $B$: dadu pertama menunjukkan angka ganjil",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{18}$; t = $3$; s = $7$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{6}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5/12 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{6}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "823e8e0aae706d6fc11daec3",
+        "teks": "Klaim: \"Jika jumlah kedua mata pada pelemparan dua dadu genap, maka hasil kali kedua mata juga genap.\" Hasil pelemparan dua dadu setimbang (dadu pertama, dadu kedua) yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$(3, 5)$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{121}$; t = $9$; s = $12$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{11}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{11}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10}{11}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{22}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{6}{11}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 5/11 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{11}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb49393f0c024d1fc60e912d",
+        "teks": "Peubah acak $X$ bernilai $1, 2, 3, 4$ dengan $P(X = x) = c\\,x^2$ untuk suatu konstanta $c$ yang membuat distribusi peluang valid. Nilai $P(X \\ge 3)$ adalah ....",
+        "jawaban": "$\\frac{25}{30}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{32}$; t = $7$; s = $13$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{8}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{8}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 7/16 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{8}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a9d5874d2a87d419fe3173ad",
+        "teks": "Distribusi peluang peubah acak $X$: $P(X=1)=0,1$; $P(X=2)=p$; $P(X=3)=0,3$; $P(X=4)=q$; $P(X=5)=0,2$. Diketahui $p$ sama dengan empat kali $q$. Nilai $p$ adalah ....",
+        "jawaban": "$0,32$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{242}$; t = $10$; s = $19$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{9}{286}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{9}{286}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{277}{286}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{9}{572}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{295}{572}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 277/572 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{9}{286}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "adc95edde134f1061e001f4b",
+        "teks": "Peubah acak $X$ bernilai $0, 1, 2$ dengan $P(X=0)=2a$, $P(X=1)=a+0,1$, dan $P(X=2)=0,5-a$. Peluang $X$ paling sedikit 1 adalah ....",
+        "jawaban": "$0,60$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{32}$; t = $3$; s = $13$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{12}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{12}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{12}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{13}{24}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 11/24 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{12}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a8676da1816c2166e2876069",
+        "teks": "Peubah acak $X$ bernilai $1, 2, 3, 4$ dengan $P(X=x)=\\frac{x+k}{30}$. Nilai $k$ yang membuat distribusi peluang valid adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{81}$; t = $3$; s = $12$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{9}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{18}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb7494ba7040400f498ab383",
+        "teks": "Dua pemain bermain dengan melempar dua dadu setimbang satu kali. Pemain A menang bila aturan tertentu terpenuhi, sedangkan pemain B menang bila tidak. Permainan adil jika peluang menang A sama dengan peluang menang B. Aturan kemenangan A yang membuat permainan adil adalah ....",
+        "jawaban": "jumlah kedua mata genap",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{128}$; t = $3$; s = $11$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{28}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{28}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27}{28}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{56}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{29}{56}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 27/56 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{28}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "210565ed0a31bc6658ee7967",
+        "teks": "Dua pemain melempar empat keping koin setimbang bersamaan. Pemain A menang bila aturan tertentu terpenuhi, selain itu pemain B menang. Aturan kemenangan A yang membuat permainan adil adalah ....",
+        "jawaban": "banyak gambar yang muncul genap (termasuk nol)",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{121}$; t = $7$; s = $11$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{4}{55}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{4}{55}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{51}{55}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2}{55}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{59}{110}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 51/110 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{4}{55}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f21e17b79e6e888326934918",
+        "teks": "Pemain A menang pada pelemparan dua dadu setimbang bila jumlah kedua mata paling banyak 6 atau paling sedikit $m$, dengan $m$ bilangan bulat dari 7 sampai 12. Pemain B menang pada hasil lainnya. Nilai $m$ yang membuat permainan adil adalah ....",
+        "jawaban": "$11$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{72}$; t = $9$; s = $18$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{12}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{12}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{12}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{24}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{13}{24}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 11/24 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{12}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d9dc21b98529d9f1fd0b2e4b",
+        "teks": "Sebuah kantong berisi 4 kelereng merah dan 3 kelereng biru yang identik selain warnanya. Dua kelereng diambil acak satu per satu. Selisih antara peluang terambil dua kelereng sewarna jika pengambilan dengan pengembalian dan peluangnya jika tanpa pengembalian adalah ....",
+        "jawaban": "$\\frac{4}{49}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{32}$; t = $4$; s = $6$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{20}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{20}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{20}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{40}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{21}{40}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 19/40 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{20}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "39f5546abb6ed9c1a02ea096",
+        "teks": "Dua dadu setimbang dilempar satu kali. Di antara kejadian berikut, kejadian yang peluangnya paling kecil adalah ....",
+        "jawaban": "angka yang lebih besar dari kedua dadu adalah 4",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{25}$; t = $3$; s = $8$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{5}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 2/5 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{5}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e96b92b0cad1169776a1abd",
+        "teks": "Dina berkata bahwa pada pelemparan dua koin setimbang ada tiga hasil, yaitu 0, 1, atau 2 gambar, sehingga ketiganya sama kemungkinannya dan peluang tepat 1 gambar adalah $\\frac{1}{3}$. Peluang tepat 1 gambar yang benar adalah ....",
+        "jawaban": "$\\frac{2}{4}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{225}$; t = $5$; s = $9$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{4}{165}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{4}{165}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{161}{165}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{2}{165}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{169}{330}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 161/330 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{4}{165}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-060"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6eb49dc0bbe41c0d2e51aab4",
+        "teks": "Budi menghitung peluang jumlah mata paling sedikit 10 pada dua dadu setimbang dengan alasan jumlah yang mungkin adalah 2, 3, ..., 12 (11 nilai) yang sama kemungkinannya, sehingga memperoleh $\\frac{3}{11}$. Peluang yang benar adalah ....",
+        "jawaban": "$\\frac{6}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{1}{50}$; t = $5$; s = $17$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{15}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{15}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{14}{15}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{30}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 7/15 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{15}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-061"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0690000765bd32042e9a92a0",
+        "teks": "Dua dadu setimbang dilempar satu kali. Bilangan bulat terkecil $m$ sehingga peluang jumlah kedua mata paling banyak $m$ lebih dari $\\frac{1}{2}$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{81}$; t = $3$; s = $11$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{9}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{18}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-062"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "179474f5d2517f99529dd29a",
+        "teks": "Dua dadu setimbang dilempar satu kali dan dicatat angka yang lebih besar dari kedua dadu (jika sama, catat angka itu). Bilangan bulat terkecil $m$ sehingga peluang angka yang dicatat paling besar $m$ adalah paling sedikit $\\frac{1}{2}$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{441}$; t = $13$; s = $29$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{21}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{21}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{20}{21}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{42}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{11}{21}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 10/21 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{21}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-063"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "032c54287b256d6cf5545dfb",
+        "teks": "Dalam sebuah permainan papan, dua dadu setimbang dilempar satu kali. Peluang jumlah kedua mata dadu berupa 4, 8, atau 11 adalah ....",
+        "jawaban": "$\\frac{10}{36}$",
+        "snapshot": "runs/exercise_sessions_3/references/kelas10.json",
+        "source_sha256": "6237481d301d95ac20c2179305c58a2335292e36c2052a42eb3aba5650e57ccc"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "session_sma_distribution_reconstruct",
+      "alasan_level": "Merekonstruksi parameter tersembunyi dari beberapa kendala, memilih cabang yang sah, lalu memakai model untuk besaran baru.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui p = $\\frac{2}{81}$; t = $5$; s = $14$. Dua dadu adil masing-masing bernomor 1 sampai n dilempar. Diketahui peluang jumlah hasilnya 3 adalah p. Jika hasil dadu pertama sedikitnya t, berapa peluang jumlah kedua hasil tepat s?",
+      "jawaban_benar": "$\\frac{1}{9}$",
+      "alasan_benar": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{9}$.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{9}$",
+          "alasan": "Menggunakan bagian komplemen, bukan bagian yang ditanyakan."
+        },
+        {
+          "teks": "$\\frac{1}{18}$",
+          "alasan": "Mengambil setengah hasil, padahal soal meminta seluruh kuantitas."
+        },
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Perhitungan pada pilihan ini berselisih 4/9 dari hasil yang memenuhi data. Gunakan seluruh syarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang jumlah tiga menentukan ukuran dadu. Bentuk ruang sampel bersyarat untuk dadu pertama, lalu hitung pasangan berurutan yang memenuhi jumlah baru. Hasilnya $\\frac{1}{9}$.",
+      "catatan": "Variasi putaran tiga sesi; penilaian lokal Codex tanpa API; confidence belum diukur.",
+      "id": "kelas10-b07-a-hard-bt01-064"
     }
   ]
 }
