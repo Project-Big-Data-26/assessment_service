@@ -1,0 +1,612 @@
+{
+  "book": "kelas3",
+  "bab_no": 5,
+  "subbab": "B",
+  "level": "medium",
+  "batch": 1,
+  "skill_versi": "v1",
+  "generator": "codex:sd-local-bank-v1",
+  "soal": [
+    {
+      "id": "kelas3-b05-b-medium-bt01-001",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "af80792faa77f2a7be932750",
+        "teks": "a, b, c, x, y, z, b, c, x, y, a, b, c, a, b, c, x, y, y, b, c, x, y, x, b, c, x, b, c, x, a, y, b, c, x, c, c, b, c,\n\nBerapa banyak c yang ada pada data tersebut?",
+        "jawaban": "11",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 5+6=11.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $11$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $11$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $11$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 5+6=11.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/238be554fe47b324ad96cd75.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 5], [6, 1], [7, 5], [8, 6]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              8,
+              6
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-002",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "631ea2e9a2d5222d502bdf5c",
+        "teks": "Hasil penilaian harian Matematika diperoleh: 9 8 8 5 9 6 10 9 8 6 7 8 9 9 5 6 7 7 9 10\n\nBerapa banyak siswa yang mendapatkan nilai lebih dari 7?",
+        "jawaban": "12 siswa",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 3+2=5.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $5$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $5$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $5$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 3+2=5.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/29facd8ac79434115c8ad943.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 8], [6, 5], [7, 3], [8, 2]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              8,
+              2
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-003",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "631ea2e9a2d5222d502bdf5c",
+        "teks": "Hasil penilaian harian Matematika diperoleh: 9 8 8 5 9 6 10 9 8 6 7 8 9 9 5 6 7 7 9 10\n\nBerapa banyak siswa yang mendapatkan nilai lebih dari 7?",
+        "jawaban": "12 siswa",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 4+8=12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $12$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $12$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $12$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 4+8=12.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/a601a06f2a445072766320fd.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 1], [6, 6], [7, 4], [8, 8]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-004",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "af80792faa77f2a7be932750",
+        "teks": "a, b, c, x, y, z, b, c, x, y, a, b, c, a, b, c, x, y, y, b, c, x, y, x, b, c, x, b, c, x, a, y, b, c, x, c, c, b, c,\n\nBerapa banyak c yang ada pada data tersebut?",
+        "jawaban": "11",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 4+0=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $4$."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $4$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $4$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 4+0=4.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/674315a1d4d3c1e030b12cff.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 8], [6, 4], [7, 4], [8, 0]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              8,
+              0
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-005",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "af80792faa77f2a7be932750",
+        "teks": "a, b, c, x, y, z, b, c, x, y, a, b, c, a, b, c, x, y, y, b, c, x, y, x, b, c, x, b, c, x, a, y, b, c, x, c, c, b, c,\n\nBerapa banyak c yang ada pada data tersebut?",
+        "jawaban": "11",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 1+6=7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $7$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $7$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $7$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 1+6=7.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/ccce1104708fc6987f7506d5.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 5], [6, 5], [7, 1], [8, 6]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              5
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              7,
+              1
+            ],
+            [
+              8,
+              6
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-006",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "631ea2e9a2d5222d502bdf5c",
+        "teks": "Hasil penilaian harian Matematika diperoleh: 9 8 8 5 9 6 10 9 8 6 7 8 9 9 5 6 7 7 9 10\n\nBerapa banyak siswa yang mendapatkan nilai lebih dari 7?",
+        "jawaban": "12 siswa",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 4+2=6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $6$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $6$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $6$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 4+2=6.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/0360bca981a3be2c2ec3063e.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 3], [6, 8], [7, 4], [8, 2]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              3
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              8,
+              2
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-007",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "af80792faa77f2a7be932750",
+        "teks": "a, b, c, x, y, z, b, c, x, y, a, b, c, a, b, c, x, y, y, b, c, x, y, x, b, c, x, b, c, x, a, y, b, c, x, c, c, b, c,\n\nBerapa banyak c yang ada pada data tersebut?",
+        "jawaban": "11",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan tabel frekuensi pada gambar. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 2+4=6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $6$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $6$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $6$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 2+4=6.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur.",
+      "gambar": [
+        "exercise_assets/kelas3/batch01/assets/6ea73b6dd2f8055d6c10992e.png"
+      ],
+      "deskripsi_gambar": "Data yang terlihat pada gambar: {\"kind\": \"table\", \"headers\": [\"Nilai\", \"Frekuensi\"], \"rows\": [[5, 4], [6, 2], [7, 2], [8, 4]], \"title\": \"Tabel nilai siswa\"}",
+      "visual_spec": {
+        "kind": "sd_scene",
+        "scene": {
+          "kind": "table",
+          "headers": [
+            "Nilai",
+            "Frekuensi"
+          ],
+          "rows": [
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              8,
+              4
+            ]
+          ],
+          "title": "Tabel nilai siswa"
+        }
+      }
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-008",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "631ea2e9a2d5222d502bdf5c",
+        "teks": "Hasil penilaian harian Matematika diperoleh: 9 8 8 5 9 6 10 9 8 6 7 8 9 9 5 6 7 7 9 10\n\nBerapa banyak siswa yang mendapatkan nilai lebih dari 7?",
+        "jawaban": "12 siswa",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan nilai 5: 5 siswa; nilai 6: 7 siswa; nilai 7: 2 siswa; nilai 8: 6 siswa. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 2+6=8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $8$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $8$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $8$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 2+6=8.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur."
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-009",
+      "tipe_generate": "variasi",
+      "variasi_cara": "angka",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "af80792faa77f2a7be932750",
+        "teks": "a, b, c, x, y, z, b, c, x, y, a, b, c, a, b, c, x, y, y, b, c, x, y, x, b, c, x, b, c, x, a, y, b, c, x, c, c, b, c,\n\nBerapa banyak c yang ada pada data tersebut?",
+        "jawaban": "11",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan nilai 5: 6 siswa; nilai 6: 5 siswa; nilai 7: 3 siswa; nilai 8: 1 siswa. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 3+1=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $4$."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $4$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $4$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 3+1=4.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur."
+    },
+    {
+      "id": "kelas3-b05-b-medium-bt01-010",
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "pretest_validated",
+        "id": "631ea2e9a2d5222d502bdf5c",
+        "teks": "Hasil penilaian harian Matematika diperoleh: 9 8 8 5 9 6 10 9 8 6 7 8 9 9 5 6 7 7 9 10\n\nBerapa banyak siswa yang mendapatkan nilai lebih dari 7?",
+        "jawaban": "12 siswa",
+        "snapshot": "output/exercise/kelas3/batch01/reference_blueprints.json",
+        "source_sha256": "8ce959a2349ec41853b3bd76732be738032bb6633450c0a27fd7b10c041fa5de"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sd3_tabel_gabung_kategori",
+      "alasan_level": "Menghubungkan pembacaan data dengan dua atau tiga langkah rutin.",
+      "stimulus": null,
+      "pertanyaan": "Perhatikan nilai 5: 5 siswa; nilai 6: 2 siswa; nilai 7: 3 siswa; nilai 8: 7 siswa. Berapa siswa yang mendapat nilai sekurang-kurangnya 7?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 3+7=10.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $10$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $10$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh informasi dan langkah pada soal; hasil yang sesuai adalah $10$."
+        }
+      ],
+      "pembahasan": "Nilai yang memenuhi 7 dan 8. Frekuensi gabungan 3+7=10.",
+      "catatan": "Variasi konsep pretest; pemeriksaan lokal Codex, tanpa API. Confidence belum diukur."
+    }
+  ]
+}

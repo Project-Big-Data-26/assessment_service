@@ -510,7 +510,7 @@ def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
     grade, _ = CLASSES[name]
     p = paths(name, batch)
     final_manifest = p["final"] / "manifest.json"
-    if final_manifest.exists() and load(final_manifest).get("schemaVersion") in {"codex-local-exercise-publication-v1", "codex-targeted-exercise-publication-v2"}:
+    if final_manifest.exists() and load(final_manifest).get("schemaVersion") in {"codex-local-exercise-publication-v1", "codex-targeted-exercise-publication-v2", "codex-local-sd-bank-v1", "codex-sd-difficulty-review-v2"}:
         raise ValueError("Local Codex publication must not be overwritten by the AI checkpoint packager")
     checkpoint_bytes = p["checkpoint"].read_bytes()
     checkpoint = json.loads(checkpoint_bytes)

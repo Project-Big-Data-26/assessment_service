@@ -20,9 +20,13 @@ Menghasilkan JSON dan Markdown lengkap per subbab. Katalog dibaca dari
 bukan sumber ID MongoDB. `--curriculum-report` menerima laporan lain berformat
 sama. Inventaris tidak memperhitungkan riwayat siswa dan bukan audit production.
 
-Berkas ditemukan otomatis dari ekspor resmi. Saat ini terdapat **24 berkas**:
+Berkas ditemukan otomatis dari ekspor resmi. Saat ini terdapat **28 berkas**:
 
-- Exercise (10 berkas):
+- Exercise (14 berkas):
+  - `output/exercise/kelas1/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas2/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas3/batch01/hasil_validasi/validation_results.json`
+  - `output/exercise/kelas4/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas5/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas6/batch01/hasil_validasi/validation_results.json`
   - `output/exercise/kelas7/batch01/hasil_validasi/validation_results.json`

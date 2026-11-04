@@ -94,6 +94,14 @@ def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
 
 def verify_bundle(source: Path, bundle: Path) -> None:
     manifest = load(bundle / "manifest.json")
+    if manifest.get("schemaVersion") == "codex-sd-difficulty-review-v2":
+        from scripts.review_sd_difficulty_local import verify
+        verify(bundle)
+        return
+    if manifest.get("schemaVersion") == "codex-local-sd-bank-v1":
+        from scripts.generate_sd_bank_local import verify
+        verify(bundle)
+        return
     if manifest.get("schemaVersion") == "codex-targeted-exercise-publication-v2":
         from scripts.generate_targeted_replenishment import verify
         verify(bundle)

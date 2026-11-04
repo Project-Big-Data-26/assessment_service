@@ -103,6 +103,12 @@ def local_metadata(source, decision, previous):
 def verify_local_publication(bundle):
     bundle = Path(bundle)
     manifest = load(bundle / "manifest.json")
+    if manifest.get('schemaVersion') == 'codex-sd-difficulty-review-v2':
+        from scripts.review_sd_difficulty_local import verify
+        return verify(bundle)
+    if manifest.get('schemaVersion') == 'codex-local-sd-bank-v1':
+        from scripts.generate_sd_bank_local import verify
+        return verify(bundle)
     if manifest.get('schemaVersion') == 'codex-targeted-exercise-publication-v2':
         from scripts.generate_targeted_replenishment import verify
         return verify(bundle)
@@ -149,7 +155,7 @@ def publish_class(name, master, meta, decisions, source_files):
     base = ROOT / "output/exercise" / name / "batch01"
     final = base / "hasil_validasi"
     with batch_lock(base):
-        if (final/'manifest.json').exists() and load(final/'manifest.json').get('schemaVersion') == 'codex-targeted-exercise-publication-v2':
+        if (final/'manifest.json').exists() and load(final/'manifest.json').get('schemaVersion') in {'codex-targeted-exercise-publication-v2','codex-local-sd-bank-v1','codex-sd-difficulty-review-v2'}:
             raise ValueError('Targeted additions must be preserved; use the targeted authoring workflow')
         if (final / "manifest.json").exists() and load(final/"manifest.json").get("schemaVersion") == SCHEMA:
             verify_local_publication(final)
