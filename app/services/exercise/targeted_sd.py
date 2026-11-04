@@ -36,6 +36,41 @@ def ratio(r,mode):
 
 def generate(grade,bab,code,level,r):
     A=r.randint(2,8);B=r.randint(2,9);C=r.randint(1,7);U=r.randint(4,14);V=r.randint(3,9);T=r.randint(3,7)
+    if grade==1:
+        if bab==1:
+            u=r.randint(2,6);v=r.randint(2,5)
+            return constant(f'Perhatikan gambar apel. Di piring ada ${u}$ apel, lalu ditambah lagi ${v}$ apel. Berapa jumlah apel seluruhnya? ${u} + {v} = \\dots$',u+v,f'Hitung penjumlahan konkret: ${u} + {v} = {u+v}$.','v2_sd1_penjumlahan_konkret',level)
+        if bab==2:
+            total=r.randint(6,12);taken=r.randint(2,total-2)
+            return constant(f'Ada ${total}$ kelereng di toples. Sebanyak ${taken}$ butir diambil. Berapa sisa kelereng di toples? ${total} - {taken} = \\dots$',total-taken,f'Hitung pengurangan konkret: ${total} - {taken} = {total-taken}$.','v2_sd1_pengurangan_konkret',level)
+        return constant(f'Kotak A berisi ${A}$ bola dan Kotak B berisi ${A+B}$ bola. Berapa selisih banyak bola? ${A+B} - {A} = \\dots$',B,f'Selisih adalah ${A+B} - {A} = {B}$.','v2_sd1_selisih_objek',level)
+    if grade==2:
+        if bab==1:
+            u=r.randint(15,45);v=r.randint(10,35)
+            return constant(f'Koleksi stiker Ani ada ${u}$ lembar. Ia diberi paman ${v}$ lembar lagi. Berapa total stiker Ani sekarang? ${u} + {v} = \\dots$',u+v,f'${u} + {v} = {u+v}$.','v2_sd2_penjumlahan_puluhan',level)
+        if bab==2:
+            piring=r.randint(3,5);kue=r.randint(2,4)
+            return constant(f'Ada ${piring}$ piring, tiap piring berisi ${kue}$ kue donat. Berapa banyak donat seluruhnya? ${piring} \\times {kue} = \\dots$',piring*kue,f'Perkalian berulang: ${piring} \\times {kue} = {piring*kue}$.','v2_sd2_perkalian_dasar',level)
+        h=r.randint(1,11)
+        return constant(f'Jarum pendek jam dinding menunjuk angka ${h}$ dan jarum panjang menunjuk angka $12$. Jam tersebut menunjukkan pukul ....',h,f'Pukul ${h:02d}.00$.','v2_sd2_jam_analog',level)
+    if grade==3:
+        if bab==1:
+            divisor=r.randint(2,5);quotient=r.randint(15,40);total=divisor*quotient
+            return constant(f'Sebanyak ${total}$ permen dibagikan sama banyak kepada ${divisor}$ anak. Berapa permen untuk tiap anak? ${total} \\div {divisor} = \\dots$',quotient,f'${total} \\div {divisor} = {quotient}$.','v2_sd3_pembagian_ratusan',level)
+        if bab==2:
+            denom=r.choice([3,4,6]);num=r.randint(1,denom-1)
+            return constant(f'Sebuah kue bolu dipotong menjadi ${denom}$ bagian sama besar. Budi memakan ${num}$ bagian. Nilai pecahan bagian yang dimakan adalah ....',s.Rational(num,denom),f'Pecahan bagian kue adalah $\\frac{{{num}}}{{{denom}}}$.','v2_sd3_pecahan_sederhana',level)
+        p=r.randint(6,12);l=r.randint(3,p-1)
+        return constant(f'Persegi panjang memiliki panjang ${p}\\text{{ cm}}$ dan lebar ${l}\\text{{ cm}}$. Kelilingnya adalah $K = 2 \\times (p + l) = \\dots\\text{{ cm}}$.',2*(p+l),f'$K = 2 \\times ({p} + {l}) = {2*(p+l)}$.','v2_sd3_keliling_persegi_panjang',level)
+    if grade==4:
+        if bab==1:
+            k=r.choice([2,3,4])
+            return constant(f'Pecahan yang senilai dengan $\\frac{{1}}{{2}}$ jika pembilang dan penyebut dikalikan ${k}$ adalah ....',s.Rational(k,2*k),f'$\\frac{{1 \\times {k}}}{{2 \\times {k}}} = \\frac{{{k}}}{{{2*k}}}$.','v2_sd4_pecahan_senilai',level)
+        if bab==2:
+            s_val=r.randint(4,12)
+            return constant(f'Sebuah persegi memiliki sisi ${s_val}\\text{{ cm}}$. Luasnya adalah $L = s \\times s = \\dots\\text{{ cm}}^2$.',s_val*s_val,f'$L = {s_val} \\times {s_val} = {s_val*s_val}\\text{{ cm}}^2$.','v2_sd4_luas_persegi',level)
+        val=r.randint(10,30)
+        return constant(f'Diagram batang menunjukkan siswa yang suka apel ada ${val}$ anak dan jeruk ada ${val+5}$ anak. Berapa selisih banyak siswa? ${val+5} - {val} = \\dots$',5,f'${val+5} - {val} = 5$.','v2_sd4_diagram_batang',level)
     if grade==5:
         if bab in [1,9]:return place_value(r,bab==9,code=='B',level)
         if bab==2:
