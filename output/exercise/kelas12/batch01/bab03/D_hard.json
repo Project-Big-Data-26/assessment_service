@@ -685,6 +685,302 @@
       ],
       "pembahasan": "Suku ke-2: $na=12$. Suku ke-3: $\\frac{n(n-1)}{2}a^2 = 54$. Dari $(na)^2\\frac{n-1}{n} = 108$ diperoleh $144\\cdot\\frac{n-1}{n}=108$, $n=4$, $a=3$. Jadi $n+a=7$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d4a6901478587fbb1df2fba",
+        "teks": "Peluang tepat $r$ keberhasilan dari 6 percobaan saling bebas dinyatakan $P(r)$. Ekspresi yang tepat untuk peluang paling sedikit 3 keberhasilan adalah ....",
+        "jawaban": "$1 - P(0) - P(1) - P(2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kombinasi_dalam_peluang",
+      "alasan_level": "Target hard; variasi konsep kombinasi dalam peluang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim menjalani 9 pertandingan independen dengan peluang menang tetap $\\frac{7}{10}$ per pertandingan. Berapa peluang tim menang tepat 6 pertandingan?",
+      "jawaban_benar": "$\\frac{66706983}{250000000}$",
+      "alasan_benar": "P=C(9,6)(7/10)^6(1-7/10)^3=66706983/250000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{316706983}{250000000}$",
+          "alasan": "Nilai $\\frac{316706983}{250000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{183293017}{250000000}$",
+          "alasan": "Nilai $- \\frac{183293017}{250000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{566706983}{250000000}$",
+          "alasan": "Nilai $\\frac{566706983}{250000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "P=C(9,6)(7/10)^6(1-7/10)^3=66706983/250000000.",
+      "catatan": "codex-replenishment:kelas12-b03-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-d-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d4a6901478587fbb1df2fba",
+        "teks": "Peluang tepat $r$ keberhasilan dari 6 percobaan saling bebas dinyatakan $P(r)$. Ekspresi yang tepat untuk peluang paling sedikit 3 keberhasilan adalah ....",
+        "jawaban": "$1 - P(0) - P(1) - P(2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kombinasi_dalam_peluang",
+      "alasan_level": "Target hard; variasi konsep kombinasi dalam peluang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim menjalani 8 pertandingan independen dengan peluang menang tetap $\\frac{3}{10}$ per pertandingan. Berapa peluang tim menang tepat 5 pertandingan?",
+      "jawaban_benar": "$\\frac{583443}{12500000}$",
+      "alasan_benar": "P=C(8,5)(3/10)^5(1-3/10)^3=583443/12500000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13083443}{12500000}$",
+          "alasan": "Nilai $\\frac{13083443}{12500000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{11916557}{12500000}$",
+          "alasan": "Nilai $- \\frac{11916557}{12500000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{25583443}{12500000}$",
+          "alasan": "Nilai $\\frac{25583443}{12500000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "P=C(8,5)(3/10)^5(1-3/10)^3=583443/12500000.",
+      "catatan": "codex-replenishment:kelas12-b03-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-d-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0943d6c2de306215c5985c0",
+        "teks": "Sebuah perangkat mengirim sinyal berulang. Peluang sinyal diterima pada setiap pengiriman adalah $0,8$ (saling bebas). Banyak pengiriman minimum agar peluang paling sedikit satu sinyal diterima tidak kurang dari $0,999$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kombinasi_dalam_peluang",
+      "alasan_level": "Target hard; variasi konsep kombinasi dalam peluang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim menjalani 8 pertandingan independen dengan peluang menang tetap $\\frac{3}{5}$ per pertandingan. Berapa peluang tim menang tepat 1 pertandingan?",
+      "jawaban_benar": "$\\frac{3072}{390625}$",
+      "alasan_benar": "P=C(8,1)(3/5)^1(1-3/5)^7=3072/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{393697}{390625}$",
+          "alasan": "Nilai $\\frac{393697}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{387553}{390625}$",
+          "alasan": "Nilai $- \\frac{387553}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{784322}{390625}$",
+          "alasan": "Nilai $\\frac{784322}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "P=C(8,1)(3/5)^1(1-3/5)^7=3072/390625.",
+      "catatan": "codex-replenishment:kelas12-b03-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-d-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31c301decfdfb87a94fa9e73",
+        "teks": "Jumlah semua koefisien suku berpangkat ganjil (yaitu $x$, $x^3$, $x^5$) pada penjabaran $(3x - 2)^5$ adalah ....",
+        "jawaban": "$1.563$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kombinasi_dalam_peluang",
+      "alasan_level": "Target hard; variasi konsep kombinasi dalam peluang. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim menjalani 9 pertandingan independen dengan peluang menang tetap $\\frac{1}{2}$ per pertandingan. Berapa peluang tim menang tepat 2 pertandingan?",
+      "jawaban_benar": "$\\frac{9}{128}$",
+      "alasan_benar": "P=C(9,2)(1/2)^2(1-1/2)^7=9/128.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{137}{128}$",
+          "alasan": "Nilai $\\frac{137}{128}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{119}{128}$",
+          "alasan": "Nilai $- \\frac{119}{128}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{265}{128}$",
+          "alasan": "Nilai $\\frac{265}{128}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "P=C(9,2)(1/2)^2(1-1/2)^7=9/128.",
+      "catatan": "codex-replenishment:kelas12-b03-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-d-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "be33711202315a412622a5b8",
+        "teks": "Seorang pemain melempar koin setimbang sebanyak $n$ kali. Banyak lemparan $n$ minimum agar peluang muncul sisi angka paling sedikit satu kali lebih dari $0,99$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kombinasi_jabatan_komplemen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim 5 orang dari 6 laki-laki dan 4 perempuan memiliki ketua dan wakil. Keduanya harus perempuan dan tim harus memiliki setidaknya seorang laki-laki. Berapa susunan tim beserta jabatannya?",
+      "jawaban_benar": "$672$",
+      "alasan_benar": "Pilih dua pejabat perempuan berurutan: 4×3. Dari sisa pilih 3 anggota; kurangi pilihan yang semuanya perempuan. Hasil 4×3[C(8,3)-C(2,3)]=672.",
+      "distraktor": [
+        {
+          "teks": "$671$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $672$."
+        },
+        {
+          "teks": "$673$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $672$."
+        },
+        {
+          "teks": "$1344$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih dua pejabat perempuan berurutan: 4×3. Dari sisa pilih 3 anggota; kurangi pilihan yang semuanya perempuan. Hasil 4×3[C(8,3)-C(2,3)]=672.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-d-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4382650afee38669bb822d1e",
+        "teks": "Tentukan koefisien suku yang memuat $x^4$ dari penjabaran $(5 + x)^6$.",
+        "jawaban": "$375$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kombinasi_jabatan_komplemen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim 4 orang dari 4 laki-laki dan 5 perempuan memiliki ketua dan wakil. Keduanya harus perempuan dan tim harus memiliki setidaknya seorang laki-laki. Berapa susunan tim beserta jabatannya?",
+      "jawaban_benar": "$360$",
+      "alasan_benar": "Pilih dua pejabat perempuan berurutan: 5×4. Dari sisa pilih 2 anggota; kurangi pilihan yang semuanya perempuan. Hasil 5×4[C(7,2)-C(3,2)]=360.",
+      "distraktor": [
+        {
+          "teks": "$359$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $360$."
+        },
+        {
+          "teks": "$361$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $360$."
+        },
+        {
+          "teks": "$720$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih dua pejabat perempuan berurutan: 5×4. Dari sisa pilih 2 anggota; kurangi pilihan yang semuanya perempuan. Hasil 5×4[C(7,2)-C(3,2)]=360.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-d-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "da76b636283b177ec1501936",
+        "teks": "Sebuah tim menjalani 5 pertandingan independen dengan peluang menang tetap $\\frac{3}{10}$ per pertandingan. Berapa peluang tim menang tepat 3 pertandingan?",
+        "jawaban": "$\\frac{1323}{10000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kombinasi_jabatan_komplemen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim 5 orang dari 5 laki-laki dan 7 perempuan memiliki ketua dan wakil. Keduanya harus perempuan dan tim harus memiliki setidaknya seorang laki-laki. Berapa susunan tim beserta jabatannya?",
+      "jawaban_benar": "$4620$",
+      "alasan_benar": "Pilih dua pejabat perempuan berurutan: 7×6. Dari sisa pilih 3 anggota; kurangi pilihan yang semuanya perempuan. Hasil 7×6[C(10,3)-C(5,3)]=4620.",
+      "distraktor": [
+        {
+          "teks": "$4619$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4620$."
+        },
+        {
+          "teks": "$4621$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4620$."
+        },
+        {
+          "teks": "$9240$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih dua pejabat perempuan berurutan: 7×6. Dari sisa pilih 3 anggota; kurangi pilihan yang semuanya perempuan. Hasil 7×6[C(10,3)-C(5,3)]=4620.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-d-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f87fa32cd75173158435674f",
+        "teks": "Peluang seorang penendang mencetak gol adalah 0,6. Dari 5 tendangan, perbandingan peluang tepat 3 tendangan berhasil terhadap peluang tepat 2 tendangan berhasil adalah ....",
+        "jawaban": "$3 : 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kombinasi_jabatan_komplemen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah tim 4 orang dari 5 laki-laki dan 6 perempuan memiliki ketua dan wakil. Keduanya harus perempuan dan tim harus memiliki setidaknya seorang laki-laki. Berapa susunan tim beserta jabatannya?",
+      "jawaban_benar": "$900$",
+      "alasan_benar": "Pilih dua pejabat perempuan berurutan: 6×5. Dari sisa pilih 2 anggota; kurangi pilihan yang semuanya perempuan. Hasil 6×5[C(9,2)-C(4,2)]=900.",
+      "distraktor": [
+        {
+          "teks": "$899$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $900$."
+        },
+        {
+          "teks": "$901$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $900$."
+        },
+        {
+          "teks": "$1800$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pilih dua pejabat perempuan berurutan: 6×5. Dari sisa pilih 2 anggota; kurangi pilihan yang semuanya perempuan. Hasil 6×5[C(9,2)-C(4,2)]=900.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-d-hard-bt01-028"
     }
   ]
 }

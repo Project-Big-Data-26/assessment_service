@@ -335,6 +335,43 @@
       "pembahasan": "Banyak paket terbanyak = FPB. Agar hanya 1 paket, FPB harus 1. FPB 35 dan 48 = 1; 35 dan 49 = 7; 48 dan 60 = 12; 36 dan 45 = 9.",
       "catatan": null,
       "id": "kelas5-b02-d-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9297d533658112e299f37080",
+        "teks": "Kakak memiliki dua jenis kue dan ingin membagi semuanya ke dalam paket dengan isi tiap jenis sama, tanpa sisa. Ternyata ia hanya bisa membuat 1 paket, tidak bisa lebih. Banyak kedua jenis kue itu adalah ....",
+        "jawaban": "35 dan 48",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "faktor_persekutuan_bersyarat",
+      "alasan_level": "Target hard; variasi konsep faktor persekutuan bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Kelompok akan membagi 32 pensil dan 40 penghapus ke paket identik tanpa sisa. Banyak paket minimal 1. Ada berapa kemungkinan banyak paket?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Banyak paket adalah faktor bersama [1, 2, 4, 8]. Yang minimal 1 ada 4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah faktor persekutuan bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah faktor persekutuan bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah faktor persekutuan bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Banyak paket adalah faktor bersama [1, 2, 4, 8]. Yang minimal 1 ada 4.",
+      "catatan": "codex-replenishment:kelas5-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b02-d-hard-bt01-011"
     }
   ]
 }

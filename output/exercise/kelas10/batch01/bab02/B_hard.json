@@ -502,6 +502,376 @@
       ],
       "pembahasan": "$\\frac{a}{1-r}=9$ dan $ar=2$. Maka $\\frac{2}{r(1-r)}=9 \\Rightarrow 9r^2-9r+2=0 \\Rightarrow (3r-1)(3r-2)=0$. $r=\\frac13 \\Rightarrow a=6$; $r=\\frac23 \\Rightarrow a=3$. Keduanya $|r|<1$; yang terbesar $6$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ea024a69cc41b2f27fdb8ce",
+        "teks": "Jumlah 4 suku pertama suatu deret aritmetika adalah 44 dan jumlah 8 suku pertama adalah 152. Suku ke-10 deret tersebut adalah ....",
+        "jawaban": "$41$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 2 dan beda 3. Tentukan jumlah 15 suku pertamanya.",
+      "jawaban_benar": "$345$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 15(2×2+(15-1)×3)/2 = 345.",
+      "distraktor": [
+        {
+          "teks": "$346$",
+          "alasan": "Pilihan $346$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $345$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$344$",
+          "alasan": "Pilihan $344$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $345$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$347$",
+          "alasan": "Pilihan $347$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $345$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 15(2×2+(15-1)×3)/2 = 345.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31e215e223aaddf9148fc971",
+        "teks": "Seorang siswa menyatakan: \"Untuk setiap deret geometri tak hingga yang konvergen, jumlahnya selalu lebih besar daripada suku pertamanya.\" Deret yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$8-4+2-1+\\dots$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 5 dan beda 3. Tentukan jumlah 14 suku pertamanya.",
+      "jawaban_benar": "$343$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 14(2×5+(14-1)×3)/2 = 343.",
+      "distraktor": [
+        {
+          "teks": "$344$",
+          "alasan": "Pilihan $344$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $343$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$342$",
+          "alasan": "Pilihan $342$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $343$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$345$",
+          "alasan": "Pilihan $345$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $343$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 14(2×5+(14-1)×3)/2 = 343.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3cb950cc2f11800af7fe0844",
+        "teks": "Pernyataan berikut yang benar adalah ....",
+        "jawaban": "Deret $2+\\frac{4}{3}+\\frac{8}{9}+\\dots$ konvergen dengan jumlah $6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 9 dan beda 7. Tentukan jumlah 17 suku pertamanya.",
+      "jawaban_benar": "$1105$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 17(2×9+(17-1)×7)/2 = 1105.",
+      "distraktor": [
+        {
+          "teks": "$1106$",
+          "alasan": "Pilihan $1106$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1105$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$1104$",
+          "alasan": "Pilihan $1104$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1105$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$1107$",
+          "alasan": "Pilihan $1107$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1105$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 17(2×9+(17-1)×7)/2 = 1105.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31e215e223aaddf9148fc971",
+        "teks": "Seorang siswa menyatakan: \"Untuk setiap deret geometri tak hingga yang konvergen, jumlahnya selalu lebih besar daripada suku pertamanya.\" Deret yang merupakan contoh penyangkal pernyataan tersebut adalah ....",
+        "jawaban": "$8-4+2-1+\\dots$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 2 dan beda 2. Tentukan jumlah 13 suku pertamanya.",
+      "jawaban_benar": "$182$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 13(2×2+(13-1)×2)/2 = 182.",
+      "distraktor": [
+        {
+          "teks": "$183$",
+          "alasan": "Pilihan $183$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $182$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Pilihan $181$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $182$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$184$",
+          "alasan": "Pilihan $184$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $182$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 13(2×2+(13-1)×2)/2 = 182.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0015c68184ffe0fb7d2479e3",
+        "teks": "Suatu deret aritmetika memiliki suku pertama 50 dan beda $-6$. Nilai terbesar yang dapat dicapai oleh jumlah $n$ suku pertama ($n$ bilangan asli) adalah ....",
+        "jawaban": "$234$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jumlah_deret",
+      "alasan_level": "Target hard; variasi konsep jumlah deret. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah deret aritmetika memiliki suku pertama 6 dan beda 4. Tentukan jumlah 6 suku pertamanya.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "S_n=n(2a+(n-1)b)/2 = 6(2×6+(6-1)×4)/2 = 96.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan $97$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan $95$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah jumlah deret pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Pilihan $98$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah jumlah deret pada pembahasan."
+        }
+      ],
+      "pembahasan": "S_n=n(2a+(n-1)b)/2 = 6(2×6+(6-1)×4)/2 = 96.",
+      "catatan": "codex-replenishment:kelas10-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "313c2bb0927ceaa030984ee4",
+        "teks": "Deret $P$: $12+3+\\frac{3}{4}+\\dots$ adalah deret geometri tak hingga. Deret geometri tak hingga $Q$ memiliki suku pertama 9 dan jumlahnya dua kali jumlah deret $P$. Rasio deret $Q$ adalah ....",
+        "jawaban": "$\\frac{23}{32}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=57$ dan $S_5=110$. Berapa n terkecil dengan $S_n>616$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=22, jadi a=16, d=3. Selesaikan n(2a+(n-1)d)/2>616. Batas positif n=16, sehingga n terkecil 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=22, jadi a=16, d=3. Selesaikan n(2a+(n-1)d)/2>616. Batas positif n=16, sehingga n terkecil 17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0db5301f48d71c5ac84e1e76",
+        "teks": "Suatu deret geometri tak hingga konvergen dengan jumlah 9 dan suku kedua 2. Suku pertama terbesar yang mungkin adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=60$ dan $S_5=110$. Berapa n terkecil dengan $S_n>630$?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Rumus jumlah memberi a+d=20, a+2d=22, jadi a=18, d=2. Selesaikan n(2a+(n-1)d)/2>630. Batas positif n=18, sehingga n terkecil 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=20, a+2d=22, jadi a=18, d=2. Selesaikan n(2a+(n-1)d)/2>630. Batas positif n=18, sehingga n terkecil 19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "acc7cf996994e6d1987e0e47",
+        "teks": "Suatu deret geometri memiliki suku pertama 2 dan rasio 3. Jumlah 6 suku pertama deret tersebut adalah ....",
+        "jawaban": "$728$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=27$ dan $S_5=65$. Berapa n terkecil dengan $S_n>152$?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Rumus jumlah memberi a+d=9, a+2d=13, jadi a=5, d=4. Selesaikan n(2a+(n-1)d)/2>152. Batas positif n=8, sehingga n terkecil 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=9, a+2d=13, jadi a=5, d=4. Selesaikan n(2a+(n-1)d)/2>152. Batas positif n=8, sehingga n terkecil 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4107fcaac9c69dee681237cb",
+        "teks": "Tentukan jumlah deret geometri tak hingga $16 + 8 + 4 + 2 + \\dots$",
+        "jawaban": "$32$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=66$ dan $S_5=125$. Berapa n terkecil dengan $S_n>325$?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Rumus jumlah memberi a+d=22, a+2d=25, jadi a=19, d=3. Selesaikan n(2a+(n-1)d)/2>325. Batas positif n=10, sehingga n terkecil 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=22, a+2d=25, jadi a=19, d=3. Selesaikan n(2a+(n-1)d)/2>325. Batas positif n=10, sehingga n terkecil 11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "de484adc73d5e86de7f36f4c",
+        "teks": "Diketahui deret aritmetika $3 + 7 + 11 + \\dots + 99$. Jumlah suku-suku yang bernomor genap (suku ke-2, ke-4, ke-6, dan seterusnya) adalah ....",
+        "jawaban": "$612$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_deret_inverse_batas",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Deret aritmetika bersuku pertama dan beda positif memenuhi $S_3=57$ dan $S_5=105$. Berapa n terkecil dengan $S_n>225$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Rumus jumlah memberi a+d=19, a+2d=21, jadi a=17, d=2. Selesaikan n(2a+(n-1)d)/2>225. Batas positif n=9, sehingga n terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rumus jumlah memberi a+d=19, a+2d=21, jadi a=17, d=2. Selesaikan n(2a+(n-1)d)/2>225. Batas positif n=9, sehingga n terkecil 10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-b-hard-bt01-025"
     }
   ]
 }

@@ -765,6 +765,1486 @@
       "pembahasan": "Misalkan $X$ adalah banyaknya sensor yang berhasil mendeteksi gas, maka $X \\sim B(5;\\, 0{,}6)$ dengan $q = 1 - 0{,}6 = 0{,}4$.\n\nPeluang alarm berbunyi pada sistem lama: $P_{\\text{lama}} = P(X \\ge 3) = P(X = 3) + P(X = 4) + P(X = 5)$.\nPeluang alarm berbunyi pada sistem baru: $P_{\\text{baru}} = P(X \\ge 4) = P(X = 4) + P(X = 5)$.\n\nPenurunan peluang berbunyinya alarm adalah:\n$\\Delta P = P_{\\text{lama}} - P_{\\text{baru}} = [P(X = 3) + P(X = 4) + P(X = 5)] - [P(X = 4) + P(X = 5)] = P(X = 3)$\n\nMaka kita cukup menghitung peluang tepat $3$ sensor mendeteksi gas:\n$P(X = 3) = \\binom{5}{3} (0{,}6)^3 (0{,}4)^{5-3}$\n$P(X = 3) = 10 \\cdot (0{,}216) \\cdot (0{,}16)$\n$P(X = 3) = 10 \\cdot 0{,}03456 = 0{,}3456$.\n\nJadi, penurunan peluang berbunyinya alarm adalah $0{,}3456$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 4 percobaan independen dengan peluang sukses $\\frac{1}{2}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{15}{16}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(1/2)^j(1-1/2)^(4-j)=15/16.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{16}$",
+          "alasan": "Nilai $\\frac{31}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{16}$",
+          "alasan": "Nilai $- \\frac{1}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{47}{16}$",
+          "alasan": "Nilai $\\frac{47}{16}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(1/2)^j(1-1/2)^(4-j)=15/16.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{94235199}{100000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,8: ΣC(8,j)(3/10)^j(1-3/10)^(8-j)=94235199/100000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{194235199}{100000000}$",
+          "alasan": "Nilai $\\frac{194235199}{100000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{5764801}{100000000}$",
+          "alasan": "Nilai $- \\frac{5764801}{100000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{294235199}{100000000}$",
+          "alasan": "Nilai $\\frac{294235199}{100000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,8: ΣC(8,j)(3/10)^j(1-3/10)^(8-j)=94235199/100000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{9997813}{10000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=9997813/10000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19997813}{10000000}$",
+          "alasan": "Nilai $\\frac{19997813}{10000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2187}{10000000}$",
+          "alasan": "Nilai $- \\frac{2187}{10000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{29997813}{10000000}$",
+          "alasan": "Nilai $\\frac{29997813}{10000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=9997813/10000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 4 sukses?",
+      "jawaban_benar": "$\\frac{1701}{3125}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=4,...,6: ΣC(6,j)(3/5)^j(1-3/5)^(6-j)=1701/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4826}{3125}$",
+          "alasan": "Nilai $\\frac{4826}{3125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1424}{3125}$",
+          "alasan": "Nilai $- \\frac{1424}{3125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{7951}{3125}$",
+          "alasan": "Nilai $\\frac{7951}{3125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=4,...,6: ΣC(6,j)(3/5)^j(1-3/5)^(6-j)=1701/3125.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+      "jawaban_benar": "$\\frac{761}{9765625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=8,...,10: ΣC(10,j)(1/5)^j(1-1/5)^(10-j)=761/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9766386}{9765625}$",
+          "alasan": "Nilai $\\frac{9766386}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{9764864}{9765625}$",
+          "alasan": "Nilai $- \\frac{9764864}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{19532011}{9765625}$",
+          "alasan": "Nilai $\\frac{19532011}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=8,...,10: ΣC(10,j)(1/5)^j(1-1/5)^(10-j)=761/9765625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 3 sukses?",
+      "jawaban_benar": "$\\frac{267424}{390625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=3,...,8: ΣC(8,j)(2/5)^j(1-2/5)^(8-j)=267424/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{658049}{390625}$",
+          "alasan": "Nilai $\\frac{658049}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{123201}{390625}$",
+          "alasan": "Nilai $- \\frac{123201}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1048674}{390625}$",
+          "alasan": "Nilai $\\frac{1048674}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=3,...,8: ΣC(8,j)(2/5)^j(1-2/5)^(8-j)=267424/390625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{882351}{1000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,6: ΣC(6,j)(3/10)^j(1-3/10)^(6-j)=882351/1000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1882351}{1000000}$",
+          "alasan": "Nilai $\\frac{1882351}{1000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{117649}{1000000}$",
+          "alasan": "Nilai $- \\frac{117649}{1000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{2882351}{1000000}$",
+          "alasan": "Nilai $\\frac{2882351}{1000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,6: ΣC(6,j)(3/10)^j(1-3/10)^(6-j)=882351/1000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 2 sukses?",
+      "jawaban_benar": "$\\frac{401998383}{500000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=2,...,9: ΣC(9,j)(3/10)^j(1-3/10)^(9-j)=401998383/500000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{901998383}{500000000}$",
+          "alasan": "Nilai $\\frac{901998383}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{98001617}{500000000}$",
+          "alasan": "Nilai $- \\frac{98001617}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1401998383}{500000000}$",
+          "alasan": "Nilai $\\frac{1401998383}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=2,...,9: ΣC(9,j)(3/10)^j(1-3/10)^(9-j)=401998383/500000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+      "jawaban_benar": "$\\frac{231415583}{500000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=7,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=231415583/500000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{731415583}{500000000}$",
+          "alasan": "Nilai $\\frac{731415583}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{268584417}{500000000}$",
+          "alasan": "Nilai $- \\frac{268584417}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1231415583}{500000000}$",
+          "alasan": "Nilai $\\frac{1231415583}{500000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=7,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=231415583/500000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 5 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 3 sukses?",
+      "jawaban_benar": "$\\frac{4077}{25000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=3,...,5: ΣC(5,j)(3/10)^j(1-3/10)^(5-j)=4077/25000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29077}{25000}$",
+          "alasan": "Nilai $\\frac{29077}{25000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{20923}{25000}$",
+          "alasan": "Nilai $- \\frac{20923}{25000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{54077}{25000}$",
+          "alasan": "Nilai $\\frac{54077}{25000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=3,...,5: ΣC(5,j)(3/10)^j(1-3/10)^(5-j)=4077/25000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 6 sukses?",
+      "jawaban_benar": "$\\frac{5989}{1953125}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=6,...,9: ΣC(9,j)(1/5)^j(1-1/5)^(9-j)=5989/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1959114}{1953125}$",
+          "alasan": "Nilai $\\frac{1959114}{1953125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1947136}{1953125}$",
+          "alasan": "Nilai $- \\frac{1947136}{1953125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{3912239}{1953125}$",
+          "alasan": "Nilai $\\frac{3912239}{1953125}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=6,...,9: ΣC(9,j)(1/5)^j(1-1/5)^(9-j)=5989/1953125.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+      "jawaban_benar": "$\\frac{6620049}{625000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/10)^j(1-3/10)^(10-j)=6620049/625000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{631620049}{625000000}$",
+          "alasan": "Nilai $\\frac{631620049}{625000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{618379951}{625000000}$",
+          "alasan": "Nilai $- \\frac{618379951}{625000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1256620049}{625000000}$",
+          "alasan": "Nilai $\\frac{1256620049}{625000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/10)^j(1-3/10)^(10-j)=6620049/625000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{16807}{40000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,6: ΣC(6,j)(7/10)^j(1-7/10)^(6-j)=16807/40000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{56807}{40000}$",
+          "alasan": "Nilai $\\frac{56807}{40000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{23193}{40000}$",
+          "alasan": "Nilai $- \\frac{23193}{40000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{96807}{40000}$",
+          "alasan": "Nilai $\\frac{96807}{40000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,6: ΣC(6,j)(7/10)^j(1-7/10)^(6-j)=16807/40000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecd1b26906373764fdb2cd1a",
+        "teks": "Sekeping uang logam seimbang dilemparkan sebanyak 6 kali. Peluang untuk mendapatkan tepat 4 sisi gambar adalah ....",
+        "jawaban": "$\\frac{15}{64}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 percobaan independen dengan peluang sukses $\\frac{1}{2}$, berapa peluang terdapat paling sedikit 6 sukses?",
+      "jawaban_benar": "$\\frac{37}{256}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=6,...,8: ΣC(8,j)(1/2)^j(1-1/2)^(8-j)=37/256.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{293}{256}$",
+          "alasan": "Nilai $\\frac{293}{256}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{219}{256}$",
+          "alasan": "Nilai $- \\frac{219}{256}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{549}{256}$",
+          "alasan": "Nilai $\\frac{549}{256}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=6,...,8: ΣC(8,j)(1/2)^j(1-1/2)^(8-j)=37/256.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{1504}{15625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(2/5)^j(1-2/5)^(7-j)=1504/15625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17129}{15625}$",
+          "alasan": "Nilai $\\frac{17129}{15625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{14121}{15625}$",
+          "alasan": "Nilai $- \\frac{14121}{15625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{32754}{15625}$",
+          "alasan": "Nilai $\\frac{32754}{15625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(2/5)^j(1-2/5)^(7-j)=1504/15625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{286497}{390625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(3/5)^j(1-3/5)^(9-j)=286497/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{677122}{390625}$",
+          "alasan": "Nilai $\\frac{677122}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{104128}{390625}$",
+          "alasan": "Nilai $- \\frac{104128}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1067747}{390625}$",
+          "alasan": "Nilai $\\frac{1067747}{390625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(3/5)^j(1-3/5)^(9-j)=286497/390625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "461ddd7cc1beaeff2d7369f0",
+        "teks": "Peluang seseorang sembuh dari suatu penyakit setelah menjalani terapi adalah 0,75. Jika terdapat 60 pasien yang menjalani terapi tersebut, nilai harapan banyaknya pasien yang sembuh adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{45059567}{50000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=45059567/50000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{95059567}{50000000}$",
+          "alasan": "Nilai $\\frac{95059567}{50000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{4940433}{50000000}$",
+          "alasan": "Nilai $- \\frac{4940433}{50000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{145059567}{50000000}$",
+          "alasan": "Nilai $\\frac{145059567}{50000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,9: ΣC(9,j)(7/10)^j(1-7/10)^(9-j)=45059567/50000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8ed394f13ae981e0a11706d",
+        "teks": "Peluang sebuah bibit tanaman berhasil tumbuh adalah 0,8. Jika seorang petani menanam 4 bibit secara terpisah dan saling bebas, peluang tepat 1 bibit yang tumbuh adalah ....",
+        "jawaban": "0,0256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 7 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 5 sukses?",
+      "jawaban_benar": "$\\frac{1294139}{2000000}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=1294139/2000000.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3294139}{2000000}$",
+          "alasan": "Nilai $\\frac{3294139}{2000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{705861}{2000000}$",
+          "alasan": "Nilai $- \\frac{705861}{2000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5294139}{2000000}$",
+          "alasan": "Nilai $\\frac{5294139}{2000000}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=5,...,7: ΣC(7,j)(7/10)^j(1-7/10)^(7-j)=1294139/2000000.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 7 sukses?",
+      "jawaban_benar": "$\\frac{3733209}{9765625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/5)^j(1-3/5)^(10-j)=3733209/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13498834}{9765625}$",
+          "alasan": "Nilai $\\frac{13498834}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{6032416}{9765625}$",
+          "alasan": "Nilai $- \\frac{6032416}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{23264459}{9765625}$",
+          "alasan": "Nilai $\\frac{23264459}{9765625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=7,...,10: ΣC(10,j)(3/5)^j(1-3/5)^(10-j)=3733209/9765625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e09ee73ffc7d3deef9194",
+        "teks": "Suatu variabel acak $X$ berdistribusi binomial dengan banyaknya percobaan $n = 50$ dan peluang sukses pada setiap percobaan $p = 0,3$. Nilai harapan $E(X)$ dari variabel acak tersebut adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "binomial_kumulatif",
+      "alasan_level": "Target hard; variasi konsep binomial kumulatif. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+      "jawaban_benar": "$\\frac{544}{625}$",
+      "alasan_benar": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(2/5)^j(1-2/5)^(4-j)=544/625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1169}{625}$",
+          "alasan": "Nilai $\\frac{1169}{625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{81}{625}$",
+          "alasan": "Nilai $- \\frac{81}{625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{1794}{625}$",
+          "alasan": "Nilai $\\frac{1794}{625}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(2/5)^j(1-2/5)^(4-j)=544/625.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-f-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e498be34a815add6e65074c1",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{3}{10}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{18}{5}$ dan $\\operatorname{Var}(X)=\\frac{54}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{7424}{1953125}$",
+      "alasan_benar": "Dari np=18/5 dan np(1-p)=54/25, p=1-Var/E=2/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7424/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1945701}{1953125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{55115776}{3814697265625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7424}{1953125}$."
+        },
+        {
+          "teks": "$\\frac{3712}{1953125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=18/5 dan np(1-p)=54/25, p=1-Var/E=2/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7424/1953125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fe54d5dbdb548f762a6b720",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{3}{10}$. Tentukan $P(X=9)$.",
+        "jawaban": "$\\frac{137781}{1000000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{24}{5}$ dan $\\operatorname{Var}(X)=\\frac{48}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{41553}{390625}$",
+      "alasan_benar": "Dari np=24/5 dan np(1-p)=48/25, p=1-Var/E=3/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=41553/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{349072}{390625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1726651809}{152587890625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{41553}{390625}$."
+        },
+        {
+          "teks": "$\\frac{41553}{781250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=24/5 dan np(1-p)=48/25, p=1-Var/E=3/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=41553/390625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{10}{3}$ dan $\\operatorname{Var}(X)=\\frac{10}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{112}{243}$",
+      "alasan_benar": "Dari np=10/3 dan np(1-p)=10/9, p=1-Var/E=2/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=112/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{131}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{12544}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{112}{243}$."
+        },
+        {
+          "teks": "$\\frac{56}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=10/3 dan np(1-p)=10/9, p=1-Var/E=2/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=112/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94af6823af16d247691128a1",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{3733209}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{20}{3}$ dan $\\operatorname{Var}(X)=\\frac{20}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{2048}{19683}$",
+      "alasan_benar": "Dari np=20/3 dan np(1-p)=20/9, p=1-Var/E=2/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2048/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17635}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4194304}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2048}{19683}$."
+        },
+        {
+          "teks": "$\\frac{1024}{19683}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=20/3 dan np(1-p)=20/9, p=1-Var/E=2/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2048/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{5}{3}$ dan $\\operatorname{Var}(X)=\\frac{10}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{11}{243}$",
+      "alasan_benar": "Dari np=5/3 dan np(1-p)=10/9, p=1-Var/E=1/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=11/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{232}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{121}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{11}{243}$."
+        },
+        {
+          "teks": "$\\frac{11}{486}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=5/3 dan np(1-p)=10/9, p=1-Var/E=1/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=11/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "964a7253e7b866d334625299",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{6}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=4$ dan $\\operatorname{Var}(X)=\\frac{12}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{16384}{9765625}$",
+      "alasan_benar": "Dari np=4 dan np(1-p)=12/5, p=1-Var/E=2/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=16384/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9749241}{9765625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{268435456}{95367431640625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{16384}{9765625}$."
+        },
+        {
+          "teks": "$\\frac{8192}{9765625}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=4 dan np(1-p)=12/5, p=1-Var/E=2/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=16384/9765625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{7}{3}$ dan $\\operatorname{Var}(X)=\\frac{14}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{5}{729}$",
+      "alasan_benar": "Dari np=7/3 dan np(1-p)=14/9, p=1-Var/E=1/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=5/729.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{724}{729}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{25}{531441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{5}{729}$."
+        },
+        {
+          "teks": "$\\frac{5}{1458}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=7/3 dan np(1-p)=14/9, p=1-Var/E=1/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=5/729.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ea63af141cb79e167c2cfb",
+        "teks": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{544}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{27}{5}$ dan $\\operatorname{Var}(X)=\\frac{54}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{137781}{1953125}$",
+      "alasan_benar": "Dari np=27/5 dan np(1-p)=54/25, p=1-Var/E=3/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=137781/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1815344}{1953125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{18983603961}{3814697265625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{137781}{1953125}$."
+        },
+        {
+          "teks": "$\\frac{137781}{3906250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=27/5 dan np(1-p)=54/25, p=1-Var/E=3/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=137781/1953125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=2$ dan $\\operatorname{Var}(X)=\\frac{4}{3}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{13}{729}$",
+      "alasan_benar": "Dari np=2 dan np(1-p)=4/3, p=1-Var/E=1/3 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=13/729.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{716}{729}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{531441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{729}$."
+        },
+        {
+          "teks": "$\\frac{13}{1458}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=2 dan np(1-p)=4/3, p=1-Var/E=1/3 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=13/729.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3f44ae16e8fbdceb3d34c7e",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+        "jawaban": "$\\frac{761}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=6$ dan $\\operatorname{Var}(X)=2$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{2816}{19683}$",
+      "alasan_benar": "Dari np=6 dan np(1-p)=2, p=1-Var/E=2/3 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2816/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16867}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{7929856}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2816}{19683}$."
+        },
+        {
+          "teks": "$\\frac{1408}{19683}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=6 dan np(1-p)=2, p=1-Var/E=2/3 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2816/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3f44ae16e8fbdceb3d34c7e",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+        "jawaban": "$\\frac{761}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=6$ dan $\\operatorname{Var}(X)=\\frac{12}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{452709}{9765625}$",
+      "alasan_benar": "Dari np=6 dan np(1-p)=12/5, p=1-Var/E=3/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=452709/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9312916}{9765625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{204945438681}{95367431640625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{452709}{9765625}$."
+        },
+        {
+          "teks": "$\\frac{452709}{19531250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=6 dan np(1-p)=12/5, p=1-Var/E=3/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=452709/9765625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{18}{5}$ dan $\\operatorname{Var}(X)=\\frac{36}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{729}{3125}$",
+      "alasan_benar": "Dari np=18/5 dan np(1-p)=36/25, p=1-Var/E=3/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=729/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2396}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{531441}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{729}{3125}$."
+        },
+        {
+          "teks": "$\\frac{729}{6250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=18/5 dan np(1-p)=36/25, p=1-Var/E=3/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=729/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e77dba4467cc3dba39d26524",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{1}{5}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{96}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{14}{3}$ dan $\\operatorname{Var}(X)=\\frac{14}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{64}{243}$",
+      "alasan_benar": "Dari np=14/3 dan np(1-p)=14/9, p=1-Var/E=2/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=64/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{179}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4096}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{64}{243}$."
+        },
+        {
+          "teks": "$\\frac{32}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=14/3 dan np(1-p)=14/9, p=1-Var/E=2/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=64/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ea63af141cb79e167c2cfb",
+        "teks": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{544}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{16}{5}$ dan $\\operatorname{Var}(X)=\\frac{48}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{3328}{390625}$",
+      "alasan_benar": "Dari np=16/5 dan np(1-p)=48/25, p=1-Var/E=2/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=3328/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{387297}{390625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{11075584}{152587890625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3328}{390625}$."
+        },
+        {
+          "teks": "$\\frac{1664}{390625}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=16/5 dan np(1-p)=48/25, p=1-Var/E=2/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=3328/390625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8c376fa0a7a5142de14746",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+        "jawaban": "$\\frac{286497}{390625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=3$ dan $\\operatorname{Var}(X)=\\frac{6}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{1053}{3125}$",
+      "alasan_benar": "Dari np=3 dan np(1-p)=6/5, p=1-Var/E=3/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1053/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2072}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1108809}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1053}{3125}$."
+        },
+        {
+          "teks": "$\\frac{1053}{6250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=3 dan np(1-p)=6/5, p=1-Var/E=3/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1053/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d4682f8a03b8106306b66502",
+        "teks": "Dari 7 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+        "jawaban": "$\\frac{1504}{15625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{12}{5}$ dan $\\operatorname{Var}(X)=\\frac{36}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{128}{3125}$",
+      "alasan_benar": "Dari np=12/5 dan np(1-p)=36/25, p=1-Var/E=2/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=128/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2997}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{16384}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{128}{3125}$."
+        },
+        {
+          "teks": "$\\frac{64}{3125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=12/5 dan np(1-p)=36/25, p=1-Var/E=2/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=128/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8663204306fdde2df2a35770",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{12}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{10}{3}$ dan $\\operatorname{Var}(X)=\\frac{20}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{7}{19683}$",
+      "alasan_benar": "Dari np=10/3 dan np(1-p)=20/9, p=1-Var/E=1/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19676}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{49}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7}{19683}$."
+        },
+        {
+          "teks": "$\\frac{7}{39366}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=10/3 dan np(1-p)=20/9, p=1-Var/E=1/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{14}{5}$ dan $\\operatorname{Var}(X)=\\frac{42}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{1472}{78125}$",
+      "alasan_benar": "Dari np=14/5 dan np(1-p)=42/25, p=1-Var/E=2/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1472/78125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{76653}{78125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{2166784}{6103515625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1472}{78125}$."
+        },
+        {
+          "teks": "$\\frac{736}{78125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=14/5 dan np(1-p)=42/25, p=1-Var/E=2/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1472/78125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb6709b90ace409ade3b74ac",
+        "teks": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{882351}{1000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{21}{5}$ dan $\\operatorname{Var}(X)=\\frac{42}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{12393}{78125}$",
+      "alasan_benar": "Dari np=21/5 dan np(1-p)=42/25, p=1-Var/E=3/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=12393/78125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65732}{78125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{153586449}{6103515625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{12393}{78125}$."
+        },
+        {
+          "teks": "$\\frac{12393}{156250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=21/5 dan np(1-p)=42/25, p=1-Var/E=3/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=12393/78125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=2$ dan $\\operatorname{Var}(X)=\\frac{6}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{272}{3125}$",
+      "alasan_benar": "Dari np=2 dan np(1-p)=6/5, p=1-Var/E=2/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=272/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2853}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{73984}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{272}{3125}$."
+        },
+        {
+          "teks": "$\\frac{136}{3125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=2 dan np(1-p)=6/5, p=1-Var/E=2/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=272/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-058"
     }
   ]
 }

@@ -16,7 +16,7 @@ def mark_completed_export(base, book, batch, rows, meta, skipped):
     marker = base / "extraction_ready.json"
     marker.unlink(missing_ok=True)
     from .workflow import managed, validation_allowed
-    if managed(base) and not validation_allowed(base):
+    if (managed(base) or (base / "reference_replenishment_state.json").exists()) and not validation_allowed(base):
         return False
     expected = set()
     for number in range(1, 40):

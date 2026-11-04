@@ -685,6 +685,80 @@
       "pembahasan": "Penjumlahan menghasilkan $\\frac{3}{2} > 1$, tidak mungkin. Gunakan komplemen: tidak ada angka sama sekali berpeluang $(\\frac{1}{2})^3 = \\frac{1}{8}$, sehingga hasilnya $1 - \\frac{1}{8} = \\frac{7}{8}$.",
       "catatan": null,
       "id": "kelas10-b07-c-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7cdd754e2e000bbdb5f24ea",
+        "teks": "Bima berkata, \"Untuk setiap dua kejadian $A$ dan $B$ berlaku $P(A \\text{ dan } B) = P(A) \\times P(B)$.\" Semua kartu bernomor 1 sampai 5 pada situasi berikut diambil secara acak. Situasi manakah yang menjadi contoh penyangkal klaim Bima?",
+        "jawaban": "Dua kartu bernomor 1 sampai 5 diambil satu per satu tanpa pengembalian; $A$: kartu pertama ganjil, $B$: kartu kedua ganjil",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "peluang_tanpa_pengembalian",
+      "alasan_level": "Target hard; variasi konsep peluang tanpa pengembalian. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah kotak berisi 7 bola merah dan 8 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Peluang merah pertama 7/15; setelah itu merah kedua 6/14. Hasil kali keduanya 1/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{49}{225}$",
+          "alasan": "Pilihan $\\frac{49}{225}$ lebih besar sebesar $\\frac{4}{225}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1}{5}$. Periksa kembali langkah peluang tanpa pengembalian pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Pilihan $\\frac{8}{15}$ lebih besar sebesar $\\frac{1}{3}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1}{5}$. Periksa kembali langkah peluang tanpa pengembalian pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{15}$",
+          "alasan": "Pilihan $\\frac{7}{15}$ lebih besar sebesar $\\frac{4}{15}$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1}{5}$. Periksa kembali langkah peluang tanpa pengembalian pada pembahasan."
+        }
+      ],
+      "pembahasan": "Peluang merah pertama 7/15; setelah itu merah kedua 6/14. Hasil kali keduanya 1/5.",
+      "catatan": "codex-replenishment:kelas10-b07-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b07-c-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5a5e673210f0bbf59ce9f83",
+        "teks": "Dua dadu setimbang, satu merah dan satu putih, dilempar bersamaan.\n\nPeluang bahwa dadu merah menunjukkan mata ganjil dan dadu putih menunjukkan mata 6 adalah ....",
+        "jawaban": "$\\frac{1}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_campuran_inverse_peluang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pabrik A dan B menyuplai barang; proporsi dari A belum diketahui. Peluang lolos uji barang A adalah $\\frac{9}{10}$, barang B $\\frac{7}{10}$. Peluang lolos uji seluruh barang $\\frac{39}{50}$. Jika sebuah barang ternyata lolos, berapa peluang berasal dari A?",
+      "jawaban_benar": "$\\frac{6}{13}$",
+      "alasan_benar": "Tulis proporsi A=p. Persamaan 9/10p+7/10(1-p)=39/50 memberi p=2/5. Bagian yang sekaligus A dan lolos 9/25; bagi peluang lolos 39/50, hasil 6/13.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{13}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{36}{169}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{6}{13}$."
+        },
+        {
+          "teks": "$\\frac{3}{13}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Tulis proporsi A=p. Persamaan 9/10p+7/10(1-p)=39/50 memberi p=2/5. Bagian yang sekaligus A dan lolos 9/25; bagi peluang lolos 39/50, hasil 6/13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b07-c-hard-bt01-022"
     }
   ]
 }

@@ -429,6 +429,487 @@
       "pembahasan": "Jumlah bibit 30 + 42 = 72. Rasio pucuk merah terhadap cemara adalah 30 : 42. Kedua bilangan dibagi 6, sehingga diperoleh 5 : 7. Jadi, klaim Beni benar.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ac51110ac916c2aee8608eb8",
+        "teks": "Di kebun, rasio pohon pucuk merah terhadap pohon cemara adalah 5 : 7. Tersedia 72 bibit. Beni berkata 30 bibit pucuk merah dan 42 bibit cemara sudah sesuai rasio. Apakah klaim Beni benar? Pilih alasan yang tepat.",
+        "jawaban": "Benar, karena rasio 30 : 42 disederhanakan menjadi 5 : 7 dan jumlahnya 72.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rasio_satuan",
+      "alasan_level": "Target hard; variasi konsep rasio satuan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Satu paket berisi 12 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?",
+      "jawaban_benar": "$5000$",
+      "alasan_benar": "Harga satuan = 60000/12 = 5000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$5001$",
+          "alasan": "Pilihan $5001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        },
+        {
+          "teks": "$4999$",
+          "alasan": "Pilihan $4999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        },
+        {
+          "teks": "$5002$",
+          "alasan": "Pilihan $5002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Harga satuan = 60000/12 = 5000 rupiah.",
+      "catatan": "codex-replenishment:kelas6-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-a-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9b15829d69ec6b36a960abd",
+        "teks": "Paket A berisi 12 bibit seharga Rp72.000. Paket B berisi 15 bibit seharga Rp82.500. Raka memilih Paket A karena harga totalnya lebih rendah. Paket mana yang lebih murah per bibit, dan berapa selisihnya?",
+        "jawaban": "Paket B, lebih murah Rp500 per bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rasio_satuan",
+      "alasan_level": "Target hard; variasi konsep rasio satuan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Satu paket berisi 6 bibit dan harganya Rp48.000,00. Berapa harga setiap bibit jika harganya sama?",
+      "jawaban_benar": "$8000$",
+      "alasan_benar": "Harga satuan = 48000/6 = 8000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$8001$",
+          "alasan": "Pilihan $8001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        },
+        {
+          "teks": "$7999$",
+          "alasan": "Pilihan $7999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        },
+        {
+          "teks": "$8002$",
+          "alasan": "Pilihan $8002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Harga satuan = 48000/6 = 8000 rupiah.",
+      "catatan": "codex-replenishment:kelas6-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17eed5c427f20fe2f965bf95",
+        "teks": "Paket A berisi 6 bibit seharga Rp42.000. Paket B berisi 10 bibit seharga Rp65.000.\n\nPaket mana yang memiliki harga per bibit lebih murah, dan berapa selisih harga per bibitnya?",
+        "jawaban": "Paket B, lebih murah Rp500 per bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rasio_satuan",
+      "alasan_level": "Target hard; variasi konsep rasio satuan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Satu paket berisi 6 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?",
+      "jawaban_benar": "$10000$",
+      "alasan_benar": "Harga satuan = 60000/6 = 10000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$10001$",
+          "alasan": "Pilihan $10001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        },
+        {
+          "teks": "$9999$",
+          "alasan": "Pilihan $9999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        },
+        {
+          "teks": "$10002$",
+          "alasan": "Pilihan $10002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $10000$. Periksa kembali langkah rasio satuan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Harga satuan = 60000/6 = 10000 rupiah.",
+      "catatan": "codex-replenishment:kelas6-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0535d567e1054c5eb67fe549",
+        "teks": "Di dua petak kebun, rasio bunga merah terhadap bunga kuning masing-masing 6 : 9 dan 8 : 12. Pernyataan mana yang benar?",
+        "jawaban": "Kedua petak memiliki rasio bunga merah terhadap bunga kuning yang sama.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 2:6. Setelah 1 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{19}{53}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 1?",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 9. Maka awal A=18, B=54; selisih B-(A+1)=35.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $35$."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $35$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 9. Maka awal A=18, B=54; selisih B-(A+1)=35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f56c4aafcbf8efb326d78225",
+        "teks": "Untuk 28 teman, Dita menyiapkan 12 liter minuman. Jika siang hari datang 21 teman, berapa liter minuman yang perlu disiapkan agar setiap teman mendapat bagian sama?",
+        "jawaban": "9 liter",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 3:4. Setelah 9 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{6}{5}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 9?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 11. Maka awal A=33, B=44; selisih B-(A+9)=2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 11. Maka awal A=33, B=44; selisih B-(A+9)=2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "251cbef8e93c1058efebfea6",
+        "teks": "Di kebun, rasio pohon mangga terhadap pohon jambu adalah 5 : 8. Jika ada 40 pohon jambu, berapa rasio pohon jambu terhadap pohon mangga?",
+        "jawaban": "8 : 5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 4:7. Setelah 7 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{47}{63}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 7?",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 10. Maka awal A=40, B=70; selisih B-(A+7)=23.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 10. Maka awal A=40, B=70; selisih B-(A+7)=23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a8f1f358ba67161950f48f7c",
+        "teks": "Bentuk paling sederhana dari rasio 18 : 30 adalah ....",
+        "jawaban": "3 : 5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 4:8. Setelah 1 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{7}{13}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 1?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 5. Maka awal A=20, B=40; selisih B-(A+1)=19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 5. Maka awal A=20, B=40; selisih B-(A+1)=19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e25c8a6685e151bc1b1ef58e",
+        "teks": "Di kebun, rasio tanaman mawar terhadap tanaman melati adalah 3 : 4. Jika ada 12 tanaman mawar, berapa tanaman melati?",
+        "jawaban": "16 tanaman melati",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 2:5. Setelah 5 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{17}{25}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 5?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 6. Maka awal A=12, B=30; selisih B-(A+5)=13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 6. Maka awal A=12, B=30; selisih B-(A+5)=13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "320a7fdb091575a62cdb3c42",
+        "teks": "Di sebuah taman, ada 42 pengunjung di wahana _roller coaster_. Rasio pengunjung bianglala terhadap _roller coaster_ adalah 5 : 7. Berapa pengunjung bianglala?",
+        "jawaban": "30 orang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 4:5. Setelah 3 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{13}{14}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 3?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 9. Maka awal A=36, B=45; selisih B-(A+3)=6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 9. Maka awal A=36, B=45; selisih B-(A+3)=6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0535d567e1054c5eb67fe549",
+        "teks": "Di dua petak kebun, rasio bunga merah terhadap bunga kuning masing-masing 6 : 9 dan 8 : 12. Pernyataan mana yang benar?",
+        "jawaban": "Kedua petak memiliki rasio bunga merah terhadap bunga kuning yang sama.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 4:8. Setelah 4 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{5}{7}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 4?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 4. Maka awal A=16, B=32; selisih B-(A+4)=12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 4. Maka awal A=16, B=32; selisih B-(A+4)=12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "66253a05e5500e61c140de5d",
+        "teks": "Satu paket berisi 6 bibit dan harganya Rp48.000,00. Berapa harga setiap bibit jika harganya sama?",
+        "jawaban": "$8000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 2:4. Setelah 5 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{5}{7}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 5?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 10. Maka awal A=20, B=40; selisih B-(A+5)=15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $15$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $15$."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 10. Maka awal A=20, B=40; selisih B-(A+5)=15.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9b15829d69ec6b36a960abd",
+        "teks": "Paket A berisi 12 bibit seharga Rp72.000. Paket B berisi 15 bibit seharga Rp82.500. Raka memilih Paket A karena harga totalnya lebih rendah. Paket mana yang lebih murah per bibit, dan berapa selisihnya?",
+        "jawaban": "Paket B, lebih murah Rp500 per bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 3:4. Setelah 8 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{19}{16}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 8?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 10. Maka awal A=30, B=40; selisih B-(A+8)=2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 10. Maka awal A=30, B=40; selisih B-(A+8)=2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dc3e7eba90575c5e5d68f539",
+        "teks": "Di taman hiburan, ada 56 pengunjung yang antre di wahana Roller Coaster. Rasio pengunjung Bianglala terhadap Roller Coaster adalah 6 : 8. Berapa pengunjung yang antre di Bianglala?",
+        "jawaban": "42 orang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_bagian_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rasio pensil kotak A:B semula 4:8. Setelah 4 pensil dari B dipindahkan ke A, rasionya menjadi $\\frac{7}{11}$:1. Berapa selisih jumlah pensil B semula dengan A semula yang ditambah 4?",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 6. Maka awal A=24, B=48; selisih B-(A+4)=20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis jumlah awal u bagian dan v bagian. Rasio sesudah pemindahan menentukan satu bagian 6. Maka awal A=24, B=48; selisih B-(A+4)=20.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-a-hard-bt01-023"
     }
   ]
 }

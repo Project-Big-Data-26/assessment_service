@@ -238,6 +238,80 @@
       "pembahasan": "Dua sudut kaki sama besar, puncak 3 kali sudut kaki, jadi ada 1 + 1 + 3 = 5 bagian sama besar yang jumlahnya 180°. Satu bagian 36°, puncak 108°, tumpul.",
       "catatan": null,
       "id": "kelas5-b07-a-hard-bt01-007"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ae33275517e0a04c77f8fc5",
+        "teks": "Sebuah segitiga sama kaki berkeliling 40 cm. Panjang setiap sisinya bilangan bulat cm. Banyak ukuran segitiga sama kaki yang berbeda yang mungkin adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_segitiga",
+      "alasan_level": "Target hard; variasi konsep ciri segitiga. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah segitiga sama kaki mempunyai alas 6 cm dan kedua sisi lainnya masing-masing 8 cm. Berapa kelilingnya?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Dua sisi sama panjang merupakan ciri segitiga sama kaki. Keliling=6+8+8=22 cm.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah ciri segitiga pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan $21$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah ciri segitiga pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah ciri segitiga pada pembahasan."
+        }
+      ],
+      "pembahasan": "Dua sisi sama panjang merupakan ciri segitiga sama kaki. Keliling=6+8+8=22 cm.",
+      "catatan": "codex-replenishment:kelas5-b07-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b07-a-hard-bt01-008"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4d3b09e5302c50daa7a5d703",
+        "teks": "Sebuah segitiga sama kaki mempunyai alas 4 cm dan kedua sisi lainnya masing-masing 9 cm. Berapa kelilingnya?",
+        "jawaban": "$22$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_ciri_segitiga_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga mempunyai tepat dua sisi sama panjang. Kelilingnya 29 cm. Sisi yang tidak sama 2 cm lebih panjang daripada masing-masing sisi sama. Tentukan panjang sisi tidak sama.",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Sifat segitiga sama kaki memberi dua kaki sama. Jika kaki x, alas x-(-2); maka 3x-(-2)=29, x=9. Alas 11. Periksa 2×9>11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sifat segitiga sama kaki memberi dua kaki sama. Jika kaki x, alas x-(-2); maka 3x-(-2)=29, x=9. Alas 11. Periksa 2×9>11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b07-a-hard-bt01-009"
     }
   ]
 }

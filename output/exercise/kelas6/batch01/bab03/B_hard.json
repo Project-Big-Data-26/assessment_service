@@ -345,6 +345,191 @@
       "pembahasan": "Tampak atas membantu menunjukkan posisi kubus pada setiap tempat. Maka Mira perlu meminta tampak atas.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb242a99154441662b4a59b0",
+        "teks": "Doni hanya menerima gambar tampak depan sebuah bangunan dari kubus. Kesimpulan apa yang tepat?",
+        "jawaban": "Tampak depan saja belum tentu menentukan susunan kubus dengan pasti",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (5,4); tampak samping memberi maksimum tiap baris (5,3). Diketahui b=4. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Karena b=4<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=4<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-009"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b198b772d51ab61ccccc752f",
+        "teks": "Saat sebuah balok diputar, mengapa bentuk tampaknya dapat berubah?",
+        "jawaban": "Sisi balok yang terlihat berubah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (4,1); tampak samping memberi maksimum tiap baris (4,1). Diketahui b=1. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "686938656ac00e8ee35c03cd",
+        "teks": "Susunan kubus memiliki dua posisi berjajar. Tampak atas menunjukkan kedua posisi terisi. Tampak depan menunjukkan tinggi kolom kiri 4 kubus dan kanan 2 kubus. Berapa tinggi kolom kiri jika tampak kanan menunjukkan tinggi 4 kubus?",
+        "jawaban": "4 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (4,3); tampak samping memberi maksimum tiap baris (4,3). Diketahui b=3. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Karena b=3<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=3<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 3, sehingga c atau d harus 3; untuk minimum, pilih satu sel setinggi 3, yang lain 1, selama batas kolom dipenuhi. Total minimum 11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a72b4490bd9509d73d8f729",
+        "teks": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 5, 1, dan 5 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (4,1); tampak samping memberi maksimum tiap baris (4,2). Diketahui b=1. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 2, sehingga c atau d harus 2; untuk minimum, pilih satu sel setinggi 2, yang lain 1, selama batas kolom dipenuhi. Total minimum 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=1<4, maksimum baris depan menentukan a=4. Maksimum baris belakang 2, sehingga c atau d harus 2; untuk minimum, pilih satu sel setinggi 2, yang lain 1, selama batas kolom dipenuhi. Total minimum 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "251dbd679b354e00c5bc9c9d",
+        "teks": "Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 1, 2, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_spasial_minimum_multitampak",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat sel kisi 2×2 semuanya berisi tumpukan kubus tegak tanpa celah. Tingginya a,b pada baris depan, c,d pada baris belakang. Tampak depan memberi maksimum tiap kolom (5,2); tampak samping memberi maksimum tiap baris (5,1). Diketahui b=2. Berapa jumlah kubus paling sedikit yang mungkin?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Karena b=2<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Karena b=2<5, maksimum baris depan menentukan a=5. Maksimum baris belakang 1, sehingga c atau d harus 1; untuk minimum, pilih satu sel setinggi 1, yang lain 1, selama batas kolom dipenuhi. Total minimum 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-b-hard-bt01-013"
     }
   ]
 }

@@ -429,6 +429,413 @@
       "pembahasan": "Karena 2 = 2/1, kebalikannya adalah 1/2. Maka 5/6 ÷ 2 = 5/6 × 1/2 = 5/12. Jadi, Rafi benar.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5887bc5562c12500eb6a3e1",
+        "teks": "Sebuah teko berisi 5 liter kuah. Kuah dituangkan ke mangkuk berkapasitas 2/5 liter. Berapa mangkuk penuh yang dapat diisi?",
+        "jawaban": "12 mangkuk",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pembagian_pecahan_bersyarat",
+      "alasan_level": "Target hard; variasi konsep pembagian pecahan bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia $\\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg. Berapa loyang penuh paling banyak yang dapat dibuat?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Jumlah loyang = (161/4)/(4) = 161/16. Karena yang dihitung loyang penuh, ambil bagian bulatnya, yaitu 10.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10$. Periksa kembali langkah pembagian pecahan bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10$. Periksa kembali langkah pembagian pecahan bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $10$. Periksa kembali langkah pembagian pecahan bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah loyang = (161/4)/(4) = 161/16. Karena yang dihitung loyang penuh, ambil bagian bulatnya, yaitu 10.",
+      "catatan": "codex-replenishment:kelas6-b01-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b01-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d973cebe06cfbe6ae08aedd7",
+        "teks": "Beni menghitung 5/6 ÷ 3 = 5/2 karena ia membagi penyebut dengan 3. Perbaikan manakah yang benar?",
+        "jawaban": "5/6 ÷ 3 = 5/18; bagi pecahan menjadi 3 bagian sama besar.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{4}$ bagiannya dipakai, dan sisanya $18$ kg. Kemudian ditambah 5 kg dan $\\frac{1}{2}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{3}{4}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 24 kg. Stok setelah tambahan 23; sesudah pemakaian kedua tersisa 23/2. Bagi berat tiap kemasan dan ambil bagian bulat: 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $15$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $15$."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 24 kg. Stok setelah tambahan 23; sesudah pemakaian kedua tersisa 23/2. Bagi berat tiap kemasan dan ambil bagian bulat: 15.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "92b9f497ba478046a9e87fca",
+        "teks": "Sebanyak 7/12 liter sari buah dibagi rata ke dalam 3 botol. Berapa liter sari buah di dalam 2 botol?",
+        "jawaban": "7/18 liter",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{4}$ bagiannya dipakai, dan sisanya $9$ kg. Kemudian ditambah 3 kg dan $\\frac{1}{2}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{1}{2}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 12 kg. Stok setelah tambahan 12; sesudah pemakaian kedua tersisa 6. Bagi berat tiap kemasan dan ambil bagian bulat: 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 12 kg. Stok setelah tambahan 12; sesudah pemakaian kedua tersisa 6. Bagi berat tiap kemasan dan ambil bagian bulat: 12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ff4ca88e2b8eaee08c3cd41",
+        "teks": "Tangki berisi 8 liter air. Air itu dimasukkan ke botol berkapasitas 1/4 liter. Berapa botol penuh yang dapat diisi?",
+        "jawaban": "32 botol",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{4}$ bagiannya dipakai, dan sisanya $27$ kg. Kemudian ditambah 4 kg dan $\\frac{1}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{3}{4}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 36 kg. Stok setelah tambahan 31; sesudah pemakaian kedua tersisa 93/4. Bagi berat tiap kemasan dan ambil bagian bulat: 31.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 36 kg. Stok setelah tambahan 31; sesudah pemakaian kedua tersisa 93/4. Bagi berat tiap kemasan dan ambil bagian bulat: 31.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a2404805919b10269438ad1a",
+        "teks": "Hitung 8 ÷ 4/5.",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{3}{4}$ bagiannya dipakai, dan sisanya $16$ kg. Kemudian ditambah 8 kg dan $\\frac{1}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{1}{2}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 64 kg. Stok setelah tambahan 24; sesudah pemakaian kedua tersisa 18. Bagi berat tiap kemasan dan ambil bagian bulat: 36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 64 kg. Stok setelah tambahan 24; sesudah pemakaian kedua tersisa 18. Bagi berat tiap kemasan dan ambil bagian bulat: 36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd574e213501b5196eb880b1",
+        "teks": "Dina memiliki 9 kg tepung. Setiap adonan roti membutuhkan 3/8 kg tepung. Berapa adonan yang dapat dibuat Dina?",
+        "jawaban": "24 adonan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{4}$ bagiannya dipakai, dan sisanya $12$ kg. Kemudian ditambah 8 kg dan $\\frac{3}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{1}{2}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 16 kg. Stok setelah tambahan 20; sesudah pemakaian kedua tersisa 5. Bagi berat tiap kemasan dan ambil bagian bulat: 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 16 kg. Stok setelah tambahan 20; sesudah pemakaian kedua tersisa 5. Bagi berat tiap kemasan dan ambil bagian bulat: 10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e47d86d68dfbf3a8cbc10780",
+        "teks": "Sebuah teko berisi 7 liter teh. Teh dituangkan sama banyak ke dalam gelas berkapasitas 1/2 liter. Berapa gelas penuh yang diperoleh?",
+        "jawaban": "14 gelas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{4}$ bagiannya dipakai, dan sisanya $9$ kg. Kemudian ditambah 4 kg dan $\\frac{1}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{3}{4}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 12 kg. Stok setelah tambahan 13; sesudah pemakaian kedua tersisa 39/4. Bagi berat tiap kemasan dan ambil bagian bulat: 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 12 kg. Stok setelah tambahan 13; sesudah pemakaian kedua tersisa 39/4. Bagi berat tiap kemasan dan ambil bagian bulat: 13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "49388650d367d8aaa7cdc15c",
+        "teks": "Hitung 9 ÷ 3/4.",
+        "jawaban": "12",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{2}$ bagiannya dipakai, dan sisanya $10$ kg. Kemudian ditambah 3 kg dan $\\frac{1}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{1}{2}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 20 kg. Stok setelah tambahan 13; sesudah pemakaian kedua tersisa 39/4. Bagi berat tiap kemasan dan ambil bagian bulat: 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 20 kg. Stok setelah tambahan 13; sesudah pemakaian kedua tersisa 39/4. Bagi berat tiap kemasan dan ambil bagian bulat: 19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e664c226617918344edebb08",
+        "teks": "Tersedia 7/8 meter pita. Rancangan harus membagikan seluruh pita sama rata kepada 4 anak, dengan setiap anak menerima kurang dari 1/4 meter. Rancangan mana yang memenuhi kedua syarat?",
+        "jawaban": "Membagi pita menjadi 4 bagian sama panjang; setiap anak menerima 7/32 meter.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{7}{10}$ bagiannya dipakai, dan sisanya $9$ kg. Kemudian ditambah 7 kg dan $\\frac{1}{2}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{1}{4}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 30 kg. Stok setelah tambahan 16; sesudah pemakaian kedua tersisa 8. Bagi berat tiap kemasan dan ambil bagian bulat: 32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 30 kg. Stok setelah tambahan 16; sesudah pemakaian kedua tersisa 8. Bagi berat tiap kemasan dan ambil bagian bulat: 32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5c2ba5bd1f78712aafef6050",
+        "teks": "Dika menghitung 7/8 ÷ 4 = 7/4 dengan membagi penyebut 8 dengan 4. Perbaikan mana yang benar?",
+        "jawaban": "7/8 ÷ 4 = 7/32",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{4}$ bagiannya dipakai, dan sisanya $21$ kg. Kemudian ditambah 8 kg dan $\\frac{1}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{1}{4}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$87$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 28 kg. Stok setelah tambahan 29; sesudah pemakaian kedua tersisa 87/4. Bagi berat tiap kemasan dan ambil bagian bulat: 87.",
+      "distraktor": [
+        {
+          "teks": "$86$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $87$."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $87$."
+        },
+        {
+          "teks": "$174$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 28 kg. Stok setelah tambahan 29; sesudah pemakaian kedua tersisa 87/4. Bagi berat tiap kemasan dan ambil bagian bulat: 87.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b5d4236dff67dc2caa73e0a",
+        "teks": "Ibu memiliki 4 kg tepung. Setiap adonan membutuhkan 3/8 kg tepung. Berapa banyak adonan yang dapat dibuat?",
+        "jawaban": "10 2/3 adonan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pembagian_pecahan_stok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia tepung sejumlah belum diketahui. $\\frac{1}{10}$ bagiannya dipakai, dan sisanya $27$ kg. Kemudian ditambah 3 kg dan $\\frac{1}{4}$ dari stok baru dipakai lagi. Tepung tersisa dikemas masing-masing $\\frac{3}{4}$ kg. Berapa kemasan penuh yang dapat dibuat?",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Sisa awal menunjukkan stok awal 30 kg. Stok setelah tambahan 30; sesudah pemakaian kedua tersisa 45/2. Bagi berat tiap kemasan dan ambil bagian bulat: 30.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $30$."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $30$."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal menunjukkan stok awal 30 kg. Stok setelah tambahan 30; sesudah pemakaian kedua tersisa 45/2. Bagi berat tiap kemasan dan ambil bagian bulat: 30.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-b-hard-bt01-021"
     }
   ]
 }

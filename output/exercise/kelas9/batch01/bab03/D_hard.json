@@ -639,6 +639,487 @@
       "pembahasan": "Langkah-langkah penyelesaian:\n1. Hitung sudut alas $\\Delta PQR$:\nKarena $PQ = PR$ dan $\\angle P = 40^\\circ$, maka:\n$$\\angle PQR = \\angle PRQ = \\frac{180^\\circ - 40^\\circ}{2} = 70^\\circ$$\n\n2. Tentukan sudut $\\angle PMR$:\nKarena garis $PQ$ lurus, $\\angle PMR$ dan $\\angle QMR$ saling berpelurus:\n$$\\angle PMR = 180^\\circ - 70^\\circ = 110^\\circ$$\n\n3. Hitung sudut $\\angle PRM$ pada $\\Delta PMR$:\n$$\\angle PRM = 180^\\circ - (\\angle P + \\angle PMR) = 180^\\circ - (40^\\circ + 110^\\circ) = 30^\\circ$$\n\n4. Buktikan $\\Delta PMR \\cong \\Delta PNQ$:\n- $PM = PN$ (diketahui)\n- $\\angle P$ sama (berimpit)\n- $PR = PQ$ (diketahui)\nBerdasarkan kriteria Sisi-Sudut-Sisi (S.Sd.S), $\\Delta PMR \\cong \\Delta PNQ$.\nAkibatnya, $\\angle PQN = \\angle PRM = 30^\\circ$.\n\n5. Tentukan sudut pada $\\Delta OQR$:\n$$\\angle OQR = \\angle PQR - \\angle PQN = 70^\\circ - 30^\\circ = 40^\\circ$$\n$$\\angle ORQ = \\angle PRQ - \\angle PRM = 70^\\circ - 30^\\circ = 40^\\circ$$\n\nPada $\\Delta OQR$, jumlah sudut dalamnya adalah $180^\\circ$:\n$$\\angle QOR = 180^\\circ - (\\angle OQR + \\angle ORQ) = 180^\\circ - (40^\\circ + 40^\\circ) = 100^\\circ$$\n\nJadi, besar $\\angle QOR$ adalah $100^\\circ$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24fe0776931cb733b7a501b6",
+        "teks": "Persegi panjang $P$ memiliki ukuran panjang $15\\text{ cm}$ dan lebar $8\\text{ cm}$. Di antara bangun datar berikut:\n(1) Jajar genjang dengan panjang sisi $15\\text{ cm}$ dan $8\\text{ cm}$ serta besar salah satu sudutnya $60^\\circ$\n(2) Persegi panjang dengan panjang salah satu sisinya $8\\text{ cm}$ dan panjang diagonalnya $17\\text{ cm}$\n(3) Persegi panjang dengan keliling $46\\text{ cm}$ dan panjang salah satu sisinya $10\\text{ cm}$\n\nBangun datar yang pasti kongruen dengan persegi panjang $P$ adalah ....",
+        "jawaban": "hanya (2)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 20 cm; selisih kedua kaki 4 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=400, v-u=4; pilih solusi positif u=12,v=16. Keliling DEF=48.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=400, v-u=4; pilih solusi positif u=12,v=16. Keliling DEF=48.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04f4a622eb751a4feff630f0",
+        "teks": "Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=12 cm, BC=4 cm, AC=12 cm, berapa keliling DEF?",
+        "jawaban": "$28$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 130 cm; selisih kedua kaki 26 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$312$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=16900, v-u=26; pilih solusi positif u=78,v=104. Keliling DEF=312.",
+      "distraktor": [
+        {
+          "teks": "$311$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $312$."
+        },
+        {
+          "teks": "$313$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $312$."
+        },
+        {
+          "teks": "$624$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=16900, v-u=26; pilih solusi positif u=78,v=104. Keliling DEF=312.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c9720d89db72de92b20299e",
+        "teks": "Diketahui segi empat $ABCD$ kongruen dengan segi empat $EFGH$, dengan urutan titik sudut yang bersesuaian berturut-turut adalah $A$ dengan $E$, $B$ dengan $F$, $C$ dengan $G$, dan $D$ dengan $H$. Jika besar $\\angle A = 115^\\circ$, $\\angle B = 65^\\circ$, dan $\\angle C = 115^\\circ$, maka besar $\\angle H$ adalah ....",
+        "jawaban": "$65^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 25 cm; selisih kedua kaki 5 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=625, v-u=5; pilih solusi positif u=15,v=20. Keliling DEF=60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=625, v-u=5; pilih solusi positif u=15,v=20. Keliling DEF=60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a6c09210f132d4f3169485e1",
+        "teks": "Layang-layang $ABCD$ kongruen dengan layang-layang $EFGH$, dengan titik-titik sudut yang bersesuaian berturut-turut adalah $A$ dengan $E$, $B$ dengan $F$, $C$ dengan $G$, serta $D$ dengan $H$. Diketahui panjang $AB = (2y + 3)\\text{ cm}$, $BC = (3x - 1)\\text{ cm}$, $EF = 11\\text{ cm}$, dan $FG = 14\\text{ cm}$. Nilai dari $x + y$ adalah ....",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 135 cm; selisih kedua kaki 27 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$324$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=18225, v-u=27; pilih solusi positif u=81,v=108. Keliling DEF=324.",
+      "distraktor": [
+        {
+          "teks": "$323$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $324$."
+        },
+        {
+          "teks": "$325$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $324$."
+        },
+        {
+          "teks": "$648$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=18225, v-u=27; pilih solusi positif u=81,v=108. Keliling DEF=324.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e7524300357f158a8555f419",
+        "teks": "Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=6 cm, BC=17 cm, AC=19 cm, berapa keliling DEF?",
+        "jawaban": "$42$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 100 cm; selisih kedua kaki 20 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$240$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=10000, v-u=20; pilih solusi positif u=60,v=80. Keliling DEF=240.",
+      "distraktor": [
+        {
+          "teks": "$239$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $240$."
+        },
+        {
+          "teks": "$241$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $240$."
+        },
+        {
+          "teks": "$480$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=10000, v-u=20; pilih solusi positif u=60,v=80. Keliling DEF=240.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "648198ae5855117fbb702cb3",
+        "teks": "Pada $\\Delta PQR$, garis $QS$ ditarik dari titik sudut $Q$ sehingga memotong sisi $PR$ tegak lurus di titik $S$ ($\\angle PSQ = \\angle RSQ = 90^\\circ$) dan membagi $\\angle PQR$ menjadi dua sama besar ($\\angle PQS = \\angle RQS$). Jika panjang $PQ = (4x - 5)\\text{ cm}$ dan $QR = (2x + 9)\\text{ cm}$, maka panjang sisi $PQ$ adalah ....",
+        "jawaban": "$23\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 150 cm; selisih kedua kaki 30 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$360$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=22500, v-u=30; pilih solusi positif u=90,v=120. Keliling DEF=360.",
+      "distraktor": [
+        {
+          "teks": "$359$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $360$."
+        },
+        {
+          "teks": "$361$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $360$."
+        },
+        {
+          "teks": "$720$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=22500, v-u=30; pilih solusi positif u=90,v=120. Keliling DEF=360.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6aa62464c05c82214ed8a77c",
+        "teks": "Farhan menggambar persegi $PQRS$ dengan panjang sisi $16\\text{ cm}$. Pada setiap sisinya, ia meletakkan titik $W, X, Y,$ dan $Z$ sedemikian rupa sehingga $PW = QX = RY = SZ = 5\\text{ cm}$, dengan $W$ pada $PQ$, $X$ pada $QR$, $Y$ pada $RS$, dan $Z$ pada $SP$. Farhan menduga bahwa segi empat $WXYZ$ merupakan sebuah persegi. Apakah dugaan Farhan benar? Manakah alasan pembuktian yang paling tepat berdasarkan kekongruenan segitiga?",
+        "jawaban": "Benar, karena keempat segitiga $\\Delta PWZ, \\Delta QXW, \\Delta RYX,$ dan $\\Delta SZY$ saling kongruen berdasarkan kriteria S.Sd.S, sehingga keempat sisi segi empat sama panjang dan keempat sudut dalamnya siku-siku",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 75 cm; selisih kedua kaki 15 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$180$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=5625, v-u=15; pilih solusi positif u=45,v=60. Keliling DEF=180.",
+      "distraktor": [
+        {
+          "teks": "$179$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $180$."
+        },
+        {
+          "teks": "$181$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $180$."
+        },
+        {
+          "teks": "$360$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=5625, v-u=15; pilih solusi positif u=45,v=60. Keliling DEF=180.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "29fbe0a88da81025560469d9",
+        "teks": "Sebuah segitiga direfleksikan terhadap garis $x = 3$. Hubungan geometris antara segitiga mula-mula dengan bayangan hasil refleksinya adalah ....",
+        "jawaban": "pasti kongruen karena refleksi merupakan transformasi kaku",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 105 cm; selisih kedua kaki 21 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$252$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=11025, v-u=21; pilih solusi positif u=63,v=84. Keliling DEF=252.",
+      "distraktor": [
+        {
+          "teks": "$251$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $252$."
+        },
+        {
+          "teks": "$253$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $252$."
+        },
+        {
+          "teks": "$504$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=11025, v-u=21; pilih solusi positif u=63,v=84. Keliling DEF=252.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6888fa4ad5d4af9303c4ddc2",
+        "teks": "Trapesium siku-siku $ABCD$ kongruen dengan trapesium siku-siku $PQRS$, dengan urutan titik sudut yang bersesuaian berturut-turut adalah $A$ dengan $P$, $B$ dengan $Q$, $C$ dengan $R$, dan $D$ dengan $S$. Sudut siku-siku berada pada titik $A$ dan $D$. Jika besar $\\angle B = (3a + 15)^\\circ$ dan pada trapesium $PQRS$ diketahui besar sudut tumpul $\\angle R = 120^\\circ$, maka nilai $a$ adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 95 cm; selisih kedua kaki 19 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$228$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=9025, v-u=19; pilih solusi positif u=57,v=76. Keliling DEF=228.",
+      "distraktor": [
+        {
+          "teks": "$227$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $228$."
+        },
+        {
+          "teks": "$229$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $228$."
+        },
+        {
+          "teks": "$456$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=9025, v-u=19; pilih solusi positif u=57,v=76. Keliling DEF=228.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "700424d2276e49a73d7ed2aa",
+        "teks": "Budi membandingkan $\\Delta KLM$ dan $\\Delta PQR$. Ia menemukan fakta bahwa $KL = PQ = 8\\text{ cm}$, $LM = QR = 6\\text{ cm}$, dan $\\angle K = \\angle P = 35^\\circ$. Dari data tersebut, Budi menyimpulkan bahwa $\\Delta KLM$ pasti kongruen dengan $\\Delta PQR$ karena memenuhi kesamaan dua pasang sisi dan satu pasang sudut (kriteria sisi-sisi-sudut). Manakah evaluasi yang paling tepat terhadap kesimpulan Budi?",
+        "jawaban": "Kesimpulan Budi salah karena sudut yang diketahui sama besar tidak diapit oleh kedua sisi yang diketahui sama panjang, sehingga kedua segitiga belum tentu kongruen.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 30 cm; selisih kedua kaki 6 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=900, v-u=6; pilih solusi positif u=18,v=24. Keliling DEF=72.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=900, v-u=6; pilih solusi positif u=18,v=24. Keliling DEF=72.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5dc5594fdd96dcccea1f2025",
+        "teks": "Transformasi geometri seperti translasi, refleksi, dan rotasi digolongkan sebagai transformasi kaku karena ....",
+        "jawaban": "tidak mengubah bentuk dan ukuran objek aslinya",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 120 cm; selisih kedua kaki 24 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$288$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=14400, v-u=24; pilih solusi positif u=72,v=96. Keliling DEF=288.",
+      "distraktor": [
+        {
+          "teks": "$287$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $288$."
+        },
+        {
+          "teks": "$289$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $288$."
+        },
+        {
+          "teks": "$576$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=14400, v-u=24; pilih solusi positif u=72,v=96. Keliling DEF=288.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "29fbe0a88da81025560469d9",
+        "teks": "Sebuah segitiga direfleksikan terhadap garis $x = 3$. Hubungan geometris antara segitiga mula-mula dengan bayangan hasil refleksinya adalah ....",
+        "jawaban": "pasti kongruen karena refleksi merupakan transformasi kaku",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 125 cm; selisih kedua kaki 25 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$300$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=15625, v-u=25; pilih solusi positif u=75,v=100. Keliling DEF=300.",
+      "distraktor": [
+        {
+          "teks": "$299$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $300$."
+        },
+        {
+          "teks": "$301$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $300$."
+        },
+        {
+          "teks": "$600$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=15625, v-u=25; pilih solusi positif u=75,v=100. Keliling DEF=300.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed3a3639f5e6c2a19da7eec8",
+        "teks": "Pada persegi $ABCD$, titik $P$ terletak pada sisi $BC$ dan titik $Q$ terletak pada sisi $CD$ sedemikian rupa sehingga panjang $BP = CQ$. Garis $AP$ dan garis $BQ$ berpotongan di titik $R$. Besar $\\angle ARB$ adalah ....",
+        "jawaban": "$90^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kongruen_dimensi_tersembunyi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC siku-siku dengan hipotenusa 35 cm; selisih kedua kaki 7 cm. Segitiga DEF kongruen ABC, dengan D↔B,E↔C,F↔A. Jika AB dan AC adalah kedua kaki, tentukan keliling DEF.",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=1225, v-u=7; pilih solusi positif u=21,v=28. Keliling DEF=84.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kongruensi mempertahankan semua panjang. Kaki u,v memenuhi u²+v²=1225, v-u=7; pilih solusi positif u=21,v=28. Keliling DEF=84.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-d-hard-bt01-028"
     }
   ]
 }

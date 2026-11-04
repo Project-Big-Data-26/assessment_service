@@ -683,6 +683,43 @@
       ],
       "pembahasan": "Ketua dipilih dari 6 siswa selain Dina: 6 cara. Sekretaris dan bendahara dipilih dari 6 siswa yang tersisa (termasuk Dina): $P(6,2) = 30$. Total $6 \\times 30 = 180$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c8b6374fc19c29f73a6a7a5c",
+        "teks": "Dua belas siswa bersedia menjadi pengurus kelas. Jabatan ketua dan wakil ketua telah diisi oleh dua siswa di antaranya. Jabatan sekretaris dan bendahara akan diisi oleh siswa yang tersisa, dan setiap siswa menduduki paling banyak satu jabatan. Banyak cara mengisi kedua jabatan tersebut adalah ....",
+        "jawaban": "90",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "permutasi_bersyarat",
+      "alasan_level": "Target medium; variasi konsep permutasi bersyarat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebanyak 9 orang berbeda berbaris. Dua orang tertentu harus berdampingan. Berapa susunan barisan yang mungkin?",
+      "jawaban_benar": "$80640$",
+      "alasan_benar": "Gabungkan dua orang menjadi satu blok. Ada (9-1)! susunan blok dan 2 urutan internal. Total=80640.",
+      "distraktor": [
+        {
+          "teks": "$80641$",
+          "alasan": "Pilihan $80641$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $80640$. Periksa kembali langkah permutasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$80639$",
+          "alasan": "Pilihan $80639$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $80640$. Periksa kembali langkah permutasi bersyarat pada pembahasan."
+        },
+        {
+          "teks": "$80642$",
+          "alasan": "Pilihan $80642$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $80640$. Periksa kembali langkah permutasi bersyarat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Gabungkan dua orang menjadi satu blok. Ada (9-1)! susunan blok dan 2 urutan internal. Total=80640.",
+      "catatan": "codex-replenishment:kelas12-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-b-medium-bt01-021"
     }
   ]
 }

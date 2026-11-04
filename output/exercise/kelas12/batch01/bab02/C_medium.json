@@ -632,6 +632,80 @@
       ],
       "pembahasan": "$4.641.000 \\times 1,1 + 1.000.000 = 5.105.100 + 1.000.000 = 6.105.100$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a0ef8fbb50b16280d2965c6",
+        "teks": "Dedi ingin memiliki tabungan Rp13.923.000,00 tepat setelah 4 tahun. Ia menyetor sejumlah uang yang sama pada akhir setiap tahun ke bank yang memberi bunga majemuk 10% per tahun. Besar setoran tiap tahun yang harus ia lakukan adalah ....",
+        "jawaban": "Rp3.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "anuitas_investasi",
+      "alasan_level": "Target medium; variasi konsep anuitas investasi. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada akhir setiap tahun disetor Rp400.000,00 selama 6 tahun. Bunga majemuk 10% per tahun. Berapa nilai akumulasi tepat setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$3086244$",
+      "alasan_benar": "Setoran terakhir belum berbunga. Jumlah akhirnya 400000×[1+(1+1/10)+...+(1+1/10)^5]=3086244.",
+      "distraktor": [
+        {
+          "teks": "$3086245$",
+          "alasan": "Pilihan $3086245$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3086244$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$3086243$",
+          "alasan": "Pilihan $3086243$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3086244$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$3086246$",
+          "alasan": "Pilihan $3086246$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3086244$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setoran terakhir belum berbunga. Jumlah akhirnya 400000×[1+(1+1/10)+...+(1+1/10)^5]=3086244.",
+      "catatan": "codex-replenishment:kelas12-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-c-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47521eae34ca174c8830313a",
+        "teks": "Bayu berkata, \"Jika lama menabung dilipatduakan, nilai masa depan tabunganku juga menjadi dua kali.\" Bayu menyetor sejumlah yang sama pada akhir setiap tahun dengan bunga majemuk 20% per tahun. Perbandingan nilai masa depan tabungan setelah 4 tahun terhadap setelah 2 tahun adalah ...., sehingga klaim Bayu keliru.",
+        "jawaban": "2,44",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "anuitas_investasi",
+      "alasan_level": "Target medium; variasi konsep anuitas investasi. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada akhir setiap tahun disetor Rp900.000,00 selama 7 tahun. Bunga majemuk 2% per tahun. Berapa nilai akumulasi tepat setelah setoran terakhir, tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{1045446100659}{156250}$",
+      "alasan_benar": "Setoran terakhir belum berbunga. Jumlah akhirnya 900000×[1+(1+1/50)+...+(1+1/50)^6]=1045446100659/156250.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1045446256909}{156250}$",
+          "alasan": "Pilihan $\\frac{1045446256909}{156250}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1045446100659}{156250}$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1045445944409}{156250}$",
+          "alasan": "Pilihan $\\frac{1045445944409}{156250}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1045446100659}{156250}$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1045446413159}{156250}$",
+          "alasan": "Pilihan $\\frac{1045446413159}{156250}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1045446100659}{156250}$. Periksa kembali langkah anuitas investasi pada pembahasan."
+        }
+      ],
+      "pembahasan": "Setoran terakhir belum berbunga. Jumlah akhirnya 900000×[1+(1+1/50)+...+(1+1/50)^6]=1045446100659/156250.",
+      "catatan": "codex-replenishment:kelas12-b02-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-c-medium-bt01-021"
     }
   ],
   "kapasitas_kurang": true,

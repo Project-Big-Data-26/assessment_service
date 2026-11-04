@@ -313,6 +313,80 @@
       ],
       "pembahasan": "Satu putaran = keliling = 200 m. Tiga putaran = 3 x 200 = 600 m.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4019a1e17f34a8bda975b580",
+        "teks": "Rani menghitung keliling segi delapan beraturan dengan panjang sisi 15 cm. Ia menulis 6 x 15 = 90 cm. Kesalahan Rani dan keliling yang benar adalah ....",
+        "jawaban": "Rani memakai 6 sisi, padahal segi delapan punya 8 sisi; kelilingnya 120 cm",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "keliling_segi_banyak",
+      "alasan_level": "Target medium; variasi konsep keliling segi banyak. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah segi-7 beraturan mempunyai sisi 11 cm. Berapakah kelilingnya?",
+      "jawaban_benar": "$77$",
+      "alasan_benar": "Ada 7 sisi sama panjang. Keliling=7×11=77 cm.",
+      "distraktor": [
+        {
+          "teks": "$78$",
+          "alasan": "Pilihan $78$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $77$. Periksa kembali langkah keliling segi banyak pada pembahasan."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Pilihan $76$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $77$. Periksa kembali langkah keliling segi banyak pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan $79$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $77$. Periksa kembali langkah keliling segi banyak pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 7 sisi sama panjang. Keliling=7×11=77 cm.",
+      "catatan": "codex-replenishment:kelas5-b04-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b04-d-medium-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "169bb9143f7609bef42b05e3",
+        "teks": "Rudi berlari 2 kali mengelilingi lapangan segi enam beraturan dengan panjang sisi 25 m. Dito berlari 2 kali mengelilingi lapangan segi delapan beraturan dengan panjang sisi 20 m. Pernyataan yang benar adalah ....",
+        "jawaban": "Dito berlari lebih jauh 20 m daripada Rudi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_keliling_poligon_kelompok",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Segi enam memiliki empat sisi sepanjang 9 cm dan dua sisi sepanjang 7 cm. Berapa kelilingnya?",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "Jumlahkan panjang keenam sisi: 4×9+2×7=50.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $50$."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $50$."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlahkan panjang keenam sisi: 4×9+2×7=50.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b04-d-medium-bt01-011"
     }
   ]
 }

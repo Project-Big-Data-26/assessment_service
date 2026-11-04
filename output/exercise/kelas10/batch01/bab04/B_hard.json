@@ -334,6 +334,265 @@
       "catatan": null,
       "tipe_generate": "orisinal",
       "id": "kelas10-b04-b-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4a658074a53d066548afa586",
+        "teks": "Pak Rudi memiliki uang Rp200.000.000,00 dan akan mendepositokan seluruhnya. Bank A memberi bunga 3% setahun dan bank B memberi bunga 5% setahun. Pak Rudi ingin mendapat bunga setidaknya Rp7.000.000,00 dalam setahun, tetapi ia tidak ingin mendepositokan seluruh uangnya pada satu bank saja.\n\nPembagian deposito yang memenuhi keinginan Pak Rudi adalah ....",
+        "jawaban": "Rp120.000.000,00 di bank A dan Rp80.000.000,00 di bank B",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 10$, $2x+y\\le 16$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp20.000,00 dan per meja Rp70.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$700000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 20000x+70000y adalah 700000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$700001$",
+          "alasan": "Pilihan $700001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $700000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$699999$",
+          "alasan": "Pilihan $699999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $700000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$700002$",
+          "alasan": "Pilihan $700002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $700000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 20000x+70000y adalah 700000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4b390e86349c56e5a1897b61",
+        "teks": "Banyak pasangan bilangan bulat $(x, y)$ yang memenuhi $x > 2$, $y \\geq 1$, dan $2x + y < 12$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 7$, $2x+y\\le 12$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp80.000,00 dan per meja Rp80.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$560000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 80000x+80000y adalah 560000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$560001$",
+          "alasan": "Pilihan $560001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $560000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$559999$",
+          "alasan": "Pilihan $559999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $560000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$560002$",
+          "alasan": "Pilihan $560002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $560000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 80000x+80000y adalah 560000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "50ef892056bab68e9f0339a7",
+        "teks": "Rencana I: $x \\geq 0$, $y \\geq 0$, $x + y \\leq 10$, dan $2x + y \\geq 8$. Rencana II: $x \\geq 0$, $y \\geq 0$, $x + y \\leq 10$, dan $2x + y \\geq 12$. Nilai $x$ dan $y$ bilangan bulat.\n\nBanyak pasangan $(x,y)$ pada Rencana I lebih banyak daripada Rencana II sebanyak ....",
+        "jawaban": "21",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 15$, $2x+y\\le 23$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp60.000,00 dan per meja Rp60.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$900000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 60000x+60000y adalah 900000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$900001$",
+          "alasan": "Pilihan $900001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $900000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$899999$",
+          "alasan": "Pilihan $899999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $900000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$900002$",
+          "alasan": "Pilihan $900002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $900000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 60000x+60000y adalah 900000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "652adb66ffaffeceb94f31b6",
+        "teks": "Alya membeli pupuk dan tanaman hias untuk kebunnya. Alya memiliki uang sebesar Rp240.000,00. Setiap kantong pupuk harganya Rp35.000,00 dan setiap tanaman harganya Rp15.000,00. Alya ingin membeli setidaknya 6 tanaman.\n\nBanyak kantong pupuk paling banyak yang dapat dibeli Alya adalah ....",
+        "jawaban": "4 kantong",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 10$, $2x+y\\le 16$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp50.000,00 dan per meja Rp30.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$420000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 50000x+30000y adalah 420000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$420001$",
+          "alasan": "Pilihan $420001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $420000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$419999$",
+          "alasan": "Pilihan $419999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $420000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$420002$",
+          "alasan": "Pilihan $420002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $420000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 50000x+30000y adalah 420000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4b390e86349c56e5a1897b61",
+        "teks": "Banyak pasangan bilangan bulat $(x, y)$ yang memenuhi $x > 2$, $y \\geq 1$, dan $2x + y < 12$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 7$, $2x+y\\le 16$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp30.000,00 dan per meja Rp30.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$210000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 30000x+30000y adalah 210000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$210001$",
+          "alasan": "Pilihan $210001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $210000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$209999$",
+          "alasan": "Pilihan $209999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $210000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$210002$",
+          "alasan": "Pilihan $210002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $210000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 30000x+30000y adalah 210000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0cf8646048027527cca6c66a",
+        "teks": "Dari kas sekolah ada dana Rp720.000,00 untuk pekan olahraga. Penyelenggaraan memerlukan Rp30.000,00 per peserta dan hadiah dianggarkan Rp45.000,00 untuk setiap jenis perlombaan. Diharapkan ada lebih dari 15 peserta (banyak peserta berupa bilangan bulat).\n\nBanyak jenis perlombaan paling banyak yang dapat diselenggarakan adalah ....",
+        "jawaban": "5 jenis",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 13$, $2x+y\\le 15$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp70.000,00 dan per meja Rp20.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$510000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 70000x+20000y adalah 510000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$510001$",
+          "alasan": "Pilihan $510001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $510000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$509999$",
+          "alasan": "Pilihan $509999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $510000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$510002$",
+          "alasan": "Pilihan $510002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $510000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 70000x+20000y adalah 510000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f1b80f5d94b61bee8e9cf0bf",
+        "teks": "Sistem pertidaksamaan $x + 2y \\geq 6$, $x \\leq 2$, dan $y < m$ mempunyai penyelesaian (bilangan real) jika ....",
+        "jawaban": "$m > 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_pertidaksamaan_linear",
+      "alasan_level": "Target hard; variasi konsep optimasi pertidaksamaan linear. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 11$, $2x+y\\le 18$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp80.000,00 dan per meja Rp20.000,00. Berapa keuntungan maksimum?",
+      "jawaban_benar": "$720000$",
+      "alasan_benar": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 80000x+20000y adalah 720000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$720001$",
+          "alasan": "Pilihan $720001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $720000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$719999$",
+          "alasan": "Pilihan $719999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $720000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        },
+        {
+          "teks": "$720002$",
+          "alasan": "Pilihan $720002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $720000$. Periksa kembali langkah optimasi pertidaksamaan linear pada pembahasan."
+        }
+      ],
+      "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 80000x+20000y adalah 720000 rupiah.",
+      "catatan": "codex-replenishment:kelas10-b04-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-b-hard-bt01-017"
     }
   ],
   "kapasitas_kurang": true,

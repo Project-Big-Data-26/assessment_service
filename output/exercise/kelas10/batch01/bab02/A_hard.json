@@ -585,6 +585,376 @@
       ],
       "pembahasan": "Misalkan suku kedua $s$. Aritmetika: $b = s - 4$, $U_3 = 2s - 4$. Geometri: $r = s/4$, $U_3 = s^2/4$. Syarat: $\\frac{s^2}{4} - 2s + 4 = 4$ sehingga $s(s - 8) = 0$; $s = 8$ ($s = 0$ membuat rasio nol). Maka $b = 4$, $r = 2$: $U_6 = 4 + 5 \\times 4 = 24$ (aritmetika) dan $4 \\times 2^5 = 128$ (geometri). Selisih 104.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f29a3f048a494c2abbd1f666",
+        "teks": "Suatu barisan memenuhi $U_{n+1} = 2U_n$ untuk setiap $n \\geq 1$, semua sukunya positif, dan $U_3 \\times U_5 = 1.024$. Nilai $U_8$ adalah ....",
+        "jawaban": "$512$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "barisan_dari_dua_suku",
+      "alasan_level": "Target hard; variasi konsep barisan dari dua suku. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika diketahui $U_4=15$ dan $U_9=35$. Tentukan $U_22$.",
+      "jawaban_benar": "$87$",
+      "alasan_benar": "Beda = (35-15)/(9-4) = 4. Suku pertama = 15-(4-1)×4 = 3. Jadi U_22=87.",
+      "distraktor": [
+        {
+          "teks": "$88$",
+          "alasan": "Pilihan $88$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $87$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Pilihan $86$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $87$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan $89$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $87$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        }
+      ],
+      "pembahasan": "Beda = (35-15)/(9-4) = 4. Suku pertama = 15-(4-1)×4 = 3. Jadi U_22=87.",
+      "catatan": "codex-replenishment:kelas10-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4171bda38ddbecca10562360",
+        "teks": "Rumus suku ke-$n$ berikut yang menghasilkan barisan geometri untuk setiap $n$ adalah ....",
+        "jawaban": "$U_n = 3^n - 3^{n-1}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "barisan_dari_dua_suku",
+      "alasan_level": "Target hard; variasi konsep barisan dari dua suku. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika diketahui $U_5=11$ dan $U_9=19$. Tentukan $U_17$.",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Beda = (19-11)/(9-5) = 2. Suku pertama = 11-(5-1)×2 = 3. Jadi U_17=35.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        }
+      ],
+      "pembahasan": "Beda = (19-11)/(9-5) = 2. Suku pertama = 11-(5-1)×2 = 3. Jadi U_17=35.",
+      "catatan": "codex-replenishment:kelas10-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04fdc303a3f446e63cf3841b",
+        "teks": "Tiga bilangan positif membentuk barisan geometri naik. Jumlah ketiga bilangan itu 26 dan hasil kalinya 216. Jumlah bilangan pertama dan bilangan ketiga adalah ....",
+        "jawaban": "$20$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "barisan_dari_dua_suku",
+      "alasan_level": "Target hard; variasi konsep barisan dari dua suku. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika diketahui $U_6=20$ dan $U_11=30$. Tentukan $U_19$.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Beda = (30-20)/(11-6) = 2. Suku pertama = 20-(6-1)×2 = 10. Jadi U_19=46.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan $47$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan $45$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan $48$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        }
+      ],
+      "pembahasan": "Beda = (30-20)/(11-6) = 2. Suku pertama = 20-(6-1)×2 = 10. Jadi U_19=46.",
+      "catatan": "codex-replenishment:kelas10-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1dfa0284bca53d918540a83b",
+        "teks": "Sebuah barisan aritmetika dan sebuah barisan geometri sama-sama memiliki suku pertama 4 dan suku kedua yang sama (suku kedua bukan 4). Suku ketiga barisan geometri lebih besar 4 daripada suku ketiga barisan aritmetika, dan rasio barisan geometri tidak nol. Selisih suku ke-6 barisan geometri dan suku ke-6 barisan aritmetika adalah ....",
+        "jawaban": "$104$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "barisan_dari_dua_suku",
+      "alasan_level": "Target hard; variasi konsep barisan dari dua suku. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika diketahui $U_6=18$ dan $U_11=33$. Tentukan $U_17$.",
+      "jawaban_benar": "$51$",
+      "alasan_benar": "Beda = (33-18)/(11-6) = 3. Suku pertama = 18-(6-1)×3 = 3. Jadi U_17=51.",
+      "distraktor": [
+        {
+          "teks": "$52$",
+          "alasan": "Pilihan $52$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $51$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan $50$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $51$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan $53$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $51$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        }
+      ],
+      "pembahasan": "Beda = (33-18)/(11-6) = 3. Suku pertama = 18-(6-1)×3 = 3. Jadi U_17=51.",
+      "catatan": "codex-replenishment:kelas10-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a877eab36d8170861be26af8",
+        "teks": "Seorang siswa menyatakan: \"Jika selisih setiap dua suku berurutan pada empat suku pertama suatu barisan selalu sama, maka barisan itu pasti barisan aritmetika.\" Barisan manakah yang merupakan contoh penyangkal pernyataan tersebut? (Setiap barisan ditulis enam suku pertamanya.)",
+        "jawaban": "$3, 6, 9, 12, 16, 20, \\ldots$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "barisan_dari_dua_suku",
+      "alasan_level": "Target hard; variasi konsep barisan dari dua suku. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pada barisan aritmetika diketahui $U_3=12$ dan $U_8=32$. Tentukan $U_20$.",
+      "jawaban_benar": "$80$",
+      "alasan_benar": "Beda = (32-12)/(8-3) = 4. Suku pertama = 12-(3-1)×4 = 4. Jadi U_20=80.",
+      "distraktor": [
+        {
+          "teks": "$81$",
+          "alasan": "Pilihan $81$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $80$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan $79$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $80$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Pilihan $82$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $80$. Periksa kembali langkah barisan dari dua suku pada pembahasan."
+        }
+      ],
+      "pembahasan": "Beda = (32-12)/(8-3) = 4. Suku pertama = 12-(3-1)×4 = 4. Jadi U_20=80.",
+      "catatan": "codex-replenishment:kelas10-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "53d025bb245ad5e386140d97",
+        "teks": "Suku pertama dari suatu barisan geometri adalah 2 dan suku ke-4 adalah 250. Tentukan rasio dari barisan tersebut.",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=51$ dan $U_3=21$. Berapa indeks terkecil n sehingga $U_n>36$?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=51, a+2d=21, sehingga a=15, d=3. Ketaksamaan menjadi n>8; indeks bulat terkecil 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=51, a+2d=21, sehingga a=15, d=3. Ketaksamaan menjadi n>8; indeks bulat terkecil 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "62eb62357fd796f0f49290b2",
+        "teks": "Sebuah barisan aritmetika terdiri atas 9 suku. Suku pertamanya 7 dan suku terakhirnya 47. Nilai suku ke-6 dari barisan tersebut adalah ….",
+        "jawaban": "32",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=78$ dan $U_3=30$. Berapa indeks terkecil n sehingga $U_n>108$?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=78, a+2d=30, sehingga a=18, d=6. Ketaksamaan menjadi n>16; indeks bulat terkecil 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=78, a+2d=30, sehingga a=18, d=6. Ketaksamaan menjadi n>16; indeks bulat terkecil 17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1dfa0284bca53d918540a83b",
+        "teks": "Sebuah barisan aritmetika dan sebuah barisan geometri sama-sama memiliki suku pertama 4 dan suku kedua yang sama (suku kedua bukan 4). Suku ketiga barisan geometri lebih besar 4 daripada suku ketiga barisan aritmetika, dan rasio barisan geometri tidak nol. Selisih suku ke-6 barisan geometri dan suku ke-6 barisan aritmetika adalah ....",
+        "jawaban": "$104$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=61$ dan $U_3=26$. Berapa indeks terkecil n sehingga $U_n>44$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=61, a+2d=26, sehingga a=20, d=3. Ketaksamaan menjadi n>9; indeks bulat terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=61, a+2d=26, sehingga a=20, d=3. Ketaksamaan menjadi n>9; indeks bulat terkecil 10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d14560a2a0d53b30e5321d12",
+        "teks": "Barisan geometri memiliki suku pertama 2 dan rasio $r$ yang merupakan bilangan bulat positif. Barisan itu dirancang agar $U_2 < 10$ dan $U_3 > 30$. Nilai $r$ yang memenuhi adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=72$ dan $U_3=24$. Berapa indeks terkecil n sehingga $U_n>72$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=72, a+2d=24, sehingga a=8, d=8. Ketaksamaan menjadi n>9; indeks bulat terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=72, a+2d=24, sehingga a=8, d=8. Ketaksamaan menjadi n>9; indeks bulat terkecil 10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8f451be07698c0c9170c351b",
+        "teks": "Tiga bilangan positif membentuk barisan aritmetika naik. Jumlah ketiga bilangan itu 21 dan hasil kalinya 280. Selisih bilangan terbesar dan bilangan terkecil adalah ....",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=90$ dan $U_3=33$. Berapa indeks terkecil n sehingga $U_n>113$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=90, a+2d=33, sehingga a=17, d=8. Ketaksamaan menjadi n>13; indeks bulat terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=90, a+2d=33, sehingga a=17, d=8. Ketaksamaan menjadi n>13; indeks bulat terkecil 14.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b02-a-hard-bt01-027"
     }
   ]
 }

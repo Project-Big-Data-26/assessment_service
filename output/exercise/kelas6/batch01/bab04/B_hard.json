@@ -429,6 +429,376 @@
       "pembahasan": "Hitung peluang merah tiap kotak: P = 5/12, Q = 4/9, R = 7/16. Perbandingan silang menunjukkan 4/9 > 5/12 dan 4/9 > 7/16. Jadi, klaim Dina salah dan Kotak Q memiliki peluang terbesar.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2a9b90c1b2c9be91d011fc24",
+        "teks": "Kotak A berisi 7 buku, 5 pensil, dan 4 penghapus. Kotak B berisi 3 buku, 6 pensil, dan 3 penghapus. Satu barang diambil secara acak dari kotak yang dipilih.\n\nDina menginginkan pensil. Kotak mana yang sebaiknya dipilih agar peluang mendapat pensil lebih besar?",
+        "jawaban": "Kotak B",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 3 lebih banyak daripada merah. Jika 3 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 14. Pemutar dikembalikan ke keadaan semula, lalu 3 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{8}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 4, biru 7. Setelah penghapusan merah tinggal 1, total 8. Peluang 1/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{64}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{8}$."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 4, biru 7. Setelah penghapusan merah tinggal 1, total 8. Peluang 1/8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bbcf4c3973fd6435180693c2",
+        "teks": "Tiga wadah berisi kartu dengan peluang sama untuk terambil:\n\n| Wadah | Kartu bergambar bintang | Jumlah kartu |\n|---|---:|---:|\n| P | 6 | 15 |\n| Q | 5 | 12 |\n| R | 7 | 18 |\n\nDito berkata peluang mengambil kartu bintang paling besar dari wadah P karena jumlah kartu bintangnya paling banyak. Penilaian yang benar adalah ...",
+        "jawaban": "Klaim Dito salah; peluang terbesar ada di wadah Q.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 3 lebih banyak daripada merah. Jika 3 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 12. Pemutar dikembalikan ke keadaan semula, lalu 2 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{7}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 6 sektor. Maka merah semula 3, biru 6. Setelah penghapusan merah tinggal 1, total 7. Peluang 1/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{7}$."
+        },
+        {
+          "teks": "$\\frac{1}{14}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 6 sektor. Maka merah semula 3, biru 6. Setelah penghapusan merah tinggal 1, total 7. Peluang 1/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b6c06020da7e5b8a58d33a0",
+        "teks": "Kotak P memuat 4 bola merah dan 7 biru. Kotak Q memuat 5 merah dan 7 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "jawaban": "Peluang merah di Q lebih besar daripada di P.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 3 lebih banyak daripada merah. Jika 3 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 18. Pemutar dikembalikan ke keadaan semula, lalu 3 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 9 sektor. Maka merah semula 6, biru 9. Setelah penghapusan merah tinggal 3, total 12. Peluang 1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{4}$."
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 9 sektor. Maka merah semula 6, biru 9. Setelah penghapusan merah tinggal 3, total 12. Peluang 1/4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fbbdd5c91d543c49fc47fbcf",
+        "teks": "Dadu setimbang memiliki sisi bernomor 1 sampai 6. Peluang mendapatkan angka 2 atau 5 dibandingkan peluang mendapatkan angka 4 adalah ....",
+        "jawaban": "Lebih besar",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 2 lebih banyak daripada merah. Jika 2 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 18. Pemutar dikembalikan ke keadaan semula, lalu 6 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{10}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 9 sektor. Maka merah semula 7, biru 9. Setelah penghapusan merah tinggal 1, total 10. Peluang 1/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{10}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{100}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{10}$."
+        },
+        {
+          "teks": "$\\frac{1}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 9 sektor. Maka merah semula 7, biru 9. Setelah penghapusan merah tinggal 1, total 10. Peluang 1/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04f727303426ed68e937504b",
+        "teks": "Kotak A berisi 6 bola hijau dari total 15 bola. Kotak B berisi 5 bola hijau dari total 12 bola. Satu bola diambil secara acak dari salah satu kotak. Kotak mana yang memberi peluang lebih besar mendapatkan bola hijau?",
+        "jawaban": "Kotak B",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 4 lebih banyak daripada merah. Jika 4 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 14. Pemutar dikembalikan ke keadaan semula, lalu 1 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{2}{9}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 3, biru 7. Setelah penghapusan merah tinggal 2, total 9. Peluang 2/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{81}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{9}$."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 3, biru 7. Setelah penghapusan merah tinggal 2, total 9. Peluang 2/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "df3e2817cde4e17817f33305",
+        "teks": "Kotak P memuat 13 bola merah dan 9 biru. Kotak Q memuat 14 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "jawaban": "Peluang merah di Q lebih besar daripada di P.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 2 lebih banyak daripada merah. Jika 2 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 14. Pemutar dikembalikan ke keadaan semula, lalu 3 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{2}{9}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 5, biru 7. Setelah penghapusan merah tinggal 2, total 9. Peluang 2/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{81}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{9}$."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 5, biru 7. Setelah penghapusan merah tinggal 2, total 9. Peluang 2/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b52b52a484a5548f5f40490a",
+        "teks": "Kotak P memuat 7 bola merah dan 9 biru. Kotak Q memuat 8 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "jawaban": "Peluang merah di Q lebih besar daripada di P.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 2 lebih banyak daripada merah. Jika 2 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 14. Pemutar dikembalikan ke keadaan semula, lalu 2 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{3}{10}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 5, biru 7. Setelah penghapusan merah tinggal 3, total 10. Peluang 3/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{10}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{9}{100}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3}{10}$."
+        },
+        {
+          "teks": "$\\frac{3}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 7 sektor. Maka merah semula 5, biru 7. Setelah penghapusan merah tinggal 3, total 10. Peluang 3/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dc0bb8d9b0d7c1791aefdb93",
+        "teks": "Tiga anak memakai dadu setimbang bersisi 1 sampai 6. Sari menang jika muncul 2 atau 5. Bima menang jika muncul 1, 3, 4, atau 6. Tono menang jika muncul 1, 2, atau 3.\n\nSiapa yang memiliki peluang menang paling besar?",
+        "jawaban": "Bima",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 1 lebih banyak daripada merah. Jika 1 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 8. Pemutar dikembalikan ke keadaan semula, lalu 1 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 4 sektor. Maka merah semula 3, biru 4. Setelah penghapusan merah tinggal 2, total 6. Peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 4 sektor. Maka merah semula 3, biru 4. Setelah penghapusan merah tinggal 2, total 6. Peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ada24f3e6536080305608e04",
+        "teks": "Kotak A berisi 5 bola kuning, 3 bola hijau, dan 4 bola ungu. Kotak B berisi 3 bola kuning, 2 bola hijau, dan 3 bola ungu.\n\nSatu bola diambil acak dari salah satu kotak. Kotak mana yang memberi peluang lebih besar untuk mendapat bola kuning?",
+        "jawaban": "Kotak A",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 3 lebih banyak daripada merah. Jika 3 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 20. Pemutar dikembalikan ke keadaan semula, lalu 5 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{6}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 10 sektor. Maka merah semula 7, biru 10. Setelah penghapusan merah tinggal 2, total 12. Peluang 1/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{36}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{6}$."
+        },
+        {
+          "teks": "$\\frac{1}{12}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 10 sektor. Maka merah semula 7, biru 10. Setelah penghapusan merah tinggal 2, total 12. Peluang 1/6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b52b52a484a5548f5f40490a",
+        "teks": "Kotak P memuat 7 bola merah dan 9 biru. Kotak Q memuat 8 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....",
+        "jawaban": "Peluang merah di Q lebih besar daripada di P.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_peluang_rekonstruksi_sektor",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pemutar memiliki sektor merah dan biru sama luas. Sektor biru 1 lebih banyak daripada merah. Jika 1 sektor merah baru ditambahkan, kedua warna menjadi sama mungkin dan jumlah sektor menjadi 12. Pemutar dikembalikan ke keadaan semula, lalu 4 sektor merah dihapus. Berapa peluang merah pada pemutar terakhir?",
+      "jawaban_benar": "$\\frac{1}{7}$",
+      "alasan_benar": "Sesudah penambahan tiap warna memiliki 6 sektor. Maka merah semula 5, biru 6. Setelah penghapusan merah tinggal 1, total 7. Peluang 1/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{7}$."
+        },
+        {
+          "teks": "$\\frac{1}{14}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Sesudah penambahan tiap warna memiliki 6 sektor. Maka merah semula 5, biru 6. Setelah penghapusan merah tinggal 1, total 7. Peluang 1/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b04-b-hard-bt01-020"
     }
   ]
 }

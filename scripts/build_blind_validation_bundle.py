@@ -23,6 +23,7 @@ sys.path.insert(0, str(ROOT))
 from app.classification.v2.contracts import HEAD_LABELS, V2ClassificationRequest  # noqa: E402
 from app.classification.v2.kko import detect_kko  # noqa: E402
 from app.classification.v2.runtime import V2ClassifierRuntime  # noqa: E402
+from app.classification.v2.prediction_cache import predict_with_cache  # noqa: E402
 from app.classification.v2.serializer import canonical_json_hash, serialize_question  # noqa: E402
 from app.llm.silver import silver_rubric, requested_runs_for, requested_run_indices  # noqa: E402
 from app.silver.policy import POLICY_VERSION, qualification  # noqa: E402
@@ -352,7 +353,7 @@ def main() -> int:
         serialized = serialize_question(request, representation=model["inputRepresentation"])
         tokens = len(runtime.tokenizer(serialized, truncation=False)["input_ids"])
         started = time.perf_counter()
-        prediction = runtime.predict(request).model_dump(mode="json")
+        prediction = predict_with_cache(runtime, request, args.source.parent / "diagnostic_prediction_cache")
         prediction["questionId"] = qid
         latency = round((time.perf_counter() - started) * 1000, 3)
         for head in HEADS:

@@ -849,6 +849,43 @@
       "pembahasan": "Berdasarkan definisi komposisi fungsi:\n$$(f \\circ g)(x) = f(g(x))$$\n\nDiketahui $f(x) = x^5$, sehingga:\n$$f(g(x)) = (g(x))^5$$\n\nDari soal diketahui bahwa $(f \\circ g)(x) = (7x + 6)^5$. Dengan menyamakan kedua bentuk tersebut, diperoleh:\n$$(g(x))^5 = (7x + 6)^5$$\n$$g(x) = 7x + 6$$\n\nJadi, rumus fungsi $g(x)$ adalah $7x + 6$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d85c7e2630ca551413eb0a22",
+        "teks": "Jika diketahui nilai fungsi $f(7) = 9$, $g(7) = 5$, $f(5) = 8$, dan $g(5) = 4$, maka nilai dari $(f \\cdot g)(7)$ adalah ....",
+        "jawaban": "$45$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11/blueprints.json",
+        "source_sha256": "b87c3824ac7c013033c79a8a39bab612704b72e2326000bed8a0c430b70de5e1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "komposisi_fungsi",
+      "alasan_level": "Target easy; variasi konsep komposisi fungsi. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=9x+5$ dan $g(x)=6x+8$. Tentukan $(f\\circ g)(-3)$.",
+      "jawaban_benar": "$-85$",
+      "alasan_benar": "g(-3)=-10, kemudian f(g(-3))=9×(-10)+5=-85.",
+      "distraktor": [
+        {
+          "teks": "$-84$",
+          "alasan": "Pilihan $-84$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-85$. Periksa kembali langkah komposisi fungsi pada pembahasan."
+        },
+        {
+          "teks": "$-86$",
+          "alasan": "Pilihan $-86$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-85$. Periksa kembali langkah komposisi fungsi pada pembahasan."
+        },
+        {
+          "teks": "$-83$",
+          "alasan": "Pilihan $-83$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-85$. Periksa kembali langkah komposisi fungsi pada pembahasan."
+        }
+      ],
+      "pembahasan": "g(-3)=-10, kemudian f(g(-3))=9×(-10)+5=-85.",
+      "catatan": "codex-replenishment:kelas11-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11-b01-b-easy-bt01-021"
     }
   ]
 }

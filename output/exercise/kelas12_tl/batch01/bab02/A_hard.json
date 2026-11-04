@@ -849,6 +849,1486 @@
       "pembahasan": "Langkah penyelesaian:\n1. Tentukan laju perubahan rata-rata produksi sepatu pada selang $t = 1$ hingga $t = 3$:\n   $$m_{\\text{sekan}} = \\dfrac{N(3) - N(1)}{3 - 1}$$\n   $$N(3) = a(3)^2 + b(3) = 9a + 3b$$\n   $$N(1) = a(1)^2 + b(1) = a + b$$\n   $$m_{\\text{sekan}} = \\dfrac{(9a + 3b) - (a + b)}{2} = \\dfrac{8a + 2b}{2} = 4a + b$$\n   Diketahui rata-rata laju produksi adalah 48 pasang/jam, maka diperoleh persamaan (1):\n   $$4a + b = 48$$\n\n2. Tentukan laju perubahan sesaat pada $t = 4$ menggunakan definisi limit:\n   $$N'(4) = \\lim_{h\\to 0}\\dfrac{N(4+h) - N(4)}{h}$$\n   $$N(4+h) = a(4+h)^2 + b(4+h) = a(16 + 8h + h^2) + 4b + bh$$\n   $$N(4) = 16a + 4b$$\n   $$N(4+h) - N(4) = 8ah + ah^2 + bh = h(8a + b + ah)$$\n   $$N'(4) = \\lim_{h\\to 0}\\dfrac{h(8a + b + ah)}{h} = \\lim_{h\\to 0}(8a + b + ah) = 8a + b$$\n   Diketahui laju produksi sesaat pada $t = 4$ adalah 68 pasang/jam, maka diperoleh persamaan (2):\n   $$8a + b = 68$$\n\n3. Eliminasi $b$ dari persamaan (2) dan persamaan (1):\n   $$(8a + b) - (4a + b) = 68 - 48$$\n   $$4a = 20 \\implies a = 5$$\n\n4. Substitusikan $a = 5$ ke persamaan (1):\n   $$4(5) + b = 48 \\implies 20 + b = 48 \\implies b = 28$$\n\n5. Hitung nilai $a + b$:\n   $$a + b = 5 + 28 = 33$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "789ef5296783adbcd1218646",
+        "teks": "Diberikan fungsi sebagai berikut:\n$$h(x) = \\begin{cases} \\dfrac{x^2 + ax + b}{x - 3}, & x > 3 \\\\ 7, & x = 3 \\\\ 2x + c, & x < 3 \\end{cases}$$\nJika fungsi $h(x)$ kontinu di seluruh himpunan bilangan real $\\mathbb{R}$, tentukan nilai dari $a + b + c$.",
+        "jawaban": "$-10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=4 x^{2} + 3 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(-1+h)-f(-1)}{h}$.",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-5.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan $-4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-5$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan $-6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-5$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-5$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-5.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0b675d2bbfaa0c9a01b9897",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{5}{3}x^2$. Nilai dari $f'(-6) + f'(9)$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=4 x^{2} + 2 x + 7$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+      "jawaban_benar": "$58$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=58.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan $59$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $58$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan $57$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $58$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Pilihan $60$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $58$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=58.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d28d08970ee1610a11cac324",
+        "teks": "Berdasarkan definisi kekontinuan fungsi, suatu fungsi $f(x)$ dikatakan kontinu di titik $x = c$ jika memenuhi tiga syarat. Manakah di antara pernyataan berikut yang merupakan salah satu syarat tersebut?",
+        "jawaban": "$\\lim_{x\\to c} f(x) = f(c)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=2 x^{2} + 6 x + 3$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=34.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=34.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea6c0702cc4d8739714efc6e",
+        "teks": "Suatu fungsi $f(x)$ terdefinisi untuk seluruh bilangan real dan memenuhi persamaan fungsional $f(x + y) = f(x) + f(y) + 4xy$ untuk setiap bilangan real $x$ dan $y$. Jika diketahui $\\displaystyle\\lim_{h\\to 0} \\frac{f(h)}{h} = 3$, tentukan nilai dari $f'(5)$ berdasarkan definisi limit turunan fungsi.",
+        "jawaban": "$23$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=5 x^{2} + 2 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(6+h)-f(6)}{h}$.",
+      "jawaban_benar": "$62$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=62.",
+      "distraktor": [
+        {
+          "teks": "$63$",
+          "alasan": "Pilihan $63$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $62$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan $61$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $62$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Pilihan $64$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $62$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=62.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa8129b20dac4525d7bfef7c",
+        "teks": "Berdasarkan definisi turunan fungsi $f'(a) = \\displaystyle\\lim_{h\\to 0}\\dfrac{f(a+h) - f(a)}{h}$, nilai dari $f'(3)$ untuk fungsi $f(x) = 2x^2 - 3x$ adalah ....",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=3 x^{2} + 4 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(6+h)-f(6)}{h}$.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=40.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=40.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=2 x^{2} + 7 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(4+h)-f(4)}{h}$.",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(4)=23.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $23$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan $22$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $23$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $23$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(4)=23.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2090786b914a8f5236048d46",
+        "teks": "Berdasarkan Definisi 2.2 mengenai kontinuitas fungsi, suatu fungsi $f(x)$ dikatakan kontinu pada suatu interval $I$ jika ....",
+        "jawaban": "fungsi tersebut kontinu pada setiap titik di $I$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=3 x^{2} + 3 x + 9$, hitung $\\lim_{h\\to0}\\frac{f(-3+h)-f(-3)}{h}$.",
+      "jawaban_benar": "$-15$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-3)=-15.",
+      "distraktor": [
+        {
+          "teks": "$-14$",
+          "alasan": "Pilihan $-14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-15$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Pilihan $-16$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-15$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-13$",
+          "alasan": "Pilihan $-13$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-15$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-3)=-15.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "789ef5296783adbcd1218646",
+        "teks": "Diberikan fungsi sebagai berikut:\n$$h(x) = \\begin{cases} \\dfrac{x^2 + ax + b}{x - 3}, & x > 3 \\\\ 7, & x = 3 \\\\ 2x + c, & x < 3 \\end{cases}$$\nJika fungsi $h(x)$ kontinu di seluruh himpunan bilangan real $\\mathbb{R}$, tentukan nilai dari $a + b + c$.",
+        "jawaban": "$-10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=8 x^{2} + 3 x + 9$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=35.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=35.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "999a96c62f240138bd504a98",
+        "teks": "Gunakan sifat-sifat limit untuk menentukan nilai dari $\\displaystyle\\lim_{y\\to 3}\\sqrt{\\dfrac{3y^2+9}{2y^2+y+4}}$.",
+        "jawaban": "$\\dfrac{6}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=8 x^{2} + 7 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(-3+h)-f(-3)}{h}$.",
+      "jawaban_benar": "$-41$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-3)=-41.",
+      "distraktor": [
+        {
+          "teks": "$-40$",
+          "alasan": "Pilihan $-40$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-41$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-42$",
+          "alasan": "Pilihan $-42$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-41$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-39$",
+          "alasan": "Pilihan $-39$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-41$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-3)=-41.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12864b86e346f35b2dc8d98b",
+        "teks": "Suatu garis sekan menghubungkan titik $P(1, 2)$ dan $R(4, 11)$ pada kurva $f(x)$. Kemiringan (gradien) garis sekan $PR$ tersebut adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=8 x^{2} + 9 x + 9$, hitung $\\lim_{h\\to0}\\frac{f(-2+h)-f(-2)}{h}$.",
+      "jawaban_benar": "$-23$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-2)=-23.",
+      "distraktor": [
+        {
+          "teks": "$-22$",
+          "alasan": "Pilihan $-22$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-23$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-24$",
+          "alasan": "Pilihan $-24$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-23$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-21$",
+          "alasan": "Pilihan $-21$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-23$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-2)=-23.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=9 x^{2} + 8 x + 9$, hitung $\\lim_{h\\to0}\\frac{f(1+h)-f(1)}{h}$.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(1)=26.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan $28$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(1)=26.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9c2d5019889db18d74207d52",
+        "teks": "Diberikan fungsi berikut:\n$$f(x) = \\begin{cases} ax^2 + 5x, & x \\le 2 \\\\ 2x^2 + bx + 4, & x > 2 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan di titik $x = 2$, nilai dari $a + b$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=9 x^{2} + 4 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(-1+h)-f(-1)}{h}$.",
+      "jawaban_benar": "$-14$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-14.",
+      "distraktor": [
+        {
+          "teks": "$-13$",
+          "alasan": "Pilihan $-13$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-14$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan $-15$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-14$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Pilihan $-12$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-14$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-14.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2cdf902e3c96a21c4b0457b",
+        "teks": "Diketahui fungsi $f(x) = -4x^2$. Nilai dari $f'(-3)$ adalah ....",
+        "jawaban": "$24$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=6 x^{2} + 8 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(-1+h)-f(-1)}{h}$.",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-4.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Pilihan $-5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-4.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ffc0ca8edb0cc19c91f0403",
+        "teks": "Sebuah benda bergerak sepanjang lintasan lurus dengan posisi yang dinyatakan oleh $s(t) = 3t^2 + 2t$ ($s$ dalam meter dan $t$ dalam detik). Selisih antara kecepatan rata-rata benda dari $t = 1$ hingga $t = 4$ detik dengan kecepatan sesaat benda pada $t = 2$ detik adalah ....",
+        "jawaban": "$3\\text{ m/s}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=7 x^{2} + 5 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(6+h)-f(6)}{h}$.",
+      "jawaban_benar": "$89$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=89.",
+      "distraktor": [
+        {
+          "teks": "$90$",
+          "alasan": "Pilihan $90$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $89$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Pilihan $88$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $89$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Pilihan $91$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $89$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(6)=89.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea6c0702cc4d8739714efc6e",
+        "teks": "Suatu fungsi $f(x)$ terdefinisi untuk seluruh bilangan real dan memenuhi persamaan fungsional $f(x + y) = f(x) + f(y) + 4xy$ untuk setiap bilangan real $x$ dan $y$. Jika diketahui $\\displaystyle\\lim_{h\\to 0} \\frac{f(h)}{h} = 3$, tentukan nilai dari $f'(5)$ berdasarkan definisi limit turunan fungsi.",
+        "jawaban": "$23$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=3 x^{2} + 4 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=46.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan $47$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan $45$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan $48$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(7)=46.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c7732a48d5aaf16d2e42b8d",
+        "teks": "Diberikan fungsi $g(x) = \\begin{cases} mx + 5, & x \\le 2 \\\\ 3x^2 - 1, & x > 2 \\end{cases}$. Tentukan nilai $m$ agar fungsi $g(x)$ kontinu di seluruh $\\mathbb{R}$.",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=7 x^{2} + 4 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(3+h)-f(3)}{h}$.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(3)=46.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan $47$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan $45$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan $48$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $46$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(3)=46.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6c70fecc3117e123ba957d34",
+        "teks": "Dengan menggunakan sifat-sifat limit fungsi, tentukan nilai dari $\\displaystyle\\lim_{y\\to 4}\\sqrt{\\dfrac{y^2 + 9}{2y^2 - 7y + 12}}$.",
+        "jawaban": "$\\dfrac{5}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=7 x^{2} + 7 x + 7$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=35.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $35$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(2)=35.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2090786b914a8f5236048d46",
+        "teks": "Berdasarkan Definisi 2.2 mengenai kontinuitas fungsi, suatu fungsi $f(x)$ dikatakan kontinu pada suatu interval $I$ jika ....",
+        "jawaban": "fungsi tersebut kontinu pada setiap titik di $I$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=7 x^{2} + 2 x + 4$, hitung $\\lim_{h\\to0}\\frac{f(-5+h)-f(-5)}{h}$.",
+      "jawaban_benar": "$-68$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-5)=-68.",
+      "distraktor": [
+        {
+          "teks": "$-67$",
+          "alasan": "Pilihan $-67$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-68$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-69$",
+          "alasan": "Pilihan $-69$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-68$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-66$",
+          "alasan": "Pilihan $-66$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-68$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-5)=-68.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aef3ad616c726594bba37ad",
+        "teks": "Diberikan fungsi piecewise berikut:\n$$f(x) = \\begin{cases} ax^2 + bx, & x \\le 1 \\\\ 4\\sqrt{x} - 1, & x > 1 \\end{cases}$$\nAgar fungsi $f(x)$ mempunyai turunan (terdiferensialkan) di titik $x = 1$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=2 x^{2} + 4 x + 7$, hitung $\\lim_{h\\to0}\\frac{f(0+h)-f(0)}{h}$.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(0)=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(0)=4.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8cab6cb821b68a8fcffee1b3",
+        "teks": "Gunakan sifat-sifat limit fungsi untuk menentukan nilai dari $\\lim_{x\\to 5}(x^2 - 6)$.",
+        "jawaban": "$19$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "definisi_turunan_limit",
+      "alasan_level": "Target hard; variasi konsep definisi turunan limit. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=9 x^{2} + 3 x + 3$, hitung $\\lim_{h\\to0}\\frac{f(-1+h)-f(-1)}{h}$.",
+      "jawaban_benar": "$-15$",
+      "alasan_benar": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-15.",
+      "distraktor": [
+        {
+          "teks": "$-14$",
+          "alasan": "Pilihan $-14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-15$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Pilihan $-16$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-15$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        },
+        {
+          "teks": "$-13$",
+          "alasan": "Pilihan $-13$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-15$. Periksa kembali langkah definisi turunan limit pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-15.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-a-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "789ef5296783adbcd1218646",
+        "teks": "Diberikan fungsi sebagai berikut:\n$$h(x) = \\begin{cases} \\dfrac{x^2 + ax + b}{x - 3}, & x > 3 \\\\ 7, & x = 3 \\\\ 2x + c, & x < 3 \\end{cases}$$\nJika fungsi $h(x)$ kontinu di seluruh himpunan bilangan real $\\mathbb{R}$, tentukan nilai dari $a + b + c$.",
+        "jawaban": "$-10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+2$ memenuhi $f(9)=371$ dan $f^\\prime(4)=37$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=369 dan 8a+b=37; diperoleh a=4, b=5. Jadi f′(3)=29.",
+      "distraktor": [
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $29$."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $29$."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=369 dan 8a+b=37; diperoleh a=4, b=5. Jadi f′(3)=29.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5bade566925f0ab1a45b4698",
+        "teks": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to 0} (5x^2 - 4x + 8)$ dengan menerapkan sifat-sifat limit fungsi.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+6$ memenuhi $f(9)=366$ dan $f^\\prime(4)=36$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=360 dan 8a+b=36; diperoleh a=4, b=4. Jadi f′(6)=52.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=360 dan 8a+b=36; diperoleh a=4, b=4. Jadi f′(6)=52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0b675d2bbfaa0c9a01b9897",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{5}{3}x^2$. Nilai dari $f'(-6) + f'(9)$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+4$ memenuhi $f(9)=301$ dan $f^\\prime(4)=30$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=297 dan 8a+b=30; diperoleh a=3, b=6. Jadi f′(3)=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=297 dan 8a+b=30; diperoleh a=3, b=6. Jadi f′(3)=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e05143bd27fbf99f6ac3183",
+        "teks": "Gunakan sifat-sifat limit untuk menentukan nilai dari $\\displaystyle\\lim_{y\\to 5}\\sqrt{\\dfrac{y-1}{6y+6}}$.",
+        "jawaban": "$\\dfrac{1}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(7)=224$ dan $f^\\prime(3)=27$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=217 dan 6a+b=27; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $43$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $43$."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=217 dan 6a+b=27; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0f68385388666050eaaf331",
+        "teks": "Untuk $f(x)=8 x^{2} + 3 x + 9$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+        "jawaban": "$35$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+6$ memenuhi $f(9)=429$ dan $f^\\prime(4)=42$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=423 dan 8a+b=42; diperoleh a=5, b=2. Jadi f′(3)=32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=423 dan 8a+b=42; diperoleh a=5, b=2. Jadi f′(3)=32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1c460440e9d690447e54457",
+        "teks": "Untuk $f(x)=8 x^{2} + 4 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+        "jawaban": "$36$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(5)=72$ dan $f^\\prime(2)=11$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=65 dan 4a+b=11; diperoleh a=2, b=3. Jadi f′(4)=19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=65 dan 4a+b=11; diperoleh a=2, b=3. Jadi f′(4)=19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c629fca5038e44295a118403",
+        "teks": "Diketahui fungsi $f(x) = \\begin{cases} \\dfrac{x^2 - 16}{x - 4}, & x \\neq 4 \\\\ c, & x = 4 \\end{cases}$. Agar fungsi $f(x)$ kontinu di titik $x = 4$, nilai $c$ yang memenuhi adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(5)=116$ dan $f^\\prime(2)=19$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=115 dan 4a+b=19; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $43$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $43$."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=115 dan 4a+b=19; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "789ef5296783adbcd1218646",
+        "teks": "Diberikan fungsi sebagai berikut:\n$$h(x) = \\begin{cases} \\dfrac{x^2 + ax + b}{x - 3}, & x > 3 \\\\ 7, & x = 3 \\\\ 2x + c, & x < 3 \\end{cases}$$\nJika fungsi $h(x)$ kontinu di seluruh himpunan bilangan real $\\mathbb{R}$, tentukan nilai dari $a + b + c$.",
+        "jawaban": "$-10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=505$ dan $f^\\prime(4)=50$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(4)=50.",
+      "distraktor": [
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $50$."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $50$."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(4)=50.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0b675d2bbfaa0c9a01b9897",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{5}{3}x^2$. Nilai dari $f'(-6) + f'(9)$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=541$ dan $f^\\prime(4)=54$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=540 dan 8a+b=54; diperoleh a=6, b=6. Jadi f′(6)=78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $78$."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $78$."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=540 dan 8a+b=54; diperoleh a=6, b=6. Jadi f′(6)=78.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "27e1fd322bde7e9ac252bb03",
+        "teks": "Diketahui nilai limit trigonometri berikut:\n$$\\lim_{x\\to 0} \\dfrac{\\cos(ax) - \\cos(bx)}{x^2} = 16$$\nJika $a$ dan $b$ adalah bilangan bulat positif dengan $a + b = 8$, tentukan nilai dari $b - a$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+4$ memenuhi $f(9)=472$ dan $f^\\prime(4)=47$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=468 dan 8a+b=47; diperoleh a=5, b=7. Jadi f′(4)=47.",
+      "distraktor": [
+        {
+          "teks": "$46$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $47$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $47$."
+        },
+        {
+          "teks": "$94$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=468 dan 8a+b=47; diperoleh a=5, b=7. Jadi f′(4)=47.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "79a3d8a23f3258a33957d651",
+        "teks": "Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut. Tentukan nilai dari:\n$$\\lim_{x\\to 3}\\dfrac{\\sqrt{3x + 16} - 5}{x^2 - 2x - 3}$$",
+        "jawaban": "$\\dfrac{3}{40}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+8$ memenuhi $f(7)=169$ dan $f^\\prime(3)=20$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=161 dan 6a+b=20; diperoleh a=3, b=2. Jadi f′(3)=20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=161 dan 6a+b=20; diperoleh a=3, b=2. Jadi f′(3)=20.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "270c365940532f9385406cd6",
+        "teks": "Untuk $f(x)=9 x^{2} + 2 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+        "jawaban": "$128$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(7)=273$ dan $f^\\prime(3)=33$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "distraktor": [
+        {
+          "teks": "$62$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bdb10795511d2fc09ee0ad8d",
+        "teks": "Untuk $f(x)=2 x^{2} + 6 x + 3$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+        "jawaban": "$34$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(7)=239$ dan $f^\\prime(3)=30$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=238 dan 6a+b=30; diperoleh a=4, b=6. Jadi f′(5)=46.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $46$."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $46$."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=238 dan 6a+b=30; diperoleh a=4, b=6. Jadi f′(5)=46.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12864b86e346f35b2dc8d98b",
+        "teks": "Suatu garis sekan menghubungkan titik $P(1, 2)$ dan $R(4, 11)$ pada kurva $f(x)$. Kemiringan (gradien) garis sekan $PR$ tersebut adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(5)=162$ dan $f^\\prime(2)=26$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=155 dan 4a+b=26; diperoleh a=5, b=6. Jadi f′(5)=56.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=155 dan 4a+b=26; diperoleh a=5, b=6. Jadi f′(5)=56.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "270c365940532f9385406cd6",
+        "teks": "Untuk $f(x)=9 x^{2} + 2 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+        "jawaban": "$128$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+3$ memenuhi $f(7)=115$ dan $f^\\prime(3)=14$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=112 dan 6a+b=14; diperoleh a=2, b=2. Jadi f′(6)=26.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $26$."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $26$."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=112 dan 6a+b=14; diperoleh a=2, b=2. Jadi f′(6)=26.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d28d08970ee1610a11cac324",
+        "teks": "Berdasarkan definisi kekontinuan fungsi, suatu fungsi $f(x)$ dikatakan kontinu di titik $x = c$ jika memenuhi tiga syarat. Manakah di antara pernyataan berikut yang merupakan salah satu syarat tersebut?",
+        "jawaban": "$\\lim_{x\\to c} f(x) = f(c)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+4$ memenuhi $f(7)=179$ dan $f^\\prime(3)=22$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=175 dan 6a+b=22; diperoleh a=3, b=4. Jadi f′(3)=22.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=175 dan 6a+b=22; diperoleh a=3, b=4. Jadi f′(3)=22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1fc9e350c883cf8679299f2",
+        "teks": "Sebuah pabrik memproduksi sepatu dengan kurva total produksi $N(t) = at^2 + bt$ pasang sepatu setelah $t$ jam kerja ($0 \\le t \\le 8$). Rata-rata laju produksi sepatu dari jam ke-1 hingga jam ke-3 ($t = 1$ sampai $t = 3$) adalah $48$ pasang per jam. Sementara itu, laju produksi sesaat pada jam ke-4 ($t = 4$) yang dihitung melalui limit pergerakan garis tangen $\\displaystyle\\lim_{h\\to 0}\\dfrac{N(4+h)-N(4)}{h}$ adalah $68$ pasang per jam. Nilai dari $a + b$ adalah ....",
+        "jawaban": "$33$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=307$ dan $f^\\prime(4)=31$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=306 dan 8a+b=31; diperoleh a=3, b=7. Jadi f′(4)=31.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=306 dan 8a+b=31; diperoleh a=3, b=7. Jadi f′(4)=31.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0edeb852ed9623bd5b67b669",
+        "teks": "Garis tangen (garis singgung) pada kurva $f(x) = 4 - x^2$ di titik berabsis $x = 1$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai $c$ yang memenuhi adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=505$ dan $f^\\prime(4)=50$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$38$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(3)=38.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $38$."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $38$."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(3)=38.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2090786b914a8f5236048d46",
+        "teks": "Berdasarkan Definisi 2.2 mengenai kontinuitas fungsi, suatu fungsi $f(x)$ dikatakan kontinu pada suatu interval $I$ jika ....",
+        "jawaban": "fungsi tersebut kontinu pada setiap titik di $I$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+8$ memenuhi $f(7)=274$ dan $f^\\prime(3)=33$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "distraktor": [
+        {
+          "teks": "$62$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccab1079719a4bac9a993428",
+        "teks": "Untuk $f(x)=2 x^{2} + 4 x + 7$, hitung $\\lim_{h\\to0}\\frac{f(0+h)-f(0)}{h}$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+2$ memenuhi $f(9)=434$ dan $f^\\prime(4)=43$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=432 dan 8a+b=43; diperoleh a=5, b=3. Jadi f′(4)=43.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $43$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $43$."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=432 dan 8a+b=43; diperoleh a=5, b=3. Jadi f′(4)=43.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-060"
     }
   ]
 }

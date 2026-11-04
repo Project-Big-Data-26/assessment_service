@@ -849,6 +849,1486 @@
       "pembahasan": "Langkah 1: Menentukan gradien garis yang diketahui.\nPersamaan garis $x + 4y - 12 = 0 \\iff 4y = -x + 12 \\iff y = -\\frac{1}{4}x + 3$.\nGradien garis tersebut adalah $m_1 = -\\frac{1}{4}$.\n\nLangkah 2: Menentukan gradien garis singgung.\nKarena garis singgung tegak lurus terhadap garis di atas, berlaku:\n$$m \\cdot m_1 = -1 \\iff m \\left(-\\frac{1}{4}\\right) = -1 \\iff m = 4$$\n\nLangkah 3: Menentukan turunan fungsi $F(x)$ menggunakan Teorema Dasar Kalkulus I.\n$$F'(x) = \\frac{d}{dx} \\left[ \\int_2^x (3t^2 - 8t + 1)\\,dt \\right] = 3x^2 - 8x + 1$$\n\nLangkah 4: Menentukan nilai absis titik singgung $x = a$.\n$$F'(a) = m \\iff 3a^2 - 8a + 1 = 4$$\n$$3a^2 - 8a - 3 = 0$$\n$$(3a + 1)(a - 3) = 0$$\nDiperoleh $a = -\\frac{1}{3}$ atau $a = 3$.\n\nLangkah 5: Memilih nilai yang memenuhi syarat.\nKarena disyaratkan $a > 0$, maka nilai yang memenuhi adalah $a = 3$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d500e9bcc4c82d16a0ae8bc",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^2 - 6t + 8)\\,dt$ untuk setiap bilangan real $x$. Nilai maksimum lokal dari $F(x)$ tercapai pada saat $x = \\dots.$",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{3}^{5}(2 x^{2} + 2 x + 4)\\,dx$.",
+      "jawaban_benar": "$\\frac{268}{3}$",
+      "alasan_benar": "Antiturunannya $\\frac{2 x^{3}}{3} + x^{2} + 4 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 268/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{271}{3}$",
+          "alasan": "Pilihan $\\frac{271}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{268}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{265}{3}$",
+          "alasan": "Pilihan $\\frac{265}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{268}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{274}{3}$",
+          "alasan": "Pilihan $\\frac{274}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{268}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{2 x^{3}}{3} + x^{2} + 4 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 268/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f25679391a660a2beb15862d",
+        "teks": "Luas daerah bidang datar yang dibatasi oleh kurva parabola $y = x^2$ dan garis $y = 2x + 3$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{32}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{3}^{8}(8 x^{2} + 5 x + 5)\\,dx$.",
+      "jawaban_benar": "$\\frac{8735}{6}$",
+      "alasan_benar": "Antiturunannya $\\frac{8 x^{3}}{3} + \\frac{5 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 8735/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8741}{6}$",
+          "alasan": "Pilihan $\\frac{8741}{6}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8735}{6}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8729}{6}$",
+          "alasan": "Pilihan $\\frac{8729}{6}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8735}{6}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8747}{6}$",
+          "alasan": "Pilihan $\\frac{8747}{6}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8735}{6}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{8 x^{3}}{3} + \\frac{5 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 8735/6.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "021826cbd606953108b8a1f6",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 6x^2 + 8x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{3}^{8}(8 x^{3} + 4 x + 2)\\,dx$.",
+      "jawaban_benar": "$8150$",
+      "alasan_benar": "Antiturunannya $2 x^{4} + 2 x^{2} + 2 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 8150.",
+      "distraktor": [
+        {
+          "teks": "$8151$",
+          "alasan": "Pilihan $8151$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8150$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$8149$",
+          "alasan": "Pilihan $8149$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8150$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$8152$",
+          "alasan": "Pilihan $8152$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8150$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $2 x^{4} + 2 x^{2} + 2 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 8150.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d500e9bcc4c82d16a0ae8bc",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^2 - 6t + 8)\\,dt$ untuk setiap bilangan real $x$. Nilai maksimum lokal dari $F(x)$ tercapai pada saat $x = \\dots.$",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{6}(5 x^{5} + 6 x + 8)\\,dx$.",
+      "jawaban_benar": "$\\frac{106628}{3}$",
+      "alasan_benar": "Antiturunannya $\\frac{5 x^{6}}{6} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 106628/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{106631}{3}$",
+          "alasan": "Pilihan $\\frac{106631}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{106628}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{106625}{3}$",
+          "alasan": "Pilihan $\\frac{106625}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{106628}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{106634}{3}$",
+          "alasan": "Pilihan $\\frac{106634}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{106628}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{5 x^{6}}{6} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 106628/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f1425a37b6ee48a04eefa56",
+        "teks": "Diketahui suatu fungsi $f(x)$ kontinu pada himpunan bilangan real dan memenuhi $\\int_0^3 f(x)\\,dx = 7$, $\\int_0^5 f(x)\\,dx = 15$, serta $\\int_2^5 f(x)\\,dx = 11$. Nilai dari $\\int_2^3 [4f(x) - 5]\\,dx$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{3}^{5}(6 x^{4} + 6 x + 7)\\,dx$.",
+      "jawaban_benar": "$\\frac{17602}{5}$",
+      "alasan_benar": "Antiturunannya $\\frac{6 x^{5}}{5} + 3 x^{2} + 7 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 17602/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17607}{5}$",
+          "alasan": "Pilihan $\\frac{17607}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{17602}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17597}{5}$",
+          "alasan": "Pilihan $\\frac{17597}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{17602}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17612}{5}$",
+          "alasan": "Pilihan $\\frac{17612}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{17602}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{6 x^{5}}{5} + 3 x^{2} + 7 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 17602/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff392c0d8eeb853167986a5a",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_{-1}^x (3t^2 - 6t - 9)\\,dt$ untuk setiap bilangan real $x$. Nilai minimum relatif dari fungsi $F(x)$ adalah ....",
+        "jawaban": "$-32$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{6}(3 x^{2} + 8 x + 9)\\,dx$.",
+      "jawaban_benar": "$250$",
+      "alasan_benar": "Antiturunannya $x^{3} + 4 x^{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 250.",
+      "distraktor": [
+        {
+          "teks": "$251$",
+          "alasan": "Pilihan $251$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $250$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$249$",
+          "alasan": "Pilihan $249$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $250$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$252$",
+          "alasan": "Pilihan $252$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $250$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $x^{3} + 4 x^{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 250.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6e85824cb8bc323cd33889ae",
+        "teks": "Luas bidang datar yang dibatasi oleh kurva parabola $y = 12 - x^2$ dan $y = x^2 - 6$ adalah .... satuan luas.",
+        "jawaban": "$72$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{6}(5 x^{3} + 2 x + 9)\\,dx$.",
+      "jawaban_benar": "$1710$",
+      "alasan_benar": "Antiturunannya $\\frac{5 x^{4}}{4} + x^{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1710.",
+      "distraktor": [
+        {
+          "teks": "$1711$",
+          "alasan": "Pilihan $1711$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1710$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1709$",
+          "alasan": "Pilihan $1709$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1710$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1712$",
+          "alasan": "Pilihan $1712$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1710$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{5 x^{4}}{4} + x^{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1710.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9cb259d0a7e593087d129cf",
+        "teks": "Diketahui fungsi $f(x) = 2x^2 - 5x + 3$ pada interval $[0, 3]$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 (2x^2 - 5x + 3)\\,dx$ adalah ....",
+        "jawaban": "$\\frac{9}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{2}(4 x^{2} + 4 x + 3)\\,dx$.",
+      "jawaban_benar": "$\\frac{74}{3}$",
+      "alasan_benar": "Antiturunannya $\\frac{4 x^{3}}{3} + 2 x^{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 74/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{77}{3}$",
+          "alasan": "Pilihan $\\frac{77}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{74}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{71}{3}$",
+          "alasan": "Pilihan $\\frac{71}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{74}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{80}{3}$",
+          "alasan": "Pilihan $\\frac{80}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{74}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{4 x^{3}}{3} + 2 x^{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 74/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "021826cbd606953108b8a1f6",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 6x^2 + 8x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{2}^{4}(4 x^{5} + 5 x + 5)\\,dx$.",
+      "jawaban_benar": "$2728$",
+      "alasan_benar": "Antiturunannya $\\frac{2 x^{6}}{3} + \\frac{5 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2728.",
+      "distraktor": [
+        {
+          "teks": "$2729$",
+          "alasan": "Pilihan $2729$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2728$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$2727$",
+          "alasan": "Pilihan $2727$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2728$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$2730$",
+          "alasan": "Pilihan $2730$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2728$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{2 x^{6}}{3} + \\frac{5 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2728.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a65e4617241f325ae495b31",
+        "teks": "Nilai dari $\\int_5^5 (9x^4 - 3x^2 + 7)\\,dx$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{3}^{5}(6 x^{5} + 4 x + 6)\\,dx$.",
+      "jawaban_benar": "$14940$",
+      "alasan_benar": "Antiturunannya $x^{6} + 2 x^{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 14940.",
+      "distraktor": [
+        {
+          "teks": "$14941$",
+          "alasan": "Pilihan $14941$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14940$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$14939$",
+          "alasan": "Pilihan $14939$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14940$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$14942$",
+          "alasan": "Pilihan $14942$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $14940$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $x^{6} + 2 x^{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 14940.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "69e37917e71aa9944ba69c15",
+        "teks": "Nilai dari $\\int_0^1 6x(x^2 + 1)^2\\,dx$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{10}(8 x^{5} + 9 x + 5)\\,dx$.",
+      "jawaban_benar": "$1328280$",
+      "alasan_benar": "Antiturunannya $\\frac{4 x^{6}}{3} + \\frac{9 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1328280.",
+      "distraktor": [
+        {
+          "teks": "$1328281$",
+          "alasan": "Pilihan $1328281$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1328280$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1328279$",
+          "alasan": "Pilihan $1328279$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1328280$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1328282$",
+          "alasan": "Pilihan $1328282$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1328280$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{4 x^{6}}{3} + \\frac{9 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1328280.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fe703b3c3bbabff7cee88b1b",
+        "teks": "Diketahui fungsi $f(x) = 2x + 1$ pada interval $[1, 5]$. Jika interval tersebut dipartisi menjadi $4$ subinterval sama panjang dan titik wakil yang digunakan adalah titik ujung kanan dari tiap subinterval, nilai Jumlahan Riemann tersebut adalah ....",
+        "jawaban": "$32$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{7}(3 x^{2} + 9 x + 5)\\,dx$.",
+      "jawaban_benar": "$588$",
+      "alasan_benar": "Antiturunannya $x^{3} + \\frac{9 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 588.",
+      "distraktor": [
+        {
+          "teks": "$589$",
+          "alasan": "Pilihan $589$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $588$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$587$",
+          "alasan": "Pilihan $587$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $588$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$590$",
+          "alasan": "Pilihan $590$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $588$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $x^{3} + \\frac{9 x^{2}}{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 588.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a7e4ad2bce2d9259129417",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = 9x - x^3$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{81}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{3}(3 x^{4} + 4 x + 9)\\,dx$.",
+      "jawaban_benar": "$\\frac{954}{5}$",
+      "alasan_benar": "Antiturunannya $\\frac{3 x^{5}}{5} + 2 x^{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 954/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{959}{5}$",
+          "alasan": "Pilihan $\\frac{959}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{954}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{949}{5}$",
+          "alasan": "Pilihan $\\frac{949}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{954}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{964}{5}$",
+          "alasan": "Pilihan $\\frac{964}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{954}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{3 x^{5}}{5} + 2 x^{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 954/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaaaa1b4e95a4b60effdf1ea",
+        "teks": "Diketahui suatu fungsi $F(x) = \\int_2^x (3t^2 - 8t + 1)\\,dt$ untuk setiap bilangan real $x$. Jika garis singgung grafik fungsi $F(x)$ di titik berabsis $x = a$ (dengan $a > 0$) tegak lurus terhadap garis $x + 4y - 12 = 0$, maka nilai $a$ adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{2}^{7}(3 x^{4} + 5 x + 3)\\,dx$.",
+      "jawaban_benar": "$\\frac{20385}{2}$",
+      "alasan_benar": "Antiturunannya $\\frac{3 x^{5}}{5} + \\frac{5 x^{2}}{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 20385/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{20387}{2}$",
+          "alasan": "Pilihan $\\frac{20387}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{20385}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{20383}{2}$",
+          "alasan": "Pilihan $\\frac{20383}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{20385}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{20389}{2}$",
+          "alasan": "Pilihan $\\frac{20389}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{20385}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{3 x^{5}}{5} + \\frac{5 x^{2}}{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 20385/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7f7dfcbb21b8f81ea5f5b21b",
+        "teks": "Nilai dari $\\int_0^1 4x(2x^2 + 1)^3\\,dx$ adalah ....",
+        "jawaban": "$20$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{9}(6 x^{3} + 9 x + 6)\\,dx$.",
+      "jawaban_benar": "$9780$",
+      "alasan_benar": "Antiturunannya $\\frac{3 x^{4}}{2} + \\frac{9 x^{2}}{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 9780.",
+      "distraktor": [
+        {
+          "teks": "$9781$",
+          "alasan": "Pilihan $9781$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9780$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$9779$",
+          "alasan": "Pilihan $9779$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9780$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$9782$",
+          "alasan": "Pilihan $9782$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9780$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{3 x^{4}}{2} + \\frac{9 x^{2}}{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 9780.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3cd9e71fbb4992abc1b48051",
+        "teks": "Daerah yang dibatasi oleh kurva $y = 3x^2$, sumbu-$x$, dan garis $x = 2$ dibagi menjadi dua daerah dengan luas yang sama oleh garis vertikal $x = k$ (dengan $0 < k < 2$). Nilai $k$ adalah ....",
+        "jawaban": "$\\sqrt[3]{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{2}(6 x^{2} + 3 x + 6)\\,dx$.",
+      "jawaban_benar": "$34$",
+      "alasan_benar": "Antiturunannya $2 x^{3} + \\frac{3 x^{2}}{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 34.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan $36$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $34$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $2 x^{3} + \\frac{3 x^{2}}{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 34.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d500e9bcc4c82d16a0ae8bc",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^2 - 6t + 8)\\,dt$ untuk setiap bilangan real $x$. Nilai maksimum lokal dari $F(x)$ tercapai pada saat $x = \\dots.$",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{6}(9 x^{3} + 6 x + 8)\\,dx$.",
+      "jawaban_benar": "$3072$",
+      "alasan_benar": "Antiturunannya $\\frac{9 x^{4}}{4} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 3072.",
+      "distraktor": [
+        {
+          "teks": "$3073$",
+          "alasan": "Pilihan $3073$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3072$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$3071$",
+          "alasan": "Pilihan $3071$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3072$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$3074$",
+          "alasan": "Pilihan $3074$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3072$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{9 x^{4}}{4} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 3072.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "401a1336977854691adcb489",
+        "teks": "Misalkan $f$ kontinu pada interval tertutup $[1, 4]$ dan $F$ adalah antiturunan dari $f$ sedemikian sehingga $F'(x) = f(x)$. Jika $F(4) = 19$ dan $F(1) = 7$, maka nilai dari $\\int_1^4 f(t)\\,dt$ adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{7}(3 x^{4} + 6 x + 6)\\,dx$.",
+      "jawaban_benar": "$\\frac{47934}{5}$",
+      "alasan_benar": "Antiturunannya $\\frac{3 x^{5}}{5} + 3 x^{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 47934/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{47939}{5}$",
+          "alasan": "Pilihan $\\frac{47939}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{47934}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{47929}{5}$",
+          "alasan": "Pilihan $\\frac{47929}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{47934}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{47944}{5}$",
+          "alasan": "Pilihan $\\frac{47944}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{47934}{5}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{3 x^{5}}{5} + 3 x^{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 47934/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d86963bc3fe7ba5d624175e4",
+        "teks": "Diketahui suatu fungsi $f$ kontinu pada interval $[1, 7]$ dengan $\\int_1^7 f(x)\\,dx = 13$ dan $\\int_4^7 f(x)\\,dx = 5$. Nilai dari $\\int_1^4 [2f(x) + 3]\\,dx$ adalah ....",
+        "jawaban": "25",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{5}(8 x^{3} + 2 x + 3)\\,dx$.",
+      "jawaban_benar": "$1290$",
+      "alasan_benar": "Antiturunannya $2 x^{4} + x^{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1290.",
+      "distraktor": [
+        {
+          "teks": "$1291$",
+          "alasan": "Pilihan $1291$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1290$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1289$",
+          "alasan": "Pilihan $1289$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1290$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1292$",
+          "alasan": "Pilihan $1292$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1290$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $2 x^{4} + x^{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1290.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f62e517cb92741f7b1f123",
+        "teks": "Nilai dari $\\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{3}{n} \\left( 2 + \\frac{3i}{n} \\right)^2$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target hard; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{2}^{6}(6 x^{3} + 6 x + 8)\\,dx$.",
+      "jawaban_benar": "$2048$",
+      "alasan_benar": "Antiturunannya $\\frac{3 x^{4}}{2} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2048.",
+      "distraktor": [
+        {
+          "teks": "$2049$",
+          "alasan": "Pilihan $2049$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2048$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$2047$",
+          "alasan": "Pilihan $2047$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2048$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$2050$",
+          "alasan": "Pilihan $2050$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2048$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{3 x^{4}}{2} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2048.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "354cbae241656e3d486cde8f",
+        "teks": "Diketahui fungsi $f(x) = 3x^2 - 6x + 7$ pada interval $[2, 6]$. Nilai integral tentu dari $f(x)$ pada interval $[2, 6]$ atau $\\int_2^6 (3x^2 - 6x + 7)\\,dx$ adalah ....",
+        "jawaban": "$140$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{19}{6}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{3625}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3625}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3625}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{3625}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aa0536ddabe4052335c3c23",
+        "teks": "Hitung $\\int_{0}^{3}(5 x^{3} + 6 x + 8)\\,dx$.",
+        "jawaban": "$\\frac{609}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{7625}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7625}{24}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{7625}{6}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{7625}{12}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ecf947fbed19a12f8b73b79",
+        "teks": "Hitung $\\int_{1}^{7}(3 x^{3} + 6 x + 6)\\,dx$.",
+        "jawaban": "$1980$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=9$, dan $\\int_0^1 xf(x)\\,dx=\\frac{29}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1216}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{608}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2432}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1216}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f03781bd020f50096a1fd111",
+        "teks": "Hitung $\\int_{3}^{8}(8 x^{3} + 4 x + 2)\\,dx$.",
+        "jawaban": "$8150$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=7$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1408}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{704}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2816}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1408}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "05afb0189d18dcdf75e027a3",
+        "teks": "Misalkan $\\int_1^4 f(x)\\,dx = 12$ dan $\\int_1^4 g(x)\\,dx = 7$. Nilai dari $\\int_1^4 [3f(x) - 4g(x)]\\,dx$ adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=5$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{6125}{6}$",
+      "alasan_benar": "Integral data memberi a/2+b=5 dan a/3+b/2=3; maka a=6, b=2. Integralkan x²(6x+2) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6125}{12}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{6125}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{6125}{6}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=5 dan a/3+b/2=3; maka a=6, b=2. Integralkan x²(6x+2) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9ba075420fe358847e69c69",
+        "teks": "Jika fungsi $F(x) = \\int_1^x (t^3 + 5t)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$x^3 + 5x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=8$, dan $\\int_0^1 xf(x)\\,dx=\\frac{13}{3}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$135$",
+      "alasan_benar": "Integral data memberi a/2+b=8 dan a/3+b/2=13/3; maka a=4, b=6. Integralkan x²(4x+6) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$134$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $135$."
+        },
+        {
+          "teks": "$136$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $135$."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=8 dan a/3+b/2=13/3; maka a=4, b=6. Integralkan x²(4x+6) pada batas 0 hingga 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c52b8883c731576cbfa67cca",
+        "teks": "Diketahui fungsi $f(x) = 6x - x^2$ pada interval $[0, 5]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 5]$ atau $\\int_0^5 (6x - x^2)\\,dx$ adalah ....",
+        "jawaban": "$\\frac{100}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=6$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$2160$",
+      "alasan_benar": "Integral data memberi a/2+b=6 dan a/3+b/2=7/2; maka a=6, b=3. Integralkan x²(6x+3) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$2159$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2160$."
+        },
+        {
+          "teks": "$2161$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2160$."
+        },
+        {
+          "teks": "$4320$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=6 dan a/3+b/2=7/2; maka a=6, b=3. Integralkan x²(6x+3) pada batas 0 hingga 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "db7aa5c9783477f22b80b5bf",
+        "teks": "Hitung $\\int_{0}^{6}(5 x^{3} + 2 x + 9)\\,dx$.",
+        "jawaban": "$1710$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{13}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{423}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{423}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{423}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{423}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a7e4ad2bce2d9259129417",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = 9x - x^3$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{81}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{15}{2}$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$320$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$319$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $320$."
+        },
+        {
+          "teks": "$321$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $320$."
+        },
+        {
+          "teks": "$640$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f62e517cb92741f7b1f123",
+        "teks": "Nilai dari $\\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{3}{n} \\left( 2 + \\frac{3i}{n} \\right)^2$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{13}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{896}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{448}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1792}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{896}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a65e4617241f325ae495b31",
+        "teks": "Nilai dari $\\int_5^5 (9x^4 - 3x^2 + 7)\\,dx$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{15}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{25}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1280}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=25/6; maka a=5, b=5. Integralkan x²(5x+5) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{640}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2560}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1280}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=25/6; maka a=5, b=5. Integralkan x²(5x+5) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "644ae3fae0e9ef11ca7f537f",
+        "teks": "Suatu fungsi linier $f(x) = ax + b$ memenuhi persamaan $\\int_0^2 f(x)\\,dx = 8$ dan $\\int_0^4 f(x)\\,dx = 24$. Nilai dari $\\int_2^6 f(x)\\,dx$ adalah ....",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{7}{2}$, dan $\\int_0^1 xf(x)\\,dx=2$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{704}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{352}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1408}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{704}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "706c91465b89ed873c15489b",
+        "teks": "Diketahui fungsi $f(x) = 6x^2 + 8x + 9$ pada interval $[0, 3]$. Nilai dari $\\int_0^3 (6x^2 + 8x + 9)\\,dx$ adalah ....",
+        "jawaban": "$117$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=9$, dan $\\int_0^1 xf(x)\\,dx=\\frac{29}{6}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$144$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$143$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $144$."
+        },
+        {
+          "teks": "$145$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $144$."
+        },
+        {
+          "teks": "$288$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9cb259d0a7e593087d129cf",
+        "teks": "Diketahui fungsi $f(x) = 2x^2 - 5x + 3$ pada interval $[0, 3]$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 (2x^2 - 5x + 3)\\,dx$ adalah ....",
+        "jawaban": "$\\frac{9}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=7$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{3}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1080$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1079$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1080$."
+        },
+        {
+          "teks": "$1081$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1080$."
+        },
+        {
+          "teks": "$2160$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d4bf2f14c27d3561f529fbf",
+        "teks": "Luas bidang datar yang dibatasi oleh kurva $y = 6x - x^2$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$36$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{9}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{5}{2}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{2375}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=5/2; maka a=3, b=3. Integralkan x²(3x+3) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2375}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2375}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{2375}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=5/2; maka a=3, b=3. Integralkan x²(3x+3) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaf16afa434d23db929843d7",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus sehingga kecepatannya pada waktu $t$ ditentukan oleh $v(t) = 3t^2 - 12t + 9$ (dalam meter per detik). Jarak yang ditempuh partikel tersebut selama periode waktu $0 \\le t \\le 4$ adalah ....",
+        "jawaban": "$12\\text{ meter}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{9}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{8}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{10375}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10375}{24}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{10375}{6}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{10375}{12}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ecbaece6f9841308f4a3c44",
+        "teks": "Berdasarkan Teorema Dasar Kalkulus I, jika suatu fungsi didefinisikan oleh $F(x) = \\int_3^x (7t^2 - 4t + 5)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$7x^2 - 4x + 5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=7$, dan $\\int_0^1 xf(x)\\,dx=\\frac{23}{6}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1656$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=23/6; maka a=4, b=5. Integralkan x²(4x+5) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1655$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1656$."
+        },
+        {
+          "teks": "$1657$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1656$."
+        },
+        {
+          "teks": "$3312$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=23/6; maka a=4, b=5. Integralkan x²(4x+5) pada batas 0 hingga 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bcde9228652c0c8fcd2e1772",
+        "teks": "Hitung $\\int_{0}^{2}(4 x^{2} + 4 x + 3)\\,dx$.",
+        "jawaban": "$\\frac{74}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{13}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{8125}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8125}{24}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{8125}{6}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{8125}{12}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aecb7307c13ce2f189b84c90",
+        "teks": "Misalkan terdapat fungsi $f(x) = 4x$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 4x\\,dx$ adalah ....",
+        "jawaban": "$18$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{17}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{14}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{4125}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=17/2 dan a/3+b/2=14/3; maka a=5, b=6. Integralkan x²(5x+6) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4125}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{4125}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{4125}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=17/2 dan a/3+b/2=14/3; maka a=5, b=6. Integralkan x²(5x+6) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d500e9bcc4c82d16a0ae8bc",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^2 - 6t + 8)\\,dt$ untuk setiap bilangan real $x$. Nilai maksimum lokal dari $F(x)$ tercapai pada saat $x = \\dots.$",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=4$, dan $\\int_0^1 xf(x)\\,dx=\\frac{13}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$192$",
+      "alasan_benar": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$191$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $192$."
+        },
+        {
+          "teks": "$193$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $192$."
+        },
+        {
+          "teks": "$384$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-060"
     }
   ]
 }

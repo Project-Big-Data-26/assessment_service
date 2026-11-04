@@ -639,6 +639,561 @@
       "pembahasan": "Langkah 1: Menentukan hubungan antarunsur pada bangun ruang Platonic:\n- Setiap sisi adalah segitiga, maka $2R = 3S \\implies R = \\frac{3S}{2}$.\n- Setiap titik sudut mempertemukan 4 rusuk, maka $2R = 4T \\implies T = \\frac{R}{2} = \\frac{3S}{4}$.\n\nLangkah 2: Menghitung banyak sisi, rusuk, dan titik sudut menggunakan rumus Euler $S + T - R = 2$:\n$$S + \\frac{3S}{4} - \\frac{3S}{2} = 2$$\n$$\\frac{4S + 3S - 6S}{4} = 2$$\n$$\\frac{S}{4} = 2 \\implies S = 8$$\nBanyak rusuk $R = \\frac{3(8)}{2} = 12$ dan titik sudut $T = 6$ (bangun tersebut adalah oktahedron beraturan).\n\nLangkah 3: Menentukan banyak rusuk sambungan/lipatan yang dipertahankan:\nAgar $S = 8$ sisi tetap saling terhubung menjadi satu pola jaring-jaring tanpa terpisah dan tanpa lingkaran tertutup, banyak rusuk lipatan yang dipertahankan tepat sebanyak $S - 1 = 8 - 1 = 7$ rusuk.\n\nLangkah 4: Menghitung banyak rusuk yang harus digunting:\n$$\\text{Banyak rusuk digunting} = R - (S - 1) = 12 - 7 = 5\\text{ rusuk}.$$",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9a7c3e067f252a076180ce0",
+        "teks": "Sebuah kemasan berbentuk balok memiliki ukuran panjang $8\\text{ cm}$, lebar $5\\text{ cm}$, dan tinggi $3\\text{ cm}$. Kardus tersebut digunting sepanjang beberapa rusuknya hingga membentang rata menjadi jaring-jaring berbentuk salib pada bidang datar. Pola jaring-jaring tersebut terdiri dari empat bidang berurutan secara vertikal (sisi alas $8\\text{ cm} \\times 5\\text{ cm}$, sisi depan $8\\text{ cm} \\times 3\\text{ cm}$, sisi atas $8\\text{ cm} \\times 5\\text{ cm}$, dan sisi belakang $8\\text{ cm} \\times 3\\text{ cm}$) serta dua bidang sisi samping ($5\\text{ cm} \\times 3\\text{ cm}$) yang masing-masing menempel di sisi kiri dan kanan sisi alas sepanjang rusuk $5\\text{ cm}$. Keliling terluar dari bentangan jaring-jaring balok tersebut adalah ....",
+        "jawaban": "$60\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-6. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Alas dan tutup masing-masing 6 rusuk, ditambah 6 rusuk tegak: total 3×6=18.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan $20$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah ciri prisma pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 6 rusuk, ditambah 6 rusuk tegak: total 3×6=18.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b02-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9745993c2e4daabb1fc216c",
+        "teks": "Sebuah jaring-jaring tabung tanpa tutup terdiri atas satu persegi panjang sebagai selimut dan satu lingkaran sebagai alas. Luas persegi panjang tersebut adalah $440\\text{ cm}^2$ dan memiliki lebar (tinggi tabung) $10\\text{ cm}$. Jika tabung tersebut diubah menjadi tabung tertutup dengan jari-jari alas baru dua kali jari-jari semula dan tinggi tabung baru setengah dari tinggi semula, maka luas total seluruh jaring-jaring tabung yang baru adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$1.672\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Alas dan tutup masing-masing 4 rusuk, ditambah 4 rusuk tegak: total 3×4=12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah ciri prisma pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 4 rusuk, ditambah 4 rusuk tegak: total 3×4=12.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b02-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f69cceadf48934c6b9b192de",
+        "teks": "Sebuah bangun ruang polihedron memiliki banyak rusuk ($R$) tiga kali lipat dari banyak sisinya ($S$), sehingga $R = 3S$. Jika banyak titik sudutnya adalah $26$, banyak sisi ($S$) dari bangun ruang tersebut adalah ....",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "ciri_prisma",
+      "alasan_level": "Target hard; variasi konsep ciri prisma. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Alas dan tutup masing-masing 8 rusuk, ditambah 8 rusuk tegak: total 3×8=24.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah ciri prisma pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah ciri prisma pada pembahasan."
+        }
+      ],
+      "pembahasan": "Alas dan tutup masing-masing 8 rusuk, ditambah 8 rusuk tegak: total 3×8=24.",
+      "catatan": "codex-replenishment:kelas9-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "95490d7821fb111604b2ad46",
+        "teks": "Sebuah jaring-jaring prisma tegak memiliki dua sisi alas kongruen berbentuk trapesium sama kaki dan empat sisi tegak berbentuk persegi panjang. Pada trapesium alas, panjang sisi-sisi sejajarnya berturut-turut adalah $10\\text{ cm}$ dan $22\\text{ cm}$, serta jarak antara kedua sisi sejajar tersebut adalah $8\\text{ cm}$. Jika tinggi prisma tersebut adalah $15\\text{ cm}$, maka luas total seluruh bidang datar pada jaring-jaring prisma tersebut adalah ....",
+        "jawaban": "$1.036\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 154 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=154, sehingga n=14 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=56.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=154, sehingga n=14 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=56.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2defbab2007db1c7b7c8360c",
+        "teks": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 130 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=130, sehingga n=13 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=52.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=130, sehingga n=13 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d18c4ff16c50959e398ab74e",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas satu daerah persegi sebagai alas dan empat daerah segitiga sama kaki kongruen sebagai sisi tegak. Bangun ruang yang terbentuk dari rangkaian jaring-jaring tersebut adalah ....",
+        "jawaban": "limas segi empat",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 88 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$44$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=88, sehingga n=11 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=44.",
+      "distraktor": [
+        {
+          "teks": "$43$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=88, sehingga n=11 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=44.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e66d5f78387daa2e87158084",
+        "teks": "Sebuah bangun ruang polihedron memiliki $18$ buah rusuk ($R = 18$). Diketahui perbandingan banyak sisi ($S$) dan banyak titik sudut ($T$) pada polihedron tersebut memenuhi $S : T = 2 : 3$. Banyak sisi ($S$) pada bangun polihedron tersebut adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 18 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=18, sehingga n=6 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=18, sehingga n=6 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "778b6599f591bbfd71a12c18",
+        "teks": "Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?",
+        "jawaban": "$24$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 208 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=208, sehingga n=16 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=64.",
+      "distraktor": [
+        {
+          "teks": "$63$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=208, sehingga n=16 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=64.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dcb104b4f40b13d56b631eb1",
+        "teks": "Sebuah jaring-jaring prisma tegak segitiga siku-siku terdiri atas dua buah segitiga siku-siku kongruen (panjang sisi siku-sikunya $6\\text{ cm}$ dan $8\\text{ cm}$) serta tiga buah persegi panjang sebagai sisi tegak. Jika luas total hamparan jaring-jaring tersebut adalah $384\\text{ cm}^2$, berapakah tinggi prisma yang akan terbentuk?",
+        "jawaban": "$14\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 70 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=70, sehingga n=10 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=40.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=70, sehingga n=10 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6dfb28aff9439e6641ca6601",
+        "teks": "Sebuah tabung tertutup memiliki jari-jari alas $14\\text{ cm}$ dan tinggi $10\\text{ cm}$. Jika tabung tersebut dibelah sepanjang rusuk lengkung dan salah satu garis tingginya sehingga membentuk jaring-jaring datar, berapa keliling dari bidang persegi panjang yang membentuk selimut tabung tersebut? (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$196\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 108 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=108, sehingga n=12 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=48.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=108, sehingga n=12 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=48.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e0bbd5b12f8d4e39ba10fe9",
+        "teks": "Sebuah wadah kaleng tanpa tutup berbentuk tabung memiliki diameter alas $14\\text{ cm}$ dan tinggi $15\\text{ cm}$. Jika kaleng tersebut dibuka dan direbahkan menjadi jaring-jaring pada bidang datar, luas total jaring-jaring wadah kaleng tersebut adalah .... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$814\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 180 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=180, sehingga n=15 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=180, sehingga n=15 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5fd90735532ec90d0faa45c",
+        "teks": "Kelompok bangun ruang berikut yang seluruh anggotanya merupakan bangun ruang sisi lengkung adalah ....",
+        "jawaban": "tabung, kerucut, dan bola",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 28 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=28, sehingga n=7 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=28.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=28, sehingga n=7 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2defbab2007db1c7b7c8360c",
+        "teks": "Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?",
+        "jawaban": "$12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 54 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=54, sehingga n=9 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=54, sehingga n=9 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d18c4ff16c50959e398ab74e",
+        "teks": "Sebuah jaring-jaring bangun ruang terdiri atas satu daerah persegi sebagai alas dan empat daerah segitiga sama kaki kongruen sebagai sisi tegak. Bangun ruang yang terbentuk dari rangkaian jaring-jaring tersebut adalah ....",
+        "jawaban": "limas segi empat",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 40 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=40, sehingga n=8 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=40, sehingga n=8 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf258cd2808361870bb9ea73",
+        "teks": "Bangun ruang yang seluruh permukaannya dibatasi oleh poligon (bidang banyak) disebut ....",
+        "jawaban": "polihedron",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jaring_prisma_limas_gabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Jaring-jaring prisma tegak memiliki dua alas berupa segi-n. Jumlah diagonal yang dapat digambar di bagian dalam kedua alas adalah 10 (rusuk tidak dihitung). Pada prisma tersebut ditambahkan sebuah limas dengan alas menutup tepat salah satu alas prisma. Berapa jumlah rusuk pada permukaan gabungan? Rusuk pertemuan prisma dan limas tetap dihitung satu kali.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=10, sehingga n=5 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=20.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap segi-n memiliki n(n-3)/2 diagonal. Dua alas memberi n(n-3)=10, sehingga n=5 (n≥3). Prisma mempunyai 3n rusuk. Limas menambahkan n rusuk menuju puncak; n rusuk alasnya berimpit dengan prisma. Total 4n=20.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-a-hard-bt01-030"
     }
   ]
 }

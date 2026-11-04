@@ -429,6 +429,487 @@
       "pembahasan": "Sederhanakan rasio lahan dan bibit: 14 : 24 = 7 : 12. Lahan 35 m² adalah 5 kali 7 m², jadi bibit yang sesuai rasio adalah 5 × 12 = 60. Catatan 58 bibit tidak sesuai.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5b1bd51cb472928fcb6d95a",
+        "teks": "Toko menjual tiga paket pensil bermutu sama:\n\n| Paket | Banyak pensil | Harga |\n|---|---:|---:|\n| P | 7 | Rp18.900 |\n| Q | 9 | Rp23.400 |\n| R | 5 | Rp13.500 |\n\nPaket mana yang paling murah untuk setiap pensil, dan berapa harga satu pensilnya?",
+        "jawaban": "Paket Q, Rp2.600",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rasio_senilai",
+      "alasan_level": "Target hard; variasi konsep rasio senilai. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk membuat 9 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 27 gelas?",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Banyak gelas menjadi 3 kali, sehingga sirup juga 3 kali: 11×3=33.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah rasio senilai pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan $32$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah rasio senilai pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah rasio senilai pada pembahasan."
+        }
+      ],
+      "pembahasan": "Banyak gelas menjadi 3 kali, sehingga sirup juga 3 kali: 11×3=33.",
+      "catatan": "codex-replenishment:kelas6-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f498eea1d42a2c98097129df",
+        "teks": "Lahan seluas 18 m² dapat menampung 27 bibit tanaman.\n\nJika tersedia lahan seluas 42 m², berapa bibit yang dapat ditanam dengan rasio yang sama?",
+        "jawaban": "63 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rasio_senilai",
+      "alasan_level": "Target hard; variasi konsep rasio senilai. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk membuat 10 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 50 gelas?",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Banyak gelas menjadi 5 kali, sehingga sirup juga 5 kali: 8×5=40.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah rasio senilai pada pembahasan."
+        }
+      ],
+      "pembahasan": "Banyak gelas menjadi 5 kali, sehingga sirup juga 5 kali: 8×5=40.",
+      "catatan": "codex-replenishment:kelas6-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "38f8be4e589631659335357c",
+        "teks": "Rasio lahan terhadap bibit adalah 5 : 8. Lahan dan bibit harus berupa bilangan cacah kelipatan rasio itu. Jika luas lahan kurang dari 40 m² dan jumlah bibit lebih dari 40, berapa jumlah bibit terbesar yang dapat ditanam?",
+        "jawaban": "56 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas6/blueprints.json",
+        "source_sha256": "ed06b276fa2321116c89066cb64e24dc2ec3494878b08f3619d85e585d65a340"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "rasio_senilai",
+      "alasan_level": "Target hard; variasi konsep rasio senilai. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Untuk membuat 8 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 64 gelas?",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 11×8=88.",
+      "distraktor": [
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan $89$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $88$. Periksa kembali langkah rasio senilai pada pembahasan."
+        },
+        {
+          "teks": "$87$",
+          "alasan": "Pilihan $87$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $88$. Periksa kembali langkah rasio senilai pada pembahasan."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Pilihan $90$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $88$. Periksa kembali langkah rasio senilai pada pembahasan."
+        }
+      ],
+      "pembahasan": "Banyak gelas menjadi 8 kali, sehingga sirup juga 8 kali: 11×8=88.",
+      "catatan": "codex-replenishment:kelas6-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas6-b02-b-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c73a0b8b18160fbcc38f25c",
+        "teks": "Untuk membuat 6 liter minuman diperlukan 15 buah jahe. Berapa buah jahe diperlukan untuk 18 liter dengan resep yang sama?",
+        "jawaban": "45 buah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 2:5. Setelah masing-masing menerima 5 anggota baru, rasionya menjadi $\\frac{17}{35}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$42$",
+      "alasan_benar": "Tulis banyak awal 2k dan 5k. Kesamaan rasio (2k+5)/(5k+5)=17/35 memberi k=6. Jumlah awal (2+5)×6=42.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $42$."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $42$."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 2k dan 5k. Kesamaan rasio (2k+5)/(5k+5)=17/35 memberi k=6. Jumlah awal (2+5)×6=42.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4127497a184a2812ac2dc223",
+        "teks": "Lahan seluas 6 m² dapat menampung 5 bibit. Jika lahan tersedia seluas 18 m², berapa bibit yang dapat ditanam dengan rasio yang sama?",
+        "jawaban": "15 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 3:7. Setelah masing-masing menerima 3 anggota baru, rasionya menjadi $\\frac{33}{73}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$100$",
+      "alasan_benar": "Tulis banyak awal 3k dan 7k. Kesamaan rasio (3k+3)/(7k+3)=33/73 memberi k=10. Jumlah awal (3+7)×10=100.",
+      "distraktor": [
+        {
+          "teks": "$99$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $100$."
+        },
+        {
+          "teks": "$101$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $100$."
+        },
+        {
+          "teks": "$200$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 3k dan 7k. Kesamaan rasio (3k+3)/(7k+3)=33/73 memberi k=10. Jumlah awal (3+7)×10=100.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e768c3fdfe1d8675630206be",
+        "teks": "Lahan seluas 14 m² dapat menampung 24 bibit. Pada catatan kebun, lahan seluas 35 m² ditulis dapat menampung 58 bibit. Jika rasio tetap, berapa bibit seharusnya tertulis?",
+        "jawaban": "60 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 3:4. Setelah masing-masing menerima 3 anggota baru, rasionya menjadi $\\frac{13}{17}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Tulis banyak awal 3k dan 4k. Kesamaan rasio (3k+3)/(4k+3)=13/17 memberi k=12. Jumlah awal (3+4)×12=84.",
+      "distraktor": [
+        {
+          "teks": "$83$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $84$."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 3k dan 4k. Kesamaan rasio (3k+3)/(4k+3)=13/17 memberi k=12. Jumlah awal (3+4)×12=84.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e3155416b2e08ddd8416b0d2",
+        "teks": "Untuk 6 liter air, resep wedang jahe membutuhkan 18 buah jahe merah.\n\nBerapa buah jahe merah yang diperlukan untuk membuat wedang jahe sebanyak 15 liter dengan resep yang sama?",
+        "jawaban": "45 buah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 5:8. Setelah masing-masing menerima 8 anggota baru, rasionya menjadi $\\frac{17}{26}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$156$",
+      "alasan_benar": "Tulis banyak awal 5k dan 8k. Kesamaan rasio (5k+8)/(8k+8)=17/26 memberi k=12. Jumlah awal (5+8)×12=156.",
+      "distraktor": [
+        {
+          "teks": "$155$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $156$."
+        },
+        {
+          "teks": "$157$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $156$."
+        },
+        {
+          "teks": "$312$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 5k dan 8k. Kesamaan rasio (5k+8)/(8k+8)=17/26 memberi k=12. Jumlah awal (5+8)×12=156.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "265761a7bf011137d2df233a",
+        "teks": "Sederhanakan rasio 24 : 36.",
+        "jawaban": "2 : 3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 2:4. Setelah masing-masing menerima 1 anggota baru, rasionya menjadi $\\frac{21}{41}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Tulis banyak awal 2k dan 4k. Kesamaan rasio (2k+1)/(4k+1)=21/41 memberi k=10. Jumlah awal (2+4)×10=60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 2k dan 4k. Kesamaan rasio (2k+1)/(4k+1)=21/41 memberi k=10. Jumlah awal (2+4)×10=60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e768c3fdfe1d8675630206be",
+        "teks": "Lahan seluas 14 m² dapat menampung 24 bibit. Pada catatan kebun, lahan seluas 35 m² ditulis dapat menampung 58 bibit. Jika rasio tetap, berapa bibit seharusnya tertulis?",
+        "jawaban": "60 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 3:4. Setelah masing-masing menerima 4 anggota baru, rasionya menjadi $\\frac{19}{24}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Tulis banyak awal 3k dan 4k. Kesamaan rasio (3k+4)/(4k+4)=19/24 memberi k=5. Jumlah awal (3+4)×5=35.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $35$."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $35$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 3k dan 4k. Kesamaan rasio (3k+4)/(4k+4)=19/24 memberi k=5. Jumlah awal (3+4)×5=35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8be7b91a5fccada802eea2d0",
+        "teks": "Manakah yang merupakan rasio satuan?",
+        "jawaban": "1 : 8",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 4:5. Setelah masing-masing menerima 3 anggota baru, rasionya menjadi $\\frac{23}{28}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Tulis banyak awal 4k dan 5k. Kesamaan rasio (4k+3)/(5k+3)=23/28 memberi k=5. Jumlah awal (4+5)×5=45.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $45$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $45$."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 4k dan 5k. Kesamaan rasio (4k+3)/(5k+3)=23/28 memberi k=5. Jumlah awal (4+5)×5=45.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87630ba394a06dfbfeec1606",
+        "teks": "Dalam satu adonan, 8 cangkir tepung digunakan untuk 6 cangkir susu. Berapa cangkir tepung diperlukan untuk 15 cangkir susu agar rasionya tetap?",
+        "jawaban": "20 cangkir",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 2:5. Setelah masing-masing menerima 8 anggota baru, rasionya menjadi $\\frac{26}{53}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Tulis banyak awal 2k dan 5k. Kesamaan rasio (2k+8)/(5k+8)=26/53 memberi k=9. Jumlah awal (2+5)×9=63.",
+      "distraktor": [
+        {
+          "teks": "$62$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 2k dan 5k. Kesamaan rasio (2k+8)/(5k+8)=26/53 memberi k=9. Jumlah awal (2+5)×9=63.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "11e78b962cc09133eb0f869f",
+        "teks": "Dari rasio 18 : 30, 21 : 35, dan 24 : 42, pasangan manakah yang menunjukkan kesamaan rasio?",
+        "jawaban": "18 : 30 dan 21 : 35",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 3:7. Setelah masing-masing menerima 9 anggota baru, rasionya menjadi $\\frac{1}{2}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$90$",
+      "alasan_benar": "Tulis banyak awal 3k dan 7k. Kesamaan rasio (3k+9)/(7k+9)=1/2 memberi k=9. Jumlah awal (3+7)×9=90.",
+      "distraktor": [
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $90$."
+        },
+        {
+          "teks": "$91$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $90$."
+        },
+        {
+          "teks": "$180$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 3k dan 7k. Kesamaan rasio (3k+9)/(7k+9)=1/2 memberi k=9. Jumlah awal (3+7)×9=90.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5b1bd51cb472928fcb6d95a",
+        "teks": "Toko menjual tiga paket pensil bermutu sama:\n\n| Paket | Banyak pensil | Harga |\n|---|---:|---:|\n| P | 7 | Rp18.900 |\n| Q | 9 | Rp23.400 |\n| R | 5 | Rp13.500 |\n\nPaket mana yang paling murah untuk setiap pensil, dan berapa harga satu pensilnya?",
+        "jawaban": "Paket Q, Rp2.600",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_rasio_penambahan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok memiliki rasio banyak anggota 3:5. Setelah masing-masing menerima 2 anggota baru, rasionya menjadi $\\frac{35}{57}$:1. Berapa jumlah anggota kedua kelompok semula?",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Tulis banyak awal 3k dan 5k. Kesamaan rasio (3k+2)/(5k+2)=35/57 memberi k=11. Jumlah awal (3+5)×11=88.",
+      "distraktor": [
+        {
+          "teks": "$87$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $88$."
+        },
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $88$."
+        },
+        {
+          "teks": "$176$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis banyak awal 3k dan 5k. Kesamaan rasio (3k+2)/(5k+2)=35/57 memberi k=11. Jumlah awal (3+5)×11=88.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-b-hard-bt01-023"
     }
   ]
 }

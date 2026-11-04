@@ -639,6 +639,80 @@
       "pembahasan": "Panjang nama ditentukan oleh banyaknya huruf yang menyusun nama tersebut tanpa menghitung spasi:\n- Budi = 4 huruf\n- Santoso = 7 huruf\n\nTotal panjang nama = $4 + 7 = 11$ huruf.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6b2ceb56f948b8380d0d9d36",
+        "teks": "Seorang guru olahraga ingin mengetahui kelas mana di antara kelas 7A dan 7B yang memiliki daya tahan fisik lebih baik dalam tes lari 12 menit. Manakah bentuk formulasi pertanyaan investigasi statistika yang paling tepat untuk menguji hal tersebut?",
+        "jawaban": "\"Kelas mana yang memiliki rata-rata jarak tempuh lari 12 menit yang lebih jauh?\"",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rata_rata",
+      "alasan_level": "Target easy; variasi konsep rata rata. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data lima hasil pengukuran adalah 23, 20, 17, 20, 26. Berapakah rata-ratanya?",
+      "jawaban_benar": "$\\frac{106}{5}$",
+      "alasan_benar": "Jumlah data = 106. Rata-rata = 106/5 = 106/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{111}{5}$",
+          "alasan": "Pilihan $\\frac{111}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{106}{5}$. Periksa kembali langkah rata rata pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{101}{5}$",
+          "alasan": "Pilihan $\\frac{101}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{106}{5}$. Periksa kembali langkah rata rata pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{116}{5}$",
+          "alasan": "Pilihan $\\frac{116}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{106}{5}$. Periksa kembali langkah rata rata pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah data = 106. Rata-rata = 106/5 = 106/5.",
+      "catatan": "codex-replenishment:kelas7-b06-A-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-a-easy-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6716b94abb59b5b11f7c1b27",
+        "teks": "Seorang peneliti ingin mengetahui apakah siswa kelas VII A lebih rajin membaca buku dibandingkan siswa kelas VII B. Manakah formulasi pertanyaan investigasi statistika yang paling tepat dan terukur untuk menjawab permasalahan tersebut?",
+        "jawaban": "\"Kelas mana yang memiliki rata-rata jumlah buku yang dibaca per bulan lebih tinggi?\"",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "rata_rata",
+      "alasan_level": "Target easy; variasi konsep rata rata. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Data lima hasil pengukuran adalah 12, 18, 9, 15, 12. Berapakah rata-ratanya?",
+      "jawaban_benar": "$\\frac{66}{5}$",
+      "alasan_benar": "Jumlah data = 66. Rata-rata = 66/5 = 66/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{71}{5}$",
+          "alasan": "Pilihan $\\frac{71}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{66}{5}$. Periksa kembali langkah rata rata pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{61}{5}$",
+          "alasan": "Pilihan $\\frac{61}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{66}{5}$. Periksa kembali langkah rata rata pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{76}{5}$",
+          "alasan": "Pilihan $\\frac{76}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{66}{5}$. Periksa kembali langkah rata rata pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlah data = 66. Rata-rata = 66/5 = 66/5.",
+      "catatan": "codex-replenishment:kelas7-b06-A-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-a-easy-bt01-017"
     }
   ]
 }

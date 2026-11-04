@@ -639,6 +639,524 @@
       "pembahasan": "Langkah 1: Menentukan jari-jari bola.\n$$r = \\frac{1}{2} \\times 28 = 14\\text{ cm}$$\n\nLangkah 2: Menghitung luas permukaan bola mula-mula.\n$$L_{\\text{awal}} = 4\\pi r^2 = 4 \\times \\frac{22}{7} \\times 14 \\times 14 = 2.464\\text{ cm}^2$$\n\nLangkah 3: Menganalisis luas permukaan setelah pemotongan.\nKetika bola dipotong menjadi 4 bagian identik melalui 2 bidang yang saling tegak lurus:\n- Masing-masing dari 4 potongan memiliki bagian kulit lengkung sebesar $\\frac{1}{4} \\times 4\\pi r^2 = \\pi r^2$.\n- Masing-masing potongan memiliki dua sisi datar berbentuk setengah lingkaran dengan jari-jari $r$, dengan luas $2 \\times \\left(\\frac{1}{2}\\pi r^2\\right) = \\pi r^2$.\n- Luas permukaan 1 potongan $= \\pi r^2 + \\pi r^2 = 2\\pi r^2$.\n- Total luas permukaan 4 potongan $= 4 \\times 2\\pi r^2 = 8\\pi r^2 = 4.928\\text{ cm}^2$.\n\nLangkah 4: Menghitung pertambahan luas permukaan.\n$$\\Delta L = 8\\pi r^2 - 4\\pi r^2 = 4\\pi r^2 = 2.464\\text{ cm}^2$$\n\nJadi, pertambahan luas seluruh permukaan dari keempat potongan tersebut adalah $2.464\\text{ cm}^2$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "825a102027442554b33be1e8",
+        "teks": "Pada jaring-jaring kerucut, bagian selimut yang berupa juring lingkaran memiliki panjang busur yang sama dengan ...",
+        "jawaban": "keliling lingkaran alas kerucut",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 168 cm dan luas permukaan total $62720 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$552$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=62720; Pythagoras l²=r²+28224. Gabungkan dan pilih r,l positif: r=160, l=232. Hasil l+2r=552.",
+      "distraktor": [
+        {
+          "teks": "$551$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $552$."
+        },
+        {
+          "teks": "$553$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $552$."
+        },
+        {
+          "teks": "$1104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=62720; Pythagoras l²=r²+28224. Gabungkan dan pilih r,l positif: r=160, l=232. Hasil l+2r=552.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "07837bb69fb8b46b86dbd0f0",
+        "teks": "Tabung tertutup memiliki jari-jari 11 cm dan tinggi 12 cm. Berapa luas seluruh permukaannya dalam bentuk $\\pi$?",
+        "jawaban": "$506 \\pi$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 6 cm dan luas permukaan total $144 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=144; Pythagoras l²=r²+36. Gabungkan dan pilih r,l positif: r=8, l=10. Hasil l+2r=26.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $26$."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $26$."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=144; Pythagoras l²=r²+36. Gabungkan dan pilih r,l positif: r=8, l=10. Hasil l+2r=26.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d46cc6dc9e74aff70a4ded06",
+        "teks": "Dua kaleng biskuit tertutup berbentuk tabung mula-mula identik dengan panjang jari-jari alas $r$ dan tinggi $t = r$. Kaleng pertama diperbesar dengan mengalikan jari-jari alasnya saja dengan faktor $3$ sementara tingginya tetap. Kaleng kedua diperbesar dengan menerapkan faktor skala $3$ ke seluruh dimensinya (jari-jari alas dan tinggi diperbesar $3$ kali lipat). Perbandingan luas permukaan seluruh kaleng pertama terhadap kaleng kedua setelah perubahan tersebut adalah ...",
+        "jawaban": "$2 : 3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 28 cm dan luas permukaan total $4410 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$143$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=4410; Pythagoras l²=r²+784. Gabungkan dan pilih r,l positif: r=45, l=53. Hasil l+2r=143.",
+      "distraktor": [
+        {
+          "teks": "$142$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $143$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $143$."
+        },
+        {
+          "teks": "$286$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=4410; Pythagoras l²=r²+784. Gabungkan dan pilih r,l positif: r=45, l=53. Hasil l+2r=143.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "80209482eb04bf6658144fed",
+        "teks": "Sebuah tangki penyimpanan gas berbentuk tabung silinder memiliki panjang jari-jari alas $r$ dan tinggi $t$. Dalam rangka perancangan ulang model baru, insinyur memperbesar panjang jari-jari alas sebesar $50\\%$, namun memperpendek tingginya sebesar $20\\%$. Pengaruh perubahan ukuran tersebut terhadap luas sisi tegak (selimut) tangki adalah ...",
+        "jawaban": "bertambah sebesar $20\\%$ dari luas semula",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 36 cm dan luas permukaan total $22680 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$321$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=22680; Pythagoras l²=r²+1296. Gabungkan dan pilih r,l positif: r=105, l=111. Hasil l+2r=321.",
+      "distraktor": [
+        {
+          "teks": "$320$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $321$."
+        },
+        {
+          "teks": "$322$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $321$."
+        },
+        {
+          "teks": "$642$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=22680; Pythagoras l²=r²+1296. Gabungkan dan pilih r,l positif: r=105, l=111. Hasil l+2r=321.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b0ff9e0c9e551d512210109",
+        "teks": "Perbandingan panjang jari-jari dua buah bola adalah $3 : 5$. Jika luas permukaan bola yang lebih kecil adalah $72\\pi\\text{ cm}^2$, maka luas permukaan bola yang lebih besar adalah ...",
+        "jawaban": "$200\\pi\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 12 cm dan luas permukaan total $90 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=90; Pythagoras l²=r²+144. Gabungkan dan pilih r,l positif: r=5, l=13. Hasil l+2r=23.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=90; Pythagoras l²=r²+144. Gabungkan dan pilih r,l positif: r=5, l=13. Hasil l+2r=23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f174f384e755cd5023325163",
+        "teks": "Tabung tertutup memiliki jari-jari 15 cm dan tinggi 8 cm. Berapa luas seluruh permukaannya dalam bentuk $\\pi$?",
+        "jawaban": "$690 \\pi$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 144 cm dan luas permukaan total $31104 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$396$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=31104; Pythagoras l²=r²+20736. Gabungkan dan pilih r,l positif: r=108, l=180. Hasil l+2r=396.",
+      "distraktor": [
+        {
+          "teks": "$395$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $396$."
+        },
+        {
+          "teks": "$397$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $396$."
+        },
+        {
+          "teks": "$792$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=31104; Pythagoras l²=r²+20736. Gabungkan dan pilih r,l positif: r=108, l=180. Hasil l+2r=396.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "825a102027442554b33be1e8",
+        "teks": "Pada jaring-jaring kerucut, bagian selimut yang berupa juring lingkaran memiliki panjang busur yang sama dengan ...",
+        "jawaban": "keliling lingkaran alas kerucut",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 80 cm dan luas permukaan total $1800 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$118$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=1800; Pythagoras l²=r²+6400. Gabungkan dan pilih r,l positif: r=18, l=82. Hasil l+2r=118.",
+      "distraktor": [
+        {
+          "teks": "$117$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $118$."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $118$."
+        },
+        {
+          "teks": "$236$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=1800; Pythagoras l²=r²+6400. Gabungkan dan pilih r,l positif: r=18, l=82. Hasil l+2r=118.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "936fe2e0614b275267322b36",
+        "teks": "Sebuah kerucut tumpeng padat memiliki diameter alas $24\\text{ cm}$ dan tinggi $16\\text{ cm}$. Seluruh bidang lengkung (selimut) tumpeng tersebut akan ditutup rapat dengan potongan-potongan daun pisang berbentuk persegi berukuran $10\\text{ cm} \\times 10\\text{ cm}$. Karena pemasangan daun pisang saling bertumpuk (tumpang tindih), efektifitas luas tiap potongan daun pisang berkurang sebesar $20\\%$. Jika digunakan $\\pi = 3,14$, berapa lembar daun pisang utuh minimum yang harus disiapkan?",
+        "jawaban": "10 lembar",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 80 cm dan luas permukaan total $16800 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$284$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=16800; Pythagoras l²=r²+6400. Gabungkan dan pilih r,l positif: r=84, l=116. Hasil l+2r=284.",
+      "distraktor": [
+        {
+          "teks": "$283$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $284$."
+        },
+        {
+          "teks": "$285$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $284$."
+        },
+        {
+          "teks": "$568$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=16800; Pythagoras l²=r²+6400. Gabungkan dan pilih r,l positif: r=84, l=116. Hasil l+2r=284.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7076c096b6291c7ce584398",
+        "teks": "Sebuah wadah logam kedap udara dirancang berbentuk gabungan tabung dan kerucut pada bagian atasnya. Bagian alas kerucut berimpit tepat dengan bidang tutup tabung sehingga bagian dalam wadah menyatu tanpa sekat. Wadah tersebut memiliki jari-jari alas $7\\text{ cm}$, tinggi tabung $24\\text{ cm}$, dan tinggi kerucut $24\\text{ cm}$. Jika seluruh permukaan luar wadah tersebut akan dilapisi cairan antikorosi dengan biaya $\\text{Rp}50,00$ per $\\text{cm}^2$, biaya yang diperlukan untuk melapisi seluruh permukaan luar wadah tersebut adalah ... (Gunakan $\\pi = \\frac{22}{7}$)",
+        "jawaban": "$\\text{Rp}88.000,00$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 48 cm dan luas permukaan total $896 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=896; Pythagoras l²=r²+2304. Gabungkan dan pilih r,l positif: r=14, l=50. Hasil l+2r=78.",
+      "distraktor": [
+        {
+          "teks": "$77$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $78$."
+        },
+        {
+          "teks": "$79$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $78$."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=896; Pythagoras l²=r²+2304. Gabungkan dan pilih r,l positif: r=14, l=50. Hasil l+2r=78.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "49e407e79efdbf037e2da6e0",
+        "teks": "Sebuah drum minyak berbentuk tabung tertutup memiliki panjang diameter $70\\text{ cm}$ dan tinggi $100\\text{ cm}$. Seluruh permukaan luar drum tersebut akan dicat menggunakan cat pelapis dengan ketebalan DFT = $40$ dan $\\text{VS}\\% = 50$. Rumus volume cat yang diperlukan adalah:\n$$\\text{Volume cat (liter)} = \\frac{\\text{Luas permukaan } (\\text{m}^2) \\times \\text{DFT}}{\\text{VS}\\% \\times 10}$$\nDengan menggunakan $\\pi = \\frac{22}{7}$, volume cat yang dibutuhkan untuk mengecat drum tersebut adalah ...",
+        "jawaban": "$0,2376\\text{ liter}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 168 cm dan luas permukaan total $5096 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$222$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=5096; Pythagoras l²=r²+28224. Gabungkan dan pilih r,l positif: r=26, l=170. Hasil l+2r=222.",
+      "distraktor": [
+        {
+          "teks": "$221$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $222$."
+        },
+        {
+          "teks": "$223$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $222$."
+        },
+        {
+          "teks": "$444$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=5096; Pythagoras l²=r²+28224. Gabungkan dan pilih r,l positif: r=26, l=170. Hasil l+2r=222.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2fd300d5018442637501f95e",
+        "teks": "Sebuah wadah berbentuk kerucut tertutup direncanakan memiliki luas selimut tepat $2,6$ kali luas lingkaran alasnya. Jika selimut kerucut tersebut dibuat dari bentangan juring lingkaran dengan sudut pusat $\\theta$ dan panjang garis pelukis $s$, serta tinggi kerucut dinyatakan dengan $t$ dan jari-jari alas dinyatakan dengan $r$, manakah perbandingan nilai $\\frac{t}{r}$ dan besar sudut pusat juring $\\theta$ yang tepat?",
+        "jawaban": "$\\frac{t}{r} = 2,4$ dan $\\theta = 138,46^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 12 cm dan luas permukaan total $216 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=216; Pythagoras l²=r²+144. Gabungkan dan pilih r,l positif: r=9, l=15. Hasil l+2r=33.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $33$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $33$."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=216; Pythagoras l²=r²+144. Gabungkan dan pilih r,l positif: r=9, l=15. Hasil l+2r=33.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0891d2bbfcc1edd2ed4b910d",
+        "teks": "Sebuah kaleng biskuit berbentuk tabung tertutup memiliki keliling lingkaran alas sebesar $88\\text{ cm}$ dan tinggi $16\\text{ cm}$. Dengan menggunakan $\\pi = \\frac{22}{7}$, luas seluruh permukaan kaleng biskuit tersebut adalah ...",
+        "jawaban": "$2.640\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 448 cm dan luas permukaan total $30720 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$572$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=30720; Pythagoras l²=r²+200704. Gabungkan dan pilih r,l positif: r=60, l=452. Hasil l+2r=572.",
+      "distraktor": [
+        {
+          "teks": "$571$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $572$."
+        },
+        {
+          "teks": "$573$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $572$."
+        },
+        {
+          "teks": "$1144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=30720; Pythagoras l²=r²+200704. Gabungkan dan pilih r,l positif: r=60, l=452. Hasil l+2r=572.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf3d6f34527237724cae5333",
+        "teks": "Rumus yang digunakan untuk mencari luas permukaan sebuah tabung tertutup dengan panjang jari-jari alas $r$ dan tinggi $t$ adalah ...",
+        "jawaban": "$2\\pi r(r + t)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 72 cm dan luas permukaan total $2016 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$117$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=2016; Pythagoras l²=r²+5184. Gabungkan dan pilih r,l positif: r=21, l=75. Hasil l+2r=117.",
+      "distraktor": [
+        {
+          "teks": "$116$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $117$."
+        },
+        {
+          "teks": "$118$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $117$."
+        },
+        {
+          "teks": "$234$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=2016; Pythagoras l²=r²+5184. Gabungkan dan pilih r,l positif: r=21, l=75. Hasil l+2r=117.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b0ff9e0c9e551d512210109",
+        "teks": "Perbandingan panjang jari-jari dua buah bola adalah $3 : 5$. Jika luas permukaan bola yang lebih kecil adalah $72\\pi\\text{ cm}^2$, maka luas permukaan bola yang lebih besar adalah ...",
+        "jawaban": "$200\\pi\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kerucut_luas_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kerucut tertutup memiliki tinggi 20 cm dan luas permukaan total $4800 \\pi$ cm². Tentukan panjang garis pelukis ditambah diameter alas.",
+      "jawaban_benar": "$148$",
+      "alasan_benar": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=4800; Pythagoras l²=r²+400. Gabungkan dan pilih r,l positif: r=48, l=52. Hasil l+2r=148.",
+      "distraktor": [
+        {
+          "teks": "$147$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $148$."
+        },
+        {
+          "teks": "$149$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $148$."
+        },
+        {
+          "teks": "$296$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis radius r dan pelukis l. Luas memberi r(r+l)=4800; Pythagoras l²=r²+400. Gabungkan dan pilih r,l positif: r=48, l=52. Hasil l+2r=148.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-e-hard-bt01-029"
     }
   ]
 }

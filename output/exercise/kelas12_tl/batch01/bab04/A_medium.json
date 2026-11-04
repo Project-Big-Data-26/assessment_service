@@ -849,6 +849,524 @@
       "pembahasan": "Dua kelereng diambil sekaligus dari kantong yang berisi kelereng merah $\\{M_1, M_2, M_3\\}$ dan hijau $\\{H_1, H_2\\}$.\n1. Jika terambil kelereng berlainan warna (satu merah dan satu hijau):\n   Nilai $V = 0$.\n2. Jika terambil kelereng berwarna sama:\n   - Keduanya merah: kemungkinan pasangan adalah $\\{M_1, M_2\\}$ bernilai $1 + 2 = 3$; $\\{M_1, M_3\\}$ bernilai $1 + 3 = 4$; $\\{M_2, M_3\\}$ bernilai $2 + 3 = 5$.\n   - Keduanya hijau: kemungkinan pasangan hanya $\\{H_1, H_2\\}$ bernilai $1 + 2 = 3$.\n\nDengan demikian, nilai-nilai yang mungkin dari variabel acak $V$ adalah 0, 3, 4, dan 5.\nHimpunan nilainya dituliskan $\\{0, 3, 4, 5\\}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea8bc4159c04793786e8b9b3",
+        "teks": "Sekeping uang logam seimbang dilempar sebanyak $n$ kali ($n$ bilangan bulat positif). Didefinisikan variabel acak $W$ sebagai selisih mutlak antara banyaknya sisi Angka dan banyaknya sisi Gambar yang muncul. Jika himpunan semua nilai yang mungkin dari $W$ memiliki tepat 5 anggota dan nilai maksimum dari $W$ adalah 8, banyaknya anggota ruang sampel $n(S)$ dari percobaan tersebut adalah ....",
+        "jawaban": "256",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 9 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{1}{5}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$\\frac{9}{5}$",
+      "alasan_benar": "X adalah jumlah 9 indikator sukses. E(X)=n×p=9×1/5=9/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{14}{5}$",
+          "alasan": "Pilihan $\\frac{14}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Pilihan $\\frac{4}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19}{5}$",
+          "alasan": "Pilihan $\\frac{19}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{9}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 9 indikator sukses. E(X)=n×p=9×1/5=9/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0c3c5cda3e64faf83dbdfa6d",
+        "teks": "Sebuah kotak berisi 7 bola merah dan 4 bola putih. Dari kotak tersebut diambil 8 bola sekaligus secara acak tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola putih yang terambil, tentukan himpunan semua nilai $z$ yang mungkin dari variabel acak $Z$.",
+        "jawaban": "$\\{1, 2, 3, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 9 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{3}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$\\frac{27}{10}$",
+      "alasan_benar": "X adalah jumlah 9 indikator sukses. E(X)=n×p=9×3/10=27/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{10}$",
+          "alasan": "Pilihan $\\frac{37}{10}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{27}{10}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17}{10}$",
+          "alasan": "Pilihan $\\frac{17}{10}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{27}{10}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{47}{10}$",
+          "alasan": "Pilihan $\\frac{47}{10}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{27}{10}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 9 indikator sukses. E(X)=n×p=9×3/10=27/10.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0c3c5cda3e64faf83dbdfa6d",
+        "teks": "Sebuah kotak berisi 7 bola merah dan 4 bola putih. Dari kotak tersebut diambil 8 bola sekaligus secara acak tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola putih yang terambil, tentukan himpunan semua nilai $z$ yang mungkin dari variabel acak $Z$.",
+        "jawaban": "$\\{1, 2, 3, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 7 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{7}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$\\frac{49}{10}$",
+      "alasan_benar": "X adalah jumlah 7 indikator sukses. E(X)=n×p=7×7/10=49/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{59}{10}$",
+          "alasan": "Pilihan $\\frac{59}{10}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{49}{10}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39}{10}$",
+          "alasan": "Pilihan $\\frac{39}{10}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{49}{10}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{69}{10}$",
+          "alasan": "Pilihan $\\frac{69}{10}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{49}{10}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 7 indikator sukses. E(X)=n×p=7×7/10=49/10.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0dd66096ca58a9f0c559d537",
+        "teks": "Sebuah kotak memuat $n$ kartu yang masing-masing bertuliskan bilangan bulat dari 1 sampai $n$ (dengan $n > 3$). Dua kartu diambil secara acak sekaligus dari kotak tersebut. Didefinisikan variabel acak $W$ sebagai selisih positif antara kedua angka pada kartu yang terambil. Jika banyaknya anggota himpunan semua nilai yang mungkin dari variabel acak $W$ adalah 7, maka banyaknya seluruh anggota ruang sampel pada percobaan tersebut adalah ....",
+        "jawaban": "28",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 4 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{1}{2}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "X adalah jumlah 4 indikator sukses. E(X)=n×p=4×1/2=2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 4 indikator sukses. E(X)=n×p=4×1/2=2.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c40cb4fc17d506cbec77e1af",
+        "teks": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Pasangan mata dadu yang muncul dinyatakan sebagai $(a, b)$ dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$. Didefinisikan matriks $M = \\begin{pmatrix} a & 2 \\\\ b & 3 \\end{pmatrix}$. Variabel acak $D$ menyatakan determinan dari matriks $M$. Banyaknya elemen ruang sampel yang memetakan ke nilai variabel acak $D$ sedemikian sehingga $|D| \\le 2$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 8 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{7}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$\\frac{28}{5}$",
+      "alasan_benar": "X adalah jumlah 8 indikator sukses. E(X)=n×p=8×7/10=28/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{33}{5}$",
+          "alasan": "Pilihan $\\frac{33}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{28}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{23}{5}$",
+          "alasan": "Pilihan $\\frac{23}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{28}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{38}{5}$",
+          "alasan": "Pilihan $\\frac{38}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{28}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 8 indikator sukses. E(X)=n×p=8×7/10=28/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccd12c8b594c3483c72766e6",
+        "teks": "Dari 10 mobil yang dikirim sebuah pabrik, sebanyak 4 mobil tiba dalam keadaan tergores. Sebuah toko menerima 8 mobil secara acak. Misalkan $T$ menyatakan ruang sampel, $G$ untuk kondisi mobil \"tergores\", dan $B$ untuk kondisi mobil yang \"baik\". Variabel acak $X$ menyatakan banyak mobil terkena goresan yang diterima oleh toko tersebut. Tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+        "jawaban": "$\\{2, 3, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 4 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{2}{5}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$\\frac{8}{5}$",
+      "alasan_benar": "X adalah jumlah 4 indikator sukses. E(X)=n×p=4×2/5=8/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{5}$",
+          "alasan": "Pilihan $\\frac{13}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{3}{5}$",
+          "alasan": "Pilihan $\\frac{3}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{18}{5}$",
+          "alasan": "Pilihan $\\frac{18}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{8}{5}$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 4 indikator sukses. E(X)=n×p=4×2/5=8/5.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3aad0293071f4f6b6cc292dd",
+        "teks": "Sebuah kotak memuat 3 bola merah dan 8 bola putih. Dari dalam kotak tersebut diambil sebanyak 6 bola satu per satu tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola putih yang terambil, himpunan semua kemungkinan nilai $z$ dari variabel acak $Z$ adalah ....",
+        "jawaban": "$\\{3, 4, 5, 6\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_acak_harapan",
+      "alasan_level": "Target medium; variasi konsep variabel acak harapan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam 10 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{2}{5}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "X adalah jumlah 10 indikator sukses. E(X)=n×p=10×2/5=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah variabel acak harapan pada pembahasan."
+        }
+      ],
+      "pembahasan": "X adalah jumlah 10 indikator sukses. E(X)=n×p=10×2/5=4.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-a-medium-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9b25ea1313482559728422e4",
+        "teks": "Seorang petugas kendali mutu melakukan pemeriksaan terhadap 5 unit prosesor komputer. Hasil pengamatan dikategorikan dalam komponen 'layak' dan 'rusak'. $X$ adalah variabel acak yang menyatakan banyaknya prosesor yang rusak. Jika diketahui paling sedikit 2 unit prosesor dalam kondisi layak, himpunan semua nilai $x$ yang mungkin dari variabel acak $X$ adalah ....",
+        "jawaban": "$\\{0, 1, 2, 3\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 6, 9, 12 dengan peluang $k$, $1/3k$, dan $4/3k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$\\frac{75}{8}$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=3/8. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 75/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{75}{16}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{75}{4}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{75}{8}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=3/8. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 75/8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "af1ae1d7a70df88328be7036",
+        "teks": "Sebuah percobaan acak melempar 4 keping uang logam seimbang secara bersamaan. Setiap keping memiliki sisi Angka ($A$) dan Gambar ($G$). Hasil lemparan dinyatakan sebagai barisan 4 huruf berurutan, misalnya $AGGA$.\nDidefinisikan dua variabel acak:\n- $X$: banyaknya sisi Angka ($A$) yang muncul.\n- $Y$: banyaknya pergantian sisi yang terjadi antara dua keping yang bersebelahan (contoh: pada hasil $AGGA$, terjadi pergantian dari $A$ ke $G$ dan dari $G$ ke $A$, sehingga $Y = 2$).\n\nPerhatikan pernyataan-pernyataan berikut:\n(1) Nilai minimum yang mungkin dari variabel acak $Y$ adalah 0.\n(2) Nilai maksimum yang mungkin dari variabel acak $Y$ adalah 3.\n(3) Banyaknya elemen dalam ruang sampel yang memetakan ke nilai $Y = 1$ adalah 6.\n(4) Himpunan semua nilai yang mungkin dari $(X - Y)$ adalah $\\{0, 1, 2, 3, 4\\}$.\n\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1), (2), dan (3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 5, 7, 9 dengan peluang $k$, $3/3k$, dan $2/3k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$\\frac{27}{4}$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=3/8. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 27/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{27}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{27}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=3/8. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 27/4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d1e9b17990f04e5694d5324",
+        "teks": "Dua buah dadu seimbang bersisi enam dilempar bersamaan sekali. Variabel acak $X$ didefinisikan bernilai 1 jika muncul pasangan mata dadu kembar, dan bernilai 0 jika muncul pasangan bukan kembar. Manakah pasangan hasil pelemparan berikut yang dipetakan ke nilai $X = 0$?",
+        "jawaban": "$(2, 5)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 5, 8, 14 dengan peluang $k$, $3/4k$, dan $2/4k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=4/9. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=4/9. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9f2f660e1caebf5ca0cb71f",
+        "teks": "Dalam 4 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{1}{2}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 3, 5, 13 dengan peluang $k$, $3/3k$, dan $3/3k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=1/3. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=1/3. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4217043f4649ea58391c81cf",
+        "teks": "Sebuah kantong berisi 3 bola merah dan 7 bola putih. Dari kantong tersebut diambil 5 bola sekaligus secara acak tanpa pengembalian. Jika variabel acak $Z$ menyatakan banyaknya bola merah yang terambil, himpunan semua nilai $z$ yang mungkin untuk variabel acak $Z$ adalah ....",
+        "jawaban": "$\\{0, 1, 2, 3\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 5, 7, 13 dengan peluang $k$, $3/2k$, dan $1/2k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$\\frac{22}{3}$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=1/3. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 22/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{44}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{22}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=1/3. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 22/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce8b9eec2286a6bf4223488b",
+        "teks": "Sekeping uang logam seimbang dilempar sebanyak 3 kali berturut-turut. Pada setiap lemparan, kemunculan sisi angka ($A$) diberi skor 2, sedangkan kemunculan sisi gambar ($G$) diberi skor $-1$. Jika variabel acak $X$ menyatakan total skor dari ketiga lemparan tersebut, tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+        "jawaban": "$\\{-3, 0, 3, 6\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 6, 10, 17 dengan peluang $k$, $4/4k$, dan $4/4k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=1/3. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 11.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $11$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=1/3. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e3b0c14578392b0f08dd416",
+        "teks": "Sekeping uang logam seimbang dilempar sebanyak 4 kali berturut-turut. Jika variabel acak $W$ menyatakan selisih mutlak antara banyaknya sisi angka dan banyaknya sisi gambar yang muncul, himpunan semua nilai $w$ yang mungkin dari variabel acak $W$ adalah ....",
+        "jawaban": "$\\{0, 2, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_acak_normalisasi_harapan",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Variabel acak X bernilai 6, 9, 15 dengan peluang $k$, $1/4k$, dan $4/4k$. Tentukan $E(X)$.",
+      "jawaban_benar": "$\\frac{31}{3}$",
+      "alasan_benar": "Jumlah peluang harus 1, sehingga k=4/9. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 31/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{62}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{31}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah peluang harus 1, sehingga k=4/9. Kalikan setiap nilai X dengan peluangnya dan jumlahkan: 31/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-medium-bt01-034"
     }
   ]
 }

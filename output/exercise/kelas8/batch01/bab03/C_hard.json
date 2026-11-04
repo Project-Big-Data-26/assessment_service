@@ -515,6 +515,80 @@
       ],
       "pembahasan": "Anggota dimulai dari 5. Tiga anggota: 5, 6, 7, jadi $k = 7$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "35ba7428cbe3fa034d942e72",
+        "teks": "Pertidaksamaan $x + 3 \\geq k$ dengan $x$ dan $k$ bilangan bulat. Agar $-1$ anggota himpunan penyelesaian tetapi $-2$ bukan anggota, nilai $k$ adalah ....",
+        "jawaban": "2",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "pertidaksamaan",
+      "alasan_level": "Target hard; variasi konsep pertidaksamaan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $2 x + 13$ < 39 dengan $x$ bilangan cacah. Berapakah nilai $x$ terbesar yang memenuhi?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Kurangi kedua ruas dengan 13, lalu bagi dengan 2>0: x < 13. Bilangan cacah terbesar yang memenuhi adalah 12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah pertidaksamaan pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah pertidaksamaan pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah pertidaksamaan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kurangi kedua ruas dengan 13, lalu bagi dengan 2>0: x < 13. Bilangan cacah terbesar yang memenuhi adalah 12.",
+      "catatan": "codex-replenishment:kelas8-b03-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b03-c-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1b59b0b64a0f164471c22e8b",
+        "teks": "Pertidaksamaan yang himpunan penyelesaiannya tepat $\\{0, 1, 2, 3, 4, 5, 6\\}$ jika $x$ anggota bilangan cacah adalah ....",
+        "jawaban": "$x + 2 \\lt 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_ptlsv_model_perbandingan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Paket A berbiaya 7x+2 ribu rupiah, paket B 10x+26 ribu rupiah. Toko memberi potongan tetap 48 ribu rupiah hanya pada B. Untuk x bilangan bulat positif, berapa x terbesar agar B setelah potongan lebih murah daripada A?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Bandingkan (10)x+26-48<7x+2, jadi 3x<24, x<8. Batas bulat positif 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Bandingkan (10)x+26-48<7x+2, jadi 3x<24, x<8. Batas bulat positif 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b03-c-hard-bt01-017"
     }
   ]
 }

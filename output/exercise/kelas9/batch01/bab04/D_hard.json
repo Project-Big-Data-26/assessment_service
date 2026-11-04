@@ -501,6 +501,635 @@
       "pembahasan": "Populasinya seluruh 600 siswa. Mengundi 60 nomor induk dari daftar seluruh siswa memberi peluang sama kepada semua kemungkinan sampel sehingga berpeluang besar representatif. Siswa yang pertama tiba, anggota ekskul olahraga, dan penjawab sukarela di media sosial semuanya dipilih berdasarkan ciri tertentu sehingga kemungkinan besar tidak mewakili seluruh siswa.",
       "catatan": "Lebih rentan: sangat dekat dengan soal pretest Latihan D nomor 6 serta soal easy dan medium D tentang memilih cara pemilihan sampel (hanya konteks dan opsi yang diganti dan ditambah satu opsi), dan dekat dengan soal hard 003 serta 001; level hard dipertahankan karena empat opsi yang semuanya tampak masuk akal. Diubah dari rancangan awal (variasi antar-sampel) supaya porsi variasi memenuhi validator.",
       "dipaksa_kuota": true
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9b0b1902cbab016ba39d4773",
+        "teks": "Guru memiliki roda putar dengan 10 juring yang sama besar, masing-masing bertuliskan satu nomor siswa dari 1 sampai 10. Untuk memilih sampel, roda diputar 3 kali (pemilihan dengan pengembalian, jadi nomor yang sama dapat muncul lebih dari sekali). Guru berharap mendapat 3 siswa yang berbeda.\n\nPeluang ketiga nomor yang terpilih berbeda semua adalah ....",
+        "jawaban": "$\\frac{18}{25}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sampling_proporsional",
+      "alasan_level": "Target hard; variasi konsep sampling proporsional. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 28 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Ada 4 kelompok, masing-masing menyumbang 3 orang, sehingga sampelnya 12 orang.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah sampling proporsional pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah sampling proporsional pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah sampling proporsional pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 4 kelompok, masing-masing menyumbang 3 orang, sehingga sampelnya 12 orang.",
+      "catatan": "codex-replenishment:kelas9-b04-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b04-d-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2945624340ecf10ecb258546",
+        "teks": "Sebuah sekolah memiliki 600 siswa: 300 siswa kelas VII, 200 siswa kelas VIII, dan 100 siswa kelas IX. Rani mengundi 30 siswa dari daftar seluruh siswa dengan cara yang memberi peluang sama kepada setiap kemungkinan sampel 30 siswa. Ternyata 22 siswa yang terpilih berasal dari kelas VII. Rani menyimpulkan bahwa cara pengundiannya salah.\n\nPenilaian yang tepat terhadap kesimpulan Rani adalah ....",
+        "jawaban": "tidak tepat, karena cara mengundinya tetap acak dan hasil yang didominasi kelas VII hanya kebetulan sebab sampel acak hanya berpeluang besar representatif",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas9/blueprints.json",
+        "source_sha256": "e873cb8635ab80f2dc2b4334a26766413e01d9611568b8b1e563dc6bf27195e1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "sampling_proporsional",
+      "alasan_level": "Target hard; variasi konsep sampling proporsional. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Populasi terdiri atas 8 kelompok dengan anggota sama banyak, total 104 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Ada 8 kelompok, masing-masing menyumbang 3 orang, sehingga sampelnya 24 orang.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah sampling proporsional pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah sampling proporsional pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah sampling proporsional pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 8 kelompok, masing-masing menyumbang 3 orang, sehingga sampelnya 24 orang.",
+      "catatan": "codex-replenishment:kelas9-b04-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas9-b04-d-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec7547364ad897864a8de42",
+        "teks": "Ibu guru mengambil satu kartu bernomor dari kotak berisi kartu nomor absen. Nomor dicatat, kartu dikembalikan ke kotak, lalu kotak dikocok dan diambil kartu berikutnya.\n\nCara pemilihan sampel tersebut dilakukan ....",
+        "jawaban": "dengan pengembalian",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 4:2 dan jumlah 120 orang. Sampel 30 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 2 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 80, kedua 40. Target kelompok pertama 30×80/120=20; tambah cadangan 2 menjadi 22.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 80, kedua 40. Target kelompok pertama 30×80/120=20; tambah cadangan 2 menjadi 22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "52fb4b39449dbb1c65bca808",
+        "teks": "Sebuah sekolah memiliki 240 siswa bernomor 1 sampai 240. Panitia akan memilih sampel 24 siswa.\n\nCara pemilihan yang menghasilkan sampel acak menurut Definisi 4.7 (semua kemungkinan sampel 24 siswa berpeluang sama) adalah ....",
+        "jawaban": "memasukkan 240 kartu bernomor ke kotak, mengocoknya, lalu mengambil 24 kartu sekaligus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 8:5 dan jumlah 260 orang. Sampel 78 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 4 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 160, kedua 100. Target kelompok pertama 78×160/260=48; tambah cadangan 4 menjadi 52.",
+      "distraktor": [
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$53$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $52$."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 160, kedua 100. Target kelompok pertama 78×160/260=48; tambah cadangan 4 menjadi 52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2cf4b569abcf65ccaa4bcae9",
+        "teks": "Dinas kesehatan sebuah kota ingin mengetahui lama tidur rata-rata warga kota itu setiap malam. Pasangan populasi dan sampel yang mungkin untuk penelitian tersebut adalah ....",
+        "jawaban": "Populasi: semua warga di kota itu; sampel: semua warga di satu RW di kota itu",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 8:6 dan jumlah 280 orang. Sampel 84 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 3 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$51$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 160, kedua 120. Target kelompok pertama 84×160/280=48; tambah cadangan 3 menjadi 51.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $51$."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $51$."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 160, kedua 120. Target kelompok pertama 84×160/280=48; tambah cadangan 3 menjadi 51.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9b0b1902cbab016ba39d4773",
+        "teks": "Guru memiliki roda putar dengan 10 juring yang sama besar, masing-masing bertuliskan satu nomor siswa dari 1 sampai 10. Untuk memilih sampel, roda diputar 3 kali (pemilihan dengan pengembalian, jadi nomor yang sama dapat muncul lebih dari sekali). Guru berharap mendapat 3 siswa yang berbeda.\n\nPeluang ketiga nomor yang terpilih berbeda semua adalah ....",
+        "jawaban": "$\\frac{18}{25}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 11:3 dan jumlah 280 orang. Sampel 84 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 3 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$69$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 220, kedua 60. Target kelompok pertama 84×220/280=66; tambah cadangan 3 menjadi 69.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$138$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 220, kedua 60. Target kelompok pertama 84×220/280=66; tambah cadangan 3 menjadi 69.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec7547364ad897864a8de42",
+        "teks": "Ibu guru mengambil satu kartu bernomor dari kotak berisi kartu nomor absen. Nomor dicatat, kartu dikembalikan ke kotak, lalu kotak dikocok dan diambil kartu berikutnya.\n\nCara pemilihan sampel tersebut dilakukan ....",
+        "jawaban": "dengan pengembalian",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 5:8 dan jumlah 260 orang. Sampel 39 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 2 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 100, kedua 160. Target kelompok pertama 39×100/260=15; tambah cadangan 2 menjadi 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 100, kedua 160. Target kelompok pertama 39×100/260=15; tambah cadangan 2 menjadi 17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0dbf1acb824a7bdf7230b8c7",
+        "teks": "Sebuah laporan menyatakan: \"Kami menyurvei 400 pengunjung sebuah pusat perbelanjaan pada hari Sabtu siang, dan 320 orang menyatakan sering berbelanja secara daring. Karena sampel kami besar, dapat disimpulkan bahwa 80% seluruh warga kota sering berbelanja secara daring.\"\n\nKesalahan penalaran utama dalam laporan tersebut adalah ....",
+        "jawaban": "mengira sampel yang besar pasti mewakili warga kota, padahal pengunjung pusat perbelanjaan itu bukan sampel acak dari seluruh warga",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 8:6 dan jumlah 280 orang. Sampel 84 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 1 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 160, kedua 120. Target kelompok pertama 84×160/280=48; tambah cadangan 1 menjadi 49.",
+      "distraktor": [
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $49$."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $49$."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 160, kedua 120. Target kelompok pertama 84×160/280=48; tambah cadangan 1 menjadi 49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "079f4902a408ddb1e04c3134",
+        "teks": "Seorang peneliti ingin mengetahui persentase pelajar SMP di Kota Medan yang rutin sarapan sebelum berangkat sekolah. Ia memilih secara acak 250 pelajar SMP di kota itu, dan 175 di antaranya rutin sarapan.\n\nPernyataan yang benar mengenai penelitian tersebut adalah ....",
+        "jawaban": "populasinya semua pelajar SMP di Kota Medan, ukuran sampelnya 250, dan 70% sampel rutin sarapan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 11:4 dan jumlah 300 orang. Sampel 30 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 1 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 220, kedua 80. Target kelompok pertama 30×220/300=22; tambah cadangan 1 menjadi 23.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 220, kedua 80. Target kelompok pertama 30×220/300=22; tambah cadangan 1 menjadi 23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "079f4902a408ddb1e04c3134",
+        "teks": "Seorang peneliti ingin mengetahui persentase pelajar SMP di Kota Medan yang rutin sarapan sebelum berangkat sekolah. Ia memilih secara acak 250 pelajar SMP di kota itu, dan 175 di antaranya rutin sarapan.\n\nPernyataan yang benar mengenai penelitian tersebut adalah ....",
+        "jawaban": "populasinya semua pelajar SMP di Kota Medan, ukuran sampelnya 250, dan 70% sampel rutin sarapan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 8:5 dan jumlah 260 orang. Sampel 65 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 4 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$44$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 160, kedua 100. Target kelompok pertama 65×160/260=40; tambah cadangan 4 menjadi 44.",
+      "distraktor": [
+        {
+          "teks": "$43$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 160, kedua 100. Target kelompok pertama 65×160/260=40; tambah cadangan 4 menjadi 44.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e038792325cc54d97ac9b07c",
+        "teks": "Sinta ingin mengetahui persentase seluruh siswa di sekolahnya yang setuju jam masuk sekolah dimajukan 30 menit. Sekolah itu memiliki 600 siswa yang tercatat dalam satu daftar nomor induk.\n\nDari empat rancangan pemilihan sampel berikut, rancangan yang paling berpeluang menghasilkan sampel representatif beserta alasannya adalah ....",
+        "jawaban": "mengundi 60 nomor induk dari daftar seluruh siswa, karena setiap siswa berpeluang sama terpilih sehingga sampel tidak berkecenderungan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 4:4 dan jumlah 160 orang. Sampel 16 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 4 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 80, kedua 80. Target kelompok pertama 16×80/160=8; tambah cadangan 4 menjadi 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 80, kedua 80. Target kelompok pertama 16×80/160=8; tambah cadangan 4 menjadi 12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2945624340ecf10ecb258546",
+        "teks": "Sebuah sekolah memiliki 600 siswa: 300 siswa kelas VII, 200 siswa kelas VIII, dan 100 siswa kelas IX. Rani mengundi 30 siswa dari daftar seluruh siswa dengan cara yang memberi peluang sama kepada setiap kemungkinan sampel 30 siswa. Ternyata 22 siswa yang terpilih berasal dari kelas VII. Rani menyimpulkan bahwa cara pengundiannya salah.\n\nPenilaian yang tepat terhadap kesimpulan Rani adalah ....",
+        "jawaban": "tidak tepat, karena cara mengundinya tetap acak dan hasil yang didominasi kelas VII hanya kebetulan sebab sampel acak hanya berpeluang besar representatif",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 3:8 dan jumlah 220 orang. Sampel 44 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 1 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 60, kedua 160. Target kelompok pertama 44×60/220=12; tambah cadangan 1 menjadi 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 60, kedua 160. Target kelompok pertama 44×60/220=12; tambah cadangan 1 menjadi 13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36f3f86f316f10b6a3997489",
+        "teks": "Sebuah kelompok (populasi) terdiri atas 4 siswa putra dan 2 siswa putri. Guru memilih 3 siswa secara acak tanpa pengembalian sebagai sampel. Sampel dianggap menyerupai populasi dalam hal komposisi jika berisi 2 siswa putra dan 1 siswa putri, yaitu perbandingan putra : putri sama dengan populasi (2 : 1).\n\nPeluang sampel yang dipilih memiliki komposisi menyerupai populasi tersebut adalah ....",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 3:5 dan jumlah 160 orang. Sampel 16 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 1 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 60, kedua 100. Target kelompok pertama 16×60/160=6; tambah cadangan 1 menjadi 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 60, kedua 100. Target kelompok pertama 16×60/160=6; tambah cadangan 1 menjadi 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1de9b2016a90d7fa4c31020d",
+        "teks": "Sebuah sekolah memiliki 450 siswa. Untuk sebuah survei, dipilih 45 siswa dari sekolah tersebut.\n\nUkuran sampel pada survei tersebut adalah ....",
+        "jawaban": "45",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 6:3 dan jumlah 180 orang. Sampel 45 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 1 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 120, kedua 60. Target kelompok pertama 45×120/180=30; tambah cadangan 1 menjadi 31.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 120, kedua 60. Target kelompok pertama 45×120/180=30; tambah cadangan 1 menjadi 31.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "391e424b9e036ac1290f9603",
+        "teks": "Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 55 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 11:3 dan jumlah 280 orang. Sampel 28 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 1 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 220, kedua 60. Target kelompok pertama 28×220/280=22; tambah cadangan 1 menjadi 23.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $23$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 220, kedua 60. Target kelompok pertama 28×220/280=22; tambah cadangan 1 menjadi 23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f693a6857f9d2950cd81bf6c",
+        "teks": "Nilai ulangan 10 siswa (populasi): 50, 60, 60, 70, 70, 70, 70, 80, 80, 90. Dari populasi itu diambil sampel 4 siswa dengan nilai 70, 70, 70, 70. Dewi menyimpulkan bahwa sampel tersebut representatif karena rata-ratanya sama dengan rata-rata populasi.\n\nPenilaian yang tepat terhadap kesimpulan Dewi adalah ....",
+        "jawaban": "kurang tepat, karena sebaran sampel (semua bernilai 70) jauh lebih sempit daripada sebaran populasi (50 sampai 90)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 6:3 dan jumlah 180 orang. Sampel 54 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 2 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$38$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 120, kedua 60. Target kelompok pertama 54×120/180=36; tambah cadangan 2 menjadi 38.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $38$."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $38$."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 120, kedua 60. Target kelompok pertama 54×120/180=36; tambah cadangan 2 menjadi 38.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "034e51898e60801fbaa82812",
+        "teks": "Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 52 orang. Sampel diambil proporsional, 10 orang per kelompok. Berapa jumlah seluruh sampel?",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sampel_strata_cadangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelompok populasi memiliki perbandingan 9:2 dan jumlah 220 orang. Sampel 66 orang dialokasikan proporsional. Di kelompok pertama diperkirakan 2 orang tidak merespons, sehingga harus disiapkan cadangan sebanyak itu di luar target. Berapa undangan kelompok pertama termasuk cadangan?",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Jumlah dan rasio menentukan populasi pertama 180, kedua 40. Target kelompok pertama 66×180/220=54; tambah cadangan 2 menjadi 56.",
+      "distraktor": [
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $56$."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah dan rasio menentukan populasi pertama 180, kedua 40. Target kelompok pertama 66×180/220=54; tambah cadangan 2 menjadi 56.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b04-d-hard-bt01-032"
     }
   ]
 }

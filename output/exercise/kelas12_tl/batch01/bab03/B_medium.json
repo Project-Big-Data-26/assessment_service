@@ -807,6 +807,339 @@
       "pembahasan": "Langkah 1: Menentukan nilai $\\int_1^4 f(x)\\,dx$ menggunakan sifat penjumlahan interval:\n$$\\int_1^7 f(x)\\,dx = \\int_1^4 f(x)\\,dx + \\int_4^7 f(x)\\,dx$$\n$$13 = \\int_1^4 f(x)\\,dx + 5 \\implies \\int_1^4 f(x)\\,dx = 13 - 5 = 8$$\n\nLangkah 2: Menerapkan sifat kelinieran integral tentu:\n$$\\int_1^4 [2f(x) + 3]\\,dx = 2\\int_1^4 f(x)\\,dx + \\int_1^4 3\\,dx$$\n\nLangkah 3: Menghitung nilai integral:\n$$2(8) + [3x]_1^4 = 16 + (3(4) - 3(1)) = 16 + (12 - 3) = 16 + 9 = 25$$\n\nJadi, nilai dari $\\int_1^4 [2f(x) + 3]\\,dx$ adalah $25$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f62e517cb92741f7b1f123",
+        "teks": "Nilai dari $\\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{3}{n} \\left( 2 + \\frac{3i}{n} \\right)^2$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{6}(4 x^{2} + 5 x + 3)\\,dx$.",
+      "jawaban_benar": "$\\frac{2335}{6}$",
+      "alasan_benar": "Antiturunannya $\\frac{4 x^{3}}{3} + \\frac{5 x^{2}}{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2335/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2341}{6}$",
+          "alasan": "Pilihan $\\frac{2341}{6}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{2335}{6}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2329}{6}$",
+          "alasan": "Pilihan $\\frac{2329}{6}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{2335}{6}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{2347}{6}$",
+          "alasan": "Pilihan $\\frac{2347}{6}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{2335}{6}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{4 x^{3}}{3} + \\frac{5 x^{2}}{2} + 3 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2335/6.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a7e4ad2bce2d9259129417",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = 9x - x^3$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{81}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{6}(3 x^{2} + 4 x + 2)\\,dx$.",
+      "jawaban_benar": "$295$",
+      "alasan_benar": "Antiturunannya $x^{3} + 2 x^{2} + 2 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 295.",
+      "distraktor": [
+        {
+          "teks": "$296$",
+          "alasan": "Pilihan $296$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $295$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$294$",
+          "alasan": "Pilihan $294$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $295$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$297$",
+          "alasan": "Pilihan $297$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $295$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $x^{3} + 2 x^{2} + 2 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 295.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6f1425a37b6ee48a04eefa56",
+        "teks": "Diketahui suatu fungsi $f(x)$ kontinu pada himpunan bilangan real dan memenuhi $\\int_0^3 f(x)\\,dx = 7$, $\\int_0^5 f(x)\\,dx = 15$, serta $\\int_2^5 f(x)\\,dx = 11$. Nilai dari $\\int_2^3 [4f(x) - 5]\\,dx$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{7}(5 x^{2} + 5 x + 6)\\,dx$.",
+      "jawaban_benar": "$\\frac{1131}{2}$",
+      "alasan_benar": "Antiturunannya $\\frac{5 x^{3}}{3} + \\frac{5 x^{2}}{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1131/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1133}{2}$",
+          "alasan": "Pilihan $\\frac{1133}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1131}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1129}{2}$",
+          "alasan": "Pilihan $\\frac{1129}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1131}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1135}{2}$",
+          "alasan": "Pilihan $\\frac{1135}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1131}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{5 x^{3}}{3} + \\frac{5 x^{2}}{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1131/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaaaa1b4e95a4b60effdf1ea",
+        "teks": "Diketahui suatu fungsi $F(x) = \\int_2^x (3t^2 - 8t + 1)\\,dt$ untuk setiap bilangan real $x$. Jika garis singgung grafik fungsi $F(x)$ di titik berabsis $x = a$ (dengan $a > 0$) tegak lurus terhadap garis $x + 4y - 12 = 0$, maka nilai $a$ adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{7}(3 x^{3} + 6 x + 6)\\,dx$.",
+      "jawaban_benar": "$1980$",
+      "alasan_benar": "Antiturunannya $\\frac{3 x^{4}}{4} + 3 x^{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1980.",
+      "distraktor": [
+        {
+          "teks": "$1981$",
+          "alasan": "Pilihan $1981$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1980$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1979$",
+          "alasan": "Pilihan $1979$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1980$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1982$",
+          "alasan": "Pilihan $1982$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1980$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{3 x^{4}}{4} + 3 x^{2} + 6 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1980.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd303f7d52f3e84c32898b70",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 16x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "128",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{4}^{10}(7 x^{5} + 8 x + 8)\\,dx$.",
+      "jawaban_benar": "$1162272$",
+      "alasan_benar": "Antiturunannya $\\frac{7 x^{6}}{6} + 4 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1162272.",
+      "distraktor": [
+        {
+          "teks": "$1162273$",
+          "alasan": "Pilihan $1162273$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1162272$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1162271$",
+          "alasan": "Pilihan $1162271$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1162272$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$1162274$",
+          "alasan": "Pilihan $1162274$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1162272$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{7 x^{6}}{6} + 4 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1162272.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd303f7d52f3e84c32898b70",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 16x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "128",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{0}^{3}(5 x^{3} + 6 x + 8)\\,dx$.",
+      "jawaban_benar": "$\\frac{609}{4}$",
+      "alasan_benar": "Antiturunannya $\\frac{5 x^{4}}{4} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 609/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{613}{4}$",
+          "alasan": "Pilihan $\\frac{613}{4}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{609}{4}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{605}{4}$",
+          "alasan": "Pilihan $\\frac{605}{4}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{609}{4}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{617}{4}$",
+          "alasan": "Pilihan $\\frac{617}{4}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{609}{4}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{5 x^{4}}{4} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 609/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "021826cbd606953108b8a1f6",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = x^3 - 6x^2 + 8x$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{6}(4 x^{4} + 3 x + 9)\\,dx$.",
+      "jawaban_benar": "$\\frac{12635}{2}$",
+      "alasan_benar": "Antiturunannya $\\frac{4 x^{5}}{5} + \\frac{3 x^{2}}{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 12635/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12637}{2}$",
+          "alasan": "Pilihan $\\frac{12637}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{12635}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{12633}{2}$",
+          "alasan": "Pilihan $\\frac{12633}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{12635}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{12639}{2}$",
+          "alasan": "Pilihan $\\frac{12639}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{12635}{2}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{4 x^{5}}{5} + \\frac{3 x^{2}}{2} + 9 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 12635/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a7e4ad2bce2d9259129417",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = 9x - x^3$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{81}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{5}(5 x^{2} + 8 x + 8)\\,dx$.",
+      "jawaban_benar": "$\\frac{1004}{3}$",
+      "alasan_benar": "Antiturunannya $\\frac{5 x^{3}}{3} + 4 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1004/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1007}{3}$",
+          "alasan": "Pilihan $\\frac{1007}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1004}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1001}{3}$",
+          "alasan": "Pilihan $\\frac{1001}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1004}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{1010}{3}$",
+          "alasan": "Pilihan $\\frac{1010}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{1004}{3}$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{5 x^{3}}{3} + 4 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 1004/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f62e517cb92741f7b1f123",
+        "teks": "Nilai dari $\\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{3}{n} \\left( 2 + \\frac{3i}{n} \\right)^2$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "integral_tentu",
+      "alasan_level": "Target medium; variasi konsep integral tentu. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hitung $\\int_{1}^{7}(4 x^{5} + 2 x + 5)\\,dx$.",
+      "jawaban_benar": "$78510$",
+      "alasan_benar": "Antiturunannya $\\frac{2 x^{6}}{3} + x^{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 78510.",
+      "distraktor": [
+        {
+          "teks": "$78511$",
+          "alasan": "Pilihan $78511$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $78510$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$78509$",
+          "alasan": "Pilihan $78509$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $78510$. Periksa kembali langkah integral tentu pada pembahasan."
+        },
+        {
+          "teks": "$78512$",
+          "alasan": "Pilihan $78512$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $78510$. Periksa kembali langkah integral tentu pada pembahasan."
+        }
+      ],
+      "pembahasan": "Antiturunannya $\\frac{2 x^{6}}{3} + x^{2} + 5 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 78510.",
+      "catatan": "codex-replenishment:kelas12_tl-b03-B-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b03-b-medium-bt01-028"
     }
   ]
 }

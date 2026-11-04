@@ -535,6 +535,80 @@
       ],
       "pembahasan": "A: $1.000\\cdot1{,}1^{x}$; B: $100\\cdot2^{x}$. $x=3$: 1.331 vs 800. $x=4$: 1.464,1 vs 1.600. Jadi 4 jam.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "670931967c4125f530504817",
+        "teks": "Massa suatu zat adalah 1.600 gram dan massanya menjadi setengah kali setiap 3 jam. Massa zat tersebut tepat 25 gram setelah ... jam.",
+        "jawaban": "$18$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "fungsi_eksponensial",
+      "alasan_level": "Target hard; variasi konsep fungsi eksponensial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Populasi awal 1000. Setiap periode populasi menjadi 2 kali sebelumnya. Jika pola tetap, berapa populasi setelah 5 periode?",
+      "jawaban_benar": "$32000$",
+      "alasan_benar": "Fungsi pertumbuhan P(t)=1000×2^t. Pada t=5, P=32000.",
+      "distraktor": [
+        {
+          "teks": "$32001$",
+          "alasan": "Pilihan $32001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32000$. Periksa kembali langkah fungsi eksponensial pada pembahasan."
+        },
+        {
+          "teks": "$31999$",
+          "alasan": "Pilihan $31999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32000$. Periksa kembali langkah fungsi eksponensial pada pembahasan."
+        },
+        {
+          "teks": "$32002$",
+          "alasan": "Pilihan $32002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $32000$. Periksa kembali langkah fungsi eksponensial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Fungsi pertumbuhan P(t)=1000×2^t. Pada t=5, P=32000.",
+      "catatan": "codex-replenishment:kelas10-b01-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b01-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c42772fbed4dabf15408dd09",
+        "teks": "Massa suatu zat radioaktif adalah 5 kg. Tingkat peluruhan zat tersebut adalah 20% setiap jam. Massa zat radioaktif tersebut 3 jam kemudian adalah ....",
+        "jawaban": "$2{,}56$ kg",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_eksponensial_intervensi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Populasi dimodelkan $N(t)=ab^t$, a>0,b>1. Diketahui N(2)=160 dan N(5)=1280. Tepat setelah pengamatan t=5, sebanyak 1/2 populasi dipindahkan. Sisanya tetap bertumbuh dengan faktor b setiap satuan waktu. Berapa selisih populasi pada t=10 terhadap N(0)?",
+      "jawaban_benar": "$20440$",
+      "alasan_benar": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 20440.",
+      "distraktor": [
+        {
+          "teks": "$20439$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20440$."
+        },
+        {
+          "teks": "$20441$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20440$."
+        },
+        {
+          "teks": "$40880$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rasio N(5)/N(2)=b³=8, jadi b=2 dan a=40. Setelah pemindahan tersisa (2-1)/2 N(5); tumbuhkan 5 kali lalu kurangi a, hasil 20440.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b01-c-hard-bt01-018"
     }
   ]
 }

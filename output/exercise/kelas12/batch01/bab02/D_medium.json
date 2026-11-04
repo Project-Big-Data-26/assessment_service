@@ -681,6 +681,228 @@
       ],
       "pembahasan": "Angsuran pokok 2.000.000. Bunga bulan ke-k = (40.000.000 - 2.000.000(k-1)) x 1%. Syarat < 100.000 memberi sisa pokok < 10.000.000, sehingga k-1 > 15, k > 16. Bulan ke-16 bunga tepat 100.000, jadi bulan ke-17 (80.000) pertama kali kurang dari 100.000.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5a4967a7cebc118cfa07b10",
+        "teks": "Pinjaman dilunasi dalam 15 bulan dengan angsuran pokok tetap dan bunga dihitung dari sisa pokok. Bunga yang dibayar pada bulan pertama sama dengan ... kali bunga yang dibayar pada bulan terakhir.",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target medium; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp31.200.000,00 dikenai bunga majemuk 12% per tahun dan belum dibayar selama 3 tahun. Berapa sisa utangnya tepat setelah 3 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{219168768}{5}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=31200000(1+3/25)^3=219168768/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{219168773}{5}$",
+          "alasan": "Pilihan $\\frac{219168773}{5}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{219168768}{5}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{219168763}{5}$",
+          "alasan": "Pilihan $\\frac{219168763}{5}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{219168768}{5}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{219168778}{5}$",
+          "alasan": "Pilihan $\\frac{219168778}{5}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{219168768}{5}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=31200000(1+3/25)^3=219168768/5.",
+      "catatan": "codex-replenishment:kelas12-b02-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fdcf2c8768aba4a9acb969db",
+        "teks": "Pinjaman Rp18.000.000,00 dilunasi dalam 6 bulan dengan angsuran pokok tetap dan bunga 2% per bulan dari sisa pokok. Total angsuran (pokok + bunga) yang dibayar pada bulan ke-4 adalah ....",
+        "jawaban": "Rp3.180.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target medium; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp18.000.000,00 dikenai bunga majemuk 12% per tahun dan belum dibayar selama 5 tahun. Berapa sisa utangnya tepat setelah 5 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{19826343936}{625}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=18000000(1+3/25)^5=19826343936/625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19826344561}{625}$",
+          "alasan": "Pilihan $\\frac{19826344561}{625}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{19826343936}{625}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19826343311}{625}$",
+          "alasan": "Pilihan $\\frac{19826343311}{625}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{19826343936}{625}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19826345186}{625}$",
+          "alasan": "Pilihan $\\frac{19826345186}{625}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{19826343936}{625}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=18000000(1+3/25)^5=19826343936/625.",
+      "catatan": "codex-replenishment:kelas12-b02-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5a4967a7cebc118cfa07b10",
+        "teks": "Pinjaman dilunasi dalam 15 bulan dengan angsuran pokok tetap dan bunga dihitung dari sisa pokok. Bunga yang dibayar pada bulan pertama sama dengan ... kali bunga yang dibayar pada bulan terakhir.",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "pinjaman_majemuk",
+      "alasan_level": "Target medium; variasi konsep pinjaman majemuk. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Pinjaman awal Rp34.800.000,00 dikenai bunga majemuk 4% per tahun dan belum dibayar selama 5 tahun. Berapa sisa utangnya tepat setelah 5 tahun, tanpa biaya lain dan tanpa pembulatan?",
+      "jawaban_benar": "$\\frac{132311003136}{3125}$",
+      "alasan_benar": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=34800000(1+1/25)^5=132311003136/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{132311006261}{3125}$",
+          "alasan": "Pilihan $\\frac{132311006261}{3125}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{132311003136}{3125}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{132311000011}{3125}$",
+          "alasan": "Pilihan $\\frac{132311000011}{3125}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{132311003136}{3125}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{132311009386}{3125}$",
+          "alasan": "Pilihan $\\frac{132311009386}{3125}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{132311003136}{3125}$. Periksa kembali langkah pinjaman majemuk pada pembahasan."
+        }
+      ],
+      "pembahasan": "Utang berkembang dengan faktor (1+i) tiap tahun. Nilai akhirnya=34800000(1+1/25)^5=132311003136/3125.",
+      "catatan": "codex-replenishment:kelas12-b02-D-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-d-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ed52cb3cbd46aac38322337",
+        "teks": "Sebuah koperasi memberi pinjaman Rp30.000.000,00 kepada seorang peternak. Pinjaman dilunasi dalam 2 bulan dengan angsuran pokok yang sama dan bunga 18% per tahun dari sisa pokok. Jumlah seluruh bunga yang dibayar peternak adalah ....",
+        "jawaban": "Rp675.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_utang_majemuk_pembayaran",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Utang Rp900.000,00 berbunga majemuk $10$% per tahun. Tepat akhir tahun 1 dibayar Rp40.000,00. Tanpa pembayaran lain, berapa sisa utang akhir tahun 3?",
+      "jawaban_benar": "$1149500$",
+      "alasan_benar": "Akhir tahun pertama utang 990000, setelah bayar 950000. Majemukkan sisa dua tahun: 1149500.",
+      "distraktor": [
+        {
+          "teks": "$1149499$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1149500$."
+        },
+        {
+          "teks": "$1149501$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1149500$."
+        },
+        {
+          "teks": "$2299000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Akhir tahun pertama utang 990000, setelah bayar 950000. Majemukkan sisa dua tahun: 1149500.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-d-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "150da281248eebaeb733db92",
+        "teks": "Pinjaman Rp24.000.000,00 dilunasi dalam 12 bulan dengan angsuran pokok yang sama tiap bulan. Bank A menghitung bunga 12% per tahun dari sisa pokok. Bank B menghitung bunga 7% per tahun dari pokok awal dan besarnya sama untuk selama 12 bulan itu. Pernyataan yang benar tentang total bunga yang dibayar adalah ....",
+        "jawaban": "Bank A lebih murah Rp120.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_utang_majemuk_pembayaran",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Utang Rp1.200.000,00 berbunga majemuk $5$% per tahun. Tepat akhir tahun 1 dibayar Rp20.000,00. Tanpa pembayaran lain, berapa sisa utang akhir tahun 3?",
+      "jawaban_benar": "$1367100$",
+      "alasan_benar": "Akhir tahun pertama utang 1260000, setelah bayar 1240000. Majemukkan sisa dua tahun: 1367100.",
+      "distraktor": [
+        {
+          "teks": "$1367099$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1367100$."
+        },
+        {
+          "teks": "$1367101$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1367100$."
+        },
+        {
+          "teks": "$2734200$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Akhir tahun pertama utang 1260000, setelah bayar 1240000. Majemukkan sisa dua tahun: 1367100.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-d-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "02d5af0d0e1245564e9e1580",
+        "teks": "Pinjaman awal Rp8.400.000,00 dikenai bunga majemuk 6% per tahun dan belum dibayar selama 2 tahun. Berapa sisa utangnya tepat setelah 2 tahun, tanpa biaya lain dan tanpa pembulatan?",
+        "jawaban": "$9438240$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_utang_majemuk_pembayaran",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Utang Rp700.000,00 berbunga majemuk $15$% per tahun. Tepat akhir tahun 1 dibayar Rp40.000,00. Tanpa pembayaran lain, berapa sisa utang akhir tahun 3?",
+      "jawaban_benar": "$\\frac{2023425}{2}$",
+      "alasan_benar": "Akhir tahun pertama utang 805000, setelah bayar 765000. Majemukkan sisa dua tahun: 2023425/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2023425}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$2023425$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{2023425}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Akhir tahun pertama utang 805000, setelah bayar 765000. Majemukkan sisa dua tahun: 2023425/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-d-medium-bt01-026"
     }
   ]
 }

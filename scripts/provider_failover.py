@@ -83,6 +83,16 @@ def _activate_checkpoint(name, batch, provider):
     if (target["final"] / "manifest.json").exists():
         verify_bundle(source, target["final"])
     archived = archive_bytes(target["stage"], old_bytes)
+    # A legacy checkpoint may already include an append-only source extension.
+    # Carry its immutable old-source proofs into the failover staging directory.
+    if source.parent.resolve() != target["stage"].resolve():
+        for proof_source in source.parent.glob("history/source_extension_*/soal_exercise_db.json"):
+            destination = target["stage"] / proof_source.relative_to(source.parent)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if destination.exists() and destination.read_bytes() != proof_source.read_bytes():
+                raise ValueError("source-extension proof differs during provider migration")
+            if not destination.exists():
+                destination.write_bytes(proof_source.read_bytes())
     # Construct a fresh active-provider header without reading/overwriting the old checkpoint.
     cp = load_checkpoint(target["stage"] / "unused_header.json", target["source"], digest(target["source"]),
                          settings.model, 1, grade, track=track, provider=provider)

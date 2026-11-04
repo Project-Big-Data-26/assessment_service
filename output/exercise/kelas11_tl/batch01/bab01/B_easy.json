@@ -703,6 +703,672 @@
       ],
       "pembahasan": "$x + 1 = 6 \\Rightarrow x = 5$ dan $2y = -8 \\Rightarrow y = -4$. Maka $xy = 5 \\times (-4) = -20$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e88aef69611afbca0d59171",
+        "teks": "Diketahui $\\begin{pmatrix} 2x & 5 \\\\ 1 & 7 \\end{pmatrix} = \\begin{pmatrix} 18 & 5 \\\\ 1 & 7 \\end{pmatrix}$. Nilai $x$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}2x+6&8\\\\3&y-6\\end{pmatrix}$ dan $B=\\begin{pmatrix}4&8\\\\3&-5\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 2x+6=4, sehingga x=-1; y-6=-5, sehingga y=1. Jumlahnya 0.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $0$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan $-1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $0$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan $2$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $0$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 2x+6=4, sehingga x=-1; y-6=-5, sehingga y=1. Jumlahnya 0.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24bda618cd190d8a40b10dbe",
+        "teks": "Diketahui $A = \\begin{pmatrix} 1 & 4 \\\\ 3 & 2 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 1 & 3 \\\\ 4 & 2 \\end{pmatrix}$. Seorang siswa berpendapat bahwa $A = B$ karena kedua matriks berordo sama dan jumlah semua elemennya sama. Pernyataan yang benar mengenai pendapat tersebut adalah ....",
+        "jawaban": "$A \\neq B$, sebab $a_{12} = 4$ berbeda dengan $b_{12} = 3$ walaupun ordo dan jumlah semua elemennya sama",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}5x+5&2\\\\5&y-5\\end{pmatrix}$ dan $B=\\begin{pmatrix}5&2\\\\5&-9\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 5x+5=5, sehingga x=0; y-5=-9, sehingga y=-4. Jumlahnya -4.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Pilihan $-5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 5x+5=5, sehingga x=0; y-5=-9, sehingga y=-4. Jumlahnya -4.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17bfb7edae810c2928de0d0a",
+        "teks": "Matriks $G$ dan matriks $H$ keduanya berordo $3 \\times 5$ dan $G = H$. Banyak persamaan yang terbentuk dari kesamaan elemen-elemen seletak $G$ dan $H$ adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}8x+9&5\\\\7&y-9\\end{pmatrix}$ dan $B=\\begin{pmatrix}49&5\\\\7&-13\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 8x+9=49, sehingga x=5; y-9=-13, sehingga y=-4. Jumlahnya 1.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan $2$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan $0$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 8x+9=49, sehingga x=5; y-9=-13, sehingga y=-4. Jumlahnya 1.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24bda618cd190d8a40b10dbe",
+        "teks": "Diketahui $A = \\begin{pmatrix} 1 & 4 \\\\ 3 & 2 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 1 & 3 \\\\ 4 & 2 \\end{pmatrix}$. Seorang siswa berpendapat bahwa $A = B$ karena kedua matriks berordo sama dan jumlah semua elemennya sama. Pernyataan yang benar mengenai pendapat tersebut adalah ....",
+        "jawaban": "$A \\neq B$, sebab $a_{12} = 4$ berbeda dengan $b_{12} = 3$ walaupun ordo dan jumlah semua elemennya sama",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}5x+5&7\\\\4&y-5\\end{pmatrix}$ dan $B=\\begin{pmatrix}15&7\\\\4&-1\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 5x+5=15, sehingga x=2; y-5=-1, sehingga y=4. Jumlahnya 6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 5x+5=15, sehingga x=2; y-5=-1, sehingga y=4. Jumlahnya 6.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e715abd353c1681ff06d9eb",
+        "teks": "Matriks $A = (a_{ij})$ dan $B = (b_{ij})$ berordo sama. Syarat kedua agar $A = B$ adalah ....",
+        "jawaban": "$a_{ij} = b_{ij}$ untuk semua $i$ dan $j$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}9x+6&6\\\\6&y-6\\end{pmatrix}$ dan $B=\\begin{pmatrix}-21&6\\\\6&-7\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$-4$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 9x+6=-21, sehingga x=-3; y-6=-7, sehingga y=-1. Jumlahnya -4.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Pilihan $-5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-4$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 9x+6=-21, sehingga x=-3; y-6=-7, sehingga y=-1. Jumlahnya -4.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25a00100b2a704c17da563e9",
+        "teks": "Matriks $A = (a_{ij})$ dan $B = (b_{ij})$ keduanya berordo $3 \\times 3$ dan $A = B$. Jika $a_{23} = 9$, maka ....",
+        "jawaban": "$b_{23} = 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}9x+6&3\\\\5&y-6\\end{pmatrix}$ dan $B=\\begin{pmatrix}-30&3\\\\5&0\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 9x+6=-30, sehingga x=-4; y-6=0, sehingga y=6. Jumlahnya 2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 9x+6=-30, sehingga x=-4; y-6=0, sehingga y=6. Jumlahnya 2.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4041cf4558f736f8c9f35e3",
+        "teks": "Diketahui $A = \\begin{pmatrix} x & 2 \\\\ 3 & y \\end{pmatrix}$ dan $B = \\begin{pmatrix} y & 2 \\\\ 3 & x \\end{pmatrix}$ dengan $x$ dan $y$ bilangan real. Pernyataan yang benar adalah ....",
+        "jawaban": "$A = B$ tepat ketika $x = y$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}4x+4&7\\\\5&y-4\\end{pmatrix}$ dan $B=\\begin{pmatrix}28&7\\\\5&-2\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 4x+4=28, sehingga x=6; y-4=-2, sehingga y=2. Jumlahnya 8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 4x+4=28, sehingga x=6; y-4=-2, sehingga y=2. Jumlahnya 8.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25a00100b2a704c17da563e9",
+        "teks": "Matriks $A = (a_{ij})$ dan $B = (b_{ij})$ keduanya berordo $3 \\times 3$ dan $A = B$. Jika $a_{23} = 9$, maka ....",
+        "jawaban": "$b_{23} = 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}3x+2&5\\\\6&y-2\\end{pmatrix}$ dan $B=\\begin{pmatrix}26&5\\\\6&3\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 3x+2=26, sehingga x=8; y-2=3, sehingga y=5. Jumlahnya 13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 3x+2=26, sehingga x=8; y-2=3, sehingga y=5. Jumlahnya 13.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "10217db979eec78126d66dfb",
+        "teks": "Matriks $\\begin{pmatrix} a - 3 & 2b \\\\ c + 5 & d \\end{pmatrix}$ sama dengan matriks nol berordo $2 \\times 2$. Nilai $a + b + c + d$ adalah ....",
+        "jawaban": "-2",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 2,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target easy; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}4x+4&3\\\\4&y-4\\end{pmatrix}$ dan $B=\\begin{pmatrix}12&3\\\\4&-7\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 4x+4=12, sehingga x=2; y-4=-7, sehingga y=-3. Jumlahnya -1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan $0$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-1$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-1$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-1$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 4x+4=12, sehingga x=2; y-4=-7, sehingga y=-3. Jumlahnya -1.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-easy; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-easy-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b731c8bb8954652aeca56fb",
+        "teks": "Nilai $k$ agar $\\begin{pmatrix} 2k - 1 & 7 \\\\ 0 & k^2 \\end{pmatrix} = \\begin{pmatrix} 9 & 7 \\\\ 0 & 25 \\end{pmatrix}$ adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+3&7\\\\0&1\\end{pmatrix}=\\begin{pmatrix}6&7\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+3=6, jadi x=3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+3=6, jadi x=3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b2a3ff4e2fca977be49a4b9a",
+        "teks": "Tentukan nilai $ab + cd$ yang memenuhi kesamaan matriks berikut. $\\begin{pmatrix} 2a - b & a + b \\\\ 3c + d & c - d \\end{pmatrix} = \\begin{pmatrix} 6 & 9 \\\\ -13 & 5 \\end{pmatrix}$",
+        "jawaban": "34",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+5&2\\\\0&1\\end{pmatrix}=\\begin{pmatrix}9&2\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+5=9, jadi x=4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+5=9, jadi x=4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e038c81d3fc94ed9199942b6",
+        "teks": "Agar matriks $P$ dan matriks $Q$ dapat dikatakan sama, syarat pertama yang harus dipenuhi adalah ....",
+        "jawaban": "keduanya berordo sama",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+5&7\\\\0&1\\end{pmatrix}=\\begin{pmatrix}9&7\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+5=9, jadi x=4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+5=9, jadi x=4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7101ef62d352e1883d3f07b",
+        "teks": "Transpos matriks $B$, ditulis $B^T$, adalah matriks yang diperoleh dengan menukar baris menjadi kolom. Diketahui $A = \\begin{pmatrix} 2a & 5 \\\\ b - 1 & 7 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 6 & 9 \\\\ 5 & 7 \\end{pmatrix}$. Jika $A = B^T$, nilai $a + b$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+6&2\\\\0&1\\end{pmatrix}=\\begin{pmatrix}13&2\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+6=13, jadi x=7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+6=13, jadi x=7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1d939cc68f5db2045612bcd9",
+        "teks": "Matriks $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = \\begin{pmatrix} b + 1 & c + 1 \\\\ d + 1 & 2 \\end{pmatrix}$ dengan $a, b, c, d$ bilangan real. Nilai $a + b + c + d$ adalah ....",
+        "jawaban": "$14$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+6&4\\\\0&1\\end{pmatrix}=\\begin{pmatrix}12&4\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+6=12, jadi x=6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+6=12, jadi x=6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25a00100b2a704c17da563e9",
+        "teks": "Matriks $A = (a_{ij})$ dan $B = (b_{ij})$ keduanya berordo $3 \\times 3$ dan $A = B$. Jika $a_{23} = 9$, maka ....",
+        "jawaban": "$b_{23} = 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+5&3\\\\0&1\\end{pmatrix}=\\begin{pmatrix}13&3\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+5=13, jadi x=8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+5=13, jadi x=8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f7bf9078c821f0f3bb180a53",
+        "teks": "Dua matriks $A=\\begin{pmatrix}8x+9&5\\\\7&y-9\\end{pmatrix}$ dan $B=\\begin{pmatrix}49&5\\\\7&-13\\end{pmatrix}$ sama. Tentukan $x+y$.",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+4&4\\\\0&1\\end{pmatrix}=\\begin{pmatrix}9&4\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+4=9, jadi x=5.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+4=9, jadi x=5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "974a34786fc8ff617c2cbcb3",
+        "teks": "Dua matriks $A=\\begin{pmatrix}4x+4&3\\\\4&y-4\\end{pmatrix}$ dan $B=\\begin{pmatrix}12&3\\\\4&-7\\end{pmatrix}$ sama. Tentukan $x+y$.",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+6&8\\\\0&1\\end{pmatrix}=\\begin{pmatrix}9&8\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+6=9, jadi x=3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+6=9, jadi x=3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c74a1d15652c99da26bdb68",
+        "teks": "Hitunglah nilai $p + q + r$ yang memenuhi kesamaan matriks berikut. $\\begin{pmatrix} 3p & q - 5 & r + 2 \\end{pmatrix} = \\begin{pmatrix} 18 & 4 & 9 \\end{pmatrix}$",
+        "jawaban": "22",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_kesamaan_matriks_langsung",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $\\begin{pmatrix}x+4&7\\\\0&1\\end{pmatrix}=\\begin{pmatrix}7&7\\\\0&1\\end{pmatrix}$. Tentukan x.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Elemen baris pertama kolom pertama sama: x+4=7, jadi x=3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Elemen baris pertama kolom pertama sama: x+4=7, jadi x=3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-easy-bt01-038"
     }
   ]
 }

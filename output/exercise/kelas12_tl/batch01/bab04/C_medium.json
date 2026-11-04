@@ -849,6 +849,1116 @@
       "pembahasan": "Berdasarkan ciri-ciri variabel acak kontinu pada buku pelajaran, nilai-nilai variabel kontinu merupakan bilangan real yang membentuk rentang tak terputus. Pada garis bilangan, ruang sampel ini direpresentasikan berupa deretan titik yang terhubung rapat tanpa celah sehingga membentuk suatu ruas garis (segmen garis) padat dari batas bawah 6 hingga batas atas 15.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5fc3801202d3b277c65ad0cc",
+        "teks": "Sebuah mesin otomatis mengemas bubuk detergen ke dalam kantong dengan target massa $1.000\\text{ gram}$. Akibat getaran mekanik corong tuang, massa detergen riil $M$ terdistribusi acak dalam rentang $990\\text{ gram} \\le M \\le 1.010\\text{ gram}$. Seorang teknisi menyatakan bahwa $M$ bukan variabel acak kontinu dengan alasan: timbangan digital pabrik hanya memiliki presisi satu desimal ($0,1\\text{ gram}$), sehingga nilai $M$ yang mungkin dicatat hanyalah nilai-nilai diskret kelipatan $0,1\\text{ gram}$ sebanyak 201 kemungkinan nilai.\n\nBagaimanakah penilaian yang benar terhadap klaim teknisi tersebut berdasarkan konsep variabel acak kontinu?",
+        "jawaban": "Klaim salah, karena diskretisasi pencatatan oleh timbangan hanyalah aproksimasi pengukuran, sedangkan massa fisik detergen sebenarnya mencakup seluruh nilai real tak terhitung pada interval $[990, 1010]$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [17,32] menit. Berapa $P(X<27)$?",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 10/15=2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{3}$",
+          "alasan": "Nilai $\\frac{5}{3}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{3}$",
+          "alasan": "Nilai $- \\frac{1}{3}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{8}{3}$",
+          "alasan": "Nilai $\\frac{8}{3}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 10/15=2/3.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a2772ad0dc1b18e60f63e66",
+        "teks": "Dalam uji coba termal mesin, suhu fluida pendingin $T$ berfluktuasi secara kontinu pada rentang $82,5^\\circ\\text{C}$ hingga $91,0^\\circ\\text{C}$. Seorang asisten laboratorium berpendapat bahwa seluruh kemungkinan nilai $T$ dalam ruang sampel tersebut dapat didaftar dan dihitung satu per satu karena termometer digital yang digunakan memiliki resolusi pembacaan hingga 3 desimal ($0,001^\\circ\\text{C}$). Bagaimana evaluasi yang tepat terhadap pendapat asisten tersebut?",
+        "jawaban": "Pendapat salah, karena resolusi alat ukur hanya membatasi pembacaan teknis, sedangkan nilai riil $T$ mencakup seluruh bilangan real pada rentang tersebut yang bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [21,28] menit. Berapa $P(X<22)$?",
+      "jawaban_benar": "$\\frac{1}{7}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 1/7=1/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{7}$",
+          "alasan": "Nilai $\\frac{8}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{6}{7}$",
+          "alasan": "Nilai $- \\frac{6}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{15}{7}$",
+          "alasan": "Nilai $\\frac{15}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 1/7=1/7.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf2e16e063f5c68d5c08db60",
+        "teks": "Seorang guru meminta dua siswa membandingkan dua variabel acak:\n- Variabel $A$: Banyaknya tetesan air hujan yang jatuh pada suatu wadah dalam selang waktu 1 menit.\n- Variabel $B$: Volume total air hujan (dalam mililiter) yang terkumpul dalam wadah tersebut selama 1 menit.\n\nSiswa 1 menyatakan: \"Kedua variabel acak bernilai tak hingga, sehingga keduanya sama-sama tergolong variabel acak kontinu.\"\nSiswa 2 menyatakan: \"Variabel $A$ dapat didaftar satu per satu nilainya menggunakan bilangan cacah $\\{0, 1, 2, \\dots\\}$, sedangkan nilai variabel $B$ membentuk selang bilangan real tak terputus sehingga tak terhitung (uncountable). Oleh karena itu, $A$ diskret dan $B$ kontinu.\"\n\nPernyataan evaluasi yang paling tepat mengenai pendapat kedua siswa tersebut adalah ....",
+        "jawaban": "Pendapat Siswa 2 benar, karena variabel acak diskret dapat memiliki nilai tak terhingga asalkan terhitung (countable), sedangkan variabel acak kontinu bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [31,45] menit. Berapa $P(X<39)$?",
+      "jawaban_benar": "$\\frac{4}{7}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 8/14=4/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{7}$",
+          "alasan": "Nilai $\\frac{11}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{3}{7}$",
+          "alasan": "Nilai $- \\frac{3}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{18}{7}$",
+          "alasan": "Nilai $\\frac{18}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 8/14=4/7.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8166c2b01dd233fb1d10749",
+        "teks": "Sebuah instrumen presisi mencatat waktu reaksi kimia $T$ (dalam detik) sebagai variabel acak kontinu pada interval $10,00 \\le T \\le 15,00$. Dalam dua kali percobaan berturut-turut, terukur waktu reaksi $t_1 = 12,450\\text{ detik}$ dan $t_2 = 12,451\\text{ detik}$. Seorang peneliti menyimpulkan bahwa tidak ada nilai waktu reaksi riil lain yang mungkin terjadi di antara kedua hasil pengukuran tersebut karena selisihnya sudah merupakan batas toleransi terkecil instrumen ($0,001\\text{ detik}$). Evaluasi manakah yang paling tepat terhadap kesimpulan tersebut?",
+        "jawaban": "Kesimpulan tersebut salah, karena di antara dua nilai sembarang pada rentang variabel acak kontinu selalu terdapat tak hingga banyak nilai riil lain yang mungkin secara teoretis.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [19,35] menit. Berapa $P(X<31)$?",
+      "jawaban_benar": "$\\frac{3}{4}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 12/16=3/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{4}$",
+          "alasan": "Nilai $\\frac{7}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{4}$",
+          "alasan": "Nilai $- \\frac{1}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{11}{4}$",
+          "alasan": "Nilai $\\frac{11}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 12/16=3/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a9f9174f6c606043d1ff2826",
+        "teks": "Perhatikan argumen berikut mengenai klasifikasi variabel acak:\n\"Sebuah timbangan digital di laboratorium analitik memiliki tampilan dengan presisi hingga $0,0001\\text{ gram}$. Karena angka pembacaannya selalu melompat dengan selisih kelipatan $0,0001\\text{ gram}$ dan tidak dapat menampilkan angka di antaranya, maka massa zat kimia yang ditimbang dengan alat tersebut pada dasarnya merupakan variabel acak diskret, bukan kontinu.\"\n\nEvaluasi yang paling tepat terhadap argumen di atas adalah ....",
+        "jawaban": "Argumen salah, karena sifat kontinu ditentukan oleh besaran fisis massa yang dapat bernilai sembarang bilangan real tak terputus, bukan oleh keterbatasan pembacaan digit alat ukur.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [18,33] menit. Berapa $P(X<31)$?",
+      "jawaban_benar": "$\\frac{13}{15}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 13/15=13/15.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{28}{15}$",
+          "alasan": "Nilai $\\frac{28}{15}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{2}{15}$",
+          "alasan": "Nilai $- \\frac{2}{15}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{43}{15}$",
+          "alasan": "Nilai $\\frac{43}{15}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 13/15=13/15.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a2772ad0dc1b18e60f63e66",
+        "teks": "Dalam uji coba termal mesin, suhu fluida pendingin $T$ berfluktuasi secara kontinu pada rentang $82,5^\\circ\\text{C}$ hingga $91,0^\\circ\\text{C}$. Seorang asisten laboratorium berpendapat bahwa seluruh kemungkinan nilai $T$ dalam ruang sampel tersebut dapat didaftar dan dihitung satu per satu karena termometer digital yang digunakan memiliki resolusi pembacaan hingga 3 desimal ($0,001^\\circ\\text{C}$). Bagaimana evaluasi yang tepat terhadap pendapat asisten tersebut?",
+        "jawaban": "Pendapat salah, karena resolusi alat ukur hanya membatasi pembacaan teknis, sedangkan nilai riil $T$ mencakup seluruh bilangan real pada rentang tersebut yang bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [14,33] menit. Berapa $P(X<28)$?",
+      "jawaban_benar": "$\\frac{14}{19}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 14/19=14/19.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{33}{19}$",
+          "alasan": "Nilai $\\frac{33}{19}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{5}{19}$",
+          "alasan": "Nilai $- \\frac{5}{19}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{52}{19}$",
+          "alasan": "Nilai $\\frac{52}{19}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 14/19=14/19.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a9f9174f6c606043d1ff2826",
+        "teks": "Perhatikan argumen berikut mengenai klasifikasi variabel acak:\n\"Sebuah timbangan digital di laboratorium analitik memiliki tampilan dengan presisi hingga $0,0001\\text{ gram}$. Karena angka pembacaannya selalu melompat dengan selisih kelipatan $0,0001\\text{ gram}$ dan tidak dapat menampilkan angka di antaranya, maka massa zat kimia yang ditimbang dengan alat tersebut pada dasarnya merupakan variabel acak diskret, bukan kontinu.\"\n\nEvaluasi yang paling tepat terhadap argumen di atas adalah ....",
+        "jawaban": "Argumen salah, karena sifat kontinu ditentukan oleh besaran fisis massa yang dapat bernilai sembarang bilangan real tak terputus, bukan oleh keterbatasan pembacaan digit alat ukur.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [23,35] menit. Berapa $P(X<28)$?",
+      "jawaban_benar": "$\\frac{5}{12}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 5/12=5/12.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{12}$",
+          "alasan": "Nilai $\\frac{17}{12}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{7}{12}$",
+          "alasan": "Nilai $- \\frac{7}{12}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{29}{12}$",
+          "alasan": "Nilai $\\frac{29}{12}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 5/12=5/12.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf2e16e063f5c68d5c08db60",
+        "teks": "Seorang guru meminta dua siswa membandingkan dua variabel acak:\n- Variabel $A$: Banyaknya tetesan air hujan yang jatuh pada suatu wadah dalam selang waktu 1 menit.\n- Variabel $B$: Volume total air hujan (dalam mililiter) yang terkumpul dalam wadah tersebut selama 1 menit.\n\nSiswa 1 menyatakan: \"Kedua variabel acak bernilai tak hingga, sehingga keduanya sama-sama tergolong variabel acak kontinu.\"\nSiswa 2 menyatakan: \"Variabel $A$ dapat didaftar satu per satu nilainya menggunakan bilangan cacah $\\{0, 1, 2, \\dots\\}$, sedangkan nilai variabel $B$ membentuk selang bilangan real tak terputus sehingga tak terhitung (uncountable). Oleh karena itu, $A$ diskret dan $B$ kontinu.\"\n\nPernyataan evaluasi yang paling tepat mengenai pendapat kedua siswa tersebut adalah ....",
+        "jawaban": "Pendapat Siswa 2 benar, karena variabel acak diskret dapat memiliki nilai tak terhingga asalkan terhitung (countable), sedangkan variabel acak kontinu bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [37,47] menit. Berapa $P(X<42)$?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 5/10=1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "Nilai $\\frac{3}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{2}$",
+          "alasan": "Nilai $- \\frac{1}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5}{2}$",
+          "alasan": "Nilai $\\frac{5}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 5/10=1/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a9f9174f6c606043d1ff2826",
+        "teks": "Perhatikan argumen berikut mengenai klasifikasi variabel acak:\n\"Sebuah timbangan digital di laboratorium analitik memiliki tampilan dengan presisi hingga $0,0001\\text{ gram}$. Karena angka pembacaannya selalu melompat dengan selisih kelipatan $0,0001\\text{ gram}$ dan tidak dapat menampilkan angka di antaranya, maka massa zat kimia yang ditimbang dengan alat tersebut pada dasarnya merupakan variabel acak diskret, bukan kontinu.\"\n\nEvaluasi yang paling tepat terhadap argumen di atas adalah ....",
+        "jawaban": "Argumen salah, karena sifat kontinu ditentukan oleh besaran fisis massa yang dapat bernilai sembarang bilangan real tak terputus, bukan oleh keterbatasan pembacaan digit alat ukur.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [30,50] menit. Berapa $P(X<41)$?",
+      "jawaban_benar": "$\\frac{11}{20}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 11/20=11/20.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{20}$",
+          "alasan": "Nilai $\\frac{31}{20}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{9}{20}$",
+          "alasan": "Nilai $- \\frac{9}{20}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{51}{20}$",
+          "alasan": "Nilai $\\frac{51}{20}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 11/20=11/20.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5fc3801202d3b277c65ad0cc",
+        "teks": "Sebuah mesin otomatis mengemas bubuk detergen ke dalam kantong dengan target massa $1.000\\text{ gram}$. Akibat getaran mekanik corong tuang, massa detergen riil $M$ terdistribusi acak dalam rentang $990\\text{ gram} \\le M \\le 1.010\\text{ gram}$. Seorang teknisi menyatakan bahwa $M$ bukan variabel acak kontinu dengan alasan: timbangan digital pabrik hanya memiliki presisi satu desimal ($0,1\\text{ gram}$), sehingga nilai $M$ yang mungkin dicatat hanyalah nilai-nilai diskret kelipatan $0,1\\text{ gram}$ sebanyak 201 kemungkinan nilai.\n\nBagaimanakah penilaian yang benar terhadap klaim teknisi tersebut berdasarkan konsep variabel acak kontinu?",
+        "jawaban": "Klaim salah, karena diskretisasi pencatatan oleh timbangan hanyalah aproksimasi pengukuran, sedangkan massa fisik detergen sebenarnya mencakup seluruh nilai real tak terhitung pada interval $[990, 1010]$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [14,32] menit. Berapa $P(X<29)$?",
+      "jawaban_benar": "$\\frac{5}{6}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 15/18=5/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{6}$",
+          "alasan": "Nilai $\\frac{11}{6}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{6}$",
+          "alasan": "Nilai $- \\frac{1}{6}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{17}{6}$",
+          "alasan": "Nilai $\\frac{17}{6}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 15/18=5/6.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8166c2b01dd233fb1d10749",
+        "teks": "Sebuah instrumen presisi mencatat waktu reaksi kimia $T$ (dalam detik) sebagai variabel acak kontinu pada interval $10,00 \\le T \\le 15,00$. Dalam dua kali percobaan berturut-turut, terukur waktu reaksi $t_1 = 12,450\\text{ detik}$ dan $t_2 = 12,451\\text{ detik}$. Seorang peneliti menyimpulkan bahwa tidak ada nilai waktu reaksi riil lain yang mungkin terjadi di antara kedua hasil pengukuran tersebut karena selisihnya sudah merupakan batas toleransi terkecil instrumen ($0,001\\text{ detik}$). Evaluasi manakah yang paling tepat terhadap kesimpulan tersebut?",
+        "jawaban": "Kesimpulan tersebut salah, karena di antara dua nilai sembarang pada rentang variabel acak kontinu selalu terdapat tak hingga banyak nilai riil lain yang mungkin secara teoretis.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [36,54] menit. Berapa $P(X<51)$?",
+      "jawaban_benar": "$\\frac{5}{6}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 15/18=5/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{6}$",
+          "alasan": "Nilai $\\frac{11}{6}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{6}$",
+          "alasan": "Nilai $- \\frac{1}{6}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{17}{6}$",
+          "alasan": "Nilai $\\frac{17}{6}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 15/18=5/6.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5fc3801202d3b277c65ad0cc",
+        "teks": "Sebuah mesin otomatis mengemas bubuk detergen ke dalam kantong dengan target massa $1.000\\text{ gram}$. Akibat getaran mekanik corong tuang, massa detergen riil $M$ terdistribusi acak dalam rentang $990\\text{ gram} \\le M \\le 1.010\\text{ gram}$. Seorang teknisi menyatakan bahwa $M$ bukan variabel acak kontinu dengan alasan: timbangan digital pabrik hanya memiliki presisi satu desimal ($0,1\\text{ gram}$), sehingga nilai $M$ yang mungkin dicatat hanyalah nilai-nilai diskret kelipatan $0,1\\text{ gram}$ sebanyak 201 kemungkinan nilai.\n\nBagaimanakah penilaian yang benar terhadap klaim teknisi tersebut berdasarkan konsep variabel acak kontinu?",
+        "jawaban": "Klaim salah, karena diskretisasi pencatatan oleh timbangan hanyalah aproksimasi pengukuran, sedangkan massa fisik detergen sebenarnya mencakup seluruh nilai real tak terhitung pada interval $[990, 1010]$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [20,33] menit. Berapa $P(X<22)$?",
+      "jawaban_benar": "$\\frac{2}{13}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 2/13=2/13.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{13}$",
+          "alasan": "Nilai $\\frac{15}{13}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{11}{13}$",
+          "alasan": "Nilai $- \\frac{11}{13}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{28}{13}$",
+          "alasan": "Nilai $\\frac{28}{13}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 2/13=2/13.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf2e16e063f5c68d5c08db60",
+        "teks": "Seorang guru meminta dua siswa membandingkan dua variabel acak:\n- Variabel $A$: Banyaknya tetesan air hujan yang jatuh pada suatu wadah dalam selang waktu 1 menit.\n- Variabel $B$: Volume total air hujan (dalam mililiter) yang terkumpul dalam wadah tersebut selama 1 menit.\n\nSiswa 1 menyatakan: \"Kedua variabel acak bernilai tak hingga, sehingga keduanya sama-sama tergolong variabel acak kontinu.\"\nSiswa 2 menyatakan: \"Variabel $A$ dapat didaftar satu per satu nilainya menggunakan bilangan cacah $\\{0, 1, 2, \\dots\\}$, sedangkan nilai variabel $B$ membentuk selang bilangan real tak terputus sehingga tak terhitung (uncountable). Oleh karena itu, $A$ diskret dan $B$ kontinu.\"\n\nPernyataan evaluasi yang paling tepat mengenai pendapat kedua siswa tersebut adalah ....",
+        "jawaban": "Pendapat Siswa 2 benar, karena variabel acak diskret dapat memiliki nilai tak terhingga asalkan terhitung (countable), sedangkan variabel acak kontinu bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [17,24] menit. Berapa $P(X<19)$?",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 2/7=2/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{7}$",
+          "alasan": "Nilai $\\frac{9}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{5}{7}$",
+          "alasan": "Nilai $- \\frac{5}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{16}{7}$",
+          "alasan": "Nilai $\\frac{16}{7}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 2/7=2/7.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a2772ad0dc1b18e60f63e66",
+        "teks": "Dalam uji coba termal mesin, suhu fluida pendingin $T$ berfluktuasi secara kontinu pada rentang $82,5^\\circ\\text{C}$ hingga $91,0^\\circ\\text{C}$. Seorang asisten laboratorium berpendapat bahwa seluruh kemungkinan nilai $T$ dalam ruang sampel tersebut dapat didaftar dan dihitung satu per satu karena termometer digital yang digunakan memiliki resolusi pembacaan hingga 3 desimal ($0,001^\\circ\\text{C}$). Bagaimana evaluasi yang tepat terhadap pendapat asisten tersebut?",
+        "jawaban": "Pendapat salah, karena resolusi alat ukur hanya membatasi pembacaan teknis, sedangkan nilai riil $T$ mencakup seluruh bilangan real pada rentang tersebut yang bersifat tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [31,39] menit. Berapa $P(X<33)$?",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 2/8=1/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{4}$",
+          "alasan": "Nilai $\\frac{5}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{3}{4}$",
+          "alasan": "Nilai $- \\frac{3}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Nilai $\\frac{9}{4}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 2/8=1/4.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b8166c2b01dd233fb1d10749",
+        "teks": "Sebuah instrumen presisi mencatat waktu reaksi kimia $T$ (dalam detik) sebagai variabel acak kontinu pada interval $10,00 \\le T \\le 15,00$. Dalam dua kali percobaan berturut-turut, terukur waktu reaksi $t_1 = 12,450\\text{ detik}$ dan $t_2 = 12,451\\text{ detik}$. Seorang peneliti menyimpulkan bahwa tidak ada nilai waktu reaksi riil lain yang mungkin terjadi di antara kedua hasil pengukuran tersebut karena selisihnya sudah merupakan batas toleransi terkecil instrumen ($0,001\\text{ detik}$). Evaluasi manakah yang paling tepat terhadap kesimpulan tersebut?",
+        "jawaban": "Kesimpulan tersebut salah, karena di antara dua nilai sembarang pada rentang variabel acak kontinu selalu terdapat tak hingga banyak nilai riil lain yang mungkin secara teoretis.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "variabel_kontinu_seragam",
+      "alasan_level": "Target medium; variasi konsep variabel kontinu seragam. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Waktu tunggu X berdistribusi seragam kontinu pada interval [40,52] menit. Berapa $P(X<46)$?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 6/12=1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "Nilai $\\frac{3}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$- \\frac{1}{2}$",
+          "alasan": "Nilai $- \\frac{1}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        },
+        {
+          "teks": "$\\frac{5}{2}$",
+          "alasan": "Nilai $\\frac{5}{2}$ berada di luar rentang 0 sampai 1, sehingga tidak dapat menjadi peluang pada soal ini."
+        }
+      ],
+      "pembahasan": "Peluang seragam kontinu = panjang subinterval/panjang seluruh interval = 6/12=1/2.",
+      "catatan": "codex-replenishment:kelas12_tl-b04-C-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b04-c-medium-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48c66564f2758a7c74dd691d",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [17,37] menit. Berapa $P(X<25)$?",
+        "jawaban": "$\\frac{2}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[6,b]$. Diketahui $P(X<12)=1/4$. Tentukan $P(X>18)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (12-6)/(b-6)=1/4, sehingga b=30. Panjang bagian di atas 18 adalah 12 dari total 24; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (12-6)/(b-6)=1/4, sehingga b=30. Panjang bagian di atas 18 adalah 12 dari total 24; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d20a0cb4cdb27909030faee5",
+        "teks": "Berat sekarung beras hasil pengemasan pabrik berkisar antara $49,5\\text{ kg}$ hingga $50,5\\text{ kg}$. Jika $W$ menyatakan berat karung beras tersebut dalam kg, apakah semua kemungkinan nilai $W$ dapat dihitung satu per satu? Berikan alasan yang tepat.",
+        "jawaban": "Tidak dapat, karena $W$ memuat semua bilangan real dalam interval tersebut sehingga nilainya tak terhitung (uncountable).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[2,b]$. Diketahui $P(X<11)=1/4$. Tentukan $P(X>26)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (11-2)/(b-2)=1/4, sehingga b=38. Panjang bagian di atas 26 adalah 12 dari total 36; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (11-2)/(b-2)=1/4, sehingga b=38. Panjang bagian di atas 26 adalah 12 dari total 36; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "258c48506e1fb0705533fec8",
+        "teks": "Berdasarkan karakteristiknya pada materi statistika, nilai-nilai dari suatu variabel acak kontinu pada umumnya diperoleh melalui proses ....",
+        "jawaban": "pengukuran menggunakan alat ukur",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[8,b]$. Diketahui $P(X<17)=1/4$. Tentukan $P(X>26)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (17-8)/(b-8)=1/4, sehingga b=44. Panjang bagian di atas 26 adalah 18 dari total 36; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (17-8)/(b-8)=1/4, sehingga b=44. Panjang bagian di atas 26 adalah 18 dari total 36; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7b31452b707b7d17c7673346",
+        "teks": "Dalam suatu uji coba aerodinamika, kecepatan aliran udara $V$ (dalam m/s) pada permukaan sayap pesawat berfluktuasi secara kontinu pada selang $65,0 \\le V \\le 72,0$. Sebuah sensor kecepatan berkecepatan tinggi mencatat dua data berturut-turut pada saat uji coba, yaitu $68,421\\text{ m/s}$ dan $68,422\\text{ m/s}$. Seorang teknisi menyimpulkan:\n\"Karena selisih kedua data tersebut sangat kecil ($0,001\\text{ m/s}$), tidak ada lagi nilai kecepatan fisik aliran udara yang mungkin terjadi di antara kedua angka tersebut.\"\n\nPenilaian yang paling tepat terhadap kesimpulan teknisi tersebut adalah ....",
+        "jawaban": "Salah, karena sifat bilangan real pada variabel acak kontinu menjamin adanya tak hingga banyak kemungkinan nilai lain di antara dua nilai sembarang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[3,b]$. Diketahui $P(X<21)=1/4$. Tentukan $P(X>51)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (21-3)/(b-3)=1/4, sehingga b=75. Panjang bagian di atas 51 adalah 24 dari total 72; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (21-3)/(b-3)=1/4, sehingga b=75. Panjang bagian di atas 51 adalah 24 dari total 72; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bf591e6a34b50cdfd2eadf33",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [23,35] menit. Berapa $P(X<28)$?",
+        "jawaban": "$\\frac{5}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[8,b]$. Diketahui $P(X<14)=1/4$. Tentukan $P(X>20)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (14-8)/(b-8)=1/4, sehingga b=32. Panjang bagian di atas 20 adalah 12 dari total 24; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (14-8)/(b-8)=1/4, sehingga b=32. Panjang bagian di atas 20 adalah 12 dari total 24; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "43f79d6827583fc3e2f3c1b5",
+        "teks": "Sebuah variabel acak kontinu $X$ menyatakan suhu cairan pada suatu termometer dengan rentang $74,0^\\circ\\text{C} \\le X \\le 78,0^\\circ\\text{C}$. Nilai berikut yang mungkin merupakan salah satu nilai dari variabel acak $X$ tersebut adalah ....",
+        "jawaban": "$76,45^\\circ\\text{C}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[4,b]$. Diketahui $P(X<13)=1/4$. Tentukan $P(X>28)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (13-4)/(b-4)=1/4, sehingga b=40. Panjang bagian di atas 28 adalah 12 dari total 36; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (13-4)/(b-4)=1/4, sehingga b=40. Panjang bagian di atas 28 adalah 12 dari total 36; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61b7c2bcdfb5d8b0a67355d1",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [33,50] menit. Berapa $P(X<41)$?",
+        "jawaban": "$\\frac{8}{17}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[1,b]$. Diketahui $P(X<19)=1/4$. Tentukan $P(X>49)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (19-1)/(b-1)=1/4, sehingga b=73. Panjang bagian di atas 49 adalah 24 dari total 72; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (19-1)/(b-1)=1/4, sehingga b=73. Panjang bagian di atas 49 adalah 24 dari total 72; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bbd500df7783dcb68aa0672d",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [11,29] menit. Berapa $P(X<13)$?",
+        "jawaban": "$\\frac{1}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[4,b]$. Diketahui $P(X<19)=1/4$. Tentukan $P(X>34)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (19-4)/(b-4)=1/4, sehingga b=64. Panjang bagian di atas 34 adalah 30 dari total 60; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (19-4)/(b-4)=1/4, sehingga b=64. Panjang bagian di atas 34 adalah 30 dari total 60; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "22a4bef1c2b1d2edce9783ce",
+        "teks": "Sebuah tim peneliti di stasiun pemantauan gunung api mencatat lima variabel acak selama masa observasi:\n(1) Frekuensi gempa vulkanik dangkal yang terekam seismograf per hari\n(2) Laju curah hujan per jam di lereng kawah yang dicatat sensor otomatis\n(3) Jumlah kera liar yang terpantau melintas di sekitar pos pengamatan\n(4) Konsentrasi gas belerang di udara ambien pada radius pengamanan\n(5) Perubahan elevasi kubah lava hasil pengukuran teodolit digital\n\nBerdasarkan karakteristik variabel acak, kelompok variabel yang memiliki kemungkinan nilai tak terhitung banyaknya dalam suatu selang adalah ....",
+        "jawaban": "(2), (4), dan (5)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[2,b]$. Diketahui $P(X<20)=1/4$. Tentukan $P(X>26)$.",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (20-2)/(b-2)=1/4, sehingga b=74. Panjang bagian di atas 26 adalah 48 dari total 72; peluang 2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (20-2)/(b-2)=1/4, sehingga b=74. Panjang bagian di atas 26 adalah 48 dari total 72; peluang 2/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bbd500df7783dcb68aa0672d",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [11,29] menit. Berapa $P(X<13)$?",
+        "jawaban": "$\\frac{1}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[8,b]$. Diketahui $P(X<26)=1/4$. Tentukan $P(X>56)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (26-8)/(b-8)=1/4, sehingga b=80. Panjang bagian di atas 56 adalah 24 dari total 72; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (26-8)/(b-8)=1/4, sehingga b=80. Panjang bagian di atas 56 adalah 24 dari total 72; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "abe95be14bce1b960c546f35",
+        "teks": "Suatu larutan kimia memerlukan waktu pengendapan partikel yang dicatat dalam menit. Misalkan $T$ adalah variabel acak kontinu yang menyatakan waktu pengendapan tersebut, dengan hasil pengamatan selalu berada pada rentang $6,4\\text{ menit}$ hingga $9,8\\text{ menit}$. Bentuk penulisan ruang sampel $S$ yang tepat untuk variabel acak tersebut adalah ....",
+        "jawaban": "$S = \\{t \\mid 6,4 \\le t \\le 9,8,\\ t \\in \\mathbb{R}\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[7,b]$. Diketahui $P(X<13)=1/4$. Tentukan $P(X>19)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (13-7)/(b-7)=1/4, sehingga b=31. Panjang bagian di atas 19 adalah 12 dari total 24; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (13-7)/(b-7)=1/4, sehingga b=31. Panjang bagian di atas 19 adalah 12 dari total 24; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccb637b99a6f81852cb2cf8a",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [14,32] menit. Berapa $P(X<29)$?",
+        "jawaban": "$\\frac{5}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[6,b]$. Diketahui $P(X<21)=1/4$. Tentukan $P(X>36)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (21-6)/(b-6)=1/4, sehingga b=66. Panjang bagian di atas 36 adalah 30 dari total 60; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (21-6)/(b-6)=1/4, sehingga b=66. Panjang bagian di atas 36 adalah 30 dari total 60; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "56cc3ed6794e0e3b05708af1",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [37,52] menit. Berapa $P(X<41)$?",
+        "jawaban": "$\\frac{4}{15}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[6,b]$. Diketahui $P(X<21)=1/4$. Tentukan $P(X>46)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (21-6)/(b-6)=1/4, sehingga b=66. Panjang bagian di atas 46 adalah 20 dari total 60; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (21-6)/(b-6)=1/4, sehingga b=66. Panjang bagian di atas 46 adalah 20 dari total 60; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1e453cc4f05bc89106ff9dca",
+        "teks": "Waktu tunggu X berdistribusi seragam kontinu pada interval [29,44] menit. Berapa $P(X<37)$?",
+        "jawaban": "$\\frac{8}{15}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[7,b]$. Diketahui $P(X<16)=1/4$. Tentukan $P(X>25)$.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (16-7)/(b-7)=1/4, sehingga b=43. Panjang bagian di atas 25 adalah 18 dari total 36; peluang 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (16-7)/(b-7)=1/4, sehingga b=43. Panjang bagian di atas 25 adalah 18 dari total 36; peluang 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "77df21fa0a8ba413e1432e2b",
+        "teks": "Debit aliran fluida $Q$ (dalam liter/detik) yang keluar dari suatu pipa venturi berfluktuasi secara acak pada rentang $14,5\\text{ L/s}$ hingga $18,2\\text{ L/s}$. Empat orang siswa mengusulkan penulisan ruang sampel $S$ untuk variabel acak kontinu $Q$ tersebut sebagai berikut:\n\n1. $S_1 = \\{14,5;\\ 14,6;\\ 14,7;\\ \\dots;\\ 18,2\\}$\n2. $S_2 = \\{q \\in \\mathbb{Q} \\mid 14,5 \\le q \\le 18,2\\}$\n3. $S_3 = \\{q \\in \\mathbb{R} \\mid 14,5 \\le q \\le 18,2\\}$\n4. $S_4 = \\{q \\in \\mathbb{Z} \\mid 15 \\le q \\le 18\\}$\n\nBerdasarkan definisi variabel acak kontinu, usulan notasi ruang sampel yang tepat secara matematis adalah ....",
+        "jawaban": "$S_3$ saja",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_kontinu_batas_balik",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "X seragam kontinu pada $[5,b]$. Diketahui $P(X<14)=1/4$. Tentukan $P(X>29)$.",
+      "jawaban_benar": "$\\frac{1}{3}$",
+      "alasan_benar": "Perbandingan panjang interval memberi (14-5)/(b-5)=1/4, sehingga b=41. Panjang bagian di atas 29 adalah 12 dari total 36; peluang 1/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{3}$."
+        },
+        {
+          "teks": "$\\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Perbandingan panjang interval memberi (14-5)/(b-5)=1/4, sehingga b=41. Panjang bagian di atas 29 adalah 12 dari total 36; peluang 1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-c-medium-bt01-050"
     }
   ]
 }

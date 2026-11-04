@@ -515,6 +515,80 @@
       ],
       "pembahasan": "$3^{t} > 1.000.000$. $3^{10} = 59.049$, $3^{11} = 177.147$, $3^{12} = 531.441$, $3^{13} = 1.594.323$. Jadi $t = 13$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c1a29fa45e5ec34537763876",
+        "teks": "Banyak bilangan bulat $n$ yang memenuhi $\\frac{1}{64} < 2^{n} \\leq 32$ adalah ....",
+        "jawaban": "11",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas8/blueprints.json",
+        "source_sha256": "9274bd57a3322fdaac5603b1c5d3c60f31abfa625146926e631138accad33caa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pangkat",
+      "alasan_level": "Target hard; variasi konsep aturan pangkat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Bentuk $(5^5)^2 : 5^4$ ditulis sebagai $5^n$. Tentukan $n$.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Pangkat pada pangkat dikalikan, lalu pada pembagian dikurangi: n=5×2-4=6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah aturan pangkat pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah aturan pangkat pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah aturan pangkat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Pangkat pada pangkat dikalikan, lalu pada pembagian dikurangi: n=5×2-4=6.",
+      "catatan": "codex-replenishment:kelas8-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas8-b01-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "371c8c295094708659cb8465",
+        "teks": "Nilai dari $(-8)^{0}$ adalah ....",
+        "jawaban": "1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pangkat_sistem_eksponen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat a,b memenuhi $2^{a+b}=256$ dan $2^{2a-b}=16$. Tentukan $a^2-b^2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Samakan pangkat: a+b=8, 2a-b=4. Eliminasi memberi a=4, b=4; selisih kuadrat 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Samakan pangkat: a+b=8, 2a-b=4. Eliminasi memberi a=4, b=4; selisih kuadrat 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b01-a-hard-bt01-017"
     }
   ]
 }

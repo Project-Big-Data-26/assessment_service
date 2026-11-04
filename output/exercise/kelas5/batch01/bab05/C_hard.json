@@ -345,6 +345,80 @@
       ],
       "pembahasan": "Luas = 6l + 16. Syarat 70 < 6l + 16 < 90 berarti 54 < 6l < 74, jadi l = 10, 11, 12 (luas 76, 82, 88). Ada 3 nilai.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47d76645b3e9d3ed97ba34a8",
+        "teks": "Lantai sebuah aula terdiri dari bagian persegi panjang 8 m x 5 m dan bagian persegi dengan panjang sisi 4 m yang tidak saling menutupi. Lantai itu dipasang keramik dengan biaya Rp50.000 per m2. Biaya seluruh keramik adalah ....",
+        "jawaban": "Rp2.800.000",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas5/blueprints.json",
+        "source_sha256": "544806aac30307329f7de2ba6ac1fb0eba89f5e1a0a179e137a716c974f7bf51"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "luas_bangun_gabungan",
+      "alasan_level": "Target hard; variasi konsep luas bangun gabungan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Hiasan tersusun dari dua persegi panjang yang tidak saling menutupi, berukuran 8 cm × 6 cm dan 5 cm × 1 cm. Berapa luas seluruh hiasan?",
+      "jawaban_benar": "$53$",
+      "alasan_benar": "Luas gabungan=8×6+5×1=53 cm².",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Pilihan $54$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $53$. Periksa kembali langkah luas bangun gabungan pada pembahasan."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Pilihan $52$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $53$. Periksa kembali langkah luas bangun gabungan pada pembahasan."
+        },
+        {
+          "teks": "$55$",
+          "alasan": "Pilihan $55$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $53$. Periksa kembali langkah luas bangun gabungan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Luas gabungan=8×6+5×1=53 cm².",
+      "catatan": "codex-replenishment:kelas5-b05-C-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas5-b05-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "527d8b3d29f805024c5f2e05",
+        "teks": "Lahan berbentuk huruf L mempunyai bagian tegak setinggi 9 m dan selebar 3 m. Di dasar bagian tegak, menempel bagian mendatar setinggi 2 m sehingga lebar seluruh bagian bawah 8 m. Ani menghitung 9 x 3 = 27 dan 5 x 2 = 10, lalu 27 + 10. Budi menghitung 8 x 2 = 16 dan 7 x 3 = 21, lalu 16 + 21. Pernyataan yang benar tentang luas lahan itu adalah ....",
+        "jawaban": "Kedua cara benar dan menghasilkan luas yang sama, yaitu 37 m2",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_luas_dimensi_potongan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persegi panjang berkeliling 60 cm; panjangnya 4 cm lebih dari lebar. Sebuah persegi panjang kecil 5×4 cm dipotong dari satu sudut. Sisa bangun ditutup ubin seluas 1 cm² per ubin tanpa celah. Berapa ubin yang dibutuhkan?",
+      "jawaban_benar": "$201$",
+      "alasan_benar": "Setengah keliling p+l=30, selisih p-l=4. Jadi p=17,l=13. Luas awal 221, luas potongan 20. Sisa dan jumlah ubin 201.",
+      "distraktor": [
+        {
+          "teks": "$200$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $201$."
+        },
+        {
+          "teks": "$202$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $201$."
+        },
+        {
+          "teks": "$402$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setengah keliling p+l=30, selisih p-l=4. Jadi p=17,l=13. Luas awal 221, luas potongan 20. Sisa dan jumlah ubin 201.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b05-c-hard-bt01-012"
     }
   ]
 }

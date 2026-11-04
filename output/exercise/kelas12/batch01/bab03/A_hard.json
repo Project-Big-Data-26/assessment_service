@@ -469,6 +469,672 @@
       ],
       "pembahasan": "Pisahkan menurut $a$. $a$ ganjil: $5 \\times 5 = 25$ pasangan $(a,b)$. $a$ genap (2, 4, 6, 8): $4 \\times 10 = 40$ pasangan. Total 65 pasangan, masing-masing dengan $c$ 9 pilihan: $65 \\times 9 = 585$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc9b88cebabb1701a6ebb669",
+        "teks": "Sebuah kode terdiri atas satu huruf yang dipilih dari sekelompok huruf, diikuti dua angka berbeda dari 0 sampai 9 dengan angka pertama tidak boleh 0. Agar banyak kode yang dapat dibuat tepat 1.620, banyak huruf dalam kelompok tersebut haruslah ....",
+        "jawaban": "20 huruf",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 digit berbeda yang semuanya bukan nol dibuat bilangan 3 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$336$",
+      "alasan_benar": "Aturan pengisian tempat memberi 8×7×... sebanyak 3 faktor, yaitu 336.",
+      "distraktor": [
+        {
+          "teks": "$337$",
+          "alasan": "Pilihan $337$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $336$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$335$",
+          "alasan": "Pilihan $335$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $336$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$338$",
+          "alasan": "Pilihan $338$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $336$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 8×7×... sebanyak 3 faktor, yaitu 336.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d58641074aff712d3261d5a",
+        "teks": "Dari angka 0, 1, 2, 3, 4, dan 5 akan dibuat bilangan genap tiga angka dengan angka tidak boleh berulang. Seorang siswa menyelesaikan: \"satuan 3 pilihan (0, 2, atau 4), ratusan 5 pilihan (bukan 0), puluhan 4 pilihan, sehingga $3 \\times 5 \\times 4 = 60$ bilangan\". Penilaian yang benar terhadap penyelesaian tersebut adalah ....",
+        "jawaban": "Keliru; yang benar 52 bilangan, karena banyak pilihan ratusan bergantung pada angka satuan yang dipilih",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 8 digit berbeda yang semuanya bukan nol dibuat bilangan 5 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$6720$",
+      "alasan_benar": "Aturan pengisian tempat memberi 8×7×... sebanyak 5 faktor, yaitu 6720.",
+      "distraktor": [
+        {
+          "teks": "$6721$",
+          "alasan": "Pilihan $6721$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6720$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$6719$",
+          "alasan": "Pilihan $6719$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6720$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$6722$",
+          "alasan": "Pilihan $6722$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6720$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 8×7×... sebanyak 5 faktor, yaitu 6720.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ff44cb3c1ffa077efd11499c",
+        "teks": "Enam orang siswa, termasuk Ani dan Budi, duduk berjajar pada enam kursi dalam satu baris. Ani harus duduk di salah satu ujung baris, sedangkan Budi tidak boleh duduk di kedua ujung baris. Banyak cara mereka duduk adalah ....",
+        "jawaban": "192 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 digit berbeda yang semuanya bukan nol dibuat bilangan 5 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$720$",
+      "alasan_benar": "Aturan pengisian tempat memberi 6×5×... sebanyak 5 faktor, yaitu 720.",
+      "distraktor": [
+        {
+          "teks": "$721$",
+          "alasan": "Pilihan $721$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $720$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$719$",
+          "alasan": "Pilihan $719$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $720$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$722$",
+          "alasan": "Pilihan $722$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $720$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 6×5×... sebanyak 5 faktor, yaitu 720.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d58641074aff712d3261d5a",
+        "teks": "Dari angka 0, 1, 2, 3, 4, dan 5 akan dibuat bilangan genap tiga angka dengan angka tidak boleh berulang. Seorang siswa menyelesaikan: \"satuan 3 pilihan (0, 2, atau 4), ratusan 5 pilihan (bukan 0), puluhan 4 pilihan, sehingga $3 \\times 5 \\times 4 = 60$ bilangan\". Penilaian yang benar terhadap penyelesaian tersebut adalah ....",
+        "jawaban": "Keliru; yang benar 52 bilangan, karena banyak pilihan ratusan bergantung pada angka satuan yang dipilih",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 digit berbeda yang semuanya bukan nol dibuat bilangan 3 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Aturan pengisian tempat memberi 6×5×... sebanyak 3 faktor, yaitu 120.",
+      "distraktor": [
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan $121$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan $119$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$122$",
+          "alasan": "Pilihan $122$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 6×5×... sebanyak 3 faktor, yaitu 120.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d58641074aff712d3261d5a",
+        "teks": "Dari angka 0, 1, 2, 3, 4, dan 5 akan dibuat bilangan genap tiga angka dengan angka tidak boleh berulang. Seorang siswa menyelesaikan: \"satuan 3 pilihan (0, 2, atau 4), ratusan 5 pilihan (bukan 0), puluhan 4 pilihan, sehingga $3 \\times 5 \\times 4 = 60$ bilangan\". Penilaian yang benar terhadap penyelesaian tersebut adalah ....",
+        "jawaban": "Keliru; yang benar 52 bilangan, karena banyak pilihan ratusan bergantung pada angka satuan yang dipilih",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 digit berbeda yang semuanya bukan nol dibuat bilangan 4 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$3024$",
+      "alasan_benar": "Aturan pengisian tempat memberi 9×8×... sebanyak 4 faktor, yaitu 3024.",
+      "distraktor": [
+        {
+          "teks": "$3025$",
+          "alasan": "Pilihan $3025$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3024$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$3023$",
+          "alasan": "Pilihan $3023$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3024$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$3026$",
+          "alasan": "Pilihan $3026$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3024$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 9×8×... sebanyak 4 faktor, yaitu 3024.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fbad7aac63894efd2e2e88fd",
+        "teks": "Kode tiga angka $abc$ disusun dari angka 0 sampai 9 dengan angka boleh berulang, angka pertama $a$ tidak boleh 0, dengan aturan berikut: jika $a$ ganjil maka angka kedua $b$ harus kurang dari 5; jika $a$ genap maka $b$ boleh angka apa saja; dan angka ketiga $c$ tidak boleh sama dengan $b$. Banyak kode yang dapat dibuat adalah ....",
+        "jawaban": "585 kode",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 digit berbeda yang semuanya bukan nol dibuat bilangan 3 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$504$",
+      "alasan_benar": "Aturan pengisian tempat memberi 9×8×... sebanyak 3 faktor, yaitu 504.",
+      "distraktor": [
+        {
+          "teks": "$505$",
+          "alasan": "Pilihan $505$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $504$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$503$",
+          "alasan": "Pilihan $503$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $504$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$506$",
+          "alasan": "Pilihan $506$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $504$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 9×8×... sebanyak 3 faktor, yaitu 504.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d58641074aff712d3261d5a",
+        "teks": "Dari angka 0, 1, 2, 3, 4, dan 5 akan dibuat bilangan genap tiga angka dengan angka tidak boleh berulang. Seorang siswa menyelesaikan: \"satuan 3 pilihan (0, 2, atau 4), ratusan 5 pilihan (bukan 0), puluhan 4 pilihan, sehingga $3 \\times 5 \\times 4 = 60$ bilangan\". Penilaian yang benar terhadap penyelesaian tersebut adalah ....",
+        "jawaban": "Keliru; yang benar 52 bilangan, karena banyak pilihan ratusan bergantung pada angka satuan yang dipilih",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 6 digit berbeda yang semuanya bukan nol dibuat bilangan 4 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$360$",
+      "alasan_benar": "Aturan pengisian tempat memberi 6×5×... sebanyak 4 faktor, yaitu 360.",
+      "distraktor": [
+        {
+          "teks": "$361$",
+          "alasan": "Pilihan $361$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $360$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$359$",
+          "alasan": "Pilihan $359$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $360$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$362$",
+          "alasan": "Pilihan $362$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $360$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 6×5×... sebanyak 4 faktor, yaitu 360.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc9b88cebabb1701a6ebb669",
+        "teks": "Sebuah kode terdiri atas satu huruf yang dipilih dari sekelompok huruf, diikuti dua angka berbeda dari 0 sampai 9 dengan angka pertama tidak boleh 0. Agar banyak kode yang dapat dibuat tepat 1.620, banyak huruf dalam kelompok tersebut haruslah ....",
+        "jawaban": "20 huruf",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 9 digit berbeda yang semuanya bukan nol dibuat bilangan 5 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$15120$",
+      "alasan_benar": "Aturan pengisian tempat memberi 9×8×... sebanyak 5 faktor, yaitu 15120.",
+      "distraktor": [
+        {
+          "teks": "$15121$",
+          "alasan": "Pilihan $15121$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$15119$",
+          "alasan": "Pilihan $15119$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$15122$",
+          "alasan": "Pilihan $15122$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $15120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 9×8×... sebanyak 5 faktor, yaitu 15120.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e954929b0e01963abf43d91a",
+        "teks": "Dari angka 1, 2, 3, 4, 5, dan 6 dibuat bilangan tiga angka dengan angka boleh berulang. Banyak bilangan yang memuat paling sedikit satu angka genap adalah ....",
+        "jawaban": "189 bilangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "aturan_pengisian_tempat",
+      "alasan_level": "Target hard; variasi konsep aturan pengisian tempat. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dari 5 digit berbeda yang semuanya bukan nol dibuat bilangan 4 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Aturan pengisian tempat memberi 5×4×... sebanyak 4 faktor, yaitu 120.",
+      "distraktor": [
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan $121$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan $119$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        },
+        {
+          "teks": "$122$",
+          "alasan": "Pilihan $122$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $120$. Periksa kembali langkah aturan pengisian tempat pada pembahasan."
+        }
+      ],
+      "pembahasan": "Aturan pengisian tempat memberi 5×4×... sebanyak 4 faktor, yaitu 120.",
+      "catatan": "codex-replenishment:kelas12-b03-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b03-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "45494675b5ccd6a82b4b1f3c",
+        "teks": "Dari 8 calon akan dipilih ketua, wakil ketua, dan sekretaris, dengan ketentuan satu orang hanya boleh memegang satu jabatan. Banyak susunan pengurus yang mungkin adalah ....",
+        "jawaban": "336 susunan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 2, 3, 5, 6, 7], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 3000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$132$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 48, 2: 48, 6: 36}. Total 132.",
+      "distraktor": [
+        {
+          "teks": "$131$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $132$."
+        },
+        {
+          "teks": "$133$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $132$."
+        },
+        {
+          "teks": "$264$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 48, 2: 48, 6: 36}. Total 132.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fbad7aac63894efd2e2e88fd",
+        "teks": "Kode tiga angka $abc$ disusun dari angka 0 sampai 9 dengan angka boleh berulang, angka pertama $a$ tidak boleh 0, dengan aturan berikut: jika $a$ ganjil maka angka kedua $b$ harus kurang dari 5; jika $a$ genap maka $b$ boleh angka apa saja; dan angka ketiga $c$ tidak boleh sama dengan $b$. Banyak kode yang dapat dibuat adalah ....",
+        "jawaban": "585 kode",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 1, 3, 6, 7, 8], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 2000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 48, 6: 36, 8: 36}. Total 120.",
+      "distraktor": [
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $120$."
+        },
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $120$."
+        },
+        {
+          "teks": "$240$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 48, 6: 36, 8: 36}. Total 120.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "802fb213d9b5818dae6c3469",
+        "teks": "Pada sebuah gembok kode, empat kotak perlu diisi angka dari 1 sampai 8, dan angka boleh berulang. Banyak kemungkinan susunan angka yang dapat dipasang pada gembok tersebut adalah ....",
+        "jawaban": "4.096 susunan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 1, 2, 5, 6, 8], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 6000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 24, 2: 24, 6: 12, 8: 12}. Total 72.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 24, 2: 24, 6: 12, 8: 12}. Total 72.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "76a8b4027d7426baa788ac58",
+        "teks": "Sanggar tari Kenanga memiliki 28 penari yang terbagi atas kelompok pemula dan kelompok lanjutan. Kelompok pemula terdiri atas 16 penari dengan 9 di antaranya penari putra. Banyak penari putri di sanggar tersebut ada 12 orang. Banyak pasangan tari putra dan putri yang dapat dibentuk dengan satu penari dari masing-masing kelompok adalah ....",
+        "jawaban": "94 pasangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 2, 3, 4, 7, 9], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 4000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 36, 2: 36, 4: 24}. Total 96.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 36, 2: 36, 4: 24}. Total 96.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "45494675b5ccd6a82b4b1f3c",
+        "teks": "Dari 8 calon akan dipilih ketua, wakil ketua, dan sekretaris, dengan ketentuan satu orang hanya boleh memegang satu jabatan. Banyak susunan pengurus yang mungkin adalah ....",
+        "jawaban": "336 susunan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 1, 2, 3, 7, 8], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 5000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 24, 2: 24, 8: 12}. Total 60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 24, 2: 24, 8: 12}. Total 60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e695ad8afec00b113443493b",
+        "teks": "Dari digit 1, 2, 3, 7, 8 dibuat bilangan 4 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+        "jawaban": "$120$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 1, 2, 3, 6, 8], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 7000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 12, 2: 12, 6: 12, 8: 0}. Total 36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 12, 2: 12, 6: 12, 8: 0}. Total 36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dde3005ac35a7eaf36a99b8e",
+        "teks": "Seorang siswa memiliki 9 kemeja dan beberapa celana. Banyak pasangan kemeja dan celana berbeda yang dapat dipakai adalah 54. Banyak celana yang dimiliki siswa tersebut adalah ....",
+        "jawaban": "6 celana",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 1, 2, 5, 7, 8], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 3000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 36, 2: 36, 8: 24}. Total 96.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 36, 2: 36, 8: 24}. Total 96.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d515d7b4dc9b7ad7825dce0",
+        "teks": "Bu Lestari memiliki 4 blus, 6 rok, dan 7 pasang sepatu berbeda yang digunakan sebagai pakaian ke kantor. Jika Bu Lestari membuat setelan yang berbeda saat mengenakannya ke kantor, tentukan banyak setelan berbeda yang dibuat.",
+        "jawaban": "168 setelan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 1, 2, 5, 6, 9], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 2000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$120$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 48, 2: 36, 6: 36}. Total 120.",
+      "distraktor": [
+        {
+          "teks": "$119$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $120$."
+        },
+        {
+          "teks": "$121$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $120$."
+        },
+        {
+          "teks": "$240$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 48, 2: 36, 6: 36}. Total 120.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "895c9018964a435cc1666da8",
+        "teks": "Dari digit 1, 2, 3, 4, 5, 6 dibuat bilangan 3 angka tanpa pengulangan digit. Berapa banyak bilangan yang dapat dibuat?",
+        "jawaban": "$120$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_aturan_tempat_batas_genap",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari angka [0, 3, 4, 7, 8, 9], dibentuk bilangan genap empat angka tanpa pengulangan yang lebih besar dari 5000. Berapa banyak bilangan yang memenuhi?",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 36, 4: 36, 8: 24}. Total 96.",
+      "distraktor": [
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $96$."
+        },
+        {
+          "teks": "$192$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan berdasarkan angka terakhir yang genap. Larang nol di depan, larang pengulangan, dan periksa batas ribuan. Jumlah menurut digit terakhir: {0: 36, 4: 36, 8: 24}. Total 96.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-a-hard-bt01-032"
     }
   ]
 }

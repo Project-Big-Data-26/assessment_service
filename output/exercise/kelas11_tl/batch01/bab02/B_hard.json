@@ -549,6 +549,746 @@
       ],
       "pembahasan": "Agar jumlah turun derajat, koefisien $x^3$ $Q$ harus $-2$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f5649d15d7f87fcce63a4885",
+        "teks": "Budi mengklaim: \"Jumlah dua polinomial berderajat $3$ selalu berderajat $3$.\" Diketahui $P(x) = 2x^3 - 5x^2 + x + 4$. Polinomial $Q(x)$ yang bersama $P(x)$ merupakan contoh penyangkal klaim Budi adalah ....",
+        "jawaban": "$Q(x) = -2x^3 + x^2 + 6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=3 x^{2} + 2 x + 3$ dan $Q(x)=2 x^{2} - 3 x + 3$, berapa koefisien $x^3$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$6 x^{4} - 5 x^{3} + 9 x^{2} - 3 x + 9$. Koefisien yang diminta -5.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan $-4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-5$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan $-6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-5$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan $-3$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-5$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$6 x^{4} - 5 x^{3} + 9 x^{2} - 3 x + 9$. Koefisien yang diminta -5.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72b4fe4d8c7155862306f2f4",
+        "teks": "Diketahui $P(x) = 5x^3 - 4x^2 + x + 3$. Polinomial $Q(x) = 5x^3 + ax^2 + bx + c$ dirancang sehingga $P(x) - Q(x)$ berderajat $1$ dengan koefisien $x$ sama dengan $6$, dan suku konstan $P(x) + Q(x)$ sama dengan $11$. Nilai $a + b + c$ adalah ....",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=5 x^{2} + 4 x + 3$ dan $Q(x)=4 x^{2} - 3 x + 7$, berapa koefisien $x^3$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$20 x^{4} + x^{3} + 35 x^{2} + 19 x + 21$. Koefisien yang diminta 1.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan $2$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan $0$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$20 x^{4} + x^{3} + 35 x^{2} + 19 x + 21$. Koefisien yang diminta 1.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "233d402405f02dec4c569e94",
+        "teks": "Diketahui $P(x)$ dan $Q(x)$ masing-masing berderajat $4$. Kejadian yang mungkin terjadi adalah ....",
+        "jawaban": "$P(x) + Q(x)$ berderajat $2$ dan $P(x) - Q(x)$ berderajat $4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=7 x^{2} + 5 x + 9$ dan $Q(x)=5 x^{2} - 9 x + 3$, berapa koefisien $x^1$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$-66$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$35 x^{4} - 38 x^{3} + 21 x^{2} - 66 x + 27$. Koefisien yang diminta -66.",
+      "distraktor": [
+        {
+          "teks": "$-65$",
+          "alasan": "Pilihan $-65$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-66$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-67$",
+          "alasan": "Pilihan $-67$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-66$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-64$",
+          "alasan": "Pilihan $-64$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-66$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$35 x^{4} - 38 x^{3} + 21 x^{2} - 66 x + 27$. Koefisien yang diminta -66.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "233d402405f02dec4c569e94",
+        "teks": "Diketahui $P(x)$ dan $Q(x)$ masing-masing berderajat $4$. Kejadian yang mungkin terjadi adalah ....",
+        "jawaban": "$P(x) + Q(x)$ berderajat $2$ dan $P(x) - Q(x)$ berderajat $4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=9 x^{2} + 9 x + 9$ dan $Q(x)=9 x^{2} - 9 x + 4$, berapa koefisien $x^2$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$81 x^{4} + 36 x^{2} - 45 x + 36$. Koefisien yang diminta 36.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan $38$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$81 x^{4} + 36 x^{2} - 45 x + 36$. Koefisien yang diminta 36.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72b4fe4d8c7155862306f2f4",
+        "teks": "Diketahui $P(x) = 5x^3 - 4x^2 + x + 3$. Polinomial $Q(x) = 5x^3 + ax^2 + bx + c$ dirancang sehingga $P(x) - Q(x)$ berderajat $1$ dengan koefisien $x$ sama dengan $6$, dan suku konstan $P(x) + Q(x)$ sama dengan $11$. Nilai $a + b + c$ adalah ....",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=2 x^{2} + 7 x + 3$ dan $Q(x)=7 x^{2} - 3 x + 5$, berapa koefisien $x^1$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$14 x^{4} + 43 x^{3} + 10 x^{2} + 26 x + 15$. Koefisien yang diminta 26.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan $28$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$14 x^{4} + 43 x^{3} + 10 x^{2} + 26 x + 15$. Koefisien yang diminta 26.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3664188503dc1e6440fa4637",
+        "teks": "Sebuah toko menjual $(2x + 10)$ pensil per hari dengan harga $(x + 5)$ ribu rupiah per pensil. Biaya operasional per hari adalah $(x^2 + 9x + 4)$ ribu rupiah. Laba per hari (dalam ribu rupiah) dinyatakan dengan ....",
+        "jawaban": "$x^2 + 11x + 46$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=7 x^{2} + 5 x + 7$ dan $Q(x)=5 x^{2} - 7 x + 3$, berapa koefisien $x^1$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$-34$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$35 x^{4} - 24 x^{3} + 21 x^{2} - 34 x + 21$. Koefisien yang diminta -34.",
+      "distraktor": [
+        {
+          "teks": "$-33$",
+          "alasan": "Pilihan $-33$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-34$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-35$",
+          "alasan": "Pilihan $-35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-34$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Pilihan $-32$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-34$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$35 x^{4} - 24 x^{3} + 21 x^{2} - 34 x + 21$. Koefisien yang diminta -34.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "131613a03d2dff7ba60c03f1",
+        "teks": "Polinomial $R(x) = x^2 + px + q$ dirancang sehingga hasil perkalian $(x - 3)R(x)$ hanya terdiri dari dua suku. Polinomial $R(x)$ tersebut adalah ....",
+        "jawaban": "$x^2 + 3x + 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=2 x^{2} + 7 x + 4$ dan $Q(x)=7 x^{2} - 4 x + 6$, berapa koefisien $x^1$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$14 x^{4} + 41 x^{3} + 12 x^{2} + 26 x + 24$. Koefisien yang diminta 26.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan $28$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $26$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$14 x^{4} + 41 x^{3} + 12 x^{2} + 26 x + 24$. Koefisien yang diminta 26.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "131613a03d2dff7ba60c03f1",
+        "teks": "Polinomial $R(x) = x^2 + px + q$ dirancang sehingga hasil perkalian $(x - 3)R(x)$ hanya terdiri dari dua suku. Polinomial $R(x)$ tersebut adalah ....",
+        "jawaban": "$x^2 + 3x + 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=9 x^{2} + 9 x + 5$ dan $Q(x)=9 x^{2} - 5 x + 5$, berapa koefisien $x^3$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$81 x^{4} + 36 x^{3} + 45 x^{2} + 20 x + 25$. Koefisien yang diminta 36.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan $38$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$81 x^{4} + 36 x^{3} + 45 x^{2} + 20 x + 25$. Koefisien yang diminta 36.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "92290f629074ce600d49ef3e",
+        "teks": "(1) $(4x - 3)(2x^2 - x + 6) = 4x(2x^2 - x + 6) - 3(2x^2 - x + 6)$\n\n(2) $= 8x^3 - 4x^2 + 24x - 6x^2 - 3x - 18$\n\n(3) $= 8x^3 - 10x^2 + 21x - 18$\n\nSeorang siswa mengalikan $(4x - 3)(2x^2 - x + 6)$ seperti pada stimulus. Pernyataan yang benar tentang pekerjaan siswa adalah ....",
+        "jawaban": "langkah (2) salah karena $-3 \\cdot (-x)$ seharusnya $+3x$, dan hasil yang benar adalah $8x^3 - 10x^2 + 27x - 18$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=7 x^{2} + 7 x + 5$ dan $Q(x)=7 x^{2} - 5 x + 7$, berapa koefisien $x^2$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$49 x^{4} + 14 x^{3} + 49 x^{2} + 24 x + 35$. Koefisien yang diminta 49.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan $50$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $49$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan $48$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $49$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan $51$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $49$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$49 x^{4} + 14 x^{3} + 49 x^{2} + 24 x + 35$. Koefisien yang diminta 49.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "92290f629074ce600d49ef3e",
+        "teks": "(1) $(4x - 3)(2x^2 - x + 6) = 4x(2x^2 - x + 6) - 3(2x^2 - x + 6)$\n\n(2) $= 8x^3 - 4x^2 + 24x - 6x^2 - 3x - 18$\n\n(3) $= 8x^3 - 10x^2 + 21x - 18$\n\nSeorang siswa mengalikan $(4x - 3)(2x^2 - x + 6)$ seperti pada stimulus. Pernyataan yang benar tentang pekerjaan siswa adalah ....",
+        "jawaban": "langkah (2) salah karena $-3 \\cdot (-x)$ seharusnya $+3x$, dan hasil yang benar adalah $8x^3 - 10x^2 + 27x - 18$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "operasi_polinomial",
+      "alasan_level": "Target hard; variasi konsep operasi polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Jika $P(x)=6 x^{2} + 6 x + 2$ dan $Q(x)=6 x^{2} - 2 x + 4$, berapa koefisien $x^2$ dalam $P(x)Q(x)$?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$36 x^{4} + 24 x^{3} + 24 x^{2} + 20 x + 8$. Koefisien yang diminta 24.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $24$. Periksa kembali langkah operasi polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Kalikan dan kelompokkan pangkat sama: P(x)Q(x)=$36 x^{4} + 24 x^{3} + 24 x^{2} + 20 x + 8$. Koefisien yang diminta 24.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "812548a5a79215ed23ea1355",
+        "teks": "Tentukan hasil dari: (7h^5 - 9h^3 + 4h - 10) + (-7h^5 + 6h^4 + 9h^3 - h + 16)",
+        "jawaban": "$6h^4 + 3h + 6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 4, sedangkan koefisien x pada PQ adalah 4. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=4 dan b(a+1)=4. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=3, b=1. Koefisien x² dari P²-Q² adalah a²+2b-1=10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=4 dan b(a+1)=4. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=3, b=1. Koefisien x² dari P²-Q² adalah a²+2b-1=10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fab02fce5a7dc835a4f979fa",
+        "teks": "Bentuk paling sederhana dari $(7c^6 - c^5 + 9c - 15) - (c^6 + 8c^5 - c^4 - 5)$ adalah ....",
+        "jawaban": "$6c^6 - 9c^5 + c^4 + 9c - 10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 13, sedangkan koefisien x pada PQ adalah 48. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=13 dan b(a+1)=48. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=7, b=6. Koefisien x² dari P²-Q² adalah a²+2b-1=60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=13 dan b(a+1)=48. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=7, b=6. Koefisien x² dari P²-Q² adalah a²+2b-1=60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fe86343a84cd285f094e165",
+        "teks": "Hasil dari $(w^6 - 8w^4 + 5w - 12) - (9w^5 + 7w^4 - w - 10)$ adalah ....",
+        "jawaban": "$w^6 - 9w^5 - 15w^4 + 6w - 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 7, sedangkan koefisien x pada PQ adalah 12. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=7 dan b(a+1)=12. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=5, b=2. Koefisien x² dari P²-Q² adalah a²+2b-1=28.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=7 dan b(a+1)=12. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=5, b=2. Koefisien x² dari P²-Q² adalah a²+2b-1=28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e233f38127ab287fce91bda",
+        "teks": "Pada hasil penjumlahan $(5x^3 + 4x^2 - 7x) + (2x^3 - 9x^2 + x)$ yang sudah disederhanakan, koefisien $x^2$ adalah ....",
+        "jawaban": "$-5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 9, sedangkan koefisien x pada PQ adalah 24. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=9 dan b(a+1)=24. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=5, b=4. Koefisien x² dari P²-Q² adalah a²+2b-1=32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=9 dan b(a+1)=24. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=5, b=4. Koefisien x² dari P²-Q² adalah a²+2b-1=32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "812548a5a79215ed23ea1355",
+        "teks": "Tentukan hasil dari: (7h^5 - 9h^3 + 4h - 10) + (-7h^5 + 6h^4 + 9h^3 - h + 16)",
+        "jawaban": "$6h^4 + 3h + 6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 9, sedangkan koefisien x pada PQ adalah 21. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=9 dan b(a+1)=21. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=6, b=3. Koefisien x² dari P²-Q² adalah a²+2b-1=41.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $41$."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $41$."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=9 dan b(a+1)=21. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=6, b=3. Koefisien x² dari P²-Q² adalah a²+2b-1=41.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c20c778068b5abda57185b40",
+        "teks": "Polinomial $3x^3 - x^2 + 4x - 6$ dikalikan dengan $x^2 + 5$. Sebelum suku-suku sejenis digabung, banyak suku hasil perkalian tersebut adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 14, sedangkan koefisien x pada PQ adalah 54. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$75$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=14 dan b(a+1)=54. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=8, b=6. Koefisien x² dari P²-Q² adalah a²+2b-1=75.",
+      "distraktor": [
+        {
+          "teks": "$74$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $75$."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $75$."
+        },
+        {
+          "teks": "$150$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=14 dan b(a+1)=54. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=8, b=6. Koefisien x² dari P²-Q² adalah a²+2b-1=75.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "799eac0e7317ee5710646b42",
+        "teks": "Pernyataan yang benar tentang hasil perkalian (x^3 + 2x - 1)(x^2 - 4x + 5) adalah ....",
+        "jawaban": "berderajat 5 dan suku konstannya $-5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 11, sedangkan koefisien x pada PQ adalah 27. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$69$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=11 dan b(a+1)=27. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=8, b=3. Koefisien x² dari P²-Q² adalah a²+2b-1=69.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$138$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=11 dan b(a+1)=27. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=8, b=3. Koefisien x² dari P²-Q² adalah a²+2b-1=69.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce24fb2555187a59dbdd69b9",
+        "teks": "Tentukan hasil perkalian (4m^3 - 7m + 6)(5m - 8).",
+        "jawaban": "$20m^4 - 32m^3 - 35m^2 + 86m - 48$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 11, sedangkan koefisien x pada PQ adalah 35. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$45$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=11 dan b(a+1)=35. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=6, b=5. Koefisien x² dari P²-Q² adalah a²+2b-1=45.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $45$."
+        },
+        {
+          "teks": "$46$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $45$."
+        },
+        {
+          "teks": "$90$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=11 dan b(a+1)=35. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=6, b=5. Koefisien x² dari P²-Q² adalah a²+2b-1=45.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "014085e5ba9c36246a472d84",
+        "teks": "Hasil perkalian $(x^2 + ax + 4)(x^2 - 3x + b)$ yang telah disederhanakan tidak memuat suku $x^3$ dan suku $x$. Pernyataan yang benar adalah ....",
+        "jawaban": "$a = 3$, $b = 4$, dan koefisien $x^2$ adalah $-1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 5, sedangkan koefisien x pada PQ adalah 8. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=5 dan b(a+1)=8. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=3, b=2. Koefisien x² dari P²-Q² adalah a²+2b-1=12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=5 dan b(a+1)=8. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=3, b=2. Koefisien x² dari P²-Q² adalah a²+2b-1=12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b48df2e3b31ea153fbad1b9b",
+        "teks": "Sebuah balok memiliki panjang $(x + 5)$ cm, lebar $(x - 2)$ cm, dan tinggi $(2x + 1)$ cm. Volume balok tersebut (dalam cm$^3$) dinyatakan dengan ....",
+        "jawaban": "$2x^3 + 7x^2 - 17x - 10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_operasi_polinomial_koefisien_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $P(x)=x^2+ax+b$ dan $Q(x)=x+b$ dengan a>b>0. Koefisien $x^2$ pada PQ adalah 7, sedangkan koefisien x pada PQ adalah 7. Tentukan koefisien $x^2$ pada $P^2-Q^2$.",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Pada PQ kedua koefisien memberi a+b=7 dan b(a+1)=7. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=6, b=1. Koefisien x² dari P²-Q² adalah a²+2b-1=37.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37$."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada PQ kedua koefisien memberi a+b=7 dan b(a+1)=7. Eliminasi membentuk persamaan kuadrat; syarat a>b>0 memilih a=6, b=1. Koefisien x² dari P²-Q² adalah a²+2b-1=37.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-b-hard-bt01-036"
     }
   ],
   "kapasitas_kurang": true,

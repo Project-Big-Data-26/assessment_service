@@ -238,6 +238,968 @@
       ],
       "pembahasan": "$9^4+4=6565$. Dengan $x^4+4=(x^2+2x+2)(x^2-2x+2)$ dan $x=9$: $101\\cdot65=6565$, sehingga komposit (bahkan $5\\cdot13\\cdot101$).",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5023b881a24c91525317832b",
+        "teks": "Hasan menyatakan bahwa $9^4+4$ adalah bilangan prima, karena penjumlahan dua bilangan kuadrat ($(9^2)^2+2^2$) tidak dapat difaktorkan. Pernyataan yang tepat adalah ....",
+        "jawaban": "Keliru; $9^4+4=(9^2+2)^2-(2\\cdot9)^2=101\\cdot65$, sehingga bilangan komposit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+7)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$735$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×7²=735.",
+      "distraktor": [
+        {
+          "teks": "$736$",
+          "alasan": "Pilihan $736$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $735$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$734$",
+          "alasan": "Pilihan $734$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $735$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$737$",
+          "alasan": "Pilihan $737$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $735$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×7²=735.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-008"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+6)^4$, tentukan koefisien $x^2$.",
+      "jawaban_benar": "$216$",
+      "alasan_benar": "Teorema binomial memberi C(4,2)×6²=216.",
+      "distraktor": [
+        {
+          "teks": "$217$",
+          "alasan": "Pilihan $217$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $216$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$215$",
+          "alasan": "Pilihan $215$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $216$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$218$",
+          "alasan": "Pilihan $218$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $216$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(4,2)×6²=216.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-009"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7399a0c5030779d9d7cf5d1",
+        "teks": "Rani ingin menentukan $a$ dan $b$ agar $(x^2+ax+b)^2=x^4-6x^3+13x^2-12x+4$ merupakan identitas polinomial. Pekerjaannya: koefisien $x^3$: $2a=-6$ sehingga $a=-3$; koefisien $x^2$: $a^2+b=13$ sehingga $b=4$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+        "jawaban": "Koefisien $x^2$ seharusnya $a^2+2b$, sehingga $b=2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+5)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$75$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×5²=75.",
+      "distraktor": [
+        {
+          "teks": "$76$",
+          "alasan": "Pilihan $76$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $75$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Pilihan $74$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $75$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$77$",
+          "alasan": "Pilihan $77$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $75$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×5²=75.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-010"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+6)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$540$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×6²=540.",
+      "distraktor": [
+        {
+          "teks": "$541$",
+          "alasan": "Pilihan $541$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $540$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$539$",
+          "alasan": "Pilihan $539$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $540$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$542$",
+          "alasan": "Pilihan $542$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $540$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×6²=540.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+4)^4$, tentukan koefisien $x^2$.",
+      "jawaban_benar": "$96$",
+      "alasan_benar": "Teorema binomial memberi C(4,2)×4²=96.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan $97$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$95$",
+          "alasan": "Pilihan $95$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$98$",
+          "alasan": "Pilihan $98$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $96$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(4,2)×4²=96.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+9)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$243$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×9²=243.",
+      "distraktor": [
+        {
+          "teks": "$244$",
+          "alasan": "Pilihan $244$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $243$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$242$",
+          "alasan": "Pilihan $242$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $243$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$245$",
+          "alasan": "Pilihan $245$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $243$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×9²=243.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5023b881a24c91525317832b",
+        "teks": "Hasan menyatakan bahwa $9^4+4$ adalah bilangan prima, karena penjumlahan dua bilangan kuadrat ($(9^2)^2+2^2$) tidak dapat difaktorkan. Pernyataan yang tepat adalah ....",
+        "jawaban": "Keliru; $9^4+4=(9^2+2)^2-(2\\cdot9)^2=101\\cdot65$, sehingga bilangan komposit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+9)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$810$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×9²=810.",
+      "distraktor": [
+        {
+          "teks": "$811$",
+          "alasan": "Pilihan $811$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $810$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$809$",
+          "alasan": "Pilihan $809$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $810$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$812$",
+          "alasan": "Pilihan $812$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $810$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×9²=810.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+2)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×2²=40.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×2²=40.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "641f6764454d944be672dba5",
+        "teks": "Jika $(px+q)^3 = 8x^3 + 36x^2 + rx + 27$ adalah identitas polinomial dengan $p$ dan $q$ bilangan real positif, nilai $p+q+r$ adalah ....",
+        "jawaban": "$59$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+7)^4$, tentukan koefisien $x^2$.",
+      "jawaban_benar": "$294$",
+      "alasan_benar": "Teorema binomial memberi C(4,2)×7²=294.",
+      "distraktor": [
+        {
+          "teks": "$295$",
+          "alasan": "Pilihan $295$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $294$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$293$",
+          "alasan": "Pilihan $293$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $294$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$296$",
+          "alasan": "Pilihan $296$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $294$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(4,2)×7²=294.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+2)^3$, tentukan koefisien $x^1$.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Teorema binomial memberi C(3,2)×2²=12.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $12$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(3,2)×2²=12.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7af1df516048d7b923f93fda",
+        "teks": "Budi menyatakan ada 6 pasangan bilangan asli $(a,b)$ dengan $a^2-b^2=45$, karena 45 memiliki 6 faktor positif. Pernyataan yang tepat tentang klaim Budi adalah ....",
+        "jawaban": "Keliru; $(a-b)(a+b)=45$ dengan $a-b<a+b$ hanya memberi pasangan faktor $(1,45)$, $(3,15)$, $(5,9)$, sehingga ada 3 pasangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+9)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$1215$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×9²=1215.",
+      "distraktor": [
+        {
+          "teks": "$1216$",
+          "alasan": "Pilihan $1216$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1215$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$1214$",
+          "alasan": "Pilihan $1214$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1215$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$1217$",
+          "alasan": "Pilihan $1217$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1215$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×9²=1215.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7399a0c5030779d9d7cf5d1",
+        "teks": "Rani ingin menentukan $a$ dan $b$ agar $(x^2+ax+b)^2=x^4-6x^3+13x^2-12x+4$ merupakan identitas polinomial. Pekerjaannya: koefisien $x^3$: $2a=-6$ sehingga $a=-3$; koefisien $x^2$: $a^2+b=13$ sehingga $b=4$. Pernyataan yang benar tentang pekerjaan Rani adalah ....",
+        "jawaban": "Koefisien $x^2$ seharusnya $a^2+2b$, sehingga $b=2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+4)^6$, tentukan koefisien $x^4$.",
+      "jawaban_benar": "$240$",
+      "alasan_benar": "Teorema binomial memberi C(6,2)×4²=240.",
+      "distraktor": [
+        {
+          "teks": "$241$",
+          "alasan": "Pilihan $241$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $240$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$239$",
+          "alasan": "Pilihan $239$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $240$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$242$",
+          "alasan": "Pilihan $242$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $240$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(6,2)×4²=240.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e6bc14d6e421c1eae385d93",
+        "teks": "Rina mencatat hasil berikut: $4^2-2^2=12$ dengan $4+2=6$; $6^2-4^2=20$ dengan $6+4=10$; $8^2-6^2=28$ dengan $8+6=14$. Rina menduga selisih kuadrat dua bilangan genap yang berurutan selalu sama dengan $k$ kali jumlah kedua bilangan itu. Bila dibuktikan secara aljabar untuk semua bilangan genap berurutan $n$ dan $n+2$, nilai $k$ adalah ....",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "identitas_polinomial",
+      "alasan_level": "Target hard; variasi konsep identitas polinomial. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dalam identitas $(x+8)^5$, tentukan koefisien $x^3$.",
+      "jawaban_benar": "$640$",
+      "alasan_benar": "Teorema binomial memberi C(5,2)×8²=640.",
+      "distraktor": [
+        {
+          "teks": "$641$",
+          "alasan": "Pilihan $641$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $640$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$639$",
+          "alasan": "Pilihan $639$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $640$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        },
+        {
+          "teks": "$642$",
+          "alasan": "Pilihan $642$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $640$. Periksa kembali langkah identitas polinomial pada pembahasan."
+        }
+      ],
+      "pembahasan": "Teorema binomial memberi C(5,2)×8²=640.",
+      "catatan": "codex-replenishment:kelas11_tl-b02-E-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b02-e-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "641f6764454d944be672dba5",
+        "teks": "Jika $(px+q)^3 = 8x^3 + 36x^2 + rx + 27$ adalah identitas polinomial dengan $p$ dan $q$ bilangan real positif, nilai $p+q+r$ adalah ....",
+        "jawaban": "$59$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^6+(x+b)^6$, koefisien $x^5$ adalah 24 dan koefisien $x^4$ adalah 150. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Koefisien pertama memberi a+b=4. Koefisien berikutnya memberi a²+b²=10; maka ab=3. Selesaikan pasangan akar dan gunakan a>b: a=3, b=1. Selisih kubik 26.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $26$."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $26$."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=4. Koefisien berikutnya memberi a²+b²=10; maka ab=3. Selesaikan pasangan akar dan gunakan a>b: a=3, b=1. Selisih kubik 26.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6fcf48b8ab74edfc07e37d58",
+        "teks": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
+        "jawaban": "$x^3 + 27$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^7+(x+b)^7$, koefisien $x^6$ adalah 56 dan koefisien $x^5$ adalah 840. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$208$",
+      "alasan_benar": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=40; maka ab=12. Selesaikan pasangan akar dan gunakan a>b: a=6, b=2. Selisih kubik 208.",
+      "distraktor": [
+        {
+          "teks": "$207$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $208$."
+        },
+        {
+          "teks": "$209$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $208$."
+        },
+        {
+          "teks": "$416$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=40; maka ab=12. Selesaikan pasangan akar dan gunakan a>b: a=6, b=2. Selisih kubik 208.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b2c3cf762e5bd2ef069f092",
+        "teks": "Dengan memakai identitas $a^2-b^2=(a+b)(a-b)$, nilai dari $101^2 - 99^2$ adalah ....",
+        "jawaban": "$400$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^6+(x+b)^6$, koefisien $x^5$ adalah 48 dan koefisien $x^4$ adalah 600. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$208$",
+      "alasan_benar": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=40; maka ab=12. Selesaikan pasangan akar dan gunakan a>b: a=6, b=2. Selisih kubik 208.",
+      "distraktor": [
+        {
+          "teks": "$207$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $208$."
+        },
+        {
+          "teks": "$209$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $208$."
+        },
+        {
+          "teks": "$416$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=40; maka ab=12. Selesaikan pasangan akar dan gunakan a>b: a=6, b=2. Selisih kubik 208.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a98a8a3ba09a3097ce0df310",
+        "teks": "Dalam identitas $(x+9)^5$, tentukan koefisien $x^3$.",
+        "jawaban": "$810$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^7+(x+b)^7$, koefisien $x^6$ adalah 63 dan koefisien $x^5$ adalah 1365. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$511$",
+      "alasan_benar": "Koefisien pertama memberi a+b=9. Koefisien berikutnya memberi a²+b²=65; maka ab=8. Selesaikan pasangan akar dan gunakan a>b: a=8, b=1. Selisih kubik 511.",
+      "distraktor": [
+        {
+          "teks": "$510$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $511$."
+        },
+        {
+          "teks": "$512$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $511$."
+        },
+        {
+          "teks": "$1022$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=9. Koefisien berikutnya memberi a²+b²=65; maka ab=8. Selesaikan pasangan akar dan gunakan a>b: a=8, b=1. Selisih kubik 511.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4383703992ab541bf45f9481",
+        "teks": "Diberikan persamaan polinomial $(2p - q + 3r)^2 = 4p^2 + q^2 + 9r^2 - 4pq + 12pr + 6qr$. Pernyataan yang benar adalah ....",
+        "jawaban": "Bukan identitas, karena suku $qr$ seharusnya $-6qr$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^4+(x+b)^4$, koefisien $x^3$ adalah 36 dan koefisien $x^2$ adalah 270. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$189$",
+      "alasan_benar": "Koefisien pertama memberi a+b=9. Koefisien berikutnya memberi a²+b²=45; maka ab=18. Selesaikan pasangan akar dan gunakan a>b: a=6, b=3. Selisih kubik 189.",
+      "distraktor": [
+        {
+          "teks": "$188$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $189$."
+        },
+        {
+          "teks": "$190$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $189$."
+        },
+        {
+          "teks": "$378$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=9. Koefisien berikutnya memberi a²+b²=45; maka ab=18. Selesaikan pasangan akar dan gunakan a>b: a=6, b=3. Selisih kubik 189.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d8153bc18a8d5a142abd7e7",
+        "teks": "Faktorkan $(5x-2)^2 - 49$.",
+        "jawaban": "$(5x+5)(5x-9)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^7+(x+b)^7$, koefisien $x^6$ adalah 70 dan koefisien $x^5$ adalah 1092. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$152$",
+      "alasan_benar": "Koefisien pertama memberi a+b=10. Koefisien berikutnya memberi a²+b²=52; maka ab=24. Selesaikan pasangan akar dan gunakan a>b: a=6, b=4. Selisih kubik 152.",
+      "distraktor": [
+        {
+          "teks": "$151$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $152$."
+        },
+        {
+          "teks": "$153$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $152$."
+        },
+        {
+          "teks": "$304$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=10. Koefisien berikutnya memberi a²+b²=52; maka ab=24. Selesaikan pasangan akar dan gunakan a>b: a=6, b=4. Selisih kubik 152.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5d8153bc18a8d5a142abd7e7",
+        "teks": "Faktorkan $(5x-2)^2 - 49$.",
+        "jawaban": "$(5x+5)(5x-9)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^7+(x+b)^7$, koefisien $x^6$ adalah 98 dan koefisien $x^5$ adalah 2100. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$296$",
+      "alasan_benar": "Koefisien pertama memberi a+b=14. Koefisien berikutnya memberi a²+b²=100; maka ab=48. Selesaikan pasangan akar dan gunakan a>b: a=8, b=6. Selisih kubik 296.",
+      "distraktor": [
+        {
+          "teks": "$295$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $296$."
+        },
+        {
+          "teks": "$297$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $296$."
+        },
+        {
+          "teks": "$592$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=14. Koefisien berikutnya memberi a²+b²=100; maka ab=48. Selesaikan pasangan akar dan gunakan a>b: a=8, b=6. Selisih kubik 296.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b37cd5c1919697fe9f64aba2",
+        "teks": "Dalam identitas $(x+6)^4$, tentukan koefisien $x^2$.",
+        "jawaban": "$216$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^5+(x+b)^5$, koefisien $x^4$ adalah 50 dan koefisien $x^3$ adalah 680. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$504$",
+      "alasan_benar": "Koefisien pertama memberi a+b=10. Koefisien berikutnya memberi a²+b²=68; maka ab=16. Selesaikan pasangan akar dan gunakan a>b: a=8, b=2. Selisih kubik 504.",
+      "distraktor": [
+        {
+          "teks": "$503$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $504$."
+        },
+        {
+          "teks": "$505$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $504$."
+        },
+        {
+          "teks": "$1008$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=10. Koefisien berikutnya memberi a²+b²=68; maka ab=16. Selesaikan pasangan akar dan gunakan a>b: a=8, b=2. Selisih kubik 504.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78cfb9513aee3647aacee5c1",
+        "teks": "Diberikan persamaan polinomial $(8y-9)^2 + 4 = 64y^2 - 144y + 84$. Pernyataan yang benar adalah ....",
+        "jawaban": "Bukan identitas, karena untuk $y=0$ ruas kiri bernilai 85 sedangkan ruas kanan bernilai 84",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^6+(x+b)^6$, koefisien $x^5$ adalah 78 dan koefisien $x^4$ adalah 1275. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$127$",
+      "alasan_benar": "Koefisien pertama memberi a+b=13. Koefisien berikutnya memberi a²+b²=85; maka ab=42. Selesaikan pasangan akar dan gunakan a>b: a=7, b=6. Selisih kubik 127.",
+      "distraktor": [
+        {
+          "teks": "$126$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $127$."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $127$."
+        },
+        {
+          "teks": "$254$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=13. Koefisien berikutnya memberi a²+b²=85; maka ab=42. Selesaikan pasangan akar dan gunakan a>b: a=7, b=6. Selisih kubik 127.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6fcf48b8ab74edfc07e37d58",
+        "teks": "Bentuk sederhana dari $(x+3)(x^2-3x+9)$ adalah ....",
+        "jawaban": "$x^3 + 27$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^7+(x+b)^7$, koefisien $x^6$ adalah 56 dan koefisien $x^5$ adalah 714. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$98$",
+      "alasan_benar": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=34; maka ab=15. Selesaikan pasangan akar dan gunakan a>b: a=5, b=3. Selisih kubik 98.",
+      "distraktor": [
+        {
+          "teks": "$97$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $98$."
+        },
+        {
+          "teks": "$99$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $98$."
+        },
+        {
+          "teks": "$196$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=34; maka ab=15. Selesaikan pasangan akar dan gunakan a>b: a=5, b=3. Selisih kubik 98.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d756e6c2ef4fa9186b634c0",
+        "teks": "Dalam identitas $(x+7)^6$, tentukan koefisien $x^4$.",
+        "jawaban": "$735$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^4+(x+b)^4$, koefisien $x^3$ adalah 32 dan koefisien $x^2$ adalah 300. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$342$",
+      "alasan_benar": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=50; maka ab=7. Selesaikan pasangan akar dan gunakan a>b: a=7, b=1. Selisih kubik 342.",
+      "distraktor": [
+        {
+          "teks": "$341$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $342$."
+        },
+        {
+          "teks": "$343$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $342$."
+        },
+        {
+          "teks": "$684$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=8. Koefisien berikutnya memberi a²+b²=50; maka ab=7. Selesaikan pasangan akar dan gunakan a>b: a=7, b=1. Selisih kubik 342.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d8db5254033a908a496ffa49",
+        "teks": "Pernyataan berikut yang merupakan identitas polinomial (benar untuk semua bilangan real $a$ dan $b$) adalah ....",
+        "jawaban": "$(a-b)^3=a^3-b^3-3ab(a-b)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^4+(x+b)^4$, koefisien $x^3$ adalah 60 dan koefisien $x^2$ adalah 678. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$169$",
+      "alasan_benar": "Koefisien pertama memberi a+b=15. Koefisien berikutnya memberi a²+b²=113; maka ab=56. Selesaikan pasangan akar dan gunakan a>b: a=8, b=7. Selisih kubik 169.",
+      "distraktor": [
+        {
+          "teks": "$168$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $169$."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $169$."
+        },
+        {
+          "teks": "$338$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=15. Koefisien berikutnya memberi a²+b²=113; maka ab=56. Selesaikan pasangan akar dan gunakan a>b: a=8, b=7. Selisih kubik 169.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b787b377ab10950374893457",
+        "teks": "Dalam identitas $(x+9)^4$, tentukan koefisien $x^2$.",
+        "jawaban": "$486$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_identitas_binomial_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pada identitas $(x+a)^6+(x+b)^6$, koefisien $x^5$ adalah 30 dan koefisien $x^4$ adalah 195. Jika $a>b>0$, tentukan $a^3-b^3$.",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Koefisien pertama memberi a+b=5. Koefisien berikutnya memberi a²+b²=13; maka ab=6. Selesaikan pasangan akar dan gunakan a>b: a=3, b=2. Selisih kubik 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Koefisien pertama memberi a+b=5. Koefisien berikutnya memberi a²+b²=13; maka ab=6. Selesaikan pasangan akar dan gunakan a>b: a=3, b=2. Selisih kubik 19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b02-e-hard-bt01-033"
     }
   ]
 }

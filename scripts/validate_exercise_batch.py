@@ -114,8 +114,14 @@ def validated_source(name: str, batch: str) -> list[dict]:
     if any(info.get("batch") != int(batch[5:]) or info.get("level_target") not in LEVELS for info in meta.values()):
         raise ValueError("exercise metadata has an invalid batch or target level")
     from app.services.exercise.workflow import managed
-    if managed(p["exercise"]):
+    is_managed = managed(p["exercise"])
+    has_reference_additions = (p["exercise"] / "reference_replenishment_state.json").exists()
+    if is_managed or has_reference_additions:
         for item in items:
+            # Keep old paid inputs byte-for-byte compatible. Only the newly
+            # appended candidates receive the blind-input marker.
+            if not is_managed and meta[str(item["_id"])].get("generator") != "codex:reference-parameterized-v1":
+                continue
             item["_exerciseBlindInput"] = True
     return items
 
@@ -503,6 +509,9 @@ def copy_publication_file(source, destination):
 def package(name: str, batch: str, *, allow_partial: bool = False) -> dict:
     grade, _ = CLASSES[name]
     p = paths(name, batch)
+    final_manifest = p["final"] / "manifest.json"
+    if final_manifest.exists() and load(final_manifest).get("schemaVersion") in {"codex-local-exercise-publication-v1", "codex-targeted-exercise-publication-v2"}:
+        raise ValueError("Local Codex publication must not be overwritten by the AI checkpoint packager")
     checkpoint_bytes = p["checkpoint"].read_bytes()
     checkpoint = json.loads(checkpoint_bytes)
     checkpoint_hash = hashlib.sha256(checkpoint_bytes).hexdigest()

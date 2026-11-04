@@ -692,6 +692,154 @@
       ],
       "pembahasan": "Misal bilangan besar $a$ dan kecil $b$. $a-b=2$ sehingga $a=b+2$. $3a+2b=36$: $3b+6+2b=36$, $b=6$, $a=8$. Hasil kali $8\\times6=48$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "45c2ad3e5521307330695dc4",
+        "teks": "Pak Burhan ingin mengetahui harga per kg tiga jenis buah: salak, pir, dan anggur. Ia baru melakukan dua transaksi. Transaksi pertama: 2 kg salak, 1 kg pir, dan 1 kg anggur seharga Rp80.000,00. Transaksi kedua: 1 kg salak, 2 kg pir, dan 1 kg anggur seharga Rp85.000,00.\n\nKesimpulan yang tepat mengenai harga ketiga buah tersebut adalah ....",
+        "jawaban": "tidak dapat ditentukan secara tunggal karena hanya ada dua persamaan untuk tiga variabel",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sistem_linear_tiga_variabel",
+      "alasan_level": "Target medium; variasi konsep sistem linear tiga variabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Selesaikan sistem $x+y=14$, $y+z=14$, dan $x+z=18$. Berapa nilai $x+y+z$?",
+      "jawaban_benar": "$23$",
+      "alasan_benar": "Jumlahkan ketiga persamaan: 2(x+y+z)=46. Jadi x+y+z=23.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $23$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan $22$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $23$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan $25$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $23$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlahkan ketiga persamaan: 2(x+y+z)=46. Jadi x+y+z=23.",
+      "catatan": "codex-replenishment:kelas10-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-a-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a8183bc4b5aec643b5506492",
+        "teks": "Dina menyelesaikan sistem $2x + 3y = 12$ dan $4x - 3y = 6$ dengan langkah berikut.\n\nLangkah 1: kedua persamaan dikurangkan, $(2x + 3y) - (4x - 3y) = 12 - 6$.\n\nLangkah 2: ruas kiri ditulis $-2x + 0y$ karena $3y - (-3y)$ dianggap 0, sehingga $-2x = 6$.\n\nLangkah 3: $x = -3$.\n\nKesalahan Dina terdapat pada ....",
+        "jawaban": "langkah 2: $3y - (-3y)$ seharusnya $6y$ sehingga $y$ tidak hilang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sistem_linear_tiga_variabel",
+      "alasan_level": "Target medium; variasi konsep sistem linear tiga variabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Selesaikan sistem $x+y=12$, $y+z=20$, dan $x+z=12$. Berapa nilai $x+y+z$?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Jumlahkan ketiga persamaan: 2(x+y+z)=44. Jadi x+y+z=22.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan $21$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $22$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlahkan ketiga persamaan: 2(x+y+z)=44. Jadi x+y+z=22.",
+      "catatan": "codex-replenishment:kelas10-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-a-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8dbdf2e9df58dc7804957f11",
+        "teks": "Diketahui sistem persamaan linear:\n\n$x + y + z = 9$ ... (1)\n\n$2x - y + z = 8$ ... (2)\n\n$x + 3y - z = 5$ ... (3)\n\nEmpat siswa mengusulkan penyelesaian berbeda dan masing-masing yakin usulannya benar.\n\nUsulan yang merupakan penyelesaian sistem tersebut adalah ....",
+        "jawaban": "$(x, y, z) = (3, 2, 4)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sistem_linear_tiga_variabel",
+      "alasan_level": "Target medium; variasi konsep sistem linear tiga variabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Selesaikan sistem $x+y=14$, $y+z=22$, dan $x+z=14$. Berapa nilai $x+y+z$?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Jumlahkan ketiga persamaan: 2(x+y+z)=50. Jadi x+y+z=25.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlahkan ketiga persamaan: 2(x+y+z)=50. Jadi x+y+z=25.",
+      "catatan": "codex-replenishment:kelas10-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-a-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8dbdf2e9df58dc7804957f11",
+        "teks": "Diketahui sistem persamaan linear:\n\n$x + y + z = 9$ ... (1)\n\n$2x - y + z = 8$ ... (2)\n\n$x + 3y - z = 5$ ... (3)\n\nEmpat siswa mengusulkan penyelesaian berbeda dan masing-masing yakin usulannya benar.\n\nUsulan yang merupakan penyelesaian sistem tersebut adalah ....",
+        "jawaban": "$(x, y, z) = (3, 2, 4)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 3,
+      "jenis_soal": "sistem_linear_tiga_variabel",
+      "alasan_level": "Target medium; variasi konsep sistem linear tiga variabel. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Selesaikan sistem $x+y=14$, $y+z=16$, dan $x+z=12$. Berapa nilai $x+y+z$?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Jumlahkan ketiga persamaan: 2(x+y+z)=42. Jadi x+y+z=21.",
+      "distraktor": [
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan $22$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $21$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan $20$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $21$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan $23$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $21$. Periksa kembali langkah sistem linear tiga variabel pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jumlahkan ketiga persamaan: 2(x+y+z)=42. Jadi x+y+z=21.",
+      "catatan": "codex-replenishment:kelas10-b04-A-medium; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b04-a-medium-bt01-024"
     }
   ]
 }

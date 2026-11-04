@@ -807,6 +807,1486 @@
       "pembahasan": "Persamaan lingkaran $L \\equiv x^2 + y^2 - 8x + 4y + m = 0$ memiliki titik pusat:\n$$M\\left(-\\frac{-8}{2}, -\\frac{4}{2}\\right) = (4, -2)$$\nJari-jari lingkaran memenuhi:\n$$r^2 = 4^2 + (-2)^2 - m = 20 - m$$\n\nJarak antara titik pusat $M(4, -2)$ dan titik potong garis singgung $T(4, 11)$ adalah:\n$$d = MT = \\sqrt{(4 - 4)^2 + (11 - (-2))^2} = \\sqrt{0 + 13^2} = 13$$\n\nKarena garis singgung tegak lurus jari-jari di titik singgung, segitiga $MPT$ dan $MQT$ merupakan segitiga siku-siku yang kongruen dengan panjang ruas garis singgung $t = \\sqrt{d^2 - r^2} = \\sqrt{169 - r^2}$.\n\nLuas layang-layang $MPTQ$ adalah:\n$$L = 2 \\times \\left(\\frac{1}{2} \\cdot r \\cdot t\\right) = r \\cdot t = 60$$\nSubstitusikan nilai $t$:\n$$r\\sqrt{169 - r^2} = 60$$\nKuadratkan kedua ruas:\n$$r^2(169 - r^2) = 3600$$\n$$r^4 - 169r^2 + 3600 = 0$$\n$$(r^2 - 25)(r^2 - 144) = 0$$\n\nDiperoleh dua kemungkinan:\n1. $r^2 = 25 \\implies r = 5$, sehingga $t = \\sqrt{169 - 25} = 12$ (memenuhi syarat $r < t$).\n2. $r^2 = 144 \\implies r = 12$, sehingga $t = \\sqrt{169 - 144} = 5$ (tidak memenuhi syarat $r < t$).\n\nDengan mengambil $r^2 = 25$:\n$$20 - m = 25 \\implies m = 20 - 25 = -5$$\n\nJadi, nilai $m$ yang memenuhi adalah $-5$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3bb646c58e0705abf1c6d579",
+        "teks": "Garis singgung lingkaran $L \\equiv x^2 + y^2 = 50$ di titik $T(5, 5)$ memotong sumbu-$x$ di titik $A$ dan memotong sumbu-$y$ di titik $B$. Luas daerah segitiga $AOB$ (dengan $O$ adalah titik pangkal koordinat) adalah ....",
+        "jawaban": "$50$ satuan luas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(6, 7)$ berjari-jari 7. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Titik paling kanan adalah (6+7,7)=(13,7); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (6+7,7)=(13,7); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "964d888f482ae7ea97dc5f7a",
+        "teks": "Salah satu persamaan garis singgung lingkaran $L \\equiv (x - 2)^2 + (y + 3)^2 = 25$ di titik yang berabsis $5$ adalah ....",
+        "jawaban": "$3x + 4y - 19 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(-2, 7)$ berjari-jari 8. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Titik paling kanan adalah (-2+8,7)=(6,7); jari-jari mendatar, sehingga garis singgungnya x=6.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (-2+8,7)=(6,7); jari-jari mendatar, sehingga garis singgungnya x=6.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "21b942e39ed9d8064674911a",
+        "teks": "Misalkan titik $P$ dan titik $Q$ berada pada lingkaran $L \\equiv x^2 + y^2 - 8x + 4y + m = 0$, serta garis-garis singgung lingkaran yang melalui kedua titik tersebut berpotongan di titik $T(4, 11)$. Jika luas layang-layang yang melalui titik $P$, titik $Q$, titik $T$, dan titik pusat lingkaran adalah $60$, serta panjang jari-jari lingkaran lebih kecil daripada panjang ruas garis singgungnya, nilai $m$ adalah ....",
+        "jawaban": "$-5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(8, -8)$ berjari-jari 5. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Titik paling kanan adalah (8+5,-8)=(13,-8); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (8+5,-8)=(13,-8); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "74667a85a00c52e1f0dd8ab1",
+        "teks": "Persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 = 9$ yang memiliki kemiringan $m = 3$ adalah ....",
+        "jawaban": "$y = 3x \\pm 3\\sqrt{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(2, -6)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Titik paling kanan adalah (2+3,-6)=(5,-6); jari-jari mendatar, sehingga garis singgungnya x=5.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $5$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (2+3,-6)=(5,-6); jari-jari mendatar, sehingga garis singgungnya x=5.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "93a9339944a9ef8f2d911d2b",
+        "teks": "Dari titik $T(4, 8)$ ditarik garis polar terhadap lingkaran $L \\equiv x^2 + y^2 = 16$. Garis polar tersebut memotong sumbu-$x$ di titik $A$ dan memotong sumbu-$y$ di titik $B$. Luas daerah segitiga $OAB$ dengan $O(0, 0)$ adalah ....",
+        "jawaban": "$4$ satuan luas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(6, 6)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Titik paling kanan adalah (6+3,6)=(9,6); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (6+3,6)=(9,6); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b21df0e16a70a40fa717579",
+        "teks": "Dari titik $P(8, 6)$ ditarik garis singgung ke lingkaran $L \\equiv x^2 + y^2 = 36$. Panjang ruas garis singgung dari titik $P$ ke titik singgung pada lingkaran tersebut adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(6, -8)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Titik paling kanan adalah (6+3,-8)=(9,-8); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (6+3,-8)=(9,-8); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b3e9c16148c7f65ad77d6db1",
+        "teks": "Salah satu persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 + 10x - 16y + 64 = 0$ di titik yang berabsis $-8$ adalah ....",
+        "jawaban": "$3x + 4y + 8 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(8, -3)$ berjari-jari 5. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Titik paling kanan adalah (8+5,-3)=(13,-3); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (8+5,-3)=(13,-3); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3bb646c58e0705abf1c6d579",
+        "teks": "Garis singgung lingkaran $L \\equiv x^2 + y^2 = 50$ di titik $T(5, 5)$ memotong sumbu-$x$ di titik $A$ dan memotong sumbu-$y$ di titik $B$. Luas daerah segitiga $AOB$ (dengan $O$ adalah titik pangkal koordinat) adalah ....",
+        "jawaban": "$50$ satuan luas",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(-1, 1)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Titik paling kanan adalah (-1+3,1)=(2,1); jari-jari mendatar, sehingga garis singgungnya x=2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (-1+3,1)=(2,1); jari-jari mendatar, sehingga garis singgungnya x=2.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31e048766627b6584048270c",
+        "teks": "Diketahui titik $K(-8, 15)$ terletak pada lingkaran $L \\equiv x^2 + y^2 = 289$. Persamaan garis singgung lingkaran $L$ di titik tersebut adalah ....",
+        "jawaban": "$-8x + 15y = 289$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(0, 4)$ berjari-jari 7. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Titik paling kanan adalah (0+7,4)=(7,4); jari-jari mendatar, sehingga garis singgungnya x=7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (0+7,4)=(7,4); jari-jari mendatar, sehingga garis singgungnya x=7.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b3e9c16148c7f65ad77d6db1",
+        "teks": "Salah satu persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 + 10x - 16y + 64 = 0$ di titik yang berabsis $-8$ adalah ....",
+        "jawaban": "$3x + 4y + 8 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(5, 3)$ berjari-jari 4. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Titik paling kanan adalah (5+4,3)=(9,3); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (5+4,3)=(9,3); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "42aaf51ac7519e15fcd73fd2",
+        "teks": "Diketahui lingkaran $L \\equiv x^2 + y^2 - 12x + ky + 36 = 0$. Nilai $k$ yang memenuhi agar lingkaran tersebut menyinggung sumbu-$y$ adalah ....",
+        "jawaban": "$k = 12$ atau $k = -12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(4, 8)$ berjari-jari 5. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Titik paling kanan adalah (4+5,8)=(9,8); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan $11$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $9$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (4+5,8)=(9,8); jari-jari mendatar, sehingga garis singgungnya x=9.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6819f30021676e41643921a8",
+        "teks": "Diketahui persamaan lingkaran $L \\equiv (x - 1)^2 + (y - 6)^2 = 36$. Persamaan garis singgung lingkaran tersebut yang melalui titik $A(7, 6)$ adalah ....",
+        "jawaban": "$x = 7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(7, 3)$ berjari-jari 10. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Titik paling kanan adalah (7+10,3)=(17,3); jari-jari mendatar, sehingga garis singgungnya x=17.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan $18$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (7+10,3)=(17,3); jari-jari mendatar, sehingga garis singgungnya x=17.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6744a8f6fccc18a3f0d80d76",
+        "teks": "Persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 = 20$ yang mempunyai kemiringan $-2$ adalah ....",
+        "jawaban": "$y = -2x \\pm 10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(3, 3)$ berjari-jari 10. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Titik paling kanan adalah (3+10,3)=(13,3); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (3+10,3)=(13,3); jari-jari mendatar, sehingga garis singgungnya x=13.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d31adc69e92250327328d360",
+        "teks": "Persamaan salah satu garis singgung pada lingkaran $L \\equiv x^2 + y^2 - 4x + 2y - 20 = 0$ yang sejajar dengan garis $3x - 4y + 7 = 0$ adalah ....",
+        "jawaban": "$3x - 4y + 15 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(-7, 0)$ berjari-jari 6. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Titik paling kanan adalah (-7+6,0)=(-1,0); jari-jari mendatar, sehingga garis singgungnya x=-1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan $0$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-1$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan $-2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $-1$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $-1$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (-7+6,0)=(-1,0); jari-jari mendatar, sehingga garis singgungnya x=-1.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c4e524fcc6860e1cffa44c0f",
+        "teks": "Garis $g$ merupakan garis singgung lingkaran $L \\equiv x^2 + y^2 - 4x - 2y = 0$ di titik $A(4, 2)$. Garis normal $k$ tegak lurus terhadap garis $g$ di titik $A$. Jika garis $g$ dan garis normal $k$ masing-masing memotong sumbu-$y$ di titik $Q$ dan $P$, maka panjang ruas garis $PQ$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(1, -8)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Titik paling kanan adalah (1+3,-8)=(4,-8); jari-jari mendatar, sehingga garis singgungnya x=4.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $4$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (1+3,-8)=(4,-8); jari-jari mendatar, sehingga garis singgungnya x=4.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e56fda9566e4a77823681c64",
+        "teks": "Dari titik $P(5, 5)$ di luar lingkaran ditarik dua garis singgung ke lingkaran $L \\equiv x^2 + y^2 = 25$. Jika kedua garis tersebut masing-masing menyinggung lingkaran di titik $A$ dan titik $B$, panjang ruas garis $AB$ adalah ....",
+        "jawaban": "$5\\sqrt{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(5, -8)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Titik paling kanan adalah (5+3,-8)=(8,-8); jari-jari mendatar, sehingga garis singgungnya x=8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (5+3,-8)=(8,-8); jari-jari mendatar, sehingga garis singgungnya x=8.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "00c847338c414121a8253562",
+        "teks": "Diketahui lingkaran $L \\equiv (x - 1)^2 + (y - 1)^2 = 5$. Garis $g$ merupakan garis singgung lingkaran $L$ di titik $A(3, 0)$. Garis $h$ tegak lurus terhadap garis $g$ dan juga menyinggung lingkaran $L$. Jika garis $h$ memotong sumbu-$x$ di titik $(p, 0)$ dengan $p > 0$, maka nilai $p$ adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(8, -8)$ berjari-jari 12. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Titik paling kanan adalah (8+12,-8)=(20,-8); jari-jari mendatar, sehingga garis singgungnya x=20.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan $21$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $20$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $20$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan $22$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $20$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (8+12,-8)=(20,-8); jari-jari mendatar, sehingga garis singgungnya x=20.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8ad5ef6d78e7099b68b1d6ac",
+        "teks": "Salah satu persamaan garis singgung pada lingkaran $L \\equiv (x - 1)^2 + (y + 2)^2 = 10$ yang tegak lurus terhadap garis $g: x - 3y + 5 = 0$ adalah ....",
+        "jawaban": "$3x + y - 11 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(4, 0)$ berjari-jari 10. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Titik paling kanan adalah (4+10,0)=(14,0); jari-jari mendatar, sehingga garis singgungnya x=14.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $14$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (4+10,0)=(14,0); jari-jari mendatar, sehingga garis singgungnya x=14.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fbe4ae0692c3ec6cd0030203",
+        "teks": "Titik $P(x_0, y_0)$ selalu terletak pada garis $x + 2y = 10$. Dari titik $P$ ditarik garis polar terhadap lingkaran $L \\equiv x^2 + y^2 = 25$. Untuk setiap posisi titik $P$ pada garis tersebut, garis polar yang terbentuk selalu melalui satu titik tetap $Q(a, b)$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "$\\frac{15}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(4, -6)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Titik paling kanan adalah (4+3,-6)=(7,-6); jari-jari mendatar, sehingga garis singgungnya x=7.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan $8$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan $6$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (4+3,-6)=(7,-6); jari-jari mendatar, sehingga garis singgungnya x=7.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ad87740821a8a0d85f3fa770",
+        "teks": "Diketahui titik $B(5, -12)$ terletak pada lingkaran $L \\equiv x^2 + y^2 = 169$. Persamaan garis singgung lingkaran $L$ yang melalui titik $B$ adalah ....",
+        "jawaban": "$5x - 12y = 169$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "garis_singgung_lingkaran",
+      "alasan_level": "Target hard; variasi konsep garis singgung lingkaran. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Lingkaran berpusat di $(8, -3)$ berjari-jari 8. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Titik paling kanan adalah (8+8,-3)=(16,-3); jari-jari mendatar, sehingga garis singgungnya x=16.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan $18$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $16$. Periksa kembali langkah garis singgung lingkaran pada pembahasan."
+        }
+      ],
+      "pembahasan": "Titik paling kanan adalah (8+8,-3)=(16,-3); jari-jari mendatar, sehingga garis singgungnya x=16.",
+      "catatan": "codex-replenishment:kelas12_tl-b01-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b01-d-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5dfc53acf041b4d2a579bc40",
+        "teks": "Salah satu persamaan garis singgung lingkaran $L \\equiv (x - 7)^2 + (y + 5)^2 = 64$ yang tegak lurus terhadap garis $l: 4x - 3y + 9 = 0$ adalah ....",
+        "jawaban": "$3x + 4y + 39 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(7, 3)$ ditarik dua garis singgung ke lingkaran $x^{2} + 12 x + y^{2} + 4 y - 9=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$- \\frac{1}{5}$",
+      "alasan_benar": "Pusat (-6,-2). Garis melalui P bergradien m menyinggung jika (13m-5)²=49(m²+1). Persamaan gradien memiliki koefisien utama 120 dan konstanta -24; hasil kali akar -1/5.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{2}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{1}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pusat (-6,-2). Garis melalui P bergradien m menyinggung jika (13m-5)²=49(m²+1). Persamaan gradien memiliki koefisien utama 120 dan konstanta -24; hasil kali akar -1/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7fdcb10f4b1f3e2cdac9e406",
+        "teks": "Lingkaran berpusat di $(-7, 0)$ berjari-jari 6. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(14, 9)$ ditarik dua garis singgung ke lingkaran $x^{2} + y^{2} - 14 y=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$- \\frac{15}{49}$",
+      "alasan_benar": "Pusat (0,7). Garis melalui P bergradien m menyinggung jika (14m-2)²=49(m²+1). Persamaan gradien memiliki koefisien utama 147 dan konstanta -45; hasil kali akar -15/49.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{15}{98}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{30}{49}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{15}{49}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pusat (0,7). Garis melalui P bergradien m menyinggung jika (14m-2)²=49(m²+1). Persamaan gradien memiliki koefisien utama 147 dan konstanta -45; hasil kali akar -15/49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "74667a85a00c52e1f0dd8ab1",
+        "teks": "Persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 = 9$ yang memiliki kemiringan $m = 3$ adalah ....",
+        "jawaban": "$y = 3x \\pm 3\\sqrt{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(15, 0)$ ditarik dua garis singgung ke lingkaran $x^{2} + y^{2} + 4 y - 60=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$- \\frac{60}{161}$",
+      "alasan_benar": "Pusat (0,-2). Garis melalui P bergradien m menyinggung jika (15m-2)²=64(m²+1). Persamaan gradien memiliki koefisien utama 161 dan konstanta -60; hasil kali akar -60/161.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{30}{161}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{120}{161}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{60}{161}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pusat (0,-2). Garis melalui P bergradien m menyinggung jika (15m-2)²=64(m²+1). Persamaan gradien memiliki koefisien utama 161 dan konstanta -60; hasil kali akar -60/161.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a66128d9b55a889f0a38b6b",
+        "teks": "Lingkaran berpusat di $(1, -8)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(11, 14)$ ditarik dua garis singgung ke lingkaran $x^{2} + 6 x + y^{2} - 12 y - 19=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (-3,6). Garis melalui P bergradien m menyinggung jika (14m-8)²=64(m²+1). Persamaan gradien memiliki koefisien utama 132 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (-3,6). Garis melalui P bergradien m menyinggung jika (14m-8)²=64(m²+1). Persamaan gradien memiliki koefisien utama 132 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d63fb4ef05a13a44ebc611a",
+        "teks": "Diketahui titik $T(4, -1)$ terletak pada lingkaran $L \\equiv (x - 1)^2 + (y + 2)^2 = 10$. Jika garis $g$ merupakan garis singgung lingkaran $L$ di titik $T$, jarak titik $Q(8, 7)$ ke garis $g$ adalah ....",
+        "jawaban": "$2\\sqrt{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(2, 1)$ ditarik dua garis singgung ke lingkaran $x^{2} + 12 x + y^{2} + 8 y + 27=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (-6,-4). Garis melalui P bergradien m menyinggung jika (8m-5)²=25(m²+1). Persamaan gradien memiliki koefisien utama 39 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (-6,-4). Garis melalui P bergradien m menyinggung jika (8m-5)²=25(m²+1). Persamaan gradien memiliki koefisien utama 39 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "174a2cd2189d6ea326eaa087",
+        "teks": "Lingkaran berpusat di $(8, -8)$ berjari-jari 12. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$20$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(16, 3)$ ditarik dua garis singgung ke lingkaran $x^{2} - 12 x + y^{2} + 8 y + 43=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$\\frac{40}{91}$",
+      "alasan_benar": "Pusat (6,-4). Garis melalui P bergradien m menyinggung jika (10m-7)²=9(m²+1). Persamaan gradien memiliki koefisien utama 91 dan konstanta 40; hasil kali akar 40/91.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{51}{91}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1600}{8281}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{40}{91}$."
+        },
+        {
+          "teks": "$\\frac{20}{91}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Pusat (6,-4). Garis melalui P bergradien m menyinggung jika (10m-7)²=9(m²+1). Persamaan gradien memiliki koefisien utama 91 dan konstanta 40; hasil kali akar 40/91.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "67680b8237167f538f1bc64f",
+        "teks": "Lingkaran berpusat di $(3, 3)$ berjari-jari 10. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$13$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(12, 10)$ ditarik dua garis singgung ke lingkaran $x^{2} - 8 x + y^{2} - 8 y - 4=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (4,4). Garis melalui P bergradien m menyinggung jika (8m-6)²=36(m²+1). Persamaan gradien memiliki koefisien utama 28 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (4,4). Garis melalui P bergradien m menyinggung jika (8m-6)²=36(m²+1). Persamaan gradien memiliki koefisien utama 28 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51efa82a99e819adbbb29d5e",
+        "teks": "Persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 = 8$ yang memiliki kemiringan $m = 1$ adalah ....",
+        "jawaban": "$y = x \\pm 4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(6, 13)$ ditarik dua garis singgung ke lingkaran $x^{2} + 8 x + y^{2} - 12 y + 3=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (-4,6). Garis melalui P bergradien m menyinggung jika (10m-7)²=49(m²+1). Persamaan gradien memiliki koefisien utama 51 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (-4,6). Garis melalui P bergradien m menyinggung jika (10m-7)²=49(m²+1). Persamaan gradien memiliki koefisien utama 51 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5b73dd8571d605f6d6acf45",
+        "teks": "Lingkaran berpusat di $(5, 3)$ berjari-jari 4. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(12, 14)$ ditarik dua garis singgung ke lingkaran $x^{2} - 8 x + y^{2} - 14 y + 29=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$\\frac{13}{28}$",
+      "alasan_benar": "Pusat (4,7). Garis melalui P bergradien m menyinggung jika (8m-7)²=36(m²+1). Persamaan gradien memiliki koefisien utama 28 dan konstanta 13; hasil kali akar 13/28.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{28}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{784}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{28}$."
+        },
+        {
+          "teks": "$\\frac{13}{56}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Pusat (4,7). Garis melalui P bergradien m menyinggung jika (8m-7)²=36(m²+1). Persamaan gradien memiliki koefisien utama 28 dan konstanta 13; hasil kali akar 13/28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3be283f1020cec2fe10267eb",
+        "teks": "Persamaan garis singgung lingkaran $L \\equiv x^2 + y^2 = 12$ yang membentuk sudut $60^\\circ$ terhadap sumbu-$x$ positif adalah ....",
+        "jawaban": "$y = \\sqrt{3}x \\pm 4\\sqrt{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(15, 2)$ ditarik dua garis singgung ke lingkaran $x^{2} - 6 x + y^{2} + 6 y - 7=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (3,-3). Garis melalui P bergradien m menyinggung jika (12m-5)²=25(m²+1). Persamaan gradien memiliki koefisien utama 119 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (3,-3). Garis melalui P bergradien m menyinggung jika (12m-5)²=25(m²+1). Persamaan gradien memiliki koefisien utama 119 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "440f59cbdf8ad7827f2a6e1b",
+        "teks": "Persamaan garis singgung pada lingkaran $L \\equiv x^2 + y^2 = 5$ yang sejajar dengan garis $g: 2x - y + 7 = 0$ adalah ....",
+        "jawaban": "$y = 2x \\pm 5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(19, -4)$ ditarik dua garis singgung ke lingkaran $x^{2} - 6 x + y^{2} + 12 y - 36=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$- \\frac{11}{25}$",
+      "alasan_benar": "Pusat (3,-6). Garis melalui P bergradien m menyinggung jika (16m-2)²=81(m²+1). Persamaan gradien memiliki koefisien utama 175 dan konstanta -77; hasil kali akar -11/25.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{11}{50}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{22}{25}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{11}{25}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pusat (3,-6). Garis melalui P bergradien m menyinggung jika (16m-2)²=81(m²+1). Persamaan gradien memiliki koefisien utama 175 dan konstanta -77; hasil kali akar -11/25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d95f96dbd57b0cf17e7c4029",
+        "teks": "Persamaan salah satu garis singgung lingkaran $L \\equiv x^2 + y^2 = 65$ yang sejajar dengan garis $l: 8x - y + 13 = 0$ adalah ....",
+        "jawaban": "$8x - y + 65 = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(8, -5)$ ditarik dua garis singgung ke lingkaran $x^{2} + 6 x + y^{2} + 14 y + 22=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$- \\frac{32}{85}$",
+      "alasan_benar": "Pusat (-3,-7). Garis melalui P bergradien m menyinggung jika (11m-2)²=36(m²+1). Persamaan gradien memiliki koefisien utama 85 dan konstanta -32; hasil kali akar -32/85.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{16}{85}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{64}{85}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{32}{85}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pusat (-3,-7). Garis melalui P bergradien m menyinggung jika (11m-2)²=36(m²+1). Persamaan gradien memiliki koefisien utama 85 dan konstanta -32; hasil kali akar -32/85.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5660baf87fbb38626d2542b1",
+        "teks": "Dua garis singgung pada lingkaran $L \\equiv x^2 + y^2 = 16$ ditarik dari titik $P(5, 0)$ di luar lingkaran dan masing-masing menyinggung lingkaran di titik $A$ dan titik $B$. Jarak antara titik $A$ dan titik $B$ adalah ....",
+        "jawaban": "$\\frac{24}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(13, 3)$ ditarik dua garis singgung ke lingkaran $x^{2} - 6 x + y^{2} + 4 y + 4=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$\\frac{16}{91}$",
+      "alasan_benar": "Pusat (3,-2). Garis melalui P bergradien m menyinggung jika (10m-5)²=9(m²+1). Persamaan gradien memiliki koefisien utama 91 dan konstanta 16; hasil kali akar 16/91.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{75}{91}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{256}{8281}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{16}{91}$."
+        },
+        {
+          "teks": "$\\frac{8}{91}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Pusat (3,-2). Garis melalui P bergradien m menyinggung jika (10m-5)²=9(m²+1). Persamaan gradien memiliki koefisien utama 91 dan konstanta 16; hasil kali akar 16/91.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed038e047d8af1a57631bc12",
+        "teks": "Titik $A$ dan $B$ terletak pada lingkaran $L \\equiv x^2 + y^2 + 4x - 6y + c = 0$. Garis-garis singgung lingkaran yang ditarik melalui titik $A$ dan $B$ berpotongan di titik $T(4, 11)$. Jika luas layang-layang yang dibentuk oleh titik $A$, $B$, $T$, dan pusat lingkaran adalah $48$ satuan luas serta jari-jari lingkaran $r < 7$, maka nilai $c$ adalah ....",
+        "jawaban": "$-23$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(15, 6)$ ditarik dua garis singgung ke lingkaran $x^{2} - 8 x + y^{2} + 2 y - 32=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (4,-1). Garis melalui P bergradien m menyinggung jika (11m-7)²=49(m²+1). Persamaan gradien memiliki koefisien utama 72 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (4,-1). Garis melalui P bergradien m menyinggung jika (11m-7)²=49(m²+1). Persamaan gradien memiliki koefisien utama 72 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a7c32eceb1ae7940afdc371",
+        "teks": "Persamaan garis singgung pada lingkaran $L \\equiv x^2 + y^2 - 6x + 8y = 0$ di titik $(0, 0)$ adalah ....",
+        "jawaban": "$3x - 4y = 0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(8, 1)$ ditarik dua garis singgung ke lingkaran $x^{2} + 4 x + y^{2} + 12 y + 24=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$\\frac{11}{28}$",
+      "alasan_benar": "Pusat (-2,-6). Garis melalui P bergradien m menyinggung jika (10m-7)²=16(m²+1). Persamaan gradien memiliki koefisien utama 84 dan konstanta 33; hasil kali akar 11/28.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{28}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{121}{784}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{11}{28}$."
+        },
+        {
+          "teks": "$\\frac{11}{56}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Pusat (-2,-6). Garis melalui P bergradien m menyinggung jika (10m-7)²=16(m²+1). Persamaan gradien memiliki koefisien utama 84 dan konstanta 33; hasil kali akar 11/28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "42aaf51ac7519e15fcd73fd2",
+        "teks": "Diketahui lingkaran $L \\equiv x^2 + y^2 - 12x + ky + 36 = 0$. Nilai $k$ yang memenuhi agar lingkaran tersebut menyinggung sumbu-$y$ adalah ....",
+        "jawaban": "$k = 12$ atau $k = -12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(13, 1)$ ditarik dua garis singgung ke lingkaran $x^{2} - 6 x + y^{2} + 14 y + 33=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$\\frac{13}{25}$",
+      "alasan_benar": "Pusat (3,-7). Garis melalui P bergradien m menyinggung jika (10m-8)²=25(m²+1). Persamaan gradien memiliki koefisien utama 75 dan konstanta 39; hasil kali akar 13/25.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{25}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{25}$."
+        },
+        {
+          "teks": "$\\frac{13}{50}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Pusat (3,-7). Garis melalui P bergradien m menyinggung jika (10m-8)²=25(m²+1). Persamaan gradien memiliki koefisien utama 75 dan konstanta 39; hasil kali akar 13/25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9267c997f35928dd2ea0f826",
+        "teks": "Dua garis singgung pada lingkaran $L \\equiv (x - 1)^2 + (y - 2)^2 = 20$ memiliki kemiringan $m = 2$. Kedua garis singgung tersebut masing-masing memotong sumbu-$x$ di titik $P$ dan titik $Q$. Panjang ruas garis $PQ$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(19, 5)$ ditarik dua garis singgung ke lingkaran $x^{2} - 12 x + y^{2} - 4 y - 9=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$- \\frac{1}{3}$",
+      "alasan_benar": "Pusat (6,2). Garis melalui P bergradien m menyinggung jika (13m-3)²=49(m²+1). Persamaan gradien memiliki koefisien utama 120 dan konstanta -40; hasil kali akar -1/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{2}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pusat (6,2). Garis melalui P bergradien m menyinggung jika (13m-3)²=49(m²+1). Persamaan gradien memiliki koefisien utama 120 dan konstanta -40; hasil kali akar -1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7fdcb10f4b1f3e2cdac9e406",
+        "teks": "Lingkaran berpusat di $(-7, 0)$ berjari-jari 6. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$-1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(12, -2)$ ditarik dua garis singgung ke lingkaran $x^{2} - 14 x + y^{2} + 10 y + 65=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (7,-5). Garis melalui P bergradien m menyinggung jika (5m-3)²=9(m²+1). Persamaan gradien memiliki koefisien utama 16 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (7,-5). Garis melalui P bergradien m menyinggung jika (5m-3)²=9(m²+1). Persamaan gradien memiliki koefisien utama 16 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6aa140bab0772c00c85c8cbf",
+        "teks": "Lingkaran berpusat di $(6, -8)$ berjari-jari 3. Garis singgung di titik paling kanan berbentuk $x=c$. Tentukan $c$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(6, 7)$ ditarik dua garis singgung ke lingkaran $x^{2} + 10 x + y^{2} - 11=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$\\frac{13}{85}$",
+      "alasan_benar": "Pusat (-5,0). Garis melalui P bergradien m menyinggung jika (11m-7)²=36(m²+1). Persamaan gradien memiliki koefisien utama 85 dan konstanta 13; hasil kali akar 13/85.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{72}{85}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{7225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{85}$."
+        },
+        {
+          "teks": "$\\frac{13}{170}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Pusat (-5,0). Garis melalui P bergradien m menyinggung jika (11m-7)²=36(m²+1). Persamaan gradien memiliki koefisien utama 85 dan konstanta 13; hasil kali akar 13/85.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed038e047d8af1a57631bc12",
+        "teks": "Titik $A$ dan $B$ terletak pada lingkaran $L \\equiv x^2 + y^2 + 4x - 6y + c = 0$. Garis-garis singgung lingkaran yang ditarik melalui titik $A$ dan $B$ berpotongan di titik $T(4, 11)$. Jika luas layang-layang yang dibentuk oleh titik $A$, $B$, $T$, dan pusat lingkaran adalah $48$ satuan luas serta jari-jari lingkaran $r < 7$, maka nilai $c$ adalah ....",
+        "jawaban": "$-23$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_gradien_singgung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dari titik P$(14, 3)$ ditarik dua garis singgung ke lingkaran $x^{2} - 6 x + y^{2} + 10 y - 30=0$. Jika gradiennya $m_1$ dan $m_2$, tentukan $m_1m_2$.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Pusat (3,-5). Garis melalui P bergradien m menyinggung jika (11m-8)²=64(m²+1). Persamaan gradien memiliki koefisien utama 57 dan konstanta 0; hasil kali akar 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Pusat (3,-5). Garis melalui P bergradien m menyinggung jika (11m-8)²=64(m²+1). Persamaan gradien memiliki koefisien utama 57 dan konstanta 0; hasil kali akar 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b01-d-hard-bt01-059"
     }
   ]
 }

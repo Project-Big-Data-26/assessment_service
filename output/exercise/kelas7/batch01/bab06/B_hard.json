@@ -639,6 +639,450 @@
       "pembahasan": "Langkah evaluasi dan penyelesaian:\n1. Tinjau Besaran I (Tabel 1): Variabel banyak gol merupakan data numerik (menyatakan jumlah/kuantitas capaian). Perhitungan rata-rata absah secara matematis.\n2. Hitung total gol dari seluruh pemain:\n$\\text{Total gol} = (1 \\times 5) + (2 \\times 8) + (3 \\times 4) + (4 \\times 2) + (5 \\times 1) = 5 + 16 + 12 + 8 + 5 = 46$ gol.\n3. Hitung rata-rata banyak gol per pemain:\n$\\text{Rata-rata} = \\frac{46}{20} = 2,3$ gol per pemain.\n4. Tinjau Besaran II (Tabel 2): Nomor punggung pemain berbentuk angka, namun berfungsi sebagai penanda/identitas pemain (data kategorik). Sesuai kaidah statistika, data kategorik tidak dapat dikenai operasi aritmetika (seperti jumlah atau rata-rata) karena hasilnya tidak memiliki makna kuantitas.\n5. Kesimpulan: Hanya Besaran I yang absah secara matematis dengan nilai $2,3$ gol per pemain.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9933f4d550d22ded835a498f",
+        "teks": "Dua kelompok data hasil survei gawai pada 32 siswa Kelas 7B tersaji dalam dua tabel berikut:\n\n**Tabel 1: Banyak Aplikasi Permainan Online dalam Gawai**\n| Banyak Aplikasi ($x$) | Banyak Siswa ($f$) |\n| :---: | :---: |\n| 0 | 1 |\n| 1 | 3 |\n| 2 | 7 |\n| 3 | 10 |\n| 4 | 8 |\n| 5 | 2 |\n| 6 | 1 |\n\n**Tabel 2: Aplikasi Permainan Online Favorit**\n| Nama Aplikasi | Banyak Siswa |\n| :--- | :---: |\n| Mobile Legends | 12 |\n| Wormszone.io | 6 |\n| PUBG Mobile | 5 |\n| Among Us! | 4 |\n| Hago | 3 |\n| Candy Crush Saga | 1 |\n\nEmpat siswa memberikan pernyataan terkait pengolahan data pada kedua tabel tersebut:\n- **Alif**: \"Pada Tabel 2, kita dapat menghitung nilai rata-rata jenis permainan dengan menjumlahkan frekuensi lalu membaginya dengan 6, karena nama aplikasi merupakan data numerik.\"\n- **Bima**: \"Pada Tabel 1, kita sah menghitung total seluruh aplikasi yang dimiliki siswa dengan melakukan perkalian dan penjumlahan $\\sum (x \\times f) = 95$ aplikasi, karena banyak aplikasi merupakan data numerik.\"\n- **Cahyo**: \"Pada Tabel 1, angka 0 sampai 6 pada kolom banyak aplikasi tidak boleh dijumlahkan karena angka tersebut hanya berperan sebagai label kategorik seperti nomor urut kelas.\"\n- **Dina**: \"Pada Tabel 2, data nama aplikasi berubah menjadi data numerik saat kita menghitung selisih frekuensi antara Mobile Legends dan Candy Crush Saga ($12 - 1 = 11$).\"\n\nEvaluasi manakah yang paling tepat berdasarkan konsep jenis data?",
+        "jawaban": "Pernyataan Bima tepat, karena banyak aplikasi merupakan data numerik berupa hasil pencacahan sehingga nilainya sah dioperasikan dengan operasi matematika untuk mencari kuantitas total.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_data",
+      "alasan_level": "Target hard; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 35 siswa. Jenis data banyak saudara kandung adalah ....",
+      "jawaban_benar": "Data kuantitatif diskret.",
+      "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "distraktor": [
+        {
+          "teks": "Data kuantitatif kontinu.",
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
+        },
+        {
+          "teks": "Data kualitatif nominal.",
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
+        },
+        {
+          "teks": "Data kualitatif ordinal.",
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
+        }
+      ],
+      "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1375071298113e548fcdf7a5",
+        "teks": "Sebuah kelas beranggotakan 40 siswa mengikuti tes kebugaran berupa penilaian banyaknya push-up dalam satu menit (data numerik). Hasilnya tersaji pada tabel frekuensi berikut:\n\n| Banyak Push-Up ($x$) | Banyak Siswa ($f$) |\n| :---: | :---: |\n| 10 | 4 |\n| 15 | 6 |\n| 20 | 12 |\n| 25 | 10 |\n| 30 | 5 |\n| 35 | 3 |\n\nGuru olahraga menetapkan kriteria predikat kategorik \"Sangat Bugar\" jika banyaknya push-up seorang siswa mencapai minimal $M$ kali. Guru menghendaki agar banyaknya siswa yang memperoleh predikat \"Sangat Bugar\" berada dalam rentang tepat $40\\%$ hingga $50\\%$ dari seluruh siswa di kelas. Nilai ambang minimum $M$ yang harus ditetapkan guru adalah ....",
+        "jawaban": "25 push-up",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_data",
+      "alasan_level": "Target hard; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 33 siswa. Jenis data banyak saudara kandung adalah ....",
+      "jawaban_benar": "Data kuantitatif diskret.",
+      "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "distraktor": [
+        {
+          "teks": "Data kuantitatif kontinu.",
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
+        },
+        {
+          "teks": "Data kualitatif nominal.",
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
+        },
+        {
+          "teks": "Data kualitatif ordinal.",
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
+        }
+      ],
+      "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "221212570906946a79eca368",
+        "teks": "Tabel berikut menyajikan data numerik tentang banyaknya jam belajar mandiri mingguan dari sekelompok siswa berprestasi:\n\n| Jam Belajar per Minggu | Frekuensi |\n| :---: | :---: | \n| 6 | 4 |\n| 8 | 9 |\n| 10 | 6 |\n| 12 | 5 |\n| 15 | 2 |\n\nGuru pembimbing menetapkan bahwa program bimbingan lanjutan hanya diberikan jika total jam belajar dari seluruh siswa yang belajar minimal 10 jam per minggu mencapai sedikitnya 150 jam. Berdasarkan data tersebut, kesimpulan evaluasi yang tepat adalah ....",
+        "jawaban": "Program bimbingan lanjutan disetujui karena kelompok siswa tersebut mengumpulkan total 150 jam belajar",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_data",
+      "alasan_level": "Target hard; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 34 siswa. Jenis data banyak saudara kandung adalah ....",
+      "jawaban_benar": "Data kuantitatif diskret.",
+      "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "distraktor": [
+        {
+          "teks": "Data kuantitatif kontinu.",
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
+        },
+        {
+          "teks": "Data kualitatif nominal.",
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
+        },
+        {
+          "teks": "Data kualitatif ordinal.",
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
+        }
+      ],
+      "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "221212570906946a79eca368",
+        "teks": "Tabel berikut menyajikan data numerik tentang banyaknya jam belajar mandiri mingguan dari sekelompok siswa berprestasi:\n\n| Jam Belajar per Minggu | Frekuensi |\n| :---: | :---: | \n| 6 | 4 |\n| 8 | 9 |\n| 10 | 6 |\n| 12 | 5 |\n| 15 | 2 |\n\nGuru pembimbing menetapkan bahwa program bimbingan lanjutan hanya diberikan jika total jam belajar dari seluruh siswa yang belajar minimal 10 jam per minggu mencapai sedikitnya 150 jam. Berdasarkan data tersebut, kesimpulan evaluasi yang tepat adalah ....",
+        "jawaban": "Program bimbingan lanjutan disetujui karena kelompok siswa tersebut mengumpulkan total 150 jam belajar",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_data",
+      "alasan_level": "Target hard; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 23 siswa. Jenis data banyak saudara kandung adalah ....",
+      "jawaban_benar": "Data kuantitatif diskret.",
+      "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "distraktor": [
+        {
+          "teks": "Data kuantitatif kontinu.",
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
+        },
+        {
+          "teks": "Data kualitatif nominal.",
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
+        },
+        {
+          "teks": "Data kualitatif ordinal.",
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
+        }
+      ],
+      "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "80be91b3beacadd30f8dcb06",
+        "teks": "Seorang peneliti OSIS ingin mengetahui faktor kenyamanan belajar siswa di perpustakaan. Peneliti mengumpulkan 4 variabel data berikut:\n- Variabel P: Tingkat kepuasan siswa (Sangat Puas, Puas, Cukup, Kurang)\n- Variabel Q: Suhu ruangan perpustakaan dalam $^{\\circ}\\text{C}$ yang diukur tiap jam\n- Variabel R: Kode klasifikasi lemari buku (100: Filsafat, 500: Sains, 800: Sastra)\n- Variabel S: Durasi belajar siswa di perpustakaan (dalam menit)\n\nPeneliti menyusun empat draf kesimpulan awal dari analisis data tersebut:\n1. \"Rata-rata nomor kode lemari buku yang paling sering dikunjungi siswa adalah 466,7 sehingga perpustakaan perlu memperbanyak koleksi di lemari tersebut.\"\n2. \"Rata-rata durasi belajar siswa (Variabel S) dan rata-rata suhu ruangan (Variabel Q) dapat dihitung untuk melihat korelasi matematis waktu kunjung terhadap temperatur ruang.\"\n3. \"Frekuensi modus pada Variabel P dapat digunakan untuk menentukan tingkat kepuasan mayoritas pengunjung perpustakaan.\"\n4. \"Selisih antara kode lemari 800 dan 500 bernilai 300, yang membuktikan bahwa buku Sastra memiliki bobot 300 satuan lebih unggul daripada buku Sains.\"\n\nBerdasarkan konsep klasifikasi data yang benar, manakah pasangan pernyataan draf kesimpulan yang bernilai VALID secara statistika?",
+        "jawaban": "2 dan 3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_data",
+      "alasan_level": "Target hard; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 18 siswa. Jenis data banyak saudara kandung adalah ....",
+      "jawaban_benar": "Data kuantitatif diskret.",
+      "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "distraktor": [
+        {
+          "teks": "Data kuantitatif kontinu.",
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
+        },
+        {
+          "teks": "Data kualitatif nominal.",
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
+        },
+        {
+          "teks": "Data kualitatif ordinal.",
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
+        }
+      ],
+      "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e72be442ba85f7f2656a6059",
+        "teks": "Pelatih tim futsal sekolah mencatat performa dan identitas 20 siswa dalam dua tabel berikut:\n\n**Tabel 1: Banyak Gol Selama Turnamen**\n| Banyak Gol ($x$) | Frekuensi Pemain ($f$) |\n| :---: | :---: |\n| 1 | 5 |\n| 2 | 8 |\n| 3 | 4 |\n| 4 | 2 |\n| 5 | 1 |\n\n**Tabel 2: Nomor Punggung Pemain Berdasarkan Posisi Utama**\n| Posisi | Nomor Punggung yang Dipakai | Frekuensi Pemain |\n| :---: | :---: | :---: |\n| Kiper | 1, 20 | 2 |\n| Bertahan | 2, 3, 4, 5, 12, 14 | 6 |\n| Sayap | 6, 7, 8, 11, 13, 15, 17 | 7 |\n| Penyerang | 9, 10, 16, 18, 19 | 5 |\n\nPelatih bermaksud menghitung dua besaran:\n- Besaran I: Rata-rata banyak gol yang dicetak per pemain dari 20 pemain tersebut.\n- Besaran II: Rata-rata nomor punggung pemain untuk menentukan representasi nomor tengah tim.\n\nBerdasarkan konsep klasifikasi data, evaluasilah besaran manakah yang absah secara matematis untuk dihitung serta berapakah nilainya jika absah?",
+        "jawaban": "Hanya Besaran I yang absah dihitung, dengan nilai rata-rata sebesar $2,3$ gol per pemain.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
+        "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_data",
+      "alasan_level": "Target hard; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 29 siswa. Jenis data banyak saudara kandung adalah ....",
+      "jawaban_benar": "Data kuantitatif diskret.",
+      "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "distraktor": [
+        {
+          "teks": "Data kuantitatif kontinu.",
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
+        },
+        {
+          "teks": "Data kualitatif nominal.",
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
+        },
+        {
+          "teks": "Data kualitatif ordinal.",
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
+        }
+      ],
+      "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
+      "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas7-b06-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "90592101551c2ac1ee4b40e5",
+        "teks": "Petugas perpustakaan mencatat beberapa informasi mengenai kegiatan kunjungan siswa. Di antara data yang dicatat berikut, manakah yang merupakan data numerik?",
+        "jawaban": "Banyaknya buku yang dipinjam oleh tiap siswa dalam seminggu",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 3 catatan banyak saudara, 4 warna favorit, 2 jumlah buku, dan 8 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 1 catatan banyak saudara dengan 1 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 5. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 12; selisih -7.",
+      "distraktor": [
+        {
+          "teks": "$-8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-7$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-7$."
+        },
+        {
+          "teks": "$-14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 5. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 12; selisih -7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e21108470334c99ce29f794e",
+        "teks": "Petugas kebun binatang melakukan survei kepada pengunjung dengan mengajukan empat pertanyaan berikut:\n(1) Berapa kali Anda mengunjungi kebun binatang ini dalam setahun terakhir?\n(2) Apa wahana satwa yang paling berkesan bagi Anda?\n(3) Berapa rupiah uang yang Anda belanjakan untuk membeli suvenir hari ini?\n(4) Bagaimana Anda menuju ke kebun binatang (bus, mobil pribadi, sepeda motor)?\n\nPasangan pertanyaan yang menghasilkan data numerik adalah ....",
+        "jawaban": "(1) dan (3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 4 catatan banyak saudara, 6 warna favorit, 2 jumlah buku, dan 3 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 4 catatan banyak saudara dengan 4 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 6. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -3.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 6. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dee2cbe55cbcdbfde55df428",
+        "teks": "Perhatikan beberapa data yang memuat angka berikut:\n1. Nomor rekening bank nasabah\n2. Berat badan siswa dalam kilogram\n3. Nomor plat kendaraan bermotor\n4. Kode pos alamat pengiriman surat\n\nData yang nilai bilangannya dapat dikenai operasi penjumlahan dan pengurangan secara bermakna adalah ....",
+        "jawaban": "berat badan siswa dalam kilogram",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 5 catatan banyak saudara, 3 warna favorit, 7 jumlah buku, dan 3 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 1 catatan banyak saudara dengan 1 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 12. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 6; selisih 6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 12. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 6; selisih 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4d656f438307eea825eaa179",
+        "teks": "Peneliti mencatat banyak saudara kandung dari 35 siswa. Jenis data banyak saudara kandung adalah ....",
+        "jawaban": "Data kuantitatif diskret.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 3 catatan banyak saudara, 3 warna favorit, 4 jumlah buku, dan 6 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 3 catatan banyak saudara dengan 3 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -2.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-2$."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c859f58ac474ab5fca000e0",
+        "teks": "Peneliti mencatat banyak saudara kandung dari 33 siswa. Jenis data banyak saudara kandung adalah ....",
+        "jawaban": "Data kuantitatif diskret.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 2 catatan banyak saudara, 6 warna favorit, 5 jumlah buku, dan 4 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 2 catatan banyak saudara dengan 2 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -3.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1ade974d4497d1a3ed007f8d",
+        "teks": "Panitia lomba cerdas cermat mencatat empat atribut dari setiap regu peserta:\n1. Nomor undian regu (misal: Regu 1, Regu 2, Regu 3)\n2. Peringkat hasil babak penyisihan (Peringkat 1, 2, 3, 4)\n3. Skor perolehan babak final (misal: 150 poin, 225 poin, 310 poin)\n4. Banyaknya anggota tiap regu (3 orang, 4 orang, 5 orang)\n\nSeorang anggota panitia membuat beberapa klaim mengenai operasi matematika terhadap atribut-atribut tersebut. Klaim manakah yang bernilai BENAR secara konsep statistika?",
+        "jawaban": "Operasi penjumlahan skor babak final (atribut 3) bermakna matematis karena merupakan data numerik, sedangkan penjumlahan peringkat (atribut 2) tidak menghasilkan makna besaran baru.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 3 catatan banyak saudara, 7 warna favorit, 5 jumlah buku, dan 3 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 1 catatan banyak saudara dengan 1 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 8. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -2.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-2$."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 8. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-027"
     }
   ]
 }

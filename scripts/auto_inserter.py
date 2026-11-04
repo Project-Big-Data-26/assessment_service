@@ -1,456 +1,236 @@
-"""
-auto_inserter.py — Pemantau Otomatis & Auto-Import Soal ke MongoDB
-===================================================================
-Skrip ini berjalan secara kontinu di latar belakang untuk memantau direktori `output/`.
-Fitur:
-  1. Filter Khusus 'hasil_validasi': hanya memproses file `validation_results.json`
-     yang berada langsung di dalam direktori `hasil_validasi/`. File lain (audit,
-     bundle, operational_balance, backup) diabaikan secara otomatis.
-  2. Sinkronisasi Awal Super Cepat (Initial Sync): memeriksa berkas resmi yang sudah ada
-     dan meng-insert soal yang belum ada di database tanpa hambatan.
-  3. Batch Duplicate Check & Auto-Update: mencegah duplikasi berbasis _id secara instan (0.05 detik),
-     serta otomatis memperbarui skor kognitif jika ada hasil validasi baru dari LLM.
-  4. Dynamic Kelas & Subbab Lookup: memetakan kelas_id dan subbab_id langsung dari memori.
-  5. Real-time Continuous Watcher: memantau berkas baru / pembaruan dari LLM dengan
-     indikator heartbeat agar terminal tidak terlihat stuck/membeku.
-
-Jalankan:
-    python scripts/auto_inserter.py
-    python scripts/auto_inserter.py --watch-only  (lewati sinkronisasi berkas lama)
-"""
-
+"""Plan Mongo question imports/repairs; writes require --execute explicitly."""
 from __future__ import annotations
 
 import argparse
-import asyncio
+from datetime import datetime, timezone
+import hashlib
 import json
-import logging
 import os
-import re
-import sys
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple
+import sys
+import time
+import uuid
 
-# -- Path setup agar import `app.*` berjalan mulus dari root proyek ---
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
-if str(_PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(_PROJECT_ROOT))
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
-from bson import ObjectId                             # noqa: E402
-from pymongo import UpdateOne                         # noqa: E402
-from motor.motor_asyncio import AsyncIOMotorClient    # noqa: E402
-from beanie import init_beanie                        # noqa: E402
-
-from app.db.questions_pretest import Pertanyaan, Option  # noqa: E402
-from app.db.subbab_model import Subbab                   # noqa: E402
-
-# ───────────────────────────── Konfigurasi ─────────────────────────────────
-
-MONGO_URI = (
-    "mongodb+srv://romadhonim1_db_user:cEaG3NBp2wKc99VF"
-    "@cluster0.nn1euxs.mongodb.net/project_assessment?appName=Cluster0"
+from app.ingestion.question_sync import (  # noqa: E402
+    SYNC_FIELDS, coverage, identifier, load_sources, mongo_catalog,
+    plan_sync, read_json, report_catalog, source_files,
 )
-DB_NAME = "math_learning_db"
-
-WATCH_DIR = _PROJECT_ROOT / "output"
-TARGET_FILENAME = "validation_results.json"
-TARGET_PARENT_DIR = "hasil_validasi"  # Hanya proses file di dalam folder hasil_validasi
-POLL_INTERVAL_SEC = 5
-HEARTBEAT_INTERVAL_SEC = 30  # Tampilkan sinyal aktif tiap 30 detik jika standby
-
-# ─────────────────────────────── Logging ───────────────────────────────────
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)-7s | %(message)s",
-    datefmt="%H:%M:%S",
-)
-log = logging.getLogger("auto_inserter")
-
-_KELAS_RE = re.compile(r"kelas(\d+)(_tl)?", re.IGNORECASE)
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-#  Lookup Helpers (In-Memory untuk Kecepatan Maksimal)
-# ═══════════════════════════════════════════════════════════════════════════
-
-async def load_kelas_map(db: Any) -> Dict[str, ObjectId]:
-    """
-    Memuat seluruh data kelas (14 dokumen) dari database ke memori.
-    Menggunakan raw motor collection untuk menghindari issue skema Pydantic.
-    Memetakan variasi penamaan folder (e.g. 'kelas5', 'kelas11_tl') langsung ke ObjectId.
-    """
-    docs = await db.kelas.find({}).to_list(100)
-    kelas_map: Dict[str, ObjectId] = {}
-
-    for doc in docs:
-        cid = doc["_id"]
-        nomor = doc.get("nomor_kelas")
-        name = doc.get("name", "")
-
-        if nomor is None:
-            continue
-
-        # SD / SMP (Kelas 1 - 9) & Kelas 10 SMA
-        if nomor < 11:
-            kelas_map[f"kelas{nomor}"] = cid
-
-        # Kelas 11 & 12 SMA (dibagi Umum dan Lanjut)
-        elif nomor in (11, 12):
-            if "Lanjut" in name:
-                kelas_map[f"kelas{nomor}_tl"] = cid
-            elif "Umum" in name:
-                kelas_map[f"kelas{nomor}"] = cid
-            else:
-                kelas_map.setdefault(f"kelas{nomor}", cid)
-
-    log.info("Memuat %d pemetaan kelas ke memori", len(kelas_map))
-    return kelas_map
+def write_report(path: Path, report: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(path.name + "." + uuid.uuid4().hex + ".tmp")
+    try:
+        temporary.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
 
 
-async def load_subbab_map() -> Dict[str, ObjectId]:
-    """Memuat seluruh data Subbab ke memori {nama_subbab: ObjectId}."""
-    docs = await Subbab.find_all().to_list()
-    log.info("Memuat %d subbab dari database", len(docs))
-    return {s.name: s.id for s in docs}
+def write_inventory_markdown(path: Path, report: dict) -> None:
+    inventory = report["coverage"]
+    lines = ["# Audit latihan lokal berdasarkan kelas dan bab", "",
+             "Sumber: ekspor hasil_validasi resmi. Bukan audit database production.",
+             "Pretest, soal inactive, dan soal tanpa label tidak dihitung sebagai latihan tersedia.",
+             "Ketersediaan belum dikurangi riwayat soal masing-masing siswa.", "",
+             "Batas PER LEVEL dalam setiap subbab: SD 10, SMP 15, SMA 20.",
+             "Bab cukup hanya jika seluruh level pada seluruh subbab memenuhi batas.", "",
+             f"Bab belum cukup: {inventory['under_threshold_chapters']}/{inventory['chapters']}.",
+             f"Subbab dengan level kurang: {inventory['under_threshold']}/{inventory['subchapters']}.",
+             f"Kombinasi subbab-level kurang: {inventory['under_threshold_levels']}/{inventory['level_slots']}.",
+             f"Total kekurangan per level: {inventory['shortfall_questions']} soal aktif.", "",
+             "## Ringkasan per bab", "",
+             "| Kelas | Bab | Subbab | Subbab belum cukup | Level kurang | Kekurangan soal |",
+             "|---|---:|---:|---:|---:|---:|"]
+    for row in inventory["chapter_rows"]:
+        lines.append(f"| {row['class_key']} | {row['chapter_no']} | {row['subchapters']} | "
+                     f"{row['deficient_subchapters']} | {row['deficient_levels']} | {row['shortfall']} |")
+    lines += ["", "## Rincian per subbab dan level", "",
+              "| Kelas | Bab | Kode | Subbab | Minimum per level | Easy tersedia | Kurang E | Medium tersedia | Kurang M | Hard tersedia | Kurang H |",
+              "|---|---:|---|---|---:|---:|---:|---:|---:|---:|---:|"]
+    for row in inventory["rows"]:
+        levels, deficits = row["levels"], row["level_shortfalls"]
+        name = row["name"].replace("|", "\\|")
+        lines.append(f"| {row['class_key']} | {row['chapter_no']} | {row['code']} | {name} | "
+                     f"{row['required']} | {levels['easy']} | {deficits['easy']} | "
+                     f"{levels['medium']} | {deficits['medium']} | {levels['hard']} | {deficits['hard']} |")
+    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
-def _extract_kelas_folder(path: Path) -> Optional[str]:
-    """Mendeteksi nama folder kelas dari path berkas."""
-    for part in path.parts:
-        m = _KELAS_RE.match(part)
-        if m:
-            return part.lower()
-    return None
+def live_snapshot(db) -> dict:
+    return {"kelas": list(db.kelas.find({})), "bab": list(db.bab.find({})),
+            "subbab": list(db.subbab.find({})),
+            "soal": list(db.soal.find({}, {key: 1 for key in SYNC_FIELDS}))}
 
 
-def _resolve_kelas_id(folder_name: Optional[str], kelas_map: Dict[str, ObjectId]) -> Optional[ObjectId]:
-    """Mencari ObjectId kelas secara instan dari memori."""
-    if not folder_name:
-        return None
-    return kelas_map.get(folder_name)
+def apply_plan(db, plan: dict, questions) -> dict:
+    """Update controlled fields only; never replace/delete an existing question."""
+    from bson import ObjectId
+    from pymongo import UpdateOne
+
+    if plan["blocked"]:
+        raise ValueError("Rencana diblokir: selesaikan semua kesalahan pemetaan terlebih dahulu")
+    sources = {question.qid: question.item for question in questions}
+    operations = []
+
+    def db_fields(fields):
+        return {key: ObjectId(value) if key in ("kelas_id", "subbab_id") and value else value
+                for key, value in fields.items()}
+
+    for change in plan["changes"]:
+        qid = change["_id"]
+        values = db_fields(change["after"])
+        if change["action"] == "insert":
+            source = sources[qid]
+            allowed = ("berkas_id", "soal_text", "image_url", "options", "jawaban",
+                       "soal_type", "matching_pairs")
+            document = {key: source[key] for key in allowed if key in source}
+            document.update(values)
+            document["_id"] = ObjectId(qid)
+            for field in ("created_at", "updated_at"):
+                raw = source.get(field)
+                document[field] = (datetime.fromisoformat(raw.replace("Z", "+00:00"))
+                                   if isinstance(raw, str) else datetime.now(timezone.utc))
+            operations.append(UpdateOne({"_id": ObjectId(qid)}, {"$setOnInsert": document}, upsert=True))
+        else:
+            # Compare-and-set prevents silently overwriting a concurrent edit.
+            expected = {"_id": ObjectId(qid), **db_fields(change["before"])}
+            operations.append(UpdateOne(expected, {"$set": values}, upsert=False))
+    if not operations:
+        return {"matched": 0, "modified": 0, "inserted": 0}
+    result = db.soal.bulk_write(operations, ordered=True)
+    if result.matched_count != plan["updates"] or result.upserted_count != plan["inserts"]:
+        raise ValueError("Data berubah saat penerapan; sebagian operasi mungkin selesai. Audit ulang memakai rencana tersimpan")
+    return {"matched": result.matched_count, "modified": result.modified_count,
+            "inserted": result.upserted_count}
 
 
-# ═══════════════════════════════════════════════════════════════════════════
-#  Pemeriksaan Duplikasi Cepat (Batch $in)
-# ═══════════════════════════════════════════════════════════════════════════
-
-async def get_existing_ids(raw_ids: List[str]) -> Set[str]:
-    """
-    Mengecek duplikasi ribuan soal sekaligus dalam 1 query batch.
-    Selesai dalam < 0.05 detik tanpa N+1 query.
-    """
-    valid_oids = [ObjectId(r) for r in raw_ids if isinstance(r, str) and ObjectId.is_valid(r)]
-    if not valid_oids:
-        return set()
-
-    existing: Set[str] = set()
-    # Batch chunk per 1000 ID agar aman dari batasan payload MongoDB
-    chunk_size = 1000
-    for i in range(0, len(valid_oids), chunk_size):
-        chunk = valid_oids[i : i + chunk_size]
-        docs = await Pertanyaan.find({"_id": {"$in": chunk}}).to_list()
-        for d in docs:
-            existing.add(str(d.id))
-    return existing
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  Proses Berkas JSON
-# ═══════════════════════════════════════════════════════════════════════════
-
-def _build_soal(
-    item: Dict[str, Any],
-    kelas_id: Optional[ObjectId],
-    subbab_id: Optional[ObjectId],
-) -> Pertanyaan:
-    """Mengubah dictionary JSON menjadi model Pertanyaan."""
-    options = [
-        Option(
-            option_id=str(o.get("option_id", "")),
-            text=str(o.get("text", "")),
-            alasan=o.get("alasan"),
-        )
-        for o in item.get("options", [])
-    ]
-
-    raw_img = item.get("image_url")
-    if isinstance(raw_img, list):
-        image_url = [str(x) for x in raw_img]
-    elif isinstance(raw_img, str) and raw_img.strip():
-        image_url = [raw_img.strip()]
+def sync_once(args, db=None) -> dict:
+    questions = load_sources(args.output)
+    if args.file:
+        target = args.file.resolve().relative_to(args.output.resolve()).as_posix()
+        if args.file.resolve() not in {p.resolve() for p in source_files(args.output)}:
+            raise ValueError("--file harus berupa ekspor hasil_validasi resmi")
+        questions = [question for question in questions if question.source == target]
+        if not questions:
+            raise ValueError("Tidak ada soal utama pada --file")
+    if args.local:
+        report = {"mode": "local_inventory", "unique_questions": len(questions),
+                  "exercise": sum(q.kind == "exercise" for q in questions),
+                  "pretest": sum(q.kind == "pretest" for q in questions),
+                  "coverage": coverage(questions, report_catalog(args.curriculum_report))}
     else:
-        image_url = []
+        snapshot = read_json(args.snapshot) if args.snapshot else live_snapshot(db)
+        catalog = read_json(args.catalog) if args.catalog else snapshot.get("catalog")
+        if catalog is None:
+            catalog = mongo_catalog(snapshot["kelas"], snapshot["bab"], snapshot["subbab"], args.chapter_number_field)
+        report = plan_sync(questions, catalog, snapshot["soal"])
+        report["mode"] = "execute" if args.execute else "dry_run"
+        report["database"] = db.name if db is not None else "offline_snapshot"
+        known = {q.qid for q in questions}
+        report["unmatched_database_ids"] = [identifier(q["_id"]) for q in snapshot["soal"]
+                                            if identifier(q["_id"]) not in known]
+        report["plan_sha256"] = hashlib.sha256(
+            json.dumps(report, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+    report["created_at"] = datetime.now(timezone.utc).isoformat()
+    # Save before-values and IDs BEFORE database mutation.
+    write_report(args.report, report)
+    if args.local:
+        write_inventory_markdown(args.report.with_suffix(".md"), report)
+    if args.execute:
+        report["execution"] = apply_plan(db, report, questions)
+        write_report(args.report, report)
+    summary = {k: v for k, v in report.items() if k in (
+        "mode", "questions", "unique_questions", "exercise", "pretest", "inserts", "updates", "blocked", "unchanged", "execution")}
+    if args.local:
+        summary["under_threshold"] = report["coverage"]["under_threshold"]
+        summary["under_threshold_levels"] = report["coverage"]["under_threshold_levels"]
+        summary["under_threshold_chapters"] = report["coverage"]["under_threshold_chapters"]
+    print(json.dumps(summary, ensure_ascii=False))
+    print(f"Report: {args.report}")
+    return report
 
-    kwargs: Dict[str, Any] = {
-        "soal_text": str(item.get("soal_text", "")),
-        "image_url": image_url,
-        "options": options,
-        "jawaban": item.get("jawaban"),
-        "cognitive_level": item.get("cognitive_level"),
-        "cognitive_score": item.get("cognitive_score"),
-        "confidence_score": item.get("confidence_score"),
-        "kelas_id": kelas_id,
-        "subbab_id": subbab_id,
-        "status": "active",
-    }
 
-    raw_id = item.get("_id")
-    if raw_id and ObjectId.is_valid(str(raw_id)):
-        kwargs["id"] = ObjectId(str(raw_id))
-
-    return Pertanyaan(**kwargs)
-
-async def process_file(
-    file_path: Path,
-    subbab_map: Dict[str, ObjectId],
-    kelas_map: Dict[str, ObjectId],
-    silent_if_no_new: bool = False,
-) -> int:
-    """
-    Membaca berkas validation_results.json, mengecek duplikasi,
-    meng-insert soal baru, dan memperbarui skor kognitif soal lama.
-    """
-    rel_path = file_path.relative_to(_PROJECT_ROOT) if file_path.is_relative_to(_PROJECT_ROOT) else file_path
-
+def main(argv=None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=ROOT / "output")
+    parser.add_argument("--file", type=Path, help="Batasi ke satu ekspor resmi")
+    parser.add_argument("--local", action="store_true", help="Inventaris lokal tanpa koneksi MongoDB")
+    parser.add_argument("--curriculum-report", type=Path, default=ROOT / "API_DOCUMENTATION/Pesan_eror.md")
+    parser.add_argument("--snapshot", type=Path, help="JSON: kelas, bab, subbab, soal; atau catalog dan soal")
+    parser.add_argument("--catalog", type=Path, help="Pemetaan ID eksplisit jika skema katalog berbeda")
+    parser.add_argument("--chapter-number-field", default="nomor_bab")
+    parser.add_argument("--execute", action="store_true", help="Terapkan rencana ke DB tujuan")
+    parser.add_argument("--watch", action="store_true", help="Pantau perubahan; tanpa --execute hanya audit")
+    parser.add_argument("--watch-only", action="store_true", help="Pantau tanpa sinkronisasi awal")
+    parser.add_argument("--once", action="store_true", help="Satu kali proses (mode bawaan)")
+    parser.add_argument("--report", type=Path)
+    args = parser.parse_args(argv)
+    if args.execute and (args.local or args.snapshot):
+        parser.error("--execute tidak dapat digunakan bersama --local/--snapshot")
+    if args.watch_only:
+        args.watch = True
+    if args.watch and (args.snapshot or args.local or args.once):
+        parser.error("--watch tidak dapat digabung dengan --local/--snapshot/--once")
+    if args.local and (args.snapshot or args.catalog):
+        parser.error("--local tidak menggunakan snapshot/katalog ID database")
+    client = db = None
     try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-    except Exception as exc:
-        log.error("Gagal membaca %s: %s", rel_path, exc)
-        return 0
+        if not args.local and not args.snapshot:
+            from dotenv import load_dotenv
+            from pymongo import MongoClient
 
-    if not isinstance(data, list) or not data:
-        return 0
+            load_dotenv(ROOT / ".env")
+            uri, database = os.getenv("MONGODB_URI", ""), os.getenv("MONGODB_DATABASE", "")
+            if not uri or not database or any(token in uri.casefold() for token in ("replace-me", "example.mongodb.net")):
+                raise ValueError("MONGODB_URI/MONGODB_DATABASE belum dikonfigurasi untuk database tujuan; gunakan --local atau --snapshot")
+            client = MongoClient(uri, serverSelectionTimeoutMS=10000)
+            db = client[database]
+        requested_report = args.report
 
-    # 1. Resolusi Kelas ID
-    kelas_folder = _extract_kelas_folder(file_path)
-    kelas_id = _resolve_kelas_id(kelas_folder, kelas_map)
+        def run():
+            stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+            args.report = (requested_report.with_name(f"{requested_report.stem}_{stamp}{requested_report.suffix}")
+                           if requested_report and args.watch else requested_report)
+            args.report = args.report or ROOT / "runs/question_sync" / f"plan_{stamp}.json"
+            return sync_once(args, db)
 
-    # 2. Cek Duplikasi Massal (Batch)
-    raw_ids = [str(item["_id"]) for item in data if item.get("_id")]
-    existing_ids = await get_existing_ids(raw_ids)
+        def signatures():
+            watched = source_files(args.output)
+            watched += list(args.output.glob("exercise/kelas*/batch*/soal_exercise_meta.json"))
+            watched += list(args.output.glob("pretest/kelas*/sesi_pretest.json"))
+            if args.catalog:
+                watched.append(args.catalog)
+            return {p: p.stat().st_mtime_ns for p in watched}
 
-    # 3. Filter Soal Baru & Siapkan Update untuk Soal yang Berubah
-    new_soal: List[Pertanyaan] = []
-    updates: List[UpdateOne] = []
-    seen_in_file: Set[str] = set()
-    skipped = 0
-
-    for item in data:
-        soal_id = str(item.get("_id", ""))
-
-        if soal_id and (soal_id in existing_ids or soal_id in seen_in_file):
-            # Jika soal sudah ada di DB, periksa apakah file JSON memiliki data validasi kognitif
-            cog_level = item.get("cognitive_level")
-            if soal_id in existing_ids and cog_level is not None and ObjectId.is_valid(soal_id):
-                updates.append(
-                    UpdateOne(
-                        {"_id": ObjectId(soal_id)},
-                        {"$set": {
-                            "cognitive_level": cog_level,
-                            "cognitive_score": item.get("cognitive_score"),
-                            "confidence_score": item.get("confidence_score"),
-                            "status": "active",
-                        }}
-                    )
-                )
-            skipped += 1
-            continue
-
-        if soal_id:
-            seen_in_file.add(soal_id)
-
-        # Resolusi Subbab ID
-        nama_subbab = item.get("subbab_id")
-        subbab_id = subbab_map.get(nama_subbab) if nama_subbab else None
-
-        new_soal.append(_build_soal(item, kelas_id, subbab_id))
-
-    # 4. Terapkan Update untuk Soal yang Diperbarui oleh LLM
-    updated_count = 0
-    if updates:
-        try:
-            coll = Pertanyaan.get_motor_collection()
-            res = await coll.bulk_write(updates, ordered=False)
-            updated_count = res.modified_count
-        except Exception as exc:
-            log.warning("Gagal bulk update data kognitif (%s)", exc)
-
-    # 5. Simpan Soal Baru ke Database
-    if not new_soal:
-        if updated_count > 0:
-            log.info("🔄 [Auto-Update] %d soal diperbarui skor kognitifnya di DB dari %s", updated_count, rel_path)
-            return updated_count
-        if not silent_if_no_new:
-            log.info("⏩ Dilewati: %s (semua %d soal sudah ada di DB)", rel_path, skipped)
-        return 0
-
-    try:
-        await Pertanyaan.insert_many(new_soal)
-        update_msg = f", {updated_count} diperbarui" if updated_count > 0 else ""
-        log.info(
-            "⚡ [Auto-Import] %d soal baru berhasil di-insert dari %s (duplikat: %d%s)",
-            len(new_soal), rel_path, skipped, update_msg
-        )
-        return len(new_soal) + updated_count
-    except Exception as exc:
-        log.warning("insert_many gagal (%s), beralih ke fallback satu per satu...", exc)
-        inserted = 0
-        for s in new_soal:
-            try:
-                await s.insert()
-                inserted += 1
-            except Exception:
-                pass
-        log.info("⚡ [Auto-Import] %d/%d soal berhasil di-insert (fallback) dari %s", inserted, len(new_soal), rel_path)
-        return inserted
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  Pemindai Direktori (Hanya Memantau Folder 'hasil_validasi')
-# ═══════════════════════════════════════════════════════════════════════════
-
-def scan_all_targets(root: Path) -> Dict[Path, float]:
-    """
-    Menemukan semua path dan mtime validation_results.json yang berada
-    langsung di dalam folder TARGET_PARENT_DIR ('hasil_validasi').
-    File validation_results.json di folder lain (seperti audit, bundle, operational_balance, dll.)
-    secara otomatis diabaikan.
-    """
-    targets: Dict[Path, float] = {}
-    try:
-        for dirpath, _, filenames in os.walk(root):
-            if TARGET_FILENAME in filenames:
-                dir_path = Path(dirpath)
-                # Hanya sertakan file jika folder induknya bernama 'hasil_validasi'
-                if dir_path.name.lower() == TARGET_PARENT_DIR.lower():
-                    fp = dir_path / TARGET_FILENAME
-                    try:
-                        targets[fp] = fp.stat().st_mtime
-                    except OSError:
-                        pass
-    except Exception as exc:
-        log.warning("Gagal memindai direktori %s: %s", root, exc)
-    return targets
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  Loop Utama Pemantau (Watcher Loop)
-# ═══════════════════════════════════════════════════════════════════════════
-
-async def run_watcher(skip_initial_sync: bool = False) -> None:
-    """Inisialisasi DB, sinkronisasi awal, dan loop pemantau berkas."""
-    log.info("Menghubungkan ke MongoDB Atlas...")
-    client = AsyncIOMotorClient(MONGO_URI)
-    db = client[DB_NAME]
-    await init_beanie(database=db, document_models=[Pertanyaan, Subbab])
-    log.info("Terhubung ke database '%s'", DB_NAME)
-
-    # Muat pemetaan kelas & subbab langsung ke RAM
-    kelas_map = await load_kelas_map(db)
-    subbab_map = await load_subbab_map()
-
-    # Temukan semua file resmi di dalam folder 'hasil_validasi'
-    known_files = scan_all_targets(WATCH_DIR)
-    total_found = len(known_files)
-
-    # ── Tahap 1: Sinkronisasi Awal ──────────────────────────────────────────
-    if not skip_initial_sync and total_found > 0:
-        log.info("=" * 60)
-        log.info("🔍 [Sinkronisasi Awal] Ditemukan %d berkas hasil_validasi/validation_results.json", total_found)
-        log.info("   Memeriksa dan mengimpor soal yang belum tersimpan di DB...")
-        log.info("=" * 60)
-
-        total_inserted = 0
-        for idx, fp in enumerate(known_files.keys(), start=1):
-            inserted = await process_file(fp, subbab_map, kelas_map, silent_if_no_new=True)
-            total_inserted += inserted
-            # Tampilkan progress setiap file baru / kelipatan
-            if inserted > 0 or idx % 5 == 0 or idx == total_found:
-                log.info("📊 Progress Sinkronisasi: [%d/%d berkas] | +%d soal baru/diperbarui", idx, total_found, total_inserted)
-
-        log.info("=" * 60)
-        log.info("✅ [Sinkronisasi Selesai] Total %d soal diproses ke DB!", total_inserted)
-        log.info("=" * 60)
-    else:
-        log.info("Melewati sinkronisasi awal (%d berkas existing dicatat).", total_found)
-
-    # ── Tahap 2: Pemantauan Real-time ───────────────────────────────────────
-    log.info("👀 [Watcher Aktif] Memantau berkas 'hasil_validasi/%s' di folder '%s' (setiap %ds)", TARGET_FILENAME, WATCH_DIR.name, POLL_INTERVAL_SEC)
-    log.info("💡 Tekan Ctrl+C di terminal kapan saja untuk menghentikan.")
-
-    heartbeat_counter = 0
-
-    while True:
-        try:
-            await asyncio.sleep(POLL_INTERVAL_SEC)
-            current_files = scan_all_targets(WATCH_DIR)
-
-            any_change = False
-
-            # Deteksi file baru / termodifikasi
-            for fp, mtime in current_files.items():
-                prev_mtime = known_files.get(fp)
-                if prev_mtime is None or mtime > prev_mtime:
-                    any_change = True
-                    is_new = prev_mtime is None
-                    action = "🆕 Berkas baru terdeteksi" if is_new else "🔄 Berkas diperbarui"
-                    log.info("%s: %s", action, fp.relative_to(_PROJECT_ROOT))
-
-                    await process_file(fp, subbab_map, kelas_map, silent_if_no_new=False)
-                    known_files[fp] = mtime
-
-            # Deteksi file dihapus
-            deleted = set(known_files.keys()) - set(current_files.keys())
-            for fp in deleted:
-                log.info("🗑️  Berkas dihapus: %s", fp.relative_to(_PROJECT_ROOT))
-                del known_files[fp]
-                any_change = True
-
-            # Heartbeat agar terminal tidak tampak membeku
-            if not any_change:
-                heartbeat_counter += POLL_INTERVAL_SEC
-                if heartbeat_counter >= HEARTBEAT_INTERVAL_SEC:
-                    log.info("💓 [Standby] Pemantau aktif, menunggu berkas baru di hasil_validasi/ ...")
-                    heartbeat_counter = 0
-            else:
-                heartbeat_counter = 0
-
-        except asyncio.CancelledError:
-            log.info("🛑 Pemantau dihentikan.")
-            break
-        except Exception as exc:
-            log.exception("⚠️ Terjadi kesalahan di loop pemantau (tetap berjalan): %s", exc)
-            await asyncio.sleep(POLL_INTERVAL_SEC)
-
-
-# ═══════════════════════════════════════════════════════════════════════════
-#  Entry Point
-# ═══════════════════════════════════════════════════════════════════════════
-
-def main() -> None:
-    parser = argparse.ArgumentParser(description="Auto Inserter & File Watcher")
-    parser.add_argument(
-        "--watch-only",
-        action="store_true",
-        help="Lewati pemeriksaan awal berkas yang sudah ada, hanya pantau berkas baru.",
-    )
-    args = parser.parse_args()
-
-    print(
-        "\n"
-        "╔══════════════════════════════════════════════════════════╗\n"
-        "║     🚀 AUTO-INSERTER & CONTINUOUS FILE WATCHER           ║\n"
-        "║     Khusus folder: hasil_validasi/validation_results.json║\n"
-        "╚══════════════════════════════════════════════════════════╝\n"
-    )
-
-    try:
-        asyncio.run(run_watcher(skip_initial_sync=args.watch_only))
+        previous = signatures()
+        report = None if args.watch_only else run()
+        if not args.watch:
+            return 2 if report and report.get("blocked") else 0
+        print("Watcher aktif; setiap siklus memuat ulang katalog dan seluruh sumber resmi.")
+        while True:
+            time.sleep(5)
+            current = signatures()
+            if current != previous:
+                run()
+                previous = current
     except KeyboardInterrupt:
-        log.info("👋 Dihentikan oleh pengguna (Ctrl+C).")
+        return 0
+    except ValueError as error:
+        print(str(error), file=sys.stderr)
+        return 2
+    except Exception as error:
+        # Driver exceptions can embed connection details. Never echo their text.
+        print(f"Sinkronisasi berhenti ({type(error).__name__}); periksa skema/koneksi dan rencana tersimpan.", file=sys.stderr)
+        return 2
+    finally:
+        if client is not None:
+            client.close()
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

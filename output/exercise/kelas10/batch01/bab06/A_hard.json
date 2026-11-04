@@ -370,6 +370,672 @@
       ],
       "pembahasan": "Periksa tiap baris: 15%, 25%, 30%, 20%, 10%. Baris 2 dan 3 pada tabel tertukar meskipun jumlahnya tetap 100%.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e8d41b3840bb2a84f80929b",
+        "teks": "| Kelas | Peserta sekolah P | Lulus sekolah P | Peserta sekolah Q | Lulus sekolah Q |\n|---|---|---|---|---|\n| Pagi | 80 | 64 | 20 | 18 |\n| Sore | 20 | 4 | 80 | 24 |\n\nDua sekolah, P dan Q, mengikuti seleksi dengan hasil pada tabel. Pak Rudi berkata, \"Persentase lulus Q lebih tinggi daripada P di kelas pagi maupun kelas sore, jadi persentase lulus Q secara keseluruhan pasti lebih tinggi.\" Kesimpulan yang tepat tentang klaim Pak Rudi adalah ....",
+        "jawaban": "Klaim keliru: persentase lulus keseluruhan sekolah P adalah 68% dan sekolah Q 42%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 3. Frekuensinya 7 dan 15. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{11}{3}$",
+      "alasan_benar": "Frekuensi gabungan=22, lebar gabungan=6; densitas=(frekuensi/lebar)=11/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{14}{3}$",
+          "alasan": "Pilihan $\\frac{14}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{11}{3}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{8}{3}$",
+          "alasan": "Pilihan $\\frac{8}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{11}{3}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{17}{3}$",
+          "alasan": "Pilihan $\\frac{17}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{11}{3}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=22, lebar gabungan=6; densitas=(frekuensi/lebar)=11/3.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 5. Frekuensinya 16 dan 14. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Frekuensi gabungan=30, lebar gabungan=10; densitas=(frekuensi/lebar)=3.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan $2$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan $5$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=30, lebar gabungan=10; densitas=(frekuensi/lebar)=3.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70275bc6bebd4b76dcf64d34",
+        "teks": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-5 | 5 | 4 |\n| 5-10 | 5 | 6 |\n| 10-20 | 10 | 2 |\n| 20-40 | 20 | 1,5 |\n\nSebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel, dan luas seluruh batang adalah 100%. Pernyataan yang benar tentang histogram tersebut adalah ....",
+        "jawaban": "Kelas 20-40 memuat data sama banyak dengan kelas 5-10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 6. Frekuensinya 9 dan 17. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{13}{6}$",
+      "alasan_benar": "Frekuensi gabungan=26, lebar gabungan=12; densitas=(frekuensi/lebar)=13/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{6}$",
+          "alasan": "Pilihan $\\frac{19}{6}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{13}{6}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{6}$",
+          "alasan": "Pilihan $\\frac{7}{6}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{13}{6}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{6}$",
+          "alasan": "Pilihan $\\frac{25}{6}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{13}{6}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=26, lebar gabungan=12; densitas=(frekuensi/lebar)=13/6.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94148e5dd37033d714e044d1",
+        "teks": "Dinas pendidikan ingin membandingkan bentuk sebaran lama belajar harian siswa SMA di kota A (1.200 siswa) dan kota B (300 siswa). Lama belajar tiap siswa dicatat dalam jam dan dikelompokkan ke interval 0-2, 2-4, 4-6, dan seterusnya. Penyajian yang paling tepat adalah ....",
+        "jawaban": "dua histogram frekuensi relatif (persen) dengan interval yang sama",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 4. Frekuensinya 9 dan 14. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{23}{8}$",
+      "alasan_benar": "Frekuensi gabungan=23, lebar gabungan=8; densitas=(frekuensi/lebar)=23/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{8}$",
+          "alasan": "Pilihan $\\frac{31}{8}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{23}{8}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{15}{8}$",
+          "alasan": "Pilihan $\\frac{15}{8}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{23}{8}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39}{8}$",
+          "alasan": "Pilihan $\\frac{39}{8}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{23}{8}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=23, lebar gabungan=8; densitas=(frekuensi/lebar)=23/8.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c795276a80c9c92d634e6b1",
+        "teks": "Sebuah histogram memiliki kelas 0-2 dengan tinggi batang 9 dan kelas 2-6 dengan tinggi batang 6. Kedua kelas digabung menjadi kelas 0-6 tanpa mengubah data. Tinggi batang kelas 0-6 adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 5. Frekuensinya 15 dan 5. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Frekuensi gabungan=20, lebar gabungan=10; densitas=(frekuensi/lebar)=2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=20, lebar gabungan=10; densitas=(frekuensi/lebar)=2.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70275bc6bebd4b76dcf64d34",
+        "teks": "| Kelas interval | Lebar kelas | Tinggi batang (persen per satuan) |\n|---|---|---|\n| 0-5 | 5 | 4 |\n| 5-10 | 5 | 6 |\n| 10-20 | 10 | 2 |\n| 20-40 | 20 | 1,5 |\n\nSebuah histogram frekuensi relatif memiliki empat batang dengan data pada tabel, dan luas seluruh batang adalah 100%. Pernyataan yang benar tentang histogram tersebut adalah ....",
+        "jawaban": "Kelas 20-40 memuat data sama banyak dengan kelas 5-10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 2. Frekuensinya 9 dan 8. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{17}{4}$",
+      "alasan_benar": "Frekuensi gabungan=17, lebar gabungan=4; densitas=(frekuensi/lebar)=17/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{21}{4}$",
+          "alasan": "Pilihan $\\frac{21}{4}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{17}{4}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{4}$",
+          "alasan": "Pilihan $\\frac{13}{4}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{17}{4}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{4}$",
+          "alasan": "Pilihan $\\frac{25}{4}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{17}{4}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=17, lebar gabungan=4; densitas=(frekuensi/lebar)=17/4.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 4. Frekuensinya 9 dan 6. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{15}{8}$",
+      "alasan_benar": "Frekuensi gabungan=15, lebar gabungan=8; densitas=(frekuensi/lebar)=15/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{8}$",
+          "alasan": "Pilihan $\\frac{23}{8}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{15}{8}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Pilihan $\\frac{7}{8}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{15}{8}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{8}$",
+          "alasan": "Pilihan $\\frac{31}{8}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{15}{8}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=15, lebar gabungan=8; densitas=(frekuensi/lebar)=15/8.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "466e5e5ca96b65c8bd7db58c",
+        "teks": "Histogram kiri memiliki kelas 4-6 dengan frekuensi 10 dan kelas 6-8 dengan frekuensi 20. Pada histogram kanan, kedua kelas digabung menjadi kelas 4-8 sehingga luas persegi panjangnya sama dengan jumlah luas kedua kelas semula. Frekuensi kelas 4-8 pada histogram kanan adalah ....",
+        "jawaban": "15",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 4. Frekuensinya 10 dan 12. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{11}{4}$",
+      "alasan_benar": "Frekuensi gabungan=22, lebar gabungan=8; densitas=(frekuensi/lebar)=11/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{4}$",
+          "alasan": "Pilihan $\\frac{15}{4}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{11}{4}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{7}{4}$",
+          "alasan": "Pilihan $\\frac{7}{4}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{11}{4}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{19}{4}$",
+          "alasan": "Pilihan $\\frac{19}{4}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{11}{4}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=22, lebar gabungan=8; densitas=(frekuensi/lebar)=11/4.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2c795276a80c9c92d634e6b1",
+        "teks": "Sebuah histogram memiliki kelas 0-2 dengan tinggi batang 9 dan kelas 2-6 dengan tinggi batang 6. Kedua kelas digabung menjadi kelas 0-6 tanpa mengubah data. Tinggi batang kelas 0-6 adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas10/blueprints.json",
+        "source_sha256": "789403bea3745688f382a159c10d995e02fb775665ab73d55745fb968cc6ddd5"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "representasi_histogram",
+      "alasan_level": "Target hard; variasi konsep representasi histogram. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 6. Frekuensinya 20 dan 8. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+      "jawaban_benar": "$\\frac{7}{3}$",
+      "alasan_benar": "Frekuensi gabungan=28, lebar gabungan=12; densitas=(frekuensi/lebar)=7/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10}{3}$",
+          "alasan": "Pilihan $\\frac{10}{3}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{7}{3}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{4}{3}$",
+          "alasan": "Pilihan $\\frac{4}{3}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{7}{3}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{13}{3}$",
+          "alasan": "Pilihan $\\frac{13}{3}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{7}{3}$. Periksa kembali langkah representasi histogram pada pembahasan."
+        }
+      ],
+      "pembahasan": "Frekuensi gabungan=28, lebar gabungan=12; densitas=(frekuensi/lebar)=7/3.",
+      "catatan": "codex-replenishment:kelas10-b06-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas10-b06-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94148e5dd37033d714e044d1",
+        "teks": "Dinas pendidikan ingin membandingkan bentuk sebaran lama belajar harian siswa SMA di kota A (1.200 siswa) dan kota B (300 siswa). Lama belajar tiap siswa dicatat dalam jam dan dikelompokkan ke interval 0-2, 2-4, 4-6, dan seterusnya. Penyajian yang paling tepat adalah ....",
+        "jawaban": "dua histogram frekuensi relatif (persen) dengan interval yang sama",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [6,9), [9,15), [15,23]. Frekuensi kelas terakhir 8, jumlah seluruh data 56, dan rata-rata berdasarkan titik tengah $\\frac{155}{14}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=48; persamaan rata-rata memakai titik tengah [15/2, 12, 19]. Penyelesaian a=8, b=4; rasio 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+6b=48; persamaan rata-rata memakai titik tengah [15/2, 12, 19]. Penyelesaian a=8, b=4; rasio 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "704c6a5dda05ab16e6c111c5",
+        "teks": "Dua kelas histogram yang berdampingan sama-sama memiliki lebar 3. Frekuensinya 7 dan 16. Jika digabung menjadi satu kelas, berapa densitas frekuensi kelas gabungan?",
+        "jawaban": "$\\frac{23}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [5,9), [9,16), [16,24]. Frekuensi kelas terakhir 6, jumlah seluruh data 50, dan rata-rata berdasarkan titik tengah $\\frac{291}{25}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=44; persamaan rata-rata memakai titik tengah [7, 25/2, 20]. Penyelesaian a=4, b=4; rasio 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=44; persamaan rata-rata memakai titik tengah [7, 25/2, 20]. Penyelesaian a=4, b=4; rasio 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4deaeacabe84dcca2262bd7c",
+        "teks": "Penjualan toko A adalah 90 unit dan toko B adalah 70 unit. Sebuah diagram batang dibuat dengan sumbu tegak tidak dimulai dari nol. Agar batang toko A tampak tepat 2 kali setinggi batang toko B, sumbu tegak harus dimulai dari angka ....",
+        "jawaban": "50",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [3,5), [5,10), [10,18]. Frekuensi kelas terakhir 18, jumlah seluruh data 61, dan rata-rata berdasarkan titik tengah $\\frac{1093}{122}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{4}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=43; persamaan rata-rata memakai titik tengah [4, 15/2, 14]. Penyelesaian a=4, b=7; rasio 4/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{16}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{4}{7}$."
+        },
+        {
+          "teks": "$\\frac{2}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 2a+5b=43; persamaan rata-rata memakai titik tengah [4, 15/2, 14]. Penyelesaian a=4, b=7; rasio 4/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b75d5ada216fea6e0d5a700",
+        "teks": "Sebuah histogram frekuensi relatif menampilkan nilai ulangan Fisika. Pada histogram itu, kelas interval 60 sampai 70 memiliki frekuensi relatif 24%. Jika seluruhnya ada 150 siswa yang mengikuti ulangan, banyak siswa pada kelas interval tersebut adalah ....",
+        "jawaban": "36 siswa",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [4,7), [7,14), [14,22]. Frekuensi kelas terakhir 6, jumlah seluruh data 56, dan rata-rata berdasarkan titik tengah $\\frac{279}{28}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+7b=50; persamaan rata-rata memakai titik tengah [11/2, 21/2, 18]. Penyelesaian a=5, b=5; rasio 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+7b=50; persamaan rata-rata memakai titik tengah [11/2, 21/2, 18]. Penyelesaian a=5, b=5; rasio 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6cb66e54a12e947a323e5643",
+        "teks": "Nilai 25 siswa: 47, 52, 63, 58, 71, 66, 45, 74, 69, 81, 62, 55, 68, 77, 64, 59, 72, 65, 88, 61, 53, 67, 70, 60, 79.\n\nData nilai dikelompokkan dengan panjang kelas 10 mulai dari 40-49. Frekuensi relatif kelas interval yang memuat paling banyak siswa adalah ....",
+        "jawaban": "40%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [9,13), [13,20), [20,29]. Frekuensi kelas terakhir 18, jumlah seluruh data 89, dan rata-rata berdasarkan titik tengah $\\frac{3137}{178}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{9}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=71; persamaan rata-rata memakai titik tengah [11, 33/2, 49/2]. Penyelesaian a=2, b=9; rasio 2/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{9}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{81}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{9}$."
+        },
+        {
+          "teks": "$\\frac{1}{9}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+7b=71; persamaan rata-rata memakai titik tengah [11, 33/2, 49/2]. Penyelesaian a=2, b=9; rasio 2/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc150711803df4ae71006966",
+        "teks": "Histogram frekuensi relatif nilai tes memiliki lima kelas interval. Empat kelas pertama berturut-turut memiliki persentase 12%, 20%, 28%, dan 25%. Persentase kelas kelima adalah ....",
+        "jawaban": "15%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [7,10), [10,15), [15,24]. Frekuensi kelas terakhir 22, jumlah seluruh data 75, dan rata-rata berdasarkan titik tengah $\\frac{2039}{150}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{6}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=53; persamaan rata-rata memakai titik tengah [17/2, 25/2, 39/2]. Penyelesaian a=6, b=7; rasio 6/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{36}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{6}{7}$."
+        },
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 3a+5b=53; persamaan rata-rata memakai titik tengah [17/2, 25/2, 39/2]. Penyelesaian a=6, b=7; rasio 6/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f60ac85a35c6515004a68a18",
+        "teks": "| Lama belajar (jam) | Lebar kelas | Tinggi batang (persen per jam) |\n|---|---|---|\n| 0-2 | 2 | 15 |\n| 2-6 | 4 | 10 |\n| 6-10 | 4 | 7,5 |\n\nPada histogram frekuensi relatif dengan data pada tabel, Dina menyimpulkan, \"Siswa yang belajar 2 sampai 6 jam ada 10%.\" Penilaian yang tepat terhadap kesimpulan Dina adalah ....",
+        "jawaban": "keliru: tinggi batang bukan persen; persentase kelas 2-6 adalah luas batangnya, yaitu 40%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [5,9), [9,15), [15,25]. Frekuensi kelas terakhir 18, jumlah seluruh data 92, dan rata-rata berdasarkan titik tengah $\\frac{287}{23}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{5}{9}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=74; persamaan rata-rata memakai titik tengah [7, 12, 20]. Penyelesaian a=5, b=9; rasio 5/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{25}{81}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{5}{9}$."
+        },
+        {
+          "teks": "$\\frac{5}{18}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=74; persamaan rata-rata memakai titik tengah [7, 12, 20]. Penyelesaian a=5, b=9; rasio 5/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ebe0a3f8604e2b8f0051ee70",
+        "teks": "Pada sebuah histogram, lebar batang tiap kelas berbeda-beda. Frekuensi setiap kelas dibaca dari ....",
+        "jawaban": "luas persegi panjang masing-masing batang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [2,6), [6,11), [11,20]. Frekuensi kelas terakhir 22, jumlah seluruh data 81, dan rata-rata berdasarkan titik tengah $\\frac{1469}{162}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{6}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=59; persamaan rata-rata memakai titik tengah [4, 17/2, 31/2]. Penyelesaian a=6, b=7; rasio 6/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{36}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{6}{7}$."
+        },
+        {
+          "teks": "$\\frac{3}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+5b=59; persamaan rata-rata memakai titik tengah [4, 17/2, 31/2]. Penyelesaian a=6, b=7; rasio 6/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b8b971eaaa4b134617f2b1",
+        "teks": "| Nilai | Kelompok 1 (80 siswa) | Kelompok 2 (200 siswa) |\n|---|---|---|\n| kurang dari 60 | 30% | 8% |\n| 60 sampai 79 | 45% | 77% |\n| 80 ke atas | 25% | 15% |\n\nPerhatikan tiga pernyataan berikut. (i) Proporsi siswa bernilai 80 ke atas lebih besar di kelompok 1. (ii) Banyak siswa bernilai 80 ke atas lebih besar di kelompok 2. (iii) Banyak siswa bernilai kurang dari 60 lebih besar di kelompok 2 karena jumlah siswanya lebih banyak. Pernyataan yang benar adalah ....",
+        "jawaban": "(i) dan (ii) saja",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_histogram_rekonstruksi_kepadatan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Histogram kepadatan terdiri dari kelas [2,6), [6,12), [12,20]. Frekuensi kelas terakhir 16, jumlah seluruh data 66, dan rata-rata berdasarkan titik tengah $\\frac{111}{11}$. Berapa rasio tinggi batang pertama terhadap kedua?",
+      "jawaban_benar": "$\\frac{2}{7}$",
+      "alasan_benar": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=50; persamaan rata-rata memakai titik tengah [4, 9, 16]. Penyelesaian a=2, b=7; rasio 2/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{7}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{49}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{7}$."
+        },
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Misalkan tinggi pertama a dan kedua b. Frekuensi = lebar×tinggi. Jumlah memberi 4a+6b=50; persamaan rata-rata memakai titik tengah [4, 9, 16]. Penyelesaian a=2, b=7; rasio 2/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-a-hard-bt01-029"
     }
   ]
 }

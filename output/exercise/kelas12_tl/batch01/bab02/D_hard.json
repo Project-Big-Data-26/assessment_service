@@ -849,6 +849,1338 @@
       "pembahasan": "Langkah-langkah penyelesaian:\n1. Tentukan fungsi kecepatan $v(t)$ sebagai turunan pertama dari lintasan posisi $s(t)$:\n   $$v(t) = s'(t) = -4\\sin(t) - 2\\sin(2t)$$\n2. Tentukan fungsi percepatan $a(t)$ untuk mencari titik stasioner kecepatan:\n   $$a(t) = v'(t) = -4\\cos(t) - 4\\cos(2t)$$\n3. Terapkan identitas sudut ganda $\\cos(2t) = 2\\cos^2(t) - 1$ dan atur $a(t) = 0$:\n   $$-4\\cos(t) - 4(2\\cos^2(t) - 1) = 0$$\n   $$-4(2\\cos^2(t) + \\cos(t) - 1) = 0$$\n   $$(2\\cos(t) - 1)(\\cos(t) + 1) = 0$$\n   Diperoleh $\\cos(t) = \\frac{1}{2}$ atau $\\cos(t) = -1$.\n4. Tentukan titik kritis pada selang $0 \\le t \\le 2\\pi$:\n   - Dari $\\cos(t) = \\frac{1}{2}$ diperoleh $t = \\frac{\\pi}{3}$ atau $t = \\frac{5\\pi}{3}$.\n   - Dari $\\cos(t) = -1$ diperoleh $t = \\pi$.\n   - Batas interval: $t = 0$ dan $t = 2\\pi$.\n5. Evaluasi kelajuan $|v(t)|$ pada setiap titik kritis:\n   - Untuk $t = 0, \\pi, 2\\pi$: $|v(t)| = 0\\text{ m/s}$.\n   - Untuk $t = \\frac{\\pi}{3}$:\n     $$v\\left(\\frac{\\pi}{3}\\right) = -4\\sin\\left(\\frac{\\pi}{3}\\right) - 2\\sin\\left(\\frac{2\\pi}{3}\\right) = -4\\left(\\frac{\\sqrt{3}}{2}\\right) - 2\\left(\\frac{\\sqrt{3}}{2}\\right) = -3\\sqrt{3}\\text{ m/s}$$\n     Kelajuan: $|v| = 3\\sqrt{3}\\text{ m/s}$.\n   - Untuk $t = \\frac{5\\pi}{3}$:\n     $$v\\left(\\frac{5\\pi}{3}\\right) = -4\\left(-\\frac{\\sqrt{3}}{2}\\right) - 2\\left(-\\frac{\\sqrt{3}}{2}\\right) = 3\\sqrt{3}\\text{ m/s}$$\n     Kelajuan: $|v| = 3\\sqrt{3}\\text{ m/s}$.\n\nJadi, kelajuan maksimum partikel tersebut adalah $3\\sqrt{3}\\text{ m/s}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 54 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{27}{2}$",
+      "alasan_benar": "Jika sisi x dan 54/2-x, luas L=x(54/2-x). L′=54/2-2x=0 memberi x=27/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Pilihan $\\frac{29}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{27}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{25}{2}$",
+          "alasan": "Pilihan $\\frac{25}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{27}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{31}{2}$",
+          "alasan": "Pilihan $\\frac{31}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{27}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 54/2-x, luas L=x(54/2-x). L′=54/2-2x=0 memberi x=27/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 160 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Jika sisi x dan 160/2-x, luas L=x(160/2-x). L′=160/2-2x=0 memberi x=40. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan $41$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan $39$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan $42$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $40$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 160/2-x, luas L=x(160/2-x). L′=160/2-2x=0 memberi x=40. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 150 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{75}{2}$",
+      "alasan_benar": "Jika sisi x dan 150/2-x, luas L=x(150/2-x). L′=150/2-2x=0 memberi x=75/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{77}{2}$",
+          "alasan": "Pilihan $\\frac{77}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{75}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{73}{2}$",
+          "alasan": "Pilihan $\\frac{73}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{75}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{79}{2}$",
+          "alasan": "Pilihan $\\frac{79}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{75}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 150/2-x, luas L=x(150/2-x). L′=150/2-2x=0 memberi x=75/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 126 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{63}{2}$",
+      "alasan_benar": "Jika sisi x dan 126/2-x, luas L=x(126/2-x). L′=126/2-2x=0 memberi x=63/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65}{2}$",
+          "alasan": "Pilihan $\\frac{65}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{63}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{61}{2}$",
+          "alasan": "Pilihan $\\frac{61}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{63}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{67}{2}$",
+          "alasan": "Pilihan $\\frac{67}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{63}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 126/2-x, luas L=x(126/2-x). L′=126/2-2x=0 memberi x=63/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 86 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{43}{2}$",
+      "alasan_benar": "Jika sisi x dan 86/2-x, luas L=x(86/2-x). L′=86/2-2x=0 memberi x=43/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{45}{2}$",
+          "alasan": "Pilihan $\\frac{45}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{43}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{41}{2}$",
+          "alasan": "Pilihan $\\frac{41}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{43}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{47}{2}$",
+          "alasan": "Pilihan $\\frac{47}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{43}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 86/2-x, luas L=x(86/2-x). L′=86/2-2x=0 memberi x=43/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 144 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Jika sisi x dan 144/2-x, luas L=x(144/2-x). L′=144/2-2x=0 memberi x=36. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan $37$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan $38$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 144/2-x, luas L=x(144/2-x). L′=144/2-2x=0 memberi x=36. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 46 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{23}{2}$",
+      "alasan_benar": "Jika sisi x dan 46/2-x, luas L=x(46/2-x). L′=46/2-2x=0 memberi x=23/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{2}$",
+          "alasan": "Pilihan $\\frac{25}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{23}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{21}{2}$",
+          "alasan": "Pilihan $\\frac{21}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{23}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{27}{2}$",
+          "alasan": "Pilihan $\\frac{27}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{23}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 46/2-x, luas L=x(46/2-x). L′=46/2-2x=0 memberi x=23/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 70 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{35}{2}$",
+      "alasan_benar": "Jika sisi x dan 70/2-x, luas L=x(70/2-x). L′=70/2-2x=0 memberi x=35/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{2}$",
+          "alasan": "Pilihan $\\frac{37}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{35}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{33}{2}$",
+          "alasan": "Pilihan $\\frac{33}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{35}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39}{2}$",
+          "alasan": "Pilihan $\\frac{39}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{35}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 70/2-x, luas L=x(70/2-x). L′=70/2-2x=0 memberi x=35/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 78 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{39}{2}$",
+      "alasan_benar": "Jika sisi x dan 78/2-x, luas L=x(78/2-x). L′=78/2-2x=0 memberi x=39/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{41}{2}$",
+          "alasan": "Pilihan $\\frac{41}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{39}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{37}{2}$",
+          "alasan": "Pilihan $\\frac{37}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{39}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{43}{2}$",
+          "alasan": "Pilihan $\\frac{43}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{39}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 78/2-x, luas L=x(78/2-x). L′=78/2-2x=0 memberi x=39/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 72 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Jika sisi x dan 72/2-x, luas L=x(72/2-x). L′=72/2-2x=0 memberi x=18. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan $20$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $18$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 72/2-x, luas L=x(72/2-x). L′=72/2-2x=0 memberi x=18. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 106 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{53}{2}$",
+      "alasan_benar": "Jika sisi x dan 106/2-x, luas L=x(106/2-x). L′=106/2-2x=0 memberi x=53/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{55}{2}$",
+          "alasan": "Pilihan $\\frac{55}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{53}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{51}{2}$",
+          "alasan": "Pilihan $\\frac{51}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{53}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{57}{2}$",
+          "alasan": "Pilihan $\\frac{57}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{53}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 106/2-x, luas L=x(106/2-x). L′=106/2-2x=0 memberi x=53/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 132 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Jika sisi x dan 132/2-x, luas L=x(132/2-x). L′=132/2-2x=0 memberi x=33. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan $32$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan $35$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $33$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 132/2-x, luas L=x(132/2-x). L′=132/2-2x=0 memberi x=33. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 138 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{69}{2}$",
+      "alasan_benar": "Jika sisi x dan 138/2-x, luas L=x(138/2-x). L′=138/2-2x=0 memberi x=69/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{71}{2}$",
+          "alasan": "Pilihan $\\frac{71}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{69}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{67}{2}$",
+          "alasan": "Pilihan $\\frac{67}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{69}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{73}{2}$",
+          "alasan": "Pilihan $\\frac{73}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{69}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 138/2-x, luas L=x(138/2-x). L′=138/2-2x=0 memberi x=69/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 74 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{37}{2}$",
+      "alasan_benar": "Jika sisi x dan 74/2-x, luas L=x(74/2-x). L′=74/2-2x=0 memberi x=37/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{39}{2}$",
+          "alasan": "Pilihan $\\frac{39}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{37}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{35}{2}$",
+          "alasan": "Pilihan $\\frac{35}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{37}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{41}{2}$",
+          "alasan": "Pilihan $\\frac{41}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{37}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 74/2-x, luas L=x(74/2-x). L′=74/2-2x=0 memberi x=37/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 82 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$\\frac{41}{2}$",
+      "alasan_benar": "Jika sisi x dan 82/2-x, luas L=x(82/2-x). L′=82/2-2x=0 memberi x=41/2. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{2}$",
+          "alasan": "Pilihan $\\frac{43}{2}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{41}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{39}{2}$",
+          "alasan": "Pilihan $\\frac{39}{2}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{41}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$\\frac{45}{2}$",
+          "alasan": "Pilihan $\\frac{45}{2}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $\\frac{41}{2}$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 82/2-x, luas L=x(82/2-x). L′=82/2-2x=0 memberi x=41/2. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 68 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Jika sisi x dan 68/2-x, luas L=x(68/2-x). L′=68/2-2x=0 memberi x=17. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan $18$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan $19$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $17$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 68/2-x, luas L=x(68/2-x). L′=68/2-2x=0 memberi x=17. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 156 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$39$",
+      "alasan_benar": "Jika sisi x dan 156/2-x, luas L=x(156/2-x). L′=156/2-2x=0 memberi x=39. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Pilihan $40$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $39$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan $38$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $39$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan $41$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $39$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 156/2-x, luas L=x(156/2-x). L′=156/2-2x=0 memberi x=39. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12_tl/blueprints.json",
+        "source_sha256": "949634108276dc0ab4f873788eec975fc9e860962324775449c2430bd9685dfa"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "optimasi_turunan",
+      "alasan_level": "Target hard; variasi konsep optimasi turunan. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Tersedia pagar sepanjang 60 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Jika sisi x dan 60/2-x, luas L=x(60/2-x). L′=60/2-2x=0 memberi x=15. L″=-2<0, sehingga maksimum.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $15$. Periksa kembali langkah optimasi turunan pada pembahasan."
+        }
+      ],
+      "pembahasan": "Jika sisi x dan 60/2-x, luas L=x(60/2-x). L′=60/2-2x=0 memberi x=15. L″=-2<0, sehingga maksimum.",
+      "catatan": "codex-replenishment:kelas12_tl-b02-D-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12_tl-b02-d-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "48f38f90a7fd141402d228b7",
+        "teks": "Kecepatan sesaat suatu partikel yang bergerak lurus dinyatakan oleh fungsi $v(t) = 6t^2 - 4t + 5$ (dalam m/s). Fungsi percepatan sesaat $a(t)$ dari partikel tersebut adalah ....",
+        "jawaban": "$a(t) = 12t - 4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp50.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp20.000 per meter. Anggaran tepat Rp3.600.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$810$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=3600000. Luas xy maksimum saat x=36, y=45/2; hasil kali 810 m².",
+      "distraktor": [
+        {
+          "teks": "$809$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $810$."
+        },
+        {
+          "teks": "$811$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $810$."
+        },
+        {
+          "teks": "$1620$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=3600000. Luas xy maksimum saat x=36, y=45/2; hasil kali 810 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "687b40ced01351864874ee04",
+        "teks": "Tersedia pagar sepanjang 132 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$33$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp30.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp20.000 per meter. Anggaran tepat Rp1.800.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{675}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 30000x+80000y=1800000. Luas xy maksimum saat x=30, y=45/4; hasil kali 675/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{675}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$675$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{675}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 30000x+80000y=1800000. Luas xy maksimum saat x=30, y=45/4; hasil kali 675/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a5f53518375eef68e0eb6465",
+        "teks": "Sebuah peluru kendali ditembakkan vertikal ke atas dengan persamaan lintasan ketinggian $s(t) = 120t - 5t^2$, dengan $s$ menyatakan tinggi dalam meter dan $t$ menyatakan waktu dalam detik. Ketinggian maksimum yang dapat dicapai peluru kendali tersebut adalah ....",
+        "jawaban": "$720\\text{ meter}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp60.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp10.000 per meter. Anggaran tepat Rp2.160.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$486$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 60000x+40000y=2160000. Luas xy maksimum saat x=18, y=27; hasil kali 486 m².",
+      "distraktor": [
+        {
+          "teks": "$485$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $486$."
+        },
+        {
+          "teks": "$487$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $486$."
+        },
+        {
+          "teks": "$972$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 60000x+40000y=2160000. Luas xy maksimum saat x=18, y=27; hasil kali 486 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "687b40ced01351864874ee04",
+        "teks": "Tersedia pagar sepanjang 132 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$33$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp50.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp20.000 per meter. Anggaran tepat Rp3.120.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{3042}{5}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=3120000. Luas xy maksimum saat x=156/5, y=39/2; hasil kali 3042/5 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1521}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{6084}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{3042}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=3120000. Luas xy maksimum saat x=156/5, y=39/2; hasil kali 3042/5 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp60.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp50.000 per meter. Anggaran tepat Rp2.040.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{867}{10}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 60000x+200000y=2040000. Luas xy maksimum saat x=17, y=51/10; hasil kali 867/10 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{867}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{867}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{867}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 60000x+200000y=2040000. Luas xy maksimum saat x=17, y=51/10; hasil kali 867/10 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70b206fe06f34f592b7d9f33",
+        "teks": "Sebuah instalasi pembangkit listrik berada di tepi sungai yang memiliki lebar $900\\text{ meter}$. Sebuah pabrik pengolahan berada di seberang sungai sejauh $3.000\\text{ meter}$ ke arah hilir dari titik yang persis berseberangan dengan stasiun pembangkit. Kabel listrik akan dipasang melintasi sungai ke suatu titik $P$ di tepi seberang, lalu dilanjutkan menyusuri daratan menuju pabrik. Jika biaya penarikan kabel di bawah air adalah $\\text{Rp}500.000,00$ per meter dan biaya di daratan adalah $\\text{Rp}300.000,00$ per meter, berapakah total biaya minimum yang diperlukan untuk instalasi kabel tersebut?",
+        "jawaban": "Rp1.260.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp50.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp10.000 per meter. Anggaran tepat Rp1.920.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{2304}{5}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+40000y=1920000. Luas xy maksimum saat x=96/5, y=24; hasil kali 2304/5 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1152}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{4608}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{2304}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+40000y=1920000. Luas xy maksimum saat x=96/5, y=24; hasil kali 2304/5 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "febd9658b989414e9d9bd0fe",
+        "teks": "Tersedia pagar sepanjang 160 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp50.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp20.000 per meter. Anggaran tepat Rp1.800.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{405}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=1800000. Luas xy maksimum saat x=18, y=45/4; hasil kali 405/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{405}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$405$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{405}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=1800000. Luas xy maksimum saat x=18, y=45/4; hasil kali 405/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7a4d93f7f925cf375acd7ba2",
+        "teks": "Tersedia pagar sepanjang 46 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$\\frac{23}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp30.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp50.000 per meter. Anggaran tepat Rp2.400.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$240$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 30000x+200000y=2400000. Luas xy maksimum saat x=40, y=6; hasil kali 240 m².",
+      "distraktor": [
+        {
+          "teks": "$239$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $240$."
+        },
+        {
+          "teks": "$241$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $240$."
+        },
+        {
+          "teks": "$480$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 30000x+200000y=2400000. Luas xy maksimum saat x=40, y=6; hasil kali 240 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa4ba2660e362e3f2bd1ce26",
+        "teks": "Sebuah objek berosilasi pada suatu lintasan dengan persamaan posisi $s(t) = \\sin(2t) + 5t$ ($s$ dalam meter dan $t$ dalam detik). Kecepatan objek saat $t = 0$ detik adalah ....",
+        "jawaban": "$7\\text{ m/s}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp20.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp30.000 per meter. Anggaran tepat Rp2.400.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$600$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+120000y=2400000. Luas xy maksimum saat x=60, y=10; hasil kali 600 m².",
+      "distraktor": [
+        {
+          "teks": "$599$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $600$."
+        },
+        {
+          "teks": "$601$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $600$."
+        },
+        {
+          "teks": "$1200$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+120000y=2400000. Luas xy maksimum saat x=60, y=10; hasil kali 600 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dfea66fc1e4ae6acbf6def7c",
+        "teks": "Tersedia pagar sepanjang 60 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp20.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp40.000 per meter. Anggaran tepat Rp2.160.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{729}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+160000y=2160000. Luas xy maksimum saat x=54, y=27/4; hasil kali 729/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{729}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$729$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{729}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+160000y=2160000. Luas xy maksimum saat x=54, y=27/4; hasil kali 729/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "690e01f5e24bd37755303193",
+        "teks": "Tersedia pagar sepanjang 54 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$\\frac{27}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp20.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp40.000 per meter. Anggaran tepat Rp1.800.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{2025}{8}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+160000y=1800000. Luas xy maksimum saat x=45, y=45/8; hasil kali 2025/8 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2025}{16}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2025}{4}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{2025}{8}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+160000y=1800000. Luas xy maksimum saat x=45, y=45/8; hasil kali 2025/8 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "febd9658b989414e9d9bd0fe",
+        "teks": "Tersedia pagar sepanjang 160 meter untuk kebun persegi panjang tertutup. Dengan fungsi luas dan turunan, tentukan panjang salah satu sisi agar luas maksimum.",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp30.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp50.000 per meter. Anggaran tepat Rp1.800.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$135$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 30000x+200000y=1800000. Luas xy maksimum saat x=30, y=9/2; hasil kali 135 m².",
+      "distraktor": [
+        {
+          "teks": "$134$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $135$."
+        },
+        {
+          "teks": "$136$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $135$."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 30000x+200000y=1800000. Luas xy maksimum saat x=30, y=9/2; hasil kali 135 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c58261466eefeaeec88d6a36",
+        "teks": "Ketinggian sebuah bola yang dilempar vertikal ke atas dari tanah setelah $t$ detik diberikan oleh fungsi $h(t) = 60t - 5t^2$ meter. Kecepatan sesaat bola pada saat $t = 4$ detik adalah ....",
+        "jawaban": "$20\\text{ m/s}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp60.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp40.000 per meter. Anggaran tepat Rp2.160.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{243}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 60000x+160000y=2160000. Luas xy maksimum saat x=18, y=27/4; hasil kali 243/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{243}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$243$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{243}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 60000x+160000y=2160000. Luas xy maksimum saat x=18, y=27/4; hasil kali 243/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "871b2f25bb50715f00656c99",
+        "teks": "Model kestabilan suhu fluktuatif suatu fluida reaktor dinyatakan oleh fungsi limit $L = \\lim_{x \\to 0} \\frac{a\\cos(2x) + bx\\sin(x) - 4}{x^4}$. Agar sistem termal berada dalam keadaan stabil, nilai limit $L$ harus ada dan bernilai bilangan real berhingga. Nilai dari $a + b + 3L$ yang memenuhi kondisi tersebut adalah ....",
+        "jawaban": "$16$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp50.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp20.000 per meter. Anggaran tepat Rp1.920.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{1152}{5}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=1920000. Luas xy maksimum saat x=96/5, y=12; hasil kali 1152/5 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{576}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2304}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1152}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 50000x+80000y=1920000. Luas xy maksimum saat x=96/5, y=12; hasil kali 1152/5 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e74096c70fddc6f9f40df551",
+        "teks": "Sebuah talang air dirancang dari selembar pelat logam selebar $60\\text{ cm}$ dengan cara melipat kedua tepi sisinya selebar $20\\text{ cm}$ ke atas membentuk sudut lancip $\\theta$ terhadap bidang alas berlebar $20\\text{ cm}$. Luas penampang tegak talang air tersebut dinyatakan sebagai fungsi dari sudut kemiringan $\\theta$. Berapakah luas penampang maksimum talang air yang dapat dihasilkan?",
+        "jawaban": "$300\\sqrt{3}\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp20.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp30.000 per meter. Anggaran tepat Rp1.800.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{675}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+120000y=1800000. Luas xy maksimum saat x=45, y=15/2; hasil kali 675/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{675}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$675$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{675}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+120000y=1800000. Luas xy maksimum saat x=45, y=15/2; hasil kali 675/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cd63a90779951b0ea95a3f1f",
+        "teks": "Keuntungan produksi suatu barang dinyatakan dengan fungsi $f(x) = 360x - 3x^2$, dengan $f(x)$ dalam ribuan rupiah dan $x$ menyatakan banyak unit barang. Tentukan jumlah unit barang yang harus diproduksi agar keuntungan mencapai maksimum.",
+        "jawaban": "$60$ unit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp40.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp20.000 per meter. Anggaran tepat Rp3.120.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{1521}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 40000x+80000y=3120000. Luas xy maksimum saat x=39, y=39/2; hasil kali 1521/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1521}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$1521$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1521}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 40000x+80000y=3120000. Luas xy maksimum saat x=39, y=39/2; hasil kali 1521/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b6fd5037bcaf8b9b50affd92",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus dengan persamaan posisi $s(t) = t^3 - 3t^2 + 8t$ ($s$ dalam meter dan $t$ dalam detik). Percepatan partikel tersebut pada saat $t = 4$ detik adalah ....",
+        "jawaban": "$18\\text{ m/s}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp20.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp50.000 per meter. Anggaran tepat Rp1.560.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{1521}{10}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+200000y=1560000. Luas xy maksimum saat x=39, y=39/10; hasil kali 1521/10 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1521}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1521}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1521}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+200000y=1560000. Luas xy maksimum saat x=39, y=39/10; hasil kali 1521/10 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4b34dfb28db0972ae4c67de8",
+        "teks": "Sebuah papan baliho berbentuk persegi panjang dipasang di bawah sebuah gapura melengkung yang memenuhi persamaan parabola $y = 48 - x^2$ (satuan dalam meter). Sisi alas baliho terletak mendatar pada permukaan tanah (sumbu-$X$, $y = 0$) dan simetris terhadap sumbu-$Y$, sedangkan kedua sudut atasnya menyentuh lengkungan gapura. Agar luas permukaan baliho tersebut maksimum, berapakah rasio antara tinggi baliho terhadap panjang sisi alasnya?",
+        "jawaban": "$4 : 1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_optimasi_pagar_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp20.000 per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp30.000 per meter. Anggaran tepat Rp2.040.000. Berapa luas maksimum kebun?",
+      "jawaban_benar": "$\\frac{867}{2}$",
+      "alasan_benar": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+120000y=2040000. Luas xy maksimum saat x=51, y=17/2; hasil kali 867/2 m².",
+      "distraktor": [
+        {
+          "teks": "$\\frac{867}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$867$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{867}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya 20000x+120000y=2040000. Luas xy maksimum saat x=51, y=17/2; hasil kali 867/2 m².",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-d-hard-bt01-056"
     }
   ]
 }

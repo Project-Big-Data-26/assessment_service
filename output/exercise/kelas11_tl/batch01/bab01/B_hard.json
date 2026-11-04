@@ -347,6 +347,376 @@
       ],
       "pembahasan": "Elemen seletak: $d = 2$, $c = d + 1 = 3$, $b = c + 1 = 4$, $a = b + 1 = 5$. Jumlah $5 + 4 + 3 + 2 = 14$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b58c8bfed062075a8c719c74",
+        "teks": "Jika $A = \\begin{pmatrix} 2x + y & (x - 4y)^2 \\\\ 0 & x + 5y \\end{pmatrix}$ dan $I$ adalah matriks identitas berordo $2 \\times 2$ dengan $A = I$, tentukan nilai $5x - y$.",
+        "jawaban": "$\\frac{19}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target hard; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}6x+3&5\\\\3&y-3\\end{pmatrix}$ dan $B=\\begin{pmatrix}27&5\\\\3&4\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$11$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 6x+3=27, sehingga x=4; y-3=4, sehingga y=7. Jumlahnya 11.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $11$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $11$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $11$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 6x+3=27, sehingga x=4; y-3=4, sehingga y=7. Jumlahnya 11.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6b6e8f617881ec459f4adac3",
+        "teks": "Matriks $A$ berordo $(p + 1) \\times (2p - 1)$ dan $B = \\begin{pmatrix} 4 & 1 & 7 \\\\ 2 & 9 & 5 \\end{pmatrix}$. Pernyataan yang benar mengenai nilai $p$ agar $A = B$ adalah ....",
+        "jawaban": "tidak ada $p$ yang memenuhi, sebab banyak baris menuntut $p = 1$ sedangkan banyak kolom menuntut $p = 2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target hard; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}6x+7&7\\\\4&y-7\\end{pmatrix}$ dan $B=\\begin{pmatrix}37&7\\\\4&1\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 6x+7=37, sehingga x=5; y-7=1, sehingga y=8. Jumlahnya 13.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan $14$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan $12$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $13$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 6x+7=37, sehingga x=5; y-7=1, sehingga y=8. Jumlahnya 13.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "32a89f524008bc9ab53b8de0",
+        "teks": "Hitunglah nilai $a + b + c + d$ yang memenuhi kesamaan matriks berikut. $\\begin{pmatrix} 4a & b + 8 \\\\ c - 6 & 3d \\end{pmatrix} = \\begin{pmatrix} 20 & 15 \\\\ 2 & 21 \\end{pmatrix}$",
+        "jawaban": "27",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target hard; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}6x+4&7\\\\3&y-4\\end{pmatrix}$ dan $B=\\begin{pmatrix}16&7\\\\3&2\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 6x+4=16, sehingga x=2; y-4=2, sehingga y=6. Jumlahnya 8.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan $9$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan $7$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan $10$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $8$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 6x+4=16, sehingga x=2; y-4=2, sehingga y=6. Jumlahnya 8.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fe1f95d21fc92c95b8997ec7",
+        "teks": "Jika $A = \\begin{pmatrix} 9x - y & 0 \\\\ (4x - y)^2 & 1 \\end{pmatrix}$ dan $I$ adalah matriks identitas yang seordo dengan $A$. Jika $A = I$, tentukan nilai $x + 5y$.",
+        "jawaban": "$\\frac{21}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target hard; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}4x+9&3\\\\7&y-9\\end{pmatrix}$ dan $B=\\begin{pmatrix}37&3\\\\7&-2\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 4x+9=37, sehingga x=7; y-9=-2, sehingga y=7. Jumlahnya 14.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan $13$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan $16$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $14$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 4x+9=37, sehingga x=7; y-9=-2, sehingga y=7. Jumlahnya 14.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1d939cc68f5db2045612bcd9",
+        "teks": "Matriks $\\begin{pmatrix} a & b \\\\ c & d \\end{pmatrix} = \\begin{pmatrix} b + 1 & c + 1 \\\\ d + 1 & 2 \\end{pmatrix}$ dengan $a, b, c, d$ bilangan real. Nilai $a + b + c + d$ adalah ....",
+        "jawaban": "$14$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "kesamaan_matriks",
+      "alasan_level": "Target hard; variasi konsep kesamaan matriks. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $A=\\begin{pmatrix}4x+2&2\\\\7&y-2\\end{pmatrix}$ dan $B=\\begin{pmatrix}10&2\\\\7&-2\\end{pmatrix}$ sama. Tentukan $x+y$.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Elemen bersesuaian harus sama: 4x+2=10, sehingga x=2; y-2=-2, sehingga y=0. Jumlahnya 2.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan $3$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan $1$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan $4$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2$. Periksa kembali langkah kesamaan matriks pada pembahasan."
+        }
+      ],
+      "pembahasan": "Elemen bersesuaian harus sama: 4x+2=10, sehingga x=2; y-2=-2, sehingga y=0. Jumlahnya 2.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-B-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-b-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c7862c91641dd6dc7081944f",
+        "teks": "Dua matriks $A=\\begin{pmatrix}6x+3&5\\\\3&y-3\\end{pmatrix}$ dan $B=\\begin{pmatrix}27&5\\\\3&4\\end{pmatrix}$ sama. Tentukan $x+y$.",
+        "jawaban": "$11$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_matriks_akar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $\\begin{pmatrix}x^2+y^2&x+y\\\\xy&1\\end{pmatrix}$ dan $\\begin{pmatrix}13&5\\\\6&1\\end{pmatrix}$ sama. Jika $x>y$, tentukan $x^3-y^3$.",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Kesamaan elemen memberi x+y=5, xy=6. Bilangan x,y berakar pada t²-5t+6=0, yaitu 3,2. Syarat x>y menentukan urutan. Selisih kubiknya 19.",
+      "distraktor": [
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $19$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kesamaan elemen memberi x+y=5, xy=6. Bilangan x,y berakar pada t²-5t+6=0, yaitu 3,2. Syarat x>y menentukan urutan. Selisih kubiknya 19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b911164ca435722f40bbcf64",
+        "teks": "Jika $A = \\begin{pmatrix} 4x - 3 & y + 5 \\\\ z - 9 & 6w - 5 \\end{pmatrix}$ dan $I$ adalah matriks identitas berordo $2 \\times 2$ dengan $A = I$, tentukan nilai $x + y + z + w$.",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_matriks_akar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $\\begin{pmatrix}x^2+y^2&x+y\\\\xy&1\\end{pmatrix}$ dan $\\begin{pmatrix}45&9\\\\18&1\\end{pmatrix}$ sama. Jika $x>y$, tentukan $x^3-y^3$.",
+      "jawaban_benar": "$189$",
+      "alasan_benar": "Kesamaan elemen memberi x+y=9, xy=18. Bilangan x,y berakar pada t²-9t+18=0, yaitu 6,3. Syarat x>y menentukan urutan. Selisih kubiknya 189.",
+      "distraktor": [
+        {
+          "teks": "$188$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $189$."
+        },
+        {
+          "teks": "$190$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $189$."
+        },
+        {
+          "teks": "$378$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kesamaan elemen memberi x+y=9, xy=18. Bilangan x,y berakar pada t²-9t+18=0, yaitu 6,3. Syarat x>y menentukan urutan. Selisih kubiknya 189.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc5a222b3c288649071a31f7",
+        "teks": "Diketahui $A = \\begin{pmatrix} x + 2 & 3y \\\\ 7 & 1 \\end{pmatrix}$ dan $B = \\begin{pmatrix} y + 5 & 12 \\\\ 7 & 1 \\end{pmatrix}$. Jika $A = B$, nilai $xy$ adalah ....",
+        "jawaban": "28",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_matriks_akar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $\\begin{pmatrix}x^2+y^2&x+y\\\\xy&1\\end{pmatrix}$ dan $\\begin{pmatrix}85&13\\\\42&1\\end{pmatrix}$ sama. Jika $x>y$, tentukan $x^3-y^3$.",
+      "jawaban_benar": "$127$",
+      "alasan_benar": "Kesamaan elemen memberi x+y=13, xy=42. Bilangan x,y berakar pada t²-13t+42=0, yaitu 7,6. Syarat x>y menentukan urutan. Selisih kubiknya 127.",
+      "distraktor": [
+        {
+          "teks": "$126$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $127$."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $127$."
+        },
+        {
+          "teks": "$254$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kesamaan elemen memberi x+y=13, xy=42. Bilangan x,y berakar pada t²-13t+42=0, yaitu 7,6. Syarat x>y menentukan urutan. Selisih kubiknya 127.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ba329c3814396df63b83392",
+        "teks": "Diketahui $A = \\begin{pmatrix} 3 & x \\\\ y & 5 \\end{pmatrix}$ dan $B = \\begin{pmatrix} 3 & 2y - 1 \\\\ x - 6 & 5 \\end{pmatrix}$. Jika $A = B$, nilai $2x - y$ adalah ....",
+        "jawaban": "19",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_matriks_akar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $\\begin{pmatrix}x^2+y^2&x+y\\\\xy&1\\end{pmatrix}$ dan $\\begin{pmatrix}25&7\\\\12&1\\end{pmatrix}$ sama. Jika $x>y$, tentukan $x^3-y^3$.",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Kesamaan elemen memberi x+y=7, xy=12. Bilangan x,y berakar pada t²-7t+12=0, yaitu 4,3. Syarat x>y menentukan urutan. Selisih kubiknya 37.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37$."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kesamaan elemen memberi x+y=7, xy=12. Bilangan x,y berakar pada t²-7t+12=0, yaitu 4,3. Syarat x>y menentukan urutan. Selisih kubiknya 37.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "55770864539c4b8a140f9866",
+        "teks": "Dua matriks $A=\\begin{pmatrix}5x+5&7\\\\4&y-5\\end{pmatrix}$ dan $B=\\begin{pmatrix}15&7\\\\4&-1\\end{pmatrix}$ sama. Tentukan $x+y$.",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kesamaan_matriks_akar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua matriks $\\begin{pmatrix}x^2+y^2&x+y\\\\xy&1\\end{pmatrix}$ dan $\\begin{pmatrix}65&9\\\\8&1\\end{pmatrix}$ sama. Jika $x>y$, tentukan $x^3-y^3$.",
+      "jawaban_benar": "$511$",
+      "alasan_benar": "Kesamaan elemen memberi x+y=9, xy=8. Bilangan x,y berakar pada t²-9t+8=0, yaitu 8,1. Syarat x>y menentukan urutan. Selisih kubiknya 511.",
+      "distraktor": [
+        {
+          "teks": "$510$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $511$."
+        },
+        {
+          "teks": "$512$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $511$."
+        },
+        {
+          "teks": "$1022$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kesamaan elemen memberi x+y=9, xy=8. Bilangan x,y berakar pada t²-9t+8=0, yaitu 8,1. Syarat x>y menentukan urutan. Selisih kubiknya 511.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-b-hard-bt01-020"
     }
   ]
 }

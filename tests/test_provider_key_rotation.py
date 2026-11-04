@@ -89,6 +89,16 @@ def test_slot_selector_is_inherited_and_restored_on_failure(isolated_keys, monke
     assert os.environ["EXERCISE_GROQ_KEY_SLOT"] == "3"
 
 
+def test_additional_numbered_slots_are_discovered_and_selectable(isolated_keys, monkeypatch):
+    values = {"GEMINI_API_KEY_1": "first-private", "GEMINI_API_KEY_4": "fourth-private",
+              "GEMINI_API_KEY_5": "fifth-private", "GEMINI_API_KEY_9": "fifth-private"}
+    assert credential_slots("gemini", values) == [1, 4, 5]
+    with use_credential_slot("gemini", 5):
+        assert selected_api_key("gemini", values) == "fifth-private"
+    monkeypatch.setenv("GEMINI_API_KEY_4", "")
+    assert credential_slots("gemini", values) == [1, 5]
+
+
 def setup_rotation(monkeypatch):
     for provider in ("gemini", "groq"):
         for slot in (1, 2, 3):

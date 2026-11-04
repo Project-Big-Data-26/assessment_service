@@ -370,6 +370,1042 @@
       ],
       "pembahasan": "Bunga per bulan 60.000. Syarat 60.000 n <= 1.540.000 sehingga n <= 25,67; karena batas atas, n terbanyak = 25.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "632e18ed585655b37f73a39f",
+        "teks": "Modal akhir sebuah simpanan berbunga tunggal (tanpa penarikan dan penambahan uang) dicatat pada tiga waktu. Catatan (lama menyimpan, modal akhir) yang mungkin berasal dari satu simpanan tersebut adalah ....",
+        "jawaban": "(5 bulan, Rp8.350.000,00), (10 bulan, Rp8.700.000,00), (20 bulan, Rp9.400.000,00)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 12% per tahun menjadi Rp44.280.000,00 setelah 23 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$36000000$",
+      "alasan_benar": "Nilai akhir M=P(1+12/100×23/12). Maka P=44280000/(123/100)=36000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$36000001$",
+          "alasan": "Pilihan $36000001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$35999999$",
+          "alasan": "Pilihan $35999999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $36000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$36000002$",
+          "alasan": "Pilihan $36000002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $36000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+12/100×23/12). Maka P=44280000/(123/100)=36000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc4c68d68643fc12cb26b205",
+        "teks": "Klaim: \"Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar.\" Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.600.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 4% per tahun menjadi Rp31.300.000,00 setelah 13 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$30000000$",
+      "alasan_benar": "Nilai akhir M=P(1+4/100×13/12). Maka P=31300000/(313/300)=30000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$30000001$",
+          "alasan": "Pilihan $30000001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $30000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$29999999$",
+          "alasan": "Pilihan $29999999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $30000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$30000002$",
+          "alasan": "Pilihan $30000002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $30000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+4/100×13/12). Maka P=31300000/(313/300)=30000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 4% per tahun menjadi Rp14.688.000,00 setelah 6 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$14400000$",
+      "alasan_benar": "Nilai akhir M=P(1+4/100×6/12). Maka P=14688000/(51/50)=14400000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$14400001$",
+          "alasan": "Pilihan $14400001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14400000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$14399999$",
+          "alasan": "Pilihan $14399999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $14400000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$14400002$",
+          "alasan": "Pilihan $14400002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $14400000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+4/100×6/12). Maka P=14688000/(51/50)=14400000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c15826552d38fabbbc64772",
+        "teks": "Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun. Bunga pada kedua periode dihitung dari modal awal yang sama. Modal akhir Pak Darmo setelah 11 bulan adalah ....",
+        "jawaban": "Rp8.512.500,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 8% per tahun menjadi Rp25.704.000,00 setelah 3 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$25200000$",
+      "alasan_benar": "Nilai akhir M=P(1+8/100×3/12). Maka P=25704000/(51/50)=25200000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$25200001$",
+          "alasan": "Pilihan $25200001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25200000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$25199999$",
+          "alasan": "Pilihan $25199999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25200000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$25200002$",
+          "alasan": "Pilihan $25200002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $25200000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+8/100×3/12). Maka P=25704000/(51/50)=25200000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e79ba501b375b1f67c82ab4d",
+        "teks": "Dian meminjam Rp12.000.000,00. Skema X: bunga tunggal 1,5% per bulan selama 8 bulan. Skema Y: bunga tunggal 15% per tahun selama 9 bulan. Pernyataan yang benar tentang total yang harus dikembalikan Dian adalah ....",
+        "jawaban": "Skema Y lebih kecil Rp90.000,00 daripada Skema X",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 6% per tahun menjadi Rp17.238.000,00 setelah 21 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$15600000$",
+      "alasan_benar": "Nilai akhir M=P(1+6/100×21/12). Maka P=17238000/(221/200)=15600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$15600001$",
+          "alasan": "Pilihan $15600001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$15599999$",
+          "alasan": "Pilihan $15599999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $15600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$15600002$",
+          "alasan": "Pilihan $15600002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $15600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+6/100×21/12). Maka P=17238000/(221/200)=15600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 3% per tahun menjadi Rp18.810.000,00 setelah 18 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$18000000$",
+      "alasan_benar": "Nilai akhir M=P(1+3/100×18/12). Maka P=18810000/(209/200)=18000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$18000001$",
+          "alasan": "Pilihan $18000001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$17999999$",
+          "alasan": "Pilihan $17999999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $18000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$18000002$",
+          "alasan": "Pilihan $18000002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $18000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+3/100×18/12). Maka P=18810000/(209/200)=18000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 8% per tahun menjadi Rp3.816.000,00 setelah 9 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$3600000$",
+      "alasan_benar": "Nilai akhir M=P(1+8/100×9/12). Maka P=3816000/(53/50)=3600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$3600001$",
+          "alasan": "Pilihan $3600001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$3599999$",
+          "alasan": "Pilihan $3599999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$3600002$",
+          "alasan": "Pilihan $3600002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+8/100×9/12). Maka P=3816000/(53/50)=3600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc4c68d68643fc12cb26b205",
+        "teks": "Klaim: \"Jika modal akhir dua simpanan berbunga tunggal sama besar, maka bunga yang diterima keduanya juga sama besar.\" Pasangan simpanan yang menjadi contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "Simpanan P: modal awal Rp8.000.000,00 dengan bunga Rp600.000,00; Simpanan Q: modal awal Rp7.000.000,00 dengan bunga Rp1.600.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 2% per tahun menjadi Rp17.472.000,00 setelah 24 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$16800000$",
+      "alasan_benar": "Nilai akhir M=P(1+2/100×24/12). Maka P=17472000/(26/25)=16800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$16800001$",
+          "alasan": "Pilihan $16800001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$16799999$",
+          "alasan": "Pilihan $16799999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$16800002$",
+          "alasan": "Pilihan $16800002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $16800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+2/100×24/12). Maka P=17472000/(26/25)=16800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e79ba501b375b1f67c82ab4d",
+        "teks": "Dian meminjam Rp12.000.000,00. Skema X: bunga tunggal 1,5% per bulan selama 8 bulan. Skema Y: bunga tunggal 15% per tahun selama 9 bulan. Pernyataan yang benar tentang total yang harus dikembalikan Dian adalah ....",
+        "jawaban": "Skema Y lebih kecil Rp90.000,00 daripada Skema X",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 8% per tahun menjadi Rp18.368.000,00 setelah 14 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$16800000$",
+      "alasan_benar": "Nilai akhir M=P(1+8/100×14/12). Maka P=18368000/(82/75)=16800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$16800001$",
+          "alasan": "Pilihan $16800001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$16799999$",
+          "alasan": "Pilihan $16799999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$16800002$",
+          "alasan": "Pilihan $16800002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $16800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+8/100×14/12). Maka P=18368000/(82/75)=16800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 10% per tahun menjadi Rp28.750.000,00 setelah 5 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$27600000$",
+      "alasan_benar": "Nilai akhir M=P(1+10/100×5/12). Maka P=28750000/(25/24)=27600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$27600001$",
+          "alasan": "Pilihan $27600001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $27600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$27599999$",
+          "alasan": "Pilihan $27599999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $27600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$27600002$",
+          "alasan": "Pilihan $27600002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $27600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+10/100×5/12). Maka P=28750000/(25/24)=27600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c15826552d38fabbbc64772",
+        "teks": "Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun. Bunga pada kedua periode dihitung dari modal awal yang sama. Modal akhir Pak Darmo setelah 11 bulan adalah ....",
+        "jawaban": "Rp8.512.500,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 5% per tahun menjadi Rp28.060.000,00 setelah 4 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$27600000$",
+      "alasan_benar": "Nilai akhir M=P(1+5/100×4/12). Maka P=28060000/(61/60)=27600000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$27600001$",
+          "alasan": "Pilihan $27600001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $27600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$27599999$",
+          "alasan": "Pilihan $27599999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $27600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$27600002$",
+          "alasan": "Pilihan $27600002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $27600000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+5/100×4/12). Maka P=28060000/(61/60)=27600000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 5% per tahun menjadi Rp11.880.000,00 setelah 24 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$10800000$",
+      "alasan_benar": "Nilai akhir M=P(1+5/100×24/12). Maka P=11880000/(11/10)=10800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$10800001$",
+          "alasan": "Pilihan $10800001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$10799999$",
+          "alasan": "Pilihan $10799999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $10800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$10800002$",
+          "alasan": "Pilihan $10800002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $10800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+5/100×24/12). Maka P=11880000/(11/10)=10800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c15826552d38fabbbc64772",
+        "teks": "Pak Darmo menyimpan Rp7.500.000,00 di koperasi. Selama 6 bulan pertama bunga tunggalnya 12% per tahun, lalu 5 bulan berikutnya naik menjadi 18% per tahun. Bunga pada kedua periode dihitung dari modal awal yang sama. Modal akhir Pak Darmo setelah 11 bulan adalah ....",
+        "jawaban": "Rp8.512.500,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 10% per tahun menjadi Rp6.200.000,00 setelah 4 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$6000000$",
+      "alasan_benar": "Nilai akhir M=P(1+10/100×4/12). Maka P=6200000/(31/30)=6000000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$6000001$",
+          "alasan": "Pilihan $6000001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$5999999$",
+          "alasan": "Pilihan $5999999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $6000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$6000002$",
+          "alasan": "Pilihan $6000002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $6000000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+10/100×4/12). Maka P=6200000/(31/30)=6000000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f43482b8f055934c221061ad",
+        "teks": "Sebuah simpanan berbunga tunggal bernilai Rp10.750.000,00 setelah 5 bulan dan Rp11.350.000,00 setelah 9 bulan. Persentase bunga tunggal per tahun dari simpanan tersebut adalah ....",
+        "jawaban": "18%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas12/blueprints.json",
+        "source_sha256": "795ca1ebd9886d19870c431e0f141b427c1cc184bcfd8ed3cfe040b4383d3908"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "bunga_tunggal_balik",
+      "alasan_level": "Target hard; variasi konsep bunga tunggal balik. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Simpanan berbunga tunggal 3% per tahun menjadi Rp23.370.000,00 setelah 10 bulan. Berapa modal awalnya?",
+      "jawaban_benar": "$22800000$",
+      "alasan_benar": "Nilai akhir M=P(1+3/100×10/12). Maka P=23370000/(41/40)=22800000 rupiah.",
+      "distraktor": [
+        {
+          "teks": "$22800001$",
+          "alasan": "Pilihan $22800001$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$22799999$",
+          "alasan": "Pilihan $22799999$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $22800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        },
+        {
+          "teks": "$22800002$",
+          "alasan": "Pilihan $22800002$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $22800000$. Periksa kembali langkah bunga tunggal balik pada pembahasan."
+        }
+      ],
+      "pembahasan": "Nilai akhir M=P(1+3/100×10/12). Maka P=23370000/(41/40)=22800000 rupiah.",
+      "catatan": "codex-replenishment:kelas12-b02-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas12-b02-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "60853b25e1a0d253acf8bdb8",
+        "teks": "Pak Hadi menyimpan modal awal Rp4.000.000,00 di koperasi karyawan yang memberi bunga tunggal 9% per tahun untuk simpanan anggota. Pak Hadi menyimpan modalnya selama 7 bulan. Besar bunga yang diterima Pak Hadi adalah ....",
+        "jawaban": "Rp210.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp3.922.000,00, dan akhir bulan 7 adalah Rp4.218.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp74.000,00. Modal awal Rp3.700.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp74.000,00. Modal awal Rp3.700.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9c5c55b031bd40281cd0bdb",
+        "teks": "Bu Tika menyimpan Rp15.000.000,00 di koperasi dengan bunga tunggal dan ingin modal akhirnya tepat Rp16.200.000,00 pada akhir masa simpan. Pasangan persentase bunga per tahun dan lama menyimpan yang memenuhi keinginan Bu Tika adalah ....",
+        "jawaban": "12% per tahun selama 8 bulan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp5.253.000,00, dan akhir bulan 7 adalah Rp5.457.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp51.000,00. Modal awal Rp5.100.000,00, suku bunga bulanan $\\frac{1}{100}$. Persentase tahunan =12 × 100 × 1/100=12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp51.000,00. Modal awal Rp5.100.000,00, suku bunga bulanan $\\frac{1}{100}$. Persentase tahunan =12 × 100 × 1/100=12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e10da8c9065d8d3fa6ff4a3",
+        "teks": "Ibu Wati anggota koperasi \"Sinar Mandiri\". Ia menyimpan modal awal Rp2.400.000,00 dan koperasi memberi bunga tunggal 15% per tahun. Ibu Wati menyimpan uangnya selama 10 bulan. Total simpanan Ibu Wati setelah 10 bulan adalah ....",
+        "jawaban": "Rp2.700.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp4.830.000,00, dan akhir bulan 10 adalah Rp5.460.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp126.000,00. Modal awal Rp4.200.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp126.000,00. Modal awal Rp4.200.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "51314af8aba2e77edafa5393",
+        "teks": "Simpanan berbunga tunggal 8% per tahun menjadi Rp25.704.000,00 setelah 3 bulan. Berapa modal awalnya?",
+        "jawaban": "$25200000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 4 adalah Rp1.456.000,00, dan akhir bulan 6 adalah Rp1.534.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp39.000,00. Modal awal Rp1.300.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp39.000,00. Modal awal Rp1.300.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1ed662ad7260f8860f29b25e",
+        "teks": "Pak Surya menyimpan Rp9.000.000,00 di koperasi dengan bunga tunggal 8% per tahun selama 2 tahun 3 bulan. Total simpanan Pak Surya pada akhir masa tersebut adalah ....",
+        "jawaban": "Rp10.620.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp1.090.000,00, dan akhir bulan 7 adalah Rp1.210.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp30.000,00. Modal awal Rp1.000.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp30.000,00. Modal awal Rp1.000.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3385530e5dcd7022d175b7e0",
+        "teks": "Seseorang menyimpan modal awal positif di koperasi dengan bunga tunggal tetap. Jika modal awal dan persentase bunga tidak berubah, tetapi lama menyimpan dijadikan 3 kali semula, pernyataan yang benar adalah ....",
+        "jawaban": "bunga menjadi tepat 3 kali semula, tetapi modal akhir kurang dari 3 kali modal akhir semula",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 4 adalah Rp3.888.000,00, dan akhir bulan 6 adalah Rp4.032.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp72.000,00. Modal awal Rp3.600.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp72.000,00. Modal awal Rp3.600.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "92fc3b5d4063721c378fe58d",
+        "teks": "Suatu koperasi memberi bunga tunggal 0,8% per bulan. Jika Rina menyimpan Rp7.500.000,00 selama 6 bulan, besar bunga yang diterima Rina adalah ....",
+        "jawaban": "Rp360.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp5.750.000,00, dan akhir bulan 8 adalah Rp6.200.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp150.000,00. Modal awal Rp5.000.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp150.000,00. Modal awal Rp5.000.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b7642d9798c06936ecba5f8a",
+        "teks": "Bu Nia menyimpan Rp8.000.000,00 di koperasi dengan bunga tunggal 9% per tahun. Bunga hanya dihitung untuk bulan penuh dan Bu Nia tidak ingin bunga yang diterima melebihi Rp1.540.000,00. Lama menyimpan terbanyak (dalam bulan penuh) yang masih memenuhi keinginan Bu Nia adalah ... bulan.",
+        "jawaban": "25",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp5.500.000,00, dan akhir bulan 10 adalah Rp6.000.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp100.000,00. Modal awal Rp5.000.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp100.000,00. Modal awal Rp5.000.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a6940db0c6dfbe94477460e4",
+        "teks": "Koperasi A memberi bunga tunggal 9% per tahun, sedangkan Koperasi B memberi bunga tunggal 0,8% per bulan. Modal Rp12.500.000,00 disimpan selama 10 bulan. Selisih bunga yang diterima di Koperasi B dan di Koperasi A adalah ....",
+        "jawaban": "Rp62.500,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 2 adalah Rp2.650.000,00, dan akhir bulan 5 adalah Rp2.875.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp75.000,00. Modal awal Rp2.500.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp75.000,00. Modal awal Rp2.500.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea468500404f70ef4c523d4b",
+        "teks": "Simpanan berbunga tunggal 4% per tahun menjadi Rp31.300.000,00 setelah 13 bulan. Berapa modal awalnya?",
+        "jawaban": "$30000000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp6.210.000,00, dan akhir bulan 9 adalah Rp6.858.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp162.000,00. Modal awal Rp5.400.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp162.000,00. Modal awal Rp5.400.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "df555422a23a97a903fa71d8",
+        "teks": "Modal Rp8.400.000,00 disimpan dengan bunga tunggal 6% per tahun selama 15 bulan. Berapa bunga yang diperoleh?",
+        "jawaban": "$630000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp6.213.000,00, dan akhir bulan 5 adalah Rp6.555.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp171.000,00. Modal awal Rp5.700.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp171.000,00. Modal awal Rp5.700.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a727f9709d5f44601af9bce0",
+        "teks": "Bu Yuni meminjam Rp6.000.000,00 dari koperasi dengan bunga tunggal 1,5% per bulan. Pinjaman beserta bunganya dilunasi dengan angsuran sama besar setiap bulan selama 10 bulan. Besar angsuran setiap bulan adalah ....",
+        "jawaban": "Rp690.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp6.380.000,00, dan akhir bulan 7 adalah Rp6.612.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp116.000,00. Modal awal Rp5.800.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp116.000,00. Modal awal Rp5.800.000,00, suku bunga bulanan $\\frac{1}{50}$. Persentase tahunan =12 × 100 × 1/50=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "60853b25e1a0d253acf8bdb8",
+        "teks": "Pak Hadi menyimpan modal awal Rp4.000.000,00 di koperasi karyawan yang memberi bunga tunggal 9% per tahun untuk simpanan anggota. Pak Hadi menyimpan modalnya selama 7 bulan. Besar bunga yang diterima Pak Hadi adalah ....",
+        "jawaban": "Rp210.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp1.962.000,00, dan akhir bulan 7 adalah Rp2.178.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$36$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp54.000,00. Modal awal Rp1.800.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "distraktor": [
+        {
+          "teks": "$35$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$37$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $36$."
+        },
+        {
+          "teks": "$72$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp54.000,00. Modal awal Rp1.800.000,00, suku bunga bulanan $\\frac{3}{100}$. Persentase tahunan =12 × 100 × 3/100=36.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87bef1b72895b1a809bd5519",
+        "teks": "Tiga koperasi menawarkan bunga tunggal untuk modal dan lama menyimpan yang sama. Koperasi X: 1,2% per bulan. Koperasi Y: 7% per 6 bulan. Koperasi Z: 14,4% per tahun. Pernyataan yang benar adalah ....",
+        "jawaban": "Koperasi X dan Z memberi bunga sama besar, sedangkan Koperasi Y memberi bunga lebih kecil",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp4.830.000,00, dan akhir bulan 9 adalah Rp5.014.000,00; tidak ada transaksi atau biaya sebelum saat itu. Berapa persentase suku bunga per tahun?",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp46.000,00. Modal awal Rp4.600.000,00, suku bunga bulanan $\\frac{1}{100}$. Persentase tahunan =12 × 100 × 1/100=12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp46.000,00. Modal awal Rp4.600.000,00, suku bunga bulanan $\\frac{1}{100}$. Persentase tahunan =12 × 100 × 1/100=12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-a-hard-bt01-039"
     }
   ]
 }

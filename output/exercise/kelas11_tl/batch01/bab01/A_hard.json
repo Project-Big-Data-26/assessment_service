@@ -347,6 +347,894 @@
       ],
       "pembahasan": "$\\frac{n(n-1)}{2} = 45 \\Rightarrow n = 10$. Elemen pada dan di atas diagonal utama $= 55$.",
       "catatan": null
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1facb098aa341522dcf30f8f",
+        "teks": "Matriks persegi yang sekaligus merupakan matriks segitiga atas dan matriks simetris pasti merupakan matriks ....",
+        "jawaban": "diagonal",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 3×3 dipilih dari 5 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$125$",
+      "alasan_benar": "Ada 3 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^3=125 matriks.",
+      "distraktor": [
+        {
+          "teks": "$126$",
+          "alasan": "Pilihan $126$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $125$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$124$",
+          "alasan": "Pilihan $124$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $125$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$127$",
+          "alasan": "Pilihan $127$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $125$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 3 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^3=125 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2aa711c2b030f8f84b05a098",
+        "teks": "Diberikan klaim: \"Jika $A$ dan $A^t$ sama-sama matriks segitiga atas, maka $A$ adalah matriks identitas.\" Matriks berordo $3 \\times 3$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 4×4 dipilih dari 7 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$2401$",
+      "alasan_benar": "Ada 4 elemen diagonal yang bebas, masing-masing 7 pilihan. Jadi ada 7^4=2401 matriks.",
+      "distraktor": [
+        {
+          "teks": "$2402$",
+          "alasan": "Pilihan $2402$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2401$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$2400$",
+          "alasan": "Pilihan $2400$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $2401$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$2403$",
+          "alasan": "Pilihan $2403$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $2401$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 4 elemen diagonal yang bebas, masing-masing 7 pilihan. Jadi ada 7^4=2401 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "04f00a7a1504f1359426c352",
+        "teks": "Sebuah matriks tegak memuat $60$ elemen dan memiliki paling sedikit dua kolom. Banyak kemungkinan ordo matriks tersebut adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 2×2 dipilih dari 7 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$49$",
+      "alasan_benar": "Ada 2 elemen diagonal yang bebas, masing-masing 7 pilihan. Jadi ada 7^2=49 matriks.",
+      "distraktor": [
+        {
+          "teks": "$50$",
+          "alasan": "Pilihan $50$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $49$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Pilihan $48$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $49$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Pilihan $51$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $49$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 2 elemen diagonal yang bebas, masing-masing 7 pilihan. Jadi ada 7^2=49 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "deff0cee42ca22f2a07b53cd",
+        "teks": "Matriks $A$ berordo $(k + 2) \\times (10 - k)$ dengan $k$ bilangan asli. Jumlah semua kemungkinan banyak elemen $A$ jika $A$ merupakan matriks tegak tetapi bukan matriks kolom adalah ....",
+        "jawaban": "$114$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 2×2 dipilih dari 5 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Ada 2 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^2=25 matriks.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan $24$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan $27$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $25$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 2 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^2=25 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34e45eca80337f97f10d5017",
+        "teks": "Setiap elemen matriks persegi berordo $3 \\times 3$ dipilih dari himpunan $\\{0, 1, 2\\}$. Banyak matriks yang sekaligus merupakan matriks segitiga bawah dan matriks simetris adalah ....",
+        "jawaban": "$27$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 3×3 dipilih dari 3 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$27$",
+      "alasan_benar": "Ada 3 elemen diagonal yang bebas, masing-masing 3 pilihan. Jadi ada 3^3=27 matriks.",
+      "distraktor": [
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan $28$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $27$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan $26$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $27$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan $29$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $27$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 3 elemen diagonal yang bebas, masing-masing 3 pilihan. Jadi ada 3^3=27 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2421411df5e5a05821133ccf",
+        "teks": "Rekapan absensi peserta didik kelas XII di SMA Makmur dalam satu semester.\n\n| Keterangan | XII 1 | XII 2 | XII 3 |\n|---|---|---|---|\n| Izin | 1 | 1 | 3 |\n| Sakit | 2 | 1 | 3 |\n| Tanpa keterangan | 5 | 1 | 2 |\n\nData pada tabel disajikan sebagai matriks dengan setiap baris menyatakan satu jenis keterangan dan setiap kolom menyatakan satu kelas. Pernyataan yang benar tentang matriks tersebut adalah ....",
+        "jawaban": "Matriks persegi dengan jumlah elemen diagonal utama $4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 4×4 dipilih dari 2 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Ada 4 elemen diagonal yang bebas, masing-masing 2 pilihan. Jadi ada 2^4=16 matriks.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan $17$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan $15$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan $18$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $16$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 4 elemen diagonal yang bebas, masing-masing 2 pilihan. Jadi ada 2^4=16 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2421411df5e5a05821133ccf",
+        "teks": "Rekapan absensi peserta didik kelas XII di SMA Makmur dalam satu semester.\n\n| Keterangan | XII 1 | XII 2 | XII 3 |\n|---|---|---|---|\n| Izin | 1 | 1 | 3 |\n| Sakit | 2 | 1 | 3 |\n| Tanpa keterangan | 5 | 1 | 2 |\n\nData pada tabel disajikan sebagai matriks dengan setiap baris menyatakan satu jenis keterangan dan setiap kolom menyatakan satu kelas. Pernyataan yang benar tentang matriks tersebut adalah ....",
+        "jawaban": "Matriks persegi dengan jumlah elemen diagonal utama $4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 5×5 dipilih dari 5 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$3125$",
+      "alasan_benar": "Ada 5 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^5=3125 matriks.",
+      "distraktor": [
+        {
+          "teks": "$3126$",
+          "alasan": "Pilihan $3126$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3125$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$3124$",
+          "alasan": "Pilihan $3124$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $3125$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$3127$",
+          "alasan": "Pilihan $3127$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $3125$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 5 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^5=3125 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "deff0cee42ca22f2a07b53cd",
+        "teks": "Matriks $A$ berordo $(k + 2) \\times (10 - k)$ dengan $k$ bilangan asli. Jumlah semua kemungkinan banyak elemen $A$ jika $A$ merupakan matriks tegak tetapi bukan matriks kolom adalah ....",
+        "jawaban": "$114$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 5×5 dipilih dari 7 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$16807$",
+      "alasan_benar": "Ada 5 elemen diagonal yang bebas, masing-masing 7 pilihan. Jadi ada 7^5=16807 matriks.",
+      "distraktor": [
+        {
+          "teks": "$16808$",
+          "alasan": "Pilihan $16808$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16807$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$16806$",
+          "alasan": "Pilihan $16806$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $16807$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$16809$",
+          "alasan": "Pilihan $16809$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $16807$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 5 elemen diagonal yang bebas, masing-masing 7 pilihan. Jadi ada 7^5=16807 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "deff0cee42ca22f2a07b53cd",
+        "teks": "Matriks $A$ berordo $(k + 2) \\times (10 - k)$ dengan $k$ bilangan asli. Jumlah semua kemungkinan banyak elemen $A$ jika $A$ merupakan matriks tegak tetapi bukan matriks kolom adalah ....",
+        "jawaban": "$114$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 5×5 dipilih dari 6 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$7776$",
+      "alasan_benar": "Ada 5 elemen diagonal yang bebas, masing-masing 6 pilihan. Jadi ada 6^5=7776 matriks.",
+      "distraktor": [
+        {
+          "teks": "$7777$",
+          "alasan": "Pilihan $7777$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7776$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$7775$",
+          "alasan": "Pilihan $7775$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $7776$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$7778$",
+          "alasan": "Pilihan $7778$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $7776$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 5 elemen diagonal yang bebas, masing-masing 6 pilihan. Jadi ada 6^5=7776 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2421411df5e5a05821133ccf",
+        "teks": "Rekapan absensi peserta didik kelas XII di SMA Makmur dalam satu semester.\n\n| Keterangan | XII 1 | XII 2 | XII 3 |\n|---|---|---|---|\n| Izin | 1 | 1 | 3 |\n| Sakit | 2 | 1 | 3 |\n| Tanpa keterangan | 5 | 1 | 2 |\n\nData pada tabel disajikan sebagai matriks dengan setiap baris menyatakan satu jenis keterangan dan setiap kolom menyatakan satu kelas. Pernyataan yang benar tentang matriks tersebut adalah ....",
+        "jawaban": "Matriks persegi dengan jumlah elemen diagonal utama $4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 5×5 dipilih dari 2 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Ada 5 elemen diagonal yang bebas, masing-masing 2 pilihan. Jadi ada 2^5=32 matriks.",
+      "distraktor": [
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan $33$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan $31$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan $34$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $32$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 5 elemen diagonal yang bebas, masing-masing 2 pilihan. Jadi ada 2^5=32 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2aa711c2b030f8f84b05a098",
+        "teks": "Diberikan klaim: \"Jika $A$ dan $A^t$ sama-sama matriks segitiga atas, maka $A$ adalah matriks identitas.\" Matriks berordo $3 \\times 3$ berikut yang merupakan contoh penyangkal klaim tersebut adalah ....",
+        "jawaban": "$\\begin{pmatrix} 2 & 0 & 0 \\\\ 0 & 3 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 4×4 dipilih dari 6 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$1296$",
+      "alasan_benar": "Ada 4 elemen diagonal yang bebas, masing-masing 6 pilihan. Jadi ada 6^4=1296 matriks.",
+      "distraktor": [
+        {
+          "teks": "$1297$",
+          "alasan": "Pilihan $1297$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1296$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$1295$",
+          "alasan": "Pilihan $1295$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $1296$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$1298$",
+          "alasan": "Pilihan $1298$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $1296$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 4 elemen diagonal yang bebas, masing-masing 6 pilihan. Jadi ada 6^4=1296 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34e45eca80337f97f10d5017",
+        "teks": "Setiap elemen matriks persegi berordo $3 \\times 3$ dipilih dari himpunan $\\{0, 1, 2\\}$. Banyak matriks yang sekaligus merupakan matriks segitiga bawah dan matriks simetris adalah ....",
+        "jawaban": "$27$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
+        "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
+      },
+      "cognitive_c": "C5",
+      "jumlah_langkah": 4,
+      "jenis_soal": "jenis_matriks_diagonal",
+      "alasan_level": "Target hard; variasi konsep jenis matriks diagonal. Kesulitan final menunggu validasi Gemini.",
+      "stimulus": null,
+      "pertanyaan": "Setiap elemen matriks diagonal berordo 4×4 dipilih dari 5 nilai berbeda yang memuat nol. Elemen di luar diagonal wajib nol. Berapa banyak matriks diagonal yang mungkin?",
+      "jawaban_benar": "$625$",
+      "alasan_benar": "Ada 4 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^4=625 matriks.",
+      "distraktor": [
+        {
+          "teks": "$626$",
+          "alasan": "Pilihan $626$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $625$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$624$",
+          "alasan": "Pilihan $624$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $625$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        },
+        {
+          "teks": "$627$",
+          "alasan": "Pilihan $627$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $625$. Periksa kembali langkah jenis matriks diagonal pada pembahasan."
+        }
+      ],
+      "pembahasan": "Ada 4 elemen diagonal yang bebas, masing-masing 5 pilihan. Jadi ada 5^4=625 matriks.",
+      "catatan": "codex-replenishment:kelas11_tl-b01-A-hard; generation_only; level target bukan label tervalidasi.",
+      "id": "kelas11_tl-b01-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef46da6370f1fc91955096e0",
+        "teks": "$K = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$\n\nSeorang siswa menyatakan bahwa matriks $K$ bukan matriks diagonal karena ada elemen diagonal utama yang bernilai nol. Pernyataan yang tepat tentang penalaran siswa tersebut adalah ....",
+        "jawaban": "Siswa keliru: matriks diagonal hanya mensyaratkan elemen di luar diagonal utama bernilai nol, sehingga $K$ adalah matriks diagonal",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&16\\\\16&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 68. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$60$",
+      "alasan_benar": "Determinan nol memberi xy=256; jumlah diagonal memberi x+y=68. Akar t²-68t+256=0 adalah 64 dan 4. Syarat x>y memilih x=64, y=4, sehingga selisihnya 60.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$61$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $60$."
+        },
+        {
+          "teks": "$120$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=256; jumlah diagonal memberi x+y=68. Akar t²-68t+256=0 adalah 64 dan 4. Syarat x>y memilih x=64, y=4, sehingga selisihnya 60.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "02efae58d2abc1412855c5eb",
+        "teks": "Transpos matriks $P$ adalah matriks $Q$ berordo $3 \\times 7$. Pernyataan yang benar tentang matriks $P$ adalah ....",
+        "jawaban": "$P$ merupakan matriks tegak yang memuat $21$ elemen",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&35\\\\35&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 74. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Determinan nol memberi xy=1225; jumlah diagonal memberi x+y=74. Akar t²-74t+1225=0 adalah 49 dan 25. Syarat x>y memilih x=49, y=25, sehingga selisihnya 24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=1225; jumlah diagonal memberi x+y=74. Akar t²-74t+1225=0 adalah 49 dan 25. Syarat x>y memilih x=49, y=25, sehingga selisihnya 24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34f0e546387d35ee3998f4ab",
+        "teks": "Jumlah semua elemen pada matriks identitas berordo $5 \\times 5$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&5\\\\5&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 26. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Determinan nol memberi xy=25; jumlah diagonal memberi x+y=26. Akar t²-26t+25=0 adalah 25 dan 1. Syarat x>y memilih x=25, y=1, sehingga selisihnya 24.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=25; jumlah diagonal memberi x+y=26. Akar t²-26t+25=0 adalah 25 dan 1. Syarat x>y memilih x=25, y=1, sehingga selisihnya 24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6b69eca4b040d37a29b5d3f",
+        "teks": "Matriks $M = \\begin{pmatrix} 3 & p + 4 & 0 \\\\ 3q - 6 & 6 & 2r + 2 \\\\ 0 & r + 1 & 8 \\end{pmatrix}$ merupakan matriks segitiga atas sekaligus matriks simetris. Nilai $p + q + r$ adalah ....",
+        "jawaban": "$-3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&6\\\\6&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 37. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$35$",
+      "alasan_benar": "Determinan nol memberi xy=36; jumlah diagonal memberi x+y=37. Akar t²-37t+36=0 adalah 36 dan 1. Syarat x>y memilih x=36, y=1, sehingga selisihnya 35.",
+      "distraktor": [
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $35$."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $35$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=36; jumlah diagonal memberi x+y=37. Akar t²-37t+36=0 adalah 36 dan 1. Syarat x>y memilih x=36, y=1, sehingga selisihnya 35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef46da6370f1fc91955096e0",
+        "teks": "$K = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$\n\nSeorang siswa menyatakan bahwa matriks $K$ bukan matriks diagonal karena ada elemen diagonal utama yang bernilai nol. Pernyataan yang tepat tentang penalaran siswa tersebut adalah ....",
+        "jawaban": "Siswa keliru: matriks diagonal hanya mensyaratkan elemen di luar diagonal utama bernilai nol, sehingga $K$ adalah matriks diagonal",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&8\\\\8&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 65. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Determinan nol memberi xy=64; jumlah diagonal memberi x+y=65. Akar t²-65t+64=0 adalah 64 dan 1. Syarat x>y memilih x=64, y=1, sehingga selisihnya 63.",
+      "distraktor": [
+        {
+          "teks": "$62$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $63$."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=64; jumlah diagonal memberi x+y=65. Akar t²-65t+64=0 adalah 64 dan 1. Syarat x>y memilih x=64, y=1, sehingga selisihnya 63.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e439d125d8cdf06783174929",
+        "teks": "Matriks $S$ berordo $3 \\times 3$ adalah matriks simetris dengan $a_{12} = 9$ dan $a_{23} = -4$. Nilai $a_{21} + a_{32}$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&12\\\\12&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 25. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Determinan nol memberi xy=144; jumlah diagonal memberi x+y=25. Akar t²-25t+144=0 adalah 16 dan 9. Syarat x>y memilih x=16, y=9, sehingga selisihnya 7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=144; jumlah diagonal memberi x+y=25. Akar t²-25t+144=0 adalah 16 dan 9. Syarat x>y memilih x=16, y=9, sehingga selisihnya 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "975b39930ae217460cb10da6",
+        "teks": "Matriks $K = \\begin{pmatrix} 3 & p + 3 & 0 \\\\ 0 & 5 & 3q - 12 \\\\ 0 & 0 & 2 \\end{pmatrix}$ merupakan matriks diagonal. Nilai $p \\cdot q$ adalah ....",
+        "jawaban": "$-12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&3\\\\3&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 10. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Determinan nol memberi xy=9; jumlah diagonal memberi x+y=10. Akar t²-10t+9=0 adalah 9 dan 1. Syarat x>y memilih x=9, y=1, sehingga selisihnya 8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=9; jumlah diagonal memberi x+y=10. Akar t²-10t+9=0 adalah 9 dan 1. Syarat x>y memilih x=9, y=1, sehingga selisihnya 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e0af16757d46f9066f868760",
+        "teks": "Matriks datar termasuk ke dalam kelompok matriks ....",
+        "jawaban": "persegi panjang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&6\\\\6&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 13. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Determinan nol memberi xy=36; jumlah diagonal memberi x+y=13. Akar t²-13t+36=0 adalah 9 dan 4. Syarat x>y memilih x=9, y=4, sehingga selisihnya 5.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=36; jumlah diagonal memberi x+y=13. Akar t²-13t+36=0 adalah 9 dan 4. Syarat x>y memilih x=9, y=4, sehingga selisihnya 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f6fe0e4f5622378138702ecd",
+        "teks": "Matriks segitiga atas berordo $6 \\times 6$ dan matriks diagonal berordo $6 \\times 6$ masing-masing dibuat dengan elemen tak nol sebanyak mungkin. Selisih banyak elemen tak nol kedua matriks tersebut adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&15\\\\15&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 34. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Determinan nol memberi xy=225; jumlah diagonal memberi x+y=34. Akar t²-34t+225=0 adalah 25 dan 9. Syarat x>y memilih x=25, y=9, sehingga selisihnya 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=225; jumlah diagonal memberi x+y=34. Akar t²-34t+225=0 adalah 25 dan 9. Syarat x>y memilih x=25, y=9, sehingga selisihnya 16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "efc1ddaf69870b66cfd4eb73",
+        "teks": "$A = \\begin{pmatrix} 4 & -1 & 7 \\\\ 3 & 0 & 5 \\end{pmatrix}$\n\nTranspos dari matriks $A$, yaitu $A^t$, adalah ....",
+        "jawaban": "$\\begin{pmatrix} 4 & 3 \\\\ -1 & 0 \\\\ 7 & 5 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&7\\\\7&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 50. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Determinan nol memberi xy=49; jumlah diagonal memberi x+y=50. Akar t²-50t+49=0 adalah 49 dan 1. Syarat x>y memilih x=49, y=1, sehingga selisihnya 48.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=49; jumlah diagonal memberi x+y=50. Akar t²-50t+49=0 adalah 49 dan 1. Syarat x>y memilih x=49, y=1, sehingga selisihnya 48.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ef46da6370f1fc91955096e0",
+        "teks": "$K = \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 0 & 0 \\\\ 0 & 0 & 5 \\end{pmatrix}$\n\nSeorang siswa menyatakan bahwa matriks $K$ bukan matriks diagonal karena ada elemen diagonal utama yang bernilai nol. Pernyataan yang tepat tentang penalaran siswa tersebut adalah ....",
+        "jawaban": "Siswa keliru: matriks diagonal hanya mensyaratkan elemen di luar diagonal utama bernilai nol, sehingga $K$ adalah matriks diagonal",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&20\\\\20&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 41. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Determinan nol memberi xy=400; jumlah diagonal memberi x+y=41. Akar t²-41t+400=0 adalah 25 dan 16. Syarat x>y memilih x=25, y=16, sehingga selisihnya 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=400; jumlah diagonal memberi x+y=41. Akar t²-41t+400=0 adalah 25 dan 16. Syarat x>y memilih x=25, y=16, sehingga selisihnya 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a5a86877ae7cf70501add9d8",
+        "teks": "Di antara matriks berordo $3 \\times 3$ berikut, yang merupakan matriks segitiga atas tetapi bukan matriks diagonal adalah ....",
+        "jawaban": "$\\begin{pmatrix} 2 & 5 & 1 \\\\ 0 & 3 & 4 \\\\ 0 & 0 & 6 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_singular_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks simetris $M=\\begin{pmatrix}x&8\\\\8&y\\end{pmatrix}$ mempunyai determinan nol dan jumlah elemen diagonal 20. Jika $x>y>0$, tentukan $x-y$.",
+      "jawaban_benar": "$12$",
+      "alasan_benar": "Determinan nol memberi xy=64; jumlah diagonal memberi x+y=20. Akar t²-20t+64=0 adalah 16 dan 4. Syarat x>y memilih x=16, y=4, sehingga selisihnya 12.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $12$."
+        },
+        {
+          "teks": "$24$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Determinan nol memberi xy=64; jumlah diagonal memberi x+y=20. Akar t²-20t+64=0 adalah 16 dan 4. Syarat x>y memilih x=16, y=4, sehingga selisihnya 12.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-a-hard-bt01-034"
     }
   ]
 }
