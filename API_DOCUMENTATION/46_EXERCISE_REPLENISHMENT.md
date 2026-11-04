@@ -25,6 +25,11 @@ bisa langsung diberikan kepada generator lama. Acuan soal tervalidasi atau
 sumber/halaman buku serta alokasi pilot diverifikasi sebelum membuat manifest.
 Jalankan planner ulang setelah hasil validasi atau sumber berubah.
 
+Untuk 2.028 tambahan `batch01`, format soal lengkap sudah diseragamkan di
+folder bab. Catatan pemeriksaan dan snapshot terpisah di
+`runs/exercise_replenishment/codex_batch01/audit/`; salinan khusus soal baru
+berformat `book … soal: [...]` berada di subfolder `generated/` pada run yang sama.
+
 ## Urutan penanganan
 
 1. Selesaikan kandidat **batch lama** yang belum selesai divalidasi, menggunakan

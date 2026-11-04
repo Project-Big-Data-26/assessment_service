@@ -39,9 +39,12 @@ yang ditulis generator juga usulan, bukan label hasil validasi independen.
 - JSON kerja: `output/exercise/<kelas>/batch01/babNN/<KODE>_<level>.json`.
 - Master dan metadata lama tetap ada, dengan kandidat baru ditambahkan di akhir.
 - Preview per kelas beserta acuan asli:
-  `output/exercise/<kelas>/batch01/_replenishment/PREVIEW.md`.
-- Snapshot blueprint: `_replenishment/blueprints.json` pada setiap kelas.
-- Pemeriksaan lokal per slot: `_replenishment/NN_KODE_level_checks.json`.
+  `runs/exercise_replenishment/codex_batch01/audit/<kelas>/PREVIEW.md`.
+- Snapshot blueprint: `audit/<kelas>/blueprints.json` pada folder run.
+- Pemeriksaan lokal per slot: `audit/<kelas>/NN_KODE_level_checks.json`.
+- Salinan khusus soal baru, dengan format lengkap `book`, `bab_no`, `subbab`,
+  `level`, `batch`, `skill_versi`, `soal`:
+  `runs/exercise_replenishment/codex_batch01/generated/<kelas>/babNN/KODE_level.json`.
 - Progres lengkap: `runs/exercise_replenishment/codex_batch01/PROGRESS.md`.
 - Bukti audit: `audit.json`, `katex_audit.json`, `tests.xml` pada folder progres.
 - Backup berkas sebelum penambahan: `codex_batch01/backups/<kelas>/...`.
@@ -49,6 +52,18 @@ yang ditulis generator juga usulan, bukan label hasil validasi independen.
 Soal lama, urutan master lama, metadata lama, dan hasil validasi lama tidak
 diganti. Acuan baru menggunakan `exercise_validated` atau `pretest_validated`,
 dengan ID sumber, teks dan kunci asli, snapshot, serta SHA-256.
+
+Folder `_replenishment` lama telah dipindahkan keluar dari `output/exercise`.
+Soal utama tetap di file bab; checks adalah catatan pemeriksaan yang terpisah.
+`acuan.snapshot` menunjuk path relatif root proyek. Manifest mengikat file soal
+melalui `files` dan berkas audit melalui `auditFiles`, sehingga penataan folder
+tidak melepas pemeriksaan integritas atau mengizinkan validasi otomatis.
+
+Format tambahan baru mengikuti susunan field soal lama, termasuk ID di akhir,
+pertanyaan, jawaban, alasan benar, tiga distraktor beserta alasannya, dan
+pembahasan. Opsi kosong yang tidak dipakai pada soal teks dihilangkan.
+Alasan distraktor menggunakan pemeriksaan nilai, batas, atau sifat konsep yang
+bisa ditunjukkan; bukan menyimpulkan penyebab kesalahan siswa tanpa bukti.
 
 ## Pemeriksaan
 

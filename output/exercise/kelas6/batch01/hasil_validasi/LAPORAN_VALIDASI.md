@@ -1,15 +1,17 @@
 # Validasi ulang soal kelas 6 — LLM blind N=1 lanjutan dengan hasil N=3 terdahulu dan diagnostik IndoBERT
 
-Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sd-grade-aware`.
+**Batch belum selesai:** 344/382 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
+
+Model penilai: `openai/gpt-oss-120b`. Prompt: `gemini-silver-math-3x4x3-v10-blind-key-verified`. Rubrik: `math-rubric-3x4x3-v8-sd-grade-aware`.
 
 Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terdahulu dipertahankan. Isi, kunci, solusi dan tiga label tetap diperiksa. Temuan konten atau abstain tetap inactive. Confidence N=1 pada JSON memakai round(100 * min(probabilitas label akhir LLM tiap head IndoBERT)); ini dukungan model, bukan konsistensi antar-run atau akurasi terukur; bukti ini tidak memenuhi provenance training N=3.
 
 Checkpoint dikunci dengan SHA-256 sebelum inferensi IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Prediksi model dipakai sebagai diagnostik; tidak diberikan kembali ke LLM.
 
-Jumlah soal: 327; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 243, "knowing": 63, "reasoning": 21}, "knowledgeDimension": {"procedural": 121, "conceptual": 188, "factual": 18, "metacognitive": 0}, "intendedDifficulty": {"Easy": 220, "Medium": 101, "Hard": 6}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 241, "knowing": 63, "reasoning": 20}, "knowledgeDimension": {"procedural": 120, "conceptual": 186, "factual": 18, "metacognitive": 0}, "intendedDifficulty": {"Easy": 220, "Medium": 99, "Hard": 5}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"silver_ready": 324, "revision_required": 2, "needs_ai_review": 1}`.
-Run awal sukses: 327/327; adjudikasi: 0; token sukses tercatat: 800,642.
+Jumlah soal: 382; distribusi label advisory: `{"mathCognitiveDomain": {"applying": 256, "knowing": 67, "reasoning": 21, "undecided": 38}, "knowledgeDimension": {"procedural": 134, "conceptual": 192, "factual": 18, "undecided": 38, "metacognitive": 0}, "intendedDifficulty": {"Easy": 234, "Medium": 104, "Hard": 6, "undecided": 38}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"applying": 254, "knowing": 67, "reasoning": 20}, "knowledgeDimension": {"procedural": 133, "conceptual": 190, "factual": 18, "metacognitive": 0}, "intendedDifficulty": {"Easy": 234, "Medium": 102, "Hard": 5}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"silver_ready": 341, "revision_required": 2, "needs_ai_review": 39}`.
+Run awal sukses: 344/382; adjudikasi: 0; token sukses tercatat: 842,569.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -22,8 +24,8 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 220 | 220 | [Easy.json](difficulty/Easy.json) |
-| Medium | 101 | 99 | [Medium.json](difficulty/Medium.json) |
+| Easy | 234 | 234 | [Easy.json](difficulty/Easy.json) |
+| Medium | 104 | 102 | [Medium.json](difficulty/Medium.json) |
 | Hard | 6 | 5 | [Hard.json](difficulty/Hard.json) |
 
 ## Perhitungan yang dipakai
@@ -32584,3 +32586,4284 @@ Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension":
 Status konten: `valid`. Catatan konten: .
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 328. Soal `bcc821599605fde4472903f5`
+
+Panjang seutas pita $\frac{3}{8}$ meter. Sebanyak $\frac{10}{13}$ bagian dari pita itu digunakan. Berapa meter panjang pita yang digunakan?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{119}{104}$ |
+| B | $- \frac{41}{104}$ |
+| C | $\frac{39}{80}$ |
+| D | $\frac{15}{52}$ |
+
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Panjang pita yang digunakan adalah hasil perkalian dari panjang total pita dengan bagian yang digunakan: (3/8) * (10/13) = 30/104. Menyederhanakan pecahan 30/104 dengan membagi pembilang dan penyebut dengan 2 menghasilkan 15/52.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a90447a60a64bb897789930d89696f31a0b680780f4736e09f7081f72ff6b857`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2240 |
+
+Run 1 — solusi: Panjang pita yang digunakan adalah hasil perkalian dari panjang total pita dengan bagian yang digunakan: (3/8) * (10/13) = 30/104. Menyederhanakan pecahan 30/104 dengan membagi pembilang dan penyebut dengan 2 menghasilkan 15/52.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan prosedur perkalian pecahan untuk menyelesaikan masalah rutin yang konteksnya jelas. Siswa hanya perlu mengalikan dua pecahan yang diberikan.. Bukti: Sebanyak 10/13 bagian dari pita itu digunakan. Berapa meter panjang pita yang digunakan?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami algoritme perkalian pecahan dan bagaimana menerapkannya dalam konteks bagian dari keseluruhan.. Bukti: Panjang seutas pita 3/8 meter. Sebanyak 10/13 bagian dari pita itu digunakan.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan jalur penyelesaian yang sangat jelas (perkalian langsung). Tidak ada kendala yang berinteraksi atau kebutuhan untuk merancang strategi kompleks. Beban kognitif rendah karena prosedur perkalian pecahan adalah materi standar kelas 6.. Bukti: Panjang seutas pita 3/8 meter. Sebanyak 10/13 bagian dari pita itu digunakan.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi perkalian pecahan dan penyederhanaan pecahan. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Perkalian pecahan adalah materi dasar kelas 6. Soal ini tidak memerlukan langkah tambahan selain operasi hitung langsung. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 130/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.064875; applying=0.935125; reasoning=0.000000 | applying | 0.935125 | 0.218617 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.001776; conceptual=0.989500; procedural=0.008724; metacognitive=0.000000 | conceptual | 0.989500 | 0.045489 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.755667; Medium=0.240731; Hard=0.003602 | Easy | 0.755667 | 0.523196 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.935125; −Σp ln(p) = 0.240175; H = 0.240175/ln(3) = 0.218617; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.989500; −Σp ln(p) = 0.063060; H = 0.063060/ln(4) = 0.045489; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.755667; −Σp ln(p) = 0.574789; H = 0.574789/ln(3) = 0.523196; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Perkalian Pecahan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Panjang seutas pita $\frac{3}{8}$ meter. Sebanyak $\frac{10}{13}$ bagian dari pita itu digunakan. Berapa meter panjang pita yang digunakan?
+Pilihan: A. $\frac{119}{104}$
+B. $- \frac{41}{104}$
+C. $\frac{39}{80}$
+D. $\frac{15}{52}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 329. Soal `839b766c578b51afd4fd29ab`
+
+Tersedia $\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg. Berapa loyang penuh paling banyak yang dapat dibuat?
+
+| Opsi | Isi |
+|---|---|
+| A | $12$ |
+| B | $10$ |
+| C | $9$ |
+| D | $11$ |
+
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Total adonan = 161/4 = 40,25 kg. Adonan per loyang = 4 kg. Banyak loyang penuh = floor(40,25 / 4) = floor(10,0625) = 10 loyang.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a5a52bc73aeb3bd3ef2e175ed9cf095a190dcfc87792209fa89120f11105f494`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2283 |
+
+Run 1 — solusi: Total adonan = 161/4 = 40,25 kg. Adonan per loyang = 4 kg. Banyak loyang penuh = floor(40,25 / 4) = floor(10,0625) = 10 loyang.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan prosedur pembagian pecahan atau desimal untuk menentukan berapa kali 4 kg dapat diambil dari 40,25 kg, kemudian menginterpretasikan hasil bagi untuk menentukan jumlah loyang penuh (pembulatan ke bawah). Ini adalah penerapan konsep pembagian dalam konteks rutin.. Bukti: Tersedia $\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg. Berapa loyang penuh paling banyak yang dapat dibuat?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritme pembagian pecahan dan bagaimana menerjemahkan hasil pembagian tersebut ke dalam konteks praktis (loyang penuh).. Bukti: Tersedia $\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg.
+- Intended difficulty `classify/Easy`: Soal ini tergolong Easy karena prosedurnya langsung (pembagian pecahan/desimal). Siswa hanya perlu melakukan satu operasi pembagian dan memahami konsep 'paling banyak' (pembulatan ke bawah). Tidak ada kendala yang saling berinteraksi atau kebutuhan strategi nonrutin.. Bukti: Tersedia $\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg. Berapa loyang penuh paling banyak yang dapat dibuat?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Operasi pembagian pecahan dan desimal dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 6 sudah mempelajari pembagian pecahan dan desimal. Soal ini adalah aplikasi langsung dari materi tersebut tanpa kerumitan tambahan. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 86/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.047620; applying=0.952380; reasoning=0.000000 | applying | 0.952380 | 0.174262 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.099113; conceptual=0.863073; procedural=0.037814; metacognitive=0.000000 | conceptual | 0.863073 | 0.346273 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.851559; Medium=0.144731; Hard=0.003710 | Easy | 0.851559 | 0.398087 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.952380; −Σp ln(p) = 0.191447; H = 0.191447/ln(3) = 0.174262; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.863073; −Σp ln(p) = 0.480036; H = 0.480036/ln(4) = 0.346273; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.851559; −Σp ln(p) = 0.437344; H = 0.437344/ln(3) = 0.398087; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Pembagian Pecahan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tersedia $\frac{161}{4}$ kg adonan. Tiap loyang memerlukan $4$ kg. Berapa loyang penuh paling banyak yang dapat dibuat?
+Pilihan: A. $12$
+B. $10$
+C. $9$
+D. $11$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 330. Soal `e39cbfbbcb6f32e97c389ce7`
+
+Rasio bibit mawar terhadap melati adalah 11:2. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?
+
+| Opsi | Isi |
+|---|---|
+| A | $65$ |
+| B | $67$ |
+| C | $66$ |
+| D | $68$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total bagian rasio adalah 11 + 2 = 13. Nilai satu bagian adalah 78 / 13 = 6. Jumlah bibit mawar adalah 11 bagian * 6 = 66.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a26a96bec5a5e8b4b7bc7fcb4db1022fc55354c107a3a4abf218c20d03bd615b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Medium | 2223 |
+
+Run 1 — solusi: Total bagian rasio adalah 11 + 2 = 13. Nilai satu bagian adalah 78 / 13 = 6. Jumlah bibit mawar adalah 11 bagian * 6 = 66.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rasio bagian-bagian untuk menentukan nilai satu bagian dari total yang diketahui, kemudian mengalikan dengan bagian mawar. Ini adalah penerapan prosedur rutin dalam konteks rasio.. Bukti: Rasio bibit mawar terhadap melati adalah 11:2; jumlah seluruh bibit 78; berapa banyak bibit mawar?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman tentang prinsip rasio dan bagaimana menghubungkan rasio bagian-bagian dengan total keseluruhan.. Bukti: Rasio bibit mawar terhadap melati adalah 11:2; jumlah seluruh bibit 78
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena memerlukan dua langkah logis yang saling terkait: menjumlahkan rasio untuk mencari nilai per bagian, lalu mengalikan dengan bagian mawar. Meskipun prosedurnya rutin, siswa harus memahami hubungan antara rasio dan total, bukan sekadar operasi satu langkah.. Bukti: Rasio bibit mawar terhadap melati adalah 11:2; jumlah seluruh bibit 78
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar rasio dan pembagian bilangan cacah. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 6 sudah mempelajari rasio. Soal ini menuntut pemahaman hubungan bagian-keseluruhan yang merupakan standar kompetensi kelas 6. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 75/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.055270; applying=0.944730; reasoning=0.000000 | applying | 0.944730 | 0.194562 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.344955; conceptual=0.609715; procedural=0.045331; metacognitive=0.000000 | conceptual | 0.609715 | 0.583612 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.899231; Medium=0.098366; Hard=0.002403 | Easy | 0.899231 | 0.307770 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.944730; −Σp ln(p) = 0.213748; H = 0.213748/ln(3) = 0.194562; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.609715; −Σp ln(p) = 0.809058; H = 0.809058/ln(4) = 0.583612; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.899231; −Σp ln(p) = 0.338120; H = 0.338120/ln(3) = 0.307770; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Penerapan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Rasio bibit mawar terhadap melati adalah 11:2. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?
+Pilihan: A. $65$
+B. $67$
+C. $66$
+D. $68$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 331. Soal `8ca127bd00647e8171b8705b`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 3, 3, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $3$ |
+| B | $2$ |
+| C | $4$ |
+| D | $5$ |
+
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Tiga menara kubus diletakkan berjajar. Karena setiap menara menempati satu petak terpisah, maka dilihat dari atas, setiap menara akan menempati satu petak. Tiga menara berarti 3 petak yang tampak terisi.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `91097a1be59c2505817642c8a71d33ad3209d29e9fef557ee6ac071348ce8fd3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2260 |
+
+Run 1 — solusi: Tiga menara kubus diletakkan berjajar. Karena setiap menara menempati satu petak terpisah, maka dilihat dari atas, setiap menara akan menempati satu petak. Tiga menara berarti 3 petak yang tampak terisi.
+- Domain kognitif `classify/applying`: Soal ini meminta siswa untuk memahami representasi visual dari objek 3D ke 2D (pandangan atas). Siswa perlu mengenali bahwa jumlah menara yang berjajar secara terpisah akan menghasilkan jumlah petak yang sama dengan jumlah menara saat dilihat dari atas.. Bukti: Tiga menara kubus diletakkan berjajar dari kiri ke kanan; Jika dilihat dari atas, setiap menara menempati satu petak terpisah
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami konsep dasar proyeksi atau pandangan atas (top view) dari susunan benda 3D, yang merupakan konsep spasial dasar.. Bukti: Tiga menara kubus diletakkan berjajar; Jika dilihat dari atas, setiap menara menempati satu petak terpisah
+- Intended difficulty `classify/Easy`: Soal ini sangat langsung. Informasi kunci bahwa setiap menara menempati satu petak terpisah sudah diberikan secara eksplisit, sehingga siswa tidak perlu melakukan inferensi kompleks tentang tumpang tindih atau perspektif yang sulit.. Bukti: Tiga menara kubus diletakkan berjajar dari kiri ke kanan; Jika dilihat dari atas, setiap menara menempati satu petak terpisah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang pandangan atas (top view) objek sederhana. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | True |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk kelas 6, memahami pandangan atas dari susunan kubus sederhana adalah tugas rutin yang tidak memerlukan perencanaan langkah yang rumit. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.000123; applying=0.999877; reasoning=0.000000 | applying | 0.999877 | 0.001117 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.285256; conceptual=0.696995; procedural=0.017749; metacognitive=0.000000 | conceptual | 0.696995 | 0.491215 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.849403; Medium=0.147954; Hard=0.002643 | Easy | 0.849403 | 0.397819 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999877; −Σp ln(p) = 0.001227; H = 0.001227/ln(3) = 0.001117; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.696995; −Σp ln(p) = 0.680968; H = 0.680968/ln(4) = 0.491215; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.849403; −Σp ln(p) = 0.437048; H = 0.437048/ln(3) = 0.397819; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 3, 3, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $3$
+B. $2$
+C. $4$
+D. $5$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 332. Soal `1f318782f9d8c898975393eb`
+
+Massa sebuah paket 3,2 kg. Setelah ditambah kemasan, massanya bertambah 0,6 kg. Berapa massa paket beserta kemasan?
+
+| Opsi | Isi |
+|---|---|
+| A | 3,8 |
+| B | 2,6 |
+| C | 3,26 |
+| D | 9,2 |
+
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `3,8`.
+Solusi minimum hasil AI: Massa total = 3,2 kg + 0,6 kg = 3,8 kg.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `84ef9e691bc5f9549640f8da751cc69622e50f55d5db756d17f9088e92de306d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2519 |
+
+Run 1 — solusi: Massa total = 3,2 kg + 0,6 kg = 3,8 kg.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan operasi penjumlahan bilangan desimal dalam konteks rutin sehari-hari. Prosedur yang digunakan bersifat langsung dan familiar.. Bukti: Massa sebuah paket 3,2 kg. Setelah ditambah kemasan, massanya bertambah 0,6 kg.
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang algoritma penjumlahan bilangan desimal, yang merupakan pengetahuan prosedural.. Bukti: 3,2 kg; 0,6 kg
+- Intended difficulty `classify/Easy`: Soal ini merupakan operasi penjumlahan satu langkah yang sangat mendasar. Tidak ada kendala yang berinteraksi atau kebutuhan perencanaan yang kompleks.. Bukti: Massa sebuah paket 3,2 kg.; massanya bertambah 0,6 kg.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan desimal. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Penjumlahan desimal adalah materi dasar yang sudah dikuasai di kelas 6. Soal ini tidak menuntut kemampuan lebih dari sekadar melakukan operasi hitung tersebut. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 81/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.991555; applying=0.008445; reasoning=0.000000 | knowing | 0.991555 | 0.044352 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.773080; conceptual=0.207200; procedural=0.019720; metacognitive=0.000000 | factual | 0.773080 | 0.434641 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.901559; Medium=0.095947; Hard=0.002494 | Easy | 0.901559 | 0.303359 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.991555; −Σp ln(p) = 0.048725; H = 0.048725/ln(3) = 0.044352; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.773080; −Σp ln(p) = 0.602540; H = 0.602540/ln(4) = 0.434641; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.901559; −Σp ln(p) = 0.333274; H = 0.333274/ln(3) = 0.303359; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Bilangan Desimal
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Massa sebuah paket 3,2 kg. Setelah ditambah kemasan, massanya bertambah 0,6 kg. Berapa massa paket beserta kemasan?
+Pilihan: A. 3,8
+B. 2,6
+C. 3,26
+D. 9,2
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 333. Soal `12163b6b85dcd7244764f495`
+
+Massa sebuah paket 10,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?
+
+| Opsi | Isi |
+|---|---|
+| A | 14,9 |
+| B | 10,94 |
+| C | 11,3 |
+| D | 10,5 |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Massa total = massa paket + tambahan massa kemasan = 10,9 kg + 0,4 kg = 11,3 kg.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `eefd7b3bca78024e54ba46fcbc6df44707b8500449c4a2b26de495c00da6adcb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2139 |
+
+Run 1 — solusi: Massa total = massa paket + tambahan massa kemasan = 10,9 kg + 0,4 kg = 11,3 kg.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan operasi penjumlahan desimal sederhana untuk menentukan total massa. Ini adalah prosedur langsung yang sudah dipelajari di kelas 6, sehingga masuk dalam domain knowing.. Bukti: Massa sebuah paket 10,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritme penjumlahan desimal (prosedural) untuk menyelesaikan masalah ini.. Bukti: 10,9 kg; 0,4 kg; bertambah
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu langkah operasi penjumlahan desimal. Tidak ada kendala yang berinteraksi atau kebutuhan strategi kompleks.. Bukti: 10,9 kg; bertambah 0,4 kg
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan desimal |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Penjumlahan desimal adalah materi dasar kelas 6. Soal ini tidak memerlukan perencanaan langkah atau integrasi konsep, sehingga tergolong mudah. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 81/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.994171; applying=0.005829; reasoning=0.000000 | knowing | 0.994171 | 0.032587 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.763478; conceptual=0.217786; procedural=0.018736; metacognitive=0.000000 | factual | 0.763478 | 0.441839 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.904353; Medium=0.093167; Hard=0.002481 | Easy | 0.904353 | 0.297576 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.994171; −Σp ln(p) = 0.035801; H = 0.035801/ln(3) = 0.032587; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.763478; −Σp ln(p) = 0.612519; H = 0.612519/ln(4) = 0.441839; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.904353; −Σp ln(p) = 0.326920; H = 0.326920/ln(3) = 0.297576; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Bilangan Desimal
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Massa sebuah paket 10,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?
+Pilihan: A. 14,9
+B. 10,94
+C. 11,3
+D. 10,5
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 334. Soal `706a58689f9e741b6310ed58`
+
+Rasio bibit mawar terhadap melati adalah 15:11. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?
+
+| Opsi | Isi |
+|---|---|
+| A | $45$ |
+| B | $44$ |
+| C | $47$ |
+| D | $46$ |
+
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `45`.
+Solusi minimum hasil AI: Total rasio = 15 + 11 = 26. Nilai satu bagian = 78 / 26 = 3. Banyak bibit mawar = 15 * 3 = 45.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4197c569598f0e7ab590a9852d25dfa1bfc6c9637ce498fa571645e4bbd1fba0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2248 |
+
+Run 1 — solusi: Total rasio = 15 + 11 = 26. Nilai satu bagian = 78 / 26 = 3. Banyak bibit mawar = 15 * 3 = 45.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rasio bagian-bagian untuk menentukan nilai satu bagian dari total yang diketahui, kemudian mengalikan dengan bagian yang ditanyakan. Ini adalah penerapan prosedur rutin pada konteks rasio.. Bukti: Rasio bibit mawar terhadap melati adalah 15:11; jumlah seluruh bibit 78
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang hubungan rasio dan total (konseptual) serta penggunaan algoritma pembagian dan perkalian untuk menyelesaikan masalah (prosedural).. Bukti: Rasio bibit mawar terhadap melati adalah 15:11; jumlah seluruh bibit 78
+- Intended difficulty `classify/Medium`: Soal ini dikategorikan Medium karena siswa harus melakukan dua langkah yang saling terkait: menjumlahkan rasio untuk mendapatkan total bagian, lalu membagi total bibit dengan total bagian tersebut sebelum mengalikan kembali. Meskipun prosedurnya familiar, terdapat ketergantungan langkah yang memerlukan pemahaman hubungan antara rasio dan total.. Bukti: Rasio bibit mawar terhadap melati adalah 15:11; jumlah seluruh bibit 78
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan bulat, konsep rasio, dan pembagian bilangan bulat. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 6 sudah mempelajari rasio. Soal ini menuntut pemahaman hubungan bagian-keseluruhan yang merupakan standar kompetensi kelas 6. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 75/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.058386; applying=0.941614; reasoning=0.000000 | applying | 0.941614 | 0.202530 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.339781; conceptual=0.617328; procedural=0.042891; metacognitive=0.000000 | conceptual | 0.617328 | 0.576802 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.897068; Medium=0.100475; Hard=0.002457 | Easy | 0.897068 | 0.312289 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.941614; −Σp ln(p) = 0.222502; H = 0.222502/ln(3) = 0.202530; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.617328; −Σp ln(p) = 0.799617; H = 0.799617/ln(4) = 0.576802; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.897068; −Σp ln(p) = 0.343084; H = 0.343084/ln(3) = 0.312289; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Penerapan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Rasio bibit mawar terhadap melati adalah 15:11. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?
+Pilihan: A. $45$
+B. $44$
+C. $47$
+D. $46$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 335. Soal `1f4d2f954a6da65fac2fa96a`
+
+Rasio bibit mawar terhadap melati adalah 9:10. Jika jumlah seluruh bibit 76, berapa banyak bibit mawar?
+
+| Opsi | Isi |
+|---|---|
+| A | $35$ |
+| B | $37$ |
+| C | $36$ |
+| D | $38$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Total rasio = 9 + 10 = 19. Nilai satu bagian = 76 / 19 = 4. Jumlah bibit mawar = 9 bagian * 4 = 36.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `76e083fa1371e60d4df3bcbe785f03899a0a59154fdd28402cd5c786b18e0836`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Medium | 2197 |
+
+Run 1 — solusi: Total rasio = 9 + 10 = 19. Nilai satu bagian = 76 / 19 = 4. Jumlah bibit mawar = 9 bagian * 4 = 36.
+- Domain kognitif `classify/applying`: Siswa perlu menerapkan konsep rasio bagian-bagian untuk menentukan nilai satu bagian dari total yang diketahui, kemudian mengalikan dengan bagian yang ditanyakan. Ini adalah penerapan prosedur standar pada konteks rutin.. Bukti: Rasio bibit mawar terhadap melati adalah 9:10; jumlah seluruh bibit 76
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman tentang hubungan rasio dan total (konsep) serta penggunaan algoritma pembagian dan perkalian untuk menyelesaikannya (prosedural).. Bukti: Rasio bibit mawar terhadap melati adalah 9:10; jumlah seluruh bibit 76
+- Intended difficulty `classify/Medium`: Soal ini termasuk Medium karena memerlukan pemahaman hubungan antara rasio bagian-bagian dengan total (jumlah rasio), yang merupakan langkah tambahan dibanding soal rasio satu langkah. Namun, jalurnya sangat rutin dan familiar bagi siswa kelas 6.. Bukti: Rasio bibit mawar terhadap melati adalah 9:10; jumlah seluruh bibit 76
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan bulat, pembagian bilangan bulat, konsep dasar rasio. |
+| dependentSteps | 3 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 1 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 6 sudah mempelajari rasio dan proporsi. Menghitung nilai per bagian dari total adalah prosedur standar yang rutin. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Medium": 1} | single_run / single_run | Medium |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 75/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.016721; applying=0.983279; reasoning=0.000000 | applying | 0.983279 | 0.077360 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.382504; conceptual=0.579497; procedural=0.037999; metacognitive=0.000000 | conceptual | 0.579497 | 0.582869 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.899809; Medium=0.097742; Hard=0.002449 | Easy | 0.899809 | 0.306760 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.983279; −Σp ln(p) = 0.084989; H = 0.084989/ln(3) = 0.077360; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.579497; −Σp ln(p) = 0.808028; H = 0.808028/ln(4) = 0.582869; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.899809; −Σp ln(p) = 0.337011; H = 0.337011/ln(3) = 0.306760; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Penerapan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Rasio bibit mawar terhadap melati adalah 9:10. Jika jumlah seluruh bibit 76, berapa banyak bibit mawar?
+Pilihan: A. $35$
+B. $37$
+C. $36$
+D. $38$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Medium"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Medium", "agreement": false}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 336. Soal `53c5a4bdb518f2a6dc533f26`
+
+Massa sebuah paket 8,4 kg. Setelah ditambah kemasan, massanya bertambah 0,2 kg. Berapa massa paket beserta kemasan?
+
+| Opsi | Isi |
+|---|---|
+| A | 8,42 |
+| B | 8,2 |
+| C | 10,4 |
+| D | 8,6 |
+
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `8,6`.
+Solusi minimum hasil AI: Massa total = massa paket + tambahan massa kemasan = 8,4 kg + 0,2 kg = 8,6 kg.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `393e0681c8f32d09a3a1b912763834b76ce95c8d8e371826bfd46d71491a961d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2196 |
+
+Run 1 — solusi: Massa total = massa paket + tambahan massa kemasan = 8,4 kg + 0,2 kg = 8,6 kg.
+- Domain kognitif `classify/knowing`: Soal meminta siswa melakukan operasi penjumlahan desimal sederhana berdasarkan informasi yang diberikan secara eksplisit. Siswa hanya perlu mengenali prosedur penjumlahan desimal untuk menyelesaikan masalah ini.. Bukti: Massa sebuah paket 8,4 kg.; Setelah ditambah kemasan, massanya bertambah 0,2 kg.; Berapa massa paket beserta kemasan?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman prosedural dasar mengenai operasi penjumlahan bilangan desimal.. Bukti: 8,4 kg; 0,2 kg; bertambah
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan satu langkah operasi penjumlahan desimal tanpa ada kendala atau langkah tambahan yang kompleks. Jalur penyelesaian sangat jelas dan familiar bagi siswa kelas 6.. Bukti: Massa sebuah paket 8,4 kg.; Setelah ditambah kemasan, massanya bertambah 0,2 kg.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan desimal dengan nilai tempat yang sama. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Penjumlahan desimal adalah materi dasar yang sudah dikuasai di kelas 6. Tidak ada tuntutan perencanaan atau integrasi konsep yang kompleks. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 81/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.992695; applying=0.007305; reasoning=0.000000 | knowing | 0.992695 | 0.039335 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.780803; conceptual=0.202394; procedural=0.016803; metacognitive=0.000000 | factual | 0.780803 | 0.422124 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.902433; Medium=0.095036; Hard=0.002531 | Easy | 0.902433 | 0.301694 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.992695; −Σp ln(p) = 0.043214; H = 0.043214/ln(3) = 0.039335; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.780803; −Σp ln(p) = 0.585188; H = 0.585188/ln(4) = 0.422124; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.902433; −Σp ln(p) = 0.331445; H = 0.331445/ln(3) = 0.301694; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Bilangan Desimal
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Massa sebuah paket 8,4 kg. Setelah ditambah kemasan, massanya bertambah 0,2 kg. Berapa massa paket beserta kemasan?
+Pilihan: A. 8,42
+B. 8,2
+C. 10,4
+D. 8,6
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 337. Soal `d5d005f6d89b933e25a27c65`
+
+Massa sebuah paket 13,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?
+
+| Opsi | Isi |
+|---|---|
+| A | 13,94 |
+| B | 13,5 |
+| C | 17,9 |
+| D | 14,3 |
+
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `14,3`.
+Solusi minimum hasil AI: Massa total = massa awal + tambahan massa = 13,9 kg + 0,4 kg = 14,3 kg.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f67d4f31e5ff8dec47e8069d5c990f5d8639c40275caff2f9acde532d933affa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2145 |
+
+Run 1 — solusi: Massa total = massa awal + tambahan massa = 13,9 kg + 0,4 kg = 14,3 kg.
+- Domain kognitif `classify/applying`: Soal meminta siswa melakukan operasi penjumlahan bilangan desimal sederhana untuk menentukan total massa. Ini adalah prosedur langsung yang sudah dipelajari di kelas 6, sehingga termasuk dalam domain applying.. Bukti: Massa sebuah paket 13,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman tentang algoritma penjumlahan bilangan desimal, yang merupakan bagian dari pengetahuan prosedural.. Bukti: 13,9 kg; 0,4 kg; bertambah
+- Intended difficulty `classify/Easy`: Soal ini sangat mudah karena hanya memerlukan satu langkah operasi penjumlahan bilangan desimal tanpa kendala tambahan atau langkah yang saling bergantung.. Bukti: 13,9 kg; 0,4 kg; bertambah
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan desimal |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Penjumlahan desimal adalah materi dasar kelas 6. Soal tidak memiliki jebakan atau kompleksitas tambahan. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 81/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.987332; applying=0.012668; reasoning=0.000000 | knowing | 0.987332 | 0.061831 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.748301; conceptual=0.231530; procedural=0.020169; metacognitive=0.000000 | factual | 0.748301 | 0.457653 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.902142; Medium=0.095317; Hard=0.002541 | Easy | 0.902142 | 0.302322 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.987332; −Σp ln(p) = 0.067928; H = 0.067928/ln(3) = 0.061831; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.748301; −Σp ln(p) = 0.634441; H = 0.634441/ln(4) = 0.457653; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.902142; −Σp ln(p) = 0.332135; H = 0.332135/ln(3) = 0.302322; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Bilangan Desimal
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Massa sebuah paket 13,9 kg. Setelah ditambah kemasan, massanya bertambah 0,4 kg. Berapa massa paket beserta kemasan?
+Pilihan: A. 13,94
+B. 13,5
+C. 17,9
+D. 14,3
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "applying", "agreement": false}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 338. Soal `7b3002c8381318bddecc0527`
+
+Massa sebuah paket 4,9 kg. Setelah ditambah kemasan, massanya bertambah 0,2 kg. Berapa massa paket beserta kemasan?
+
+| Opsi | Isi |
+|---|---|
+| A | 5,1 |
+| B | 6,9 |
+| C | 4,92 |
+| D | 4,7 |
+
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Massa total = 4,9 kg + 0,2 kg = 5,1 kg.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `165a8dd5462d563e8719f7e2c3e802f9aefa8a1a9cefcb613ac05914b956d0aa`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2737 |
+
+Run 1 — solusi: Massa total = 4,9 kg + 0,2 kg = 5,1 kg.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta siswa melakukan operasi penjumlahan dua bilangan desimal secara langsung, yang merupakan prosedur dasar.. Bukti: Massa sebuah paket 4,9 kg.; Setelah ditambah kemasan, massanya bertambah 0,2 kg.
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma penjumlahan bilangan desimal dengan memperhatikan nilai tempat persepuluhan.. Bukti: Berapa massa paket beserta kemasan?
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung konsep penjumlahan desimal. Jalur penyelesaian sangat jelas, hanya satu langkah operasi, dan tidak ada kendala yang berinteraksi.. Bukti: Massa sebuah paket 4,9 kg.; Setelah ditambah kemasan, massanya bertambah 0,2 kg.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Penjumlahan bilangan desimal dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Penjumlahan desimal adalah materi dasar kelas 6 yang rutin dilakukan. Tidak ada jebakan atau kompleksitas tambahan dalam soal ini. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 81/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.989547; applying=0.010453; reasoning=0.000000 | knowing | 0.989547 | 0.052860 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.785909; conceptual=0.196701; procedural=0.017390; metacognitive=0.000000 | factual | 0.785909 | 0.418127 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.900802; Medium=0.096694; Hard=0.002504 | Easy | 0.900802 | 0.304934 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.989547; −Σp ln(p) = 0.058073; H = 0.058073/ln(3) = 0.052860; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.785909; −Σp ln(p) = 0.579647; H = 0.579647/ln(4) = 0.418127; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.900802; −Σp ln(p) = 0.335004; H = 0.335004/ln(3) = 0.304934; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Bilangan Desimal
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Massa sebuah paket 4,9 kg. Setelah ditambah kemasan, massanya bertambah 0,2 kg. Berapa massa paket beserta kemasan?
+Pilihan: A. 5,1
+B. 6,9
+C. 4,92
+D. 4,7
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "knowing", "blindLabel": "knowing", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 339. Soal `5231ef25739bcfcf6401d653`
+
+Satu paket berisi 12 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?
+
+| Opsi | Isi |
+|---|---|
+| A | $5001$ |
+| B | $5002$ |
+| C | $5000$ |
+| D | $4999$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Harga per bibit = Total harga / Jumlah bibit = Rp60.000,00 / 12 = Rp5.000,00.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `feb3a5490a8a51d95f733f07116dd4e53fa1b27814ab83053a90dd4841af09f6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2200 |
+
+Run 1 — solusi: Harga per bibit = Total harga / Jumlah bibit = Rp60.000,00 / 12 = Rp5.000,00.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep pembagian untuk menentukan nilai satuan (unit price) dari rasio yang diberikan. Ini adalah prosedur rutin yang langsung.. Bukti: Satu paket berisi 12 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami konsep harga satuan sebagai hubungan antara total harga dan jumlah barang, yang merupakan pengetahuan prosedural dasar.. Bukti: Berapa harga setiap bibit jika harganya sama?
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dengan satu langkah penyelesaian (pembagian). Tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.. Bukti: Satu paket berisi 12 bibit dan harganya Rp60.000,00.; Berapa harga setiap bibit
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pembagian bilangan cacah dan konsep harga satuan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Materi harga satuan adalah standar kurikulum kelas 6. Soal ini sangat langsung dan tidak memerlukan perencanaan langkah tambahan. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 79/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.004505; applying=0.995495; reasoning=0.000000 | applying | 0.995495 | 0.026244 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.477272; conceptual=0.514323; procedural=0.008405; metacognitive=0.000000 | conceptual | 0.514323 | 0.530309 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.908765; Medium=0.089217; Hard=0.002019 | Easy | 0.908765 | 0.286794 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.995495; −Σp ln(p) = 0.028832; H = 0.028832/ln(3) = 0.026244; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.514323; −Σp ln(p) = 0.735164; H = 0.735164/ln(4) = 0.530309; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.908765; −Σp ln(p) = 0.315076; H = 0.315076/ln(3) = 0.286794; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Satu paket berisi 12 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?
+Pilihan: A. $5001$
+B. $5002$
+C. $5000$
+D. $4999$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 340. Soal `66253a05e5500e61c140de5d`
+
+Satu paket berisi 6 bibit dan harganya Rp48.000,00. Berapa harga setiap bibit jika harganya sama?
+
+| Opsi | Isi |
+|---|---|
+| A | $7999$ |
+| B | $8001$ |
+| C | $8002$ |
+| D | $8000$ |
+
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Harga per bibit = Total harga / Jumlah bibit = Rp48.000,00 / 6 = Rp8.000,00.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8cb6bcd68b82c826ec486dc0cb1de4a13fb4080e33076febbb2fa6d242000771`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2832 |
+
+Run 1 — solusi: Harga per bibit = Total harga / Jumlah bibit = Rp48.000,00 / 6 = Rp8.000,00.
+- Domain kognitif `classify/knowing`: Soal ini memerlukan penerapan langsung prosedur pembagian untuk menentukan harga satuan, yang merupakan prosedur rutin bagi siswa kelas 6.. Bukti: Satu paket berisi 6 bibit dan harganya Rp48.000,00.; Berapa harga setiap bibit jika harganya sama?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji kemampuan siswa dalam menggunakan algoritme pembagian untuk menyelesaikan masalah harga satuan.. Bukti: Berapa harga setiap bibit jika harganya sama?
+- Intended difficulty `classify/Easy`: Soal ini bersifat langsung dengan satu langkah penyelesaian yang jelas dan familiar bagi siswa kelas 6.. Bukti: Satu paket berisi 6 bibit dan harganya Rp48.000,00.; Berapa harga setiap bibit jika harganya sama?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pembagian bilangan cacah. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 6 sudah terbiasa dengan konsep harga satuan dan operasi pembagian dasar. Tidak ada kendala atau langkah tambahan yang diperlukan. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 79/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.000879; applying=0.999121; reasoning=0.000000 | applying | 0.999121 | 0.006431 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.454751; conceptual=0.534572; procedural=0.010676; metacognitive=0.000000 | conceptual | 0.534572 | 0.534959 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.900226; Medium=0.097599; Hard=0.002175 | Easy | 0.900226 | 0.304983 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.999121; −Σp ln(p) = 0.007065; H = 0.007065/ln(3) = 0.006431; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.534572; −Σp ln(p) = 0.741610; H = 0.741610/ln(4) = 0.534959; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.900226; −Σp ln(p) = 0.335058; H = 0.335058/ln(3) = 0.304983; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Satu paket berisi 6 bibit dan harganya Rp48.000,00. Berapa harga setiap bibit jika harganya sama?
+Pilihan: A. $7999$
+B. $8001$
+C. $8002$
+D. $8000$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "knowing", "agreement": false}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 341. Soal `68c07b8340f335c8c521c4da`
+
+Satu paket berisi 6 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?
+
+| Opsi | Isi |
+|---|---|
+| A | $9999$ |
+| B | $10000$ |
+| C | $10002$ |
+| D | $10001$ |
+
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Harga per bibit = Total harga / Jumlah bibit = Rp60.000,00 / 6 = Rp10.000,00.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `356af8cbce203c2ae2710c936c6ee7309ccd42dd437ac179ec6ca5d213eb9fa7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2232 |
+
+Run 1 — solusi: Harga per bibit = Total harga / Jumlah bibit = Rp60.000,00 / 6 = Rp10.000,00.
+- Domain kognitif `classify/applying`: Soal meminta siswa menerapkan konsep pembagian untuk menentukan nilai satuan (unit price) dari rasio yang diberikan. Prosedur ini bersifat langsung dan rutin bagi siswa kelas 6.. Bukti: Satu paket berisi 6 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit
+- Dimensi pengetahuan `classify/conceptual`: Siswa perlu memahami hubungan antara total harga dan jumlah unit (konsep rasio/unit price) serta menerapkan algoritma pembagian yang sesuai.. Bukti: Berapa harga setiap bibit jika harganya sama?
+- Intended difficulty `classify/Easy`: Soal ini merupakan penerapan langsung dari konsep pembagian untuk mencari nilai satuan. Jalur penyelesaian sangat jelas, hanya melibatkan satu langkah operasi pembagian sederhana, dan tidak ada kendala yang berinteraksi atau kebutuhan untuk memilih strategi yang kompleks.. Bukti: Satu paket berisi 6 bibit dan harganya Rp60.000,00.; Berapa harga setiap bibit
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep pembagian bilangan cacah dan konsep dasar harga satuan. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Mencari harga satuan adalah materi standar kelas 6. Soal tidak memiliki jebakan atau kompleksitas tambahan, sehingga tergolong mudah. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 79/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.001888; applying=0.998112; reasoning=0.000000 | applying | 0.998112 | 0.012496 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.481966; conceptual=0.509195; procedural=0.008838; metacognitive=0.000000 | conceptual | 0.509195 | 0.531806 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.901740; Medium=0.096123; Hard=0.002137 | Easy | 0.901740 | 0.301780 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.998112; −Σp ln(p) = 0.013728; H = 0.013728/ln(3) = 0.012496; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.509195; −Σp ln(p) = 0.737239; H = 0.737239/ln(4) = 0.531806; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.901740; −Σp ln(p) = 0.331539; H = 0.331539/ln(3) = 0.301780; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Satu paket berisi 6 bibit dan harganya Rp60.000,00. Berapa harga setiap bibit jika harganya sama?
+Pilihan: A. $9999$
+B. $10000$
+C. $10002$
+D. $10001$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 342. Soal `81dd90054030395f008c4c51`
+
+Untuk membuat 9 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 27 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $32$ |
+| B | $33$ |
+| C | $34$ |
+| D | $35$ |
+
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `33`.
+Solusi minimum hasil AI: Rasio gelas terhadap sirup adalah 9:11. Untuk 27 gelas, faktor pengalinya adalah 27/9 = 3. Maka, jumlah sirup yang dibutuhkan adalah 11 * 3 = 33 sendok.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6368c575c8351a2ed01cc5e2486c691114f98be4e27914b5f2039fc170be24d9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 3056 |
+
+Run 1 — solusi: Rasio gelas terhadap sirup adalah 9:11. Untuk 27 gelas, faktor pengalinya adalah 27/9 = 3. Maka, jumlah sirup yang dibutuhkan adalah 11 * 3 = 33 sendok.
+- Domain kognitif `classify/applying`: Siswa menerapkan konsep rasio senilai untuk menyelesaikan masalah proporsi sederhana dengan faktor pengali bilangan bulat.. Bukti: Untuk membuat 9 gelas minuman dibutuhkan 11 sendok sirup.; berapa sendok sirup untuk 27 gelas?
+- Dimensi pengetahuan `classify/procedural`: Siswa menggunakan prosedur perkalian untuk menentukan nilai yang belum diketahui berdasarkan rasio yang diberikan.. Bukti: Dengan takaran yang sama
+- Intended difficulty `classify/Easy`: Masalah ini adalah penerapan langsung konsep rasio dengan faktor pengali bilangan bulat yang jelas (27/9 = 3), sehingga tidak memerlukan perencanaan kompleks.. Bukti: 9 gelas minuman dibutuhkan 11 sendok sirup; berapa sendok sirup untuk 27 gelas?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Perkalian dasar dan konsep rasio sederhana. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Siswa kelas 6 sudah terbiasa dengan masalah perbandingan senilai sederhana dengan angka yang mudah dibagi. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.197559; applying=0.802441; reasoning=0.000000 | applying | 0.802441 | 0.452388 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.486460; conceptual=0.486319; procedural=0.027221; metacognitive=0.000000 | factual | 0.486460 | 0.576518 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.874863; Medium=0.122378; Hard=0.002759 | Easy | 0.874863 | 0.355256 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.802441; −Σp ln(p) = 0.497000; H = 0.497000/ln(3) = 0.452388; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.486460; −Σp ln(p) = 0.799223; H = 0.799223/ln(4) = 0.576518; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.874863; −Σp ln(p) = 0.390288; H = 0.390288/ln(3) = 0.355256; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 9 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 27 gelas?
+Pilihan: A. $32$
+B. $33$
+C. $34$
+D. $35$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "factual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 343. Soal `3d4462b5992e2d14b1e911b3`
+
+Untuk membuat 10 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 50 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $39$ |
+| B | $40$ |
+| C | $42$ |
+| D | $41$ |
+
+Kunci sumber: `B`; status AI: `verified`; jawaban diverifikasi AI: `B`.
+Solusi minimum hasil AI: Rasio sirup terhadap gelas adalah 8:10 atau 0,8 sendok per gelas. Untuk 50 gelas, sirup yang dibutuhkan adalah 50 * (8/10) = 40 sendok. Alternatif: 50 gelas adalah 5 kali lipat dari 10 gelas, maka sirup yang dibutuhkan adalah 5 * 8 = 40 sendok.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f2fc2d0abfdede5fc20f37aeff68c57de55cff85606743428e5aa7da1c20539f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | conceptual | Easy | 2250 |
+
+Run 1 — solusi: Rasio sirup terhadap gelas adalah 8:10 atau 0,8 sendok per gelas. Untuk 50 gelas, sirup yang dibutuhkan adalah 50 * (8/10) = 40 sendok. Alternatif: 50 gelas adalah 5 kali lipat dari 10 gelas, maka sirup yang dibutuhkan adalah 5 * 8 = 40 sendok.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan konsep rasio senilai dalam konteks rutin. Prosedur penyelesaiannya langsung, yaitu menentukan faktor pengali (skala) antara 10 dan 50, lalu mengalikannya dengan jumlah sirup awal.. Bukti: Untuk membuat 10 gelas minuman dibutuhkan 8 sendok sirup.; Dengan takaran yang sama, berapa sendok sirup untuk 50 gelas?
+- Dimensi pengetahuan `classify/conceptual`: Soal ini menguji pemahaman siswa tentang prinsip proporsi atau rasio senilai, yang merupakan konsep relasional dasar dalam matematika sekolah dasar.. Bukti: Dengan takaran yang sama
+- Intended difficulty `classify/Easy`: Soal ini tergolong mudah karena hubungan antara 10 dan 50 sangat jelas (kelipatan bulat), sehingga siswa dapat dengan mudah menentukan faktor pengali tanpa perlu prosedur kompleks.. Bukti: 10 gelas minuman dibutuhkan 8 sendok sirup; berapa sendok sirup untuk 50 gelas?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman dasar tentang rasio dan perkalian bilangan bulat. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 6 sudah mempelajari perbandingan senilai. Soal ini menggunakan angka yang sederhana dan hubungan yang eksplisit, sehingga tidak menuntut perencanaan tinggi. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"conceptual": 1} | single_run / single_run | conceptual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.213548; applying=0.786452; reasoning=0.000000 | applying | 0.786452 | 0.472068 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.450174; conceptual=0.519687; procedural=0.030139; metacognitive=0.000000 | conceptual | 0.519687 | 0.580676 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.878925; Medium=0.118306; Hard=0.002769 | Easy | 0.878925 | 0.347948 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.786452; −Σp ln(p) = 0.518620; H = 0.518620/ln(3) = 0.472068; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.519687; −Σp ln(p) = 0.804988; H = 0.804988/ln(4) = 0.580676; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.878925; −Σp ln(p) = 0.382260; H = 0.382260/ln(3) = 0.347948; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 10 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 50 gelas?
+Pilihan: A. $39$
+B. $40$
+C. $42$
+D. $41$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "conceptual", "agreement": true}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 344. Soal `1e415a12c00984ae06356fbd`
+
+Untuk membuat 8 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 64 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $87$ |
+| B | $90$ |
+| C | $89$ |
+| D | $88$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6ad00f8420e3a17d46be44fb3a0a45068f659711bb04b0162f6d44dd5b644bd9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ClientError:429`; tidak dihitung sebagai suara.
+
+Histori retry: run 1 sebelumnya `failed` / `ConnectError:unknown`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 8 gelas minuman dibutuhkan 11 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 64 gelas?
+Pilihan: A. $87$
+B. $90$
+C. $89$
+D. $88$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 345. Soal `efb8f9979a64f594cd35b18b`
+
+Untuk membuat 13 gelas minuman dibutuhkan 5 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 104 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $41$ |
+| B | $39$ |
+| C | $42$ |
+| D | $40$ |
+
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `40`.
+Solusi minimum hasil AI: 104*5/13=40
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e92c42536367aef3e98cf7349e657b4909149fe1cd0ff6bd6227cb557ba7ab9c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 4170 |
+
+Run 1 — solusi: 104*5/13=40
+- Domain kognitif `classify/applying`: Soal meminta penerapan langsung rasio yang sudah diberikan, tanpa perlu memilih strategi baru.. Bukti: Untuk membuat 13 gelas... 5 sendok sirup... 104 gelas
+- Dimensi pengetahuan `classify/procedural`: Menyelesaikan soal memerlukan prosedur menghitung rasio dan perkalian, yang termasuk dimensi prosedural.. Bukti: Rasio 13 gelas : 5 sendok, hitung per gelas, kalikan 104
+- Intended difficulty `classify/Easy`: Hanya diperlukan dua langkah rutin dengan operasi aritmetika sederhana, sehingga mudah bagi siswa kelas 6.. Bukti: Langkah menghitung rasio dan mengalikan 104
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Memahami perbandingan dan operasi perkalian/ pembagian sederhana. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Langkah hanya menghitung rasio dan mengalikan, prosedur familiar bagi kelas 6. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif | knowing=0.203334; applying=0.796666; reasoning=0.000000 | applying | 0.796666 | 0.459662 | review / selective_threshold_gate_not_met |
+| Dimensi pengetahuan | factual=0.479646; conceptual=0.488631; procedural=0.031723; metacognitive=0.000000 | conceptual | 0.488631 | 0.585588 | review / selective_threshold_gate_not_met |
+| Intended difficulty | Easy=0.881971; Medium=0.115291; Hard=0.002738 | Easy | 0.881971 | 0.342242 | review / selective_threshold_gate_not_met |
+
+Domain kognitif: Σp = 1.00000000; confidence = max(p) = 0.796666; −Σp ln(p) = 0.504990; H = 0.504990/ln(3) = 0.459662; T = 0.050000.
+
+
+Dimensi pengetahuan: Σp = 1.00000000; confidence = max(p) = 0.488631; −Σp ln(p) = 0.811798; H = 0.811798/ln(4) = 0.585588; T = 0.209800.
+
+
+Intended difficulty: Σp = 1.00000000; confidence = max(p) = 0.881971; −Σp ln(p) = 0.375992; H = 0.375992/ln(3) = 0.342242; T = 0.953328.
+
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 13 gelas minuman dibutuhkan 5 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 104 gelas?
+Pilihan: A. $41$
+B. $39$
+C. $42$
+D. $40$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": "applying", "blindLabel": "applying", "agreement": true}, "knowledgeDimension": {"modelLabel": "conceptual", "blindLabel": "procedural", "agreement": false}, "intendedDifficulty": {"modelLabel": "Easy", "blindLabel": "Easy", "agreement": true}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 346. Soal `611c67ab73de47e9d676ea7f`
+
+Untuk membuat 14 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 70 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $39$ |
+| B | $42$ |
+| C | $40$ |
+| D | $41$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c8d7be16f1301c81e47ed5493cff3fb63b9fb15b62b43013a148c5a3a9587af8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ClientError:429`; tidak dihitung sebagai suara.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 14 gelas minuman dibutuhkan 8 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 70 gelas?
+Pilihan: A. $39$
+B. $42$
+C. $40$
+D. $41$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 347. Soal `aad6bf26fbafe13c872c822d`
+
+Untuk membuat 9 gelas minuman dibutuhkan 3 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 18 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $7$ |
+| B | $8$ |
+| C | $5$ |
+| D | $6$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `dadf4d3299b322a907e5e6fd84b7c4b0547402b79ed8d1201360d8c7b0b21b9b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 9 gelas minuman dibutuhkan 3 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 18 gelas?
+Pilihan: A. $7$
+B. $8$
+C. $5$
+D. $6$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 348. Soal `7dd61466504c62bec05256a0`
+
+Untuk membuat 11 gelas minuman dibutuhkan 4 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 88 gelas?
+
+| Opsi | Isi |
+|---|---|
+| A | $31$ |
+| B | $34$ |
+| C | $32$ |
+| D | $33$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3e4022e21a413fe30147c4afbd111909b77a39d6076c472143bda6cee0d4b9f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 77/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Konsep Kesamaan Rasio
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Untuk membuat 11 gelas minuman dibutuhkan 4 sendok sirup. Dengan takaran yang sama, berapa sendok sirup untuk 88 gelas?
+Pilihan: A. $31$
+B. $34$
+C. $32$
+D. $33$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 349. Soal `6b696db127fe1e216aec8c75`
+
+Model balok tersusun dari kubus satuan. Susunan alas 7 baris dan 7 kubus tiap baris, dengan 6 lapisan penuh. Berapa kubus satuan penyusunnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $295$ |
+| B | $294$ |
+| C | $296$ |
+| D | $293$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3423ba5e0cfdd547f637332730e2f6e1ff32b304c579299efcf026cda0ed5dd0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 88/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Mengonstruksi dan Mengurai
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Model balok tersusun dari kubus satuan. Susunan alas 7 baris dan 7 kubus tiap baris, dengan 6 lapisan penuh. Berapa kubus satuan penyusunnya?
+Pilihan: A. $295$
+B. $294$
+C. $296$
+D. $293$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 350. Soal `dd0d7fa1dcd0299e241c3137`
+
+Model balok tersusun dari kubus satuan. Susunan alas 4 baris dan 7 kubus tiap baris, dengan 7 lapisan penuh. Berapa kubus satuan penyusunnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $195$ |
+| B | $197$ |
+| C | $196$ |
+| D | $198$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0c2509f6d74e28a8f9d98c34dcdd614ba316c59492a67cda400dfeb8de572a4f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 84/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Mengonstruksi dan Mengurai
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Model balok tersusun dari kubus satuan. Susunan alas 4 baris dan 7 kubus tiap baris, dengan 7 lapisan penuh. Berapa kubus satuan penyusunnya?
+Pilihan: A. $195$
+B. $197$
+C. $196$
+D. $198$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 351. Soal `bc956f2e6080f9347e3a1a28`
+
+Model balok tersusun dari kubus satuan. Susunan alas 12 baris dan 9 kubus tiap baris, dengan 2 lapisan penuh. Berapa kubus satuan penyusunnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $218$ |
+| B | $216$ |
+| C | $215$ |
+| D | $217$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `025758d1ed14ea0a6cc8f60b2d6134530919f0c7b550528ffe2bb230febeac25`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 84/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Mengonstruksi dan Mengurai
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Model balok tersusun dari kubus satuan. Susunan alas 12 baris dan 9 kubus tiap baris, dengan 2 lapisan penuh. Berapa kubus satuan penyusunnya?
+Pilihan: A. $218$
+B. $216$
+C. $215$
+D. $217$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 352. Soal `16d3f0893eef3c02656a5693`
+
+Model balok tersusun dari kubus satuan. Susunan alas 12 baris dan 5 kubus tiap baris, dengan 7 lapisan penuh. Berapa kubus satuan penyusunnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $422$ |
+| B | $420$ |
+| C | $419$ |
+| D | $421$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `29c905018e3e2f24dea797b9c410a4a9050989e2e247552fb61068ff615c37cc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 87/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Mengonstruksi dan Mengurai
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Model balok tersusun dari kubus satuan. Susunan alas 12 baris dan 5 kubus tiap baris, dengan 7 lapisan penuh. Berapa kubus satuan penyusunnya?
+Pilihan: A. $422$
+B. $420$
+C. $419$
+D. $421$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 353. Soal `bbc7a3bd1d21cbc88d20684e`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(5, 2)$ ke $(10, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $7$ |
+| B | $9$ |
+| C | $6$ |
+| D | $8$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c30d0be9b05610fc7f7ed814f46b97ccef991ce21995c6dd365ddd9db0965753`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(5, 2)$ ke $(10, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $7$
+B. $9$
+C. $6$
+D. $8$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 354. Soal `2dcea42a4422f6bd081fc763`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(2, 6)$ ke $(4, 11)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $8$ |
+| B | $6$ |
+| C | $9$ |
+| D | $7$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `21c7e0876d7877bc1d1793aacd2ada527eeeeb5e8f711e40fb812180d4d67f8f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(2, 6)$ ke $(4, 11)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $8$
+B. $6$
+C. $9$
+D. $7$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 355. Soal `99e61a2ef8190b6564b283fe`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(3, 3)$ ke $(6, 7)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $6$ |
+| B | $8$ |
+| C | $9$ |
+| D | $7$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d521d14b4ff953b7ccb3f6eecbd4460860e1f60f426bc8b3dffad030383af4f9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(3, 3)$ ke $(6, 7)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $6$
+B. $8$
+C. $9$
+D. $7$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 356. Soal `427fc2e0a5f126f55aa8b1a1`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(1, 2)$ ke $(6, 6)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $10$ |
+| B | $11$ |
+| C | $9$ |
+| D | $8$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1df367f9b08e150046f291f6338eea319675fab0afe0c922df12d37fe2f9afc9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(1, 2)$ ke $(6, 6)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $10$
+B. $11$
+C. $9$
+D. $8$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 357. Soal `dffc87ff16b4dc251aac2199`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 6, 5, dan 6 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $2$ |
+| B | $5$ |
+| C | $3$ |
+| D | $4$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `227ba79bd4545731acc1ecaec1f3dd3d9a7eddf805393c0b455058931e228569`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 6, 5, dan 6 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $2$
+B. $5$
+C. $3$
+D. $4$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 358. Soal `7a72b4490bd9509d73d8f729`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 5, 1, dan 5 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $3$ |
+| B | $5$ |
+| C | $2$ |
+| D | $4$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `13c137ed24780606d83c550beebd228c4a0ac5bd47e1feecaf2a15c402336ee1`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 5, 1, dan 5 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $3$
+B. $5$
+C. $2$
+D. $4$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 359. Soal `b874b22033216d68c13dc9d0`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 2, 3, dan 1 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $2$ |
+| B | $5$ |
+| C | $4$ |
+| D | $3$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4281dc40191dedd7a9745728ea92320ae6022eb6ba545389c76dd5d37f48b3dc`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 2, 3, dan 1 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $2$
+B. $5$
+C. $4$
+D. $3$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 360. Soal `cbb2d3440e8862ff41282beb`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 4, 1, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $5$ |
+| B | $2$ |
+| C | $3$ |
+| D | $4$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `712a8004688b5b5c77d83039af072bb2aa3c17c3b8d77f251640b81c2f1e55c2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 4, 1, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $5$
+B. $2$
+C. $3$
+D. $4$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 361. Soal `22de7384c749d4cfa5b7d292`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 6, 5, dan 3 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $4$ |
+| B | $2$ |
+| C | $5$ |
+| D | $3$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0a48ee619701754ed96fd94cffdb1f1e947921e55491042de8541dd82a7455d0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 6, 5, dan 3 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $4$
+B. $2$
+C. $5$
+D. $3$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 362. Soal `251dbd679b354e00c5bc9c9d`
+
+Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 1, 2, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+
+| Opsi | Isi |
+|---|---|
+| A | $2$ |
+| B | $4$ |
+| C | $5$ |
+| D | $3$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c2f68cfe719f777826ed88936518282e1ebd173fbf3d731b99bffff69dc9305`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 96/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Visualisasi Spasial
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tiga menara kubus diletakkan berjajar dari kiri ke kanan, dengan tinggi 1, 2, dan 2 kubus. Jika dilihat dari atas, setiap menara menempati satu petak terpisah. Berapa petak yang tampak terisi dari atas?
+Pilihan: A. $2$
+B. $4$
+C. $5$
+D. $3$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 363. Soal `5f7ada7ce076fcc225d8ca81`
+
+Dari kotak berisi 8 bola merah dan 9 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{8}{17}$ |
+| B | $\frac{8}{9}$ |
+| C | $\frac{9}{17}$ |
+| D | $\frac{1}{17}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `236e30a205e24f79d373761aae8bfe8228473d9b4b4a8b2917a5664586e79f5f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 114/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Skala Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dari kotak berisi 8 bola merah dan 9 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+Pilihan: A. $\frac{8}{17}$
+B. $\frac{8}{9}$
+C. $\frac{9}{17}$
+D. $\frac{1}{17}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 364. Soal `f56bf98a040258ca6d42612c`
+
+Dari kotak berisi 7 bola merah dan 3 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{3}{10}$ |
+| B | $\frac{7}{3}$ |
+| C | $\frac{1}{10}$ |
+| D | $\frac{7}{10}$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `15cde40c6a2c06cc36d4547b65571e55d9a92320bdb759870c54b828b9193d34`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 114/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Skala Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dari kotak berisi 7 bola merah dan 3 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+Pilihan: A. $\frac{3}{10}$
+B. $\frac{7}{3}$
+C. $\frac{1}{10}$
+D. $\frac{7}{10}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 365. Soal `a589f854506e0673fb6af3cf`
+
+Dari kotak berisi 4 bola merah dan 4 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{3}{2}$ |
+| B | $1$ |
+| C | $\frac{1}{2}$ |
+| D | $\frac{1}{8}$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `df68184284e6ecb2682f2eede9f5519ef6b9f6f23a89892631dfae3391f65f19`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 106/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Skala Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dari kotak berisi 4 bola merah dan 4 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+Pilihan: A. $\frac{3}{2}$
+B. $1$
+C. $\frac{1}{2}$
+D. $\frac{1}{8}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 366. Soal `2795f545a10006d6e54143f2`
+
+Dari kotak berisi 8 bola merah dan 5 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{5}{13}$ |
+| B | $\frac{8}{13}$ |
+| C | $\frac{8}{5}$ |
+| D | $\frac{1}{13}$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `acc9a9868a7cf93929072872f1350a628f296400da0f2cb748aafd7fe169cebd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 114/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Skala Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dari kotak berisi 8 bola merah dan 5 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+Pilihan: A. $\frac{5}{13}$
+B. $\frac{8}{13}$
+C. $\frac{8}{5}$
+D. $\frac{1}{13}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 367. Soal `d237006d6fa99cacfcfa2025`
+
+Dari kotak berisi 6 bola merah dan 11 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{6}{11}$ |
+| B | $\frac{11}{17}$ |
+| C | $\frac{1}{17}$ |
+| D | $\frac{6}{17}$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6644c558a1deaa5c5653c9dbc67ba62fcae49075d3499acdefd61208dda4cb13`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 114/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Skala Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dari kotak berisi 6 bola merah dan 11 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+Pilihan: A. $\frac{6}{11}$
+B. $\frac{11}{17}$
+C. $\frac{1}{17}$
+D. $\frac{6}{17}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 368. Soal `e63e8ca13bae2927896c154f`
+
+Dari kotak berisi 9 bola merah dan 10 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{9}{19}$ |
+| B | $\frac{9}{10}$ |
+| C | $\frac{10}{19}$ |
+| D | $\frac{1}{19}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `df0e46c15a51f543aebd71012374089af8ea2d9c2bafac4465000476846b158e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 114/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Skala Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dari kotak berisi 9 bola merah dan 10 bola biru diambil satu bola secara acak. Peluang bola yang terambil berwarna merah adalah ....
+Pilihan: A. $\frac{9}{19}$
+B. $\frac{9}{10}$
+C. $\frac{10}{19}$
+D. $\frac{1}{19}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 369. Soal `2868ca7fdbbfccc0b23a2512`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(3, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $6$ |
+| B | $3$ |
+| C | $5$ |
+| D | $4$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `27769cd6a8d11a70251270e5454613ed393fa4a088b7d963bfc8e64baf165a90`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(3, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $6$
+B. $3$
+C. $5$
+D. $4$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 370. Soal `a29967b8a252424375805399`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(8, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $4$ |
+| B | $7$ |
+| C | $6$ |
+| D | $5$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5c440200282f2a2646a431afbfa5fa25d629ac7d1b386fb350f8d9bb67c5aa21`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(8, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $4$
+B. $7$
+C. $6$
+D. $5$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 371. Soal `542029f34543889fae556158`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(2, 4)$ ke $(6, 9)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $11$ |
+| B | $8$ |
+| C | $9$ |
+| D | $10$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `241979e7e8224369c4f6414c7b47ea3d0c0b332d7a346f8a723c39d3012069cb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(2, 4)$ ke $(6, 9)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $11$
+B. $8$
+C. $9$
+D. $10$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 372. Soal `2982bac04d46c6321a64f6b9`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(10, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $8$ |
+| B | $7$ |
+| C | $6$ |
+| D | $9$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5a9ee262ee647832bde0aeee8b0d786ef93e34be62ef1de932ec81d3bbd815be`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(10, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $8$
+B. $7$
+C. $6$
+D. $9$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 373. Soal `2ecb034fe48974844b2629ea`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(5, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $6$ |
+| B | $7$ |
+| C | $5$ |
+| D | $8$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8a1a881a7099e8e4f91d56635e14b1adaa57d0ee8506fb44293cb6ef34af0bed`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(1, 1)$ ke $(5, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $6$
+B. $7$
+C. $5$
+D. $8$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 374. Soal `d617c0032c3cbeffaf0a793c`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(3, 1)$ ke $(8, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $8$ |
+| B | $10$ |
+| C | $7$ |
+| D | $9$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `680dc07438e55f4d0851aa50dbb1726e32de378da158289d98c0bbedbdda41b0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(3, 1)$ ke $(8, 4)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $8$
+B. $10$
+C. $7$
+D. $9$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 375. Soal `c7d64ef3fc7e4c84b654992b`
+
+Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(7, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+
+| Opsi | Isi |
+|---|---|
+| A | $5$ |
+| B | $3$ |
+| C | $6$ |
+| D | $4$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ec7894391a981b828a3a6cd4aac5867c698b4e5605a5d85ec47937096da14a42`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 94/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Lokasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Pada denah berpetak, sebuah bidak berpindah dari $(5, 1)$ ke $(7, 3)$. Tiap langkah hanya boleh satu petak mendatar atau tegak. Berapa langkah paling sedikit?
+Pilihan: A. $5$
+B. $3$
+C. $6$
+D. $4$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 376. Soal `4883f78f9773a76c77ee073a`
+
+Kotak P memuat 15 bola merah dan 10 biru. Kotak Q memuat 16 merah dan 10 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di Q lebih besar daripada di P. |
+| B | Peluang merah di kedua kotak pasti 1. |
+| C | Peluang merah di kedua kotak sama. |
+| D | Peluang merah di P lebih besar daripada di Q. |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8abad4fadf53a2387d03f9c9926945a14a4770ec87f67afb9abee1f0d24474e6`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 15 bola merah dan 10 biru. Kotak Q memuat 16 merah dan 10 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di Q lebih besar daripada di P.
+B. Peluang merah di kedua kotak pasti 1.
+C. Peluang merah di kedua kotak sama.
+D. Peluang merah di P lebih besar daripada di Q.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 377. Soal `8b6c06020da7e5b8a58d33a0`
+
+Kotak P memuat 4 bola merah dan 7 biru. Kotak Q memuat 5 merah dan 7 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di Q lebih besar daripada di P. |
+| B | Peluang merah di kedua kotak pasti 1. |
+| C | Peluang merah di kedua kotak sama. |
+| D | Peluang merah di P lebih besar daripada di Q. |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `99e23377363587c35789c6d547cb058d42f626c2db8e94d364de3328a5603058`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 4 bola merah dan 7 biru. Kotak Q memuat 5 merah dan 7 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di Q lebih besar daripada di P.
+B. Peluang merah di kedua kotak pasti 1.
+C. Peluang merah di kedua kotak sama.
+D. Peluang merah di P lebih besar daripada di Q.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 378. Soal `df3e2817cde4e17817f33305`
+
+Kotak P memuat 13 bola merah dan 9 biru. Kotak Q memuat 14 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di P lebih besar daripada di Q. |
+| B | Peluang merah di kedua kotak sama. |
+| C | Peluang merah di kedua kotak pasti 1. |
+| D | Peluang merah di Q lebih besar daripada di P. |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `24a11490cb50ab29670087d26644a7e50cc787cc043f793c1b665a80d1785d39`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 13 bola merah dan 9 biru. Kotak Q memuat 14 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di P lebih besar daripada di Q.
+B. Peluang merah di kedua kotak sama.
+C. Peluang merah di kedua kotak pasti 1.
+D. Peluang merah di Q lebih besar daripada di P.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 379. Soal `cc859cab4f20fbbb7748e9cf`
+
+Kotak P memuat 13 bola merah dan 11 biru. Kotak Q memuat 14 merah dan 11 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di kedua kotak sama. |
+| B | Peluang merah di P lebih besar daripada di Q. |
+| C | Peluang merah di kedua kotak pasti 1. |
+| D | Peluang merah di Q lebih besar daripada di P. |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a60ba6d3add605a492086970662fdc83b1b1afff194fb9d3610b3817c55af237`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 13 bola merah dan 11 biru. Kotak Q memuat 14 merah dan 11 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di kedua kotak sama.
+B. Peluang merah di P lebih besar daripada di Q.
+C. Peluang merah di kedua kotak pasti 1.
+D. Peluang merah di Q lebih besar daripada di P.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 380. Soal `10bac2d0fb75a89e89788c81`
+
+Kotak P memuat 9 bola merah dan 5 biru. Kotak Q memuat 10 merah dan 5 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di P lebih besar daripada di Q. |
+| B | Peluang merah di kedua kotak sama. |
+| C | Peluang merah di Q lebih besar daripada di P. |
+| D | Peluang merah di kedua kotak pasti 1. |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f83448e3f9c8bee311dd0864a830bc5b9ec1faf0313f430f4795ef39af7fcb83`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 9 bola merah dan 5 biru. Kotak Q memuat 10 merah dan 5 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di P lebih besar daripada di Q.
+B. Peluang merah di kedua kotak sama.
+C. Peluang merah di Q lebih besar daripada di P.
+D. Peluang merah di kedua kotak pasti 1.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 381. Soal `b52b52a484a5548f5f40490a`
+
+Kotak P memuat 7 bola merah dan 9 biru. Kotak Q memuat 8 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di kedua kotak sama. |
+| B | Peluang merah di P lebih besar daripada di Q. |
+| C | Peluang merah di kedua kotak pasti 1. |
+| D | Peluang merah di Q lebih besar daripada di P. |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c10b36b1e9ee7e99054064cc99ffb662cb9ab16e300b059e1980ec16e41fb085`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 7 bola merah dan 9 biru. Kotak Q memuat 8 merah dan 9 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di kedua kotak sama.
+B. Peluang merah di P lebih besar daripada di Q.
+C. Peluang merah di kedua kotak pasti 1.
+D. Peluang merah di Q lebih besar daripada di P.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 382. Soal `f2f78126b17d29c63dbfe4c8`
+
+Kotak P memuat 8 bola merah dan 4 biru. Kotak Q memuat 9 merah dan 4 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | Peluang merah di kedua kotak pasti 1. |
+| B | Peluang merah di P lebih besar daripada di Q. |
+| C | Peluang merah di kedua kotak sama. |
+| D | Peluang merah di Q lebih besar daripada di P. |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 6 / Matematika SD Kelas 6. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4b97b2fc6888d48df0dab17f6823fd69922402b586d80e8e9f80f9263c619b6c`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Model membaca representation `metadata`; token input 115/256; truncation: `False`.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Dimensi pengetahuan |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+| Intended difficulty |  | — | — | — | abstain / content_not_qualified;answer_key_not_verified;minimal_solution_not_verified |
+
+<details><summary>Input sebenarnya yang dibaca model</summary>
+
+```text
+Kelas: 6
+Topik: Matematika SD Kelas 6
+Subtopik: Membandingkan Peluang Kejadian
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak P memuat 8 bola merah dan 4 biru. Kotak Q memuat 9 merah dan 4 biru. Satu bola diambil acak dari masing-masing kotak. Pernyataan yang tepat adalah ....
+Pilihan: A. Peluang merah di kedua kotak pasti 1.
+B. Peluang merah di P lebih besar daripada di Q.
+C. Peluang merah di kedua kotak sama.
+D. Peluang merah di Q lebih besar daripada di P.
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+Provider aktif: groq. 343 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.

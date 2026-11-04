@@ -45,14 +45,14 @@ def pending_generation(output_root, canonical):
     for manifest_path in sorted(output_root.glob("exercise/kelas*/batch01/reference_replenishment_manifest.json")):
         base=manifest_path.parent;manifest=read_json(manifest_path)
         state=read_json(base/'reference_replenishment_state.json')
-        from app.services.exercise.workflow import digest
+        from app.services.exercise.workflow import digest,reference_manifest_intact,reference_manifest_paths
         checksum=digest(manifest_path)
         if state.get('phase') not in ('generation_complete','validation_authorized'):
             continue
-        if (state.get('manifestSha256')!=checksum or any(digest(base/path)!=value for path,value in manifest['files'].items())):
+        if state.get('manifestSha256')!=checksum or not reference_manifest_intact(base,manifest):
             raise ValueError('Batch01 reference additions changed after generation')
         master=read_json(base/'soal_exercise_db.json');metadata=read_json(base/'soal_exercise_meta.json')
-        files += [manifest_path,base/'reference_replenishment_state.json',*[base/path for path in manifest['files']]]
+        files += [manifest_path,base/'reference_replenishment_state.json',*reference_manifest_paths(base,manifest).values()]
         for item in master['items']:
             if item['_id'] in known:continue
             info=metadata[item['_id']];owner,chapter=class_from_chapter(info['bab_id'])

@@ -167,6 +167,31 @@ def verify_generation(base):
     return checksum
 
 
+def reference_manifest_paths(base, manifest):
+    """Resolve question files in the batch and audit files within the project."""
+    base = Path(base).resolve()
+    paths = {}
+    for name in manifest.get("files", {}):
+        path = (base / name).resolve()
+        if Path(name).is_absolute() or not path.is_relative_to(base):
+            raise ValueError("reference question file is outside its batch")
+        paths[name] = path
+    if manifest.get("auditFiles"):
+        project = base.parents[3]
+        for name in manifest["auditFiles"]:
+            path = (project / name).resolve()
+            if Path(name).is_absolute() or ".." in Path(name).parts or not path.is_relative_to(project):
+                raise ValueError("reference audit file is outside the project")
+            paths["audit:" + name] = path
+    return paths
+
+
+def reference_manifest_intact(base, manifest):
+    checksums = {**manifest.get("files", {}),
+                 **{"audit:" + key: value for key, value in manifest.get("auditFiles", {}).items()}}
+    return all(digest(path) == checksums[key] for key, path in reference_manifest_paths(base, manifest).items())
+
+
 def require_validation(base):
     base = Path(base)
     hold = base / "reference_replenishment_state.json"
@@ -177,7 +202,7 @@ def require_validation(base):
             raise ValueError("validation_pending: batch01 reference additions are generation-only")
         if state.get("manifestSha256") != digest(manifest):
             raise ValueError("reference addition manifest changed")
-        if any(digest(base / name) != checksum for name, checksum in load(manifest)["files"].items()):
+        if not reference_manifest_intact(base, load(manifest)):
             raise ValueError("reference addition files changed after approval")
     if not managed(base):
         return  # Existing paid legacy batches are unaffected.
@@ -207,7 +232,7 @@ def approve_validation(base, expected_hash):
             if (state.get("phase") != "generation_complete" or not manifest.exists()
                     or digest(manifest) != expected_hash
                     or state.get("manifestSha256") != expected_hash
-                    or any(digest(base / name) != checksum for name, checksum in load(manifest)["files"].items())):
+                    or not reference_manifest_intact(base, load(manifest))):
                 raise ValueError("reference addition approval must match a complete immutable manifest")
             state.update(phase="validation_authorized", validationStatus="validation_authorized")
             atomic_json(hold, state)

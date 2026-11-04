@@ -1,15 +1,17 @@
 # Validasi ulang soal kelas 9 — LLM blind N=1 lanjutan dengan hasil N=3 terdahulu dan diagnostik IndoBERT
 
+**Batch belum selesai:** 777/866 run awal sukses; 0 item tercatat membutuhkan adjudikasi setelah run lengkap. Distribusi berikut masih sementara; item tanpa keputusan ditampilkan sebagai undecided.
+
 Model penilai: `gemini-3.1-flash-lite`. Prompt: `gemini-silver-math-3x4x3-v10-blind-smp9-key-verified`. Rubrik: `math-rubric-3x4x3-v8-smp9-grade-aware`.
 
 Soal lanjutan dinilai satu kali (N=1), tanpa adjudikasi otomatis; hasil N=3 terdahulu dipertahankan. Isi, kunci, solusi dan tiga label tetap diperiksa. Temuan konten atau abstain tetap inactive. Confidence N=1 pada JSON memakai round(100 * min(probabilitas label akhir LLM tiap head IndoBERT)); ini dukungan model, bukan konsistensi antar-run atau akurasi terukur; bukti ini tidak memenuhi provenance training N=3.
 
 Checkpoint dikunci dengan SHA-256 sebelum pemeriksaan scope IndoBERT. Label akhir advisory mengikuti penilaian blind yang terkunci. Artifact berada di luar cakupan kelas 9, sehingga seluruh head abstain dan tidak menghasilkan ukuran agreement dengan label blind.
 
-Jumlah soal: 764; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 177, "applying": 533, "reasoning": 54}, "knowledgeDimension": {"conceptual": 345, "factual": 36, "procedural": 383, "metacognitive": 0}, "intendedDifficulty": {"Easy": 460, "Medium": 295, "Hard": 9}}`.
-Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 176, "applying": 530, "reasoning": 54}, "knowledgeDimension": {"conceptual": 344, "factual": 36, "procedural": 380, "metacognitive": 0}, "intendedDifficulty": {"Easy": 458, "Medium": 293, "Hard": 9}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
-Routing: `{"silver_ready": 760, "revision_required": 1, "needs_ai_review": 3}`.
-Run awal sukses: 770/770; adjudikasi: 2; token sukses tercatat: 2,348,311.
+Jumlah soal: 860; distribusi label advisory: `{"mathCognitiveDomain": {"knowing": 183, "applying": 534, "reasoning": 54, "undecided": 89}, "knowledgeDimension": {"conceptual": 345, "factual": 38, "procedural": 388, "undecided": 89, "metacognitive": 0}, "intendedDifficulty": {"Easy": 467, "Medium": 295, "Hard": 9, "undecided": 89}}`.
+Distribusi hanya pada soal tanpa blocker konten: `{"mathCognitiveDomain": {"knowing": 182, "applying": 531, "reasoning": 54}, "knowledgeDimension": {"conceptual": 344, "factual": 38, "procedural": 385, "metacognitive": 0}, "intendedDifficulty": {"Easy": 465, "Medium": 293, "Hard": 9}}`. Label usulan pada soal perlu revisi tidak berarti soalnya sudah sah digunakan.
+Routing: `{"silver_ready": 767, "revision_required": 1, "needs_ai_review": 92}`.
+Run awal sukses: 777/866; adjudikasi: 2; token sukses tercatat: 2,368,175.
 
 Seluruh label memakai provenance ai_silver. Delivery memakai snapshot silver yang lolos qualification. CTT/IRT tidak dihitung karena respons siswa belum ada. Boundary audit dan gate training tidak dianggap lolos hanya karena batch API selesai.
 
@@ -22,7 +24,7 @@ Kesulitan dinilai relatif terhadap kelas sasaran. Kategori kosong tetap ditampil
 
 | Difficulty | Semua usulan | Tanpa blocker konten | Data soal |
 |---|---:|---:|---|
-| Easy | 460 | 458 | [Easy.json](difficulty/Easy.json) |
+| Easy | 467 | 465 | [Easy.json](difficulty/Easy.json) |
 | Medium | 295 | 293 | [Medium.json](difficulty/Medium.json) |
 | Hard | 9 | 9 | [Hard.json](difficulty/Hard.json) |
 
@@ -69570,6 +69572,6698 @@ Transkripsi visual: -
 Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "conceptual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
 Status konten: `valid`. Catatan konten: .
 Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "conceptual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 765. Soal `643def6334fd8801cd0e3f1d`
+
+Balok berukuran 14 cm × 15 cm × 13 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $2729$ |
+| B | $2732$ |
+| C | $2730$ |
+| D | $2731$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Volume balok = panjang × lebar × tinggi = 14 cm × 15 cm × 13 cm = 210 cm² × 13 cm = 2730 cm³.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5cc87737253155199730015771ec3576716f5d803f7d535eb48fc4e4297d95ad`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2502 |
+
+Run 1 — solusi: Volume balok = panjang × lebar × tinggi = 14 cm × 15 cm × 13 cm = 210 cm² × 13 cm = 2730 cm³.
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus volume balok yang sudah diketahui dimensinya. Siswa hanya perlu melakukan operasi perkalian dasar.. Bukti: Balok berukuran 14 cm × 15 cm × 13 cm. Berapa volumenya?
+- Dimensi pengetahuan `classify/procedural`: Soal menguji pemahaman prosedural tentang rumus volume bangun ruang sisi datar (balok).. Bukti: Berapa volumenya?
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar karena langsung memberikan semua variabel yang diperlukan (panjang, lebar, tinggi) tanpa ada langkah tambahan, kendala, atau kebutuhan untuk menyusun strategi. Ini adalah penerapan rumus langsung.. Bukti: Balok berukuran 14 cm × 15 cm × 13 cm.
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman konsep volume balok dan kemampuan perkalian bilangan bulat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Untuk kelas 9, menghitung volume balok dengan dimensi yang diberikan secara eksplisit adalah tugas yang sangat rutin dan mendasar. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 14 cm × 15 cm × 13 cm. Berapa volumenya?
+Pilihan: A. $2729$
+B. $2732$
+C. $2730$
+D. $2731$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 766. Soal `ed58d962a8b4bb81bf1fcc47`
+
+Titik P$(-11, 5)$ ditranslasi oleh vektor $(6, 6)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-6, 10)$ |
+| B | $(-4, 11)$ |
+| C | $(-5, 11)$ |
+| D | $(-5, 12)$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `C`.
+Solusi minimum hasil AI: Translasi titik (x, y) oleh vektor (a, b) menghasilkan bayangan (x+a, y+b). Untuk titik P(-11, 5) dan vektor translasi (6, 6), koordinat bayangannya adalah (-11 + 6, 5 + 6) = (-5, 11).
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `52e5472377b24eafc3f7cc6a84f0aca988f1797ec5cf2d45333fbde6018bb29e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 3184 |
+
+Run 1 — solusi: Translasi titik (x, y) oleh vektor (a, b) menghasilkan bayangan (x+a, y+b). Untuk titik P(-11, 5) dan vektor translasi (6, 6), koordinat bayangannya adalah (-11 + 6, 5 + 6) = (-5, 11).
+- Domain kognitif `classify/knowing`: Soal ini meminta penerapan langsung rumus translasi titik pada koordinat Kartesius. Siswa hanya perlu menjumlahkan koordinat titik asal dengan komponen vektor translasi, yang merupakan prosedur standar dan langsung.. Bukti: Titik P(-11, 5) ditranslasi oleh vektor (6, 6). Koordinat bayangannya adalah
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman dan penerapan algoritma atau prosedur matematis standar untuk melakukan translasi pada titik di bidang koordinat.. Bukti: ditranslasi oleh vektor (6, 6)
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Tidak ada langkah perencanaan yang kompleks, kendala yang berinteraksi, atau kebutuhan untuk memilih strategi. Siswa hanya perlu menerapkan definisi translasi secara langsung.. Bukti: Titik P(-11, 5) ditranslasi oleh vektor (6, 6).
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman koordinat Kartesius dan penjumlahan bilangan bulat. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | plausible |
+| gradeRelativeRationale | Translasi titik adalah materi dasar kelas 9. Soal ini tidak memiliki tingkat kesulitan tambahan dan dapat diselesaikan dengan satu langkah operasi aritmatika sederhana. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-11, 5)$ ditranslasi oleh vektor $(6, 6)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(-6, 10)$
+B. $(-4, 11)$
+C. $(-5, 11)$
+D. $(-5, 12)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 767. Soal `4c9ed19487f31370ebf4e49b`
+
+Sebuah prisma tegak memiliki alas segi-3. Berapa banyak rusuk prisma tersebut?
+
+| Opsi | Isi |
+|---|---|
+| A | $8$ |
+| B | $11$ |
+| C | $10$ |
+| D | $9$ |
+
+Kunci sumber: `D`; status AI: `verified`; jawaban diverifikasi AI: `D`.
+Solusi minimum hasil AI: Prisma dengan alas segi-n memiliki rusuk sebanyak 3n. Untuk prisma segitiga (n=3), jumlah rusuk = 3 * 3 = 9.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `986b150c5f4677858a23480fcecbe903b7fb9b7aa52c3e21f5ed7c3d9863ee19`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 2461 |
+
+Run 1 — solusi: Prisma dengan alas segi-n memiliki rusuk sebanyak 3n. Untuk prisma segitiga (n=3), jumlah rusuk = 3 * 3 = 9.
+- Domain kognitif `classify/knowing`: Siswa hanya perlu mengingat atau menerapkan rumus umum jumlah rusuk prisma (3n) untuk prisma segitiga. Ini adalah pengenalan fakta geometris dasar.. Bukti: Sebuah prisma tegak memiliki alas segi-3. Berapa banyak rusuk prisma tersebut?
+- Dimensi pengetahuan `classify/factual`: Soal ini menguji pengetahuan faktual mengenai sifat-sifat bangun ruang (prisma).. Bukti: Sebuah prisma tegak memiliki alas segi-3. Berapa banyak rusuk prisma tersebut?
+- Intended difficulty `classify/Easy`: Soal ini sangat mendasar dan langsung. Siswa hanya perlu mengidentifikasi jumlah rusuk prisma segitiga tanpa langkah perencanaan atau integrasi yang kompleks.. Bukti: Sebuah prisma tegak memiliki alas segi-3. Berapa banyak rusuk prisma tersebut?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pengetahuan dasar tentang komponen bangun ruang (rusuk, sisi, titik sudut). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Ini adalah materi dasar geometri yang sudah diperkenalkan sejak jenjang SMP awal, sehingga bagi siswa kelas 9 ini adalah tugas yang sangat rutin. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah prisma tegak memiliki alas segi-3. Berapa banyak rusuk prisma tersebut?
+Pilihan: A. $8$
+B. $11$
+C. $10$
+D. $9$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 768. Soal `47a9572426d3ea177938951f`
+
+Sebuah prisma tegak memiliki alas segi-9. Berapa banyak rusuk prisma tersebut?
+
+| Opsi | Isi |
+|---|---|
+| A | $27$ |
+| B | $29$ |
+| C | $28$ |
+| D | $26$ |
+
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `27`.
+Solusi minimum hasil AI: Prisma segi-n memiliki n rusuk pada alas, n rusuk pada tutup, dan n rusuk tegak. Total rusuk = 3n. Untuk prisma segi-9, total rusuk = 3 * 9 = 27.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c5ee5874be05962b65b0b400fc8e968c528f078a907243543bbc3f6c9530a11f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | factual | Easy | 3240 |
+
+Run 1 — solusi: Prisma segi-n memiliki n rusuk pada alas, n rusuk pada tutup, dan n rusuk tegak. Total rusuk = 3n. Untuk prisma segi-9, total rusuk = 3 * 9 = 27.
+- Domain kognitif `classify/knowing`: Soal ini menuntut pengenalan sifat dasar prisma (jumlah rusuk = 3n) tanpa memerlukan strategi kompleks atau integrasi konsep.. Bukti: Sebuah prisma tegak memiliki alas segi-9. Berapa banyak rusuk prisma tersebut?
+- Dimensi pengetahuan `classify/factual`: Siswa perlu mengetahui definisi atau rumus jumlah rusuk prisma sebagai fakta geometris dasar.. Bukti: Sebuah prisma tegak memiliki alas segi-9. Berapa banyak rusuk prisma tersebut?
+- Intended difficulty `classify/Easy`: Soal ini bersifat prosedural langsung dengan satu langkah perhitungan sederhana (3n). Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin.. Bukti: Sebuah prisma tegak memiliki alas segi-9. Berapa banyak rusuk prisma tersebut?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Definisi dan sifat-sifat dasar prisma (jumlah rusuk). |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 9 sudah familiar dengan bangun ruang sisi datar dan sifat-sifatnya. Menghitung rusuk prisma adalah materi dasar yang rutin. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"factual": 1} | single_run / single_run | factual |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah prisma tegak memiliki alas segi-9. Berapa banyak rusuk prisma tersebut?
+Pilihan: A. $27$
+B. $29$
+C. $28$
+D. $26$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "factual", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "factual", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 769. Soal `43f7c282d235df4481c51d9e`
+
+Balok mempunyai panjang 6 cm, lebar 12 cm, dan tinggi 13 cm. Berapa luas permukaannya?
+
+| Opsi | Isi |
+|---|---|
+| A | $612$ |
+| B | $614$ |
+| C | $611$ |
+| D | $613$ |
+
+Kunci sumber: `A`; status AI: `verified`; jawaban diverifikasi AI: `A`.
+Solusi minimum hasil AI: Luas permukaan balok = 2 * (p*l + p*t + l*t). Diketahui p=6, l=12, t=13. Luas = 2 * (6*12 + 6*13 + 12*13) = 2 * (72 + 78 + 156) = 2 * 306 = 612 cm^2.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0366754dd744fb4d59e2194768232c1ea2ab71bf84634e48dcb4498dc93756e9`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 3325 |
+
+Run 1 — solusi: Luas permukaan balok = 2 * (p*l + p*t + l*t). Diketahui p=6, l=12, t=13. Luas = 2 * (6*12 + 6*13 + 12*13) = 2 * (72 + 78 + 156) = 2 * 306 = 612 cm^2.
+- Domain kognitif `classify/knowing`: Soal ini hanya meminta penerapan langsung rumus luas permukaan balok dengan nilai yang sudah diberikan secara eksplisit. Tidak diperlukan penalaran kompleks atau strategi nonrutin.. Bukti: Balok mempunyai panjang 6 cm, lebar 12 cm, dan tinggi 13 cm.; Berapa luas permukaannya?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu menerapkan algoritma atau prosedur standar untuk menghitung luas permukaan bangun ruang sisi datar.. Bukti: Berapa luas permukaannya?
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Semua variabel yang diperlukan tersedia, dan siswa hanya perlu melakukan substitusi ke dalam rumus luas permukaan balok.. Bukti: Balok mempunyai panjang 6 cm, lebar 12 cm, dan tinggi 13 cm.; Berapa luas permukaannya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus luas permukaan balok |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Siswa kelas 9 diharapkan sudah menguasai rumus dasar bangun ruang sisi datar. Soal ini tidak memiliki kendala atau tuntutan integrasi yang tinggi. |
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Luas Permukaan Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok mempunyai panjang 6 cm, lebar 12 cm, dan tinggi 13 cm. Berapa luas permukaannya?
+Pilihan: A. $612$
+B. $614$
+C. $611$
+D. $613$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 770. Soal `1441f5e12fb523a3f7d35c02`
+
+Balok mempunyai panjang 7 cm, lebar 4 cm, dan tinggi 16 cm. Berapa luas permukaannya?
+
+| Opsi | Isi |
+|---|---|
+| A | $409$ |
+| B | $407$ |
+| C | $408$ |
+| D | $410$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `408`.
+Solusi minimum hasil AI: Luas permukaan balok = 2 * (p*l + p*t + l*t) = 2 * (7*4 + 7*16 + 4*16) = 2 * (28 + 112 + 64) = 2 * 204 = 408 cm^2.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d8fc29811b0050477e7ffdd7dc934946ee758abe86b49b26517f040beebc2765`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | applying | procedural | Easy | 2557 |
+
+Run 1 — solusi: Luas permukaan balok = 2 * (p*l + p*t + l*t) = 2 * (7*4 + 7*16 + 4*16) = 2 * (28 + 112 + 64) = 2 * 204 = 408 cm^2.
+- Domain kognitif `classify/applying`: Siswa diminta menerapkan rumus luas permukaan balok secara langsung dengan nilai yang sudah diketahui. Ini adalah prosedur standar yang diajarkan di kelas 9 (atau sebelumnya), sehingga masuk dalam domain applying.. Bukti: Berapa luas permukaannya?
+- Dimensi pengetahuan `classify/procedural`: Soal ini menguji pemahaman siswa terhadap algoritma atau rumus luas permukaan bangun ruang sisi datar (balok).. Bukti: Balok mempunyai panjang 7 cm, lebar 4 cm, dan tinggi 16 cm.
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Siswa hanya perlu memasukkan nilai ke dalam rumus luas permukaan balok tanpa ada kendala tambahan atau integrasi konsep yang kompleks.. Bukti: Balok mempunyai panjang 7 cm, lebar 4 cm, dan tinggi 16 cm. Berapa luas permukaannya?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Pemahaman rumus luas permukaan balok dan operasi perkalian/penjumlahan dasar. |
+| dependentSteps | 1 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 3 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal ini adalah penerapan rumus dasar yang sangat familiar bagi siswa kelas 9, dengan beban kognitif yang rendah. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"applying": 1} | single_run / single_run | applying |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Luas Permukaan Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok mempunyai panjang 7 cm, lebar 4 cm, dan tinggi 16 cm. Berapa luas permukaannya?
+Pilihan: A. $409$
+B. $407$
+C. $408$
+D. $410$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "applying", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "applying", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 771. Soal `07837bb69fb8b46b86dbd0f0`
+
+Tabung tertutup memiliki jari-jari 11 cm dan tinggi 12 cm. Berapa luas seluruh permukaannya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $-1 + 506 \pi$ |
+| B | $1 + 506 \pi$ |
+| C | $506 \pi$ |
+| D | $2 + 506 \pi$ |
+
+Kunci sumber: `C`; status AI: `verified`; jawaban diverifikasi AI: `506 \pi`.
+Solusi minimum hasil AI: Luas permukaan tabung tertutup = 2 * pi * r * (r + h). Diketahui r = 11 cm dan h = 12 cm. Maka, L = 2 * pi * 11 * (11 + 12) = 22 * pi * 23 = 506 * pi cm^2.
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `18f635d40bb5820f7b4fe44ec0d18301b9cf25dc05ef689d5238d10e6b3ed10a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | success | valid / verified | knowing | procedural | Easy | 2595 |
+
+Run 1 — solusi: Luas permukaan tabung tertutup = 2 * pi * r * (r + h). Diketahui r = 11 cm dan h = 12 cm. Maka, L = 2 * pi * 11 * (11 + 12) = 22 * pi * 23 = 506 * pi cm^2.
+- Domain kognitif `classify/knowing`: Soal meminta penerapan langsung rumus luas permukaan tabung yang sudah umum dipelajari di kelas 9. Siswa hanya perlu mensubstitusi nilai r dan h ke dalam rumus.. Bukti: Tabung tertutup memiliki jari-jari 11 cm dan tinggi 12 cm.; Berapa luas seluruh permukaannya dalam bentuk pi?
+- Dimensi pengetahuan `classify/procedural`: Siswa perlu memahami rumus luas permukaan tabung (konsep) dan melakukan perhitungan prosedural untuk mendapatkan hasil akhir.. Bukti: Berapa luas seluruh permukaannya dalam bentuk pi?
+- Intended difficulty `classify/Easy`: Soal ini bersifat rutin dan langsung. Tidak ada kendala yang berinteraksi atau kebutuhan untuk strategi non-rutin. Semua informasi yang diperlukan diberikan secara eksplisit.. Bukti: Tabung tertutup memiliki jari-jari 11 cm dan tinggi 12 cm.; Berapa luas seluruh permukaannya dalam bentuk pi?
+
+Profil difficulty run ini:
+
+| Parameter | Nilai |
+|---|---|
+| expectedPrerequisite | Rumus luas permukaan tabung dan operasi perkalian dasar. |
+| dependentSteps | 2 |
+| routineStatus | familiar_routine |
+| strategySelection | False |
+| representationTransfer | False |
+| relevantInformationUnits | 2 |
+| interactingConstraints | 0 |
+| calculationLoad | low |
+| scaffoldLevel | none |
+| distractorQuality | weak |
+| gradeRelativeRationale | Soal ini adalah aplikasi langsung rumus standar untuk siswa kelas 9 tanpa variasi atau tantangan tambahan. |
+
+Histori retry: run 1 sebelumnya `failed` / `ServerError:503`. Percobaan gagal ini bukan suara kelas; tabel run di atas berisi hasil terbaru.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {"knowing": 1} | single_run / single_run | knowing |
+| Dimensi pengetahuan | {"procedural": 1} | single_run / single_run | procedural |
+| Intended difficulty | {"Easy": 1} | single_run / single_run | Easy |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Luas Permukaan Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tabung tertutup memiliki jari-jari 11 cm dan tinggi 12 cm. Berapa luas seluruh permukaannya dalam bentuk $\pi$?
+Pilihan: A. $-1 + 506 \pi$
+B. $1 + 506 \pi$
+C. $506 \pi$
+D. $2 + 506 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": "knowing", "knowledgeDimension": "procedural", "intendedDifficulty": "Easy"}`. Routing: `silver_ready`.
+Status konten: `valid`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": "knowing", "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": "procedural", "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": "Easy", "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 772. Soal `f174f384e755cd5023325163`
+
+Tabung tertutup memiliki jari-jari 15 cm dan tinggi 8 cm. Berapa luas seluruh permukaannya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $690 \pi$ |
+| B | $2 + 690 \pi$ |
+| C | $1 + 690 \pi$ |
+| D | $-1 + 690 \pi$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cb07f26d8a99a3beb9ac10b4512e155d1e8aacddcedb2d0be4f2d6b60518dd7b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ConnectError:unknown`; tidak dihitung sebagai suara.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Luas Permukaan Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Tabung tertutup memiliki jari-jari 15 cm dan tinggi 8 cm. Berapa luas seluruh permukaannya dalam bentuk $\pi$?
+Pilihan: A. $690 \pi$
+B. $2 + 690 \pi$
+C. $1 + 690 \pi$
+D. $-1 + 690 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 773. Soal `559b667102aa343087ac3196`
+
+Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 28 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $13$ |
+| B | $11$ |
+| C | $14$ |
+| D | $12$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `75e9012ae007013d09630d5e87922242efefcf05ad09966db7103e918b3d029d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+| 1 | failed | — / — | — | — | — | 0 |
+
+Run 1 gagal: `ServerError:503`; tidak dihitung sebagai suara.
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 28 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $13$
+B. $11$
+C. $14$
+D. $12$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 774. Soal `dc7b3183e2dc01ebd1361af2`
+
+Populasi terdiri atas 8 kelompok dengan anggota sama banyak, total 104 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $26$ |
+| B | $24$ |
+| C | $23$ |
+| D | $25$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `49623d903c18e73e3ef3c5d0d19cc45ccf29cdf22d623219d72ccd900c3f2011`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 8 kelompok dengan anggota sama banyak, total 104 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $26$
+B. $24$
+C. $23$
+D. $25$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 775. Soal `790b5ba4a4dc2d92ff57f0f5`
+
+Sebuah prisma tegak memiliki alas segi-6. Berapa banyak rusuk prisma tersebut?
+
+| Opsi | Isi |
+|---|---|
+| A | $20$ |
+| B | $17$ |
+| C | $18$ |
+| D | $19$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `2c15e275d97f8dec1a0d48f4852ff16f4b13d7d09847b175b6dc115a07600fbd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah prisma tegak memiliki alas segi-6. Berapa banyak rusuk prisma tersebut?
+Pilihan: A. $20$
+B. $17$
+C. $18$
+D. $19$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 776. Soal `2defbab2007db1c7b7c8360c`
+
+Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?
+
+| Opsi | Isi |
+|---|---|
+| A | $14$ |
+| B | $13$ |
+| C | $12$ |
+| D | $11$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `616af58ab3f35277c5b91a35771258ea685ee3842b64a9e68ac0569e83945aed`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah prisma tegak memiliki alas segi-4. Berapa banyak rusuk prisma tersebut?
+Pilihan: A. $14$
+B. $13$
+C. $12$
+D. $11$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 777. Soal `778b6599f591bbfd71a12c18`
+
+Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?
+
+| Opsi | Isi |
+|---|---|
+| A | $23$ |
+| B | $24$ |
+| C | $26$ |
+| D | $25$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a38d9606364b993fd9f4ab09c0cc0c689ba3aa51562d7d846e6e7f10bf67bd83`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Klasifikasi Bangun Ruang dan Jaring-Jaring
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah prisma tegak memiliki alas segi-8. Berapa banyak rusuk prisma tersebut?
+Pilihan: A. $23$
+B. $24$
+C. $26$
+D. $25$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 778. Soal `525be71d1e05560afa778557`
+
+Titik $(x,14)$ memenuhi persamaan $5x+4y=116$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $12$ |
+| B | $13$ |
+| C | $14$ |
+| D | $11$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0560558df54054e3ffe3f0dd4b1cefcc44c5265f66e08796dc9d158f98f1873a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik $(x,14)$ memenuhi persamaan $5x+4y=116$. Tentukan $x$.
+Pilihan: A. $12$
+B. $13$
+C. $14$
+D. $11$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 779. Soal `7e1b39d4ea38b04dfba77272`
+
+Titik $(x,9)$ memenuhi persamaan $3x+2y=39$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $7$ |
+| B | $8$ |
+| C | $6$ |
+| D | $9$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `36fc923fccebfefc9b7a502e864dcbe4200458111b84f0d4c71380c6cfde4e0e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik $(x,9)$ memenuhi persamaan $3x+2y=39$. Tentukan $x$.
+Pilihan: A. $7$
+B. $8$
+C. $6$
+D. $9$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 780. Soal `df34f2a194c2662a434f4612`
+
+Titik $(x,12)$ memenuhi persamaan $7x+5y=144$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $11$ |
+| B | $13$ |
+| C | $14$ |
+| D | $12$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3f0cbd800e54070c484b778fc19ae4cfaa37fd0dafb4f61c783b25a761568670`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik $(x,12)$ memenuhi persamaan $7x+5y=144$. Tentukan $x$.
+Pilihan: A. $11$
+B. $13$
+C. $14$
+D. $12$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 781. Soal `39ac8561e3c950a26c428375`
+
+Titik $(x,10)$ memenuhi persamaan $3x+7y=97$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $11$ |
+| B | $8$ |
+| C | $10$ |
+| D | $9$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a9015022fe1c84c747f1245862ad162b9774c2d24fb01bfe3b011d129fa081a7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik $(x,10)$ memenuhi persamaan $3x+7y=97$. Tentukan $x$.
+Pilihan: A. $11$
+B. $8$
+C. $10$
+D. $9$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 782. Soal `8e3d70690057f2ed7d0372c0`
+
+Diketahui $x+y=21$ dan $6x+7y=137$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $9$ |
+| B | $12$ |
+| C | $10$ |
+| D | $11$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `47d2a96f9f1efbbf70d61d4d6553480287bdca35e504f82ba1351523d7a20f7a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Sistem Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Diketahui $x+y=21$ dan $6x+7y=137$. Tentukan $x$.
+Pilihan: A. $9$
+B. $12$
+C. $10$
+D. $11$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 783. Soal `b24c177f9a91a115931539ae`
+
+Diketahui $x+y=12$ dan $5x+6y=64$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $9$ |
+| B | $7$ |
+| C | $8$ |
+| D | $10$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b22a398d911fa92a235aaf00c628ece87859d75cbe9ab780d0f8b681c89b260d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Sistem Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Diketahui $x+y=12$ dan $5x+6y=64$. Tentukan $x$.
+Pilihan: A. $9$
+B. $7$
+C. $8$
+D. $10$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 784. Soal `edeb0331dc3d43eb4af57b44`
+
+Diketahui $x+y=17$ dan $4x+5y=71$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $13$ |
+| B | $15$ |
+| C | $16$ |
+| D | $14$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `adc4ed7ee24eeae64356299d0c0e3fc98c9f4a5eeef45c5ebbdb5e39dbb6cd49`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Sistem Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Diketahui $x+y=17$ dan $4x+5y=71$. Tentukan $x$.
+Pilihan: A. $13$
+B. $15$
+C. $16$
+D. $14$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 785. Soal `0c9a162c83c8c2581f30ea7d`
+
+Diketahui $x+y=10$ dan $6x+7y=64$. Tentukan $x$.
+
+| Opsi | Isi |
+|---|---|
+| A | $8$ |
+| B | $5$ |
+| C | $6$ |
+| D | $7$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['mengidentifikasi']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `e8a83fcfee8e7cf9d77ddf67c9a657bd3671fa5fb969f9729f7fa80281c01573`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Sistem Persamaan Linear Dua Variabel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Diketahui $x+y=10$ dan $6x+7y=64$. Tentukan $x$.
+Pilihan: A. $8$
+B. $5$
+C. $6$
+D. $7$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 786. Soal `2fa268188837153b7b53dc45`
+
+Lingkaran mempunyai jari-jari 16 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $2 + 256 \pi$ |
+| B | $256 \pi$ |
+| C | $-1 + 256 \pi$ |
+| D | $1 + 256 \pi$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3698e5d537f59833c8263d39dbb2fc46df4dbd39b1f6786a363b34b64001d3bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 16 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $2 + 256 \pi$
+B. $256 \pi$
+C. $-1 + 256 \pi$
+D. $1 + 256 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 787. Soal `fd4d764e5aec202b1320832e`
+
+Lingkaran mempunyai jari-jari 8 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $-1 + 64 \pi$ |
+| B | $1 + 64 \pi$ |
+| C | $64 \pi$ |
+| D | $2 + 64 \pi$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cdfb6378c9b3a4c9d44e4217f3aa02b7a321d0db9a4a04cc7fa062777bc65b95`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 8 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $-1 + 64 \pi$
+B. $1 + 64 \pi$
+C. $64 \pi$
+D. $2 + 64 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 788. Soal `446e5f21df7ba09be5a716b6`
+
+Lingkaran mempunyai jari-jari 14 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $196 \pi$ |
+| B | $2 + 196 \pi$ |
+| C | $1 + 196 \pi$ |
+| D | $-1 + 196 \pi$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `bd167997ee0eef47056313210b22d3080760d8eb87bf8c0b7ea9a463030b0639`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 14 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $196 \pi$
+B. $2 + 196 \pi$
+C. $1 + 196 \pi$
+D. $-1 + 196 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 789. Soal `1414f1c13632aa8c9a38e87a`
+
+Lingkaran mempunyai jari-jari 12 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $1 + 144 \pi$ |
+| B | $-1 + 144 \pi$ |
+| C | $144 \pi$ |
+| D | $2 + 144 \pi$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `07aaa4e12f1c333552e032538103036b371417ad011c506502692e56792e54bb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 12 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $1 + 144 \pi$
+B. $-1 + 144 \pi$
+C. $144 \pi$
+D. $2 + 144 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 790. Soal `01e2f4a67a91a093ed5b8be0`
+
+Titik P$(5, 11)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-5, 11)$ |
+| B | $(-5, 12)$ |
+| C | $(-4, 11)$ |
+| D | $(-6, 10)$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `aa2ff4fc4629f7b5dee6d780812d049892f5201d9c8fb2e870698c1e60fd3f20`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Refleksi (Pencerminan)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(5, 11)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+Pilihan: A. $(-5, 11)$
+B. $(-5, 12)$
+C. $(-4, 11)$
+D. $(-6, 10)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 791. Soal `b5fe333c4514723213a5827d`
+
+Titik P$(10, 6)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-11, 5)$ |
+| B | $(-10, 6)$ |
+| C | $(-10, 7)$ |
+| D | $(-9, 6)$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `656b5e02b24d99b069164a18dfc15ad74496c733f896011e948e1648ad244734`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Refleksi (Pencerminan)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(10, 6)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+Pilihan: A. $(-11, 5)$
+B. $(-10, 6)$
+C. $(-10, 7)$
+D. $(-9, 6)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 792. Soal `319096ea514dda6b10d058bc`
+
+Titik P$(4, 3)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-4, 3)$ |
+| B | $(-5, 2)$ |
+| C | $(-3, 3)$ |
+| D | $(-4, 4)$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `60e6d53319a45c2fe572586f2bb543a14536cc22bd129761150e41588446ce37`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Refleksi (Pencerminan)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(4, 3)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+Pilihan: A. $(-4, 3)$
+B. $(-5, 2)$
+C. $(-3, 3)$
+D. $(-4, 4)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 793. Soal `039a6c1e203db781264be5e5`
+
+Titik P$(-10, -3)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(10, -2)$ |
+| B | $(9, -4)$ |
+| C | $(10, -3)$ |
+| D | $(11, -3)$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c61b282b83efee07040fe3d9855c02a1eed02c2551a3472c127367286ef4895f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Refleksi (Pencerminan)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-10, -3)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangannya adalah ....
+Pilihan: A. $(10, -2)$
+B. $(9, -4)$
+C. $(10, -3)$
+D. $(11, -3)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 794. Soal `c9a441047feca9db30b2320b`
+
+Titik P$(7, -8)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(7, 6)$ |
+| B | $(8, 8)$ |
+| C | $(9, 7)$ |
+| D | $(8, 7)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `32c012fb48cc5f6f4878c01b1b49dae9e9fd3571adb060d4eb5bbc34f0668e47`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Rotasi (Perputaran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(7, -8)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+Pilihan: A. $(7, 6)$
+B. $(8, 8)$
+C. $(9, 7)$
+D. $(8, 7)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 795. Soal `b489de862f8d3dcbe4fda5dc`
+
+Titik P$(6, 5)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-4, 6)$ |
+| B | $(-6, 5)$ |
+| C | $(-5, 7)$ |
+| D | $(-5, 6)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3036168954dc2ca106901b0295bb4b0ea8f6eae77f9553003184f4ae41ca9ec0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Rotasi (Perputaran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(6, 5)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+Pilihan: A. $(-4, 6)$
+B. $(-6, 5)$
+C. $(-5, 7)$
+D. $(-5, 6)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 796. Soal `2809a72fe8c6e62b3101c8ab`
+
+Titik P$(5, 9)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-8, 5)$ |
+| B | $(-10, 4)$ |
+| C | $(-9, 5)$ |
+| D | $(-9, 6)$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `93e3694a569566f62811f8556f2df06d92e33f6304c5e73af4dc38b8ef933b84`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Rotasi (Perputaran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(5, 9)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+Pilihan: A. $(-8, 5)$
+B. $(-10, 4)$
+C. $(-9, 5)$
+D. $(-9, 6)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 797. Soal `8accfd080627ee895c448838`
+
+Titik P$(10, 4)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-4, 11)$ |
+| B | $(-3, 10)$ |
+| C | $(-5, 9)$ |
+| D | $(-4, 10)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8447bbcccad024f5d658cdccad32e8082590e4fbb0210dc2805a032c036a9bbb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Rotasi (Perputaran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(10, 4)$ dirotasi 90° berlawanan arah jarum jam terhadap O(0,0). Koordinat bayangannya adalah ....
+Pilihan: A. $(-4, 11)$
+B. $(-3, 10)$
+C. $(-5, 9)$
+D. $(-4, 10)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 798. Soal `04f4a622eb751a4feff630f0`
+
+Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=12 cm, BC=4 cm, AC=12 cm, berapa keliling DEF?
+
+| Opsi | Isi |
+|---|---|
+| A | $29$ |
+| B | $30$ |
+| C | $28$ |
+| D | $27$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ae87acdcad8293a2b322bf36f89afe2f361c9872f3019f06d72a6aa716b9d08a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Kekongruenan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=12 cm, BC=4 cm, AC=12 cm, berapa keliling DEF?
+Pilihan: A. $29$
+B. $30$
+C. $28$
+D. $27$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 799. Soal `933fb383a133b4a27710c1ab`
+
+Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=19 cm, BC=14 cm, AC=30 cm, berapa keliling DEF?
+
+| Opsi | Isi |
+|---|---|
+| A | $64$ |
+| B | $65$ |
+| C | $63$ |
+| D | $62$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ebdcac5c353f18993403e5cf8e6bed4135a749e54f46118f16fab7a2a94329ce`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Kekongruenan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=19 cm, BC=14 cm, AC=30 cm, berapa keliling DEF?
+Pilihan: A. $64$
+B. $65$
+C. $63$
+D. $62$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 800. Soal `7631d1816634d7654341f644`
+
+Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=11 cm, BC=13 cm, AC=18 cm, berapa keliling DEF?
+
+| Opsi | Isi |
+|---|---|
+| A | $41$ |
+| B | $43$ |
+| C | $42$ |
+| D | $44$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3ada534ca0c434b6f987a6d6ce99078a6d5636ecd7447961cfb9d6a64f4cc3f0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Kekongruenan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=11 cm, BC=13 cm, AC=18 cm, berapa keliling DEF?
+Pilihan: A. $41$
+B. $43$
+C. $42$
+D. $44$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 801. Soal `b02e927916d8f4d3b2a473aa`
+
+Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=5 cm, BC=9 cm, AC=13 cm, berapa keliling DEF?
+
+| Opsi | Isi |
+|---|---|
+| A | $28$ |
+| B | $29$ |
+| C | $27$ |
+| D | $26$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `ec65227ccbf9cbec663c1cb71ca55c297fd1e36c4021e6b648d16a1234f16bf0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Kekongruenan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=5 cm, BC=9 cm, AC=13 cm, berapa keliling DEF?
+Pilihan: A. $28$
+B. $29$
+C. $27$
+D. $26$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 802. Soal `e7524300357f158a8555f419`
+
+Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=6 cm, BC=17 cm, AC=19 cm, berapa keliling DEF?
+
+| Opsi | Isi |
+|---|---|
+| A | $43$ |
+| B | $44$ |
+| C | $41$ |
+| D | $42$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5e29748f27cd83e91454d52054139d7e85c30d5bc213e12a9bd289122bddd2db`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Kekongruenan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Segitiga ABC kongruen dengan DEF, dengan A-D, B-E, C-F. Jika AB=6 cm, BC=17 cm, AC=19 cm, berapa keliling DEF?
+Pilihan: A. $43$
+B. $44$
+C. $41$
+D. $42$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 803. Soal `66900b2221d4705f56f52aa7`
+
+Titik P$(-9, -8)$ didilatasi berpusat di O(0,0) dengan faktor 2. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-18, -15)$ |
+| B | $(-19, -17)$ |
+| C | $(-17, -16)$ |
+| D | $(-18, -16)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f5777a12b6d23cfe7e351e0b2e7095426a04b4dabac59aadecd9b933bf6c8d2b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Dilatasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-9, -8)$ didilatasi berpusat di O(0,0) dengan faktor 2. Koordinat bayangannya adalah ....
+Pilihan: A. $(-18, -15)$
+B. $(-19, -17)$
+C. $(-17, -16)$
+D. $(-18, -16)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 804. Soal `f45372940913be728d88c122`
+
+Titik P$(-9, -1)$ didilatasi berpusat di O(0,0) dengan faktor 7. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-62, -7)$ |
+| B | $(-63, -6)$ |
+| C | $(-64, -8)$ |
+| D | $(-63, -7)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `545f7ed2e6940e5d78ca5ec6fa4d1d5565914a9a55b3b811f57e15a1dcf6b480`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Dilatasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-9, -1)$ didilatasi berpusat di O(0,0) dengan faktor 7. Koordinat bayangannya adalah ....
+Pilihan: A. $(-62, -7)$
+B. $(-63, -6)$
+C. $(-64, -8)$
+D. $(-63, -7)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 805. Soal `b6af0549e14eae0d8d6ce2cc`
+
+Titik P$(12, 12)$ didilatasi berpusat di O(0,0) dengan faktor 6. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(71, 71)$ |
+| B | $(73, 72)$ |
+| C | $(72, 72)$ |
+| D | $(72, 73)$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0852aa97d7b83b5614228fd4bdbe74df26bf77e269a8fd90bff45ab8a2f59e2f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Dilatasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(12, 12)$ didilatasi berpusat di O(0,0) dengan faktor 6. Koordinat bayangannya adalah ....
+Pilihan: A. $(71, 71)$
+B. $(73, 72)$
+C. $(72, 72)$
+D. $(72, 73)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 806. Soal `732947f2cd512c8c1e608ec5`
+
+Titik P$(-2, 9)$ didilatasi berpusat di O(0,0) dengan faktor 4. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-8, 37)$ |
+| B | $(-7, 36)$ |
+| C | $(-9, 35)$ |
+| D | $(-8, 36)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `65633acdfbf35b25617be1f8302c30eb0e77fdbf81b243a6f10cec43a1d507d2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Dilatasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-2, 9)$ didilatasi berpusat di O(0,0) dengan faktor 4. Koordinat bayangannya adalah ....
+Pilihan: A. $(-8, 37)$
+B. $(-7, 36)$
+C. $(-9, 35)$
+D. $(-8, 36)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 807. Soal `d37590c6c530d1238c75ee7c`
+
+Titik P$(-3, -2)$ didilatasi berpusat di O(0,0) dengan faktor 2. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-7, -5)$ |
+| B | $(-6, -4)$ |
+| C | $(-5, -4)$ |
+| D | $(-6, -3)$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b98416639d620f293c76605fde1479b1180a2953fe1b5b5e4a914354737d2e6f`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Dilatasi
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-3, -2)$ didilatasi berpusat di O(0,0) dengan faktor 2. Koordinat bayangannya adalah ....
+Pilihan: A. $(-7, -5)$
+B. $(-6, -4)$
+C. $(-5, -4)$
+D. $(-6, -3)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 808. Soal `034e51898e60801fbaa82812`
+
+Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 52 orang. Sampel diambil proporsional, 10 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $39$ |
+| B | $41$ |
+| C | $42$ |
+| D | $40$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `99ec6e0e2c8a74a630eba8fffd028c86d9ecaa90d65610169960157f862cfcd0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 52 orang. Sampel diambil proporsional, 10 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $39$
+B. $41$
+C. $42$
+D. $40$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 809. Soal `700492fdd1d052c867268b7f`
+
+Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 55 orang. Sampel diambil proporsional, 7 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $34$ |
+| B | $36$ |
+| C | $37$ |
+| D | $35$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4b7370547bd9ef968a8ac86f0d4d8823b87d54dbfc0751e49c4245f6c0a3ae77`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 55 orang. Sampel diambil proporsional, 7 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $34$
+B. $36$
+C. $37$
+D. $35$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 810. Soal `f748bb7a2461dc28e1c78347`
+
+Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 50 orang. Sampel diambil proporsional, 7 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $36$ |
+| B | $34$ |
+| C | $35$ |
+| D | $37$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1f26a60953249b8557f59098a7beb034b5e1795a66be6d2525af2874aa78874b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 50 orang. Sampel diambil proporsional, 7 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $36$
+B. $34$
+C. $35$
+D. $37$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 811. Soal `d4832cbd172635262175f5a6`
+
+Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 20 orang. Sampel diambil proporsional, 2 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $10$ |
+| B | $8$ |
+| C | $9$ |
+| D | $7$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f380c493f6c7e851cdcaed974babdd191c419b192ffaef8d46087b79597c0c72`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 4 kelompok dengan anggota sama banyak, total 20 orang. Sampel diambil proporsional, 2 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $10$
+B. $8$
+C. $9$
+D. $7$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 812. Soal `391e424b9e036ac1290f9603`
+
+Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 55 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?
+
+| Opsi | Isi |
+|---|---|
+| A | $16$ |
+| B | $17$ |
+| C | $15$ |
+| D | $14$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `5eed980e2bee3ca907d991a1c86cd3447e5b89ce60ad22569beef9a26f5c7c01`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Pemilihan Sampel
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Populasi terdiri atas 5 kelompok dengan anggota sama banyak, total 55 orang. Sampel diambil proporsional, 3 orang per kelompok. Berapa jumlah seluruh sampel?
+Pilihan: A. $16$
+B. $17$
+C. $15$
+D. $14$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 813. Soal `2ff6c9ae7478a3c577eb0525`
+
+Balok berukuran 8 cm × 8 cm × 14 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $898$ |
+| B | $897$ |
+| C | $896$ |
+| D | $895$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3313a4a0369d38d82e8d22ff611fb67ef872de1b6859777af9c84181e7185012`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 8 cm × 8 cm × 14 cm. Berapa volumenya?
+Pilihan: A. $898$
+B. $897$
+C. $896$
+D. $895$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 814. Soal `f9201e28ce7828d469ebcdd1`
+
+Balok berukuran 13 cm × 10 cm × 13 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $1692$ |
+| B | $1691$ |
+| C | $1690$ |
+| D | $1689$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0f9a795f79f89772befd7145f50abcdc886967c015a1a150b57f171503df9d2d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 13 cm × 10 cm × 13 cm. Berapa volumenya?
+Pilihan: A. $1692$
+B. $1691$
+C. $1690$
+D. $1689$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 815. Soal `94ffbaae0601df18e67a3dff`
+
+Balok berukuran 18 cm × 14 cm × 6 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $1514$ |
+| B | $1512$ |
+| C | $1511$ |
+| D | $1513$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `7d4a564ab4af28205f104bb81f64a8dd8a44e8ed781a932e5af89e00e5b01185`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 18 cm × 14 cm × 6 cm. Berapa volumenya?
+Pilihan: A. $1514$
+B. $1512$
+C. $1511$
+D. $1513$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 816. Soal `8964371080d8f0e2d73e8c38`
+
+Balok berukuran 8 cm × 3 cm × 16 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $386$ |
+| B | $384$ |
+| C | $385$ |
+| D | $383$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4bc4dc019e9733a41af98e6bd32026bfdb78c7b31afda8155c0a5f231c3b8e91`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 8 cm × 3 cm × 16 cm. Berapa volumenya?
+Pilihan: A. $386$
+B. $384$
+C. $385$
+D. $383$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 817. Soal `8248ef4d43dfd6debc05a325`
+
+Balok berukuran 17 cm × 3 cm × 7 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $356$ |
+| B | $358$ |
+| C | $357$ |
+| D | $359$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9f8451739d858cd40e0d10cbd7b3512fa0d4a38c5bd49e31560a3fd09f962015`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 17 cm × 3 cm × 7 cm. Berapa volumenya?
+Pilihan: A. $356$
+B. $358$
+C. $357$
+D. $359$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 818. Soal `94fe509fb98254785c457319`
+
+Balok berukuran 5 cm × 8 cm × 9 cm. Berapa volumenya?
+
+| Opsi | Isi |
+|---|---|
+| A | $362$ |
+| B | $360$ |
+| C | $361$ |
+| D | $359$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f89f09acb140432a5a3b992fb1e84eb2f277a4a0a5fe411bab4f42a810b4eaf3`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Datar
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Balok berukuran 5 cm × 8 cm × 9 cm. Berapa volumenya?
+Pilihan: A. $362$
+B. $360$
+C. $361$
+D. $359$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 819. Soal `343b3d17594f367de460f3a6`
+
+Lingkaran mempunyai jari-jari 17 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $2 + 289 \pi$ |
+| B | $289 \pi$ |
+| C | $1 + 289 \pi$ |
+| D | $-1 + 289 \pi$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b19018da34476cfa667496539653ac665cc9ce8d865657ffb92aba5984054f55`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 17 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $2 + 289 \pi$
+B. $289 \pi$
+C. $1 + 289 \pi$
+D. $-1 + 289 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 820. Soal `4892c3342a5b78cb70edb037`
+
+Lingkaran mempunyai jari-jari 13 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $2 + 169 \pi$ |
+| B | $1 + 169 \pi$ |
+| C | $169 \pi$ |
+| D | $-1 + 169 \pi$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fc6cadd7488af6efe83bf14954579160885bbf9ea57062198a7d00fba1874aa2`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 13 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $2 + 169 \pi$
+B. $1 + 169 \pi$
+C. $169 \pi$
+D. $-1 + 169 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 821. Soal `5935b9dc99567f7b55a1d510`
+
+Lingkaran mempunyai jari-jari 6 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $-1 + 36 \pi$ |
+| B | $36 \pi$ |
+| C | $2 + 36 \pi$ |
+| D | $1 + 36 \pi$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `21f05855cbb3961c2a1c158dd638819a891327570fe7f45cdbfb3cdc436e1cec`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 6 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $-1 + 36 \pi$
+B. $36 \pi$
+C. $2 + 36 \pi$
+D. $1 + 36 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 822. Soal `4a7dffb67366685b0184e84a`
+
+Lingkaran mempunyai jari-jari 15 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $225 \pi$ |
+| B | $2 + 225 \pi$ |
+| C | $-1 + 225 \pi$ |
+| D | $1 + 225 \pi$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3b34dabc57a624c0ef13a35e46f17dd24300645eedb1980d0e10b815f42a08bf`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 15 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $225 \pi$
+B. $2 + 225 \pi$
+C. $-1 + 225 \pi$
+D. $1 + 225 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 823. Soal `bb150697b370f1de44270538`
+
+Lingkaran mempunyai jari-jari 10 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $100 \pi$ |
+| B | $1 + 100 \pi$ |
+| C | $-1 + 100 \pi$ |
+| D | $2 + 100 \pi$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d9471ddaab8dfba0d3f3e225048b2f6cfe604353c7366cba5edd314119c9cca7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 10 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $100 \pi$
+B. $1 + 100 \pi$
+C. $-1 + 100 \pi$
+D. $2 + 100 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 824. Soal `4ae1820ba3c413b64a37adca`
+
+Lingkaran mempunyai jari-jari 18 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $2 + 324 \pi$ |
+| B | $324 \pi$ |
+| C | $-1 + 324 \pi$ |
+| D | $1 + 324 \pi$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `cbeba983759aaacb2c95de13c174e4b4ce50cf9932457c2fd28d6f72a4ee6b13`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Lingkaran
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Lingkaran mempunyai jari-jari 18 cm. Dengan $\pi$ tetap sebagai simbol, berapa luasnya?
+Pilihan: A. $2 + 324 \pi$
+B. $324 \pi$
+C. $-1 + 324 \pi$
+D. $1 + 324 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 825. Soal `d00296984357676f3afb871a`
+
+Titik P$(1, 5)$ ditranslasi oleh vektor $(4, 6)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(4, 10)$ |
+| B | $(5, 12)$ |
+| C | $(6, 11)$ |
+| D | $(5, 11)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `038829b6b940cf0e1c84eabd83fb677e333c505b5c5480165ebc9ee352b91b8e`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(1, 5)$ ditranslasi oleh vektor $(4, 6)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(4, 10)$
+B. $(5, 12)$
+C. $(6, 11)$
+D. $(5, 11)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 826. Soal `2f9b0ed8a01d0a6b2e4f49ab`
+
+Titik P$(-8, 3)$ ditranslasi oleh vektor $(7, 7)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(0, 10)$ |
+| B | $(-2, 9)$ |
+| C | $(-1, 10)$ |
+| D | $(-1, 11)$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0b666f8eb7927c2b9e581dee07b8fb0010b09bd95f5d1969348e1649800833b8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-8, 3)$ ditranslasi oleh vektor $(7, 7)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(0, 10)$
+B. $(-2, 9)$
+C. $(-1, 10)$
+D. $(-1, 11)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 827. Soal `fbf36e843d98715198f6d008`
+
+Titik P$(-3, -5)$ ditranslasi oleh vektor $(3, 6)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(-1, 0)$ |
+| B | $(0, 1)$ |
+| C | $(1, 1)$ |
+| D | $(0, 2)$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0c4d28f1d8ba42a6a1be2787be1aef78cd28d2dfee022d1db72853be1a432efb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-3, -5)$ ditranslasi oleh vektor $(3, 6)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(-1, 0)$
+B. $(0, 1)$
+C. $(1, 1)$
+D. $(0, 2)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 828. Soal `ab728b6faa0eede28c0450e2`
+
+Titik P$(8, 1)$ ditranslasi oleh vektor $(9, 5)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(16, 5)$ |
+| B | $(17, 6)$ |
+| C | $(17, 7)$ |
+| D | $(18, 6)$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c07be251328b01b416c5cb2eafde9d13d787cbef272cf0025f5662e8ce3404b5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(8, 1)$ ditranslasi oleh vektor $(9, 5)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(16, 5)$
+B. $(17, 6)$
+C. $(17, 7)$
+D. $(18, 6)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 829. Soal `d2e064e1115a9bd31d3ef24a`
+
+Titik P$(-7, 10)$ ditranslasi oleh vektor $(8, 7)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(0, 16)$ |
+| B | $(1, 18)$ |
+| C | $(1, 17)$ |
+| D | $(2, 17)$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d50f2005fdaa1de4a2f47a62e4a667632b354101fb74b57806fac0756239fd46`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(-7, 10)$ ditranslasi oleh vektor $(8, 7)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(0, 16)$
+B. $(1, 18)$
+C. $(1, 17)$
+D. $(2, 17)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 830. Soal `872f5ee784d4ebc400c5fce5`
+
+Titik P$(0, 3)$ ditranslasi oleh vektor $(5, 7)$. Koordinat bayangannya adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $(4, 9)$ |
+| B | $(5, 11)$ |
+| C | $(6, 10)$ |
+| D | $(5, 10)$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0567e00f2f4f5c4f501ae212df106177abe9973f6df7bd0b767fdd13037c741d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Translasi (Pergeseran)
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Titik P$(0, 3)$ ditranslasi oleh vektor $(5, 7)$. Koordinat bayangannya adalah ....
+Pilihan: A. $(4, 9)$
+B. $(5, 11)$
+C. $(6, 10)$
+D. $(5, 10)$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 831. Soal `b75ef4ac19b11d53682f42e4`
+
+Dalam 39 percobaan, suatu kejadian muncul 26 kali. Berapa peluang empirisnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{2}{3}$ |
+| B | $- \frac{1}{3}$ |
+| C | $\frac{5}{3}$ |
+| D | $\frac{8}{3}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c66a2df660ce74eb73c8dfbe96feabe8530c2c034fe962f04f9bc6d78f43be4d`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang Empiris
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dalam 39 percobaan, suatu kejadian muncul 26 kali. Berapa peluang empirisnya?
+Pilihan: A. $\frac{2}{3}$
+B. $- \frac{1}{3}$
+C. $\frac{5}{3}$
+D. $\frac{8}{3}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 832. Soal `7222eed405c6fafdfd5b1005`
+
+Dalam 69 percobaan, suatu kejadian muncul 27 kali. Berapa peluang empirisnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{32}{23}$ |
+| B | $\frac{9}{23}$ |
+| C | $\frac{55}{23}$ |
+| D | $- \frac{14}{23}$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `a11acd14da341f55406b7a10d66102e97bf44298f28786695b6d11f590397b39`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang Empiris
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dalam 69 percobaan, suatu kejadian muncul 27 kali. Berapa peluang empirisnya?
+Pilihan: A. $\frac{32}{23}$
+B. $\frac{9}{23}$
+C. $\frac{55}{23}$
+D. $- \frac{14}{23}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 833. Soal `5c665951e197b571cd5061ba`
+
+Dalam 68 percobaan, suatu kejadian muncul 47 kali. Berapa peluang empirisnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{47}{68}$ |
+| B | $- \frac{21}{68}$ |
+| C | $\frac{183}{68}$ |
+| D | $\frac{115}{68}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `9d3a2f03d803e47dd85b68869ed9d27adf57d046d0c2c80df34b48bf70d921ce`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang Empiris
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dalam 68 percobaan, suatu kejadian muncul 47 kali. Berapa peluang empirisnya?
+Pilihan: A. $\frac{47}{68}$
+B. $- \frac{21}{68}$
+C. $\frac{183}{68}$
+D. $\frac{115}{68}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 834. Soal `d18d415455c6a4076b1a4bee`
+
+Dalam 44 percobaan, suatu kejadian muncul 8 kali. Berapa peluang empirisnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{13}{11}$ |
+| B | $\frac{2}{11}$ |
+| C | $- \frac{9}{11}$ |
+| D | $\frac{24}{11}$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4a545df366d52a9f0d1e5850bb9bc725b46784fadc87972a485ef91e2b79b0bd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang Empiris
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dalam 44 percobaan, suatu kejadian muncul 8 kali. Berapa peluang empirisnya?
+Pilihan: A. $\frac{13}{11}$
+B. $\frac{2}{11}$
+C. $- \frac{9}{11}$
+D. $\frac{24}{11}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 835. Soal `01ab8a588c4453753ca77a29`
+
+Dalam 75 percobaan, suatu kejadian muncul 61 kali. Berapa peluang empirisnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{211}{75}$ |
+| B | $\frac{136}{75}$ |
+| C | $- \frac{14}{75}$ |
+| D | $\frac{61}{75}$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `6030888e1fea682dfe5725a2b7826deda07a55671f4f9098d7ef119eae705bb5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang Empiris
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dalam 75 percobaan, suatu kejadian muncul 61 kali. Berapa peluang empirisnya?
+Pilihan: A. $\frac{211}{75}$
+B. $\frac{136}{75}$
+C. $- \frac{14}{75}$
+D. $\frac{61}{75}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 836. Soal `a7f23ad8726150ea732303ce`
+
+Dalam 83 percobaan, suatu kejadian muncul 61 kali. Berapa peluang empirisnya?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{61}{83}$ |
+| B | $- \frac{22}{83}$ |
+| C | $\frac{227}{83}$ |
+| D | $\frac{144}{83}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d7423f61687a73882da3a2c459e7ae0986512814d7bc093b34abc33615f6085a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang Empiris
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Dalam 83 percobaan, suatu kejadian muncul 61 kali. Berapa peluang empirisnya?
+Pilihan: A. $\frac{61}{83}$
+B. $- \frac{22}{83}$
+C. $\frac{227}{83}$
+D. $\frac{144}{83}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 837. Soal `b15030afef30b9ff2ba47907`
+
+Sebuah kotak berisi 11 bola merah dan 7 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{11}{18}$ |
+| B | $\frac{55}{153}$ |
+| C | $\frac{121}{324}$ |
+| D | $\frac{7}{18}$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `0bc21916c9e1bf0955bf6d0e1661bfaa7f2897844da52bdd0a8dc970a09efca4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 11 bola merah dan 7 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{11}{18}$
+B. $\frac{55}{153}$
+C. $\frac{121}{324}$
+D. $\frac{7}{18}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 838. Soal `9ca9eaded9e7ccaa7052b021`
+
+Sebuah kotak berisi 6 bola merah dan 11 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{6}{17}$ |
+| B | $\frac{15}{136}$ |
+| C | $\frac{11}{17}$ |
+| D | $\frac{36}{289}$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `593daca823db7e91bf8f199ad1e5e2760467fea4cc1a095358b0583187879e17`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 6 bola merah dan 11 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{6}{17}$
+B. $\frac{15}{136}$
+C. $\frac{11}{17}$
+D. $\frac{36}{289}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 839. Soal `a045eabe88933ae3ea04cbdf`
+
+Sebuah kotak berisi 10 bola merah dan 7 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{10}{17}$ |
+| B | $\frac{100}{289}$ |
+| C | $\frac{45}{136}$ |
+| D | $\frac{7}{17}$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `f3aebf403c4462adf9d88db9720cc13d148a527053a4be5c0fc3f8ea70438622`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 10 bola merah dan 7 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{10}{17}$
+B. $\frac{100}{289}$
+C. $\frac{45}{136}$
+D. $\frac{7}{17}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 840. Soal `d24c34b3a9567e1ee876e69f`
+
+Sebuah kotak berisi 12 bola merah dan 11 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{144}{529}$ |
+| B | $\frac{11}{23}$ |
+| C | $\frac{12}{23}$ |
+| D | $\frac{6}{23}$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `08c53bc2d547e60235b0a2eca70056dc7fd305d958660b6c69902bb184ba52f8`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 12 bola merah dan 11 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{144}{529}$
+B. $\frac{11}{23}$
+C. $\frac{12}{23}$
+D. $\frac{6}{23}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 841. Soal `e5bc02cc23bd60e40dd358c7`
+
+Sebuah kotak berisi 12 bola merah dan 5 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{12}{17}$ |
+| B | $\frac{144}{289}$ |
+| C | $\frac{5}{17}$ |
+| D | $\frac{33}{68}$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `d6c02dd5b6a823364bcd9798c04c5be40139ff0904252b0c7905d2db4f985ab5`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 12 bola merah dan 5 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{12}{17}$
+B. $\frac{144}{289}$
+C. $\frac{5}{17}$
+D. $\frac{33}{68}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 842. Soal `3fe02be348649c5dd2bac508`
+
+Sebuah kotak berisi 7 bola merah dan 12 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{7}{57}$ |
+| B | $\frac{12}{19}$ |
+| C | $\frac{49}{361}$ |
+| D | $\frac{7}{19}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `3adc36648021cea82116ba15f9d651170628c8c27ac4082a66db470692d451ef`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 7 bola merah dan 12 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{7}{57}$
+B. $\frac{12}{19}$
+C. $\frac{49}{361}$
+D. $\frac{7}{19}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 843. Soal `1bb1938de4defc5987b24b9d`
+
+Sebuah kotak berisi 10 bola merah dan 10 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{47}{38}$ |
+| B | $\frac{1}{2}$ |
+| C | $\frac{9}{38}$ |
+| D | $\frac{1}{4}$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `50788db65d0a0f91335a4472f5a601f822d8709e3b611b3bbc9bb26f25e2c663`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Peluang
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Sebuah kotak berisi 10 bola merah dan 10 bola biru. Dua bola diambil berturut-turut tanpa pengembalian. Peluang keduanya merah adalah ....
+Pilihan: A. $\frac{47}{38}$
+B. $\frac{1}{2}$
+C. $\frac{9}{38}$
+D. $\frac{1}{4}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 844. Soal `b411e52ed6a2d8035877a284`
+
+Kotak berisi 3 bola merah dan 12 bola biru. Dilakukan 210 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $41$ |
+| B | $43$ |
+| C | $44$ |
+| D | $42$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `43f19cfa26bd5460fda9673e53cacccb856ed4a98ba8b97695fbf0ec222d260b`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 3 bola merah dan 12 bola biru. Dilakukan 210 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $41$
+B. $43$
+C. $44$
+D. $42$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 845. Soal `fc868dc106635daecedf1011`
+
+Kotak berisi 4 bola merah dan 6 bola biru. Dilakukan 120 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $49$ |
+| B | $47$ |
+| C | $50$ |
+| D | $48$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `fcd95ea0244e20ec7977940bcd7018ab2683110e0568f832efe4e8698831abdd`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 4 bola merah dan 6 bola biru. Dilakukan 120 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $49$
+B. $47$
+C. $50$
+D. $48$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 846. Soal `8303cb80c51167451390f05d`
+
+Kotak berisi 10 bola merah dan 3 bola biru. Dilakukan 169 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $132$ |
+| B | $130$ |
+| C | $129$ |
+| D | $131$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `08b0c2a800703489e524df4fda2858668fb7d9716c5bb2c19a4cab2ffb6d5db4`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 10 bola merah dan 3 bola biru. Dilakukan 169 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $132$
+B. $130$
+C. $129$
+D. $131$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 847. Soal `4ea21a7ce0cf7cb437aaf7bf`
+
+Kotak berisi 6 bola merah dan 8 bola biru. Dilakukan 84 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $35$ |
+| B | $37$ |
+| C | $36$ |
+| D | $38$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1be8a4c8456ea60c36ba4f2178b1ea443e70911dfdbb6545a71ceb6db5f8b2cf`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 6 bola merah dan 8 bola biru. Dilakukan 84 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $35$
+B. $37$
+C. $36$
+D. $38$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 848. Soal `3ba8ea94bd04b6bf59c47f39`
+
+Kotak berisi 12 bola merah dan 11 bola biru. Dilakukan 253 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $133$ |
+| B | $134$ |
+| C | $131$ |
+| D | $132$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `93621e607f64ab9210a1e59e6eee3a80403a834854c2e03bdd47333091dede57`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 12 bola merah dan 11 bola biru. Dilakukan 253 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $133$
+B. $134$
+C. $131$
+D. $132$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 849. Soal `8d649fda4bb9765467d62814`
+
+Kotak berisi 4 bola merah dan 12 bola biru. Dilakukan 240 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $60$ |
+| B | $62$ |
+| C | $59$ |
+| D | $61$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4663b8e4fa02e00ddc211d586535d09da6e97c1fadde1c6fa79b67b9fb55f82a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 4 bola merah dan 12 bola biru. Dilakukan 240 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $60$
+B. $62$
+C. $59$
+D. $61$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 850. Soal `b9b57b1fa4efaba4095f1571`
+
+Kotak berisi 10 bola merah dan 11 bola biru. Dilakukan 231 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $112$ |
+| B | $110$ |
+| C | $109$ |
+| D | $111$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `8f7b9a7137aca6679e19a848fb315efa486d1ec65e8e607d0bd4845ac2b50bd0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 10 bola merah dan 11 bola biru. Dilakukan 231 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $112$
+B. $110$
+C. $109$
+D. $111$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 851. Soal `1a0b883a770c5ab1489e64fe`
+
+Kotak berisi 3 bola merah dan 3 bola biru. Dilakukan 48 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+
+| Opsi | Isi |
+|---|---|
+| A | $26$ |
+| B | $23$ |
+| C | $24$ |
+| D | $25$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `[]`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `67e93d9d1ad580ecb6c5b2e1a8e7a1e7c00d8656320f6435d1bbcb6f2c677901`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Frekuensi Harapan
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kotak berisi 3 bola merah dan 3 bola biru. Dilakukan 48 pengambilan acak dengan pengembalian. Frekuensi harapan terambil bola merah adalah ....
+Pilihan: A. $26$
+B. $23$
+C. $24$
+D. $25$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 852. Soal `ec78ddbe2f777266d38a8cff`
+
+Kerucut memiliki jari-jari 8 cm dan tinggi 3 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $-1 + 64 \pi$ |
+| B | $1 + 64 \pi$ |
+| C | $2 + 64 \pi$ |
+| D | $64 \pi$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `453adc13bc691a907e5d4ebad29020ab94db413b7567b360bc4ce526c6e64508`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 8 cm dan tinggi 3 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $-1 + 64 \pi$
+B. $1 + 64 \pi$
+C. $2 + 64 \pi$
+D. $64 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 853. Soal `d27f2f73f54d218e2c06e91b`
+
+Kerucut memiliki jari-jari 17 cm dan tinggi 5 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $1 + \frac{1445 \pi}{3}$ |
+| B | $2 + \frac{1445 \pi}{3}$ |
+| C | $-1 + \frac{1445 \pi}{3}$ |
+| D | $\frac{1445 \pi}{3}$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `1006b0c0e14f0913dca2bb982e8c41c97b58d6e1cdd956eb5e2d90ccd407af02`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 17 cm dan tinggi 5 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $1 + \frac{1445 \pi}{3}$
+B. $2 + \frac{1445 \pi}{3}$
+C. $-1 + \frac{1445 \pi}{3}$
+D. $\frac{1445 \pi}{3}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 854. Soal `a711279028cf06146b573aa1`
+
+Kerucut memiliki jari-jari 12 cm dan tinggi 12 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $1 + 576 \pi$ |
+| B | $-1 + 576 \pi$ |
+| C | $2 + 576 \pi$ |
+| D | $576 \pi$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4aeda24d9fccfe94cd3134e931db61864041771ccc178e3e41710f79bd35aac7`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 12 cm dan tinggi 12 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $1 + 576 \pi$
+B. $-1 + 576 \pi$
+C. $2 + 576 \pi$
+D. $576 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 855. Soal `170ae7f782efab5fcf352278`
+
+Kerucut memiliki jari-jari 16 cm dan tinggi 5 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $-1 + \frac{1280 \pi}{3}$ |
+| B | $2 + \frac{1280 \pi}{3}$ |
+| C | $\frac{1280 \pi}{3}$ |
+| D | $1 + \frac{1280 \pi}{3}$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `c7fb612ffe43b8ef253449e548ce50def7fbfa711c9e6d9cd2133ea3549e6a2a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 16 cm dan tinggi 5 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $-1 + \frac{1280 \pi}{3}$
+B. $2 + \frac{1280 \pi}{3}$
+C. $\frac{1280 \pi}{3}$
+D. $1 + \frac{1280 \pi}{3}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 856. Soal `e0fa423e1f70b3ee2c9d2e99`
+
+Kerucut memiliki jari-jari 10 cm dan tinggi 14 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $\frac{1400 \pi}{3}$ |
+| B | $1 + \frac{1400 \pi}{3}$ |
+| C | $-1 + \frac{1400 \pi}{3}$ |
+| D | $2 + \frac{1400 \pi}{3}$ |
+
+Kunci sumber: `A`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `b547d8b1482163493006e01ae278279e7bb0ad1bd26f88417210cdf7aadbba39`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 10 cm dan tinggi 14 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $\frac{1400 \pi}{3}$
+B. $1 + \frac{1400 \pi}{3}$
+C. $-1 + \frac{1400 \pi}{3}$
+D. $2 + \frac{1400 \pi}{3}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 857. Soal `d88db09b29f59a1291f69aed`
+
+Kerucut memiliki jari-jari 9 cm dan tinggi 15 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $1 + 405 \pi$ |
+| B | $405 \pi$ |
+| C | $2 + 405 \pi$ |
+| D | $-1 + 405 \pi$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `65a93d2116912ac46dc38da327336b2ee2b917ef032d476689dbe2e324da053a`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 9 cm dan tinggi 15 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $1 + 405 \pi$
+B. $405 \pi$
+C. $2 + 405 \pi$
+D. $-1 + 405 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 858. Soal `fad34e114ca35377898279dd`
+
+Kerucut memiliki jari-jari 7 cm dan tinggi 13 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $1 + \frac{637 \pi}{3}$ |
+| B | $\frac{637 \pi}{3}$ |
+| C | $-1 + \frac{637 \pi}{3}$ |
+| D | $2 + \frac{637 \pi}{3}$ |
+
+Kunci sumber: `B`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `817f670d3f24cea6aa135a855f370d39dd97bbbe35ff7a470652d850c1d1cfa0`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 7 cm dan tinggi 13 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $1 + \frac{637 \pi}{3}$
+B. $\frac{637 \pi}{3}$
+C. $-1 + \frac{637 \pi}{3}$
+D. $2 + \frac{637 \pi}{3}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 859. Soal `f67d9d80561d1984501491fa`
+
+Kerucut memiliki jari-jari 18 cm dan tinggi 15 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $1 + 1620 \pi$ |
+| B | $2 + 1620 \pi$ |
+| C | $-1 + 1620 \pi$ |
+| D | $1620 \pi$ |
+
+Kunci sumber: `D`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `4c312d5f59560351c5dc88de14e99619f38a450ded0bd1160e78edd86757eecb`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 18 cm dan tinggi 15 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $1 + 1620 \pi$
+B. $2 + 1620 \pi$
+C. $-1 + 1620 \pi$
+D. $1620 \pi$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
+Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
+
+## 860. Soal `90de75afd5e2396dcea653c5`
+
+Kerucut memiliki jari-jari 17 cm dan tinggi 14 cm. Berapa volumenya dalam bentuk $\pi$?
+
+| Opsi | Isi |
+|---|---|
+| A | $2 + \frac{4046 \pi}{3}$ |
+| B | $-1 + \frac{4046 \pi}{3}$ |
+| C | $\frac{4046 \pi}{3}$ |
+| D | $1 + \frac{4046 \pi}{3}$ |
+
+Kunci sumber: `C`; status AI: `None`; jawaban diverifikasi AI: `None`.
+Solusi minimum hasil AI: —
+Gambar sumber: —. Transkripsi visual: —
+
+### 1. Pemeriksaan input dan fitur
+
+Struktur: `pass`; alasan: `[]`. Grade/topik: kelas 9 / Matematika SMP Kelas 9. KKO: `['menghitung']`; KKO hanya petunjuk bantu.
+Isi dan kunci berasal dari sumber yang sama pada ketiga run. Versi konten: 2; hash: `11de79efd0610600ce0c7b500b2d0ae14531bdaea58d913d741c11a711dd5749`. Bukti verifikasi AI tetap tercatat sebagai silver.
+
+### 2. Penilaian LLM blind — tiga run sebelum melihat IndoBERT
+
+| Run | Status | Konten / kunci | Kognitif | Pengetahuan | Difficulty | Token |
+|---:|---|---|---|---|---|---:|
+
+### 3. Voting awal dan adjudikasi
+
+| Head | Suara awal | Pola / status akhir | Label akhir advisory |
+|---|---|---|---|
+| Domain kognitif | {} | no_label / incomplete | — |
+| Dimensi pengetahuan | {} | no_label / incomplete | — |
+| Intended difficulty | {} | no_label / incomplete | — |
+
+### 4. Diagnostik IndoBERT setelah label blind dikunci
+
+Scope model: `out_of_scope`. Encoder tidak dijalankan untuk kelas di luar cakupan. Input terserialisasi tetap dicatat untuk audit.
+
+| Head | Probabilitas | Label | Confidence | Entropy | Action / alasan |
+|---|---|---|---:|---:|---|
+| Domain kognitif |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Dimensi pengetahuan |  | — | — | — | abstain / grade_outside_sd_v1 |
+| Intended difficulty |  | — | — | — | abstain / grade_outside_sd_v1 |
+
+<details><summary>Input terserialisasi untuk audit; encoder tidak dijalankan</summary>
+
+```text
+Kelas: 9
+Topik: Matematika SMP Kelas 9
+Subtopik: Volume Bangun Ruang Sisi Lengkung
+Tipe soal: multiple_choice
+Stimulus: -
+Soal: Kerucut memiliki jari-jari 17 cm dan tinggi 14 cm. Berapa volumenya dalam bentuk $\pi$?
+Pilihan: A. $2 + \frac{4046 \pi}{3}$
+B. $-1 + \frac{4046 \pi}{3}$
+C. $\frac{4046 \pi}{3}$
+D. $1 + \frac{4046 \pi}{3}$
+Transkripsi visual: -
+```
+
+</details>
+
+### 5. Keputusan batch
+
+Label advisory blind: `{"mathCognitiveDomain": null, "knowledgeDimension": null, "intendedDifficulty": null}`. Routing: `needs_ai_review`.
+Status konten: `None`. Catatan konten: .
+Perbedaan model dan blind: `{"mathCognitiveDomain": {"modelLabel": null, "blindLabel": null, "agreement": null}, "knowledgeDimension": {"modelLabel": null, "blindLabel": null, "agreement": null}, "intendedDifficulty": {"modelLabel": null, "blindLabel": null, "agreement": null}}`.
 Label tetap silver AI; revalidation memakai AI. Confidence IndoBERT tidak digunakan untuk mengganti label blind.
 
 Provider aktif: gemini. 422 keputusan provider sebelumnya dipertahankan tanpa panggilan ulang; provider/model per soal ada pada metadata dan audit.

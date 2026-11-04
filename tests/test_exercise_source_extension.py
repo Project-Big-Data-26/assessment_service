@@ -70,3 +70,44 @@ def test_edits_deletions_and_reordering_are_rejected_without_writes(tmp_path, mo
     with pytest.raises(ValueError, match="unchanged old"):
         exercise.extend_class("kelas5", "batch01")
     assert (p["source"].read_bytes(), p["checkpoint"].read_bytes()) == previous
+
+
+def test_reference_additions_are_blind_without_changing_old_paid_inputs(tmp_path, monkeypatch):
+    p, rows, checkpoint = prepare(tmp_path, monkeypatch)
+    added = {**rows[0], "_id": "q3"}
+    write_source(p, rows + [added])
+    meta_path = p["exercise"] / "soal_exercise_meta.json"
+    meta = json.loads(meta_path.read_text())
+    meta["q3"]["generator"] = "codex:reference-parameterized-v1"
+    generator.atomic_write(meta, meta_path)
+    generator.atomic_write({}, p["exercise"] / "reference_replenishment_state.json")
+    source = exercise.validated_source("kelas5", "batch01")
+    assert source[:2] == rows
+    assert source[2]["_exerciseBlindInput"] is True
+    exercise.extend_class("kelas5", "batch01")
+    after = json.loads(p["checkpoint"].read_text())
+    assert after["items"] == checkpoint["items"]
+    verify_evidence(p["source"], p["checkpoint"], 5)
+
+
+def test_retained_provider_proof_survives_only_unchanged_source_extension(tmp_path, monkeypatch):
+    from app.llm.provenance import verify_retained_record
+    from scripts.generate_silver_labels_kelas1 import atomic_write
+    from copy import deepcopy
+    p, rows, checkpoint = prepare(tmp_path, monkeypatch)
+    archive = p["stage"] / "history/provider_original/silver_labels.json"
+    archive.parent.mkdir(parents=True)
+    atomic_write(checkpoint, archive)
+    retained = deepcopy(checkpoint["items"]["q1"])
+    retained.update(provider=checkpoint["provider"], model=checkpoint["model"],
+                    retainedProviderEvidence={"path": str(archive), "sha256": digest(archive)})
+    checkpoint["items"]["q1"] = retained
+    atomic_write(checkpoint, p["checkpoint"])
+    write_source(p, rows + [{**rows[0], "_id": "q3"}])
+    exercise.extend_class("kelas5", "batch01")
+    verify_retained_record(p["source"], "q1", retained)
+    altered = json.loads(p["source"].read_text())
+    altered[0]["soal_text"] += " altered"
+    atomic_write(altered, p["source"])
+    with pytest.raises(ValueError, match="identity differs"):
+        verify_retained_record(p["source"], "q1", retained)

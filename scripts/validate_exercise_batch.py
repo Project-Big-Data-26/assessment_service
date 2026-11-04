@@ -114,8 +114,14 @@ def validated_source(name: str, batch: str) -> list[dict]:
     if any(info.get("batch") != int(batch[5:]) or info.get("level_target") not in LEVELS for info in meta.values()):
         raise ValueError("exercise metadata has an invalid batch or target level")
     from app.services.exercise.workflow import managed
-    if managed(p["exercise"]):
+    is_managed = managed(p["exercise"])
+    has_reference_additions = (p["exercise"] / "reference_replenishment_state.json").exists()
+    if is_managed or has_reference_additions:
         for item in items:
+            # Keep old paid inputs byte-for-byte compatible. Only the newly
+            # appended candidates receive the blind-input marker.
+            if not is_managed and meta[str(item["_id"])].get("generator") != "codex:reference-parameterized-v1":
+                continue
             item["_exerciseBlindInput"] = True
     return items
 

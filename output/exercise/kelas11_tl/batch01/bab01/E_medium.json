@@ -703,7 +703,6 @@
       "catatan": null
     },
     {
-      "id": "kelas11_tl-b01-e-medium-bt01-021",
       "tipe_generate": "variasi",
       "variasi_cara": "konteks",
       "acuan": {
@@ -711,7 +710,7 @@
         "id": "8df7971559fe6b502b0fee8c",
         "teks": "Seorang siswa menghitung invers dari $A = \\begin{pmatrix} 5 & 2 \\\\ 7 & 3 \\end{pmatrix}$ dan menulis $A^{-1} = \\begin{pmatrix} 3 & 2 \\\\ 7 & 5 \\end{pmatrix}$. Kesalahan siswa tersebut adalah ....",
         "jawaban": "elemen diagonal samping tidak diubah tandanya",
-        "snapshot": "_replenishment/blueprints.json",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas11_tl/blueprints.json",
         "source_sha256": "622a4b2f4e6cd1b3ddfd9ca55f3281815e6c7bf06a3335fefe1dc28aed112fd1"
       },
       "cognitive_c": "C4",
@@ -719,27 +718,26 @@
       "jenis_soal": "invers_matriks",
       "alasan_level": "Target medium; variasi konsep invers matriks. Kesulitan final menunggu validasi Gemini.",
       "stimulus": null,
-      "gambar": [],
       "pertanyaan": "Matriks $A=\\left[\\begin{matrix}6 & 4\\\\8 & 3\\end{matrix}\\right]$ memiliki invers. Tentukan elemen baris 1 kolom 1 dari $A^{-1}$.",
       "jawaban_benar": "$- \\frac{3}{14}$",
       "alasan_benar": "det(A)=-14. Invers 2×2 mempunyai elemen (1,1)=d/det(A)=3/-14.",
       "distraktor": [
         {
           "teks": "$\\frac{11}{14}$",
-          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+          "alasan": "Pilihan $\\frac{11}{14}$ lebih besar sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $- \\frac{3}{14}$. Periksa kembali langkah invers matriks pada pembahasan."
         },
         {
           "teks": "$- \\frac{17}{14}$",
-          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+          "alasan": "Pilihan $- \\frac{17}{14}$ lebih kecil sebesar $1$ daripada hasil yang memenuhi perhitungan, yaitu $- \\frac{3}{14}$. Periksa kembali langkah invers matriks pada pembahasan."
         },
         {
           "teks": "$\\frac{25}{14}$",
-          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+          "alasan": "Pilihan $\\frac{25}{14}$ lebih besar sebesar $2$ daripada hasil yang memenuhi perhitungan, yaitu $- \\frac{3}{14}$. Periksa kembali langkah invers matriks pada pembahasan."
         }
       ],
       "pembahasan": "det(A)=-14. Invers 2×2 mempunyai elemen (1,1)=d/det(A)=3/-14.",
       "catatan": "codex-replenishment:kelas11_tl-b01-E-medium; generation_only; level target bukan label tervalidasi.",
-      "dipaksa_kuota": false
+      "id": "kelas11_tl-b01-e-medium-bt01-021"
     }
   ]
 }

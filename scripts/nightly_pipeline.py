@@ -143,12 +143,16 @@ def mark_ready(name, batch):
 
 def discover_jobs(config):
     from app.services.exercise.workflow import validation_allowed
+    def manually_owned(base):
+        state = base / "reference_replenishment_state.json"
+        return state.exists() and load(state).get("validationOwner") == "replenishment_runner"
     jobs, problems = {}, []
     for entry in config.get("bootstrapJobs", []):
         if entry["class"] not in config["classes"]:
             raise ValueError("bootstrap class must be enabled")
         try:
-            if not validation_allowed(exercise.paths(entry["class"], entry["batch"])["exercise"]):
+            base = exercise.paths(entry["class"], entry["batch"])["exercise"]
+            if manually_owned(base) or not validation_allowed(base):
                 continue
             identity = source_identity(entry["class"], entry["batch"])
             jobs[(identity["class"], identity["batch"])] = identity
@@ -157,7 +161,7 @@ def discover_jobs(config):
     for name in config["classes"]:
         for marker in sorted((ROOT / "output/exercise" / name).glob("batch*/extraction_ready.json")):
             try:
-                if not validation_allowed(marker.parent):
+                if manually_owned(marker.parent) or not validation_allowed(marker.parent):
                     jobs.pop((name, marker.parent.name), None)
                     continue
                 ready = load(marker)

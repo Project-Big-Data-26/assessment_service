@@ -641,7 +641,6 @@
       "dipaksa_kuota": false
     },
     {
-      "id": "kelas7-b06-b-medium-bt01-016",
       "tipe_generate": "variasi",
       "variasi_cara": "konteks",
       "acuan": {
@@ -649,7 +648,7 @@
         "id": "22b2a8542531ffe39bafc8f5",
         "teks": "Panitia survei kependudukan mencatat 8 butir data keluarga berikut:\n(1) Nomor Induk Kependudukan (NIK) kepala keluarga\n(2) Banyak anggota keluarga di dalam rumah\n(3) Luas tanah tempat tinggal (dalam $\\text{m}^2$)\n(4) Nomor plat kendaraan bermotor\n(5) Kapasitas bahan bakar kendaraan (dalam liter)\n(6) Jarak rumah ke fasilitas kesehatan terdekat (dalam km)\n(7) Status kepemilikan bangunan rumah\n(8) Biaya tagihan air bulanan (dalam rupiah)\n\nJika $P$ adalah banyaknya data kategorik dan $Q$ adalah banyaknya data numerik, berapakah nilai dari $Q - P$?",
         "jawaban": "2",
-        "snapshot": "_replenishment/blueprints.json",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/audit/kelas7/blueprints.json",
         "source_sha256": "bc2fe286bcd6c9588bc3493aa9633530571dd47ed8bb2a5dc5625e8dd439f91a"
       },
       "cognitive_c": "C4",
@@ -657,27 +656,26 @@
       "jenis_soal": "jenis_data",
       "alasan_level": "Target medium; variasi konsep jenis data. Kesulitan final menunggu validasi Gemini.",
       "stimulus": null,
-      "gambar": [],
       "pertanyaan": "Peneliti mencatat banyak saudara kandung dari 21 siswa. Jenis data banyak saudara kandung adalah ....",
       "jawaban_benar": "Data kuantitatif diskret.",
       "alasan_benar": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
       "distraktor": [
         {
           "teks": "Data kuantitatif kontinu.",
-          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+          "alasan": "Banyak saudara diperoleh dengan menghitung bilangan bulat, bukan mengukur nilai pada rentang kontinu."
         },
         {
           "teks": "Data kualitatif nominal.",
-          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+          "alasan": "Angka banyak saudara menyatakan jumlah, bukan sekadar nama atau kode kategori nominal."
         },
         {
           "teks": "Data kualitatif ordinal.",
-          "alasan": "Hasil ini muncul dari kekeliruan memilih operasi, substitusi, atau langkah hitung; tidak memenuhi perhitungan pada pembahasan."
+          "alasan": "Data ini menyatakan jumlah saudara, bukan hanya urutan atau peringkat kategori ordinal."
         }
       ],
       "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
       "catatan": "codex-replenishment:kelas7-b06-B-medium; generation_only; level target bukan label tervalidasi.",
-      "dipaksa_kuota": false
+      "id": "kelas7-b06-b-medium-bt01-016"
     }
   ]
 }

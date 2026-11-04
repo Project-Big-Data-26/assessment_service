@@ -16,6 +16,7 @@ sys.path.insert(0,str(ROOT))
 from app.ingestion.question_sync import load_sources
 from app.services.exercise.schema import ExerciseFile,Soal
 from app.services.exercise.workflow import atomic_json,batch_lock,digest,load
+from app.services.exercise.replenishment_format import standard_question,distractor_reason
 
 RUN=ROOT/'runs/exercise_replenishment/codex_batch01'
 CLASSES=['kelas5','kelas6','kelas7','kelas8','kelas9','kelas10','kelas11','kelas11_tl','kelas12','kelas12_tl']
@@ -88,7 +89,8 @@ def run_class(name,progress,jobs):
         (base/'extraction_ready.json').unlink(missing_ok=True)
         envelope=load(master_file);metadata=load(meta_file)
         # Freeze source payloads before touching any source metadata.
-        frozen_file=base/'_replenishment/blueprints.json'
+        audit_dir=RUN/'audit'/name
+        frozen_file=audit_dir/'blueprints.json'
         if frozen_file.exists():frozen=load(frozen_file)
         else:
             frozen={q.qid:{'source':q.source,'kind':q.kind,'class':q.class_key,'bab':q.chapter_no,
@@ -128,7 +130,7 @@ def run_class(name,progress,jobs):
                 question={'id':working,'tipe_generate':'variasi','variasi_cara':'konteks',
                           'acuan':{'sumber':reference.kind+'_validated','id':reference.qid,
                                    'teks':original['soal_text'],'jawaban':correct,
-                                   'snapshot':'_replenishment/blueprints.json','source_sha256':frozen_hash},
+                                   'snapshot':frozen_file.relative_to(ROOT).as_posix(),'source_sha256':frozen_hash},
                           'cognitive_c':cognitive,'jumlah_langkah':{'easy':2,'medium':3,'hard':4}[level],
                           'jenis_soal':draft.kind[:60],
                           'alasan_level':f'Target {level}; variasi konsep {draft.kind.replace("_"," ")}. Kesulitan final menunggu validasi Gemini.',
@@ -138,6 +140,9 @@ def run_class(name,progress,jobs):
                           'pembahasan':draft.explanation,
                           'catatan':f'codex-replenishment:{key}; generation_only; level target bukan label tervalidasi.',
                           'dipaksa_kuota':False}
+                for option_index,distractor in enumerate(question['distraktor']):
+                    distractor['alasan']=distractor_reason(question,option_index,draft.proof)
+                question=standard_question(question)
                 Soal.model_validate(question)
                 new.append(question)
                 options=[{'text':d['teks'],'alasan':'Salah: '+d['alasan']} for d in question['distraktor']]
@@ -164,16 +169,17 @@ def run_class(name,progress,jobs):
             raw['soal'].extend(new);ExerciseFile.model_validate(raw)
             envelope['items'].extend(newrows);metadata.update(newmeta)
             atomic_json(path,raw);atomic_json(master_file,envelope);atomic_json(meta_file,metadata)
-            proof_path=base/'_replenishment'/f'{chapter:02d}_{code}_{level}_checks.json';atomic_json(proof_path,proofs)
+            proof_path=audit_dir/f'{chapter:02d}_{code}_{level}_checks.json';atomic_json(proof_path,proofs)
             progress['jobs'][key]={'status':'complete','added':wanted,'path':str(path.relative_to(ROOT)),
                                    'ids':[q['id'] for q in new]}
             progress['classes'][name]['added']+=wanted;save_progress(progress)
             print(f'{name} {chapter}/{code}/{level}: +{wanted}; class {progress["classes"][name]["added"]}/{progress["classes"][name]["target"]}',flush=True)
-        changed=[master_file,meta_file,frozen_file]
-        changed+=list((base/'_replenishment').glob('*_checks.json'))
+        changed=[master_file,meta_file]
         changed+=[base/f'bab{j["chapter_no"]:02d}'/f'{j["code"]}_{j["level_target"]}.json' for j in relevant]
         manifest={'class':name,'batch':'batch01','added':progress['classes'][name]['added'],
-                  'generationOnly':True,'files':{p.relative_to(base).as_posix():digest(p) for p in changed}}
+                  'generationOnly':True,'files':{p.relative_to(base).as_posix():digest(p) for p in changed},
+                  'auditFiles':{p.relative_to(ROOT).as_posix():digest(p)
+                                for p in [frozen_file,*audit_dir.glob('*_checks.json')]}}
         manifest_file=base/'reference_replenishment_manifest.json';atomic_json(manifest_file,manifest)
         atomic_json(state_file,{'class':name,'batch':'batch01','phase':'generation_complete','validationStatus':'validation_pending',
                                 'manifestSha256':digest(manifest_file),'added':manifest['added']})
