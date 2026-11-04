@@ -807,6 +807,746 @@
       "pembahasan": "Langkah 1: Hitung panjang hipotenusa $AC$ dengan Teorema Pythagoras:\n$$AC = \\sqrt{AB^2 + BC^2} = \\sqrt{15^2 + 20^2} = \\sqrt{225 + 400} = \\sqrt{625} = 25\\text{ cm}$$\n\nLangkah 2: Tentukan jari-jari lingkaran dalam segitiga siku-siku ($r$):\n$$r = \\frac{AB + BC - AC}{2} = \\frac{15 + 20 - 25}{2} = \\frac{10}{2} = 5\\text{ cm}$$\n\nLangkah 3: Karena garis singgung tegak lurus dengan jari-jari lingkaran di titik singgung dan $\\angle B = 90^\\circ$, segiempat yang terbentuk di sudut $B$ adalah persegi bersisi $r$. Oleh karena itu:\n$$BD = BE = r = 5\\text{ cm}$$\n\nLangkah 4: Dari sifat dua garis singgung dari satu titik di luar lingkaran, panjang ruas garis singgung yang ditarik dari titik $A$ ke lingkaran adalah sama:\n$$AF = AD = AB - BD = 15\\text{ cm} - 5\\text{ cm} = 10\\text{ cm}$$\n\nJadi, panjang ruas garis singgung $AF$ adalah $10\\text{ cm}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "11786871960e8f25dc83649a",
+        "teks": "Dua buah lingkaran terpisah memiliki garis singgung persekutuan luar dan garis singgung persekutuan dalam. Manakah di antara kedua garis singgung tersebut yang selalu memiliki ukuran lebih pendek?",
+        "jawaban": "Garis singgung persekutuan dalam",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 23 cm. Garis singgung persekutuan luar panjangnya $6 \\sqrt{14}$ cm dan dalam $4 \\sqrt{15}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=529-504 dan (R+r)²=529-240. Karena R>r>0, akar positif menentukan R=11, r=6. Hasil R-r/2=8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=529-504 dan (R+r)²=529-240. Karena R>r>0, akar positif menentukan R=11, r=6. Hasil R-r/2=8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "694ecae5b25e8d642f13adf7",
+        "teks": "Jika jari-jari lingkaran $A$ adalah $20\\text{ cm}$ dan titik $P$ berjarak $29\\text{ cm}$ dari titik pusat $A$, berapakah panjang garis singgung $PB$ jika $B$ adalah titik singgung pada lingkaran?",
+        "jawaban": "$21\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 16 cm. Garis singgung persekutuan luar panjangnya $\\sqrt{247}$ cm dan dalam $5 \\sqrt{7}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{9}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=256-247 dan (R+r)²=256-175. Karena R>r>0, akar positif menentukan R=6, r=3. Hasil R-r/2=9/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{9}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=256-247 dan (R+r)²=256-175. Karena R>r>0, akar positif menentukan R=6, r=3. Hasil R-r/2=9/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a799ae59a3018e8c46269a3",
+        "teks": "Dua penampang lingkaran sumber cahaya (lingkaran besar $A$) dan bola penghalang (lingkaran kecil $B$) masing-masing memiliki jari-jari $30\\text{ cm}$ dan $6\\text{ cm}$. Jarak antara kedua pusat lingkaran tersebut adalah $96\\text{ cm}$. Garis singgung persekutuan luar kedua lingkaran diperpanjang sehingga berpotongan di satu titik $T$ di belakang lingkaran kecil (membentuk puncak kerucut umbra). Berapakah jarak dari titik pusat lingkaran kecil $B$ ke titik perpotongan $T$ tersebut?",
+        "jawaban": "$24\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 19 cm. Garis singgung persekutuan luar panjangnya $2 \\sqrt{78}$ cm dan dalam $6 \\sqrt{2}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{19}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=361-312 dan (R+r)²=361-72. Karena R>r>0, akar positif menentukan R=12, r=5. Hasil R-r/2=19/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{19}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=361-312 dan (R+r)²=361-72. Karena R>r>0, akar positif menentukan R=12, r=5. Hasil R-r/2=19/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5195762b2057f8448d7ddda9",
+        "teks": "Dari sebuah titik $P$ di luar lingkaran yang berpusat di $O$, dibuat dua garis singgung yang menyentuh lingkaran di titik $A$ dan $B$ dengan panjang ruas garis singgung $PA = 18\\text{ cm}$. Garis singgung ketiga ditarik memotong ruas garis $PA$ di titik $Q$, memotong ruas garis $PB$ di titik $R$, serta menyinggung busur minor lingkaran di titik $T$. Berapakah keliling segitiga $PQR$?",
+        "jawaban": "$36\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 25 cm. Garis singgung persekutuan luar panjangnya $\\sqrt{589}$ cm dan dalam $\\sqrt{301}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=625-589 dan (R+r)²=625-301. Karena R>r>0, akar positif menentukan R=12, r=6. Hasil R-r/2=9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=625-589 dan (R+r)²=625-301. Karena R>r>0, akar positif menentukan R=12, r=6. Hasil R-r/2=9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8ae8f5e43cb2c00234e4b76d",
+        "teks": "Dua buah lingkaran memiliki panjang jari-jari masing-masing $7\\text{ cm}$ dan $8\\text{ cm}$. Jika panjang garis singgung persekutuan dalam kedua lingkaran tersebut adalah $20\\text{ cm}$, maka jarak antara kedua pusat lingkaran tersebut adalah ....",
+        "jawaban": "$25\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 21 cm. Garis singgung persekutuan luar panjangnya $14 \\sqrt{2}$ cm dan dalam $4 \\sqrt{5}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=441-392 dan (R+r)²=441-80. Karena R>r>0, akar positif menentukan R=13, r=6. Hasil R-r/2=10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=441-392 dan (R+r)²=441-80. Karena R>r>0, akar positif menentukan R=13, r=6. Hasil R-r/2=10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "caf83b9db76e6ef5f0dec49c",
+        "teks": "Titik P berjarak 17 cm dari pusat lingkaran berjari-jari 8 cm. Garis PT menyinggung lingkaran di T. Berapa panjang PT?",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 15 cm. Garis singgung persekutuan luar panjangnya $\\sqrt{209}$ cm dan dalam $9$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=225-209 dan (R+r)²=225-81. Karena R>r>0, akar positif menentukan R=8, r=4. Hasil R-r/2=6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=225-209 dan (R+r)²=225-81. Karena R>r>0, akar positif menentukan R=8, r=4. Hasil R-r/2=6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8304f84931883a8a12e22895",
+        "teks": "Seorang pengamat berdiri di puncak menara pandang dengan ketinggian $45\\text{ m}$ dari permukaan laut. Jika jari-jari bumi dimodelkan sebesar $6.400\\text{ km}$, berapakah jarak cakrawala terjauh yang dapat dilihat oleh pengamat tersebut?",
+        "jawaban": "$24\\text{ km}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 16 cm. Garis singgung persekutuan luar panjangnya $6 \\sqrt{7}$ cm dan dalam $2 \\sqrt{39}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=256-252 dan (R+r)²=256-156. Karena R>r>0, akar positif menentukan R=6, r=4. Hasil R-r/2=4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=256-252 dan (R+r)²=256-156. Karena R>r>0, akar positif menentukan R=6, r=4. Hasil R-r/2=4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f9003140f2e575daf5f5207f",
+        "teks": "Panjang garis singgung persekutuan luar dua buah lingkaran adalah $21\\text{ cm}$ dan jarak antara kedua titik pusatnya adalah $29\\text{ cm}$. Jika jari-jari lingkaran besar bernilai $5$ kali jari-jari lingkaran kecil, tentukan panjang jari-jari lingkaran yang besar.",
+        "jawaban": "$25\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 20 cm. Garis singgung persekutuan luar panjangnya $5 \\sqrt{15}$ cm dan dalam $\\sqrt{111}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=400-375 dan (R+r)²=400-111. Karena R>r>0, akar positif menentukan R=11, r=6. Hasil R-r/2=8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=400-375 dan (R+r)²=400-111. Karena R>r>0, akar positif menentukan R=11, r=6. Hasil R-r/2=8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "caf83b9db76e6ef5f0dec49c",
+        "teks": "Titik P berjarak 17 cm dari pusat lingkaran berjari-jari 8 cm. Garis PT menyinggung lingkaran di T. Berapa panjang PT?",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 21 cm. Garis singgung persekutuan luar panjangnya $9 \\sqrt{5}$ cm dan dalam $7 \\sqrt{5}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=441-405 dan (R+r)²=441-245. Karena R>r>0, akar positif menentukan R=10, r=4. Hasil R-r/2=8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=441-405 dan (R+r)²=441-245. Karena R>r>0, akar positif menentukan R=10, r=4. Hasil R-r/2=8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c804e6dd7453a649fe1418de",
+        "teks": "Sebuah lahan berbentuk trapesium sama kaki $PQRS$ dengan $PQ \\parallel SR$ dirancang sebagai segiempat garis singgung (semua sisinya menyinggung lingkaran di dalamnya). Jika panjang sisi sejajar berturut-turut adalah $PQ = 32\\text{ m}$ dan $SR = 18\\text{ m}$, serta tinggi trapesium tersebut sama dengan diameter lingkaran di dalamnya, berapakah panjang jari-jari lingkaran tersebut?",
+        "jawaban": "$12\\text{ m}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 14 cm. Garis singgung persekutuan luar panjangnya $8 \\sqrt{3}$ cm dan dalam $2 \\sqrt{13}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{9}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=196-192 dan (R+r)²=196-52. Karena R>r>0, akar positif menentukan R=7, r=5. Hasil R-r/2=9/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{9}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=196-192 dan (R+r)²=196-52. Karena R>r>0, akar positif menentukan R=7, r=5. Hasil R-r/2=9/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c75eb56620d2c7b6bcdd868",
+        "teks": "Jika jari-jari lingkaran $A$ adalah $9\\text{ cm}$ dan titik $P$ berjarak $41\\text{ cm}$ dari titik $A$, berapakah panjang garis singgung $PB$ jika $B$ adalah titik singgung pada lingkaran?",
+        "jawaban": "$40\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 18 cm. Garis singgung persekutuan luar panjangnya $12 \\sqrt{2}$ cm dan dalam $6 \\sqrt{5}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{15}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=324-288 dan (R+r)²=324-180. Karena R>r>0, akar positif menentukan R=9, r=3. Hasil R-r/2=15/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{15}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{15}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=324-288 dan (R+r)²=324-180. Karena R>r>0, akar positif menentukan R=9, r=3. Hasil R-r/2=15/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0361d4712708be2e0ff1f393",
+        "teks": "Seorang petugas mercusuar mengamati lautan dari balkon pengamatan yang berada pada ketinggian $80\\text{ m}$ dari permukaan laut. Jika jari-jari bumi adalah $6.400\\text{ km}$, jarak pandang terjauh menuju cakrawala yang dapat dilihat oleh petugas tersebut adalah sekitar ....",
+        "jawaban": "$32\\text{ km}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 12 cm. Garis singgung persekutuan luar panjangnya $8 \\sqrt{2}$ cm dan dalam $2 \\sqrt{11}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{11}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=144-128 dan (R+r)²=144-44. Karena R>r>0, akar positif menentukan R=7, r=3. Hasil R-r/2=11/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{11}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=144-128 dan (R+r)²=144-44. Karena R>r>0, akar positif menentukan R=7, r=3. Hasil R-r/2=11/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ed4a8842670900a3ea08251",
+        "teks": "Berdasarkan sifat dasarnya, sebuah garis singgung memotong atau menyentuh lingkaran tepat pada ....",
+        "jawaban": "1 titik",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 15 cm. Garis singgung persekutuan luar panjangnya $6 \\sqrt{6}$ cm dan dalam $12$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{9}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=225-216 dan (R+r)²=225-144. Karena R>r>0, akar positif menentukan R=6, r=3. Hasil R-r/2=9/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{9}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=225-216 dan (R+r)²=225-144. Karena R>r>0, akar positif menentukan R=6, r=3. Hasil R-r/2=9/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36b1de986b477bbe3fc8a86a",
+        "teks": "Dua garis singgung ditarik dari titik $P$ di luar lingkaran dan menyinggung lingkaran berpusat di $O$ masing-masing di titik $A$ dan $B$. Titik $C$ terletak pada busur mayor $AB$ sedemikian sehingga besar $\\angle ACB = 68^\\circ$. Berapakah besar $\\angle APB$?",
+        "jawaban": "$44^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 22 cm. Garis singgung persekutuan luar panjangnya $8 \\sqrt{7}$ cm dan dalam $4 \\sqrt{10}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=484-448 dan (R+r)²=484-160. Karena R>r>0, akar positif menentukan R=12, r=6. Hasil R-r/2=9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=484-448 dan (R+r)²=484-160. Karena R>r>0, akar positif menentukan R=12, r=6. Hasil R-r/2=9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "655b073894a59e60a92bf0e0",
+        "teks": "Kedudukan antara garis singgung suatu lingkaran dengan jari-jari lingkaran yang ditarik melalui titik singgungnya adalah saling ....",
+        "jawaban": "tegak lurus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 22 cm. Garis singgung persekutuan luar panjangnya $5 \\sqrt{19}$ cm dan dalam $\\sqrt{259}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=484-475 dan (R+r)²=484-259. Karena R>r>0, akar positif menentukan R=9, r=6. Hasil R-r/2=6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=484-475 dan (R+r)²=484-259. Karena R>r>0, akar positif menentukan R=9, r=6. Hasil R-r/2=6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7aeddc1852709ca45f975df1",
+        "teks": "Dua buah lingkaran memiliki jari-jari masing-masing $9\\text{ cm}$ dan $4\\text{ cm}$. Jika jarak antara pusat kedua lingkaran tersebut adalah $13\\text{ cm}$, maka panjang garis singgung persekutuan luarnya adalah ....",
+        "jawaban": "$12\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 20 cm. Garis singgung persekutuan luar panjangnya $6 \\sqrt{11}$ cm dan dalam $2 \\sqrt{51}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$5$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=400-396 dan (R+r)²=400-204. Karena R>r>0, akar positif menentukan R=8, r=6. Hasil R-r/2=5.",
+      "distraktor": [
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $5$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=400-396 dan (R+r)²=400-204. Karena R>r>0, akar positif menentukan R=8, r=6. Hasil R-r/2=5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "655b073894a59e60a92bf0e0",
+        "teks": "Kedudukan antara garis singgung suatu lingkaran dengan jari-jari lingkaran yang ditarik melalui titik singgungnya adalah saling ....",
+        "jawaban": "tegak lurus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 23 cm. Garis singgung persekutuan luar panjangnya $4 \\sqrt{30}$ cm dan dalam $4 \\sqrt{15}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{19}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=529-480 dan (R+r)²=529-240. Karena R>r>0, akar positif menentukan R=12, r=5. Hasil R-r/2=19/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{19}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=529-480 dan (R+r)²=529-240. Karena R>r>0, akar positif menentukan R=12, r=5. Hasil R-r/2=19/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0b7e70e44e4f5599d189a427",
+        "teks": "Sebuah satelit pengamat mengorbit bumi pada ketinggian $1.600\\text{ km}$ di atas permukaan bumi. Bumi dimodelkan sebagai bola dengan penampang lintang lingkaran berjari-jari $6.400\\text{ km}$. Jangkauan terjauh sinyal langsung dari satelit ke permukaan bumi dibatasi oleh garis singgung yang ditarik dari satelit ke permukaan bumi. Jarak jangkauan terjauh tersebut (panjang garis singgung dari satelit ke titik singgung di permukaan bumi) adalah ....",
+        "jawaban": "$4.800\\text{ km}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 16 cm. Garis singgung persekutuan luar panjangnya $4 \\sqrt{15}$ cm dan dalam $2 \\sqrt{15}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{13}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=256-240 dan (R+r)²=256-60. Karena R>r>0, akar positif menentukan R=9, r=5. Hasil R-r/2=13/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$13$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{13}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=256-240 dan (R+r)²=256-60. Karena R>r>0, akar positif menentukan R=9, r=5. Hasil R-r/2=13/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8c75eb56620d2c7b6bcdd868",
+        "teks": "Jika jari-jari lingkaran $A$ adalah $9\\text{ cm}$ dan titik $P$ berjarak $41\\text{ cm}$ dari titik $A$, berapakah panjang garis singgung $PB$ jika $B$ adalah titik singgung pada lingkaran?",
+        "jawaban": "$40\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 18 cm. Garis singgung persekutuan luar panjangnya $5 \\sqrt{11}$ cm dan dalam $\\sqrt{155}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$\\frac{17}{2}$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=324-275 dan (R+r)²=324-155. Karena R>r>0, akar positif menentukan R=10, r=3. Hasil R-r/2=17/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{17}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=324-275 dan (R+r)²=324-155. Karena R>r>0, akar positif menentukan R=10, r=3. Hasil R-r/2=17/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "71b8d119fed2954b7d4a5a9d",
+        "teks": "Dua roda dihubungkan oleh sabuk lurus sebagai garis singgung persekutuan luar dengan panjang $48\\text{ cm}$. Mula-mula, jari-jari roda besar $18\\text{ cm}$ dan roda kecil $4\\text{ cm}$. Jika jari-jari roda besar diganti menjadi $24\\text{ cm}$ tanpa mengubah jari-jari roda kecil dan panjang garis singgung persekutuan luarnya tetap $48\\text{ cm}$, berapakah pertambahan jarak antara kedua pusat roda tersebut?",
+        "jawaban": "$2\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dua_singgung_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lingkaran berpusat berjarak 15 cm. Garis singgung persekutuan luar panjangnya $10 \\sqrt{2}$ cm dan dalam $2 \\sqrt{14}$ cm. Tentukan selisih jari-jari terbesar dan setengah jari-jari terkecil.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Pythagoras memberi (R-r)²=225-200 dan (R+r)²=225-56. Karena R>r>0, akar positif menentukan R=9, r=4. Hasil R-r/2=7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pythagoras memberi (R-r)²=225-200 dan (R+r)²=225-56. Karena R>r>0, akar positif menentukan R=9, r=4. Hasil R-r/2=7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b02-b-hard-bt01-039"
     }
   ]
 }

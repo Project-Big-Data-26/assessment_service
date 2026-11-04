@@ -45,7 +45,7 @@ def generate(bab, code, level, r):
             f=(a*x*x+b*x)*(x+C);df=s.diff(f,x);d0=df.subs({x:0,a:A,b:B});d1=df.subs({x:1,a:A,b:B});query=s.diff(f,x,2).subs(x,T)
             val=query.subs({a:A,b:B})
             return checked(rf'Untuk $f(x)=(ax^2+bx)(x+{C})$ diketahui $f^\prime(0)={d0}$ dan $f^\prime(1)={d1}$. Tentukan $f^{{\prime\prime}}({T})$.',val,
-                rf'Aturan hasil kali memberi f′={s.latex(df)}. Kedua nilai turunannya menentukan a={A}, b={B}. Turunkan sekali lagi lalu substitusi x={T}; hasilnya {val}.',
+                rf'Aturan hasil kali memberi $f^\prime(x)={s.latex(df)}$. Kedua nilai turunannya menentukan a={A}, b={B}. Turunkan sekali lagi lalu substitusi x={T}; hasilnya {val}.',
                 'v2_turunan_hasil_kali_balik','hard',system(['a','b'],[df.subs(x,0)-d0,df.subs(x,1)-d1],query))
         if code=='C':
             u=r.randint(1,4);v=u+r.randint(2,5);f=x**3+a*x*x+b*x+C;df=s.diff(f,x);aa=-s.Rational(3,2)*(u+v);bb=3*u*v
@@ -54,7 +54,7 @@ def generate(bab, code, level, r):
                 rf'Syarat f′({u})=f′({v})=0 menghasilkan a={aa}, b={bb}. Turunan kedua negatif di {u} dan positif di {v}. Hitung f({u})-f({v})={val}.',
                 'v2_ekstrem_rekonstruksi','hard',system(['a','b'],[df.subs(x,u),df.subs(x,v)],f.subs(x,u)-f.subs(x,v)))
         p=r.randint(2,6)*10000;q=r.randint(1,5)*10000;budget=r.randint(12,30)*120000;val=s.Rational(budget**2,12*p*q)
-        return checked(rf'Kebun persegi panjang berbatasan dengan sungai pada salah satu sisi panjangnya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp{p:,} per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp{q:,} per meter. Anggaran tepat Rp{budget:,}. Berapa luas maksimum kebun?'.replace(',','.'),s.Rational(budget**2,16*p*q),
+        return checked(rf'Kebun persegi panjang berbatasan dengan sungai pada salah satu sisinya. Sisi sejajar sungai yang lain berpagar dengan biaya Rp{p:,} per meter; dua sisi tegak dan dua pagar pembagi yang tegak lurus sungai masing-masing berbiaya Rp{q:,} per meter. Anggaran tepat Rp{budget:,}. Berapa luas maksimum kebun?'.replace(',','.'),s.Rational(budget**2,16*p*q),
             rf'Jika sisi sejajar sungai x dan kedalaman y, terdapat empat ruas pagar sepanjang y. Kendala biaya {p}x+{4*q}y={budget}. Luas xy maksimum saat x={s.Rational(budget,2*p)}, y={s.Rational(budget,8*q)}; hasil kali {s.Rational(budget**2,16*p*q)} m².',
             'v2_optimasi_pagar_biaya','hard',system(['a','b'],[p*a+4*q*b-budget,p*a-4*q*b],a*b,[a,b]))
     if bab==3:
@@ -97,9 +97,9 @@ def generate(bab, code, level, r):
         if code=='C':
             L=r.randint(4,10)
             if level=='medium':
-                width=4*r.randint(2,6);lo=r.randint(1,8);cut=lo+width//4;threshold=lo+width//2
-                return constant(rf'X seragam kontinu pada $[{lo},b]$. Diketahui $P(X<{cut})=1/4$. Tentukan $P(X>{threshold})$.',s.Rational(1,2),
-                    rf'Perbandingan panjang interval memberi ({cut}-{lo})/(b-{lo})=1/4, sehingga b={lo+width}. Panjang bagian di atas {threshold} adalah {width//2} dari total {width}; peluang 1/2.','v2_kontinu_batas_balik','medium')
+                width=12*r.randint(2,6);lo=r.randint(1,8);cut=lo+width//4;threshold=lo+r.choice([width//3,width//2,2*width//3]);value=s.Rational(lo+width-threshold,width)
+                return constant(rf'X seragam kontinu pada $[{lo},b]$. Diketahui $P(X<{cut})=1/4$. Tentukan $P(X>{threshold})$.',value,
+                    rf'Perbandingan panjang interval memberi ({cut}-{lo})/(b-{lo})=1/4, sehingga b={lo+width}. Panjang bagian di atas {threshold} adalah {lo+width-threshold} dari total {width}; peluang {value}.','v2_kontinu_batas_balik','medium')
             p=s.Rational(r.randint(1,3),10);q=s.Rational(r.randint(2,4),10);cdf1=p+q/2;cdf2=p+q+(1-p-q)/3;val=p/2+3*q/4
             return checked(rf'Suatu sumber memilih distribusi seragam $[0,{L}]$, $[{L},{3*L}]$, atau $[{3*L},{6*L}]$ dengan peluang $p$, $q$, dan $1-p-q$. Diketahui $P(X<{2*L})={s.latex(cdf1)}$ serta $P(X<{4*L})={s.latex(cdf2)}$. Tentukan $P({s.latex(s.Rational(L,2))}<X<{s.latex(s.Rational(5*L,2))})$.',val,
                 rf'Data distribusi campuran memberi p+q/2={cdf1} dan p+q+(1-p-q)/3={cdf2}. Maka p={p}, q={q}. Interval pertanyaan mencakup separuh interval pertama dan 3/4 interval kedua, sehingga peluang p/2+3q/4={val}.',

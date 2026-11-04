@@ -765,6 +765,746 @@
       "pembahasan": "Langkah 1: Menggunakan sifat metode kuadrat terkecil bahwa jumlah seluruh residu adalah nol ($\\sum_{i=1}^n e_i = 0$):\n$$e_1 + e_2 + e_3 + e_4 + e_5 = 0$$\n$$(-3) + 2 + (-1) + 4 + e_5 = 0$$\n$$2 + e_5 = 0 \\implies e_5 = -2$$\n\nLangkah 2: Menghitung nilai prediksi ($\\hat{y}_5$) untuk cabang ke-5 dengan $x_5 = 12$:\n$$\\hat{y}_5 = 10 + 2,5(12) = 10 + 30 = 40\\text{ juta rupiah}$$\n\nLangkah 3: Menghitung omzet aktual ($y_5$) cabang ke-5 menggunakan rumus residu $e_5 = y_5 - \\hat{y}_5$:\n$$y_5 = \\hat{y}_5 + e_5 = 40 + (-2) = 38\\text{ juta rupiah}$$\n\nLangkah 4: Menghitung jumlah total omzet ($\\sum_{i=1}^5 y_i$):\nGaris regresi kuadrat terkecil selalu melalui titik $(\\bar{x}, \\bar{y})$. Oleh karena itu:\n$$\\bar{y} = 10 + 2,5\\bar{x} = 10 + 2,5(8) = 10 + 20 = 30\\text{ juta rupiah}$$\nJumlah seluruh nilai aktual variabel $y$ adalah:\n$$\\sum_{i=1}^5 y_i = n \\times \\bar{y} = 5 \\times 30 = 150\\text{ juta rupiah}$$\n\nJadi, diperoleh $y_5 = 38$ juta rupiah dan $\\sum_{i=1}^5 y_i = 150$ juta rupiah.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a25ad6f229f5a076180b9d6",
+        "teks": "Pertumbuhan tinggi bibit tanaman cabai ($y$, dalam cm) berdasarkan usia tanam ($x$, dalam minggu) dinyatakan dengan persamaan garis regresi $\\hat{y} = 12 + 6,5x$. Berdasarkan model tersebut, prediksi tinggi bibit tanaman yang telah berumur $4$ minggu adalah...",
+        "jawaban": "$38\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 7), (1, 9), (2, 14)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{163}{35}$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$\\frac{1011}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=55/4; intersep ȳ-mx̄=28/5. Taksiran pada x=5 adalah 1011/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1011}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2022}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1011}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=55/4; intersep ȳ-mx̄=28/5. Taksiran pada x=5 adalah 1011/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f465b3e463fd57310cf96f12",
+        "teks": "Sebuah eksperimen mencatat data waktu pemanasan ($x$, dalam menit) pada rentang $2 \\le x \\le 10$ terhadap suhu cairan ($y$, dalam $^{\\circ}\\text{C}$) dengan persamaan regresi $\\hat{y} = 42 + 4,5x$. Berapakah selisih suhu prediksi antara waktu pemanasan $14$ menit dan $6$ menit, serta apa istilah jenis prediksi yang dilakukan pada saat $x = 14$ menit?",
+        "jawaban": "$36^{\\circ}\\text{C}$ dan ekstrapolasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 3), (1, 12), (2, 16)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{148}{35}$. Tentukan taksiran y saat x=8.",
+      "jawaban_benar": "$\\frac{276}{7}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=13; intersep ȳ-mx̄=28/5. Taksiran pada x=8 adalah 276/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{138}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{552}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{276}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=13; intersep ȳ-mx̄=28/5. Taksiran pada x=8 adalah 276/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "44bb3eebcd3ba827a1413c2c",
+        "teks": "Garis regresi suatu data adalah $\\hat y=-3x+(19)$. Berapa prediksi $y$ ketika $x=25$?",
+        "jawaban": "$-56$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 3), (1, 13), (2, 18)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{183}{35}$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$\\frac{1111}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=59/4; intersep ȳ-mx̄=28/5. Taksiran pada x=5 adalah 1111/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1111}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2222}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1111}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=59/4; intersep ȳ-mx̄=28/5. Taksiran pada x=5 adalah 1111/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb8d8e8f93be324f0af6b544",
+        "teks": "| Gerai UMKM | Biaya Promosi ($x$, juta rupiah) | Penjualan Aktual ($y$, puluh juta rupiah) |\n|---|---|---|\n| P | $2$ | $6$ |\n| Q | $4$ | $15$ |\n| R | $6$ | $14$ |\n| S | $8$ | $18$ |\n\nHubungan antara biaya promosi dan hasil penjualan dimodelkan oleh garis regresi linear $\\hat{y} = 2 + 2x$. Seorang manajer penjualan mencurigai ada satu gerai yang memiliki lonjakan performa penjualan sangat tinggi melebihi estimasi model.\n\nGerai manakah yang dimaksud oleh manajer tersebut dan berapakah selisih nilai penjualan aktualnya terhadap prediksi model regresi?",
+        "jawaban": "Gerai Q, dengan selisih penjualan aktual terhadap prediksi sebesar $5$ puluh juta rupiah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 7), (1, 8), (2, 14)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{26}{7}$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$\\frac{172}{7}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=25/2; intersep ȳ-mx̄=6. Taksiran pada x=5 adalah 172/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{86}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{344}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{172}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=25/2; intersep ȳ-mx̄=6. Taksiran pada x=5 adalah 172/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1323d1569debe74f3cf5259d",
+        "teks": "Sebuah penelitian mengamati hubungan antara biaya promosi harian ($x$, dalam jutaan rupiah) dan omzet penjualan ($y$, dalam jutaan rupiah) di $5$ cabang toko ritel. Rata-rata biaya promosi dari kelima cabang tersebut adalah $\\bar{x} = 8$ juta rupiah, dan model regresi kuadrat terkecil yang terbentuk adalah $\\hat{y} = 10 + 2,5x$.\n\nDari $4$ cabang pertama, tercatat nilai residu berturut-turut adalah $e_1 = -3$, $e_2 = +2$, $e_3 = -1$, dan $e_4 = +4$. Jika cabang ke-5 mengeluarkan biaya promosi sebesar $x_5 = 12$ juta rupiah, berapakah omzet penjualan aktual ($y_5$) cabang ke-5 serta jumlah total omzet penjualan ($\\sum_{i=1}^5 y_i$) dari seluruh kelima cabang tersebut?",
+        "jawaban": "$y_5 = 38$ juta rupiah dan $\\sum_{i=1}^5 y_i = 150$ juta rupiah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 6), (1, 8), (2, 13)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{136}{35}$. Tentukan taksiran y saat x=6.",
+      "jawaban_benar": "$\\frac{998}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=12; intersep ȳ-mx̄=26/5. Taksiran pada x=6 adalah 998/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{499}{35}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1996}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{998}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=12; intersep ȳ-mx̄=26/5. Taksiran pada x=6 adalah 998/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f963fcb4cb51cad610d8a132",
+        "teks": "Garis regresi suatu data adalah $\\hat y=2x+(23)$. Berapa prediksi $y$ ketika $x=22$?",
+        "jawaban": "$67$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 5), (1, 9), (2, 12)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $5$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=51/4; intersep ȳ-mx̄=4. Taksiran pada x=5 adalah 29.",
+      "distraktor": [
+        {
+          "teks": "$28$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $29$."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $29$."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=51/4; intersep ȳ-mx̄=4. Taksiran pada x=5 adalah 29.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08d737490441c7b292c6e771",
+        "teks": "Hubungan antara lama latihan mandiri per minggu ($x$, dalam jam) dan kenaikan skor tes ($y$, dalam poin) dimodelkan oleh persamaan garis regresi $\\hat{y} = 0,5 + 0,4x$. Prediksi kenaikan skor tes seorang siswa yang berlatih mandiri selama $5$ jam per minggu adalah...",
+        "jawaban": "$2,5\\text{ poin}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 2), (1, 12), (2, 16)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{31}{7}$. Tentukan taksiran y saat x=9.",
+      "jawaban_benar": "$\\frac{314}{7}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=51/4; intersep ȳ-mx̄=5. Taksiran pada x=9 adalah 314/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{157}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{628}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{314}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=51/4; intersep ȳ-mx̄=5. Taksiran pada x=9 adalah 314/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eabb3c112e643f522c144715",
+        "teks": "Sebuah analisis regresi linear kuadrat terkecil dilakukan terhadap $4$ pasang data pengamatan. Awalnya diperoleh rata-rata $\\bar{x} = 5$ dan $\\bar{y} = 14$. Setelah diteliti kembali, terdapat kesalahan pencatatan: satu titik data yang awalnya tertulis $(x, y) = (4, 12)$ seharusnya bernilai $(8, 20)$. Titik koordinat manakah yang pasti dilalui oleh garis regresi linear yang baru setelah data tersebut diperbaiki?",
+        "jawaban": "$(6, 16)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 8), (1, 13), (2, 18)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{16}{5}$. Tentukan taksiran y saat x=6.",
+      "jawaban_benar": "$\\frac{143}{5}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=15; intersep ȳ-mx̄=47/5. Taksiran pada x=6 adalah 143/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{143}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{286}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{143}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=15; intersep ȳ-mx̄=47/5. Taksiran pada x=6 adalah 143/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e66204440c6a7a5b1a9fa535",
+        "teks": "Hubungan antara dua variabel dirumuskan oleh persamaan regresi linear $\\hat{y} = 14 + 2,5x$. Jika untuk suatu titik pengamatan dengan nilai $x = 8$ diperoleh nilai residu $\\varepsilon = -3,5$, berapakah nilai variabel dependen aktual ($y$) dari data pengamatan tersebut?",
+        "jawaban": "$30,5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 6), (1, 9), (2, 18)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{24}{7}$. Tentukan taksiran y saat x=8.",
+      "jawaban_benar": "$\\frac{241}{7}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=19. Rata-rata y=13; intersep ȳ-mx̄=7. Taksiran pada x=8 adalah 241/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{241}{14}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{482}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{241}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=19. Rata-rata y=13; intersep ȳ-mx̄=7. Taksiran pada x=8 adalah 241/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "735177d2e74c8ccc2ab98a1f",
+        "teks": "Seorang ilmuwan mengumpulkan data waktu pemanasan logam ($x$, dalam menit) pada interval $4 \\le x \\le 20$ terhadap pemuaian panjangnya ($y$, dalam mm). Persamaan regresi yang dihasilkan adalah $\\hat{y} = 0,6 + 0,15x$. Jika model tersebut digunakan untuk memprediksi pemuaian panjang pada waktu pemanasan $24$ menit, nilai pemuaian yang diprediksi dan kategori proses prediksi tersebut adalah...",
+        "jawaban": "$4,2\\text{ mm}$ dan ekstrapolasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 2), (1, 13), (2, 13)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $4$. Tentukan taksiran y saat x=9.",
+      "jawaban_benar": "$41$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=20. Rata-rata y=12; intersep ȳ-mx̄=5. Taksiran pada x=9 adalah 41.",
+      "distraktor": [
+        {
+          "teks": "$40$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $41$."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $41$."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=20. Rata-rata y=12; intersep ȳ-mx̄=5. Taksiran pada x=9 adalah 41.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fed8f4875d0bce16bba8c024",
+        "teks": "| Data ke- | $x$ | $y$ |\n|---|---|---|\n| 1 | $2$ | $3$ |\n| 2 | $4$ | $7$ |\n| 3 | $6$ | $8$ |\n| 4 | $8$ | $p$ |\n\nSebuah eksperimen menghasilkan $4$ pasangan data $(x, y)$ seperti tercantum pada tabel di atas. Jika diketahui bahwa garis regresi kuadrat terkecil dari data tersebut memiliki gradien kemiringan $b = 1,4$, maka nilai $p$ dan nilai intersep sumbu $y$ ($a$) dari persamaan regresi tersebut adalah...",
+        "jawaban": "$p = 12$ dan $a = 0,5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 2), (1, 14), (2, 14)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{192}{35}$. Tentukan taksiran y saat x=9.",
+      "jawaban_benar": "$\\frac{1882}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=26. Rata-rata y=14; intersep ȳ-mx̄=22/5. Taksiran pada x=9 adalah 1882/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{941}{35}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3764}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1882}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=26. Rata-rata y=14; intersep ȳ-mx̄=22/5. Taksiran pada x=9 adalah 1882/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b19248d75f3c166aefca33b9",
+        "teks": "Seorang pengelola kedai kopi menemukan bahwa rata-rata banyak cangkir kopi yang terjual per hari ($y$) berkaitan dengan lama jam operasional kedai ($x$, dalam jam) melalui model regresi $\\hat{y} = 20 + 15x$. Berapa prediksi banyak cangkir kopi yang terjual jika kedai beroperasi selama $8$ jam per hari?",
+        "jawaban": "$140\\text{ cangkir}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 5), (1, 10), (2, 15)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{193}{35}$. Tentukan taksiran y saat x=9.",
+      "jawaban_benar": "$\\frac{1898}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=27. Rata-rata y=57/4; intersep ȳ-mx̄=23/5. Taksiran pada x=9 adalah 1898/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{949}{35}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3796}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1898}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=27. Rata-rata y=57/4; intersep ȳ-mx̄=23/5. Taksiran pada x=9 adalah 1898/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08d737490441c7b292c6e771",
+        "teks": "Hubungan antara lama latihan mandiri per minggu ($x$, dalam jam) dan kenaikan skor tes ($y$, dalam poin) dimodelkan oleh persamaan garis regresi $\\hat{y} = 0,5 + 0,4x$. Prediksi kenaikan skor tes seorang siswa yang berlatih mandiri selama $5$ jam per minggu adalah...",
+        "jawaban": "$2,5\\text{ poin}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 5), (1, 13), (2, 13)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{128}{35}$. Tentukan taksiran y saat x=8.",
+      "jawaban_benar": "$\\frac{251}{7}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=13; intersep ȳ-mx̄=33/5. Taksiran pada x=8 adalah 251/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{251}{14}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{502}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{251}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=13; intersep ȳ-mx̄=33/5. Taksiran pada x=8 adalah 251/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e05f6c642b967aa8ea5e1d8",
+        "teks": "Hubungan antara lama pengisian daya gawai ($x$, dalam jam) dan persentase daya baterai ($y$, dalam %) dapat dimodelkan dengan persamaan garis regresi $\\hat{y} = 15 + 22x$. Berapakah prediksi persentase daya baterai setelah pengisian daya berlangsung selama $3,5$ jam?",
+        "jawaban": "$92\\%$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 3), (1, 8), (2, 17)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{188}{35}$. Tentukan taksiran y saat x=7.",
+      "jawaban_benar": "$\\frac{206}{5}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=24. Rata-rata y=13; intersep ȳ-mx̄=18/5. Taksiran pada x=7 adalah 206/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{103}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{412}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{206}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=24. Rata-rata y=13; intersep ȳ-mx̄=18/5. Taksiran pada x=7 adalah 206/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f465b3e463fd57310cf96f12",
+        "teks": "Sebuah eksperimen mencatat data waktu pemanasan ($x$, dalam menit) pada rentang $2 \\le x \\le 10$ terhadap suhu cairan ($y$, dalam $^{\\circ}\\text{C}$) dengan persamaan regresi $\\hat{y} = 42 + 4,5x$. Berapakah selisih suhu prediksi antara waktu pemanasan $14$ menit dan $6$ menit, serta apa istilah jenis prediksi yang dilakukan pada saat $x = 14$ menit?",
+        "jawaban": "$36^{\\circ}\\text{C}$ dan ekstrapolasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 7), (1, 14), (2, 16)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{123}{35}$. Tentukan taksiran y saat x=6.",
+      "jawaban_benar": "$\\frac{1039}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=22. Rata-rata y=59/4; intersep ȳ-mx̄=43/5. Taksiran pada x=6 adalah 1039/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1039}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2078}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1039}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=22. Rata-rata y=59/4; intersep ȳ-mx̄=43/5. Taksiran pada x=6 adalah 1039/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "361332e736dccb2d30b93e66",
+        "teks": "Pada bentuk umum persamaan regresi linear $\\hat{y} = a + bx$, konstanta $a$ menyatakan...",
+        "jawaban": "titik potong garis regresi terhadap sumbu $y$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 4), (1, 11), (2, 16)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{144}{35}$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$\\frac{923}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=13; intersep ȳ-mx̄=29/5. Taksiran pada x=5 adalah 923/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{923}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1846}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{923}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=21. Rata-rata y=13; intersep ȳ-mx̄=29/5. Taksiran pada x=5 adalah 923/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4978d0488b5e6d5515254214",
+        "teks": "Hubungan antara lama belajar ($x$, dalam jam) dan skor tes matematika ($y$) dinyatakan dengan persamaan garis regresi $\\hat{y} = 45 + 8x$. Jika seorang siswa belajar selama $4$ jam, prediksi skor tes matematika yang diperoleh siswa tersebut adalah...",
+        "jawaban": "$77$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 6), (1, 8), (2, 12)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{18}{5}$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$\\frac{116}{5}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=20. Rata-rata y=23/2; intersep ȳ-mx̄=26/5. Taksiran pada x=5 adalah 116/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{58}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{232}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{116}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=20. Rata-rata y=23/2; intersep ȳ-mx̄=26/5. Taksiran pada x=5 adalah 116/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b320d84506bad363aedc4ed5",
+        "teks": "Dari $4$ pasangan data pengamatan bivariat $(x, y)$, diperoleh model regresi linear kuadrat terkecil $\\hat{y} = 1,5 + 1,2x$. Tiga nilai residu pertama diketahui berturut-turut adalah $\\varepsilon_1 = 0,4$, $\\varepsilon_2 = -0,9$, dan $\\varepsilon_3 = 0,2$. Jika pada data pengamatan ke-4 nilai variabel independennya adalah $x_4 = 5$, berapakah nilai variabel dependen aktual ($y_4$) dari pengamatan ke-4 tersebut?",
+        "jawaban": "$7,8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 5), (1, 13), (2, 17)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{24}{5}$. Tentukan taksiran y saat x=6.",
+      "jawaban_benar": "$\\frac{177}{5}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=15; intersep ȳ-mx̄=33/5. Taksiran pada x=6 adalah 177/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{177}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{354}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{177}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=15; intersep ȳ-mx̄=33/5. Taksiran pada x=6 adalah 177/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1eaa5c12863d4dc07c67176d",
+        "teks": "Proses penggunaan model regresi untuk memprediksi nilai variabel dependen pada nilai variabel independen yang berada di luar jangkauan data pengamatan disebut...",
+        "jawaban": "ekstrapolasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 8), (1, 13), (2, 13)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{143}{35}$. Tentukan taksiran y saat x=5.",
+      "jawaban_benar": "$\\frac{981}{35}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=59/4; intersep ȳ-mx̄=38/5. Taksiran pada x=5 adalah 981/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{981}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1962}{35}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{981}{35}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=59/4; intersep ȳ-mx̄=38/5. Taksiran pada x=5 adalah 981/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c205f941c995d9553b5f8be3",
+        "teks": "Dari pengamatan sekumpulan data bivariat diperoleh $SS_{xy} = 96$, $SS_{xx} = 32$, nilai rata-rata variabel independen $\\bar{x} = 6$, dan nilai rata-rata variabel dependen $\\bar{y} = 22$. Persamaan garis regresi linear yang memenuhi kriteria metode kuadrat terkecil adalah...",
+        "jawaban": "$\\hat{y} = 4 + 3x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_regresi_data_hilang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Empat titik data adalah [(0, 8), (1, 9), (2, 12)] dan (4,t). Regresi kuadrat terkecil y atas x mempunyai gradien $\\frac{22}{5}$. Tentukan taksiran y saat x=9.",
+      "jawaban_benar": "$\\frac{227}{5}$",
+      "alasan_benar": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=27/2; intersep ȳ-mx̄=29/5. Taksiran pada x=9 adalah 227/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{227}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{454}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{227}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Rata-rata x=7/4, jumlah kuadrat simpangan x=35/4. Syarat gradien menentukan t=25. Rata-rata y=27/2; intersep ȳ-mx̄=29/5. Taksiran pada x=9 adalah 227/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-b-hard-bt01-038"
     }
   ]
 }

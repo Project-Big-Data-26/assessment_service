@@ -861,6 +861,561 @@
       "pembahasan": "Gunakan aturan transformasi tersebut pada koordinat (0,3), diperoleh (5,10).",
       "catatan": "codex-replenishment:kelas9-b03-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas9-b03-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ab728b6faa0eede28c0450e2",
+        "teks": "Titik P$(8, 1)$ ditranslasi oleh vektor $(9, 5)$. Koordinat bayangannya adalah ....",
+        "jawaban": "$(17, 6)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(8,7) ke (7,4). Jika komposisi yang sama membawa R ke (8,-4) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=-5. Balikkan gabungan untuk memperoleh R=(9,-1). Lalu terapkan T1: S=(3,4); 2xS+yS=10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=-5. Balikkan gabungan untuk memperoleh R=(9,-1). Lalu terapkan T1: S=(3,4); 2xS+yS=10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e4a36c5b0991378b24b0fe7",
+        "teks": "Diketahui segitiga $KLM$ dengan koordinat $K(-7, 5)$, $L(3, -2)$, dan $M(1, 6)$ ditranslasikan oleh translasi $T$ sehingga menghasilkan bayangan $K'(-1, 1)$. Pasangan translasi $T$ serta koordinat titik $L'$ dan $M'$ berturut-turut adalah ...",
+        "jawaban": "$\\binom{6}{-4}$, $L'(9, -6)$, dan $M'(7, 2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-2,-3) ke (12,3). Jika komposisi yang sama membawa R ke (8,6) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=6, b=-2. Balikkan gabungan untuk memperoleh R=(-6,0). Lalu terapkan T1: S=(6,2); 2xS+yS=14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=6, b=-2. Balikkan gabungan untuk memperoleh R=(-6,0). Lalu terapkan T1: S=(6,2); 2xS+yS=14.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0df1b1c9d367fc3ac6593f4a",
+        "teks": "Sebuah persegi $ABCD$ memiliki koordinat titik sudut $A(2, 3)$, $B(8, 3)$, $C(8, 9)$, dan $D(2, 9)$. Persegi tersebut ditranslasikan oleh $T = \\binom{a}{b}$ dengan $a > 0$ dan $b > 0$. Jika daerah persekutuan (irisan) antara persegi $ABCD$ dan bayangannya $A'B'C'D'$ berbentuk persegi dengan luas $9\\text{ satuan luas}$, maka nilai dari $a + b$ adalah ...",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-1,-2) ke (9,1). Jika komposisi yang sama membawa R ke (-8,7) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=3, b=-4. Balikkan gabungan untuk memperoleh R=(-18,4). Lalu terapkan T1: S=(-12,8); 2xS+yS=-16.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=3, b=-4. Balikkan gabungan untuk memperoleh R=(-18,4). Lalu terapkan T1: S=(-12,8); 2xS+yS=-16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b9c08ed037fd22c55542cd4f",
+        "teks": "Titik $P(a, b)$ digeser oleh translasi $T_1 = \\binom{5}{-7}$ menghasilkan titik $Q$. Selanjutnya, titik $Q$ digeser kembali oleh translasi $T_2 = \\binom{-8}{3}$ sehingga menghasilkan bayangan akhir $P'(-1, 2)$. Nilai dari $2a + b$ adalah ...",
+        "jawaban": "10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(3,-2) ke (-5,-5). Jika komposisi yang sama membawa R ke (7,3) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=2. Balikkan gabungan untuk memperoleh R=(15,6). Lalu terapkan T1: S=(9,4); 2xS+yS=22.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=2. Balikkan gabungan untuk memperoleh R=(15,6). Lalu terapkan T1: S=(9,4); 2xS+yS=22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d2e064e1115a9bd31d3ef24a",
+        "teks": "Titik P$(-7, 10)$ ditranslasi oleh vektor $(8, 7)$. Koordinat bayangannya adalah ....",
+        "jawaban": "$(1, 17)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-2,7) ke (-8,1). Jika komposisi yang sama membawa R ke (1,6) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$8$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-6, b=-6. Balikkan gabungan untuk memperoleh R=(7,12). Lalu terapkan T1: S=(-5,18); 2xS+yS=8.",
+      "distraktor": [
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $8$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-6, b=-6. Balikkan gabungan untuk memperoleh R=(7,12). Lalu terapkan T1: S=(-5,18); 2xS+yS=8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed58d962a8b4bb81bf1fcc47",
+        "teks": "Titik P$(-11, 5)$ ditranslasi oleh vektor $(6, 6)$. Koordinat bayangannya adalah ....",
+        "jawaban": "$(-5, 11)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-8,4) ke (-11,0). Jika komposisi yang sama membawa R ke (0,8) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-4, b=-5. Balikkan gabungan untuk memperoleh R=(3,12). Lalu terapkan T1: S=(-5,17); 2xS+yS=7.",
+      "distraktor": [
+        {
+          "teks": "$6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-4, b=-5. Balikkan gabungan untuk memperoleh R=(3,12). Lalu terapkan T1: S=(-5,17); 2xS+yS=7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f5d03049ff46874582ddbeb",
+        "teks": "Perubahan posisi suatu objek (titik, garis, atau bangun) dengan jarak dan arah tertentu pada bidang datar disebut ...",
+        "jawaban": "translasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-4,-6) ke (-12,-8). Jika komposisi yang sama membawa R ke (8,3) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-2, b=4. Balikkan gabungan untuk memperoleh R=(16,5). Lalu terapkan T1: S=(12,1); 2xS+yS=25.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-2, b=4. Balikkan gabungan untuk memperoleh R=(16,5). Lalu terapkan T1: S=(12,1); 2xS+yS=25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2f9b0ed8a01d0a6b2e4f49ab",
+        "teks": "Titik P$(-8, 3)$ ditranslasi oleh vektor $(7, 7)$. Koordinat bayangannya adalah ....",
+        "jawaban": "$(-1, 10)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-2,-3) ke (-11,-6). Jika komposisi yang sama membawa R ke (-5,-2) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-6$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=3. Balikkan gabungan untuk memperoleh R=(4,1). Lalu terapkan T1: S=(-2,-2); 2xS+yS=-6.",
+      "distraktor": [
+        {
+          "teks": "$-7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-6$."
+        },
+        {
+          "teks": "$-5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-6$."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=3. Balikkan gabungan untuk memperoleh R=(4,1). Lalu terapkan T1: S=(-2,-2); 2xS+yS=-6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5b6b5fe27527926fac747cbe",
+        "teks": "Segitiga $ABC$ memiliki titik-titik sudut $A(1, 2)$, $B(7, 2)$, dan $C(1, 8)$. Segitiga tersebut ditranslasikan berturut-turut oleh $T_1 = \\binom{a}{5}$ dan dilanjutkan oleh $T_2 = \\binom{-2}{b}$. Jika titik berat dari segitiga bayangan akhir berada tepat pada titik asal $(0, 0)$, maka nilai dari $a - b$ adalah ...",
+        "jawaban": "8",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(1,6) ke (20,13). Jika komposisi yang sama membawa R ke (5,-3) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=7, b=-5. Balikkan gabungan untuk memperoleh R=(-14,-10). Lalu terapkan T1: S=(0,-5); 2xS+yS=-5.",
+      "distraktor": [
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-5$."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-5$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=7, b=-5. Balikkan gabungan untuk memperoleh R=(-14,-10). Lalu terapkan T1: S=(0,-5); 2xS+yS=-5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "35001ba790b5b29a0db724be",
+        "teks": "Hasil translasi garis lurus $4x + 5y = 20$ oleh $\\binom{-1}{7}$ adalah ...",
+        "jawaban": "$4x + 5y = 51$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(1,-2) ke (6,-3). Jika komposisi yang sama membawa R ke (-5,0) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-1, b=-7. Balikkan gabungan untuk memperoleh R=(-10,1). Lalu terapkan T1: S=(-12,8); 2xS+yS=-16.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-1, b=-7. Balikkan gabungan untuk memperoleh R=(-10,1). Lalu terapkan T1: S=(-12,8); 2xS+yS=-16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3efbb6a4c0990dfa20133866",
+        "teks": "Segitiga $DEF$ ditranslasikan sehingga menghasilkan bayangan segitiga $KLM$, dengan titik $D$ berkorespondensi dengan $K$, $E$ dengan $L$, dan $F$ dengan $M$. Jika diketahui $D(-2, 4)$, $E(5, 1)$, $K(4, -1)$, dan $M(1, 6)$, maka koordinat titik $L$ dan titik $F$ berturut-turut adalah ...",
+        "jawaban": "$L(11, -4)$ dan $F(-5, 11)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-2,-8) ke (-11,-11). Jika komposisi yang sama membawa R ke (0,8) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=3. Balikkan gabungan untuk memperoleh R=(9,11). Lalu terapkan T1: S=(3,8); 2xS+yS=14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-3, b=3. Balikkan gabungan untuk memperoleh R=(9,11). Lalu terapkan T1: S=(3,8); 2xS+yS=14.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3f5d03049ff46874582ddbeb",
+        "teks": "Perubahan posisi suatu objek (titik, garis, atau bangun) dengan jarak dan arah tertentu pada bidang datar disebut ...",
+        "jawaban": "translasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-2,-5) ke (-12,-11). Jika komposisi yang sama membawa R ke (-8,2) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-10$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=-6, b=-2. Balikkan gabungan untuk memperoleh R=(2,8). Lalu terapkan T1: S=(-10,10); 2xS+yS=-10.",
+      "distraktor": [
+        {
+          "teks": "$-11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-10$."
+        },
+        {
+          "teks": "$-9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-10$."
+        },
+        {
+          "teks": "$-20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=-6, b=-2. Balikkan gabungan untuk memperoleh R=(2,8). Lalu terapkan T1: S=(-10,10); 2xS+yS=-10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1dddf69e10ef25e97a1e5385",
+        "teks": "Titik $A(m, -3)$ ditranslasikan oleh $\\binom{4}{n}$ sehingga menghasilkan bayangan $A'(2, 5)$. Jika titik $B(2m, n)$ ditranslasikan oleh $\\binom{-n}{m}$, maka koordinat bayangan titik $B'$ adalah ...",
+        "jawaban": "$B'(-12, 6)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(5,5) ke (14,11). Jika komposisi yang sama membawa R ke (-6,8) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=6, b=3. Balikkan gabungan untuk memperoleh R=(-15,2). Lalu terapkan T1: S=(-3,-1); 2xS+yS=-7.",
+      "distraktor": [
+        {
+          "teks": "$-8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-7$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-7$."
+        },
+        {
+          "teks": "$-14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=6, b=3. Balikkan gabungan untuk memperoleh R=(-15,2). Lalu terapkan T1: S=(-3,-1); 2xS+yS=-7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed58d962a8b4bb81bf1fcc47",
+        "teks": "Titik P$(-11, 5)$ ditranslasi oleh vektor $(6, 6)$. Koordinat bayangannya adalah ....",
+        "jawaban": "$(-5, 11)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-7,1) ke (3,7). Jika komposisi yang sama membawa R ke (-6,3) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-13$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=6, b=2. Balikkan gabungan untuk memperoleh R=(-16,-3). Lalu terapkan T1: S=(-4,-5); 2xS+yS=-13.",
+      "distraktor": [
+        {
+          "teks": "$-14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-13$."
+        },
+        {
+          "teks": "$-12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-13$."
+        },
+        {
+          "teks": "$-26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=6, b=2. Balikkan gabungan untuk memperoleh R=(-16,-3). Lalu terapkan T1: S=(-4,-5); 2xS+yS=-13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ccd9d3bc4f35c661efd07e3",
+        "teks": "Sebuah trapesium siku-siku $ABCD$ memiliki koordinat titik sudut $A(1, 1)$, $B(7, 1)$, $C(4, 5)$, dan $D(1, 5)$. Trapesium tersebut ditranslasikan oleh $T = \\binom{m}{n}$ menghasilkan bayangan $A'B'C'D'$. Diketahui bahwa titik $A'$ terletak di kuadran IV dengan absis bernilai $9$, dan bayangan titik $D$ yaitu $D'$ terletak pada garis lurus $y = -2x + 10$. Jika koordinat titik $C'$ adalah $(x_c, y_c)$, nilai dari $x_c + y_c$ adalah ...",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_translasi_dua_vektor_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Translasi T1 bervektor (2a,-b) diikuti T2 bervektor (-b,a+b) membawa P(-1,0) ke (2,3). Jika komposisi yang sama membawa R ke (-5,-1) dan hasil T1 saja pada R adalah S, tentukan 2xS+yS.",
+      "jawaban_benar": "$-11$",
+      "alasan_benar": "Vektor gabungan (2a-b,a). Data P memberi a=3, b=3. Balikkan gabungan untuk memperoleh R=(-8,-4). Lalu terapkan T1: S=(-2,-7); 2xS+yS=-11.",
+      "distraktor": [
+        {
+          "teks": "$-12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-11$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-11$."
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Vektor gabungan (2a-b,a). Data P memberi a=3, b=3. Balikkan gabungan untuk memperoleh R=(-8,-4). Lalu terapkan T1: S=(-2,-7); 2xS+yS=-11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-a-hard-bt01-036"
     }
   ]
 }

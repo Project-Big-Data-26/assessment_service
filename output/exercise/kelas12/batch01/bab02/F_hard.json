@@ -753,6 +753,191 @@
       "pembahasan": "r=I/(P×t)×100%=5760000/(14400000×4)×100%=10%.",
       "catatan": "codex-replenishment:kelas12-b02-F-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12-b02-f-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9b507d52bb350f8707f5b5f8",
+        "teks": "Modal Rp20.000.000,00 dibungakan majemuk 10% per tahun. Besar bunga yang diperoleh pada tahun ketiga saja adalah ....",
+        "jawaban": "Rp2.420.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_parameter_dua_skema_bunga",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Modal sama P ditawarkan dalam dua skema dengan suku bunga tahunan sama r>0. Skema bunga tunggal bernilai $650000$ rupiah setelah 2 tahun, sedangkan majemuk tahunan $661250$ rupiah. Tentukan selisih saldo majemuk dan tunggal setelah 3 tahun, dalam rupiah.",
+      "jawaban_benar": "$\\frac{70875}{2}$",
+      "alasan_benar": "Susun P(1+2r)=650000, P(1+r)²=661250. Selesaikan dengan P>0,r>0: P=500000, r=3/20. Selisih tahun ketiga P[(1+r)³-(1+3r)]=70875/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{70875}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$70875$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{70875}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Susun P(1+2r)=650000, P(1+r)²=661250. Selesaikan dengan P>0,r>0: P=500000, r=3/20. Selisih tahun ketiga P[(1+r)³-(1+3r)]=70875/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-f-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "38229fe6df4246cc6ec78c50",
+        "teks": "Dina menghitung nilai akhir modal Rp20.000.000,00 dengan bunga majemuk 10% per tahun selama 3 tahun:\n\n| Tahun | Perhitungan Dina | Hasil |\n|---|---|---|\n| 1 | 20.000.000 + 10% x 20.000.000 | 22.000.000 |\n| 2 | 22.000.000 + 10% x 20.000.000 | 24.000.000 |\n| 3 | 24.000.000 + 10% x 20.000.000 | 26.000.000 |\n\nPernyataan yang benar mengenai pekerjaan Dina adalah ....",
+        "jawaban": "Kesalahan mulai pada tahun ke-2: bunga dihitung dari modal awal, bukan dari nilai akhir tahun ke-1; nilai akhir yang benar Rp26.620.000,00.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_parameter_dua_skema_bunga",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Modal sama P ditawarkan dalam dua skema dengan suku bunga tahunan sama r>0. Skema bunga tunggal bernilai $1440000$ rupiah setelah 2 tahun, sedangkan majemuk tahunan $1452000$ rupiah. Tentukan selisih saldo majemuk dan tunggal setelah 3 tahun, dalam rupiah.",
+      "jawaban_benar": "$37200$",
+      "alasan_benar": "Susun P(1+2r)=1440000, P(1+r)²=1452000. Selesaikan dengan P>0,r>0: P=1200000, r=1/10. Selisih tahun ketiga P[(1+r)³-(1+3r)]=37200.",
+      "distraktor": [
+        {
+          "teks": "$37199$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37200$."
+        },
+        {
+          "teks": "$37201$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37200$."
+        },
+        {
+          "teks": "$74400$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Susun P(1+2r)=1440000, P(1+r)²=1452000. Selesaikan dengan P>0,r>0: P=1200000, r=1/10. Selisih tahun ketiga P[(1+r)³-(1+3r)]=37200.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-f-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3827aa1b8c28edc63aca538c",
+        "teks": "Sebuah aplikasi pinjaman online memberikan pinjaman sebesar Rp25.000.000,00 dengan suku bunga majemuk 10% per tahun. Periode pinjaman selama 60 bulan. Berapakah nilai akhir pengembalian pinjaman tersebut?",
+        "jawaban": "Rp40.262.750,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_parameter_dua_skema_bunga",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Modal sama P ditawarkan dalam dua skema dengan suku bunga tahunan sama r>0. Skema bunga tunggal bernilai $720000$ rupiah setelah 2 tahun, sedangkan majemuk tahunan $726000$ rupiah. Tentukan selisih saldo majemuk dan tunggal setelah 3 tahun, dalam rupiah.",
+      "jawaban_benar": "$18600$",
+      "alasan_benar": "Susun P(1+2r)=720000, P(1+r)²=726000. Selesaikan dengan P>0,r>0: P=600000, r=1/10. Selisih tahun ketiga P[(1+r)³-(1+3r)]=18600.",
+      "distraktor": [
+        {
+          "teks": "$18599$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $18600$."
+        },
+        {
+          "teks": "$18601$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $18600$."
+        },
+        {
+          "teks": "$37200$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Susun P(1+2r)=720000, P(1+r)²=726000. Selesaikan dengan P>0,r>0: P=600000, r=1/10. Selisih tahun ketiga P[(1+r)³-(1+3r)]=18600.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-f-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d4d5bffab9b8dc9e7cddf6b5",
+        "teks": "Dana Rp100.000.000,00 akan diinvestasikan oleh konsultan dengan bunga majemuk per tahun. Suku bunga yang mungkin terjadi 3%-7% per tahun dan periode yang mungkin 2-4 tahun. Selisih antara nilai akhir terbesar dan nilai akhir terkecil yang mungkin adalah ....",
+        "jawaban": "Rp24.989.601,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_parameter_dua_skema_bunga",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Modal sama P ditawarkan dalam dua skema dengan suku bunga tahunan sama r>0. Skema bunga tunggal bernilai $330000$ rupiah setelah 2 tahun, sedangkan majemuk tahunan $330750$ rupiah. Tentukan selisih saldo majemuk dan tunggal setelah 3 tahun, dalam rupiah.",
+      "jawaban_benar": "$\\frac{4575}{2}$",
+      "alasan_benar": "Susun P(1+2r)=330000, P(1+r)²=330750. Selesaikan dengan P>0,r>0: P=300000, r=1/20. Selisih tahun ketiga P[(1+r)³-(1+3r)]=4575/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4575}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$4575$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{4575}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Susun P(1+2r)=330000, P(1+r)²=330750. Selesaikan dengan P>0,r>0: P=300000, r=1/20. Selisih tahun ketiga P[(1+r)³-(1+3r)]=4575/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-f-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c680d7ac524758cd81157f1",
+        "teks": "Modal Rp33.600.000,00 menghasilkan bunga tunggal selama 2 tahun sebesar Rp4.032.000,00. Berapa suku bunga tahunannya dalam persen?",
+        "jawaban": "$6$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_parameter_dua_skema_bunga",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Modal sama P ditawarkan dalam dua skema dengan suku bunga tahunan sama r>0. Skema bunga tunggal bernilai $560000$ rupiah setelah 2 tahun, sedangkan majemuk tahunan $576000$ rupiah. Tentukan selisih saldo majemuk dan tunggal setelah 3 tahun, dalam rupiah.",
+      "jawaban_benar": "$51200$",
+      "alasan_benar": "Susun P(1+2r)=560000, P(1+r)²=576000. Selesaikan dengan P>0,r>0: P=400000, r=1/5. Selisih tahun ketiga P[(1+r)³-(1+3r)]=51200.",
+      "distraktor": [
+        {
+          "teks": "$51199$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $51200$."
+        },
+        {
+          "teks": "$51201$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $51200$."
+        },
+        {
+          "teks": "$102400$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Susun P(1+2r)=560000, P(1+r)²=576000. Selesaikan dengan P>0,r>0: P=400000, r=1/5. Selisih tahun ketiga P[(1+r)³-(1+3r)]=51200.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-f-hard-bt01-027"
     }
   ]
 }

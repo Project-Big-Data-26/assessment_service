@@ -997,6 +997,746 @@
       "pembahasan": "Balikkan y=4x+10 menjadi x=(y-10)/4. Maka f⁻¹(30)=5.",
       "catatan": "codex-replenishment:kelas11-b01-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas11-b01-c-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5eb6119b445cc18be35533ac",
+        "teks": "Diketahui fungsi linear $f(x) = 2x - 3$ dan fungsi pecahan $g(x) = \\frac{px - 2}{x - 2}$ dengan $x \\ne 2$. Jika grafik fungsi invers $(f \\circ g)^{-1}(x)$ melalui titik $(11, 3)$, maka nilai dari $g^{-1}(p + 1)$ adalah ....",
+        "jawaban": "6",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{5}{3}$, f(1)=$\\frac{13}{4}$, f(2)=$\\frac{21}{5}$. Tentukan $f^{-1}(10)$.",
+      "jawaban_benar": "$- \\frac{25}{2}$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=5, c=3. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=10, hasil -25/2.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{25}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-25$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{25}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=5, c=3. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=10, hasil -25/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9491a4c5dd4b89be6c458b86",
+        "teks": "Tentukan fungsi invers (jika ada) dari $f(x) = \\sqrt{7x - 35}$, beserta daerah asal dan daerah hasilnya.",
+        "jawaban": "$f^{-1}(x) = \\frac{x^2 + 35}{7}$, dengan daerah asal $[0, \\infty)$ dan daerah hasil $[5, \\infty)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{9}{4}$, f(1)=$\\frac{17}{5}$, f(2)=$\\frac{25}{6}$. Tentukan $f^{-1}(9)$.",
+      "jawaban_benar": "$-27$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=9, c=4. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=9, hasil -27.",
+      "distraktor": [
+        {
+          "teks": "$-28$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-27$."
+        },
+        {
+          "teks": "$-26$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-27$."
+        },
+        {
+          "teks": "$-54$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=9, c=4. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=9, hasil -27.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "20e34acdba71e2aa3c6c0e12",
+        "teks": "Diketahui dua fungsi $f(x) = \\frac{5x - 3}{x - 2}$ untuk $x \\ne 2$ dan $g(x) = 3x - 3$. Jika berlaku persamaan $(f^{-1} \\circ g)(m) = 3$, maka nilai dari konstanta $m$ adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{1}{2}$, f(1)=$\\frac{6}{5}$, f(2)=$\\frac{5}{3}$. Tentukan $f^{-1}(7)$.",
+      "jawaban_benar": "$- \\frac{26}{3}$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=2, c=4. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=7, hasil -26/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{13}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{52}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{26}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=2, c=4. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=7, hasil -26/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cf6487eefd9dced5ed2d51fe",
+        "teks": "Diketahui suatu fungsi bijektif $f$ memenuhi $f(7) = 15$. Nilai dari $f^{-1}(15)$ adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$9$, f(1)=$6$, f(2)=$5$. Tentukan $f^{-1}(5)$.",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=9, c=1. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=5, hasil 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=9, c=1. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=5, hasil 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8b936f246aecaca495d8e4d1",
+        "teks": "Fungsi $f(x)=4x+3$ memiliki invers. Tentukan $f^{-1}(15)$.",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{2}{3}$, f(1)=$\\frac{8}{7}$, f(2)=$\\frac{3}{2}$. Tentukan $f^{-1}(6)$.",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=4, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -16.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=4, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "489cc0d50cd7d389a9f7bc73",
+        "teks": "Diketahui fungsi $f(x) = \\sqrt{3x - 12}$ terdefinisi pada daerah asal $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$. Rumus fungsi invers $f^{-1}(x)$ beserta daerah asalnya adalah ....",
+        "jawaban": "$f^{-1}(x) = \\frac{x^2 + 12}{3}$ dengan domain $\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{2}{5}$, f(1)=$\\frac{5}{3}$, f(2)=$\\frac{18}{7}$. Tentukan $f^{-1}(10)$.",
+      "jawaban_benar": "$-24$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=2, c=5. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=10, hasil -24.",
+      "distraktor": [
+        {
+          "teks": "$-25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-24$."
+        },
+        {
+          "teks": "$-23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-24$."
+        },
+        {
+          "teks": "$-48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=2, c=5. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=10, hasil -24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a7c436299e1fb6981864af49",
+        "teks": "Fungsi kuadrat $f(x) = x^2 - 6x + 14$ dibatasi pada domain $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 3\\}$ agar memiliki fungsi invers. Rumus fungsi invers $f^{-1}(x)$ untuk $x \\ge 5$ adalah ....",
+        "jawaban": "$3 + \\sqrt{x - 5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{1}{2}$, f(1)=$\\frac{8}{7}$, f(2)=$\\frac{13}{8}$. Tentukan $f^{-1}(6)$.",
+      "jawaban_benar": "$-33$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=5, b=3, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -33.",
+      "distraktor": [
+        {
+          "teks": "$-34$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-33$."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-33$."
+        },
+        {
+          "teks": "$-66$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=5, b=3, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -33.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e4ad05524eb351f9909fb801",
+        "teks": "Diketahui fungsi rasional $f(x) = \\frac{ax + 7}{3x - 4}$ dengan $x \\ne \\frac{4}{3}$ dan $a$ suatu konstanta real. Jika fungsi invers dari $f(x)$ sama dengan fungsi asalnya sendiri, yaitu $f^{-1}(x) = f(x)$, maka nilai konstanta $a$ adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{9}{8}$, f(1)=$\\frac{4}{3}$, f(2)=$\\frac{3}{2}$. Tentukan $f^{-1}(4)$.",
+      "jawaban_benar": "$-23$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=9, c=8. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=4, hasil -23.",
+      "distraktor": [
+        {
+          "teks": "$-24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-23$."
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-23$."
+        },
+        {
+          "teks": "$-46$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=9, c=8. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=4, hasil -23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e4ad05524eb351f9909fb801",
+        "teks": "Diketahui fungsi rasional $f(x) = \\frac{ax + 7}{3x - 4}$ dengan $x \\ne \\frac{4}{3}$ dan $a$ suatu konstanta real. Jika fungsi invers dari $f(x)$ sama dengan fungsi asalnya sendiri, yaitu $f^{-1}(x) = f(x)$, maka nilai konstanta $a$ adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{3}{8}$, f(1)=$\\frac{8}{9}$, f(2)=$\\frac{13}{10}$. Tentukan $f^{-1}(7)$.",
+      "jawaban_benar": "$- \\frac{53}{2}$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=5, b=3, c=8. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=7, hasil -53/2.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{53}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-53$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{53}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=5, b=3, c=8. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=7, hasil -53/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fff36762d33495a32212d465",
+        "teks": "Rumus fungsi invers $f^{-1}(x)$ dari fungsi linear $f(x) = 6x + 5$ adalah ....",
+        "jawaban": "$f^{-1}(x) = \\frac{x - 5}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{4}{3}$, f(1)=$\\frac{11}{7}$, f(2)=$\\frac{7}{4}$. Tentukan $f^{-1}(6)$.",
+      "jawaban_benar": "$- \\frac{28}{3}$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=8, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -28/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{14}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{56}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{28}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=8, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -28/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c74d6403e5c598cd6e3d5d50",
+        "teks": "Diketahui fungsi $f(x) = 2x - 1$ dan $g(x) = 3x + 5$. Jika $h(x) = (g \\circ f)(x)$, maka nilai dari $h^{-1}(17)$ adalah ....",
+        "jawaban": "\\frac{5}{2}",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{6}{5}$, f(1)=$\\frac{3}{2}$, f(2)=$\\frac{12}{7}$. Tentukan $f^{-1}(6)$.",
+      "jawaban_benar": "$-8$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=6, c=5. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -8.",
+      "distraktor": [
+        {
+          "teks": "$-9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-8$."
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-8$."
+        },
+        {
+          "teks": "$-16$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=6, c=5. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c91204aa44237c435944ccc",
+        "teks": "Diketahui fungsi $f(x) = -4x + 9$ yang terdefinisi pada bilangan real. Nilai dari $f^{-1}(-7)$ adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{5}{3}$, f(1)=$\\frac{13}{4}$, f(2)=$\\frac{21}{5}$. Tentukan $f^{-1}(11)$.",
+      "jawaban_benar": "$- \\frac{28}{3}$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=5, c=3. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=11, hasil -28/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{14}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{56}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{28}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=8, b=5, c=3. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=11, hasil -28/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fff36762d33495a32212d465",
+        "teks": "Rumus fungsi invers $f^{-1}(x)$ dari fungsi linear $f(x) = 6x + 5$ adalah ....",
+        "jawaban": "$f^{-1}(x) = \\frac{x - 5}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$4$, f(1)=$5$, f(2)=$\\frac{16}{3}$. Tentukan $f^{-1}(7)$.",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=6, b=4, c=1. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=7, hasil -3.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=6, b=4, c=1. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=7, hasil -3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccd86fd5a91392e84d71a779",
+        "teks": "Diketahui fungsi $f(x) = 3x + b$ dengan $(f \\circ f)(x) = 9x + 20$. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+        "jawaban": "$\\frac{x - 5}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{3}{2}$, f(1)=$\\frac{10}{3}$, f(2)=$\\frac{17}{4}$. Tentukan $f^{-1}(10)$.",
+      "jawaban_benar": "$- \\frac{17}{3}$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=7, b=3, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=10, hasil -17/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{17}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{34}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{17}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=7, b=3, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=10, hasil -17/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "91a29616c9244b346314f0f5",
+        "teks": "Diketahui fungsi $f(x) = 5x - 7$ dengan domain himpunan bilangan real. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+        "jawaban": "$\\frac{x + 7}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{7}{2}$, f(1)=$\\frac{14}{3}$, f(2)=$\\frac{21}{4}$. Tentukan $f^{-1}(8)$.",
+      "jawaban_benar": "$-9$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=7, b=7, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=8, hasil -9.",
+      "distraktor": [
+        {
+          "teks": "$-10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-9$."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-9$."
+        },
+        {
+          "teks": "$-18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=7, b=7, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=8, hasil -9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "489cc0d50cd7d389a9f7bc73",
+        "teks": "Diketahui fungsi $f(x) = \\sqrt{3x - 12}$ terdefinisi pada daerah asal $D_f = \\{x \\in \\mathbb{R} \\mid x \\ge 4\\}$. Rumus fungsi invers $f^{-1}(x)$ beserta daerah asalnya adalah ....",
+        "jawaban": "$f^{-1}(x) = \\frac{x^2 + 12}{3}$ dengan domain $\\{x \\in \\mathbb{R} \\mid x \\ge 0\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{4}{3}$, f(1)=$\\frac{12}{7}$, f(2)=$2$. Tentukan $f^{-1}(5)$.",
+      "jawaban_benar": "$-22$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=8, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=5, hasil -22.",
+      "distraktor": [
+        {
+          "teks": "$-23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-22$."
+        },
+        {
+          "teks": "$-21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-22$."
+        },
+        {
+          "teks": "$-44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=8, c=6. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=5, hasil -22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9f187dd27d9e1ef94b043a44",
+        "teks": "Syarat utama agar suatu fungsi $f: A \\to B$ memiliki fungsi invers $f^{-1}: B \\to A$ adalah fungsi $f$ harus bersifat ....",
+        "jawaban": "bijektif (injektif dan surjektif)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$1$, f(1)=$2$, f(2)=$\\frac{5}{2}$. Tentukan $f^{-1}(6)$.",
+      "jawaban_benar": "$-5$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=2, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -5.",
+      "distraktor": [
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-5$."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-5$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=4, b=2, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=6, hasil -5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "332a21c34ba03cd1620f40ea",
+        "teks": "Diketahui fungsi $f(x) = \\frac{px + 7}{3x - 5}$ terdefinisi untuk $x \\ne \\frac{5}{3}$. Jika fungsi $f$ merupakan invers dari dirinya sendiri, yaitu $f^{-1}(x) = f(x)$ untuk semua nilai $x$ pada daerah asalnya, maka nilai dari konstanta $p$ adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{8}{7}$, f(1)=$\\frac{13}{8}$, f(2)=$2$. Tentukan $f^{-1}(8)$.",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=5, b=8, c=7. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=8, hasil -16.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=5, b=8, c=7. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=8, hasil -16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccd86fd5a91392e84d71a779",
+        "teks": "Diketahui fungsi $f(x) = 3x + b$ dengan $(f \\circ f)(x) = 9x + 20$. Rumus fungsi invers $f^{-1}(x)$ adalah ....",
+        "jawaban": "$\\frac{x - 5}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{7}{2}$, f(1)=$\\frac{10}{3}$, f(2)=$\\frac{13}{4}$. Tentukan $f^{-1}(4)$.",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=7, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=4, hasil -1.",
+      "distraktor": [
+        {
+          "teks": "$-2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-1$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=3, b=7, c=2. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=4, hasil -1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f93055870c2d35cf9a0426eb",
+        "teks": "Diketahui fungsi $f(x) = \\sqrt{x - 5}$ terdefinisi untuk $x \\ge 5$. Nilai dari $f^{-1}(4)$ adalah ....",
+        "jawaban": "21",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_invers_mobius_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi invertibel $f(x)=(ax+b)/(x+c)$ memenuhi f(0)=$\\frac{5}{7}$, f(1)=$\\frac{7}{8}$, f(2)=$1$. Tentukan $f^{-1}(3)$.",
+      "jawaban_benar": "$-16$",
+      "alasan_benar": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=2, b=5, c=7. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=3, hasil -16.",
+      "distraktor": [
+        {
+          "teks": "$-17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-16$."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kalikan penyebut di tiga data untuk memperoleh SPL tiga parameter. Hasil a=2, b=5, c=7. Dari y=(ax+b)/(x+c), invers x=(b-yc)/(y-a). Masukkan y=3, hasil -16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-c-hard-bt01-044"
     }
   ]
 }

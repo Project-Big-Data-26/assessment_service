@@ -824,6 +824,191 @@
       "pembahasan": "Substitusi x=6: y=3×(6)+(9)=27.",
       "catatan": "codex-replenishment:kelas8-b05-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas8-b05-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b56197eefeda183dec543b58",
+        "teks": "| $x$ | $a$ | $6$ |\n|---|---|---|\n| $y$ | $-3$ | $b$ |\n\nTabel di atas memuat pasangan titik koordinat $(x, y)$ yang memenuhi persamaan garis lurus $3x - 2y = 12$. Berdasarkan data tersebut, nilai dari $2a + b$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Garis lurus melalui P(11,49) dan Q(18,77). Garis ini memotong garis horizontal y=7 di R. Berapa koordinat x titik R?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Gradien (77-49)/(18-11)=4. Substitusi P memberi intersep 5. Perpotongan memenuhi 4x+(5)=7, jadi x=1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$- \\frac{1}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Gradien (77-49)/(18-11)=4. Substitusi P memberi intersep 5. Perpotongan memenuhi 4x+(5)=7, jadi x=1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b05-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "889199cfde356898b9e03249",
+        "teks": "Titik potong grafik persamaan garis $y = -\\frac{1}{4}x - 2$ terhadap sumbu-$x$ adalah ....",
+        "jawaban": "$(-8, 0)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Garis lurus melalui P(11,73) dan Q(18,115). Garis ini memotong garis horizontal y=7 di R. Berapa koordinat x titik R?",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Gradien (115-73)/(18-11)=6. Substitusi P memberi intersep 7. Perpotongan memenuhi 6x+(7)=7, jadi x=0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Gradien (115-73)/(18-11)=6. Substitusi P memberi intersep 7. Perpotongan memenuhi 6x+(7)=7, jadi x=0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b05-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d461c2f0219eabf05c7e549",
+        "teks": "Sebuah garis lurus $k$ melalui titik potong antara garis $g_1: 2x - y = 4$ dan garis $g_2: x + y = 5$. Selain itu, garis $k$ juga memotong sumbu-$x$ di titik yang sama dengan titik potong garis $g_3: 3x - 4y = 27$ terhadap sumbu-$x$. Jika garis $k$ dinyatakan dalam bentuk umum $y = mx + c$, maka nilai dari $3(m + c)$ adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Garis lurus melalui P(5,5) dan Q(11,17). Garis ini memotong garis horizontal y=3 di R. Berapa koordinat x titik R?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Gradien (17-5)/(11-5)=2. Substitusi P memberi intersep -5. Perpotongan memenuhi 2x+(-5)=3, jadi x=4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Gradien (17-5)/(11-5)=2. Substitusi P memberi intersep -5. Perpotongan memenuhi 2x+(-5)=3, jadi x=4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b05-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a55e259d6d923cf24ed18176",
+        "teks": "Dua garis sejajar memiliki persamaan $g_1: y = 3x + 12$ dan $g_2: y = 3x - 8$. Sebuah garis ketiga $g_3: y = -x + 4$ memotong garis $g_1$ di titik $A$ dan memotong garis $g_2$ di titik $B$. Jika titik $M(x_M, y_M)$ merupakan titik tengah dari segmen garis $AB$, maka nilai dari $2x_M + 4y_M$ adalah ....",
+        "jawaban": "$15$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Garis lurus melalui P(6,22) dan Q(10,34). Garis ini memotong garis horizontal y=6 di R. Berapa koordinat x titik R?",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Gradien (34-22)/(10-6)=3. Substitusi P memberi intersep 4. Perpotongan memenuhi 3x+(4)=6, jadi x=2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{5}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        }
+      ],
+      "pembahasan": "Gradien (34-22)/(10-6)=3. Substitusi P memberi intersep 4. Perpotongan memenuhi 3x+(4)=6, jadi x=2/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b05-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "beb5b2f45fb2067a11b2cdc9",
+        "teks": "Tarif sewa sebuah mobil operasional ($T$) dalam ribuan rupiah ditentukan berdasarkan jarak tempuh ($s$) dalam kilometer melalui persamaan garis lurus $T = 8s + 50$. Jika seorang penyewa harus membayar biaya sewa sebesar $\\text{Rp}290.000,00$, berapakah jarak yang telah ditempuh mobil tersebut?",
+        "jawaban": "$30\\text{ km}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+        "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Garis lurus melalui P(3,18) dan Q(6,36). Garis ini memotong garis horizontal y=7 di R. Berapa koordinat x titik R?",
+      "jawaban_benar": "$\\frac{7}{6}$",
+      "alasan_benar": "Gradien (36-18)/(6-3)=6. Substitusi P memberi intersep 0. Perpotongan memenuhi 6x+(0)=7, jadi x=7/6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{12}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{7}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{7}{6}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Gradien (36-18)/(6-3)=6. Substitusi P memberi intersep 0. Perpotongan memenuhi 6x+(0)=7, jadi x=7/6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas8-b05-a-hard-bt01-025"
     }
   ]
 }

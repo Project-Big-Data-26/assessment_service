@@ -495,6 +495,154 @@
       "pembahasan": "Nilai terbesar 29 dan terkecil 23. Jangkauan = 29 - 23 = 6.",
       "catatan": "codex-replenishment:kelas10-b06-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas10-b06-c-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ecf596c95f1cb6ee5437b24f",
+        "teks": "Data pengukuran lima benda adalah 35, 35, 37, 36, 34. Berapakah jangkauan data tersebut?",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_frekuensi_median_optimasi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data berjumlah 21, hanya bernilai 4, 8, atau 11, masing-masing frekuensinya a,b,c positif. Diketahui c=2a+1 dan median data adalah 8. Berapa rata-rata terbesar yang mungkin?",
+      "jawaban_benar": "$\\frac{179}{21}$",
+      "alasan_benar": "Dari jumlah diperoleh b=21-3a-1, c=2a+1. Posisi median 11 mensyaratkan a<11≤a+b. Kandidat a=[1, 2, 3, 4]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 179/21.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{179}{42}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{358}{21}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{179}{21}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari jumlah diperoleh b=21-3a-1, c=2a+1. Posisi median 11 mensyaratkan a<11≤a+b. Kandidat a=[1, 2, 3, 4]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 179/21.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed786506fc4a4b3aba00bce3",
+        "teks": "Banyak pengunjung harian sebuah perpustakaan selama 40 hari diringkas sebagai berikut: nilai minimum 12, Q1 = 20, Q2 = 26, Q3 = 33, dan nilai maksimum 41.\n\nPersentase hari yang banyak pengunjungnya terletak antara 20 dan 41 adalah ....",
+        "jawaban": "75%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_frekuensi_median_optimasi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data berjumlah 17, hanya bernilai 2, 8, atau 14, masing-masing frekuensinya a,b,c positif. Diketahui c=2a+2 dan median data adalah 8. Berapa rata-rata terbesar yang mungkin?",
+      "jawaban_benar": "$\\frac{166}{17}$",
+      "alasan_benar": "Dari jumlah diperoleh b=17-3a-2, c=2a+2. Posisi median 9 mensyaratkan a<9≤a+b. Kandidat a=[1, 2, 3]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 166/17.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{83}{17}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{332}{17}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{166}{17}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari jumlah diperoleh b=17-3a-2, c=2a+2. Posisi median 9 mensyaratkan a<9≤a+b. Kandidat a=[1, 2, 3]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 166/17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "544f79697cae660c5d2a166c",
+        "teks": "Menurut aturan pada diagram kotak garis, sebuah data disebut pencilan jika ....",
+        "jawaban": "kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_frekuensi_median_optimasi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data berjumlah 17, hanya bernilai 2, 4, atau 9, masing-masing frekuensinya a,b,c positif. Diketahui c=2a+3 dan median data adalah 4. Berapa rata-rata terbesar yang mungkin?",
+      "jawaban_benar": "$\\frac{99}{17}$",
+      "alasan_benar": "Dari jumlah diperoleh b=17-3a-3, c=2a+3. Posisi median 9 mensyaratkan a<9≤a+b. Kandidat a=[1, 2]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 99/17.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{99}{34}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{198}{17}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{99}{17}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari jumlah diperoleh b=17-3a-3, c=2a+3. Posisi median 9 mensyaratkan a<9≤a+b. Kandidat a=[1, 2]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 99/17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4caebcacd1a9ef40b28cd40a",
+        "teks": "Sepuluh pasangan data (x, y) dicatat sebagai berikut.\n\n|x|y|\n|---|---|\n|1|3|\n|2|5|\n|3|7|\n|4|9|\n|5|11|\n|6|13|\n|7|15|\n|8|17|\n|9|19|\n|10|3|\n\nPernyataan yang paling tepat tentang diagram pencar data itu adalah ....",
+        "jawaban": "Sembilan titik pertama segaris naik; titik (10, 3) melemahkan korelasi tetapi arahnya tetap positif",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_frekuensi_median_optimasi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data berjumlah 17, hanya bernilai 2, 5, atau 13, masing-masing frekuensinya a,b,c positif. Diketahui c=2a+1 dan median data adalah 5. Berapa rata-rata terbesar yang mungkin?",
+      "jawaban_benar": "$\\frac{132}{17}$",
+      "alasan_benar": "Dari jumlah diperoleh b=17-3a-1, c=2a+1. Posisi median 9 mensyaratkan a<9≤a+b. Kandidat a=[1, 2, 3]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 132/17.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{66}{17}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{264}{17}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{132}{17}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari jumlah diperoleh b=17-3a-1, c=2a+1. Posisi median 9 mensyaratkan a<9≤a+b. Kandidat a=[1, 2, 3]; hitung rata-rata tiap kandidat dengan semua frekuensi positif. Nilai terbesar 132/17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-hard-bt01-018"
     }
   ]
 }

@@ -861,6 +861,228 @@
       "pembahasan": "Banyak saudara dihitung dalam bilangan bulat, sehingga merupakan data kuantitatif diskret.",
       "catatan": "codex-replenishment:kelas7-b06-B-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas7-b06-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "90592101551c2ac1ee4b40e5",
+        "teks": "Petugas perpustakaan mencatat beberapa informasi mengenai kegiatan kunjungan siswa. Di antara data yang dicatat berikut, manakah yang merupakan data numerik?",
+        "jawaban": "Banyaknya buku yang dipinjam oleh tiap siswa dalam seminggu",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 3 catatan banyak saudara, 4 warna favorit, 2 jumlah buku, dan 8 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 1 catatan banyak saudara dengan 1 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-7$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 5. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 12; selisih -7.",
+      "distraktor": [
+        {
+          "teks": "$-8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-7$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-7$."
+        },
+        {
+          "teks": "$-14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 5. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 12; selisih -7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e21108470334c99ce29f794e",
+        "teks": "Petugas kebun binatang melakukan survei kepada pengunjung dengan mengajukan empat pertanyaan berikut:\n(1) Berapa kali Anda mengunjungi kebun binatang ini dalam setahun terakhir?\n(2) Apa wahana satwa yang paling berkesan bagi Anda?\n(3) Berapa rupiah uang yang Anda belanjakan untuk membeli suvenir hari ini?\n(4) Bagaimana Anda menuju ke kebun binatang (bus, mobil pribadi, sepeda motor)?\n\nPasangan pertanyaan yang menghasilkan data numerik adalah ....",
+        "jawaban": "(1) dan (3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 4 catatan banyak saudara, 6 warna favorit, 2 jumlah buku, dan 3 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 4 catatan banyak saudara dengan 4 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 6. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -3.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 6. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dee2cbe55cbcdbfde55df428",
+        "teks": "Perhatikan beberapa data yang memuat angka berikut:\n1. Nomor rekening bank nasabah\n2. Berat badan siswa dalam kilogram\n3. Nomor plat kendaraan bermotor\n4. Kode pos alamat pengiriman surat\n\nData yang nilai bilangannya dapat dikenai operasi penjumlahan dan pengurangan secara bermakna adalah ....",
+        "jawaban": "berat badan siswa dalam kilogram",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 5 catatan banyak saudara, 3 warna favorit, 7 jumlah buku, dan 3 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 1 catatan banyak saudara dengan 1 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$6$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 12. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 6; selisih 6.",
+      "distraktor": [
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$7$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6$."
+        },
+        {
+          "teks": "$12$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 12. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 6; selisih 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4d656f438307eea825eaa179",
+        "teks": "Peneliti mencatat banyak saudara kandung dari 35 siswa. Jenis data banyak saudara kandung adalah ....",
+        "jawaban": "Data kuantitatif diskret.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 3 catatan banyak saudara, 3 warna favorit, 4 jumlah buku, dan 6 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 3 catatan banyak saudara dengan 3 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -2.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-2$."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 9; selisih -2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c859f58ac474ab5fca000e0",
+        "teks": "Peneliti mencatat banyak saudara kandung dari 33 siswa. Jenis data banyak saudara kandung adalah ....",
+        "jawaban": "Data kuantitatif diskret.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 2 catatan banyak saudara, 6 warna favorit, 5 jumlah buku, dan 4 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 2 catatan banyak saudara dengan 2 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-3$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -3.",
+      "distraktor": [
+        {
+          "teks": "$-4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-3$."
+        },
+        {
+          "teks": "$-6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 7. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1ade974d4497d1a3ed007f8d",
+        "teks": "Panitia lomba cerdas cermat mencatat empat atribut dari setiap regu peserta:\n1. Nomor undian regu (misal: Regu 1, Regu 2, Regu 3)\n2. Peringkat hasil babak penyisihan (Peringkat 1, 2, 3, 4)\n3. Skor perolehan babak final (misal: 150 poin, 225 poin, 310 poin)\n4. Banyaknya anggota tiap regu (3 orang, 4 orang, 5 orang)\n\nSeorang anggota panitia membuat beberapa klaim mengenai operasi matematika terhadap atribut-atribut tersebut. Klaim manakah yang bernilai BENAR secara konsep statistika?",
+        "jawaban": "Operasi penjumlahan skor babak final (atribut 3) bermakna matematis karena merupakan data numerik, sedangkan penjumlahan peringkat (atribut 2) tidak menghasilkan makna besaran baru.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_jenis_data_audit_salah_label",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 3 catatan banyak saudara, 7 warna favorit, 5 jumlah buku, dan 3 peringkat lomba. Sistem menandai semua hitungan sebagai kuantitatif diskret, tetapi keliru menukar label 1 catatan banyak saudara dengan 1 catatan warna favorit. Setelah label diperbaiki, berapa selisih banyak catatan yang benar-benar diskret dan yang bukan diskret?",
+      "jawaban_benar": "$-2$",
+      "alasan_benar": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 8. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -2.",
+      "distraktor": [
+        {
+          "teks": "$-3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-2$."
+        },
+        {
+          "teks": "$-1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Warna nominal dan peringkat ordinal bukan kuantitatif diskret. Banyak saudara dan buku diskret: 8. Pertukaran label tidak mengubah isi data. Kelompok bukan diskret 10; selisih -2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-b-hard-bt01-027"
     }
   ]
 }

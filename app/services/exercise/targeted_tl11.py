@@ -89,8 +89,8 @@ def generate(bab,code,level,r):
                 'v2_identitas_pemilihan_cabang','hard',system(['a','b'],[a+b-S,a*a+b*b-1],(1+K*a)/b,[a,b,sign*(a-b)]))
         if code=='D':
             if level=='easy':
-                side=r.randint(3,15)
-                return constant(rf'Segitiga ABC mempunyai A=30° dan B=30°. Jika sisi di depan A {side} cm, berapa sisi di depan B?',side,
+                side=r.randint(3,25);angle=r.choice([15,20,25,30,35,40,45,50,55,60,65,70,75])
+                return constant(rf'Segitiga ABC mempunyai A={angle}° dan B={angle}°. Jika sisi di depan A {side} cm, berapa sisi di depan B?',side,
                     'Sudut yang sama mempunyai sisi di hadapannya sama panjang.','v2_sinus_sudut_sama','easy')
             k=r.randint(3,8);side_a=k+r.randint(1,k-1);side_b=2*k;val=side_b**2+2*side_a**2
             return checked(rf'Dalam segitiga ABC, A=30°, sisi di depan A adalah {side_a} cm dan sisi di depan B adalah {side_b} cm. Ada dua segitiga yang memenuhi data. Jika dua kemungkinan panjang sisi di depan C adalah c₁ dan c₂, tentukan $c_1^2+c_2^2$.',val,
@@ -109,6 +109,7 @@ def generate(bab,code,level,r):
             return checked(rf'Vektor u={pair(aa,bb)} dan v=(x,y) memenuhi $u\cdot v={dot}$, $|v|^2={norm}$, serta ${aa}y-{bb}x>0$. Tentukan $v\cdot{pair(C,T)}$.',C*p+T*q,
                 f'Selesaikan {aa}x+{bb}y={dot} bersama x²+y²={norm}. Ketaksamaan memilih x={p}, y={q}; hasil kali titik berikutnya {C}×{p}+{T}×{q}={C*p+T*q}.',
                 'v2_dot_norma_orientasi','hard',system(['a','b'],[aa*a+bb*b-dot,a*a+b*b-norm],C*a+T*b,[aa*b-bb*a]))
+        if U*B==A*V:B+=1
         return constant(rf'Pada segitiga A{pair(A,B)}, B{pair(U,V)}, C{pair(U+A,V+B)}, titik M dan N adalah titik tengah AB dan AC. Dengan vektor, tentukan kuadrat panjang MN.',s.Rational(A*A+B*B,4),
             f'Vektor MN=(AC-AB)/2=BC/2=({A}/2,{B}/2). Kuadrat panjangnya ({A}²+{B}²)/4={s.Rational(A*A+B*B,4)}.','v2_geometri_garis_tengah','medium')
     if bab==5:
@@ -121,7 +122,7 @@ def generate(bab,code,level,r):
         # F = upper-triangular matrix after a quarter-turn.
         query=(-a*sx+a*sy*0+sy)/(a*b) # replaced with directly derived inverse below
         query=(sy/b)+(sy/b-sx)/a
-        return checked(rf'Transformasi T bermatriks $\begin{{pmatrix}}a&1\\0&b\end{{pmatrix}}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Diketahui $(T\circ R)({pair(px,py)})={pair(px-A*py,B*px)}$. Jika $(T\circ R)(P)={pair(sx,sy)}, tentukan jumlah koordinat P.',query.subs({a:A,b:B}),
+        return checked(rf'Transformasi T bermatriks $\begin{{pmatrix}}a&1\\0&b\end{{pmatrix}}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\circ R$ memetakan titik {pair(px,py)} ke {pair(px-A*py,B*px)}. Jika komposisi tersebut memetakan P ke {pair(sx,sy)}, tentukan jumlah koordinat P.',query.subs({a:A,b:B}),
             f'Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a={A}, b={B}. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya {query.subs({a:A,b:B})}.',
             'v2_matriks_transformasi_inverse','hard',system(['a','b'],[px-a*py-(px-A*py),b*px-B*px],query,[a,b]))
     if bab==6:

@@ -633,6 +633,302 @@
       "pembahasan": "Agar nilai terbesarnya minimum, pilih 3 bilangan bulat berurutan mulai -17. Yang terbesar adalah -15.",
       "catatan": "codex-replenishment:kelas7-b01-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas7-b01-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72452642578ce6e6716d9945",
+        "teks": "Terdapat 6 bilangan bulat negatif berbeda yang semuanya lebih besar daripada -23. Berapakah nilai terkecil yang mungkin untuk bilangan terbesar di antara bilangan-bilangan itu?",
+        "jawaban": "$-17$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 21 satuan dari titik -7 dan 2 pada garis bilangan, yaitu |x-(-7)|+|x-2|=21. Jika x<-7, berapa nilai 7-2x?",
+      "jawaban_benar": "$33$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 9, sehingga x di luar selang. Syarat x<-7 memilih sisi kiri: (-7-x)+(2-x)=21, jadi x=-13. Nilai 7-2x=33.",
+      "distraktor": [
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $33$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $33$."
+        },
+        {
+          "teks": "$66$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 9, sehingga x di luar selang. Syarat x<-7 memilih sisi kiri: (-7-x)+(2-x)=21, jadi x=-13. Nilai 7-2x=33.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ccefa61d8c2eb8a4a058251",
+        "teks": "Terdapat 6 bilangan bulat negatif berbeda yang semuanya lebih besar daripada -10. Berapakah nilai terkecil yang mungkin untuk bilangan terbesar di antara bilangan-bilangan itu?",
+        "jawaban": "$-4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 32 satuan dari titik -11 dan 7 pada garis bilangan, yaitu |x-(-11)|+|x-7|=32. Jika x<-11, berapa nilai 8-2x?",
+      "jawaban_benar": "$44$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 18, sehingga x di luar selang. Syarat x<-11 memilih sisi kiri: (-11-x)+(7-x)=32, jadi x=-18. Nilai 8-2x=44.",
+      "distraktor": [
+        {
+          "teks": "$43$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $44$."
+        },
+        {
+          "teks": "$88$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 18, sehingga x di luar selang. Syarat x<-11 memilih sisi kiri: (-11-x)+(7-x)=32, jadi x=-18. Nilai 8-2x=44.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "107a7773898506f9be62d97d",
+        "teks": "Seekor lumba-lumba berenang 15 meter di bawah permukaan laut, sedangkan seekor elang terbang 40 meter di atas permukaan laut. Pasangan bilangan bertanda untuk lumba-lumba dan elang secara berturut-turut adalah ....",
+        "jawaban": "$-15$ meter dan $+40$ meter",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 22 satuan dari titik -12 dan 6 pada garis bilangan, yaitu |x-(-12)|+|x-6|=22. Jika x<-12, berapa nilai 4-2x?",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 18, sehingga x di luar selang. Syarat x<-12 memilih sisi kiri: (-12-x)+(6-x)=22, jadi x=-14. Nilai 4-2x=32.",
+      "distraktor": [
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$33$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $32$."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 18, sehingga x di luar selang. Syarat x<-12 memilih sisi kiri: (-12-x)+(6-x)=22, jadi x=-14. Nilai 4-2x=32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3745c24ff63af5cd1c88de80",
+        "teks": "Suhu empat kota $P, Q, R, S$ (dalam °C) berupa bilangan bulat. Suhu $Q$ adalah $-6$. Kota $P$ lebih dingin daripada $Q$. Kota $R$ lebih panas daripada $Q$ tetapi suhunya masih di bawah nol. Kota $S$ lebih panas daripada $R$. Pilihan suhu $(P, Q, R, S)$ yang memenuhi semua syarat adalah ....",
+        "jawaban": "$(-11, -6, -1, 2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 20 satuan dari titik -4 dan 4 pada garis bilangan, yaitu |x-(-4)|+|x-4|=20. Jika x<-4, berapa nilai 8-2x?",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 8, sehingga x di luar selang. Syarat x<-4 memilih sisi kiri: (-4-x)+(4-x)=20, jadi x=-10. Nilai 8-2x=28.",
+      "distraktor": [
+        {
+          "teks": "$27$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $28$."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 8, sehingga x di luar selang. Syarat x<-4 memilih sisi kiri: (-4-x)+(4-x)=20, jadi x=-10. Nilai 8-2x=28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fc0fdb0a3e22436d80e8a0c9",
+        "teks": "Bilangan bulat negatif $a$, $b$, dan $c$ memenuhi $c < a < b$. Jika angka masing-masing bilangan ditulis tanpa tanda, urutan angka dari yang terkecil ke terbesar adalah ....",
+        "jawaban": "$b, a, c$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 23 satuan dari titik -11 dan 6 pada garis bilangan, yaitu |x-(-11)|+|x-6|=23. Jika x<-11, berapa nilai 3-2x?",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 17, sehingga x di luar selang. Syarat x<-11 memilih sisi kiri: (-11-x)+(6-x)=23, jadi x=-14. Nilai 3-2x=31.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 17, sehingga x di luar selang. Syarat x<-11 memilih sisi kiri: (-11-x)+(6-x)=23, jadi x=-14. Nilai 3-2x=31.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ced62e2401dbd78866f73b0d",
+        "teks": "Terdapat 5 bilangan bulat negatif berbeda yang semuanya lebih besar daripada -17. Berapakah nilai terkecil yang mungkin untuk bilangan terbesar di antara bilangan-bilangan itu?",
+        "jawaban": "$-12$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 18 satuan dari titik -5 dan 3 pada garis bilangan, yaitu |x-(-5)|+|x-3|=18. Jika x<-5, berapa nilai 5-2x?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 8, sehingga x di luar selang. Syarat x<-5 memilih sisi kiri: (-5-x)+(3-x)=18, jadi x=-10. Nilai 5-2x=25.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 8, sehingga x di luar selang. Syarat x<-5 memilih sisi kiri: (-5-x)+(3-x)=18, jadi x=-10. Nilai 5-2x=25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ac16b095d9aacc820efb1932",
+        "teks": "Terdapat 3 bilangan bulat negatif berbeda yang semuanya lebih besar daripada -16. Berapakah nilai terkecil yang mungkin untuk bilangan terbesar di antara bilangan-bilangan itu?",
+        "jawaban": "$-13$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 18 satuan dari titik -6 dan 6 pada garis bilangan, yaitu |x-(-6)|+|x-6|=18. Jika x<-6, berapa nilai 3-2x?",
+      "jawaban_benar": "$21$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 12, sehingga x di luar selang. Syarat x<-6 memilih sisi kiri: (-6-x)+(6-x)=18, jadi x=-9. Nilai 3-2x=21.",
+      "distraktor": [
+        {
+          "teks": "$20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $21$."
+        },
+        {
+          "teks": "$22$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $21$."
+        },
+        {
+          "teks": "$42$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 12, sehingga x di luar selang. Syarat x<-6 memilih sisi kiri: (-6-x)+(6-x)=18, jadi x=-9. Nilai 3-2x=21.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f4c3e285fb7dce36e9d9eb20",
+        "teks": "Terdapat 4 bilangan bulat negatif berbeda yang semuanya lebih besar daripada -9. Berapakah nilai terkecil yang mungkin untuk bilangan terbesar di antara bilangan-bilangan itu?",
+        "jawaban": "$-5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integer_jarak_cabang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Bilangan bulat x berjarak total 16 satuan dari titik -7 dan 3 pada garis bilangan, yaitu |x-(-7)|+|x-3|=16. Jika x<-7, berapa nilai 5-2x?",
+      "jawaban_benar": "$25$",
+      "alasan_benar": "Pada selang antara kedua titik jumlah jarak hanya 10, sehingga x di luar selang. Syarat x<-7 memilih sisi kiri: (-7-x)+(3-x)=16, jadi x=-10. Nilai 5-2x=25.",
+      "distraktor": [
+        {
+          "teks": "$24$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $25$."
+        },
+        {
+          "teks": "$50$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pada selang antara kedua titik jumlah jarak hanya 10, sehingga x di luar selang. Syarat x<-7 memilih sisi kiri: (-7-x)+(3-x)=16, jadi x=-10. Nilai 5-2x=25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b01-a-hard-bt01-026"
     }
   ]
 }

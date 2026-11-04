@@ -503,6 +503,376 @@
       "pembahasan": "Samakan nilai tempat desimal, lalu jumlahkan: 10,9 + 0,4 = 11,3 kg.",
       "catatan": "codex-replenishment:kelas6-b01-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas6-b01-c-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bfc245e84cb45bf9238032b",
+        "teks": "Bilangan desimal memiliki dua angka di belakang koma. Angka satuannya 4, nilainya lebih besar dari 4,6 tetapi lebih kecil dari 4,7, dan angka perseratusannya 3. Bilangan yang memenuhi semua syarat adalah ...",
+        "jawaban": "4,63",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,25 dari seluruh bahan dipakai, tersisa 15 kg. Stok ditambah 5 kg; lalu 0,25 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Sisa awal adalah 0,75 kali stok awal, jadi stok awal 20 kg. Pemakaian pertama 5 kg. Stok baru 20 kg; pemakaian kedua 5 kg. Total 10 kg.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,75 kali stok awal, jadi stok awal 20 kg. Pemakaian pertama 5 kg. Stok baru 20 kg; pemakaian kedua 5 kg. Total 10 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "852ec3636aa196c91d3f60c7",
+        "teks": "| Nama siswa | Jarak dari rumah ke sekolah (km) |\n|---|---:|\n| Lani | 3,4 |\n| Dodi | 12,6 |\n| Rara | 2,7 |\n| Feri | 5,8 |\n| Miko | 13,2 |\n| Sari | 3,9 |\n| Rido | 4,6 |\n| Dimas | 4,1 |\n| Fina | 3,8 |\n| Andi | 2,5 |\n\nSiapakah yang paling jauh jarak rumahnya ke sekolah?",
+        "jawaban": "Miko (13,2 km)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,5 dari seluruh bahan dipakai, tersisa 6 kg. Stok ditambah 5 kg; lalu 0,5 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$\\frac{23}{2}$",
+      "alasan_benar": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 12 kg. Pemakaian pertama 6 kg. Stok baru 11 kg; pemakaian kedua 5,5 kg. Total 11,5 kg.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{23}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 12 kg. Pemakaian pertama 6 kg. Stok baru 11 kg; pemakaian kedua 5,5 kg. Total 11,5 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d6ff6277aa79eab77ee26e1f",
+        "teks": "Bentuk pecahan dari 0,6 dengan penyebut 10 adalah ...",
+        "jawaban": "6/10",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,25 dari seluruh bahan dipakai, tersisa 21 kg. Stok ditambah 5 kg; lalu 0,25 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$\\frac{27}{2}$",
+      "alasan_benar": "Sisa awal adalah 0,75 kali stok awal, jadi stok awal 28 kg. Pemakaian pertama 7 kg. Stok baru 26 kg; pemakaian kedua 6,5 kg. Total 13,5 kg.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{27}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$27$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{27}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,75 kali stok awal, jadi stok awal 28 kg. Pemakaian pertama 7 kg. Stok baru 26 kg; pemakaian kedua 6,5 kg. Total 13,5 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "86bdb1a3ab48371fe23c5eb8",
+        "teks": "Panjang pita adalah 9/25 meter. Berapa panjang pita itu dalam bentuk desimal?",
+        "jawaban": "0,36 meter",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,5 dari seluruh bahan dipakai, tersisa 36 kg. Stok ditambah 2 kg; lalu 0,75 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$\\frac{129}{2}$",
+      "alasan_benar": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 72 kg. Pemakaian pertama 36 kg. Stok baru 38 kg; pemakaian kedua 28,5 kg. Total 64,5 kg.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{129}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$129$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{129}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 72 kg. Pemakaian pertama 36 kg. Stok baru 38 kg; pemakaian kedua 28,5 kg. Total 64,5 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bfc245e84cb45bf9238032b",
+        "teks": "Bilangan desimal memiliki dua angka di belakang koma. Angka satuannya 4, nilainya lebih besar dari 4,6 tetapi lebih kecil dari 4,7, dan angka perseratusannya 3. Bilangan yang memenuhi semua syarat adalah ...",
+        "jawaban": "4,63",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,1 dari seluruh bahan dipakai, tersisa 45 kg. Stok ditambah 5 kg; lalu 0,75 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$\\frac{85}{2}$",
+      "alasan_benar": "Sisa awal adalah 0,9 kali stok awal, jadi stok awal 50 kg. Pemakaian pertama 5 kg. Stok baru 50 kg; pemakaian kedua 37,5 kg. Total 42,5 kg.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{85}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$85$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{85}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,9 kali stok awal, jadi stok awal 50 kg. Pemakaian pertama 5 kg. Stok baru 50 kg; pemakaian kedua 37,5 kg. Total 42,5 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1f318782f9d8c898975393eb",
+        "teks": "Massa sebuah paket 3,2 kg. Setelah ditambah kemasan, massanya bertambah 0,6 kg. Berapa massa paket beserta kemasan?",
+        "jawaban": "3,8",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,5 dari seluruh bahan dipakai, tersisa 24 kg. Stok ditambah 4 kg; lalu 0,25 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 48 kg. Pemakaian pertama 24 kg. Stok baru 28 kg; pemakaian kedua 7 kg. Total 31 kg.",
+      "distraktor": [
+        {
+          "teks": "$30$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $31$."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 48 kg. Pemakaian pertama 24 kg. Stok baru 28 kg; pemakaian kedua 7 kg. Total 31 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "759f5d4ae55ec52497b82ea1",
+        "teks": "Buat bilangan desimal dengan satu angka di belakang koma yang lebih besar dari 7,2 tetapi lebih kecil dari 7,5. Angka persepuluhannya harus ganjil. Bilangan yang memenuhi syarat adalah ...",
+        "jawaban": "7,3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,8 dari seluruh bahan dipakai, tersisa 8 kg. Stok ditambah 2 kg; lalu 0,5 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$37$",
+      "alasan_benar": "Sisa awal adalah 0,2 kali stok awal, jadi stok awal 40 kg. Pemakaian pertama 32 kg. Stok baru 10 kg; pemakaian kedua 5 kg. Total 37 kg.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37$."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $37$."
+        },
+        {
+          "teks": "$74$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,2 kali stok awal, jadi stok awal 40 kg. Pemakaian pertama 32 kg. Stok baru 10 kg; pemakaian kedua 5 kg. Total 37 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bfc245e84cb45bf9238032b",
+        "teks": "Bilangan desimal memiliki dua angka di belakang koma. Angka satuannya 4, nilainya lebih besar dari 4,6 tetapi lebih kecil dari 4,7, dan angka perseratusannya 3. Bilangan yang memenuhi semua syarat adalah ...",
+        "jawaban": "4,63",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,5 dari seluruh bahan dipakai, tersisa 14 kg. Stok ditambah 5 kg; lalu 0,5 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$\\frac{47}{2}$",
+      "alasan_benar": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 28 kg. Pemakaian pertama 14 kg. Stok baru 19 kg; pemakaian kedua 9,5 kg. Total 23,5 kg.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{47}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{47}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 28 kg. Pemakaian pertama 14 kg. Stok baru 19 kg; pemakaian kedua 9,5 kg. Total 23,5 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "439a7715acec919d55c4eccb",
+        "teks": "Dalam lomba lari, Tono berlari 4,2 km, Siska 3,8 km, dan Bima 4,1 km. Siapa yang berlari paling pendek?",
+        "jawaban": "Siska",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,5 dari seluruh bahan dipakai, tersisa 24 kg. Stok ditambah 3 kg; lalu 0,5 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$\\frac{75}{2}$",
+      "alasan_benar": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 48 kg. Pemakaian pertama 24 kg. Stok baru 27 kg; pemakaian kedua 13,5 kg. Total 37,5 kg.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{75}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{75}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,5 kali stok awal, jadi stok awal 48 kg. Pemakaian pertama 24 kg. Stok baru 27 kg; pemakaian kedua 13,5 kg. Total 37,5 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "89f3fb4ba973a49d5ab145e4",
+        "teks": "Dina membeli kain sepanjang 5/8 meter. Berapa panjang kain itu dalam bentuk desimal?",
+        "jawaban": "0,625 meter",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_desimal_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah 0,4 dari seluruh bahan dipakai, tersisa 48 kg. Stok ditambah 8 kg; lalu 0,75 dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai dalam kedua tahap, dalam kg?",
+      "jawaban_benar": "$74$",
+      "alasan_benar": "Sisa awal adalah 0,6 kali stok awal, jadi stok awal 80 kg. Pemakaian pertama 32 kg. Stok baru 56 kg; pemakaian kedua 42 kg. Total 74 kg.",
+      "distraktor": [
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $74$."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $74$."
+        },
+        {
+          "teks": "$148$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 0,6 kali stok awal, jadi stok awal 80 kg. Pemakaian pertama 32 kg. Stok baru 56 kg; pemakaian kedua 42 kg. Total 74 kg.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-c-hard-bt01-022"
     }
   ]
 }

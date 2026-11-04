@@ -992,6 +992,302 @@
       "pembahasan": "Evaluasi titik bilangan cacah yang memenuhi kedua batas. Nilai maksimum 70000x+80000y adalah 1200000 rupiah.",
       "catatan": "codex-replenishment:kelas10-b04-B-easy; generation_only; level target bukan label tervalidasi.",
       "id": "kelas10-b04-b-easy-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e1b29b77cbdb7f1853115183",
+        "teks": "Sebuah toko membuat bolu ($x$ buah) dan brownies ($y$ buah). Ketentuannya: jumlah kue paling sedikit 20; tepung yang tersedia 5 kg dengan bolu memakai 200 gram dan brownies 300 gram per buah; banyak brownies tidak lebih dari dua kali banyak bolu. Dina menulis model: (1) $x + y \\geq 20$, (2) $200x + 300y \\leq 5.000$, (3) $x \\leq 2y$.\n\nPernyataan yang tepat tentang model Dina adalah ....",
+        "jawaban": "Hanya (3) yang salah; seharusnya $y \\leq 2x$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 24$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Substitusi x=0 memberi y≤24; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$25$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $24$."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤24; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7cc064a1710e41a29ec66d54",
+        "teks": "Titik yang termasuk daerah hasil sistem pertidaksamaan $x > 1$, $y \\geq 2$, dan $x + y < 8$ adalah ....",
+        "jawaban": "$(3, 2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 40$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Substitusi x=0 memberi y≤40; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤40; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a91dd0268c69d032310166b0",
+        "teks": "Sebuah UMKM memproduksi sabun mandi dan sabun cuci tangan. Biaya produksi sabun mandi Rp12.000,00 per liter dan sabun cuci tangan Rp8.000,00 per liter, ditambah biaya tetap Rp400.000,00. Modal yang dimiliki Rp2.000.000,00 dan gudang hanya menampung 140 liter. Sabun mandi dijual Rp23.000,00 per liter dan sabun cuci tangan Rp15.000,00 per liter. Semua sabun yang diproduksi terjual.\n\nRencana produksi yang modalnya cukup, muat di gudang, dan pendapatannya lebih dari seluruh pengeluaran adalah ....",
+        "jawaban": "40 liter sabun mandi dan 60 liter sabun cuci tangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 66$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$66$",
+      "alasan_benar": "Substitusi x=0 memberi y≤66; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $66$."
+        },
+        {
+          "teks": "$67$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $66$."
+        },
+        {
+          "teks": "$132$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤66; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "84ca5e44a7499b272ecf26ff",
+        "teks": "Sistem I: $x + y \\leq 6$ dan $x \\geq 1$. Sistem II: $x + y \\leq 6$ dan $y > 2$.\n\nTitik yang memenuhi sistem I tetapi tidak memenuhi sistem II adalah ....",
+        "jawaban": "$(3, 0)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 20$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Substitusi x=0 memberi y≤20; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $20$."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤20; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7018d05ccea4acee51ae6652",
+        "teks": "Apakah titik $(1, 3)$ merupakan daerah hasil pertidaksamaan $3x + 4y < 16$? Petunjuk: substitusikan nilai $x = 1$ dan $y = 3$ ke dalam pertidaksamaan dan periksalah apakah pertidaksamaan bernilai benar.",
+        "jawaban": "Ya, karena $3(1) + 4(3) = 15$ dan $15 < 16$ (pertidaksamaan bernilai benar).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 81$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$81$",
+      "alasan_benar": "Substitusi x=0 memberi y≤81; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$80$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $81$."
+        },
+        {
+          "teks": "$82$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $81$."
+        },
+        {
+          "teks": "$162$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤81; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a91dd0268c69d032310166b0",
+        "teks": "Sebuah UMKM memproduksi sabun mandi dan sabun cuci tangan. Biaya produksi sabun mandi Rp12.000,00 per liter dan sabun cuci tangan Rp8.000,00 per liter, ditambah biaya tetap Rp400.000,00. Modal yang dimiliki Rp2.000.000,00 dan gudang hanya menampung 140 liter. Sabun mandi dijual Rp23.000,00 per liter dan sabun cuci tangan Rp15.000,00 per liter. Semua sabun yang diproduksi terjual.\n\nRencana produksi yang modalnya cukup, muat di gudang, dan pendapatannya lebih dari seluruh pengeluaran adalah ....",
+        "jawaban": "40 liter sabun mandi dan 60 liter sabun cuci tangan",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 30$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Substitusi x=0 memberi y≤30; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $30$."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $30$."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤30; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "71fb51d0bb58a1a77181aadd",
+        "teks": "Titik yang termasuk daerah hasil pertidaksamaan $2(x - y) + 3 > x + 4$ adalah ....",
+        "jawaban": "$(5, 1)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 42$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$42$",
+      "alasan_benar": "Substitusi x=0 memberi y≤42; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $42$."
+        },
+        {
+          "teks": "$43$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $42$."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤42; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4c25fe6b9d413bd7d4d788ff",
+        "teks": "Produksi kursi $x$ dan meja $y$ harus memenuhi $x+y\\le 11$, $2x+y\\le 15$, dan $x,y$ bilangan cacah. Keuntungan per kursi Rp80.000,00 dan per meja Rp40.000,00. Berapa keuntungan maksimum?",
+        "jawaban": "$600000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_ptldv_potong_sumbu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Daerah memenuhi $x,y\\ge0$ dan $x+y\\le 48$. Pada x=0, berapa y terbesar?",
+      "jawaban_benar": "$48$",
+      "alasan_benar": "Substitusi x=0 memberi y≤48; batasnya tercapai.",
+      "distraktor": [
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$49$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $48$."
+        },
+        {
+          "teks": "$96$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi x=0 memberi y≤48; batasnya tercapai.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b04-b-easy-bt01-036"
     }
   ]
 }

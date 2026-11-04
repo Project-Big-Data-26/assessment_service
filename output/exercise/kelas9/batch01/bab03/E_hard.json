@@ -597,6 +597,524 @@
       "pembahasan": "Langkah 1: Menentukan nilai faktor skala $k$.\nSelisih koordinat absis bayangan sebanding dengan selisih koordinat awal dikalikan faktor skala:\n$$x_{B'} - x_{A'} = k(x_B - x_A)$$\n$$2 - (-7) = k(4 - 1)$$\n$$9 = 3k \\implies k = 3$$\n\nLangkah 2: Menentukan koordinat pusat dilatasi $P(a, b)$.\nBerdasarkan rumus dilatasi titik terhadap pusat $P(a, b)$:\n$$x' = k(x - a) + a$$\n$$-7 = 3(1 - a) + a$$\n$$-7 = 3 - 2a \\implies 2a = 10 \\implies a = 5$$\n\n$$y' = k(y - b) + b$$\n$$-10 = 3(2 - b) + b$$\n$$-10 = 6 - 2b \\implies 2b = 16 \\implies b = 8$$\nPusat dilatasi adalah $P(5, 8)$.\n\nLangkah 3: Menentukan titik awal $C(x, y)$ dari bayangan $C'(-1, -4)$.\n$$-1 = 3(x - 5) + 5$$\n$$-6 = 3(x - 5)$$\n$$x - 5 = -2 \\implies x = 3$$\n\n$$-4 = 3(y - 8) + 8$$\n$$-12 = 3(y - 8)$$\n$$y - 8 = -4 \\implies y = 4$$\n\nDengan demikian, koordinat titik $C$ adalah $(3, 4)$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b31c8caf551eb50ec3f7ddca",
+        "teks": "Titik $P$ didilatasikan terhadap pusat titik asal $O(0,0)$ dengan faktor skala 6 menghasilkan bayangan $P'$. Jika panjang ruas garis $OP = 5\\text{ cm}$, maka panjang ruas garis $OP'$ adalah ....",
+        "jawaban": "$30\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 2 berpusat C(h,k) membawa P(-6,4) ke (-9,6). Jika bayangan R adalah (-7,-3), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$- \\frac{11}{2}$",
+      "alasan_benar": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-3,2). Gunakan invers pada bayangan R; jumlah koordinat -11/2.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{11}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-11$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{11}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-3,2). Gunakan invers pada bayangan R; jumlah koordinat -11/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b31c8caf551eb50ec3f7ddca",
+        "teks": "Titik $P$ didilatasikan terhadap pusat titik asal $O(0,0)$ dengan faktor skala 6 menghasilkan bayangan $P'$. Jika panjang ruas garis $OP = 5\\text{ cm}$, maka panjang ruas garis $OP'$ adalah ....",
+        "jawaban": "$30\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 2 berpusat C(h,k) membawa P(3,-6) ke (8,-16). Jika bayangan R adalah (-1,1), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-2,4). Gunakan invers pada bayangan R; jumlah koordinat 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-2,4). Gunakan invers pada bayangan R; jumlah koordinat 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ee7c88b924c4a11be82fd92",
+        "teks": "Diketahui ruas garis menghubungkan titik $A(2, 1)$ dan $B(5, 5)$. Ruas garis tersebut didilatasikan terhadap titik pusat tertentu dengan faktor skala $-3$ sehingga menghasilkan bayangan ruas garis $A'B'$. Panjang ruas garis $A'B'$ adalah ....",
+        "jawaban": "$15\\text{ satuan}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(7,7) ke (13,17). Jika bayangan R adalah (4,-5), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$\\frac{11}{3}$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (4,2). Gunakan invers pada bayangan R; jumlah koordinat 11/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{22}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{11}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (4,2). Gunakan invers pada bayangan R; jumlah koordinat 11/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3a0f4fcec81071d02ff55cf4",
+        "teks": "Persegi panjang $ABCD$ memiliki koordinat titik sudut $A(1, 1)$, $B(5, 1)$, $C(5, 4)$, dan $D(1, 4)$. Jika persegi panjang tersebut didilatasikan terhadap titik pusat $O(0,0)$ dengan faktor skala $-2$, maka luas bayangan persegi panjang $A'B'C'D'$ adalah ....",
+        "jawaban": "$48\\text{ satuan luas}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 2 berpusat C(h,k) membawa P(-5,5) ke (-15,8). Jika bayangan R adalah (-4,3), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (5,2). Gunakan invers pada bayangan R; jumlah koordinat 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (5,2). Gunakan invers pada bayangan R; jumlah koordinat 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7bda5466f7bfa208dfe21522",
+        "teks": "Perhatikan empat pernyataan berikut terkait segitiga $ABC$ dengan koordinat $A(1, 2)$, $B(5, 2)$, dan $C(3, 6)$ yang didilatasikan berturut-turut terhadap pusat titik asal $O(0,0)$ dengan faktor skala $k_1 = -2$ menghasilkan $\\Delta A_1B_1C_1$, kemudian bayangan tersebut didilatasikan kembali terhadap pusat $O(0,0)$ dengan faktor skala $k_2 = \\frac{3}{2}$ menghasilkan $\\Delta A_2B_2C_2$:\n(1) Faktor skala total dilatasi dari segitiga awal ke segitiga $\\Delta A_2B_2C_2$ adalah $-3$.\n(2) Luas $\\Delta A_2B_2C_2$ adalah $9$ kali luas $\\Delta ABC$.\n(3) Koordinat titik sudut $C_2$ adalah $(-9, -18)$.\n(4) Keliling $\\Delta A_2B_2C_2$ adalah $-3$ kali keliling $\\Delta ABC$.\n\nPernyataan yang benar adalah ....",
+        "jawaban": "(1), (2), dan (3)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(1,1) ke (5,-3). Jika bayangan R adalah (5,1), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$\\frac{10}{3}$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (-1,3). Gunakan invers pada bayangan R; jumlah koordinat 10/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{20}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{10}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (-1,3). Gunakan invers pada bayangan R; jumlah koordinat 10/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f45372940913be728d88c122",
+        "teks": "Titik P$(-9, -1)$ didilatasi berpusat di O(0,0) dengan faktor 7. Koordinat bayangannya adalah ....",
+        "jawaban": "$(-63, -7)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 4 berpusat C(h,k) membawa P(-3,-4) ke (-9,-16). Jika bayangan R adalah (2,-3), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$-1$",
+      "alasan_benar": "Dari x′=4x+(1-4)h dan y′=4y+(1-4)k diperoleh pusat (-1,0). Gunakan invers pada bayangan R; jumlah koordinat -1.",
+      "distraktor": [
+        {
+          "teks": "$-2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-1$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=4x+(1-4)h dan y′=4y+(1-4)k diperoleh pusat (-1,0). Gunakan invers pada bayangan R; jumlah koordinat -1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa067ba12beae82cdd10faca",
+        "teks": "Titik $B'$ adalah bayangan dari titik $B$ oleh dilatasi dengan pusat $O(0,0)$ dan faktor skala 4. Jika koordinat titik $B'$ adalah $(-16, 28)$, koordinat titik awal $B$ adalah ....",
+        "jawaban": "$(-4, 7)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(-8,4) ke (-32,6). Jika bayangan R adalah (-6,1), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (4,3). Gunakan invers pada bayangan R; jumlah koordinat 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (4,3). Gunakan invers pada bayangan R; jumlah koordinat 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b7196659d82264e182500c2",
+        "teks": "Diketahui segitiga $PQR$ dengan koordinat titik sudut $P(-6, 9)$, $Q(3, -6)$, dan $R(12, 15)$. Koordinat bayangan titik-titik sudut segitiga $PQR$ setelah didilatasikan terhadap pusat titik asal $O(0,0)$ dengan faktor skala $\\frac{1}{3}$ adalah ....",
+        "jawaban": "$P'(-2, 3)$, $Q'(1, -2)$, dan $R'(4, 5)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(-2,5) ke (2,15). Jika bayangan R adalah (5,2), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$- \\frac{1}{3}$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (-4,0). Gunakan invers pada bayangan R; jumlah koordinat -1/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{2}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (-4,0). Gunakan invers pada bayangan R; jumlah koordinat -1/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cf35a5c8c8cda52c542a96ed",
+        "teks": "Titik $A(6, -8)$ didilatasikan terhadap titik pusat $O(0,0)$ dengan faktor skala $\\frac{1}{2}$ menghasilkan bayangan titik $A'$. Jika bayangan lanjutan dari titik $A'$ oleh suatu dilatasi dengan pusat $O(0,0)$ adalah titik $A''(9, -12)$, maka faktor skala dilatasi dari titik $A'$ ke titik $A''$ adalah ....",
+        "jawaban": "3",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(-3,-2) ke (-13,0). Jika bayangan R adalah (3,-1), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (2,-3). Gunakan invers pada bayangan R; jumlah koordinat 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (2,-3). Gunakan invers pada bayangan R; jumlah koordinat 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "120656ad188591cf5c78ff8b",
+        "teks": "Titik $B(2, -3)$ didilatasikan terhadap titik pusat $P(-1, 1)$ menghasilkan bayangan $B'(-10, 13)$. Faktor skala dilatasi tersebut adalah ....",
+        "jawaban": "$-3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(7,3) ke (21,13). Jika bayangan R adalah (-1,-5), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$- \\frac{10}{3}$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (0,-2). Gunakan invers pada bayangan R; jumlah koordinat -10/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{5}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{20}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{10}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (0,-2). Gunakan invers pada bayangan R; jumlah koordinat -10/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8d2c3196e1beaa1aeb5a0a6",
+        "teks": "Di antara jenis transformasi geometri berikut, transformasi yang menghasilkan bayangan dengan ukuran yang dapat berubah (memperbesar atau memperkecil) dari bangun semula adalah ....",
+        "jawaban": "dilatasi",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 2 berpusat C(h,k) membawa P(1,-6) ke (7,-9). Jika bayangan R adalah (-2,-1), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$- \\frac{11}{2}$",
+      "alasan_benar": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-5,-3). Gunakan invers pada bayangan R; jumlah koordinat -11/2.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{11}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-11$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{11}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-5,-3). Gunakan invers pada bayangan R; jumlah koordinat -11/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25dbed8bd7f586e676a2b2b6",
+        "teks": "Titik $A(5, 3)$ didilatasikan dengan faktor skala $k = 3$ sehingga menghasilkan bayangan $A'(11, 7)$. Jika dilatasi tersebut berpusat di titik $P(a, b)$, koordinat titik $P$ adalah ....",
+        "jawaban": "$(2, 1)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 3 berpusat C(h,k) membawa P(-8,-2) ke (-28,4). Jika bayangan R adalah (-1,-1), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$- \\frac{8}{3}$",
+      "alasan_benar": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (2,-5). Gunakan invers pada bayangan R; jumlah koordinat -8/3.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{4}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{16}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{8}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=3x+(1-3)h dan y′=3y+(1-3)k diperoleh pusat (2,-5). Gunakan invers pada bayangan R; jumlah koordinat -8/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d7b2ecad259c5f0a95a0056c",
+        "teks": "Diketahui persegi panjang $KLMN$ memiliki titik-titik sudut $K(2, 1)$, $L(8, 1)$, $M(8, 5)$, dan $N(2, 5)$. Jika persegi panjang tersebut didilatasikan terhadap pusat $P(3, 2)$ dengan faktor skala 3, keliling bayangan persegi panjang $K'L'M'N'$ adalah ....",
+        "jawaban": "$60\\text{ satuan}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 2 berpusat C(h,k) membawa P(-6,-5) ke (-8,-5). Jika bayangan R adalah (-8,0), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$- \\frac{17}{2}$",
+      "alasan_benar": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-4,-5). Gunakan invers pada bayangan R; jumlah koordinat -17/2.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{17}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-17$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{17}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari x′=2x+(1-2)h dan y′=2y+(1-2)k diperoleh pusat (-4,-5). Gunakan invers pada bayangan R; jumlah koordinat -17/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4778e9d455805a16e0a22235",
+        "teks": "Persegi panjang $ABCD$ berukuran panjang $12\\text{ cm}$ dan lebar $8\\text{ cm}$. Persegi panjang tersebut didilatasikan oleh $[P, -\\frac{3}{2}]$ menghasilkan $A'B'C'D'$. Selanjutnya, $A'B'C'D'$ didilatasikan kembali oleh $[Q, \\frac{1}{3}]$ menghasilkan $A''B''C''D''$. Selisih luas antara bangun awal $ABCD$ dan bangun akhir $A''B''C''D''$ adalah ....",
+        "jawaban": "$72\\text{ cm}^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_dilatasi_pusat_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dilatasi faktor 4 berpusat C(h,k) membawa P(3,-6) ke (12,-21). Jika bayangan R adalah (8,-5), tentukan jumlah koordinat R.",
+      "jawaban_benar": "$0$",
+      "alasan_benar": "Dari x′=4x+(1-4)h dan y′=4y+(1-4)k diperoleh pusat (0,-1). Gunakan invers pada bayangan R; jumlah koordinat 0.",
+      "distraktor": [
+        {
+          "teks": "$-1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$1$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $0$."
+        }
+      ],
+      "pembahasan": "Dari x′=4x+(1-4)h dan y′=4y+(1-4)k diperoleh pusat (0,-1). Gunakan invers pada bayangan R; jumlah koordinat 0.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b03-e-hard-bt01-028"
     }
   ]
 }

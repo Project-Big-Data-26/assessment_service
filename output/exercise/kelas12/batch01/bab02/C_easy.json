@@ -866,6 +866,191 @@
       "pembahasan": "Setoran terakhir belum berbunga. Jumlah akhirnya 900000×[1+(1+1/50)+...+(1+1/50)^7]=60349001133609/7812500.",
       "catatan": "codex-replenishment:kelas12-b02-C-easy; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12-b02-c-easy-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0e38fad7e5cab3807561c42",
+        "teks": "Dewi selalu menyisihkan uangnya sebesar Rp4.000.000,00 per tahun pada akhir tahun dan memasukkannya ke dalam rekening deposito dengan bunga majemuk 5% per tahun. Berapa nilai masa depan tabungan Dewi dalam 3 tahun?",
+        "jawaban": "Rp12.610.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_anuitas_rumus_terpandu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Setoran Rp70.000,00 dilakukan tiap akhir tahun selama 2 tahun, bunga $5$% per tahun. Gunakan langsung rumus $S=D((1+i)^n-1)/i$. Tentukan S dalam rupiah.",
+      "jawaban_benar": "$143500$",
+      "alasan_benar": "Substitusi D=70000, i=1/20, n=2 memberi S=143500.",
+      "distraktor": [
+        {
+          "teks": "$143499$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $143500$."
+        },
+        {
+          "teks": "$143501$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $143500$."
+        },
+        {
+          "teks": "$287000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi D=70000, i=1/20, n=2 memberi S=143500.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-c-easy-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "278f10a57ed0b86ee035e4a6",
+        "teks": "Dina menghitung nilai masa depan setoran Rp2.000.000,00 pada akhir setiap tahun selama 4 tahun dengan bunga majemuk 10% per tahun. Ia menulis $FV = 2.000.000 \\times \\frac{(1,1)^4}{0,1} = 29.282.000$. Pernyataan yang benar tentang pekerjaan Dina adalah ....",
+        "jawaban": "Salah: pembilang seharusnya $(1,1)^4 - 1$, sehingga nilai masa depan yang benar Rp9.282.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_anuitas_rumus_terpandu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Setoran Rp60.000,00 dilakukan tiap akhir tahun selama 4 tahun, bunga $15$% per tahun. Gunakan langsung rumus $S=D((1+i)^n-1)/i$. Tentukan S dalam rupiah.",
+      "jawaban_benar": "$\\frac{599205}{2}$",
+      "alasan_benar": "Substitusi D=60000, i=3/20, n=4 memberi S=599205/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{599205}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$599205$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{599205}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Substitusi D=60000, i=3/20, n=4 memberi S=599205/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-c-easy-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e4ec1e6c8f71a2e78d610866",
+        "teks": "Seseorang ingin mengambil uang sebesar $A$ pada akhir setiap periode selama $n$ periode dari tabungan yang berbunga majemuk $i$ per periode. Rumus tabungan awal yang diperlukan ($PV$) adalah ....",
+        "jawaban": "$PV = A \\times \\frac{1-(1+i)^{-n}}{i}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_anuitas_rumus_terpandu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Setoran Rp40.000,00 dilakukan tiap akhir tahun selama 4 tahun, bunga $10$% per tahun. Gunakan langsung rumus $S=D((1+i)^n-1)/i$. Tentukan S dalam rupiah.",
+      "jawaban_benar": "$185640$",
+      "alasan_benar": "Substitusi D=40000, i=1/10, n=4 memberi S=185640.",
+      "distraktor": [
+        {
+          "teks": "$185639$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $185640$."
+        },
+        {
+          "teks": "$185641$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $185640$."
+        },
+        {
+          "teks": "$371280$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi D=40000, i=1/10, n=4 memberi S=185640.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-c-easy-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "47521eae34ca174c8830313a",
+        "teks": "Bayu berkata, \"Jika lama menabung dilipatduakan, nilai masa depan tabunganku juga menjadi dua kali.\" Bayu menyetor sejumlah yang sama pada akhir setiap tahun dengan bunga majemuk 20% per tahun. Perbandingan nilai masa depan tabungan setelah 4 tahun terhadap setelah 2 tahun adalah ...., sehingga klaim Bayu keliru.",
+        "jawaban": "2,44",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_anuitas_rumus_terpandu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Setoran Rp30.000,00 dilakukan tiap akhir tahun selama 2 tahun, bunga $15$% per tahun. Gunakan langsung rumus $S=D((1+i)^n-1)/i$. Tentukan S dalam rupiah.",
+      "jawaban_benar": "$64500$",
+      "alasan_benar": "Substitusi D=30000, i=3/20, n=2 memberi S=64500.",
+      "distraktor": [
+        {
+          "teks": "$64499$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64500$."
+        },
+        {
+          "teks": "$64501$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64500$."
+        },
+        {
+          "teks": "$129000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Substitusi D=30000, i=3/20, n=2 memberi S=64500.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-c-easy-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eae15b0730bd59e35aa42d0f",
+        "teks": "Eko mendepositokan Rp1.000.000,00 hari ini, lalu menyetor sejumlah yang sama pada akhir setiap tahun selama 3 tahun ke bank yang sama berbunga majemuk 10% per tahun. Ia menginginkan saldo tepat setelah setoran ketiga sebesar Rp6.296.000,00. Besar setoran tahunan yang harus dilakukan adalah ....",
+        "jawaban": "Rp1.500.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C2",
+      "jumlah_langkah": 1,
+      "jenis_soal": "v2_anuitas_rumus_terpandu",
+      "alasan_level": "Satu konsep dan satu prosedur langsung dengan data lengkap.",
+      "stimulus": null,
+      "pertanyaan": "Setoran Rp20.000,00 dilakukan tiap akhir tahun selama 4 tahun, bunga $5$% per tahun. Gunakan langsung rumus $S=D((1+i)^n-1)/i$. Tentukan S dalam rupiah.",
+      "jawaban_benar": "$\\frac{172405}{2}$",
+      "alasan_benar": "Substitusi D=20000, i=1/20, n=4 memberi S=172405/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{172405}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$172405$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{172405}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Substitusi D=20000, i=1/20, n=4 memberi S=172405/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b02-c-easy-bt01-030"
     }
   ]
 }

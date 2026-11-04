@@ -382,6 +382,43 @@
       "pembahasan": "Luas gabungan=8×6+5×1=53 cm².",
       "catatan": "codex-replenishment:kelas5-b05-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas5-b05-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "527d8b3d29f805024c5f2e05",
+        "teks": "Lahan berbentuk huruf L mempunyai bagian tegak setinggi 9 m dan selebar 3 m. Di dasar bagian tegak, menempel bagian mendatar setinggi 2 m sehingga lebar seluruh bagian bawah 8 m. Ani menghitung 9 x 3 = 27 dan 5 x 2 = 10, lalu 27 + 10. Budi menghitung 8 x 2 = 16 dan 7 x 3 = 21, lalu 16 + 21. Pernyataan yang benar tentang luas lahan itu adalah ....",
+        "jawaban": "Kedua cara benar dan menghasilkan luas yang sama, yaitu 37 m2",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_luas_dimensi_potongan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persegi panjang berkeliling 60 cm; panjangnya 4 cm lebih dari lebar. Sebuah persegi panjang kecil 5×4 cm dipotong dari satu sudut. Sisa bangun ditutup ubin seluas 1 cm² per ubin tanpa celah. Berapa ubin yang dibutuhkan?",
+      "jawaban_benar": "$201$",
+      "alasan_benar": "Setengah keliling p+l=30, selisih p-l=4. Jadi p=17,l=13. Luas awal 221, luas potongan 20. Sisa dan jumlah ubin 201.",
+      "distraktor": [
+        {
+          "teks": "$200$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $201$."
+        },
+        {
+          "teks": "$202$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $201$."
+        },
+        {
+          "teks": "$402$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setengah keliling p+l=30, selisih p-l=4. Jadi p=17,l=13. Luas awal 221, luas potongan 20. Sisa dan jumlah ubin 201.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b05-c-hard-bt01-012"
     }
   ]
 }

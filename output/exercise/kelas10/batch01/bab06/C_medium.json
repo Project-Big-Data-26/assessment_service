@@ -721,6 +721,228 @@
       "pembahasan": "Nilai terbesar 37 dan terkecil 19. Jangkauan = 37 - 19 = 18.",
       "catatan": "codex-replenishment:kelas10-b06-C-medium; generation_only; level target bukan label tervalidasi.",
       "id": "kelas10-b06-c-medium-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5aefaeb77b0b7f30d740e93",
+        "teks": "Delapan siswa dicatat nomor sepatu (sumbu x) dan nilai ulangan matematika (sumbu y).\n\n| Nomor sepatu | 38 | 40 | 39 | 41 | 37 | 42 | 40 | 39 |\n|---|---|---|---|---|---|---|---|---|\n| Nilai matematika | 78 | 65 | 90 | 85 | 72 | 70 | 88 | 68 |\n\nPernyataan yang paling sesuai dengan diagram pencar dari data itu adalah ....",
+        "jawaban": "Tidak ada korelasi antara nomor sepatu dan nilai matematika",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=8, median=13, Q3=20. Setiap nilai x diubah menjadi y=48-2x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru 22; IQR baru 2(20-8)=24. Jumlah 46.",
+      "distraktor": [
+        {
+          "teks": "$45$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $46$."
+        },
+        {
+          "teks": "$47$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $46$."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru 22; IQR baru 2(20-8)=24. Jumlah 46.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e470ad897bda41dd309366e1",
+        "teks": "Nilai 80 siswa diringkas: minimum 20, Q1 = 45, Q2 = 50, Q3 = 68, dan maksimum 78.\n\nBagian nilai yang memuat 25% data dengan sebaran paling sempit (paling rapat) beserta banyak siswa di bagian itu adalah ....",
+        "jawaban": "antara 45 dan 50, yaitu 20 siswa",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=9, median=11, Q3=16. Setiap nilai x diubah menjadi y=37-5x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$17$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru -18; IQR baru 5(16-9)=35. Jumlah 17.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $17$."
+        },
+        {
+          "teks": "$34$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru -18; IQR baru 5(16-9)=35. Jumlah 17.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d2ff3e685fd23d5553785976",
+        "teks": "Ringkasan lima ukuran data nilai ujian: minimum 15, Q1 = 28, Q2 = 35, Q3 = 47, maksimum 60.\n\nJangkauan interkuartil (IQR) data nilai itu adalah ....",
+        "jawaban": "19",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=5, median=8, Q3=16. Setiap nilai x diubah menjadi y=58-2x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$64$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru 42; IQR baru 2(16-5)=22. Jumlah 64.",
+      "distraktor": [
+        {
+          "teks": "$63$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$65$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $64$."
+        },
+        {
+          "teks": "$128$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru 42; IQR baru 2(16-5)=22. Jumlah 64.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d3940da5ffd185176bda0260",
+        "teks": "Waktu tunggu (dalam menit) delapan pelanggan di sebuah loket: 14, 12, 15, 13, 16, 14, 2, 15. Dari data ini diperoleh Q1 = 12,5 dan Q3 = 15. Pencilan: data kurang dari Q1 - 1,5 x IQR atau lebih dari Q3 + 1,5 x IQR.\n\nData yang tergolong pencilan adalah ....",
+        "jawaban": "2 menit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=4, median=9, Q3=17. Setiap nilai x diubah menjadi y=52-5x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru 7; IQR baru 5(17-4)=65. Jumlah 72.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $72$."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru 7; IQR baru 5(17-4)=65. Jumlah 72.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5ee8cf3141a0ba72644d25d3",
+        "teks": "Seorang petani mencatat banyak pupuk (kg, sumbu x) dan hasil panen (kuintal, sumbu y) pada 10 petak, belum terurut menurut x.\n\n| Pupuk (kg) | 2 | 5 | 3 | 8 | 1 | 6 | 4 | 9 | 7 | 10 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| Hasil panen (kuintal) | 26 | 35 | 29 | 28 | 23 | 38 | 32 | 47 | 41 | 50 |\n\nJika pasangan data itu digambar sebagai diagram pencar, pernyataan yang benar adalah ....",
+        "jawaban": "Korelasi positif, dan petak dengan pupuk 8 kg dan hasil 28 kuintal menyimpang dari pola",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=6, median=15, Q3=23. Setiap nilai x diubah menjadi y=32-4x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru -28; IQR baru 4(23-6)=68. Jumlah 40.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru -28; IQR baru 4(23-6)=68. Jumlah 40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ed786506fc4a4b3aba00bce3",
+        "teks": "Banyak pengunjung harian sebuah perpustakaan selama 40 hari diringkas sebagai berikut: nilai minimum 12, Q1 = 20, Q2 = 26, Q3 = 33, dan nilai maksimum 41.\n\nPersentase hari yang banyak pengunjungnya terletak antara 20 dan 41 adalah ....",
+        "jawaban": "75%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C3",
+      "jumlah_langkah": 3,
+      "jenis_soal": "v2_transformasi_kuartil",
+      "alasan_level": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
+      "stimulus": null,
+      "pertanyaan": "Suatu data mempunyai Q1=10, median=17, Q3=22. Setiap nilai x diubah menjadi y=60-4x. Tentukan median baru ditambah jangkauan antarkuartil baru.",
+      "jawaban_benar": "$40$",
+      "alasan_benar": "Transformasi menurun membalik urutan. Median baru -8; IQR baru 4(22-10)=48. Jumlah 40.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$41$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $40$."
+        },
+        {
+          "teks": "$80$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Transformasi menurun membalik urutan. Median baru -8; IQR baru 4(22-10)=48. Jumlah 40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-c-medium-bt01-026"
     }
   ],
   "kapasitas_kurang": true,

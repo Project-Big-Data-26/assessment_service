@@ -722,6 +722,43 @@
       "pembahasan": "Peluang merah pertama 7/15; setelah itu merah kedua 6/14. Hasil kali keduanya 1/5.",
       "catatan": "codex-replenishment:kelas10-b07-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas10-b07-c-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b5a5e673210f0bbf59ce9f83",
+        "teks": "Dua dadu setimbang, satu merah dan satu putih, dilempar bersamaan.\n\nPeluang bahwa dadu merah menunjukkan mata ganjil dan dadu putih menunjukkan mata 6 adalah ....",
+        "jawaban": "$\\frac{1}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_campuran_inverse_peluang",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Pabrik A dan B menyuplai barang; proporsi dari A belum diketahui. Peluang lolos uji barang A adalah $\\frac{9}{10}$, barang B $\\frac{7}{10}$. Peluang lolos uji seluruh barang $\\frac{39}{50}$. Jika sebuah barang ternyata lolos, berapa peluang berasal dari A?",
+      "jawaban_benar": "$\\frac{6}{13}$",
+      "alasan_benar": "Tulis proporsi A=p. Persamaan 9/10p+7/10(1-p)=39/50 memberi p=2/5. Bagian yang sekaligus A dan lolos 9/25; bagi peluang lolos 39/50, hasil 6/13.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{13}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{36}{169}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{6}{13}$."
+        },
+        {
+          "teks": "$\\frac{3}{13}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Tulis proporsi A=p. Persamaan 9/10p+7/10(1-p)=39/50 memberi p=2/5. Bagian yang sekaligus A dan lolos 9/25; bagi peluang lolos 39/50, hasil 6/13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b07-c-hard-bt01-022"
     }
   ]
 }

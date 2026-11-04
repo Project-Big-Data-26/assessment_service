@@ -859,6 +859,450 @@
       "pembahasan": "Elemen (1,2)=2+5=7; elemen (2,1)=7+8=15. Selisihnya -8.",
       "catatan": "codex-replenishment:kelas11_tl-b01-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas11_tl-b01-c-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e76fe15798ef599b67d863db",
+        "teks": "Diketahui $\\begin{bmatrix} x & 3 \\\\ 2 & y \\end{bmatrix}$ + $\\begin{bmatrix} 4 & -1 \\\\ 5 & 6 \\end{bmatrix}$ = $\\begin{bmatrix} 9 & 2 \\\\ 7 & 10 \\end{bmatrix}$. Nilai $x + y$ adalah ....",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}5 & a\\\\2 a + b & 6\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}6 & b - 7\\\\-12 & 3\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-243$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=7 dan 2a+b=12. Maka a=5, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -243.",
+      "distraktor": [
+        {
+          "teks": "$-244$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-243$."
+        },
+        {
+          "teks": "$-242$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-243$."
+        },
+        {
+          "teks": "$-486$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=7 dan 2a+b=12. Maka a=5, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e6be96af302c72dd66edefab",
+        "teks": "Sebuah toko buku memiliki stok awal (eksemplar) pada cabang X dan cabang Y untuk novel, komik, dan kamus: $\\begin{bmatrix} 40 & 25 \\\\ 30 & 18 \\\\ 22 & 35 \\end{bmatrix}$, dengan kolom pertama cabang X dan kolom kedua cabang Y. Buku yang terjual dalam sebulan: $\\begin{bmatrix} 12 & 9 \\\\ 10 & 17 \\\\ 5 & 14 \\end{bmatrix}$. Matriks sisa stok setiap jenis buku di kedua cabang adalah ....",
+        "jawaban": "$\\begin{bmatrix} 28 & 16 \\\\ 20 & 1 \\\\ 17 & 21 \\end{bmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}4 & a\\\\2 a + b & 5\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}2 & b - 5\\\\-9 & 3\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-140$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=5 dan 2a+b=9. Maka a=4, b=1. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -140.",
+      "distraktor": [
+        {
+          "teks": "$-141$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-140$."
+        },
+        {
+          "teks": "$-139$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-140$."
+        },
+        {
+          "teks": "$-280$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=5 dan 2a+b=9. Maka a=4, b=1. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -140.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0929a0abc59233701de9ae3e",
+        "teks": "Matriks $A=\\begin{pmatrix}7&3\\\\10&7\\end{pmatrix}$ dan $B=\\begin{pmatrix}9&7\\\\7&9\\end{pmatrix}$. Berapa selisih elemen baris 1 kolom 2 dan baris 2 kolom 1 dari $A+B$?",
+        "jawaban": "$-7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}5 & a\\\\2 a + b & 8\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}2 & b - 5\\\\-8 & 6\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-90$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=5 dan 2a+b=8. Maka a=3, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -90.",
+      "distraktor": [
+        {
+          "teks": "$-91$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-90$."
+        },
+        {
+          "teks": "$-89$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-90$."
+        },
+        {
+          "teks": "$-180$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=5 dan 2a+b=8. Maka a=3, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -90.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c8b2528cd0243d7afdb1670b",
+        "teks": "Diketahui $A$ = $\\begin{bmatrix} 5 & -2 \\\\ 8 & 6 \\end{bmatrix}$ dan $B$ = $\\begin{bmatrix} -4 & 7 \\\\ 3 & -9 \\end{bmatrix}$. Hasil $A + B$ adalah ....",
+        "jawaban": "$\\begin{bmatrix} 1 & 5 \\\\ 11 & -3 \\end{bmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}4 & a\\\\2 a + b & 8\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}3 & b - 9\\\\-15 & 6\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-358$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=9 dan 2a+b=15. Maka a=6, b=3. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -358.",
+      "distraktor": [
+        {
+          "teks": "$-359$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-358$."
+        },
+        {
+          "teks": "$-357$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-358$."
+        },
+        {
+          "teks": "$-716$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=9 dan 2a+b=15. Maka a=6, b=3. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -358.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bc4fdd9bff5e26984452f4c4",
+        "teks": "Matriks $P$ dan $Q$ sama-sama berordo $3 \\times 5$. Ordo matriks $P - Q$ adalah ....",
+        "jawaban": "$3 \\times 5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}6 & a\\\\2 a + b & 2\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}3 & b - 4\\\\-7 & 5\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-93$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=4 dan 2a+b=7. Maka a=3, b=1. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -93.",
+      "distraktor": [
+        {
+          "teks": "$-94$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-93$."
+        },
+        {
+          "teks": "$-92$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-93$."
+        },
+        {
+          "teks": "$-186$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=4 dan 2a+b=7. Maka a=3, b=1. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -93.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "482e561005c7424fd8faf9d3",
+        "teks": "Matriks $A$ berordo $(2m - 1) \\times (n + 2)$ dan matriks $B$ berordo $5 \\times 6$. Jika $A - B$ terdefinisi dengan $m$ dan $n$ bilangan asli, nilai $m + n$ adalah ....",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}7 & a\\\\2 a + b & 3\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}3 & b - 10\\\\-17 & 3\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-476$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=10 dan 2a+b=17. Maka a=7, b=3. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -476.",
+      "distraktor": [
+        {
+          "teks": "$-477$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-476$."
+        },
+        {
+          "teks": "$-475$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-476$."
+        },
+        {
+          "teks": "$-952$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=10 dan 2a+b=17. Maka a=7, b=3. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -476.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "26df8400c8d2ba32d982768a",
+        "teks": "Diketahui $\\begin{pmatrix} 3x & y \\\\ 5z & 7z \\end{pmatrix}$ - $\\begin{pmatrix} 19 & -x \\\\ -4y & 17 \\end{pmatrix}$ + $\\begin{pmatrix} 4 & -3 \\\\ -7 & -4 \\end{pmatrix}$ = $\\begin{pmatrix} 0 & 0 \\\\ 0 & 0 \\end{pmatrix}$. Nilai $x$, $y$, dan $z$ berturut-turut adalah ....",
+        "jawaban": "$x = 5$, $y = -2$, $z = 3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}7 & a\\\\2 a + b & 2\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}4 & b - 15\\\\-23 & 3\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-739$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=15 dan 2a+b=23. Maka a=8, b=7. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -739.",
+      "distraktor": [
+        {
+          "teks": "$-740$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-739$."
+        },
+        {
+          "teks": "$-738$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-739$."
+        },
+        {
+          "teks": "$-1478$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=15 dan 2a+b=23. Maka a=8, b=7. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -739.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "49e0434accf5ac48929a683e",
+        "teks": "Matriks $A=\\begin{pmatrix}7&5\\\\4&6\\end{pmatrix}$ dan $B=\\begin{pmatrix}2&7\\\\7&2\\end{pmatrix}$. Berapa selisih elemen baris 1 kolom 2 dan baris 2 kolom 1 dari $A+B$?",
+        "jawaban": "$1$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}4 & a\\\\2 a + b & 8\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}3 & b - 9\\\\-15 & 4\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-356$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=9 dan 2a+b=15. Maka a=6, b=3. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -356.",
+      "distraktor": [
+        {
+          "teks": "$-357$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-356$."
+        },
+        {
+          "teks": "$-355$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-356$."
+        },
+        {
+          "teks": "$-712$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=9 dan 2a+b=15. Maka a=6, b=3. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -356.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "11c536c9606a48568144c975",
+        "teks": "Diketahui $A$ = $\\begin{pmatrix} 3 & -1 & 4 \\\\ 2 & 5 & 0 \\end{pmatrix}$ dan $B$ = $\\begin{pmatrix} 6 & 2 \\\\ -3 & 7 \\end{pmatrix}$. Seorang siswa menjumlahkannya dengan menambahkan kolom nol pada $B$ hingga berordo $2 \\times 3$, lalu memperoleh $A + B$ = $\\begin{pmatrix} 9 & 1 & 4 \\\\ -1 & 12 & 0 \\end{pmatrix}$. Penilaian yang tepat terhadap penyelesaian siswa tersebut adalah ....",
+        "jawaban": "Salah, sebab $A + B$ tidak terdefinisi: ordo $A$ ($2 \\times 3$) dan $B$ ($2 \\times 2$) berbeda, dan menambah kolom nol mengganti $B$ dengan matriks lain",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}6 & a\\\\2 a + b & 3\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}4 & b - 7\\\\-13 & 7\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-320$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=7 dan 2a+b=13. Maka a=6, b=1. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -320.",
+      "distraktor": [
+        {
+          "teks": "$-321$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-320$."
+        },
+        {
+          "teks": "$-319$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-320$."
+        },
+        {
+          "teks": "$-640$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=7 dan 2a+b=13. Maka a=6, b=1. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -320.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17f2aa2ed6aea4af40f5c603",
+        "teks": "Kapasitas kursi dua studio bioskop pada sesi siang dan malam adalah $\\begin{bmatrix} 80 & 60 \\\\ 120 & 90 \\end{bmatrix}$ (baris: studio 1 dan 2; kolom: siang dan malam). Kursi yang terisi adalah $\\begin{bmatrix} 57 & 41 \\\\ 85 & 63 \\end{bmatrix}$. Matriks banyak kursi yang masih kosong adalah ....",
+        "jawaban": "$\\begin{bmatrix} 23 & 19 \\\\ 35 & 27 \\end{bmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}3 & a\\\\2 a + b & 2\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}2 & b - 7\\\\-12 & 3\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-241$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=7 dan 2a+b=12. Maka a=5, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -241.",
+      "distraktor": [
+        {
+          "teks": "$-242$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-241$."
+        },
+        {
+          "teks": "$-240$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-241$."
+        },
+        {
+          "teks": "$-482$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=7 dan 2a+b=12. Maka a=5, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -241.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "79a63bbbaa406feee5ada15a",
+        "teks": "Penjualan roti (buah) sebuah toko pada pagi hari dicatat dalam matriks $M$ = $\\begin{pmatrix} 38 & 52 & 23 \\\\ 45 & 17 & 60 \\end{pmatrix}$ dan pada sore hari dalam matriks $N$ = $\\begin{pmatrix} 27 & 33 & 14 \\\\ 19 & 41 & 25 \\end{pmatrix}$, dengan baris menyatakan cabang (Utara, Selatan) dan kolom menyatakan jenis roti (tawar, manis, keju). Pernyataan yang benar mengenai elemen baris ke-2 kolom ke-3 matriks $M + N$ adalah ....",
+        "jawaban": "total roti keju yang terjual di cabang Selatan sepanjang hari, yaitu 85 buah",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}7 & a\\\\2 a + b & 8\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}6 & b - 9\\\\-14 & 3\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-275$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=9 dan 2a+b=14. Maka a=5, b=4. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -275.",
+      "distraktor": [
+        {
+          "teks": "$-276$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-275$."
+        },
+        {
+          "teks": "$-274$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-275$."
+        },
+        {
+          "teks": "$-550$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=9 dan 2a+b=14. Maka a=5, b=4. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -275.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6735a9bb92654f0571da853e",
+        "teks": "Matriks $A=\\begin{pmatrix}7&5\\\\7&5\\end{pmatrix}$ dan $B=\\begin{pmatrix}2&2\\\\7&2\\end{pmatrix}$. Berapa selisih elemen baris 1 kolom 2 dan baris 2 kolom 1 dari $A+B$?",
+        "jawaban": "$-7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_penjumlahan_diagonal_determinan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Matriks $P=\\left[\\begin{matrix}7 & a\\\\2 a + b & 3\\end{matrix}\\right]$ dan $Q=\\left[\\begin{matrix}5 & b - 8\\\\-14 & 4\\end{matrix}\\right]$ memenuhi syarat bahwa $P+Q$ diagonal. Tentukan $\\det(P-Q)$.",
+      "jawaban_benar": "$-338$",
+      "alasan_benar": "Kedua elemen di luar diagonal P+Q harus nol: a+b=8 dan 2a+b=14. Maka a=6, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -338.",
+      "distraktor": [
+        {
+          "teks": "$-339$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-338$."
+        },
+        {
+          "teks": "$-337$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-338$."
+        },
+        {
+          "teks": "$-676$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kedua elemen di luar diagonal P+Q harus nol: a+b=8 dan 2a+b=14. Maka a=6, b=2. Bentuk P-Q, lalu gunakan determinan 2×2; hasil -338.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b01-c-hard-bt01-036"
     }
   ]
 }

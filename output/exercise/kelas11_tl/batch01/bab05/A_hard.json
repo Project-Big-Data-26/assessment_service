@@ -561,6 +561,154 @@
       "pembahasan": "Terapkan transformasi sesuai urutannya pada (12,8); hasil akhirnya (20,11).",
       "catatan": "codex-replenishment:kelas11_tl-b05-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas11_tl-b05-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2f1cb54790c4094e189060fc",
+        "teks": "Dito diminta menentukan peta titik $P(1, 5)$ yang dirotasikan $270^\\circ$ berlawanan arah jarum jam terhadap titik pusat $C(-3, 2)$. Langkah Dito: (1) menggeser titik: $P - C = (4, 3)$; (2) memutar $(4, 3)$ sebesar $270^\\circ$ terhadap $O(0, 0)$ sehingga diperoleh $(3, -4)$; (3) menulis hasil akhir $P' = (3, -4)$. Kesalahan Dito terdapat pada ....",
+        "jawaban": "langkah (3): hasil rotasi terhadap $O$ belum digeser kembali dengan menambahkan $C$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_transformasi_inverse_berantai",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi F berupa translasi (a,b), lalu rotasi 90° berlawanan arah jarum jam terhadap O. Diketahui F($(6, 6)$)=$(-12, 10)$. Jika F(R)=$(5, 6)$, tentukan jumlah koordinat R.",
+      "jawaban_benar": "$-9$",
+      "alasan_benar": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=4, b=6. Invers memberi R=(2,-11), sehingga jumlah koordinat -9.",
+      "distraktor": [
+        {
+          "teks": "$-10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-9$."
+        },
+        {
+          "teks": "$-8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-9$."
+        },
+        {
+          "teks": "$-18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=4, b=6. Invers memberi R=(2,-11), sehingga jumlah koordinat -9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61d4ed82a6953a2547b80162",
+        "teks": "Tentukan peta dari titik $(-14, 8)$ yang dicerminkan terhadap garis $y = 5x$.",
+        "jawaban": "$(16, 2)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_transformasi_inverse_berantai",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi F berupa translasi (a,b), lalu rotasi 90° berlawanan arah jarum jam terhadap O. Diketahui F($(6, 6)$)=$(-10, 13)$. Jika F(R)=$(0, -8)$, tentukan jumlah koordinat R.",
+      "jawaban_benar": "$-19$",
+      "alasan_benar": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=7, b=4. Invers memberi R=(-15,-4), sehingga jumlah koordinat -19.",
+      "distraktor": [
+        {
+          "teks": "$-20$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-19$."
+        },
+        {
+          "teks": "$-18$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-19$."
+        },
+        {
+          "teks": "$-38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=7, b=4. Invers memberi R=(-15,-4), sehingga jumlah koordinat -19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "96941c65ffd04541f1c8d8a8",
+        "teks": "Peta dari titik $(5, 2)$ yang dirotasikan terhadap titik pusat $C(2, 1)$ sebesar $90^\\circ$ berlawanan arah jarum jam adalah ....",
+        "jawaban": "$(1, 4)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_transformasi_inverse_berantai",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi F berupa translasi (a,b), lalu rotasi 90° berlawanan arah jarum jam terhadap O. Diketahui F($(3, 8)$)=$(-12, 10)$. Jika F(R)=$(-4, -8)$, tentukan jumlah koordinat R.",
+      "jawaban_benar": "$-15$",
+      "alasan_benar": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=7, b=4. Invers memberi R=(-15,0), sehingga jumlah koordinat -15.",
+      "distraktor": [
+        {
+          "teks": "$-16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-15$."
+        },
+        {
+          "teks": "$-14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-15$."
+        },
+        {
+          "teks": "$-30$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=7, b=4. Invers memberi R=(-15,0), sehingga jumlah koordinat -15.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "230536c40a44fc3b0e78bb19",
+        "teks": "Sebuah segitiga siku-siku dibesarkan dengan dilatasi berpusat di titik tertentu dan faktor skala $3$. Pernyataan yang benar tentang segitiga hasil dilatasinya adalah ....",
+        "jawaban": "panjang setiap sisi menjadi $3$ kali semula dan bentuknya sebangun",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_transformasi_inverse_berantai",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi F berupa translasi (a,b), lalu rotasi 90° berlawanan arah jarum jam terhadap O. Diketahui F($(2, 7)$)=$(-9, 4)$. Jika F(R)=$(5, -2)$, tentukan jumlah koordinat R.",
+      "jawaban_benar": "$-11$",
+      "alasan_benar": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=2, b=2. Invers memberi R=(-4,-7), sehingga jumlah koordinat -11.",
+      "distraktor": [
+        {
+          "teks": "$-12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-11$."
+        },
+        {
+          "teks": "$-10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $-11$."
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Aturan F(x,y)=(-y-b,x+a). Data titik memberi a=2, b=2. Invers memberi R=(-4,-7), sehingga jumlah koordinat -11.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-a-hard-bt01-020"
     }
   ],
   "kapasitas_kurang": true,

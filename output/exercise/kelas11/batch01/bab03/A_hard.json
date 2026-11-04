@@ -1256,6 +1256,746 @@
       "pembahasan": "Setiap kenaikan x diikuti perubahan y dengan gradien -4, sehingga arah hubungannya negatif.",
       "catatan": "codex-replenishment:kelas11-b03-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas11-b03-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "204eb0123dc1d68971bff411",
+        "teks": "| Jarak Tempuh ($x$, km) | Biaya Perawatan Mesin ($y$, ratus ribu rupiah) |\n| :---: | :---: |\n| 10 | 25 |\n| 20 | 40 |\n| 30 | 55 |\n| 40 | 68 |\n| 50 | 85 |\n| 60 | 95 |\n\nBerdasarkan data sampel operasional kendaraan operasional kantor pada tabel tersebut, kesimpulan yang paling tepat mengenai hubungan antara jarak tempuh kendaraan ($x$) dan biaya perawatan mesin ($y$) adalah...",
+        "jawaban": "Terdapat korelasi positif dengan tren linear; semakin jauh jarak tempuh kendaraan, semakin tinggi biaya perawatan mesin.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 4), (1, 6), (2, 8)]; kelompok II: [(15, -6), (16, -4), (17, -2)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II <0; kovarians gabungan >0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -217. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, False, False]; jumlah 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -217. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, False, False]; jumlah 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d5433293c3623eefe44d1ae",
+        "teks": "Diagram pencar awal antara persentase ruang terbuka hijau ($x$, dalam %) dan indeks temperatur mikro perkotaan ($y$, $^{\\circ}\\text{C}$) dari 10 kecamatan menunjukkan tren linear negatif dengan sebaran titik yang rapat. Pada pengamatan susulan, ditemukan satu kawasan industri khusus dengan data $(x = 45\\%, y = 38^{\\circ}\\text{C})$, sementara 9 wilayah lainnya berada pada rentang $x = 10\\%$ hingga $40\\%$ dengan $y$ menurun dari $35^{\\circ}\\text{C}$ ke $26^{\\circ}\\text{C}$.\n\nBerdasarkan evaluasi terhadap penambahan titik data baru tersebut, simpulan metodologis yang paling tepat adalah...",
+        "jawaban": "Titik data kawasan industri merupakan data pencilan yang menyimpang dari tren umum, sehingga perlu diinvestigasi faktor khususnya tanpa langsung membatalkan tren negatif 9 kecamatan lainnya.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 6), (1, 8), (2, 10)]; kelompok II: [(14, -4), (15, -2), (16, 0)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -202. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, False, True]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -202. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, False, True]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "788efc07b2e645702d398da2",
+        "teks": "Pasangan data $(x,y)$ adalah $(3, -5)$, $(15, -53)$, $(29, -109)$, $(34, -129)$. Arah pola pada diagram pencarnya adalah ....",
+        "jawaban": "Korelasi linear negatif.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 8), (1, 10), (2, 12)]; kelompok II: [(16, -2), (17, 0), (18, 2)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II >0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -232. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, True]; jumlah 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -232. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, True]; jumlah 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "110d2a2d2c797e750c9a1964",
+        "teks": "| Waktu Fermentasi ($x$, jam) | 2 | 4 | 6 | 8 | 10 | 12 | 14 |\n| :---: | :---: | :---: | :---: | :---: | :---: | :---: |\n| Konsentrasi Asam ($y$, g/L) | 4 | 9 | 15 | 22 | 27 | 28 | 28 |\n\nSeorang praktikan bioteknologi mengklaim bahwa hubungan antara waktu fermentasi ($x$) dan konsentrasi asam ($y$) pada tabel di atas merupakan tren linear murni dengan korelasi positif di sepanjang rentang waktu pengamatan. Evaluasi yang paling tepat terhadap klaim tersebut adalah...",
+        "jawaban": "Klaim keliru, karena laju pertambahan konsentrasi asam melambat dan akhirnya konstan pada jam ke-12 hingga 14, sehingga bentuk tren data lebih tepat dikategorikan sebagai kurva/non-linear.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 4), (1, 6), (2, 8)]; kelompok II: [(16, -6), (17, -4), (18, -2)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan <0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -232. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, True]; jumlah 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -232. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, True]; jumlah 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ba71ecbc0cbf1f74ae9b68",
+        "teks": "Diagram pencar antara umur ($x$, rentang 2–12 tahun) dan tinggi badan ($y$, dalam cm) memperlihatkan pola tren linear positif yang sangat konsisten. Seorang siswa memodelkan pola tersebut ke dalam garis lurus $y = 7x + 75$ dan mengklaim bahwa seseorang yang berumur 60 tahun akan memiliki tinggi badan $435\\text{ cm}$.\n\nBerdasarkan prinsip pembacaan diagram pencar dan karakteristik data bivariat, kelemahan utama dari rancangan kesimpulan siswa tersebut adalah...",
+        "jawaban": "Menyimpulkan tren di luar batas rentang data pengamatan (ekstrapolasi berlebihan), padahal pada kenyataannya pertumbuhan tinggi badan berhenti setelah usia dewasa sehingga tren berubah menjadi konstan/non-linear.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 8), (1, 10), (2, 12)]; kelompok II: [(10, -2), (11, 0), (12, 2)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II <0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -142. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, False, True]; jumlah 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -142. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, False, True]; jumlah 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a317078955d6f208b42f67d2",
+        "teks": "Pasangan data $(x,y)$ adalah $(4, -5)$, $(20, -69)$, $(28, -101)$, $(36, -133)$. Arah pola pada diagram pencarnya adalah ....",
+        "jawaban": "Korelasi linear negatif.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 7), (1, 9), (2, 11)]; kelompok II: [(12, -3), (13, -1), (14, 1)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II <0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -172. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, False, True]; jumlah 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -172. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, False, True]; jumlah 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "420482c57baf1c430d593b82",
+        "teks": "Sebuah toko roti mencatat data harian mengenai banyak adonan roti yang dibuat ($x$) dan banyak tepung terigu yang digunakan ($y$). Kesimpulan apa yang paling tepat mengenai hubungan antara kedua variabel tersebut?",
+        "jawaban": "Semakin banyak adonan roti yang dibuat, semakin banyak tepung terigu yang dibutuhkan (korelasi positif).",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 5), (1, 7), (2, 9)]; kelompok II: [(11, -5), (12, -3), (13, -1)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II <0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, False, True]; jumlah 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, False, True]; jumlah 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3a8ad5fd38b5f2d27d019309",
+        "teks": "Perhatikan pasangan variabel berikut: intensitas curah hujan bulanan ($x$) dan tinggi permukaan air pada waduk penampungan ($y$). Bagaimana bentuk hubungan yang paling tepat antara kedua variabel tersebut?",
+        "jawaban": "Korelasi positif, karena semakin tinggi intensitas curah hujan, tinggi permukaan air waduk cenderung semakin meningkat.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 6), (1, 8), (2, 10)]; kelompok II: [(11, -4), (12, -2), (13, 0)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan <0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, False]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, False]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d5433293c3623eefe44d1ae",
+        "teks": "Diagram pencar awal antara persentase ruang terbuka hijau ($x$, dalam %) dan indeks temperatur mikro perkotaan ($y$, $^{\\circ}\\text{C}$) dari 10 kecamatan menunjukkan tren linear negatif dengan sebaran titik yang rapat. Pada pengamatan susulan, ditemukan satu kawasan industri khusus dengan data $(x = 45\\%, y = 38^{\\circ}\\text{C})$, sementara 9 wilayah lainnya berada pada rentang $x = 10\\%$ hingga $40\\%$ dengan $y$ menurun dari $35^{\\circ}\\text{C}$ ke $26^{\\circ}\\text{C}$.\n\nBerdasarkan evaluasi terhadap penambahan titik data baru tersebut, simpulan metodologis yang paling tepat adalah...",
+        "jawaban": "Titik data kawasan industri merupakan data pencilan yang menyimpang dari tren umum, sehingga perlu diinvestigasi faktor khususnya tanpa langsung membatalkan tren negatif 9 kecamatan lainnya.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 5), (1, 7), (2, 9)]; kelompok II: [(12, -5), (13, -3), (14, -1)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan <0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -172. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, False]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -172. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, False]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cfdb1a62b17af60a23f47663",
+        "teks": "Seorang peneliti mencatat persentase akses sanitasi layak ($x$, dalam %) dan persentase kasus infeksi diare anak ($y$, dalam %) di 5 wilayah berikut:\n\n| Wilayah | $x$ (%) | $y$ (%) |\n| :---: | :---: | :---: | \n| A | 85 | 12 |\n| B | 70 | 22 |\n| C | 60 | 31 |\n| D | 50 | 40 |\n| E | 40 | 48 |\n\nPeneliti kemudian mendata wilayah F dengan koordinat $(x=90, y=55)$. Wilayah F memiliki akses sanitasi tinggi tetapi mengalami pencemaran mendadak pada sumber air utama.\n\nJika data wilayah F dimasukkan ke dalam diagram pencar, evaluasi manakah yang paling tepat mengenai perubahan karakteristik hubungan antardua variabel tersebut?",
+        "jawaban": "Pola umum data awal adalah korelasi negatif linear, sedangkan titik F menjadi pencilan (outlier) yang melemahkan kekuatan tren linear negatif tersebut.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 7), (1, 9), (2, 11)]; kelompok II: [(15, -3), (16, -1), (17, 1)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II >0; kovarians gabungan >0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -217. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, False]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -217. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, False]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec2c1d531fb8b7e3a4a6696",
+        "teks": "Tabel berikut menyajikan data jam terbang latihan simulator ($x$, dalam jam) dan skor penilaian kesalahan prosedur ($y$, rentang 0–100) dari lima calon penerbang:\n\n| Calon Penerbang | Jam Terbang Simulator ($x$) | Skor Kesalahan Prosedur ($y$) |\n| :---: | :---: | :---: |\n| A | 15 | 78 |\n| B | 25 | 60 |\n| C | 35 | 44 |\n| D | 45 | 72 |\n| E | 55 | 18 |\n\nBerdasarkan sebaran titik koordinat $(x, y)$ pada tabel, titik data calon penerbang manakah yang tidak konsisten dengan tren korelasi data secara keseluruhan (berperan sebagai pencilan)?",
+        "jawaban": "Calon penerbang D dengan titik koordinat $(45, 72)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 8), (1, 10), (2, 12)]; kelompok II: [(8, -2), (9, 0), (10, 2)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II <0; kovarians gabungan <0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -112. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, True, False]; jumlah 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -112. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, False, True, False]; jumlah 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2be279153aa15a85771076af",
+        "teks": "Tabel berikut menyajikan data lama belajar harian ($x$, dalam jam) dan perolehan skor kuis matematika ($y$) dari 6 siswa:\n\n| Siswa | Lama Belajar ($x$ jam) | Skor Kuis ($y$) |\n| :---: | :---: | :---: | \n| A | 1,5 | 55 |\n| B | 2,5 | 68 |\n| C | 3,0 | 92 |\n| D | 4,0 | 78 |\n| E | 5,0 | 85 |\n| F | 6,0 | 95 |\n\nSecara umum, sebaran data menunjukkan kecenderungan korelasi positif.\n\nBerdasarkan data pada tabel, titik data siswa manakah yang paling tidak konsisten (menyimpang) terhadap tren kenaikan umum data tersebut?",
+        "jawaban": "Siswa C $(3,0; 92)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 3), (1, 5), (2, 7)]; kelompok II: [(15, -7), (16, -5), (17, -3)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II <0; kovarians gabungan <0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -217. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, True, True]; jumlah 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -217. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, True, True]; jumlah 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a96775f7cfbe275da1ea91b0",
+        "teks": "Dalam analisis diagram pencar, variabel yang digunakan untuk membuat prediksi terhadap nilai variabel lainnya disebut sebagai variabel...",
+        "jawaban": "independen",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 3), (1, 5), (2, 7)]; kelompok II: [(14, -7), (15, -5), (16, -3)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II >0; kovarians gabungan >0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -202. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, False]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -202. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, False]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a85fbc14f5b1970a18aaf46e",
+        "teks": "Data tahunan dari 15 distrik kota memperlihatkan diagram pencar dengan tren linear korelasi positif yang sangat kuat antara jumlah gerai pusat kebugaran modern ($x$) dan banyak kasus penyakit kardiovaskular kronis yang terdiagnosis ($y$). Seorang pejabat menyimpulkan bahwa pembukaan pusat kebugaran baru memicu timbulnya penyakit kardiovaskular pada masyarakat.\n\nBerdasarkan prinsip diagram pencar dan analisis statistika bivariat, evaluasi manakah yang paling tepat untuk menanggapi klaim pejabat tersebut?",
+        "jawaban": "Klaim keliru; korelasi positif yang kuat hanya menunjukkan asosiasi pola statistik dan tidak membuktikan hubungan sebab-akibat langsung, karena kedua variabel kemungkinan sama-sama dipengaruhi oleh kepadatan atau ukuran populasi distrik.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 5), (1, 7), (2, 9)]; kelompok II: [(13, -5), (14, -3), (15, -1)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II <0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -187. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, False, True]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -187. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, False, True]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "87ca37e92fab1757a4b59e88",
+        "teks": "Seorang pengelola kedai minuman mencatat data rata-rata suhu udara luar harian ($x$, dalam $^\\circ\\text{C}$) dan banyak cangkir minuman dingin yang terjual ($y$) selama 5 hari pengamatan:\n\n| Hari | Suhu Udara Rata-rata ($x$) | Penjualan Minuman Dingin ($y$) |\n| :---: | :---: | :---: |\n| 1 | 25 | 40 |\n| 2 | 27 | 51 |\n| 3 | 29 | 63 |\n| 4 | 31 | 74 |\n| 5 | 33 | 85 |\n\nKesimpulan yang paling tepat mengenai jenis korelasi dan bentuk tren data antara suhu udara rata-rata dan penjualan minuman dingin adalah...",
+        "jawaban": "Korelasi positif dengan tren linear; semakin tinggi suhu udara rata-rata harian, semakin banyak penjualan minuman dingin.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 8), (1, 10), (2, 12)]; kelompok II: [(14, -2), (15, 0), (16, 2)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -202. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, False, True]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -202. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, False, True]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c5f9cd76107ad26a18ee7d27",
+        "teks": "Seorang peternak mengamati data bobot tubuh sapi potong ($x$) dan hasil rendemen karkas daging ($y$) yang diperoleh saat pemotongan. Jika kedua variabel tersebut berkorelasi positif, kesimpulan apa yang paling tepat mengenai hubungan keduanya?",
+        "jawaban": "Semakin besar bobot tubuh sapi potong, semakin banyak hasil rendemen karkas daging yang diperoleh.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 5), (1, 7), (2, 9)]; kelompok II: [(10, -5), (11, -3), (12, -1)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II <0; kovarians gabungan >0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -142. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, False, True]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -142. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, False, False, True]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "81bd19b873cc0f83846faeff",
+        "teks": "Tabel berikut menyajikan hasil uji laboratorium laju aktivitas suatu enzim katalis ($y$, dalam $\\text{mmol/menit}$) pada berbagai variasi temperatur reaksi ($x$, dalam $^{\\circ}\\text{C}$):\n\n| Suhu Reaksi ($x$) | 20 | 30 | 40 | 50 | 60 |\n| :---: | :---: | :---: | :---: | :---: | :---: |\n| Laju Enzim ($y$) | 15 | 32 | 48 | 31 | 14 |\n\nSeorang praktikan menyimpulkan bahwa diagram pencar data tersebut menunjukkan korelasi positif dengan tren linear.\n\nEvaluasi yang paling tepat terhadap kesimpulan praktikan tersebut adalah...",
+        "jawaban": "Kesimpulan keliru; tren data berbentuk kurva/non-linear karena nilai $y$ awalnya meningkat hingga suhu optimum $40^{\\circ}\\text{C}$ lalu menurun, sehingga tidak dapat diklasifikasikan sebagai korelasi positif linear.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 5), (1, 7), (2, 9)]; kelompok II: [(11, -5), (12, -3), (13, -1)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan <0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, False]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, False]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7810f01eabbeef45fd4d00f9",
+        "teks": "Pada sebuah diagram pencar, titik-titik koordinat data tersebar membentuk kecenderungan garis lurus yang bergerak naik dari kiri bawah menuju kanan atas. Karakteristik pola penyebaran titik-titik tersebut mengindikasikan bahwa data memiliki...",
+        "jawaban": "tren linear dengan arah korelasi positif",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 8), (1, 10), (2, 12)]; kelompok II: [(12, -2), (13, 0), (14, 2)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II >0; kovarians gabungan >0; korelasi saja membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -172. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, False]; jumlah 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -172. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, False, False]; jumlah 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2be279153aa15a85771076af",
+        "teks": "Tabel berikut menyajikan data lama belajar harian ($x$, dalam jam) dan perolehan skor kuis matematika ($y$) dari 6 siswa:\n\n| Siswa | Lama Belajar ($x$ jam) | Skor Kuis ($y$) |\n| :---: | :---: | :---: | \n| A | 1,5 | 55 |\n| B | 2,5 | 68 |\n| C | 3,0 | 92 |\n| D | 4,0 | 78 |\n| E | 5,0 | 85 |\n| F | 6,0 | 95 |\n\nSecara umum, sebaran data menunjukkan kecenderungan korelasi positif.\n\nBerdasarkan data pada tabel, titik data siswa manakah yang paling tidak konsisten (menyimpang) terhadap tren kenaikan umum data tersebut?",
+        "jawaban": "Siswa C $(3,0; 92)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 2), (1, 4), (2, 6)]; kelompok II: [(16, -8), (17, -6), (18, -4)]. Periksa empat pernyataan berikut: kovarians kelompok I <0; kovarians kelompok II >0; kovarians gabungan <0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -232. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, True]; jumlah 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -232. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [False, True, True, True]; jumlah 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d5433293c3623eefe44d1ae",
+        "teks": "Diagram pencar awal antara persentase ruang terbuka hijau ($x$, dalam %) dan indeks temperatur mikro perkotaan ($y$, $^{\\circ}\\text{C}$) dari 10 kecamatan menunjukkan tren linear negatif dengan sebaran titik yang rapat. Pada pengamatan susulan, ditemukan satu kawasan industri khusus dengan data $(x = 45\\%, y = 38^{\\circ}\\text{C})$, sementara 9 wilayah lainnya berada pada rentang $x = 10\\%$ hingga $40\\%$ dengan $y$ menurun dari $35^{\\circ}\\text{C}$ ke $26^{\\circ}\\text{C}$.\n\nBerdasarkan evaluasi terhadap penambahan titik data baru tersebut, simpulan metodologis yang paling tepat adalah...",
+        "jawaban": "Titik data kawasan industri merupakan data pencilan yang menyimpang dari tren umum, sehingga perlu diinvestigasi faktor khususnya tanpa langsung membatalkan tren negatif 9 kecamatan lainnya.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pencar_efek_penggabungan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Data pencar kelompok I: [(0, 8), (1, 10), (2, 12)]; kelompok II: [(11, -2), (12, 0), (13, 2)]. Periksa empat pernyataan berikut: kovarians kelompok I >0; kovarians kelompok II >0; kovarians gabungan <0; korelasi saja belum membuktikan sebab-akibat. Berapa pernyataan yang benar?",
+      "jawaban_benar": "$4$",
+      "alasan_benar": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, True, True]; jumlah 4.",
+      "distraktor": [
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$5$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4$."
+        },
+        {
+          "teks": "$8$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah hasil kali simpangan pada dua kelompok dan gabungan berturut-turut 4, 4, -157. Tandanya harus dihitung per kelompok dan gabungan; korelasi tidak cukup membuktikan kausalitas. Kebenaran pernyataan [True, True, True, True]; jumlah 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b03-a-hard-bt01-051"
     }
   ]
 }

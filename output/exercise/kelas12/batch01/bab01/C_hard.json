@@ -806,6 +806,376 @@
       "pembahasan": "Nilai akhir M=P(1+12/100×11/12). Maka P=34632000/(111/100)=31200000 rupiah.",
       "catatan": "codex-replenishment:kelas12-b01-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12-b01-c-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7eda1c63b36b4df001305b37",
+        "teks": "Menurut Otoritas Jasa Keuangan, bunga simpanan adalah ....",
+        "jawaban": "balas jasa dari bank kepada nasabah karena nasabah menyimpan uangnya di bank",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp5.047.000,00, dan akhir bulan 8 adalah Rp5.292.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 8, ditambahkan Rp500.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 13, dalam rupiah?",
+      "jawaban_benar": "$6062000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp49.000,00. Modal awal Rp4.900.000,00, suku bunga bulanan $\\frac{1}{100}$. Modal awal berbunga selama 13 bulan; tambahan hanya 5 bulan. Jumlah 4900000+13×49000+500000(1+5×1/100)=6062000.",
+      "distraktor": [
+        {
+          "teks": "$6061999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6062000$."
+        },
+        {
+          "teks": "$6062001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6062000$."
+        },
+        {
+          "teks": "$12124000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp49.000,00. Modal awal Rp4.900.000,00, suku bunga bulanan $\\frac{1}{100}$. Modal awal berbunga selama 13 bulan; tambahan hanya 5 bulan. Jumlah 4900000+13×49000+500000(1+5×1/100)=6062000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "99280679a60bc0a11eca0c46",
+        "teks": "Modal Rp33.600.000,00 disimpan dengan bunga tunggal 10% per tahun selama 20 bulan. Berapa bunga yang diperoleh?",
+        "jawaban": "$5600000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp5.750.000,00, dan akhir bulan 9 adalah Rp6.350.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 9, ditambahkan Rp600.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 13, dalam rupiah?",
+      "jawaban_benar": "$7622000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp150.000,00. Modal awal Rp5.000.000,00, suku bunga bulanan $\\frac{3}{100}$. Modal awal berbunga selama 13 bulan; tambahan hanya 4 bulan. Jumlah 5000000+13×150000+600000(1+4×3/100)=7622000.",
+      "distraktor": [
+        {
+          "teks": "$7621999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7622000$."
+        },
+        {
+          "teks": "$7622001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $7622000$."
+        },
+        {
+          "teks": "$15244000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp150.000,00. Modal awal Rp5.000.000,00, suku bunga bulanan $\\frac{3}{100}$. Modal awal berbunga selama 13 bulan; tambahan hanya 4 bulan. Jumlah 5000000+13×150000+600000(1+4×3/100)=7622000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8fecc96eb575badc089ecec7",
+        "teks": "Simpanan berbunga tunggal 4% per tahun menjadi Rp18.360.000,00 setelah 6 bulan. Berapa modal awalnya?",
+        "jawaban": "$18000000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 2 adalah Rp3.162.000,00, dan akhir bulan 4 adalah Rp3.224.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 4, ditambahkan Rp300.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 6, dalam rupiah?",
+      "jawaban_benar": "$3592000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp31.000,00. Modal awal Rp3.100.000,00, suku bunga bulanan $\\frac{1}{100}$. Modal awal berbunga selama 6 bulan; tambahan hanya 2 bulan. Jumlah 3100000+6×31000+300000(1+2×1/100)=3592000.",
+      "distraktor": [
+        {
+          "teks": "$3591999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3592000$."
+        },
+        {
+          "teks": "$3592001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3592000$."
+        },
+        {
+          "teks": "$7184000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp31.000,00. Modal awal Rp3.100.000,00, suku bunga bulanan $\\frac{1}{100}$. Modal awal berbunga selama 6 bulan; tambahan hanya 2 bulan. Jumlah 3100000+6×31000+300000(1+2×1/100)=3592000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "abef29a80a2efdab3defd934",
+        "teks": "Dewi menyimpan Rp10.000.000,00 selama 4 tahun dengan bunga tunggal 5% per tahun. Eka menyimpan Rp8.000.000,00 selama 5 tahun dengan bunga tunggal 6% per tahun. Selisih total bunga yang diterima Eka dan Dewi adalah ....",
+        "jawaban": "Rp400.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp5.618.000,00, dan akhir bulan 6 adalah Rp5.936.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 6, ditambahkan Rp300.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 12, dalam rupiah?",
+      "jawaban_benar": "$6908000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp106.000,00. Modal awal Rp5.300.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 12 bulan; tambahan hanya 6 bulan. Jumlah 5300000+12×106000+300000(1+6×1/50)=6908000.",
+      "distraktor": [
+        {
+          "teks": "$6907999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6908000$."
+        },
+        {
+          "teks": "$6908001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $6908000$."
+        },
+        {
+          "teks": "$13816000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp106.000,00. Modal awal Rp5.300.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 12 bulan; tambahan hanya 6 bulan. Jumlah 5300000+12×106000+300000(1+6×1/50)=6908000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a48b813a6cb7a7e70a2bc290",
+        "teks": "Pak Danu menyimpan Rp5.000.000,00 pada sebuah bank yang memberi bunga tunggal 6% per tahun. Besar bunga yang diperoleh Pak Danu selama 3 tahun adalah ....",
+        "jawaban": "Rp900.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 4 adalah Rp2.484.000,00, dan akhir bulan 8 adalah Rp2.668.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 8, ditambahkan Rp900.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 10, dalam rupiah?",
+      "jawaban_benar": "$3696000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp46.000,00. Modal awal Rp2.300.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 10 bulan; tambahan hanya 2 bulan. Jumlah 2300000+10×46000+900000(1+2×1/50)=3696000.",
+      "distraktor": [
+        {
+          "teks": "$3695999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3696000$."
+        },
+        {
+          "teks": "$3696001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3696000$."
+        },
+        {
+          "teks": "$7392000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp46.000,00. Modal awal Rp2.300.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 10 bulan; tambahan hanya 2 bulan. Jumlah 2300000+10×46000+900000(1+2×1/50)=3696000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "99280679a60bc0a11eca0c46",
+        "teks": "Modal Rp33.600.000,00 disimpan dengan bunga tunggal 10% per tahun selama 20 bulan. Berapa bunga yang diperoleh?",
+        "jawaban": "$5600000$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 2 adalah Rp3.016.000,00, dan akhir bulan 5 adalah Rp3.190.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 5, ditambahkan Rp500.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 10, dalam rupiah?",
+      "jawaban_benar": "$4030000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp58.000,00. Modal awal Rp2.900.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 10 bulan; tambahan hanya 5 bulan. Jumlah 2900000+10×58000+500000(1+5×1/50)=4030000.",
+      "distraktor": [
+        {
+          "teks": "$4029999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4030000$."
+        },
+        {
+          "teks": "$4030001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4030000$."
+        },
+        {
+          "teks": "$8060000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp58.000,00. Modal awal Rp2.900.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 10 bulan; tambahan hanya 5 bulan. Jumlah 2900000+10×58000+500000(1+5×1/50)=4030000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c19f2936e489f88c20647219",
+        "teks": "Eko menabung Rp5.000.000,00 di bank dengan bunga tunggal 6% per tahun. Bunga ditambahkan ke saldo setiap akhir tahun dan uang tidak pernah diambil. Saldo tabungan Eko menjadi Rp6.200.000,00 setelah menabung selama ... tahun.",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp2.332.000,00, dan akhir bulan 8 adalah Rp2.552.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 8, ditambahkan Rp300.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 14, dalam rupiah?",
+      "jawaban_benar": "$3152000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp44.000,00. Modal awal Rp2.200.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 14 bulan; tambahan hanya 6 bulan. Jumlah 2200000+14×44000+300000(1+6×1/50)=3152000.",
+      "distraktor": [
+        {
+          "teks": "$3151999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3152000$."
+        },
+        {
+          "teks": "$3152001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3152000$."
+        },
+        {
+          "teks": "$6304000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp44.000,00. Modal awal Rp2.200.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 14 bulan; tambahan hanya 6 bulan. Jumlah 2200000+14×44000+300000(1+6×1/50)=3152000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bfa31bd57521547fab89a2c4",
+        "teks": "Tina menyimpan Rp6.000.000,00 dan Umi menyimpan Rp4.000.000,00, keduanya dengan bunga tunggal selama 5 tahun. Persentase bunga per tahun simpanan Umi 2 poin persentase lebih besar daripada simpanan Tina, dan bunga yang mereka terima selama 5 tahun sama besar. Persentase bunga per tahun simpanan Umi adalah ....",
+        "jawaban": "6%",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 5 adalah Rp2.530.000,00, dan akhir bulan 10 adalah Rp2.760.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 10, ditambahkan Rp500.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 12, dalam rupiah?",
+      "jawaban_benar": "$3372000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp46.000,00. Modal awal Rp2.300.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 12 bulan; tambahan hanya 2 bulan. Jumlah 2300000+12×46000+500000(1+2×1/50)=3372000.",
+      "distraktor": [
+        {
+          "teks": "$3371999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3372000$."
+        },
+        {
+          "teks": "$3372001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3372000$."
+        },
+        {
+          "teks": "$6744000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp46.000,00. Modal awal Rp2.300.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 12 bulan; tambahan hanya 2 bulan. Jumlah 2300000+12×46000+500000(1+2×1/50)=3372000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "73baf4618e55c3851995a3e0",
+        "teks": "Bu Sari menyetor Rp4.500.000,00 pada tabungan koperasi sekolah dengan bunga tunggal 8% per tahun. Selama lima tahun ia tidak menarik uangnya. Berapa saldo Bu Sari setelah lima tahun?",
+        "jawaban": "Rp6.300.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 2 adalah Rp3.536.000,00, dan akhir bulan 4 adalah Rp3.672.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 4, ditambahkan Rp800.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 10, dalam rupiah?",
+      "jawaban_benar": "$4976000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp68.000,00. Modal awal Rp3.400.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 10 bulan; tambahan hanya 6 bulan. Jumlah 3400000+10×68000+800000(1+6×1/50)=4976000.",
+      "distraktor": [
+        {
+          "teks": "$4975999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4976000$."
+        },
+        {
+          "teks": "$4976001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4976000$."
+        },
+        {
+          "teks": "$9952000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp68.000,00. Modal awal Rp3.400.000,00, suku bunga bulanan $\\frac{1}{50}$. Modal awal berbunga selama 10 bulan; tambahan hanya 6 bulan. Jumlah 3400000+10×68000+800000(1+6×1/50)=4976000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "73baf4618e55c3851995a3e0",
+        "teks": "Bu Sari menyetor Rp4.500.000,00 pada tabungan koperasi sekolah dengan bunga tunggal 8% per tahun. Selama lima tahun ia tidak menarik uangnya. Berapa saldo Bu Sari setelah lima tahun?",
+        "jawaban": "Rp6.300.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_bunga_tunggal_rekonstruksi",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabungan menggunakan bunga tunggal bulanan dengan modal dan suku bunga tetap. Saldo akhir bulan 3 adalah Rp2.781.000,00, dan akhir bulan 8 adalah Rp2.916.000,00; tidak ada transaksi atau biaya sebelum saat itu. Tepat sesudah pencatatan saldo bulan 8, ditambahkan Rp200.000,00 dengan suku bunga yang sama. Berapa saldo akhir bulan 13, dalam rupiah?",
+      "jawaban_benar": "$3261000$",
+      "alasan_benar": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp27.000,00. Modal awal Rp2.700.000,00, suku bunga bulanan $\\frac{1}{100}$. Modal awal berbunga selama 13 bulan; tambahan hanya 5 bulan. Jumlah 2700000+13×27000+200000(1+5×1/100)=3261000.",
+      "distraktor": [
+        {
+          "teks": "$3260999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3261000$."
+        },
+        {
+          "teks": "$3261001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3261000$."
+        },
+        {
+          "teks": "$6522000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih saldo dibagi selisih waktu memberi bunga awal per bulan Rp27.000,00. Modal awal Rp2.700.000,00, suku bunga bulanan $\\frac{1}{100}$. Modal awal berbunga selama 13 bulan; tambahan hanya 5 bulan. Jumlah 2700000+13×27000+200000(1+5×1/100)=3261000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-c-hard-bt01-033"
     }
   ]
 }

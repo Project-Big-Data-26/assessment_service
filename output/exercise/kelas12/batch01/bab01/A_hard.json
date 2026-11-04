@@ -907,6 +907,228 @@
       "pembahasan": "Beda = (37-17)/(8-4) = 5. Suku pertama = 17-(4-1)×5 = 2. Jadi U_25=122.",
       "catatan": "codex-replenishment:kelas12-b01-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12-b01-a-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2780b99a48ac95bf99ebff2",
+        "teks": "Pada barisan aritmetika diketahui $U_4+U_{11}=58$. Seorang siswa berpendapat nilai $U_6+U_9$ tidak dapat ditentukan karena suku pertama dan beda tidak diketahui. Pernyataan yang benar adalah ....",
+        "jawaban": "$U_6+U_9=58$, sebab $4+11=6+9$ sehingga $U_4+U_{11}=2a+13b=U_6+U_9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=66$ dan $U_3=24$. Berapa indeks terkecil n sehingga $U_n>108$?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=66, a+2d=24, sehingga a=12, d=6. Ketaksamaan menjadi n>17; indeks bulat terkecil 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $18$."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $18$."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=66, a+2d=24, sehingga a=12, d=6. Ketaksamaan menjadi n>17; indeks bulat terkecil 18.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-a-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9183e92ea381cd6b1873734a",
+        "teks": "Bayu berlatih lari setiap pagi. Pada hari pertama ia berlari 6 putaran, hari kedua 11 putaran, dan hari ketiga 16 putaran. Banyak putaran yang ia lakukan setiap hari selalu bertambah secara teratur dengan pola yang sama. Latihan berlangsung hingga hari ke-12. Berapa banyak putaran yang dilakukan Bayu pada hari ke-12?",
+        "jawaban": "61",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=88$ dan $U_3=32$. Berapa indeks terkecil n sehingga $U_n>72$?",
+      "jawaban_benar": "$9$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=88, a+2d=32, sehingga a=16, d=8. Ketaksamaan menjadi n>8; indeks bulat terkecil 9.",
+      "distraktor": [
+        {
+          "teks": "$8$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$10$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $9$."
+        },
+        {
+          "teks": "$18$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=88, a+2d=32, sehingga a=16, d=8. Ketaksamaan menjadi n>8; indeks bulat terkecil 9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-a-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e604d60772217c26d0b2c",
+        "teks": "Suatu barisan geometri memiliki suku ke-3 sama dengan 144. Suku pertama dan rasionya adalah bilangan bulat positif, dan rasionya lebih dari 1. Banyak barisan berbeda yang memenuhi adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=25$ dan $U_3=8$. Berapa indeks terkecil n sehingga $U_n>26$?",
+      "jawaban_benar": "$10$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=25, a+2d=8, sehingga a=2, d=3. Ketaksamaan menjadi n>9; indeks bulat terkecil 10.",
+      "distraktor": [
+        {
+          "teks": "$9$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$11$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $10$."
+        },
+        {
+          "teks": "$20$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=25, a+2d=8, sehingga a=2, d=3. Ketaksamaan menjadi n>9; indeks bulat terkecil 10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-a-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8e604d60772217c26d0b2c",
+        "teks": "Suatu barisan geometri memiliki suku ke-3 sama dengan 144. Suku pertama dan rasionya adalah bilangan bulat positif, dan rasionya lebih dari 1. Banyak barisan berbeda yang memenuhi adalah ....",
+        "jawaban": "5",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=47$ dan $U_3=19$. Berapa indeks terkecil n sehingga $U_n>46$?",
+      "jawaban_benar": "$13$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=47, a+2d=19, sehingga a=13, d=3. Ketaksamaan menjadi n>12; indeks bulat terkecil 13.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $13$."
+        },
+        {
+          "teks": "$26$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=47, a+2d=19, sehingga a=13, d=3. Ketaksamaan menjadi n>12; indeks bulat terkecil 13.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-a-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2552ddf9ac19d480b7b28aa8",
+        "teks": "Pada barisan aritmetika diketahui $U_4=17$ dan $U_8=37$. Tentukan $U_25$.",
+        "jawaban": "$122$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=64$ dan $U_3=26$. Berapa indeks terkecil n sehingga $U_n>66$?",
+      "jawaban_benar": "$14$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=64, a+2d=26, sehingga a=18, d=4. Ketaksamaan menjadi n>13; indeks bulat terkecil 14.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $14$."
+        },
+        {
+          "teks": "$28$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=64, a+2d=26, sehingga a=18, d=4. Ketaksamaan menjadi n>13; indeks bulat terkecil 14.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-a-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5e3646f32953dad18f8cccb0",
+        "teks": "Seorang penjual membagi stok barang menjadi 4 kelompok dengan banyak barang membentuk barisan geometri naik dengan rasio positif. Jika kelompok terkecil berisi 32 barang dan kelompok terbesar berisi 108 barang, berapa barang pada kelompok ketiga?",
+        "jawaban": "72 barang",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_barisan_kendala_indeks",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Barisan aritmetika mempunyai beda positif, $U_2+U_7=63$ dan $U_3=21$. Berapa indeks terkecil n sehingga $U_n>105$?",
+      "jawaban_benar": "$16$",
+      "alasan_benar": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=63, a+2d=21, sehingga a=7, d=7. Ketaksamaan menjadi n>15; indeks bulat terkecil 16.",
+      "distraktor": [
+        {
+          "teks": "$15$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $16$."
+        },
+        {
+          "teks": "$32$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Tulis U_n=a+(n-1)d. Data memberi 2a+7d=63, a+2d=21, sehingga a=7, d=7. Ketaksamaan menjadi n>15; indeks bulat terkecil 16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b01-a-hard-bt01-032"
     }
   ]
 }

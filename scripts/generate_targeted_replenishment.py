@@ -29,6 +29,16 @@ def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def h(value):return hashlib.sha256(json.dumps(value,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
 
 
+def save_progress(path,name,result,target):
+    # Merge under a separate lock: classes can finish concurrently.
+    with batch_lock(RUN):
+        progress=load(path) if path.exists() else {'target':target,'classes':{},'apiCalls':0}
+        progress['classes'][name]=result
+        progress['completed']=sum(v['added'] for v in progress['classes'].values() if v['status']=='complete')
+        atomic_json(path,progress)
+        return progress
+
+
 def factory(name,bab,code,level,r):
     if name=='kelas12_tl':
         from app.services.exercise.targeted_tl12 import generate
@@ -53,7 +63,7 @@ def verify(bundle,check_live=True):
     if check_live:
         for info in manifest['liveInputs'].values():assert digest(info['path'])==info['sha256']
     source=load(manifest['sourceFiles']['exerciseEnvelope']['path'])['items']
-    old=load(manifest['sourceFiles']['previousResults']['path']);old_by={q['_id']:q for q in old}
+    old=load(manifest['sourceFiles']['previousResults']['path']);old_by={q['_id']:q for q in old};source_by={q['_id']:q for q in source}
     old_meta=load(manifest['sourceFiles']['previousMetadata']['path'])
     rows=load(bundle/'validation_results.json');meta=load(bundle/'validation_results_meta.json')
     audit=load(bundle/'bukti_validasi/codex_targeted_review.json');new={q['questionId']:q for q in audit['items']}
@@ -65,10 +75,14 @@ def verify(bundle,check_live=True):
         if qid in old_by:
             assert q==old_by[qid] and meta[qid]==old_meta[qid], 'Existing published question changed'
         else:
-            item=new[qid];assert h(q)==item['publishedHash']
+            item=new[qid];assert h(q)==item['publishedHash'] and q==item['publishedQuestion']
+            assert h(source_by[qid])==item['sourceHash']
+            assert {k:v for k,v in q.items() if k not in ('status','cognitive_level','cognitive_score','confidence_score')}=={k:v for k,v in source_by[qid].items() if k not in ('status','cognitive_level','cognitive_score','confidence_score')}
             value=solve_certificate(item['certificate'])
             from app.services.exercise.replenishment_format import exact_value
             assert value==exact_value(item['exactValue'])
+            from app.services.exercise.replenishment_math import m
+            assert next(o['text'] for o in q['options'] if o['option_id']==q['jawaban'])==m(value)
             assert q['confidence_score']==0 and q['status']=='active'
             assert q['cognitive_level']==item['assessedLevel']
             assert meta[qid]['validasi']['label_provenance']=='codex_local_assessment'
@@ -87,9 +101,7 @@ def run_class(name,jobs,execute):
         if current.get('schemaVersion')==SCHEMA:
             verify(final)
             assert current['localReview']['jobSetHash']==h(relevant), 'A different authoring round already owns this batch'
-            progress['classes'][name]=current['localReview']
-            progress['completed']=sum(v['added'] for v in progress['classes'].values() if v['status']=='complete')
-            atomic_json(status_path,progress)
+            save_progress(status_path,name,current['localReview'],progress['target'])
             return current['localReview']
         verify_local_publication(final)
         master_path=base/'soal_exercise_db.json';meta_path=base/'soal_exercise_meta.json'
@@ -175,7 +187,7 @@ def run_class(name,jobs,execute):
         for record in records:
             row=record['publishedQuestion']
             for text in [row['soal_text'],record['solution'],*[o['text'] for o in row['options']],*[o['alasan'] for o in row['options']]]:
-                assert text.count('$')%2==0
+                assert text.count('$')%2==0, (record['questionId'],text)
                 expressions.update(math_spans(text))
         render_input=RUN/f'targeted_math_{name}.json'
         atomic_json(render_input,[{'id':i,'tex':tex,'display':display} for i,(tex,display) in enumerate(sorted(expressions))])
@@ -198,6 +210,8 @@ def run_class(name,jobs,execute):
         new_master=backup/f'v2_{stamp}_expanded_master.json';new_meta=backup/f'v2_{stamp}_expanded_meta.json'
         atomic_json(new_master,master);atomic_json(new_meta,meta)
         staging=Path(tempfile.mkdtemp(prefix='targeted_',dir=RUN))
+        # Retain the prior local review evidence in the canonical publication.
+        if (final/'bukti_validasi').is_dir():shutil.copytree(final/'bukti_validasi',staging/'bukti_validasi')
         atomic_json(staging/'validation_results.json',rows);atomic_json(staging/'validation_results_meta.json',old_meta_final)
         atomic_json(staging/'bukti_validasi/codex_targeted_review.json',{'schemaVersion':SCHEMA,'apiCalls':0,'items':records})
         note=f'# Tambahan sesuai kekurangan — {name}\n\n{len(records)} soal baru, confidence 0, pemeriksaan lokal Codex tanpa API.\n\nSoal lama dipertahankan persis. Label adalah intended difficulty berdasarkan isi dan profil penyelesaian, bukan kalibrasi empiris atau hasil blind Gemini. Sertifikat matematika dapat dihitung ulang.\n'
@@ -238,17 +252,59 @@ def run_class(name,jobs,execute):
                 if data is None:p.unlink(missing_ok=True)
                 else:p.write_bytes(data)
             raise
-        progress['classes'][name]=result;progress['completed']=sum(v['added'] for v in progress['classes'].values() if v['status']=='complete')
-        atomic_json(status_path,progress)
+        progress=save_progress(status_path,name,result,progress['target'])
         atomic_json(journal,{'phase':'committed','completed':len(records),'manifestSha256':digest(final/'manifest.json')})
         print(json.dumps({**result,'completedOverall':progress['completed'],'target':progress['target']}),flush=True)
         return result
 
 
+def reauthor_class(name,jobs):
+    """Replace only this round's additions; all pre-existing questions stay frozen."""
+    base=ROOT/'output/exercise'/name/'batch01';final=base/'hasil_validasi';verify(final)
+    manifest=load(final/'manifest.json');backup=RUN/'backups'/name
+    previous=Path(manifest['sourceFiles']['previousManifest']['path']);stamp=digest(previous)[:16]
+    retired=backup/f'v2_{stamp}_previous_publication';archive=backup/f'v2_{stamp}_superseded_targeted_publication'
+    assert retired.is_dir() and not archive.exists()
+    paths=[base/n for n in ['soal_exercise_db.json','soal_exercise_meta.json','reference_replenishment_state.json','reference_replenishment_manifest.json']]
+    paths += [base/f"bab{j['chapter_no']:02d}"/f"{j['code']}_{j['level_target']}.json" for j in jobs if j['class_key']==name]
+    before={p:p.read_bytes() if p.exists() else None for p in paths}
+    for p in [final,retired,archive,*paths]:assert p.resolve().is_relative_to(ROOT.resolve())
+    old_progress=load(RUN/'targeted_generation_progress.json')
+    # Freeze the superseded round's source snapshots before the same job is rebuilt.
+    for key in ['exerciseEnvelope','exerciseMetadata']:
+        dest=backup/f'v2_{stamp}_superseded_{key}.json';shutil.copyfile(manifest['sourceFiles'][key]['path'],dest)
+        manifest['sourceFiles'][key]={'path':str(dest),'sha256':digest(dest)}
+    try:
+        final.rename(archive);atomic_json(archive/'manifest.json',manifest);retired.rename(final)
+        for p in paths:
+            retained=backup/f"v2_{stamp}_rollback_{p.relative_to(base).as_posix().replace('/','__')}"
+            if retained.exists():shutil.copyfile(retained,p)
+            else:
+                assert p.parent.name.startswith('bab')
+                p.unlink(missing_ok=True)
+        verify_local_publication(final)
+        progress=load(RUN/'targeted_generation_progress.json');progress['classes'].pop(name,None)
+        progress['completed']=sum(v['added'] for v in progress['classes'].values());atomic_json(RUN/'targeted_generation_progress.json',progress)
+        return run_class(name,jobs,True)
+    except Exception:
+        if final.exists():
+            if not retired.exists():final.rename(retired)
+            else:final.rename(backup/f'v2_{stamp}_failed_reauthoring')
+        if archive.exists():archive.rename(final)
+        for p,data in before.items():
+            if data is None:p.unlink(missing_ok=True)
+            else:p.write_bytes(data)
+        atomic_json(RUN/'targeted_generation_progress.json',old_progress)
+        raise
+
+
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--classes',nargs='+',required=True);p.add_argument('--execute',action='store_true');args=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--classes',nargs='+',required=True);p.add_argument('--execute',action='store_true');p.add_argument('--reauthor',action='store_true');args=p.parse_args()
     jobs=load(RUN/'remaining_level_needs.json')['jobs']
-    for name in args.classes:run_class(name,jobs,args.execute)
+    if args.reauthor:assert args.execute
+    for name in args.classes:
+        if args.reauthor:reauthor_class(name,jobs)
+        else:run_class(name,jobs,args.execute)
 
 
 if __name__=='__main__':main()

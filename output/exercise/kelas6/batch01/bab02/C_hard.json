@@ -429,6 +429,376 @@
       "pembahasan": "Rasio tanaman hias : tanaman obat = 3 : 4. Kalikan rasio tanaman obat : tanaman sayur, 2 : 5, dengan 2 sehingga menjadi 4 : 10. Rasio gabungan 3 : 4 : 10 memiliki 17 bagian. Setiap bagian bernilai 510 ÷ 17 = 30 bibit. Jadi jumlahnya 90, 120, dan 300 bibit.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7815d8afc5d8cb1dda1ad68f",
+        "teks": "Jumlah peserta lomba 650 orang, terdiri atas siswa dan guru. Rasio siswa terhadap guru adalah 7 : 6. Raka berkata ada 350 siswa. Apakah hitungan Raka benar? Pilih jumlah siswa yang benar.",
+        "jawaban": "350 siswa",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 4:7; kelompok B lebih banyak 18 orang. Biaya makan per orang A 5000 rupiah dan B 7000 rupiah. Jika 4 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$394000$",
+      "alasan_benar": "Selisih 3 bagian=18, jadi satu bagian 6. Peserta awal A=24, B=42. Pesanan A tinggal 20; biaya (24-4)×5000+42×7000=394000.",
+      "distraktor": [
+        {
+          "teks": "$393999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $394000$."
+        },
+        {
+          "teks": "$394001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $394000$."
+        },
+        {
+          "teks": "$788000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 3 bagian=18, jadi satu bagian 6. Peserta awal A=24, B=42. Pesanan A tinggal 20; biaya (24-4)×5000+42×7000=394000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d10fdda9eb0fbcda6849d00f",
+        "teks": "Banyu dapat menempuh jarak sepanjang 3 km dalam waktu 42 menit. Jika ia berjalan selama 4 jam, berapa jarak yang ia tempuh? Raka berkata jaraknya 18 km. Apakah Raka benar?",
+        "jawaban": "Tidak. Jaraknya 17 1/7 km.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 4:6; kelompok B lebih banyak 12 orang. Biaya makan per orang A 2000 rupiah dan B 8000 rupiah. Jika 6 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$324000$",
+      "alasan_benar": "Selisih 2 bagian=12, jadi satu bagian 6. Peserta awal A=24, B=36. Pesanan A tinggal 18; biaya (24-6)×2000+36×8000=324000.",
+      "distraktor": [
+        {
+          "teks": "$323999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $324000$."
+        },
+        {
+          "teks": "$324001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $324000$."
+        },
+        {
+          "teks": "$648000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 2 bagian=12, jadi satu bagian 6. Peserta awal A=24, B=36. Pesanan A tinggal 18; biaya (24-6)×2000+36×8000=324000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "706a58689f9e741b6310ed58",
+        "teks": "Rasio bibit mawar terhadap melati adalah 15:11. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?",
+        "jawaban": "$45$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 2:4; kelompok B lebih banyak 18 orang. Biaya makan per orang A 2000 rupiah dan B 9000 rupiah. Jika 5 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$350000$",
+      "alasan_benar": "Selisih 2 bagian=18, jadi satu bagian 9. Peserta awal A=18, B=36. Pesanan A tinggal 13; biaya (18-5)×2000+36×9000=350000.",
+      "distraktor": [
+        {
+          "teks": "$349999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $350000$."
+        },
+        {
+          "teks": "$350001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $350000$."
+        },
+        {
+          "teks": "$700000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 2 bagian=18, jadi satu bagian 9. Peserta awal A=18, B=36. Pesanan A tinggal 13; biaya (18-5)×2000+36×9000=350000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e39cbfbbcb6f32e97c389ce7",
+        "teks": "Rasio bibit mawar terhadap melati adalah 11:2. Jika jumlah seluruh bibit 78, berapa banyak bibit mawar?",
+        "jawaban": "$66$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 5:9; kelompok B lebih banyak 40 orang. Biaya makan per orang A 3000 rupiah dan B 9000 rupiah. Jika 2 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$954000$",
+      "alasan_benar": "Selisih 4 bagian=40, jadi satu bagian 10. Peserta awal A=50, B=90. Pesanan A tinggal 48; biaya (50-2)×3000+90×9000=954000.",
+      "distraktor": [
+        {
+          "teks": "$953999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $954000$."
+        },
+        {
+          "teks": "$954001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $954000$."
+        },
+        {
+          "teks": "$1908000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 4 bagian=40, jadi satu bagian 10. Peserta awal A=50, B=90. Pesanan A tinggal 48; biaya (50-2)×3000+90×9000=954000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce02025cacff1bf6d9c72f96",
+        "teks": "Rasio tanaman hias terhadap tanaman obat yang terjual adalah 5 : 7. Jika seluruhnya terjual 96 bibit, berapa bibit tanaman obat yang terjual?",
+        "jawaban": "56 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 3:7; kelompok B lebih banyak 36 orang. Biaya makan per orang A 4000 rupiah dan B 7000 rupiah. Jika 5 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$529000$",
+      "alasan_benar": "Selisih 4 bagian=36, jadi satu bagian 9. Peserta awal A=27, B=63. Pesanan A tinggal 22; biaya (27-5)×4000+63×7000=529000.",
+      "distraktor": [
+        {
+          "teks": "$528999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $529000$."
+        },
+        {
+          "teks": "$529001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $529000$."
+        },
+        {
+          "teks": "$1058000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 4 bagian=36, jadi satu bagian 9. Peserta awal A=27, B=63. Pesanan A tinggal 22; biaya (27-5)×4000+63×7000=529000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "22014ecae1f19724e585224c",
+        "teks": "Di sebuah toko, 126 bibit terbagi antara tanaman bunga dan tanaman sayur dengan rasio 7 : 5. Berapa rasio bibit bunga terhadap seluruh bibit?",
+        "jawaban": "7 : 12",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 2:4; kelompok B lebih banyak 20 orang. Biaya makan per orang A 4000 rupiah dan B 9000 rupiah. Jika 5 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$420000$",
+      "alasan_benar": "Selisih 2 bagian=20, jadi satu bagian 10. Peserta awal A=20, B=40. Pesanan A tinggal 15; biaya (20-5)×4000+40×9000=420000.",
+      "distraktor": [
+        {
+          "teks": "$419999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $420000$."
+        },
+        {
+          "teks": "$420001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $420000$."
+        },
+        {
+          "teks": "$840000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 2 bagian=20, jadi satu bagian 10. Peserta awal A=20, B=40. Pesanan A tinggal 15; biaya (20-5)×4000+40×9000=420000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61376daa64e4a306f046dbd8",
+        "teks": "Rani belajar selama 2 jam. Berapa menit lama Rani belajar?",
+        "jawaban": "120 menit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 4:7; kelompok B lebih banyak 30 orang. Biaya makan per orang A 6000 rupiah dan B 7000 rupiah. Jika 3 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$712000$",
+      "alasan_benar": "Selisih 3 bagian=30, jadi satu bagian 10. Peserta awal A=40, B=70. Pesanan A tinggal 37; biaya (40-3)×6000+70×7000=712000.",
+      "distraktor": [
+        {
+          "teks": "$711999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $712000$."
+        },
+        {
+          "teks": "$712001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $712000$."
+        },
+        {
+          "teks": "$1424000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 3 bagian=30, jadi satu bagian 10. Peserta awal A=40, B=70. Pesanan A tinggal 37; biaya (40-3)×6000+70×7000=712000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0d046c6528312e27723660e8",
+        "teks": "Dua anak menyiram tanaman selama total 2 jam. Durasi anak pertama terhadap anak kedua harus 3 : 5. Anak pertama harus menyiram lebih lama daripada 40 menit. Berapa durasi masing-masing yang memenuhi syarat?",
+        "jawaban": "Anak pertama 45 menit dan anak kedua 75 menit.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 2:5; kelompok B lebih banyak 15 orang. Biaya makan per orang A 3000 rupiah dan B 7000 rupiah. Jika 4 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$193000$",
+      "alasan_benar": "Selisih 3 bagian=15, jadi satu bagian 5. Peserta awal A=10, B=25. Pesanan A tinggal 6; biaya (10-4)×3000+25×7000=193000.",
+      "distraktor": [
+        {
+          "teks": "$192999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $193000$."
+        },
+        {
+          "teks": "$193001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $193000$."
+        },
+        {
+          "teks": "$386000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 3 bagian=15, jadi satu bagian 5. Peserta awal A=10, B=25. Pesanan A tinggal 6; biaya (10-4)×3000+25×7000=193000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1f4d2f954a6da65fac2fa96a",
+        "teks": "Rasio bibit mawar terhadap melati adalah 9:10. Jika jumlah seluruh bibit 76, berapa banyak bibit mawar?",
+        "jawaban": "$36$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 4:6; kelompok B lebih banyak 12 orang. Biaya makan per orang A 6000 rupiah dan B 8000 rupiah. Jika 2 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$420000$",
+      "alasan_benar": "Selisih 2 bagian=12, jadi satu bagian 6. Peserta awal A=24, B=36. Pesanan A tinggal 22; biaya (24-2)×6000+36×8000=420000.",
+      "distraktor": [
+        {
+          "teks": "$419999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $420000$."
+        },
+        {
+          "teks": "$420001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $420000$."
+        },
+        {
+          "teks": "$840000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 2 bagian=12, jadi satu bagian 6. Peserta awal A=24, B=36. Pesanan A tinggal 22; biaya (24-2)×6000+36×8000=420000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9c1b0dbd4b17c73a7ffb7ee",
+        "teks": "Jumlah bibit mawar dan melati di sebuah toko adalah 117. Rasio bibit mawar terhadap bibit melati adalah 5 : 8. Berapa banyak bibit masing-masing jenis?",
+        "jawaban": "Mawar 45 bibit dan melati 72 bibit",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_rasio_pesanan_biaya",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Peserta A dan B memiliki rasio 5:6; kelompok B lebih banyak 7 orang. Biaya makan per orang A 6000 rupiah dan B 10000 rupiah. Jika 3 orang A berhalangan dan tidak dipesankan makan, berapa total biaya?",
+      "jawaban_benar": "$612000$",
+      "alasan_benar": "Selisih 1 bagian=7, jadi satu bagian 7. Peserta awal A=35, B=42. Pesanan A tinggal 32; biaya (35-3)×6000+42×10000=612000.",
+      "distraktor": [
+        {
+          "teks": "$611999$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $612000$."
+        },
+        {
+          "teks": "$612001$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $612000$."
+        },
+        {
+          "teks": "$1224000$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih 1 bagian=7, jadi satu bagian 7. Peserta awal A=35, B=42. Pesanan A tinggal 32; biaya (35-3)×6000+42×10000=612000.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b02-c-hard-bt01-020"
     }
   ]
 }

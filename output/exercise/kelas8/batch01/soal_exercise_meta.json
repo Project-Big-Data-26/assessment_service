@@ -29839,5 +29839,4907 @@
       ],
       "independent_ai_validation": "pending"
     }
+  },
+  "e321ae6f640c786f3d135a4a": {
+    "id": "kelas8-b01-a-hard-bt01-017",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "371c8c295094708659cb8465",
+      "teks": "Nilai dari $(-8)^{0}$ adalah ....",
+      "jawaban": "1",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pangkat_sistem_eksponen",
+    "pembahasan": "Samakan pangkat: a+b=8, 2a-b=4. Eliminasi memberi a=4, b=4; selisih kuadrat 0.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "0",
+      "options": [
+        "0",
+        "-1",
+        "1",
+        "2"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 8",
+          "2*a - b - 4"
+        ],
+        "query": "a**2 - b**2",
+        "positive": []
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "ca3935ac77c34767d9b772a8": {
+    "id": "kelas8-b01-b-easy-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "b26c40aa6053fd2bdb839c72",
+      "teks": "Bentuk paling sederhana dari $6\\sqrt{7} + 4\\sqrt{7}$ adalah ....",
+      "jawaban": "$10\\sqrt{7}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 4: √(4×7)=2√7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2*sqrt(7)",
+      "options": [
+        "2*sqrt(7)",
+        "sqrt(7)",
+        "4*sqrt(7)",
+        "-2*sqrt(7)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 2*sqrt(7)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "71185f59ea933bd536128488": {
+    "id": "kelas8-b01-b-easy-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "68481397418149d88e35ebe7",
+      "teks": "Bentuk sederhana dari $\\frac{6}{\\sqrt{3}}$ dengan penyebut rasional adalah ....",
+      "jawaban": "$2\\sqrt{3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 4: √(4×6)=2√6.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2*sqrt(6)",
+      "options": [
+        "2*sqrt(6)",
+        "sqrt(6)",
+        "4*sqrt(6)",
+        "-2*sqrt(6)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 2*sqrt(6)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "cd414f689c7c68bdf020c352": {
+    "id": "kelas8-b01-b-easy-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "c26717db6c2d08c281f7f57a",
+      "teks": "Bentuk paling sederhana dari $4\\sqrt{6} \\times 5\\sqrt{15}$ adalah ....",
+      "jawaban": "$60\\sqrt{10}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 4: √(4×2)=2√2.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2*sqrt(2)",
+      "options": [
+        "2*sqrt(2)",
+        "sqrt(2)",
+        "4*sqrt(2)",
+        "-2*sqrt(2)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 2*sqrt(2)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "603d238e9817aef9de2b5b06": {
+    "id": "kelas8-b01-b-easy-bt01-028",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "b68596830035ac457686b6f5",
+      "teks": "Bentuk sederhana dari $\\frac{12}{4+\\sqrt{2}}$ dengan penyebut rasional adalah ....",
+      "jawaban": "$\\frac{24-6\\sqrt{2}}{7}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 16: √(16×2)=4√2.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "4*sqrt(2)",
+      "options": [
+        "4*sqrt(2)",
+        "2*sqrt(2)",
+        "8*sqrt(2)",
+        "-4*sqrt(2)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 4*sqrt(2)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "4aa44cfed79f10b3ee640d4a": {
+    "id": "kelas8-b01-b-easy-bt01-029",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "18701dd6924b0c2d8c5a22d2",
+      "teks": "Sederhanakan $\\sqrt{18}+\\sqrt{72}$.",
+      "jawaban": "$9 \\sqrt{2}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 64: √(64×7)=8√7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "8*sqrt(7)",
+      "options": [
+        "8*sqrt(7)",
+        "4*sqrt(7)",
+        "16*sqrt(7)",
+        "-8*sqrt(7)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 8*sqrt(7)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "7075782882afd4fe228e34d7": {
+    "id": "kelas8-b01-b-easy-bt01-030",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "26fa14929fe8def733e2ee65",
+      "teks": "Sederhanakan $\\sqrt{147}+\\sqrt{243}$.",
+      "jawaban": "$16 \\sqrt{3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 16: √(16×5)=4√5.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "4*sqrt(5)",
+      "options": [
+        "4*sqrt(5)",
+        "2*sqrt(5)",
+        "8*sqrt(5)",
+        "-4*sqrt(5)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 4*sqrt(5)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "f1eb33870c1119cb3fa7f932": {
+    "id": "kelas8-b01-b-easy-bt01-031",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "839a4a8da83059543ebf2f11",
+      "teks": "Sederhanakan $\\sqrt{108}+\\sqrt{192}$.",
+      "jawaban": "$14 \\sqrt{3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 49: √(49×7)=7√7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "7*sqrt(7)",
+      "options": [
+        "7*sqrt(7)",
+        "7*sqrt(7)/2",
+        "14*sqrt(7)",
+        "-7*sqrt(7)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 7*sqrt(7)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "52b7581ebdea511dc9a1aa32": {
+    "id": "kelas8-b01-b-easy-bt01-032",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "5bb238e25d9efaa4c64db726",
+      "teks": "Tiga siswa merasionalkan penyebut $\\frac{10}{\\sqrt{5}}$.\n\nAli: $2\\sqrt{5}$\n\nBeni: $\\frac{10\\sqrt{5}}{5}$\n\nCici: $10\\sqrt{5}$\n\nSiswa yang jawabannya benar adalah ....",
+      "jawaban": "Ali dan Beni",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 9: √(9×6)=3√6.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "3*sqrt(6)",
+      "options": [
+        "3*sqrt(6)",
+        "3*sqrt(6)/2",
+        "6*sqrt(6)",
+        "-3*sqrt(6)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 3*sqrt(6)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "80fc0eaf27a6db368851ae3f": {
+    "id": "kelas8-b01-b-easy-bt01-033",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "ee0fd8acf8d4ac838f6dc30e",
+      "teks": "Tiga dari empat bentuk berikut sama nilainya dengan $4\\sqrt{18}$. Bentuk yang nilainya berbeda dari $4\\sqrt{18}$ adalah ....",
+      "jawaban": "$\\sqrt{72}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_akar_sederhana",
+    "pembahasan": "Faktor kuadrat 36: √(36×3)=6√3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "6*sqrt(3)",
+      "options": [
+        "6*sqrt(3)",
+        "3*sqrt(3)",
+        "12*sqrt(3)",
+        "-6*sqrt(3)"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 6*sqrt(3)"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "59abcf95e6a876da3cc6fbd5": {
+    "id": "kelas8-b01-b-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "d854396fb753285264a752cc",
+      "teks": "Bentuk paling sederhana dari $\\frac{3\\sqrt{6} \\times 4\\sqrt{15}}{2\\sqrt{3}}$ adalah ....",
+      "jawaban": "$6\\sqrt{30}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√2, q=b√2. Maka a+b=12, ab=32. Akar memberi a=8, b=4 karena p>q. Hasil a-b=4.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "4",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "8"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 12",
+          "a*b - 32"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "e32a35d1e1278fd82c22eede": {
+    "id": "kelas8-b01-b-hard-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "414a14d67ec7308888aa2aad",
+      "teks": "Bentuk paling sederhana dari $4\\sqrt{2} \\times 6\\sqrt{10}$ adalah ....",
+      "jawaban": "$48\\sqrt{5}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√6, q=b√6. Maka a+b=11, ab=30. Akar memberi a=6, b=5 karena p>q. Hasil a-b=1.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "1",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 11",
+          "a*b - 30"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "ddf43a8ebc05822a83d3705c": {
+    "id": "kelas8-b01-b-hard-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "5faa7c828c07c864023b4a1a",
+      "teks": "Bentuk sederhana dari $3\\sqrt{12} + 5\\sqrt{27}$ adalah ....",
+      "jawaban": "$21\\sqrt{3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√3, q=b√3. Maka a+b=11, ab=28. Akar memberi a=7, b=4 karena p>q. Hasil a-b=3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "3",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 11",
+          "a*b - 28"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "5125d775d9d349e1888d90d3": {
+    "id": "kelas8-b01-b-hard-bt01-028",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "263098dc53753dc9ce9bbeba",
+      "teks": "Sederhanakan $\\sqrt{20}+\\sqrt{245}$.",
+      "jawaban": "$9 \\sqrt{5}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√3, q=b√3. Maka a+b=8, ab=15. Akar memberi a=5, b=3 karena p>q. Hasil a-b=2.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 8",
+          "a*b - 15"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "13dbfea922a15abd73ae3dc6": {
+    "id": "kelas8-b01-b-hard-bt01-029",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "9cc018cb664fc20c77ee1cea",
+      "teks": "Hasil kali $(3\\sqrt{2}+\\sqrt{5})(3\\sqrt{2}-\\sqrt{5})$ adalah ....",
+      "jawaban": "$13$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√5, q=b√5. Maka a+b=9, ab=8. Akar memberi a=8, b=1 karena p>q. Hasil a-b=7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "7",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "14"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 9",
+          "a*b - 8"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "562fd8477a7a0cad55e31b93": {
+    "id": "kelas8-b01-b-hard-bt01-030",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "6bd11c4502317fcff32b4a2e",
+      "teks": "Di antara bentuk akar berikut, yang merupakan bilangan irasional adalah ....",
+      "jawaban": "$\\sqrt{20}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√3, q=b√3. Maka a+b=7, ab=10. Akar memberi a=5, b=2 karena p>q. Hasil a-b=3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "3",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 7",
+          "a*b - 10"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "748589c8c19cd52ba5495cc1": {
+    "id": "kelas8-b01-b-hard-bt01-031",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "da2736b553a880e93381df4c",
+      "teks": "Bentuk paling sederhana dari $\\frac{12\\sqrt{54}}{4\\sqrt{3}}$ adalah ....",
+      "jawaban": "$9\\sqrt{2}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√7, q=b√7. Maka a+b=3, ab=2. Akar memberi a=2, b=1 karena p>q. Hasil a-b=1.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "1",
+      "options": [
+        "1",
+        "0",
+        "2",
+        "3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 3",
+          "a*b - 2"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "aaf4be987363e0a391350f80": {
+    "id": "kelas8-b01-b-hard-bt01-032",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "660d8ff949fb76d5875fe719",
+      "teks": "Urutan bilangan $3\\sqrt{10}$, $5\\sqrt{3}$, $7\\sqrt{2}$, dan $4\\sqrt{6}$ dari yang terkecil ke terbesar adalah ....",
+      "jawaban": "$5\\sqrt{3},\\ 3\\sqrt{10},\\ 4\\sqrt{6},\\ 7\\sqrt{2}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√7, q=b√7. Maka a+b=13, ab=40. Akar memberi a=8, b=5 karena p>q. Hasil a-b=3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "3",
+      "options": [
+        "3",
+        "2",
+        "4",
+        "6"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 13",
+          "a*b - 40"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "2c1a8ff11d3bc1456f45a367": {
+    "id": "kelas8-b01-b-hard-bt01-033",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "613f099d45012af2d9c3359c",
+      "teks": "Sita menyatakan bahwa hasil kali dua bilangan irasional selalu irasional. Pasangan berikut yang menunjukkan bahwa pernyataan Sita salah adalah ....",
+      "jawaban": "$\\sqrt{2}\\times\\sqrt{8}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_akar_rekonstruksi_panjang",
+    "pembahasan": "Misalkan p=a√3, q=b√3. Maka a+b=10, ab=24. Akar memberi a=6, b=4 karena p>q. Hasil a-b=2.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2",
+      "options": [
+        "2",
+        "1",
+        "3",
+        "4"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a + b - 10",
+          "a*b - 24"
+        ],
+        "query": "a - b",
+        "positive": [
+          "a - b",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "9c6c8e95ca23b73ace0f297c": {
+    "id": "kelas8-b01-c-medium-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "417255586979129c1f27c6d7",
+      "teks": "Bentuk baku dari $3,2 \\times 10^{-5} \\times 0,5^{3} \\times 10^{-2} \\times 100.000$ adalah ....",
+      "jawaban": "$4 \\times 10^{-3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (3/9)×10^(4-3)=10/3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "10/3",
+      "options": [
+        "10/3",
+        "5/3",
+        "20/3",
+        "-10/3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 10/3"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "29edb8cd4aec68869ffa9db9": {
+    "id": "kelas8-b01-c-medium-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "417255586979129c1f27c6d7",
+      "teks": "Bentuk baku dari $3,2 \\times 10^{-5} \\times 0,5^{3} \\times 10^{-2} \\times 100.000$ adalah ....",
+      "jawaban": "$4 \\times 10^{-3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (4/6)×10^(6-3)=2000/3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2000/3",
+      "options": [
+        "2000/3",
+        "1000/3",
+        "4000/3",
+        "-2000/3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 2000/3"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "74cc0841a6f584cb6a62229b": {
+    "id": "kelas8-b01-c-medium-bt01-028",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "c07804a1ee4e54532d797457",
+      "teks": "Berat operasi sebuah truk pengangkut batu bara adalah 2.450.000 kg. Berat tersebut dalam bentuk baku adalah ....",
+      "jawaban": "$2,45 \\times 10^{6}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (2/3)×10^(7-3)=20000/3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "20000/3",
+      "options": [
+        "20000/3",
+        "10000/3",
+        "40000/3",
+        "-20000/3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 20000/3"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "7e1a4a3ff139efff3f3d67ef": {
+    "id": "kelas8-b01-c-medium-bt01-029",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "4fd9653bed1c14d3f2b03b7a",
+      "teks": "Sebuah sinyal bergerak dengan kecepatan $2,5 \\times 10^{8}$ m/detik. Jarak yang ditempuh sinyal itu dalam waktu 12 menit, dinyatakan dalam km dengan bentuk baku, adalah ....",
+      "jawaban": "$1,8 \\times 10^{8}$ km",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (4/8)×10^(4-1)=500.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "500",
+      "options": [
+        "500",
+        "499",
+        "501",
+        "1000"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 500"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "5d6a9d0dddf4bc022a5b345d": {
+    "id": "kelas8-b01-c-medium-bt01-030",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "417255586979129c1f27c6d7",
+      "teks": "Bentuk baku dari $3,2 \\times 10^{-5} \\times 0,5^{3} \\times 10^{-2} \\times 100.000$ adalah ....",
+      "jawaban": "$4 \\times 10^{-3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (2/3)×10^(6-2)=20000/3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "20000/3",
+      "options": [
+        "20000/3",
+        "10000/3",
+        "40000/3",
+        "-20000/3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 20000/3"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "fb22980e0484c7d4e548ca19": {
+    "id": "kelas8-b01-c-medium-bt01-031",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "cb3c0ba0a30dc9d2eeca9636",
+      "teks": "Hasil dari $(7,2 \\times 10^{5}) + (6,8 \\times 10^{6})$ dalam bentuk baku adalah ....",
+      "jawaban": "$7,52 \\times 10^{6}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (5/5)×10^(4-2)=100.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "100",
+      "options": [
+        "100",
+        "99",
+        "101",
+        "200"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 100"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "b8fbf9c47ec791a9fd8a6807": {
+    "id": "kelas8-b01-c-medium-bt01-032",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "5cee991647d6b3de445d7043",
+      "teks": "Berat sebuah benda ditulis $5 \\times 10^{12}$ ton. Jika ditulis dalam bentuk biasa, banyak angka nol di belakang angka 5 adalah ....",
+      "jawaban": "12",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (6/3)×10^(5-2)=2000.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2000",
+      "options": [
+        "2000",
+        "1999",
+        "2001",
+        "4000"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 2000"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "e827caa1d0cde36592b42d20": {
+    "id": "kelas8-b01-c-medium-bt01-033",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "218e3c2ead219a0ca08a29d5",
+      "teks": "Diameter sebuah bakteri adalah $2,5 \\times 10^{-6}$ m. Jika bakteri-bakteri itu disusun berjajar tanpa celah dalam satu baris sepanjang 1 cm, banyak bakteri dalam bentuk baku adalah ....",
+      "jawaban": "$4 \\times 10^{3}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (7/6)×10^(3-1)=350/3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "350/3",
+      "options": [
+        "350/3",
+        "175/3",
+        "700/3",
+        "-350/3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 350/3"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "3c4f9286ba60e5199039f9fe": {
+    "id": "kelas8-b01-c-medium-bt01-034",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "d5f730f173d602e93fae9007",
+      "teks": "Ukuran sebuah virus adalah $1,5 \\times 10^{-7}$ m dan ukuran sebuah sel adalah $3 \\times 10^{-5}$ m. Ukuran sel adalah ... kali ukuran virus.",
+      "jawaban": "$2 \\times 10^{2}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (5/7)×10^(5-1)=50000/7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "50000/7",
+      "options": [
+        "50000/7",
+        "25000/7",
+        "100000/7",
+        "-50000/7"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 50000/7"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "17b1c247008a751c215e0fae": {
+    "id": "kelas8-b01-c-medium-bt01-035",
+    "batch": 1,
+    "bab_id": "SMP8-B1",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "ea88df01bcf8cccc9d4f3c94",
+      "teks": "Hasil dari $(7 \\times 10^{5}) \\times (9 \\times 10^{8})$ dalam bentuk baku adalah ....",
+      "jawaban": "$6,3 \\times 10^{14}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_bentuk_baku_pembagian",
+    "pembahasan": "Bagi koefisien dan kurangkan pangkat: (7/4)×10^(4-1)=1750.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "1750",
+      "options": [
+        "1750",
+        "1749",
+        "1751",
+        "3500"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 1750"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "62ec2b126229e52cb9a42d9f": {
+    "id": "kelas8-b02-a-hard-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "bbb651b360dfb6976c7ce633",
+      "teks": "Pada sebuah segitiga siku-siku, luas daerah persegi yang menempel pada sisi miringnya adalah $169\\text{ cm}^2$. Jika perbandingan panjang kedua sisi siku-sikunya adalah $5 : 12$, panjang sisi siku-siku yang terpendek adalah ....",
+      "jawaban": "$5\\text{ cm}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+7. Pythagoras x²+(x+7)²=1225 memberi akar positif x=21; kaki lain 28. Keliling 84. Tambahkan tiga tumpang tindih 6 cm: 102.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "102",
+      "options": [
+        "102",
+        "101",
+        "103",
+        "204"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 1225",
+          "-a + b - 7"
+        ],
+        "query": "a + b + 53",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "748b2f6981a5f49d0422088f": {
+    "id": "kelas8-b02-a-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "779d8d8354a8eb41789a4c29",
+      "teks": "Sebuah segitiga siku-siku memiliki luas daerah $84\\text{ cm}^2$ dan panjang sisi miring (hipotenusa) adalah $25\\text{ cm}$. Keliling segitiga siku-siku tersebut adalah ....",
+      "jawaban": "$56\\text{ cm}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 4 cm: 60.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "60",
+      "options": [
+        "60",
+        "59",
+        "61",
+        "120"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 400",
+          "-a + b - 4"
+        ],
+        "query": "a + b + 32",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "61f31243208881cbefad8225": {
+    "id": "kelas8-b02-a-hard-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "b4dd6e4990cff1718016da65",
+      "teks": "Sebuah segitiga siku-siku memiliki dua sisi yang saling tegak lurus dengan panjang 25 cm dan 60 cm. Berapa panjang sisi miringnya?",
+      "jawaban": "$65$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 3 cm: 81.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "81",
+      "options": [
+        "81",
+        "80",
+        "82",
+        "162"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 900",
+          "-a + b - 6"
+        ],
+        "query": "a + b + 39",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "72fdb4c390ad7d8d7c135c62": {
+    "id": "kelas8-b02-a-hard-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "5f74f1a7bcad58417a0dad68",
+      "teks": "Sebuah segitiga siku-siku memiliki panjang hipotenusa $15\\text{ cm}$ dan panjang salah satu sisi siku-sikunya $9\\text{ cm}$. Panjang sisi siku-siku yang lain adalah ....",
+      "jawaban": "$12\\text{ cm}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 2 cm: 42.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "42",
+      "options": [
+        "42",
+        "41",
+        "43",
+        "84"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 225",
+          "-a + b - 3"
+        ],
+        "query": "a + b + 21",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "53726019dbea6f4171197ba3": {
+    "id": "kelas8-b02-a-hard-bt01-028",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "3ae4f929c7cd7902796aaea7",
+      "teks": "Sebuah segitiga siku-siku memiliki dua sisi yang saling tegak lurus dengan panjang 16 cm dan 30 cm. Berapa panjang sisi miringnya?",
+      "jawaban": "$34$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+9. Pythagoras x²+(x+9)²=2025 memberi akar positif x=27; kaki lain 36. Keliling 108. Tambahkan tiga tumpang tindih 4 cm: 120.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "120",
+      "options": [
+        "120",
+        "119",
+        "121",
+        "240"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 2025",
+          "-a + b - 9"
+        ],
+        "query": "a + b + 57",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "3812be33c501f2f1d934784c": {
+    "id": "kelas8-b02-a-hard-bt01-029",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "e5f2d226ecff0a14e445d7d4",
+      "teks": "Sebuah tiang lampu sorot setinggi $24\\text{ meter}$ berdiri tegak di lapangan terbuka. Seorang teknisi membandingkan dua opsi pemasangan kawat penahan dari tanah ke tiang:\n- Opsi A: Kawat dikaitkan pada $\\frac{3}{4}$ dari tinggi tiang, dengan pangkal kawat di tanah berjarak $24\\text{ meter}$ dari kaki tiang.\n- Opsi B: Kawat dikaitkan pada $\\frac{2}{3}$ dari tinggi tiang, dengan pangkal kawat di tanah berjarak $12\\text{ meter}$ dari kaki tiang.\n\nBerdasarkan perhitungan Teorema Pythagoras, evaluasilah selisih panjang kawat yang dibutuhkan antara Opsi A dan Opsi B!",
+      "jawaban": "$10\\text{ meter}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 7 cm: 117.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "117",
+      "options": [
+        "117",
+        "116",
+        "118",
+        "234"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 1600",
+          "-a + b - 8"
+        ],
+        "query": "a + b + 61",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "03260bbf7fc4ae48b9d7024e": {
+    "id": "kelas8-b02-a-hard-bt01-030",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "1b204e46fd6ce3cb4cb0b5d2",
+      "teks": "Sebuah segitiga siku-siku memiliki dua sisi yang saling tegak lurus dengan panjang 28 cm dan 96 cm. Berapa panjang sisi miringnya?",
+      "jawaban": "$100$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+11. Pythagoras x²+(x+11)²=3025 memberi akar positif x=33; kaki lain 44. Keliling 132. Tambahkan tiga tumpang tindih 5 cm: 147.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "147",
+      "options": [
+        "147",
+        "146",
+        "148",
+        "294"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 3025",
+          "-a + b - 11"
+        ],
+        "query": "a + b + 70",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "44d155445d85497d985d3a21": {
+    "id": "kelas8-b02-a-hard-bt01-031",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "17aa13797ee9aa4a1c403fa2",
+      "teks": "Sebuah tangga darurat sepanjang $25\\text{ meter}$ disandarkan pada dinding tegak sebuah gedung sehingga jarak kaki tangga ke dinding adalah $7\\text{ meter}$. Jika kaki tangga tersebut kemudian digeser menjauhi dinding sejauh $8\\text{ meter}$, seberapa jauh ujung atas tangga bergeser turun menyusuri dinding gedung?",
+      "jawaban": "$4\\text{ meter}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+4. Pythagoras x²+(x+4)²=400 memberi akar positif x=12; kaki lain 16. Keliling 48. Tambahkan tiga tumpang tindih 2 cm: 54.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "54",
+      "options": [
+        "54",
+        "53",
+        "55",
+        "108"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 400",
+          "-a + b - 4"
+        ],
+        "query": "a + b + 26",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "c25d30142b12ba32f7140511": {
+    "id": "kelas8-b02-b-hard-bt01-022",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "09aef0125a22a3a74c505111",
+      "teks": "Sebuah tiang pemancar sinyal ditegakkan tegak lurus di atas permukaan tanah datar. Kawat pancang dipasang dari puncak tiang ke sebuah patok di tanah. Jika panjang kawat pancang adalah $15\\text{ meter}$ dan jarak patok ke pangkal tiang adalah $9\\text{ meter}$, berapakah tinggi tiang pemancar sinyal tersebut?",
+      "jawaban": "$12\\text{ meter}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+8. Pythagoras x²+(x+8)²=1600 memberi akar positif x=24; kaki lain 32. Keliling 96. Tambahkan tiga tumpang tindih 2 cm: 102.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "102",
+      "options": [
+        "102",
+        "101",
+        "103",
+        "204"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 1600",
+          "-a + b - 8"
+        ],
+        "query": "a + b + 46",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "3c464e36fc365a16dbd00058": {
+    "id": "kelas8-b02-b-hard-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "a55185dff2181b15b84b90da",
+      "teks": "Sebuah taman bermain berbentuk segitiga siku-siku memiliki keliling $84\\text{ meter}$. Diketahui panjang semua sisinya merupakan bilangan asli dan selisih antara panjang hipotenusa dengan sisi siku-siku terpanjangnya adalah $2\\text{ meter}$. Perhatikan pernyataan-pernyataan berikut:\n(1) Panjang hipotenusa taman bermain tersebut adalah $37\\text{ meter}$.\n(2) Panjang sisi siku-siku terpendek taman bermain tersebut adalah $14\\text{ meter}$.\n(3) Luas area taman bermain tersebut adalah $210\\text{ meter}^2$.\n(4) Selisih panjang antara kedua sisi siku-sikunya adalah $21\\text{ meter}$.\n\nPernyataan yang bernilai benar adalah ....",
+      "jawaban": "(1) dan (3)",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+7. Pythagoras x²+(x+7)²=1225 memberi akar positif x=21; kaki lain 28. Keliling 84. Tambahkan tiga tumpang tindih 4 cm: 96.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "96",
+      "options": [
+        "96",
+        "95",
+        "97",
+        "192"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 1225",
+          "-a + b - 7"
+        ],
+        "query": "a + b + 47",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "34d5b86896caec933d74c75b": {
+    "id": "kelas8-b02-b-hard-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "5c7cb16485478d0e0d709482",
+      "teks": "Diketahui rumus salah satu sisi tegak pembentuk tripel Pythagoras adalah $p^2 - q^2$. Jika dipilih nilai $p = 4$ dan $q = 1$, maka panjang sisi tegak tersebut adalah ....",
+      "jawaban": "$15$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+12. Pythagoras x²+(x+12)²=3600 memberi akar positif x=36; kaki lain 48. Keliling 144. Tambahkan tiga tumpang tindih 7 cm: 165.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "165",
+      "options": [
+        "165",
+        "164",
+        "166",
+        "330"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 3600",
+          "-a + b - 12"
+        ],
+        "query": "a + b + 81",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "dcde06ad9cb2bb10ae6c0a87": {
+    "id": "kelas8-b02-b-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "c53207c60df46d385efd1bbe",
+      "teks": "Rani ingin memastikan apakah sebidang tanah segitiga di halaman sekolahnya berbentuk segitiga siku-siku. Setelah diukur, panjang sisi-sisi tanah tersebut berturut-turut adalah $7\\text{ meter}$, $24\\text{ meter}$, dan $25\\text{ meter}$. Kesimpulan yang tepat mengenai bentuk tanah tersebut adalah ....",
+      "jawaban": "berbentuk segitiga siku-siku karena $25^2 = 7^2 + 24^2$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+6. Pythagoras x²+(x+6)²=900 memberi akar positif x=18; kaki lain 24. Keliling 72. Tambahkan tiga tumpang tindih 4 cm: 84.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "84",
+      "options": [
+        "84",
+        "83",
+        "85",
+        "168"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 900",
+          "-a + b - 6"
+        ],
+        "query": "a + b + 42",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "c7dd9eb19e48ffad70565edd": {
+    "id": "kelas8-b02-b-hard-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "c53207c60df46d385efd1bbe",
+      "teks": "Rani ingin memastikan apakah sebidang tanah segitiga di halaman sekolahnya berbentuk segitiga siku-siku. Setelah diukur, panjang sisi-sisi tanah tersebut berturut-turut adalah $7\\text{ meter}$, $24\\text{ meter}$, dan $25\\text{ meter}$. Kesimpulan yang tepat mengenai bentuk tanah tersebut adalah ....",
+      "jawaban": "berbentuk segitiga siku-siku karena $25^2 = 7^2 + 24^2$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+3. Pythagoras x²+(x+3)²=225 memberi akar positif x=9; kaki lain 12. Keliling 36. Tambahkan tiga tumpang tindih 5 cm: 51.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "51",
+      "options": [
+        "51",
+        "50",
+        "52",
+        "102"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 225",
+          "-a + b - 3"
+        ],
+        "query": "a + b + 30",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "3973269f1403f1d9dc42c9c0": {
+    "id": "kelas8-b02-b-hard-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "2288b12a987d433eb6d461c3",
+      "teks": "Pak Haris memiliki beberapa set bilah kayu untuk membuat rangka penopang segitiga siku-siku. Di antara kelompok panjang bilah kayu berikut, manakah yang dapat membentuk segitiga siku-siku (tripel Pythagoras)?",
+      "jawaban": "$9\\text{ cm}, 40\\text{ cm}, 41\\text{ cm}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pythagoras_dimensi_pita",
+    "pembahasan": "Kaki kecil x, besar x+10. Pythagoras x²+(x+10)²=2500 memberi akar positif x=30; kaki lain 40. Keliling 120. Tambahkan tiga tumpang tindih 7 cm: 141.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "141",
+      "options": [
+        "141",
+        "140",
+        "142",
+        "282"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "a**2 + b**2 - 2500",
+          "-a + b - 10"
+        ],
+        "query": "a + b + 71",
+        "positive": [
+          "a",
+          "b"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "3ef6af88a49d6905c9e6da61": {
+    "id": "kelas8-b02-c-medium-bt01-018",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "cf61c3f520231413147a58eb",
+      "teks": "Segitiga sama sisi $ABC$ memiliki panjang sisi $12\\text{ cm}$. Titik $D$ terletak pada perpanjangan ruas garis $BC$ melalui $C$ sedemikian sehingga terbentuk segitiga siku-siku $ABD$ dengan sudut siku-siku di $A$. Jarak terpendek dari titik $C$ ke ruas garis $AD$ adalah ....",
+      "jawaban": "$6\\text{ cm}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_segitiga_istimewa_luas",
+    "pembahasan": "Masing-masing kaki 4 cm; luas 1/2×4²=8.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "8",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "16"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 8"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "90f5d561ec89ab15549ed6fc": {
+    "id": "kelas8-b02-c-medium-bt01-019",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "C",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "2721c0056f8593cde5833bce",
+      "teks": "Pada segitiga siku-siku $ABC$ yang siku-siku di $B$, titik $D$ terletak pada sisi alas $AB$ sedemikian sehingga $\\angle BDC = 60^\\circ$ dan $\\angle A = 30^\\circ$. Jika jarak $AD = 12\\text{ cm}$, maka panjang sisi tegak $BC$ adalah ....",
+      "jawaban": "$6\\sqrt{3}\\text{ cm}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_segitiga_istimewa_luas",
+    "pembahasan": "Masing-masing kaki 8 cm; luas 1/2×8²=32.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "32",
+      "options": [
+        "32",
+        "31",
+        "33",
+        "64"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 32"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "efc38c0f70ad5045c563e74d": {
+    "id": "kelas8-b02-e-easy-bt01-022",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "E",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "3d6d21fe5c9e637d03e69804",
+      "teks": "Titik $A(-1, 2)$ dan $B(7, 2)$ merupakan ujung-ujung hipotenusa dari segitiga siku-siku sama kaki $ABC$. Jika titik $C(x, y)$ berada di atas garis $AB$ (ordinat $y > 2$), koordinat titik $C$ adalah ....",
+      "jawaban": "$(3, 6)$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_jarak_pythagoras",
+    "pembahasan": "Selisih koordinat 15,20; jarak √((15)²+(20)²)=25.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "25",
+      "options": [
+        "25",
+        "24",
+        "26",
+        "50"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 25"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a1fdbed6e25c65e5b57f4d24": {
+    "id": "kelas8-b02-e-easy-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "E",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "b8a082bee7296aaa3ca2bec7",
+      "teks": "Tentukan jarak antara titik $(5, -6)$ dan $(11, 2)$.",
+      "jawaban": "$10$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_jarak_pythagoras",
+    "pembahasan": "Selisih koordinat 30,40; jarak √((30)²+(40)²)=50.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "50",
+      "options": [
+        "50",
+        "49",
+        "51",
+        "100"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 50"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "88d3bf211ce68f8addb8aaae": {
+    "id": "kelas8-b02-e-easy-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "E",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "347fe88efb403e35168884c8",
+      "teks": "Sebuah stasiun pemancar $P$ dirancang agar terletak pada garis vertikal $x = 2$ sehingga koordinatnya berbentuk $(2, y)$. Stasiun tersebut harus dibangun sedemikian rupa sehingga jaraknya ke Pos Pemantau $A(-2, 1)$ sama dengan jaraknya ke Pos Pemantau $B(6, 5)$. Koordinat stasiun $P$ dan jarak langsung stasiun tersebut ke masing-masing pos pemantau adalah ....",
+      "jawaban": "$P(2, 3)$ dengan jarak $2\\sqrt{5}\\text{ satuan}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_jarak_pythagoras",
+    "pembahasan": "Selisih koordinat 24,32; jarak √((24)²+(32)²)=40.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "40",
+      "options": [
+        "40",
+        "39",
+        "41",
+        "80"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 40"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "4a4c72c72ddd9918b46f8f52": {
+    "id": "kelas8-b02-e-easy-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "E",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "48457ef671ff2f3dbb202a2b",
+      "teks": "Diberikan empat titik koordinat $P(-2, 1)$, $Q(2, 4)$, $R(-1, 8)$, dan $S(-5, 5)$ yang membentuk segi empat $PQRS$. Dua siswa memberikan pendapat mengenai bentuk bangun tersebut:\n- Siswa I: $PQRS$ adalah belah ketupat bukan persegi, karena keempat sisinya sama panjang tetapi diagonalnya tidak sama panjang.\n- Siswa II: $PQRS$ adalah persegi, karena keempat sisinya sama panjang ($5$ satuan) dan kedua diagonalnya sama panjang ($\\\\sqrt{50}$ satuan) sehingga sudut-sudutnya siku-siku.\n\nEvaluasi yang tepat mengenai pendapat kedua siswa tersebut adalah ....",
+      "jawaban": "Siswa II benar, karena keempat sisinya sama panjang dan kedua diagonalnya sama panjang sehingga memenuhi Teorema Pythagoras untuk membentuk sudut siku-siku.",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_jarak_pythagoras",
+    "pembahasan": "Selisih koordinat 21,28; jarak √((21)²+(28)²)=35.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "35",
+      "options": [
+        "35",
+        "34",
+        "36",
+        "70"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 35"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "62ba69e6cbc7eaa43420ef4c": {
+    "id": "kelas8-b02-e-easy-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "E",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "a8d41fa9c0a016c2432de22a",
+      "teks": "Seorang petugas pos pengawas memanggil seorang pendaki menggunakan pelantang suara dengan jarak jangkauan dengar maksimum $50\\text{ meter}$. Posisi petugas berada di menara pengawas pada ketinggian $45\\text{ meter}$, sedangkan pendaki berada di permukaan tanah pada jarak mendatar $28\\text{ meter}$ dari kaki menara. Dapatkah pendaki tersebut mendengar suara panggilan petugas pos pengawas?",
+      "jawaban": "Tidak dapat, karena jarak langsung antara petugas dan pendaki adalah $53\\text{ meter}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_jarak_pythagoras",
+    "pembahasan": "Selisih koordinat 36,48; jarak √((36)²+(48)²)=60.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "60",
+      "options": [
+        "60",
+        "59",
+        "61",
+        "120"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 60"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "1ea693faa686f5d0d5b20f64": {
+    "id": "kelas8-b02-e-easy-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B2",
+    "subbab_kode": "E",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "affdb36144872062508fc9fe",
+      "teks": "Dua regu penyelamat saling berkomunikasi menggunakan perangkat radio genggam yang memiliki jangkauan sinyal maksimum $25\\text{ meter}$. Jika Regu A berada pada koordinat $(3, 4)$ dan Regu B berada pada koordinat $(15, 20)$ dalam satuan meter, apakah kedua regu tersebut dapat saling berkomunikasi?",
+      "jawaban": "Dapat, karena jarak kedua regu adalah $20\\text{ meter}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_jarak_pythagoras",
+    "pembahasan": "Selisih koordinat 33,44; jarak √((33)²+(44)²)=55.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "55",
+      "options": [
+        "55",
+        "54",
+        "56",
+        "110"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 55"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "c767b1fb178c5a8f23abc709": {
+    "id": "kelas8-b03-a-hard-bt01-020",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "b67c0626cfb8b634f1ce995d",
+      "teks": "Tentukan nilai $x$ yang memenuhi $5 x + 14$ = 49.",
+      "jawaban": "$7$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤13 dan x>13. Kasus pertama: 63+4x=103, memberi x=10; terima hanya jika positif dan dalam interval. Kasus kedua: 63+4x=103+7(x-13), memberi x=17. Kandidat sah [10, 17]; jumlah 27.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "27",
+      "options": [
+        "27",
+        "26",
+        "28",
+        "54"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            22
+          ]
+        ],
+        "equations": [
+          "4*x - Piecewise((103, x <= 13), (7*x + 12, True)) + 63"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "3927a08e6844f93b3205c337": {
+    "id": "kelas8-b03-a-hard-bt01-021",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "5f01451b0c3cbaf1cce5f882",
+      "teks": "Pak Rudi membagikan 30 apel kepada beberapa anak. Tiap anak mendapat 4 apel dan tepat 3 apel tersisa. Jika banyak anak adalah $a$ dan $a$ harus bilangan asli, banyak anak yang memenuhi syarat tersebut adalah ....",
+      "jawaban": "tidak ada yang memenuhi",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤8 dan x>8. Kasus pertama: 88+4x=108, memberi x=5; terima hanya jika positif dan dalam interval. Kasus kedua: 88+4x=108+7(x-8), memberi x=12. Kandidat sah [5, 12]; jumlah 17.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "17",
+      "options": [
+        "17",
+        "16",
+        "18",
+        "34"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            17
+          ]
+        ],
+        "equations": [
+          "4*x - Piecewise((108, x <= 8), (7*x + 52, True)) + 88"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "818eb87248c24719d18843ff": {
+    "id": "kelas8-b03-a-hard-bt01-022",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "a6ce740fb71f75dbfc08fc55",
+      "teks": "Bentuk berikut yang dapat disederhanakan menjadi persamaan linier satu variabel adalah ....",
+      "jawaban": "$3(p - 2) + p = 14$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤18 dan x>18. Kasus pertama: 97+6x=169, memberi x=12; terima hanya jika positif dan dalam interval. Kasus kedua: 97+6x=169+9(x-18), memberi x=30. Kandidat sah [12, 30]; jumlah 42.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "42",
+      "options": [
+        "42",
+        "41",
+        "43",
+        "84"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            35
+          ]
+        ],
+        "equations": [
+          "6*x - Piecewise((169, x <= 18), (9*x + 7, True)) + 97"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "ce7fde3d867cb7bf2fd1efe8": {
+    "id": "kelas8-b03-a-hard-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "cf11fd3ef4df7fa19dd3a5fb",
+      "teks": "Hasil kali $k$ dengan 8 sama dengan 72. Persamaan yang sesuai dengan kalimat tersebut adalah ....",
+      "jawaban": "$8k = 72$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤18 dan x>18. Kasus pertama: 91+4x=127, memberi x=9; terima hanya jika positif dan dalam interval. Kasus kedua: 91+4x=127+7(x-18), memberi x=30. Kandidat sah [9, 30]; jumlah 39.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "39",
+      "options": [
+        "39",
+        "38",
+        "40",
+        "78"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            35
+          ]
+        ],
+        "equations": [
+          "4*x - Piecewise((127, x <= 18), (7*x + 1, True)) + 91"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "ae74d2f80fd48871c64acf32": {
+    "id": "kelas8-b03-b-hard-bt01-022",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "2ce618df39dcd4ec35bbaf72",
+      "teks": "Tentukan nilai $x$ yang memenuhi $6 x + 13$ = 61.",
+      "jawaban": "$8$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤19 dan x>19. Kasus pertama: 78+3x=117, memberi x=13; terima hanya jika positif dan dalam interval. Kasus kedua: 78+3x=117+6(x-19), memberi x=25. Kandidat sah [13, 25]; jumlah 38.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "38",
+      "options": [
+        "38",
+        "37",
+        "39",
+        "76"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            30
+          ]
+        ],
+        "equations": [
+          "3*x - Piecewise((117, x <= 19), (6*x + 3, True)) + 78"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a92c81a7c64a615d59812076": {
+    "id": "kelas8-b03-b-hard-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "c488fde650fe1cb43c4869b5",
+      "teks": "Untuk menyelesaikan persamaan $5x - 3 = 22$, agar suku $-3$ hilang dari ruas kiri, kedua ruas harus ....",
+      "jawaban": "ditambah 3",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤13 dan x>13. Kasus pertama: 75+6x=141, memberi x=11; terima hanya jika positif dan dalam interval. Kasus kedua: 75+6x=141+8(x-13), memberi x=19. Kandidat sah [11, 19]; jumlah 30.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "30",
+      "options": [
+        "30",
+        "29",
+        "31",
+        "60"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            24
+          ]
+        ],
+        "equations": [
+          "6*x - Piecewise((141, x <= 13), (8*x + 37, True)) + 75"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "e6af4f3ec3cf4a2f6551fd01": {
+    "id": "kelas8-b03-b-hard-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "50c260eea6dac7a810915786",
+      "teks": "Tentukan nilai $x$ yang memenuhi $4 x + 9$ = 17.",
+      "jawaban": "$2$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤12 dan x>12. Kasus pertama: 85+3x=115, memberi x=10; terima hanya jika positif dan dalam interval. Kasus kedua: 85+3x=115+5(x-12), memberi x=15. Kandidat sah [10, 15]; jumlah 25.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "25",
+      "options": [
+        "25",
+        "24",
+        "26",
+        "50"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            20
+          ]
+        ],
+        "equations": [
+          "3*x - Piecewise((115, x <= 12), (5*x + 55, True)) + 85"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "7d80c27a9ee9bb8357c6e759": {
+    "id": "kelas8-b03-b-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "e0315771cd1ed97f2d84802b",
+      "teks": "Suhu di dalam sebuah ruang pendingin dinaikkan $8^\\circ$C sehingga menjadi $3^\\circ$C. Jika suhu semula adalah $t^\\circ$C, maka $t + 8 = 3$. Suhu semula ruang pendingin tersebut adalah ....",
+      "jawaban": "$-5^\\circ$C",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤12 dan x>12. Kasus pertama: 85+6x=121, memberi x=6; terima hanya jika positif dan dalam interval. Kasus kedua: 85+6x=121+8(x-12), memberi x=30. Kandidat sah [6, 30]; jumlah 36.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "36",
+      "options": [
+        "36",
+        "35",
+        "37",
+        "72"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            35
+          ]
+        ],
+        "equations": [
+          "6*x - Piecewise((121, x <= 12), (8*x + 25, True)) + 85"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a8c6e3f3a2b8b4100da549af": {
+    "id": "kelas8-b03-b-hard-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "4c2eb96d6ad5e1441aa48ae1",
+      "teks": "Umur Ayah sekarang 4 kali umur Dika. Lima tahun lagi, umur Ayah sama dengan 3 kali umur Dika pada saat itu ditambah 2 tahun. Umur Ayah sekarang adalah ....",
+      "jawaban": "48 tahun",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤8 dan x>8. Kasus pertama: 59+5x=69, memberi x=2; terima hanya jika positif dan dalam interval. Kasus kedua: 59+5x=69+8(x-8), memberi x=18. Kandidat sah [2, 18]; jumlah 20.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "20",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "40"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            23
+          ]
+        ],
+        "equations": [
+          "5*x - Piecewise((69, x <= 8), (8*x + 5, True)) + 59"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "85f6325e36315e84d23365db": {
+    "id": "kelas8-b03-b-hard-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "B",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "c3ebdd8dd2b68c77067ba977",
+      "teks": "Seorang siswa memperoleh $x=13$ dari persamaan $2 x + 13$ = $x + 25$. Nilai $x$ yang sebenarnya adalah ....",
+      "jawaban": "$12$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_plsv_dua_regim_biaya",
+    "pembahasan": "Pisahkan kasus x≤11 dan x>11. Kasus pertama: 91+6x=139, memberi x=8; terima hanya jika positif dan dalam interval. Kasus kedua: 91+6x=139+9(x-11), memberi x=17. Kandidat sah [8, 17]; jumlah 25.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "25",
+      "options": [
+        "25",
+        "24",
+        "26",
+        "50"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            22
+          ]
+        ],
+        "equations": [
+          "6*x - Piecewise((139, x <= 11), (9*x + 40, True)) + 91"
+        ],
+        "query": "x",
+        "aggregate": "sum"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "99379895db1c76b150b4b574": {
+    "id": "kelas8-b03-c-hard-bt01-017",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "C",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "1b59b0b64a0f164471c22e8b",
+      "teks": "Pertidaksamaan yang himpunan penyelesaiannya tepat $\\{0, 1, 2, 3, 4, 5, 6\\}$ jika $x$ anggota bilangan cacah adalah ....",
+      "jawaban": "$x + 2 \\lt 9$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_ptlsv_model_perbandingan",
+    "pembahasan": "Bandingkan (10)x+26-48<7x+2, jadi 3x<24, x<8. Batas bulat positif 7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "7",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "14"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "x"
+        ],
+        "ranges": [
+          [
+            1,
+            16
+          ]
+        ],
+        "equations": [
+          "Piecewise((0, x < 8), (1, True))"
+        ],
+        "query": "x",
+        "aggregate": "max"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "4356389571dfc092f8c483a0": {
+    "id": "kelas8-b03-d-medium-bt01-017",
+    "batch": 1,
+    "bab_id": "SMP8-B3",
+    "subbab_kode": "D",
+    "level_target": "medium",
+    "cognitive_score_target": 1000,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "a218aad99e42abae5c7a514d",
+      "teks": "Diketahui $6 x + 12$ < 60 dengan $x$ bilangan cacah. Berapakah nilai $x$ terbesar yang memenuhi?",
+      "jawaban": "$7$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C3",
+    "jumlah_langkah": 3,
+    "jenis_soal": "v2_ptlsv_anggaran",
+    "pembahasan": "Pertidaksamaan 8000+8000t≤72000; maka t≤8.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "8",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "16"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 8"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "medium",
+      "dependent_steps": 3,
+      "assessment_rationale": "Menghubungkan dua sampai tiga langkah rutin yang saling bergantung."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "f1c2edbedb25ee444b826b03": {
+    "id": "kelas8-b04-a-hard-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "6ca04fb8874d605ae379fdbe",
+      "teks": "Apabila diketahui himpunan $D = \\{\\text{suatu bilangan kurang dari } 45 \\text{ dan merupakan bilangan genap yang habis dibagi enam}\\}$ dan himpunan $F = \\{4, 5, 9\\}$, maka daerah hasil (range) relasi \"faktor dari\" dari himpunan $F$ ke himpunan $D$ adalah ....",
+      "jawaban": "$\\{12, 18, 24, 30, 36\\}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 4. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 9.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "9",
+      "options": [
+        "9",
+        "8",
+        "10",
+        "18"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            3,
+            11
+          ],
+          [
+            7,
+            15
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -4), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "862f17792c1a6c3bcb272f0a": {
+    "id": "kelas8-b04-a-hard-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "828a04e76bb2b1e3bd584f74",
+      "teks": "Diketahui himpunan $P = \\{20, 24, 33, 40, 44, 48, 55\\}$ dan $Q = \\{4, 5, 8, 11, 12\\}$. Relasi dari himpunan $P$ ke himpunan $Q$ adalah \"kelipatan dari\". Anggota himpunan $Q$ yang berpasangan dengan paling banyak anggota $P$, beserta banyak pasangannya, adalah ....",
+      "jawaban": "$4$ dengan $5$ pasangan",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 4. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 10.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "10",
+      "options": [
+        "10",
+        "9",
+        "11",
+        "20"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            2,
+            8
+          ],
+          [
+            6,
+            12
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -4), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a725feb5b8ceece918af0225": {
+    "id": "kelas8-b04-a-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "7ba0eda676f3a5bff99fa9cd",
+      "teks": "Diketahui $A = \\{1, 2, 3, 4\\}$ dan $B = \\{a, b, c\\}$. Sebuah diagram panah dari $A$ ke $B$ digambar dengan pasangan berurutan $\\{(1, a), (2, b), (3, c), (4, d)\\}$, dengan $d$ bukan anggota $B$. Relasi dari $A$ ke $B$ adalah himpunan bagian dari $A \\times B$. Pernyataan yang benar adalah ....",
+      "jawaban": "Himpunan pasangan itu bukan relasi dari $A$ ke $B$ karena $(4, d)$ bukan anggota $A \\times B$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 1. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 8.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "8",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "16"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            2,
+            10
+          ],
+          [
+            3,
+            11
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -1), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a9e80b6df547f93a69795297": {
+    "id": "kelas8-b04-a-hard-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "a73fd7422cf58272de30b527",
+      "teks": "Himpunan berikut yang merupakan himpunan tak berhingga adalah ....",
+      "jawaban": "$\\{x \\mid x > 10,\\ x \\text{ bilangan asli}\\}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 1. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 7.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "7",
+      "options": [
+        "7",
+        "6",
+        "8",
+        "14"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            3,
+            11
+          ],
+          [
+            4,
+            12
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -1), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a4279acc104364bf741e1469": {
+    "id": "kelas8-b04-a-hard-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "916c99c9a519e989b02790b3",
+      "teks": "Diketahui $R = \\{16, 18, 21, 25\\}$ dan $S = \\{15, 17, 20, 23\\}$. Relasi dari himpunan $R$ ke himpunan $S$ adalah \"satu lebihnya dari\". Pasangan berurutan berikut yang merupakan anggota relasi tersebut adalah ....",
+      "jawaban": "$(18, 17)$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 1. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 12.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "12",
+      "options": [
+        "12",
+        "11",
+        "13",
+        "24"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            8
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -1), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "78253e27ef7a528696ca9cf8": {
+    "id": "kelas8-b04-a-hard-bt01-028",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "0d7ec17b14805c88deede4c1",
+      "teks": "Diketahui himpunan $A = \\{x \\mid 2 < x < 8,\\ x \\text{ bilangan asli}\\}$ dan himpunan $B = \\{y \\mid 10 < y < 25,\\ y \\text{ bilangan genap}\\}$. Pada relasi \"faktor dari\" dari himpunan $A$ ke himpunan $B$, anggota $B$ yang tidak mendapat pasangan adalah ....",
+      "jawaban": "22",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 3. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 8.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "8",
+      "options": [
+        "8",
+        "7",
+        "9",
+        "16"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            3,
+            11
+          ],
+          [
+            6,
+            14
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -3), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "1e87a9b6e8c3dff65215ca28": {
+    "id": "kelas8-b04-a-hard-bt01-029",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "cb9d218c3a238080f911e3cd",
+      "teks": "Diketahui $K = \\{1, 2, 3, 4\\}$ dan $L = \\{2, 4, 6, 8, 10\\}$. Relasi dari himpunan $K$ ke himpunan $L$ yang menghasilkan pasangan berurutan paling banyak di antara pilihan berikut adalah ....",
+      "jawaban": "\"kurang dari\"",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_relasi_tiga_kendala",
+    "pembahasan": "Untuk tiap anggota A, periksa kelipatan pada B, syarat b>a, dan selisih minimal 3. Hitung tiap pasangan sekali. Pemeriksaan seluruh pasangan memberi 4.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "4",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "8"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "finite_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "ranges": [
+          [
+            4,
+            9
+          ],
+          [
+            7,
+            12
+          ]
+        ],
+        "equations": [
+          "Mod(b, a)",
+          "Piecewise((0, a < b), (1, True))",
+          "Piecewise((0, a - b <= -3), (1, True))"
+        ],
+        "query": "1",
+        "aggregate": "count"
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "83b04d9ab6ea6bf0bffda856": {
+    "id": "kelas8-b04-c-easy-bt01-017",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "C",
+    "level_target": "easy",
+    "cognitive_score_target": 600,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "e18103fd1341585dfcebbb79",
+      "teks": "Diketahui $A = \\{1, 2, 3\\}$ dan $B = \\{a, b, c, d\\}$. Pernyataan yang benar tentang hubungan dari $A$ ke $B$ adalah ....",
+      "jawaban": "Ada fungsi dari $A$ ke $B$ yang memasangkan ketiga anggota $A$ dengan anggota $B$ yang berbeda-beda, tetapi tidak ada korespondensi satu-satu dari $A$ ke $B$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C2",
+    "jumlah_langkah": 1,
+    "jenis_soal": "v2_bijeksi_kardinal",
+    "pembahasan": "Korespondensi satu-satu memasangkan setiap anggota tepat satu kali, sehingga banyak anggota sama.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "6",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "12"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "z"
+        ],
+        "equations": [
+          "z - 6"
+        ],
+        "query": "z",
+        "positive": []
+      },
+      "assessed_level": "easy",
+      "dependent_steps": 1,
+      "assessment_rationale": "Satu konsep dan satu prosedur langsung dengan data lengkap."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "79a14569e762d43368350402": {
+    "id": "kelas8-b04-c-hard-bt01-017",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "C",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "959f509a1c65c66690596a18",
+      "teks": "Dini, Eka, dan Fani masing-masing akan menerima tepat satu dari tiga buku yang berbeda, dan setiap buku diterima tepat satu orang. Banyaknya cara pemasangan anak dengan buku sebagai korespondensi satu-satu adalah ....",
+      "jawaban": "$3! = 6$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_bijeksi_larangan_beririsan",
+    "pembahasan": "Inklusi-eksklusi: n!−3(n−1)!+3(n−2)!−(n−3)!. Untuk n=4, hasil 11; siswa lain tidak memiliki larangan.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "11",
+      "options": [
+        "11",
+        "10",
+        "12",
+        "22"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "restricted_bijection",
+        "size": 4,
+        "forbidden": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "48c6954e42ef66ee75bc90d4": {
+    "id": "kelas8-b04-c-hard-bt01-018",
+    "batch": 1,
+    "bab_id": "SMP8-B4",
+    "subbab_kode": "C",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "7c17c1e7940abe8a79dcec4c",
+      "teks": "Lima siswa mengambil nomor undian dari himpunan $\\{1, 2, 3, 4, 5\\}$. Hasil pengambilan:\n\n| Siswa | Nomor undian |\n|---|---|\n| Ani | 3 |\n| Budi | 1 |\n| Cici | 5 |\n| Dedi | 3 |\n| Eka | 4 |\n\nPernyataan yang benar tentang relasi \"nomor undian\" dari himpunan siswa ke himpunan nomor adalah ....",
+      "jawaban": "fungsi tetapi bukan korespondensi satu-satu, karena nomor 3 dipakai dua siswa dan nomor 2 tidak dipakai",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_bijeksi_larangan_beririsan",
+    "pembahasan": "Inklusi-eksklusi: n!−3(n−1)!+3(n−2)!−(n−3)!. Untuk n=4, hasil 11; siswa lain tidak memiliki larangan.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "11",
+      "options": [
+        "11",
+        "10",
+        "12",
+        "22"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "restricted_bijection",
+        "size": 4,
+        "forbidden": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "cc4b45b683d15e065718ce98": {
+    "id": "kelas8-b05-a-hard-bt01-021",
+    "batch": 1,
+    "bab_id": "SMP8-B5",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "b56197eefeda183dec543b58",
+      "teks": "| $x$ | $a$ | $6$ |\n|---|---|---|\n| $y$ | $-3$ | $b$ |\n\nTabel di atas memuat pasangan titik koordinat $(x, y)$ yang memenuhi persamaan garis lurus $3x - 2y = 12$. Berdasarkan data tersebut, nilai dari $2a + b$ adalah ....",
+      "jawaban": "$7$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+    "pembahasan": "Gradien (77-49)/(18-11)=4. Substitusi P memberi intersep 5. Perpotongan memenuhi 4x+(5)=7, jadi x=1/2.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "1/2",
+      "options": [
+        "1/2",
+        "1/4",
+        "3/2",
+        "-1/2"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "11*a + b - 49",
+          "18*a + b - 77"
+        ],
+        "query": "(7 - b)/a",
+        "positive": []
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "bbfc13dd32d528dc61ac34aa": {
+    "id": "kelas8-b05-a-hard-bt01-022",
+    "batch": 1,
+    "bab_id": "SMP8-B5",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "889199cfde356898b9e03249",
+      "teks": "Titik potong grafik persamaan garis $y = -\\frac{1}{4}x - 2$ terhadap sumbu-$x$ adalah ....",
+      "jawaban": "$(-8, 0)$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+    "pembahasan": "Gradien (115-73)/(18-11)=6. Substitusi P memberi intersep 7. Perpotongan memenuhi 6x+(7)=7, jadi x=0.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "0",
+      "options": [
+        "0",
+        "-1",
+        "1",
+        "2"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "11*a + b - 73",
+          "18*a + b - 115"
+        ],
+        "query": "(7 - b)/a",
+        "positive": []
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "55f5dbf23991e8b2a5b0a281": {
+    "id": "kelas8-b05-a-hard-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B5",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "7d461c2f0219eabf05c7e549",
+      "teks": "Sebuah garis lurus $k$ melalui titik potong antara garis $g_1: 2x - y = 4$ dan garis $g_2: x + y = 5$. Selain itu, garis $k$ juga memotong sumbu-$x$ di titik yang sama dengan titik potong garis $g_3: 3x - 4y = 27$ terhadap sumbu-$x$. Jika garis $k$ dinyatakan dalam bentuk umum $y = mx + c$, maka nilai dari $3(m + c)$ adalah ....",
+      "jawaban": "$8$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+    "pembahasan": "Gradien (17-5)/(11-5)=2. Substitusi P memberi intersep -5. Perpotongan memenuhi 2x+(-5)=3, jadi x=4.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "4",
+      "options": [
+        "4",
+        "3",
+        "5",
+        "8"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "5*a + b - 5",
+          "11*a + b - 17"
+        ],
+        "query": "(3 - b)/a",
+        "positive": []
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "ba65ddfc549b722a2dd76225": {
+    "id": "kelas8-b05-a-hard-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B5",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "a55e259d6d923cf24ed18176",
+      "teks": "Dua garis sejajar memiliki persamaan $g_1: y = 3x + 12$ dan $g_2: y = 3x - 8$. Sebuah garis ketiga $g_3: y = -x + 4$ memotong garis $g_1$ di titik $A$ dan memotong garis $g_2$ di titik $B$. Jika titik $M(x_M, y_M)$ merupakan titik tengah dari segmen garis $AB$, maka nilai dari $2x_M + 4y_M$ adalah ....",
+      "jawaban": "$15$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+    "pembahasan": "Gradien (34-22)/(10-6)=3. Substitusi P memberi intersep 4. Perpotongan memenuhi 3x+(4)=6, jadi x=2/3.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "2/3",
+      "options": [
+        "2/3",
+        "1/3",
+        "4/9",
+        "5/3"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "6*a + b - 22",
+          "10*a + b - 34"
+        ],
+        "query": "(6 - b)/a",
+        "positive": []
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "1953f617d28cea3df22c0a5c": {
+    "id": "kelas8-b05-a-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B5",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "beb5b2f45fb2067a11b2cdc9",
+      "teks": "Tarif sewa sebuah mobil operasional ($T$) dalam ribuan rupiah ditentukan berdasarkan jarak tempuh ($s$) dalam kilometer melalui persamaan garis lurus $T = 8s + 50$. Jika seorang penyewa harus membayar biaya sewa sebesar $\\text{Rp}290.000,00$, berapakah jarak yang telah ditempuh mobil tersebut?",
+      "jawaban": "$30\\text{ km}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_garis_rekonstruksi_perpotongan",
+    "pembahasan": "Gradien (36-18)/(6-3)=6. Substitusi P memberi intersep 0. Perpotongan memenuhi 6x+(0)=7, jadi x=7/6.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "7/6",
+      "options": [
+        "7/6",
+        "7/12",
+        "7/3",
+        "-7/6"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a",
+          "b"
+        ],
+        "equations": [
+          "3*a + b - 18",
+          "6*a + b - 36"
+        ],
+        "query": "(7 - b)/a",
+        "positive": []
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "645d9753c609eccb8ee756e9": {
+    "id": "kelas8-b06-a-hard-bt01-023",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "ef4490360846d6757bd6f732",
+      "teks": "Bu Sari mempunyai dua anak yang berumur 9 tahun dan 15 tahun. Rata-rata umur kedua anak Bu Sari adalah ....",
+      "jawaban": "12 tahun",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 11 sama dengan n×1, jadi n=11. Jumlah semula 495; setelah penghapusan jumlah 432, banyak 10. Rata-rata 216/5.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "216/5",
+      "options": [
+        "216/5",
+        "108/5",
+        "432/5",
+        "-216/5"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "a - 11"
+        ],
+        "query": "(45*a - 63)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "a5f03aa4fa887e1ec7725002": {
+    "id": "kelas8-b06-a-hard-bt01-024",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "8ad912ab8ce8dca8c341096f",
+      "teks": "Sembilan karyawan sebuah toko memiliki gaji per bulan. Empat orang bergaji Rp3.200.000,00, empat orang bergaji Rp2.600.000,00, dan satu orang lagi belum diketahui gajinya. Jika rata-rata gaji 9 karyawan tersebut adalah Rp3.000.000,00, gaji karyawan yang belum diketahui adalah ....",
+      "jawaban": "Rp3.800.000,00",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 38 sama dengan n×2, jadi n=19. Jumlah semula 874; setelah penghapusan jumlah 847, banyak 18. Rata-rata 847/18.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "847/18",
+      "options": [
+        "847/18",
+        "847/36",
+        "847/9",
+        "-847/18"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "2*a - 38"
+        ],
+        "query": "(46*a - 27)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "87bf69bdea6ef03c60f80086": {
+    "id": "kelas8-b06-a-hard-bt01-025",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "e82656fbc5bf6fdc60b3a759",
+      "teks": "Lima nilai adalah 33, 27, 27, 39, 21. Satu nilai baru ditambahkan sehingga rata-rata enam nilai menjadi $\\frac{162}{5}$. Berapakah nilai yang ditambahkan?",
+      "jawaban": "$\\frac{237}{5}$",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 24 sama dengan n×2, jadi n=12. Jumlah semula 504; setelah penghapusan jumlah 454, banyak 11. Rata-rata 454/11.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "454/11",
+      "options": [
+        "454/11",
+        "227/11",
+        "908/11",
+        "-454/11"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "2*a - 24"
+        ],
+        "query": "(42*a - 50)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "15736810c5a29c7a744e7478": {
+    "id": "kelas8-b06-a-hard-bt01-026",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "31f47f70a988f52eb7611a83",
+      "teks": "Tinggi delapan tanaman (dalam cm) adalah 2,5; 4,1; 3,8; 6,2; 4,1; 5,3; 3,6; dan 4,4. Rata-rata tinggi tanaman tersebut adalah ... cm.",
+      "jawaban": "4,25",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 32 sama dengan n×2, jadi n=16. Jumlah semula 912; setelah penghapusan jumlah 877, banyak 15. Rata-rata 877/15.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "877/15",
+      "options": [
+        "877/15",
+        "877/30",
+        "1754/15",
+        "-877/15"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "2*a - 32"
+        ],
+        "query": "(57*a - 35)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "9173fdb6e88634b8d7821c4f": {
+    "id": "kelas8-b06-a-hard-bt01-027",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "281335ccd6e69b3822079035",
+      "teks": "Rata-rata nilai ulangan 7 siswa adalah 72. Setelah nilai Rani dimasukkan, rata-rata nilai 8 siswa menjadi 74. Nilai ulangan Rani adalah ....",
+      "jawaban": "88",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 42 sama dengan n×2, jadi n=21. Jumlah semula 1575; setelah penghapusan jumlah 1528, banyak 20. Rata-rata 382/5.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "382/5",
+      "options": [
+        "382/5",
+        "191/5",
+        "764/5",
+        "-382/5"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "2*a - 42"
+        ],
+        "query": "(75*a - 47)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "dd9593b344fc6aa9f10056ec": {
+    "id": "kelas8-b06-a-hard-bt01-028",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "8b30f04625328cd6c0f714c0",
+      "teks": "|Nilai|Frekuensi kelas X|Frekuensi kelas Y|\n|---|---|---|\n|55|2|1|\n|65|5|3|\n|75|8|5|\n|85|3|8|\n|95|2|3|\n\nTabel di atas menunjukkan nilai tes kelas X dan kelas Y, masing-masing 20 siswa. Ayu mengatakan bahwa median kelas Y sama dengan median kelas X. Pernyataan yang tepat adalah ....",
+      "jawaban": "Salah; median kelas X 75 dan kelas Y 85",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 54 sama dengan n×3, jadi n=18. Jumlah semula 1206; setelah penghapusan jumlah 1143, banyak 17. Rata-rata 1143/17.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "1143/17",
+      "options": [
+        "1143/17",
+        "1143/34",
+        "2286/17",
+        "-1143/17"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "3*a - 54"
+        ],
+        "query": "(67*a - 63)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
+  },
+  "dfb632b54d782e562e267ded": {
+    "id": "kelas8-b06-a-hard-bt01-029",
+    "batch": 1,
+    "bab_id": "SMP8-B6",
+    "subbab_kode": "A",
+    "level_target": "hard",
+    "cognitive_score_target": 1400,
+    "tipe_generate": "variasi",
+    "variasi_cara": "konteks",
+    "acuan": {
+      "sumber": "exercise_validated",
+      "id": "1ed778671c303867ae580acb",
+      "teks": "Nilai empat ulangan Dani adalah 72, 80, 68, dan 76. Nilai minimal ulangan kelima agar rata-rata kelima ulangan paling sedikit 76 adalah ....",
+      "jawaban": "84",
+      "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas8.json",
+      "source_sha256": "43c49c726c35756e3b092611f47eabe9a912d921bef72833c9eee4e94b07e9e5"
+    },
+    "cognitive_c": "C4",
+    "jumlah_langkah": 5,
+    "jenis_soal": "v2_pemusatan_koreksi_inverse",
+    "pembahasan": "Perubahan jumlah 34 sama dengan n×2, jadi n=17. Jumlah semula 986; setelah penghapusan jumlah 954, banyak 16. Rata-rata 477/8.",
+    "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+    "dipaksa_kuota": false,
+    "skill_versi": "v1",
+    "generator": "codex:targeted-replenishment-v2",
+    "bergambar": false,
+    "gambar": [],
+    "local_math_check": {
+      "check": "exact_value_and_four_distinct_options",
+      "value": "477/8",
+      "options": [
+        "477/8",
+        "477/16",
+        "477/4",
+        "-477/8"
+      ],
+      "independent_ai_validation": "not_requested_local_review",
+      "local_certificate": {
+        "type": "symbolic_constraints",
+        "variables": [
+          "a"
+        ],
+        "equations": [
+          "2*a - 34"
+        ],
+        "query": "(58*a - 32)/(a - 1)",
+        "positive": [
+          "a - 1"
+        ]
+      },
+      "assessed_level": "hard",
+      "dependent_steps": 5,
+      "assessment_rationale": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."
+    },
+    "validation_status": "codex_local_review_pass"
   }
 }

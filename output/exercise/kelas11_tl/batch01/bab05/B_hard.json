@@ -913,6 +913,450 @@
       "pembahasan": "Terapkan transformasi sesuai urutannya pada (1,8); hasil akhirnya (-8,1).",
       "catatan": "codex-replenishment:kelas11_tl-b05-B-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas11_tl-b05-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d324cb8f9207db38ba9ead3c",
+        "teks": "Dilatasi memetakan titik $A(3, 5)$ ke $A'(-3, -4)$ dan titik $B(0, 1)$ ke $B'(3, 4)$. Titik pusat dan faktor skala dilatasi tersebut berturut-turut adalah ....",
+        "jawaban": "pusat $(1, 2)$ dan faktor skala $-2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(7, 6)$ ke $(-35, 35)$. Jika komposisi tersebut memetakan P ke $(6, 4)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{2}{35}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=7, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 2/35.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{33}{35}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{1225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{35}$."
+        },
+        {
+          "teks": "$\\frac{1}{35}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=7, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 2/35.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7df7dde872535b0778b93ba1",
+        "teks": "Matriks yang berkaitan dengan rotasi terhadap titik pusat $O$ sebesar $\\pi$ (ekuivalen dengan $180^\\circ$) adalah ....",
+        "jawaban": "$\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(3, 6)$ ke $(-9, 6)$. Jika komposisi tersebut memetakan P ke $(-7, -4)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=2, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=2, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8226c07064ac6df292858bd",
+        "teks": "Sebuah drone terbang pada posisi $(-9, 14)$ di bidang Kartesius. Dengan perkalian matriks, posisi bayangan drone tersebut jika dicerminkan terhadap sumbu-$x$ adalah ....",
+        "jawaban": "$(-9, -14)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(4, 8)$ ke $(-28, 16)$. Jika komposisi tersebut memetakan P ke $(8, -8)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$- \\frac{9}{2}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=4, b=4. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -9/2.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{9}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$-9$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{9}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=4, b=4. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -9/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "75c11d1491732dbd8183e9c5",
+        "teks": "Tentukan peta dari titik $(10, -7)$ yang ditransformasikan oleh dilatasi dengan titik pusat $(-2, 5)$ dan faktor skala $\\frac{1}{3}$.",
+        "jawaban": "$(2, 1)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(6, 6)$ ke $(-12, 12)$. Jika komposisi tersebut memetakan P ke $(2, 5)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{8}{3}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=3, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 8/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{16}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{8}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=3, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 8/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8226c07064ac6df292858bd",
+        "teks": "Sebuah drone terbang pada posisi $(-9, 14)$ di bidang Kartesius. Dengan perkalian matriks, posisi bayangan drone tersebut jika dicerminkan terhadap sumbu-$x$ adalah ....",
+        "jawaban": "$(-9, -14)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(3, 5)$ ke $(-22, 15)$. Jika komposisi tersebut memetakan P ke $(0, -2)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$- \\frac{12}{25}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=5, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -12/25.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{6}{25}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{24}{25}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{12}{25}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=5, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -12/25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ab4990c46ca71ba7481144c9",
+        "teks": "Perhatikan matriks-matriks transformasi pada bidang Kartesius. Pernyataan yang benar tentang determinan matriks transformasi adalah ....",
+        "jawaban": "Determinan matriks pencerminan terhadap garis $y = x$ adalah $-1$, sedangkan determinan matriks rotasi sebesar $\\theta$ terhadap titik asal selalu $1$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(8, 2)$ ke $(2, 16)$. Jika komposisi tersebut memetakan P ke $(-5, 2)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=3, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=3, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1839fdfd9678551703989a97",
+        "teks": "Titik $(8, 9)$ ditransformasikan oleh matriks $\\begin{pmatrix} 7 & -2 \\\\ 5 & 6 \\end{pmatrix}$. Koordinat petanya adalah ....",
+        "jawaban": "$(38, 94)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(4, 2)$ ke $(-10, 8)$. Jika komposisi tersebut memetakan P ke $(-4, -6)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$- \\frac{20}{7}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=7, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -20/7.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{10}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{40}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{20}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=7, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -20/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "72fecaf377d6d00a5b34e31a",
+        "teks": "Peta dari titik $(8, -4)$ oleh dilatasi dengan titik pusat $(-3, 6)$ dan faktor skala $3$ adalah ....",
+        "jawaban": "$(30, -24)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(3, 3)$ ke $(-6, 12)$. Jika komposisi tersebut memetakan P ke $(-6, -4)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{2}{3}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=3, b=4. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 2/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{3}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{9}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        },
+        {
+          "teks": "$\\frac{5}{6}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{3}$."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=3, b=4. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 2/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c035095333699f0b54301d2",
+        "teks": "Matriks $\\begin{pmatrix} - \\frac{1}{2} & \\frac{\\sqrt{3}}{2} \\\\ - \\frac{\\sqrt{3}}{2} & - \\frac{1}{2} \\end{pmatrix}$ adalah matriks rotasi terhadap titik asal sebesar $\\theta$ radian dengan $0 < \\theta < 2\\pi$. Nilai $\\theta$ adalah ....",
+        "jawaban": "$\\frac{4\\pi}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(7, 5)$ ke $(-23, 35)$. Jika komposisi tersebut memetakan P ke $(-3, -6)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$- \\frac{9}{10}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=6, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -9/10.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{9}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{9}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{9}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=6, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya -9/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb0b40570c7f59943da790a0",
+        "teks": "Titik P$(11, -4)$ dikenai transformasi bermatriks $\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}$. Koordinat bayangannya adalah ....",
+        "jawaban": "$(4, 11)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(2, 7)$ ke $(-12, 4)$. Jika komposisi tersebut memetakan P ke $(-6, 2)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{9}{2}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=2, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 9/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$9$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{9}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=2, b=2. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 9/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3c6b88ec6cb294c7ef98cbfb",
+        "teks": "Titik-titik sudut sebuah segitiga adalah $P(4, -5)$, $Q(9, 2)$, dan $R(-7, 8)$. Segitiga itu dicerminkan terhadap garis $y = x$. Titik-titik peta segitiga tersebut adalah ....",
+        "jawaban": "$P'(-5, 4)$, $Q'(2, 9)$, $R'(8, -7)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(6, 5)$ ke $(-24, 36)$. Jika komposisi tersebut memetakan P ke $(-5, 2)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{11}{9}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=6, b=6. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 11/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{18}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{22}{9}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{11}{9}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=6, b=6. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 11/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a4a0ab96b2e6af7ae61a6471",
+        "teks": "Suatu transformasi memetakan setiap titik $(x, y)$ ke titik $(4x - 3y,\\ -x + 2y)$. Matriks yang berkaitan dengan transformasi tersebut adalah ....",
+        "jawaban": "$\\begin{pmatrix} 4 & -3 \\\\ -1 & 2 \\end{pmatrix}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11_tl.json",
+        "source_sha256": "8985fa54e8332d9cf0f4ebf0f39014b6a2997956a1592ca97fa84c2188521ac9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_matriks_transformasi_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Transformasi T bermatriks $\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ dengan a,b>0. R adalah rotasi 90° berlawanan arah jarum jam. Komposisi $T\\circ R$ memetakan titik $(7, 6)$ ke $(-29, 35)$. Jika komposisi tersebut memetakan P ke $(7, 7)$, tentukan jumlah koordinat P.",
+      "jawaban_benar": "$\\frac{7}{15}$",
+      "alasan_benar": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=6, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 7/15.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8}{15}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{49}{225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7}{15}$."
+        },
+        {
+          "teks": "$\\frac{7}{30}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Matriks komposisi adalah [[1,-a],[b,0]]. Titik yang diketahui menentukan a=6, b=5. Dari Y=bx dan X=x-ay diperoleh x=Y/b, y=(Y/b-X)/a. Jumlahnya 7/15.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11_tl-b05-b-hard-bt01-038"
     }
   ]
 }

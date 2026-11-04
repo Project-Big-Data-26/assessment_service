@@ -850,6 +850,191 @@
       "pembahasan": "Jumlah semula 157. Jumlah baru harus 6 × 172/5 = 1032/5. Nilai tambahan = 1032/5 - 157 = 247/5.",
       "catatan": "codex-replenishment:kelas10-b06-B-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas10-b06-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e29f273ba31642c5b94826b",
+        "teks": "Banyak kata yang diketik (per menit) oleh 11 peserta dari dua kelompok latihan.\n\n- Kelompok X: 23, 27, 25, 23, 31, 29, 23, 26, 28, 25, 24\n- Kelompok Y: 20, 34, 27, 27, 22, 30, 27, 25, 33, 22, 26\n\nSelisih jangkauan, selisih modus, dan selisih median kelompok Y terhadap kelompok X (Y dikurangi X) berturut-turut adalah ....",
+        "jawaban": "6, 4, 2",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_statistika_koreksi_penghapusan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rata-rata n data semula 67. Mengganti nilai 25 dengan 47 menaikkan rata-rata sebesar 1. Data lalu dikembalikan persis ke keadaan semula. Jika dua data bernilai 31 dan 63 dihapus, berapa rata-rata sisanya?",
+      "jawaban_benar": "$69$",
+      "alasan_benar": "Kenaikan jumlah 22=n×1, jadi n=22. Jumlah asli 1474. Hapus kedua nilai dan dua anggota: rata-rata (1474-31-63)/(22-2)=69.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$138$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kenaikan jumlah 22=n×1, jadi n=22. Jumlah asli 1474. Hapus kedua nilai dan dua anggota: rata-rata (1474-31-63)/(22-2)=69.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "59539c1ee5948edd985d2386",
+        "teks": "Rata-rata nilai 15 siswa kelas X-C adalah 68 dan rata-rata nilai 25 siswa kelas X-D adalah 84. Pak Anwar mengatakan bahwa rata-rata nilai gabungan kedua kelas adalah 76 karena $(68 + 84) : 2 = 76$. Pernyataan yang tepat tentang klaim Pak Anwar adalah ....",
+        "jawaban": "Klaim salah; rata-rata gabungan 78 karena kelas X-D lebih banyak siswanya",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_statistika_koreksi_penghapusan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rata-rata n data semula 64. Mengganti nilai 29 dengan 57 menaikkan rata-rata sebesar 1. Data lalu dikembalikan persis ke keadaan semula. Jika dua data bernilai 35 dan 68 dihapus, berapa rata-rata sisanya?",
+      "jawaban_benar": "$\\frac{1689}{26}$",
+      "alasan_benar": "Kenaikan jumlah 28=n×1, jadi n=28. Jumlah asli 1792. Hapus kedua nilai dan dua anggota: rata-rata (1792-35-68)/(28-2)=1689/26.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1689}{52}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1689}{13}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1689}{26}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kenaikan jumlah 28=n×1, jadi n=28. Jumlah asli 1792. Hapus kedua nilai dan dua anggota: rata-rata (1792-35-68)/(28-2)=1689/26.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "91dedf244740513b765211d3",
+        "teks": "Data lima hasil pengukuran adalah 17, 13, 11, 13, 15. Berapakah rata-ratanya?",
+        "jawaban": "$\\frac{69}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_statistika_koreksi_penghapusan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rata-rata n data semula 64. Mengganti nilai 38 dengan 88 menaikkan rata-rata sebesar 2. Data lalu dikembalikan persis ke keadaan semula. Jika dua data bernilai 30 dan 64 dihapus, berapa rata-rata sisanya?",
+      "jawaban_benar": "$\\frac{1506}{23}$",
+      "alasan_benar": "Kenaikan jumlah 50=n×2, jadi n=25. Jumlah asli 1600. Hapus kedua nilai dan dua anggota: rata-rata (1600-30-64)/(25-2)=1506/23.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{753}{23}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3012}{23}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1506}{23}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kenaikan jumlah 50=n×2, jadi n=25. Jumlah asli 1600. Hapus kedua nilai dan dua anggota: rata-rata (1600-30-64)/(25-2)=1506/23.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f78ea602e45187e7095d99f4",
+        "teks": "Nilai bulat 20 siswa dikelompokkan sebagai berikut.\n\n| Nilai | 40–49 | 50–59 | 60–69 |\n|---|---|---|---|\n| Frekuensi | 5 | 8 | 7 |\n\nKarena hanya diketahui kelasnya, mean sesungguhnya tidak diketahui pasti. Nilai terkecil yang mungkin untuk mean nilai ke-20 siswa itu adalah ....",
+        "jawaban": "51",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_statistika_koreksi_penghapusan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rata-rata n data semula 50. Mengganti nilai 20 dengan 37 menaikkan rata-rata sebesar 1. Data lalu dikembalikan persis ke keadaan semula. Jika dua data bernilai 53 dan 72 dihapus, berapa rata-rata sisanya?",
+      "jawaban_benar": "$\\frac{145}{3}$",
+      "alasan_benar": "Kenaikan jumlah 17=n×1, jadi n=17. Jumlah asli 850. Hapus kedua nilai dan dua anggota: rata-rata (850-53-72)/(17-2)=145/3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{145}{6}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{290}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{145}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kenaikan jumlah 17=n×1, jadi n=17. Jumlah asli 850. Hapus kedua nilai dan dua anggota: rata-rata (850-53-72)/(17-2)=145/3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f55ce83c01d7e07ced3eb79b",
+        "teks": "Lima bilangan asli terurut dari yang terkecil memiliki mean 10, median 8, dan modus 8 sebagai satu-satunya modus. Nilai terbesar yang mungkin untuk bilangan kelima adalah ....",
+        "jawaban": "31",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas10.json",
+        "source_sha256": "e00ba0112a9825d6a8bbb1f9ea27695c91edacf97b415ddec3eeca372e1b1a3c"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_statistika_koreksi_penghapusan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Rata-rata n data semula 65. Mengganti nilai 32 dengan 84 menaikkan rata-rata sebesar 2. Data lalu dikembalikan persis ke keadaan semula. Jika dua data bernilai 53 dan 66 dihapus, berapa rata-rata sisanya?",
+      "jawaban_benar": "$\\frac{1571}{24}$",
+      "alasan_benar": "Kenaikan jumlah 52=n×2, jadi n=26. Jumlah asli 1690. Hapus kedua nilai dan dua anggota: rata-rata (1690-53-66)/(26-2)=1571/24.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1571}{48}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1571}{12}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1571}{24}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Kenaikan jumlah 52=n×2, jadi n=26. Jumlah asli 1690. Hapus kedua nilai dan dua anggota: rata-rata (1690-53-66)/(26-2)=1571/24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas10-b06-b-hard-bt01-030"
     }
   ]
 }

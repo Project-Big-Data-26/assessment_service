@@ -520,6 +520,191 @@
       "pembahasan": "Kelipatannya [56, 63, 70, 77]. Ada 4 bilangan.",
       "catatan": "codex-replenishment:kelas5-b02-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas5-b02-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "678e34d1a76b7d3ab3d12644",
+        "teks": "Berapa banyak kelipatan 8 dari 64 sampai 112, termasuk kedua batasnya?",
+        "jawaban": "$7$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kelipatan_jadwal_pengecualian",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lampu menyala tiap 3 dan 5 menit, bersama pada menit 0. Pada menit kelipatan 30, listrik padam sehingga keduanya tidak menyala. Berapa kali keduanya benar-benar menyala bersama setelah menit 15 dan sebelum menit 75?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Kelipatan persekutuan muncul setiap KPK(3,5)=15 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [45]; jumlah kejadian 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Kelipatan persekutuan muncul setiap KPK(3,5)=15 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [45]; jumlah kejadian 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12852260033b12825d03b3e0",
+        "teks": "Manakah di antara bilangan berikut yang merupakan kelipatan 6?",
+        "jawaban": "42",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kelipatan_jadwal_pengecualian",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lampu menyala tiap 5 dan 5 menit, bersama pada menit 0. Pada menit kelipatan 15, listrik padam sehingga keduanya tidak menyala. Berapa kali keduanya benar-benar menyala bersama setelah menit 10 dan sebelum menit 25?",
+      "jawaban_benar": "$1$",
+      "alasan_benar": "Kelipatan persekutuan muncul setiap KPK(5,5)=5 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [20]; jumlah kejadian 1.",
+      "distraktor": [
+        {
+          "teks": "$0$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        },
+        {
+          "teks": "$2$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1$."
+        }
+      ],
+      "pembahasan": "Kelipatan persekutuan muncul setiap KPK(5,5)=5 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [20]; jumlah kejadian 1.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1304be47f9483cef26911d93",
+        "teks": "Sebutkan bilangan kelipatan 9.",
+        "jawaban": "9, 18, 27, 36, 45, ...",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kelipatan_jadwal_pengecualian",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lampu menyala tiap 4 dan 4 menit, bersama pada menit 0. Pada menit kelipatan 12, listrik padam sehingga keduanya tidak menyala. Berapa kali keduanya benar-benar menyala bersama setelah menit 4 dan sebelum menit 24?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Kelipatan persekutuan muncul setiap KPK(4,4)=4 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [8, 16, 20]; jumlah kejadian 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kelipatan persekutuan muncul setiap KPK(4,4)=4 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [8, 16, 20]; jumlah kejadian 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "31135d4733e0d8ab6860d119",
+        "teks": "Bilangan kelipatan 15 yang lebih dari 1.000, kurang dari 1.200, berakhir angka 5, dan angka puluhannya 3 adalah ....",
+        "jawaban": "1.035",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kelipatan_jadwal_pengecualian",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lampu menyala tiap 6 dan 6 menit, bersama pada menit 0. Pada menit kelipatan 18, listrik padam sehingga keduanya tidak menyala. Berapa kali keduanya benar-benar menyala bersama setelah menit 12 dan sebelum menit 48?",
+      "jawaban_benar": "$3$",
+      "alasan_benar": "Kelipatan persekutuan muncul setiap KPK(6,6)=6 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [24, 30, 42]; jumlah kejadian 3.",
+      "distraktor": [
+        {
+          "teks": "$2$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3$."
+        },
+        {
+          "teks": "$6$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kelipatan persekutuan muncul setiap KPK(6,6)=6 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [24, 30, 42]; jumlah kejadian 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a5fa6a462213a2e46e84389",
+        "teks": "Dina memasukkan kelereng ke dalam kantong yang masing-masing berisi 8 butir dan semua kantong terisi penuh. Jumlah kelerengnya lebih dari 50 dan kurang dari 60. Jumlah kelereng Dina adalah ....",
+        "jawaban": "56",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kelipatan_jadwal_pengecualian",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua lampu menyala tiap 5 dan 6 menit, bersama pada menit 0. Pada menit kelipatan 60, listrik padam sehingga keduanya tidak menyala. Berapa kali keduanya benar-benar menyala bersama setelah menit 90 dan sebelum menit 270?",
+      "jawaban_benar": "$2$",
+      "alasan_benar": "Kelipatan persekutuan muncul setiap KPK(5,6)=30 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [150, 210]; jumlah kejadian 2.",
+      "distraktor": [
+        {
+          "teks": "$1$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2$."
+        },
+        {
+          "teks": "$4$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Kelipatan persekutuan muncul setiap KPK(5,6)=30 menit. Periksa batas terbuka dan keluarkan jadwal padam. Menit tersisa [150, 210]; jumlah kejadian 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-a-hard-bt01-020"
     }
   ]
 }

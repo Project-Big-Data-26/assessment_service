@@ -409,6 +409,80 @@
       "pembahasan": "Samakan penyebut. Pecahan lebih besar 3/5, lebih kecil 1/3; selisihnya 4/15.",
       "catatan": "codex-replenishment:kelas5-b03-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas5-b03-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "86d0a22fa398faf8bd22c826",
+        "teks": "Diketahui pecahan $\\frac{3}{5}$ dan $\\frac{1}{3}$. Berapa selisih pecahan yang lebih besar terhadap yang lebih kecil?",
+        "jawaban": "$\\frac{4}{15}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_urut_potong_sambung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tiga pita memiliki panjang $\\frac{1}{6}$, $\\frac{3}{4}$, dan $\\frac{3}{8}$ meter. Pita terpanjang dipotong hingga panjangnya sama dengan pita terpendek; potongannya disambungkan ke pita yang panjangnya di tengah. Berapa panjang pita tengah setelah disambung?",
+      "jawaban_benar": "$\\frac{23}{24}$",
+      "alasan_benar": "Urutan panjang [1/6, 3/8, 3/4]. Potongan dari terpanjang adalah 3/4-1/6=7/12; tambahkan pada pita tengah 3/8, menjadi 23/24.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{24}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{529}{576}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{23}{24}$."
+        },
+        {
+          "teks": "$\\frac{23}{48}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Urutan panjang [1/6, 3/8, 3/4]. Potongan dari terpanjang adalah 3/4-1/6=7/12; tambahkan pada pita tengah 3/8, menjadi 23/24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b03-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "86d0a22fa398faf8bd22c826",
+        "teks": "Diketahui pecahan $\\frac{3}{5}$ dan $\\frac{1}{3}$. Berapa selisih pecahan yang lebih besar terhadap yang lebih kecil?",
+        "jawaban": "$\\frac{4}{15}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_urut_potong_sambung",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tiga pita memiliki panjang $\\frac{2}{9}$, $\\frac{17}{18}$, dan $\\frac{7}{18}$ meter. Pita terpanjang dipotong hingga panjangnya sama dengan pita terpendek; potongannya disambungkan ke pita yang panjangnya di tengah. Berapa panjang pita tengah setelah disambung?",
+      "jawaban_benar": "$\\frac{10}{9}$",
+      "alasan_benar": "Urutan panjang [2/9, 7/18, 17/18]. Potongan dari terpanjang adalah 17/18-2/9=13/18; tambahkan pada pita tengah 7/18, menjadi 10/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{20}{9}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{10}{9}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Urutan panjang [2/9, 7/18, 17/18]. Potongan dari terpanjang adalah 17/18-2/9=13/18; tambahkan pada pita tengah 7/18, menjadi 10/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b03-a-hard-bt01-014"
     }
   ]
 }

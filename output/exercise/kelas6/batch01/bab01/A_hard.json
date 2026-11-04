@@ -429,6 +429,376 @@
       "pembahasan": "Uji tiap pilihan: 6 × 1/2 = 3 memenuhi syarat; 6 × 1/3 = 2 tidak lebih dari 2; 6 × 2/3 = 4 tidak kurang dari 4; 6 × 1/4 = 1 1/2 bukan bilangan bulat.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "56c3962d213b8b7e8d7867de",
+        "teks": "Di sebuah rak ada 24 buku. Sebanyak 3/4 bagiannya adalah buku cerita. Berapa buku cerita di rak itu?",
+        "jawaban": "18 buku",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{2}{5}$ bagiannya dipakai, tersisa $18$ kg. Stok lalu ditambah 6 kg; $\\frac{3}{4}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$30$",
+      "alasan_benar": "Sisa awal adalah 3/5 bagian, sehingga stok awal 30 kg. Pemakaian pertama 12. Dasar pecahan tahap kedua berubah menjadi 24; pemakaian kedua 18. Jumlah 30.",
+      "distraktor": [
+        {
+          "teks": "$29$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $30$."
+        },
+        {
+          "teks": "$31$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $30$."
+        },
+        {
+          "teks": "$60$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 3/5 bagian, sehingga stok awal 30 kg. Pemakaian pertama 12. Dasar pecahan tahap kedua berubah menjadi 24; pemakaian kedua 18. Jumlah 30.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d784b8aa373ed0c860e879b6",
+        "teks": "Sebuah toko memiliki 75 jeruk. Sebanyak 2/15 bagian terjual. Berapa jeruk yang belum terjual?",
+        "jawaban": "65 jeruk",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{4}$ bagiannya dipakai, tersisa $42$ kg. Stok lalu ditambah 5 kg; $\\frac{1}{2}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$\\frac{75}{2}$",
+      "alasan_benar": "Sisa awal adalah 3/4 bagian, sehingga stok awal 56 kg. Pemakaian pertama 14. Dasar pecahan tahap kedua berubah menjadi 47; pemakaian kedua 47/2. Jumlah 75/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{75}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{75}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 3/4 bagian, sehingga stok awal 56 kg. Pemakaian pertama 14. Dasar pecahan tahap kedua berubah menjadi 47; pemakaian kedua 47/2. Jumlah 75/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-012"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "56c3962d213b8b7e8d7867de",
+        "teks": "Di sebuah rak ada 24 buku. Sebanyak 3/4 bagiannya adalah buku cerita. Berapa buku cerita di rak itu?",
+        "jawaban": "18 buku",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{2}$ bagiannya dipakai, tersisa $45$ kg. Stok lalu ditambah 7 kg; $\\frac{1}{4}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$58$",
+      "alasan_benar": "Sisa awal adalah 1/2 bagian, sehingga stok awal 90 kg. Pemakaian pertama 45. Dasar pecahan tahap kedua berubah menjadi 52; pemakaian kedua 13. Jumlah 58.",
+      "distraktor": [
+        {
+          "teks": "$57$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $58$."
+        },
+        {
+          "teks": "$59$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $58$."
+        },
+        {
+          "teks": "$116$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 1/2 bagian, sehingga stok awal 90 kg. Pemakaian pertama 45. Dasar pecahan tahap kedua berubah menjadi 52; pemakaian kedua 13. Jumlah 58.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-013"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cc248d2b6d102c80be32b6bf",
+        "teks": "Untuk menghitung 6 × 5/8, Sari menulis 30/48. Perbaikan manakah yang benar dan menunjukkan aturan yang tepat?",
+        "jawaban": "Kalikan 6 dengan 5, pertahankan penyebut 8; hasilnya 30/8 atau 3 3/4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{10}$ bagiannya dipakai, tersisa $36$ kg. Stok lalu ditambah 7 kg; $\\frac{1}{2}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$\\frac{51}{2}$",
+      "alasan_benar": "Sisa awal adalah 9/10 bagian, sehingga stok awal 40 kg. Pemakaian pertama 4. Dasar pecahan tahap kedua berubah menjadi 43; pemakaian kedua 43/2. Jumlah 51/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{51}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$51$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{51}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 9/10 bagian, sehingga stok awal 40 kg. Pemakaian pertama 4. Dasar pecahan tahap kedua berubah menjadi 43; pemakaian kedua 43/2. Jumlah 51/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "32b8482786414ffaa21775f5",
+        "teks": "Berapakah 5/6 dari 18 kancing?",
+        "jawaban": "15 kancing",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{5}$ bagiannya dipakai, tersisa $12$ kg. Stok lalu ditambah 4 kg; $\\frac{3}{4}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$15$",
+      "alasan_benar": "Sisa awal adalah 4/5 bagian, sehingga stok awal 15 kg. Pemakaian pertama 3. Dasar pecahan tahap kedua berubah menjadi 16; pemakaian kedua 12. Jumlah 15.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $15$."
+        },
+        {
+          "teks": "$16$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $15$."
+        },
+        {
+          "teks": "$30$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 4/5 bagian, sehingga stok awal 15 kg. Pemakaian pertama 3. Dasar pecahan tahap kedua berubah menjadi 16; pemakaian kedua 12. Jumlah 15.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "115c9058aeff7fefc3acff19",
+        "teks": "Perpustakaan menerima 84 buku baru. Sebanyak 3/7 bagiannya adalah buku cerita. Nisa menghitung 84 × 3/7 = 36 buku. Rudi menghitung 84 ÷ 7 × 3 = 36 buku. Kesimpulan manakah yang benar?",
+        "jawaban": "Keduanya benar; jumlahnya 36 buku.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{3}{5}$ bagiannya dipakai, tersisa $10$ kg. Stok lalu ditambah 2 kg; $\\frac{1}{4}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$18$",
+      "alasan_benar": "Sisa awal adalah 2/5 bagian, sehingga stok awal 25 kg. Pemakaian pertama 15. Dasar pecahan tahap kedua berubah menjadi 12; pemakaian kedua 3. Jumlah 18.",
+      "distraktor": [
+        {
+          "teks": "$17$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $18$."
+        },
+        {
+          "teks": "$19$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $18$."
+        },
+        {
+          "teks": "$36$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 2/5 bagian, sehingga stok awal 25 kg. Pemakaian pertama 15. Dasar pecahan tahap kedua berubah menjadi 12; pemakaian kedua 3. Jumlah 18.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "115c9058aeff7fefc3acff19",
+        "teks": "Perpustakaan menerima 84 buku baru. Sebanyak 3/7 bagiannya adalah buku cerita. Nisa menghitung 84 × 3/7 = 36 buku. Rudi menghitung 84 ÷ 7 × 3 = 36 buku. Kesimpulan manakah yang benar?",
+        "jawaban": "Keduanya benar; jumlahnya 36 buku.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{4}$ bagiannya dipakai, tersisa $27$ kg. Stok lalu ditambah 4 kg; $\\frac{1}{4}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$\\frac{67}{4}$",
+      "alasan_benar": "Sisa awal adalah 3/4 bagian, sehingga stok awal 36 kg. Pemakaian pertama 9. Dasar pecahan tahap kedua berubah menjadi 31; pemakaian kedua 31/4. Jumlah 67/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{67}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{67}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{67}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 3/4 bagian, sehingga stok awal 36 kg. Pemakaian pertama 9. Dasar pecahan tahap kedua berubah menjadi 31; pemakaian kedua 31/4. Jumlah 67/4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cc248d2b6d102c80be32b6bf",
+        "teks": "Untuk menghitung 6 × 5/8, Sari menulis 30/48. Perbaikan manakah yang benar dan menunjukkan aturan yang tepat?",
+        "jawaban": "Kalikan 6 dengan 5, pertahankan penyebut 8; hasilnya 30/8 atau 3 3/4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{5}$ bagiannya dipakai, tersisa $40$ kg. Stok lalu ditambah 7 kg; $\\frac{1}{2}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$\\frac{67}{2}$",
+      "alasan_benar": "Sisa awal adalah 4/5 bagian, sehingga stok awal 50 kg. Pemakaian pertama 10. Dasar pecahan tahap kedua berubah menjadi 47; pemakaian kedua 47/2. Jumlah 67/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{67}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$67$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{67}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 4/5 bagian, sehingga stok awal 50 kg. Pemakaian pertama 10. Dasar pecahan tahap kedua berubah menjadi 47; pemakaian kedua 47/2. Jumlah 67/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "29cf658c949a98ce1c10050e",
+        "teks": "Tono berkata, \"Hasil 4 × 3/5 lebih besar dari 4 karena 4 dikalikan 3.\" Perbaikan manakah yang benar?",
+        "jawaban": "4 × 3/5 = 12/5 = 2 2/5, lebih kecil dari 4.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{1}{4}$ bagiannya dipakai, tersisa $24$ kg. Stok lalu ditambah 4 kg; $\\frac{1}{2}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Sisa awal adalah 3/4 bagian, sehingga stok awal 32 kg. Pemakaian pertama 8. Dasar pecahan tahap kedua berubah menjadi 28; pemakaian kedua 14. Jumlah 22.",
+      "distraktor": [
+        {
+          "teks": "$21$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$23$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $22$."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 3/4 bagian, sehingga stok awal 32 kg. Pemakaian pertama 8. Dasar pecahan tahap kedua berubah menjadi 28; pemakaian kedua 14. Jumlah 22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "78815777cb683309ea2473ef",
+        "teks": "Lia menghitung 5/12 × 9 = 45/108. Perbaikan manakah yang benar?",
+        "jawaban": "45/12 = 3 3/4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pecahan_basis_berubah_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Persediaan bahan mula-mula belum diketahui. Setelah $\\frac{5}{8}$ bagiannya dipakai, tersisa $24$ kg. Stok lalu ditambah 6 kg; $\\frac{1}{2}$ dari stok sesudah tambahan dipakai. Berapa total bahan yang dipakai pada kedua tahap?",
+      "jawaban_benar": "$55$",
+      "alasan_benar": "Sisa awal adalah 3/8 bagian, sehingga stok awal 64 kg. Pemakaian pertama 40. Dasar pecahan tahap kedua berubah menjadi 30; pemakaian kedua 15. Jumlah 55.",
+      "distraktor": [
+        {
+          "teks": "$54$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $55$."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $55$."
+        },
+        {
+          "teks": "$110$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Sisa awal adalah 3/8 bagian, sehingga stok awal 64 kg. Pemakaian pertama 40. Dasar pecahan tahap kedua berubah menjadi 30; pemakaian kedua 15. Jumlah 55.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b01-a-hard-bt01-020"
     }
   ]
 }

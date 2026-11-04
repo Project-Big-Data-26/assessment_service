@@ -849,6 +849,709 @@
       "pembahasan": "Langkah penyelesaian:\n1. Tentukan domain dari $f(x)$: $D_f = \\{x \\in \\mathbb{R} \\mid 5x - 4 \\neq 0\\} = \\{x \\in \\mathbb{R} \\mid x \\neq \\frac{4}{5}\\}$.\n2. Tentukan range dari $f(x)$: karena pembilang bernilai 1 (konstan tak nol), maka tidak ada nilai $x$ yang membuat $f(x) = 0$. Jadi, $R_f = \\{u \\in \\mathbb{R} \\mid u \\neq 0\\}$.\n3. Bentuk rumus fungsi komposisi:\n$$(g \\circ f)(x) = g(f(x)) = 6(f(x))^2 + 8 = 6\\left(\\frac{1}{5x - 4}\\right)^2 + 8$$\n4. Analisis nilai untuk $u = f(x) \\neq 0$:\nKarena $u \\neq 0$, maka $u^2 > 0$ untuk setiap $x \\in D_f$.\n5. Tentukan range dari $(g \\circ f)(x)$:\n$$u^2 > 0 \\implies 6u^2 > 0 \\implies 6u^2 + 8 > 8$$\nKetika $|x| \\to \\infty$, nilai $u \\to 0$ sehingga $6u^2 + 8 \\to 8^+$. Ketika $x \\to \\frac{4}{5}$, nilai $u^2 \\to \\infty$ sehingga $6u^2 + 8 \\to \\infty$.\nDengan demikian, daerah hasilnya adalah $R_{g \\circ f} = \\{y \\in \\mathbb{R} \\mid y > 8\\}$.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea4e949a6762dcd37159ab17",
+        "teks": "Diketahui dua fungsi real $f(x) = \\frac{1}{3x + 4}$ dan $g(x) = 3x^2 + 2$. Daerah hasil (range) dari fungsi komposisi $(f \\circ g)(x)$ untuk seluruh $x \\in \\mathbb{R}$ adalah ....",
+        "jawaban": "$\\left\\{y \\in \\mathbb{R} \\mid 0 < y \\le \\frac{1}{10}\\right\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=20$, $(f\\circ g)(1)=25$, dan $(g\\circ f)(0)=28$. Tentukan $(g\\circ f)(6)$.",
+      "jawaban_benar": "$1228$",
+      "alasan_benar": "Selisih dua data pertama memberi a=5. Kemudian ac+b=20, b²+c=28. Eliminasi dan syarat positif memberi b=5, c=3. Hitung (a×6+b)²+c, hasil 1228.",
+      "distraktor": [
+        {
+          "teks": "$1227$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1228$."
+        },
+        {
+          "teks": "$1229$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1228$."
+        },
+        {
+          "teks": "$2456$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=5. Kemudian ac+b=20, b²+c=28. Eliminasi dan syarat positif memberi b=5, c=3. Hitung (a×6+b)²+c, hasil 1228.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "382cd482747631e83d36d652",
+        "teks": "Jumlah kertas yang diperlukan untuk mencetak $x$ eksemplar modul ajar dinyatakan dalam fungsi $k(x) = 150(x + 2)$ lembar. Biaya pencetakan yang diperlukan untuk $k$ lembar kertas adalah $b(k) = 300k + 10.000$ (dalam rupiah). Jika total biaya yang dikeluarkan percetakan sebesar Rp4.060.000,00, banyak eksemplar modul ajar yang dicetak adalah ....",
+        "jawaban": "88",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=21$, $(f\\circ g)(1)=28$, dan $(g\\circ f)(0)=51$. Tentukan $(g\\circ f)(5)$.",
+      "jawaban_benar": "$1766$",
+      "alasan_benar": "Selisih dua data pertama memberi a=7. Kemudian ac+b=21, b²+c=51. Eliminasi dan syarat positif memberi b=7, c=2. Hitung (a×5+b)²+c, hasil 1766.",
+      "distraktor": [
+        {
+          "teks": "$1765$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1766$."
+        },
+        {
+          "teks": "$1767$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1766$."
+        },
+        {
+          "teks": "$3532$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=7. Kemudian ac+b=21, b²+c=51. Eliminasi dan syarat positif memberi b=7, c=2. Hitung (a×5+b)²+c, hasil 1766.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4b27d25dce89912ba142361d",
+        "teks": "Diketahui tiga fungsi real $f(x) = 2x - 5$, $g(x) = 4x + 1$, dan $h(x) = px - 3$ dengan $p$ konstanta positif. Jika fungsi komposisi $((f \\circ g) \\circ h)(x) = 48x - 27$, maka nilai dari $((g \\circ h) \\circ f)(3)$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=14$, $(f\\circ g)(1)=19$, dan $(g\\circ f)(0)=18$. Tentukan $(g\\circ f)(3)$.",
+      "jawaban_benar": "$363$",
+      "alasan_benar": "Selisih dua data pertama memberi a=5. Kemudian ac+b=14, b²+c=18. Eliminasi dan syarat positif memberi b=4, c=2. Hitung (a×3+b)²+c, hasil 363.",
+      "distraktor": [
+        {
+          "teks": "$362$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $363$."
+        },
+        {
+          "teks": "$364$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $363$."
+        },
+        {
+          "teks": "$726$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=5. Kemudian ac+b=14, b²+c=18. Eliminasi dan syarat positif memberi b=4, c=2. Hitung (a×3+b)²+c, hasil 363.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb9a8a3b3ef8147fad4f9640",
+        "teks": "Diketahui fungsi $f(x) = 6x + 5$ dan $g(x) = 2x - 8$. Rumus fungsi $(f + g)(x)$ adalah ....",
+        "jawaban": "$8x - 3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=50$, $(f\\circ g)(1)=56$, dan $(g\\circ f)(0)=71$. Tentukan $(g\\circ f)(6)$.",
+      "jawaban_benar": "$1943$",
+      "alasan_benar": "Selisih dua data pertama memberi a=6. Kemudian ac+b=50, b²+c=71. Eliminasi dan syarat positif memberi b=8, c=7. Hitung (a×6+b)²+c, hasil 1943.",
+      "distraktor": [
+        {
+          "teks": "$1942$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1943$."
+        },
+        {
+          "teks": "$1944$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1943$."
+        },
+        {
+          "teks": "$3886$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=6. Kemudian ac+b=50, b²+c=71. Eliminasi dan syarat positif memberi b=8, c=7. Hitung (a×6+b)²+c, hasil 1943.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3543524703cdcf2688e3d5b8",
+        "teks": "Diketahui fungsi $f(x) = \\sqrt{x - 5}$ dan $g(x) = x^2 - 4$. Daerah asal (domain) dari fungsi komposisi $(f \\circ g)(x)$ untuk $x \\in \\mathbb{R}$ adalah ....",
+        "jawaban": "$\\{x \\mid x \\le -3 \\text{ atau } x \\ge 3,\\, x \\in \\mathbb{R}\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=30$, $(f\\circ g)(1)=37$, dan $(g\\circ f)(0)=8$. Tentukan $(g\\circ f)(6)$.",
+      "jawaban_benar": "$1940$",
+      "alasan_benar": "Selisih dua data pertama memberi a=7. Kemudian ac+b=30, b²+c=8. Eliminasi dan syarat positif memberi b=2, c=4. Hitung (a×6+b)²+c, hasil 1940.",
+      "distraktor": [
+        {
+          "teks": "$1939$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1940$."
+        },
+        {
+          "teks": "$1941$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1940$."
+        },
+        {
+          "teks": "$3880$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=7. Kemudian ac+b=30, b²+c=8. Eliminasi dan syarat positif memberi b=2, c=4. Hitung (a×6+b)²+c, hasil 1940.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e24cb6793cb4ccd4d59cf69",
+        "teks": "Sebuah pusat perbelanjaan memberikan dua pilihan promo akhir pekan untuk pembelian barang dengan harga awal di atas Rp60.000,00:\n- **Pilihan A**: Diskon 30% terlebih dahulu, kemudian dilanjutkan dengan potongan voucer sebesar Rp60.000,00.\n- **Pilihan B**: Potongan voucer sebesar Rp60.000,00 terlebih dahulu, kemudian dilanjutkan dengan diskon 30%.\n\nBerdasarkan konsep komposisi fungsi, manakah pernyataan berikut yang paling tepat mengenai perbandingan kedua promo tersebut?",
+        "jawaban": "Pilihan A selalu lebih murah Rp18.000,00 dibandingkan Pilihan B untuk setiap harga barang.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=29$, $(f\\circ g)(1)=33$, dan $(g\\circ f)(0)=31$. Tentukan $(g\\circ f)(3)$.",
+      "jawaban_benar": "$295$",
+      "alasan_benar": "Selisih dua data pertama memberi a=4. Kemudian ac+b=29, b²+c=31. Eliminasi dan syarat positif memberi b=5, c=6. Hitung (a×3+b)²+c, hasil 295.",
+      "distraktor": [
+        {
+          "teks": "$294$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $295$."
+        },
+        {
+          "teks": "$296$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $295$."
+        },
+        {
+          "teks": "$590$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=4. Kemudian ac+b=29, b²+c=31. Eliminasi dan syarat positif memberi b=5, c=6. Hitung (a×3+b)²+c, hasil 295.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3de7e9c811a093d74e1d7a0f",
+        "teks": "Rani memesan satu set lemari pakaian secara daring. Toko mebel menetapkan biaya asuransi pengiriman sebesar 4% dari harga lemari dan biaya ongkos kirim kargo tetap sebesar Rp40.000,00. Jika total pembayaran yang dikeluarkan Rani adalah Rp1.860.000,00, maka harga lemari pakaian tersebut sebelum dikenai asuransi dan ongkos kirim adalah ....",
+        "jawaban": "Rp1.750.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=23$, $(f\\circ g)(1)=30$, dan $(g\\circ f)(0)=83$. Tentukan $(g\\circ f)(3)$.",
+      "jawaban_benar": "$902$",
+      "alasan_benar": "Selisih dua data pertama memberi a=7. Kemudian ac+b=23, b²+c=83. Eliminasi dan syarat positif memberi b=9, c=2. Hitung (a×3+b)²+c, hasil 902.",
+      "distraktor": [
+        {
+          "teks": "$901$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $902$."
+        },
+        {
+          "teks": "$903$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $902$."
+        },
+        {
+          "teks": "$1804$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=7. Kemudian ac+b=23, b²+c=83. Eliminasi dan syarat positif memberi b=9, c=2. Hitung (a×3+b)²+c, hasil 902.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ea4e949a6762dcd37159ab17",
+        "teks": "Diketahui dua fungsi real $f(x) = \\frac{1}{3x + 4}$ dan $g(x) = 3x^2 + 2$. Daerah hasil (range) dari fungsi komposisi $(f \\circ g)(x)$ untuk seluruh $x \\in \\mathbb{R}$ adalah ....",
+        "jawaban": "$\\left\\{y \\in \\mathbb{R} \\mid 0 < y \\le \\frac{1}{10}\\right\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=32$, $(f\\circ g)(1)=40$, dan $(g\\circ f)(0)=67$. Tentukan $(g\\circ f)(6)$.",
+      "jawaban_benar": "$3139$",
+      "alasan_benar": "Selisih dua data pertama memberi a=8. Kemudian ac+b=32, b²+c=67. Eliminasi dan syarat positif memberi b=8, c=3. Hitung (a×6+b)²+c, hasil 3139.",
+      "distraktor": [
+        {
+          "teks": "$3138$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3139$."
+        },
+        {
+          "teks": "$3140$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3139$."
+        },
+        {
+          "teks": "$6278$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=8. Kemudian ac+b=32, b²+c=67. Eliminasi dan syarat positif memberi b=8, c=3. Hitung (a×6+b)²+c, hasil 3139.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd1e37ad1952269e2a4c1dd9",
+        "teks": "Fungsi penerimaan total dari penjualan $x$ unit kue dinyatakan oleh $R(x) = 800x - 2x^2$, sedangkan fungsi biaya total produksi dinyatakan oleh $C(x) = 200x + 10.000$ (keduanya dalam ribuan rupiah). Keuntungan maksimum yang dapat diraih dari penjualan kue tersebut adalah ....",
+        "jawaban": "Rp35.000.000,00",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=73$, $(f\\circ g)(1)=81$, dan $(g\\circ f)(0)=89$. Tentukan $(g\\circ f)(7)$.",
+      "jawaban_benar": "$4233$",
+      "alasan_benar": "Selisih dua data pertama memberi a=8. Kemudian ac+b=73, b²+c=89. Eliminasi dan syarat positif memberi b=9, c=8. Hitung (a×7+b)²+c, hasil 4233.",
+      "distraktor": [
+        {
+          "teks": "$4232$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4233$."
+        },
+        {
+          "teks": "$4234$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $4233$."
+        },
+        {
+          "teks": "$8466$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=8. Kemudian ac+b=73, b²+c=89. Eliminasi dan syarat positif memberi b=9, c=8. Hitung (a×7+b)²+c, hasil 4233.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "80461c45c268a24541c29fd0",
+        "teks": "Diketahui tiga buah fungsi real $f(x) = 2x + 3$, $g(x) = 3x - 1$, dan $h(x) = x^2 - 4x + 5$. Nilai minimum dari fungsi komposisi $k(x) = (f \\circ (g \\circ h))(x)$ untuk seluruh $x \\in \\mathbb{R}$ adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=66$, $(f\\circ g)(1)=74$, dan $(g\\circ f)(0)=12$. Tentukan $(g\\circ f)(7)$.",
+      "jawaban_benar": "$3372$",
+      "alasan_benar": "Selisih dua data pertama memberi a=8. Kemudian ac+b=66, b²+c=12. Eliminasi dan syarat positif memberi b=2, c=8. Hitung (a×7+b)²+c, hasil 3372.",
+      "distraktor": [
+        {
+          "teks": "$3371$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3372$."
+        },
+        {
+          "teks": "$3373$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3372$."
+        },
+        {
+          "teks": "$6744$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=8. Kemudian ac+b=66, b²+c=12. Eliminasi dan syarat positif memberi b=2, c=8. Hitung (a×7+b)²+c, hasil 3372.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-030"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2146bc5a92f54f570477fb83",
+        "teks": "Pernyataan yang tepat mengenai sifat komutatif pada operasi komposisi fungsi adalah ....",
+        "jawaban": "secara umum tidak berlaku, sehingga $(f \\circ g)(x) \\neq (g \\circ f)(x)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=54$, $(f\\circ g)(1)=62$, dan $(g\\circ f)(0)=42$. Tentukan $(g\\circ f)(5)$.",
+      "jawaban_benar": "$2122$",
+      "alasan_benar": "Selisih dua data pertama memberi a=8. Kemudian ac+b=54, b²+c=42. Eliminasi dan syarat positif memberi b=6, c=6. Hitung (a×5+b)²+c, hasil 2122.",
+      "distraktor": [
+        {
+          "teks": "$2121$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2122$."
+        },
+        {
+          "teks": "$2123$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2122$."
+        },
+        {
+          "teks": "$4244$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=8. Kemudian ac+b=54, b²+c=42. Eliminasi dan syarat positif memberi b=6, c=6. Hitung (a×5+b)²+c, hasil 2122.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-031"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5a4154265456509eab0a9833",
+        "teks": "Diketahui fungsi $f(x) = \\frac{1}{x + 3}$ dan $g(x) = 4x - 1$. Jika $(f \\circ g)(a) = \\frac{1}{7}$, maka nilai dari $g(a)$ adalah ....",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=8$, $(f\\circ g)(1)=11$, dan $(g\\circ f)(0)=6$. Tentukan $(g\\circ f)(6)$.",
+      "jawaban_benar": "$402$",
+      "alasan_benar": "Selisih dua data pertama memberi a=3. Kemudian ac+b=8, b²+c=6. Eliminasi dan syarat positif memberi b=2, c=2. Hitung (a×6+b)²+c, hasil 402.",
+      "distraktor": [
+        {
+          "teks": "$401$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $402$."
+        },
+        {
+          "teks": "$403$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $402$."
+        },
+        {
+          "teks": "$804$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=3. Kemudian ac+b=8, b²+c=6. Eliminasi dan syarat positif memberi b=2, c=2. Hitung (a×6+b)²+c, hasil 402.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-032"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "44ff3e794a6d84e257282516",
+        "teks": "Diketahui fungsi $f(x) = \\sqrt{18 - x}$ dan $g(x) = x^2 - 4x + c$ dengan daerah asal $D_g = \\{x \\in \\mathbb{R} \\mid 1 \\le x \\le 5\\}$. Berdasarkan syarat komposisi bahwa daerah hasil $R_g \\subseteq D_f$, batas nilai maksimum dari konstanta $c$ agar fungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk seluruh $x \\in D_g$ adalah ....",
+        "jawaban": "13",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=21$, $(f\\circ g)(1)=23$, dan $(g\\circ f)(0)=56$. Tentukan $(g\\circ f)(4)$.",
+      "jawaban_benar": "$232$",
+      "alasan_benar": "Selisih dua data pertama memberi a=2. Kemudian ac+b=21, b²+c=56. Eliminasi dan syarat positif memberi b=7, c=7. Hitung (a×4+b)²+c, hasil 232.",
+      "distraktor": [
+        {
+          "teks": "$231$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $232$."
+        },
+        {
+          "teks": "$233$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $232$."
+        },
+        {
+          "teks": "$464$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=2. Kemudian ac+b=21, b²+c=56. Eliminasi dan syarat positif memberi b=7, c=7. Hitung (a×4+b)²+c, hasil 232.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-033"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "24a1d6ca53eb634c2cd557de",
+        "teks": "Diketahui fungsi $g(x) = 3x - 2$ dan rumus komposisinya $(f \\circ g)(x) = 9x^2 - 3x + 1$. Nilai dari $f(4)$ adalah ....",
+        "jawaban": "31",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=45$, $(f\\circ g)(1)=51$, dan $(g\\circ f)(0)=87$. Tentukan $(g\\circ f)(3)$.",
+      "jawaban_benar": "$735$",
+      "alasan_benar": "Selisih dua data pertama memberi a=6. Kemudian ac+b=45, b²+c=87. Eliminasi dan syarat positif memberi b=9, c=6. Hitung (a×3+b)²+c, hasil 735.",
+      "distraktor": [
+        {
+          "teks": "$734$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $735$."
+        },
+        {
+          "teks": "$736$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $735$."
+        },
+        {
+          "teks": "$1470$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=6. Kemudian ac+b=45, b²+c=87. Eliminasi dan syarat positif memberi b=9, c=6. Hitung (a×3+b)²+c, hasil 735.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-034"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6166e4b4c57227493562779d",
+        "teks": "Diketahui fungsi $f(x) = \\frac{1}{x - 5}$ dan $g(x) = x^2 - 4x + k$. Agar fungsi komposisi $(f \\circ g)(x)$ terdefinisi untuk seluruh bilangan real $x$, maka batasan nilai konstanta $k$ yang memenuhi adalah ....",
+        "jawaban": "$k > 9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=16$, $(f\\circ g)(1)=23$, dan $(g\\circ f)(0)=6$. Tentukan $(g\\circ f)(6)$.",
+      "jawaban_benar": "$1938$",
+      "alasan_benar": "Selisih dua data pertama memberi a=7. Kemudian ac+b=16, b²+c=6. Eliminasi dan syarat positif memberi b=2, c=2. Hitung (a×6+b)²+c, hasil 1938.",
+      "distraktor": [
+        {
+          "teks": "$1937$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1938$."
+        },
+        {
+          "teks": "$1939$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1938$."
+        },
+        {
+          "teks": "$3876$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=7. Kemudian ac+b=16, b²+c=6. Eliminasi dan syarat positif memberi b=2, c=2. Hitung (a×6+b)²+c, hasil 1938.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-035"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4e24cb6793cb4ccd4d59cf69",
+        "teks": "Sebuah pusat perbelanjaan memberikan dua pilihan promo akhir pekan untuk pembelian barang dengan harga awal di atas Rp60.000,00:\n- **Pilihan A**: Diskon 30% terlebih dahulu, kemudian dilanjutkan dengan potongan voucer sebesar Rp60.000,00.\n- **Pilihan B**: Potongan voucer sebesar Rp60.000,00 terlebih dahulu, kemudian dilanjutkan dengan diskon 30%.\n\nBerdasarkan konsep komposisi fungsi, manakah pernyataan berikut yang paling tepat mengenai perbandingan kedua promo tersebut?",
+        "jawaban": "Pilihan A selalu lebih murah Rp18.000,00 dibandingkan Pilihan B untuk setiap harga barang.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=4$, $(f\\circ g)(1)=6$, dan $(g\\circ f)(0)=5$. Tentukan $(g\\circ f)(4)$.",
+      "jawaban_benar": "$101$",
+      "alasan_benar": "Selisih dua data pertama memberi a=2. Kemudian ac+b=4, b²+c=5. Eliminasi dan syarat positif memberi b=2, c=1. Hitung (a×4+b)²+c, hasil 101.",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $101$."
+        },
+        {
+          "teks": "$102$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $101$."
+        },
+        {
+          "teks": "$202$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=2. Kemudian ac+b=4, b²+c=5. Eliminasi dan syarat positif memberi b=2, c=1. Hitung (a×4+b)²+c, hasil 101.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-036"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c2c16b46f95382a238492d32",
+        "teks": "Sebuah pusat perbelanjaan menyediakan dua kupon promo belanja untuk pembelian barang dengan harga awal minimal Rp100.000,00:\n- **Kupon Merah**: Diskon 15% dari total belanja, kemudian dilanjutkan potongan harga langsung sebesar Rp30.000,00.\n- **Kupon Biru**: Potongan harga langsung sebesar Rp10.000,00, kemudian dilanjutkan diskon 25% dari sisa belanja.\n\nSeorang pembeli ingin membeli sebuah barang dengan harga $x$ rupiah. Agar penggunaan **Kupon Biru** menghasilkan harga bayar akhir yang lebih murah daripada **Kupon Merah**, batas nilai harga awal $x$ yang memenuhi adalah ....",
+        "jawaban": "$x > \\text{Rp}225.000,00$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=17$, $(f\\circ g)(1)=22$, dan $(g\\circ f)(0)=7$. Tentukan $(g\\circ f)(7)$.",
+      "jawaban_benar": "$1372$",
+      "alasan_benar": "Selisih dua data pertama memberi a=5. Kemudian ac+b=17, b²+c=7. Eliminasi dan syarat positif memberi b=2, c=3. Hitung (a×7+b)²+c, hasil 1372.",
+      "distraktor": [
+        {
+          "teks": "$1371$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1372$."
+        },
+        {
+          "teks": "$1373$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1372$."
+        },
+        {
+          "teks": "$2744$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=5. Kemudian ac+b=17, b²+c=7. Eliminasi dan syarat positif memberi b=2, c=3. Hitung (a×7+b)²+c, hasil 1372.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9be046ab17aba2c4260db658",
+        "teks": "Sebuah toko pakaian memberikan promo diskon bertingkat. Suatu barang dikenai diskon 40% kemudian dilanjutkan diskon 10%. Jika urutan diskon ditukar menjadi diskon 10% kemudian dilanjutkan diskon 40%, hubungan harga akhir barang pada kedua urutan tersebut adalah ....",
+        "jawaban": "sama besar, karena perkalian faktor pengali diskon bersifat komutatif",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=27$, $(f\\circ g)(1)=32$, dan $(g\\circ f)(0)=53$. Tentukan $(g\\circ f)(5)$.",
+      "jawaban_benar": "$1028$",
+      "alasan_benar": "Selisih dua data pertama memberi a=5. Kemudian ac+b=27, b²+c=53. Eliminasi dan syarat positif memberi b=7, c=4. Hitung (a×5+b)²+c, hasil 1028.",
+      "distraktor": [
+        {
+          "teks": "$1027$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1028$."
+        },
+        {
+          "teks": "$1029$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1028$."
+        },
+        {
+          "teks": "$2056$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=5. Kemudian ac+b=27, b²+c=53. Eliminasi dan syarat positif memberi b=7, c=4. Hitung (a×5+b)²+c, hasil 1028.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c721f633e9b6ba237f1e89a8",
+        "teks": "Diketahui $f(x)=9x+5$ dan $g(x)=6x+8$. Tentukan $(f\\circ g)(-3)$.",
+        "jawaban": "$-85$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas11.json",
+        "source_sha256": "0fdd63856203924ac54380dc924e57724c8e45ee86672b202d5f61c4b2c780fa"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_komposisi_tiga_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax+b$, $g(x)=x^2+c$ dengan a,b,c>0 memenuhi $(f\\circ g)(0)=21$, $(f\\circ g)(1)=23$, dan $(g\\circ f)(0)=56$. Tentukan $(g\\circ f)(3)$.",
+      "jawaban_benar": "$176$",
+      "alasan_benar": "Selisih dua data pertama memberi a=2. Kemudian ac+b=21, b²+c=56. Eliminasi dan syarat positif memberi b=7, c=7. Hitung (a×3+b)²+c, hasil 176.",
+      "distraktor": [
+        {
+          "teks": "$175$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $176$."
+        },
+        {
+          "teks": "$177$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $176$."
+        },
+        {
+          "teks": "$352$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Selisih dua data pertama memberi a=2. Kemudian ac+b=21, b²+c=56. Eliminasi dan syarat positif memberi b=7, c=7. Hitung (a×3+b)²+c, hasil 176.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas11-b01-b-hard-bt01-039"
     }
   ]
 }

@@ -824,6 +824,191 @@
       "pembahasan": "Jumlah semula 102. Jumlah baru harus 6 × 112/5 = 672/5. Nilai tambahan = 672/5 - 102 = 162/5.",
       "catatan": "codex-replenishment:kelas7-b06-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas7-b06-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d597f920600e59adfdb13ef",
+        "teks": "| Durasi Belajar (menit) | Frekuensi (Siswa) |\n| :---: | :---: |\n| 30 | 4 |\n| 45 | 7 |\n| 60 | 11 |\n| 75 | 5 |\n| 90 | 3 |\n\nSeorang konselor sekolah menyatakan bahwa lebih dari sepertiga siswa belajar mandiri lebih dari 60 menit per hari. Berdasarkan tabel di atas, evaluasilah pernyataan konselor tersebut!",
+        "jawaban": "Pernyataan salah, karena proporsi siswa yang belajar lebih dari 60 menit hanya $\\frac{8}{30}$ (sekitar 26,67%), yang kurang dari sepertiga.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_investigasi_respons_kelompok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Survei dibagikan ke dua kelompok, total 40 siswa. Kelompok I mengembalikan 4/5 formulirnya, kelompok II 3/5; jumlah kembali 27. Semua siswa menerima satu formulir. Berapa selisih banyak formulir tidak kembali dari kelompok I dan II, dibagi total siswa?",
+      "jawaban_benar": "$- \\frac{7}{40}$",
+      "alasan_benar": "Tulis besar kelompok a,b. Dari a+b=40 dan 4a/5+3b/5=27, diperoleh a=15,b=25. Yang tidak kembali a/5=3, 2b/5=10; selisih dibagi total -7/40.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{7}{80}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{7}{20}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{7}{40}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Tulis besar kelompok a,b. Dari a+b=40 dan 4a/5+3b/5=27, diperoleh a=15,b=25. Yang tidak kembali a/5=3, 2b/5=10; selisih dibagi total -7/40.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "25c28c8ebeebedbb413f566f",
+        "teks": "| Banyak Huruf ($x$) | 5 | 8 | 10 | 12 |\n| :--- | :---: | :---: | :---: | :---: |\n| Frekuensi Siswa ($f$) | 4 | 5 | 8 | 3 |\n\nBerdasarkan tabel distribusi di atas, berapakah rata-rata banyak huruf per nama siswa di kelompok belajar tersebut?",
+        "jawaban": "8,8 huruf",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_investigasi_respons_kelompok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Survei dibagikan ke dua kelompok, total 95 siswa. Kelompok I mengembalikan 4/5 formulirnya, kelompok II 3/5; jumlah kembali 69. Semua siswa menerima satu formulir. Berapa selisih banyak formulir tidak kembali dari kelompok I dan II, dibagi total siswa?",
+      "jawaban_benar": "$- \\frac{2}{95}$",
+      "alasan_benar": "Tulis besar kelompok a,b. Dari a+b=95 dan 4a/5+3b/5=69, diperoleh a=60,b=35. Yang tidak kembali a/5=12, 2b/5=14; selisih dibagi total -2/95.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{95}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{4}{95}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{2}{95}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Tulis besar kelompok a,b. Dari a+b=95 dan 4a/5+3b/5=69, diperoleh a=60,b=35. Yang tidak kembali a/5=12, 2b/5=14; selisih dibagi total -2/95.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a05a8c9581ed26fcc57c7fd4",
+        "teks": "| Panjang Nama (Banyak Huruf) | Banyak Siswa |\n| :---: | :---: |\n| 10 | 3 |\n| 11 | 7 |\n| 12 | 6 |\n| 13 | 4 |\n| 14 | 2 |\n\nBerdasarkan tabel di atas, banyak siswa yang memiliki panjang nama sama dengan \"Dewi Sartika\" adalah ....",
+        "jawaban": "7 siswa",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_investigasi_respons_kelompok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Survei dibagikan ke dua kelompok, total 40 siswa. Kelompok I mengembalikan 4/5 formulirnya, kelompok II 3/5; jumlah kembali 28. Semua siswa menerima satu formulir. Berapa selisih banyak formulir tidak kembali dari kelompok I dan II, dibagi total siswa?",
+      "jawaban_benar": "$- \\frac{1}{10}$",
+      "alasan_benar": "Tulis besar kelompok a,b. Dari a+b=40 dan 4a/5+3b/5=28, diperoleh a=20,b=20. Yang tidak kembali a/5=4, 2b/5=8; selisih dibagi total -1/10.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{1}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Tulis besar kelompok a,b. Dari a+b=40 dan 4a/5+3b/5=28, diperoleh a=20,b=20. Yang tidak kembali a/5=4, 2b/5=8; selisih dibagi total -1/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "607a406e58aab495f7f82fb1",
+        "teks": "Diagram sederhana yang menggunakan garis bilangan dengan menempatkan tanda X di atas setiap nilai data untuk menampilkan kumpulan data disebut ....",
+        "jawaban": "line plot",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_investigasi_respons_kelompok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Survei dibagikan ke dua kelompok, total 55 siswa. Kelompok I mengembalikan 4/5 formulirnya, kelompok II 3/5; jumlah kembali 41. Semua siswa menerima satu formulir. Berapa selisih banyak formulir tidak kembali dari kelompok I dan II, dibagi total siswa?",
+      "jawaban_benar": "$\\frac{2}{55}$",
+      "alasan_benar": "Tulis besar kelompok a,b. Dari a+b=55 dan 4a/5+3b/5=41, diperoleh a=40,b=15. Yang tidak kembali a/5=8, 2b/5=6; selisih dibagi total 2/55.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{53}{55}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4}{3025}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2}{55}$."
+        },
+        {
+          "teks": "$\\frac{1}{55}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Tulis besar kelompok a,b. Dari a+b=55 dan 4a/5+3b/5=41, diperoleh a=40,b=15. Yang tidak kembali a/5=8, 2b/5=6; selisih dibagi total 2/55.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c45c88bf941179c72af88507",
+        "teks": "Seorang ketua OSIS ingin mengetahui kegiatan ekstrakurikuler yang paling diminati oleh siswa di sekolahnya. Formulasi pertanyaan investigasi statistika yang paling tepat untuk mengumpulkan data tersebut adalah ....",
+        "jawaban": "\"Ekstrakurikuler apa yang paling banyak dipilih oleh siswa?\"",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_investigasi_respons_kelompok",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Survei dibagikan ke dua kelompok, total 75 siswa. Kelompok I mengembalikan 4/5 formulirnya, kelompok II 3/5; jumlah kembali 53. Semua siswa menerima satu formulir. Berapa selisih banyak formulir tidak kembali dari kelompok I dan II, dibagi total siswa?",
+      "jawaban_benar": "$- \\frac{2}{25}$",
+      "alasan_benar": "Tulis besar kelompok a,b. Dari a+b=75 dan 4a/5+3b/5=53, diperoleh a=40,b=35. Yang tidak kembali a/5=8, 2b/5=14; selisih dibagi total -2/25.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{25}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{4}{25}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{2}{25}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Tulis besar kelompok a,b. Dari a+b=75 dan 4a/5+3b/5=53, diperoleh a=40,b=35. Yang tidak kembali a/5=8, 2b/5=14; selisih dibagi total -2/25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b06-a-hard-bt01-025"
     }
   ]
 }

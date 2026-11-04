@@ -739,6 +739,80 @@
       "pembahasan": "Jumlah semua tim C(17,4) dikurangi tim seluruhnya putra C(10,4), diperoleh 2170.",
       "catatan": "codex-replenishment:kelas12-b03-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12-b03-c-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9938a5f12b4ec70f92c3738",
+        "teks": "Tentukan banyak solusi bilangan bulat non-negatif dari persamaan $a + b + c = 9$.",
+        "jawaban": "55",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kombinasi_batas_larangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tim 4 orang dipilih dari 7 laki-laki dan 5 perempuan. Tim harus memuat sedikitnya dua perempuan; dua laki-laki tertentu A dan B tidak boleh bersama dalam tim. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$275$",
+      "alasan_benar": "Pisahkan menurut jumlah perempuan j≥2. Untuk tiap j, hitung C(perempuan,j)×C(laki-laki,k-j), lalu kurangi tim yang memuat A dan B sekaligus dengan memilih anggota laki-laki sisanya dari selain A,B. Jumlah seluruh kasus memberi 275.",
+      "distraktor": [
+        {
+          "teks": "$274$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $275$."
+        },
+        {
+          "teks": "$276$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $275$."
+        },
+        {
+          "teks": "$550$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan menurut jumlah perempuan j≥2. Untuk tiap j, hitung C(perempuan,j)×C(laki-laki,k-j), lalu kurangi tim yang memuat A dan B sekaligus dengan memilih anggota laki-laki sisanya dari selain A,B. Jumlah seluruh kasus memberi 275.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "58f6b4ebb23f22ec272c7474",
+        "teks": "Enam permen yang identik akan dibagikan kepada tiga orang anak, dan setiap anak boleh menerima berapa pun permen, termasuk tidak menerima sama sekali. Banyak cara membagikan permen tersebut adalah ....",
+        "jawaban": "28 cara",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12.json",
+        "source_sha256": "024012b483b9c226daa0b1aabd73711be9038b964d8b67f2ebe511c905462272"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_kombinasi_batas_larangan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tim 5 orang dipilih dari 6 laki-laki dan 6 perempuan. Tim harus memuat sedikitnya dua perempuan; dua laki-laki tertentu A dan B tidak boleh bersama dalam tim. Berapa tim yang memenuhi?",
+      "jawaban_benar": "$616$",
+      "alasan_benar": "Pisahkan menurut jumlah perempuan j≥2. Untuk tiap j, hitung C(perempuan,j)×C(laki-laki,k-j), lalu kurangi tim yang memuat A dan B sekaligus dengan memilih anggota laki-laki sisanya dari selain A,B. Jumlah seluruh kasus memberi 616.",
+      "distraktor": [
+        {
+          "teks": "$615$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $616$."
+        },
+        {
+          "teks": "$617$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $616$."
+        },
+        {
+          "teks": "$1232$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Pisahkan menurut jumlah perempuan j≥2. Untuk tiap j, hitung C(perempuan,j)×C(laki-laki,k-j), lalu kurangi tim yang memuat A dan B sekaligus dengan memilih anggota laki-laki sisanya dari selain A,B. Jumlah seluruh kasus memberi 616.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12-b03-c-hard-bt01-024"
     }
   ]
 }

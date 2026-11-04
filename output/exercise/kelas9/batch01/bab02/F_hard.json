@@ -639,6 +639,561 @@
       "pembahasan": "Diketahui:\nTabung mula-mula:\n- Jari-jari alas: $r = \\frac{12}{2} = 6\\text{ cm}$\n- Tinggi: $t = 15\\text{ cm}$\n- Volume mula-mula: $V = \\pi r^2 t = \\pi (6)^2 (15) = 540\\pi\\text{ cm}^3$\n\nTabung varian ekonomis:\nSeluruh dimensi linier diskalakan dengan faktor $k = 0,6$.\n- Jari-jari baru: $r' = 0,6 \\times 6 = 3,6\\text{ cm}$\n- Tinggi baru: $t' = 0,6 \\times 15 = 9\\text{ cm}$\n- Volume baru: $V' = \\pi (r')^2 t' = \\pi (3,6)^2 (9) = 116,64\\pi\\text{ cm}^3$\n\nPersentase volume lilin baru terhadap semula:\n$$\\frac{V'}{V} = \\frac{116,64\\pi}{540\\pi} = 0,216 = 21,6\\%$$\n\nSecara langsung melalui sifat skala bangun ruang sisi lengkung:\n$$V' = k^3 \\times V = (0,6)^3 \\times V = 0,216 V = 21,6\\% V$$\n\nDengan demikian, dugaan asisten salah karena ia hanya memperhitungkan faktor skala dua dimensi (luas alas $k^2 = 0,36$) dan melupakan faktor penyusutan pada tinggi tabung ($k = 0,6$). Lilin ekonomis sebenarnya hanya membutuhkan $21,6\\%$ bahan dari lilin semula.",
       "catatan": null,
       "dipaksa_kuota": false
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "38552a42ab504027ffa0ecf2",
+        "teks": "Sebuah wadah tabung memiliki volume mula-mula $250\\text{ cm}^3$. Jika wadah tersebut didesain ulang sedemikian rupa sehingga panjang jari-jari alasnya menjadi $2$ kali ukuran semula dan tingginya menjadi $3$ kali ukuran semula, volume wadah tabung yang baru adalah ....",
+        "jawaban": "$3.000\\text{ cm}^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $448 \\pi$ cm³. Silinder padat berjari-jari 4 cm dan tinggi 4 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 1 cm tanpa tumpah. Tinggi tabung 15 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$448 \\pi$",
+      "alasan_benar": "Volume benda $64 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 7. Tinggi akhir 8; sisa udara πr²(15-8)=$448 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$224 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$896 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 448 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $64 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 7. Tinggi akhir 8; sisa udara πr²(15-8)=$448 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bac7a5f010c94fe6260078b4",
+        "teks": "Sebuah cetakan cairan lilin memiliki dua tipe rongga dengan kedalaman tinggi yang sama. Rongga pertama berbentuk prisma tegak persegi (panjang sisi alas $s$), dan rongga kedua berbentuk kerucut dengan panjang diameter alas lingkaran sama dengan $s$. Seorang perancang cetakan mengklaim bahwa volume rongga prisma persegi tersebut adalah hampir empat kali lipat (tepatnya $\\frac{12}{\\pi} \\approx 3,82$ kali) dari volume rongga kerucut. Evaluasilah kebenaran klaim tersebut!",
+        "jawaban": "Klaim benar, karena rasio perbandingan volume prisma terhadap volume kerucut adalah $12 : \\pi \\approx 3,82$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $3168 \\pi$ cm³. Silinder padat berjari-jari 6 cm dan tinggi 16 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 4 cm tanpa tumpah. Tinggi tabung 29 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$432 \\pi$",
+      "alasan_benar": "Volume benda $576 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 22. Tinggi akhir 26; sisa udara πr²(29-26)=$432 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$216 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$864 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 432 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $576 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 22. Tinggi akhir 26; sisa udara πr²(29-26)=$432 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c79a1fa78a18dd03f9fdf762",
+        "teks": "Jika sebuah bola memiliki panjang jari-jari $r$, rumus yang tepat untuk menghitung volume bola tersebut adalah ....",
+        "jawaban": "$V = \\frac{4}{3}\\pi r^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $288 \\pi$ cm³. Silinder padat berjari-jari 2 cm dan tinggi 12 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 3 cm tanpa tumpah. Tinggi tabung 24 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$48 \\pi$",
+      "alasan_benar": "Volume benda $48 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=4. Volume air awal memberi tinggi awal 18. Tinggi akhir 21; sisa udara πr²(24-21)=$48 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$24 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$96 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 48 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $48 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=4. Volume air awal memberi tinggi awal 18. Tinggi akhir 21; sisa udara πr²(24-21)=$48 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a711279028cf06146b573aa1",
+        "teks": "Kerucut memiliki jari-jari 12 cm dan tinggi 12 cm. Berapa volumenya dalam bentuk $\\pi$?",
+        "jawaban": "$576 \\pi$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $2592 \\pi$ cm³. Silinder padat berjari-jari 6 cm dan tinggi 12 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 3 cm tanpa tumpah. Tinggi tabung 27 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$864 \\pi$",
+      "alasan_benar": "Volume benda $432 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 18. Tinggi akhir 21; sisa udara πr²(27-21)=$864 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$432 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$1728 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 864 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $432 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 18. Tinggi akhir 21; sisa udara πr²(27-21)=$864 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec78ddbe2f777266d38a8cff",
+        "teks": "Kerucut memiliki jari-jari 8 cm dan tinggi 3 cm. Berapa volumenya dalam bentuk $\\pi$?",
+        "jawaban": "$64 \\pi$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $640 \\pi$ cm³. Silinder padat berjari-jari 4 cm dan tinggi 4 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 1 cm tanpa tumpah. Tinggi tabung 16 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$320 \\pi$",
+      "alasan_benar": "Volume benda $64 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 10. Tinggi akhir 11; sisa udara πr²(16-11)=$320 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$160 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$640 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 320 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $64 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 10. Tinggi akhir 11; sisa udara πr²(16-11)=$320 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a64085037eb232fb436cbcbd",
+        "teks": "Sebuah bis beton silinder memiliki panjang $100\\text{ cm}$. Jari-jari luar bis beton tersebut adalah $10\\text{ cm}$ dan ketebalan dinding betonnya adalah $3\\text{ cm}$. Dengan menggunakan $\\pi = 3,14$, volume beton penyusun bis tersebut adalah ....",
+        "jawaban": "$16.014\\text{ cm}^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $2736 \\pi$ cm³. Silinder padat berjari-jari 6 cm dan tinggi 16 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 4 cm tanpa tumpah. Tinggi tabung 30 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$1008 \\pi$",
+      "alasan_benar": "Volume benda $576 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 19. Tinggi akhir 23; sisa udara πr²(30-23)=$1008 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$504 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$2016 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 1008 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $576 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 19. Tinggi akhir 23; sisa udara πr²(30-23)=$1008 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c79a1fa78a18dd03f9fdf762",
+        "teks": "Jika sebuah bola memiliki panjang jari-jari $r$, rumus yang tepat untuk menghitung volume bola tersebut adalah ....",
+        "jawaban": "$V = \\frac{4}{3}\\pi r^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $176 \\pi$ cm³. Silinder padat berjari-jari 2 cm dan tinggi 4 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 1 cm tanpa tumpah. Tinggi tabung 20 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$128 \\pi$",
+      "alasan_benar": "Volume benda $16 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=4. Volume air awal memberi tinggi awal 11. Tinggi akhir 12; sisa udara πr²(20-12)=$128 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$64 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$256 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 128 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $16 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=4. Volume air awal memberi tinggi awal 11. Tinggi akhir 12; sisa udara πr²(20-12)=$128 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7f7bb938f0339d3f60ead4e8",
+        "teks": "Sebuah wadah cetakan nasi berbentuk kerucut memiliki volume $1.232\\text{ cm}^3$. Jika panjang diameter alas kerucut tersebut adalah $14\\text{ cm}$ dan digunakan $\\pi = \\frac{22}{7}$, tinggi wadah kerucut tersebut adalah ....",
+        "jawaban": "$24\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $304 \\pi$ cm³. Silinder padat berjari-jari 2 cm dan tinggi 16 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 4 cm tanpa tumpah. Tinggi tabung 26 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$48 \\pi$",
+      "alasan_benar": "Volume benda $64 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=4. Volume air awal memberi tinggi awal 19. Tinggi akhir 23; sisa udara πr²(26-23)=$48 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$24 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$96 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 48 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $64 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=4. Volume air awal memberi tinggi awal 19. Tinggi akhir 23; sisa udara πr²(26-23)=$48 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "16d9c7b4a4e66d56eba1254a",
+        "teks": "Sebuah keran air mengisi dua wadah kosong dengan debit aliran yang sama konstan. Wadah I berbentuk tabung dengan diameter alas $d$ dan tinggi $h$. Wadah II berbentuk kerucut dengan diameter alas $2d$ dan tinggi $h$. Jika Wadah I terisi penuh air dalam waktu $15\\text{ menit}$, seorang pekerja mengklaim bahwa Wadah II akan terisi penuh dalam waktu tepat $30\\text{ menit}$. Bagaimanakah kebenaran klaim tersebut?",
+        "jawaban": "Klaim salah, waktu yang dibutuhkan untuk mengisi penuh Wadah II adalah $20\\text{ menit}$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $1472 \\pi$ cm³. Silinder padat berjari-jari 4 cm dan tinggi 16 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 4 cm tanpa tumpah. Tinggi tabung 33 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$384 \\pi$",
+      "alasan_benar": "Volume benda $256 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 23. Tinggi akhir 27; sisa udara πr²(33-27)=$384 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$192 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$768 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 384 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $256 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 23. Tinggi akhir 27; sisa udara πr²(33-27)=$384 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c79a1fa78a18dd03f9fdf762",
+        "teks": "Jika sebuah bola memiliki panjang jari-jari $r$, rumus yang tepat untuk menghitung volume bola tersebut adalah ....",
+        "jawaban": "$V = \\frac{4}{3}\\pi r^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $432 \\pi$ cm³. Silinder padat berjari-jari 3 cm dan tinggi 8 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 2 cm tanpa tumpah. Tinggi tabung 16 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$72 \\pi$",
+      "alasan_benar": "Volume benda $72 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=6. Volume air awal memberi tinggi awal 12. Tinggi akhir 14; sisa udara πr²(16-14)=$72 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$36 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$144 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 72 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $72 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=6. Volume air awal memberi tinggi awal 12. Tinggi akhir 14; sisa udara πr²(16-14)=$72 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "caf624a627ba78c724932b31",
+        "teks": "Sebuah tangki penyimpanan gas kimia berbentuk kapsul, yaitu gabungan sebuah tabung silinder di bagian tengah dan dua belahan setengah bola identik pada kedua ujungnya. Panjang total tangki dari ujung ke ujung terluar adalah $28\\text{ m}$, dan jari-jari belahan bola pada kedua ujungnya adalah $3\\text{ m}$. Demi keselamatan kerja terhadap batas tekanan gas, tangki tersebut hanya boleh diisi cairan kimia maksimal $80\\%$ dari kapasitas total tangki. Volume maksimum cairan kimia yang diizinkan untuk diisikan ke dalam tangki tersebut adalah ....",
+        "jawaban": "$187,2\\pi\\text{ m}^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $1100 \\pi$ cm³. Silinder padat berjari-jari 5 cm dan tinggi 8 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 2 cm tanpa tumpah. Tinggi tabung 15 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$200 \\pi$",
+      "alasan_benar": "Volume benda $200 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=10. Volume air awal memberi tinggi awal 11. Tinggi akhir 13; sisa udara πr²(15-13)=$200 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$100 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$400 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 200 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $200 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=10. Volume air awal memberi tinggi awal 11. Tinggi akhir 13; sisa udara πr²(15-13)=$200 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-026"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c79a1fa78a18dd03f9fdf762",
+        "teks": "Jika sebuah bola memiliki panjang jari-jari $r$, rumus yang tepat untuk menghitung volume bola tersebut adalah ....",
+        "jawaban": "$V = \\frac{4}{3}\\pi r^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $896 \\pi$ cm³. Silinder padat berjari-jari 4 cm dan tinggi 8 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 2 cm tanpa tumpah. Tinggi tabung 20 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$256 \\pi$",
+      "alasan_benar": "Volume benda $128 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 14. Tinggi akhir 16; sisa udara πr²(20-16)=$256 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$128 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$512 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 256 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $128 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 14. Tinggi akhir 16; sisa udara πr²(20-16)=$256 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-027"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bc8b268076af9293ad0aa4d",
+        "teks": "Sebuah wadah berbentuk tabung dengan jari-jari alas $10\\text{ cm}$ terisi air sebagian. Tiga buah bola besi pejal yang masing-masing berjari-jari $5\\text{ cm}$ dimasukkan ke dalam wadah tersebut hingga seluruhnya tenggelam dan air tidak tumpah. Kenaikan tinggi permukaan air pada wadah tersebut adalah ....",
+        "jawaban": "$5\\text{ cm}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $1024 \\pi$ cm³. Silinder padat berjari-jari 4 cm dan tinggi 8 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 2 cm tanpa tumpah. Tinggi tabung 21 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$192 \\pi$",
+      "alasan_benar": "Volume benda $128 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 16. Tinggi akhir 18; sisa udara πr²(21-18)=$192 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$96 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$384 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 192 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $128 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 16. Tinggi akhir 18; sisa udara πr²(21-18)=$192 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-028"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "857a700c048d4193a664d39c",
+        "teks": "Sebuah wadah berbentuk kerucut terpancung memiliki lingkaran alas atas dengan jari-jari $6\\text{ cm}$, lingkaran alas bawah dengan jari-jari $3\\text{ cm}$, dan tinggi wadah $4\\text{ cm}$. Berapakah kapasitas volume wadah tersebut dinyatakan dalam $\\pi$?",
+        "jawaban": "$84\\pi\\text{ cm}^3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $1440 \\pi$ cm³. Silinder padat berjari-jari 6 cm dan tinggi 8 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 2 cm tanpa tumpah. Tinggi tabung 16 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$576 \\pi$",
+      "alasan_benar": "Volume benda $288 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 10. Tinggi akhir 12; sisa udara πr²(16-12)=$576 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$288 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$1152 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 576 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $288 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=12. Volume air awal memberi tinggi awal 10. Tinggi akhir 12; sisa udara πr²(16-12)=$576 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-029"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "16d9c7b4a4e66d56eba1254a",
+        "teks": "Sebuah keran air mengisi dua wadah kosong dengan debit aliran yang sama konstan. Wadah I berbentuk tabung dengan diameter alas $d$ dan tinggi $h$. Wadah II berbentuk kerucut dengan diameter alas $2d$ dan tinggi $h$. Jika Wadah I terisi penuh air dalam waktu $15\\text{ menit}$, seorang pekerja mengklaim bahwa Wadah II akan terisi penuh dalam waktu tepat $30\\text{ menit}$. Bagaimanakah kebenaran klaim tersebut?",
+        "jawaban": "Klaim salah, waktu yang dibutuhkan untuk mengisi penuh Wadah II adalah $20\\text{ menit}$.",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas9.json",
+        "source_sha256": "d763bf7ffdf68cfee59a61c88b0ffc5205f44cdba34aacd21077116cc86b90d3"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_volume_perpindahan_inverse",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Tabung tegak berjari-jari belum diketahui berisi air $1536 \\pi$ cm³. Silinder padat berjari-jari 4 cm dan tinggi 16 cm dimasukkan hingga seluruhnya terendam, sehingga air naik 4 cm tanpa tumpah. Tinggi tabung 32 cm. Berapa volume udara yang masih tersisa dalam tabung?",
+      "jawaban_benar": "$256 \\pi$",
+      "alasan_benar": "Volume benda $256 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 24. Tinggi akhir 28; sisa udara πr²(32-28)=$256 \\pi$.",
+      "distraktor": [
+        {
+          "teks": "$128 \\pi$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$512 \\pi$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- 256 \\pi$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Volume benda $256 \\pi$ sama dengan luas alas tabung×kenaikan air, sehingga r=8. Volume air awal memberi tinggi awal 24. Tinggi akhir 28; sisa udara πr²(32-28)=$256 \\pi$.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas9-b02-f-hard-bt01-030"
     }
   ]
 }

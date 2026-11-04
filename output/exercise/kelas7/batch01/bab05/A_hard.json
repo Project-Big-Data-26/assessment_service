@@ -581,6 +581,376 @@
       "pembahasan": "Jumlah sudut segitiga 180°. Sudut ketiga=180-46-46=88°.",
       "catatan": "codex-replenishment:kelas7-b05-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas7-b05-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f659744bba3aa143885b3b18",
+        "teks": "Seorang siswa menyatakan: \"Jika dua sudut saling berpelurus, maka salah satunya pasti lancip dan yang lain pasti tumpul.\" Contoh yang menunjukkan pernyataan itu salah adalah dua sudut berpelurus yang besarnya ....",
+        "jawaban": "$90^\\circ$ dan $90^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+12)^\\circ$, B=$(3x+12)^\\circ$, dan C=$86$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$74$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=14. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=74.",
+      "distraktor": [
+        {
+          "teks": "$73$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $74$."
+        },
+        {
+          "teks": "$75$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $74$."
+        },
+        {
+          "teks": "$148$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=14. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=74.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a3dede658fee448416cf6f2b",
+        "teks": "Dua sudut sebuah segitiga masing-masing 50° dan 27°. Tentukan sudut ketiganya.",
+        "jawaban": "$103$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+5)^\\circ$, B=$(3x+8)^\\circ$, dan C=$102$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$\\frac{125}{2}$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=13. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=125/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{125}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$125$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{125}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=13. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=125/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1feb5c9130237f872073d9d0",
+        "teks": "Garis $k$ dan $l$ sejajar dan dipotong garis $t$. Dua sudut dalam sepihak besarnya $(3x + 10)^\\circ$ dan $(2x + 20)^\\circ$. Seorang siswa menulis $3x + 10 = 2x + 20$ sehingga $x = 10$, lalu menyimpulkan kedua sudut itu $40^\\circ$. Pernyataan yang benar tentang pekerjaan siswa itu adalah ....",
+        "jawaban": "Salah, sebab sudut dalam sepihak berjumlah $180^\\circ$; seharusnya $x = 30$ dan sudutnya $100^\\circ$ dan $80^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+12)^\\circ$, B=$(3x+8)^\\circ$, dan C=$70$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$86$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=18. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=86.",
+      "distraktor": [
+        {
+          "teks": "$85$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $86$."
+        },
+        {
+          "teks": "$87$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $86$."
+        },
+        {
+          "teks": "$172$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=18. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=86.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "309f014a08e11cd7f8c7342e",
+        "teks": "Pada bangun $ABCD$ dengan $AB \\parallel DC$ dan $AD \\parallel BC$, besar $\\angle A$ tiga kali besar $\\angle B$, dan keduanya bersebelahan pada sisi $AB$. Besar $\\angle D$ (bersebelahan dengan $\\angle A$ pada sisi $AD$) adalah ....",
+        "jawaban": "$45^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+13)^\\circ$, B=$(3x+12)^\\circ$, dan C=$80$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$\\frac{157}{2}$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=15. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=157/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{157}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$157$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{157}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=15. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=157/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "092616c47dc2e8e225be88f6",
+        "teks": "Garis $AB$ dan garis $CD$ berpotongan di titik $O$. Besar $\\angle AOC = (2x + 10)^\\circ$ dan $\\angle BOD = 70^\\circ$, dengan $\\angle AOC$ dan $\\angle BOD$ saling bertolak belakang. Nilai $x$ adalah ....",
+        "jawaban": "$30$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+9)^\\circ$, B=$(3x+9)^\\circ$, dan C=$77$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$\\frac{163}{2}$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=17. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=163/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{163}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$163$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{163}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=17. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=163/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a3dede658fee448416cf6f2b",
+        "teks": "Dua sudut sebuah segitiga masing-masing 50° dan 27°. Tentukan sudut ketiganya.",
+        "jawaban": "$103$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+5)^\\circ$, B=$(3x+15)^\\circ$, dan C=$100$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$\\frac{131}{2}$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=12. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=131/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{131}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$131$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{131}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=12. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=131/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1feb5c9130237f872073d9d0",
+        "teks": "Garis $k$ dan $l$ sejajar dan dipotong garis $t$. Dua sudut dalam sepihak besarnya $(3x + 10)^\\circ$ dan $(2x + 20)^\\circ$. Seorang siswa menulis $3x + 10 = 2x + 20$ sehingga $x = 10$, lalu menyimpulkan kedua sudut itu $40^\\circ$. Pernyataan yang benar tentang pekerjaan siswa itu adalah ....",
+        "jawaban": "Salah, sebab sudut dalam sepihak berjumlah $180^\\circ$; seharusnya $x = 30$ dan sudutnya $100^\\circ$ dan $80^\\circ$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+6)^\\circ$, B=$(3x+8)^\\circ$, dan C=$76$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$83$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=18. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=83.",
+      "distraktor": [
+        {
+          "teks": "$82$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $83$."
+        },
+        {
+          "teks": "$84$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $83$."
+        },
+        {
+          "teks": "$166$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=18. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=83.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "93d185e150f1ce14c89b4748",
+        "teks": "Dua sudut sebuah segitiga masing-masing 32° dan 52°. Tentukan sudut ketiganya.",
+        "jawaban": "$96$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+4)^\\circ$, B=$(3x+11)^\\circ$, dan C=$95$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$69$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=14. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=69.",
+      "distraktor": [
+        {
+          "teks": "$68$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$70$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $69$."
+        },
+        {
+          "teks": "$138$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=14. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=69.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-024"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2b3a99c2fda3caa1ca4028ef",
+        "teks": "Dua sudut sebuah segitiga masing-masing 43° dan 62°. Tentukan sudut ketiganya.",
+        "jawaban": "$75$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+10)^\\circ$, B=$(3x+12)^\\circ$, dan C=$73$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$85$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=17. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=85.",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $85$."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $85$."
+        },
+        {
+          "teks": "$170$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=17. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=85.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-025"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9f05b723c75fe332e59100b",
+        "teks": "Dua sudut sebuah segitiga masing-masing 34° dan 71°. Tentukan sudut ketiganya.",
+        "jawaban": "$75$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas7.json",
+        "source_sha256": "1bf97e788a747530f7cd5d61795fc8a1bf12478e1ad7abc52a3d05ca22cbf399"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_sudut_garis_bagi_luar",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Segitiga ABC mempunyai sudut A=$(2x+14)^\\circ$, B=$(3x+13)^\\circ$, dan C=$68$°. Garis bagi sudut A memotong BC di D. Tentukan besar sudut luar di D yang berpelurus dengan sudut ADB, dalam derajat.",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Jumlah sudut segitiga menentukan x=17. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=88.",
+      "distraktor": [
+        {
+          "teks": "$87$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $88$."
+        },
+        {
+          "teks": "$89$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $88$."
+        },
+        {
+          "teks": "$176$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Jumlah sudut segitiga menentukan x=17. Pada segitiga ABD, sudut A dibagi dua dan sudut B tetap. Sudut luar di D sama dengan A/2+B=88.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas7-b05-a-hard-bt01-026"
     }
   ]
 }

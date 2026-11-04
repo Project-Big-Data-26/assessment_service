@@ -372,6 +372,43 @@
       "pembahasan": "Jumlah kotak merupakan faktor 72 yang minimal 2: [2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72]. Ada 11 pilihan.",
       "catatan": "codex-replenishment:kelas5-b02-C-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas5-b02-c-hard-bt01-011"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e79e88cc464277e4aeabc3f",
+        "teks": "Bilangan berikut yang memiliki 6 dan 8 sebagai faktornya adalah ....",
+        "jawaban": "48",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas5.json",
+        "source_sha256": "9b88c193b84f3e1dd9de023969126f7310bfb95fd37588f9cb88afba626447ed"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_faktor_batas_kantong",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Ada 112 jeruk dan 112 apel. Semua dibagi ke kantong dengan isi jeruk sama dan isi apel sama, tanpa sisa. Tersedia paling banyak 2 kantong. Berapa banyak buah dalam satu kantong jika kantong yang dipakai sebanyak mungkin?",
+      "jawaban_benar": "$112$",
+      "alasan_benar": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1, 2]; terbesar 2. Isi per kantong 112/2+112/2=112.",
+      "distraktor": [
+        {
+          "teks": "$111$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $112$."
+        },
+        {
+          "teks": "$113$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $112$."
+        },
+        {
+          "teks": "$224$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Banyak kantong harus faktor kedua jumlah dan tidak lebih dari 2. Kandidat [1, 2]; terbesar 2. Isi per kantong 112/2+112/2=112.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas5-b02-c-hard-bt01-012"
     }
   ]
 }

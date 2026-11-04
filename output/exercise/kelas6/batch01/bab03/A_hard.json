@@ -577,6 +577,376 @@
       "pembahasan": "Tiap lapisan memuat 60 kubus. Dengan 7 lapisan ada 60×7=420 kubus.",
       "catatan": "codex-replenishment:kelas6-b03-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas6-b03-a-hard-bt01-014"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "44b6129d9d984a5689b1ce74",
+        "teks": "Sebuah bentuk terdiri atas 7 kubus identik yang saling menempel. Berapa kubus yang diperlukan untuk membentuknya?",
+        "jawaban": "7 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 9×9×9 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 1×1 dan menembus sepanjang 9. Ketiga terowongan berpotongan pada blok pusat 1×1×1; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$704$",
+      "alasan_benar": "Setiap terowongan membuang 9. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 25, sisa 729-25=704.",
+      "distraktor": [
+        {
+          "teks": "$703$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $704$."
+        },
+        {
+          "teks": "$705$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $704$."
+        },
+        {
+          "teks": "$1408$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 9. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 25, sisa 729-25=704.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-015"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b53719b0139717c8f0cbd69e",
+        "teks": "Sebuah model menara memiliki 3 lapisan. Lapisan bawah berisi 5 kubus, lapisan tengah 3 kubus, dan lapisan atas 2 kubus. Berapa kubus seluruhnya?",
+        "jawaban": "10 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 8×8×8 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 2×2 dan menembus sepanjang 8. Ketiga terowongan berpotongan pada blok pusat 2×2×2; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$432$",
+      "alasan_benar": "Setiap terowongan membuang 32. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 80, sisa 512-80=432.",
+      "distraktor": [
+        {
+          "teks": "$431$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $432$."
+        },
+        {
+          "teks": "$433$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $432$."
+        },
+        {
+          "teks": "$864$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 32. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 80, sisa 512-80=432.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-016"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "332a9ddca48526a38b9e369a",
+        "teks": "Sebuah balok tersusun rapat dari kubus satuan. Pada setiap lapis terdapat 4 kubus sepanjang dan 3 kubus selebar. Balok memiliki 2 lapis.\n\nJika balok diurai menjadi kubus satuan, berapa kubus yang diperoleh?",
+        "jawaban": "24 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 14×14×14 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 2×2 dan menembus sepanjang 14. Ketiga terowongan berpotongan pada blok pusat 2×2×2; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$2592$",
+      "alasan_benar": "Setiap terowongan membuang 56. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 152, sisa 2744-152=2592.",
+      "distraktor": [
+        {
+          "teks": "$2591$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2592$."
+        },
+        {
+          "teks": "$2593$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $2592$."
+        },
+        {
+          "teks": "$5184$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 56. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 152, sisa 2744-152=2592.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-017"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "83e88afc626fd02fc3fb3e27",
+        "teks": "Sebuah balok tersusun rapat dari kubus satuan. Setiap lapis memiliki 6 kubus sepanjang dan 2 kubus selebar. Balok itu memiliki 3 lapis. Berapa kubus satuan yang diperoleh jika balok diurai?",
+        "jawaban": "36 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 7×7×7 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 1×1 dan menembus sepanjang 7. Ketiga terowongan berpotongan pada blok pusat 1×1×1; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$324$",
+      "alasan_benar": "Setiap terowongan membuang 7. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 19, sisa 343-19=324.",
+      "distraktor": [
+        {
+          "teks": "$323$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $324$."
+        },
+        {
+          "teks": "$325$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $324$."
+        },
+        {
+          "teks": "$648$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 7. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 19, sisa 343-19=324.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-018"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "b53719b0139717c8f0cbd69e",
+        "teks": "Sebuah model menara memiliki 3 lapisan. Lapisan bawah berisi 5 kubus, lapisan tengah 3 kubus, dan lapisan atas 2 kubus. Berapa kubus seluruhnya?",
+        "jawaban": "10 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 15×15×15 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 7×7 dan menembus sepanjang 15. Ketiga terowongan berpotongan pada blok pusat 7×7×7; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$1856$",
+      "alasan_benar": "Setiap terowongan membuang 735. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 1519, sisa 3375-1519=1856.",
+      "distraktor": [
+        {
+          "teks": "$1855$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1856$."
+        },
+        {
+          "teks": "$1857$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $1856$."
+        },
+        {
+          "teks": "$3712$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 735. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 1519, sisa 3375-1519=1856.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-019"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cfb4a954fbc0a881866f006a",
+        "teks": "Rancang susunan dari kubus satuan dengan 6 kubus pada lapis bawah dan sedikitnya 2 kubus pada lapis atas. Setiap kubus atas harus tepat di atas kubus bawah. Jumlah seluruh kubus harus lebih dari 9. Berapa jumlah terkecil yang dapat dipakai?",
+        "jawaban": "10 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 12×12×12 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 6×6 dan menembus sepanjang 12. Ketiga terowongan berpotongan pada blok pusat 6×6×6; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$864$",
+      "alasan_benar": "Setiap terowongan membuang 432. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 864, sisa 1728-864=864.",
+      "distraktor": [
+        {
+          "teks": "$863$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $864$."
+        },
+        {
+          "teks": "$865$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $864$."
+        },
+        {
+          "teks": "$1728$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 432. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 864, sisa 1728-864=864.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-020"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "141cc5cae55ba14a44a7123a",
+        "teks": "Rani menyusun 8 kubus kecil menjadi sebuah bentuk. Berapa kubus yang dipakai?",
+        "jawaban": "8 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 6×6×6 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 2×2 dan menembus sepanjang 6. Ketiga terowongan berpotongan pada blok pusat 2×2×2; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$160$",
+      "alasan_benar": "Setiap terowongan membuang 24. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 56, sisa 216-56=160.",
+      "distraktor": [
+        {
+          "teks": "$159$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $160$."
+        },
+        {
+          "teks": "$161$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $160$."
+        },
+        {
+          "teks": "$320$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 24. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 56, sisa 216-56=160.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-021"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "971403f4ce04e36f2fcc82e3",
+        "teks": "Dua menara kubus berdiri berdampingan. Menara pertama memiliki 4 kubus dan menara kedua 3 kubus. Sebuah kubus diletakkan di atas menara pertama. Berapa kubus seluruhnya?",
+        "jawaban": "8 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 15×15×15 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 1×1 dan menembus sepanjang 15. Ketiga terowongan berpotongan pada blok pusat 1×1×1; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$3332$",
+      "alasan_benar": "Setiap terowongan membuang 15. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 43, sisa 3375-43=3332.",
+      "distraktor": [
+        {
+          "teks": "$3331$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3332$."
+        },
+        {
+          "teks": "$3333$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3332$."
+        },
+        {
+          "teks": "$6664$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 15. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 43, sisa 3375-43=3332.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-022"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "44b6129d9d984a5689b1ce74",
+        "teks": "Sebuah bentuk terdiri atas 7 kubus identik yang saling menempel. Berapa kubus yang diperlukan untuk membentuknya?",
+        "jawaban": "7 kubus",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 15×15×15 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 3×3 dan menembus sepanjang 15. Ketiga terowongan berpotongan pada blok pusat 3×3×3; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$3024$",
+      "alasan_benar": "Setiap terowongan membuang 135. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 351, sisa 3375-351=3024.",
+      "distraktor": [
+        {
+          "teks": "$3023$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3024$."
+        },
+        {
+          "teks": "$3025$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $3024$."
+        },
+        {
+          "teks": "$6048$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 135. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 351, sisa 3375-351=3024.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-023"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "65f9470b42f24e8990a514d1",
+        "teks": "Sebuah toko memiliki 24 kardus identik berukuran 50 cm x 80 cm x 90 cm. Kardus boleh diputar dan disusun tepat satu kolom. Berapa tinggi kolom terkecil yang dapat dibuat?",
+        "jawaban": "12 m",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas6.json",
+        "source_sha256": "5534830d8585bae8710100406387cf93bb97037cdc3d5e868831f28c767f79e9"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_konstruksi_tiga_terowongan",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Kubus 9×9×9 tersusun dari kubus satuan. Dibuat tiga terowongan lurus saling tegak lurus, masing-masing penampang 3×3 dan menembus sepanjang 9. Ketiga terowongan berpotongan pada blok pusat 3×3×3; setiap perpotongan dua terowongan tepat blok pusat yang sama. Berapa kubus satuan yang tidak dibuang?",
+      "jawaban_benar": "$540$",
+      "alasan_benar": "Setiap terowongan membuang 81. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 189, sisa 729-189=540.",
+      "distraktor": [
+        {
+          "teks": "$539$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $540$."
+        },
+        {
+          "teks": "$541$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $540$."
+        },
+        {
+          "teks": "$1080$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        }
+      ],
+      "pembahasan": "Setiap terowongan membuang 81. Menjumlahkan tiga terowongan menghitung blok pusat tiga kali. Agar blok pusat dihitung sekali, kurangi dua kali volume pusat. Kubus dibuang 189, sisa 729-189=540.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas6-b03-a-hard-bt01-024"
     }
   ]
 }

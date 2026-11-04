@@ -1,6 +1,6 @@
 """Exact certificates for the second, curriculum-specific local authoring pass."""
 from dataclasses import dataclass
-from itertools import product
+from itertools import product, permutations, combinations
 import sympy as s
 from .replenishment_math import numeric, text, m, pair, rp
 from app.presentation.latex import normalize_text
@@ -27,6 +27,24 @@ def finite(variables, ranges, constraints, query, aggregate="max"):
 
 
 def solve_certificate(cert):
+    if cert['type']=='restricted_bijection':
+        return s.Integer(sum(all(p[i]!=j for i,j in cert['forbidden']) for p in permutations(range(cert['size']))))
+    if cert['type']=='digit_arrangements':
+        return s.Integer(sum(p[0]!=0 and p[-1]%2==0 and int(''.join(map(str,p)))>cert['threshold'] for p in permutations(cert['digits'],cert['length'])))
+    if cert['type']=='committee':
+        men,women,k=cert['men'],cert['women'],cert['size'];total=0
+        if cert['mode']=='two_female_officers':
+            for first,second in permutations(range(men,men+women),2):
+                for rest in combinations([i for i in range(men+women) if i not in (first,second)],k-2):
+                    total+=any(i<men for i in rest)
+        else:
+            for team in combinations(range(men+women),k):
+                total+=sum(i>=men for i in team)>=2 and not (0 in team and 1 in team)
+        return s.Integer(total)
+    if cert['type']=='conditional_urn':
+        red,blue=cert['red'],cert['blue'];events=list(combinations(range(red+blue),3))
+        accepted=[v for v in events if any(i<red for i in v)]
+        return s.Rational(sum(sum(i<red for i in v)==2 for v in accepted),len(accepted))
     if cert['type']=='finite_probability':
         variables=s.symbols(' '.join(cert['variables']),real=True)
         if not isinstance(variables,tuple):variables=(variables,)
@@ -78,7 +96,7 @@ def checked(q, value, solution, family, level, cert, steps=None, rationale=None,
         "medium":"Menghubungkan dua sampai tiga langkah rutin yang saling bergantung.",
         "hard":"Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan."}[level]
     if wrong is None:
-        wrong = [1-value, value**2, value/2] if value.is_number and 0 < value < 1 else [value-1,value+1,2*value] if value.is_Integer else [value/2, value*2, -value]
+        wrong = [1-value,value**2,value/2,(1+value)/2,s.Rational(1,3),s.Rational(2,3)] if value.is_number and 0 < value < 1 else [value-1,value+1,2*value] if value.is_Integer else [value/2, value*2, -value]
     draft = numeric(normalize_text(q), value, normalize_text(solution), family, wrong=wrong)
     draft.proof.update(local_certificate=cert, assessed_level=level, dependent_steps=steps,
                        assessment_rationale=rationale, independent_ai_validation="not_requested_local_review")
