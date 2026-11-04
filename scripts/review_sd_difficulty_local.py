@@ -73,6 +73,9 @@ def verify(bundle):
 def run_class(grade):
     base=bank.base_for(grade);final=base/'hasil_validasi';name='kelas'+str(grade)
     with batch_lock(base):
+        if load(final/'manifest.json')['schemaVersion']=='codex-exercise-sessions-local-v3':
+            from app.services.exercise.session_expansion import verify_publication
+            return verify_publication(final)
         if load(final/'manifest.json')['schemaVersion']==SCHEMA:
             verify(final);return load(final/'bukti_validasi/codex_local_review.json')['summary']
         bank.verify(final)

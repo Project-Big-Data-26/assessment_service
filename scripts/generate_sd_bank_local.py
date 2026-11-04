@@ -258,6 +258,9 @@ def check_latex(questions,path):
 
 def verify(bundle):
     bundle=Path(bundle);base=bundle.parent;manifest=load(bundle/'manifest.json')
+    if manifest['schemaVersion']=='codex-exercise-sessions-local-v3':
+        from app.services.exercise.session_expansion import verify_publication
+        return verify_publication(bundle)
     if manifest['schemaVersion']=='codex-sd-difficulty-review-v2':
         from scripts.review_sd_difficulty_local import verify
         return verify(bundle)
@@ -348,6 +351,9 @@ def publish(grade,plan):
 
 
 def audit(plan):
+    if all((base_for(g)/'hasil_validasi/manifest.json').exists() and load(base_for(g)/'hasil_validasi/manifest.json')['schemaVersion']=='codex-exercise-sessions-local-v3' for g in range(1,5)):
+        from app.services.exercise.session_expansion import audit,prepare
+        return audit(prepare())
     # The original target remains a generation baseline; the reviewed export can
     # contain additions and withheld questions after honest difficulty changes.
     manifests=[base_for(g)/'hasil_validasi/manifest.json' for g in range(1,5)]
@@ -418,7 +424,7 @@ def refresh_owned(grade,plan,files=None):
     """Archive and rebuild only this locally owned SD run after content corrections."""
     base=base_for(grade);state=load(base/'reference_replenishment_state.json')
     manifest=base/'hasil_validasi/manifest.json'
-    if manifest.exists() and load(manifest)['schemaVersion']=='codex-sd-difficulty-review-v2':
+    if manifest.exists() and load(manifest)['schemaVersion'] in {'codex-sd-difficulty-review-v2','codex-exercise-sessions-local-v3'}:
         raise ValueError('This batch has a newer difficulty review. Use review_sd_difficulty_local.py; rebuilding the initial bank would discard reviewed additions.')
     assert state['schemaVersion']==SCHEMA and state['reviewMode']=='local_without_external_api'
     assert load(base/'generation_plan.json')['planHash']==plan['planHash']
@@ -451,6 +457,11 @@ def main():
     if args.audit_only:print(json.dumps(audit(plan),ensure_ascii=False));return
     for grade in args.classes:
         with batch_lock(base_for(grade)):
+            current=base_for(grade)/'hasil_validasi/manifest.json'
+            if current.exists() and load(current).get('schemaVersion')=='codex-exercise-sessions-local-v3':
+                verify(current.parent)
+                print(json.dumps({'class':grade,'status':'three_session_round_preserved'}),flush=True)
+                continue
             initialize(grade,plan)
             if args.refresh_owned:refresh_owned(grade,plan)
             jobs=[r for r in plan['catalog'] if r['class_key']=='kelas'+str(grade)]

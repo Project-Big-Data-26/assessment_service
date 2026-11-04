@@ -94,6 +94,10 @@ def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
 
 def verify_bundle(source: Path, bundle: Path) -> None:
     manifest = load(bundle / "manifest.json")
+    if manifest.get("schemaVersion") == "codex-exercise-sessions-local-v3":
+        from app.services.exercise.session_expansion import verify_publication
+        verify_publication(bundle)
+        return
     if manifest.get("schemaVersion") == "codex-sd-difficulty-review-v2":
         from scripts.review_sd_difficulty_local import verify
         verify(bundle)

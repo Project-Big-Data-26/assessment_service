@@ -23,7 +23,7 @@ class VisualGroup(BaseModel):
 
 class VisualSpec(BaseModel):
     model_config = ConfigDict(extra="forbid")
-    kind: Literal["object_groups", "shape_pattern", "clock", "sd_scene"]
+    kind: Literal["object_groups", "shape_pattern", "clock", "sd_scene", "math_scene"]
     groups: list[VisualGroup] = Field(default_factory=list, max_length=3)
     pattern: list[Literal["circle", "square", "triangle", "?"]] = Field(default_factory=list, max_length=12)
     hour: int | None = Field(default=None, ge=0, le=11)
@@ -32,14 +32,17 @@ class VisualSpec(BaseModel):
 
     @model_validator(mode="after")
     def check_kind(self):
-        if self.kind == "sd_scene":
-            from .sd_bank_visuals import validate_scene
+        if self.kind in {"sd_scene", "math_scene"}:
+            if self.kind == "sd_scene":
+                from .sd_bank_visuals import validate_scene
+            else:
+                from .math_scene_visuals import validate_scene
             if self.groups or self.pattern or self.hour is not None or self.minute is not None:
                 raise ValueError("SD scenes cannot contain legacy visual fields")
             validate_scene(self.scene)
             return self
         if self.scene is not None:
-            raise ValueError("scene data requires kind sd_scene")
+            raise ValueError("scene data requires kind sd_scene or math_scene")
         if self.kind == "object_groups":
             if not self.groups or len({g.label for g in self.groups}) != len(self.groups):
                 raise ValueError("object groups need unique group labels")
@@ -61,6 +64,9 @@ def render(spec, base):
     spec = VisualSpec.model_validate(spec)
     if spec.kind == "sd_scene":
         from .sd_bank_visuals import render_scene
+        return render_scene(spec.scene, Path(base))
+    if spec.kind == "math_scene":
+        from .math_scene_visuals import render_scene
         return render_scene(spec.scene, Path(base))
     payload = spec.model_dump(mode="json")
     # Keep legacy content-addressed assets stable after adding the optional scene.

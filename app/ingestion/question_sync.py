@@ -133,8 +133,10 @@ def report_catalog(path: Path) -> list[dict]:
     return rows
 
 
-def coverage(questions: list[SourceQuestion], catalog: list[dict]) -> dict:
+def coverage(questions: list[SourceQuestion], catalog: list[dict], sessions: int = 1) -> dict:
     """Every difficulty in every subchapter must meet its grade threshold."""
+    if type(sessions) is not int or sessions < 1:
+        raise ValueError("sessions must be a positive integer")
     counts: dict[tuple, Counter] = defaultdict(Counter)
     for question in questions:
         item = question.item
@@ -147,7 +149,7 @@ def coverage(questions: list[SourceQuestion], catalog: list[dict]) -> dict:
     for row in catalog:
         levels = counts[(row["class_key"], row["chapter_no"], row["code"])]
         available = sum(levels.values())
-        required = threshold(row["class_key"])
+        required = sessions * threshold(row["class_key"])
         deficits = {level: max(0, required - levels[level]) for level in LEVELS}
         rows.append({**row, "levels": {k: levels[k] for k in LEVELS}, "available": available,
                      "required": required, "level_shortfalls": deficits,
@@ -163,6 +165,7 @@ def coverage(questions: list[SourceQuestion], catalog: list[dict]) -> dict:
         chapter["deficient_levels"] += sum(value > 0 for value in row["level_shortfalls"].values())
         chapter["shortfall"] += row["shortfall"]
     return {"scope": "local_canonical_active_exercise; no student history",
+            "sessions": sessions,
             "policy": "per_subchapter_per_level_v1",
             "subchapters": len(rows), "under_threshold": sum(r["shortfall"] > 0 for r in rows),
             "level_slots": len(rows) * len(LEVELS),

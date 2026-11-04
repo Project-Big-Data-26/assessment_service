@@ -57,7 +57,11 @@ def factory(name,bab,code,level,r):
 
 
 def verify(bundle,check_live=True):
-    bundle=Path(bundle);manifest=load(bundle/'manifest.json');assert manifest['schemaVersion']==SCHEMA
+    bundle=Path(bundle);manifest=load(bundle/'manifest.json')
+    if manifest['schemaVersion']=='codex-exercise-sessions-local-v3':
+        from app.services.exercise.session_expansion import verify_publication
+        return verify_publication(bundle)
+    assert manifest['schemaVersion']==SCHEMA
     for info in manifest['sourceFiles'].values():assert digest(info['path'])==info['sha256']
     for name,info in manifest['outputs'].items():assert digest(bundle/name)==info['sha256']
     if check_live:
