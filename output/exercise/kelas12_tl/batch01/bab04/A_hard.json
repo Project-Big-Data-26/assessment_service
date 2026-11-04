@@ -1463,6 +1463,746 @@
       "pembahasan": "X adalah jumlah 7 indikator sukses. E(X)=n×p=7×1/2=7/2.",
       "catatan": "codex-replenishment:kelas12_tl-b04-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b04-a-hard-bt01-037"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "be7688c5783fb50c6c89a321",
+        "teks": "Sebuah kuis memuat 4 butir pertanyaan tipe Benar/Salah. Seorang peserta menjawab semua pertanyaan secara acak tanpa membaca soal. Jika variabel acak $W$ menyatakan banyaknya jawaban yang benar dari peserta tersebut, himpunan semua nilai $w$ yang mungkin dari variabel acak $W$ adalah ....",
+        "jawaban": "$\\{0, 1, 2, 3, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 4 dilempar. Pemain memperoleh 6 poin jika hasil sama, 2 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{9}{8}$",
+      "alasan_benar": "Ada 16 pasangan berurutan. Hasil sama ada 4, selisih 1 ada 6, dan sisanya 6. Harapan=(6×4+2×6-3×6)/16=9/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{16}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{9}{4}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{9}{8}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 16 pasangan berurutan. Hasil sama ada 4, selisih 1 ada 6, dan sisanya 6. Harapan=(6×4+2×6-3×6)/16=9/8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3839b9d8ab6083bacb227469",
+        "teks": "Seorang petugas pengendali mutu memeriksa 4 unit lampu LED. Setiap lampu dikategorikan 'layak' atau 'rusak'. Misalkan variabel acak $Y$ didefinisikan sebagai banyaknya lampu layak dikurangi banyaknya lampu rusak. Himpunan semua nilai $y$ yang mungkin dari variabel acak $Y$ adalah ....",
+        "jawaban": "$\\{-4, -2, 0, 2, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 8 dilempar. Pemain memperoleh 11 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{1}{2}$",
+      "alasan_benar": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(11×8+5×14-3×42)/64=1/2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1}{4}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3}{2}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{2}$."
+        },
+        {
+          "teks": "$- \\frac{1}{2}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(11×8+5×14-3×42)/64=1/2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7dfa2e32393438f928866767",
+        "teks": "Seorang petani menanam 4 butir benih jagung unggul pada petak lahan percobaan. Jika variabel acak $Y$ menyatakan banyaknya benih jagung yang berhasil berkecambah, tentukan himpunan semua nilai $y$ yang mungkin dari variabel acak $Y$.",
+        "jawaban": "$\\{0, 1, 2, 3, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 6 dilempar. Pemain memperoleh 5 poin jika hasil sama, 3 poin jika selisih hasil tepat 1, dan kehilangan 1 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{10}{9}$",
+      "alasan_benar": "Ada 36 pasangan berurutan. Hasil sama ada 6, selisih 1 ada 10, dan sisanya 20. Harapan=(5×6+3×10-1×20)/36=10/9.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{20}{9}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{10}{9}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 36 pasangan berurutan. Hasil sama ada 6, selisih 1 ada 10, dan sisanya 20. Harapan=(5×6+3×10-1×20)/36=10/9.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ec1eb1fa2c695073db6c72a4",
+        "teks": "Dalam 7 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{1}{2}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{7}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 6 dilempar. Pemain memperoleh 11 poin jika hasil sama, 4 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{23}{18}$",
+      "alasan_benar": "Ada 36 pasangan berurutan. Hasil sama ada 6, selisih 1 ada 10, dan sisanya 20. Harapan=(11×6+4×10-3×20)/36=23/18.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{36}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{23}{9}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{23}{18}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 36 pasangan berurutan. Hasil sama ada 6, selisih 1 ada 10, dan sisanya 20. Harapan=(11×6+4×10-3×20)/36=23/18.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2055b9b2d2a2510a79993b25",
+        "teks": "Dalam 9 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{3}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{27}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 4 dilempar. Pemain memperoleh 8 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 4 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{19}{8}$",
+      "alasan_benar": "Ada 16 pasangan berurutan. Hasil sama ada 4, selisih 1 ada 6, dan sisanya 6. Harapan=(8×4+5×6-4×6)/16=19/8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{16}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{19}{4}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{19}{8}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 16 pasangan berurutan. Hasil sama ada 4, selisih 1 ada 6, dan sisanya 6. Harapan=(8×4+5×6-4×6)/16=19/8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2055b9b2d2a2510a79993b25",
+        "teks": "Dalam 9 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{3}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{27}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 11 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 2 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{11}{7}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(11×7+5×12-2×30)/49=11/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{11}{14}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{22}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{11}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(11×7+5×12-2×30)/49=11/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8ece78fc2f5be2042390cb59",
+        "teks": "Dari 7 unit genset di sebuah gudang, terdapat 3 unit yang mengalami kerusakan kabel. Sebuah proyek konstruksi menyewa 4 unit genset secara acak. Variabel acak $X$ menyatakan banyaknya genset dengan kerusakan kabel yang disewa oleh proyek tersebut. Himpunan semua nilai $x$ yang mungkin dari variabel acak $X$ adalah ....",
+        "jawaban": "$\\{0, 1, 2, 3\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 8 dilempar. Pemain memperoleh 9 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 5 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{17}{16}$",
+      "alasan_benar": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(9×8+5×14-5×42)/64=-17/16.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{17}{32}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{17}{8}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{17}{16}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(9×8+5×14-5×42)/64=-17/16.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "568094c6b42a5098f14159b8",
+        "teks": "Dalam 7 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{1}{5}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{7}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 4 dilempar. Pemain memperoleh 5 poin jika hasil sama, 3 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{5}{4}$",
+      "alasan_benar": "Ada 16 pasangan berurutan. Hasil sama ada 4, selisih 1 ada 6, dan sisanya 6. Harapan=(5×4+3×6-3×6)/16=5/4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{5}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{5}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 16 pasangan berurutan. Hasil sama ada 4, selisih 1 ada 6, dan sisanya 6. Harapan=(5×4+3×6-3×6)/16=5/4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a02e290f7e7e10b413c89da0",
+        "teks": "Dalam 6 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{7}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{21}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 7 poin jika hasil sama, 4 poin jika selisih hasil tepat 1, dan kehilangan 2 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{37}{49}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(7×7+4×12-2×30)/49=37/49.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{12}{49}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1369}{2401}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{37}{49}$."
+        },
+        {
+          "teks": "$\\frac{37}{98}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(7×7+4×12-2×30)/49=37/49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a3e56ef1d3fce3349a6f322",
+        "teks": "Dalam 7 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{3}{5}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{21}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 5 poin jika hasil sama, 4 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{1}{7}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(5×7+4×12-3×30)/49=-1/7.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{1}{14}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{2}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{1}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(5×7+4×12-3×30)/49=-1/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0e43c76a9facaf22bec3f85",
+        "teks": "Dua buah dadu seimbang bersisi enam dilempar bersamaan satu kali. Pasangan mata dadu yang muncul dinyatakan sebagai $(a, b)$ dengan $a, b \\in \\{1, 2, 3, 4, 5, 6\\}$. Didefinisikan variabel acak $X = \\gcd(a, b)$, yaitu faktor persekutuan terbesar dari bilangan $a$ dan $b$. Banyaknya elemen ruang sampel yang dipetakan ke nilai $X = 2$ adalah ....",
+        "jawaban": "7",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 10 poin jika hasil sama, 6 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{52}{49}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(10×7+6×12-3×30)/49=52/49.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{26}{49}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{104}{49}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{52}{49}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(10×7+6×12-3×30)/49=52/49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "638b24587992ec03c5acc44e",
+        "teks": "Dalam 9 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{7}{10}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$\\frac{63}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 10 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 5 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{20}{49}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(10×7+5×12-5×30)/49=-20/49.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{10}{49}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{40}{49}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{20}{49}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(10×7+5×12-5×30)/49=-20/49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "74bddca8f5b1bbb858f992a0",
+        "teks": "Pak Hendra dan istrinya merencanakan memiliki 3 orang anak. Asumsikan peluang lahir anak laki-laki dan perempuan sama pada setiap kelahiran. Jika variabel acak $Y$ didefinisikan sebagai hasil kali antara banyaknya anak laki-laki dan banyaknya anak perempuan yang lahir, tentukan himpunan semua nilai $y$ yang mungkin dari variabel acak $Y$.",
+        "jawaban": "$\\{0, 2\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 9 poin jika hasil sama, 2 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{3}{49}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(9×7+2×12-3×30)/49=-3/49.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{3}{98}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{6}{49}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{3}{49}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(9×7+2×12-3×30)/49=-3/49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0dd66096ca58a9f0c559d537",
+        "teks": "Sebuah kotak memuat $n$ kartu yang masing-masing bertuliskan bilangan bulat dari 1 sampai $n$ (dengan $n > 3$). Dua kartu diambil secara acak sekaligus dari kotak tersebut. Didefinisikan variabel acak $W$ sebagai selisih positif antara kedua angka pada kartu yang terambil. Jika banyaknya anggota himpunan semua nilai yang mungkin dari variabel acak $W$ adalah 7, maka banyaknya seluruh anggota ruang sampel pada percobaan tersebut adalah ....",
+        "jawaban": "28",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 7 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 4 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{11}{49}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(7×7+5×12-4×30)/49=-11/49.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{11}{98}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{22}{49}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{11}{49}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(7×7+5×12-4×30)/49=-11/49.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7e3b0c14578392b0f08dd416",
+        "teks": "Sekeping uang logam seimbang dilempar sebanyak 4 kali berturut-turut. Jika variabel acak $W$ menyatakan selisih mutlak antara banyaknya sisi angka dan banyaknya sisi gambar yang muncul, himpunan semua nilai $w$ yang mungkin dari variabel acak $W$ adalah ....",
+        "jawaban": "$\\{0, 2, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 8 dilempar. Pemain memperoleh 12 poin jika hasil sama, 3 poin jika selisih hasil tepat 1, dan kehilangan 2 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{27}{32}$",
+      "alasan_benar": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(12×8+3×14-2×42)/64=27/32.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{32}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{729}{1024}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{27}{32}$."
+        },
+        {
+          "teks": "$\\frac{27}{64}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(12×8+3×14-2×42)/64=27/32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8d3fcbf1974930ea2809d1f6",
+        "teks": "Seorang petugas laboratorium memeriksa kondisi 4 tabung reaksi setelah proses sterilisasi. Setiap tabung dikategorikan dalam kondisi 'retak' atau 'utuh'. Jika variabel acak $K$ menyatakan banyaknya tabung reaksi yang retak, himpunan seluruh nilai $k$ yang mungkin dari variabel acak $K$ adalah ....",
+        "jawaban": "$\\{0, 1, 2, 3, 4\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 5 dilempar. Pemain memperoleh 5 poin jika hasil sama, 5 poin jika selisih hasil tepat 1, dan kehilangan 1 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{53}{25}$",
+      "alasan_benar": "Ada 25 pasangan berurutan. Hasil sama ada 5, selisih 1 ada 8, dan sisanya 12. Harapan=(5×5+5×8-1×12)/25=53/25.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{53}{50}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{106}{25}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{53}{25}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 25 pasangan berurutan. Hasil sama ada 5, selisih 1 ada 8, dan sisanya 12. Harapan=(5×5+5×8-1×12)/25=53/25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fa9a578e04f47f79f3541ddf",
+        "teks": "Dalam 8 percobaan Bernoulli independen, peluang sukses tiap percobaan $\\frac{1}{2}$. Variabel acak X menyatakan jumlah sukses. Berapa $E(X)$?",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 8 dilempar. Pemain memperoleh 7 poin jika hasil sama, 4 poin jika selisih hasil tepat 1, dan kehilangan 4 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{7}{8}$",
+      "alasan_benar": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(7×8+4×14-4×42)/64=-7/8.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{7}{16}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{7}{4}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{7}{8}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(7×8+4×14-4×42)/64=-7/8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ce8b9eec2286a6bf4223488b",
+        "teks": "Sekeping uang logam seimbang dilempar sebanyak 3 kali berturut-turut. Pada setiap lemparan, kemunculan sisi angka ($A$) diberi skor 2, sedangkan kemunculan sisi gambar ($G$) diberi skor $-1$. Jika variabel acak $X$ menyatakan total skor dari ketiga lemparan tersebut, tentukan himpunan semua nilai $x$ yang mungkin dari variabel acak $X$.",
+        "jawaban": "$\\{-3, 0, 3, 6\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 8 dilempar. Pemain memperoleh 6 poin jika hasil sama, 4 poin jika selisih hasil tepat 1, dan kehilangan 3 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$- \\frac{11}{32}$",
+      "alasan_benar": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(6×8+4×14-3×42)/64=-11/32.",
+      "distraktor": [
+        {
+          "teks": "$- \\frac{11}{64}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$- \\frac{11}{16}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$\\frac{11}{32}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 64 pasangan berurutan. Hasil sama ada 8, selisih 1 ada 14, dan sisanya 42. Harapan=(6×8+4×14-3×42)/64=-11/32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70ea067188e4fd624da74579",
+        "teks": "Dua buah dadu seimbang bersisi enam dilemparkan bersamaan satu kali. Jika variabel acak $X$ menyatakan hasil kali kedua mata dadu yang muncul, banyaknya elemen dalam ruang sampel yang memetakan nilai $X = 12$ adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 7 dilempar. Pemain memperoleh 12 poin jika hasil sama, 6 poin jika selisih hasil tepat 1, dan kehilangan 1 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{18}{7}$",
+      "alasan_benar": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(12×7+6×12-1×30)/49=18/7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9}{7}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{36}{7}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{18}{7}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 49 pasangan berurutan. Hasil sama ada 7, selisih 1 ada 12, dan sisanya 30. Harapan=(12×7+6×12-1×30)/49=18/7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1694d5d94efdf7fb8883eb03",
+        "teks": "Sebuah kantong berisi sejumlah kelereng merah dan kelereng biru dengan jumlah total 10 kelereng. Dari dalam kantong tersebut diambil 6 kelereng sekaligus secara acak. Misalkan $m$ menyatakan banyaknya kelereng merah dan $k$ menyatakan banyaknya kelereng biru di dalam kantong. Didefinisikan variabel acak $X$ sebagai banyaknya kelereng merah yang terambil. Jika himpunan semua nilai yang mungkin dari $X$ memiliki tepat 4 anggota, maka selisih mutlak $|m - k|$ adalah ....",
+        "jawaban": "4",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_acak_skor_bertingkat",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Dua dadu adil masing-masing bernomor 1 sampai 5 dilempar. Pemain memperoleh 7 poin jika hasil sama, 6 poin jika selisih hasil tepat 1, dan kehilangan 1 poin untuk hasil lainnya. Berapa nilai harapan skor satu permainan?",
+      "jawaban_benar": "$\\frac{71}{25}$",
+      "alasan_benar": "Ada 25 pasangan berurutan. Hasil sama ada 5, selisih 1 ada 8, dan sisanya 12. Harapan=(7×5+6×8-1×12)/25=71/25.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{71}{50}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{142}{25}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{71}{25}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Ada 25 pasangan berurutan. Hasil sama ada 5, selisih 1 ada 8, dan sisanya 12. Harapan=(7×5+6×8-1×12)/25=71/25.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-a-hard-bt01-057"
     }
   ]
 }

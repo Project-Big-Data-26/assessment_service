@@ -1505,6 +1505,746 @@
       "pembahasan": "E(X)=ΣxP(X=x)=53/6; jumlah peluangnya 1.",
       "catatan": "codex-replenishment:kelas12_tl-b04-B-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b04-b-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c07fad2cb611018d5ab48c4d",
+        "teks": "X bernilai 1, 9, 15 dengan peluang berturut-turut $\\frac{1}{8}$, $\\frac{5}{8}$, $\\frac{1}{4}$. Tentukan $E(X)$.",
+        "jawaban": "$\\frac{19}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 2, 6, dan 12. Diketahui $P(X\\le 6)=\\frac{1}{2}$ dan $E(X)=\\frac{39}{5}$. Tentukan $E[(X-7)^2]$.",
+      "jawaban_benar": "$\\frac{101}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 2p+6q+12(1-p-q)=39/5. Diperoleh p=3/10, q=1/5. Jumlahkan (x-7)²P(X=x), hasil 101/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{101}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{202}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{101}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 2p+6q+12(1-p-q)=39/5. Diperoleh p=3/10, q=1/5. Jumlahkan (x-7)²P(X=x), hasil 101/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bdb499cf884f426eec3e5299",
+        "teks": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $\\{1, 2, 3, 4, 5\\}$. Fungsi distribusi kumulatif dari $X$ didefinisikan sebagai:\n$$F(x) = P(X \\le x) = \\frac{x^2 + k}{30}$$\nuntuk setiap $x \\in \\{1, 2, 3, 4, 5\\}$, dengan $k$ suatu konstanta real. Nilai dari peluang bersyarat $P(X \\text{ ganjil} \\mid X \\ge 2)$ adalah ....",
+        "jawaban": "$\\frac{7}{12}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 2, 7, dan 11. Diketahui $P(X\\le 7)=\\frac{3}{5}$ dan $E(X)=\\frac{71}{10}$. Tentukan $E[(X-10)^2]$.",
+      "jawaban_benar": "$\\frac{223}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 2p+7q+11(1-p-q)=71/10. Diperoleh p=3/10, q=3/10. Jumlahkan (x-10)²P(X=x), hasil 223/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{223}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{223}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{223}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 2p+7q+11(1-p-q)=71/10. Diperoleh p=3/10, q=3/10. Jumlahkan (x-10)²P(X=x), hasil 223/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7d2aa9d29cc0bed700d44b10",
+        "teks": "Sekeping koin seimbang dilambungkan berulang-ulang sampai muncul sisi Angka untuk pertama kalinya. Misalkan variabel acak $N$ menyatakan banyaknya pelambungan yang dilakukan hingga eksperimen tersebut berhenti. Karakteristik yang tepat mengenai variabel acak $N$ berdasarkan definisinya adalah ....",
+        "jawaban": "ruang sampelnya merupakan himpunan tak berhingga (infinite) yang dapat dihitung satu per satu (countable), sehingga $N$ adalah variabel acak diskret",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 3, 7, dan 9. Diketahui $P(X\\le 7)=\\frac{2}{5}$ dan $E(X)=\\frac{39}{5}$. Tentukan $E[(X-10)^2]$.",
+      "jawaban_benar": "$\\frac{41}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 3p+7q+9(1-p-q)=39/5. Diperoleh p=1/10, q=3/10. Jumlahkan (x-10)²P(X=x), hasil 41/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{41}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{82}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{41}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 3p+7q+9(1-p-q)=39/5. Diperoleh p=1/10, q=3/10. Jumlahkan (x-10)²P(X=x), hasil 41/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "88c11bca44fbdef104228e68",
+        "teks": "Dua buah dadu bersisi empat (tetrahedral) seimbang masing-masing memiliki sisi bernomor 1, 2, 3, dan 4. Kedua dadu dilemparkan bersama-sama sebanyak satu kali. Jika variabel acak $X$ menyatakan hasil kali kedua mata dadu yang muncul, maka banyaknya nilai berbeda yang mungkin untuk variabel acak $X$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 3, 10, dan 17. Diketahui $P(X\\le 10)=\\frac{2}{5}$ dan $E(X)=\\frac{27}{2}$. Tentukan $E[(X-13)^2]$.",
+      "jawaban_benar": "$\\frac{223}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 3p+10q+17(1-p-q)=27/2. Diperoleh p=1/10, q=3/10. Jumlahkan (x-13)²P(X=x), hasil 223/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{223}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{223}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{223}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 3p+10q+17(1-p-q)=27/2. Diperoleh p=1/10, q=3/10. Jumlahkan (x-13)²P(X=x), hasil 223/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "164ecaee68dcfbeb0819ab67",
+        "teks": "X bernilai 5, 7, 12 dengan peluang berturut-turut $\\frac{1}{4}$, $\\frac{5}{12}$, $\\frac{1}{3}$. Tentukan $E(X)$.",
+        "jawaban": "$\\frac{49}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 5, 8, dan 13. Diketahui $P(X\\le 8)=\\frac{2}{5}$ dan $E(X)=\\frac{52}{5}$. Tentukan $E[(X-10)^2]$.",
+      "jawaban_benar": "$\\frac{56}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 5p+8q+13(1-p-q)=52/5. Diperoleh p=1/5, q=1/5. Jumlahkan (x-10)²P(X=x), hasil 56/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{28}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{112}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{56}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 5p+8q+13(1-p-q)=52/5. Diperoleh p=1/5, q=1/5. Jumlahkan (x-10)²P(X=x), hasil 56/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "613bd53c01442fd817a2891f",
+        "teks": "Berikut disajikan beberapa besaran dalam suatu pengamatan. Besaran yang tergolong sebagai variabel acak diskret adalah ....",
+        "jawaban": "Banyaknya panggilan telepon yang masuk ke sentra layanan dalam kurun waktu satu hari",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 2, 5, dan 11. Diketahui $P(X\\le 5)=\\frac{7}{10}$ dan $E(X)=\\frac{59}{10}$. Tentukan $E[(X-6)^2]$.",
+      "jawaban_benar": "$\\frac{127}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=7/10 dan 2p+5q+11(1-p-q)=59/10. Diperoleh p=3/10, q=2/5. Jumlahkan (x-6)²P(X=x), hasil 127/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{127}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{127}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{127}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=7/10 dan 2p+5q+11(1-p-q)=59/10. Diperoleh p=3/10, q=2/5. Jumlahkan (x-6)²P(X=x), hasil 127/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9dffeb5e299a3fb2c4df4c0b",
+        "teks": "| $x$ | 1 | 2 | 3 | 4 |\n| :--- | :---: | :---: | :---: | :---: |\n| $P(X = x)$ | $\\frac{1}{6}$ | $\\frac{1}{3}$ | $k$ | $\\frac{1}{4}$ |\n\nTabel di atas menyajikan distribusi peluang untuk variabel acak diskret $X$. Nilai $k$ yang memenuhi adalah ....",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 6, 9, dan 10. Diketahui $P(X\\le 9)=\\frac{2}{5}$ dan $E(X)=\\frac{93}{10}$. Tentukan $E[(X-11)^2]$.",
+      "jawaban_benar": "$\\frac{43}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 6p+9q+10(1-p-q)=93/10. Diperoleh p=1/10, q=3/10. Jumlahkan (x-11)²P(X=x), hasil 43/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{43}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{43}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 6p+9q+10(1-p-q)=93/10. Diperoleh p=1/10, q=3/10. Jumlahkan (x-11)²P(X=x), hasil 43/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f155a3e16f51d138085a5b21",
+        "teks": "Sebuah variabel acak diskret $X$ memiliki himpunan nilai $\\{1, 2, 3, 4\\}$ dengan fungsi distribusi peluang didefinisikan oleh:\n$$P(X = x) = c(k - x)$$\nuntuk setiap $x \\in \\{1, 2, 3, 4\\}$, dengan $c$ dan $k$ adalah konstanta real positif. Jika diketahui bahwa $P(X = 1) = 2 \\cdot P(X = 3)$, berapakah nilai konstanta $c$?",
+        "jawaban": "$\\frac{1}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 6, 10, dan 12. Diketahui $P(X\\le 10)=\\frac{3}{5}$ dan $E(X)=10$. Tentukan $E[(X-13)^2]$.",
+      "jawaban_benar": "$\\frac{69}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 6p+10q+12(1-p-q)=10. Diperoleh p=1/5, q=2/5. Jumlahkan (x-13)²P(X=x), hasil 69/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{69}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{138}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{69}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 6p+10q+12(1-p-q)=10. Diperoleh p=1/5, q=2/5. Jumlahkan (x-13)²P(X=x), hasil 69/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f8aa63304acedd9213bb96ac",
+        "teks": "Sebuah kantong berisi 3 bola merah dan 2 bola putih. Dari kantong tersebut diambil 2 bola sekaligus secara acak. Jika variabel acak $K$ menyatakan banyaknya bola merah yang terambil, maka nilai peluang $P(K = 1)$ adalah ....",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 3, 10, dan 17. Diketahui $P(X\\le 10)=\\frac{3}{5}$ dan $E(X)=\\frac{107}{10}$. Tentukan $E[(X-11)^2]$.",
+      "jawaban_benar": "$\\frac{339}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 3p+10q+17(1-p-q)=107/10. Diperoleh p=3/10, q=3/10. Jumlahkan (x-11)²P(X=x), hasil 339/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{339}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{339}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{339}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 3p+10q+17(1-p-q)=107/10. Diperoleh p=3/10, q=3/10. Jumlahkan (x-11)²P(X=x), hasil 339/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9821065248a7793cad29b0b1",
+        "teks": "Variabel acak yang memiliki ruang sampel berupa himpunan berhingga (*finite*) atau tak berhingga (*infinite*) yang nilainya dapat dihitung satu per satu (*countable*) disebut ....",
+        "jawaban": "variabel acak diskret",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 5, 10, dan 17. Diketahui $P(X\\le 10)=\\frac{1}{2}$ dan $E(X)=12$. Tentukan $E[(X-12)^2]$.",
+      "jawaban_benar": "$28$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 5p+10q+17(1-p-q)=12. Diperoleh p=3/10, q=1/5. Jumlahkan (x-12)²P(X=x), hasil 28.",
+      "distraktor": [
+        {
+          "teks": "$14$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$56$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-28$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 5p+10q+17(1-p-q)=12. Diperoleh p=3/10, q=1/5. Jumlahkan (x-12)²P(X=x), hasil 28.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "00e2ca5d09ec3b75873c7db7",
+        "teks": "Sebuah kotak berisi 3 bola merah dan 3 bola biru. Dari kotak tersebut diambil 2 bola satu per satu secara acak tanpa pengembalian. Jika variabel acak $M$ menyatakan banyaknya bola merah yang terambil, maka nilai peluang $P(M \\le 1)$ adalah ....",
+        "jawaban": "$\\frac{4}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 5, 9, dan 16. Diketahui $P(X\\le 9)=\\frac{7}{10}$ dan $E(X)=\\frac{99}{10}$. Tentukan $E[(X-12)^2]$.",
+      "jawaban_benar": "$\\frac{231}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=7/10 dan 5p+9q+16(1-p-q)=99/10. Diperoleh p=3/10, q=2/5. Jumlahkan (x-12)²P(X=x), hasil 231/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{231}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{231}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{231}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=7/10 dan 5p+9q+16(1-p-q)=99/10. Diperoleh p=3/10, q=2/5. Jumlahkan (x-12)²P(X=x), hasil 231/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e29f53c3fd827fa943842c02",
+        "teks": "Sebuah variabel acak diskret $Y$ memiliki daerah nilai $\\{1, 2, 3, 4\\}$. Fungsi peluang dari $Y$ didefinisikan oleh:\n$$P(Y = y) = \\frac{y^2 + 1}{c}$$\nuntuk setiap $y \\in \\{1, 2, 3, 4\\}$ dengan $c$ merupakan konstanta real positif. Nilai dari $P(Y \\le 2)$ adalah ....",
+        "jawaban": "$\\frac{7}{34}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 5, 8, dan 13. Diketahui $P(X\\le 8)=\\frac{1}{2}$ dan $E(X)=\\frac{48}{5}$. Tentukan $E[(X-11)^2]$.",
+      "jawaban_benar": "$\\frac{73}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 5p+8q+13(1-p-q)=48/5. Diperoleh p=3/10, q=1/5. Jumlahkan (x-11)²P(X=x), hasil 73/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{73}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{146}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{73}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 5p+8q+13(1-p-q)=48/5. Diperoleh p=3/10, q=1/5. Jumlahkan (x-11)²P(X=x), hasil 73/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "88c11bca44fbdef104228e68",
+        "teks": "Dua buah dadu bersisi empat (tetrahedral) seimbang masing-masing memiliki sisi bernomor 1, 2, 3, dan 4. Kedua dadu dilemparkan bersama-sama sebanyak satu kali. Jika variabel acak $X$ menyatakan hasil kali kedua mata dadu yang muncul, maka banyaknya nilai berbeda yang mungkin untuk variabel acak $X$ adalah ....",
+        "jawaban": "9",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 6, 13, dan 17. Diketahui $P(X\\le 13)=\\frac{3}{10}$ dan $E(X)=\\frac{151}{10}$. Tentukan $E[(X-14)^2]$.",
+      "jawaban_benar": "$\\frac{129}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/10 dan 6p+13q+17(1-p-q)=151/10. Diperoleh p=1/10, q=1/5. Jumlahkan (x-14)²P(X=x), hasil 129/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{129}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{129}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{129}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/10 dan 6p+13q+17(1-p-q)=151/10. Diperoleh p=1/10, q=1/5. Jumlahkan (x-14)²P(X=x), hasil 129/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "cb89df523d9d2d00d2f252e8",
+        "teks": "X bernilai 4, 10, 11 dengan peluang berturut-turut $\\frac{1}{3}$, $\\frac{1}{6}$, $\\frac{1}{2}$. Tentukan $E(X)$.",
+        "jawaban": "$\\frac{17}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 4, 11, dan 18. Diketahui $P(X\\le 11)=\\frac{3}{5}$ dan $E(X)=\\frac{117}{10}$. Tentukan $E[(X-12)^2]$.",
+      "jawaban_benar": "$\\frac{339}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 4p+11q+18(1-p-q)=117/10. Diperoleh p=3/10, q=3/10. Jumlahkan (x-12)²P(X=x), hasil 339/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{339}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{339}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{339}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 4p+11q+18(1-p-q)=117/10. Diperoleh p=3/10, q=3/10. Jumlahkan (x-12)²P(X=x), hasil 339/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1345bcb15bea7b79ecc88355",
+        "teks": "Sekeping koin tidak seimbang memiliki peluang muncul sisi Angka sebesar $\\frac{2}{3}$ dan sisi Gambar sebesar $\\frac{1}{3}$. Koin tersebut dilempar sebanyak dua kali secara independen. Jika variabel acak $X$ menyatakan banyaknya sisi Angka yang muncul, berapakah nilai peluang $P(X \\ge 1)$?",
+        "jawaban": "$\\frac{8}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 6, 10, dan 18. Diketahui $P(X\\le 10)=\\frac{2}{5}$ dan $E(X)=\\frac{72}{5}$. Tentukan $E[(X-13)^2]$.",
+      "jawaban_benar": "$\\frac{113}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 6p+10q+18(1-p-q)=72/5. Diperoleh p=1/10, q=3/10. Jumlahkan (x-13)²P(X=x), hasil 113/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{113}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{226}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{113}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 6p+10q+18(1-p-q)=72/5. Diperoleh p=1/10, q=3/10. Jumlahkan (x-13)²P(X=x), hasil 113/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fb6a7b923953ebad3f117f11",
+        "teks": "X bernilai 2, 10, 14 dengan peluang berturut-turut $\\frac{2}{7}$, $\\frac{3}{7}$, $\\frac{2}{7}$. Tentukan $E(X)$.",
+        "jawaban": "$\\frac{62}{7}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 6, 10, dan 13. Diketahui $P(X\\le 10)=\\frac{1}{2}$ dan $E(X)=\\frac{107}{10}$. Tentukan $E[(X-11)^2]$.",
+      "jawaban_benar": "$\\frac{73}{10}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 6p+10q+13(1-p-q)=107/10. Diperoleh p=1/5, q=3/10. Jumlahkan (x-11)²P(X=x), hasil 73/10.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{73}{20}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{73}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{73}{10}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 6p+10q+13(1-p-q)=107/10. Diperoleh p=1/5, q=3/10. Jumlahkan (x-11)²P(X=x), hasil 73/10.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "541b409924e86b5812a3d502",
+        "teks": "Sebuah sistem transmisi data memiliki 4 saluran independen. Masing-masing saluran memiliki peluang mengalami gangguan sebesar $\\frac{1}{3}$. Misalkan variabel acak diskret $X$ menyatakan banyaknya saluran yang berfungsi normal tanpa gangguan. Sistem dinyatakan mampu mentransmisikan data jika sekurang-kurangnya 3 saluran berfungsi normal. Berapakah peluang sistem tersebut mampu mentransmisikan data?",
+        "jawaban": "$\\frac{16}{27}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 3, 8, dan 9. Diketahui $P(X\\le 8)=\\frac{1}{2}$ dan $E(X)=8$. Tentukan $E[(X-10)^2]$.",
+      "jawaban_benar": "$7$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 3p+8q+9(1-p-q)=8. Diperoleh p=1/10, q=2/5. Jumlahkan (x-10)²P(X=x), hasil 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$14$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-7$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=1/2 dan 3p+8q+9(1-p-q)=8. Diperoleh p=1/10, q=2/5. Jumlahkan (x-10)²P(X=x), hasil 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "7c1bca59f5a9ab2c37f050b3",
+        "teks": "Kotak I berisi dua kartu bernomor 4 dan 6. Kotak II berisi dua kartu bernomor 1 dan 2. Dari masing-masing kotak diambil satu kartu secara acak. Jika variabel acak $X$ menyatakan nomor kartu yang terambil dari kotak I dan $Y$ menyatakan nomor kartu yang terambil dari kotak II, maka himpunan semua nilai yang mungkin dari variabel acak $Z = X - Y$ adalah ....",
+        "jawaban": "$\\{2, 3, 4, 5\\}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 3, 5, dan 12. Diketahui $P(X\\le 5)=\\frac{2}{5}$ dan $E(X)=9$. Tentukan $E[(X-8)^2]$.",
+      "jawaban_benar": "$\\frac{74}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 3p+5q+12(1-p-q)=9. Diperoleh p=1/10, q=3/10. Jumlahkan (x-8)²P(X=x), hasil 74/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{5}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{148}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{74}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 3p+5q+12(1-p-q)=9. Diperoleh p=1/10, q=3/10. Jumlahkan (x-8)²P(X=x), hasil 74/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "fd15d082816a9786e81ce3ef",
+        "teks": "Sebuah variabel acak diskret $M$ memiliki ruang sampel tak berhingga dengan daerah nilai himpunan bilangan asli $\\{1, 2, 3, \\dots\\}$. Model fungsi peluang dari $M$ didefinisikan sebagai $P(M = m) = k \\left(\\frac{3}{4}\\right)^m$ untuk setiap $m \\in \\{1, 2, 3, \\dots\\}$, dengan $k$ suatu konstanta real. Nilai dari peluang $P(M > 2)$ adalah ....",
+        "jawaban": "$\\frac{9}{16}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 2, 6, dan 13. Diketahui $P(X\\le 6)=\\frac{3}{5}$ dan $E(X)=\\frac{38}{5}$. Tentukan $E[(X-9)^2]$.",
+      "jawaban_benar": "$\\frac{119}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 2p+6q+13(1-p-q)=38/5. Diperoleh p=3/10, q=3/10. Jumlahkan (x-9)²P(X=x), hasil 119/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{119}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{238}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{119}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=3/5 dan 2p+6q+13(1-p-q)=38/5. Diperoleh p=3/10, q=3/10. Jumlahkan (x-9)²P(X=x), hasil 119/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9d0353d71b1e5d7fdff3f08d",
+        "teks": "X bernilai 3, 9, 15 dengan peluang berturut-turut $\\frac{2}{5}$, $\\frac{3}{10}$, $\\frac{3}{10}$. Tentukan $E(X)$.",
+        "jawaban": "$\\frac{42}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_diskret_parameter_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X hanya bernilai 5, 8, dan 15. Diketahui $P(X\\le 8)=\\frac{2}{5}$ dan $E(X)=\\frac{58}{5}$. Tentukan $E[(X-11)^2]$.",
+      "jawaban_benar": "$\\frac{93}{5}$",
+      "alasan_benar": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 5p+8q+15(1-p-q)=58/5. Diperoleh p=1/5, q=1/5. Jumlahkan (x-11)²P(X=x), hasil 93/5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{93}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{186}{5}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{93}{5}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Misalkan dua peluang pertama p dan q. Data memberi p+q=2/5 dan 5p+8q+15(1-p-q)=58/5. Diperoleh p=1/5, q=1/5. Jumlahkan (x-11)²P(X=x), hasil 93/5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-b-hard-bt01-058"
     }
   ]
 }

@@ -1505,6 +1505,746 @@
       "pembahasan": "Jumlahkan peluang binomial untuk j=1,...,4: ΣC(4,j)(2/5)^j(1-2/5)^(4-j)=544/625.",
       "catatan": "codex-replenishment:kelas12_tl-b04-F-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b04-f-hard-bt01-038"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e498be34a815add6e65074c1",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{3}{10}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{18}{5}$ dan $\\operatorname{Var}(X)=\\frac{54}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{7424}{1953125}$",
+      "alasan_benar": "Dari np=18/5 dan np(1-p)=54/25, p=1-Var/E=2/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7424/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1945701}{1953125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{55115776}{3814697265625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7424}{1953125}$."
+        },
+        {
+          "teks": "$\\frac{3712}{1953125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=18/5 dan np(1-p)=54/25, p=1-Var/E=2/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7424/1953125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4fe54d5dbdb548f762a6b720",
+        "teks": "X berdistribusi binomial dengan $n=10$ dan $p=\\frac{3}{10}$. Tentukan $P(X=9)$.",
+        "jawaban": "$\\frac{137781}{1000000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{24}{5}$ dan $\\operatorname{Var}(X)=\\frac{48}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{41553}{390625}$",
+      "alasan_benar": "Dari np=24/5 dan np(1-p)=48/25, p=1-Var/E=3/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=41553/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{349072}{390625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1726651809}{152587890625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{41553}{390625}$."
+        },
+        {
+          "teks": "$\\frac{41553}{781250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=24/5 dan np(1-p)=48/25, p=1-Var/E=3/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=41553/390625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{10}{3}$ dan $\\operatorname{Var}(X)=\\frac{10}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{112}{243}$",
+      "alasan_benar": "Dari np=10/3 dan np(1-p)=10/9, p=1-Var/E=2/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=112/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{131}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{12544}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{112}{243}$."
+        },
+        {
+          "teks": "$\\frac{56}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=10/3 dan np(1-p)=10/9, p=1-Var/E=2/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=112/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "94af6823af16d247691128a1",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{3733209}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{20}{3}$ dan $\\operatorname{Var}(X)=\\frac{20}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{2048}{19683}$",
+      "alasan_benar": "Dari np=20/3 dan np(1-p)=20/9, p=1-Var/E=2/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2048/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{17635}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4194304}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2048}{19683}$."
+        },
+        {
+          "teks": "$\\frac{1024}{19683}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=20/3 dan np(1-p)=20/9, p=1-Var/E=2/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2048/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{5}{3}$ dan $\\operatorname{Var}(X)=\\frac{10}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{11}{243}$",
+      "alasan_benar": "Dari np=5/3 dan np(1-p)=10/9, p=1-Var/E=1/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=11/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{232}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{121}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{11}{243}$."
+        },
+        {
+          "teks": "$\\frac{11}{486}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=5/3 dan np(1-p)=10/9, p=1-Var/E=1/3 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=11/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "964a7253e7b866d334625299",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{6}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=4$ dan $\\operatorname{Var}(X)=\\frac{12}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{16384}{9765625}$",
+      "alasan_benar": "Dari np=4 dan np(1-p)=12/5, p=1-Var/E=2/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=16384/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9749241}{9765625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{268435456}{95367431640625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{16384}{9765625}$."
+        },
+        {
+          "teks": "$\\frac{8192}{9765625}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=4 dan np(1-p)=12/5, p=1-Var/E=2/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=16384/9765625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{7}{3}$ dan $\\operatorname{Var}(X)=\\frac{14}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{5}{729}$",
+      "alasan_benar": "Dari np=7/3 dan np(1-p)=14/9, p=1-Var/E=1/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=5/729.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{724}{729}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{25}{531441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{5}{729}$."
+        },
+        {
+          "teks": "$\\frac{5}{1458}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=7/3 dan np(1-p)=14/9, p=1-Var/E=1/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=5/729.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ea63af141cb79e167c2cfb",
+        "teks": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{544}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{27}{5}$ dan $\\operatorname{Var}(X)=\\frac{54}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{137781}{1953125}$",
+      "alasan_benar": "Dari np=27/5 dan np(1-p)=54/25, p=1-Var/E=3/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=137781/1953125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{1815344}{1953125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{18983603961}{3814697265625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{137781}{1953125}$."
+        },
+        {
+          "teks": "$\\frac{137781}{3906250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=27/5 dan np(1-p)=54/25, p=1-Var/E=3/5 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=137781/1953125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=2$ dan $\\operatorname{Var}(X)=\\frac{4}{3}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{13}{729}$",
+      "alasan_benar": "Dari np=2 dan np(1-p)=4/3, p=1-Var/E=1/3 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=13/729.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{716}{729}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{531441}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{729}$."
+        },
+        {
+          "teks": "$\\frac{13}{1458}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=2 dan np(1-p)=4/3, p=1-Var/E=1/3 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=13/729.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3f44ae16e8fbdceb3d34c7e",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+        "jawaban": "$\\frac{761}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=6$ dan $\\operatorname{Var}(X)=2$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{2816}{19683}$",
+      "alasan_benar": "Dari np=6 dan np(1-p)=2, p=1-Var/E=2/3 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2816/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16867}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{7929856}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{2816}{19683}$."
+        },
+        {
+          "teks": "$\\frac{1408}{19683}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=6 dan np(1-p)=2, p=1-Var/E=2/3 dan n=9. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=2816/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f3f44ae16e8fbdceb3d34c7e",
+        "teks": "Dari 10 percobaan independen dengan peluang sukses $\\frac{1}{5}$, berapa peluang terdapat paling sedikit 8 sukses?",
+        "jawaban": "$\\frac{761}{9765625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=6$ dan $\\operatorname{Var}(X)=\\frac{12}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{452709}{9765625}$",
+      "alasan_benar": "Dari np=6 dan np(1-p)=12/5, p=1-Var/E=3/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=452709/9765625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{9312916}{9765625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{204945438681}{95367431640625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{452709}{9765625}$."
+        },
+        {
+          "teks": "$\\frac{452709}{19531250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=6 dan np(1-p)=12/5, p=1-Var/E=3/5 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=452709/9765625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "37ae3264fddd29cb3af44006",
+        "teks": "X berdistribusi binomial dengan $n=7$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{14}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{18}{5}$ dan $\\operatorname{Var}(X)=\\frac{36}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{729}{3125}$",
+      "alasan_benar": "Dari np=18/5 dan np(1-p)=36/25, p=1-Var/E=3/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=729/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2396}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{531441}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{729}{3125}$."
+        },
+        {
+          "teks": "$\\frac{729}{6250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=18/5 dan np(1-p)=36/25, p=1-Var/E=3/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=729/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e77dba4467cc3dba39d26524",
+        "teks": "X berdistribusi binomial dengan $n=4$ dan $p=\\frac{1}{5}$. Tentukan $P(X=2)$.",
+        "jawaban": "$\\frac{96}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{14}{3}$ dan $\\operatorname{Var}(X)=\\frac{14}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{64}{243}$",
+      "alasan_benar": "Dari np=14/3 dan np(1-p)=14/9, p=1-Var/E=2/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=64/243.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{179}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{4096}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{64}{243}$."
+        },
+        {
+          "teks": "$\\frac{32}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=14/3 dan np(1-p)=14/9, p=1-Var/E=2/3 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=64/243.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "17ea63af141cb79e167c2cfb",
+        "teks": "Dari 4 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{544}{625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{16}{5}$ dan $\\operatorname{Var}(X)=\\frac{48}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{3328}{390625}$",
+      "alasan_benar": "Dari np=16/5 dan np(1-p)=48/25, p=1-Var/E=2/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=3328/390625.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{387297}{390625}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{11075584}{152587890625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{3328}{390625}$."
+        },
+        {
+          "teks": "$\\frac{1664}{390625}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=16/5 dan np(1-p)=48/25, p=1-Var/E=2/5 dan n=8. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=3328/390625.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8e8c376fa0a7a5142de14746",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{3}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+        "jawaban": "$\\frac{286497}{390625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=3$ dan $\\operatorname{Var}(X)=\\frac{6}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{1053}{3125}$",
+      "alasan_benar": "Dari np=3 dan np(1-p)=6/5, p=1-Var/E=3/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1053/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2072}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1108809}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1053}{3125}$."
+        },
+        {
+          "teks": "$\\frac{1053}{6250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=3 dan np(1-p)=6/5, p=1-Var/E=3/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1053/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d4682f8a03b8106306b66502",
+        "teks": "Dari 7 percobaan independen dengan peluang sukses $\\frac{2}{5}$, berapa peluang terdapat paling sedikit 5 sukses?",
+        "jawaban": "$\\frac{1504}{15625}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{12}{5}$ dan $\\operatorname{Var}(X)=\\frac{36}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{128}{3125}$",
+      "alasan_benar": "Dari np=12/5 dan np(1-p)=36/25, p=1-Var/E=2/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=128/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2997}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{16384}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{128}{3125}$."
+        },
+        {
+          "teks": "$\\frac{64}{3125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=12/5 dan np(1-p)=36/25, p=1-Var/E=2/5 dan n=6. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=128/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8663204306fdde2df2a35770",
+        "teks": "X berdistribusi binomial dengan $n=6$ dan $p=\\frac{2}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{12}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{10}{3}$ dan $\\operatorname{Var}(X)=\\frac{20}{9}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{7}{19683}$",
+      "alasan_benar": "Dari np=10/3 dan np(1-p)=20/9, p=1-Var/E=1/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7/19683.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19676}{19683}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{49}{387420489}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7}{19683}$."
+        },
+        {
+          "teks": "$\\frac{7}{39366}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=10/3 dan np(1-p)=20/9, p=1-Var/E=1/3 dan n=10. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=7/19683.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d007e3712d4975c8c75f3c0b",
+        "teks": "Dari 9 percobaan independen dengan peluang sukses $\\frac{7}{10}$, berapa peluang terdapat paling sedikit 7 sukses?",
+        "jawaban": "$\\frac{231415583}{500000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{14}{5}$ dan $\\operatorname{Var}(X)=\\frac{42}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{1472}{78125}$",
+      "alasan_benar": "Dari np=14/5 dan np(1-p)=42/25, p=1-Var/E=2/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1472/78125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{76653}{78125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{2166784}{6103515625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1472}{78125}$."
+        },
+        {
+          "teks": "$\\frac{736}{78125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=14/5 dan np(1-p)=42/25, p=1-Var/E=2/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=1472/78125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bb6709b90ace409ade3b74ac",
+        "teks": "Dari 6 percobaan independen dengan peluang sukses $\\frac{3}{10}$, berapa peluang terdapat paling sedikit 1 sukses?",
+        "jawaban": "$\\frac{882351}{1000000}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=\\frac{21}{5}$ dan $\\operatorname{Var}(X)=\\frac{42}{25}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{12393}{78125}$",
+      "alasan_benar": "Dari np=21/5 dan np(1-p)=42/25, p=1-Var/E=3/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=12393/78125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{65732}{78125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{153586449}{6103515625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{12393}{78125}$."
+        },
+        {
+          "teks": "$\\frac{12393}{156250}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=21/5 dan np(1-p)=42/25, p=1-Var/E=3/5 dan n=7. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=12393/78125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9bd2cafdfd314e2163aca2a9",
+        "teks": "X berdistribusi binomial dengan $n=9$ dan $p=\\frac{1}{5}$. Berapa nilai harapan X?",
+        "jawaban": "$\\frac{9}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_binomial_parameter_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "X berdistribusi binomial dengan parameter n dan p yang belum diketahui. Diberikan $E(X)=2$ dan $\\operatorname{Var}(X)=\\frac{6}{5}$. Tentukan peluang bahwa banyak kegagalan paling banyak satu.",
+      "jawaban_benar": "$\\frac{272}{3125}$",
+      "alasan_benar": "Dari np=2 dan np(1-p)=6/5, p=1-Var/E=2/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=272/3125.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2853}{3125}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{73984}{9765625}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{272}{3125}$."
+        },
+        {
+          "teks": "$\\frac{136}{3125}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Dari np=2 dan np(1-p)=6/5, p=1-Var/E=2/5 dan n=5. Paling banyak satu gagal berarti X=n atau n-1. Peluangnya p^n+n(1-p)p^(n-1)=272/3125.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-f-hard-bt01-058"
     }
   ]
 }

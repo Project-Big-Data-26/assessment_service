@@ -1589,6 +1589,746 @@
       "pembahasan": "Aturan pangkat memberi f′(x)=$18 x^{2} + 14 x + 9$. Pada x=4, nilainya 353.",
       "catatan": "codex-replenishment:kelas12_tl-b02-B-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b02-b-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "08bac4c057a2ed7b7085bced",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 7e^x + 4x^3$.",
+        "jawaban": "$f'(x) = 7e^x + 12x^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+8)$ diketahui $f^\\prime(0)=56$ dan $f^\\prime(1)=146$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$150$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 150.",
+      "distraktor": [
+        {
+          "teks": "$75$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$300$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-150$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 8\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=3; hasilnya 150.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70a7adf8fc19999d9367baff",
+        "teks": "Diketahui $f(x)=4 x^{3} + 4 x^{2} + 5 x + 6$. Tentukan $f^\\prime(-1)$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=47$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$134$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=3, b=4. Turunkan sekali lagi lalu substitusi x=6; hasilnya 134.",
+      "distraktor": [
+        {
+          "teks": "$67$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$268$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-134$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=3, b=4. Turunkan sekali lagi lalu substitusi x=6; hasilnya 134.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "06b666ebc60044a606a32888",
+        "teks": "Tentukan turunan pertama dari fungsi $y = (8x^2 + 7)\\cos x$.",
+        "jawaban": "$y' = 16x\\cos x - (8x^2 + 7)\\sin x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=28$ dan $f^\\prime(1)=138$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$236$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 236.",
+      "distraktor": [
+        {
+          "teks": "$118$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$472$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-236$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 236.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bda51f6c5c050cfa20993201",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = 6x^3 - 8\\cos x + 15$.",
+        "jawaban": "$f'(x) = 18x^2 + 8\\sin x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+5)$ diketahui $f^\\prime(0)=15$ dan $f^\\prime(1)=86$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$146$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 146.",
+      "distraktor": [
+        {
+          "teks": "$73$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$292$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-146$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 5\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 146.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "8467dd85c0a68e9523be678d",
+        "teks": "Diketahui fungsi $f(x) = (3x - 2)e^{2x}$. Tentukan nilai dari $f'(1)$.",
+        "jawaban": "$5e^2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=16$ dan $f^\\prime(1)=90$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$200$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 200.",
+      "distraktor": [
+        {
+          "teks": "$100$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$400$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-200$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=4. Turunkan sekali lagi lalu substitusi x=4; hasilnya 200.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f64b83a421299039a1e19a5a",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{\\sin x}{p + \\cos x}$ dengan parameter $p > 0$. Jika garis singgung kurva $y = f(x)$ pada absis $x = \\frac{\\pi}{2}$ memiliki gradien $\\frac{1}{4}$, tentukan nilai dari $f\\left(\\frac{\\pi}{3}\\right)$.",
+        "jawaban": "\\frac{\\sqrt{3}}{5}",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=21$ dan $f^\\prime(1)=112$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$256$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 256.",
+      "distraktor": [
+        {
+          "teks": "$128$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$512$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-256$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 256.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f086006e683d5d1375965106",
+        "teks": "Diketahui fungsi $f(x) = \\cos^4(2x) - \\sin^4(2x)$. Jika turunan pertama $f'(x) = k \\sin(4x)$, maka nilai dari konstanta real $k$ adalah ....",
+        "jawaban": "$-4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+6)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=106$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$184$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 184.",
+      "distraktor": [
+        {
+          "teks": "$92$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$368$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-184$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=2. Turunkan sekali lagi lalu substitusi x=3; hasilnya 184.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "651ed6b499d3529032eb4699",
+        "teks": "Diketahui $f(x)=9 x^{3} + 3 x^{2} + 4 x + 2$. Tentukan $f^\\prime(-2)$.",
+        "jawaban": "$100$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=6$ dan $f^\\prime(1)=43$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$142$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 142.",
+      "distraktor": [
+        {
+          "teks": "$71$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$284$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-142$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 142.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "dd4a30704b78d7a5ccd21e2c",
+        "teks": "Diketahui $f(x)=3 x^{3} + 9 x^{2} + 4 x + 7$. Tentukan $f^\\prime(-3)$.",
+        "jawaban": "$31$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=6$ dan $f^\\prime(1)=48$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$168$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 168.",
+      "distraktor": [
+        {
+          "teks": "$84$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$336$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-168$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 168.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eb50f265a37b6f374865ecdf",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{a\\sin x + b}{\\cos x}$ dengan konstanta real $a$ dan $b$. Jika $f\\left(\\frac{\\pi}{3}\\right) = 2\\sqrt{3}$ dan $f'\\left(\\frac{\\pi}{3}\\right) = 8$, tentukan nilai dari $a^2 + b^2$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+4)$ diketahui $f^\\prime(0)=12$ dan $f^\\prime(1)=51$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$84$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 84.",
+      "distraktor": [
+        {
+          "teks": "$42$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$168$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-84$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 4\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=3; hasilnya 84.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f6e7b27c2104b05d9332947c",
+        "teks": "Tentukan turunan pertama dari fungsi trigonometri $f(x) = 8 - 5\\sin(3x)$.",
+        "jawaban": "$f'(x) = -15\\cos(3x)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=4$ dan $f^\\prime(1)=22$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$72$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 72.",
+      "distraktor": [
+        {
+          "teks": "$36$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$144$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-72$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=5; hasilnya 72.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "1380eb1d64035929b3add5f1",
+        "teks": "Jari-jari sebuah bola bertambah panjang dengan laju $5\\text{ cm}$ per detik. Misalkan jari-jari bola tersebut $40\\text{ cm}$. Tentukan laju bertambahnya luas permukaan bola.",
+        "jawaban": "$1.600\\pi\\text{ cm}^2/\\text{detik}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+2)$ diketahui $f^\\prime(0)=8$ dan $f^\\prime(1)=30$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=3; hasilnya 52.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-52$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 2\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=2, b=4. Turunkan sekali lagi lalu substitusi x=3; hasilnya 52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=7$ dan $f^\\prime(1)=41$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$118$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=4; hasilnya 118.",
+      "distraktor": [
+        {
+          "teks": "$59$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$236$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-118$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=4, b=7. Turunkan sekali lagi lalu substitusi x=4; hasilnya 118.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d3278e9afa4edbe58d8669c",
+        "teks": "Diketahui fungsi $f(x) = e^{2x}(x^2 + ax + b)$ dengan $a$ dan $b$ adalah konstanta real. Kurva $y = f(x)$ memiliki titik stasioner di $x = 0$ dan $x = 1$. Nilai dari $a + b$ adalah ....",
+        "jawaban": "-1",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=9$ dan $f^\\prime(1)=69$. Tentukan $f^{\\prime\\prime}(6)$.",
+      "jawaban_benar": "$258$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 258.",
+      "distraktor": [
+        {
+          "teks": "$129$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$516$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-258$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=3. Turunkan sekali lagi lalu substitusi x=6; hasilnya 258.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "370d5d17b3e83315ba853204",
+        "teks": "Diketahui $f(x)=8 x^{3} + 6 x^{2} + 8 x + 7$. Tentukan $f^\\prime(4)$.",
+        "jawaban": "$440$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=35$ dan $f^\\prime(1)=147$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$238$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 238.",
+      "distraktor": [
+        {
+          "teks": "$119$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$476$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-238$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=6, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 238.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "70a7adf8fc19999d9367baff",
+        "teks": "Diketahui $f(x)=4 x^{3} + 4 x^{2} + 5 x + 6$. Tentukan $f^\\prime(-1)$.",
+        "jawaban": "$9$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=15$ dan $f^\\prime(1)=70$. Tentukan $f^{\\prime\\prime}(3)$.",
+      "jawaban_benar": "$130$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=3; hasilnya 130.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$260$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-130$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=3; hasilnya 130.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bec1da7c466456c4a2e11521",
+        "teks": "Tentukan turunan pertama dari fungsi $f(x) = \\dfrac{\\cos x}{1 + \\sin x}$.",
+        "jawaban": "$-\\dfrac{1}{1 + \\sin x}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+7)$ diketahui $f^\\prime(0)=42$ dan $f^\\prime(1)=88$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$88$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 88.",
+      "distraktor": [
+        {
+          "teks": "$44$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$176$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-88$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 7\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=2, b=6. Turunkan sekali lagi lalu substitusi x=4; hasilnya 88.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2632269da25eb6a5629598c",
+        "teks": "Diketahui kurva fungsi $f(x) = e^{2x} \\sin(kx)$ dengan konstanta $k > 0$. Jika garis singgung kurva di titik $(0, f(0))$ tegak lurus dengan garis $x + 5y - 10 = 0$, maka nilai dari $k$ adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+1)$ diketahui $f^\\prime(0)=5$ dan $f^\\prime(1)=40$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$140$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 140.",
+      "distraktor": [
+        {
+          "teks": "$70$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$280$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-140$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 1\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=5, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 140.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3ef936c70aca895b1f499a9a",
+        "teks": "Tentukan turunan pertama dari fungsi $y = e^{\\sqrt{x+5}}$.",
+        "jawaban": "$y' = \\dfrac{e^{\\sqrt{x+5}}}{2\\sqrt{x+5}}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+3)$ diketahui $f^\\prime(0)=15$ dan $f^\\prime(1)=61$. Tentukan $f^{\\prime\\prime}(4)$.",
+      "jawaban_benar": "$130$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=4, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 130.",
+      "distraktor": [
+        {
+          "teks": "$65$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$260$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-130$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 3\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=4, b=5. Turunkan sekali lagi lalu substitusi x=4; hasilnya 130.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "890a6e667dd220cb09fba655",
+        "teks": "Diketahui $f(x)=2 x^{3} + 8 x^{2} + 4 x + 7$. Tentukan $f^\\prime(5)$.",
+        "jawaban": "$234$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_turunan_hasil_kali_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Untuk $f(x)=(ax^2+bx)(x+6)$ diketahui $f^\\prime(0)=18$ dan $f^\\prime(1)=69$. Tentukan $f^{\\prime\\prime}(5)$.",
+      "jawaban_benar": "$132$",
+      "alasan_benar": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=5; hasilnya 132.",
+      "distraktor": [
+        {
+          "teks": "$66$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$264$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-132$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Aturan hasil kali memberi f′=a x^{2} + b x + \\left(x + 6\\right) \\left(2 a x + b\\right). Kedua nilai turunannya menentukan a=3, b=3. Turunkan sekali lagi lalu substitusi x=5; hasilnya 132.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-b-hard-bt01-060"
     }
   ]
 }

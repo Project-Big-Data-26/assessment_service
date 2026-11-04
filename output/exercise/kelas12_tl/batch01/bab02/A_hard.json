@@ -1589,6 +1589,746 @@
       "pembahasan": "Kembangkan pembilang, bagi dengan h, lalu ambil limit h→0. Hasilnya f′(-1)=-15.",
       "catatan": "codex-replenishment:kelas12_tl-b02-A-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b02-a-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "789ef5296783adbcd1218646",
+        "teks": "Diberikan fungsi sebagai berikut:\n$$h(x) = \\begin{cases} \\dfrac{x^2 + ax + b}{x - 3}, & x > 3 \\\\ 7, & x = 3 \\\\ 2x + c, & x < 3 \\end{cases}$$\nJika fungsi $h(x)$ kontinu di seluruh himpunan bilangan real $\\mathbb{R}$, tentukan nilai dari $a + b + c$.",
+        "jawaban": "$-10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+2$ memenuhi $f(9)=371$ dan $f^\\prime(4)=37$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$29$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=369 dan 8a+b=37; diperoleh a=4, b=5. Jadi f′(3)=29.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{29}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$58$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-29$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=369 dan 8a+b=37; diperoleh a=4, b=5. Jadi f′(3)=29.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "5bade566925f0ab1a45b4698",
+        "teks": "Tentukan nilai dari $\\displaystyle\\lim_{x\\to 0} (5x^2 - 4x + 8)$ dengan menerapkan sifat-sifat limit fungsi.",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+6$ memenuhi $f(9)=366$ dan $f^\\prime(4)=36$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$52$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=360 dan 8a+b=36; diperoleh a=4, b=4. Jadi f′(6)=52.",
+      "distraktor": [
+        {
+          "teks": "$26$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$104$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-52$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=360 dan 8a+b=36; diperoleh a=4, b=4. Jadi f′(6)=52.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0b675d2bbfaa0c9a01b9897",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{5}{3}x^2$. Nilai dari $f'(-6) + f'(9)$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+4$ memenuhi $f(9)=301$ dan $f^\\prime(4)=30$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$24$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=297 dan 8a+b=30; diperoleh a=3, b=6. Jadi f′(3)=24.",
+      "distraktor": [
+        {
+          "teks": "$12$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$48$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-24$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=297 dan 8a+b=30; diperoleh a=3, b=6. Jadi f′(3)=24.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9e05143bd27fbf99f6ac3183",
+        "teks": "Gunakan sifat-sifat limit untuk menentukan nilai dari $\\displaystyle\\lim_{y\\to 5}\\sqrt{\\dfrac{y-1}{6y+6}}$.",
+        "jawaban": "$\\dfrac{1}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(7)=224$ dan $f^\\prime(3)=27$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=217 dan 6a+b=27; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-43$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=217 dan 6a+b=27; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c0f68385388666050eaaf331",
+        "teks": "Untuk $f(x)=8 x^{2} + 3 x + 9$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+        "jawaban": "$35$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+6$ memenuhi $f(9)=429$ dan $f^\\prime(4)=42$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$32$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=423 dan 8a+b=42; diperoleh a=5, b=2. Jadi f′(3)=32.",
+      "distraktor": [
+        {
+          "teks": "$16$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$64$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-32$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=423 dan 8a+b=42; diperoleh a=5, b=2. Jadi f′(3)=32.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1c460440e9d690447e54457",
+        "teks": "Untuk $f(x)=8 x^{2} + 4 x + 5$, hitung $\\lim_{h\\to0}\\frac{f(2+h)-f(2)}{h}$.",
+        "jawaban": "$36$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(5)=72$ dan $f^\\prime(2)=11$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$19$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=65 dan 4a+b=11; diperoleh a=2, b=3. Jadi f′(4)=19.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{19}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$38$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-19$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=65 dan 4a+b=11; diperoleh a=2, b=3. Jadi f′(4)=19.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c629fca5038e44295a118403",
+        "teks": "Diketahui fungsi $f(x) = \\begin{cases} \\dfrac{x^2 - 16}{x - 4}, & x \\neq 4 \\\\ c, & x = 4 \\end{cases}$. Agar fungsi $f(x)$ kontinu di titik $x = 4$, nilai $c$ yang memenuhi adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(5)=116$ dan $f^\\prime(2)=19$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=115 dan 4a+b=19; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-43$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=115 dan 4a+b=19; diperoleh a=4, b=3. Jadi f′(5)=43.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "789ef5296783adbcd1218646",
+        "teks": "Diberikan fungsi sebagai berikut:\n$$h(x) = \\begin{cases} \\dfrac{x^2 + ax + b}{x - 3}, & x > 3 \\\\ 7, & x = 3 \\\\ 2x + c, & x < 3 \\end{cases}$$\nJika fungsi $h(x)$ kontinu di seluruh himpunan bilangan real $\\mathbb{R}$, tentukan nilai dari $a + b + c$.",
+        "jawaban": "$-10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=505$ dan $f^\\prime(4)=50$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$50$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(4)=50.",
+      "distraktor": [
+        {
+          "teks": "$25$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$100$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-50$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(4)=50.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0b675d2bbfaa0c9a01b9897",
+        "teks": "Diketahui fungsi $f(x) = \\dfrac{5}{3}x^2$. Nilai dari $f'(-6) + f'(9)$ adalah ....",
+        "jawaban": "$10$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=541$ dan $f^\\prime(4)=54$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$78$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=540 dan 8a+b=54; diperoleh a=6, b=6. Jadi f′(6)=78.",
+      "distraktor": [
+        {
+          "teks": "$39$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$156$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-78$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=540 dan 8a+b=54; diperoleh a=6, b=6. Jadi f′(6)=78.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "27e1fd322bde7e9ac252bb03",
+        "teks": "Diketahui nilai limit trigonometri berikut:\n$$\\lim_{x\\to 0} \\dfrac{\\cos(ax) - \\cos(bx)}{x^2} = 16$$\nJika $a$ dan $b$ adalah bilangan bulat positif dengan $a + b = 8$, tentukan nilai dari $b - a$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+4$ memenuhi $f(9)=472$ dan $f^\\prime(4)=47$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$47$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=468 dan 8a+b=47; diperoleh a=5, b=7. Jadi f′(4)=47.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{47}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$94$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-47$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=468 dan 8a+b=47; diperoleh a=5, b=7. Jadi f′(4)=47.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "79a3d8a23f3258a33957d651",
+        "teks": "Gunakanlah sifat-sifat limit untuk menyelesaikan masalah berikut. Tentukan nilai dari:\n$$\\lim_{x\\to 3}\\dfrac{\\sqrt{3x + 16} - 5}{x^2 - 2x - 3}$$",
+        "jawaban": "$\\dfrac{3}{40}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+8$ memenuhi $f(7)=169$ dan $f^\\prime(3)=20$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$20$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=161 dan 6a+b=20; diperoleh a=3, b=2. Jadi f′(3)=20.",
+      "distraktor": [
+        {
+          "teks": "$10$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$40$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-20$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=161 dan 6a+b=20; diperoleh a=3, b=2. Jadi f′(3)=20.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "270c365940532f9385406cd6",
+        "teks": "Untuk $f(x)=9 x^{2} + 2 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+        "jawaban": "$128$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(7)=273$ dan $f^\\prime(3)=33$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{63}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-63$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bdb10795511d2fc09ee0ad8d",
+        "teks": "Untuk $f(x)=2 x^{2} + 6 x + 3$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+        "jawaban": "$34$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(7)=239$ dan $f^\\prime(3)=30$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$46$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=238 dan 6a+b=30; diperoleh a=4, b=6. Jadi f′(5)=46.",
+      "distraktor": [
+        {
+          "teks": "$23$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$92$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-46$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=238 dan 6a+b=30; diperoleh a=4, b=6. Jadi f′(5)=46.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "12864b86e346f35b2dc8d98b",
+        "teks": "Suatu garis sekan menghubungkan titik $P(1, 2)$ dan $R(4, 11)$ pada kurva $f(x)$. Kemiringan (gradien) garis sekan $PR$ tersebut adalah ....",
+        "jawaban": "$3$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+7$ memenuhi $f(5)=162$ dan $f^\\prime(2)=26$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(5)$.",
+      "jawaban_benar": "$56$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=155 dan 4a+b=26; diperoleh a=5, b=6. Jadi f′(5)=56.",
+      "distraktor": [
+        {
+          "teks": "$28$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$112$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-56$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 25a+5b=155 dan 4a+b=26; diperoleh a=5, b=6. Jadi f′(5)=56.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "270c365940532f9385406cd6",
+        "teks": "Untuk $f(x)=9 x^{2} + 2 x + 8$, hitung $\\lim_{h\\to0}\\frac{f(7+h)-f(7)}{h}$.",
+        "jawaban": "$128$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+3$ memenuhi $f(7)=115$ dan $f^\\prime(3)=14$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$26$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=112 dan 6a+b=14; diperoleh a=2, b=2. Jadi f′(6)=26.",
+      "distraktor": [
+        {
+          "teks": "$13$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$52$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-26$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=112 dan 6a+b=14; diperoleh a=2, b=2. Jadi f′(6)=26.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d28d08970ee1610a11cac324",
+        "teks": "Berdasarkan definisi kekontinuan fungsi, suatu fungsi $f(x)$ dikatakan kontinu di titik $x = c$ jika memenuhi tiga syarat. Manakah di antara pernyataan berikut yang merupakan salah satu syarat tersebut?",
+        "jawaban": "$\\lim_{x\\to c} f(x) = f(c)$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+4$ memenuhi $f(7)=179$ dan $f^\\prime(3)=22$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$22$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=175 dan 6a+b=22; diperoleh a=3, b=4. Jadi f′(3)=22.",
+      "distraktor": [
+        {
+          "teks": "$11$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$44$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-22$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=175 dan 6a+b=22; diperoleh a=3, b=4. Jadi f′(3)=22.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "d1fc9e350c883cf8679299f2",
+        "teks": "Sebuah pabrik memproduksi sepatu dengan kurva total produksi $N(t) = at^2 + bt$ pasang sepatu setelah $t$ jam kerja ($0 \\le t \\le 8$). Rata-rata laju produksi sepatu dari jam ke-1 hingga jam ke-3 ($t = 1$ sampai $t = 3$) adalah $48$ pasang per jam. Sementara itu, laju produksi sesaat pada jam ke-4 ($t = 4$) yang dihitung melalui limit pergerakan garis tangen $\\displaystyle\\lim_{h\\to 0}\\dfrac{N(4+h)-N(4)}{h}$ adalah $68$ pasang per jam. Nilai dari $a + b$ adalah ....",
+        "jawaban": "$33$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=307$ dan $f^\\prime(4)=31$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$31$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=306 dan 8a+b=31; diperoleh a=3, b=7. Jadi f′(4)=31.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{31}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$62$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-31$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=306 dan 8a+b=31; diperoleh a=3, b=7. Jadi f′(4)=31.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0edeb852ed9623bd5b67b669",
+        "teks": "Garis tangen (garis singgung) pada kurva $f(x) = 4 - x^2$ di titik berabsis $x = 1$ memotong sumbu-$Y$ di titik $(0, c)$. Nilai $c$ yang memenuhi adalah ....",
+        "jawaban": "$5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+1$ memenuhi $f(9)=505$ dan $f^\\prime(4)=50$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(3)$.",
+      "jawaban_benar": "$38$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(3)=38.",
+      "distraktor": [
+        {
+          "teks": "$19$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$76$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-38$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=504 dan 8a+b=50; diperoleh a=6, b=2. Jadi f′(3)=38.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2090786b914a8f5236048d46",
+        "teks": "Berdasarkan Definisi 2.2 mengenai kontinuitas fungsi, suatu fungsi $f(x)$ dikatakan kontinu pada suatu interval $I$ jika ....",
+        "jawaban": "fungsi tersebut kontinu pada setiap titik di $I$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+8$ memenuhi $f(7)=274$ dan $f^\\prime(3)=33$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(6)$.",
+      "jawaban_benar": "$63$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{63}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$126$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-63$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 49a+7b=266 dan 6a+b=33; diperoleh a=5, b=3. Jadi f′(6)=63.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "ccab1079719a4bac9a993428",
+        "teks": "Untuk $f(x)=2 x^{2} + 4 x + 7$, hitung $\\lim_{h\\to0}\\frac{f(0+h)-f(0)}{h}$.",
+        "jawaban": "$4$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_limit_turunan_parameter",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi $f(x)=ax^2+bx+2$ memenuhi $f(9)=434$ dan $f^\\prime(4)=43$. Gunakan definisi turunan sebagai limit hasil bagi selisih untuk menentukan $f^\\prime(4)$.",
+      "jawaban_benar": "$43$",
+      "alasan_benar": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=432 dan 8a+b=43; diperoleh a=5, b=3. Jadi f′(4)=43.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{43}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$86$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-43$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Dari definisi limit, f′(x)=2ax+b. Dua data memberi 81a+9b=432 dan 8a+b=43; diperoleh a=5, b=3. Jadi f′(4)=43.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b02-a-hard-bt01-060"
     }
   ]
 }

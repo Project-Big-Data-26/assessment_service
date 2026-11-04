@@ -145,7 +145,7 @@ def discover_jobs(config):
     from app.services.exercise.workflow import validation_allowed
     def manually_owned(base):
         state = base / "reference_replenishment_state.json"
-        return state.exists() and load(state).get("validationOwner") == "replenishment_runner"
+        return state.exists() and load(state).get("validationOwner") in {"replenishment_runner", "codex_local_review"}
     jobs, problems = {}, []
     for entry in config.get("bootstrapJobs", []):
         if entry["class"] not in config["classes"]:

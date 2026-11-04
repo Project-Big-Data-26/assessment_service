@@ -40,6 +40,8 @@ def snapshot():
         published = read(final) if final.exists() else []
         final_meta_path = base / "hasil_validasi/validation_results_meta.json"
         final_meta = read(final_meta_path) if final_meta_path.exists() else {}
+        local_completed = sum(final_meta.get(qid, {}).get("validasi", {}).get("validation_method") == "codex_local_review" for qid in ids)
+        done = max(done, local_completed)
         new = [q for q in published if str(q["_id"]) in ids]
         counts = Counter(q.get("status") for q in new)
         labeled = sum(final_meta.get(str(q["_id"]), {}).get("validasi", {}).get("full_complete") is True for q in new)
@@ -47,7 +49,8 @@ def snapshot():
                      "pending": len(ids)-done, "publishedActive": counts["active"],
                      "publishedInactiveDecisions": max(0, labeled-counts["active"]),
                      "unpublishedDecisions": max(0, done-labeled),
-                     "checkpointStatus": cp.get("executionStatus", "not_started")})
+                     "localReviewed": local_completed,
+                     "checkpointStatus": "codex_local_review_complete" if local_completed == len(ids) else cp.get("executionStatus", "not_started")})
         meta = read(base / "soal_exercise_meta.json")
         stock = Counter((meta[str(q["_id"])]["bab_id"], meta[str(q["_id"])]["subbab_kode"], q.get("cognitive_level"))
                         for q in published if q.get("status") == "active")
@@ -70,9 +73,15 @@ def snapshot():
               "pending": sum(r["pending"] for r in rows), "classes": rows,
               "targetSlotsStillUnderThreshold": shortages,
               "note": "Local published stock; production and student attempt history are not verified. Drafts are excluded."}
+    report["percentage"] = round(100 * report["completed"] / report["target"], 2) if report["target"] else 100
+    state_path = RUN / "validation/current_run.json"
+    report["executionStatus"] = read(state_path).get("status", "unknown") if state_path.exists() else "unknown"
+    report["localReviewed"] = sum(row["localReviewed"] for row in rows)
+    report["reviewMethod"] = "codex_local_review" if report["localReviewed"] else "blind_api_n1"
     atomic_json(RUN / "validation_progress.json", report)
     lines = ["# Progres validasi soal tambahan", "", f"Diperbarui: {report['updatedAt']}", "",
-             f"Selesai divalidasi: **{report['completed']} / {report['target']}**. Tersisa: **{report['pending']}**.", "",
+             f"Selesai divalidasi: **{report['completed']} / {report['target']} ({report['percentage']:.2f}%)**. Tersisa: **{report['pending']}**.", "",
+             f"Status: `{report['executionStatus']}`. Metode: **{report['reviewMethod']}**.", "",
              "Selesai divalidasi mencakup keputusan valid maupun bermasalah. Hanya active yang dihitung tersedia.", "",
              "| Kelas | Target | Selesai | Tersisa | Active terbit | Keputusan belum terbit |",
              "|---|---:|---:|---:|---:|---:|"]
@@ -90,17 +99,22 @@ def snapshot():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--watch", action="store_true")
+    parser.add_argument("--interval", type=int, default=10)
     args = parser.parse_args()
-    for _ in range(720 if args.watch else 1):
+    if args.interval < 5:
+        parser.error("--interval must be at least 5 seconds")
+    while True:
         report = snapshot()
         if report["pending"] == 0 and all(row["unpublishedDecisions"] == 0 for row in report["classes"]):
             subprocess.run([sys.executable, str(ROOT / "scripts/auto_inserter.py"), "--local", "--once",
                             "--report", str(RUN / "availability_after_validation.json")], cwd=ROOT, check=True)
             break
-        if args.watch:
-            time.sleep(60)
+        if not args.watch or report["executionStatus"] in (
+                "all_configured_provider_slots_unavailable", "api_call_budget_reached", "workflow_error"):
+            break
+        time.sleep(args.interval)
     if not args.watch:
-        print(json.dumps({k: report[k] for k in ("target", "completed", "pending")}))
+        print(json.dumps({k: report[k] for k in ("target", "completed", "percentage", "pending")}))
 
 
 if __name__ == "__main__":

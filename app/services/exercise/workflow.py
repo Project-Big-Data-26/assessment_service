@@ -193,6 +193,9 @@ def reference_manifest_intact(base, manifest):
 
 
 def require_validation(base):
+    local_state = Path(base) / "reference_replenishment_state.json"
+    if local_state.exists() and load(local_state).get("reviewMode") == "local_without_external_api":
+        raise ValueError("local_review_mode: external API validation is disabled for this batch")
     base = Path(base)
     hold = base / "reference_replenishment_state.json"
     if hold.exists():

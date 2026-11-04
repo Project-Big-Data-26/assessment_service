@@ -94,6 +94,14 @@ def verify_evidence(source: Path, checkpoint: Path, grade: int) -> None:
 
 def verify_bundle(source: Path, bundle: Path) -> None:
     manifest = load(bundle / "manifest.json")
+    if manifest.get("schemaVersion") == "codex-targeted-exercise-publication-v2":
+        from scripts.generate_targeted_replenishment import verify
+        verify(bundle)
+        return
+    if manifest.get("schemaVersion") == "codex-local-exercise-publication-v1":
+        from scripts.review_replenishment_local import verify_local_publication
+        verify_local_publication(bundle)
+        return
     for info in manifest["sourceFiles"].values():
         assert digest(Path(info["path"])) == info["sha256"], info["path"]
     for name, info in manifest["outputs"].items():

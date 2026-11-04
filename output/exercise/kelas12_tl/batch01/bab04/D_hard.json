@@ -1547,6 +1547,746 @@
       "pembahasan": "Jumlah peluang=(7)/28=1/4. Normalisasi sah karena Σj=28.",
       "catatan": "codex-replenishment:kelas12_tl-b04-D-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b04-d-hard-bt01-039"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "61551e2591b6154a2cac4ddb",
+        "teks": "Fungsi peluang diskret $P(X=j)=j/10$ untuk $j=1,2,\\ldots,4$. Tentukan $P(X\\ge 2)$.",
+        "jawaban": "$\\frac{9}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,5$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{25}{7}$. Tentukan peluang bahwa X genap dan $X\\ge 4$.",
+      "jawaban_benar": "$\\frac{9}{35}$",
+      "alasan_benar": "Normalisasi memberi 15a+5b=1; rumus harapan memberi 55a+15b=25/7. Maka a=2/35, b=1/35; jumlahkan peluang nilai genap minimal 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{26}{35}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{81}{1225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{9}{35}$."
+        },
+        {
+          "teks": "$\\frac{9}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 15a+5b=1; rumus harapan memberi 55a+15b=25/7. Maka a=2/35, b=1/35; jumlahkan peluang nilai genap minimal 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "535246fe6369573d02cbd73e",
+        "teks": "Fungsi peluang diskret $P(X=j)=j/15$ untuk $j=1,2,\\ldots,5$. Tentukan $P(X\\ge 4)$.",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,9$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{425}{69}$. Tentukan peluang bahwa X genap dan $X\\ge 6$.",
+      "jawaban_benar": "$\\frac{62}{207}$",
+      "alasan_benar": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=425/69. Maka a=4/207, b=1/69; jumlahkan peluang nilai genap minimal 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{145}{207}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{3844}{42849}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{62}{207}$."
+        },
+        {
+          "teks": "$\\frac{31}{207}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=425/69. Maka a=4/207, b=1/69; jumlahkan peluang nilai genap minimal 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e2f64b2f6a099ca69beef9fe",
+        "teks": "Fungsi peluang diskret $P(X=j)=j/28$ untuk $j=1,2,\\ldots,7$. Tentukan $P(X\\ge 7)$.",
+        "jawaban": "$\\frac{1}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,5$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{7}{2}$. Tentukan peluang bahwa X genap dan $X\\ge 4$.",
+      "jawaban_benar": "$\\frac{1}{4}$",
+      "alasan_benar": "Normalisasi memberi 15a+5b=1; rumus harapan memberi 55a+15b=7/2. Maka a=1/20, b=1/20; jumlahkan peluang nilai genap minimal 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3}{4}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{16}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{4}$."
+        },
+        {
+          "teks": "$\\frac{1}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 15a+5b=1; rumus harapan memberi 55a+15b=7/2. Maka a=1/20, b=1/20; jumlahkan peluang nilai genap minimal 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "6a91ed919a8cfa76d2c366bd",
+        "teks": "| $W = w$ | 1 | 2 | 3 | 4 |\n| :---: | :---: | :---: | :---: | :---: |\n| $P(W = w)$ | $2a$ | $3a$ | $0,25$ | $0,15$ |\n\nTabel di atas menyajikan distribusi peluang untuk variabel acak diskret $W$. Nilai dari $P(2 \\le W \\le 4)$ adalah ....",
+        "jawaban": "0,76",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,6$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{427}{102}$. Tentukan peluang bahwa X genap dan $X\\ge 5$.",
+      "jawaban_benar": "$\\frac{9}{34}$",
+      "alasan_benar": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=427/102. Maka a=2/51, b=1/34; jumlahkan peluang nilai genap minimal 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{25}{34}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{81}{1156}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{9}{34}$."
+        },
+        {
+          "teks": "$\\frac{9}{68}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=427/102. Maka a=2/51, b=1/34; jumlahkan peluang nilai genap minimal 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "493b47fcf75282754c8685d3",
+        "teks": "Fungsi peluang dari suatu variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{k}{x(x+1)}, & \\text{untuk } x = 1, 2, 3, 4 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\ge 3)$ adalah ....",
+        "jawaban": "$\\frac{1}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,8$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{198}{37}$. Tentukan peluang bahwa X genap dan $X\\ge 6$.",
+      "jawaban_benar": "$\\frac{13}{37}$",
+      "alasan_benar": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=198/37. Maka a=3/148, b=5/148; jumlahkan peluang nilai genap minimal 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{24}{37}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{169}{1369}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{13}{37}$."
+        },
+        {
+          "teks": "$\\frac{13}{74}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=198/37. Maka a=3/148, b=5/148; jumlahkan peluang nilai genap minimal 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4b6d8439fe452d51c8f1ccb5",
+        "teks": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $x \\in \\{1, 2, 3, 4, 5\\}$. Nilai-nilai peluang $f(x) = P(X = x)$ diketahui membentuk barisan aritmetika dengan beda tetap $d$. Jika $P(X \\le 2) = \\frac{1}{5}$, nilai dari $P(X \\ge 4)$ adalah ....",
+        "jawaban": "$\\frac{3}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,9$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{505}{81}$. Tentukan peluang bahwa X genap dan $X\\ge 6$.",
+      "jawaban_benar": "$\\frac{74}{243}$",
+      "alasan_benar": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=505/81. Maka a=5/243, b=2/243; jumlahkan peluang nilai genap minimal 6.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{169}{243}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{5476}{59049}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{74}{243}$."
+        },
+        {
+          "teks": "$\\frac{37}{243}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=505/81. Maka a=5/243, b=2/243; jumlahkan peluang nilai genap minimal 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "88b5452bd0c919c39663760b",
+        "teks": "Sebuah dadu setimbang bersisi enam dilempar satu kali. Jika variabel acak $X$ menyatakan mata dadu yang muncul, yaitu $X \\in \\{1, 2, 3, 4, 5, 6\\}$, nilai dari $P(X = 4)$ adalah …",
+        "jawaban": "$\\frac{1}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,5$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{27}{8}$. Tentukan peluang bahwa X genap dan $X\\ge 3$.",
+      "jawaban_benar": "$\\frac{19}{80}$",
+      "alasan_benar": "Normalisasi memberi 15a+5b=1; rumus harapan memberi 55a+15b=27/8. Maka a=3/80, b=7/80; jumlahkan peluang nilai genap minimal 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{61}{80}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{361}{6400}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{19}{80}$."
+        },
+        {
+          "teks": "$\\frac{19}{160}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 15a+5b=1; rumus harapan memberi 55a+15b=27/8. Maka a=3/80, b=7/80; jumlahkan peluang nilai genap minimal 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "493b47fcf75282754c8685d3",
+        "teks": "Fungsi peluang dari suatu variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{k}{x(x+1)}, & \\text{untuk } x = 1, 2, 3, 4 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\ge 3)$ adalah ....",
+        "jawaban": "$\\frac{1}{6}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,7$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{24}{5}$. Tentukan peluang bahwa X genap dan $X\\ge 5$.",
+      "jawaban_benar": "$\\frac{1}{5}$",
+      "alasan_benar": "Normalisasi memberi 28a+7b=1; rumus harapan memberi 140a+28b=24/5. Maka a=1/35, b=1/35; jumlahkan peluang nilai genap minimal 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4}{5}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1}{25}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{1}{5}$."
+        },
+        {
+          "teks": "$\\frac{1}{10}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 28a+7b=1; rumus harapan memberi 140a+28b=24/5. Maka a=1/35, b=1/35; jumlahkan peluang nilai genap minimal 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "812a3b29975d020610c07fc1",
+        "teks": "Fungsi peluang suatu variabel acak diskret $X$ didefinisikan sebagai:\n$$f(x) = \\begin{cases} \\frac{k - x^2}{20}, & \\text{untuk } x \\in \\{-2, -1, 0, 1, 2\\} \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nPerhatikan pernyataan-pernyataan berikut:\n(1) Nilai konstanta $k = 6$.\n(2) Nilai peluang $P(X = 0) = \\frac{3}{10}$.\n(3) Nilai peluang $P(X > 0) = \\frac{1}{4}$.\n(4) Fungsi peluang bersifat simetris terhadap titik 0, yaitu $P(X = x) = P(X = -x)$ untuk semua $x$.\n\nPernyataan yang bernilai benar adalah ....",
+        "jawaban": "(1), (2), dan (4)",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,9$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{43}{7}$. Tentukan peluang bahwa X genap dan $X\\ge 8$.",
+      "jawaban_benar": "$\\frac{53}{315}$",
+      "alasan_benar": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=43/7. Maka a=2/105, b=1/63; jumlahkan peluang nilai genap minimal 8.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{262}{315}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{2809}{99225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{53}{315}$."
+        },
+        {
+          "teks": "$\\frac{53}{630}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=43/7. Maka a=2/105, b=1/63; jumlahkan peluang nilai genap minimal 8.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c4090d670bf239118eeed06c",
+        "teks": "Diketahui fungsi peluang dari suatu variabel acak diskret $X$ dinyatakan oleh:\n$$f(x) = \\begin{cases} \\frac{x}{20}, & \\text{untuk } x = 4, 7, 9 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\ge 7)$ adalah ....",
+        "jawaban": "$\\frac{4}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,6$, dan nol di luar nilai itu. Diketahui $E(X)=4$. Tentukan peluang bahwa X genap dan $X\\ge 2$.",
+      "jawaban_benar": "$\\frac{19}{35}$",
+      "alasan_benar": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=4. Maka a=1/35, b=1/15; jumlahkan peluang nilai genap minimal 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{16}{35}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{361}{1225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{19}{35}$."
+        },
+        {
+          "teks": "$\\frac{19}{70}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=4. Maka a=1/35, b=1/15; jumlahkan peluang nilai genap minimal 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "981e8e28d39839325217cbd8",
+        "teks": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $\\{1, 2, 3, 4, 5\\}$. Fungsi peluang $X$ didefinisikan sebagai:\n$$P(X = x) = \\begin{cases} kx, & \\text{untuk } x = 1, 2, 3 \\\\ c(6 - x), & \\text{untuk } x = 4, 5 \\end{cases}$$\nJika diketahui $P(X = 2) = P(X = 4)$, nilai dari $P(2 \\le X \\le 4)$ adalah ....",
+        "jawaban": "$\\frac{7}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,9$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{105}{17}$. Tentukan peluang bahwa X genap dan $X\\ge 2$.",
+      "jawaban_benar": "$\\frac{4}{9}$",
+      "alasan_benar": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=105/17. Maka a=1/51, b=2/153; jumlahkan peluang nilai genap minimal 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{9}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{16}{81}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{4}{9}$."
+        },
+        {
+          "teks": "$\\frac{2}{9}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=105/17. Maka a=1/51, b=2/153; jumlahkan peluang nilai genap minimal 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "36bebda20fa7d5b731e8da3a",
+        "teks": "Sebuah kotak memuat 7 bohlam lampu, dengan 3 di antaranya dalam keadaan rusak. Seorang petugas mengambil 2 bohlam secara acak sekaligus. Jika variabel acak $X$ menyatakan banyak bohlam rusak yang terambil, nilai peluang terambilnya semua bohlam dalam keadaan baik ($P(X = 0)$) adalah …",
+        "jawaban": "$\\frac{2}{7}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,8$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{60}{11}$. Tentukan peluang bahwa X genap dan $X\\ge 2$.",
+      "jawaban_benar": "$\\frac{6}{11}$",
+      "alasan_benar": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=60/11. Maka a=1/44, b=1/44; jumlahkan peluang nilai genap minimal 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{5}{11}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{36}{121}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{6}{11}$."
+        },
+        {
+          "teks": "$\\frac{3}{11}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=60/11. Maka a=1/44, b=1/44; jumlahkan peluang nilai genap minimal 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "74e9479f2bd5ea1da2cf80d7",
+        "teks": "Sebuah laci memuat 5 kaus kaki hitam, 3 kaus kaki putih, dan 2 kaus kaki abu-abu. Tiga kaus kaki diambil secara acak sekaligus. Jika variabel acak $P$ menyatakan banyak kaus kaki putih yang terambil, nilai dari $P(P = 2)$ adalah ....",
+        "jawaban": "$\\frac{7}{40}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,7$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{24}{5}$. Tentukan peluang bahwa X genap dan $X\\ge 4$.",
+      "jawaban_benar": "$\\frac{12}{35}$",
+      "alasan_benar": "Normalisasi memberi 28a+7b=1; rumus harapan memberi 140a+28b=24/5. Maka a=1/35, b=1/35; jumlahkan peluang nilai genap minimal 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{23}{35}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{144}{1225}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{12}{35}$."
+        },
+        {
+          "teks": "$\\frac{6}{35}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 28a+7b=1; rumus harapan memberi 140a+28b=24/5. Maka a=1/35, b=1/35; jumlahkan peluang nilai genap minimal 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f40ddf0f4f2a9b8cdecbdcb0",
+        "teks": "Fungsi peluang suatu variabel acak diskret $X$ didefinisikan oleh:\n$$f(x) = \\begin{cases} c(5 - x), & \\text{untuk } x = 1, 2, 3, 4 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\le 2)$ adalah ....",
+        "jawaban": "$\\frac{7}{10}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,6$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{98}{23}$. Tentukan peluang bahwa X genap dan $X\\ge 3$.",
+      "jawaban_benar": "$\\frac{32}{69}$",
+      "alasan_benar": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=98/23. Maka a=1/23, b=1/69; jumlahkan peluang nilai genap minimal 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{69}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1024}{4761}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{32}{69}$."
+        },
+        {
+          "teks": "$\\frac{16}{69}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=98/23. Maka a=1/23, b=1/69; jumlahkan peluang nilai genap minimal 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "981e8e28d39839325217cbd8",
+        "teks": "Sebuah variabel acak diskret $X$ memiliki ruang nilai $\\{1, 2, 3, 4, 5\\}$. Fungsi peluang $X$ didefinisikan sebagai:\n$$P(X = x) = \\begin{cases} kx, & \\text{untuk } x = 1, 2, 3 \\\\ c(6 - x), & \\text{untuk } x = 4, 5 \\end{cases}$$\nJika diketahui $P(X = 2) = P(X = 4)$, nilai dari $P(2 \\le X \\le 4)$ adalah ....",
+        "jawaban": "$\\frac{7}{9}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,8$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{27}{5}$. Tentukan peluang bahwa X genap dan $X\\ge 4$.",
+      "jawaban_benar": "$\\frac{33}{70}$",
+      "alasan_benar": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=27/5. Maka a=3/140, b=1/35; jumlahkan peluang nilai genap minimal 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{37}{70}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1089}{4900}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{33}{70}$."
+        },
+        {
+          "teks": "$\\frac{33}{140}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=27/5. Maka a=3/140, b=1/35; jumlahkan peluang nilai genap minimal 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "a0eda6d1c3997df14d5a58da",
+        "teks": "Diketahui fungsi peluang dari suatu variabel acak diskret $X$ dinyatakan oleh:\n$$f(x) = \\begin{cases} k(x^2 - 1), & \\text{untuk } x = 2, 3, 4 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X > 2)$ adalah ....",
+        "jawaban": "$\\frac{23}{26}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,8$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{162}{29}$. Tentukan peluang bahwa X genap dan $X\\ge 2$.",
+      "jawaban_benar": "$\\frac{16}{29}$",
+      "alasan_benar": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=162/29. Maka a=3/116, b=1/116; jumlahkan peluang nilai genap minimal 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{29}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{256}{841}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{16}{29}$."
+        },
+        {
+          "teks": "$\\frac{8}{29}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 36a+8b=1; rumus harapan memberi 204a+36b=162/29. Maka a=3/116, b=1/116; jumlahkan peluang nilai genap minimal 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c4090d670bf239118eeed06c",
+        "teks": "Diketahui fungsi peluang dari suatu variabel acak diskret $X$ dinyatakan oleh:\n$$f(x) = \\begin{cases} \\frac{x}{20}, & \\text{untuk } x = 4, 7, 9 \\\\ 0, & \\text{untuk } x \\text{ lainnya} \\end{cases}$$\nNilai dari $P(X \\ge 7)$ adalah ....",
+        "jawaban": "$\\frac{4}{5}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,9$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{425}{69}$. Tentukan peluang bahwa X genap dan $X\\ge 7$.",
+      "jawaban_benar": "$\\frac{35}{207}$",
+      "alasan_benar": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=425/69. Maka a=4/207, b=1/69; jumlahkan peluang nilai genap minimal 7.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{172}{207}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{1225}{42849}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{35}{207}$."
+        },
+        {
+          "teks": "$\\frac{35}{414}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 45a+9b=1; rumus harapan memberi 285a+45b=425/69. Maka a=4/207, b=1/69; jumlahkan peluang nilai genap minimal 7.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0800d4bb91cc2a7ff00f7092",
+        "teks": "Sebuah inkubator riset memuat 6 bibit tanaman varietas unggul dan 4 bibit varietas lokal. Sebanyak 3 bibit diambil secara acak sekaligus untuk ditanam di lahan percobaan. Jika variabel acak $Y$ menyatakan banyak bibit varietas lokal yang terambil dengan fungsi peluang $f(y) = P(Y = y)$, nilai dari $\\frac{f(1) \\cdot f(2)}{f(0) \\cdot f(3)}$ adalah ....",
+        "jawaban": "27",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,6$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{47}{12}$. Tentukan peluang bahwa X genap dan $X\\ge 2$.",
+      "jawaban_benar": "$\\frac{15}{28}$",
+      "alasan_benar": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=47/12. Maka a=1/42, b=1/12; jumlahkan peluang nilai genap minimal 2.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{28}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{225}{784}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{15}{28}$."
+        },
+        {
+          "teks": "$\\frac{15}{56}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=47/12. Maka a=1/42, b=1/12; jumlahkan peluang nilai genap minimal 2.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3e39b64582a026d2a96fa267",
+        "teks": "Fungsi peluang diskret $P(X=j)=j/28$ untuk $j=1,2,\\ldots,7$. Tentukan $P(X\\ge 2)$.",
+        "jawaban": "$\\frac{27}{28}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,6$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{112}{27}$. Tentukan peluang bahwa X genap dan $X\\ge 5$.",
+      "jawaban_benar": "$\\frac{7}{27}$",
+      "alasan_benar": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=112/27. Maka a=1/27, b=1/27; jumlahkan peluang nilai genap minimal 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{20}{27}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{49}{729}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{7}{27}$."
+        },
+        {
+          "teks": "$\\frac{7}{54}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=112/27. Maka a=1/27, b=1/27; jumlahkan peluang nilai genap minimal 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "0e8fa4c195f46ce94cb3e7ba",
+        "teks": "Pabrik ponsel Sigma mengirim 12 ponsel pintar ke sebuah toko elektronik. Ternyata sebanyak 5 ponsel pintar di antaranya cacat. Beta membeli 3 ponsel pintar dari toko tersebut secara acak. Jika $Y$ adalah variabel acak yang menyatakan banyak ponsel pintar cacat yang dibeli Beta, nilai dari $P(Y = 2)$ adalah ....",
+        "jawaban": "$\\frac{7}{22}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_pmf_normalisasi_momen",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Fungsi peluang X adalah $P(X=j)=aj+b$ untuk $j=1,2,\\ldots,6$, dan nol di luar nilai itu. Diketahui $E(X)=\\frac{203}{48}$. Tentukan peluang bahwa X genap dan $X\\ge 4$.",
+      "jawaban_benar": "$\\frac{11}{24}$",
+      "alasan_benar": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=203/48. Maka a=1/24, b=1/48; jumlahkan peluang nilai genap minimal 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{13}{24}$",
+          "alasan": "Menggunakan peluang komplemen, bukan kejadian yang diminta."
+        },
+        {
+          "teks": "$\\frac{121}{576}$",
+          "alasan": "Pilihan ini tidak memenuhi seluruh kendala; perhitungan yang memenuhi syarat memberi $\\frac{11}{24}$."
+        },
+        {
+          "teks": "$\\frac{11}{48}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        }
+      ],
+      "pembahasan": "Normalisasi memberi 21a+6b=1; rumus harapan memberi 91a+21b=203/48. Maka a=1/24, b=1/48; jumlahkan peluang nilai genap minimal 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b04-d-hard-bt01-059"
     }
   ]
 }

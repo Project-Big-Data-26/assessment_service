@@ -1589,6 +1589,746 @@
       "pembahasan": "Antiturunannya $\\frac{3 x^{4}}{2} + 3 x^{2} + 8 x$. Substitusi batas atas dikurangi batas bawah menghasilkan 2048.",
       "catatan": "codex-replenishment:kelas12_tl-b03-B-hard; generation_only; level target bukan label tervalidasi.",
       "id": "kelas12_tl-b03-b-hard-bt01-040"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "354cbae241656e3d486cde8f",
+        "teks": "Diketahui fungsi $f(x) = 3x^2 - 6x + 7$ pada interval $[2, 6]$. Nilai integral tentu dari $f(x)$ pada interval $[2, 6]$ atau $\\int_2^6 (3x^2 - 6x + 7)\\,dx$ adalah ....",
+        "jawaban": "$140$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{19}{6}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{3625}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{3625}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{3625}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{3625}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=19/6; maka a=5, b=3. Integralkan x²(5x+3) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-041"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4aa0536ddabe4052335c3c23",
+        "teks": "Hitung $\\int_{0}^{3}(5 x^{3} + 6 x + 8)\\,dx$.",
+        "jawaban": "$\\frac{609}{4}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{11}{2}$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{7625}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{7625}{24}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{7625}{6}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{7625}{12}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=11/2 dan a/3+b/2=3; maka a=3, b=4. Integralkan x²(3x+4) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-042"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "4ecf947fbed19a12f8b73b79",
+        "teks": "Hitung $\\int_{1}^{7}(3 x^{3} + 6 x + 6)\\,dx$.",
+        "jawaban": "$1980$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=9$, dan $\\int_0^1 xf(x)\\,dx=\\frac{29}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1216}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{608}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2432}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1216}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-043"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "f03781bd020f50096a1fd111",
+        "teks": "Hitung $\\int_{3}^{8}(8 x^{3} + 4 x + 2)\\,dx$.",
+        "jawaban": "$8150$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=7$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1408}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{704}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2816}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1408}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=4; maka a=6, b=4. Integralkan x²(6x+4) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-044"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "05afb0189d18dcdf75e027a3",
+        "teks": "Misalkan $\\int_1^4 f(x)\\,dx = 12$ dan $\\int_1^4 g(x)\\,dx = 7$. Nilai dari $\\int_1^4 [3f(x) - 4g(x)]\\,dx$ adalah ....",
+        "jawaban": "$8$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=5$, dan $\\int_0^1 xf(x)\\,dx=3$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{6125}{6}$",
+      "alasan_benar": "Integral data memberi a/2+b=5 dan a/3+b/2=3; maka a=6, b=2. Integralkan x²(6x+2) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{6125}{12}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{6125}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{6125}{6}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=5 dan a/3+b/2=3; maka a=6, b=2. Integralkan x²(6x+2) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-045"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c9ba075420fe358847e69c69",
+        "teks": "Jika fungsi $F(x) = \\int_1^x (t^3 + 5t)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$x^3 + 5x$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=8$, dan $\\int_0^1 xf(x)\\,dx=\\frac{13}{3}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$135$",
+      "alasan_benar": "Integral data memberi a/2+b=8 dan a/3+b/2=13/3; maka a=4, b=6. Integralkan x²(4x+6) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{135}{2}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$270$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-135$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=8 dan a/3+b/2=13/3; maka a=4, b=6. Integralkan x²(4x+6) pada batas 0 hingga 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-046"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "c52b8883c731576cbfa67cca",
+        "teks": "Diketahui fungsi $f(x) = 6x - x^2$ pada interval $[0, 5]$. Nilai integral tentu dari $f(x)$ pada interval $[0, 5]$ atau $\\int_0^5 (6x - x^2)\\,dx$ adalah ....",
+        "jawaban": "$\\frac{100}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=6$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$2160$",
+      "alasan_benar": "Integral data memberi a/2+b=6 dan a/3+b/2=7/2; maka a=6, b=3. Integralkan x²(6x+3) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$1080$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$4320$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-2160$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=6 dan a/3+b/2=7/2; maka a=6, b=3. Integralkan x²(6x+3) pada batas 0 hingga 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-047"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "db7aa5c9783477f22b80b5bf",
+        "teks": "Hitung $\\int_{0}^{6}(5 x^{3} + 2 x + 9)\\,dx$.",
+        "jawaban": "$1710$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{13}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{423}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{423}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{423}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{423}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-048"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "34a7e4ad2bce2d9259129417",
+        "teks": "Luas bidang datar yang dibatasi oleh grafik fungsi $y = 9x - x^3$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$\\frac{81}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{15}{2}$, dan $\\int_0^1 xf(x)\\,dx=4$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$320$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$160$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$640$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-320$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=4; maka a=3, b=6. Integralkan x²(3x+6) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-049"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e8f62e517cb92741f7b1f123",
+        "teks": "Nilai dari $\\lim_{n \\to \\infty} \\sum_{i=1}^n \\frac{3}{n} \\left( 2 + \\frac{3i}{n} \\right)^2$ adalah ....",
+        "jawaban": "$39$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{13}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{896}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{448}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1792}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{896}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-050"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9a65e4617241f325ae495b31",
+        "teks": "Nilai dari $\\int_5^5 (9x^4 - 3x^2 + 7)\\,dx$ adalah ....",
+        "jawaban": "$0$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{15}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{25}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{1280}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=15/2 dan a/3+b/2=25/6; maka a=5, b=5. Integralkan x²(5x+5) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{640}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2560}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{1280}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=15/2 dan a/3+b/2=25/6; maka a=5, b=5. Integralkan x²(5x+5) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-051"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "644ae3fae0e9ef11ca7f537f",
+        "teks": "Suatu fungsi linier $f(x) = ax + b$ memenuhi persamaan $\\int_0^2 f(x)\\,dx = 8$ dan $\\int_0^4 f(x)\\,dx = 24$. Nilai dari $\\int_2^6 f(x)\\,dx$ adalah ....",
+        "jawaban": "$40$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{7}{2}$, dan $\\int_0^1 xf(x)\\,dx=2$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{704}{3}$",
+      "alasan_benar": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{352}{3}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{1408}{3}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{704}{3}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7/2 dan a/3+b/2=2; maka a=3, b=2. Integralkan x²(3x+2) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-052"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "706c91465b89ed873c15489b",
+        "teks": "Diketahui fungsi $f(x) = 6x^2 + 8x + 9$ pada interval $[0, 3]$. Nilai dari $\\int_0^3 (6x^2 + 8x + 9)\\,dx$ adalah ....",
+        "jawaban": "$117$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=9$, dan $\\int_0^1 xf(x)\\,dx=\\frac{29}{6}$. Hitung $\\int_0^3x^2f(x)\\,dx$.",
+      "jawaban_benar": "$144$",
+      "alasan_benar": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 3.",
+      "distraktor": [
+        {
+          "teks": "$72$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$288$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-144$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9 dan a/3+b/2=29/6; maka a=4, b=7. Integralkan x²(4x+7) pada batas 0 hingga 3.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-053"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "e9cb259d0a7e593087d129cf",
+        "teks": "Diketahui fungsi $f(x) = 2x^2 - 5x + 3$ pada interval $[0, 3]$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 (2x^2 - 5x + 3)\\,dx$ adalah ....",
+        "jawaban": "$\\frac{9}{2}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=7$, dan $\\int_0^1 xf(x)\\,dx=\\frac{11}{3}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1080$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$540$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$2160$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-1080$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=11/3; maka a=2, b=6. Integralkan x²(2x+6) pada batas 0 hingga 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-054"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "3d4bf2f14c27d3561f529fbf",
+        "teks": "Luas bidang datar yang dibatasi oleh kurva $y = 6x - x^2$ dan sumbu-$x$ adalah .... satuan luas.",
+        "jawaban": "$36$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{9}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{5}{2}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{2375}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=5/2; maka a=3, b=3. Integralkan x²(3x+3) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{2375}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{2375}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{2375}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=5/2; maka a=3, b=3. Integralkan x²(3x+3) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-055"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "eaf16afa434d23db929843d7",
+        "teks": "Sebuah partikel bergerak sepanjang garis lurus sehingga kecepatannya pada waktu $t$ ditentukan oleh $v(t) = 3t^2 - 12t + 9$ (dalam meter per detik). Jarak yang ditempuh partikel tersebut selama periode waktu $0 \\le t \\le 4$ adalah ....",
+        "jawaban": "$12\\text{ meter}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{9}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{8}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{10375}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{10375}{24}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{10375}{6}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{10375}{12}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=9/2 dan a/3+b/2=8/3; maka a=5, b=2. Integralkan x²(5x+2) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-056"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "9ecbaece6f9841308f4a3c44",
+        "teks": "Berdasarkan Teorema Dasar Kalkulus I, jika suatu fungsi didefinisikan oleh $F(x) = \\int_3^x (7t^2 - 4t + 5)\\,dt$, maka turunan pertama $F'(x)$ adalah ....",
+        "jawaban": "$7x^2 - 4x + 5$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=7$, dan $\\int_0^1 xf(x)\\,dx=\\frac{23}{6}$. Hitung $\\int_0^6x^2f(x)\\,dx$.",
+      "jawaban_benar": "$1656$",
+      "alasan_benar": "Integral data memberi a/2+b=7 dan a/3+b/2=23/6; maka a=4, b=5. Integralkan x²(4x+5) pada batas 0 hingga 6.",
+      "distraktor": [
+        {
+          "teks": "$828$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$3312$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-1656$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=7 dan a/3+b/2=23/6; maka a=4, b=5. Integralkan x²(4x+5) pada batas 0 hingga 6.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-057"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "bcde9228652c0c8fcd2e1772",
+        "teks": "Hitung $\\int_{0}^{2}(4 x^{2} + 4 x + 3)\\,dx$.",
+        "jawaban": "$\\frac{74}{3}$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{13}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{7}{2}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{8125}{12}$",
+      "alasan_benar": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{8125}{24}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{8125}{6}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{8125}{12}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=13/2 dan a/3+b/2=7/2; maka a=3, b=5. Integralkan x²(3x+5) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-058"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "aecb7307c13ce2f189b84c90",
+        "teks": "Misalkan terdapat fungsi $f(x) = 4x$. Nilai integral tentu dari fungsi tersebut pada interval $[0, 3]$ atau $\\int_0^3 4x\\,dx$ adalah ....",
+        "jawaban": "$18$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=\\frac{17}{2}$, dan $\\int_0^1 xf(x)\\,dx=\\frac{14}{3}$. Hitung $\\int_0^5x^2f(x)\\,dx$.",
+      "jawaban_benar": "$\\frac{4125}{4}$",
+      "alasan_benar": "Integral data memberi a/2+b=17/2 dan a/3+b/2=14/3; maka a=5, b=6. Integralkan x²(5x+6) pada batas 0 hingga 5.",
+      "distraktor": [
+        {
+          "teks": "$\\frac{4125}{8}$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$\\frac{4125}{2}$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$- \\frac{4125}{4}$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=17/2 dan a/3+b/2=14/3; maka a=5, b=6. Integralkan x²(5x+6) pada batas 0 hingga 5.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-059"
+    },
+    {
+      "tipe_generate": "variasi",
+      "variasi_cara": "konteks",
+      "acuan": {
+        "sumber": "exercise_validated",
+        "id": "2d500e9bcc4c82d16a0ae8bc",
+        "teks": "Diketahui fungsi $F(x)$ didefinisikan oleh $F(x) = \\int_0^x (t^2 - 6t + 8)\\,dt$ untuk setiap bilangan real $x$. Nilai maksimum lokal dari $F(x)$ tercapai pada saat $x = \\dots.$",
+        "jawaban": "$2$",
+        "snapshot": "runs/exercise_replenishment/codex_batch01/local_review/targeted_blueprints_kelas12_tl.json",
+        "source_sha256": "bdf55e8515c46e13aef94b0a6860c478f26b6e0323527b5df4595fbcfce8bb2f"
+      },
+      "cognitive_c": "C4",
+      "jumlah_langkah": 5,
+      "jenis_soal": "v2_integral_momen_balik",
+      "alasan_level": "Menyusun model dari beberapa kendala, menentukan parameter tersembunyi, lalu mengevaluasi solusi atau batas yang relevan.",
+      "stimulus": null,
+      "pertanyaan": "Diketahui $f(x)=ax+b$, $\\int_0^1 f(x)\\,dx=4$, dan $\\int_0^1 xf(x)\\,dx=\\frac{13}{6}$. Hitung $\\int_0^4x^2f(x)\\,dx$.",
+      "jawaban_benar": "$192$",
+      "alasan_benar": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 4.",
+      "distraktor": [
+        {
+          "teks": "$96$",
+          "alasan": "Mengambil separuh hasil yang semestinya, sehingga salah menerapkan faktor atau penggabungan bagian."
+        },
+        {
+          "teks": "$384$",
+          "alasan": "Mengalikan hasil akhir dengan 2 meskipun kuantitas yang diminta tidak memerlukan faktor tersebut."
+        },
+        {
+          "teks": "$-192$",
+          "alasan": "Membalik tanda hasil; tidak sesuai dengan arah, selisih, atau kuantitas yang diminta."
+        }
+      ],
+      "pembahasan": "Integral data memberi a/2+b=4 dan a/3+b/2=13/6; maka a=2, b=3. Integralkan x²(2x+3) pada batas 0 hingga 4.",
+      "catatan": "Codex local authoring v2; confidence belum diukur; tanpa API eksternal.",
+      "id": "kelas12_tl-b03-b-hard-bt01-060"
     }
   ]
 }
